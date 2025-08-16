@@ -21,7 +21,7 @@ class MoveEnd:
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
+            from Motion import Motion
             obj = Motion()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -32,7 +32,7 @@ class MoveEnd:
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
+            from Motion import Motion
             obj = Motion()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -43,7 +43,7 @@ class MoveEnd:
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
+            from Motion import Motion
             obj = Motion()
             obj.Init(self._tab.Bytes, x)
             return obj

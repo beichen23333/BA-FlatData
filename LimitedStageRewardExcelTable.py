@@ -23,7 +23,7 @@ class LimitedStageRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .LimitedStageRewardExcel import LimitedStageRewardExcel
+            from LimitedStageRewardExcel import LimitedStageRewardExcel
             obj = LimitedStageRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

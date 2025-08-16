@@ -23,7 +23,7 @@ class RootMotionFlat:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Form import Form
+            from Form import Form
             obj = Form()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -46,7 +46,7 @@ class RootMotionFlat:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Motion import Motion
+            from Motion import Motion
             obj = Motion()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -67,7 +67,7 @@ class RootMotionFlat:
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
+            from Motion import Motion
             obj = Motion()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -78,7 +78,7 @@ class RootMotionFlat:
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
+            from Motion import Motion
             obj = Motion()
             obj.Init(self._tab.Bytes, x)
             return obj

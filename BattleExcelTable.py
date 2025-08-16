@@ -23,7 +23,7 @@ class BattleExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .BattleExcel import BattleExcel
+            from BattleExcel import BattleExcel
             obj = BattleExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

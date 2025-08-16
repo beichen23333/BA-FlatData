@@ -23,7 +23,7 @@ class EquipmentExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EquipmentExcel import EquipmentExcel
+            from EquipmentExcel import EquipmentExcel
             obj = EquipmentExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

@@ -23,7 +23,7 @@ class OpenConditionExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .OpenConditionExcel import OpenConditionExcel
+            from OpenConditionExcel import OpenConditionExcel
             obj = OpenConditionExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

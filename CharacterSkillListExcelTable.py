@@ -23,7 +23,7 @@ class CharacterSkillListExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .CharacterSkillListExcel import CharacterSkillListExcel
+            from CharacterSkillListExcel import CharacterSkillListExcel
             obj = CharacterSkillListExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

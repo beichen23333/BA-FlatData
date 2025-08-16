@@ -23,7 +23,7 @@ class AcademyRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .AcademyRewardExcel import AcademyRewardExcel
+            from AcademyRewardExcel import AcademyRewardExcel
             obj = AcademyRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

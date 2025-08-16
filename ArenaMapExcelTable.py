@@ -23,7 +23,7 @@ class ArenaMapExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .ArenaMapExcel import ArenaMapExcel
+            from ArenaMapExcel import ArenaMapExcel
             obj = ArenaMapExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

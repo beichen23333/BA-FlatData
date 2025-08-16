@@ -23,7 +23,7 @@ class AssistEchelonTypeConvertExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .AssistEchelonTypeConvertExcel import AssistEchelonTypeConvertExcel
+            from AssistEchelonTypeConvertExcel import AssistEchelonTypeConvertExcel
             obj = AssistEchelonTypeConvertExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

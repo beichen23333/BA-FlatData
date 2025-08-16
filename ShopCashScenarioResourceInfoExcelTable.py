@@ -23,7 +23,7 @@ class ShopCashScenarioResourceInfoExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .ShopCashScenarioResourceInfoExcel import ShopCashScenarioResourceInfoExcel
+            from ShopCashScenarioResourceInfoExcel import ShopCashScenarioResourceInfoExcel
             obj = ShopCashScenarioResourceInfoExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

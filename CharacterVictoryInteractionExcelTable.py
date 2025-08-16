@@ -23,7 +23,7 @@ class CharacterVictoryInteractionExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .CharacterVictoryInteractionExcel import CharacterVictoryInteractionExcel
+            from CharacterVictoryInteractionExcel import CharacterVictoryInteractionExcel
             obj = CharacterVictoryInteractionExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

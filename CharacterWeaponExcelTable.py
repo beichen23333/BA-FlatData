@@ -23,7 +23,7 @@ class CharacterWeaponExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .CharacterWeaponExcel import CharacterWeaponExcel
+            from CharacterWeaponExcel import CharacterWeaponExcel
             obj = CharacterWeaponExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

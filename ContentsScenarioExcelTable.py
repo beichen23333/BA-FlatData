@@ -23,7 +23,7 @@ class ContentsScenarioExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .ContentsScenarioExcel import ContentsScenarioExcel
+            from ContentsScenarioExcel import ContentsScenarioExcel
             obj = ContentsScenarioExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

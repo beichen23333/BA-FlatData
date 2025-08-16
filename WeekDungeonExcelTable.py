@@ -23,7 +23,7 @@ class WeekDungeonExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .WeekDungeonExcel import WeekDungeonExcel
+            from WeekDungeonExcel import WeekDungeonExcel
             obj = WeekDungeonExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

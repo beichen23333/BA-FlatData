@@ -23,7 +23,7 @@ class EventContentDiceRaceExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EventContentDiceRaceExcel import EventContentDiceRaceExcel
+            from EventContentDiceRaceExcel import EventContentDiceRaceExcel
             obj = EventContentDiceRaceExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

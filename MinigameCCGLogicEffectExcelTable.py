@@ -23,7 +23,7 @@ class MinigameCCGLogicEffectExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .MinigameCCGLogicEffectExcel import MinigameCCGLogicEffectExcel
+            from MinigameCCGLogicEffectExcel import MinigameCCGLogicEffectExcel
             obj = MinigameCCGLogicEffectExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

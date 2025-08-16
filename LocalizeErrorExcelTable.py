@@ -23,7 +23,7 @@ class LocalizeErrorExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .LocalizeErrorExcel import LocalizeErrorExcel
+            from LocalizeErrorExcel import LocalizeErrorExcel
             obj = LocalizeErrorExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

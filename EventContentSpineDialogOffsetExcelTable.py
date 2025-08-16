@@ -23,7 +23,7 @@ class EventContentSpineDialogOffsetExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EventContentSpineDialogOffsetExcel import EventContentSpineDialogOffsetExcel
+            from EventContentSpineDialogOffsetExcel import EventContentSpineDialogOffsetExcel
             obj = EventContentSpineDialogOffsetExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

@@ -23,7 +23,7 @@ class AnimationBlendTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .BlendData import BlendData
+            from BlendData import BlendData
             obj = BlendData()
             obj.Init(self._tab.Bytes, x)
             return obj

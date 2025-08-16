@@ -42,7 +42,7 @@ class GroundNodeFlat:
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .GroundVector3 import GroundVector3
+            from GroundVector3 import GroundVector3
             obj = GroundVector3()
             obj.Init(self._tab.Bytes, x)
             return obj

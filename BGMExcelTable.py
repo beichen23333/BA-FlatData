@@ -23,7 +23,7 @@ class BGMExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .BGMExcel import BGMExcel
+            from BGMExcel import BGMExcel
             obj = BGMExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

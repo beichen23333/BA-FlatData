@@ -23,7 +23,7 @@ class CharacterStatExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .CharacterStatExcel import CharacterStatExcel
+            from CharacterStatExcel import CharacterStatExcel
             obj = CharacterStatExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

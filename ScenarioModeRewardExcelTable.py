@@ -23,7 +23,7 @@ class ScenarioModeRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .ScenarioModeRewardExcel import ScenarioModeRewardExcel
+            from ScenarioModeRewardExcel import ScenarioModeRewardExcel
             obj = ScenarioModeRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

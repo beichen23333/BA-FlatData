@@ -23,7 +23,7 @@ class CampaignUnitExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .CampaignUnitExcel import CampaignUnitExcel
+            from CampaignUnitExcel import CampaignUnitExcel
             obj = CampaignUnitExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

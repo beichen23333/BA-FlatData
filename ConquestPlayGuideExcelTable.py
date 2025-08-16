@@ -23,7 +23,7 @@ class ConquestPlayGuideExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .ConquestPlayGuideExcel import ConquestPlayGuideExcel
+            from ConquestPlayGuideExcel import ConquestPlayGuideExcel
             obj = ConquestPlayGuideExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

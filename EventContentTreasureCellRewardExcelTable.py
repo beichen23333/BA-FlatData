@@ -23,7 +23,7 @@ class EventContentTreasureCellRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EventContentTreasureCellRewardExcel import EventContentTreasureCellRewardExcel
+            from EventContentTreasureCellRewardExcel import EventContentTreasureCellRewardExcel
             obj = EventContentTreasureCellRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

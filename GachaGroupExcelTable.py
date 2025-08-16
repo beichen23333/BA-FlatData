@@ -23,7 +23,7 @@ class GachaGroupExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .GachaGroupExcel import GachaGroupExcel
+            from GachaGroupExcel import GachaGroupExcel
             obj = GachaGroupExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

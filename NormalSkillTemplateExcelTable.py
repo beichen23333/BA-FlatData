@@ -23,7 +23,7 @@ class NormalSkillTemplateExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .NormalSkillTemplateExcel import NormalSkillTemplateExcel
+            from NormalSkillTemplateExcel import NormalSkillTemplateExcel
             obj = NormalSkillTemplateExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

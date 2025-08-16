@@ -23,7 +23,7 @@ class ObstacleExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .ObstacleExcel import ObstacleExcel
+            from ObstacleExcel import ObstacleExcel
             obj = ObstacleExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

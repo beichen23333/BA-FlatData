@@ -23,7 +23,7 @@ class SchoolDungeonStageExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .SchoolDungeonStageExcel import SchoolDungeonStageExcel
+            from SchoolDungeonStageExcel import SchoolDungeonStageExcel
             obj = SchoolDungeonStageExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

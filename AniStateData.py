@@ -100,7 +100,7 @@ class AniStateData:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .AniEventData import AniEventData
+            from AniEventData import AniEventData
             obj = AniEventData()
             obj.Init(self._tab.Bytes, x)
             return obj

@@ -23,7 +23,7 @@ class EventContentStageRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EventContentStageRewardExcel import EventContentStageRewardExcel
+            from EventContentStageRewardExcel import EventContentStageRewardExcel
             obj = EventContentStageRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

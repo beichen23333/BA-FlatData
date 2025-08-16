@@ -23,7 +23,7 @@ class CharacterDialogSubtitleExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .CharacterDialogSubtitleExcel import CharacterDialogSubtitleExcel
+            from CharacterDialogSubtitleExcel import CharacterDialogSubtitleExcel
             obj = CharacterDialogSubtitleExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

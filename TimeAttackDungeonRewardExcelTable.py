@@ -23,7 +23,7 @@ class TimeAttackDungeonRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .TimeAttackDungeonRewardExcel import TimeAttackDungeonRewardExcel
+            from TimeAttackDungeonRewardExcel import TimeAttackDungeonRewardExcel
             obj = TimeAttackDungeonRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

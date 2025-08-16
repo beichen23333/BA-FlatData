@@ -23,7 +23,7 @@ class EventContentChangeExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EventContentChangeExcel import EventContentChangeExcel
+            from EventContentChangeExcel import EventContentChangeExcel
             obj = EventContentChangeExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

@@ -23,7 +23,7 @@ class OperatorExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .OperatorExcel import OperatorExcel
+            from OperatorExcel import OperatorExcel
             obj = OperatorExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

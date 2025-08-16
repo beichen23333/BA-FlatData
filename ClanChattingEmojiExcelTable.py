@@ -23,7 +23,7 @@ class ClanChattingEmojiExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .ClanChattingEmojiExcel import ClanChattingEmojiExcel
+            from ClanChattingEmojiExcel import ClanChattingEmojiExcel
             obj = ClanChattingEmojiExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

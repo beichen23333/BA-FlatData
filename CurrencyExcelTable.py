@@ -23,7 +23,7 @@ class CurrencyExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .CurrencyExcel import CurrencyExcel
+            from CurrencyExcel import CurrencyExcel
             obj = CurrencyExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

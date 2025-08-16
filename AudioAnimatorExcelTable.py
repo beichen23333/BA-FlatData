@@ -23,7 +23,7 @@ class AudioAnimatorExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .AudioAnimatorExcel import AudioAnimatorExcel
+            from AudioAnimatorExcel import AudioAnimatorExcel
             obj = AudioAnimatorExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

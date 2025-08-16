@@ -23,7 +23,7 @@ class EventContentLocationRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EventContentLocationRewardExcel import EventContentLocationRewardExcel
+            from EventContentLocationRewardExcel import EventContentLocationRewardExcel
             obj = EventContentLocationRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

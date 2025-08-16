@@ -23,7 +23,7 @@ class MiniGameDreamInfoExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .MiniGameDreamInfoExcel import MiniGameDreamInfoExcel
+            from MiniGameDreamInfoExcel import MiniGameDreamInfoExcel
             obj = MiniGameDreamInfoExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

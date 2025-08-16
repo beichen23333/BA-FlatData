@@ -23,7 +23,7 @@ class MinigameCCGEnemyExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .MinigameCCGEnemyExcel import MinigameCCGEnemyExcel
+            from MinigameCCGEnemyExcel import MinigameCCGEnemyExcel
             obj = MinigameCCGEnemyExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

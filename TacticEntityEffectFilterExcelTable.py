@@ -23,7 +23,7 @@ class TacticEntityEffectFilterExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .TacticEntityEffectFilterExcel import TacticEntityEffectFilterExcel
+            from TacticEntityEffectFilterExcel import TacticEntityEffectFilterExcel
             obj = TacticEntityEffectFilterExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

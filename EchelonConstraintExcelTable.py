@@ -23,7 +23,7 @@ class EchelonConstraintExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EchelonConstraintExcel import EchelonConstraintExcel
+            from EchelonConstraintExcel import EchelonConstraintExcel
             obj = EchelonConstraintExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

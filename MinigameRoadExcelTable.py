@@ -23,7 +23,7 @@ class MinigameRoadExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .MinigameRoadExcel import MinigameRoadExcel
+            from MinigameRoadExcel import MinigameRoadExcel
             obj = MinigameRoadExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

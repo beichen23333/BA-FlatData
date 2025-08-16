@@ -23,7 +23,7 @@ class MissionEmergencyCompleteExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .MissionEmergencyCompleteExcel import MissionEmergencyCompleteExcel
+            from MissionEmergencyCompleteExcel import MissionEmergencyCompleteExcel
             obj = MissionEmergencyCompleteExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

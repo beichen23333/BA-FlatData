@@ -23,7 +23,7 @@ class EventContentMeetupInfoExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .EventContentMeetupInfoExcel import EventContentMeetupInfoExcel
+            from EventContentMeetupInfoExcel import EventContentMeetupInfoExcel
             obj = EventContentMeetupInfoExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

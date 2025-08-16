@@ -23,7 +23,7 @@ class ConquestProgressResourceExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .ConquestProgressResourceExcel import ConquestProgressResourceExcel
+            from ConquestProgressResourceExcel import ConquestProgressResourceExcel
             obj = ConquestProgressResourceExcel()
             obj.Init(self._tab.Bytes, x)
             return obj
