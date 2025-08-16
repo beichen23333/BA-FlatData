@@ -3,13 +3,13 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class AnimationBlendTable:
+class PropRootMotionFlat:
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = AnimationBlendTable()
+        x = PropRootMotionFlat()
         x.Init(buf, n + offset)
         return x
 
@@ -17,24 +17,24 @@ class AnimationBlendTable:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def DataList(self, j):
+    def RootMotions(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            obj = BlendData()
+            obj = PropMotion()
             obj.Init(self._tab.Bytes, x)
             return obj
         return None
 
-    def DataListLength(self):
+    def RootMotionsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
-    def DataListIsNone(self):
+    def RootMotionsIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
@@ -48,7 +48,7 @@ class AnimationBlendTable:
 
 
     @staticmethod
-    def AddDataList(builder, DataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(DataList), 0)
+    def AddRootMotions(builder, RootMotions): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(RootMotions), 0)
     @staticmethod
-    def StartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def StartRootMotionsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 

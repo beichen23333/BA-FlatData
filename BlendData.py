@@ -3,13 +3,13 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class AnimationBlendTable:
+class BlendData:
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = AnimationBlendTable()
+        x = BlendData()
         x.Init(buf, n + offset)
         return x
 
@@ -17,38 +17,49 @@ class AnimationBlendTable:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def DataList(self, j):
+    def Type(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def InfoList(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            obj = BlendData()
+            obj = BlendInfo()
             obj.Init(self._tab.Bytes, x)
             return obj
         return None
 
-    def DataListLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
+    def InfoListLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
-    def DataListIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
+    def InfoListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(1)
+    def Start(builder): builder.StartObject(2)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddDataList(builder, DataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(DataList), 0)
+    def AddType(builder, Type): builder.PrependInt32Slot(0, Type, 0)
+
+
     @staticmethod
-    def StartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddInfoList(builder, InfoList): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(InfoList), 0)
+    @staticmethod
+    def StartInfoListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 

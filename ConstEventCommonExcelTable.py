@@ -3,13 +3,13 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class AnimationBlendTable:
+class ConstEventCommonExcelTable:
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = AnimationBlendTable()
+        x = ConstEventCommonExcelTable()
         x.Init(buf, n + offset)
         return x
 
@@ -23,7 +23,7 @@ class AnimationBlendTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            obj = BlendData()
+            obj = ConstEventCommonExcel()
             obj.Init(self._tab.Bytes, x)
             return obj
         return None

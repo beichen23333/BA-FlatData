@@ -3,13 +3,13 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class AnimationBlendTable:
+class MinigameCardExcel:
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = AnimationBlendTable()
+        x = MinigameCardExcel()
         x.Init(buf, n + offset)
         return x
 
@@ -17,24 +17,26 @@ class AnimationBlendTable:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def DataList(self, j):
+    def None_(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            obj = BlendData()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return 0
 
-    def DataListLength(self):
+    def None_AsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
+        return 0
+
+    def None_Length(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
-    def DataListIsNone(self):
+    def None_IsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
@@ -48,7 +50,7 @@ class AnimationBlendTable:
 
 
     @staticmethod
-    def AddDataList(builder, DataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(DataList), 0)
+    def AddNone_(builder, None_): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(None_), 0)
     @staticmethod
-    def StartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def StartNone_Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
