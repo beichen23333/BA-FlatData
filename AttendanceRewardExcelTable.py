@@ -23,6 +23,7 @@ class AttendanceRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .AttendanceRewardExcel import AttendanceRewardExcel
             obj = AttendanceRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

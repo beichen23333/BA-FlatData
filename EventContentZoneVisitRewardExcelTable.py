@@ -23,6 +23,7 @@ class EventContentZoneVisitRewardExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .EventContentZoneVisitRewardExcel import EventContentZoneVisitRewardExcel
             obj = EventContentZoneVisitRewardExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

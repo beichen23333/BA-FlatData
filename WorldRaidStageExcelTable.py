@@ -23,6 +23,7 @@ class WorldRaidStageExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .WorldRaidStageExcel import WorldRaidStageExcel
             obj = WorldRaidStageExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

@@ -23,6 +23,7 @@ class ScenarioScriptField1ExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .ScenarioScriptField1Excel import ScenarioScriptField1Excel
             obj = ScenarioScriptField1Excel()
             obj.Init(self._tab.Bytes, x)
             return obj

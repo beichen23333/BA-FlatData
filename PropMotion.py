@@ -30,6 +30,7 @@ class PropMotion:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .PropVector3 import PropVector3
             obj = PropVector3()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -52,6 +53,7 @@ class PropMotion:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .PropVector3 import PropVector3
             obj = PropVector3()
             obj.Init(self._tab.Bytes, x)
             return obj

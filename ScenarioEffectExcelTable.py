@@ -23,6 +23,7 @@ class ScenarioEffectExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .ScenarioEffectExcel import ScenarioEffectExcel
             obj = ScenarioEffectExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

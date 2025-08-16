@@ -23,6 +23,7 @@ class ProductSelectionGroupExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .ProductSelectionGroupExcel import ProductSelectionGroupExcel
             obj = ProductSelectionGroupExcel()
             obj.Init(self._tab.Bytes, x)
             return obj

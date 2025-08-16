@@ -23,6 +23,7 @@ class ServiceActionExcelTable:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
+            from .ServiceActionExcel import ServiceActionExcel
             obj = ServiceActionExcel()
             obj.Init(self._tab.Bytes, x)
             return obj
