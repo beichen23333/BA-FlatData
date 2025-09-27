@@ -51,3 +51,6 @@ class Club:
     AbydosStudentCouncil = 49
     CentralControlCenter = 50
     FreightLogisticsDepartment = 51
+    OccultClub = 52
+    PrefectBrigade = 53
+    FreeTradeCartel = 54

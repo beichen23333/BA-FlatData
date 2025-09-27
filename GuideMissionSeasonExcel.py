@@ -108,85 +108,92 @@ class GuideMissionSeasonExcel:
         return 0
 
 
-    def SpineCharacterId(self):
+    def IconOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def RequirementParcelImage(self):
+    def SpineCharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
 
 
-    def RewardImage(self):
+    def RequirementParcelImage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def LobbyBannerImage(self):
+    def RewardImage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def BackgroundImage(self):
+    def LobbyBannerImage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def TitleImage(self):
+    def BackgroundImage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def RequirementParcelType(self):
+    def TitleImage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def RequirementParcelType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RequirementParcelId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
     def RequirementParcelAmount(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def TabType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def IsPermanent(self):
+    def TabType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def IsPermanent(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def PreSeasonId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
@@ -195,7 +202,7 @@ class GuideMissionSeasonExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(25)
+    def Start(builder): builder.StartObject(26)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -246,44 +253,48 @@ class GuideMissionSeasonExcel:
 
 
     @staticmethod
-    def AddSpineCharacterId(builder, SpineCharacterId): builder.PrependInt64Slot(13, SpineCharacterId, 0)
+    def AddIconOrder(builder, IconOrder): builder.PrependInt64Slot(13, IconOrder, 0)
 
 
     @staticmethod
-    def AddRequirementParcelImage(builder, RequirementParcelImage): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(RequirementParcelImage), 0)
-
-    @staticmethod
-    def AddRewardImage(builder, RewardImage): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(RewardImage), 0)
-
-    @staticmethod
-    def AddLobbyBannerImage(builder, LobbyBannerImage): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(LobbyBannerImage), 0)
-
-    @staticmethod
-    def AddBackgroundImage(builder, BackgroundImage): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(BackgroundImage), 0)
-
-    @staticmethod
-    def AddTitleImage(builder, TitleImage): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(TitleImage), 0)
-
-    @staticmethod
-    def AddRequirementParcelType(builder, RequirementParcelType): builder.PrependInt32Slot(19, RequirementParcelType, 0)
+    def AddSpineCharacterId(builder, SpineCharacterId): builder.PrependInt64Slot(14, SpineCharacterId, 0)
 
 
     @staticmethod
-    def AddRequirementParcelId(builder, RequirementParcelId): builder.PrependInt64Slot(20, RequirementParcelId, 0)
+    def AddRequirementParcelImage(builder, RequirementParcelImage): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(RequirementParcelImage), 0)
+
+    @staticmethod
+    def AddRewardImage(builder, RewardImage): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(RewardImage), 0)
+
+    @staticmethod
+    def AddLobbyBannerImage(builder, LobbyBannerImage): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(LobbyBannerImage), 0)
+
+    @staticmethod
+    def AddBackgroundImage(builder, BackgroundImage): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(BackgroundImage), 0)
+
+    @staticmethod
+    def AddTitleImage(builder, TitleImage): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(TitleImage), 0)
+
+    @staticmethod
+    def AddRequirementParcelType(builder, RequirementParcelType): builder.PrependInt32Slot(20, RequirementParcelType, 0)
 
 
     @staticmethod
-    def AddRequirementParcelAmount(builder, RequirementParcelAmount): builder.PrependInt32Slot(21, RequirementParcelAmount, 0)
+    def AddRequirementParcelId(builder, RequirementParcelId): builder.PrependInt64Slot(21, RequirementParcelId, 0)
 
 
     @staticmethod
-    def AddTabType(builder, TabType): builder.PrependInt32Slot(22, TabType, 0)
+    def AddRequirementParcelAmount(builder, RequirementParcelAmount): builder.PrependInt32Slot(22, RequirementParcelAmount, 0)
 
 
     @staticmethod
-    def AddIsPermanent(builder, IsPermanent): builder.PrependBoolSlot(23, IsPermanent, 0)
+    def AddTabType(builder, TabType): builder.PrependInt32Slot(23, TabType, 0)
 
 
     @staticmethod
-    def AddPreSeasonId(builder, PreSeasonId): builder.PrependInt64Slot(24, PreSeasonId, 0)
+    def AddIsPermanent(builder, IsPermanent): builder.PrependBoolSlot(24, IsPermanent, 0)
+
+
+    @staticmethod
+    def AddPreSeasonId(builder, PreSeasonId): builder.PrependInt64Slot(25, PreSeasonId, 0)
 

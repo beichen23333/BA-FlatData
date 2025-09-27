@@ -52,34 +52,41 @@ class ShopFreeRecruitExcel:
         return None
 
 
-    def ShopRecruitId(self, j):
+    def TenRecruitCountOnly(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def ShopRecruitId(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
         return 0
 
     def ShopRecruitIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
         return 0
 
     def ShopRecruitIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def ShopRecruitIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(6)
+    def Start(builder): builder.StartObject(7)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -102,7 +109,11 @@ class ShopFreeRecruitExcel:
     def AddFreeRecruitDecorationImagePath(builder, FreeRecruitDecorationImagePath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(FreeRecruitDecorationImagePath), 0)
 
     @staticmethod
-    def AddShopRecruitId(builder, ShopRecruitId): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ShopRecruitId), 0)
+    def AddTenRecruitCountOnly(builder, TenRecruitCountOnly): builder.PrependBoolSlot(5, TenRecruitCountOnly, 0)
+
+
+    @staticmethod
+    def AddShopRecruitId(builder, ShopRecruitId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(ShopRecruitId), 0)
     @staticmethod
     def StartShopRecruitIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
 

@@ -3,13 +3,13 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class ClanAssistSlotExcel:
+class AssistSlotExcel:
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = ClanAssistSlotExcel()
+        x = AssistSlotExcel()
         x.Init(buf, n + offset)
         return x
 

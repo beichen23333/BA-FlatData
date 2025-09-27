@@ -52,15 +52,8 @@ class WorldRaidStageRewardExcel:
         return 0
 
 
-    def ClearStageRewardParcelUniqueName(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
     def ClearStageRewardAmount(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
@@ -69,7 +62,7 @@ class WorldRaidStageRewardExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(7)
+    def Start(builder): builder.StartObject(6)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -95,8 +88,5 @@ class WorldRaidStageRewardExcel:
 
 
     @staticmethod
-    def AddClearStageRewardParcelUniqueName(builder, ClearStageRewardParcelUniqueName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ClearStageRewardParcelUniqueName), 0)
-
-    @staticmethod
-    def AddClearStageRewardAmount(builder, ClearStageRewardAmount): builder.PrependInt64Slot(6, ClearStageRewardAmount, 0)
+    def AddClearStageRewardAmount(builder, ClearStageRewardAmount): builder.PrependInt64Slot(5, ClearStageRewardAmount, 0)
 

@@ -135,99 +135,106 @@ class ShopRecruitExcel:
         return o == 0
 
 
-    def SalePeriodFrom(self):
+    def SalePeriodVisible(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
 
 
-    def SalePeriodTo(self):
+    def SalePeriodFrom(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def RecruitCoinId(self):
+    def SalePeriodTo(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def RecruitSellectionShopId(self):
+    def RecruitCoinId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PurchaseCooltimeMin(self):
+    def RecruitSellectionShopId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PurchaseCountLimit(self):
+    def PurchaseCooltimeMin(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PurchaseCountResetType(self):
+    def PurchaseCountLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def PurchaseCountResetType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def IsNewbie(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
-
-
-    def IsSelectRecruit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def DirectPayInvisibleTokenId(self):
+    def IsSelectRecruit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def DirectPayAndroidShopCashId(self):
+    def DirectPayInvisibleTokenId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def DirectPayAppleShopCashId(self):
+    def DirectPayAndroidShopCashId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def SelectAbleGachaGroupId(self):
+    def DirectPayAppleShopCashId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def MaxSelectCharacterNum(self):
+    def SelectAbleGachaGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def MaxSelectCharacterNum(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
@@ -236,7 +243,7 @@ class ShopRecruitExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(26)
+    def Start(builder): builder.StartObject(27)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -292,55 +299,59 @@ class ShopRecruitExcel:
 
 
     @staticmethod
-    def AddSalePeriodFrom(builder, SalePeriodFrom): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodFrom), 0)
-
-    @staticmethod
-    def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
-
-    @staticmethod
-    def AddRecruitCoinId(builder, RecruitCoinId): builder.PrependInt64Slot(14, RecruitCoinId, 0)
+    def AddSalePeriodVisible(builder, SalePeriodVisible): builder.PrependBoolSlot(12, SalePeriodVisible, 0)
 
 
     @staticmethod
-    def AddRecruitSellectionShopId(builder, RecruitSellectionShopId): builder.PrependInt64Slot(15, RecruitSellectionShopId, 0)
+    def AddSalePeriodFrom(builder, SalePeriodFrom): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodFrom), 0)
+
+    @staticmethod
+    def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
+
+    @staticmethod
+    def AddRecruitCoinId(builder, RecruitCoinId): builder.PrependInt64Slot(15, RecruitCoinId, 0)
 
 
     @staticmethod
-    def AddPurchaseCooltimeMin(builder, PurchaseCooltimeMin): builder.PrependInt64Slot(16, PurchaseCooltimeMin, 0)
+    def AddRecruitSellectionShopId(builder, RecruitSellectionShopId): builder.PrependInt64Slot(16, RecruitSellectionShopId, 0)
 
 
     @staticmethod
-    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt64Slot(17, PurchaseCountLimit, 0)
+    def AddPurchaseCooltimeMin(builder, PurchaseCooltimeMin): builder.PrependInt64Slot(17, PurchaseCooltimeMin, 0)
 
 
     @staticmethod
-    def AddPurchaseCountResetType(builder, PurchaseCountResetType): builder.PrependInt32Slot(18, PurchaseCountResetType, 0)
+    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt64Slot(18, PurchaseCountLimit, 0)
 
 
     @staticmethod
-    def AddIsNewbie(builder, IsNewbie): builder.PrependBoolSlot(19, IsNewbie, 0)
+    def AddPurchaseCountResetType(builder, PurchaseCountResetType): builder.PrependInt32Slot(19, PurchaseCountResetType, 0)
 
 
     @staticmethod
-    def AddIsSelectRecruit(builder, IsSelectRecruit): builder.PrependBoolSlot(20, IsSelectRecruit, 0)
+    def AddIsNewbie(builder, IsNewbie): builder.PrependBoolSlot(20, IsNewbie, 0)
 
 
     @staticmethod
-    def AddDirectPayInvisibleTokenId(builder, DirectPayInvisibleTokenId): builder.PrependInt64Slot(21, DirectPayInvisibleTokenId, 0)
+    def AddIsSelectRecruit(builder, IsSelectRecruit): builder.PrependBoolSlot(21, IsSelectRecruit, 0)
 
 
     @staticmethod
-    def AddDirectPayAndroidShopCashId(builder, DirectPayAndroidShopCashId): builder.PrependInt64Slot(22, DirectPayAndroidShopCashId, 0)
+    def AddDirectPayInvisibleTokenId(builder, DirectPayInvisibleTokenId): builder.PrependInt64Slot(22, DirectPayInvisibleTokenId, 0)
 
 
     @staticmethod
-    def AddDirectPayAppleShopCashId(builder, DirectPayAppleShopCashId): builder.PrependInt64Slot(23, DirectPayAppleShopCashId, 0)
+    def AddDirectPayAndroidShopCashId(builder, DirectPayAndroidShopCashId): builder.PrependInt64Slot(23, DirectPayAndroidShopCashId, 0)
 
 
     @staticmethod
-    def AddSelectAbleGachaGroupId(builder, SelectAbleGachaGroupId): builder.PrependInt64Slot(24, SelectAbleGachaGroupId, 0)
+    def AddDirectPayAppleShopCashId(builder, DirectPayAppleShopCashId): builder.PrependInt64Slot(24, DirectPayAppleShopCashId, 0)
 
 
     @staticmethod
-    def AddMaxSelectCharacterNum(builder, MaxSelectCharacterNum): builder.PrependInt64Slot(25, MaxSelectCharacterNum, 0)
+    def AddSelectAbleGachaGroupId(builder, SelectAbleGachaGroupId): builder.PrependInt64Slot(25, SelectAbleGachaGroupId, 0)
+
+
+    @staticmethod
+    def AddMaxSelectCharacterNum(builder, MaxSelectCharacterNum): builder.PrependInt64Slot(26, MaxSelectCharacterNum, 0)
 

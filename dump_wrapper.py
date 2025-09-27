@@ -42,15 +42,16 @@ class FurnitureSubCategory(IntEnum):
     FurnitureEtc = 5
     FurnitureSubCategory1 = 6
     HomeAppliance = 7
-    WallDecoration = 8
-    FloorDecoration = 9
-    DecorationEtc = 10
-    DecorationSubCategory1 = 11
-    Floor = 12
-    Background = 13
-    Wallpaper = 14
-    InteriorsSubCategory1 = 15
-    All = 16
+    Trophy = 8
+    WallDecoration = 9
+    FloorDecoration = 10
+    DecorationEtc = 11
+    DecorationSubCategory1 = 12
+    Floor = 13
+    Background = 14
+    Wallpaper = 15
+    InteriorsSubCategory1 = 16
+    All = 17
 
 class FurnitureLocation(IntEnum):
     None_ = 0
@@ -959,6 +960,7 @@ class EventContentType(IntEnum):
     MiniShop = 38
     MiniGameRoad = 39
     MiniGameCCG = 40
+    Concentration = 41
 
 class OpenCondition(IntEnum):
     Hide = 0
@@ -1297,6 +1299,18 @@ class BattlePassContentType(IntEnum):
     Lobby = 0
     Mission = 1
 
+class ConcentrationVoiceCondition(IntEnum):
+    None_ = 0
+    PairMatchFail = 1
+    PairMatchSuccess = 2
+    RoundRenewal = 3
+
+class ConcentrationRewardType(IntEnum):
+    None_ = 0
+    CardOpen = 1
+    PairMatch = 2
+    RoundRenewal = 3
+
 class EquipmentCategory(IntEnum):
     Unable = 0
     Exp = 1
@@ -1405,6 +1419,7 @@ class EquipmentOptionType(IntEnum):
     RegenCost_Base = 87
     RegenCost_Coefficient = 88
     MaxCostIncrease_Base = 89
+    HealRate_Base = 90
 
 class MultipleConditionCheckType(IntEnum):
     And = 0
@@ -1630,6 +1645,17 @@ class CVUnlockScenarioType(IntEnum):
     Main = 0
     Event = 1
     SpecialOperation = 2
+
+class PeriodType(IntEnum):
+    None_ = 0
+    Daily = 1
+    Weekly = 2
+    Monthly = 3
+
+class AssistRewardType(IntEnum):
+    None_ = 0
+    AssistTerm = 1
+    AssistRent = 2
 
 class FieldConditionType(IntEnum):
     Invalid = 0
@@ -2380,7 +2406,9 @@ class CurrencyTypes(IntEnum):
     EliminateTicketB = 25
     EliminateTicketC = 26
     EliminateTicketD = 27
-    Max = 28
+    CafeSummonTicket1 = 28
+    CafeSummonTicket2 = 29
+    Max = 30
 
 class SortingTarget(IntEnum):
     None_ = 0
@@ -2607,6 +2635,10 @@ class ParcelChangeReason(IntEnum):
     Account_LevelReward = 187
     MiniGame_CCGCompleteGame = 188
     MiniGame_CCGBuyPerk = 189
+    Cafe_SummonCharacterTicketUse = 190
+    Concentration_FlipCard = 191
+    Concentration_RoundComplete = 192
+    Concentration_RoundSkip = 193
 
 class ConsumeCondition(IntEnum):
     And = 0
@@ -2983,6 +3015,7 @@ class ShopCategoryType(IntEnum):
     SelectPickupGacha = 35
     GemDaily = 36
     GemWeekly = 37
+    CafeSummonTicket = 38
 
 class PurchaseServerTag(IntEnum):
     Audit = 0
@@ -3102,12 +3135,12 @@ class ShopFilterType(IntEnum):
     Arius = 21
     Shanhaijing = 22
     Valkyrie = 23
-    SRT = 24
+    WildHunt = 24
     Event = 25
     ChaserTotalTicket = 26
     SchoolTotalTicket = 27
-    Highlander = 28
-    ShopFilterDUMMY_2 = 29
+    SRT = 28
+    Highlander = 29
     ShopFilterDUMMY_3 = 30
     ShopFilterDUMMY_4 = 31
     ShopFilterDUMMY_5 = 32
@@ -6290,6 +6323,9 @@ class Club(IntEnum):
     AbydosStudentCouncil = 49
     CentralControlCenter = 50
     FreightLogisticsDepartment = 51
+    OccultClub = 52
+    PrefectBrigade = 53
+    FreeTradeCartel = 54
 
 class UnderCoverItemCategory(IntEnum):
     Consumable = 0
@@ -6398,24 +6434,6 @@ def dump_BattleExcel(excel_instance, password: bytes = b"") -> dict:
         "Talk": BattleDialogType(convert_int(excel_instance.Talk(), password)).name,
     }
 
-def dump_BattleLevelFactorExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "LevelDiff": convert_int(excel_instance.LevelDiff(), password),
-        "DamageRate": convert_long(excel_instance.DamageRate(), password),
-    }
-
-def dump_BossExternalBTExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "ExternalBTId": convert_long(excel_instance.ExternalBTId(), password),
-        "AIPhase": convert_long(excel_instance.AIPhase(), password),
-        "ExternalBTNodeType": ExternalBTNodeType(convert_int(excel_instance.ExternalBTNodeType(), password)).name,
-        "ExternalBTTrigger": ExternalBTTrigger(convert_int(excel_instance.ExternalBTTrigger(), password)).name,
-        "TriggerArgument": convert_string(excel_instance.TriggerArgument(), password),
-        "BehaviorRate": convert_long(excel_instance.BehaviorRate(), password),
-        "ExternalBehavior": ExternalBehavior(convert_int(excel_instance.ExternalBehavior(), password)).name,
-        "BehaviorArgument": convert_string(excel_instance.BehaviorArgument(), password),
-    }
-
 def dump_BossPhaseExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_long(excel_instance.Id(), password),
@@ -6430,52 +6448,6 @@ def dump_BuffParticleExcel(excel_instance, password: bytes = b"") -> dict:
         "UniqueName": convert_string(excel_instance.UniqueName(), password),
         "BuffType": convert_string(excel_instance.BuffType(), password),
         "BuffName": convert_string(excel_instance.BuffName(), password),
-        "ResourcePath": convert_string(excel_instance.ResourcePath(), password),
-    }
-
-def dump_BulletArmorDamageFactorExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DamageFactorGroupId": convert_string(excel_instance.DamageFactorGroupId(), password),
-        "BulletType": BulletType(convert_int(excel_instance.BulletType(), password)).name,
-        "ArmorType": ArmorType(convert_int(excel_instance.ArmorType(), password)).name,
-        "DamageRate": convert_long(excel_instance.DamageRate(), password),
-        "DamageAttribute": DamageAttribute(convert_int(excel_instance.DamageAttribute(), password)).name,
-        "MinDamageRate": convert_long(excel_instance.MinDamageRate(), password),
-        "MaxDamageRate": convert_long(excel_instance.MaxDamageRate(), password),
-        "ShowHighlightFloater": excel_instance.ShowHighlightFloater(),
-    }
-
-def dump_CharacterAIExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "EngageType": EngageType(convert_int(excel_instance.EngageType(), password)).name,
-        "Positioning": PositioningType(convert_int(excel_instance.Positioning(), password)).name,
-        "CheckCanUseAutoSkill": excel_instance.CheckCanUseAutoSkill(),
-        "DistanceReduceRatioObstaclePath": convert_long(excel_instance.DistanceReduceRatioObstaclePath(), password),
-        "DistanceReduceObstaclePath": convert_long(excel_instance.DistanceReduceObstaclePath(), password),
-        "DistanceReduceRatioFormationPath": convert_long(excel_instance.DistanceReduceRatioFormationPath(), password),
-        "DistanceReduceFormationPath": convert_long(excel_instance.DistanceReduceFormationPath(), password),
-        "MinimumPositionGap": convert_long(excel_instance.MinimumPositionGap(), password),
-        "CanUseObstacleOfKneelMotion": excel_instance.CanUseObstacleOfKneelMotion(),
-        "CanUseObstacleOfStandMotion": excel_instance.CanUseObstacleOfStandMotion(),
-        "HasTargetSwitchingMotion": excel_instance.HasTargetSwitchingMotion(),
-    }
-
-def dump_CharacterCalculationLimitExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
-        "CalculationValue": BattleCalculationStat(convert_int(excel_instance.CalculationValue(), password)).name,
-        "MinValue": convert_long(excel_instance.MinValue(), password),
-        "MaxValue": convert_long(excel_instance.MaxValue(), password),
-        "LimitStartValue": [convert_long(excel_instance.LimitStartValue(j), password) for j in range(excel_instance.LimitStartValueLength())],
-        "DecreaseRate": [convert_long(excel_instance.DecreaseRate(j), password) for j in range(excel_instance.DecreaseRateLength())],
-    }
-
-def dump_CharacterCombatSkinExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "GroupId": convert_string(excel_instance.GroupId(), password),
-        "UniqueId": convert_long(excel_instance.UniqueId(), password),
         "ResourcePath": convert_string(excel_instance.ResourcePath(), password),
     }
 
@@ -6502,283 +6474,6 @@ def dump_CharacterDialogFieldExcel(excel_instance, password: bytes = b"") -> dic
         "HideUI": excel_instance.HideUI(),
         "LocalizeKR": convert_string(excel_instance.LocalizeKR(), password),
         "LocalizeJP": convert_string(excel_instance.LocalizeJP(), password),
-    }
-
-def dump_CharacterExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "DevName": convert_string(excel_instance.DevName(), password),
-        "CostumeGroupId": convert_long(excel_instance.CostumeGroupId(), password),
-        "IsPlayable": excel_instance.IsPlayable(),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
-        "CollectionVisible": excel_instance.CollectionVisible(),
-        "ReleaseDate": convert_string(excel_instance.ReleaseDate(), password),
-        "CollectionVisibleStartDate": convert_string(excel_instance.CollectionVisibleStartDate(), password),
-        "CollectionVisibleEndDate": convert_string(excel_instance.CollectionVisibleEndDate(), password),
-        "IsPlayableCharacter": excel_instance.IsPlayableCharacter(),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
-        "IsNPC": excel_instance.IsNPC(),
-        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
-        "CanSurvive": excel_instance.CanSurvive(),
-        "IsDummy": excel_instance.IsDummy(),
-        "SubPartsCount": convert_int(excel_instance.SubPartsCount(), password),
-        "TacticRole": TacticRole(convert_int(excel_instance.TacticRole(), password)).name,
-        "WeaponType": WeaponType(convert_int(excel_instance.WeaponType(), password)).name,
-        "TacticRange": TacticRange(convert_int(excel_instance.TacticRange(), password)).name,
-        "BulletType": BulletType(convert_int(excel_instance.BulletType(), password)).name,
-        "ArmorType": ArmorType(convert_int(excel_instance.ArmorType(), password)).name,
-        "AimIKType": AimIKType(convert_int(excel_instance.AimIKType(), password)).name,
-        "School": School(convert_int(excel_instance.School(), password)).name,
-        "Club": Club(convert_int(excel_instance.Club(), password)).name,
-        "DefaultStarGrade": convert_int(excel_instance.DefaultStarGrade(), password),
-        "MaxStarGrade": convert_int(excel_instance.MaxStarGrade(), password),
-        "StatLevelUpType": StatLevelUpType(convert_int(excel_instance.StatLevelUpType(), password)).name,
-        "SquadType": SquadType(convert_int(excel_instance.SquadType(), password)).name,
-        "Jumpable": excel_instance.Jumpable(),
-        "PersonalityId": convert_long(excel_instance.PersonalityId(), password),
-        "CharacterAIId": convert_long(excel_instance.CharacterAIId(), password),
-        "ExternalBTId": convert_long(excel_instance.ExternalBTId(), password),
-        "MainCombatStyleId": convert_long(excel_instance.MainCombatStyleId(), password),
-        "CombatStyleIndex": convert_int(excel_instance.CombatStyleIndex(), password),
-        "ScenarioCharacter": convert_string(excel_instance.ScenarioCharacter(), password),
-        "SpawnTemplateId": convert_uint(excel_instance.SpawnTemplateId(), password),
-        "FavorLevelupType": convert_int(excel_instance.FavorLevelupType(), password),
-        "EquipmentSlot": [EquipmentCategory(convert_int(excel_instance.EquipmentSlot(j), password)).name for j in range(excel_instance.EquipmentSlotLength())],
-        "WeaponLocalizeId": convert_uint(excel_instance.WeaponLocalizeId(), password),
-        "DisplayEnemyInfo": excel_instance.DisplayEnemyInfo(),
-        "BodyRadius": convert_long(excel_instance.BodyRadius(), password),
-        "RandomEffectRadius": convert_long(excel_instance.RandomEffectRadius(), password),
-        "HPBarHide": excel_instance.HPBarHide(),
-        "HpBarHeight": convert_float(excel_instance.HpBarHeight(), password),
-        "HighlightFloaterHeight": convert_float(excel_instance.HighlightFloaterHeight(), password),
-        "EmojiOffsetX": convert_float(excel_instance.EmojiOffsetX(), password),
-        "EmojiOffsetY": convert_float(excel_instance.EmojiOffsetY(), password),
-        "MoveStartFrame": convert_int(excel_instance.MoveStartFrame(), password),
-        "MoveEndFrame": convert_int(excel_instance.MoveEndFrame(), password),
-        "JumpMotionFrame": convert_int(excel_instance.JumpMotionFrame(), password),
-        "AppearFrame": convert_int(excel_instance.AppearFrame(), password),
-        "CanMove": excel_instance.CanMove(),
-        "CanFix": excel_instance.CanFix(),
-        "CanCrowdControl": excel_instance.CanCrowdControl(),
-        "CanBattleItemMove": excel_instance.CanBattleItemMove(),
-        "IgnoreObstacle": excel_instance.IgnoreObstacle(),
-        "IsAirUnit": excel_instance.IsAirUnit(),
-        "AirUnitHeight": convert_long(excel_instance.AirUnitHeight(), password),
-        "Tags": [Tag(convert_int(excel_instance.Tags(j), password)).name for j in range(excel_instance.TagsLength())],
-        "SecretStoneItemId": convert_long(excel_instance.SecretStoneItemId(), password),
-        "SecretStoneItemAmount": convert_int(excel_instance.SecretStoneItemAmount(), password),
-        "CharacterPieceItemId": convert_long(excel_instance.CharacterPieceItemId(), password),
-        "CharacterPieceItemAmount": convert_int(excel_instance.CharacterPieceItemAmount(), password),
-        "CombineRecipeId": convert_long(excel_instance.CombineRecipeId(), password),
-    }
-
-def dump_CharacterIllustCoordinateExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "CharacterBodyCenterX": convert_float(excel_instance.CharacterBodyCenterX(), password),
-        "CharacterBodyCenterY": convert_float(excel_instance.CharacterBodyCenterY(), password),
-        "DefaultScale": convert_float(excel_instance.DefaultScale(), password),
-        "MinScale": convert_float(excel_instance.MinScale(), password),
-        "MaxScale": convert_float(excel_instance.MaxScale(), password),
-    }
-
-def dump_CharacterLevelExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Level": convert_int(excel_instance.Level(), password),
-        "Exp": convert_long(excel_instance.Exp(), password),
-        "TotalExp": convert_long(excel_instance.TotalExp(), password),
-    }
-
-def dump_CharacterLevelStatFactorExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Level": convert_long(excel_instance.Level(), password),
-        "CriticalFactor": convert_long(excel_instance.CriticalFactor(), password),
-        "StabilityFactor": convert_long(excel_instance.StabilityFactor(), password),
-        "DefenceFactor": convert_long(excel_instance.DefenceFactor(), password),
-        "AccuracyFactor": convert_long(excel_instance.AccuracyFactor(), password),
-    }
-
-def dump_CharacterSkillListExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "CharacterSkillListGroupId": convert_long(excel_instance.CharacterSkillListGroupId(), password),
-        "MinimumGradeCharacterWeapon": convert_int(excel_instance.MinimumGradeCharacterWeapon(), password),
-        "MinimumTierCharacterGear": convert_int(excel_instance.MinimumTierCharacterGear(), password),
-        "FormIndex": convert_int(excel_instance.FormIndex(), password),
-        "IsRootMotion": excel_instance.IsRootMotion(),
-        "IsMoveLeftRight": excel_instance.IsMoveLeftRight(),
-        "UseRandomExSkillTimeline": excel_instance.UseRandomExSkillTimeline(),
-        "TSAInteractionId": convert_long(excel_instance.TSAInteractionId(), password),
-        "NormalSkillGroupId": [convert_string(excel_instance.NormalSkillGroupId(j), password) for j in range(excel_instance.NormalSkillGroupIdLength())],
-        "NormalSkillTimeLineIndex": [convert_int(excel_instance.NormalSkillTimeLineIndex(j), password) for j in range(excel_instance.NormalSkillTimeLineIndexLength())],
-        "SelectExSkillActionSkillSlot": convert_int(excel_instance.SelectExSkillActionSkillSlot(), password),
-        "ExSkillGroupId": [convert_string(excel_instance.ExSkillGroupId(j), password) for j in range(excel_instance.ExSkillGroupIdLength())],
-        "ExSkillCutInTimeLineIndex": [convert_string(excel_instance.ExSkillCutInTimeLineIndex(j), password) for j in range(excel_instance.ExSkillCutInTimeLineIndexLength())],
-        "ExSkillLevelTimeLineIndex": [convert_string(excel_instance.ExSkillLevelTimeLineIndex(j), password) for j in range(excel_instance.ExSkillLevelTimeLineIndexLength())],
-        "PublicSkillGroupId": [convert_string(excel_instance.PublicSkillGroupId(j), password) for j in range(excel_instance.PublicSkillGroupIdLength())],
-        "PublicSkillTimeLineIndex": [convert_int(excel_instance.PublicSkillTimeLineIndex(j), password) for j in range(excel_instance.PublicSkillTimeLineIndexLength())],
-        "PassiveSkillGroupId": [convert_string(excel_instance.PassiveSkillGroupId(j), password) for j in range(excel_instance.PassiveSkillGroupIdLength())],
-        "LeaderSkillGroupId": [convert_string(excel_instance.LeaderSkillGroupId(j), password) for j in range(excel_instance.LeaderSkillGroupIdLength())],
-        "ExtraPassiveSkillGroupId": [convert_string(excel_instance.ExtraPassiveSkillGroupId(j), password) for j in range(excel_instance.ExtraPassiveSkillGroupIdLength())],
-        "HiddenPassiveSkillGroupId": [convert_string(excel_instance.HiddenPassiveSkillGroupId(j), password) for j in range(excel_instance.HiddenPassiveSkillGroupIdLength())],
-    }
-
-def dump_CharacterStatExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "CharacterId": convert_long(excel_instance.CharacterId(), password),
-        "StabilityRate": convert_long(excel_instance.StabilityRate(), password),
-        "StabilityPoint": convert_long(excel_instance.StabilityPoint(), password),
-        "AttackPower1": convert_long(excel_instance.AttackPower1(), password),
-        "AttackPower100": convert_long(excel_instance.AttackPower100(), password),
-        "MaxHP1": convert_long(excel_instance.MaxHP1(), password),
-        "MaxHP100": convert_long(excel_instance.MaxHP100(), password),
-        "DefensePower1": convert_long(excel_instance.DefensePower1(), password),
-        "DefensePower100": convert_long(excel_instance.DefensePower100(), password),
-        "HealPower1": convert_long(excel_instance.HealPower1(), password),
-        "HealPower100": convert_long(excel_instance.HealPower100(), password),
-        "DodgePoint": convert_long(excel_instance.DodgePoint(), password),
-        "AccuracyPoint": convert_long(excel_instance.AccuracyPoint(), password),
-        "CriticalPoint": convert_long(excel_instance.CriticalPoint(), password),
-        "CriticalResistPoint": convert_long(excel_instance.CriticalResistPoint(), password),
-        "CriticalDamageRate": convert_long(excel_instance.CriticalDamageRate(), password),
-        "CriticalDamageResistRate": convert_long(excel_instance.CriticalDamageResistRate(), password),
-        "BlockRate": convert_long(excel_instance.BlockRate(), password),
-        "HealEffectivenessRate": convert_long(excel_instance.HealEffectivenessRate(), password),
-        "OppressionPower": convert_long(excel_instance.OppressionPower(), password),
-        "OppressionResist": convert_long(excel_instance.OppressionResist(), password),
-        "DefensePenetration1": convert_long(excel_instance.DefensePenetration1(), password),
-        "DefensePenetration100": convert_long(excel_instance.DefensePenetration100(), password),
-        "DefensePenetrationResist1": convert_long(excel_instance.DefensePenetrationResist1(), password),
-        "DefensePenetrationResist100": convert_long(excel_instance.DefensePenetrationResist100(), password),
-        "EnhanceExplosionRate": convert_long(excel_instance.EnhanceExplosionRate(), password),
-        "EnhancePierceRate": convert_long(excel_instance.EnhancePierceRate(), password),
-        "EnhanceMysticRate": convert_long(excel_instance.EnhanceMysticRate(), password),
-        "EnhanceSonicRate": convert_long(excel_instance.EnhanceSonicRate(), password),
-        "EnhanceSiegeRate": convert_long(excel_instance.EnhanceSiegeRate(), password),
-        "EnhanceNormalRate": convert_long(excel_instance.EnhanceNormalRate(), password),
-        "EnhanceLightArmorRate": convert_long(excel_instance.EnhanceLightArmorRate(), password),
-        "EnhanceHeavyArmorRate": convert_long(excel_instance.EnhanceHeavyArmorRate(), password),
-        "EnhanceUnarmedRate": convert_long(excel_instance.EnhanceUnarmedRate(), password),
-        "EnhanceElasticArmorRate": convert_long(excel_instance.EnhanceElasticArmorRate(), password),
-        "EnhanceStructureRate": convert_long(excel_instance.EnhanceStructureRate(), password),
-        "EnhanceNormalArmorRate": convert_long(excel_instance.EnhanceNormalArmorRate(), password),
-        "ExtendBuffDuration": convert_long(excel_instance.ExtendBuffDuration(), password),
-        "ExtendDebuffDuration": convert_long(excel_instance.ExtendDebuffDuration(), password),
-        "ExtendCrowdControlDuration": convert_long(excel_instance.ExtendCrowdControlDuration(), password),
-        "AmmoCount": convert_long(excel_instance.AmmoCount(), password),
-        "AmmoCost": convert_long(excel_instance.AmmoCost(), password),
-        "IgnoreDelayCount": convert_long(excel_instance.IgnoreDelayCount(), password),
-        "NormalAttackSpeed": convert_long(excel_instance.NormalAttackSpeed(), password),
-        "Range": convert_long(excel_instance.Range(), password),
-        "InitialRangeRate": convert_long(excel_instance.InitialRangeRate(), password),
-        "MoveSpeed": convert_long(excel_instance.MoveSpeed(), password),
-        "SightPoint": convert_long(excel_instance.SightPoint(), password),
-        "ActiveGauge": convert_long(excel_instance.ActiveGauge(), password),
-        "GroggyGauge": convert_int(excel_instance.GroggyGauge(), password),
-        "GroggyTime": convert_int(excel_instance.GroggyTime(), password),
-        "StrategyMobility": convert_long(excel_instance.StrategyMobility(), password),
-        "ActionCount": convert_long(excel_instance.ActionCount(), password),
-        "StrategySightRange": convert_long(excel_instance.StrategySightRange(), password),
-        "DamageRatio": convert_long(excel_instance.DamageRatio(), password),
-        "DamagedRatio": convert_long(excel_instance.DamagedRatio(), password),
-        "DamageRatio2Increase": convert_long(excel_instance.DamageRatio2Increase(), password),
-        "DamageRatio2Decrease": convert_long(excel_instance.DamageRatio2Decrease(), password),
-        "DamagedRatio2Increase": convert_long(excel_instance.DamagedRatio2Increase(), password),
-        "DamagedRatio2Decrease": convert_long(excel_instance.DamagedRatio2Decrease(), password),
-        "ExDamagedRatioIncrease": convert_long(excel_instance.ExDamagedRatioIncrease(), password),
-        "ExDamagedRatioDecrease": convert_long(excel_instance.ExDamagedRatioDecrease(), password),
-        "EnhanceExDamageRate": convert_long(excel_instance.EnhanceExDamageRate(), password),
-        "ReduceExDamagedRate": convert_long(excel_instance.ReduceExDamagedRate(), password),
-        "HealRate": convert_long(excel_instance.HealRate(), password),
-        "HealLightArmorRate": convert_long(excel_instance.HealLightArmorRate(), password),
-        "HealHeavyArmorRate": convert_long(excel_instance.HealHeavyArmorRate(), password),
-        "HealUnarmedRate": convert_long(excel_instance.HealUnarmedRate(), password),
-        "HealElasticArmorRate": convert_long(excel_instance.HealElasticArmorRate(), password),
-        "HealNormalArmorRate": convert_long(excel_instance.HealNormalArmorRate(), password),
-        "HealedExplosionRate": convert_long(excel_instance.HealedExplosionRate(), password),
-        "HealedPierceRate": convert_long(excel_instance.HealedPierceRate(), password),
-        "HealedMysticRate": convert_long(excel_instance.HealedMysticRate(), password),
-        "HealedSonicRate": convert_long(excel_instance.HealedSonicRate(), password),
-        "HealedNormalRate": convert_long(excel_instance.HealedNormalRate(), password),
-        "StreetBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.StreetBattleAdaptation(), password)).name,
-        "OutdoorBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.OutdoorBattleAdaptation(), password)).name,
-        "IndoorBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.IndoorBattleAdaptation(), password)).name,
-        "RegenCost": convert_long(excel_instance.RegenCost(), password),
-    }
-
-def dump_CharacterStatLimitExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
-        "StatType": StatType(convert_int(excel_instance.StatType(), password)).name,
-        "StatMinValue": convert_long(excel_instance.StatMinValue(), password),
-        "StatMaxValue": convert_long(excel_instance.StatMaxValue(), password),
-        "StatRatioMinValue": convert_long(excel_instance.StatRatioMinValue(), password),
-        "StatRatioMaxValue": convert_long(excel_instance.StatRatioMaxValue(), password),
-    }
-
-def dump_CharacterStatsDetailExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "DetailShowStats": [StatType(convert_int(excel_instance.DetailShowStats(j), password)).name for j in range(excel_instance.DetailShowStatsLength())],
-        "IsStatsPercent": [excel_instance.IsStatsPercent(j) for j in range(excel_instance.IsStatsPercentLength())],
-    }
-
-def dump_CharacterStatsTransExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "TransSupportStats": StatType(convert_int(excel_instance.TransSupportStats(), password)).name,
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
-        "TransSupportStatsFactor": convert_int(excel_instance.TransSupportStatsFactor(), password),
-        "StatTransType": StatTransType(convert_int(excel_instance.StatTransType(), password)).name,
-    }
-
-def dump_CharacterTranscendenceExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "CharacterId": convert_long(excel_instance.CharacterId(), password),
-        "MaxFavorLevel": [convert_int(excel_instance.MaxFavorLevel(j), password) for j in range(excel_instance.MaxFavorLevelLength())],
-        "StatBonusRateAttack": [convert_long(excel_instance.StatBonusRateAttack(j), password) for j in range(excel_instance.StatBonusRateAttackLength())],
-        "StatBonusRateHP": [convert_long(excel_instance.StatBonusRateHP(j), password) for j in range(excel_instance.StatBonusRateHPLength())],
-        "StatBonusRateHeal": [convert_long(excel_instance.StatBonusRateHeal(j), password) for j in range(excel_instance.StatBonusRateHealLength())],
-        "RecipeId": [convert_long(excel_instance.RecipeId(j), password) for j in range(excel_instance.RecipeIdLength())],
-        "SkillSlotA": [convert_string(excel_instance.SkillSlotA(j), password) for j in range(excel_instance.SkillSlotALength())],
-        "SkillSlotB": [convert_string(excel_instance.SkillSlotB(j), password) for j in range(excel_instance.SkillSlotBLength())],
-        "SkillSlotC": [convert_string(excel_instance.SkillSlotC(j), password) for j in range(excel_instance.SkillSlotCLength())],
-        "MaxlevelStar": [convert_int(excel_instance.MaxlevelStar(j), password) for j in range(excel_instance.MaxlevelStarLength())],
-    }
-
-def dump_CharacterVictoryInteractionExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "InteractionId": convert_long(excel_instance.InteractionId(), password),
-        "CostumeId01": convert_long(excel_instance.CostumeId01(), password),
-        "PositionIndex01": convert_int(excel_instance.PositionIndex01(), password),
-        "VictoryStartAnimationPath01": convert_string(excel_instance.VictoryStartAnimationPath01(), password),
-        "VictoryEndAnimationPath01": convert_string(excel_instance.VictoryEndAnimationPath01(), password),
-        "VoiceEvent01": VoiceEvent(convert_int(excel_instance.VoiceEvent01(), password)).name,
-        "CostumeId02": convert_long(excel_instance.CostumeId02(), password),
-        "PositionIndex02": convert_int(excel_instance.PositionIndex02(), password),
-        "VictoryStartAnimationPath02": convert_string(excel_instance.VictoryStartAnimationPath02(), password),
-        "VictoryEndAnimationPath02": convert_string(excel_instance.VictoryEndAnimationPath02(), password),
-        "VoiceEvent02": VoiceEvent(convert_int(excel_instance.VoiceEvent02(), password)).name,
-        "CostumeId03": convert_long(excel_instance.CostumeId03(), password),
-        "PositionIndex03": convert_int(excel_instance.PositionIndex03(), password),
-        "VictoryStartAnimationPath03": convert_string(excel_instance.VictoryStartAnimationPath03(), password),
-        "VictoryEndAnimationPath03": convert_string(excel_instance.VictoryEndAnimationPath03(), password),
-        "VoiceEvent03": VoiceEvent(convert_int(excel_instance.VoiceEvent03(), password)).name,
-        "CostumeId04": convert_long(excel_instance.CostumeId04(), password),
-        "PositionIndex04": convert_int(excel_instance.PositionIndex04(), password),
-        "VictoryStartAnimationPath04": convert_string(excel_instance.VictoryStartAnimationPath04(), password),
-        "VictoryEndAnimationPath04": convert_string(excel_instance.VictoryEndAnimationPath04(), password),
-        "VoiceEvent04": VoiceEvent(convert_int(excel_instance.VoiceEvent04(), password)).name,
-        "CostumeId05": convert_long(excel_instance.CostumeId05(), password),
-        "PositionIndex05": convert_int(excel_instance.PositionIndex05(), password),
-        "VictoryStartAnimationPath05": convert_string(excel_instance.VictoryStartAnimationPath05(), password),
-        "VictoryEndAnimationPath05": convert_string(excel_instance.VictoryEndAnimationPath05(), password),
-        "VoiceEvent05": VoiceEvent(convert_int(excel_instance.VoiceEvent05(), password)).name,
-        "CostumeId06": convert_long(excel_instance.CostumeId06(), password),
-        "PositionIndex06": convert_int(excel_instance.PositionIndex06(), password),
-        "VictoryStartAnimationPath06": convert_string(excel_instance.VictoryStartAnimationPath06(), password),
-        "VictoryEndAnimationPath06": convert_string(excel_instance.VictoryEndAnimationPath06(), password),
-        "VoiceEvent06": VoiceEvent(convert_int(excel_instance.VoiceEvent06(), password)).name,
     }
 
 def dump_ClearDeckRuleExcel(excel_instance, password: bytes = b"") -> dict:
@@ -7113,6 +6808,7 @@ def dump_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "BattlePassEndImminentDay": convert_int(excel_instance.BattlePassEndImminentDay(), password),
         "BattlePassExpIconPath": convert_string(excel_instance.BattlePassExpIconPath(), password),
         "CafeCameraDragThreshold": convert_float(excel_instance.CafeCameraDragThreshold(), password),
+        "CafeSummonTicketBuyLimitForValidate": convert_int(excel_instance.CafeSummonTicketBuyLimitForValidate(), password),
     }
 
 def dump_ConstConquestExcel(excel_instance, password: bytes = b"") -> dict:
@@ -7277,43 +6973,6 @@ def dump_ConstStrategyExcel(excel_instance, password: bytes = b"") -> dict:
         "MultiSweepPresetSelectParcelMaxCount": convert_int(excel_instance.MultiSweepPresetSelectParcelMaxCount(), password),
     }
 
-def dump_CostumeExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "CostumeGroupId": convert_long(excel_instance.CostumeGroupId(), password),
-        "CostumeUniqueId": convert_long(excel_instance.CostumeUniqueId(), password),
-        "DevName": convert_string(excel_instance.DevName(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
-        "IsDefault": excel_instance.IsDefault(),
-        "CollectionVisible": excel_instance.CollectionVisible(),
-        "ReleaseDate": convert_string(excel_instance.ReleaseDate(), password),
-        "CollectionVisibleStartDate": convert_string(excel_instance.CollectionVisibleStartDate(), password),
-        "CollectionVisibleEndDate": convert_string(excel_instance.CollectionVisibleEndDate(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
-        "CharacterSkillListGroupId": convert_long(excel_instance.CharacterSkillListGroupId(), password),
-        "SpineResourceName": convert_string(excel_instance.SpineResourceName(), password),
-        "SpineResourceNameDiorama": convert_string(excel_instance.SpineResourceNameDiorama(), password),
-        "SpineResourceNameDioramaForFormConversion": [convert_string(excel_instance.SpineResourceNameDioramaForFormConversion(j), password) for j in range(excel_instance.SpineResourceNameDioramaForFormConversionLength())],
-        "EntityMaterialType": EntityMaterialType(convert_int(excel_instance.EntityMaterialType(), password)).name,
-        "ModelPrefabName": convert_string(excel_instance.ModelPrefabName(), password),
-        "AnimatorName": convert_string(excel_instance.AnimatorName(), password),
-        "CafeModelPrefabName": convert_string(excel_instance.CafeModelPrefabName(), password),
-        "EchelonModelPrefabName": convert_string(excel_instance.EchelonModelPrefabName(), password),
-        "StrategyModelPrefabName": convert_string(excel_instance.StrategyModelPrefabName(), password),
-        "TextureDir": convert_string(excel_instance.TextureDir(), password),
-        "CollectionTexturePath": convert_string(excel_instance.CollectionTexturePath(), password),
-        "CollectionBGTexturePath": convert_string(excel_instance.CollectionBGTexturePath(), password),
-        "CombatStyleTexturePath": convert_string(excel_instance.CombatStyleTexturePath(), password),
-        "UseObjectHPBAR": excel_instance.UseObjectHPBAR(),
-        "TextureBoss": convert_string(excel_instance.TextureBoss(), password),
-        "TextureSkillCard": [convert_string(excel_instance.TextureSkillCard(j), password) for j in range(excel_instance.TextureSkillCardLength())],
-        "InformationPacel": convert_string(excel_instance.InformationPacel(), password),
-        "AnimationSSR": convert_string(excel_instance.AnimationSSR(), password),
-        "EnterStrategyAnimationName": convert_string(excel_instance.EnterStrategyAnimationName(), password),
-        "AnimationValidator": excel_instance.AnimationValidator(),
-        "CharacterVoiceGroupId": convert_long(excel_instance.CharacterVoiceGroupId(), password),
-        "ShowObjectHpStatus": excel_instance.ShowObjectHpStatus(),
-    }
-
 def dump_CouponStuffExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "StuffId": convert_long(excel_instance.StuffId(), password),
@@ -7376,32 +7035,11 @@ def dump_DefaultParcelExcel(excel_instance, password: bytes = b"") -> dict:
         "ParcelAmount": convert_long(excel_instance.ParcelAmount(), password),
     }
 
-def dump_EchelonConstraintExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "GroupId": convert_long(excel_instance.GroupId(), password),
-        "IsWhiteList": excel_instance.IsWhiteList(),
-        "CharacterId": [convert_long(excel_instance.CharacterId(j), password) for j in range(excel_instance.CharacterIdLength())],
-        "PersonalityId": [convert_long(excel_instance.PersonalityId(j), password) for j in range(excel_instance.PersonalityIdLength())],
-        "WeaponType": WeaponType(convert_int(excel_instance.WeaponType(), password)).name,
-        "School": School(convert_int(excel_instance.School(), password)).name,
-        "Club": Club(convert_int(excel_instance.Club(), password)).name,
-        "Role": TacticRole(convert_int(excel_instance.Role(), password)).name,
-    }
-
 def dump_EmoticonSpecialExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_long(excel_instance.UniqueId(), password),
         "CharacterUniqueId": convert_long(excel_instance.CharacterUniqueId(), password),
         "Random": convert_string(excel_instance.Random(), password),
-    }
-
-def dump_EventContentArchiveBannerOffsetExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "OffsetX": convert_float(excel_instance.OffsetX(), password),
-        "OffsetY": convert_float(excel_instance.OffsetY(), password),
-        "ScaleX": convert_float(excel_instance.ScaleX(), password),
-        "ScaleY": convert_float(excel_instance.ScaleY(), password),
     }
 
 def dump_EventContentBoxGachaElementExcel(excel_instance, password: bytes = b"") -> dict:
@@ -7412,596 +7050,12 @@ def dump_EventContentBoxGachaElementExcel(excel_instance, password: bytes = b"")
         "GroupId": convert_long(excel_instance.GroupId(), password),
     }
 
-def dump_EventContentBoxGachaManageExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "Round": convert_long(excel_instance.Round(), password),
-        "GoodsId": convert_long(excel_instance.GoodsId(), password),
-        "IsLoop": excel_instance.IsLoop(),
-    }
-
-def dump_EventContentBoxGachaShopExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "GroupId": convert_long(excel_instance.GroupId(), password),
-        "GroupElementAmount": convert_long(excel_instance.GroupElementAmount(), password),
-        "Round": convert_long(excel_instance.Round(), password),
-        "IsLegacy": excel_instance.IsLegacy(),
-        "IsPrize": excel_instance.IsPrize(),
-        "GoodsId": [convert_long(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
-        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
-    }
-
-def dump_EventContentBuffExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentBuffId": convert_long(excel_instance.EventContentBuffId(), password),
-        "IsBuff": excel_instance.IsBuff(),
-        "CharacterTag": Tag(convert_int(excel_instance.CharacterTag(), password)).name,
-        "EnumType": EventContentBuffFindRule(convert_int(excel_instance.EnumType(), password)).name,
-        "EnumTypeValue": [convert_string(excel_instance.EnumTypeValue(j), password) for j in range(excel_instance.EnumTypeValueLength())],
-        "SkillGroupId": convert_string(excel_instance.SkillGroupId(), password),
-        "IconPath": convert_string(excel_instance.IconPath(), password),
-        "SpriteName": convert_string(excel_instance.SpriteName(), password),
-        "BuffDescriptionLocalizeCodeId": convert_string(excel_instance.BuffDescriptionLocalizeCodeId(), password),
-    }
-
-def dump_EventContentBuffGroupExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "BuffContentId": convert_long(excel_instance.BuffContentId(), password),
-        "BuffGroupId": convert_long(excel_instance.BuffGroupId(), password),
-        "BuffGroupNameLocalizeCodeId": convert_string(excel_instance.BuffGroupNameLocalizeCodeId(), password),
-        "EventContentBuffId1": convert_long(excel_instance.EventContentBuffId1(), password),
-        "BuffNameLocalizeCodeId1": convert_string(excel_instance.BuffNameLocalizeCodeId1(), password),
-        "BuffDescriptionIconPath1": convert_string(excel_instance.BuffDescriptionIconPath1(), password),
-        "EventContentBuffId2": convert_long(excel_instance.EventContentBuffId2(), password),
-        "BuffNameLocalizeCodeId2": convert_string(excel_instance.BuffNameLocalizeCodeId2(), password),
-        "BuffDescriptionIconPath2": convert_string(excel_instance.BuffDescriptionIconPath2(), password),
-        "EventContentDebuffId": convert_long(excel_instance.EventContentDebuffId(), password),
-        "DebuffNameLocalizeCodeId": convert_string(excel_instance.DebuffNameLocalizeCodeId(), password),
-        "DeBuffDescriptionIconPath": convert_string(excel_instance.DeBuffDescriptionIconPath(), password),
-        "BuffGroupProb": convert_long(excel_instance.BuffGroupProb(), password),
-    }
-
-def dump_EventContentCardExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "CardGroupId": convert_int(excel_instance.CardGroupId(), password),
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "IconPath": convert_string(excel_instance.IconPath(), password),
-        "BackIconPath": convert_string(excel_instance.BackIconPath(), password),
-        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
-        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
-    }
-
-def dump_EventContentCardShopExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "Id": convert_long(excel_instance.Id(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
-        "CostGoodsId": convert_long(excel_instance.CostGoodsId(), password),
-        "CardGroupId": convert_int(excel_instance.CardGroupId(), password),
-        "IsLegacy": excel_instance.IsLegacy(),
-        "RefreshGroup": convert_int(excel_instance.RefreshGroup(), password),
-        "Prob": convert_int(excel_instance.Prob(), password),
-        "ProbWeight1": convert_int(excel_instance.ProbWeight1(), password),
-        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
-        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
-        "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
-    }
-
-def dump_EventContentChangeExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "ChangeCount": convert_long(excel_instance.ChangeCount(), password),
-        "IsLast": excel_instance.IsLast(),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
-        "RewardId": convert_long(excel_instance.RewardId(), password),
-        "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
-        "ChangeCostType": ParcelType(convert_int(excel_instance.ChangeCostType(), password)).name,
-        "ChangeCostId": convert_long(excel_instance.ChangeCostId(), password),
-        "ChangeCostAmount": convert_int(excel_instance.ChangeCostAmount(), password),
-    }
-
-def dump_EventContentChangeScenarioExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "ChangeType": EventChangeType(convert_int(excel_instance.ChangeType(), password)).name,
-        "ChangeCount": convert_long(excel_instance.ChangeCount(), password),
-        "ScenarioGroupId": convert_long(excel_instance.ScenarioGroupId(), password),
-    }
-
-def dump_EventContentCharacterBonusExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "CharacterId": convert_long(excel_instance.CharacterId(), password),
-        "EventContentItemType": [EventContentItemType(convert_int(excel_instance.EventContentItemType(j), password)).name for j in range(excel_instance.EventContentItemTypeLength())],
-        "BonusPercentage": [convert_long(excel_instance.BonusPercentage(j), password) for j in range(excel_instance.BonusPercentageLength())],
-    }
-
-def dump_EventContentCollectionExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "GroupId": convert_long(excel_instance.GroupId(), password),
-        "UnlockConditionType": CollectionUnlockType(convert_int(excel_instance.UnlockConditionType(), password)).name,
-        "UnlockConditionParameter": [convert_long(excel_instance.UnlockConditionParameter(j), password) for j in range(excel_instance.UnlockConditionParameterLength())],
-        "MultipleConditionCheckType": MultipleConditionCheckType(convert_int(excel_instance.MultipleConditionCheckType(), password)).name,
-        "UnlockConditionCount": convert_long(excel_instance.UnlockConditionCount(), password),
-        "IsObject": excel_instance.IsObject(),
-        "IsObjectOnFullResource": excel_instance.IsObjectOnFullResource(),
-        "IsHorizon": excel_instance.IsHorizon(),
-        "EmblemResource": convert_string(excel_instance.EmblemResource(), password),
-        "ThumbResource": convert_string(excel_instance.ThumbResource(), password),
-        "FullResource": convert_string(excel_instance.FullResource(), password),
-        "Decoration": convert_string(excel_instance.Decoration(), password),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "SubNameLocalizeCodeId": convert_string(excel_instance.SubNameLocalizeCodeId(), password),
-    }
-
-def dump_EventContentCurrencyItemExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "EventContentItemType": EventContentItemType(convert_int(excel_instance.EventContentItemType(), password)).name,
-        "ItemUniqueId": convert_long(excel_instance.ItemUniqueId(), password),
-        "UseShortCutContentType": convert_string(excel_instance.UseShortCutContentType(), password),
-    }
-
-def dump_EventContentDebuffRewardExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "EventStageId": convert_long(excel_instance.EventStageId(), password),
-        "EventContentItemType": EventContentItemType(convert_int(excel_instance.EventContentItemType(), password)).name,
-        "RewardPercentage": convert_long(excel_instance.RewardPercentage(), password),
-    }
-
-def dump_EventContentDiceRaceEffectExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "EventContentDiceRaceResultType": EventContentDiceRaceResultType(convert_int(excel_instance.EventContentDiceRaceResultType(), password)).name,
-        "IsDiceResult": excel_instance.IsDiceResult(),
-        "AniClip": convert_string(excel_instance.AniClip(), password),
-        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
-    }
-
-def dump_EventContentDiceRaceExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "DiceCostGoodsId": convert_long(excel_instance.DiceCostGoodsId(), password),
-        "SkipableLap": convert_int(excel_instance.SkipableLap(), password),
-        "DiceRacePawnPrefab": convert_string(excel_instance.DiceRacePawnPrefab(), password),
-        "IsUsingFixedDice": excel_instance.IsUsingFixedDice(),
-        "DiceRaceEventType": [convert_string(excel_instance.DiceRaceEventType(j), password) for j in range(excel_instance.DiceRaceEventTypeLength())],
-    }
-
-def dump_EventContentDiceRaceNodeExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "NodeId": convert_long(excel_instance.NodeId(), password),
-        "EventContentDiceRaceNodeType": EventContentDiceRaceNodeType(convert_int(excel_instance.EventContentDiceRaceNodeType(), password)).name,
-        "MoveForwardTypeArg": convert_int(excel_instance.MoveForwardTypeArg(), password),
-        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
-        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
-        "RewardAmount": [convert_long(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
-    }
-
-def dump_EventContentDiceRaceProbExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "EventContentDiceRaceResultType": EventContentDiceRaceResultType(convert_int(excel_instance.EventContentDiceRaceResultType(), password)).name,
-        "CostItemId": convert_long(excel_instance.CostItemId(), password),
-        "CostItemAmount": convert_int(excel_instance.CostItemAmount(), password),
-        "DiceResult": convert_int(excel_instance.DiceResult(), password),
-        "Prob": convert_int(excel_instance.Prob(), password),
-    }
-
-def dump_EventContentDiceRaceTotalRewardExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "RewardID": convert_long(excel_instance.RewardID(), password),
-        "RequiredLapFinishCount": convert_int(excel_instance.RequiredLapFinishCount(), password),
-        "DisplayLapFinishCount": convert_int(excel_instance.DisplayLapFinishCount(), password),
-        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
-        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
-        "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
-    }
-
 def dump_EventContentExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_long(excel_instance.Id(), password),
         "DevName": convert_string(excel_instance.DevName(), password),
         "EventContentId": convert_long(excel_instance.EventContentId(), password),
         "BgImagePath": convert_string(excel_instance.BgImagePath(), password),
-    }
-
-def dump_EventContentFortuneGachaExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "FortuneGachaGroupId": convert_int(excel_instance.FortuneGachaGroupId(), password),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "NameImagePath": convert_string(excel_instance.NameImagePath(), password),
-        "IconPath": convert_string(excel_instance.IconPath(), password),
-    }
-
-def dump_EventContentFortuneGachaModifyExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "TargetGrade": convert_int(excel_instance.TargetGrade(), password),
-        "ProbModifyStartCount": convert_int(excel_instance.ProbModifyStartCount(), password),
-        "UsePrefabName": convert_string(excel_instance.UsePrefabName(), password),
-        "BucketImagePath": convert_string(excel_instance.BucketImagePath(), password),
-        "ShopBgImagePath": convert_string(excel_instance.ShopBgImagePath(), password),
-        "TitleLocalizeKey": convert_string(excel_instance.TitleLocalizeKey(), password),
-    }
-
-def dump_EventContentFortuneGachaShopExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "Id": convert_long(excel_instance.Id(), password),
-        "Grade": convert_int(excel_instance.Grade(), password),
-        "CostGoodsId": convert_long(excel_instance.CostGoodsId(), password),
-        "IsLegacy": excel_instance.IsLegacy(),
-        "FortuneGachaGroupId": convert_int(excel_instance.FortuneGachaGroupId(), password),
-        "Prob": convert_int(excel_instance.Prob(), password),
-        "ProbModifyValue": convert_int(excel_instance.ProbModifyValue(), password),
-        "ProbModifyLimit": convert_int(excel_instance.ProbModifyLimit(), password),
-        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
-        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
-        "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
-    }
-
-def dump_EventContentLobbyMenuExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
-        "IconSpriteName": convert_string(excel_instance.IconSpriteName(), password),
-        "ButtonText": convert_string(excel_instance.ButtonText(), password),
-        "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "IconOffsetX": convert_float(excel_instance.IconOffsetX(), password),
-        "IconOffsetY": convert_float(excel_instance.IconOffsetY(), password),
-        "ReddotSpriteName": convert_string(excel_instance.ReddotSpriteName(), password),
-    }
-
-def dump_EventContentLocationExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "Id": convert_long(excel_instance.Id(), password),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "PrefabPath": convert_string(excel_instance.PrefabPath(), password),
-        "LocationResetScheduleCount": convert_int(excel_instance.LocationResetScheduleCount(), password),
-        "ScheduleEventPointCostParcelType": ParcelType(convert_int(excel_instance.ScheduleEventPointCostParcelType(), password)).name,
-        "ScheduleEventPointCostParcelId": convert_long(excel_instance.ScheduleEventPointCostParcelId(), password),
-        "ScheduleEventPointCostParcelAmount": convert_long(excel_instance.ScheduleEventPointCostParcelAmount(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
-        "RewardParcelId": convert_long(excel_instance.RewardParcelId(), password),
-        "InformationGroupId": convert_long(excel_instance.InformationGroupId(), password),
-    }
-
-def dump_EventContentLocationRewardExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Location": convert_string(excel_instance.Location(), password),
-        "ScheduleGroupId": convert_long(excel_instance.ScheduleGroupId(), password),
-        "OrderInGroup": convert_long(excel_instance.OrderInGroup(), password),
-        "Id": convert_long(excel_instance.Id(), password),
-        "ProgressTexture": convert_string(excel_instance.ProgressTexture(), password),
-        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "LocationRank": convert_long(excel_instance.LocationRank(), password),
-        "FavorExp": convert_long(excel_instance.FavorExp(), password),
-        "SecretStoneAmount": convert_long(excel_instance.SecretStoneAmount(), password),
-        "SecretStoneProb": convert_long(excel_instance.SecretStoneProb(), password),
-        "ExtraFavorExp": convert_long(excel_instance.ExtraFavorExp(), password),
-        "ExtraFavorExpProb": convert_long(excel_instance.ExtraFavorExpProb(), password),
-        "ExtraRewardParcelType": [ParcelType(convert_int(excel_instance.ExtraRewardParcelType(j), password)).name for j in range(excel_instance.ExtraRewardParcelTypeLength())],
-        "ExtraRewardParcelId": [convert_long(excel_instance.ExtraRewardParcelId(j), password) for j in range(excel_instance.ExtraRewardParcelIdLength())],
-        "ExtraRewardAmount": [convert_long(excel_instance.ExtraRewardAmount(j), password) for j in range(excel_instance.ExtraRewardAmountLength())],
-        "ExtraRewardProb": [convert_long(excel_instance.ExtraRewardProb(j), password) for j in range(excel_instance.ExtraRewardProbLength())],
-        "IsExtraRewardDisplayed": [excel_instance.IsExtraRewardDisplayed(j) for j in range(excel_instance.IsExtraRewardDisplayedLength())],
-        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
-        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
-        "RewardAmount": [convert_long(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
-    }
-
-def dump_EventContentMeetupExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "CharacterId": convert_long(excel_instance.CharacterId(), password),
-        "ConditionScenarioGroupId": convert_long(excel_instance.ConditionScenarioGroupId(), password),
-        "ConditionType": MeetupConditionType(convert_int(excel_instance.ConditionType(), password)).name,
-        "ConditionParameter": [convert_long(excel_instance.ConditionParameter(j), password) for j in range(excel_instance.ConditionParameterLength())],
-        "ConditionPrintType": MeetupConditionPrintType(convert_int(excel_instance.ConditionPrintType(), password)).name,
-    }
-
-def dump_EventContentMeetupInfoExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "CostParcelType": ParcelType(convert_int(excel_instance.CostParcelType(), password)).name,
-        "CostId": convert_long(excel_instance.CostId(), password),
-        "CostAmount": convert_int(excel_instance.CostAmount(), password),
-    }
-
-def dump_EventContentMiniEventShortCutExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_int(excel_instance.Id(), password),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "ShorcutContentType": EventTargetType(convert_int(excel_instance.ShorcutContentType(), password)).name,
-        "ShortcutUI": convert_string(excel_instance.ShortcutUI(), password),
-    }
-
-def dump_EventContentMiniEventTokenExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "ItemUniqueId": convert_long(excel_instance.ItemUniqueId(), password),
-        "MaximumAmount": convert_long(excel_instance.MaximumAmount(), password),
-    }
-
-def dump_EventContentMissionExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "GroupId": convert_long(excel_instance.GroupId(), password),
-        "GroupName": convert_string(excel_instance.GroupName(), password),
-        "Category": MissionCategory(convert_int(excel_instance.Category(), password)).name,
-        "Description": convert_uint(excel_instance.Description(), password),
-        "ResetType": MissionResetType(convert_int(excel_instance.ResetType(), password)).name,
-        "ToastDisplayType": MissionToastDisplayConditionType(convert_int(excel_instance.ToastDisplayType(), password)).name,
-        "ToastImagePath": convert_string(excel_instance.ToastImagePath(), password),
-        "ViewFlag": excel_instance.ViewFlag(),
-        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
-        "PreMissionId": [convert_long(excel_instance.PreMissionId(j), password) for j in range(excel_instance.PreMissionIdLength())],
-        "AccountType": AccountState(convert_int(excel_instance.AccountType(), password)).name,
-        "AccountLevel": convert_long(excel_instance.AccountLevel(), password),
-        "ShortcutUI": [convert_string(excel_instance.ShortcutUI(j), password) for j in range(excel_instance.ShortcutUILength())],
-        "ChallengeStageShortcut": convert_long(excel_instance.ChallengeStageShortcut(), password),
-        "CompleteConditionType": MissionCompleteConditionType(convert_int(excel_instance.CompleteConditionType(), password)).name,
-        "IsCompleteExtensionTime": excel_instance.IsCompleteExtensionTime(),
-        "CompleteConditionCount": convert_long(excel_instance.CompleteConditionCount(), password),
-        "CompleteConditionParameter": [convert_long(excel_instance.CompleteConditionParameter(j), password) for j in range(excel_instance.CompleteConditionParameterLength())],
-        "CompleteConditionParameterTag": [Tag(convert_int(excel_instance.CompleteConditionParameterTag(j), password)).name for j in range(excel_instance.CompleteConditionParameterTagLength())],
-        "RewardIcon": convert_string(excel_instance.RewardIcon(), password),
-        "CompleteConditionMissionId": [convert_long(excel_instance.CompleteConditionMissionId(j), password) for j in range(excel_instance.CompleteConditionMissionIdLength())],
-        "CompleteConditionMissionCount": convert_long(excel_instance.CompleteConditionMissionCount(), password),
-        "MissionRewardParcelType": [ParcelType(convert_int(excel_instance.MissionRewardParcelType(j), password)).name for j in range(excel_instance.MissionRewardParcelTypeLength())],
-        "MissionRewardParcelId": [convert_long(excel_instance.MissionRewardParcelId(j), password) for j in range(excel_instance.MissionRewardParcelIdLength())],
-        "MissionRewardAmount": [convert_int(excel_instance.MissionRewardAmount(j), password) for j in range(excel_instance.MissionRewardAmountLength())],
-        "ConditionRewardParcelType": [ParcelType(convert_int(excel_instance.ConditionRewardParcelType(j), password)).name for j in range(excel_instance.ConditionRewardParcelTypeLength())],
-        "ConditionRewardParcelId": [convert_long(excel_instance.ConditionRewardParcelId(j), password) for j in range(excel_instance.ConditionRewardParcelIdLength())],
-        "ConditionRewardAmount": [convert_int(excel_instance.ConditionRewardAmount(j), password) for j in range(excel_instance.ConditionRewardAmountLength())],
-    }
-
-def dump_EventContentPlayGuideExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "GuideTitle": convert_string(excel_instance.GuideTitle(), password),
-        "GuideImagePath": convert_string(excel_instance.GuideImagePath(), password),
-        "GuideText": convert_string(excel_instance.GuideText(), password),
-    }
-
-def dump_EventContentScenarioExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "ReplayDisplayGroup": convert_int(excel_instance.ReplayDisplayGroup(), password),
-        "Order": convert_long(excel_instance.Order(), password),
-        "RecollectionNumber": convert_long(excel_instance.RecollectionNumber(), password),
-        "IsRecollection": excel_instance.IsRecollection(),
-        "IsMeetup": excel_instance.IsMeetup(),
-        "IsOmnibus": excel_instance.IsOmnibus(),
-        "ScenarioGroupId": [convert_long(excel_instance.ScenarioGroupId(j), password) for j in range(excel_instance.ScenarioGroupIdLength())],
-        "ScenarioConditionType": EventContentScenarioConditionType(convert_int(excel_instance.ScenarioConditionType(), password)).name,
-        "ConditionAmount": convert_long(excel_instance.ConditionAmount(), password),
-        "ConditionEventContentId": convert_long(excel_instance.ConditionEventContentId(), password),
-        "ClearedScenarioGroupId": convert_long(excel_instance.ClearedScenarioGroupId(), password),
-        "RecollectionSummaryLocalizeScenarioId": convert_uint(excel_instance.RecollectionSummaryLocalizeScenarioId(), password),
-        "RecollectionResource": convert_string(excel_instance.RecollectionResource(), password),
-        "IsRecollectionHorizon": excel_instance.IsRecollectionHorizon(),
-        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
-        "RewardId": [convert_long(excel_instance.RewardId(j), password) for j in range(excel_instance.RewardIdLength())],
-        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
-    }
-
-def dump_EventContentSeasonExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "OriginalEventContentId": convert_long(excel_instance.OriginalEventContentId(), password),
-        "IsReturn": excel_instance.IsReturn(),
-        "Name": convert_string(excel_instance.Name(), password),
-        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
-        "OpenConditionContent": OpenConditionContent(convert_int(excel_instance.OpenConditionContent(), password)).name,
-        "EventDisplay": excel_instance.EventDisplay(),
-        "IconOrder": convert_int(excel_instance.IconOrder(), password),
-        "SubEventType": SubEventType(convert_int(excel_instance.SubEventType(), password)).name,
-        "SubEvent": excel_instance.SubEvent(),
-        "EventItemId": convert_long(excel_instance.EventItemId(), password),
-        "MainEventId": convert_long(excel_instance.MainEventId(), password),
-        "EventChangeOpenCondition": convert_long(excel_instance.EventChangeOpenCondition(), password),
-        "BeforehandExposedTime": convert_string(excel_instance.BeforehandExposedTime(), password),
-        "EventContentOpenTime": convert_string(excel_instance.EventContentOpenTime(), password),
-        "EventContentCloseTime": convert_string(excel_instance.EventContentCloseTime(), password),
-        "ExtensionTime": convert_string(excel_instance.ExtensionTime(), password),
-        "MainIconParcelPath": convert_string(excel_instance.MainIconParcelPath(), password),
-        "SubIconParcelPath": convert_string(excel_instance.SubIconParcelPath(), password),
-        "BeforehandBgImagePath": convert_string(excel_instance.BeforehandBgImagePath(), password),
-        "MinigamePrologScenarioGroupId": convert_long(excel_instance.MinigamePrologScenarioGroupId(), password),
-        "BeforehandScenarioGroupId": [convert_long(excel_instance.BeforehandScenarioGroupId(j), password) for j in range(excel_instance.BeforehandScenarioGroupIdLength())],
-        "MainBannerImagePath": convert_string(excel_instance.MainBannerImagePath(), password),
-        "MainBgImagePath": convert_string(excel_instance.MainBgImagePath(), password),
-        "ShiftTriggerStageId": convert_long(excel_instance.ShiftTriggerStageId(), password),
-        "ShiftMainBgImagePath": convert_string(excel_instance.ShiftMainBgImagePath(), password),
-        "MinigameLobbyPrefabName": convert_string(excel_instance.MinigameLobbyPrefabName(), password),
-        "MinigameVictoryPrefabName": convert_string(excel_instance.MinigameVictoryPrefabName(), password),
-        "MinigameMissionBgPrefabName": convert_string(excel_instance.MinigameMissionBgPrefabName(), password),
-        "MinigameMissionBgImagePath": convert_string(excel_instance.MinigameMissionBgImagePath(), password),
-        "CardBgImagePath": convert_string(excel_instance.CardBgImagePath(), password),
-        "EventAssist": excel_instance.EventAssist(),
-        "EventContentReleaseType": EventContentReleaseType(convert_int(excel_instance.EventContentReleaseType(), password)).name,
-        "EventContentStageRewardIdPermanent": convert_long(excel_instance.EventContentStageRewardIdPermanent(), password),
-        "RewardTagPermanent": RewardTag(convert_int(excel_instance.RewardTagPermanent(), password)).name,
-        "MiniEventShortCutScenarioModeId": convert_long(excel_instance.MiniEventShortCutScenarioModeId(), password),
-        "ScenarioContentCollectionGroupId": convert_long(excel_instance.ScenarioContentCollectionGroupId(), password),
-    }
-
-def dump_EventContentShopExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "Id": convert_long(excel_instance.Id(), password),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "CategoryType": ShopCategoryType(convert_int(excel_instance.CategoryType(), password)).name,
-        "IsLegacy": excel_instance.IsLegacy(),
-        "GoodsId": [convert_long(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
-        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
-        "SalePeriodFrom": convert_string(excel_instance.SalePeriodFrom(), password),
-        "SalePeriodTo": convert_string(excel_instance.SalePeriodTo(), password),
-        "PurchaseCooltimeMin": convert_long(excel_instance.PurchaseCooltimeMin(), password),
-        "PurchaseCountLimit": convert_long(excel_instance.PurchaseCountLimit(), password),
-        "PurchaseCountResetType": PurchaseCountResetType(convert_int(excel_instance.PurchaseCountResetType(), password)).name,
-        "BuyReportEventName": convert_string(excel_instance.BuyReportEventName(), password),
-        "RestrictBuyWhenInventoryFull": excel_instance.RestrictBuyWhenInventoryFull(),
-    }
-
-def dump_EventContentShopInfoExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "CategoryType": ShopCategoryType(convert_int(excel_instance.CategoryType(), password)).name,
-        "LocalizeCode": convert_uint(excel_instance.LocalizeCode(), password),
-        "CostParcelType": [ParcelType(convert_int(excel_instance.CostParcelType(j), password)).name for j in range(excel_instance.CostParcelTypeLength())],
-        "CostParcelId": [convert_long(excel_instance.CostParcelId(j), password) for j in range(excel_instance.CostParcelIdLength())],
-        "IsRefresh": excel_instance.IsRefresh(),
-        "IsSoldOutDimmed": excel_instance.IsSoldOutDimmed(),
-        "AutoRefreshCoolTime": convert_long(excel_instance.AutoRefreshCoolTime(), password),
-        "RefreshAbleCount": convert_long(excel_instance.RefreshAbleCount(), password),
-        "GoodsId": [convert_long(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
-        "OpenPeriodFrom": convert_string(excel_instance.OpenPeriodFrom(), password),
-        "OpenPeriodTo": convert_string(excel_instance.OpenPeriodTo(), password),
-        "ShopProductUpdateDate": convert_string(excel_instance.ShopProductUpdateDate(), password),
-    }
-
-def dump_EventContentShopRefreshExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "Id": convert_long(excel_instance.Id(), password),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "IsLegacy": excel_instance.IsLegacy(),
-        "GoodsId": convert_long(excel_instance.GoodsId(), password),
-        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
-        "CategoryType": ShopCategoryType(convert_int(excel_instance.CategoryType(), password)).name,
-        "RefreshGroup": convert_int(excel_instance.RefreshGroup(), password),
-        "Prob": convert_int(excel_instance.Prob(), password),
-        "BuyReportEventName": convert_string(excel_instance.BuyReportEventName(), password),
-    }
-
-def dump_EventContentSpecialOperationsExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "PointItemId": convert_long(excel_instance.PointItemId(), password),
-    }
-
-def dump_EventContentSpineDialogOffsetExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
-        "CostumeUniqueId": convert_long(excel_instance.CostumeUniqueId(), password),
-        "SpineOffsetX": convert_float(excel_instance.SpineOffsetX(), password),
-        "SpineOffsetY": convert_float(excel_instance.SpineOffsetY(), password),
-        "DialogOffsetX": convert_float(excel_instance.DialogOffsetX(), password),
-        "DialogOffsetY": convert_float(excel_instance.DialogOffsetY(), password),
-    }
-
-def dump_EventContentStageExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "Name": convert_string(excel_instance.Name(), password),
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "StageDifficulty": StageDifficulty(convert_int(excel_instance.StageDifficulty(), password)).name,
-        "StageNumber": convert_string(excel_instance.StageNumber(), password),
-        "StageDisplay": convert_int(excel_instance.StageDisplay(), password),
-        "PrevStageId": convert_long(excel_instance.PrevStageId(), password),
-        "OpenDate": convert_long(excel_instance.OpenDate(), password),
-        "OpenEventPoint": convert_long(excel_instance.OpenEventPoint(), password),
-        "OpenConditionScenarioPermanentSubEventId": convert_long(excel_instance.OpenConditionScenarioPermanentSubEventId(), password),
-        "PrevStageSubEventId": convert_long(excel_instance.PrevStageSubEventId(), password),
-        "OpenConditionScenarioId": convert_long(excel_instance.OpenConditionScenarioId(), password),
-        "OpenConditionContentType": EventContentType(convert_int(excel_instance.OpenConditionContentType(), password)).name,
-        "OpenConditionContentId": convert_long(excel_instance.OpenConditionContentId(), password),
-        "BattleDuration": convert_long(excel_instance.BattleDuration(), password),
-        "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
-        "StageEnterCostId": convert_long(excel_instance.StageEnterCostId(), password),
-        "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
-        "StageEnterEchelonCount": convert_int(excel_instance.StageEnterEchelonCount(), password),
-        "StarConditionTacticRankSCount": convert_long(excel_instance.StarConditionTacticRankSCount(), password),
-        "StarConditionTurnCount": convert_long(excel_instance.StarConditionTurnCount(), password),
-        "EnterScenarioGroupId": [convert_long(excel_instance.EnterScenarioGroupId(j), password) for j in range(excel_instance.EnterScenarioGroupIdLength())],
-        "ClearScenarioGroupId": [convert_long(excel_instance.ClearScenarioGroupId(j), password) for j in range(excel_instance.ClearScenarioGroupIdLength())],
-        "StrategyMap": convert_string(excel_instance.StrategyMap(), password),
-        "StrategyMapBG": convert_string(excel_instance.StrategyMapBG(), password),
-        "EventContentStageRewardId": convert_long(excel_instance.EventContentStageRewardId(), password),
-        "MaxTurn": convert_int(excel_instance.MaxTurn(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
-        "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
-        "BgmId": convert_string(excel_instance.BgmId(), password),
-        "StrategyEnvironment": StrategyEnvironment(convert_int(excel_instance.StrategyEnvironment(), password)).name,
-        "GroundID": convert_long(excel_instance.GroundID(), password),
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
-        "BGMId": convert_long(excel_instance.BGMId(), password),
-        "InstantClear": excel_instance.InstantClear(),
-        "BuffContentId": convert_long(excel_instance.BuffContentId(), password),
-        "FixedEchelonId": convert_long(excel_instance.FixedEchelonId(), password),
-        "ChallengeDisplay": excel_instance.ChallengeDisplay(),
-        "StarGoal": [StarGoalType(convert_int(excel_instance.StarGoal(j), password)).name for j in range(excel_instance.StarGoalLength())],
-        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmount(j), password) for j in range(excel_instance.StarGoalAmountLength())],
-        "IsDefeatBattle": excel_instance.IsDefeatBattle(),
-        "StageHint": convert_uint(excel_instance.StageHint(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
-    }
-
-def dump_EventContentStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "GroupId": convert_long(excel_instance.GroupId(), password),
-        "RewardTag": RewardTag(convert_int(excel_instance.RewardTag(), password)).name,
-        "RewardProb": convert_int(excel_instance.RewardProb(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
-        "RewardId": convert_long(excel_instance.RewardId(), password),
-        "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
-        "IsDisplayed": excel_instance.IsDisplayed(),
-    }
-
-def dump_EventContentStageTotalRewardExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "RequiredEventItemAmount": convert_long(excel_instance.RequiredEventItemAmount(), password),
-        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
-        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
-        "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
-    }
-
-def dump_EventContentZoneExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "OriginalZoneId": convert_long(excel_instance.OriginalZoneId(), password),
-        "LocationId": convert_long(excel_instance.LocationId(), password),
-        "LocationRank": convert_long(excel_instance.LocationRank(), password),
-        "EventPointForLocationRank": convert_long(excel_instance.EventPointForLocationRank(), password),
-        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "StudentVisitProb": [convert_long(excel_instance.StudentVisitProb(j), password) for j in range(excel_instance.StudentVisitProbLength())],
-        "RewardGroupId": convert_long(excel_instance.RewardGroupId(), password),
-        "Tags": [Tag(convert_int(excel_instance.Tags(j), password)).name for j in range(excel_instance.TagsLength())],
-        "WhiteListTags": [Tag(convert_int(excel_instance.WhiteListTags(j), password)).name for j in range(excel_instance.WhiteListTagsLength())],
-    }
-
-def dump_EventContentZoneVisitRewardExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "EventContentId": convert_long(excel_instance.EventContentId(), password),
-        "EventContentLocationId": convert_long(excel_instance.EventContentLocationId(), password),
-        "DevName": convert_string(excel_instance.DevName(), password),
-        "CharacterId": convert_long(excel_instance.CharacterId(), password),
-        "CharacterDevName": convert_string(excel_instance.CharacterDevName(), password),
-        "VisitRewardParcelType": [ParcelType(convert_int(excel_instance.VisitRewardParcelType(j), password)).name for j in range(excel_instance.VisitRewardParcelTypeLength())],
-        "VisitRewardParcelId": [convert_long(excel_instance.VisitRewardParcelId(j), password) for j in range(excel_instance.VisitRewardParcelIdLength())],
-        "VisitRewardAmount": [convert_long(excel_instance.VisitRewardAmount(j), password) for j in range(excel_instance.VisitRewardAmountLength())],
-        "VisitRewardProb": [convert_long(excel_instance.VisitRewardProb(j), password) for j in range(excel_instance.VisitRewardProbLength())],
     }
 
 def dump_FieldContentStageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -8228,16 +7282,6 @@ def dump_FieldWorldMapZoneExcel(excel_instance, password: bytes = b"") -> dict:
         "NewTagDisplay": excel_instance.NewTagDisplay(),
     }
 
-def dump_FloaterCommonExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
-        "FloaterOffsetPosX": convert_int(excel_instance.FloaterOffsetPosX(), password),
-        "FloaterOffsetPosY": convert_int(excel_instance.FloaterOffsetPosY(), password),
-        "FloaterRandomPosRangeX": convert_int(excel_instance.FloaterRandomPosRangeX(), password),
-        "FloaterRandomPosRangeY": convert_int(excel_instance.FloaterRandomPosRangeY(), password),
-    }
-
 def dump_GachaSelectPickupGroupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_long(excel_instance.Id(), password),
@@ -8270,13 +7314,6 @@ def dump_GroundNodeFlat(excel_instance, password: bytes = b"") -> dict:
 def dump_GroundNodeLayerFlat(excel_instance, password: bytes = b"") -> dict:
     return {
             }
-
-def dump_HpBarAbbreviationExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "MonsterLv": convert_int(excel_instance.MonsterLv(), password),
-        "StandardHpBar": convert_int(excel_instance.StandardHpBar(), password),
-        "RaidBossHpBar": convert_int(excel_instance.RaidBossHpBar(), password),
-    }
 
 def dump_KnockBackExcel(excel_instance, password: bytes = b"") -> dict:
     return {
@@ -8349,48 +7386,6 @@ def dump_LocalizeCCGExcel(excel_instance, password: bytes = b"") -> dict:
         "Jp": convert_string(excel_instance.Jp(), password),
     }
 
-def dump_LocalizeCharProfileExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "CharacterId": convert_long(excel_instance.CharacterId(), password),
-        "StatusMessageKr": convert_string(excel_instance.StatusMessageKr(), password),
-        "StatusMessageJp": convert_string(excel_instance.StatusMessageJp(), password),
-        "FullNameKr": convert_string(excel_instance.FullNameKr(), password),
-        "FullNameJp": convert_string(excel_instance.FullNameJp(), password),
-        "FamilyNameKr": convert_string(excel_instance.FamilyNameKr(), password),
-        "FamilyNameRubyKr": convert_string(excel_instance.FamilyNameRubyKr(), password),
-        "PersonalNameKr": convert_string(excel_instance.PersonalNameKr(), password),
-        "PersonalNameRubyKr": convert_string(excel_instance.PersonalNameRubyKr(), password),
-        "FamilyNameJp": convert_string(excel_instance.FamilyNameJp(), password),
-        "FamilyNameRubyJp": convert_string(excel_instance.FamilyNameRubyJp(), password),
-        "PersonalNameJp": convert_string(excel_instance.PersonalNameJp(), password),
-        "PersonalNameRubyJp": convert_string(excel_instance.PersonalNameRubyJp(), password),
-        "SchoolYearKr": convert_string(excel_instance.SchoolYearKr(), password),
-        "SchoolYearJp": convert_string(excel_instance.SchoolYearJp(), password),
-        "CharacterAgeKr": convert_string(excel_instance.CharacterAgeKr(), password),
-        "CharacterAgeJp": convert_string(excel_instance.CharacterAgeJp(), password),
-        "BirthDay": convert_string(excel_instance.BirthDay(), password),
-        "BirthdayKr": convert_string(excel_instance.BirthdayKr(), password),
-        "BirthdayJp": convert_string(excel_instance.BirthdayJp(), password),
-        "CharHeightKr": convert_string(excel_instance.CharHeightKr(), password),
-        "CharHeightJp": convert_string(excel_instance.CharHeightJp(), password),
-        "DesignerNameKr": convert_string(excel_instance.DesignerNameKr(), password),
-        "DesignerNameJp": convert_string(excel_instance.DesignerNameJp(), password),
-        "IllustratorNameKr": convert_string(excel_instance.IllustratorNameKr(), password),
-        "IllustratorNameJp": convert_string(excel_instance.IllustratorNameJp(), password),
-        "CharacterVoiceKr": convert_string(excel_instance.CharacterVoiceKr(), password),
-        "CharacterVoiceJp": convert_string(excel_instance.CharacterVoiceJp(), password),
-        "HobbyKr": convert_string(excel_instance.HobbyKr(), password),
-        "HobbyJp": convert_string(excel_instance.HobbyJp(), password),
-        "WeaponNameKr": convert_string(excel_instance.WeaponNameKr(), password),
-        "WeaponDescKr": convert_string(excel_instance.WeaponDescKr(), password),
-        "WeaponNameJp": convert_string(excel_instance.WeaponNameJp(), password),
-        "WeaponDescJp": convert_string(excel_instance.WeaponDescJp(), password),
-        "ProfileIntroductionKr": convert_string(excel_instance.ProfileIntroductionKr(), password),
-        "ProfileIntroductionJp": convert_string(excel_instance.ProfileIntroductionJp(), password),
-        "CharacterSSRNewKr": convert_string(excel_instance.CharacterSSRNewKr(), password),
-        "CharacterSSRNewJp": convert_string(excel_instance.CharacterSSRNewJp(), password),
-    }
-
 def dump_LocalizeFieldExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Key": convert_uint(excel_instance.Key(), password),
@@ -8434,20 +7429,6 @@ def dump_ObstacleExcel(excel_instance, password: bytes = b"") -> dict:
         "Point2Offeset": [convert_float(excel_instance.Point2Offeset(j), password) for j in range(excel_instance.Point2OffesetLength())],
         "EnemyPoint2Osset": [convert_float(excel_instance.EnemyPoint2Osset(j), password) for j in range(excel_instance.EnemyPoint2OssetLength())],
         "SubObstacleID": [convert_long(excel_instance.SubObstacleID(j), password) for j in range(excel_instance.SubObstacleIDLength())],
-    }
-
-def dump_ObstacleFireLineCheckExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "MyObstacleFireLineCheck": excel_instance.MyObstacleFireLineCheck(),
-        "AllyObstacleFireLineCheck": excel_instance.AllyObstacleFireLineCheck(),
-        "EnemyObstacleFireLineCheck": excel_instance.EnemyObstacleFireLineCheck(),
-        "EmptyObstacleFireLineCheck": excel_instance.EmptyObstacleFireLineCheck(),
-    }
-
-def dump_PersonalityExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "Name": convert_string(excel_instance.Name(), password),
     }
 
 def dump_PropVector3(excel_instance, password: bytes = b"") -> dict:
@@ -8591,37 +7572,6 @@ def dump_SystemMailExcel(excel_instance, password: bytes = b"") -> dict:
         "Comment": convert_string(excel_instance.Comment(), password),
     }
 
-def dump_TacticalSupportSystemExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "Id": convert_long(excel_instance.Id(), password),
-        "SummonedTime": convert_long(excel_instance.SummonedTime(), password),
-        "DefaultPersonalityId": convert_long(excel_instance.DefaultPersonalityId(), password),
-        "CanTargeting": excel_instance.CanTargeting(),
-        "CanCover": excel_instance.CanCover(),
-        "ObstacleUniqueName": convert_string(excel_instance.ObstacleUniqueName(), password),
-        "ObstacleCoverRange": convert_long(excel_instance.ObstacleCoverRange(), password),
-        "SummonSkilllGroupId": convert_string(excel_instance.SummonSkilllGroupId(), password),
-        "CrashObstacleOBBWidth": convert_long(excel_instance.CrashObstacleOBBWidth(), password),
-        "CrashObstacleOBBHeight": convert_long(excel_instance.CrashObstacleOBBHeight(), password),
-        "IsTSSBlockedNodeCheck": excel_instance.IsTSSBlockedNodeCheck(),
-        "NumberOfUses": convert_int(excel_instance.NumberOfUses(), password),
-        "InventoryOffsetX": convert_float(excel_instance.InventoryOffsetX(), password),
-        "InventoryOffsetY": convert_float(excel_instance.InventoryOffsetY(), password),
-        "InventoryOffsetZ": convert_float(excel_instance.InventoryOffsetZ(), password),
-        "InteractionChar": convert_long(excel_instance.InteractionChar(), password),
-        "CharacterInteractionStartDelay": convert_long(excel_instance.CharacterInteractionStartDelay(), password),
-        "GetOnStartEffectPath": convert_string(excel_instance.GetOnStartEffectPath(), password),
-        "GetOnEndEffectPath": convert_string(excel_instance.GetOnEndEffectPath(), password),
-        "SummonerCharacterId": convert_long(excel_instance.SummonerCharacterId(), password),
-        "InteractionFrame": convert_int(excel_instance.InteractionFrame(), password),
-        "TSAInteractionAddDuration": convert_long(excel_instance.TSAInteractionAddDuration(), password),
-        "InteractionStudentExSkillGroupId": convert_string(excel_instance.InteractionStudentExSkillGroupId(), password),
-        "InteractionSkillCardTexture": convert_string(excel_instance.InteractionSkillCardTexture(), password),
-        "InteractionSkillSpine": convert_string(excel_instance.InteractionSkillSpine(), password),
-        "RetreatFrame": convert_int(excel_instance.RetreatFrame(), password),
-        "DestroyFrame": convert_int(excel_instance.DestroyFrame(), password),
-    }
-
 def dump_TacticArenaSimulatorSettingExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Order": convert_long(excel_instance.Order(), password),
@@ -8668,12 +7618,6 @@ def dump_TacticSimulatorSettingExcel(excel_instance, password: bytes = b"") -> d
         "FixedEchelonId": convert_long(excel_instance.FixedEchelonId(), password),
     }
 
-def dump_TacticSkipExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "LevelDiff": convert_int(excel_instance.LevelDiff(), password),
-        "HPResult": convert_long(excel_instance.HPResult(), password),
-    }
-
 def dump_TacticTimeAttackSimulatorConfigExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Order": convert_long(excel_instance.Order(), password),
@@ -8688,17 +7632,6 @@ def dump_TagExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Furniture": Tag(convert_int(excel_instance.Furniture(), password)).name,
         "None_": Club(convert_int(excel_instance.None_(), password)).name,
-    }
-
-def dump_TerrainAdaptationFactorExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "TerrainAdaptation": StageTopography(convert_int(excel_instance.TerrainAdaptation(), password)).name,
-        "TerrainAdaptationStat": TerrainAdaptationStat(convert_int(excel_instance.TerrainAdaptationStat(), password)).name,
-        "ShotFactor": convert_long(excel_instance.ShotFactor(), password),
-        "BlockFactor": convert_long(excel_instance.BlockFactor(), password),
-        "AccuracyFactor": convert_long(excel_instance.AccuracyFactor(), password),
-        "DodgeFactor": convert_long(excel_instance.DodgeFactor(), password),
-        "AttackPowerFactor": convert_long(excel_instance.AttackPowerFactor(), password),
     }
 
 def dump_TranscendenceRecipeExcel(excel_instance, password: bytes = b"") -> dict:
@@ -8882,7 +7815,6 @@ def dump_ArenaRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "RankIconPath": convert_string(excel_instance.RankIconPath(), password),
         "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
         "RewardParcelUniqueId": [convert_long(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
-        "RewardParcelUniqueName": [convert_string(excel_instance.RewardParcelUniqueName(j), password) for j in range(excel_instance.RewardParcelUniqueNameLength())],
         "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
@@ -8893,7 +7825,6 @@ def dump_ArenaSeasonCloseRewardExcel(excel_instance, password: bytes = b"") -> d
         "RankEnd": convert_long(excel_instance.RankEnd(), password),
         "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
         "RewardParcelUniqueId": [convert_long(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
-        "RewardParcelUniqueName": [convert_string(excel_instance.RewardParcelUniqueName(j), password) for j in range(excel_instance.RewardParcelUniqueNameLength())],
         "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
@@ -8910,6 +7841,27 @@ def dump_AssistEchelonTypeConvertExcel(excel_instance, password: bytes = b"") ->
     return {
         "Contents": EchelonType(convert_int(excel_instance.Contents(), password)).name,
         "ConvertTo": EchelonType(convert_int(excel_instance.ConvertTo(), password)).name,
+    }
+
+def dump_AssistRewardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "RewardType": AssistRewardType(convert_int(excel_instance.RewardType(), password)).name,
+        "EchelonType": EchelonType(convert_int(excel_instance.EchelonType(), password)).name,
+        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelId": convert_long(excel_instance.RewardParcelId(), password),
+        "RewardParcelAmount": convert_long(excel_instance.RewardParcelAmount(), password),
+    }
+
+def dump_AssistSlotExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "SlotId": convert_long(excel_instance.SlotId(), password),
+        "EchelonType": EchelonType(convert_int(excel_instance.EchelonType(), password)).name,
+        "SlotNumber": convert_long(excel_instance.SlotNumber(), password),
+        "AssistTermRewardPeriodFromSec": convert_long(excel_instance.AssistTermRewardPeriodFromSec(), password),
+        "AssistRewardLimit": convert_long(excel_instance.AssistRewardLimit(), password),
+        "AssistRentRewardDailyMaxCount": convert_long(excel_instance.AssistRentRewardDailyMaxCount(), password),
+        "AssistRentalFeeAmount": convert_long(excel_instance.AssistRentalFeeAmount(), password),
+        "AssistRentalFeeAmountStranger": convert_long(excel_instance.AssistRentalFeeAmountStranger(), password),
     }
 
 def dump_AttendanceExcel(excel_instance, password: bytes = b"") -> dict:
@@ -8964,6 +7916,12 @@ def dump_AudioAnimatorExcel(excel_instance, password: bytes = b"") -> dict:
         "VoiceHash": [convert_uint(excel_instance.VoiceHash(j), password) for j in range(excel_instance.VoiceHashLength())],
     }
 
+def dump_BattleLevelFactorExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "LevelDiff": convert_int(excel_instance.LevelDiff(), password),
+        "DamageRate": convert_long(excel_instance.DamageRate(), password),
+    }
+
 def dump_BattlePassExpLimitExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "BattlePassId": convert_long(excel_instance.BattlePassId(), password),
@@ -9000,7 +7958,6 @@ def dump_BattlePassInfoExcel(excel_instance, password: bytes = b"") -> dict:
         "LobbyBannerPath": convert_string(excel_instance.LobbyBannerPath(), password),
         "MainIconParcelPath": convert_string(excel_instance.MainIconParcelPath(), password),
         "PurchaseStepProductImagePath": convert_string(excel_instance.PurchaseStepProductImagePath(), password),
-        "PurchaseStepBgImagePath": convert_string(excel_instance.PurchaseStepBgImagePath(), password),
     }
 
 def dump_BattlePassLevelExcel(excel_instance, password: bytes = b"") -> dict:
@@ -9069,12 +8026,41 @@ def dump_BGMUIExcel(excel_instance, password: bytes = b"") -> dict:
         "EventContentId": convert_long(excel_instance.EventContentId(), password),
     }
 
+def dump_BossExternalBTExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "ExternalBTId": convert_long(excel_instance.ExternalBTId(), password),
+        "AIPhase": convert_long(excel_instance.AIPhase(), password),
+        "ExternalBTNodeType": ExternalBTNodeType(convert_int(excel_instance.ExternalBTNodeType(), password)).name,
+        "ExternalBTTrigger": ExternalBTTrigger(convert_int(excel_instance.ExternalBTTrigger(), password)).name,
+        "TriggerArgument": convert_string(excel_instance.TriggerArgument(), password),
+        "BehaviorRate": convert_long(excel_instance.BehaviorRate(), password),
+        "ExternalBehavior": ExternalBehavior(convert_int(excel_instance.ExternalBehavior(), password)).name,
+        "BehaviorArgument": convert_string(excel_instance.BehaviorArgument(), password),
+    }
+
+def dump_BulletArmorDamageFactorExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DamageFactorGroupId": convert_string(excel_instance.DamageFactorGroupId(), password),
+        "BulletType": BulletType(convert_int(excel_instance.BulletType(), password)).name,
+        "ArmorType": ArmorType(convert_int(excel_instance.ArmorType(), password)).name,
+        "DamageRate": convert_long(excel_instance.DamageRate(), password),
+        "DamageAttribute": DamageAttribute(convert_int(excel_instance.DamageAttribute(), password)).name,
+        "MinDamageRate": convert_long(excel_instance.MinDamageRate(), password),
+        "MaxDamageRate": convert_long(excel_instance.MaxDamageRate(), password),
+        "ShowHighlightFloater": excel_instance.ShowHighlightFloater(),
+    }
+
 def dump_CafeInfoExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "CafeId": convert_long(excel_instance.CafeId(), password),
         "IsDefault": excel_instance.IsDefault(),
         "OpenConditionCafeId": OpenConditionContent(convert_int(excel_instance.OpenConditionCafeId(), password)).name,
         "OpenConditionCafeInvite": OpenConditionContent(convert_int(excel_instance.OpenConditionCafeInvite(), password)).name,
+        "SummonParcelType": ParcelType(convert_int(excel_instance.SummonParcelType(), password)).name,
+        "SummonParcelId": convert_long(excel_instance.SummonParcelId(), password),
+        "SummonParcelAmount": convert_long(excel_instance.SummonParcelAmount(), password),
+        "CategoryType": ShopCategoryType(convert_int(excel_instance.CategoryType(), password)).name,
+        "SummonTicketIconPath": convert_string(excel_instance.SummonTicketIconPath(), password),
     }
 
 def dump_CafeInteractionExcel(excel_instance, password: bytes = b"") -> dict:
@@ -9253,6 +8239,40 @@ def dump_CharacterAcademyTagsExcel(excel_instance, password: bytes = b"") -> dic
         "ZoneWhiteListTags": [Tag(convert_int(excel_instance.ZoneWhiteListTags(j), password)).name for j in range(excel_instance.ZoneWhiteListTagsLength())],
     }
 
+def dump_CharacterAIExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "EngageType": EngageType(convert_int(excel_instance.EngageType(), password)).name,
+        "Positioning": PositioningType(convert_int(excel_instance.Positioning(), password)).name,
+        "CheckCanUseAutoSkill": excel_instance.CheckCanUseAutoSkill(),
+        "DistanceReduceRatioObstaclePath": convert_long(excel_instance.DistanceReduceRatioObstaclePath(), password),
+        "DistanceReduceObstaclePath": convert_long(excel_instance.DistanceReduceObstaclePath(), password),
+        "DistanceReduceRatioFormationPath": convert_long(excel_instance.DistanceReduceRatioFormationPath(), password),
+        "DistanceReduceFormationPath": convert_long(excel_instance.DistanceReduceFormationPath(), password),
+        "MinimumPositionGap": convert_long(excel_instance.MinimumPositionGap(), password),
+        "CanUseObstacleOfKneelMotion": excel_instance.CanUseObstacleOfKneelMotion(),
+        "CanUseObstacleOfStandMotion": excel_instance.CanUseObstacleOfStandMotion(),
+        "HasTargetSwitchingMotion": excel_instance.HasTargetSwitchingMotion(),
+    }
+
+def dump_CharacterCalculationLimitExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
+        "CalculationValue": BattleCalculationStat(convert_int(excel_instance.CalculationValue(), password)).name,
+        "MinValue": convert_long(excel_instance.MinValue(), password),
+        "MaxValue": convert_long(excel_instance.MaxValue(), password),
+        "LimitStartValue": [convert_long(excel_instance.LimitStartValue(j), password) for j in range(excel_instance.LimitStartValueLength())],
+        "DecreaseRate": [convert_long(excel_instance.DecreaseRate(j), password) for j in range(excel_instance.DecreaseRateLength())],
+    }
+
+def dump_CharacterCombatSkinExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "GroupId": convert_string(excel_instance.GroupId(), password),
+        "UniqueId": convert_long(excel_instance.UniqueId(), password),
+        "ResourcePath": convert_string(excel_instance.ResourcePath(), password),
+    }
+
 def dump_CharacterDialogBattlePassExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "CostumeUniqueId": convert_long(excel_instance.CostumeUniqueId(), password),
@@ -9354,6 +8374,75 @@ def dump_CharacterDialogSubtitleExcel(excel_instance, password: bytes = b"") -> 
         "LocalizeJP": convert_string(excel_instance.LocalizeJP(), password),
     }
 
+def dump_CharacterExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "DevName": convert_string(excel_instance.DevName(), password),
+        "CostumeGroupId": convert_long(excel_instance.CostumeGroupId(), password),
+        "IsPlayable": excel_instance.IsPlayable(),
+        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
+        "CollectionVisible": excel_instance.CollectionVisible(),
+        "ReleaseDate": convert_string(excel_instance.ReleaseDate(), password),
+        "CollectionVisibleStartDate": convert_string(excel_instance.CollectionVisibleStartDate(), password),
+        "CollectionVisibleEndDate": convert_string(excel_instance.CollectionVisibleEndDate(), password),
+        "IsPlayableCharacter": excel_instance.IsPlayableCharacter(),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "IsNPC": excel_instance.IsNPC(),
+        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
+        "CanSurvive": excel_instance.CanSurvive(),
+        "IsDummy": excel_instance.IsDummy(),
+        "SubPartsCount": convert_int(excel_instance.SubPartsCount(), password),
+        "TacticRole": TacticRole(convert_int(excel_instance.TacticRole(), password)).name,
+        "WeaponType": WeaponType(convert_int(excel_instance.WeaponType(), password)).name,
+        "TacticRange": TacticRange(convert_int(excel_instance.TacticRange(), password)).name,
+        "BulletType": BulletType(convert_int(excel_instance.BulletType(), password)).name,
+        "ArmorType": ArmorType(convert_int(excel_instance.ArmorType(), password)).name,
+        "AimIKType": AimIKType(convert_int(excel_instance.AimIKType(), password)).name,
+        "School": School(convert_int(excel_instance.School(), password)).name,
+        "Club": Club(convert_int(excel_instance.Club(), password)).name,
+        "DefaultStarGrade": convert_int(excel_instance.DefaultStarGrade(), password),
+        "MaxStarGrade": convert_int(excel_instance.MaxStarGrade(), password),
+        "StatLevelUpType": StatLevelUpType(convert_int(excel_instance.StatLevelUpType(), password)).name,
+        "SquadType": SquadType(convert_int(excel_instance.SquadType(), password)).name,
+        "Jumpable": excel_instance.Jumpable(),
+        "PersonalityId": convert_long(excel_instance.PersonalityId(), password),
+        "CharacterAIId": convert_long(excel_instance.CharacterAIId(), password),
+        "ExternalBTId": convert_long(excel_instance.ExternalBTId(), password),
+        "MainCombatStyleId": convert_long(excel_instance.MainCombatStyleId(), password),
+        "CombatStyleIndex": convert_int(excel_instance.CombatStyleIndex(), password),
+        "ScenarioCharacter": convert_string(excel_instance.ScenarioCharacter(), password),
+        "SpawnTemplateId": convert_uint(excel_instance.SpawnTemplateId(), password),
+        "FavorLevelupType": convert_int(excel_instance.FavorLevelupType(), password),
+        "EquipmentSlot": [EquipmentCategory(convert_int(excel_instance.EquipmentSlot(j), password)).name for j in range(excel_instance.EquipmentSlotLength())],
+        "WeaponLocalizeId": convert_uint(excel_instance.WeaponLocalizeId(), password),
+        "DisplayEnemyInfo": excel_instance.DisplayEnemyInfo(),
+        "BodyRadius": convert_long(excel_instance.BodyRadius(), password),
+        "RandomEffectRadius": convert_long(excel_instance.RandomEffectRadius(), password),
+        "HPBarHide": excel_instance.HPBarHide(),
+        "HpBarHeight": convert_float(excel_instance.HpBarHeight(), password),
+        "HighlightFloaterHeight": convert_float(excel_instance.HighlightFloaterHeight(), password),
+        "EmojiOffsetX": convert_float(excel_instance.EmojiOffsetX(), password),
+        "EmojiOffsetY": convert_float(excel_instance.EmojiOffsetY(), password),
+        "MoveStartFrame": convert_int(excel_instance.MoveStartFrame(), password),
+        "MoveEndFrame": convert_int(excel_instance.MoveEndFrame(), password),
+        "JumpMotionFrame": convert_int(excel_instance.JumpMotionFrame(), password),
+        "AppearFrame": convert_int(excel_instance.AppearFrame(), password),
+        "CanMove": excel_instance.CanMove(),
+        "CanFix": excel_instance.CanFix(),
+        "CanCrowdControl": excel_instance.CanCrowdControl(),
+        "CanBattleItemMove": excel_instance.CanBattleItemMove(),
+        "IgnoreObstacle": excel_instance.IgnoreObstacle(),
+        "IsAirUnit": excel_instance.IsAirUnit(),
+        "AirUnitHeight": convert_long(excel_instance.AirUnitHeight(), password),
+        "Tags": [Tag(convert_int(excel_instance.Tags(j), password)).name for j in range(excel_instance.TagsLength())],
+        "SecretStoneItemId": convert_long(excel_instance.SecretStoneItemId(), password),
+        "SecretStoneItemAmount": convert_int(excel_instance.SecretStoneItemAmount(), password),
+        "CharacterPieceItemId": convert_long(excel_instance.CharacterPieceItemId(), password),
+        "CharacterPieceItemAmount": convert_int(excel_instance.CharacterPieceItemAmount(), password),
+        "CombineRecipeId": convert_long(excel_instance.CombineRecipeId(), password),
+    }
+
 def dump_CharacterGearExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_long(excel_instance.Id(), password),
@@ -9380,6 +8469,32 @@ def dump_CharacterGearLevelExcel(excel_instance, password: bytes = b"") -> dict:
         "TotalExp": [convert_long(excel_instance.TotalExp(j), password) for j in range(excel_instance.TotalExpLength())],
     }
 
+def dump_CharacterIllustCoordinateExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "CharacterBodyCenterX": convert_float(excel_instance.CharacterBodyCenterX(), password),
+        "CharacterBodyCenterY": convert_float(excel_instance.CharacterBodyCenterY(), password),
+        "DefaultScale": convert_float(excel_instance.DefaultScale(), password),
+        "MinScale": convert_float(excel_instance.MinScale(), password),
+        "MaxScale": convert_float(excel_instance.MaxScale(), password),
+    }
+
+def dump_CharacterLevelExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Level": convert_int(excel_instance.Level(), password),
+        "Exp": convert_long(excel_instance.Exp(), password),
+        "TotalExp": convert_long(excel_instance.TotalExp(), password),
+    }
+
+def dump_CharacterLevelStatFactorExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Level": convert_long(excel_instance.Level(), password),
+        "CriticalFactor": convert_long(excel_instance.CriticalFactor(), password),
+        "StabilityFactor": convert_long(excel_instance.StabilityFactor(), password),
+        "DefenceFactor": convert_long(excel_instance.DefenceFactor(), password),
+        "AccuracyFactor": convert_long(excel_instance.AccuracyFactor(), password),
+    }
+
 def dump_CharacterPotentialExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_long(excel_instance.Id(), password),
@@ -9404,6 +8519,188 @@ def dump_CharacterPotentialStatExcel(excel_instance, password: bytes = b"") -> d
         "PotentialLevel": convert_int(excel_instance.PotentialLevel(), password),
         "RecipeId": convert_long(excel_instance.RecipeId(), password),
         "StatBonusRate": convert_long(excel_instance.StatBonusRate(), password),
+    }
+
+def dump_CharacterSkillListExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "CharacterSkillListGroupId": convert_long(excel_instance.CharacterSkillListGroupId(), password),
+        "MinimumGradeCharacterWeapon": convert_int(excel_instance.MinimumGradeCharacterWeapon(), password),
+        "MinimumTierCharacterGear": convert_int(excel_instance.MinimumTierCharacterGear(), password),
+        "FormIndex": convert_int(excel_instance.FormIndex(), password),
+        "IsRootMotion": excel_instance.IsRootMotion(),
+        "IsMoveLeftRight": excel_instance.IsMoveLeftRight(),
+        "UseRandomExSkillTimeline": excel_instance.UseRandomExSkillTimeline(),
+        "TSAInteractionId": convert_long(excel_instance.TSAInteractionId(), password),
+        "NormalSkillGroupId": [convert_string(excel_instance.NormalSkillGroupId(j), password) for j in range(excel_instance.NormalSkillGroupIdLength())],
+        "NormalSkillTimeLineIndex": [convert_int(excel_instance.NormalSkillTimeLineIndex(j), password) for j in range(excel_instance.NormalSkillTimeLineIndexLength())],
+        "SelectExSkillActionSkillSlot": convert_int(excel_instance.SelectExSkillActionSkillSlot(), password),
+        "ExSkillGroupId": [convert_string(excel_instance.ExSkillGroupId(j), password) for j in range(excel_instance.ExSkillGroupIdLength())],
+        "ExSkillCutInTimeLineIndex": [convert_string(excel_instance.ExSkillCutInTimeLineIndex(j), password) for j in range(excel_instance.ExSkillCutInTimeLineIndexLength())],
+        "ExSkillLevelTimeLineIndex": [convert_string(excel_instance.ExSkillLevelTimeLineIndex(j), password) for j in range(excel_instance.ExSkillLevelTimeLineIndexLength())],
+        "PublicSkillGroupId": [convert_string(excel_instance.PublicSkillGroupId(j), password) for j in range(excel_instance.PublicSkillGroupIdLength())],
+        "PublicSkillTimeLineIndex": [convert_int(excel_instance.PublicSkillTimeLineIndex(j), password) for j in range(excel_instance.PublicSkillTimeLineIndexLength())],
+        "PassiveSkillGroupId": [convert_string(excel_instance.PassiveSkillGroupId(j), password) for j in range(excel_instance.PassiveSkillGroupIdLength())],
+        "LeaderSkillGroupId": [convert_string(excel_instance.LeaderSkillGroupId(j), password) for j in range(excel_instance.LeaderSkillGroupIdLength())],
+        "ExtraPassiveSkillGroupId": [convert_string(excel_instance.ExtraPassiveSkillGroupId(j), password) for j in range(excel_instance.ExtraPassiveSkillGroupIdLength())],
+        "HiddenPassiveSkillGroupId": [convert_string(excel_instance.HiddenPassiveSkillGroupId(j), password) for j in range(excel_instance.HiddenPassiveSkillGroupIdLength())],
+    }
+
+def dump_CharacterStatExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "CharacterId": convert_long(excel_instance.CharacterId(), password),
+        "StabilityRate": convert_long(excel_instance.StabilityRate(), password),
+        "StabilityPoint": convert_long(excel_instance.StabilityPoint(), password),
+        "AttackPower1": convert_long(excel_instance.AttackPower1(), password),
+        "AttackPower100": convert_long(excel_instance.AttackPower100(), password),
+        "MaxHP1": convert_long(excel_instance.MaxHP1(), password),
+        "MaxHP100": convert_long(excel_instance.MaxHP100(), password),
+        "DefensePower1": convert_long(excel_instance.DefensePower1(), password),
+        "DefensePower100": convert_long(excel_instance.DefensePower100(), password),
+        "HealPower1": convert_long(excel_instance.HealPower1(), password),
+        "HealPower100": convert_long(excel_instance.HealPower100(), password),
+        "DodgePoint": convert_long(excel_instance.DodgePoint(), password),
+        "AccuracyPoint": convert_long(excel_instance.AccuracyPoint(), password),
+        "CriticalPoint": convert_long(excel_instance.CriticalPoint(), password),
+        "CriticalResistPoint": convert_long(excel_instance.CriticalResistPoint(), password),
+        "CriticalDamageRate": convert_long(excel_instance.CriticalDamageRate(), password),
+        "CriticalDamageResistRate": convert_long(excel_instance.CriticalDamageResistRate(), password),
+        "BlockRate": convert_long(excel_instance.BlockRate(), password),
+        "HealEffectivenessRate": convert_long(excel_instance.HealEffectivenessRate(), password),
+        "OppressionPower": convert_long(excel_instance.OppressionPower(), password),
+        "OppressionResist": convert_long(excel_instance.OppressionResist(), password),
+        "DefensePenetration1": convert_long(excel_instance.DefensePenetration1(), password),
+        "DefensePenetration100": convert_long(excel_instance.DefensePenetration100(), password),
+        "DefensePenetrationResist1": convert_long(excel_instance.DefensePenetrationResist1(), password),
+        "DefensePenetrationResist100": convert_long(excel_instance.DefensePenetrationResist100(), password),
+        "EnhanceExplosionRate": convert_long(excel_instance.EnhanceExplosionRate(), password),
+        "EnhancePierceRate": convert_long(excel_instance.EnhancePierceRate(), password),
+        "EnhanceMysticRate": convert_long(excel_instance.EnhanceMysticRate(), password),
+        "EnhanceSonicRate": convert_long(excel_instance.EnhanceSonicRate(), password),
+        "EnhanceSiegeRate": convert_long(excel_instance.EnhanceSiegeRate(), password),
+        "EnhanceNormalRate": convert_long(excel_instance.EnhanceNormalRate(), password),
+        "EnhanceLightArmorRate": convert_long(excel_instance.EnhanceLightArmorRate(), password),
+        "EnhanceHeavyArmorRate": convert_long(excel_instance.EnhanceHeavyArmorRate(), password),
+        "EnhanceUnarmedRate": convert_long(excel_instance.EnhanceUnarmedRate(), password),
+        "EnhanceElasticArmorRate": convert_long(excel_instance.EnhanceElasticArmorRate(), password),
+        "EnhanceStructureRate": convert_long(excel_instance.EnhanceStructureRate(), password),
+        "EnhanceNormalArmorRate": convert_long(excel_instance.EnhanceNormalArmorRate(), password),
+        "ExtendBuffDuration": convert_long(excel_instance.ExtendBuffDuration(), password),
+        "ExtendDebuffDuration": convert_long(excel_instance.ExtendDebuffDuration(), password),
+        "ExtendCrowdControlDuration": convert_long(excel_instance.ExtendCrowdControlDuration(), password),
+        "AmmoCount": convert_long(excel_instance.AmmoCount(), password),
+        "AmmoCost": convert_long(excel_instance.AmmoCost(), password),
+        "IgnoreDelayCount": convert_long(excel_instance.IgnoreDelayCount(), password),
+        "NormalAttackSpeed": convert_long(excel_instance.NormalAttackSpeed(), password),
+        "Range": convert_long(excel_instance.Range(), password),
+        "InitialRangeRate": convert_long(excel_instance.InitialRangeRate(), password),
+        "MoveSpeed": convert_long(excel_instance.MoveSpeed(), password),
+        "SightPoint": convert_long(excel_instance.SightPoint(), password),
+        "ActiveGauge": convert_long(excel_instance.ActiveGauge(), password),
+        "GroggyGauge": convert_int(excel_instance.GroggyGauge(), password),
+        "GroggyTime": convert_int(excel_instance.GroggyTime(), password),
+        "StrategyMobility": convert_long(excel_instance.StrategyMobility(), password),
+        "ActionCount": convert_long(excel_instance.ActionCount(), password),
+        "StrategySightRange": convert_long(excel_instance.StrategySightRange(), password),
+        "DamageRatio": convert_long(excel_instance.DamageRatio(), password),
+        "DamagedRatio": convert_long(excel_instance.DamagedRatio(), password),
+        "DamageRatio2Increase": convert_long(excel_instance.DamageRatio2Increase(), password),
+        "DamageRatio2Decrease": convert_long(excel_instance.DamageRatio2Decrease(), password),
+        "DamagedRatio2Increase": convert_long(excel_instance.DamagedRatio2Increase(), password),
+        "DamagedRatio2Decrease": convert_long(excel_instance.DamagedRatio2Decrease(), password),
+        "ExDamagedRatioIncrease": convert_long(excel_instance.ExDamagedRatioIncrease(), password),
+        "ExDamagedRatioDecrease": convert_long(excel_instance.ExDamagedRatioDecrease(), password),
+        "EnhanceExDamageRate": convert_long(excel_instance.EnhanceExDamageRate(), password),
+        "ReduceExDamagedRate": convert_long(excel_instance.ReduceExDamagedRate(), password),
+        "HealRate": convert_long(excel_instance.HealRate(), password),
+        "HealLightArmorRate": convert_long(excel_instance.HealLightArmorRate(), password),
+        "HealHeavyArmorRate": convert_long(excel_instance.HealHeavyArmorRate(), password),
+        "HealUnarmedRate": convert_long(excel_instance.HealUnarmedRate(), password),
+        "HealElasticArmorRate": convert_long(excel_instance.HealElasticArmorRate(), password),
+        "HealNormalArmorRate": convert_long(excel_instance.HealNormalArmorRate(), password),
+        "HealedExplosionRate": convert_long(excel_instance.HealedExplosionRate(), password),
+        "HealedPierceRate": convert_long(excel_instance.HealedPierceRate(), password),
+        "HealedMysticRate": convert_long(excel_instance.HealedMysticRate(), password),
+        "HealedSonicRate": convert_long(excel_instance.HealedSonicRate(), password),
+        "HealedNormalRate": convert_long(excel_instance.HealedNormalRate(), password),
+        "StreetBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.StreetBattleAdaptation(), password)).name,
+        "OutdoorBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.OutdoorBattleAdaptation(), password)).name,
+        "IndoorBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.IndoorBattleAdaptation(), password)).name,
+        "RegenCost": convert_long(excel_instance.RegenCost(), password),
+    }
+
+def dump_CharacterStatLimitExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
+        "StatType": StatType(convert_int(excel_instance.StatType(), password)).name,
+        "StatMinValue": convert_long(excel_instance.StatMinValue(), password),
+        "StatMaxValue": convert_long(excel_instance.StatMaxValue(), password),
+        "StatRatioMinValue": convert_long(excel_instance.StatRatioMinValue(), password),
+        "StatRatioMaxValue": convert_long(excel_instance.StatRatioMaxValue(), password),
+    }
+
+def dump_CharacterStatsDetailExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "DetailShowStats": [StatType(convert_int(excel_instance.DetailShowStats(j), password)).name for j in range(excel_instance.DetailShowStatsLength())],
+        "IsStatsPercent": [excel_instance.IsStatsPercent(j) for j in range(excel_instance.IsStatsPercentLength())],
+    }
+
+def dump_CharacterStatsTransExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "TransSupportStats": StatType(convert_int(excel_instance.TransSupportStats(), password)).name,
+        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "TransSupportStatsFactor": convert_int(excel_instance.TransSupportStatsFactor(), password),
+        "StatTransType": StatTransType(convert_int(excel_instance.StatTransType(), password)).name,
+    }
+
+def dump_CharacterTranscendenceExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "CharacterId": convert_long(excel_instance.CharacterId(), password),
+        "MaxFavorLevel": [convert_int(excel_instance.MaxFavorLevel(j), password) for j in range(excel_instance.MaxFavorLevelLength())],
+        "StatBonusRateAttack": [convert_long(excel_instance.StatBonusRateAttack(j), password) for j in range(excel_instance.StatBonusRateAttackLength())],
+        "StatBonusRateHP": [convert_long(excel_instance.StatBonusRateHP(j), password) for j in range(excel_instance.StatBonusRateHPLength())],
+        "StatBonusRateHeal": [convert_long(excel_instance.StatBonusRateHeal(j), password) for j in range(excel_instance.StatBonusRateHealLength())],
+        "RecipeId": [convert_long(excel_instance.RecipeId(j), password) for j in range(excel_instance.RecipeIdLength())],
+        "SkillSlotA": [convert_string(excel_instance.SkillSlotA(j), password) for j in range(excel_instance.SkillSlotALength())],
+        "SkillSlotB": [convert_string(excel_instance.SkillSlotB(j), password) for j in range(excel_instance.SkillSlotBLength())],
+        "SkillSlotC": [convert_string(excel_instance.SkillSlotC(j), password) for j in range(excel_instance.SkillSlotCLength())],
+        "MaxlevelStar": [convert_int(excel_instance.MaxlevelStar(j), password) for j in range(excel_instance.MaxlevelStarLength())],
+    }
+
+def dump_CharacterVictoryInteractionExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "InteractionId": convert_long(excel_instance.InteractionId(), password),
+        "CostumeId01": convert_long(excel_instance.CostumeId01(), password),
+        "PositionIndex01": convert_int(excel_instance.PositionIndex01(), password),
+        "VictoryStartAnimationPath01": convert_string(excel_instance.VictoryStartAnimationPath01(), password),
+        "VictoryEndAnimationPath01": convert_string(excel_instance.VictoryEndAnimationPath01(), password),
+        "VoiceEvent01": VoiceEvent(convert_int(excel_instance.VoiceEvent01(), password)).name,
+        "CostumeId02": convert_long(excel_instance.CostumeId02(), password),
+        "PositionIndex02": convert_int(excel_instance.PositionIndex02(), password),
+        "VictoryStartAnimationPath02": convert_string(excel_instance.VictoryStartAnimationPath02(), password),
+        "VictoryEndAnimationPath02": convert_string(excel_instance.VictoryEndAnimationPath02(), password),
+        "VoiceEvent02": VoiceEvent(convert_int(excel_instance.VoiceEvent02(), password)).name,
+        "CostumeId03": convert_long(excel_instance.CostumeId03(), password),
+        "PositionIndex03": convert_int(excel_instance.PositionIndex03(), password),
+        "VictoryStartAnimationPath03": convert_string(excel_instance.VictoryStartAnimationPath03(), password),
+        "VictoryEndAnimationPath03": convert_string(excel_instance.VictoryEndAnimationPath03(), password),
+        "VoiceEvent03": VoiceEvent(convert_int(excel_instance.VoiceEvent03(), password)).name,
+        "CostumeId04": convert_long(excel_instance.CostumeId04(), password),
+        "PositionIndex04": convert_int(excel_instance.PositionIndex04(), password),
+        "VictoryStartAnimationPath04": convert_string(excel_instance.VictoryStartAnimationPath04(), password),
+        "VictoryEndAnimationPath04": convert_string(excel_instance.VictoryEndAnimationPath04(), password),
+        "VoiceEvent04": VoiceEvent(convert_int(excel_instance.VoiceEvent04(), password)).name,
+        "CostumeId05": convert_long(excel_instance.CostumeId05(), password),
+        "PositionIndex05": convert_int(excel_instance.PositionIndex05(), password),
+        "VictoryStartAnimationPath05": convert_string(excel_instance.VictoryStartAnimationPath05(), password),
+        "VictoryEndAnimationPath05": convert_string(excel_instance.VictoryEndAnimationPath05(), password),
+        "VoiceEvent05": VoiceEvent(convert_int(excel_instance.VoiceEvent05(), password)).name,
+        "CostumeId06": convert_long(excel_instance.CostumeId06(), password),
+        "PositionIndex06": convert_int(excel_instance.PositionIndex06(), password),
+        "VictoryStartAnimationPath06": convert_string(excel_instance.VictoryStartAnimationPath06(), password),
+        "VictoryEndAnimationPath06": convert_string(excel_instance.VictoryEndAnimationPath06(), password),
+        "VoiceEvent06": VoiceEvent(convert_int(excel_instance.VoiceEvent06(), password)).name,
     }
 
 def dump_CharacterVoiceExcel(excel_instance, password: bytes = b"") -> dict:
@@ -9476,18 +8773,6 @@ def dump_CheatCodeListExcel(excel_instance, password: bytes = b"") -> dict:
         "CheatCode": [convert_string(excel_instance.CheatCode(j), password) for j in range(excel_instance.CheatCodeLength())],
         "InputTitle": [convert_string(excel_instance.InputTitle(j), password) for j in range(excel_instance.InputTitleLength())],
         "Desc": convert_string(excel_instance.Desc(), password),
-    }
-
-def dump_ClanAssistSlotExcel(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "SlotId": convert_long(excel_instance.SlotId(), password),
-        "EchelonType": EchelonType(convert_int(excel_instance.EchelonType(), password)).name,
-        "SlotNumber": convert_long(excel_instance.SlotNumber(), password),
-        "AssistTermRewardPeriodFromSec": convert_long(excel_instance.AssistTermRewardPeriodFromSec(), password),
-        "AssistRewardLimit": convert_long(excel_instance.AssistRewardLimit(), password),
-        "AssistRentRewardDailyMaxCount": convert_long(excel_instance.AssistRentRewardDailyMaxCount(), password),
-        "AssistRentalFeeAmount": convert_long(excel_instance.AssistRentalFeeAmount(), password),
-        "AssistRentalFeeAmountStranger": convert_long(excel_instance.AssistRentalFeeAmountStranger(), password),
     }
 
 def dump_ClanChattingEmojiExcel(excel_instance, password: bytes = b"") -> dict:
@@ -9818,6 +9103,43 @@ def dump_ContentsShortcutExcel(excel_instance, password: bytes = b"") -> dict:
         "Localize": convert_string(excel_instance.Localize(), password),
     }
 
+def dump_CostumeExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "CostumeGroupId": convert_long(excel_instance.CostumeGroupId(), password),
+        "CostumeUniqueId": convert_long(excel_instance.CostumeUniqueId(), password),
+        "DevName": convert_string(excel_instance.DevName(), password),
+        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
+        "IsDefault": excel_instance.IsDefault(),
+        "CollectionVisible": excel_instance.CollectionVisible(),
+        "ReleaseDate": convert_string(excel_instance.ReleaseDate(), password),
+        "CollectionVisibleStartDate": convert_string(excel_instance.CollectionVisibleStartDate(), password),
+        "CollectionVisibleEndDate": convert_string(excel_instance.CollectionVisibleEndDate(), password),
+        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "CharacterSkillListGroupId": convert_long(excel_instance.CharacterSkillListGroupId(), password),
+        "SpineResourceName": convert_string(excel_instance.SpineResourceName(), password),
+        "SpineResourceNameDiorama": convert_string(excel_instance.SpineResourceNameDiorama(), password),
+        "SpineResourceNameDioramaForFormConversion": [convert_string(excel_instance.SpineResourceNameDioramaForFormConversion(j), password) for j in range(excel_instance.SpineResourceNameDioramaForFormConversionLength())],
+        "EntityMaterialType": EntityMaterialType(convert_int(excel_instance.EntityMaterialType(), password)).name,
+        "ModelPrefabName": convert_string(excel_instance.ModelPrefabName(), password),
+        "AnimatorName": convert_string(excel_instance.AnimatorName(), password),
+        "CafeModelPrefabName": convert_string(excel_instance.CafeModelPrefabName(), password),
+        "EchelonModelPrefabName": convert_string(excel_instance.EchelonModelPrefabName(), password),
+        "StrategyModelPrefabName": convert_string(excel_instance.StrategyModelPrefabName(), password),
+        "TextureDir": convert_string(excel_instance.TextureDir(), password),
+        "CollectionTexturePath": convert_string(excel_instance.CollectionTexturePath(), password),
+        "CollectionBGTexturePath": convert_string(excel_instance.CollectionBGTexturePath(), password),
+        "CombatStyleTexturePath": convert_string(excel_instance.CombatStyleTexturePath(), password),
+        "UseObjectHPBAR": excel_instance.UseObjectHPBAR(),
+        "TextureBoss": convert_string(excel_instance.TextureBoss(), password),
+        "TextureSkillCard": [convert_string(excel_instance.TextureSkillCard(j), password) for j in range(excel_instance.TextureSkillCardLength())],
+        "InformationPacel": convert_string(excel_instance.InformationPacel(), password),
+        "AnimationSSR": convert_string(excel_instance.AnimationSSR(), password),
+        "EnterStrategyAnimationName": convert_string(excel_instance.EnterStrategyAnimationName(), password),
+        "AnimationValidator": excel_instance.AnimationValidator(),
+        "CharacterVoiceGroupId": convert_long(excel_instance.CharacterVoiceGroupId(), password),
+        "ShowObjectHpStatus": excel_instance.ShowObjectHpStatus(),
+    }
+
 def dump_CurrencyExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "ID": convert_long(excel_instance.ID(), password),
@@ -9841,6 +9163,8 @@ def dump_CurrencyExcel(excel_instance, password: bytes = b"") -> dict:
         "ExpiryChangeParcelType": ParcelType(convert_int(excel_instance.ExpiryChangeParcelType(), password)).name,
         "ExpiryChangeId": convert_long(excel_instance.ExpiryChangeId(), password),
         "ExpiryChangeAmount": convert_long(excel_instance.ExpiryChangeAmount(), password),
+        "ResetType": PeriodType(convert_int(excel_instance.ResetType(), password)).name,
+        "ResetAmount": convert_long(excel_instance.ResetAmount(), password),
     }
 
 def dump_DuplicateBonusExcel(excel_instance, password: bytes = b"") -> dict:
@@ -9854,6 +9178,18 @@ def dump_DuplicateBonusExcel(excel_instance, password: bytes = b"") -> dict:
         "RewardParcelAmount": convert_long(excel_instance.RewardParcelAmount(), password),
     }
 
+def dump_EchelonConstraintExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "GroupId": convert_long(excel_instance.GroupId(), password),
+        "IsWhiteList": excel_instance.IsWhiteList(),
+        "CharacterId": [convert_long(excel_instance.CharacterId(j), password) for j in range(excel_instance.CharacterIdLength())],
+        "PersonalityId": [convert_long(excel_instance.PersonalityId(j), password) for j in range(excel_instance.PersonalityIdLength())],
+        "WeaponType": WeaponType(convert_int(excel_instance.WeaponType(), password)).name,
+        "School": School(convert_int(excel_instance.School(), password)).name,
+        "Club": Club(convert_int(excel_instance.Club(), password)).name,
+        "Role": TacticRole(convert_int(excel_instance.Role(), password)).name,
+    }
+
 def dump_EliminateRaidRankingRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "RankingRewardGroupId": convert_long(excel_instance.RankingRewardGroupId(), password),
@@ -9865,7 +9201,6 @@ def dump_EliminateRaidRankingRewardExcel(excel_instance, password: bytes = b"") 
         "Tier": convert_int(excel_instance.Tier(), password),
         "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
         "RewardParcelUniqueId": [convert_long(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
-        "RewardParcelUniqueName": [convert_string(excel_instance.RewardParcelUniqueName(j), password) for j in range(excel_instance.RewardParcelUniqueNameLength())],
         "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
@@ -9953,7 +9288,6 @@ def dump_EliminateRaidStageRewardExcel(excel_instance, password: bytes = b"") ->
         "ClearStageRewardProb": convert_long(excel_instance.ClearStageRewardProb(), password),
         "ClearStageRewardParcelType": ParcelType(convert_int(excel_instance.ClearStageRewardParcelType(), password)).name,
         "ClearStageRewardParcelUniqueID": convert_long(excel_instance.ClearStageRewardParcelUniqueID(), password),
-        "ClearStageRewardParcelUniqueName": convert_string(excel_instance.ClearStageRewardParcelUniqueName(), password),
         "ClearStageRewardAmount": convert_long(excel_instance.ClearStageRewardAmount(), password),
     }
 
@@ -9962,7 +9296,6 @@ def dump_EliminateRaidStageSeasonRewardExcel(excel_instance, password: bytes = b
         "SeasonRewardId": convert_long(excel_instance.SeasonRewardId(), password),
         "SeasonRewardParcelType": [ParcelType(convert_int(excel_instance.SeasonRewardParcelType(j), password)).name for j in range(excel_instance.SeasonRewardParcelTypeLength())],
         "SeasonRewardParcelUniqueId": [convert_long(excel_instance.SeasonRewardParcelUniqueId(j), password) for j in range(excel_instance.SeasonRewardParcelUniqueIdLength())],
-        "SeasonRewardParcelUniqueName": [convert_string(excel_instance.SeasonRewardParcelUniqueName(j), password) for j in range(excel_instance.SeasonRewardParcelUniqueNameLength())],
         "SeasonRewardAmount": [convert_long(excel_instance.SeasonRewardAmount(j), password) for j in range(excel_instance.SeasonRewardAmountLength())],
     }
 
@@ -10040,6 +9373,412 @@ def dump_EquipmentStatExcel(excel_instance, password: bytes = b"") -> dict:
         "DamageFactorGroupId": convert_string(excel_instance.DamageFactorGroupId(), password),
     }
 
+def dump_EventContentArchiveBannerOffsetExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "OffsetX": convert_float(excel_instance.OffsetX(), password),
+        "OffsetY": convert_float(excel_instance.OffsetY(), password),
+        "ScaleX": convert_float(excel_instance.ScaleX(), password),
+        "ScaleY": convert_float(excel_instance.ScaleY(), password),
+    }
+
+def dump_EventContentBoxGachaManageExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "Round": convert_long(excel_instance.Round(), password),
+        "GoodsId": convert_long(excel_instance.GoodsId(), password),
+        "IsLoop": excel_instance.IsLoop(),
+    }
+
+def dump_EventContentBoxGachaShopExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "GroupId": convert_long(excel_instance.GroupId(), password),
+        "GroupElementAmount": convert_long(excel_instance.GroupElementAmount(), password),
+        "Round": convert_long(excel_instance.Round(), password),
+        "IsLegacy": excel_instance.IsLegacy(),
+        "IsPrize": excel_instance.IsPrize(),
+        "GoodsId": [convert_long(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
+        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
+    }
+
+def dump_EventContentBuffExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentBuffId": convert_long(excel_instance.EventContentBuffId(), password),
+        "IsBuff": excel_instance.IsBuff(),
+        "CharacterTag": Tag(convert_int(excel_instance.CharacterTag(), password)).name,
+        "EnumType": EventContentBuffFindRule(convert_int(excel_instance.EnumType(), password)).name,
+        "EnumTypeValue": [convert_string(excel_instance.EnumTypeValue(j), password) for j in range(excel_instance.EnumTypeValueLength())],
+        "SkillGroupId": convert_string(excel_instance.SkillGroupId(), password),
+        "IconPath": convert_string(excel_instance.IconPath(), password),
+        "SpriteName": convert_string(excel_instance.SpriteName(), password),
+        "BuffDescriptionLocalizeCodeId": convert_string(excel_instance.BuffDescriptionLocalizeCodeId(), password),
+    }
+
+def dump_EventContentBuffGroupExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "BuffContentId": convert_long(excel_instance.BuffContentId(), password),
+        "BuffGroupId": convert_long(excel_instance.BuffGroupId(), password),
+        "BuffGroupNameLocalizeCodeId": convert_string(excel_instance.BuffGroupNameLocalizeCodeId(), password),
+        "EventContentBuffId1": convert_long(excel_instance.EventContentBuffId1(), password),
+        "BuffNameLocalizeCodeId1": convert_string(excel_instance.BuffNameLocalizeCodeId1(), password),
+        "BuffDescriptionIconPath1": convert_string(excel_instance.BuffDescriptionIconPath1(), password),
+        "EventContentBuffId2": convert_long(excel_instance.EventContentBuffId2(), password),
+        "BuffNameLocalizeCodeId2": convert_string(excel_instance.BuffNameLocalizeCodeId2(), password),
+        "BuffDescriptionIconPath2": convert_string(excel_instance.BuffDescriptionIconPath2(), password),
+        "EventContentDebuffId": convert_long(excel_instance.EventContentDebuffId(), password),
+        "DebuffNameLocalizeCodeId": convert_string(excel_instance.DebuffNameLocalizeCodeId(), password),
+        "DeBuffDescriptionIconPath": convert_string(excel_instance.DeBuffDescriptionIconPath(), password),
+        "BuffGroupProb": convert_long(excel_instance.BuffGroupProb(), password),
+    }
+
+def dump_EventContentCardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "CardGroupId": convert_int(excel_instance.CardGroupId(), password),
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "IconPath": convert_string(excel_instance.IconPath(), password),
+        "BackIconPath": convert_string(excel_instance.BackIconPath(), password),
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+    }
+
+def dump_EventContentCardShopExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "Id": convert_long(excel_instance.Id(), password),
+        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "CostGoodsId": convert_long(excel_instance.CostGoodsId(), password),
+        "CardGroupId": convert_int(excel_instance.CardGroupId(), password),
+        "IsLegacy": excel_instance.IsLegacy(),
+        "RefreshGroup": convert_int(excel_instance.RefreshGroup(), password),
+        "Prob": convert_int(excel_instance.Prob(), password),
+        "ProbWeight1": convert_int(excel_instance.ProbWeight1(), password),
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
+    }
+
+def dump_EventContentCardShopModifyExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "UsePrefabName": convert_string(excel_instance.UsePrefabName(), password),
+    }
+
+def dump_EventContentChangeExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "ChangeCount": convert_long(excel_instance.ChangeCount(), password),
+        "IsLast": excel_instance.IsLast(),
+        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardId": convert_long(excel_instance.RewardId(), password),
+        "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
+        "ChangeCostType": ParcelType(convert_int(excel_instance.ChangeCostType(), password)).name,
+        "ChangeCostId": convert_long(excel_instance.ChangeCostId(), password),
+        "ChangeCostAmount": convert_int(excel_instance.ChangeCostAmount(), password),
+    }
+
+def dump_EventContentChangeScenarioExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "ChangeType": EventChangeType(convert_int(excel_instance.ChangeType(), password)).name,
+        "ChangeCount": convert_long(excel_instance.ChangeCount(), password),
+        "ScenarioGroupId": convert_long(excel_instance.ScenarioGroupId(), password),
+    }
+
+def dump_EventContentCharacterBonusExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "CharacterId": convert_long(excel_instance.CharacterId(), password),
+        "EventContentItemType": [EventContentItemType(convert_int(excel_instance.EventContentItemType(j), password)).name for j in range(excel_instance.EventContentItemTypeLength())],
+        "BonusPercentage": [convert_long(excel_instance.BonusPercentage(j), password) for j in range(excel_instance.BonusPercentageLength())],
+    }
+
+def dump_EventContentCollectionExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "GroupId": convert_long(excel_instance.GroupId(), password),
+        "UnlockConditionType": CollectionUnlockType(convert_int(excel_instance.UnlockConditionType(), password)).name,
+        "UnlockConditionParameter": [convert_long(excel_instance.UnlockConditionParameter(j), password) for j in range(excel_instance.UnlockConditionParameterLength())],
+        "MultipleConditionCheckType": MultipleConditionCheckType(convert_int(excel_instance.MultipleConditionCheckType(), password)).name,
+        "UnlockConditionCount": convert_long(excel_instance.UnlockConditionCount(), password),
+        "IsObject": excel_instance.IsObject(),
+        "IsObjectOnFullResource": excel_instance.IsObjectOnFullResource(),
+        "IsHorizon": excel_instance.IsHorizon(),
+        "EmblemResource": convert_string(excel_instance.EmblemResource(), password),
+        "ThumbResource": convert_string(excel_instance.ThumbResource(), password),
+        "FullResource": convert_string(excel_instance.FullResource(), password),
+        "Decoration": convert_string(excel_instance.Decoration(), password),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "SubNameLocalizeCodeId": convert_string(excel_instance.SubNameLocalizeCodeId(), password),
+    }
+
+def dump_EventContentConcentrationCardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "CardId": convert_long(excel_instance.CardId(), password),
+        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "ImagePath": convert_string(excel_instance.ImagePath(), password),
+        "BackImagePath": convert_string(excel_instance.BackImagePath(), password),
+    }
+
+def dump_EventContentConcentrationExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "CostGoodsId": convert_long(excel_instance.CostGoodsId(), password),
+        "MaxCardPairCount": convert_int(excel_instance.MaxCardPairCount(), password),
+        "MaxCardOpenCount": convert_int(excel_instance.MaxCardOpenCount(), password),
+        "InstantClearRound": convert_int(excel_instance.InstantClearRound(), password),
+        "CardBoardPrefabs": convert_string(excel_instance.CardBoardPrefabs(), password),
+    }
+
+def dump_EventContentConcentrationRewardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "UniqueId": convert_long(excel_instance.UniqueId(), password),
+        "ConcentrationRewardType": ConcentrationRewardType(convert_int(excel_instance.ConcentrationRewardType(), password)).name,
+        "LocalizePrefabId": convert_string(excel_instance.LocalizePrefabId(), password),
+        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Round": convert_int(excel_instance.Round(), password),
+        "IsLoop": excel_instance.IsLoop(),
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
+    }
+
+def dump_EventContentConcentrationVoiceExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "UniqueId": convert_long(excel_instance.UniqueId(), password),
+        "VoiceCondition": ConcentrationVoiceCondition(convert_int(excel_instance.VoiceCondition(), password)).name,
+        "VoiceClip": convert_uint(excel_instance.VoiceClip(), password),
+    }
+
+def dump_EventContentCurrencyItemExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "EventContentItemType": EventContentItemType(convert_int(excel_instance.EventContentItemType(), password)).name,
+        "ItemUniqueId": convert_long(excel_instance.ItemUniqueId(), password),
+        "UseShortCutContentType": convert_string(excel_instance.UseShortCutContentType(), password),
+    }
+
+def dump_EventContentDebuffRewardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "EventStageId": convert_long(excel_instance.EventStageId(), password),
+        "EventContentItemType": EventContentItemType(convert_int(excel_instance.EventContentItemType(), password)).name,
+        "RewardPercentage": convert_long(excel_instance.RewardPercentage(), password),
+    }
+
+def dump_EventContentDiceRaceEffectExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "EventContentDiceRaceResultType": EventContentDiceRaceResultType(convert_int(excel_instance.EventContentDiceRaceResultType(), password)).name,
+        "IsDiceResult": excel_instance.IsDiceResult(),
+        "AniClip": convert_string(excel_instance.AniClip(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
+    }
+
+def dump_EventContentDiceRaceExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "DiceCostGoodsId": convert_long(excel_instance.DiceCostGoodsId(), password),
+        "SkipableLap": convert_int(excel_instance.SkipableLap(), password),
+        "DiceRacePawnPrefab": convert_string(excel_instance.DiceRacePawnPrefab(), password),
+        "IsUsingFixedDice": excel_instance.IsUsingFixedDice(),
+        "FixedDiceIcon": [convert_string(excel_instance.FixedDiceIcon(j), password) for j in range(excel_instance.FixedDiceIconLength())],
+        "DiceRaceEventType": [convert_string(excel_instance.DiceRaceEventType(j), password) for j in range(excel_instance.DiceRaceEventTypeLength())],
+    }
+
+def dump_EventContentDiceRaceNodeExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "NodeId": convert_long(excel_instance.NodeId(), password),
+        "EventContentDiceRaceNodeType": EventContentDiceRaceNodeType(convert_int(excel_instance.EventContentDiceRaceNodeType(), password)).name,
+        "MoveForwardTypeArg": convert_int(excel_instance.MoveForwardTypeArg(), password),
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardAmount": [convert_long(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
+    }
+
+def dump_EventContentDiceRaceProbExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "EventContentDiceRaceResultType": EventContentDiceRaceResultType(convert_int(excel_instance.EventContentDiceRaceResultType(), password)).name,
+        "CostItemId": convert_long(excel_instance.CostItemId(), password),
+        "CostItemAmount": convert_int(excel_instance.CostItemAmount(), password),
+        "DiceResult": convert_int(excel_instance.DiceResult(), password),
+        "Prob": convert_int(excel_instance.Prob(), password),
+    }
+
+def dump_EventContentDiceRaceTotalRewardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "RewardID": convert_long(excel_instance.RewardID(), password),
+        "RequiredLapFinishCount": convert_int(excel_instance.RequiredLapFinishCount(), password),
+        "DisplayLapFinishCount": convert_int(excel_instance.DisplayLapFinishCount(), password),
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
+    }
+
+def dump_EventContentFortuneGachaExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "FortuneGachaGroupId": convert_int(excel_instance.FortuneGachaGroupId(), password),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "NameImagePath": convert_string(excel_instance.NameImagePath(), password),
+        "IconPath": convert_string(excel_instance.IconPath(), password),
+    }
+
+def dump_EventContentFortuneGachaModifyExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentId(), password),
+        "TargetGrade": convert_int(excel_instance.TargetGrade(), password),
+        "ProbModifyStartCount": convert_int(excel_instance.ProbModifyStartCount(), password),
+        "UsePrefabName": convert_string(excel_instance.UsePrefabName(), password),
+        "BucketImagePath": convert_string(excel_instance.BucketImagePath(), password),
+        "ShopBgImagePath": convert_string(excel_instance.ShopBgImagePath(), password),
+        "TitleLocalizeKey": convert_string(excel_instance.TitleLocalizeKey(), password),
+    }
+
+def dump_EventContentFortuneGachaShopExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "Id": convert_long(excel_instance.Id(), password),
+        "Grade": convert_int(excel_instance.Grade(), password),
+        "CostGoodsId": convert_long(excel_instance.CostGoodsId(), password),
+        "IsLegacy": excel_instance.IsLegacy(),
+        "FortuneGachaGroupId": convert_int(excel_instance.FortuneGachaGroupId(), password),
+        "Prob": convert_int(excel_instance.Prob(), password),
+        "ProbModifyValue": convert_int(excel_instance.ProbModifyValue(), password),
+        "ProbModifyLimit": convert_int(excel_instance.ProbModifyLimit(), password),
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
+    }
+
+def dump_EventContentLobbyMenuExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
+        "IconSpriteName": convert_string(excel_instance.IconSpriteName(), password),
+        "ButtonText": convert_string(excel_instance.ButtonText(), password),
+        "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
+        "IconOffsetX": convert_float(excel_instance.IconOffsetX(), password),
+        "IconOffsetY": convert_float(excel_instance.IconOffsetY(), password),
+        "ReddotSpriteName": convert_string(excel_instance.ReddotSpriteName(), password),
+    }
+
+def dump_EventContentLocationExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "Id": convert_long(excel_instance.Id(), password),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "PrefabPath": convert_string(excel_instance.PrefabPath(), password),
+        "LocationResetScheduleCount": convert_int(excel_instance.LocationResetScheduleCount(), password),
+        "ScheduleEventPointCostParcelType": ParcelType(convert_int(excel_instance.ScheduleEventPointCostParcelType(), password)).name,
+        "ScheduleEventPointCostParcelId": convert_long(excel_instance.ScheduleEventPointCostParcelId(), password),
+        "ScheduleEventPointCostParcelAmount": convert_long(excel_instance.ScheduleEventPointCostParcelAmount(), password),
+        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelId": convert_long(excel_instance.RewardParcelId(), password),
+        "InformationGroupId": convert_long(excel_instance.InformationGroupId(), password),
+    }
+
+def dump_EventContentLocationRewardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Location": convert_string(excel_instance.Location(), password),
+        "ScheduleGroupId": convert_long(excel_instance.ScheduleGroupId(), password),
+        "OrderInGroup": convert_long(excel_instance.OrderInGroup(), password),
+        "Id": convert_long(excel_instance.Id(), password),
+        "ProgressTexture": convert_string(excel_instance.ProgressTexture(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "LocationRank": convert_long(excel_instance.LocationRank(), password),
+        "FavorExp": convert_long(excel_instance.FavorExp(), password),
+        "SecretStoneAmount": convert_long(excel_instance.SecretStoneAmount(), password),
+        "SecretStoneProb": convert_long(excel_instance.SecretStoneProb(), password),
+        "ExtraFavorExp": convert_long(excel_instance.ExtraFavorExp(), password),
+        "ExtraFavorExpProb": convert_long(excel_instance.ExtraFavorExpProb(), password),
+        "ExtraRewardParcelType": [ParcelType(convert_int(excel_instance.ExtraRewardParcelType(j), password)).name for j in range(excel_instance.ExtraRewardParcelTypeLength())],
+        "ExtraRewardParcelId": [convert_long(excel_instance.ExtraRewardParcelId(j), password) for j in range(excel_instance.ExtraRewardParcelIdLength())],
+        "ExtraRewardAmount": [convert_long(excel_instance.ExtraRewardAmount(j), password) for j in range(excel_instance.ExtraRewardAmountLength())],
+        "ExtraRewardProb": [convert_long(excel_instance.ExtraRewardProb(j), password) for j in range(excel_instance.ExtraRewardProbLength())],
+        "IsExtraRewardDisplayed": [excel_instance.IsExtraRewardDisplayed(j) for j in range(excel_instance.IsExtraRewardDisplayedLength())],
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardAmount": [convert_long(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
+    }
+
+def dump_EventContentMeetupExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "CharacterId": convert_long(excel_instance.CharacterId(), password),
+        "ConditionScenarioGroupId": convert_long(excel_instance.ConditionScenarioGroupId(), password),
+        "ConditionType": MeetupConditionType(convert_int(excel_instance.ConditionType(), password)).name,
+        "ConditionParameter": [convert_long(excel_instance.ConditionParameter(j), password) for j in range(excel_instance.ConditionParameterLength())],
+        "ConditionPrintType": MeetupConditionPrintType(convert_int(excel_instance.ConditionPrintType(), password)).name,
+    }
+
+def dump_EventContentMeetupInfoExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "CostParcelType": ParcelType(convert_int(excel_instance.CostParcelType(), password)).name,
+        "CostId": convert_long(excel_instance.CostId(), password),
+        "CostAmount": convert_int(excel_instance.CostAmount(), password),
+    }
+
+def dump_EventContentMiniEventShortCutExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_int(excel_instance.Id(), password),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "ShorcutContentType": EventTargetType(convert_int(excel_instance.ShorcutContentType(), password)).name,
+        "ShortcutUI": convert_string(excel_instance.ShortcutUI(), password),
+    }
+
+def dump_EventContentMiniEventTokenExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "ItemUniqueId": convert_long(excel_instance.ItemUniqueId(), password),
+        "MaximumAmount": convert_long(excel_instance.MaximumAmount(), password),
+    }
+
+def dump_EventContentMissionExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "GroupId": convert_long(excel_instance.GroupId(), password),
+        "GroupName": convert_string(excel_instance.GroupName(), password),
+        "Category": MissionCategory(convert_int(excel_instance.Category(), password)).name,
+        "Description": convert_uint(excel_instance.Description(), password),
+        "ResetType": MissionResetType(convert_int(excel_instance.ResetType(), password)).name,
+        "ToastDisplayType": MissionToastDisplayConditionType(convert_int(excel_instance.ToastDisplayType(), password)).name,
+        "ToastImagePath": convert_string(excel_instance.ToastImagePath(), password),
+        "ViewFlag": excel_instance.ViewFlag(),
+        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
+        "PreMissionId": [convert_long(excel_instance.PreMissionId(j), password) for j in range(excel_instance.PreMissionIdLength())],
+        "AccountType": AccountState(convert_int(excel_instance.AccountType(), password)).name,
+        "AccountLevel": convert_long(excel_instance.AccountLevel(), password),
+        "ShortcutUI": [convert_string(excel_instance.ShortcutUI(j), password) for j in range(excel_instance.ShortcutUILength())],
+        "ChallengeStageShortcut": convert_long(excel_instance.ChallengeStageShortcut(), password),
+        "CompleteConditionType": MissionCompleteConditionType(convert_int(excel_instance.CompleteConditionType(), password)).name,
+        "IsCompleteExtensionTime": excel_instance.IsCompleteExtensionTime(),
+        "CompleteConditionCount": convert_long(excel_instance.CompleteConditionCount(), password),
+        "CompleteConditionParameter": [convert_long(excel_instance.CompleteConditionParameter(j), password) for j in range(excel_instance.CompleteConditionParameterLength())],
+        "CompleteConditionParameterTag": [Tag(convert_int(excel_instance.CompleteConditionParameterTag(j), password)).name for j in range(excel_instance.CompleteConditionParameterTagLength())],
+        "RewardIcon": convert_string(excel_instance.RewardIcon(), password),
+        "CompleteConditionMissionId": [convert_long(excel_instance.CompleteConditionMissionId(j), password) for j in range(excel_instance.CompleteConditionMissionIdLength())],
+        "CompleteConditionMissionCount": convert_long(excel_instance.CompleteConditionMissionCount(), password),
+        "MissionRewardParcelType": [ParcelType(convert_int(excel_instance.MissionRewardParcelType(j), password)).name for j in range(excel_instance.MissionRewardParcelTypeLength())],
+        "MissionRewardParcelId": [convert_long(excel_instance.MissionRewardParcelId(j), password) for j in range(excel_instance.MissionRewardParcelIdLength())],
+        "MissionRewardAmount": [convert_int(excel_instance.MissionRewardAmount(j), password) for j in range(excel_instance.MissionRewardAmountLength())],
+        "ConditionRewardParcelType": [ParcelType(convert_int(excel_instance.ConditionRewardParcelType(j), password)).name for j in range(excel_instance.ConditionRewardParcelTypeLength())],
+        "ConditionRewardParcelId": [convert_long(excel_instance.ConditionRewardParcelId(j), password) for j in range(excel_instance.ConditionRewardParcelIdLength())],
+        "ConditionRewardAmount": [convert_int(excel_instance.ConditionRewardAmount(j), password) for j in range(excel_instance.ConditionRewardAmountLength())],
+    }
+
 def dump_EventContentNotifyExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
@@ -10051,6 +9790,147 @@ def dump_EventContentNotifyExcel(excel_instance, password: bytes = b"") -> dict:
         "IsShortcutEnable": excel_instance.IsShortcutEnable(),
     }
 
+def dump_EventContentPlayGuideExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
+        "GuideTitle": convert_string(excel_instance.GuideTitle(), password),
+        "GuideImagePath": convert_string(excel_instance.GuideImagePath(), password),
+        "GuideText": convert_string(excel_instance.GuideText(), password),
+    }
+
+def dump_EventContentScenarioExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "ReplayDisplayGroup": convert_int(excel_instance.ReplayDisplayGroup(), password),
+        "Order": convert_long(excel_instance.Order(), password),
+        "RecollectionNumber": convert_long(excel_instance.RecollectionNumber(), password),
+        "IsRecollection": excel_instance.IsRecollection(),
+        "IsMeetup": excel_instance.IsMeetup(),
+        "IsOmnibus": excel_instance.IsOmnibus(),
+        "ScenarioGroupId": [convert_long(excel_instance.ScenarioGroupId(j), password) for j in range(excel_instance.ScenarioGroupIdLength())],
+        "ScenarioConditionType": EventContentScenarioConditionType(convert_int(excel_instance.ScenarioConditionType(), password)).name,
+        "ConditionAmount": convert_long(excel_instance.ConditionAmount(), password),
+        "ConditionEventContentId": convert_long(excel_instance.ConditionEventContentId(), password),
+        "ClearedScenarioGroupId": convert_long(excel_instance.ClearedScenarioGroupId(), password),
+        "RecollectionSummaryLocalizeScenarioId": convert_uint(excel_instance.RecollectionSummaryLocalizeScenarioId(), password),
+        "RecollectionResource": convert_string(excel_instance.RecollectionResource(), password),
+        "IsRecollectionHorizon": excel_instance.IsRecollectionHorizon(),
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardId": [convert_long(excel_instance.RewardId(j), password) for j in range(excel_instance.RewardIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
+    }
+
+def dump_EventContentSeasonExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "OriginalEventContentId": convert_long(excel_instance.OriginalEventContentId(), password),
+        "IsReturn": excel_instance.IsReturn(),
+        "Name": convert_string(excel_instance.Name(), password),
+        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
+        "OpenConditionContent": OpenConditionContent(convert_int(excel_instance.OpenConditionContent(), password)).name,
+        "EventDisplay": excel_instance.EventDisplay(),
+        "IconOrder": convert_int(excel_instance.IconOrder(), password),
+        "SubEventType": SubEventType(convert_int(excel_instance.SubEventType(), password)).name,
+        "SubEvent": excel_instance.SubEvent(),
+        "EventItemId": convert_long(excel_instance.EventItemId(), password),
+        "MainEventId": convert_long(excel_instance.MainEventId(), password),
+        "EventChangeOpenCondition": convert_long(excel_instance.EventChangeOpenCondition(), password),
+        "BeforehandExposedTime": convert_string(excel_instance.BeforehandExposedTime(), password),
+        "EventContentOpenTime": convert_string(excel_instance.EventContentOpenTime(), password),
+        "EventContentCloseNoteTime": convert_string(excel_instance.EventContentCloseNoteTime(), password),
+        "EventContentCloseTime": convert_string(excel_instance.EventContentCloseTime(), password),
+        "ExtensionTime": convert_string(excel_instance.ExtensionTime(), password),
+        "MainIconParcelPath": convert_string(excel_instance.MainIconParcelPath(), password),
+        "SubIconParcelPath": convert_string(excel_instance.SubIconParcelPath(), password),
+        "BeforehandBgImagePath": convert_string(excel_instance.BeforehandBgImagePath(), password),
+        "MinigamePrologScenarioGroupId": convert_long(excel_instance.MinigamePrologScenarioGroupId(), password),
+        "BeforehandScenarioGroupId": [convert_long(excel_instance.BeforehandScenarioGroupId(j), password) for j in range(excel_instance.BeforehandScenarioGroupIdLength())],
+        "MainBannerImagePath": convert_string(excel_instance.MainBannerImagePath(), password),
+        "MainBgImagePath": convert_string(excel_instance.MainBgImagePath(), password),
+        "ShiftTriggerStageId": convert_long(excel_instance.ShiftTriggerStageId(), password),
+        "ShiftMainBgImagePath": convert_string(excel_instance.ShiftMainBgImagePath(), password),
+        "MinigameLobbyPrefabName": convert_string(excel_instance.MinigameLobbyPrefabName(), password),
+        "MinigameVictoryPrefabName": convert_string(excel_instance.MinigameVictoryPrefabName(), password),
+        "MinigameMissionBgPrefabName": convert_string(excel_instance.MinigameMissionBgPrefabName(), password),
+        "MinigameMissionBgImagePath": convert_string(excel_instance.MinigameMissionBgImagePath(), password),
+        "CardBgImagePath": convert_string(excel_instance.CardBgImagePath(), password),
+        "EventAssist": excel_instance.EventAssist(),
+        "EventContentReleaseType": EventContentReleaseType(convert_int(excel_instance.EventContentReleaseType(), password)).name,
+        "EventContentStageRewardIdPermanent": convert_long(excel_instance.EventContentStageRewardIdPermanent(), password),
+        "RewardTagPermanent": RewardTag(convert_int(excel_instance.RewardTagPermanent(), password)).name,
+        "MiniEventShortCutScenarioModeId": convert_long(excel_instance.MiniEventShortCutScenarioModeId(), password),
+        "ScenarioContentCollectionGroupId": convert_long(excel_instance.ScenarioContentCollectionGroupId(), password),
+    }
+
+def dump_EventContentShopExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "Id": convert_long(excel_instance.Id(), password),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "CategoryType": ShopCategoryType(convert_int(excel_instance.CategoryType(), password)).name,
+        "IsLegacy": excel_instance.IsLegacy(),
+        "GoodsId": [convert_long(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
+        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
+        "SalePeriodFrom": convert_string(excel_instance.SalePeriodFrom(), password),
+        "SalePeriodTo": convert_string(excel_instance.SalePeriodTo(), password),
+        "PurchaseCooltimeMin": convert_long(excel_instance.PurchaseCooltimeMin(), password),
+        "PurchaseCountLimit": convert_long(excel_instance.PurchaseCountLimit(), password),
+        "PurchaseCountResetType": PurchaseCountResetType(convert_int(excel_instance.PurchaseCountResetType(), password)).name,
+        "BuyReportEventName": convert_string(excel_instance.BuyReportEventName(), password),
+        "RestrictBuyWhenInventoryFull": excel_instance.RestrictBuyWhenInventoryFull(),
+    }
+
+def dump_EventContentShopInfoExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "CategoryType": ShopCategoryType(convert_int(excel_instance.CategoryType(), password)).name,
+        "LocalizeCode": convert_uint(excel_instance.LocalizeCode(), password),
+        "CostParcelType": [ParcelType(convert_int(excel_instance.CostParcelType(j), password)).name for j in range(excel_instance.CostParcelTypeLength())],
+        "CostParcelId": [convert_long(excel_instance.CostParcelId(j), password) for j in range(excel_instance.CostParcelIdLength())],
+        "IsRefresh": excel_instance.IsRefresh(),
+        "IsSoldOutDimmed": excel_instance.IsSoldOutDimmed(),
+        "AutoRefreshCoolTime": convert_long(excel_instance.AutoRefreshCoolTime(), password),
+        "RefreshAbleCount": convert_long(excel_instance.RefreshAbleCount(), password),
+        "GoodsId": [convert_long(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
+        "OpenPeriodFrom": convert_string(excel_instance.OpenPeriodFrom(), password),
+        "OpenPeriodTo": convert_string(excel_instance.OpenPeriodTo(), password),
+        "ShopProductUpdateDate": convert_string(excel_instance.ShopProductUpdateDate(), password),
+    }
+
+def dump_EventContentShopRefreshExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "Id": convert_long(excel_instance.Id(), password),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "IsLegacy": excel_instance.IsLegacy(),
+        "GoodsId": convert_long(excel_instance.GoodsId(), password),
+        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
+        "CategoryType": ShopCategoryType(convert_int(excel_instance.CategoryType(), password)).name,
+        "RefreshGroup": convert_int(excel_instance.RefreshGroup(), password),
+        "Prob": convert_int(excel_instance.Prob(), password),
+        "BuyReportEventName": convert_string(excel_instance.BuyReportEventName(), password),
+    }
+
+def dump_EventContentSpecialOperationsExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "PointItemId": convert_long(excel_instance.PointItemId(), password),
+    }
+
+def dump_EventContentSpineDialogOffsetExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
+        "CostumeUniqueId": convert_long(excel_instance.CostumeUniqueId(), password),
+        "SpineOffsetX": convert_float(excel_instance.SpineOffsetX(), password),
+        "SpineOffsetY": convert_float(excel_instance.SpineOffsetY(), password),
+        "DialogOffsetX": convert_float(excel_instance.DialogOffsetX(), password),
+        "DialogOffsetY": convert_float(excel_instance.DialogOffsetY(), password),
+    }
+
 def dump_EventContentSpoilerPopupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_long(excel_instance.EventContentId(), password),
@@ -10058,6 +9938,74 @@ def dump_EventContentSpoilerPopupExcel(excel_instance, password: bytes = b"") ->
         "SpoilerPopupDescription": convert_string(excel_instance.SpoilerPopupDescription(), password),
         "IsWarningPopUp": excel_instance.IsWarningPopUp(),
         "ConditionScenarioModeId": convert_long(excel_instance.ConditionScenarioModeId(), password),
+    }
+
+def dump_EventContentStageExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "Name": convert_string(excel_instance.Name(), password),
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "StageDifficulty": StageDifficulty(convert_int(excel_instance.StageDifficulty(), password)).name,
+        "StageNumber": convert_string(excel_instance.StageNumber(), password),
+        "StageDisplay": convert_int(excel_instance.StageDisplay(), password),
+        "PrevStageId": convert_long(excel_instance.PrevStageId(), password),
+        "OpenDate": convert_long(excel_instance.OpenDate(), password),
+        "OpenEventPoint": convert_long(excel_instance.OpenEventPoint(), password),
+        "OpenConditionScenarioPermanentSubEventId": convert_long(excel_instance.OpenConditionScenarioPermanentSubEventId(), password),
+        "PrevStageSubEventId": convert_long(excel_instance.PrevStageSubEventId(), password),
+        "OpenConditionScenarioId": convert_long(excel_instance.OpenConditionScenarioId(), password),
+        "OpenConditionContentType": EventContentType(convert_int(excel_instance.OpenConditionContentType(), password)).name,
+        "OpenConditionContentId": convert_long(excel_instance.OpenConditionContentId(), password),
+        "BattleDuration": convert_long(excel_instance.BattleDuration(), password),
+        "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
+        "StageEnterCostId": convert_long(excel_instance.StageEnterCostId(), password),
+        "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
+        "StageEnterEchelonCount": convert_int(excel_instance.StageEnterEchelonCount(), password),
+        "StarConditionTacticRankSCount": convert_long(excel_instance.StarConditionTacticRankSCount(), password),
+        "StarConditionTurnCount": convert_long(excel_instance.StarConditionTurnCount(), password),
+        "EnterScenarioGroupId": [convert_long(excel_instance.EnterScenarioGroupId(j), password) for j in range(excel_instance.EnterScenarioGroupIdLength())],
+        "ClearScenarioGroupId": [convert_long(excel_instance.ClearScenarioGroupId(j), password) for j in range(excel_instance.ClearScenarioGroupIdLength())],
+        "StrategyMap": convert_string(excel_instance.StrategyMap(), password),
+        "StrategyMapBG": convert_string(excel_instance.StrategyMapBG(), password),
+        "EventContentStageRewardId": convert_long(excel_instance.EventContentStageRewardId(), password),
+        "MaxTurn": convert_int(excel_instance.MaxTurn(), password),
+        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
+        "BgmId": convert_string(excel_instance.BgmId(), password),
+        "StrategyEnvironment": StrategyEnvironment(convert_int(excel_instance.StrategyEnvironment(), password)).name,
+        "GroundID": convert_long(excel_instance.GroundID(), password),
+        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "BGMId": convert_long(excel_instance.BGMId(), password),
+        "InstantClear": excel_instance.InstantClear(),
+        "BuffContentId": convert_long(excel_instance.BuffContentId(), password),
+        "FixedEchelonId": convert_long(excel_instance.FixedEchelonId(), password),
+        "ChallengeDisplay": excel_instance.ChallengeDisplay(),
+        "StarGoal": [StarGoalType(convert_int(excel_instance.StarGoal(j), password)).name for j in range(excel_instance.StarGoalLength())],
+        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmount(j), password) for j in range(excel_instance.StarGoalAmountLength())],
+        "IsDefeatBattle": excel_instance.IsDefeatBattle(),
+        "StageHint": convert_uint(excel_instance.StageHint(), password),
+        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+    }
+
+def dump_EventContentStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "GroupId": convert_long(excel_instance.GroupId(), password),
+        "RewardTag": RewardTag(convert_int(excel_instance.RewardTag(), password)).name,
+        "RewardProb": convert_int(excel_instance.RewardProb(), password),
+        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardId": convert_long(excel_instance.RewardId(), password),
+        "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
+        "IsDisplayed": excel_instance.IsDisplayed(),
+    }
+
+def dump_EventContentStageTotalRewardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "RequiredEventItemAmount": convert_long(excel_instance.RequiredEventItemAmount(), password),
+        "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_long(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EventContentTreasureCellRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -10104,6 +10052,33 @@ def dump_EventContentTreasureRoundExcel(excel_instance, password: bytes = b"") -
         "RewardID": [convert_long(excel_instance.RewardID(j), password) for j in range(excel_instance.RewardIDLength())],
         "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
         "TreasureCellImagePath": convert_string(excel_instance.TreasureCellImagePath(), password),
+    }
+
+def dump_EventContentZoneExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "OriginalZoneId": convert_long(excel_instance.OriginalZoneId(), password),
+        "LocationId": convert_long(excel_instance.LocationId(), password),
+        "LocationRank": convert_long(excel_instance.LocationRank(), password),
+        "EventPointForLocationRank": convert_long(excel_instance.EventPointForLocationRank(), password),
+        "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
+        "StudentVisitProb": [convert_long(excel_instance.StudentVisitProb(j), password) for j in range(excel_instance.StudentVisitProbLength())],
+        "RewardGroupId": convert_long(excel_instance.RewardGroupId(), password),
+        "Tags": [Tag(convert_int(excel_instance.Tags(j), password)).name for j in range(excel_instance.TagsLength())],
+        "WhiteListTags": [Tag(convert_int(excel_instance.WhiteListTags(j), password)).name for j in range(excel_instance.WhiteListTagsLength())],
+    }
+
+def dump_EventContentZoneVisitRewardExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_long(excel_instance.EventContentId(), password),
+        "EventContentLocationId": convert_long(excel_instance.EventContentLocationId(), password),
+        "DevName": convert_string(excel_instance.DevName(), password),
+        "CharacterId": convert_long(excel_instance.CharacterId(), password),
+        "CharacterDevName": convert_string(excel_instance.CharacterDevName(), password),
+        "VisitRewardParcelType": [ParcelType(convert_int(excel_instance.VisitRewardParcelType(j), password)).name for j in range(excel_instance.VisitRewardParcelTypeLength())],
+        "VisitRewardParcelId": [convert_long(excel_instance.VisitRewardParcelId(j), password) for j in range(excel_instance.VisitRewardParcelIdLength())],
+        "VisitRewardAmount": [convert_long(excel_instance.VisitRewardAmount(j), password) for j in range(excel_instance.VisitRewardAmountLength())],
+        "VisitRewardProb": [convert_long(excel_instance.VisitRewardProb(j), password) for j in range(excel_instance.VisitRewardProbLength())],
     }
 
 def dump_FarmingDungeonLocationManageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -10186,6 +10161,16 @@ def dump_FixedStrategyExcel(excel_instance, password: bytes = b"") -> dict:
         "StageEnterEchelon03Starttile": convert_long(excel_instance.StageEnterEchelon03Starttile(), password),
         "StageEnterEchelon04FixedEchelonId": convert_long(excel_instance.StageEnterEchelon04FixedEchelonId(), password),
         "StageEnterEchelon04Starttile": convert_long(excel_instance.StageEnterEchelon04Starttile(), password),
+    }
+
+def dump_FloaterCommonExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
+        "FloaterOffsetPosX": convert_int(excel_instance.FloaterOffsetPosX(), password),
+        "FloaterOffsetPosY": convert_int(excel_instance.FloaterOffsetPosY(), password),
+        "FloaterRandomPosRangeX": convert_int(excel_instance.FloaterRandomPosRangeX(), password),
+        "FloaterRandomPosRangeY": convert_int(excel_instance.FloaterRandomPosRangeY(), password),
     }
 
 def dump_FormationLocationExcel(excel_instance, password: bytes = b"") -> dict:
@@ -10487,6 +10472,7 @@ def dump_GuideMissionSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "CloseBannerAfterCompletion": excel_instance.CloseBannerAfterCompletion(),
         "MaximumLoginCount": convert_long(excel_instance.MaximumLoginCount(), password),
         "ExpiryDate": convert_long(excel_instance.ExpiryDate(), password),
+        "IconOrder": convert_long(excel_instance.IconOrder(), password),
         "SpineCharacterId": convert_long(excel_instance.SpineCharacterId(), password),
         "RequirementParcelImage": convert_string(excel_instance.RequirementParcelImage(), password),
         "RewardImage": convert_string(excel_instance.RewardImage(), password),
@@ -10499,6 +10485,13 @@ def dump_GuideMissionSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "TabType": GuideMissionTabType(convert_int(excel_instance.TabType(), password)).name,
         "IsPermanent": excel_instance.IsPermanent(),
         "PreSeasonId": convert_long(excel_instance.PreSeasonId(), password),
+    }
+
+def dump_HpBarAbbreviationExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "MonsterLv": convert_int(excel_instance.MonsterLv(), password),
+        "StandardHpBar": convert_int(excel_instance.StandardHpBar(), password),
+        "RaidBossHpBar": convert_int(excel_instance.RaidBossHpBar(), password),
     }
 
 def dump_IdCardBackgroundExcel(excel_instance, password: bytes = b"") -> dict:
@@ -10587,6 +10580,48 @@ def dump_LocalizeCharProfileChangeExcel(excel_instance, password: bytes = b"") -
         "CharacterId": convert_long(excel_instance.CharacterId(), password),
         "ScenarioModeId": convert_long(excel_instance.ScenarioModeId(), password),
         "ChangeCharacterID": convert_long(excel_instance.ChangeCharacterID(), password),
+    }
+
+def dump_LocalizeCharProfileExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "CharacterId": convert_long(excel_instance.CharacterId(), password),
+        "StatusMessageKr": convert_string(excel_instance.StatusMessageKr(), password),
+        "StatusMessageJp": convert_string(excel_instance.StatusMessageJp(), password),
+        "FullNameKr": convert_string(excel_instance.FullNameKr(), password),
+        "FullNameJp": convert_string(excel_instance.FullNameJp(), password),
+        "FamilyNameKr": convert_string(excel_instance.FamilyNameKr(), password),
+        "FamilyNameRubyKr": convert_string(excel_instance.FamilyNameRubyKr(), password),
+        "PersonalNameKr": convert_string(excel_instance.PersonalNameKr(), password),
+        "PersonalNameRubyKr": convert_string(excel_instance.PersonalNameRubyKr(), password),
+        "FamilyNameJp": convert_string(excel_instance.FamilyNameJp(), password),
+        "FamilyNameRubyJp": convert_string(excel_instance.FamilyNameRubyJp(), password),
+        "PersonalNameJp": convert_string(excel_instance.PersonalNameJp(), password),
+        "PersonalNameRubyJp": convert_string(excel_instance.PersonalNameRubyJp(), password),
+        "SchoolYearKr": convert_string(excel_instance.SchoolYearKr(), password),
+        "SchoolYearJp": convert_string(excel_instance.SchoolYearJp(), password),
+        "CharacterAgeKr": convert_string(excel_instance.CharacterAgeKr(), password),
+        "CharacterAgeJp": convert_string(excel_instance.CharacterAgeJp(), password),
+        "BirthDay": convert_string(excel_instance.BirthDay(), password),
+        "BirthdayKr": convert_string(excel_instance.BirthdayKr(), password),
+        "BirthdayJp": convert_string(excel_instance.BirthdayJp(), password),
+        "CharHeightKr": convert_string(excel_instance.CharHeightKr(), password),
+        "CharHeightJp": convert_string(excel_instance.CharHeightJp(), password),
+        "DesignerNameKr": convert_string(excel_instance.DesignerNameKr(), password),
+        "DesignerNameJp": convert_string(excel_instance.DesignerNameJp(), password),
+        "IllustratorNameKr": convert_string(excel_instance.IllustratorNameKr(), password),
+        "IllustratorNameJp": convert_string(excel_instance.IllustratorNameJp(), password),
+        "CharacterVoiceKr": convert_string(excel_instance.CharacterVoiceKr(), password),
+        "CharacterVoiceJp": convert_string(excel_instance.CharacterVoiceJp(), password),
+        "HobbyKr": convert_string(excel_instance.HobbyKr(), password),
+        "HobbyJp": convert_string(excel_instance.HobbyJp(), password),
+        "WeaponNameKr": convert_string(excel_instance.WeaponNameKr(), password),
+        "WeaponDescKr": convert_string(excel_instance.WeaponDescKr(), password),
+        "WeaponNameJp": convert_string(excel_instance.WeaponNameJp(), password),
+        "WeaponDescJp": convert_string(excel_instance.WeaponDescJp(), password),
+        "ProfileIntroductionKr": convert_string(excel_instance.ProfileIntroductionKr(), password),
+        "ProfileIntroductionJp": convert_string(excel_instance.ProfileIntroductionJp(), password),
+        "CharacterSSRNewKr": convert_string(excel_instance.CharacterSSRNewKr(), password),
+        "CharacterSSRNewJp": convert_string(excel_instance.CharacterSSRNewJp(), password),
     }
 
 def dump_LocalizeCodeInBuildExcel(excel_instance, password: bytes = b"") -> dict:
@@ -10865,6 +10900,7 @@ def dump_MinigameCCGRewardItemExcel(excel_instance, password: bytes = b"") -> di
         "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
         "RewardParcelId": convert_long(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
+        "DisplayOrder": convert_long(excel_instance.DisplayOrder(), password),
     }
 
 def dump_MinigameCCGSkillExcel(excel_instance, password: bytes = b"") -> dict:
@@ -11586,6 +11622,14 @@ def dump_MultiFloorRaidStatChangeExcel(excel_instance, password: bytes = b"") ->
         "ApplyCharacterId": [convert_long(excel_instance.ApplyCharacterId(j), password) for j in range(excel_instance.ApplyCharacterIdLength())],
     }
 
+def dump_ObstacleFireLineCheckExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "MyObstacleFireLineCheck": excel_instance.MyObstacleFireLineCheck(),
+        "AllyObstacleFireLineCheck": excel_instance.AllyObstacleFireLineCheck(),
+        "EnemyObstacleFireLineCheck": excel_instance.EnemyObstacleFireLineCheck(),
+        "EmptyObstacleFireLineCheck": excel_instance.EmptyObstacleFireLineCheck(),
+    }
+
 def dump_ObstacleStatExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "StringID": convert_uint(excel_instance.StringID(), password),
@@ -11656,6 +11700,12 @@ def dump_ParcelAutoSynthExcel(excel_instance, password: bytes = b"") -> dict:
         "ResultParcelType": ParcelType(convert_int(excel_instance.ResultParcelType(), password)).name,
         "ResultParcelId": convert_long(excel_instance.ResultParcelId(), password),
         "ResultParcelAmount": convert_long(excel_instance.ResultParcelAmount(), password),
+    }
+
+def dump_PersonalityExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "Name": convert_string(excel_instance.Name(), password),
     }
 
 def dump_PickupDuplicateBonusExcel(excel_instance, password: bytes = b"") -> dict:
@@ -11827,7 +11877,6 @@ def dump_RaidRankingRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "Tier": convert_int(excel_instance.Tier(), password),
         "RewardParcelType": [ParcelType(convert_int(excel_instance.RewardParcelType(j), password)).name for j in range(excel_instance.RewardParcelTypeLength())],
         "RewardParcelUniqueId": [convert_long(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
-        "RewardParcelUniqueName": [convert_string(excel_instance.RewardParcelUniqueName(j), password) for j in range(excel_instance.RewardParcelUniqueNameLength())],
         "RewardParcelAmount": [convert_long(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
@@ -11892,7 +11941,6 @@ def dump_RaidStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "ClearStageRewardProb": convert_long(excel_instance.ClearStageRewardProb(), password),
         "ClearStageRewardParcelType": ParcelType(convert_int(excel_instance.ClearStageRewardParcelType(), password)).name,
         "ClearStageRewardParcelUniqueID": convert_long(excel_instance.ClearStageRewardParcelUniqueID(), password),
-        "ClearStageRewardParcelUniqueName": convert_string(excel_instance.ClearStageRewardParcelUniqueName(), password),
         "ClearStageRewardAmount": convert_long(excel_instance.ClearStageRewardAmount(), password),
     }
 
@@ -11901,7 +11949,6 @@ def dump_RaidStageSeasonRewardExcel(excel_instance, password: bytes = b"") -> di
         "SeasonRewardId": convert_long(excel_instance.SeasonRewardId(), password),
         "SeasonRewardParcelType": [ParcelType(convert_int(excel_instance.SeasonRewardParcelType(j), password)).name for j in range(excel_instance.SeasonRewardParcelTypeLength())],
         "SeasonRewardParcelUniqueId": [convert_long(excel_instance.SeasonRewardParcelUniqueId(j), password) for j in range(excel_instance.SeasonRewardParcelUniqueIdLength())],
-        "SeasonRewardParcelUniqueName": [convert_string(excel_instance.SeasonRewardParcelUniqueName(j), password) for j in range(excel_instance.SeasonRewardParcelUniqueNameLength())],
         "SeasonRewardAmount": [convert_long(excel_instance.SeasonRewardAmount(j), password) for j in range(excel_instance.SeasonRewardAmountLength())],
     }
 
@@ -12241,6 +12288,7 @@ def dump_ShopFreeRecruitExcel(excel_instance, password: bytes = b"") -> dict:
         "FreeRecruitPeriodTo": convert_string(excel_instance.FreeRecruitPeriodTo(), password),
         "FreeRecruitType": ShopFreeRecruitType(convert_int(excel_instance.FreeRecruitType(), password)).name,
         "FreeRecruitDecorationImagePath": convert_string(excel_instance.FreeRecruitDecorationImagePath(), password),
+        "TenRecruitCountOnly": excel_instance.TenRecruitCountOnly(),
         "ShopRecruitId": [convert_long(excel_instance.ShopRecruitId(j), password) for j in range(excel_instance.ShopRecruitIdLength())],
     }
 
@@ -12301,6 +12349,7 @@ def dump_ShopRecruitExcel(excel_instance, password: bytes = b"") -> dict:
         "VideoId": [convert_long(excel_instance.VideoId(j), password) for j in range(excel_instance.VideoIdLength())],
         "LinkedRobbyBannerId": convert_long(excel_instance.LinkedRobbyBannerId(), password),
         "InfoCharacterId": [convert_long(excel_instance.InfoCharacterId(j), password) for j in range(excel_instance.InfoCharacterIdLength())],
+        "SalePeriodVisible": excel_instance.SalePeriodVisible(),
         "SalePeriodFrom": convert_string(excel_instance.SalePeriodFrom(), password),
         "SalePeriodTo": convert_string(excel_instance.SalePeriodTo(), password),
         "RecruitCoinId": convert_long(excel_instance.RecruitCoinId(), password),
@@ -12332,6 +12381,7 @@ def dump_ShopRefreshExcel(excel_instance, password: bytes = b"") -> dict:
         "RefreshGroup": convert_int(excel_instance.RefreshGroup(), password),
         "Prob": convert_int(excel_instance.Prob(), password),
         "BuyReportEventName": convert_string(excel_instance.BuyReportEventName(), password),
+        "ProductUpdateTime": convert_string(excel_instance.ProductUpdateTime(), password),
         "DisplayTag": ProductDisplayTag(convert_int(excel_instance.DisplayTag(), password)).name,
     }
 
@@ -12477,11 +12527,59 @@ def dump_StrategyObjectBuffDefineExcel(excel_instance, password: bytes = b"") ->
         "IconPath": convert_string(excel_instance.IconPath(), password),
     }
 
+def dump_TacticalSupportSystemExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_long(excel_instance.Id(), password),
+        "SummonedTime": convert_long(excel_instance.SummonedTime(), password),
+        "DefaultPersonalityId": convert_long(excel_instance.DefaultPersonalityId(), password),
+        "CanTargeting": excel_instance.CanTargeting(),
+        "CanCover": excel_instance.CanCover(),
+        "ObstacleUniqueName": convert_string(excel_instance.ObstacleUniqueName(), password),
+        "ObstacleCoverRange": convert_long(excel_instance.ObstacleCoverRange(), password),
+        "SummonSkilllGroupId": convert_string(excel_instance.SummonSkilllGroupId(), password),
+        "CrashObstacleOBBWidth": convert_long(excel_instance.CrashObstacleOBBWidth(), password),
+        "CrashObstacleOBBHeight": convert_long(excel_instance.CrashObstacleOBBHeight(), password),
+        "IsTSSBlockedNodeCheck": excel_instance.IsTSSBlockedNodeCheck(),
+        "NumberOfUses": convert_int(excel_instance.NumberOfUses(), password),
+        "InventoryOffsetX": convert_float(excel_instance.InventoryOffsetX(), password),
+        "InventoryOffsetY": convert_float(excel_instance.InventoryOffsetY(), password),
+        "InventoryOffsetZ": convert_float(excel_instance.InventoryOffsetZ(), password),
+        "InteractionChar": convert_long(excel_instance.InteractionChar(), password),
+        "CharacterInteractionStartDelay": convert_long(excel_instance.CharacterInteractionStartDelay(), password),
+        "GetOnStartEffectPath": convert_string(excel_instance.GetOnStartEffectPath(), password),
+        "GetOnEndEffectPath": convert_string(excel_instance.GetOnEndEffectPath(), password),
+        "SummonerCharacterId": convert_long(excel_instance.SummonerCharacterId(), password),
+        "InteractionFrame": convert_int(excel_instance.InteractionFrame(), password),
+        "TSAInteractionAddDuration": convert_long(excel_instance.TSAInteractionAddDuration(), password),
+        "InteractionStudentExSkillGroupId": convert_string(excel_instance.InteractionStudentExSkillGroupId(), password),
+        "InteractionSkillCardTexture": convert_string(excel_instance.InteractionSkillCardTexture(), password),
+        "InteractionSkillSpine": convert_string(excel_instance.InteractionSkillSpine(), password),
+        "RetreatFrame": convert_int(excel_instance.RetreatFrame(), password),
+        "DestroyFrame": convert_int(excel_instance.DestroyFrame(), password),
+    }
+
 def dump_TacticEntityEffectFilterExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "TargetEffectName": convert_string(excel_instance.TargetEffectName(), password),
         "ShowEffectToVehicle": excel_instance.ShowEffectToVehicle(),
         "ShowEffectToBoss": excel_instance.ShowEffectToBoss(),
+    }
+
+def dump_TacticSkipExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "LevelDiff": convert_int(excel_instance.LevelDiff(), password),
+        "HPResult": convert_long(excel_instance.HPResult(), password),
+    }
+
+def dump_TerrainAdaptationFactorExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "TerrainAdaptation": StageTopography(convert_int(excel_instance.TerrainAdaptation(), password)).name,
+        "TerrainAdaptationStat": TerrainAdaptationStat(convert_int(excel_instance.TerrainAdaptationStat(), password)).name,
+        "ShotFactor": convert_long(excel_instance.ShotFactor(), password),
+        "BlockFactor": convert_long(excel_instance.BlockFactor(), password),
+        "AccuracyFactor": convert_long(excel_instance.AccuracyFactor(), password),
+        "DodgeFactor": convert_long(excel_instance.DodgeFactor(), password),
+        "AttackPowerFactor": convert_long(excel_instance.AttackPowerFactor(), password),
     }
 
 def dump_TimeAttackDungeonExcel(excel_instance, password: bytes = b"") -> dict:
@@ -12818,23 +12916,12 @@ def dump_WorldRaidStageRewardExcel(excel_instance, password: bytes = b"") -> dic
         "ClearStageRewardProb": convert_long(excel_instance.ClearStageRewardProb(), password),
         "ClearStageRewardParcelType": ParcelType(convert_int(excel_instance.ClearStageRewardParcelType(), password)).name,
         "ClearStageRewardParcelUniqueID": convert_long(excel_instance.ClearStageRewardParcelUniqueID(), password),
-        "ClearStageRewardParcelUniqueName": convert_string(excel_instance.ClearStageRewardParcelUniqueName(), password),
         "ClearStageRewardAmount": convert_long(excel_instance.ClearStageRewardAmount(), password),
     }
 
 def dump_BattleExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_BattleExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_BattleLevelFactorExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_BattleLevelFactorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_BossExternalBTExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_BossExternalBTExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_BossPhaseExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -12847,26 +12934,6 @@ def dump_BuffParticleExcelTable(excel_instance, password: bytes = b"") -> dict:
         "DataList": [dump_BuffParticleExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
-def dump_BulletArmorDamageFactorExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_BulletArmorDamageFactorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterAIExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterAIExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterCalculationLimitExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterCalculationLimitExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterCombatSkinExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterCombatSkinExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
 def dump_CharacterDialogEmojiExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CharacterDialogEmojiExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -12875,61 +12942,6 @@ def dump_CharacterDialogEmojiExcelTable(excel_instance, password: bytes = b"") -
 def dump_CharacterDialogFieldExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CharacterDialogFieldExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterIllustCoordinateExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterIllustCoordinateExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterLevelExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterLevelExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterLevelStatFactorExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterLevelStatFactorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterSkillListExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterSkillListExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterStatExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterStatExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterStatLimitExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterStatLimitExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterStatsDetailExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterStatsDetailExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterStatsTransExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterStatsTransExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterTranscendenceExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterTranscendenceExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_CharacterVictoryInteractionExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CharacterVictoryInteractionExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_ClearDeckRuleExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13007,11 +13019,6 @@ def dump_ConstStrategyExcelTable(excel_instance, password: bytes = b"") -> dict:
         "DataList": [dump_ConstStrategyExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
-def dump_CostumeExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_CostumeExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
 def dump_CouponStuffExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CouponStuffExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -13042,19 +13049,9 @@ def dump_DefaultParcelExcelTable(excel_instance, password: bytes = b"") -> dict:
         "DataList": [dump_DefaultParcelExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
-def dump_EchelonConstraintExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EchelonConstraintExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
 def dump_EmoticonSpecialExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_EmoticonSpecialExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentArchiveBannerOffsetExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentArchiveBannerOffsetExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_EventContentBoxGachaElementExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13062,214 +13059,9 @@ def dump_EventContentBoxGachaElementExcelTable(excel_instance, password: bytes =
         "DataList": [dump_EventContentBoxGachaElementExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
-def dump_EventContentBoxGachaManageExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentBoxGachaManageExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentBoxGachaShopExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentBoxGachaShopExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentBuffExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentBuffExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentBuffGroupExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentBuffGroupExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentCardExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentCardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentCardShopExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentCardShopExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentChangeExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentChangeExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentChangeScenarioExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentChangeScenarioExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentCharacterBonusExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentCharacterBonusExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentCollectionExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentCollectionExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentCurrencyItemExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentCurrencyItemExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentDebuffRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentDebuffRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentDiceRaceEffectExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentDiceRaceEffectExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentDiceRaceExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentDiceRaceExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentDiceRaceNodeExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentDiceRaceNodeExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentDiceRaceProbExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentDiceRaceProbExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentDiceRaceTotalRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentDiceRaceTotalRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
 def dump_EventContentExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_EventContentExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentFortuneGachaExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentFortuneGachaExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentFortuneGachaModifyExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentFortuneGachaModifyExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentFortuneGachaShopExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentFortuneGachaShopExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentLobbyMenuExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentLobbyMenuExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentLocationExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentLocationExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentLocationRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentLocationRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentMeetupExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentMeetupExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentMeetupInfoExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentMeetupInfoExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentMiniEventShortCutExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentMiniEventShortCutExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentMiniEventTokenExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentMiniEventTokenExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentMissionExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentMissionExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentPlayGuideExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentPlayGuideExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentScenarioExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentScenarioExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentSeasonExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentSeasonExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentShopExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentShopExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentShopInfoExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentShopInfoExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentShopRefreshExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentShopRefreshExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentSpecialOperationsExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentSpecialOperationsExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentSpineDialogOffsetExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentSpineDialogOffsetExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentStageExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentStageExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentStageRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentStageRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentStageTotalRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentStageTotalRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentZoneExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentZoneExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_EventContentZoneVisitRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_EventContentZoneVisitRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_FieldContentStageExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13357,19 +13149,9 @@ def dump_FieldWorldMapZoneExcelTable(excel_instance, password: bytes = b"") -> d
         "DataList": [dump_FieldWorldMapZoneExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
-def dump_FloaterCommonExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_FloaterCommonExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
 def dump_GachaSelectPickupGroupExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_GachaSelectPickupGroupExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_HpBarAbbreviationExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_HpBarAbbreviationExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_KnockBackExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13397,11 +13179,6 @@ def dump_LocalizeCCGExcelTable(excel_instance, password: bytes = b"") -> dict:
         "DataList": [dump_LocalizeCCGExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
-def dump_LocalizeCharProfileExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_LocalizeCharProfileExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
 def dump_LocalizeFieldExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_LocalizeFieldExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -13425,16 +13202,6 @@ def dump_NormalSkillTemplateExcelTable(excel_instance, password: bytes = b"") ->
 def dump_ObstacleExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_ObstacleExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_ObstacleFireLineCheckExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_ObstacleFireLineCheckExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_PersonalityExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_PersonalityExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_ProtocolSettingExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13477,11 +13244,6 @@ def dump_SystemMailExcelTable(excel_instance, password: bytes = b"") -> dict:
         "DataList": [dump_SystemMailExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
-def dump_TacticalSupportSystemExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_TacticalSupportSystemExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
 def dump_TacticArenaSimulatorSettingExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_TacticArenaSimulatorSettingExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -13497,11 +13259,6 @@ def dump_TacticSimulatorSettingExcelTable(excel_instance, password: bytes = b"")
         "DataList": [dump_TacticSimulatorSettingExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
-def dump_TacticSkipExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_TacticSkipExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
 def dump_TacticTimeAttackSimulatorConfigExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_TacticTimeAttackSimulatorConfigExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -13510,11 +13267,6 @@ def dump_TacticTimeAttackSimulatorConfigExcelTable(excel_instance, password: byt
 def dump_TagExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_TagExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_TerrainAdaptationFactorExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_TerrainAdaptationFactorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_TranscendenceRecipeExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13607,6 +13359,16 @@ def dump_AssistEchelonTypeConvertExcelTable(excel_instance, password: bytes = b"
         "DataList": [dump_AssistEchelonTypeConvertExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_AssistRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_AssistRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_AssistSlotExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_AssistSlotExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_AttendanceExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_AttendanceExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -13620,6 +13382,11 @@ def dump_AttendanceRewardExcelTable(excel_instance, password: bytes = b"") -> di
 def dump_AudioAnimatorExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_AudioAnimatorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_BattleLevelFactorExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_BattleLevelFactorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_BattlePassExpLimitExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13665,6 +13432,16 @@ def dump_BGMRaidExcelTable(excel_instance, password: bytes = b"") -> dict:
 def dump_BGMUIExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_BGMUIExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_BossExternalBTExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_BossExternalBTExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_BulletArmorDamageFactorExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_BulletArmorDamageFactorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_CafeInfoExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13727,6 +13504,21 @@ def dump_CharacterAcademyTagsExcelTable(excel_instance, password: bytes = b"") -
         "DataList": [dump_CharacterAcademyTagsExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_CharacterAIExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterAIExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterCalculationLimitExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterCalculationLimitExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterCombatSkinExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterCombatSkinExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_CharacterDialogBattlePassExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CharacterDialogBattlePassExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -13752,6 +13544,11 @@ def dump_CharacterDialogSubtitleExcelTable(excel_instance, password: bytes = b""
         "DataList": [dump_CharacterDialogSubtitleExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_CharacterExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_CharacterGearExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CharacterGearExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -13760,6 +13557,21 @@ def dump_CharacterGearExcelTable(excel_instance, password: bytes = b"") -> dict:
 def dump_CharacterGearLevelExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CharacterGearLevelExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterIllustCoordinateExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterIllustCoordinateExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterLevelExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterLevelExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterLevelStatFactorExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterLevelStatFactorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_CharacterPotentialExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13775,6 +13587,41 @@ def dump_CharacterPotentialRewardExcelTable(excel_instance, password: bytes = b"
 def dump_CharacterPotentialStatExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CharacterPotentialStatExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterSkillListExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterSkillListExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterStatExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterStatExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterStatLimitExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterStatLimitExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterStatsDetailExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterStatsDetailExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterStatsTransExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterStatsTransExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterTranscendenceExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterTranscendenceExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterVictoryInteractionExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterVictoryInteractionExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_CharacterVoiceExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13805,11 +13652,6 @@ def dump_CharacterWeaponLevelExcelTable(excel_instance, password: bytes = b"") -
 def dump_CheatCodeListExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CheatCodeListExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
-    }
-
-def dump_ClanAssistSlotExcelTable(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "DataList": [dump_ClanAssistSlotExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_ClanChattingEmojiExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13927,6 +13769,11 @@ def dump_ContentsShortcutExcelTable(excel_instance, password: bytes = b"") -> di
         "DataList": [dump_ContentsShortcutExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_CostumeExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CostumeExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_CurrencyExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CurrencyExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -13935,6 +13782,11 @@ def dump_CurrencyExcelTable(excel_instance, password: bytes = b"") -> dict:
 def dump_DuplicateBonusExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_DuplicateBonusExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EchelonConstraintExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EchelonConstraintExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_EliminateRaidRankingRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -13987,14 +13839,239 @@ def dump_EquipmentStatExcelTable(excel_instance, password: bytes = b"") -> dict:
         "DataList": [dump_EquipmentStatExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_EventContentArchiveBannerOffsetExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentArchiveBannerOffsetExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentBoxGachaManageExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentBoxGachaManageExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentBoxGachaShopExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentBoxGachaShopExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentBuffExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentBuffExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentBuffGroupExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentBuffGroupExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentCardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentCardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentCardShopExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentCardShopExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentCardShopModifyExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentCardShopModifyExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentChangeExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentChangeExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentChangeScenarioExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentChangeScenarioExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentCharacterBonusExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentCharacterBonusExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentCollectionExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentCollectionExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentConcentrationCardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentConcentrationCardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentConcentrationExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentConcentrationExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentConcentrationRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentConcentrationRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentConcentrationVoiceExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentConcentrationVoiceExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentCurrencyItemExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentCurrencyItemExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentDebuffRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentDebuffRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentDiceRaceEffectExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentDiceRaceEffectExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentDiceRaceExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentDiceRaceExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentDiceRaceNodeExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentDiceRaceNodeExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentDiceRaceProbExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentDiceRaceProbExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentDiceRaceTotalRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentDiceRaceTotalRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentFortuneGachaExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentFortuneGachaExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentFortuneGachaModifyExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentFortuneGachaModifyExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentFortuneGachaShopExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentFortuneGachaShopExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentLobbyMenuExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentLobbyMenuExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentLocationExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentLocationExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentLocationRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentLocationRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentMeetupExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentMeetupExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentMeetupInfoExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentMeetupInfoExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentMiniEventShortCutExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentMiniEventShortCutExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentMiniEventTokenExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentMiniEventTokenExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentMissionExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentMissionExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_EventContentNotifyExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_EventContentNotifyExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_EventContentPlayGuideExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentPlayGuideExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentScenarioExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentScenarioExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentSeasonExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentSeasonExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentShopExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentShopExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentShopInfoExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentShopInfoExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentShopRefreshExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentShopRefreshExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentSpecialOperationsExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentSpecialOperationsExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentSpineDialogOffsetExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentSpineDialogOffsetExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_EventContentSpoilerPopupExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_EventContentSpoilerPopupExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentStageExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentStageExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentStageRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentStageRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentStageTotalRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentStageTotalRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_EventContentTreasureCellRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -14015,6 +14092,16 @@ def dump_EventContentTreasureRewardExcelTable(excel_instance, password: bytes = 
 def dump_EventContentTreasureRoundExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_EventContentTreasureRoundExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentZoneExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentZoneExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_EventContentZoneVisitRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_EventContentZoneVisitRewardExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_FarmingDungeonLocationManageExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -14040,6 +14127,11 @@ def dump_FixedEchelonSettingExcelTable(excel_instance, password: bytes = b"") ->
 def dump_FixedStrategyExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_FixedStrategyExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_FloaterCommonExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_FloaterCommonExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_FormationLocationExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -14137,6 +14229,11 @@ def dump_GuideMissionSeasonExcelTable(excel_instance, password: bytes = b"") -> 
         "DataList": [dump_GuideMissionSeasonExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_HpBarAbbreviationExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_HpBarAbbreviationExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_IdCardBackgroundExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_IdCardBackgroundExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -14170,6 +14267,11 @@ def dump_LoadingImageExcelTable(excel_instance, password: bytes = b"") -> dict:
 def dump_LocalizeCharProfileChangeExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_LocalizeCharProfileChangeExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_LocalizeCharProfileExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_LocalizeCharProfileExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_LocalizeCodeInBuildExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -14547,6 +14649,11 @@ def dump_MultiFloorRaidStatChangeExcelTable(excel_instance, password: bytes = b"
         "DataList": [dump_MultiFloorRaidStatChangeExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_ObstacleFireLineCheckExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_ObstacleFireLineCheckExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_ObstacleStatExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_ObstacleStatExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
@@ -14565,6 +14672,11 @@ def dump_OperatorExcelTable(excel_instance, password: bytes = b"") -> dict:
 def dump_ParcelAutoSynthExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_ParcelAutoSynthExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_PersonalityExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_PersonalityExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_PickupDuplicateBonusExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -14852,9 +14964,24 @@ def dump_StrategyObjectBuffDefineExcelTable(excel_instance, password: bytes = b"
         "DataList": [dump_StrategyObjectBuffDefineExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
+def dump_TacticalSupportSystemExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_TacticalSupportSystemExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
 def dump_TacticEntityEffectFilterExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_TacticEntityEffectFilterExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_TacticSkipExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_TacticSkipExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_TerrainAdaptationFactorExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_TerrainAdaptationFactorExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_TimeAttackDungeonExcelTable(excel_instance, password: bytes = b"") -> dict:

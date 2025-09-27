@@ -1306,10 +1306,17 @@ class ConstCommonExcel:
         return 0
 
 
+    def CafeSummonTicketBuyLimitForValidate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(348))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(172)
+    def Start(builder): builder.StartObject(173)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -2006,4 +2013,8 @@ class ConstCommonExcel:
 
     @staticmethod
     def AddCafeCameraDragThreshold(builder, CafeCameraDragThreshold): builder.PrependFloat32Slot(171, CafeCameraDragThreshold, 0)
+
+
+    @staticmethod
+    def AddCafeSummonTicketBuyLimitForValidate(builder, CafeSummonTicketBuyLimitForValidate): builder.PrependInt32Slot(172, CafeSummonTicketBuyLimitForValidate, 0)
 

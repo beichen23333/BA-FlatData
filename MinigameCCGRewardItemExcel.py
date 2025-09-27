@@ -59,10 +59,17 @@ class MinigameCCGRewardItemExcel:
         return 0
 
 
+    def DisplayOrder(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(6)
+    def Start(builder): builder.StartObject(7)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -89,4 +96,8 @@ class MinigameCCGRewardItemExcel:
 
     @staticmethod
     def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt32Slot(5, RewardParcelAmount, 0)
+
+
+    @staticmethod
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(6, DisplayOrder, 0)
 

@@ -108,8 +108,15 @@ class ShopRefreshExcel:
         return None
 
 
-    def DisplayTag(self):
+    def ProductUpdateTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def DisplayTag(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -118,7 +125,7 @@ class ShopRefreshExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(14)
+    def Start(builder): builder.StartObject(15)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -175,5 +182,8 @@ class ShopRefreshExcel:
     def AddBuyReportEventName(builder, BuyReportEventName): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(BuyReportEventName), 0)
 
     @staticmethod
-    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(13, DisplayTag, 0)
+    def AddProductUpdateTime(builder, ProductUpdateTime): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(ProductUpdateTime), 0)
+
+    @staticmethod
+    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(14, DisplayTag, 0)
 
