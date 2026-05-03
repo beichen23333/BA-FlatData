@@ -1,0 +1,13 @@
+class StoreType:
+    None_ = 0
+    GooglePlay = 1
+    AppStore = 2
+    OneStore = 3
+    MicrosoftStore = 4
+    GalaxyStore = 5
+    STEAM = 6
+    FreeProduct = 7
+    Twitch = 8
+    Chzzk = 9
+    PaymentCenter = 10
+    PCStore = 11
