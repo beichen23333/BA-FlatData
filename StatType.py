@@ -1,0 +1,11 @@
+class StatType:
+    AttackPower = 0
+    DefensePower = 1
+    MoveSpeed = 2
+    AttackRange = 3
+    CriticalRate = 4
+    CriticalDamageRate = 5
+    ShotTime = 6
+    Hp = 7
+    LifeStealRate = 8
+    EvasionRate = 9
