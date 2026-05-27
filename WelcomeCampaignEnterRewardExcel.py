@@ -3,13 +3,13 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class SkillAdditionalTooltipExcel:
+class WelcomeCampaignEnterRewardExcel:
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = SkillAdditionalTooltipExcel()
+        x = WelcomeCampaignEnterRewardExcel()
         x.Init(buf, n + offset)
         return x
 
@@ -24,24 +24,24 @@ class SkillAdditionalTooltipExcel:
         return 0
 
 
-    def AdditionalSkillGroupId(self):
+    def RewardParcelType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def ShowSkillSlot(self):
+    def RewardParcelUniqueID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
 
 
-    def DisplayIconBg(self):
+    def RewardAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
@@ -58,11 +58,13 @@ class SkillAdditionalTooltipExcel:
 
 
     @staticmethod
-    def AddAdditionalSkillGroupId(builder, AdditionalSkillGroupId): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(AdditionalSkillGroupId), 0)
+    def AddRewardParcelType(builder, RewardParcelType): builder.PrependInt32Slot(1, RewardParcelType, 0)
+
 
     @staticmethod
-    def AddShowSkillSlot(builder, ShowSkillSlot): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(ShowSkillSlot), 0)
+    def AddRewardParcelUniqueID(builder, RewardParcelUniqueID): builder.PrependInt64Slot(2, RewardParcelUniqueID, 0)
+
 
     @staticmethod
-    def AddDisplayIconBg(builder, DisplayIconBg): builder.PrependBoolSlot(3, DisplayIconBg, 0)
+    def AddRewardAmount(builder, RewardAmount): builder.PrependInt64Slot(3, RewardAmount, 0)
 

@@ -507,106 +507,134 @@ class CharacterStatExcel:
         return 0
 
 
-    def HealRate(self):
+    def WeakDamagedRatio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(144))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealLightArmorRate(self):
+    def EffectiveDamagedRatio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(146))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealHeavyArmorRate(self):
+    def NormalDamagedRatio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(148))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealUnarmedRate(self):
+    def ResistDamagedRatio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(150))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealElasticArmorRate(self):
+    def HealRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(152))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealNormalArmorRate(self):
+    def HealLightArmorRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(154))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealedExplosionRate(self):
+    def HealHeavyArmorRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(156))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealedPierceRate(self):
+    def HealUnarmedRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(158))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealedMysticRate(self):
+    def HealElasticArmorRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(160))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealedSonicRate(self):
+    def HealNormalArmorRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(162))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def HealedNormalRate(self):
+    def HealedExplosionRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(164))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def StreetBattleAdaptation(self):
+    def HealedPierceRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(166))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def HealedMysticRate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(168))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def HealedSonicRate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(170))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def HealedNormalRate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(172))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def StreetBattleAdaptation(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(174))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OutdoorBattleAdaptation(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(168))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(176))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def IndoorBattleAdaptation(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(170))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(178))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RegenCost(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(172))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(180))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
@@ -615,7 +643,7 @@ class CharacterStatExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(85)
+    def Start(builder): builder.StartObject(89)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -901,61 +929,77 @@ class CharacterStatExcel:
 
 
     @staticmethod
-    def AddHealRate(builder, HealRate): builder.PrependInt64Slot(70, HealRate, 0)
+    def AddWeakDamagedRatio(builder, WeakDamagedRatio): builder.PrependInt64Slot(70, WeakDamagedRatio, 0)
 
 
     @staticmethod
-    def AddHealLightArmorRate(builder, HealLightArmorRate): builder.PrependInt64Slot(71, HealLightArmorRate, 0)
+    def AddEffectiveDamagedRatio(builder, EffectiveDamagedRatio): builder.PrependInt64Slot(71, EffectiveDamagedRatio, 0)
 
 
     @staticmethod
-    def AddHealHeavyArmorRate(builder, HealHeavyArmorRate): builder.PrependInt64Slot(72, HealHeavyArmorRate, 0)
+    def AddNormalDamagedRatio(builder, NormalDamagedRatio): builder.PrependInt64Slot(72, NormalDamagedRatio, 0)
 
 
     @staticmethod
-    def AddHealUnarmedRate(builder, HealUnarmedRate): builder.PrependInt64Slot(73, HealUnarmedRate, 0)
+    def AddResistDamagedRatio(builder, ResistDamagedRatio): builder.PrependInt64Slot(73, ResistDamagedRatio, 0)
 
 
     @staticmethod
-    def AddHealElasticArmorRate(builder, HealElasticArmorRate): builder.PrependInt64Slot(74, HealElasticArmorRate, 0)
+    def AddHealRate(builder, HealRate): builder.PrependInt64Slot(74, HealRate, 0)
 
 
     @staticmethod
-    def AddHealNormalArmorRate(builder, HealNormalArmorRate): builder.PrependInt64Slot(75, HealNormalArmorRate, 0)
+    def AddHealLightArmorRate(builder, HealLightArmorRate): builder.PrependInt64Slot(75, HealLightArmorRate, 0)
 
 
     @staticmethod
-    def AddHealedExplosionRate(builder, HealedExplosionRate): builder.PrependInt64Slot(76, HealedExplosionRate, 0)
+    def AddHealHeavyArmorRate(builder, HealHeavyArmorRate): builder.PrependInt64Slot(76, HealHeavyArmorRate, 0)
 
 
     @staticmethod
-    def AddHealedPierceRate(builder, HealedPierceRate): builder.PrependInt64Slot(77, HealedPierceRate, 0)
+    def AddHealUnarmedRate(builder, HealUnarmedRate): builder.PrependInt64Slot(77, HealUnarmedRate, 0)
 
 
     @staticmethod
-    def AddHealedMysticRate(builder, HealedMysticRate): builder.PrependInt64Slot(78, HealedMysticRate, 0)
+    def AddHealElasticArmorRate(builder, HealElasticArmorRate): builder.PrependInt64Slot(78, HealElasticArmorRate, 0)
 
 
     @staticmethod
-    def AddHealedSonicRate(builder, HealedSonicRate): builder.PrependInt64Slot(79, HealedSonicRate, 0)
+    def AddHealNormalArmorRate(builder, HealNormalArmorRate): builder.PrependInt64Slot(79, HealNormalArmorRate, 0)
 
 
     @staticmethod
-    def AddHealedNormalRate(builder, HealedNormalRate): builder.PrependInt64Slot(80, HealedNormalRate, 0)
+    def AddHealedExplosionRate(builder, HealedExplosionRate): builder.PrependInt64Slot(80, HealedExplosionRate, 0)
 
 
     @staticmethod
-    def AddStreetBattleAdaptation(builder, StreetBattleAdaptation): builder.PrependInt32Slot(81, StreetBattleAdaptation, 0)
+    def AddHealedPierceRate(builder, HealedPierceRate): builder.PrependInt64Slot(81, HealedPierceRate, 0)
 
 
     @staticmethod
-    def AddOutdoorBattleAdaptation(builder, OutdoorBattleAdaptation): builder.PrependInt32Slot(82, OutdoorBattleAdaptation, 0)
+    def AddHealedMysticRate(builder, HealedMysticRate): builder.PrependInt64Slot(82, HealedMysticRate, 0)
 
 
     @staticmethod
-    def AddIndoorBattleAdaptation(builder, IndoorBattleAdaptation): builder.PrependInt32Slot(83, IndoorBattleAdaptation, 0)
+    def AddHealedSonicRate(builder, HealedSonicRate): builder.PrependInt64Slot(83, HealedSonicRate, 0)
 
 
     @staticmethod
-    def AddRegenCost(builder, RegenCost): builder.PrependInt64Slot(84, RegenCost, 0)
+    def AddHealedNormalRate(builder, HealedNormalRate): builder.PrependInt64Slot(84, HealedNormalRate, 0)
+
+
+    @staticmethod
+    def AddStreetBattleAdaptation(builder, StreetBattleAdaptation): builder.PrependInt32Slot(85, StreetBattleAdaptation, 0)
+
+
+    @staticmethod
+    def AddOutdoorBattleAdaptation(builder, OutdoorBattleAdaptation): builder.PrependInt32Slot(86, OutdoorBattleAdaptation, 0)
+
+
+    @staticmethod
+    def AddIndoorBattleAdaptation(builder, IndoorBattleAdaptation): builder.PrependInt32Slot(87, IndoorBattleAdaptation, 0)
+
+
+    @staticmethod
+    def AddRegenCost(builder, RegenCost): builder.PrependInt64Slot(88, RegenCost, 0)
 

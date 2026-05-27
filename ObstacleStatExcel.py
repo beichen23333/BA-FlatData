@@ -143,10 +143,38 @@ class ObstacleStatExcel:
         return 0
 
 
+    def WeakDamagedRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EffectiveDamagedRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def NormalDamagedRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ResistDamagedRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(18)
+    def Start(builder): builder.StartObject(22)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -220,4 +248,20 @@ class ObstacleStatExcel:
 
     @staticmethod
     def AddReduceWeakDamagedRate(builder, ReduceWeakDamagedRate): builder.PrependInt64Slot(17, ReduceWeakDamagedRate, 0)
+
+
+    @staticmethod
+    def AddWeakDamagedRatio(builder, WeakDamagedRatio): builder.PrependInt64Slot(18, WeakDamagedRatio, 0)
+
+
+    @staticmethod
+    def AddEffectiveDamagedRatio(builder, EffectiveDamagedRatio): builder.PrependInt64Slot(19, EffectiveDamagedRatio, 0)
+
+
+    @staticmethod
+    def AddNormalDamagedRatio(builder, NormalDamagedRatio): builder.PrependInt64Slot(20, NormalDamagedRatio, 0)
+
+
+    @staticmethod
+    def AddResistDamagedRatio(builder, ResistDamagedRatio): builder.PrependInt64Slot(21, ResistDamagedRatio, 0)
 

@@ -1882,6 +1882,7 @@ def pack_FieldQuestExcel(builder: flatbuffers.Builder, data: dict, encrypt=True)
     IsDaily_val = data.get('IsDaily', 0)
     FieldDateId_val = convert_long(data.get('FieldDateId', 0), password)
     Opendate_val = convert_long(data.get('Opendate', 0), password)
+    QuestGroupId_val = convert_long(data.get('QuestGroupId', 0), password)
     RewardId_val = convert_long(data.get('RewardId', 0), password)
     Prob_val = convert_int(data.get('Prob', 0), password)
     QuestNamKey_val = convert_uint(data.get('QuestNamKey', 0), password)
@@ -1892,6 +1893,7 @@ def pack_FieldQuestExcel(builder: flatbuffers.Builder, data: dict, encrypt=True)
     FieldQuestExcel.AddIsDaily(builder, IsDaily_val)
     FieldQuestExcel.AddFieldDateId(builder, FieldDateId_val)
     FieldQuestExcel.AddOpendate(builder, Opendate_val)
+    FieldQuestExcel.AddQuestGroupId(builder, QuestGroupId_val)
     FieldQuestExcel.AddAssetPath(builder, AssetPath_off)
     FieldQuestExcel.AddRewardId(builder, RewardId_val)
     FieldQuestExcel.AddProb(builder, Prob_val)
@@ -1987,6 +1989,7 @@ def pack_FieldSeasonExcel(builder: flatbuffers.Builder, data: dict, encrypt=True
     FieldLobbyTitleImagePath_off = builder.CreateString(encrypt_string(data.get('FieldLobbyTitleImagePath', ''), password))
     KeywordLogoImagePath_off = builder.CreateString(encrypt_string(data.get('KeywordLogoImagePath', ''), password))
     UniqueId_val = convert_long(data.get('UniqueId', 0), password)
+    FieldContentType_val = convert_int(getattr(FieldContentType, data.get('FieldContentType', 0)), password)
     EventContentId_val = convert_long(data.get('EventContentId', 0), password)
     EntryDateId_val = convert_long(data.get('EntryDateId', 0), password)
     InstantEntryDateId_val = convert_long(data.get('InstantEntryDateId', 0), password)
@@ -1995,6 +1998,7 @@ def pack_FieldSeasonExcel(builder: flatbuffers.Builder, data: dict, encrypt=True
     FieldGetKeywordCallDialogEnum_val = convert_int(getattr(FieldDialogType, data.get('FieldGetKeywordCallDialogEnum', 0)), password)
     FieldSeasonExcel.Start(builder)
     FieldSeasonExcel.AddUniqueId(builder, UniqueId_val)
+    FieldSeasonExcel.AddFieldContentType(builder, FieldContentType_val)
     FieldSeasonExcel.AddEventContentId(builder, EventContentId_val)
     FieldSeasonExcel.AddEntryDateId(builder, EntryDateId_val)
     FieldSeasonExcel.AddInstantEntryDateId(builder, InstantEntryDateId_val)
@@ -5283,6 +5287,10 @@ def pack_CharacterStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
     ReduceBasicsDamagedRate_val = convert_long(data.get('ReduceBasicsDamagedRate', 0), password)
     EnhanceWeakDamageRate_val = convert_long(data.get('EnhanceWeakDamageRate', 0), password)
     ReduceWeakDamagedRate_val = convert_long(data.get('ReduceWeakDamagedRate', 0), password)
+    WeakDamagedRatio_val = convert_long(data.get('WeakDamagedRatio', 0), password)
+    EffectiveDamagedRatio_val = convert_long(data.get('EffectiveDamagedRatio', 0), password)
+    NormalDamagedRatio_val = convert_long(data.get('NormalDamagedRatio', 0), password)
+    ResistDamagedRatio_val = convert_long(data.get('ResistDamagedRatio', 0), password)
     HealRate_val = convert_long(data.get('HealRate', 0), password)
     HealLightArmorRate_val = convert_long(data.get('HealLightArmorRate', 0), password)
     HealHeavyArmorRate_val = convert_long(data.get('HealHeavyArmorRate', 0), password)
@@ -5369,6 +5377,10 @@ def pack_CharacterStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
     CharacterStatExcel.AddReduceBasicsDamagedRate(builder, ReduceBasicsDamagedRate_val)
     CharacterStatExcel.AddEnhanceWeakDamageRate(builder, EnhanceWeakDamageRate_val)
     CharacterStatExcel.AddReduceWeakDamagedRate(builder, ReduceWeakDamagedRate_val)
+    CharacterStatExcel.AddWeakDamagedRatio(builder, WeakDamagedRatio_val)
+    CharacterStatExcel.AddEffectiveDamagedRatio(builder, EffectiveDamagedRatio_val)
+    CharacterStatExcel.AddNormalDamagedRatio(builder, NormalDamagedRatio_val)
+    CharacterStatExcel.AddResistDamagedRatio(builder, ResistDamagedRatio_val)
     CharacterStatExcel.AddHealRate(builder, HealRate_val)
     CharacterStatExcel.AddHealLightArmorRate(builder, HealLightArmorRate_val)
     CharacterStatExcel.AddHealHeavyArmorRate(builder, HealHeavyArmorRate_val)
@@ -9168,6 +9180,78 @@ def pack_FavorLevelRewardExcel(builder: flatbuffers.Builder, data: dict, encrypt
     FavorLevelRewardExcel.AddStatValue(builder, StatValue_vec)
     return FavorLevelRewardExcel.End(builder)
 
+def pack_FieldQuestGroupExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("FieldQuestGroup") if encrypt else None
+    Id_val = convert_long(data.get('Id', 0), password)
+    SkipFromInteractionId_val = convert_long(data.get('SkipFromInteractionId', 0), password)
+    SkipToInteractionId_val = convert_long(data.get('SkipToInteractionId', 0), password)
+    NextSceneId_val = convert_long(data.get('NextSceneId', 0), password)
+    SkipResultUI_val = data.get('SkipResultUI', 0)
+    FieldQuestGroupExcel.Start(builder)
+    FieldQuestGroupExcel.AddId(builder, Id_val)
+    FieldQuestGroupExcel.AddSkipFromInteractionId(builder, SkipFromInteractionId_val)
+    FieldQuestGroupExcel.AddSkipToInteractionId(builder, SkipToInteractionId_val)
+    FieldQuestGroupExcel.AddNextSceneId(builder, NextSceneId_val)
+    FieldQuestGroupExcel.AddSkipResultUI(builder, SkipResultUI_val)
+    return FieldQuestGroupExcel.End(builder)
+
+def pack_FieldSNSInfoExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("FieldSNSInfo") if encrypt else None
+    Id_val = convert_long(data.get('Id', 0), password)
+    InteractionGroupId_val = convert_long(data.get('InteractionGroupId', 0), password)
+    SNSStateType_val = convert_int(getattr(FieldSNSStateType, data.get('SNSStateType', 0)), password)
+    StateLocalizeKey_val = convert_uint(data.get('StateLocalizeKey', 0), password)
+    DescLocalizeKey_val = convert_uint(data.get('DescLocalizeKey', 0), password)
+    FieldSNSInfoExcel.Start(builder)
+    FieldSNSInfoExcel.AddId(builder, Id_val)
+    FieldSNSInfoExcel.AddInteractionGroupId(builder, InteractionGroupId_val)
+    FieldSNSInfoExcel.AddSNSStateType(builder, SNSStateType_val)
+    FieldSNSInfoExcel.AddStateLocalizeKey(builder, StateLocalizeKey_val)
+    FieldSNSInfoExcel.AddDescLocalizeKey(builder, DescLocalizeKey_val)
+    return FieldSNSInfoExcel.End(builder)
+
+def pack_FieldSNSPostExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("FieldSNSPost") if encrypt else None
+    Id_val = convert_long(data.get('Id', 0), password)
+    GroupInteractionId_val = convert_long(data.get('GroupInteractionId', 0), password)
+    PostType_val = convert_int(getattr(FieldSNSPostType, data.get('PostType', 0)), password)
+    SNSPostId_val = convert_long(data.get('SNSPostId', 0), password)
+    IsSequence_val = data.get('IsSequence', 0)
+    Order_val = convert_long(data.get('Order', 0), password)
+    DelayTime_val = convert_long(data.get('DelayTime', 0), password)
+    RepostMinNum_val = convert_long(data.get('RepostMinNum', 0), password)
+    RepostMaxNum_val = convert_long(data.get('RepostMaxNum', 0), password)
+    FavorMinNum_val = convert_long(data.get('FavorMinNum', 0), password)
+    FavorMaxNum_val = convert_long(data.get('FavorMaxNum', 0), password)
+    FieldSNSPostExcel.Start(builder)
+    FieldSNSPostExcel.AddId(builder, Id_val)
+    FieldSNSPostExcel.AddGroupInteractionId(builder, GroupInteractionId_val)
+    FieldSNSPostExcel.AddPostType(builder, PostType_val)
+    FieldSNSPostExcel.AddSNSPostId(builder, SNSPostId_val)
+    FieldSNSPostExcel.AddIsSequence(builder, IsSequence_val)
+    FieldSNSPostExcel.AddOrder(builder, Order_val)
+    FieldSNSPostExcel.AddDelayTime(builder, DelayTime_val)
+    FieldSNSPostExcel.AddRepostMinNum(builder, RepostMinNum_val)
+    FieldSNSPostExcel.AddRepostMaxNum(builder, RepostMaxNum_val)
+    FieldSNSPostExcel.AddFavorMinNum(builder, FavorMinNum_val)
+    FieldSNSPostExcel.AddFavorMaxNum(builder, FavorMaxNum_val)
+    return FieldSNSPostExcel.End(builder)
+
+def pack_FieldWarpExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("FieldWarp") if encrypt else None
+    ResultSceneImagePath_off = builder.CreateString(encrypt_string(data.get('ResultSceneImagePath', ''), password))
+    UniqueId_val = convert_long(data.get('UniqueId', 0), password)
+    CurrentSceneId_val = convert_long(data.get('CurrentSceneId', 0), password)
+    ResultSceneId_val = convert_long(data.get('ResultSceneId', 0), password)
+    ResultSceneNameKey_val = convert_uint(data.get('ResultSceneNameKey', 0), password)
+    FieldWarpExcel.Start(builder)
+    FieldWarpExcel.AddUniqueId(builder, UniqueId_val)
+    FieldWarpExcel.AddCurrentSceneId(builder, CurrentSceneId_val)
+    FieldWarpExcel.AddResultSceneId(builder, ResultSceneId_val)
+    FieldWarpExcel.AddResultSceneNameKey(builder, ResultSceneNameKey_val)
+    FieldWarpExcel.AddResultSceneImagePath(builder, ResultSceneImagePath_off)
+    return FieldWarpExcel.End(builder)
+
 def pack_FixedEchelonSettingExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("FixedEchelonSetting") if encrypt else None
     MainCharacterID_vec = 0
@@ -9963,6 +10047,7 @@ def pack_GroundExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> 
     StageTopography_val = convert_int(getattr(StageTopography, data.get('StageTopography', 0)), password)
     EnemyBulletType_val = convert_int(getattr(BulletType, data.get('EnemyBulletType', 0)), password)
     EnemyArmorType_val = convert_int(getattr(ArmorType, data.get('EnemyArmorType', 0)), password)
+    EnemySubArmorType_val = convert_int(getattr(ArmorType, data.get('EnemySubArmorType', 0)), password)
     LevelNPC_val = convert_long(data.get('LevelNPC', 0), password)
     LevelMinion_val = convert_long(data.get('LevelMinion', 0), password)
     LevelElite_val = convert_long(data.get('LevelElite', 0), password)
@@ -10017,6 +10102,7 @@ def pack_GroundExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> 
     GroundExcel.AddStageTopography(builder, StageTopography_val)
     GroundExcel.AddEnemyBulletType(builder, EnemyBulletType_val)
     GroundExcel.AddEnemyArmorType(builder, EnemyArmorType_val)
+    GroundExcel.AddEnemySubArmorType(builder, EnemySubArmorType_val)
     GroundExcel.AddLevelNPC(builder, LevelNPC_val)
     GroundExcel.AddLevelMinion(builder, LevelMinion_val)
     GroundExcel.AddLevelElite(builder, LevelElite_val)
@@ -13636,6 +13722,10 @@ def pack_ObstacleStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tru
     ReduceExDamagedRate_val = convert_long(data.get('ReduceExDamagedRate', 0), password)
     ReduceBasicsDamagedRate_val = convert_long(data.get('ReduceBasicsDamagedRate', 0), password)
     ReduceWeakDamagedRate_val = convert_long(data.get('ReduceWeakDamagedRate', 0), password)
+    WeakDamagedRatio_val = convert_long(data.get('WeakDamagedRatio', 0), password)
+    EffectiveDamagedRatio_val = convert_long(data.get('EffectiveDamagedRatio', 0), password)
+    NormalDamagedRatio_val = convert_long(data.get('NormalDamagedRatio', 0), password)
+    ResistDamagedRatio_val = convert_long(data.get('ResistDamagedRatio', 0), password)
     ObstacleStatExcel.Start(builder)
     ObstacleStatExcel.AddStringID(builder, StringID_val)
     ObstacleStatExcel.AddName(builder, Name_off)
@@ -13655,6 +13745,10 @@ def pack_ObstacleStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tru
     ObstacleStatExcel.AddReduceExDamagedRate(builder, ReduceExDamagedRate_val)
     ObstacleStatExcel.AddReduceBasicsDamagedRate(builder, ReduceBasicsDamagedRate_val)
     ObstacleStatExcel.AddReduceWeakDamagedRate(builder, ReduceWeakDamagedRate_val)
+    ObstacleStatExcel.AddWeakDamagedRatio(builder, WeakDamagedRatio_val)
+    ObstacleStatExcel.AddEffectiveDamagedRatio(builder, EffectiveDamagedRatio_val)
+    ObstacleStatExcel.AddNormalDamagedRatio(builder, NormalDamagedRatio_val)
+    ObstacleStatExcel.AddResistDamagedRatio(builder, ResistDamagedRatio_val)
     return ObstacleStatExcel.End(builder)
 
 def pack_OpenConditionExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -14303,6 +14397,7 @@ def pack_ProductSelectExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
         ProductSelectionSlot_vec = builder.EndVector(len(ProductSelectionSlot_items))
     Id_val = convert_long(data.get('Id', 0), password)
     ProductSelectSubType_val = convert_int(getattr(ProductSelectSubType, data.get('ProductSelectSubType', 0)), password)
+    AutoSelectPopupType_val = convert_int(getattr(AutoSelectPopupType, data.get('AutoSelectPopupType', 0)), password)
     StoreType_val = convert_int(getattr(StoreType, data.get('StoreType', 0)), password)
     Price_val = convert_long(data.get('Price', 0), password)
     PurchasePeriodType_val = convert_int(getattr(PurchasePeriodType, data.get('PurchasePeriodType', 0)), password)
@@ -14310,6 +14405,7 @@ def pack_ProductSelectExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
     ProductSelectExcel.Start(builder)
     ProductSelectExcel.AddId(builder, Id_val)
     ProductSelectExcel.AddProductSelectSubType(builder, ProductSelectSubType_val)
+    ProductSelectExcel.AddAutoSelectPopupType(builder, AutoSelectPopupType_val)
     ProductSelectExcel.AddProductId(builder, ProductId_off)
     ProductSelectExcel.AddStoreType(builder, StoreType_val)
     ProductSelectExcel.AddPrice(builder, Price_val)
@@ -14452,6 +14548,50 @@ def pack_RaidSeasonManageExcel(builder: flatbuffers.Builder, data: dict, encrypt
     RaidSeasonManageExcel.AddStackedSeasonRewardGauge(builder, StackedSeasonRewardGauge_vec)
     RaidSeasonManageExcel.AddSeasonRewardId(builder, SeasonRewardId_vec)
     return RaidSeasonManageExcel.End(builder)
+
+def pack_RaidSkillDescriptionListExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("RaidSkillDescriptionList") if encrypt else None
+    BossGroup_off = builder.CreateString(encrypt_string(data.get('BossGroup', ''), password))
+    Difficulty_off = builder.CreateString(encrypt_string(data.get('Difficulty', ''), password))
+    PhaseNameOverrideKey_off = builder.CreateString(encrypt_string(data.get('PhaseNameOverrideKey', ''), password))
+    SkillGroupId_vec = 0
+    if 'SkillGroupId' in data:
+        SkillGroupId_items = data['SkillGroupId']
+        SkillGroupId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in SkillGroupId_items]
+        RaidSkillDescriptionListExcel.StartSkillGroupIdVector(builder, len(SkillGroupId_str_offsets))
+        for offset in reversed(SkillGroupId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        SkillGroupId_vec = builder.EndVector(len(SkillGroupId_items))
+    SkillUsePhase_vec = 0
+    if 'SkillUsePhase' in data:
+        SkillUsePhase_items = data['SkillUsePhase']
+        RaidSkillDescriptionListExcel.StartSkillUsePhaseVector(builder, len(SkillUsePhase_items))
+        for item in reversed(SkillUsePhase_items):
+            builder.PrependInt64(convert_long(item, password))
+        SkillUsePhase_vec = builder.EndVector(len(SkillUsePhase_items))
+    ShowSkillSlot_vec = 0
+    if 'ShowSkillSlot' in data:
+        ShowSkillSlot_items = data['ShowSkillSlot']
+        RaidSkillDescriptionListExcel.StartShowSkillSlotVector(builder, len(ShowSkillSlot_items))
+        for item in reversed(ShowSkillSlot_items):
+            builder.PrependInt32(convert_int(getattr(SkillSlotShowType, item), password))
+        ShowSkillSlot_vec = builder.EndVector(len(ShowSkillSlot_items))
+    HighlightResource_vec = 0
+    if 'HighlightResource' in data:
+        HighlightResource_items = data['HighlightResource']
+        RaidSkillDescriptionListExcel.StartHighlightResourceVector(builder, len(HighlightResource_items))
+        for item in reversed(HighlightResource_items):
+            builder.PrependInt32(convert_int(getattr(SkillSlotHighLightType, item), password))
+        HighlightResource_vec = builder.EndVector(len(HighlightResource_items))
+    RaidSkillDescriptionListExcel.Start(builder)
+    RaidSkillDescriptionListExcel.AddBossGroup(builder, BossGroup_off)
+    RaidSkillDescriptionListExcel.AddDifficulty(builder, Difficulty_off)
+    RaidSkillDescriptionListExcel.AddPhaseNameOverrideKey(builder, PhaseNameOverrideKey_off)
+    RaidSkillDescriptionListExcel.AddSkillGroupId(builder, SkillGroupId_vec)
+    RaidSkillDescriptionListExcel.AddSkillUsePhase(builder, SkillUsePhase_vec)
+    RaidSkillDescriptionListExcel.AddShowSkillSlot(builder, ShowSkillSlot_vec)
+    RaidSkillDescriptionListExcel.AddHighlightResource(builder, HighlightResource_vec)
+    return RaidSkillDescriptionListExcel.End(builder)
 
 def pack_RaidStageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("RaidStage") if encrypt else None
@@ -14882,6 +15022,7 @@ def pack_ScenarioEffectExcel(builder: flatbuffers.Builder, data: dict, encrypt=T
 
 def pack_ScenarioModeExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("ScenarioMode") if encrypt else None
+    DisplayVolumeId_off = builder.CreateString(encrypt_string(data.get('DisplayVolumeId', ''), password))
     ExposedTime_off = builder.CreateString(encrypt_string(data.get('ExposedTime', ''), password))
     SpecialRewardPrefabName_off = builder.CreateString(encrypt_string(data.get('SpecialRewardPrefabName', ''), password))
     EventIconParcelPath_off = builder.CreateString(encrypt_string(data.get('EventIconParcelPath', ''), password))
@@ -14921,6 +15062,7 @@ def pack_ScenarioModeExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tru
     GroundId_val = convert_long(data.get('GroundId', 0), password)
     IsDefeatBattle_val = data.get('IsDefeatBattle', 0)
     BattleDuration_val = convert_long(data.get('BattleDuration', 0), password)
+    FieldDateId_val = convert_long(data.get('FieldDateId', 0), password)
     ScenarioModeRewardId_val = convert_long(data.get('ScenarioModeRewardId', 0), password)
     IsScenarioSpecialReward_val = data.get('IsScenarioSpecialReward', 0)
     SpecialRewardLogOut_val = data.get('SpecialRewardLogOut', 0)
@@ -14945,6 +15087,7 @@ def pack_ScenarioModeExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tru
     ScenarioModeExcel.AddModeId(builder, ModeId_val)
     ScenarioModeExcel.AddModeType(builder, ModeType_val)
     ScenarioModeExcel.AddSubType(builder, SubType_val)
+    ScenarioModeExcel.AddDisplayVolumeId(builder, DisplayVolumeId_off)
     ScenarioModeExcel.AddVolumeId(builder, VolumeId_val)
     ScenarioModeExcel.AddChapterId(builder, ChapterId_val)
     ScenarioModeExcel.AddEpisodeId(builder, EpisodeId_val)
@@ -14958,6 +15101,7 @@ def pack_ScenarioModeExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tru
     ScenarioModeExcel.AddGroundId(builder, GroundId_val)
     ScenarioModeExcel.AddIsDefeatBattle(builder, IsDefeatBattle_val)
     ScenarioModeExcel.AddBattleDuration(builder, BattleDuration_val)
+    ScenarioModeExcel.AddFieldDateId(builder, FieldDateId_val)
     ScenarioModeExcel.AddBackScenarioGroupId(builder, BackScenarioGroupId_vec)
     ScenarioModeExcel.AddClearedModeId(builder, ClearedModeId_vec)
     ScenarioModeExcel.AddScenarioModeRewardId(builder, ScenarioModeRewardId_val)
@@ -15691,10 +15835,12 @@ def pack_SkillAdditionalTooltipExcel(builder: flatbuffers.Builder, data: dict, e
     AdditionalSkillGroupId_off = builder.CreateString(encrypt_string(data.get('AdditionalSkillGroupId', ''), password))
     ShowSkillSlot_off = builder.CreateString(encrypt_string(data.get('ShowSkillSlot', ''), password))
     GroupId_val = convert_long(data.get('GroupId', 0), password)
+    DisplayIconBg_val = data.get('DisplayIconBg', 0)
     SkillAdditionalTooltipExcel.Start(builder)
     SkillAdditionalTooltipExcel.AddGroupId(builder, GroupId_val)
     SkillAdditionalTooltipExcel.AddAdditionalSkillGroupId(builder, AdditionalSkillGroupId_off)
     SkillAdditionalTooltipExcel.AddShowSkillSlot(builder, ShowSkillSlot_off)
+    SkillAdditionalTooltipExcel.AddDisplayIconBg(builder, DisplayIconBg_val)
     return SkillAdditionalTooltipExcel.End(builder)
 
 def pack_SkillExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -16712,6 +16858,178 @@ def pack_WeekDungeonRewardExcel(builder: flatbuffers.Builder, data: dict, encryp
     WeekDungeonRewardExcel.AddIsDisplayed(builder, IsDisplayed_val)
     WeekDungeonRewardExcel.AddDropItemModelPrefabPath(builder, DropItemModelPrefabPath_off)
     return WeekDungeonRewardExcel.End(builder)
+
+def pack_WelcomeCampaignAttendanceRewardExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("WelcomeCampaignAttendanceReward") if encrypt else None
+    Id_val = convert_long(data.get('Id', 0), password)
+    SeasonId_val = convert_long(data.get('SeasonId', 0), password)
+    CountCheckType_val = convert_int(getattr(WelcomeCampaignAttendanceType, data.get('CountCheckType', 0)), password)
+    Day_val = convert_long(data.get('Day', 0), password)
+    RewardParcelType_val = convert_int(getattr(ParcelType, data.get('RewardParcelType', 0)), password)
+    RewardId_val = convert_long(data.get('RewardId', 0), password)
+    RewardAmount_val = convert_long(data.get('RewardAmount', 0), password)
+    WelcomeCampaignAttendanceRewardExcel.Start(builder)
+    WelcomeCampaignAttendanceRewardExcel.AddId(builder, Id_val)
+    WelcomeCampaignAttendanceRewardExcel.AddSeasonId(builder, SeasonId_val)
+    WelcomeCampaignAttendanceRewardExcel.AddCountCheckType(builder, CountCheckType_val)
+    WelcomeCampaignAttendanceRewardExcel.AddDay(builder, Day_val)
+    WelcomeCampaignAttendanceRewardExcel.AddRewardParcelType(builder, RewardParcelType_val)
+    WelcomeCampaignAttendanceRewardExcel.AddRewardId(builder, RewardId_val)
+    WelcomeCampaignAttendanceRewardExcel.AddRewardAmount(builder, RewardAmount_val)
+    return WelcomeCampaignAttendanceRewardExcel.End(builder)
+
+def pack_WelcomeCampaignEnterRewardExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("WelcomeCampaignEnterReward") if encrypt else None
+    GroupId_val = convert_long(data.get('GroupId', 0), password)
+    RewardParcelType_val = convert_int(getattr(ParcelType, data.get('RewardParcelType', 0)), password)
+    RewardParcelUniqueID_val = convert_long(data.get('RewardParcelUniqueID', 0), password)
+    RewardAmount_val = convert_long(data.get('RewardAmount', 0), password)
+    WelcomeCampaignEnterRewardExcel.Start(builder)
+    WelcomeCampaignEnterRewardExcel.AddGroupId(builder, GroupId_val)
+    WelcomeCampaignEnterRewardExcel.AddRewardParcelType(builder, RewardParcelType_val)
+    WelcomeCampaignEnterRewardExcel.AddRewardParcelUniqueID(builder, RewardParcelUniqueID_val)
+    WelcomeCampaignEnterRewardExcel.AddRewardAmount(builder, RewardAmount_val)
+    return WelcomeCampaignEnterRewardExcel.End(builder)
+
+def pack_WelcomeCampaignMissionExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("WelcomeCampaignMission") if encrypt else None
+    ToastImagePath_off = builder.CreateString(encrypt_string(data.get('ToastImagePath', ''), password))
+    PreMissionId_vec = 0
+    if 'PreMissionId' in data:
+        PreMissionId_items = data['PreMissionId']
+        WelcomeCampaignMissionExcel.StartPreMissionIdVector(builder, len(PreMissionId_items))
+        for item in reversed(PreMissionId_items):
+            builder.PrependInt64(convert_long(item, password))
+        PreMissionId_vec = builder.EndVector(len(PreMissionId_items))
+    ShortcutUI_vec = 0
+    if 'ShortcutUI' in data:
+        ShortcutUI_items = data['ShortcutUI']
+        ShortcutUI_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in ShortcutUI_items]
+        WelcomeCampaignMissionExcel.StartShortcutUIVector(builder, len(ShortcutUI_str_offsets))
+        for offset in reversed(ShortcutUI_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        ShortcutUI_vec = builder.EndVector(len(ShortcutUI_items))
+    CompleteConditionParameter_vec = 0
+    if 'CompleteConditionParameter' in data:
+        CompleteConditionParameter_items = data['CompleteConditionParameter']
+        WelcomeCampaignMissionExcel.StartCompleteConditionParameterVector(builder, len(CompleteConditionParameter_items))
+        for item in reversed(CompleteConditionParameter_items):
+            builder.PrependInt64(convert_long(item, password))
+        CompleteConditionParameter_vec = builder.EndVector(len(CompleteConditionParameter_items))
+    CompleteConditionParameterTag_vec = 0
+    if 'CompleteConditionParameterTag' in data:
+        CompleteConditionParameterTag_items = data['CompleteConditionParameterTag']
+        WelcomeCampaignMissionExcel.StartCompleteConditionParameterTagVector(builder, len(CompleteConditionParameterTag_items))
+        for item in reversed(CompleteConditionParameterTag_items):
+            builder.PrependInt32(convert_int(getattr(Tag, item), password))
+        CompleteConditionParameterTag_vec = builder.EndVector(len(CompleteConditionParameterTag_items))
+    MissionRewardParcelType_vec = 0
+    if 'MissionRewardParcelType' in data:
+        MissionRewardParcelType_items = data['MissionRewardParcelType']
+        WelcomeCampaignMissionExcel.StartMissionRewardParcelTypeVector(builder, len(MissionRewardParcelType_items))
+        for item in reversed(MissionRewardParcelType_items):
+            builder.PrependInt32(convert_int(getattr(ParcelType, item), password))
+        MissionRewardParcelType_vec = builder.EndVector(len(MissionRewardParcelType_items))
+    MissionRewardParcelId_vec = 0
+    if 'MissionRewardParcelId' in data:
+        MissionRewardParcelId_items = data['MissionRewardParcelId']
+        WelcomeCampaignMissionExcel.StartMissionRewardParcelIdVector(builder, len(MissionRewardParcelId_items))
+        for item in reversed(MissionRewardParcelId_items):
+            builder.PrependInt64(convert_long(item, password))
+        MissionRewardParcelId_vec = builder.EndVector(len(MissionRewardParcelId_items))
+    MissionRewardAmount_vec = 0
+    if 'MissionRewardAmount' in data:
+        MissionRewardAmount_items = data['MissionRewardAmount']
+        WelcomeCampaignMissionExcel.StartMissionRewardAmountVector(builder, len(MissionRewardAmount_items))
+        for item in reversed(MissionRewardAmount_items):
+            builder.PrependInt32(convert_int(item, password))
+        MissionRewardAmount_vec = builder.EndVector(len(MissionRewardAmount_items))
+    SeasonId_val = convert_long(data.get('SeasonId', 0), password)
+    Id_val = convert_long(data.get('Id', 0), password)
+    Category_val = convert_int(getattr(MissionCategory, data.get('Category', 0)), password)
+    IsLegacy_val = data.get('IsLegacy', 0)
+    Day_val = convert_int(data.get('Day', 0), password)
+    Description_val = convert_uint(data.get('Description', 0), password)
+    ToastDisplayType_val = convert_int(getattr(MissionToastDisplayConditionType, data.get('ToastDisplayType', 0)), password)
+    CompleteConditionDayBlock_val = data.get('CompleteConditionDayBlock', 0)
+    CompleteConditionType_val = convert_int(getattr(MissionCompleteConditionType, data.get('CompleteConditionType', 0)), password)
+    CompleteConditionCount_val = convert_long(data.get('CompleteConditionCount', 0), password)
+    CompleteConditionParameterUIPrefabType_val = convert_int(getattr(MissionCompleteUIPrefabType, data.get('CompleteConditionParameterUIPrefabType', 0)), password)
+    WelcomeCampaignMissionExcel.Start(builder)
+    WelcomeCampaignMissionExcel.AddSeasonId(builder, SeasonId_val)
+    WelcomeCampaignMissionExcel.AddId(builder, Id_val)
+    WelcomeCampaignMissionExcel.AddCategory(builder, Category_val)
+    WelcomeCampaignMissionExcel.AddIsLegacy(builder, IsLegacy_val)
+    WelcomeCampaignMissionExcel.AddDay(builder, Day_val)
+    WelcomeCampaignMissionExcel.AddPreMissionId(builder, PreMissionId_vec)
+    WelcomeCampaignMissionExcel.AddDescription(builder, Description_val)
+    WelcomeCampaignMissionExcel.AddToastDisplayType(builder, ToastDisplayType_val)
+    WelcomeCampaignMissionExcel.AddToastImagePath(builder, ToastImagePath_off)
+    WelcomeCampaignMissionExcel.AddShortcutUI(builder, ShortcutUI_vec)
+    WelcomeCampaignMissionExcel.AddCompleteConditionDayBlock(builder, CompleteConditionDayBlock_val)
+    WelcomeCampaignMissionExcel.AddCompleteConditionType(builder, CompleteConditionType_val)
+    WelcomeCampaignMissionExcel.AddCompleteConditionCount(builder, CompleteConditionCount_val)
+    WelcomeCampaignMissionExcel.AddCompleteConditionParameter(builder, CompleteConditionParameter_vec)
+    WelcomeCampaignMissionExcel.AddCompleteConditionParameterTag(builder, CompleteConditionParameterTag_vec)
+    WelcomeCampaignMissionExcel.AddCompleteConditionParameterUIPrefabType(builder, CompleteConditionParameterUIPrefabType_val)
+    WelcomeCampaignMissionExcel.AddMissionRewardParcelType(builder, MissionRewardParcelType_vec)
+    WelcomeCampaignMissionExcel.AddMissionRewardParcelId(builder, MissionRewardParcelId_vec)
+    WelcomeCampaignMissionExcel.AddMissionRewardAmount(builder, MissionRewardAmount_vec)
+    return WelcomeCampaignMissionExcel.End(builder)
+
+def pack_WelcomeCampaignRewardIncreaseExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("WelcomeCampaignRewardIncrease") if encrypt else None
+    IconPath_off = builder.CreateString(encrypt_string(data.get('IconPath', ''), password))
+    Id_val = convert_int(data.get('Id', 0), password)
+    GroupId_val = convert_long(data.get('GroupId', 0), password)
+    LocalizeCodeId_val = convert_uint(data.get('LocalizeCodeId', 0), password)
+    EventTargetType_val = convert_int(getattr(EventTargetType, data.get('EventTargetType', 0)), password)
+    IncreaseRatio_val = convert_int(data.get('IncreaseRatio', 0), password)
+    ShortcutEventTargetType_val = convert_int(getattr(EventTargetType, data.get('ShortcutEventTargetType', 0)), password)
+    WelcomeCampaignRewardIncreaseExcel.Start(builder)
+    WelcomeCampaignRewardIncreaseExcel.AddId(builder, Id_val)
+    WelcomeCampaignRewardIncreaseExcel.AddGroupId(builder, GroupId_val)
+    WelcomeCampaignRewardIncreaseExcel.AddLocalizeCodeId(builder, LocalizeCodeId_val)
+    WelcomeCampaignRewardIncreaseExcel.AddIconPath(builder, IconPath_off)
+    WelcomeCampaignRewardIncreaseExcel.AddEventTargetType(builder, EventTargetType_val)
+    WelcomeCampaignRewardIncreaseExcel.AddIncreaseRatio(builder, IncreaseRatio_val)
+    WelcomeCampaignRewardIncreaseExcel.AddShortcutEventTargetType(builder, ShortcutEventTargetType_val)
+    return WelcomeCampaignRewardIncreaseExcel.End(builder)
+
+def pack_WelcomeCampaignSeasonExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("WelcomeCampaignSeason") if encrypt else None
+    StartDate_off = builder.CreateString(encrypt_string(data.get('StartDate', ''), password))
+    EndDate_off = builder.CreateString(encrypt_string(data.get('EndDate', ''), password))
+    EnterIconImage_off = builder.CreateString(encrypt_string(data.get('EnterIconImage', ''), password))
+    BackgroundImage_off = builder.CreateString(encrypt_string(data.get('BackgroundImage', ''), password))
+    TitleImage_off = builder.CreateString(encrypt_string(data.get('TitleImage', ''), password))
+    Id_val = convert_long(data.get('Id', 0), password)
+    TitleLocalizeCode_val = convert_uint(data.get('TitleLocalizeCode', 0), password)
+    TargetGroup_val = convert_int(getattr(TargetGroup, data.get('TargetGroup', 0)), password)
+    ActiveOrder_val = convert_int(data.get('ActiveOrder', 0), password)
+    ExpiryDate_val = convert_long(data.get('ExpiryDate', 0), password)
+    EnterRewardGroupId_val = convert_long(data.get('EnterRewardGroupId', 0), password)
+    RewardIncreaseId_val = convert_long(data.get('RewardIncreaseId', 0), password)
+    MaximumLoginCount_val = convert_long(data.get('MaximumLoginCount', 0), password)
+    AttendanceBookSize_val = convert_long(data.get('AttendanceBookSize', 0), password)
+    ContinuousAttendance_val = data.get('ContinuousAttendance', 0)
+    WelcomeCampaignSeasonExcel.Start(builder)
+    WelcomeCampaignSeasonExcel.AddId(builder, Id_val)
+    WelcomeCampaignSeasonExcel.AddTitleLocalizeCode(builder, TitleLocalizeCode_val)
+    WelcomeCampaignSeasonExcel.AddTargetGroup(builder, TargetGroup_val)
+    WelcomeCampaignSeasonExcel.AddActiveOrder(builder, ActiveOrder_val)
+    WelcomeCampaignSeasonExcel.AddStartDate(builder, StartDate_off)
+    WelcomeCampaignSeasonExcel.AddEndDate(builder, EndDate_off)
+    WelcomeCampaignSeasonExcel.AddExpiryDate(builder, ExpiryDate_val)
+    WelcomeCampaignSeasonExcel.AddEnterIconImage(builder, EnterIconImage_off)
+    WelcomeCampaignSeasonExcel.AddBackgroundImage(builder, BackgroundImage_off)
+    WelcomeCampaignSeasonExcel.AddTitleImage(builder, TitleImage_off)
+    WelcomeCampaignSeasonExcel.AddEnterRewardGroupId(builder, EnterRewardGroupId_val)
+    WelcomeCampaignSeasonExcel.AddRewardIncreaseId(builder, RewardIncreaseId_val)
+    WelcomeCampaignSeasonExcel.AddMaximumLoginCount(builder, MaximumLoginCount_val)
+    WelcomeCampaignSeasonExcel.AddAttendanceBookSize(builder, AttendanceBookSize_val)
+    WelcomeCampaignSeasonExcel.AddContinuousAttendance(builder, ContinuousAttendance_val)
+    return WelcomeCampaignSeasonExcel.End(builder)
 
 def pack_WorldRaidBossGroupExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("WorldRaidBossGroup") if encrypt else None
@@ -20054,6 +20372,54 @@ def pack_FavorLevelRewardExcelTable(builder: flatbuffers.Builder, dump_list: lis
     FavorLevelRewardExcelTable.AddDataList(builder, data_list)
     return FavorLevelRewardExcelTable.End(builder)
 
+def pack_FieldQuestGroupExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_FieldQuestGroupExcel(builder, record, encrypt))
+    FieldQuestGroupExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    FieldQuestGroupExcelTable.Start(builder)
+    FieldQuestGroupExcelTable.AddDataList(builder, data_list)
+    return FieldQuestGroupExcelTable.End(builder)
+
+def pack_FieldSNSInfoExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_FieldSNSInfoExcel(builder, record, encrypt))
+    FieldSNSInfoExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    FieldSNSInfoExcelTable.Start(builder)
+    FieldSNSInfoExcelTable.AddDataList(builder, data_list)
+    return FieldSNSInfoExcelTable.End(builder)
+
+def pack_FieldSNSPostExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_FieldSNSPostExcel(builder, record, encrypt))
+    FieldSNSPostExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    FieldSNSPostExcelTable.Start(builder)
+    FieldSNSPostExcelTable.AddDataList(builder, data_list)
+    return FieldSNSPostExcelTable.End(builder)
+
+def pack_FieldWarpExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_FieldWarpExcel(builder, record, encrypt))
+    FieldWarpExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    FieldWarpExcelTable.Start(builder)
+    FieldWarpExcelTable.AddDataList(builder, data_list)
+    return FieldWarpExcelTable.End(builder)
+
 def pack_FixedEchelonSettingExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -21818,6 +22184,18 @@ def pack_RaidSeasonManageExcelTable(builder: flatbuffers.Builder, dump_list: lis
     RaidSeasonManageExcelTable.AddDataList(builder, data_list)
     return RaidSeasonManageExcelTable.End(builder)
 
+def pack_RaidSkillDescriptionListExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_RaidSkillDescriptionListExcel(builder, record, encrypt))
+    RaidSkillDescriptionListExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    RaidSkillDescriptionListExcelTable.Start(builder)
+    RaidSkillDescriptionListExcelTable.AddDataList(builder, data_list)
+    return RaidSkillDescriptionListExcelTable.End(builder)
+
 def pack_RaidStageExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -22717,6 +23095,66 @@ def pack_WeekDungeonRewardExcelTable(builder: flatbuffers.Builder, dump_list: li
     WeekDungeonRewardExcelTable.Start(builder)
     WeekDungeonRewardExcelTable.AddDataList(builder, data_list)
     return WeekDungeonRewardExcelTable.End(builder)
+
+def pack_WelcomeCampaignAttendanceRewardExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_WelcomeCampaignAttendanceRewardExcel(builder, record, encrypt))
+    WelcomeCampaignAttendanceRewardExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    WelcomeCampaignAttendanceRewardExcelTable.Start(builder)
+    WelcomeCampaignAttendanceRewardExcelTable.AddDataList(builder, data_list)
+    return WelcomeCampaignAttendanceRewardExcelTable.End(builder)
+
+def pack_WelcomeCampaignEnterRewardExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_WelcomeCampaignEnterRewardExcel(builder, record, encrypt))
+    WelcomeCampaignEnterRewardExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    WelcomeCampaignEnterRewardExcelTable.Start(builder)
+    WelcomeCampaignEnterRewardExcelTable.AddDataList(builder, data_list)
+    return WelcomeCampaignEnterRewardExcelTable.End(builder)
+
+def pack_WelcomeCampaignMissionExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_WelcomeCampaignMissionExcel(builder, record, encrypt))
+    WelcomeCampaignMissionExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    WelcomeCampaignMissionExcelTable.Start(builder)
+    WelcomeCampaignMissionExcelTable.AddDataList(builder, data_list)
+    return WelcomeCampaignMissionExcelTable.End(builder)
+
+def pack_WelcomeCampaignRewardIncreaseExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_WelcomeCampaignRewardIncreaseExcel(builder, record, encrypt))
+    WelcomeCampaignRewardIncreaseExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    WelcomeCampaignRewardIncreaseExcelTable.Start(builder)
+    WelcomeCampaignRewardIncreaseExcelTable.AddDataList(builder, data_list)
+    return WelcomeCampaignRewardIncreaseExcelTable.End(builder)
+
+def pack_WelcomeCampaignSeasonExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_WelcomeCampaignSeasonExcel(builder, record, encrypt))
+    WelcomeCampaignSeasonExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    WelcomeCampaignSeasonExcelTable.Start(builder)
+    WelcomeCampaignSeasonExcelTable.AddDataList(builder, data_list)
+    return WelcomeCampaignSeasonExcelTable.End(builder)
 
 def pack_WorldRaidBossGroupExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []

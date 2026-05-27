@@ -197,3 +197,6 @@ class ParcelChangeReason:
     Mail_ReceiveSemiPermanentMail = 195
     ClueSearch_Submit = 196
     ClueSearch_RoundComplete = 197
+    WelcomeCampaign_EnterReward = 198
+    WelcomeCampaign_AttendanceReward = 199
+    WelcomeCampaign_MissionClear = 200

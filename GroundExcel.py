@@ -77,430 +77,437 @@ class GroundExcel:
         return 0
 
 
-    def LevelNPC(self):
+    def EnemySubArmorType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LevelMinion(self):
+    def LevelNPC(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def LevelElite(self):
+    def LevelMinion(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def LevelChampion(self):
+    def LevelElite(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def LevelBoss(self):
+    def LevelChampion(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def ObstacleLevel(self):
+    def LevelBoss(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def GradeNPC(self):
+    def ObstacleLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def GradeMinion(self):
+    def GradeNPC(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def GradeElite(self):
+    def GradeMinion(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def GradeChampion(self):
+    def GradeElite(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def GradeBoss(self):
+    def GradeChampion(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlayerSightPointAdd(self):
+    def GradeBoss(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlayerSightPointRate(self):
+    def PlayerSightPointAdd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlayerAttackRangeAdd(self):
+    def PlayerSightPointRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlayerAttackRangeRate(self):
+    def PlayerAttackRangeAdd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnemySightPointAdd(self):
+    def PlayerAttackRangeRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnemySightPointRate(self):
+    def EnemySightPointAdd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnemyAttackRangeAdd(self):
+    def EnemySightPointRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnemyAttackRangeRate(self):
+    def EnemyAttackRangeAdd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlayerSkillRangeAdd(self):
+    def EnemyAttackRangeRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlayerSkillRangeRate(self):
+    def PlayerSkillRangeAdd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnemySkillRangeAdd(self):
+    def PlayerSkillRangeRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnemySkillRangeRate(self):
+    def EnemySkillRangeAdd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlayerMinimumPositionGapRate(self):
+    def EnemySkillRangeRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnemyMinimumPositionGapRate(self):
+    def PlayerMinimumPositionGapRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlayerSightRangeMax(self):
+    def EnemyMinimumPositionGapRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnemySightRangeMax(self):
+    def PlayerSightRangeMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def TSSAirUnitHeight(self):
+    def EnemySightRangeMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def TSSAirUnitHeight(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
     def IsPhaseBGM(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def BGMId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
     def WarningUI(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
-
-
-    def TSSHatchOpen(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def ForcedTacticSpeed(self):
+    def TSSHatchOpen(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def ForcedSkillUse(self):
+    def ForcedTacticSpeed(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShowNPCSkillCutIn(self):
+    def ForcedSkillUse(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ImmuneHitBeforeTimeOutEnd(self):
+    def ShowNPCSkillCutIn(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def UIBattleHideFromScratch(self):
+    def ImmuneHitBeforeTimeOutEnd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def UIEnemyCount(self):
+    def UIBattleHideFromScratch(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def UIEnemyCount(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BattleReadyTimelinePath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def BeforeVictoryTimelinePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(96))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def SkipBattleEnd(self):
+    def BeforeVictoryTimelinePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def HideNPCWhenBattleEnd(self):
+    def SkipBattleEnd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(100))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def CoverPointOff(self):
+    def HideNPCWhenBattleEnd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(102))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def UIHpScale(self):
+    def CoverPointOff(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(104))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def UIEmojiScale(self):
+    def UIHpScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(106))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def UISkillMainLogScale(self):
+    def UIEmojiScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(108))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EffectCountLimit(self):
+    def UISkillMainLogScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(110))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EffectCountLimit(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CarrierSkillGroupId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
     def AllyPassiveSkillId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return ""
 
     def AllyPassiveSkillIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def AllyPassiveSkillIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         return o == 0
 
 
     def AllyPassiveSkillLevel(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return 0
 
     def AllyPassiveSkillLevelAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     def AllyPassiveSkillLevelLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def AllyPassiveSkillLevelIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         return o == 0
 
 
     def EnemyPassiveSkillId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return ""
 
     def EnemyPassiveSkillIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def EnemyPassiveSkillIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         return o == 0
 
 
     def EnemyPassiveSkillLevel(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return 0
 
     def EnemyPassiveSkillLevelAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     def EnemyPassiveSkillLevelLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def EnemyPassiveSkillLevelIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         return o == 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(59)
+    def Start(builder): builder.StartObject(60)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -535,215 +542,219 @@ class GroundExcel:
 
 
     @staticmethod
-    def AddLevelNPC(builder, LevelNPC): builder.PrependInt64Slot(7, LevelNPC, 0)
+    def AddEnemySubArmorType(builder, EnemySubArmorType): builder.PrependInt32Slot(7, EnemySubArmorType, 0)
 
 
     @staticmethod
-    def AddLevelMinion(builder, LevelMinion): builder.PrependInt64Slot(8, LevelMinion, 0)
+    def AddLevelNPC(builder, LevelNPC): builder.PrependInt64Slot(8, LevelNPC, 0)
 
 
     @staticmethod
-    def AddLevelElite(builder, LevelElite): builder.PrependInt64Slot(9, LevelElite, 0)
+    def AddLevelMinion(builder, LevelMinion): builder.PrependInt64Slot(9, LevelMinion, 0)
 
 
     @staticmethod
-    def AddLevelChampion(builder, LevelChampion): builder.PrependInt64Slot(10, LevelChampion, 0)
+    def AddLevelElite(builder, LevelElite): builder.PrependInt64Slot(10, LevelElite, 0)
 
 
     @staticmethod
-    def AddLevelBoss(builder, LevelBoss): builder.PrependInt64Slot(11, LevelBoss, 0)
+    def AddLevelChampion(builder, LevelChampion): builder.PrependInt64Slot(11, LevelChampion, 0)
 
 
     @staticmethod
-    def AddObstacleLevel(builder, ObstacleLevel): builder.PrependInt64Slot(12, ObstacleLevel, 0)
+    def AddLevelBoss(builder, LevelBoss): builder.PrependInt64Slot(12, LevelBoss, 0)
 
 
     @staticmethod
-    def AddGradeNPC(builder, GradeNPC): builder.PrependInt64Slot(13, GradeNPC, 0)
+    def AddObstacleLevel(builder, ObstacleLevel): builder.PrependInt64Slot(13, ObstacleLevel, 0)
 
 
     @staticmethod
-    def AddGradeMinion(builder, GradeMinion): builder.PrependInt64Slot(14, GradeMinion, 0)
+    def AddGradeNPC(builder, GradeNPC): builder.PrependInt64Slot(14, GradeNPC, 0)
 
 
     @staticmethod
-    def AddGradeElite(builder, GradeElite): builder.PrependInt64Slot(15, GradeElite, 0)
+    def AddGradeMinion(builder, GradeMinion): builder.PrependInt64Slot(15, GradeMinion, 0)
 
 
     @staticmethod
-    def AddGradeChampion(builder, GradeChampion): builder.PrependInt64Slot(16, GradeChampion, 0)
+    def AddGradeElite(builder, GradeElite): builder.PrependInt64Slot(16, GradeElite, 0)
 
 
     @staticmethod
-    def AddGradeBoss(builder, GradeBoss): builder.PrependInt64Slot(17, GradeBoss, 0)
+    def AddGradeChampion(builder, GradeChampion): builder.PrependInt64Slot(17, GradeChampion, 0)
 
 
     @staticmethod
-    def AddPlayerSightPointAdd(builder, PlayerSightPointAdd): builder.PrependInt64Slot(18, PlayerSightPointAdd, 0)
+    def AddGradeBoss(builder, GradeBoss): builder.PrependInt64Slot(18, GradeBoss, 0)
 
 
     @staticmethod
-    def AddPlayerSightPointRate(builder, PlayerSightPointRate): builder.PrependInt64Slot(19, PlayerSightPointRate, 0)
+    def AddPlayerSightPointAdd(builder, PlayerSightPointAdd): builder.PrependInt64Slot(19, PlayerSightPointAdd, 0)
 
 
     @staticmethod
-    def AddPlayerAttackRangeAdd(builder, PlayerAttackRangeAdd): builder.PrependInt64Slot(20, PlayerAttackRangeAdd, 0)
+    def AddPlayerSightPointRate(builder, PlayerSightPointRate): builder.PrependInt64Slot(20, PlayerSightPointRate, 0)
 
 
     @staticmethod
-    def AddPlayerAttackRangeRate(builder, PlayerAttackRangeRate): builder.PrependInt64Slot(21, PlayerAttackRangeRate, 0)
+    def AddPlayerAttackRangeAdd(builder, PlayerAttackRangeAdd): builder.PrependInt64Slot(21, PlayerAttackRangeAdd, 0)
 
 
     @staticmethod
-    def AddEnemySightPointAdd(builder, EnemySightPointAdd): builder.PrependInt64Slot(22, EnemySightPointAdd, 0)
+    def AddPlayerAttackRangeRate(builder, PlayerAttackRangeRate): builder.PrependInt64Slot(22, PlayerAttackRangeRate, 0)
 
 
     @staticmethod
-    def AddEnemySightPointRate(builder, EnemySightPointRate): builder.PrependInt64Slot(23, EnemySightPointRate, 0)
+    def AddEnemySightPointAdd(builder, EnemySightPointAdd): builder.PrependInt64Slot(23, EnemySightPointAdd, 0)
 
 
     @staticmethod
-    def AddEnemyAttackRangeAdd(builder, EnemyAttackRangeAdd): builder.PrependInt64Slot(24, EnemyAttackRangeAdd, 0)
+    def AddEnemySightPointRate(builder, EnemySightPointRate): builder.PrependInt64Slot(24, EnemySightPointRate, 0)
 
 
     @staticmethod
-    def AddEnemyAttackRangeRate(builder, EnemyAttackRangeRate): builder.PrependInt64Slot(25, EnemyAttackRangeRate, 0)
+    def AddEnemyAttackRangeAdd(builder, EnemyAttackRangeAdd): builder.PrependInt64Slot(25, EnemyAttackRangeAdd, 0)
 
 
     @staticmethod
-    def AddPlayerSkillRangeAdd(builder, PlayerSkillRangeAdd): builder.PrependInt64Slot(26, PlayerSkillRangeAdd, 0)
+    def AddEnemyAttackRangeRate(builder, EnemyAttackRangeRate): builder.PrependInt64Slot(26, EnemyAttackRangeRate, 0)
 
 
     @staticmethod
-    def AddPlayerSkillRangeRate(builder, PlayerSkillRangeRate): builder.PrependInt64Slot(27, PlayerSkillRangeRate, 0)
+    def AddPlayerSkillRangeAdd(builder, PlayerSkillRangeAdd): builder.PrependInt64Slot(27, PlayerSkillRangeAdd, 0)
 
 
     @staticmethod
-    def AddEnemySkillRangeAdd(builder, EnemySkillRangeAdd): builder.PrependInt64Slot(28, EnemySkillRangeAdd, 0)
+    def AddPlayerSkillRangeRate(builder, PlayerSkillRangeRate): builder.PrependInt64Slot(28, PlayerSkillRangeRate, 0)
 
 
     @staticmethod
-    def AddEnemySkillRangeRate(builder, EnemySkillRangeRate): builder.PrependInt64Slot(29, EnemySkillRangeRate, 0)
+    def AddEnemySkillRangeAdd(builder, EnemySkillRangeAdd): builder.PrependInt64Slot(29, EnemySkillRangeAdd, 0)
 
 
     @staticmethod
-    def AddPlayerMinimumPositionGapRate(builder, PlayerMinimumPositionGapRate): builder.PrependInt64Slot(30, PlayerMinimumPositionGapRate, 0)
+    def AddEnemySkillRangeRate(builder, EnemySkillRangeRate): builder.PrependInt64Slot(30, EnemySkillRangeRate, 0)
 
 
     @staticmethod
-    def AddEnemyMinimumPositionGapRate(builder, EnemyMinimumPositionGapRate): builder.PrependInt64Slot(31, EnemyMinimumPositionGapRate, 0)
+    def AddPlayerMinimumPositionGapRate(builder, PlayerMinimumPositionGapRate): builder.PrependInt64Slot(31, PlayerMinimumPositionGapRate, 0)
 
 
     @staticmethod
-    def AddPlayerSightRangeMax(builder, PlayerSightRangeMax): builder.PrependBoolSlot(32, PlayerSightRangeMax, 0)
+    def AddEnemyMinimumPositionGapRate(builder, EnemyMinimumPositionGapRate): builder.PrependInt64Slot(32, EnemyMinimumPositionGapRate, 0)
 
 
     @staticmethod
-    def AddEnemySightRangeMax(builder, EnemySightRangeMax): builder.PrependBoolSlot(33, EnemySightRangeMax, 0)
+    def AddPlayerSightRangeMax(builder, PlayerSightRangeMax): builder.PrependBoolSlot(33, PlayerSightRangeMax, 0)
 
 
     @staticmethod
-    def AddTSSAirUnitHeight(builder, TSSAirUnitHeight): builder.PrependInt64Slot(34, TSSAirUnitHeight, 0)
+    def AddEnemySightRangeMax(builder, EnemySightRangeMax): builder.PrependBoolSlot(34, EnemySightRangeMax, 0)
 
 
     @staticmethod
-    def AddIsPhaseBGM(builder, IsPhaseBGM): builder.PrependBoolSlot(35, IsPhaseBGM, 0)
+    def AddTSSAirUnitHeight(builder, TSSAirUnitHeight): builder.PrependInt64Slot(35, TSSAirUnitHeight, 0)
 
 
     @staticmethod
-    def AddBGMId(builder, BGMId): builder.PrependInt64Slot(36, BGMId, 0)
+    def AddIsPhaseBGM(builder, IsPhaseBGM): builder.PrependBoolSlot(36, IsPhaseBGM, 0)
 
 
     @staticmethod
-    def AddWarningUI(builder, WarningUI): builder.PrependBoolSlot(37, WarningUI, 0)
+    def AddBGMId(builder, BGMId): builder.PrependInt64Slot(37, BGMId, 0)
 
 
     @staticmethod
-    def AddTSSHatchOpen(builder, TSSHatchOpen): builder.PrependBoolSlot(38, TSSHatchOpen, 0)
+    def AddWarningUI(builder, WarningUI): builder.PrependBoolSlot(38, WarningUI, 0)
 
 
     @staticmethod
-    def AddForcedTacticSpeed(builder, ForcedTacticSpeed): builder.PrependInt32Slot(39, ForcedTacticSpeed, 0)
+    def AddTSSHatchOpen(builder, TSSHatchOpen): builder.PrependBoolSlot(39, TSSHatchOpen, 0)
 
 
     @staticmethod
-    def AddForcedSkillUse(builder, ForcedSkillUse): builder.PrependInt32Slot(40, ForcedSkillUse, 0)
+    def AddForcedTacticSpeed(builder, ForcedTacticSpeed): builder.PrependInt32Slot(40, ForcedTacticSpeed, 0)
 
 
     @staticmethod
-    def AddShowNPCSkillCutIn(builder, ShowNPCSkillCutIn): builder.PrependInt32Slot(41, ShowNPCSkillCutIn, 0)
+    def AddForcedSkillUse(builder, ForcedSkillUse): builder.PrependInt32Slot(41, ForcedSkillUse, 0)
 
 
     @staticmethod
-    def AddImmuneHitBeforeTimeOutEnd(builder, ImmuneHitBeforeTimeOutEnd): builder.PrependBoolSlot(42, ImmuneHitBeforeTimeOutEnd, 0)
+    def AddShowNPCSkillCutIn(builder, ShowNPCSkillCutIn): builder.PrependInt32Slot(42, ShowNPCSkillCutIn, 0)
 
 
     @staticmethod
-    def AddUIBattleHideFromScratch(builder, UIBattleHideFromScratch): builder.PrependBoolSlot(43, UIBattleHideFromScratch, 0)
+    def AddImmuneHitBeforeTimeOutEnd(builder, ImmuneHitBeforeTimeOutEnd): builder.PrependBoolSlot(43, ImmuneHitBeforeTimeOutEnd, 0)
 
 
     @staticmethod
-    def AddUIEnemyCount(builder, UIEnemyCount): builder.PrependInt32Slot(44, UIEnemyCount, 0)
+    def AddUIBattleHideFromScratch(builder, UIBattleHideFromScratch): builder.PrependBoolSlot(44, UIBattleHideFromScratch, 0)
 
 
     @staticmethod
-    def AddBattleReadyTimelinePath(builder, BattleReadyTimelinePath): builder.PrependUOffsetTRelativeSlot(45, flatbuffers.number_types.UOffsetTFlags.py_type(BattleReadyTimelinePath), 0)
-
-    @staticmethod
-    def AddBeforeVictoryTimelinePath(builder, BeforeVictoryTimelinePath): builder.PrependUOffsetTRelativeSlot(46, flatbuffers.number_types.UOffsetTFlags.py_type(BeforeVictoryTimelinePath), 0)
-
-    @staticmethod
-    def AddSkipBattleEnd(builder, SkipBattleEnd): builder.PrependBoolSlot(47, SkipBattleEnd, 0)
+    def AddUIEnemyCount(builder, UIEnemyCount): builder.PrependInt32Slot(45, UIEnemyCount, 0)
 
 
     @staticmethod
-    def AddHideNPCWhenBattleEnd(builder, HideNPCWhenBattleEnd): builder.PrependBoolSlot(48, HideNPCWhenBattleEnd, 0)
+    def AddBattleReadyTimelinePath(builder, BattleReadyTimelinePath): builder.PrependUOffsetTRelativeSlot(46, flatbuffers.number_types.UOffsetTFlags.py_type(BattleReadyTimelinePath), 0)
+
+    @staticmethod
+    def AddBeforeVictoryTimelinePath(builder, BeforeVictoryTimelinePath): builder.PrependUOffsetTRelativeSlot(47, flatbuffers.number_types.UOffsetTFlags.py_type(BeforeVictoryTimelinePath), 0)
+
+    @staticmethod
+    def AddSkipBattleEnd(builder, SkipBattleEnd): builder.PrependBoolSlot(48, SkipBattleEnd, 0)
 
 
     @staticmethod
-    def AddCoverPointOff(builder, CoverPointOff): builder.PrependBoolSlot(49, CoverPointOff, 0)
+    def AddHideNPCWhenBattleEnd(builder, HideNPCWhenBattleEnd): builder.PrependBoolSlot(49, HideNPCWhenBattleEnd, 0)
 
 
     @staticmethod
-    def AddUIHpScale(builder, UIHpScale): builder.PrependFloat32Slot(50, UIHpScale, 0)
+    def AddCoverPointOff(builder, CoverPointOff): builder.PrependBoolSlot(50, CoverPointOff, 0)
 
 
     @staticmethod
-    def AddUIEmojiScale(builder, UIEmojiScale): builder.PrependFloat32Slot(51, UIEmojiScale, 0)
+    def AddUIHpScale(builder, UIHpScale): builder.PrependFloat32Slot(51, UIHpScale, 0)
 
 
     @staticmethod
-    def AddUISkillMainLogScale(builder, UISkillMainLogScale): builder.PrependFloat32Slot(52, UISkillMainLogScale, 0)
+    def AddUIEmojiScale(builder, UIEmojiScale): builder.PrependFloat32Slot(52, UIEmojiScale, 0)
 
 
     @staticmethod
-    def AddEffectCountLimit(builder, EffectCountLimit): builder.PrependInt32Slot(53, EffectCountLimit, 0)
+    def AddUISkillMainLogScale(builder, UISkillMainLogScale): builder.PrependFloat32Slot(53, UISkillMainLogScale, 0)
 
 
     @staticmethod
-    def AddCarrierSkillGroupId(builder, CarrierSkillGroupId): builder.PrependInt64Slot(54, CarrierSkillGroupId, 0)
+    def AddEffectCountLimit(builder, EffectCountLimit): builder.PrependInt32Slot(54, EffectCountLimit, 0)
 
 
     @staticmethod
-    def AddAllyPassiveSkillId(builder, AllyPassiveSkillId): builder.PrependUOffsetTRelativeSlot(55, flatbuffers.number_types.UOffsetTFlags.py_type(AllyPassiveSkillId), 0)
+    def AddCarrierSkillGroupId(builder, CarrierSkillGroupId): builder.PrependInt64Slot(55, CarrierSkillGroupId, 0)
+
+
+    @staticmethod
+    def AddAllyPassiveSkillId(builder, AllyPassiveSkillId): builder.PrependUOffsetTRelativeSlot(56, flatbuffers.number_types.UOffsetTFlags.py_type(AllyPassiveSkillId), 0)
     @staticmethod
     def StartAllyPassiveSkillIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
 
     @staticmethod
-    def AddAllyPassiveSkillLevel(builder, AllyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(56, flatbuffers.number_types.UOffsetTFlags.py_type(AllyPassiveSkillLevel), 0)
+    def AddAllyPassiveSkillLevel(builder, AllyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(57, flatbuffers.number_types.UOffsetTFlags.py_type(AllyPassiveSkillLevel), 0)
     @staticmethod
     def StartAllyPassiveSkillLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
 
     @staticmethod
-    def AddEnemyPassiveSkillId(builder, EnemyPassiveSkillId): builder.PrependUOffsetTRelativeSlot(57, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPassiveSkillId), 0)
+    def AddEnemyPassiveSkillId(builder, EnemyPassiveSkillId): builder.PrependUOffsetTRelativeSlot(58, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPassiveSkillId), 0)
     @staticmethod
     def StartEnemyPassiveSkillIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
 
     @staticmethod
-    def AddEnemyPassiveSkillLevel(builder, EnemyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(58, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPassiveSkillLevel), 0)
+    def AddEnemyPassiveSkillLevel(builder, EnemyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(59, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPassiveSkillLevel), 0)
     @staticmethod
     def StartEnemyPassiveSkillLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 

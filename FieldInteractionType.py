@@ -11,3 +11,4 @@ class FieldInteractionType:
     ActionTrigger = 9
     Interplay = 10
     UnderCoverStage = 11
+    SNSOpen = 12

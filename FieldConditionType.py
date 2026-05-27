@@ -9,3 +9,5 @@ class FieldConditionType:
     HasEvidence = 7
     OpenDate = 8
     OpenDateAfter = 9
+    Scenario = 10
+    Timeline = 11
