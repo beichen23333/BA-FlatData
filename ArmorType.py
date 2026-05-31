@@ -5,3 +5,4 @@ class ArmorType:
     Structure = 3
     Normal = 4
     ElasticArmor = 5
+    CompositeArmor = 6

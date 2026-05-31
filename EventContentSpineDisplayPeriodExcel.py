@@ -52,10 +52,24 @@ class EventContentSpineDisplayPeriodExcel:
         return None
 
 
+    def ShowWorldRaidConditionIDFrom(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ShowWorldRaidConditionIDTo(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(5)
+    def Start(builder): builder.StartObject(7)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -77,3 +91,11 @@ class EventContentSpineDisplayPeriodExcel:
 
     @staticmethod
     def AddShowPeriodTo(builder, ShowPeriodTo): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(ShowPeriodTo), 0)
+
+    @staticmethod
+    def AddShowWorldRaidConditionIDFrom(builder, ShowWorldRaidConditionIDFrom): builder.PrependInt64Slot(5, ShowWorldRaidConditionIDFrom, 0)
+
+
+    @staticmethod
+    def AddShowWorldRaidConditionIDTo(builder, ShowWorldRaidConditionIDTo): builder.PrependInt64Slot(6, ShowWorldRaidConditionIDTo, 0)
+

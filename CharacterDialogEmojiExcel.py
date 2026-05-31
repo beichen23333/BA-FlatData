@@ -52,43 +52,137 @@ class CharacterDialogEmojiExcel:
         return 0
 
 
-    def HideUI(self):
+    def DurationAdd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def HideUI(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def LocalizeKR(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def LocalizeJP(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def LocalizeTH(self):
+    def LocalizeJP(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def LocalizeTW(self):
+    def LocalizeTH(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def LocalizeEN(self):
+    def LocalizeTW(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def LocalizeEN(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def VoiceId(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Uint32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return 0
+
+    def VoiceIdAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
+        return 0
+
+    def VoiceIdLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    def VoiceIdIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        return o == 0
+
+
+    def CharacterId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CostumeUniqueId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def DisplayOrder(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CollectionVisible(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def CVCollectionType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CVUnlockScenarioType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ScenarioGroupId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def UnlockEventSeason(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def LocalizeCVGroup(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -97,7 +191,7 @@ class CharacterDialogEmojiExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(11)
+    def Start(builder): builder.StartObject(22)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -122,20 +216,65 @@ class CharacterDialogEmojiExcel:
 
 
     @staticmethod
-    def AddHideUI(builder, HideUI): builder.PrependBoolSlot(5, HideUI, 0)
+    def AddDurationAdd(builder, DurationAdd): builder.PrependInt64Slot(5, DurationAdd, 0)
 
 
     @staticmethod
-    def AddLocalizeKR(builder, LocalizeKR): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeKR), 0)
+    def AddHideUI(builder, HideUI): builder.PrependBoolSlot(6, HideUI, 0)
+
 
     @staticmethod
-    def AddLocalizeJP(builder, LocalizeJP): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeJP), 0)
+    def AddLocalizeKR(builder, LocalizeKR): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeKR), 0)
 
     @staticmethod
-    def AddLocalizeTH(builder, LocalizeTH): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeTH), 0)
+    def AddLocalizeJP(builder, LocalizeJP): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeJP), 0)
 
     @staticmethod
-    def AddLocalizeTW(builder, LocalizeTW): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeTW), 0)
+    def AddLocalizeTH(builder, LocalizeTH): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeTH), 0)
 
     @staticmethod
-    def AddLocalizeEN(builder, LocalizeEN): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeEN), 0)
+    def AddLocalizeTW(builder, LocalizeTW): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeTW), 0)
+
+    @staticmethod
+    def AddLocalizeEN(builder, LocalizeEN): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeEN), 0)
+
+    @staticmethod
+    def AddVoiceId(builder, VoiceId): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(VoiceId), 0)
+    @staticmethod
+    def StartVoiceIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+
+
+    @staticmethod
+    def AddCharacterId(builder, CharacterId): builder.PrependInt64Slot(13, CharacterId, 0)
+
+
+    @staticmethod
+    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt64Slot(14, CostumeUniqueId, 0)
+
+
+    @staticmethod
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(15, DisplayOrder, 0)
+
+
+    @staticmethod
+    def AddCollectionVisible(builder, CollectionVisible): builder.PrependBoolSlot(16, CollectionVisible, 0)
+
+
+    @staticmethod
+    def AddCVCollectionType(builder, CVCollectionType): builder.PrependInt32Slot(17, CVCollectionType, 0)
+
+
+    @staticmethod
+    def AddCVUnlockScenarioType(builder, CVUnlockScenarioType): builder.PrependInt32Slot(18, CVUnlockScenarioType, 0)
+
+
+    @staticmethod
+    def AddScenarioGroupId(builder, ScenarioGroupId): builder.PrependInt64Slot(19, ScenarioGroupId, 0)
+
+
+    @staticmethod
+    def AddUnlockEventSeason(builder, UnlockEventSeason): builder.PrependInt64Slot(20, UnlockEventSeason, 0)
+
+
+    @staticmethod
+    def AddLocalizeCVGroup(builder, LocalizeCVGroup): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeCVGroup), 0)

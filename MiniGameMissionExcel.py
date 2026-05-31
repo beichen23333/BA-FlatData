@@ -118,7 +118,7 @@ class MiniGameMissionExcel:
         return o == 0
 
 
-    def AccountType(self):
+    def TargetGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -458,7 +458,7 @@ class MiniGameMissionExcel:
 
 
     @staticmethod
-    def AddAccountType(builder, AccountType): builder.PrependInt32Slot(12, AccountType, 0)
+    def AddTargetGroup(builder, TargetGroup): builder.PrependInt32Slot(12, TargetGroup, 0)
 
 
     @staticmethod

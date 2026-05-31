@@ -57,3 +57,4 @@ class OpenConditionContent:
     MinigameDreamMaker = 55
     MiniGameDefense = 56
     MiniGameCCG = 57
+    Main_L_1_5 = 58

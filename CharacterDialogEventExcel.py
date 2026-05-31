@@ -223,10 +223,17 @@ class CharacterDialogEventExcel:
         return None
 
 
+    def ScenarioCharacterShapes(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(27)
+    def Start(builder): builder.StartObject(28)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -332,3 +339,7 @@ class CharacterDialogEventExcel:
 
     @staticmethod
     def AddLocalizeCVGroup(builder, LocalizeCVGroup): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeCVGroup), 0)
+
+    @staticmethod
+    def AddScenarioCharacterShapes(builder, ScenarioCharacterShapes): builder.PrependInt32Slot(27, ScenarioCharacterShapes, 0)
+

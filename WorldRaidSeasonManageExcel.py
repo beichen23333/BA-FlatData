@@ -24,7 +24,7 @@ class WorldRaidSeasonManageExcel:
         return 0
 
 
-    def EventContentId(self):
+    def PhaseId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
@@ -264,7 +264,7 @@ class WorldRaidSeasonManageExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(1, EventContentId, 0)
+    def AddPhaseId(builder, PhaseId): builder.PrependInt64Slot(1, PhaseId, 0)
 
 
     @staticmethod

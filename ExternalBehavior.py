@@ -17,3 +17,5 @@ class ExternalBehavior:
     SelectTargetToUseSkillAlly = 15
     ForceChangePhase = 16
     ClearUseSkillEndGroupId = 17
+    ChangePhaseKeepATG = 18
+    ForceChangePhaseKeepATG = 19

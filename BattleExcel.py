@@ -128,11 +128,28 @@ class BattleExcel:
         return 0
 
 
-    def All(self):
+    def All(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return 0
+
+    def AllAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
+        return 0
+
+    def AllLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    def AllIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        return o == 0
 
 
     def DISTANCE(self):
@@ -346,7 +363,9 @@ class BattleExcel:
 
 
     @staticmethod
-    def AddAll(builder, All): builder.PrependInt32Slot(11, All, 0)
+    def AddAll(builder, All): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(All), 0)
+    @staticmethod
+    def StartAllVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
 
     @staticmethod

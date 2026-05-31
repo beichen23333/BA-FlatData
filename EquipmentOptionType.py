@@ -90,3 +90,7 @@ class EquipmentOptionType:
     RegenCost_Coefficient = 88
     MaxCostIncrease_Base = 89
     HealRate_Base = 90
+    EnhanceChemicalRate_Base = 91
+    EnhanceChemicalRate_Coefficient = 92
+    EnhanceCompositeArmorRate_Base = 93
+    EnhanceCompositeArmorRate_Coefficient = 94

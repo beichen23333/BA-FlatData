@@ -160,11 +160,11 @@ class EliminateRaidStageExcel:
         return 0
 
 
-    def GroundDevName(self):
+    def RaidBossGroupType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
     def EnterTimeLine(self):
@@ -431,7 +431,8 @@ class EliminateRaidStageExcel:
 
 
     @staticmethod
-    def AddGroundDevName(builder, GroundDevName): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(GroundDevName), 0)
+    def AddRaidBossGroupType(builder, RaidBossGroupType): builder.PrependInt32Slot(18, RaidBossGroupType, 0)
+
 
     @staticmethod
     def AddEnterTimeLine(builder, EnterTimeLine): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(EnterTimeLine), 0)

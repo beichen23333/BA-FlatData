@@ -84,4 +84,8 @@ class StatType:
     GrowthScore = 82
     CharacterBulletTypeEnhanceRate = 83
     MaxCostIncrease = 84
-    Max = 85
+    EnhanceChemicalRate = 85
+    EnhanceCompositeArmorRate = 86
+    EnhanceWeakDamageRate = 87
+    ReduceWeakDamagedRate = 88
+    Max = 89

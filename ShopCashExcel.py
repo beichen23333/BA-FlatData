@@ -38,120 +38,155 @@ class ShopCashExcel:
         return 0
 
 
-    def LocalizeEtcId(self):
+    def TargetGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def LocalizeEtcId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
+    def InMailPurchaseLock(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def UseMailParcel(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
     def IconPath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def DisplayOrder(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
     def RenewalDisplayOrder(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
     def CategoryType(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DisplayTag(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ProductSaleType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SalePeriodFrom(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def SalePeriodTo(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
+    def ProductSaleDay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
     def PeriodTag(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def AccountLevelLimit(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
     def AccountLevelHide(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
-
-
-    def ClearMissionLimit(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def ClearMissionHide(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
-
-
-    def PurchaseReportEventName(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def PackageClientType(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def IsStartDash(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def ViewFlag(self):
+    def ClearMissionLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ClearMissionHide(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def PurchaseReportEventName(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def PackageClientType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def IsStartDash(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def ViewFlag(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
@@ -160,7 +195,7 @@ class ShopCashExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(20)
+    def Start(builder): builder.StartObject(25)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -178,65 +213,85 @@ class ShopCashExcel:
 
 
     @staticmethod
-    def AddLocalizeEtcId(builder, LocalizeEtcId): builder.PrependUint32Slot(3, LocalizeEtcId, 0)
+    def AddTargetGroup(builder, TargetGroup): builder.PrependInt32Slot(3, TargetGroup, 0)
 
 
     @staticmethod
-    def AddIconPath(builder, IconPath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(IconPath), 0)
-
-    @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(5, DisplayOrder, 0)
+    def AddLocalizeEtcId(builder, LocalizeEtcId): builder.PrependUint32Slot(4, LocalizeEtcId, 0)
 
 
     @staticmethod
-    def AddRenewalDisplayOrder(builder, RenewalDisplayOrder): builder.PrependInt64Slot(6, RenewalDisplayOrder, 0)
+    def AddInMailPurchaseLock(builder, InMailPurchaseLock): builder.PrependBoolSlot(5, InMailPurchaseLock, 0)
 
 
     @staticmethod
-    def AddCategoryType(builder, CategoryType): builder.PrependInt32Slot(7, CategoryType, 0)
+    def AddUseMailParcel(builder, UseMailParcel): builder.PrependBoolSlot(6, UseMailParcel, 0)
 
 
     @staticmethod
-    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(8, DisplayTag, 0)
+    def AddIconPath(builder, IconPath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(IconPath), 0)
+
+    @staticmethod
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(8, DisplayOrder, 0)
 
 
     @staticmethod
-    def AddSalePeriodFrom(builder, SalePeriodFrom): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodFrom), 0)
-
-    @staticmethod
-    def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
-
-    @staticmethod
-    def AddPeriodTag(builder, PeriodTag): builder.PrependBoolSlot(11, PeriodTag, 0)
+    def AddRenewalDisplayOrder(builder, RenewalDisplayOrder): builder.PrependInt64Slot(9, RenewalDisplayOrder, 0)
 
 
     @staticmethod
-    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt64Slot(12, AccountLevelLimit, 0)
+    def AddCategoryType(builder, CategoryType): builder.PrependInt32Slot(10, CategoryType, 0)
 
 
     @staticmethod
-    def AddAccountLevelHide(builder, AccountLevelHide): builder.PrependBoolSlot(13, AccountLevelHide, 0)
+    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(11, DisplayTag, 0)
 
 
     @staticmethod
-    def AddClearMissionLimit(builder, ClearMissionLimit): builder.PrependInt64Slot(14, ClearMissionLimit, 0)
+    def AddProductSaleType(builder, ProductSaleType): builder.PrependInt32Slot(12, ProductSaleType, 0)
 
 
     @staticmethod
-    def AddClearMissionHide(builder, ClearMissionHide): builder.PrependBoolSlot(15, ClearMissionHide, 0)
+    def AddSalePeriodFrom(builder, SalePeriodFrom): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodFrom), 0)
+
+    @staticmethod
+    def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
+
+    @staticmethod
+    def AddProductSaleDay(builder, ProductSaleDay): builder.PrependInt64Slot(15, ProductSaleDay, 0)
 
 
     @staticmethod
-    def AddPurchaseReportEventName(builder, PurchaseReportEventName): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(PurchaseReportEventName), 0)
-
-    @staticmethod
-    def AddPackageClientType(builder, PackageClientType): builder.PrependInt32Slot(17, PackageClientType, 0)
+    def AddPeriodTag(builder, PeriodTag): builder.PrependBoolSlot(16, PeriodTag, 0)
 
 
     @staticmethod
-    def AddIsStartDash(builder, IsStartDash): builder.PrependBoolSlot(18, IsStartDash, 0)
+    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt64Slot(17, AccountLevelLimit, 0)
 
 
     @staticmethod
-    def AddViewFlag(builder, ViewFlag): builder.PrependBoolSlot(19, ViewFlag, 0)
+    def AddAccountLevelHide(builder, AccountLevelHide): builder.PrependBoolSlot(18, AccountLevelHide, 0)
+
+
+    @staticmethod
+    def AddClearMissionLimit(builder, ClearMissionLimit): builder.PrependInt64Slot(19, ClearMissionLimit, 0)
+
+
+    @staticmethod
+    def AddClearMissionHide(builder, ClearMissionHide): builder.PrependBoolSlot(20, ClearMissionHide, 0)
+
+
+    @staticmethod
+    def AddPurchaseReportEventName(builder, PurchaseReportEventName): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(PurchaseReportEventName), 0)
+
+    @staticmethod
+    def AddPackageClientType(builder, PackageClientType): builder.PrependInt32Slot(22, PackageClientType, 0)
+
+
+    @staticmethod
+    def AddIsStartDash(builder, IsStartDash): builder.PrependBoolSlot(23, IsStartDash, 0)
+
+
+    @staticmethod
+    def AddViewFlag(builder, ViewFlag): builder.PrependBoolSlot(24, ViewFlag, 0)
 

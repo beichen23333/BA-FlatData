@@ -24,22 +24,36 @@ class SystemMailExcel:
         return 0
 
 
-    def ExpiredDay(self):
+    def IsProductMail(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def IsVariableExpiredDay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def ExpiredDay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
     def Sender(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def Comment(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -48,7 +62,7 @@ class SystemMailExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(4)
+    def Start(builder): builder.StartObject(6)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -58,11 +72,19 @@ class SystemMailExcel:
 
 
     @staticmethod
-    def AddExpiredDay(builder, ExpiredDay): builder.PrependInt64Slot(1, ExpiredDay, 0)
+    def AddIsProductMail(builder, IsProductMail): builder.PrependBoolSlot(1, IsProductMail, 0)
 
 
     @staticmethod
-    def AddSender(builder, Sender): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(Sender), 0)
+    def AddIsVariableExpiredDay(builder, IsVariableExpiredDay): builder.PrependBoolSlot(2, IsVariableExpiredDay, 0)
+
 
     @staticmethod
-    def AddComment(builder, Comment): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(Comment), 0)
+    def AddExpiredDay(builder, ExpiredDay): builder.PrependInt64Slot(3, ExpiredDay, 0)
+
+
+    @staticmethod
+    def AddSender(builder, Sender): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(Sender), 0)
+
+    @staticmethod
+    def AddComment(builder, Comment): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(Comment), 0)

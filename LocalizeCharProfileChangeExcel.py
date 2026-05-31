@@ -38,10 +38,17 @@ class LocalizeCharProfileChangeExcel:
         return 0
 
 
+    def OverrideClub(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(3)
+    def Start(builder): builder.StartObject(4)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -56,4 +63,8 @@ class LocalizeCharProfileChangeExcel:
 
     @staticmethod
     def AddChangeCharacterID(builder, ChangeCharacterID): builder.PrependInt64Slot(2, ChangeCharacterID, 0)
+
+
+    @staticmethod
+    def AddOverrideClub(builder, OverrideClub): builder.PrependBoolSlot(3, OverrideClub, 0)
 

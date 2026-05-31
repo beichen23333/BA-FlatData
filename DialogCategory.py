@@ -74,3 +74,6 @@ class DialogCategory:
     UIBattlePassLobby = 72
     UIBattlePassMission = 73
     UIAttendanceEvent19 = 74
+    UIAttendanceEvent20 = 75
+    UIAttendanceEvent21 = 76
+    UIEventClueSearch = 77

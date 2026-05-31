@@ -11,3 +11,4 @@ class ItemCategory:
     InvisibleToken = 9
     BattlePass = 10
     ProductSelect = 11
+    ProductDailyRecord = 12

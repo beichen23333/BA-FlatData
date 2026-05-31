@@ -39,3 +39,4 @@ class ShopCategoryType:
     GemWeekly = 37
     CafeSummonTicket = 38
     SelectPickupFesGacha = 39
+    SelectPickupLimitedGacha = 40

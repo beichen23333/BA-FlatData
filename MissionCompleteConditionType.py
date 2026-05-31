@@ -185,3 +185,6 @@ class MissionCompleteConditionType:
     Reset_DayCompleteMission = 183
     Reset_ConcentrationCardMatchCount = 184
     Reset_ConcentrationClearCount = 185
+    Reset_WorldRaidSpecificBossClear = 186
+    Reset_WorldRaidActivateCoreCount = 187
+    Reset_WorldRaidActivateUSBCount = 188

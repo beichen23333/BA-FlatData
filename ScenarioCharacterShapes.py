@@ -5,3 +5,4 @@ class ScenarioCharacterShapes:
     Closeup = 4
     Highlight = 8
     WhiteSilhouette = 16
+    Glitch = 32

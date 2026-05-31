@@ -101,29 +101,43 @@ class ObstacleStatExcel:
         return 0
 
 
-    def EnhanceStructureRate(self):
+    def EnhanceCompositeArmorRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def EnhanceNormalArmorRate(self):
+    def EnhanceStructureRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def ReduceExDamagedRate(self):
+    def EnhanceNormalArmorRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
-    def ReduceBasicsDamagedRate(self):
+    def ReduceExDamagedRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ReduceBasicsDamagedRate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ReduceWeakDamagedRate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
@@ -132,7 +146,7 @@ class ObstacleStatExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(16)
+    def Start(builder): builder.StartObject(18)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -185,17 +199,25 @@ class ObstacleStatExcel:
 
 
     @staticmethod
-    def AddEnhanceStructureRate(builder, EnhanceStructureRate): builder.PrependInt64Slot(12, EnhanceStructureRate, 0)
+    def AddEnhanceCompositeArmorRate(builder, EnhanceCompositeArmorRate): builder.PrependInt64Slot(12, EnhanceCompositeArmorRate, 0)
 
 
     @staticmethod
-    def AddEnhanceNormalArmorRate(builder, EnhanceNormalArmorRate): builder.PrependInt64Slot(13, EnhanceNormalArmorRate, 0)
+    def AddEnhanceStructureRate(builder, EnhanceStructureRate): builder.PrependInt64Slot(13, EnhanceStructureRate, 0)
 
 
     @staticmethod
-    def AddReduceExDamagedRate(builder, ReduceExDamagedRate): builder.PrependInt64Slot(14, ReduceExDamagedRate, 0)
+    def AddEnhanceNormalArmorRate(builder, EnhanceNormalArmorRate): builder.PrependInt64Slot(14, EnhanceNormalArmorRate, 0)
 
 
     @staticmethod
-    def AddReduceBasicsDamagedRate(builder, ReduceBasicsDamagedRate): builder.PrependInt64Slot(15, ReduceBasicsDamagedRate, 0)
+    def AddReduceExDamagedRate(builder, ReduceExDamagedRate): builder.PrependInt64Slot(15, ReduceExDamagedRate, 0)
+
+
+    @staticmethod
+    def AddReduceBasicsDamagedRate(builder, ReduceBasicsDamagedRate): builder.PrependInt64Slot(16, ReduceBasicsDamagedRate, 0)
+
+
+    @staticmethod
+    def AddReduceWeakDamagedRate(builder, ReduceWeakDamagedRate): builder.PrependInt64Slot(17, ReduceWeakDamagedRate, 0)
 

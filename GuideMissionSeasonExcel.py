@@ -45,7 +45,7 @@ class GuideMissionSeasonExcel:
         return None
 
 
-    def AccountType(self):
+    def TargetGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -221,7 +221,7 @@ class GuideMissionSeasonExcel:
     def AddInfomationLocalizeCode(builder, InfomationLocalizeCode): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(InfomationLocalizeCode), 0)
 
     @staticmethod
-    def AddAccountType(builder, AccountType): builder.PrependInt32Slot(4, AccountType, 0)
+    def AddTargetGroup(builder, TargetGroup): builder.PrependInt32Slot(4, TargetGroup, 0)
 
 
     @staticmethod

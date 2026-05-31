@@ -184,6 +184,13 @@ def pack_BattleExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> 
         for item in reversed(Normal_items):
             builder.PrependInt32(convert_int(getattr(BulletType, item), password))
         Normal_vec = builder.EndVector(len(Normal_items))
+    All_vec = 0
+    if 'All' in data:
+        All_items = data['All']
+        BattleExcel.StartAllVector(builder, len(All_items))
+        for item in reversed(All_items):
+            builder.PrependInt32(convert_int(getattr(CoverMotionType, item), password))
+        All_vec = builder.EndVector(len(All_items))
     Single_val = convert_int(getattr(AttackType, data.get('Single', 0)), password)
     Guided_val = convert_int(getattr(ProjectileType, data.get('Guided', 0)), password)
     Blue_val = convert_int(getattr(DamageFontColor, data.get('Blue', 0)), password)
@@ -193,7 +200,6 @@ def pack_BattleExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> 
     AllySelf_val = convert_int(getattr(ReArrangeTargetType, data.get('AllySelf', 0)), password)
     LightArmor_val = convert_int(getattr(ArmorType, data.get('LightArmor', 0)), password)
     Wood_val = convert_int(getattr(EntityMaterialType, data.get('Wood', 0)), password)
-    All_val = convert_int(getattr(CoverMotionType, data.get('All', 0)), password)
     DISTANCE_val = convert_int(getattr(TargetSortBy, data.get('DISTANCE', 0)), password)
     CloseToObstacle_val = convert_int(getattr(PositioningType, data.get('CloseToObstacle', 0)), password)
     Students_val = convert_int(getattr(FormationLine, data.get('Students', 0)), password)
@@ -228,7 +234,7 @@ def pack_BattleExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> 
     BattleExcel.AddAllySelf(builder, AllySelf_val)
     BattleExcel.AddLightArmor(builder, LightArmor_val)
     BattleExcel.AddWood(builder, Wood_val)
-    BattleExcel.AddAll(builder, All_val)
+    BattleExcel.AddAll(builder, All_vec)
     BattleExcel.AddDISTANCE(builder, DISTANCE_val)
     BattleExcel.AddCloseToObstacle(builder, CloseToObstacle_val)
     BattleExcel.AddStudents(builder, Students_val)
@@ -621,6 +627,8 @@ def pack_ConstCombatExcel(builder: flatbuffers.Builder, data: dict, encrypt=True
     ExcessiveTouchCheckCount_val = convert_int(data.get('ExcessiveTouchCheckCount', 0), password)
     CampaignAlertPopupLevelGap_val = convert_int(data.get('CampaignAlertPopupLevelGap', 0), password)
     MoveCorrectionSkipRatio_val = convert_int(data.get('MoveCorrectionSkipRatio', 0), password)
+    ObstacleColliderHeightJumpable_val = encrypt_float(data.get('ObstacleColliderHeightJumpable', 0), password)
+    ObstacleColliderHeightNotJumpable_val = encrypt_float(data.get('ObstacleColliderHeightNotJumpable', 0), password)
     ConstCombatExcel.Start(builder)
     ConstCombatExcel.AddSkillHandCount(builder, SkillHandCount_val)
     ConstCombatExcel.AddDyingTime(builder, DyingTime_val)
@@ -725,6 +733,8 @@ def pack_ConstCombatExcel(builder: flatbuffers.Builder, data: dict, encrypt=True
     ConstCombatExcel.AddExcessiveTouchCheckCount(builder, ExcessiveTouchCheckCount_val)
     ConstCombatExcel.AddCampaignAlertPopupLevelGap(builder, CampaignAlertPopupLevelGap_val)
     ConstCombatExcel.AddMoveCorrectionSkipRatio(builder, MoveCorrectionSkipRatio_val)
+    ConstCombatExcel.AddObstacleColliderHeightJumpable(builder, ObstacleColliderHeightJumpable_val)
+    ConstCombatExcel.AddObstacleColliderHeightNotJumpable(builder, ObstacleColliderHeightNotJumpable_val)
     return ConstCombatExcel.End(builder)
 
 def pack_ConstCommonExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -734,6 +744,8 @@ def pack_ConstCommonExcel(builder: flatbuffers.Builder, data: dict, encrypt=True
     BirthdayMailStartDate_off = builder.CreateString(encrypt_string(data.get('BirthdayMailStartDate', ''), password))
     BattlePassExpIconPath_off = builder.CreateString(encrypt_string(data.get('BattlePassExpIconPath', ''), password))
     ReviewEventDateGL_off = builder.CreateString(encrypt_string(data.get('ReviewEventDateGL', ''), password))
+    QRIconUrlDev_off = builder.CreateString(encrypt_string(data.get('QRIconUrlDev', ''), password))
+    QRIconUrlLive_off = builder.CreateString(encrypt_string(data.get('QRIconUrlLive', ''), password))
     CraftDuration_vec = 0
     if 'CraftDuration' in data:
         CraftDuration_items = data['CraftDuration']
@@ -957,7 +969,13 @@ def pack_ConstCommonExcel(builder: flatbuffers.Builder, data: dict, encrypt=True
     ScenarioAutoDelayMillisecShort_val = encrypt_float(data.get('ScenarioAutoDelayMillisecShort', 0), password)
     ScenarioAutoDelayMillisecVeryShort_val = encrypt_float(data.get('ScenarioAutoDelayMillisecVeryShort', 0), password)
     PcBuildEnterInformation_val = convert_int(data.get('PcBuildEnterInformation', 0), password)
+    ComebackUserStandardDay_val = convert_int(data.get('ComebackUserStandardDay', 0), password)
+    ComebackUserLogSaveDay_val = convert_int(data.get('ComebackUserLogSaveDay', 0), password)
+    ComeBackActivateCooldown_val = convert_int(data.get('ComeBackActivateCooldown', 0), password)
     CafeCopyPresetSlotCount_val = convert_int(data.get('CafeCopyPresetSlotCount', 0), password)
+    ExpiryProductDailyRecordItemReceiveDay_val = convert_int(data.get('ExpiryProductDailyRecordItemReceiveDay', 0), password)
+    NewbieUserStandardDay_val = convert_int(data.get('NewbieUserStandardDay', 0), password)
+    NewbieStateHoldDay_val = convert_int(data.get('NewbieStateHoldDay', 0), password)
     ConstCommonExcel.Start(builder)
     ConstCommonExcel.AddCampaignMainStageMaxRank(builder, CampaignMainStageMaxRank_val)
     ConstCommonExcel.AddCampaignMainStageBestRecord(builder, CampaignMainStageBestRecord_val)
@@ -1157,7 +1175,15 @@ def pack_ConstCommonExcel(builder: flatbuffers.Builder, data: dict, encrypt=True
     ConstCommonExcel.AddScenarioAutoDelayMillisecShort(builder, ScenarioAutoDelayMillisecShort_val)
     ConstCommonExcel.AddScenarioAutoDelayMillisecVeryShort(builder, ScenarioAutoDelayMillisecVeryShort_val)
     ConstCommonExcel.AddPcBuildEnterInformation(builder, PcBuildEnterInformation_val)
+    ConstCommonExcel.AddComebackUserStandardDay(builder, ComebackUserStandardDay_val)
+    ConstCommonExcel.AddComebackUserLogSaveDay(builder, ComebackUserLogSaveDay_val)
+    ConstCommonExcel.AddComeBackActivateCooldown(builder, ComeBackActivateCooldown_val)
     ConstCommonExcel.AddCafeCopyPresetSlotCount(builder, CafeCopyPresetSlotCount_val)
+    ConstCommonExcel.AddExpiryProductDailyRecordItemReceiveDay(builder, ExpiryProductDailyRecordItemReceiveDay_val)
+    ConstCommonExcel.AddNewbieUserStandardDay(builder, NewbieUserStandardDay_val)
+    ConstCommonExcel.AddNewbieStateHoldDay(builder, NewbieStateHoldDay_val)
+    ConstCommonExcel.AddQRIconUrlDev(builder, QRIconUrlDev_off)
+    ConstCommonExcel.AddQRIconUrlLive(builder, QRIconUrlLive_off)
     return ConstCommonExcel.End(builder)
 
 def pack_ConstConquestExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -1240,13 +1266,37 @@ def pack_ConstKeyMappingExcel(builder: flatbuffers.Builder, data: dict, encrypt=
     TutorialDialogTouchKey_off = builder.CreateString(encrypt_string(data.get('TutorialDialogTouchKey', ''), password))
     DragSensitivity_val = encrypt_float(data.get('DragSensitivity', 0), password)
     PcInformationGroupID_val = convert_long(data.get('PcInformationGroupID', 0), password)
+    PcControllerInformationGroupID_val = convert_long(data.get('PcControllerInformationGroupID', 0), password)
     ScrollWheelFactor_val = encrypt_float(data.get('ScrollWheelFactor', 0), password)
+    ControllerCursorFactorSlow_val = convert_int(data.get('ControllerCursorFactorSlow', 0), password)
+    ControllerCursorFactor_val = convert_int(data.get('ControllerCursorFactor', 0), password)
+    ControllerCursorFactorFast_val = convert_int(data.get('ControllerCursorFactorFast', 0), password)
+    VibrationSec_val = encrypt_float(data.get('VibrationSec', 0), password)
+    VibrationPower_val = encrypt_float(data.get('VibrationPower', 0), password)
+    ControllerScrollWheelFactor_val = encrypt_float(data.get('ControllerScrollWheelFactor', 0), password)
+    ControllerZoomSensitivity_val = encrypt_float(data.get('ControllerZoomSensitivity', 0), password)
+    ControllerDpadMoveCheckRangeX_val = encrypt_float(data.get('ControllerDpadMoveCheckRangeX', 0), password)
+    ControllerDpadMoveCheckRangeY_val = encrypt_float(data.get('ControllerDpadMoveCheckRangeY', 0), password)
+    ControllerCursorClickScale_val = encrypt_float(data.get('ControllerCursorClickScale', 0), password)
+    ControllerScrollSensitivity_val = encrypt_float(data.get('ControllerScrollSensitivity', 0), password)
     ConstKeyMappingExcel.Start(builder)
     ConstKeyMappingExcel.AddDragSensitivity(builder, DragSensitivity_val)
     ConstKeyMappingExcel.AddPcInformationGroupID(builder, PcInformationGroupID_val)
+    ConstKeyMappingExcel.AddPcControllerInformationGroupID(builder, PcControllerInformationGroupID_val)
     ConstKeyMappingExcel.AddScrollWheelFactor(builder, ScrollWheelFactor_val)
     ConstKeyMappingExcel.AddRemoveKeycodeWord(builder, RemoveKeycodeWord_off)
     ConstKeyMappingExcel.AddTutorialDialogTouchKey(builder, TutorialDialogTouchKey_off)
+    ConstKeyMappingExcel.AddControllerCursorFactorSlow(builder, ControllerCursorFactorSlow_val)
+    ConstKeyMappingExcel.AddControllerCursorFactor(builder, ControllerCursorFactor_val)
+    ConstKeyMappingExcel.AddControllerCursorFactorFast(builder, ControllerCursorFactorFast_val)
+    ConstKeyMappingExcel.AddVibrationSec(builder, VibrationSec_val)
+    ConstKeyMappingExcel.AddVibrationPower(builder, VibrationPower_val)
+    ConstKeyMappingExcel.AddControllerScrollWheelFactor(builder, ControllerScrollWheelFactor_val)
+    ConstKeyMappingExcel.AddControllerZoomSensitivity(builder, ControllerZoomSensitivity_val)
+    ConstKeyMappingExcel.AddControllerDpadMoveCheckRangeX(builder, ControllerDpadMoveCheckRangeX_val)
+    ConstKeyMappingExcel.AddControllerDpadMoveCheckRangeY(builder, ControllerDpadMoveCheckRangeY_val)
+    ConstKeyMappingExcel.AddControllerCursorClickScale(builder, ControllerCursorClickScale_val)
+    ConstKeyMappingExcel.AddControllerScrollSensitivity(builder, ControllerScrollSensitivity_val)
     return ConstKeyMappingExcel.End(builder)
 
 def pack_ConstMinigameCCGExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -2303,58 +2353,6 @@ def pack_KatakanaConvertExcel(builder: flatbuffers.Builder, data: dict, encrypt=
     KatakanaConvertExcel.AddJp(builder, Jp_off)
     return KatakanaConvertExcel.End(builder)
 
-def pack_KeyMappingExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
-    password = create_key("KeyMapping") if encrypt else None
-    Id_off = builder.CreateString(encrypt_string(data.get('Id', ''), password))
-    TargetKeyCode_off = builder.CreateString(encrypt_string(data.get('TargetKeyCode', ''), password))
-    KeymappingIconBGName_off = builder.CreateString(encrypt_string(data.get('KeymappingIconBGName', ''), password))
-    IsDisplay_val = data.get('IsDisplay', 0)
-    IsUsed_val = data.get('IsUsed', 0)
-    IsLongPress_val = data.get('IsLongPress', 0)
-    IgnorePosCheck_val = data.get('IgnorePosCheck', 0)
-    IconPositionX_val = encrypt_float(data.get('IconPositionX', 0), password)
-    IconPositionY_val = encrypt_float(data.get('IconPositionY', 0), password)
-    IconScaleX_val = encrypt_float(data.get('IconScaleX', 0), password)
-    IconScaleY_val = encrypt_float(data.get('IconScaleY', 0), password)
-    KeyMappingExcel.Start(builder)
-    KeyMappingExcel.AddId(builder, Id_off)
-    KeyMappingExcel.AddTargetKeyCode(builder, TargetKeyCode_off)
-    KeyMappingExcel.AddKeymappingIconBGName(builder, KeymappingIconBGName_off)
-    KeyMappingExcel.AddIsDisplay(builder, IsDisplay_val)
-    KeyMappingExcel.AddIsUsed(builder, IsUsed_val)
-    KeyMappingExcel.AddIsLongPress(builder, IsLongPress_val)
-    KeyMappingExcel.AddIgnorePosCheck(builder, IgnorePosCheck_val)
-    KeyMappingExcel.AddIconPositionX(builder, IconPositionX_val)
-    KeyMappingExcel.AddIconPositionY(builder, IconPositionY_val)
-    KeyMappingExcel.AddIconScaleX(builder, IconScaleX_val)
-    KeyMappingExcel.AddIconScaleY(builder, IconScaleY_val)
-    return KeyMappingExcel.End(builder)
-
-def pack_KeyMappingPopupExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
-    password = create_key("KeyMappingPopup") if encrypt else None
-    PrefabName_off = builder.CreateString(encrypt_string(data.get('PrefabName', ''), password))
-    ButtonName_vec = 0
-    if 'ButtonName' in data:
-        ButtonName_items = data['ButtonName']
-        ButtonName_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in ButtonName_items]
-        KeyMappingPopupExcel.StartButtonNameVector(builder, len(ButtonName_str_offsets))
-        for offset in reversed(ButtonName_str_offsets):
-            builder.PrependUOffsetTRelative(offset)
-        ButtonName_vec = builder.EndVector(len(ButtonName_items))
-    KeyMappingId_vec = 0
-    if 'KeyMappingId' in data:
-        KeyMappingId_items = data['KeyMappingId']
-        KeyMappingId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in KeyMappingId_items]
-        KeyMappingPopupExcel.StartKeyMappingIdVector(builder, len(KeyMappingId_str_offsets))
-        for offset in reversed(KeyMappingId_str_offsets):
-            builder.PrependUOffsetTRelative(offset)
-        KeyMappingId_vec = builder.EndVector(len(KeyMappingId_items))
-    KeyMappingPopupExcel.Start(builder)
-    KeyMappingPopupExcel.AddPrefabName(builder, PrefabName_off)
-    KeyMappingPopupExcel.AddButtonName(builder, ButtonName_vec)
-    KeyMappingPopupExcel.AddKeyMappingId(builder, KeyMappingId_vec)
-    return KeyMappingPopupExcel.End(builder)
-
 def pack_KnockBackExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("KnockBack") if encrypt else None
     Index_val = convert_long(data.get('Index', 0), password)
@@ -2874,9 +2872,13 @@ def pack_SystemMailExcel(builder: flatbuffers.Builder, data: dict, encrypt=True)
     Sender_off = builder.CreateString(encrypt_string(data.get('Sender', ''), password))
     Comment_off = builder.CreateString(encrypt_string(data.get('Comment', ''), password))
     MailType_val = convert_int(getattr(MailType, data.get('MailType', 0)), password)
+    IsProductMail_val = data.get('IsProductMail', 0)
+    IsVariableExpiredDay_val = data.get('IsVariableExpiredDay', 0)
     ExpiredDay_val = convert_long(data.get('ExpiredDay', 0), password)
     SystemMailExcel.Start(builder)
     SystemMailExcel.AddMailType(builder, MailType_val)
+    SystemMailExcel.AddIsProductMail(builder, IsProductMail_val)
+    SystemMailExcel.AddIsVariableExpiredDay(builder, IsVariableExpiredDay_val)
     SystemMailExcel.AddExpiredDay(builder, ExpiredDay_val)
     SystemMailExcel.AddSender(builder, Sender_off)
     SystemMailExcel.AddComment(builder, Comment_off)
@@ -3654,7 +3656,7 @@ def pack_AttendanceExcel(builder: flatbuffers.Builder, data: dict, encrypt=True)
     Id_val = convert_long(data.get('Id', 0), password)
     Type_val = convert_int(getattr(AttendanceType, data.get('Type', 0)), password)
     DisplayOrder_val = convert_long(data.get('DisplayOrder', 0), password)
-    AccountType_val = convert_int(getattr(AccountState, data.get('AccountType', 0)), password)
+    TargetGroup_val = convert_int(getattr(TargetGroup, data.get('TargetGroup', 0)), password)
     AccountLevelLimit_val = convert_long(data.get('AccountLevelLimit', 0), password)
     CountRule_val = convert_int(getattr(AttendanceCountRule, data.get('CountRule', 0)), password)
     CountReset_val = convert_int(getattr(AttendanceResetType, data.get('CountReset', 0)), password)
@@ -3667,7 +3669,7 @@ def pack_AttendanceExcel(builder: flatbuffers.Builder, data: dict, encrypt=True)
     AttendanceExcel.AddType(builder, Type_val)
     AttendanceExcel.AddCountdownPrefab(builder, CountdownPrefab_off)
     AttendanceExcel.AddDisplayOrder(builder, DisplayOrder_val)
-    AttendanceExcel.AddAccountType(builder, AccountType_val)
+    AttendanceExcel.AddTargetGroup(builder, TargetGroup_val)
     AttendanceExcel.AddAccountLevelLimit(builder, AccountLevelLimit_val)
     AttendanceExcel.AddTitle(builder, Title_off)
     AttendanceExcel.AddInfomationLocalizeCode(builder, InfomationLocalizeCode_off)
@@ -3792,11 +3794,15 @@ def pack_BattlePassFlavorTextExcel(builder: flatbuffers.Builder, data: dict, enc
     password = create_key("BattlePassFlavorText") if encrypt else None
     GroupId_val = convert_long(data.get('GroupId', 0), password)
     Id_val = convert_long(data.get('Id', 0), password)
+    TextGroup_val = convert_long(data.get('TextGroup', 0), password)
     LocalizeCodeId_val = convert_uint(data.get('LocalizeCodeId', 0), password)
+    Sort_val = convert_long(data.get('Sort', 0), password)
     BattlePassFlavorTextExcel.Start(builder)
     BattlePassFlavorTextExcel.AddGroupId(builder, GroupId_val)
     BattlePassFlavorTextExcel.AddId(builder, Id_val)
+    BattlePassFlavorTextExcel.AddTextGroup(builder, TextGroup_val)
     BattlePassFlavorTextExcel.AddLocalizeCodeId(builder, LocalizeCodeId_val)
+    BattlePassFlavorTextExcel.AddSort(builder, Sort_val)
     return BattlePassFlavorTextExcel.End(builder)
 
 def pack_BattlePassInfoExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -3806,7 +3812,6 @@ def pack_BattlePassInfoExcel(builder: flatbuffers.Builder, data: dict, encrypt=T
     LobbyBannerPath_off = builder.CreateString(encrypt_string(data.get('LobbyBannerPath', ''), password))
     MainIconParcelPath_off = builder.CreateString(encrypt_string(data.get('MainIconParcelPath', ''), password))
     PurchaseStepProductImagePath_off = builder.CreateString(encrypt_string(data.get('PurchaseStepProductImagePath', ''), password))
-    PurchaseStepBgImagePath_off = builder.CreateString(encrypt_string(data.get('PurchaseStepBgImagePath', ''), password))
     VideoId_vec = 0
     if 'VideoId' in data:
         VideoId_items = data['VideoId']
@@ -3847,7 +3852,6 @@ def pack_BattlePassInfoExcel(builder: flatbuffers.Builder, data: dict, encrypt=T
     BattlePassInfoExcel.AddLobbyBannerPath(builder, LobbyBannerPath_off)
     BattlePassInfoExcel.AddMainIconParcelPath(builder, MainIconParcelPath_off)
     BattlePassInfoExcel.AddPurchaseStepProductImagePath(builder, PurchaseStepProductImagePath_off)
-    BattlePassInfoExcel.AddPurchaseStepBgImagePath(builder, PurchaseStepBgImagePath_off)
     return BattlePassInfoExcel.End(builder)
 
 def pack_BattlePassLevelExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -4724,23 +4728,51 @@ def pack_CharacterDialogEmojiExcel(builder: flatbuffers.Builder, data: dict, enc
     LocalizeTH_off = builder.CreateString(encrypt_string(data.get('LocalizeTH', ''), password))
     LocalizeTW_off = builder.CreateString(encrypt_string(data.get('LocalizeTW', ''), password))
     LocalizeEN_off = builder.CreateString(encrypt_string(data.get('LocalizeEN', ''), password))
+    LocalizeCVGroup_off = builder.CreateString(encrypt_string(data.get('LocalizeCVGroup', ''), password))
+    VoiceId_vec = 0
+    if 'VoiceId' in data:
+        VoiceId_items = data['VoiceId']
+        CharacterDialogEmojiExcel.StartVoiceIdVector(builder, len(VoiceId_items))
+        for item in reversed(VoiceId_items):
+            builder.PrependUint32(convert_uint(item, password))
+        VoiceId_vec = builder.EndVector(len(VoiceId_items))
     GroupId_val = convert_long(data.get('GroupId', 0), password)
     TargetIndex_val = convert_int(data.get('TargetIndex', 0), password)
     Duration_val = convert_long(data.get('Duration', 0), password)
     DurationKr_val = convert_long(data.get('DurationKr', 0), password)
+    DurationAdd_val = convert_long(data.get('DurationAdd', 0), password)
     HideUI_val = data.get('HideUI', 0)
+    CharacterId_val = convert_long(data.get('CharacterId', 0), password)
+    CostumeUniqueId_val = convert_long(data.get('CostumeUniqueId', 0), password)
+    DisplayOrder_val = convert_long(data.get('DisplayOrder', 0), password)
+    CollectionVisible_val = data.get('CollectionVisible', 0)
+    CVCollectionType_val = convert_int(getattr(CVCollectionType, data.get('CVCollectionType', 0)), password)
+    CVUnlockScenarioType_val = convert_int(getattr(CVUnlockScenarioType, data.get('CVUnlockScenarioType', 0)), password)
+    ScenarioGroupId_val = convert_long(data.get('ScenarioGroupId', 0), password)
+    UnlockEventSeason_val = convert_long(data.get('UnlockEventSeason', 0), password)
     CharacterDialogEmojiExcel.Start(builder)
     CharacterDialogEmojiExcel.AddGroupId(builder, GroupId_val)
     CharacterDialogEmojiExcel.AddTargetIndex(builder, TargetIndex_val)
     CharacterDialogEmojiExcel.AddDialogType(builder, DialogType_off)
     CharacterDialogEmojiExcel.AddDuration(builder, Duration_val)
     CharacterDialogEmojiExcel.AddDurationKr(builder, DurationKr_val)
+    CharacterDialogEmojiExcel.AddDurationAdd(builder, DurationAdd_val)
     CharacterDialogEmojiExcel.AddHideUI(builder, HideUI_val)
     CharacterDialogEmojiExcel.AddLocalizeKR(builder, LocalizeKR_off)
     CharacterDialogEmojiExcel.AddLocalizeJP(builder, LocalizeJP_off)
     CharacterDialogEmojiExcel.AddLocalizeTH(builder, LocalizeTH_off)
     CharacterDialogEmojiExcel.AddLocalizeTW(builder, LocalizeTW_off)
     CharacterDialogEmojiExcel.AddLocalizeEN(builder, LocalizeEN_off)
+    CharacterDialogEmojiExcel.AddVoiceId(builder, VoiceId_vec)
+    CharacterDialogEmojiExcel.AddCharacterId(builder, CharacterId_val)
+    CharacterDialogEmojiExcel.AddCostumeUniqueId(builder, CostumeUniqueId_val)
+    CharacterDialogEmojiExcel.AddDisplayOrder(builder, DisplayOrder_val)
+    CharacterDialogEmojiExcel.AddCollectionVisible(builder, CollectionVisible_val)
+    CharacterDialogEmojiExcel.AddCVCollectionType(builder, CVCollectionType_val)
+    CharacterDialogEmojiExcel.AddCVUnlockScenarioType(builder, CVUnlockScenarioType_val)
+    CharacterDialogEmojiExcel.AddScenarioGroupId(builder, ScenarioGroupId_val)
+    CharacterDialogEmojiExcel.AddUnlockEventSeason(builder, UnlockEventSeason_val)
+    CharacterDialogEmojiExcel.AddLocalizeCVGroup(builder, LocalizeCVGroup_off)
     return CharacterDialogEmojiExcel.End(builder)
 
 def pack_CharacterDialogEventExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -4778,6 +4810,7 @@ def pack_CharacterDialogEventExcel(builder: flatbuffers.Builder, data: dict, enc
     CVUnlockScenarioType_val = convert_int(getattr(CVUnlockScenarioType, data.get('CVUnlockScenarioType', 0)), password)
     UnlockEventSeason_val = convert_long(data.get('UnlockEventSeason', 0), password)
     ScenarioGroupId_val = convert_long(data.get('ScenarioGroupId', 0), password)
+    ScenarioCharacterShapes_val = convert_int(getattr(ScenarioCharacterShapes, data.get('ScenarioCharacterShapes', 0)), password)
     CharacterDialogEventExcel.Start(builder)
     CharacterDialogEventExcel.AddCostumeUniqueId(builder, CostumeUniqueId_val)
     CharacterDialogEventExcel.AddOriginalCharacterId(builder, OriginalCharacterId_val)
@@ -4806,6 +4839,7 @@ def pack_CharacterDialogEventExcel(builder: flatbuffers.Builder, data: dict, enc
     CharacterDialogEventExcel.AddUnlockEventSeason(builder, UnlockEventSeason_val)
     CharacterDialogEventExcel.AddScenarioGroupId(builder, ScenarioGroupId_val)
     CharacterDialogEventExcel.AddLocalizeCVGroup(builder, LocalizeCVGroup_off)
+    CharacterDialogEventExcel.AddScenarioCharacterShapes(builder, ScenarioCharacterShapes_val)
     return CharacterDialogEventExcel.End(builder)
 
 def pack_CharacterDialogExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -5384,12 +5418,14 @@ def pack_CharacterStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
     EnhancePierceRate_val = convert_long(data.get('EnhancePierceRate', 0), password)
     EnhanceMysticRate_val = convert_long(data.get('EnhanceMysticRate', 0), password)
     EnhanceSonicRate_val = convert_long(data.get('EnhanceSonicRate', 0), password)
+    EnhanceChemicalRate_val = convert_long(data.get('EnhanceChemicalRate', 0), password)
     EnhanceSiegeRate_val = convert_long(data.get('EnhanceSiegeRate', 0), password)
     EnhanceNormalRate_val = convert_long(data.get('EnhanceNormalRate', 0), password)
     EnhanceLightArmorRate_val = convert_long(data.get('EnhanceLightArmorRate', 0), password)
     EnhanceHeavyArmorRate_val = convert_long(data.get('EnhanceHeavyArmorRate', 0), password)
     EnhanceUnarmedRate_val = convert_long(data.get('EnhanceUnarmedRate', 0), password)
     EnhanceElasticArmorRate_val = convert_long(data.get('EnhanceElasticArmorRate', 0), password)
+    EnhanceCompositeArmorRate_val = convert_long(data.get('EnhanceCompositeArmorRate', 0), password)
     EnhanceStructureRate_val = convert_long(data.get('EnhanceStructureRate', 0), password)
     EnhanceNormalArmorRate_val = convert_long(data.get('EnhanceNormalArmorRate', 0), password)
     ExtendBuffDuration_val = convert_long(data.get('ExtendBuffDuration', 0), password)
@@ -5421,6 +5457,8 @@ def pack_CharacterStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
     ReduceExDamagedRate_val = convert_long(data.get('ReduceExDamagedRate', 0), password)
     EnhanceBasicsDamageRate_val = convert_long(data.get('EnhanceBasicsDamageRate', 0), password)
     ReduceBasicsDamagedRate_val = convert_long(data.get('ReduceBasicsDamagedRate', 0), password)
+    EnhanceWeakDamageRate_val = convert_long(data.get('EnhanceWeakDamageRate', 0), password)
+    ReduceWeakDamagedRate_val = convert_long(data.get('ReduceWeakDamagedRate', 0), password)
     HealRate_val = convert_long(data.get('HealRate', 0), password)
     HealLightArmorRate_val = convert_long(data.get('HealLightArmorRate', 0), password)
     HealHeavyArmorRate_val = convert_long(data.get('HealHeavyArmorRate', 0), password)
@@ -5466,12 +5504,14 @@ def pack_CharacterStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
     CharacterStatExcel.AddEnhancePierceRate(builder, EnhancePierceRate_val)
     CharacterStatExcel.AddEnhanceMysticRate(builder, EnhanceMysticRate_val)
     CharacterStatExcel.AddEnhanceSonicRate(builder, EnhanceSonicRate_val)
+    CharacterStatExcel.AddEnhanceChemicalRate(builder, EnhanceChemicalRate_val)
     CharacterStatExcel.AddEnhanceSiegeRate(builder, EnhanceSiegeRate_val)
     CharacterStatExcel.AddEnhanceNormalRate(builder, EnhanceNormalRate_val)
     CharacterStatExcel.AddEnhanceLightArmorRate(builder, EnhanceLightArmorRate_val)
     CharacterStatExcel.AddEnhanceHeavyArmorRate(builder, EnhanceHeavyArmorRate_val)
     CharacterStatExcel.AddEnhanceUnarmedRate(builder, EnhanceUnarmedRate_val)
     CharacterStatExcel.AddEnhanceElasticArmorRate(builder, EnhanceElasticArmorRate_val)
+    CharacterStatExcel.AddEnhanceCompositeArmorRate(builder, EnhanceCompositeArmorRate_val)
     CharacterStatExcel.AddEnhanceStructureRate(builder, EnhanceStructureRate_val)
     CharacterStatExcel.AddEnhanceNormalArmorRate(builder, EnhanceNormalArmorRate_val)
     CharacterStatExcel.AddExtendBuffDuration(builder, ExtendBuffDuration_val)
@@ -5503,6 +5543,8 @@ def pack_CharacterStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
     CharacterStatExcel.AddReduceExDamagedRate(builder, ReduceExDamagedRate_val)
     CharacterStatExcel.AddEnhanceBasicsDamageRate(builder, EnhanceBasicsDamageRate_val)
     CharacterStatExcel.AddReduceBasicsDamagedRate(builder, ReduceBasicsDamagedRate_val)
+    CharacterStatExcel.AddEnhanceWeakDamageRate(builder, EnhanceWeakDamageRate_val)
+    CharacterStatExcel.AddReduceWeakDamagedRate(builder, ReduceWeakDamagedRate_val)
     CharacterStatExcel.AddHealRate(builder, HealRate_val)
     CharacterStatExcel.AddHealLightArmorRate(builder, HealLightArmorRate_val)
     CharacterStatExcel.AddHealHeavyArmorRate(builder, HealHeavyArmorRate_val)
@@ -6631,6 +6673,7 @@ def pack_ContentsShortcutExcel(builder: flatbuffers.Builder, data: dict, encrypt
     UniqueId_val = convert_long(data.get('UniqueId', 0), password)
     ContentType_val = convert_int(getattr(ContentType, data.get('ContentType', 0)), password)
     EventContentId_val = convert_long(data.get('EventContentId', 0), password)
+    ScenarioModeType_val = convert_int(getattr(ScenarioModeTypes, data.get('ScenarioModeType', 0)), password)
     ScenarioModeVolume_val = convert_long(data.get('ScenarioModeVolume', 0), password)
     ScenarioModeChapter_val = convert_long(data.get('ScenarioModeChapter', 0), password)
     ConditionContentId_val = convert_long(data.get('ConditionContentId', 0), password)
@@ -6641,6 +6684,7 @@ def pack_ContentsShortcutExcel(builder: flatbuffers.Builder, data: dict, encrypt
     ContentsShortcutExcel.AddUniqueId(builder, UniqueId_val)
     ContentsShortcutExcel.AddContentType(builder, ContentType_val)
     ContentsShortcutExcel.AddEventContentId(builder, EventContentId_val)
+    ContentsShortcutExcel.AddScenarioModeType(builder, ScenarioModeType_val)
     ContentsShortcutExcel.AddScenarioModeVolume(builder, ScenarioModeVolume_val)
     ContentsShortcutExcel.AddScenarioModeChapter(builder, ScenarioModeChapter_val)
     ContentsShortcutExcel.AddShortcutOpenTime(builder, ShortcutOpenTime_off)
@@ -6652,6 +6696,21 @@ def pack_ContentsShortcutExcel(builder: flatbuffers.Builder, data: dict, encrypt
     ContentsShortcutExcel.AddShortcutUIName(builder, ShortcutUIName_vec)
     ContentsShortcutExcel.AddLocalize(builder, Localize_off)
     return ContentsShortcutExcel.End(builder)
+
+def pack_ContentTargetGroupExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("ContentTargetGroup") if encrypt else None
+    AccountType_vec = 0
+    if 'AccountType' in data:
+        AccountType_items = data['AccountType']
+        ContentTargetGroupExcel.StartAccountTypeVector(builder, len(AccountType_items))
+        for item in reversed(AccountType_items):
+            builder.PrependInt32(convert_int(getattr(AccountState, item), password))
+        AccountType_vec = builder.EndVector(len(AccountType_items))
+    TargetGroup_val = convert_int(getattr(TargetGroup, data.get('TargetGroup', 0)), password)
+    ContentTargetGroupExcel.Start(builder)
+    ContentTargetGroupExcel.AddTargetGroup(builder, TargetGroup_val)
+    ContentTargetGroupExcel.AddAccountType(builder, AccountType_vec)
+    return ContentTargetGroupExcel.End(builder)
 
 def pack_CostumeExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("Costume") if encrypt else None
@@ -6982,7 +7041,6 @@ def pack_EliminateRaidStageExcel(builder: flatbuffers.Builder, data: dict, encry
     BossSpinePath_off = builder.CreateString(encrypt_string(data.get('BossSpinePath', ''), password))
     PortraitPath_off = builder.CreateString(encrypt_string(data.get('PortraitPath', ''), password))
     BGPath_off = builder.CreateString(encrypt_string(data.get('BGPath', ''), password))
-    GroundDevName_off = builder.CreateString(encrypt_string(data.get('GroundDevName', ''), password))
     EnterTimeLine_off = builder.CreateString(encrypt_string(data.get('EnterTimeLine', ''), password))
     VictoryTimelinePath_off = builder.CreateString(encrypt_string(data.get('VictoryTimelinePath', ''), password))
     PhaseChangeTimelinePath_off = builder.CreateString(encrypt_string(data.get('PhaseChangeTimelinePath', ''), password))
@@ -7028,6 +7086,7 @@ def pack_EliminateRaidStageExcel(builder: flatbuffers.Builder, data: dict, encry
     RaidRoomLifeTime_val = convert_int(data.get('RaidRoomLifeTime', 0), password)
     BattleDuration_val = convert_long(data.get('BattleDuration', 0), password)
     GroundId_val = convert_long(data.get('GroundId', 0), password)
+    RaidBossGroupType_val = convert_int(getattr(RaidBossGroupType, data.get('RaidBossGroupType', 0)), password)
     TacticEnvironment_val = convert_int(getattr(TacticEnvironment, data.get('TacticEnvironment', 0)), password)
     DefaultClearScore_val = convert_long(data.get('DefaultClearScore', 0), password)
     MaximumScore_val = convert_long(data.get('MaximumScore', 0), password)
@@ -7061,7 +7120,7 @@ def pack_EliminateRaidStageExcel(builder: flatbuffers.Builder, data: dict, encry
     EliminateRaidStageExcel.AddRaidRoomLifeTime(builder, RaidRoomLifeTime_val)
     EliminateRaidStageExcel.AddBattleDuration(builder, BattleDuration_val)
     EliminateRaidStageExcel.AddGroundId(builder, GroundId_val)
-    EliminateRaidStageExcel.AddGroundDevName(builder, GroundDevName_off)
+    EliminateRaidStageExcel.AddRaidBossGroupType(builder, RaidBossGroupType_val)
     EliminateRaidStageExcel.AddEnterTimeLine(builder, EnterTimeLine_off)
     EliminateRaidStageExcel.AddTacticEnvironment(builder, TacticEnvironment_val)
     EliminateRaidStageExcel.AddDefaultClearScore(builder, DefaultClearScore_val)
@@ -7251,6 +7310,7 @@ def pack_EquipmentExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) 
     CraftQualityTier2_val = convert_long(data.get('CraftQualityTier2', 0), password)
     ShiftingCraftQuality_val = convert_long(data.get('ShiftingCraftQuality', 0), password)
     ShortcutTypeId_val = convert_long(data.get('ShortcutTypeId', 0), password)
+    RedirectItemId_val = convert_long(data.get('RedirectItemId', 0), password)
     EquipmentExcel.Start(builder)
     EquipmentExcel.AddId(builder, Id_val)
     EquipmentExcel.AddEquipmentCategory(builder, EquipmentCategory_val)
@@ -7271,6 +7331,7 @@ def pack_EquipmentExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) 
     EquipmentExcel.AddShiftingCraftQuality(builder, ShiftingCraftQuality_val)
     EquipmentExcel.AddShopCategory(builder, ShopCategory_vec)
     EquipmentExcel.AddShortcutTypeId(builder, ShortcutTypeId_val)
+    EquipmentExcel.AddRedirectItemId(builder, RedirectItemId_val)
     return EquipmentExcel.End(builder)
 
 def pack_EquipmentLevelExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -7612,6 +7673,140 @@ def pack_EventContentCharacterBonusExcel(builder: flatbuffers.Builder, data: dic
     EventContentCharacterBonusExcel.AddEventContentItemType(builder, EventContentItemType_vec)
     EventContentCharacterBonusExcel.AddBonusPercentage(builder, BonusPercentage_vec)
     return EventContentCharacterBonusExcel.End(builder)
+
+def pack_EventContentClueExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("EventContentClue") if encrypt else None
+    SlotClueImagePath_off = builder.CreateString(encrypt_string(data.get('SlotClueImagePath', ''), password))
+    ClueImagePath_off = builder.CreateString(encrypt_string(data.get('ClueImagePath', ''), password))
+    RewardParcelType_vec = 0
+    if 'RewardParcelType' in data:
+        RewardParcelType_items = data['RewardParcelType']
+        EventContentClueExcel.StartRewardParcelTypeVector(builder, len(RewardParcelType_items))
+        for item in reversed(RewardParcelType_items):
+            builder.PrependInt32(convert_int(getattr(ParcelType, item), password))
+        RewardParcelType_vec = builder.EndVector(len(RewardParcelType_items))
+    RewardParcelId_vec = 0
+    if 'RewardParcelId' in data:
+        RewardParcelId_items = data['RewardParcelId']
+        EventContentClueExcel.StartRewardParcelIdVector(builder, len(RewardParcelId_items))
+        for item in reversed(RewardParcelId_items):
+            builder.PrependInt64(convert_long(item, password))
+        RewardParcelId_vec = builder.EndVector(len(RewardParcelId_items))
+    RewardParcelAmount_vec = 0
+    if 'RewardParcelAmount' in data:
+        RewardParcelAmount_items = data['RewardParcelAmount']
+        EventContentClueExcel.StartRewardParcelAmountVector(builder, len(RewardParcelAmount_items))
+        for item in reversed(RewardParcelAmount_items):
+            builder.PrependInt64(convert_long(item, password))
+        RewardParcelAmount_vec = builder.EndVector(len(RewardParcelAmount_items))
+    EventContentId_val = convert_long(data.get('EventContentId', 0), password)
+    ClueId_val = convert_long(data.get('ClueId', 0), password)
+    LocalizeEtcId_val = convert_uint(data.get('LocalizeEtcId', 0), password)
+    HintUse_val = data.get('HintUse', 0)
+    Hintlocalizeid_val = convert_uint(data.get('Hintlocalizeid', 0), password)
+    EventContentClueExcel.Start(builder)
+    EventContentClueExcel.AddEventContentId(builder, EventContentId_val)
+    EventContentClueExcel.AddClueId(builder, ClueId_val)
+    EventContentClueExcel.AddLocalizeEtcId(builder, LocalizeEtcId_val)
+    EventContentClueExcel.AddSlotClueImagePath(builder, SlotClueImagePath_off)
+    EventContentClueExcel.AddClueImagePath(builder, ClueImagePath_off)
+    EventContentClueExcel.AddRewardParcelType(builder, RewardParcelType_vec)
+    EventContentClueExcel.AddRewardParcelId(builder, RewardParcelId_vec)
+    EventContentClueExcel.AddRewardParcelAmount(builder, RewardParcelAmount_vec)
+    EventContentClueExcel.AddHintUse(builder, HintUse_val)
+    EventContentClueExcel.AddHintlocalizeid(builder, Hintlocalizeid_val)
+    return EventContentClueExcel.End(builder)
+
+def pack_EventContentClueSearchExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("EventContentClueSearch") if encrypt else None
+    UsePrefabName_off = builder.CreateString(encrypt_string(data.get('UsePrefabName', ''), password))
+    ClueBGImagePath_off = builder.CreateString(encrypt_string(data.get('ClueBGImagePath', ''), password))
+    EventContentId_val = convert_long(data.get('EventContentId', 0), password)
+    TitleLocalize_val = convert_uint(data.get('TitleLocalize', 0), password)
+    EventContentClueSearchExcel.Start(builder)
+    EventContentClueSearchExcel.AddEventContentId(builder, EventContentId_val)
+    EventContentClueSearchExcel.AddTitleLocalize(builder, TitleLocalize_val)
+    EventContentClueSearchExcel.AddUsePrefabName(builder, UsePrefabName_off)
+    EventContentClueSearchExcel.AddClueBGImagePath(builder, ClueBGImagePath_off)
+    return EventContentClueSearchExcel.End(builder)
+
+def pack_EventContentClueSearchRewardExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("EventContentClueSearchReward") if encrypt else None
+    RewardParcelType_vec = 0
+    if 'RewardParcelType' in data:
+        RewardParcelType_items = data['RewardParcelType']
+        EventContentClueSearchRewardExcel.StartRewardParcelTypeVector(builder, len(RewardParcelType_items))
+        for item in reversed(RewardParcelType_items):
+            builder.PrependInt32(convert_int(getattr(ParcelType, item), password))
+        RewardParcelType_vec = builder.EndVector(len(RewardParcelType_items))
+    RewardParcelId_vec = 0
+    if 'RewardParcelId' in data:
+        RewardParcelId_items = data['RewardParcelId']
+        EventContentClueSearchRewardExcel.StartRewardParcelIdVector(builder, len(RewardParcelId_items))
+        for item in reversed(RewardParcelId_items):
+            builder.PrependInt64(convert_long(item, password))
+        RewardParcelId_vec = builder.EndVector(len(RewardParcelId_items))
+    RewardParcelAmount_vec = 0
+    if 'RewardParcelAmount' in data:
+        RewardParcelAmount_items = data['RewardParcelAmount']
+        EventContentClueSearchRewardExcel.StartRewardParcelAmountVector(builder, len(RewardParcelAmount_items))
+        for item in reversed(RewardParcelAmount_items):
+            builder.PrependInt64(convert_long(item, password))
+        RewardParcelAmount_vec = builder.EndVector(len(RewardParcelAmount_items))
+    Id_val = convert_long(data.get('Id', 0), password)
+    EventContentClueSearchRewardExcel.Start(builder)
+    EventContentClueSearchRewardExcel.AddId(builder, Id_val)
+    EventContentClueSearchRewardExcel.AddRewardParcelType(builder, RewardParcelType_vec)
+    EventContentClueSearchRewardExcel.AddRewardParcelId(builder, RewardParcelId_vec)
+    EventContentClueSearchRewardExcel.AddRewardParcelAmount(builder, RewardParcelAmount_vec)
+    return EventContentClueSearchRewardExcel.End(builder)
+
+def pack_EventContentClueSearchRoundExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("EventContentClueSearchRound") if encrypt else None
+    TargetImagePath_off = builder.CreateString(encrypt_string(data.get('TargetImagePath', ''), password))
+    ClearPageImagePath_off = builder.CreateString(encrypt_string(data.get('ClearPageImagePath', ''), password))
+    ClueSlotNumber_vec = 0
+    if 'ClueSlotNumber' in data:
+        ClueSlotNumber_items = data['ClueSlotNumber']
+        EventContentClueSearchRoundExcel.StartClueSlotNumberVector(builder, len(ClueSlotNumber_items))
+        for item in reversed(ClueSlotNumber_items):
+            builder.PrependInt32(convert_int(item, password))
+        ClueSlotNumber_vec = builder.EndVector(len(ClueSlotNumber_items))
+    ClueId_vec = 0
+    if 'ClueId' in data:
+        ClueId_items = data['ClueId']
+        EventContentClueSearchRoundExcel.StartClueIdVector(builder, len(ClueId_items))
+        for item in reversed(ClueId_items):
+            builder.PrependInt64(convert_long(item, password))
+        ClueId_vec = builder.EndVector(len(ClueId_items))
+    ClueCostAmount_vec = 0
+    if 'ClueCostAmount' in data:
+        ClueCostAmount_items = data['ClueCostAmount']
+        EventContentClueSearchRoundExcel.StartClueCostAmountVector(builder, len(ClueCostAmount_items))
+        for item in reversed(ClueCostAmount_items):
+            builder.PrependInt64(convert_long(item, password))
+        ClueCostAmount_vec = builder.EndVector(len(ClueCostAmount_items))
+    EventContentId_val = convert_long(data.get('EventContentId', 0), password)
+    Round_val = convert_long(data.get('Round', 0), password)
+    IsLoop_val = data.get('IsLoop', 0)
+    Localizeld_val = convert_uint(data.get('Localizeld', 0), password)
+    RewardId_val = convert_long(data.get('RewardId', 0), password)
+    HintlocalizeId_val = convert_uint(data.get('HintlocalizeId', 0), password)
+    ClearlocalizeId_val = convert_uint(data.get('ClearlocalizeId', 0), password)
+    EventContentClueSearchRoundExcel.Start(builder)
+    EventContentClueSearchRoundExcel.AddEventContentId(builder, EventContentId_val)
+    EventContentClueSearchRoundExcel.AddRound(builder, Round_val)
+    EventContentClueSearchRoundExcel.AddIsLoop(builder, IsLoop_val)
+    EventContentClueSearchRoundExcel.AddTargetImagePath(builder, TargetImagePath_off)
+    EventContentClueSearchRoundExcel.AddLocalizeld(builder, Localizeld_val)
+    EventContentClueSearchRoundExcel.AddRewardId(builder, RewardId_val)
+    EventContentClueSearchRoundExcel.AddClueSlotNumber(builder, ClueSlotNumber_vec)
+    EventContentClueSearchRoundExcel.AddClueId(builder, ClueId_vec)
+    EventContentClueSearchRoundExcel.AddClueCostAmount(builder, ClueCostAmount_vec)
+    EventContentClueSearchRoundExcel.AddHintlocalizeId(builder, HintlocalizeId_val)
+    EventContentClueSearchRoundExcel.AddClearlocalizeId(builder, ClearlocalizeId_val)
+    EventContentClueSearchRoundExcel.AddClearPageImagePath(builder, ClearPageImagePath_off)
+    return EventContentClueSearchRoundExcel.End(builder)
 
 def pack_EventContentCollectionExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("EventContentCollection") if encrypt else None
@@ -8295,7 +8490,7 @@ def pack_EventContentMissionExcel(builder: flatbuffers.Builder, data: dict, encr
     ToastDisplayType_val = convert_int(getattr(MissionToastDisplayConditionType, data.get('ToastDisplayType', 0)), password)
     ViewFlag_val = data.get('ViewFlag', 0)
     DisplayOrder_val = convert_long(data.get('DisplayOrder', 0), password)
-    AccountType_val = convert_int(getattr(AccountState, data.get('AccountType', 0)), password)
+    TargetGroup_val = convert_int(getattr(TargetGroup, data.get('TargetGroup', 0)), password)
     AccountLevel_val = convert_long(data.get('AccountLevel', 0), password)
     ChallengeStageShortcut_val = convert_long(data.get('ChallengeStageShortcut', 0), password)
     CompleteConditionType_val = convert_int(getattr(MissionCompleteConditionType, data.get('CompleteConditionType', 0)), password)
@@ -8315,7 +8510,7 @@ def pack_EventContentMissionExcel(builder: flatbuffers.Builder, data: dict, encr
     EventContentMissionExcel.AddViewFlag(builder, ViewFlag_val)
     EventContentMissionExcel.AddDisplayOrder(builder, DisplayOrder_val)
     EventContentMissionExcel.AddPreMissionId(builder, PreMissionId_vec)
-    EventContentMissionExcel.AddAccountType(builder, AccountType_val)
+    EventContentMissionExcel.AddTargetGroup(builder, TargetGroup_val)
     EventContentMissionExcel.AddAccountLevel(builder, AccountLevel_val)
     EventContentMissionExcel.AddShortcutUI(builder, ShortcutUI_vec)
     EventContentMissionExcel.AddChallengeStageShortcut(builder, ChallengeStageShortcut_val)
@@ -8679,12 +8874,16 @@ def pack_EventContentSpineDisplayPeriodExcel(builder: flatbuffers.Builder, data:
     EventContentId_val = convert_long(data.get('EventContentId', 0), password)
     DialogCategory_val = convert_int(getattr(DialogCategory, data.get('DialogCategory', 0)), password)
     CostumeUniqueId_val = convert_long(data.get('CostumeUniqueId', 0), password)
+    ShowWorldRaidConditionIDFrom_val = convert_long(data.get('ShowWorldRaidConditionIDFrom', 0), password)
+    ShowWorldRaidConditionIDTo_val = convert_long(data.get('ShowWorldRaidConditionIDTo', 0), password)
     EventContentSpineDisplayPeriodExcel.Start(builder)
     EventContentSpineDisplayPeriodExcel.AddEventContentId(builder, EventContentId_val)
     EventContentSpineDisplayPeriodExcel.AddDialogCategory(builder, DialogCategory_val)
     EventContentSpineDisplayPeriodExcel.AddCostumeUniqueId(builder, CostumeUniqueId_val)
     EventContentSpineDisplayPeriodExcel.AddShowPeriodFrom(builder, ShowPeriodFrom_off)
     EventContentSpineDisplayPeriodExcel.AddShowPeriodTo(builder, ShowPeriodTo_off)
+    EventContentSpineDisplayPeriodExcel.AddShowWorldRaidConditionIDFrom(builder, ShowWorldRaidConditionIDFrom_val)
+    EventContentSpineDisplayPeriodExcel.AddShowWorldRaidConditionIDTo(builder, ShowWorldRaidConditionIDTo_val)
     return EventContentSpineDisplayPeriodExcel.End(builder)
 
 def pack_EventContentSpoilerPopupExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -9149,27 +9348,6 @@ def pack_FavorLevelRewardExcel(builder: flatbuffers.Builder, data: dict, encrypt
         for item in reversed(StatValue_items):
             builder.PrependInt64(convert_long(item, password))
         StatValue_vec = builder.EndVector(len(StatValue_items))
-    RewardParcelType_vec = 0
-    if 'RewardParcelType' in data:
-        RewardParcelType_items = data['RewardParcelType']
-        FavorLevelRewardExcel.StartRewardParcelTypeVector(builder, len(RewardParcelType_items))
-        for item in reversed(RewardParcelType_items):
-            builder.PrependInt32(convert_int(getattr(ParcelType, item), password))
-        RewardParcelType_vec = builder.EndVector(len(RewardParcelType_items))
-    RewardParcelId_vec = 0
-    if 'RewardParcelId' in data:
-        RewardParcelId_items = data['RewardParcelId']
-        FavorLevelRewardExcel.StartRewardParcelIdVector(builder, len(RewardParcelId_items))
-        for item in reversed(RewardParcelId_items):
-            builder.PrependInt64(convert_long(item, password))
-        RewardParcelId_vec = builder.EndVector(len(RewardParcelId_items))
-    RewardAmount_vec = 0
-    if 'RewardAmount' in data:
-        RewardAmount_items = data['RewardAmount']
-        FavorLevelRewardExcel.StartRewardAmountVector(builder, len(RewardAmount_items))
-        for item in reversed(RewardAmount_items):
-            builder.PrependInt64(convert_long(item, password))
-        RewardAmount_vec = builder.EndVector(len(RewardAmount_items))
     CharacterId_val = convert_long(data.get('CharacterId', 0), password)
     FavorLevel_val = convert_long(data.get('FavorLevel', 0), password)
     FavorLevelRewardExcel.Start(builder)
@@ -9177,9 +9355,6 @@ def pack_FavorLevelRewardExcel(builder: flatbuffers.Builder, data: dict, encrypt
     FavorLevelRewardExcel.AddFavorLevel(builder, FavorLevel_val)
     FavorLevelRewardExcel.AddStatType(builder, StatType_vec)
     FavorLevelRewardExcel.AddStatValue(builder, StatValue_vec)
-    FavorLevelRewardExcel.AddRewardParcelType(builder, RewardParcelType_vec)
-    FavorLevelRewardExcel.AddRewardParcelId(builder, RewardParcelId_vec)
-    FavorLevelRewardExcel.AddRewardAmount(builder, RewardAmount_vec)
     return FavorLevelRewardExcel.End(builder)
 
 def pack_FixedEchelonSettingExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -9937,6 +10112,21 @@ def pack_GoodsExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> i
     GoodsExcel.AddParcelAmount(builder, ParcelAmount_vec)
     return GoodsExcel.End(builder)
 
+def pack_GooglePlayAchievementExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("GooglePlayAchievement") if encrypt else None
+    GooglePlayId_off = builder.CreateString(encrypt_string(data.get('GooglePlayId', ''), password))
+    Id_val = convert_long(data.get('Id', 0), password)
+    ConditionType_val = convert_int(getattr(ConditionType, data.get('ConditionType', 0)), password)
+    ConditionValue_val = convert_long(data.get('ConditionValue', 0), password)
+    AchievementType_val = convert_int(getattr(AchievementType, data.get('AchievementType', 0)), password)
+    GooglePlayAchievementExcel.Start(builder)
+    GooglePlayAchievementExcel.AddId(builder, Id_val)
+    GooglePlayAchievementExcel.AddConditionType(builder, ConditionType_val)
+    GooglePlayAchievementExcel.AddConditionValue(builder, ConditionValue_val)
+    GooglePlayAchievementExcel.AddGooglePlayId(builder, GooglePlayId_off)
+    GooglePlayAchievementExcel.AddAchievementType(builder, AchievementType_val)
+    return GooglePlayAchievementExcel.End(builder)
+
 def pack_GroundExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("Ground") if encrypt else None
     GroundSceneName_off = builder.CreateString(encrypt_string(data.get('GroundSceneName', ''), password))
@@ -10030,6 +10220,7 @@ def pack_GroundExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> 
     UIEmojiScale_val = encrypt_float(data.get('UIEmojiScale', 0), password)
     UISkillMainLogScale_val = encrypt_float(data.get('UISkillMainLogScale', 0), password)
     EffectCountLimit_val = convert_int(data.get('EffectCountLimit', 0), password)
+    CarrierSkillGroupId_val = convert_long(data.get('CarrierSkillGroupId', 0), password)
     GroundExcel.Start(builder)
     GroundExcel.AddId(builder, Id_val)
     GroundExcel.AddStageFileName(builder, StageFileName_vec)
@@ -10085,6 +10276,7 @@ def pack_GroundExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> 
     GroundExcel.AddUIEmojiScale(builder, UIEmojiScale_val)
     GroundExcel.AddUISkillMainLogScale(builder, UISkillMainLogScale_val)
     GroundExcel.AddEffectCountLimit(builder, EffectCountLimit_val)
+    GroundExcel.AddCarrierSkillGroupId(builder, CarrierSkillGroupId_val)
     GroundExcel.AddAllyPassiveSkillId(builder, AllyPassiveSkillId_vec)
     GroundExcel.AddAllyPassiveSkillLevel(builder, AllyPassiveSkillLevel_vec)
     GroundExcel.AddEnemyPassiveSkillId(builder, EnemyPassiveSkillId_vec)
@@ -10243,7 +10435,7 @@ def pack_GuideMissionSeasonExcel(builder: flatbuffers.Builder, data: dict, encry
     BackgroundImage_off = builder.CreateString(encrypt_string(data.get('BackgroundImage', ''), password))
     TitleImage_off = builder.CreateString(encrypt_string(data.get('TitleImage', ''), password))
     Id_val = convert_long(data.get('Id', 0), password)
-    AccountType_val = convert_int(getattr(AccountState, data.get('AccountType', 0)), password)
+    TargetGroup_val = convert_int(getattr(TargetGroup, data.get('TargetGroup', 0)), password)
     Enabled_val = data.get('Enabled', 0)
     CloseBannerAfterCompletion_val = data.get('CloseBannerAfterCompletion', 0)
     MaximumLoginCount_val = convert_long(data.get('MaximumLoginCount', 0), password)
@@ -10261,7 +10453,7 @@ def pack_GuideMissionSeasonExcel(builder: flatbuffers.Builder, data: dict, encry
     GuideMissionSeasonExcel.AddTitleLocalizeCode(builder, TitleLocalizeCode_off)
     GuideMissionSeasonExcel.AddPermanentInfomationLocalizeCode(builder, PermanentInfomationLocalizeCode_off)
     GuideMissionSeasonExcel.AddInfomationLocalizeCode(builder, InfomationLocalizeCode_off)
-    GuideMissionSeasonExcel.AddAccountType(builder, AccountType_val)
+    GuideMissionSeasonExcel.AddTargetGroup(builder, TargetGroup_val)
     GuideMissionSeasonExcel.AddEnabled(builder, Enabled_val)
     GuideMissionSeasonExcel.AddBannerOpenDate(builder, BannerOpenDate_off)
     GuideMissionSeasonExcel.AddStartDate(builder, StartDate_off)
@@ -10295,6 +10487,25 @@ def pack_HpBarAbbreviationExcel(builder: flatbuffers.Builder, data: dict, encryp
     HpBarAbbreviationExcel.AddStandardHpBar(builder, StandardHpBar_val)
     HpBarAbbreviationExcel.AddRaidBossHpBar(builder, RaidBossHpBar_val)
     return HpBarAbbreviationExcel.End(builder)
+
+def pack_IAWorldRaidStageRewardExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("IAWorldRaidStageReward") if encrypt else None
+    ClearStageRewardParcelUniqueName_off = builder.CreateString(encrypt_string(data.get('ClearStageRewardParcelUniqueName', ''), password))
+    GroupId_val = convert_long(data.get('GroupId', 0), password)
+    IsClearStageRewardHideInfo_val = data.get('IsClearStageRewardHideInfo', 0)
+    ClearStageRewardProb_val = convert_long(data.get('ClearStageRewardProb', 0), password)
+    ClearStageRewardParcelType_val = convert_int(getattr(ParcelType, data.get('ClearStageRewardParcelType', 0)), password)
+    ClearStageRewardParcelUniqueID_val = convert_long(data.get('ClearStageRewardParcelUniqueID', 0), password)
+    ClearStageRewardAmount_val = convert_long(data.get('ClearStageRewardAmount', 0), password)
+    IAWorldRaidStageRewardExcel.Start(builder)
+    IAWorldRaidStageRewardExcel.AddGroupId(builder, GroupId_val)
+    IAWorldRaidStageRewardExcel.AddIsClearStageRewardHideInfo(builder, IsClearStageRewardHideInfo_val)
+    IAWorldRaidStageRewardExcel.AddClearStageRewardProb(builder, ClearStageRewardProb_val)
+    IAWorldRaidStageRewardExcel.AddClearStageRewardParcelType(builder, ClearStageRewardParcelType_val)
+    IAWorldRaidStageRewardExcel.AddClearStageRewardParcelUniqueID(builder, ClearStageRewardParcelUniqueID_val)
+    IAWorldRaidStageRewardExcel.AddClearStageRewardParcelUniqueName(builder, ClearStageRewardParcelUniqueName_off)
+    IAWorldRaidStageRewardExcel.AddClearStageRewardAmount(builder, ClearStageRewardAmount_val)
+    return IAWorldRaidStageRewardExcel.End(builder)
 
 def pack_IdCardBackgroundExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("IdCardBackground") if encrypt else None
@@ -10360,6 +10571,706 @@ def pack_InformationStrategyObjectExcel(builder: flatbuffers.Builder, data: dict
     InformationStrategyObjectExcel.AddPageName(builder, PageName_off)
     InformationStrategyObjectExcel.AddLocalizeCodeId(builder, LocalizeCodeId_off)
     return InformationStrategyObjectExcel.End(builder)
+
+def pack_InteractiveWorldRaidArcadeMachineExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidArcadeMachine") if encrypt else None
+    MiniGameType_vec = 0
+    if 'MiniGameType' in data:
+        MiniGameType_items = data['MiniGameType']
+        InteractiveWorldRaidArcadeMachineExcel.StartMiniGameTypeVector(builder, len(MiniGameType_items))
+        for item in reversed(MiniGameType_items):
+            builder.PrependInt32(convert_int(getattr(EventContentType, item), password))
+        MiniGameType_vec = builder.EndVector(len(MiniGameType_items))
+    MiniGameCostItemId_vec = 0
+    if 'MiniGameCostItemId' in data:
+        MiniGameCostItemId_items = data['MiniGameCostItemId']
+        InteractiveWorldRaidArcadeMachineExcel.StartMiniGameCostItemIdVector(builder, len(MiniGameCostItemId_items))
+        for item in reversed(MiniGameCostItemId_items):
+            builder.PrependInt64(convert_long(item, password))
+        MiniGameCostItemId_vec = builder.EndVector(len(MiniGameCostItemId_items))
+    MiniGameCostItemAmount_vec = 0
+    if 'MiniGameCostItemAmount' in data:
+        MiniGameCostItemAmount_items = data['MiniGameCostItemAmount']
+        InteractiveWorldRaidArcadeMachineExcel.StartMiniGameCostItemAmountVector(builder, len(MiniGameCostItemAmount_items))
+        for item in reversed(MiniGameCostItemAmount_items):
+            builder.PrependInt64(convert_long(item, password))
+        MiniGameCostItemAmount_vec = builder.EndVector(len(MiniGameCostItemAmount_items))
+    MiniGameSoftLimitItemId_vec = 0
+    if 'MiniGameSoftLimitItemId' in data:
+        MiniGameSoftLimitItemId_items = data['MiniGameSoftLimitItemId']
+        MiniGameSoftLimitItemId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in MiniGameSoftLimitItemId_items]
+        InteractiveWorldRaidArcadeMachineExcel.StartMiniGameSoftLimitItemIdVector(builder, len(MiniGameSoftLimitItemId_str_offsets))
+        for offset in reversed(MiniGameSoftLimitItemId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        MiniGameSoftLimitItemId_vec = builder.EndVector(len(MiniGameSoftLimitItemId_items))
+    MiniGameSoftLimitItemAmount_vec = 0
+    if 'MiniGameSoftLimitItemAmount' in data:
+        MiniGameSoftLimitItemAmount_items = data['MiniGameSoftLimitItemAmount']
+        MiniGameSoftLimitItemAmount_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in MiniGameSoftLimitItemAmount_items]
+        InteractiveWorldRaidArcadeMachineExcel.StartMiniGameSoftLimitItemAmountVector(builder, len(MiniGameSoftLimitItemAmount_str_offsets))
+        for offset in reversed(MiniGameSoftLimitItemAmount_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        MiniGameSoftLimitItemAmount_vec = builder.EndVector(len(MiniGameSoftLimitItemAmount_items))
+    MiniGameImage_vec = 0
+    if 'MiniGameImage' in data:
+        MiniGameImage_items = data['MiniGameImage']
+        MiniGameImage_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in MiniGameImage_items]
+        InteractiveWorldRaidArcadeMachineExcel.StartMiniGameImageVector(builder, len(MiniGameImage_str_offsets))
+        for offset in reversed(MiniGameImage_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        MiniGameImage_vec = builder.EndVector(len(MiniGameImage_items))
+    LocalizeTitle_vec = 0
+    if 'LocalizeTitle' in data:
+        LocalizeTitle_items = data['LocalizeTitle']
+        InteractiveWorldRaidArcadeMachineExcel.StartLocalizeTitleVector(builder, len(LocalizeTitle_items))
+        for item in reversed(LocalizeTitle_items):
+            builder.PrependUint32(convert_uint(item, password))
+        LocalizeTitle_vec = builder.EndVector(len(LocalizeTitle_items))
+    LocalizeDesc_vec = 0
+    if 'LocalizeDesc' in data:
+        LocalizeDesc_items = data['LocalizeDesc']
+        InteractiveWorldRaidArcadeMachineExcel.StartLocalizeDescVector(builder, len(LocalizeDesc_items))
+        for item in reversed(LocalizeDesc_items):
+            builder.PrependUint32(convert_uint(item, password))
+        LocalizeDesc_vec = builder.EndVector(len(LocalizeDesc_items))
+    EventContentId_val = convert_long(data.get('EventContentId', 0), password)
+    InteractiveWorldRaidArcadeMachineExcel.Start(builder)
+    InteractiveWorldRaidArcadeMachineExcel.AddEventContentId(builder, EventContentId_val)
+    InteractiveWorldRaidArcadeMachineExcel.AddMiniGameType(builder, MiniGameType_vec)
+    InteractiveWorldRaidArcadeMachineExcel.AddMiniGameCostItemId(builder, MiniGameCostItemId_vec)
+    InteractiveWorldRaidArcadeMachineExcel.AddMiniGameCostItemAmount(builder, MiniGameCostItemAmount_vec)
+    InteractiveWorldRaidArcadeMachineExcel.AddMiniGameSoftLimitItemId(builder, MiniGameSoftLimitItemId_vec)
+    InteractiveWorldRaidArcadeMachineExcel.AddMiniGameSoftLimitItemAmount(builder, MiniGameSoftLimitItemAmount_vec)
+    InteractiveWorldRaidArcadeMachineExcel.AddMiniGameImage(builder, MiniGameImage_vec)
+    InteractiveWorldRaidArcadeMachineExcel.AddLocalizeTitle(builder, LocalizeTitle_vec)
+    InteractiveWorldRaidArcadeMachineExcel.AddLocalizeDesc(builder, LocalizeDesc_vec)
+    return InteractiveWorldRaidArcadeMachineExcel.End(builder)
+
+def pack_InteractiveWorldRaidBossGroupExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidBossGroup") if encrypt else None
+    WorldBossName_off = builder.CreateString(encrypt_string(data.get('WorldBossName', ''), password))
+    WorldBossPopupPortrait_off = builder.CreateString(encrypt_string(data.get('WorldBossPopupPortrait', ''), password))
+    WorldBossPopupNameTexture_off = builder.CreateString(encrypt_string(data.get('WorldBossPopupNameTexture', ''), password))
+    WorldBossPopupBG_off = builder.CreateString(encrypt_string(data.get('WorldBossPopupBG', ''), password))
+    WorldBossParcelPortrait_off = builder.CreateString(encrypt_string(data.get('WorldBossParcelPortrait', ''), password))
+    WorldBossListParcel_off = builder.CreateString(encrypt_string(data.get('WorldBossListParcel', ''), password))
+    ExclusiveOperatorBossSpawn_off = builder.CreateString(encrypt_string(data.get('ExclusiveOperatorBossSpawn', ''), password))
+    ExclusiveOperatorBossKill_off = builder.CreateString(encrypt_string(data.get('ExclusiveOperatorBossKill', ''), password))
+    ExclusiveOperatorScenarioBattle_off = builder.CreateString(encrypt_string(data.get('ExclusiveOperatorScenarioBattle', ''), password))
+    ExclusiveOperatorBossDamaged_off = builder.CreateString(encrypt_string(data.get('ExclusiveOperatorBossDamaged', ''), password))
+    RaidScenarioBattleLocalizeKey_off = builder.CreateString(encrypt_string(data.get('RaidScenarioBattleLocalizeKey', ''), password))
+    AnotherBossKilled_vec = 0
+    if 'AnotherBossKilled' in data:
+        AnotherBossKilled_items = data['AnotherBossKilled']
+        InteractiveWorldRaidBossGroupExcel.StartAnotherBossKilledVector(builder, len(AnotherBossKilled_items))
+        for item in reversed(AnotherBossKilled_items):
+            builder.PrependInt64(convert_long(item, password))
+        AnotherBossKilled_vec = builder.EndVector(len(AnotherBossKilled_items))
+    Id_val = convert_long(data.get('Id', 0), password)
+    WorldRaidBossGroupId_val = convert_long(data.get('WorldRaidBossGroupId', 0), password)
+    WorldBossHPLinkGroup_val = convert_long(data.get('WorldBossHPLinkGroup', 0), password)
+    WorldBossHP_val = convert_long(data.get('WorldBossHP', 0), password)
+    WorldBossHPTw_val = convert_long(data.get('WorldBossHPTw', 0), password)
+    WorldBossHPAsia_val = convert_long(data.get('WorldBossHPAsia', 0), password)
+    WorldBossHPNa_val = convert_long(data.get('WorldBossHPNa', 0), password)
+    WorldBossHPGlobal_val = convert_long(data.get('WorldBossHPGlobal', 0), password)
+    UIHideBeforeSpawn_val = data.get('UIHideBeforeSpawn', 0)
+    HideAnotherBossKilled_val = data.get('HideAnotherBossKilled', 0)
+    WorldBossClearRewardGroupId_val = convert_long(data.get('WorldBossClearRewardGroupId', 0), password)
+    EchelonConstraintGroupId_val = convert_long(data.get('EchelonConstraintGroupId', 0), password)
+    BossGroupOpenCondition_val = convert_long(data.get('BossGroupOpenCondition', 0), password)
+    IsSeasonFinalBoss_val = data.get('IsSeasonFinalBoss', 0)
+    InteractiveWorldRaidBossGroupExcel.Start(builder)
+    InteractiveWorldRaidBossGroupExcel.AddId(builder, Id_val)
+    InteractiveWorldRaidBossGroupExcel.AddWorldRaidBossGroupId(builder, WorldRaidBossGroupId_val)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossHPLinkGroup(builder, WorldBossHPLinkGroup_val)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossName(builder, WorldBossName_off)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossPopupPortrait(builder, WorldBossPopupPortrait_off)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossPopupNameTexture(builder, WorldBossPopupNameTexture_off)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossPopupBG(builder, WorldBossPopupBG_off)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossParcelPortrait(builder, WorldBossParcelPortrait_off)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossListParcel(builder, WorldBossListParcel_off)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossHP(builder, WorldBossHP_val)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossHPTw(builder, WorldBossHPTw_val)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossHPAsia(builder, WorldBossHPAsia_val)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossHPNa(builder, WorldBossHPNa_val)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossHPGlobal(builder, WorldBossHPGlobal_val)
+    InteractiveWorldRaidBossGroupExcel.AddUIHideBeforeSpawn(builder, UIHideBeforeSpawn_val)
+    InteractiveWorldRaidBossGroupExcel.AddHideAnotherBossKilled(builder, HideAnotherBossKilled_val)
+    InteractiveWorldRaidBossGroupExcel.AddWorldBossClearRewardGroupId(builder, WorldBossClearRewardGroupId_val)
+    InteractiveWorldRaidBossGroupExcel.AddAnotherBossKilled(builder, AnotherBossKilled_vec)
+    InteractiveWorldRaidBossGroupExcel.AddEchelonConstraintGroupId(builder, EchelonConstraintGroupId_val)
+    InteractiveWorldRaidBossGroupExcel.AddExclusiveOperatorBossSpawn(builder, ExclusiveOperatorBossSpawn_off)
+    InteractiveWorldRaidBossGroupExcel.AddExclusiveOperatorBossKill(builder, ExclusiveOperatorBossKill_off)
+    InteractiveWorldRaidBossGroupExcel.AddExclusiveOperatorScenarioBattle(builder, ExclusiveOperatorScenarioBattle_off)
+    InteractiveWorldRaidBossGroupExcel.AddExclusiveOperatorBossDamaged(builder, ExclusiveOperatorBossDamaged_off)
+    InteractiveWorldRaidBossGroupExcel.AddBossGroupOpenCondition(builder, BossGroupOpenCondition_val)
+    InteractiveWorldRaidBossGroupExcel.AddRaidScenarioBattleLocalizeKey(builder, RaidScenarioBattleLocalizeKey_off)
+    InteractiveWorldRaidBossGroupExcel.AddIsSeasonFinalBoss(builder, IsSeasonFinalBoss_val)
+    return InteractiveWorldRaidBossGroupExcel.End(builder)
+
+def pack_InteractiveWorldRaidCarrierExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidCarrier") if encrypt else None
+    ExSkillGroupId_vec = 0
+    if 'ExSkillGroupId' in data:
+        ExSkillGroupId_items = data['ExSkillGroupId']
+        ExSkillGroupId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in ExSkillGroupId_items]
+        InteractiveWorldRaidCarrierExcel.StartExSkillGroupIdVector(builder, len(ExSkillGroupId_str_offsets))
+        for offset in reversed(ExSkillGroupId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        ExSkillGroupId_vec = builder.EndVector(len(ExSkillGroupId_items))
+    ExSkillCardTexture_vec = 0
+    if 'ExSkillCardTexture' in data:
+        ExSkillCardTexture_items = data['ExSkillCardTexture']
+        ExSkillCardTexture_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in ExSkillCardTexture_items]
+        InteractiveWorldRaidCarrierExcel.StartExSkillCardTextureVector(builder, len(ExSkillCardTexture_str_offsets))
+        for offset in reversed(ExSkillCardTexture_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        ExSkillCardTexture_vec = builder.EndVector(len(ExSkillCardTexture_items))
+    FixedExSkillLevel_vec = 0
+    if 'FixedExSkillLevel' in data:
+        FixedExSkillLevel_items = data['FixedExSkillLevel']
+        InteractiveWorldRaidCarrierExcel.StartFixedExSkillLevelVector(builder, len(FixedExSkillLevel_items))
+        for item in reversed(FixedExSkillLevel_items):
+            builder.PrependInt32(convert_int(item, password))
+        FixedExSkillLevel_vec = builder.EndVector(len(FixedExSkillLevel_items))
+    PassiveSkillGroupId_vec = 0
+    if 'PassiveSkillGroupId' in data:
+        PassiveSkillGroupId_items = data['PassiveSkillGroupId']
+        PassiveSkillGroupId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in PassiveSkillGroupId_items]
+        InteractiveWorldRaidCarrierExcel.StartPassiveSkillGroupIdVector(builder, len(PassiveSkillGroupId_str_offsets))
+        for offset in reversed(PassiveSkillGroupId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        PassiveSkillGroupId_vec = builder.EndVector(len(PassiveSkillGroupId_items))
+    PassiveSkillCardTexture_vec = 0
+    if 'PassiveSkillCardTexture' in data:
+        PassiveSkillCardTexture_items = data['PassiveSkillCardTexture']
+        PassiveSkillCardTexture_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in PassiveSkillCardTexture_items]
+        InteractiveWorldRaidCarrierExcel.StartPassiveSkillCardTextureVector(builder, len(PassiveSkillCardTexture_str_offsets))
+        for offset in reversed(PassiveSkillCardTexture_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        PassiveSkillCardTexture_vec = builder.EndVector(len(PassiveSkillCardTexture_items))
+    FixedPassiveSkillLevel_vec = 0
+    if 'FixedPassiveSkillLevel' in data:
+        FixedPassiveSkillLevel_items = data['FixedPassiveSkillLevel']
+        InteractiveWorldRaidCarrierExcel.StartFixedPassiveSkillLevelVector(builder, len(FixedPassiveSkillLevel_items))
+        for item in reversed(FixedPassiveSkillLevel_items):
+            builder.PrependInt32(convert_int(item, password))
+        FixedPassiveSkillLevel_vec = builder.EndVector(len(FixedPassiveSkillLevel_items))
+    ExtraPassiveSkillGroupId_vec = 0
+    if 'ExtraPassiveSkillGroupId' in data:
+        ExtraPassiveSkillGroupId_items = data['ExtraPassiveSkillGroupId']
+        ExtraPassiveSkillGroupId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in ExtraPassiveSkillGroupId_items]
+        InteractiveWorldRaidCarrierExcel.StartExtraPassiveSkillGroupIdVector(builder, len(ExtraPassiveSkillGroupId_str_offsets))
+        for offset in reversed(ExtraPassiveSkillGroupId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        ExtraPassiveSkillGroupId_vec = builder.EndVector(len(ExtraPassiveSkillGroupId_items))
+    ExtraPassiveSkillCardTexture_vec = 0
+    if 'ExtraPassiveSkillCardTexture' in data:
+        ExtraPassiveSkillCardTexture_items = data['ExtraPassiveSkillCardTexture']
+        ExtraPassiveSkillCardTexture_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in ExtraPassiveSkillCardTexture_items]
+        InteractiveWorldRaidCarrierExcel.StartExtraPassiveSkillCardTextureVector(builder, len(ExtraPassiveSkillCardTexture_str_offsets))
+        for offset in reversed(ExtraPassiveSkillCardTexture_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        ExtraPassiveSkillCardTexture_vec = builder.EndVector(len(ExtraPassiveSkillCardTexture_items))
+    FixedExtraPassiveSkillLevel_vec = 0
+    if 'FixedExtraPassiveSkillLevel' in data:
+        FixedExtraPassiveSkillLevel_items = data['FixedExtraPassiveSkillLevel']
+        InteractiveWorldRaidCarrierExcel.StartFixedExtraPassiveSkillLevelVector(builder, len(FixedExtraPassiveSkillLevel_items))
+        for item in reversed(FixedExtraPassiveSkillLevel_items):
+            builder.PrependInt32(convert_int(item, password))
+        FixedExtraPassiveSkillLevel_vec = builder.EndVector(len(FixedExtraPassiveSkillLevel_items))
+    HiddenPassiveSkillGroupId_vec = 0
+    if 'HiddenPassiveSkillGroupId' in data:
+        HiddenPassiveSkillGroupId_items = data['HiddenPassiveSkillGroupId']
+        HiddenPassiveSkillGroupId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in HiddenPassiveSkillGroupId_items]
+        InteractiveWorldRaidCarrierExcel.StartHiddenPassiveSkillGroupIdVector(builder, len(HiddenPassiveSkillGroupId_str_offsets))
+        for offset in reversed(HiddenPassiveSkillGroupId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        HiddenPassiveSkillGroupId_vec = builder.EndVector(len(HiddenPassiveSkillGroupId_items))
+    HiddenPassiveSkillCardTexture_vec = 0
+    if 'HiddenPassiveSkillCardTexture' in data:
+        HiddenPassiveSkillCardTexture_items = data['HiddenPassiveSkillCardTexture']
+        HiddenPassiveSkillCardTexture_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in HiddenPassiveSkillCardTexture_items]
+        InteractiveWorldRaidCarrierExcel.StartHiddenPassiveSkillCardTextureVector(builder, len(HiddenPassiveSkillCardTexture_str_offsets))
+        for offset in reversed(HiddenPassiveSkillCardTexture_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        HiddenPassiveSkillCardTexture_vec = builder.EndVector(len(HiddenPassiveSkillCardTexture_items))
+    FixedHiddenPassiveSkillLevel_vec = 0
+    if 'FixedHiddenPassiveSkillLevel' in data:
+        FixedHiddenPassiveSkillLevel_items = data['FixedHiddenPassiveSkillLevel']
+        InteractiveWorldRaidCarrierExcel.StartFixedHiddenPassiveSkillLevelVector(builder, len(FixedHiddenPassiveSkillLevel_items))
+        for item in reversed(FixedHiddenPassiveSkillLevel_items):
+            builder.PrependInt32(convert_int(item, password))
+        FixedHiddenPassiveSkillLevel_vec = builder.EndVector(len(FixedHiddenPassiveSkillLevel_items))
+    CarrierSkillListGroupId_val = convert_long(data.get('CarrierSkillListGroupId', 0), password)
+    EventContentId_val = convert_long(data.get('EventContentId', 0), password)
+    CharacterId_val = convert_long(data.get('CharacterId', 0), password)
+    CharacterLevel_val = convert_int(data.get('CharacterLevel', 0), password)
+    CharacterGrade_val = convert_int(data.get('CharacterGrade', 0), password)
+    InteractiveWorldRaidCarrierExcel.Start(builder)
+    InteractiveWorldRaidCarrierExcel.AddCarrierSkillListGroupId(builder, CarrierSkillListGroupId_val)
+    InteractiveWorldRaidCarrierExcel.AddEventContentId(builder, EventContentId_val)
+    InteractiveWorldRaidCarrierExcel.AddCharacterId(builder, CharacterId_val)
+    InteractiveWorldRaidCarrierExcel.AddCharacterLevel(builder, CharacterLevel_val)
+    InteractiveWorldRaidCarrierExcel.AddCharacterGrade(builder, CharacterGrade_val)
+    InteractiveWorldRaidCarrierExcel.AddExSkillGroupId(builder, ExSkillGroupId_vec)
+    InteractiveWorldRaidCarrierExcel.AddExSkillCardTexture(builder, ExSkillCardTexture_vec)
+    InteractiveWorldRaidCarrierExcel.AddFixedExSkillLevel(builder, FixedExSkillLevel_vec)
+    InteractiveWorldRaidCarrierExcel.AddPassiveSkillGroupId(builder, PassiveSkillGroupId_vec)
+    InteractiveWorldRaidCarrierExcel.AddPassiveSkillCardTexture(builder, PassiveSkillCardTexture_vec)
+    InteractiveWorldRaidCarrierExcel.AddFixedPassiveSkillLevel(builder, FixedPassiveSkillLevel_vec)
+    InteractiveWorldRaidCarrierExcel.AddExtraPassiveSkillGroupId(builder, ExtraPassiveSkillGroupId_vec)
+    InteractiveWorldRaidCarrierExcel.AddExtraPassiveSkillCardTexture(builder, ExtraPassiveSkillCardTexture_vec)
+    InteractiveWorldRaidCarrierExcel.AddFixedExtraPassiveSkillLevel(builder, FixedExtraPassiveSkillLevel_vec)
+    InteractiveWorldRaidCarrierExcel.AddHiddenPassiveSkillGroupId(builder, HiddenPassiveSkillGroupId_vec)
+    InteractiveWorldRaidCarrierExcel.AddHiddenPassiveSkillCardTexture(builder, HiddenPassiveSkillCardTexture_vec)
+    InteractiveWorldRaidCarrierExcel.AddFixedHiddenPassiveSkillLevel(builder, FixedHiddenPassiveSkillLevel_vec)
+    return InteractiveWorldRaidCarrierExcel.End(builder)
+
+def pack_InteractiveWorldRaidCarrierMapExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidCarrierMap") if encrypt else None
+    ArtLevelPath_off = builder.CreateString(encrypt_string(data.get('ArtLevelPath', ''), password))
+    DesignLevelPath_off = builder.CreateString(encrypt_string(data.get('DesignLevelPath', ''), password))
+    Id_val = convert_long(data.get('Id', 0), password)
+    ConditionId_val = convert_long(data.get('ConditionId', 0), password)
+    WorldRaidSeasonId_val = convert_long(data.get('WorldRaidSeasonId', 0), password)
+    WorldRaidPhaseId_val = convert_long(data.get('WorldRaidPhaseId', 0), password)
+    ReplaySeasonGroupId_val = convert_long(data.get('ReplaySeasonGroupId', 0), password)
+    ReplaySeasonOriginalPhaseId_val = convert_long(data.get('ReplaySeasonOriginalPhaseId', 0), password)
+    RecentClearBossGroupId_val = convert_long(data.get('RecentClearBossGroupId', 0), password)
+    RecentClearEventStageId_val = convert_long(data.get('RecentClearEventStageId', 0), password)
+    ChangeTarget_val = convert_int(getattr(WorldRaidMapType, data.get('ChangeTarget', 0)), password)
+    Priority_val = convert_long(data.get('Priority', 0), password)
+    BridgeBGM_val = convert_long(data.get('BridgeBGM', 0), password)
+    HangarBGM_val = convert_long(data.get('HangarBGM', 0), password)
+    LobbyBGM_val = convert_long(data.get('LobbyBGM', 0), password)
+    WorldMapBGM_val = convert_long(data.get('WorldMapBGM', 0), password)
+    InformationGroupIdWorldMap_val = convert_long(data.get('InformationGroupIdWorldMap', 0), password)
+    InformationGroupIdUCPopup_val = convert_long(data.get('InformationGroupIdUCPopup', 0), password)
+    InformationGroupIdBridge_val = convert_long(data.get('InformationGroupIdBridge', 0), password)
+    InformationGroupIdHangar_val = convert_long(data.get('InformationGroupIdHangar', 0), password)
+    InformationGroupIdLobby_val = convert_long(data.get('InformationGroupIdLobby', 0), password)
+    InteractiveWorldRaidCarrierMapExcel.Start(builder)
+    InteractiveWorldRaidCarrierMapExcel.AddId(builder, Id_val)
+    InteractiveWorldRaidCarrierMapExcel.AddConditionId(builder, ConditionId_val)
+    InteractiveWorldRaidCarrierMapExcel.AddWorldRaidSeasonId(builder, WorldRaidSeasonId_val)
+    InteractiveWorldRaidCarrierMapExcel.AddWorldRaidPhaseId(builder, WorldRaidPhaseId_val)
+    InteractiveWorldRaidCarrierMapExcel.AddReplaySeasonGroupId(builder, ReplaySeasonGroupId_val)
+    InteractiveWorldRaidCarrierMapExcel.AddReplaySeasonOriginalPhaseId(builder, ReplaySeasonOriginalPhaseId_val)
+    InteractiveWorldRaidCarrierMapExcel.AddRecentClearBossGroupId(builder, RecentClearBossGroupId_val)
+    InteractiveWorldRaidCarrierMapExcel.AddRecentClearEventStageId(builder, RecentClearEventStageId_val)
+    InteractiveWorldRaidCarrierMapExcel.AddChangeTarget(builder, ChangeTarget_val)
+    InteractiveWorldRaidCarrierMapExcel.AddPriority(builder, Priority_val)
+    InteractiveWorldRaidCarrierMapExcel.AddArtLevelPath(builder, ArtLevelPath_off)
+    InteractiveWorldRaidCarrierMapExcel.AddDesignLevelPath(builder, DesignLevelPath_off)
+    InteractiveWorldRaidCarrierMapExcel.AddBridgeBGM(builder, BridgeBGM_val)
+    InteractiveWorldRaidCarrierMapExcel.AddHangarBGM(builder, HangarBGM_val)
+    InteractiveWorldRaidCarrierMapExcel.AddLobbyBGM(builder, LobbyBGM_val)
+    InteractiveWorldRaidCarrierMapExcel.AddWorldMapBGM(builder, WorldMapBGM_val)
+    InteractiveWorldRaidCarrierMapExcel.AddInformationGroupIdWorldMap(builder, InformationGroupIdWorldMap_val)
+    InteractiveWorldRaidCarrierMapExcel.AddInformationGroupIdUCPopup(builder, InformationGroupIdUCPopup_val)
+    InteractiveWorldRaidCarrierMapExcel.AddInformationGroupIdBridge(builder, InformationGroupIdBridge_val)
+    InteractiveWorldRaidCarrierMapExcel.AddInformationGroupIdHangar(builder, InformationGroupIdHangar_val)
+    InteractiveWorldRaidCarrierMapExcel.AddInformationGroupIdLobby(builder, InformationGroupIdLobby_val)
+    return InteractiveWorldRaidCarrierMapExcel.End(builder)
+
+def pack_InteractiveWorldRaidCarrierRecipeExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidCarrierRecipe") if encrypt else None
+    SkillSlot_off = builder.CreateString(encrypt_string(data.get('SkillSlot', ''), password))
+    RecipeIngredientId_vec = 0
+    if 'RecipeIngredientId' in data:
+        RecipeIngredientId_items = data['RecipeIngredientId']
+        InteractiveWorldRaidCarrierRecipeExcel.StartRecipeIngredientIdVector(builder, len(RecipeIngredientId_items))
+        for item in reversed(RecipeIngredientId_items):
+            builder.PrependInt64(convert_long(item, password))
+        RecipeIngredientId_vec = builder.EndVector(len(RecipeIngredientId_items))
+    SkillId_val = convert_long(data.get('SkillId', 0), password)
+    Level_val = convert_int(data.get('Level', 0), password)
+    InteractiveWorldRaidCarrierRecipeExcel.Start(builder)
+    InteractiveWorldRaidCarrierRecipeExcel.AddSkillId(builder, SkillId_val)
+    InteractiveWorldRaidCarrierRecipeExcel.AddSkillSlot(builder, SkillSlot_off)
+    InteractiveWorldRaidCarrierRecipeExcel.AddLevel(builder, Level_val)
+    InteractiveWorldRaidCarrierRecipeExcel.AddRecipeIngredientId(builder, RecipeIngredientId_vec)
+    return InteractiveWorldRaidCarrierRecipeExcel.End(builder)
+
+def pack_InteractiveWorldRaidConditionExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidCondition") if encrypt else None
+    ConditionType_vec = 0
+    if 'ConditionType' in data:
+        ConditionType_items = data['ConditionType']
+        InteractiveWorldRaidConditionExcel.StartConditionTypeVector(builder, len(ConditionType_items))
+        for item in reversed(ConditionType_items):
+            builder.PrependInt32(convert_int(getattr(WorldRaidConditionType, item), password))
+        ConditionType_vec = builder.EndVector(len(ConditionType_items))
+    ConditionValue_vec = 0
+    if 'ConditionValue' in data:
+        ConditionValue_items = data['ConditionValue']
+        InteractiveWorldRaidConditionExcel.StartConditionValueVector(builder, len(ConditionValue_items))
+        for item in reversed(ConditionValue_items):
+            builder.PrependInt64(convert_long(item, password))
+        ConditionValue_vec = builder.EndVector(len(ConditionValue_items))
+    Id_val = convert_long(data.get('Id', 0), password)
+    WorldRaidSeasonId_val = convert_long(data.get('WorldRaidSeasonId', 0), password)
+    WorldRaidPhaseId_val = convert_long(data.get('WorldRaidPhaseId', 0), password)
+    Priority_val = convert_long(data.get('Priority', 0), password)
+    MultipleConditionCheckType_val = convert_int(getattr(MultipleConditionCheckType, data.get('MultipleConditionCheckType', 0)), password)
+    MultipleConditionCheckParameter_val = convert_long(data.get('MultipleConditionCheckParameter', 0), password)
+    InteractiveWorldRaidConditionExcel.Start(builder)
+    InteractiveWorldRaidConditionExcel.AddId(builder, Id_val)
+    InteractiveWorldRaidConditionExcel.AddWorldRaidSeasonId(builder, WorldRaidSeasonId_val)
+    InteractiveWorldRaidConditionExcel.AddWorldRaidPhaseId(builder, WorldRaidPhaseId_val)
+    InteractiveWorldRaidConditionExcel.AddPriority(builder, Priority_val)
+    InteractiveWorldRaidConditionExcel.AddMultipleConditionCheckType(builder, MultipleConditionCheckType_val)
+    InteractiveWorldRaidConditionExcel.AddMultipleConditionCheckParameter(builder, MultipleConditionCheckParameter_val)
+    InteractiveWorldRaidConditionExcel.AddConditionType(builder, ConditionType_vec)
+    InteractiveWorldRaidConditionExcel.AddConditionValue(builder, ConditionValue_vec)
+    return InteractiveWorldRaidConditionExcel.End(builder)
+
+def pack_InteractiveWorldRaidSeasonManageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidSeasonManage") if encrypt else None
+    PhaseStartTime_off = builder.CreateString(encrypt_string(data.get('PhaseStartTime', ''), password))
+    PhaseEndTime_off = builder.CreateString(encrypt_string(data.get('PhaseEndTime', ''), password))
+    WorldRaidLobbyScene_off = builder.CreateString(encrypt_string(data.get('WorldRaidLobbyScene', ''), password))
+    WorldRaidLobbyBanner_off = builder.CreateString(encrypt_string(data.get('WorldRaidLobbyBanner', ''), password))
+    WorldRaidLobbyBG_off = builder.CreateString(encrypt_string(data.get('WorldRaidLobbyBG', ''), password))
+    WorldRaidUniqueThemeName_off = builder.CreateString(encrypt_string(data.get('WorldRaidUniqueThemeName', ''), password))
+    WorldRaidMapEnterOperator_off = builder.CreateString(encrypt_string(data.get('WorldRaidMapEnterOperator', ''), password))
+    OpenRaidBossGroupId_vec = 0
+    if 'OpenRaidBossGroupId' in data:
+        OpenRaidBossGroupId_items = data['OpenRaidBossGroupId']
+        InteractiveWorldRaidSeasonManageExcel.StartOpenRaidBossGroupIdVector(builder, len(OpenRaidBossGroupId_items))
+        for item in reversed(OpenRaidBossGroupId_items):
+            builder.PrependInt64(convert_long(item, password))
+        OpenRaidBossGroupId_vec = builder.EndVector(len(OpenRaidBossGroupId_items))
+    BossSpawnTime_vec = 0
+    if 'BossSpawnTime' in data:
+        BossSpawnTime_items = data['BossSpawnTime']
+        BossSpawnTime_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in BossSpawnTime_items]
+        InteractiveWorldRaidSeasonManageExcel.StartBossSpawnTimeVector(builder, len(BossSpawnTime_str_offsets))
+        for offset in reversed(BossSpawnTime_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        BossSpawnTime_vec = builder.EndVector(len(BossSpawnTime_items))
+    EliminateTime_vec = 0
+    if 'EliminateTime' in data:
+        EliminateTime_items = data['EliminateTime']
+        EliminateTime_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in EliminateTime_items]
+        InteractiveWorldRaidSeasonManageExcel.StartEliminateTimeVector(builder, len(EliminateTime_str_offsets))
+        for offset in reversed(EliminateTime_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        EliminateTime_vec = builder.EndVector(len(EliminateTime_items))
+    ScenarioOutputConditionId_vec = 0
+    if 'ScenarioOutputConditionId' in data:
+        ScenarioOutputConditionId_items = data['ScenarioOutputConditionId']
+        InteractiveWorldRaidSeasonManageExcel.StartScenarioOutputConditionIdVector(builder, len(ScenarioOutputConditionId_items))
+        for item in reversed(ScenarioOutputConditionId_items):
+            builder.PrependInt64(convert_long(item, password))
+        ScenarioOutputConditionId_vec = builder.EndVector(len(ScenarioOutputConditionId_items))
+    ConditionScenarioGroupid_vec = 0
+    if 'ConditionScenarioGroupid' in data:
+        ConditionScenarioGroupid_items = data['ConditionScenarioGroupid']
+        InteractiveWorldRaidSeasonManageExcel.StartConditionScenarioGroupidVector(builder, len(ConditionScenarioGroupid_items))
+        for item in reversed(ConditionScenarioGroupid_items):
+            builder.PrependInt64(convert_long(item, password))
+        ConditionScenarioGroupid_vec = builder.EndVector(len(ConditionScenarioGroupid_items))
+    SeasonId_val = convert_long(data.get('SeasonId', 0), password)
+    PhaseId_val = convert_long(data.get('PhaseId', 0), password)
+    PhaseStartCondition_val = convert_long(data.get('PhaseStartCondition', 0), password)
+    IsReplaySeason_val = data.get('IsReplaySeason', 0)
+    EnterTicket_val = convert_int(getattr(CurrencyTypes, data.get('EnterTicket', 0)), password)
+    WorldRaidLobbyBannerShow_val = data.get('WorldRaidLobbyBannerShow', 0)
+    SeasonOpenCondition_val = convert_long(data.get('SeasonOpenCondition', 0), password)
+    WorldRaidLobbyEnterScenario_val = convert_long(data.get('WorldRaidLobbyEnterScenario', 0), password)
+    CanPlayNotSeasonTime_val = data.get('CanPlayNotSeasonTime', 0)
+    WorldRaidUniqueThemeLobbyUI_val = data.get('WorldRaidUniqueThemeLobbyUI', 0)
+    CanWorldRaidGemEnter_val = data.get('CanWorldRaidGemEnter', 0)
+    HideWorldRaidTicketUI_val = data.get('HideWorldRaidTicketUI', 0)
+    HideWorldRaidBossCompleteRewardUI_val = data.get('HideWorldRaidBossCompleteRewardUI', 0)
+    UseWorldRaidCommonToast_val = data.get('UseWorldRaidCommonToast', 0)
+    CarrierSkillGroupId_val = convert_long(data.get('CarrierSkillGroupId', 0), password)
+    UseFavorRankBuff_val = data.get('UseFavorRankBuff', 0)
+    InteractiveWorldRaidSeasonManageExcel.Start(builder)
+    InteractiveWorldRaidSeasonManageExcel.AddSeasonId(builder, SeasonId_val)
+    InteractiveWorldRaidSeasonManageExcel.AddPhaseId(builder, PhaseId_val)
+    InteractiveWorldRaidSeasonManageExcel.AddPhaseStartCondition(builder, PhaseStartCondition_val)
+    InteractiveWorldRaidSeasonManageExcel.AddIsReplaySeason(builder, IsReplaySeason_val)
+    InteractiveWorldRaidSeasonManageExcel.AddEnterTicket(builder, EnterTicket_val)
+    InteractiveWorldRaidSeasonManageExcel.AddPhaseStartTime(builder, PhaseStartTime_off)
+    InteractiveWorldRaidSeasonManageExcel.AddPhaseEndTime(builder, PhaseEndTime_off)
+    InteractiveWorldRaidSeasonManageExcel.AddWorldRaidLobbyScene(builder, WorldRaidLobbyScene_off)
+    InteractiveWorldRaidSeasonManageExcel.AddWorldRaidLobbyBanner(builder, WorldRaidLobbyBanner_off)
+    InteractiveWorldRaidSeasonManageExcel.AddWorldRaidLobbyBG(builder, WorldRaidLobbyBG_off)
+    InteractiveWorldRaidSeasonManageExcel.AddWorldRaidLobbyBannerShow(builder, WorldRaidLobbyBannerShow_val)
+    InteractiveWorldRaidSeasonManageExcel.AddSeasonOpenCondition(builder, SeasonOpenCondition_val)
+    InteractiveWorldRaidSeasonManageExcel.AddWorldRaidLobbyEnterScenario(builder, WorldRaidLobbyEnterScenario_val)
+    InteractiveWorldRaidSeasonManageExcel.AddCanPlayNotSeasonTime(builder, CanPlayNotSeasonTime_val)
+    InteractiveWorldRaidSeasonManageExcel.AddWorldRaidUniqueThemeLobbyUI(builder, WorldRaidUniqueThemeLobbyUI_val)
+    InteractiveWorldRaidSeasonManageExcel.AddWorldRaidUniqueThemeName(builder, WorldRaidUniqueThemeName_off)
+    InteractiveWorldRaidSeasonManageExcel.AddCanWorldRaidGemEnter(builder, CanWorldRaidGemEnter_val)
+    InteractiveWorldRaidSeasonManageExcel.AddHideWorldRaidTicketUI(builder, HideWorldRaidTicketUI_val)
+    InteractiveWorldRaidSeasonManageExcel.AddHideWorldRaidBossCompleteRewardUI(builder, HideWorldRaidBossCompleteRewardUI_val)
+    InteractiveWorldRaidSeasonManageExcel.AddUseWorldRaidCommonToast(builder, UseWorldRaidCommonToast_val)
+    InteractiveWorldRaidSeasonManageExcel.AddOpenRaidBossGroupId(builder, OpenRaidBossGroupId_vec)
+    InteractiveWorldRaidSeasonManageExcel.AddBossSpawnTime(builder, BossSpawnTime_vec)
+    InteractiveWorldRaidSeasonManageExcel.AddEliminateTime(builder, EliminateTime_vec)
+    InteractiveWorldRaidSeasonManageExcel.AddScenarioOutputConditionId(builder, ScenarioOutputConditionId_vec)
+    InteractiveWorldRaidSeasonManageExcel.AddConditionScenarioGroupid(builder, ConditionScenarioGroupid_vec)
+    InteractiveWorldRaidSeasonManageExcel.AddCarrierSkillGroupId(builder, CarrierSkillGroupId_val)
+    InteractiveWorldRaidSeasonManageExcel.AddWorldRaidMapEnterOperator(builder, WorldRaidMapEnterOperator_off)
+    InteractiveWorldRaidSeasonManageExcel.AddUseFavorRankBuff(builder, UseFavorRankBuff_val)
+    return InteractiveWorldRaidSeasonManageExcel.End(builder)
+
+def pack_InteractiveWorldRaidSkillDescriptionListExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidSkillDescriptionList") if encrypt else None
+    GlobalSkillGroupId_vec = 0
+    if 'GlobalSkillGroupId' in data:
+        GlobalSkillGroupId_items = data['GlobalSkillGroupId']
+        GlobalSkillGroupId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in GlobalSkillGroupId_items]
+        InteractiveWorldRaidSkillDescriptionListExcel.StartGlobalSkillGroupIdVector(builder, len(GlobalSkillGroupId_str_offsets))
+        for offset in reversed(GlobalSkillGroupId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        GlobalSkillGroupId_vec = builder.EndVector(len(GlobalSkillGroupId_items))
+    GlobalSkillRemoveCondition_vec = 0
+    if 'GlobalSkillRemoveCondition' in data:
+        GlobalSkillRemoveCondition_items = data['GlobalSkillRemoveCondition']
+        InteractiveWorldRaidSkillDescriptionListExcel.StartGlobalSkillRemoveConditionVector(builder, len(GlobalSkillRemoveCondition_items))
+        for item in reversed(GlobalSkillRemoveCondition_items):
+            builder.PrependInt64(convert_long(item, password))
+        GlobalSkillRemoveCondition_vec = builder.EndVector(len(GlobalSkillRemoveCondition_items))
+    GlobalSkillShowSkillSlot_vec = 0
+    if 'GlobalSkillShowSkillSlot' in data:
+        GlobalSkillShowSkillSlot_items = data['GlobalSkillShowSkillSlot']
+        InteractiveWorldRaidSkillDescriptionListExcel.StartGlobalSkillShowSkillSlotVector(builder, len(GlobalSkillShowSkillSlot_items))
+        for item in reversed(GlobalSkillShowSkillSlot_items):
+            builder.PrependInt32(convert_int(getattr(SkillSlotShowType, item), password))
+        GlobalSkillShowSkillSlot_vec = builder.EndVector(len(GlobalSkillShowSkillSlot_items))
+    GlobalSkillHighlightResource_vec = 0
+    if 'GlobalSkillHighlightResource' in data:
+        GlobalSkillHighlightResource_items = data['GlobalSkillHighlightResource']
+        InteractiveWorldRaidSkillDescriptionListExcel.StartGlobalSkillHighlightResourceVector(builder, len(GlobalSkillHighlightResource_items))
+        for item in reversed(GlobalSkillHighlightResource_items):
+            builder.PrependInt32(convert_int(getattr(SkillSlotHighLightType, item), password))
+        GlobalSkillHighlightResource_vec = builder.EndVector(len(GlobalSkillHighlightResource_items))
+    SkillGroupId_vec = 0
+    if 'SkillGroupId' in data:
+        SkillGroupId_items = data['SkillGroupId']
+        SkillGroupId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in SkillGroupId_items]
+        InteractiveWorldRaidSkillDescriptionListExcel.StartSkillGroupIdVector(builder, len(SkillGroupId_str_offsets))
+        for offset in reversed(SkillGroupId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        SkillGroupId_vec = builder.EndVector(len(SkillGroupId_items))
+    ShowSkillSlot_vec = 0
+    if 'ShowSkillSlot' in data:
+        ShowSkillSlot_items = data['ShowSkillSlot']
+        InteractiveWorldRaidSkillDescriptionListExcel.StartShowSkillSlotVector(builder, len(ShowSkillSlot_items))
+        for item in reversed(ShowSkillSlot_items):
+            builder.PrependInt32(convert_int(getattr(SkillSlotShowType, item), password))
+        ShowSkillSlot_vec = builder.EndVector(len(ShowSkillSlot_items))
+    HighlightResource_vec = 0
+    if 'HighlightResource' in data:
+        HighlightResource_items = data['HighlightResource']
+        InteractiveWorldRaidSkillDescriptionListExcel.StartHighlightResourceVector(builder, len(HighlightResource_items))
+        for item in reversed(HighlightResource_items):
+            builder.PrependInt32(convert_int(getattr(SkillSlotHighLightType, item), password))
+        HighlightResource_vec = builder.EndVector(len(HighlightResource_items))
+    Id_val = convert_long(data.get('Id', 0), password)
+    SkillParcelEchelonType_val = convert_int(getattr(EchelonExtensionType, data.get('SkillParcelEchelonType', 0)), password)
+    InteractiveWorldRaidSkillDescriptionListExcel.Start(builder)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddId(builder, Id_val)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddSkillParcelEchelonType(builder, SkillParcelEchelonType_val)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddGlobalSkillGroupId(builder, GlobalSkillGroupId_vec)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddGlobalSkillRemoveCondition(builder, GlobalSkillRemoveCondition_vec)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddGlobalSkillShowSkillSlot(builder, GlobalSkillShowSkillSlot_vec)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddGlobalSkillHighlightResource(builder, GlobalSkillHighlightResource_vec)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddSkillGroupId(builder, SkillGroupId_vec)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddShowSkillSlot(builder, ShowSkillSlot_vec)
+    InteractiveWorldRaidSkillDescriptionListExcel.AddHighlightResource(builder, HighlightResource_vec)
+    return InteractiveWorldRaidSkillDescriptionListExcel.End(builder)
+
+def pack_InteractiveWorldRaidStageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidStage") if encrypt else None
+    PortraitPath_off = builder.CreateString(encrypt_string(data.get('PortraitPath', ''), password))
+    BGPath_off = builder.CreateString(encrypt_string(data.get('BGPath', ''), password))
+    VictoryTimelinePath_off = builder.CreateString(encrypt_string(data.get('VictoryTimelinePath', ''), password))
+    PhaseChangeTimelinePath_off = builder.CreateString(encrypt_string(data.get('PhaseChangeTimelinePath', ''), password))
+    BossCharacterId_vec = 0
+    if 'BossCharacterId' in data:
+        BossCharacterId_items = data['BossCharacterId']
+        InteractiveWorldRaidStageExcel.StartBossCharacterIdVector(builder, len(BossCharacterId_items))
+        for item in reversed(BossCharacterId_items):
+            builder.PrependInt64(convert_long(item, password))
+        BossCharacterId_vec = builder.EndVector(len(BossCharacterId_items))
+    BattleReadyTimelinePath_vec = 0
+    if 'BattleReadyTimelinePath' in data:
+        BattleReadyTimelinePath_items = data['BattleReadyTimelinePath']
+        BattleReadyTimelinePath_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in BattleReadyTimelinePath_items]
+        InteractiveWorldRaidStageExcel.StartBattleReadyTimelinePathVector(builder, len(BattleReadyTimelinePath_str_offsets))
+        for offset in reversed(BattleReadyTimelinePath_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        BattleReadyTimelinePath_vec = builder.EndVector(len(BattleReadyTimelinePath_items))
+    BattleReadyTimelinePhaseStart_vec = 0
+    if 'BattleReadyTimelinePhaseStart' in data:
+        BattleReadyTimelinePhaseStart_items = data['BattleReadyTimelinePhaseStart']
+        InteractiveWorldRaidStageExcel.StartBattleReadyTimelinePhaseStartVector(builder, len(BattleReadyTimelinePhaseStart_items))
+        for item in reversed(BattleReadyTimelinePhaseStart_items):
+            builder.PrependInt32(convert_int(item, password))
+        BattleReadyTimelinePhaseStart_vec = builder.EndVector(len(BattleReadyTimelinePhaseStart_items))
+    BattleReadyTimelinePhaseEnd_vec = 0
+    if 'BattleReadyTimelinePhaseEnd' in data:
+        BattleReadyTimelinePhaseEnd_items = data['BattleReadyTimelinePhaseEnd']
+        InteractiveWorldRaidStageExcel.StartBattleReadyTimelinePhaseEndVector(builder, len(BattleReadyTimelinePhaseEnd_items))
+        for item in reversed(BattleReadyTimelinePhaseEnd_items):
+            builder.PrependInt32(convert_int(item, password))
+        BattleReadyTimelinePhaseEnd_vec = builder.EndVector(len(BattleReadyTimelinePhaseEnd_items))
+    AllyPassiveSkill_vec = 0
+    if 'AllyPassiveSkill' in data:
+        AllyPassiveSkill_items = data['AllyPassiveSkill']
+        AllyPassiveSkill_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in AllyPassiveSkill_items]
+        InteractiveWorldRaidStageExcel.StartAllyPassiveSkillVector(builder, len(AllyPassiveSkill_str_offsets))
+        for offset in reversed(AllyPassiveSkill_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        AllyPassiveSkill_vec = builder.EndVector(len(AllyPassiveSkill_items))
+    AllyPassiveSkillLevel_vec = 0
+    if 'AllyPassiveSkillLevel' in data:
+        AllyPassiveSkillLevel_items = data['AllyPassiveSkillLevel']
+        InteractiveWorldRaidStageExcel.StartAllyPassiveSkillLevelVector(builder, len(AllyPassiveSkillLevel_items))
+        for item in reversed(AllyPassiveSkillLevel_items):
+            builder.PrependInt32(convert_int(item, password))
+        AllyPassiveSkillLevel_vec = builder.EndVector(len(AllyPassiveSkillLevel_items))
+    AllyPassiveSkillRemoveCondition_vec = 0
+    if 'AllyPassiveSkillRemoveCondition' in data:
+        AllyPassiveSkillRemoveCondition_items = data['AllyPassiveSkillRemoveCondition']
+        InteractiveWorldRaidStageExcel.StartAllyPassiveSkillRemoveConditionVector(builder, len(AllyPassiveSkillRemoveCondition_items))
+        for item in reversed(AllyPassiveSkillRemoveCondition_items):
+            builder.PrependInt64(convert_long(item, password))
+        AllyPassiveSkillRemoveCondition_vec = builder.EndVector(len(AllyPassiveSkillRemoveCondition_items))
+    EnemyPassiveSkill_vec = 0
+    if 'EnemyPassiveSkill' in data:
+        EnemyPassiveSkill_items = data['EnemyPassiveSkill']
+        EnemyPassiveSkill_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in EnemyPassiveSkill_items]
+        InteractiveWorldRaidStageExcel.StartEnemyPassiveSkillVector(builder, len(EnemyPassiveSkill_str_offsets))
+        for offset in reversed(EnemyPassiveSkill_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        EnemyPassiveSkill_vec = builder.EndVector(len(EnemyPassiveSkill_items))
+    EnemyPassiveSkillLevel_vec = 0
+    if 'EnemyPassiveSkillLevel' in data:
+        EnemyPassiveSkillLevel_items = data['EnemyPassiveSkillLevel']
+        InteractiveWorldRaidStageExcel.StartEnemyPassiveSkillLevelVector(builder, len(EnemyPassiveSkillLevel_items))
+        for item in reversed(EnemyPassiveSkillLevel_items):
+            builder.PrependInt32(convert_int(item, password))
+        EnemyPassiveSkillLevel_vec = builder.EndVector(len(EnemyPassiveSkillLevel_items))
+    EnemyPassiveSkillRemoveCondition_vec = 0
+    if 'EnemyPassiveSkillRemoveCondition' in data:
+        EnemyPassiveSkillRemoveCondition_items = data['EnemyPassiveSkillRemoveCondition']
+        InteractiveWorldRaidStageExcel.StartEnemyPassiveSkillRemoveConditionVector(builder, len(EnemyPassiveSkillRemoveCondition_items))
+        for item in reversed(EnemyPassiveSkillRemoveCondition_items):
+            builder.PrependInt64(convert_long(item, password))
+        EnemyPassiveSkillRemoveCondition_vec = builder.EndVector(len(EnemyPassiveSkillRemoveCondition_items))
+    Id_val = convert_long(data.get('Id', 0), password)
+    UseBossIndex_val = data.get('UseBossIndex', 0)
+    UseBossAIPhaseSync_val = data.get('UseBossAIPhaseSync', 0)
+    WorldRaidBossGroupId_val = convert_long(data.get('WorldRaidBossGroupId', 0), password)
+    RaidSkillDescriptionListId_val = convert_long(data.get('RaidSkillDescriptionListId', 0), password)
+    RaidCharacterId_val = convert_long(data.get('RaidCharacterId', 0), password)
+    AssistCharacterLimitCount_val = convert_long(data.get('AssistCharacterLimitCount', 0), password)
+    WorldRaidDifficulty_val = convert_int(getattr(WorldRaidDifficulty, data.get('WorldRaidDifficulty', 0)), password)
+    DifficultyOpenCondition_val = data.get('DifficultyOpenCondition', 0)
+    RaidEnterAmount_val = convert_long(data.get('RaidEnterAmount', 0), password)
+    ReEnterAmount_val = convert_long(data.get('ReEnterAmount', 0), password)
+    BattleDuration_val = convert_long(data.get('BattleDuration', 0), password)
+    GroundId_val = convert_long(data.get('GroundId', 0), password)
+    RaidBattleEndRewardGroupId_val = convert_long(data.get('RaidBattleEndRewardGroupId', 0), password)
+    RaidRewardGroupId_val = convert_long(data.get('RaidRewardGroupId', 0), password)
+    TimeLinePhase_val = convert_long(data.get('TimeLinePhase', 0), password)
+    EnterScenarioKey_val = convert_long(data.get('EnterScenarioKey', 0), password)
+    ClearScenarioKey_val = convert_long(data.get('ClearScenarioKey', 0), password)
+    UseFixedEchelon_val = data.get('UseFixedEchelon', 0)
+    FixedEchelonId_val = convert_long(data.get('FixedEchelonId', 0), password)
+    IsRaidScenarioBattle_val = data.get('IsRaidScenarioBattle', 0)
+    ShowSkillCard_val = data.get('ShowSkillCard', 0)
+    BossBGInfoKey_val = convert_uint(data.get('BossBGInfoKey', 0), password)
+    DamageToWorldBoss_val = convert_long(data.get('DamageToWorldBoss', 0), password)
+    SaveCurrentLocalBossHP_val = data.get('SaveCurrentLocalBossHP', 0)
+    EchelonExtensionType_val = convert_int(getattr(EchelonExtensionType, data.get('EchelonExtensionType', 0)), password)
+    InteractiveWorldRaidStageExcel.Start(builder)
+    InteractiveWorldRaidStageExcel.AddId(builder, Id_val)
+    InteractiveWorldRaidStageExcel.AddUseBossIndex(builder, UseBossIndex_val)
+    InteractiveWorldRaidStageExcel.AddUseBossAIPhaseSync(builder, UseBossAIPhaseSync_val)
+    InteractiveWorldRaidStageExcel.AddWorldRaidBossGroupId(builder, WorldRaidBossGroupId_val)
+    InteractiveWorldRaidStageExcel.AddPortraitPath(builder, PortraitPath_off)
+    InteractiveWorldRaidStageExcel.AddBGPath(builder, BGPath_off)
+    InteractiveWorldRaidStageExcel.AddRaidSkillDescriptionListId(builder, RaidSkillDescriptionListId_val)
+    InteractiveWorldRaidStageExcel.AddRaidCharacterId(builder, RaidCharacterId_val)
+    InteractiveWorldRaidStageExcel.AddBossCharacterId(builder, BossCharacterId_vec)
+    InteractiveWorldRaidStageExcel.AddAssistCharacterLimitCount(builder, AssistCharacterLimitCount_val)
+    InteractiveWorldRaidStageExcel.AddWorldRaidDifficulty(builder, WorldRaidDifficulty_val)
+    InteractiveWorldRaidStageExcel.AddDifficultyOpenCondition(builder, DifficultyOpenCondition_val)
+    InteractiveWorldRaidStageExcel.AddRaidEnterAmount(builder, RaidEnterAmount_val)
+    InteractiveWorldRaidStageExcel.AddReEnterAmount(builder, ReEnterAmount_val)
+    InteractiveWorldRaidStageExcel.AddBattleDuration(builder, BattleDuration_val)
+    InteractiveWorldRaidStageExcel.AddGroundId(builder, GroundId_val)
+    InteractiveWorldRaidStageExcel.AddRaidBattleEndRewardGroupId(builder, RaidBattleEndRewardGroupId_val)
+    InteractiveWorldRaidStageExcel.AddRaidRewardGroupId(builder, RaidRewardGroupId_val)
+    InteractiveWorldRaidStageExcel.AddBattleReadyTimelinePath(builder, BattleReadyTimelinePath_vec)
+    InteractiveWorldRaidStageExcel.AddBattleReadyTimelinePhaseStart(builder, BattleReadyTimelinePhaseStart_vec)
+    InteractiveWorldRaidStageExcel.AddBattleReadyTimelinePhaseEnd(builder, BattleReadyTimelinePhaseEnd_vec)
+    InteractiveWorldRaidStageExcel.AddVictoryTimelinePath(builder, VictoryTimelinePath_off)
+    InteractiveWorldRaidStageExcel.AddPhaseChangeTimelinePath(builder, PhaseChangeTimelinePath_off)
+    InteractiveWorldRaidStageExcel.AddTimeLinePhase(builder, TimeLinePhase_val)
+    InteractiveWorldRaidStageExcel.AddEnterScenarioKey(builder, EnterScenarioKey_val)
+    InteractiveWorldRaidStageExcel.AddClearScenarioKey(builder, ClearScenarioKey_val)
+    InteractiveWorldRaidStageExcel.AddUseFixedEchelon(builder, UseFixedEchelon_val)
+    InteractiveWorldRaidStageExcel.AddFixedEchelonId(builder, FixedEchelonId_val)
+    InteractiveWorldRaidStageExcel.AddIsRaidScenarioBattle(builder, IsRaidScenarioBattle_val)
+    InteractiveWorldRaidStageExcel.AddShowSkillCard(builder, ShowSkillCard_val)
+    InteractiveWorldRaidStageExcel.AddBossBGInfoKey(builder, BossBGInfoKey_val)
+    InteractiveWorldRaidStageExcel.AddDamageToWorldBoss(builder, DamageToWorldBoss_val)
+    InteractiveWorldRaidStageExcel.AddAllyPassiveSkill(builder, AllyPassiveSkill_vec)
+    InteractiveWorldRaidStageExcel.AddAllyPassiveSkillLevel(builder, AllyPassiveSkillLevel_vec)
+    InteractiveWorldRaidStageExcel.AddAllyPassiveSkillRemoveCondition(builder, AllyPassiveSkillRemoveCondition_vec)
+    InteractiveWorldRaidStageExcel.AddEnemyPassiveSkill(builder, EnemyPassiveSkill_vec)
+    InteractiveWorldRaidStageExcel.AddEnemyPassiveSkillLevel(builder, EnemyPassiveSkillLevel_vec)
+    InteractiveWorldRaidStageExcel.AddEnemyPassiveSkillRemoveCondition(builder, EnemyPassiveSkillRemoveCondition_vec)
+    InteractiveWorldRaidStageExcel.AddSaveCurrentLocalBossHP(builder, SaveCurrentLocalBossHP_val)
+    InteractiveWorldRaidStageExcel.AddEchelonExtensionType(builder, EchelonExtensionType_val)
+    return InteractiveWorldRaidStageExcel.End(builder)
+
+def pack_InteractiveWorldRaidStatusPresetExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("InteractiveWorldRaidStatusPreset") if encrypt else None
+    IAWorldRaidGroupId_vec = 0
+    if 'IAWorldRaidGroupId' in data:
+        IAWorldRaidGroupId_items = data['IAWorldRaidGroupId']
+        InteractiveWorldRaidStatusPresetExcel.StartIAWorldRaidGroupIdVector(builder, len(IAWorldRaidGroupId_items))
+        for item in reversed(IAWorldRaidGroupId_items):
+            builder.PrependInt64(convert_long(item, password))
+        IAWorldRaidGroupId_vec = builder.EndVector(len(IAWorldRaidGroupId_items))
+    EventContentStageId_vec = 0
+    if 'EventContentStageId' in data:
+        EventContentStageId_items = data['EventContentStageId']
+        InteractiveWorldRaidStatusPresetExcel.StartEventContentStageIdVector(builder, len(EventContentStageId_items))
+        for item in reversed(EventContentStageId_items):
+            builder.PrependInt64(convert_long(item, password))
+        EventContentStageId_vec = builder.EndVector(len(EventContentStageId_items))
+    EventContentScenarioId_vec = 0
+    if 'EventContentScenarioId' in data:
+        EventContentScenarioId_items = data['EventContentScenarioId']
+        InteractiveWorldRaidStatusPresetExcel.StartEventContentScenarioIdVector(builder, len(EventContentScenarioId_items))
+        for item in reversed(EventContentScenarioId_items):
+            builder.PrependInt64(convert_long(item, password))
+        EventContentScenarioId_vec = builder.EndVector(len(EventContentScenarioId_items))
+    Id_val = convert_long(data.get('Id', 0), password)
+    WorldRaidSeasonId_val = convert_long(data.get('WorldRaidSeasonId', 0), password)
+    WorldRaidPhaseId_val = convert_long(data.get('WorldRaidPhaseId', 0), password)
+    ScenarioModeId_val = convert_long(data.get('ScenarioModeId', 0), password)
+    InteractiveWorldRaidStatusPresetExcel.Start(builder)
+    InteractiveWorldRaidStatusPresetExcel.AddId(builder, Id_val)
+    InteractiveWorldRaidStatusPresetExcel.AddWorldRaidSeasonId(builder, WorldRaidSeasonId_val)
+    InteractiveWorldRaidStatusPresetExcel.AddWorldRaidPhaseId(builder, WorldRaidPhaseId_val)
+    InteractiveWorldRaidStatusPresetExcel.AddScenarioModeId(builder, ScenarioModeId_val)
+    InteractiveWorldRaidStatusPresetExcel.AddIAWorldRaidGroupId(builder, IAWorldRaidGroupId_vec)
+    InteractiveWorldRaidStatusPresetExcel.AddEventContentStageId(builder, EventContentStageId_vec)
+    InteractiveWorldRaidStatusPresetExcel.AddEventContentScenarioId(builder, EventContentScenarioId_vec)
+    return InteractiveWorldRaidStatusPresetExcel.End(builder)
 
 def pack_ItemExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("Item") if encrypt else None
@@ -10446,30 +11357,148 @@ def pack_ItemExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> in
     ItemExcel.AddShiftingCraftRecipe(builder, ShiftingCraftRecipe_val)
     return ItemExcel.End(builder)
 
+def pack_KeyControllerImageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("KeyControllerImage") if encrypt else None
+    ControllerKeyCode_off = builder.CreateString(encrypt_string(data.get('ControllerKeyCode', ''), password))
+    PSIconName_off = builder.CreateString(encrypt_string(data.get('PSIconName', ''), password))
+    XBoxIconName_off = builder.CreateString(encrypt_string(data.get('XBoxIconName', ''), password))
+    KeyControllerImageExcel.Start(builder)
+    KeyControllerImageExcel.AddControllerKeyCode(builder, ControllerKeyCode_off)
+    KeyControllerImageExcel.AddPSIconName(builder, PSIconName_off)
+    KeyControllerImageExcel.AddXBoxIconName(builder, XBoxIconName_off)
+    return KeyControllerImageExcel.End(builder)
+
+def pack_KeyMappingDisplayInfoExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("KeyMappingDisplayInfo") if encrypt else None
+    KeyMappingKeyCode_off = builder.CreateString(encrypt_string(data.get('KeyMappingKeyCode', ''), password))
+    KeyMappingDisplayName_off = builder.CreateString(encrypt_string(data.get('KeyMappingDisplayName', ''), password))
+    KeyMappingDisplayInfoExcel.Start(builder)
+    KeyMappingDisplayInfoExcel.AddKeyMappingKeyCode(builder, KeyMappingKeyCode_off)
+    KeyMappingDisplayInfoExcel.AddKeyMappingDisplayName(builder, KeyMappingDisplayName_off)
+    return KeyMappingDisplayInfoExcel.End(builder)
+
 def pack_KeyMappingExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("KeyMapping") if encrypt else None
     Id_off = builder.CreateString(encrypt_string(data.get('Id', ''), password))
+    GroupId_off = builder.CreateString(encrypt_string(data.get('GroupId', ''), password))
     TargetKeyCode_off = builder.CreateString(encrypt_string(data.get('TargetKeyCode', ''), password))
+    ControllerKeyCode_off = builder.CreateString(encrypt_string(data.get('ControllerKeyCode', ''), password))
+    KeymappingIconBGName_off = builder.CreateString(encrypt_string(data.get('KeymappingIconBGName', ''), password))
+    DisplayGroupType_val = convert_int(getattr(DisplayGroupType, data.get('DisplayGroupType', 0)), password)
+    EnableCustomMapping_val = data.get('EnableCustomMapping', 0)
+    DisplayCustomMapping_val = data.get('DisplayCustomMapping', 0)
+    LocalizeKeyMappingId_val = convert_uint(data.get('LocalizeKeyMappingId', 0), password)
+    ControllerCursorFocus_val = data.get('ControllerCursorFocus', 0)
     IsDisplay_val = data.get('IsDisplay', 0)
+    IsDisplayController_val = data.get('IsDisplayController', 0)
     IsUsed_val = data.get('IsUsed', 0)
+    IsUsedController_val = data.get('IsUsedController', 0)
     IsLongPress_val = data.get('IsLongPress', 0)
     IgnorePosCheck_val = data.get('IgnorePosCheck', 0)
     IconPositionX_val = encrypt_float(data.get('IconPositionX', 0), password)
     IconPositionY_val = encrypt_float(data.get('IconPositionY', 0), password)
     IconScaleX_val = encrypt_float(data.get('IconScaleX', 0), password)
     IconScaleY_val = encrypt_float(data.get('IconScaleY', 0), password)
+    ControllerIconPositionX_val = encrypt_float(data.get('ControllerIconPositionX', 0), password)
+    ControllerIconPositionY_val = encrypt_float(data.get('ControllerIconPositionY', 0), password)
+    ControllerIconScaleX_val = encrypt_float(data.get('ControllerIconScaleX', 0), password)
+    ControllerIconScaleY_val = encrypt_float(data.get('ControllerIconScaleY', 0), password)
     KeyMappingExcel.Start(builder)
     KeyMappingExcel.AddId(builder, Id_off)
+    KeyMappingExcel.AddDisplayGroupType(builder, DisplayGroupType_val)
+    KeyMappingExcel.AddGroupId(builder, GroupId_off)
+    KeyMappingExcel.AddEnableCustomMapping(builder, EnableCustomMapping_val)
+    KeyMappingExcel.AddDisplayCustomMapping(builder, DisplayCustomMapping_val)
+    KeyMappingExcel.AddLocalizeKeyMappingId(builder, LocalizeKeyMappingId_val)
     KeyMappingExcel.AddTargetKeyCode(builder, TargetKeyCode_off)
+    KeyMappingExcel.AddControllerCursorFocus(builder, ControllerCursorFocus_val)
+    KeyMappingExcel.AddControllerKeyCode(builder, ControllerKeyCode_off)
     KeyMappingExcel.AddIsDisplay(builder, IsDisplay_val)
+    KeyMappingExcel.AddIsDisplayController(builder, IsDisplayController_val)
     KeyMappingExcel.AddIsUsed(builder, IsUsed_val)
+    KeyMappingExcel.AddIsUsedController(builder, IsUsedController_val)
     KeyMappingExcel.AddIsLongPress(builder, IsLongPress_val)
     KeyMappingExcel.AddIgnorePosCheck(builder, IgnorePosCheck_val)
     KeyMappingExcel.AddIconPositionX(builder, IconPositionX_val)
     KeyMappingExcel.AddIconPositionY(builder, IconPositionY_val)
     KeyMappingExcel.AddIconScaleX(builder, IconScaleX_val)
     KeyMappingExcel.AddIconScaleY(builder, IconScaleY_val)
+    KeyMappingExcel.AddControllerIconPositionX(builder, ControllerIconPositionX_val)
+    KeyMappingExcel.AddControllerIconPositionY(builder, ControllerIconPositionY_val)
+    KeyMappingExcel.AddControllerIconScaleX(builder, ControllerIconScaleX_val)
+    KeyMappingExcel.AddControllerIconScaleY(builder, ControllerIconScaleY_val)
+    KeyMappingExcel.AddKeymappingIconBGName(builder, KeymappingIconBGName_off)
     return KeyMappingExcel.End(builder)
+
+def pack_KeyMappingGroupInfoExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("KeyMappingGroupInfo") if encrypt else None
+    DisplayGroupType_val = convert_int(getattr(DisplayGroupType, data.get('DisplayGroupType', 0)), password)
+    LocalizeKeyMappingDisplayGroupId_val = convert_uint(data.get('LocalizeKeyMappingDisplayGroupId', 0), password)
+    KeyMappingGroupInfoExcel.Start(builder)
+    KeyMappingGroupInfoExcel.AddDisplayGroupType(builder, DisplayGroupType_val)
+    KeyMappingGroupInfoExcel.AddLocalizeKeyMappingDisplayGroupId(builder, LocalizeKeyMappingDisplayGroupId_val)
+    return KeyMappingGroupInfoExcel.End(builder)
+
+def pack_KeyMappingPopupExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("KeyMappingPopup") if encrypt else None
+    PrefabName_off = builder.CreateString(encrypt_string(data.get('PrefabName', ''), password))
+    ButtonName_vec = 0
+    if 'ButtonName' in data:
+        ButtonName_items = data['ButtonName']
+        ButtonName_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in ButtonName_items]
+        KeyMappingPopupExcel.StartButtonNameVector(builder, len(ButtonName_str_offsets))
+        for offset in reversed(ButtonName_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        ButtonName_vec = builder.EndVector(len(ButtonName_items))
+    KeyMappingId_vec = 0
+    if 'KeyMappingId' in data:
+        KeyMappingId_items = data['KeyMappingId']
+        KeyMappingId_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in KeyMappingId_items]
+        KeyMappingPopupExcel.StartKeyMappingIdVector(builder, len(KeyMappingId_str_offsets))
+        for offset in reversed(KeyMappingId_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        KeyMappingId_vec = builder.EndVector(len(KeyMappingId_items))
+    KeyMappingPopupExcel.Start(builder)
+    KeyMappingPopupExcel.AddPrefabName(builder, PrefabName_off)
+    KeyMappingPopupExcel.AddButtonName(builder, ButtonName_vec)
+    KeyMappingPopupExcel.AddKeyMappingId(builder, KeyMappingId_vec)
+    return KeyMappingPopupExcel.End(builder)
+
+def pack_KeyMappingPopupNoneFocusExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("KeyMappingPopupNoneFocus") if encrypt else None
+    PrefabName_off = builder.CreateString(encrypt_string(data.get('PrefabName', ''), password))
+    ButtonName_off = builder.CreateString(encrypt_string(data.get('ButtonName', ''), password))
+    KeyMappingPopupNoneFocusExcel.Start(builder)
+    KeyMappingPopupNoneFocusExcel.AddPrefabName(builder, PrefabName_off)
+    KeyMappingPopupNoneFocusExcel.AddButtonName(builder, ButtonName_off)
+    return KeyMappingPopupNoneFocusExcel.End(builder)
+
+def pack_KeyMappingTabExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("KeyMappingTab") if encrypt else None
+    Id_off = builder.CreateString(encrypt_string(data.get('Id', ''), password))
+    LeftArrowKey_off = builder.CreateString(encrypt_string(data.get('LeftArrowKey', ''), password))
+    RightArrowKey_off = builder.CreateString(encrypt_string(data.get('RightArrowKey', ''), password))
+    LeftIconPositionX_val = encrypt_float(data.get('LeftIconPositionX', 0), password)
+    LeftIconPositionY_val = encrypt_float(data.get('LeftIconPositionY', 0), password)
+    LeftIconScaleX_val = encrypt_float(data.get('LeftIconScaleX', 0), password)
+    LeftIconScaleY_val = encrypt_float(data.get('LeftIconScaleY', 0), password)
+    RightIconPositionX_val = encrypt_float(data.get('RightIconPositionX', 0), password)
+    RightIconPositionY_val = encrypt_float(data.get('RightIconPositionY', 0), password)
+    RightIconScaleX_val = encrypt_float(data.get('RightIconScaleX', 0), password)
+    RightIconScaleY_val = encrypt_float(data.get('RightIconScaleY', 0), password)
+    KeyMappingTabExcel.Start(builder)
+    KeyMappingTabExcel.AddId(builder, Id_off)
+    KeyMappingTabExcel.AddLeftArrowKey(builder, LeftArrowKey_off)
+    KeyMappingTabExcel.AddRightArrowKey(builder, RightArrowKey_off)
+    KeyMappingTabExcel.AddLeftIconPositionX(builder, LeftIconPositionX_val)
+    KeyMappingTabExcel.AddLeftIconPositionY(builder, LeftIconPositionY_val)
+    KeyMappingTabExcel.AddLeftIconScaleX(builder, LeftIconScaleX_val)
+    KeyMappingTabExcel.AddLeftIconScaleY(builder, LeftIconScaleY_val)
+    KeyMappingTabExcel.AddRightIconPositionX(builder, RightIconPositionX_val)
+    KeyMappingTabExcel.AddRightIconPositionY(builder, RightIconPositionY_val)
+    KeyMappingTabExcel.AddRightIconScaleX(builder, RightIconScaleX_val)
+    KeyMappingTabExcel.AddRightIconScaleY(builder, RightIconScaleY_val)
+    return KeyMappingTabExcel.End(builder)
 
 def pack_LevelExpMasterCoinExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("LevelExpMasterCoin") if encrypt else None
@@ -10508,10 +11537,12 @@ def pack_LocalizeCharProfileChangeExcel(builder: flatbuffers.Builder, data: dict
     CharacterId_val = convert_long(data.get('CharacterId', 0), password)
     ScenarioModeId_val = convert_long(data.get('ScenarioModeId', 0), password)
     ChangeCharacterID_val = convert_long(data.get('ChangeCharacterID', 0), password)
+    OverrideClub_val = data.get('OverrideClub', 0)
     LocalizeCharProfileChangeExcel.Start(builder)
     LocalizeCharProfileChangeExcel.AddCharacterId(builder, CharacterId_val)
     LocalizeCharProfileChangeExcel.AddScenarioModeId(builder, ScenarioModeId_val)
     LocalizeCharProfileChangeExcel.AddChangeCharacterID(builder, ChangeCharacterID_val)
+    LocalizeCharProfileChangeExcel.AddOverrideClub(builder, OverrideClub_val)
     return LocalizeCharProfileChangeExcel.End(builder)
 
 def pack_LocalizeCharProfileExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -10612,6 +11643,7 @@ def pack_LocalizeCharProfileExcel(builder: flatbuffers.Builder, data: dict, encr
     CharacterSSRNewTw_off = builder.CreateString(encrypt_string(data.get('CharacterSSRNewTw', ''), password))
     CharacterSSRNewEn_off = builder.CreateString(encrypt_string(data.get('CharacterSSRNewEn', ''), password))
     CharacterId_val = convert_long(data.get('CharacterId', 0), password)
+    Club_val = convert_int(getattr(Club, data.get('Club', 0)), password)
     LocalizeCharProfileExcel.Start(builder)
     LocalizeCharProfileExcel.AddCharacterId(builder, CharacterId_val)
     LocalizeCharProfileExcel.AddStatusMessageKr(builder, StatusMessageKr_off)
@@ -10644,6 +11676,7 @@ def pack_LocalizeCharProfileExcel(builder: flatbuffers.Builder, data: dict, encr
     LocalizeCharProfileExcel.AddFamilyNameRubyEn(builder, FamilyNameRubyEn_off)
     LocalizeCharProfileExcel.AddPersonalNameEn(builder, PersonalNameEn_off)
     LocalizeCharProfileExcel.AddPersonalNameRubyEn(builder, PersonalNameRubyEn_off)
+    LocalizeCharProfileExcel.AddClub(builder, Club_val)
     LocalizeCharProfileExcel.AddSchoolYearKr(builder, SchoolYearKr_off)
     LocalizeCharProfileExcel.AddSchoolYearJp(builder, SchoolYearJp_off)
     LocalizeCharProfileExcel.AddSchoolYearTh(builder, SchoolYearTh_off)
@@ -11957,7 +12990,7 @@ def pack_MiniGameMissionExcel(builder: flatbuffers.Builder, data: dict, encrypt=
     ToastDisplayType_val = convert_int(getattr(MissionToastDisplayConditionType, data.get('ToastDisplayType', 0)), password)
     ViewFlag_val = data.get('ViewFlag', 0)
     DisplayOrder_val = convert_long(data.get('DisplayOrder', 0), password)
-    AccountType_val = convert_int(getattr(AccountState, data.get('AccountType', 0)), password)
+    TargetGroup_val = convert_int(getattr(TargetGroup, data.get('TargetGroup', 0)), password)
     AccountLevel_val = convert_long(data.get('AccountLevel', 0), password)
     CompleteConditionType_val = convert_int(getattr(MissionCompleteConditionType, data.get('CompleteConditionType', 0)), password)
     IsCompleteExtensionTime_val = data.get('IsCompleteExtensionTime', 0)
@@ -11976,7 +13009,7 @@ def pack_MiniGameMissionExcel(builder: flatbuffers.Builder, data: dict, encrypt=
     MiniGameMissionExcel.AddViewFlag(builder, ViewFlag_val)
     MiniGameMissionExcel.AddDisplayOrder(builder, DisplayOrder_val)
     MiniGameMissionExcel.AddPreMissionId(builder, PreMissionId_vec)
-    MiniGameMissionExcel.AddAccountType(builder, AccountType_val)
+    MiniGameMissionExcel.AddTargetGroup(builder, TargetGroup_val)
     MiniGameMissionExcel.AddAccountLevel(builder, AccountLevel_val)
     MiniGameMissionExcel.AddShortcutUI(builder, ShortcutUI_vec)
     MiniGameMissionExcel.AddCompleteConditionType(builder, CompleteConditionType_val)
@@ -12002,11 +13035,13 @@ def pack_MiniGamePlayGuideExcel(builder: flatbuffers.Builder, data: dict, encryp
     GuideText_off = builder.CreateString(encrypt_string(data.get('GuideText', ''), password))
     Id_val = convert_long(data.get('Id', 0), password)
     EventContentId_val = convert_long(data.get('EventContentId', 0), password)
+    MiniGameType_val = convert_int(getattr(EventContentType, data.get('MiniGameType', 0)), password)
     IsPcBuild_val = data.get('IsPcBuild', 0)
     DisplayOrder_val = convert_int(data.get('DisplayOrder', 0), password)
     MiniGamePlayGuideExcel.Start(builder)
     MiniGamePlayGuideExcel.AddId(builder, Id_val)
     MiniGamePlayGuideExcel.AddEventContentId(builder, EventContentId_val)
+    MiniGamePlayGuideExcel.AddMiniGameType(builder, MiniGameType_val)
     MiniGamePlayGuideExcel.AddIsPcBuild(builder, IsPcBuild_val)
     MiniGamePlayGuideExcel.AddDisplayOrder(builder, DisplayOrder_val)
     MiniGamePlayGuideExcel.AddGuideTitle(builder, GuideTitle_off)
@@ -12880,7 +13915,7 @@ def pack_MissionExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) ->
     EndDay_val = convert_long(data.get('EndDay', 0), password)
     DateAutoRefer_val = convert_int(getattr(ContentType, data.get('DateAutoRefer', 0)), password)
     DisplayOrder_val = convert_long(data.get('DisplayOrder', 0), password)
-    AccountType_val = convert_int(getattr(AccountState, data.get('AccountType', 0)), password)
+    TargetGroup_val = convert_int(getattr(TargetGroup, data.get('TargetGroup', 0)), password)
     AccountLevel_val = convert_long(data.get('AccountLevel', 0), password)
     ChallengeStageShortcut_val = convert_long(data.get('ChallengeStageShortcut', 0), password)
     CompleteConditionType_val = convert_int(getattr(MissionCompleteConditionType, data.get('CompleteConditionType', 0)), password)
@@ -12901,7 +13936,7 @@ def pack_MissionExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) ->
     MissionExcel.AddDateAutoRefer(builder, DateAutoRefer_val)
     MissionExcel.AddDisplayOrder(builder, DisplayOrder_val)
     MissionExcel.AddPreMissionId(builder, PreMissionId_vec)
-    MissionExcel.AddAccountType(builder, AccountType_val)
+    MissionExcel.AddTargetGroup(builder, TargetGroup_val)
     MissionExcel.AddAccountLevel(builder, AccountLevel_val)
     MissionExcel.AddContentTags(builder, ContentTags_vec)
     MissionExcel.AddShortcutUI(builder, ShortcutUI_vec)
@@ -13127,10 +14162,12 @@ def pack_ObstacleStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tru
     EnhanceHeavyArmorRate_val = convert_long(data.get('EnhanceHeavyArmorRate', 0), password)
     EnhanceUnarmedRate_val = convert_long(data.get('EnhanceUnarmedRate', 0), password)
     EnhanceElasticArmorRate_val = convert_long(data.get('EnhanceElasticArmorRate', 0), password)
+    EnhanceCompositeArmorRate_val = convert_long(data.get('EnhanceCompositeArmorRate', 0), password)
     EnhanceStructureRate_val = convert_long(data.get('EnhanceStructureRate', 0), password)
     EnhanceNormalArmorRate_val = convert_long(data.get('EnhanceNormalArmorRate', 0), password)
     ReduceExDamagedRate_val = convert_long(data.get('ReduceExDamagedRate', 0), password)
     ReduceBasicsDamagedRate_val = convert_long(data.get('ReduceBasicsDamagedRate', 0), password)
+    ReduceWeakDamagedRate_val = convert_long(data.get('ReduceWeakDamagedRate', 0), password)
     ObstacleStatExcel.Start(builder)
     ObstacleStatExcel.AddStringID(builder, StringID_val)
     ObstacleStatExcel.AddName(builder, Name_off)
@@ -13144,10 +14181,12 @@ def pack_ObstacleStatExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tru
     ObstacleStatExcel.AddEnhanceHeavyArmorRate(builder, EnhanceHeavyArmorRate_val)
     ObstacleStatExcel.AddEnhanceUnarmedRate(builder, EnhanceUnarmedRate_val)
     ObstacleStatExcel.AddEnhanceElasticArmorRate(builder, EnhanceElasticArmorRate_val)
+    ObstacleStatExcel.AddEnhanceCompositeArmorRate(builder, EnhanceCompositeArmorRate_val)
     ObstacleStatExcel.AddEnhanceStructureRate(builder, EnhanceStructureRate_val)
     ObstacleStatExcel.AddEnhanceNormalArmorRate(builder, EnhanceNormalArmorRate_val)
     ObstacleStatExcel.AddReduceExDamagedRate(builder, ReduceExDamagedRate_val)
     ObstacleStatExcel.AddReduceBasicsDamagedRate(builder, ReduceBasicsDamagedRate_val)
+    ObstacleStatExcel.AddReduceWeakDamagedRate(builder, ReduceWeakDamagedRate_val)
     return ObstacleStatExcel.End(builder)
 
 def pack_OpenConditionExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -13268,6 +14307,24 @@ def pack_ParcelAutoSynthExcel(builder: flatbuffers.Builder, data: dict, encrypt=
     ParcelAutoSynthExcel.AddResultParcelId(builder, ResultParcelId_val)
     ParcelAutoSynthExcel.AddResultParcelAmount(builder, ResultParcelAmount_val)
     return ParcelAutoSynthExcel.End(builder)
+
+def pack_PermanentRaidManageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("PermanentRaidManage") if encrypt else None
+    OpenDate_off = builder.CreateString(encrypt_string(data.get('OpenDate', ''), password))
+    OpenRaidBossGroup_vec = 0
+    if 'OpenRaidBossGroup' in data:
+        OpenRaidBossGroup_items = data['OpenRaidBossGroup']
+        OpenRaidBossGroup_str_offsets = [builder.CreateString(encrypt_string(item, password)) for item in OpenRaidBossGroup_items]
+        PermanentRaidManageExcel.StartOpenRaidBossGroupVector(builder, len(OpenRaidBossGroup_str_offsets))
+        for offset in reversed(OpenRaidBossGroup_str_offsets):
+            builder.PrependUOffsetTRelative(offset)
+        OpenRaidBossGroup_vec = builder.EndVector(len(OpenRaidBossGroup_items))
+    Type_val = convert_int(getattr(RaidBossGroupType, data.get('Type', 0)), password)
+    PermanentRaidManageExcel.Start(builder)
+    PermanentRaidManageExcel.AddType(builder, Type_val)
+    PermanentRaidManageExcel.AddOpenRaidBossGroup(builder, OpenRaidBossGroup_vec)
+    PermanentRaidManageExcel.AddOpenDate(builder, OpenDate_off)
+    return PermanentRaidManageExcel.End(builder)
 
 def pack_PersonalityExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("Personality") if encrypt else None
@@ -13453,6 +14510,43 @@ def pack_PresetParcelsExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
     PresetParcelsExcel.AddPresetGroupId(builder, PresetGroupId_val)
     PresetParcelsExcel.AddParcelAmount(builder, ParcelAmount_val)
     return PresetParcelsExcel.End(builder)
+
+def pack_ProductAutoSelectionGroupExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("ProductAutoSelectionGroup") if encrypt else None
+    RewardParcelType_vec = 0
+    if 'RewardParcelType' in data:
+        RewardParcelType_items = data['RewardParcelType']
+        ProductAutoSelectionGroupExcel.StartRewardParcelTypeVector(builder, len(RewardParcelType_items))
+        for item in reversed(RewardParcelType_items):
+            builder.PrependInt32(convert_int(getattr(ParcelType, item), password))
+        RewardParcelType_vec = builder.EndVector(len(RewardParcelType_items))
+    RewardParcelId_vec = 0
+    if 'RewardParcelId' in data:
+        RewardParcelId_items = data['RewardParcelId']
+        ProductAutoSelectionGroupExcel.StartRewardParcelIdVector(builder, len(RewardParcelId_items))
+        for item in reversed(RewardParcelId_items):
+            builder.PrependInt64(convert_long(item, password))
+        RewardParcelId_vec = builder.EndVector(len(RewardParcelId_items))
+    ResultAmount_vec = 0
+    if 'ResultAmount' in data:
+        ResultAmount_items = data['ResultAmount']
+        ProductAutoSelectionGroupExcel.StartResultAmountVector(builder, len(ResultAmount_items))
+        for item in reversed(ResultAmount_items):
+            builder.PrependInt64(convert_long(item, password))
+        ResultAmount_vec = builder.EndVector(len(ResultAmount_items))
+    ProductAutoSelectionGroupId_val = convert_long(data.get('ProductAutoSelectionGroupId', 0), password)
+    CharacterId_val = convert_long(data.get('CharacterId', 0), password)
+    ConditionParcelType_val = convert_int(getattr(ParcelType, data.get('ConditionParcelType', 0)), password)
+    ConditionParcelId_val = convert_long(data.get('ConditionParcelId', 0), password)
+    ProductAutoSelectionGroupExcel.Start(builder)
+    ProductAutoSelectionGroupExcel.AddProductAutoSelectionGroupId(builder, ProductAutoSelectionGroupId_val)
+    ProductAutoSelectionGroupExcel.AddCharacterId(builder, CharacterId_val)
+    ProductAutoSelectionGroupExcel.AddRewardParcelType(builder, RewardParcelType_vec)
+    ProductAutoSelectionGroupExcel.AddRewardParcelId(builder, RewardParcelId_vec)
+    ProductAutoSelectionGroupExcel.AddResultAmount(builder, ResultAmount_vec)
+    ProductAutoSelectionGroupExcel.AddConditionParcelType(builder, ConditionParcelType_val)
+    ProductAutoSelectionGroupExcel.AddConditionParcelId(builder, ConditionParcelId_val)
+    return ProductAutoSelectionGroupExcel.End(builder)
 
 def pack_ProductBattlePassExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("ProductBattlePass") if encrypt else None
@@ -13740,12 +14834,14 @@ def pack_ProductSelectExcel(builder: flatbuffers.Builder, data: dict, encrypt=Tr
             builder.PrependInt64(convert_long(item, password))
         ProductSelectionSlot_vec = builder.EndVector(len(ProductSelectionSlot_items))
     Id_val = convert_long(data.get('Id', 0), password)
+    ProductSelectSubType_val = convert_int(getattr(ProductSelectSubType, data.get('ProductSelectSubType', 0)), password)
     StoreType_val = convert_int(getattr(StoreType, data.get('StoreType', 0)), password)
     Price_val = convert_long(data.get('Price', 0), password)
     PurchasePeriodType_val = convert_int(getattr(PurchasePeriodType, data.get('PurchasePeriodType', 0)), password)
     PurchasePeriodLimit_val = convert_long(data.get('PurchasePeriodLimit', 0), password)
     ProductSelectExcel.Start(builder)
     ProductSelectExcel.AddId(builder, Id_val)
+    ProductSelectExcel.AddProductSelectSubType(builder, ProductSelectSubType_val)
     ProductSelectExcel.AddProductId(builder, ProductId_off)
     ProductSelectExcel.AddTeenProductId(builder, TeenProductId_off)
     ProductSelectExcel.AddStoreType(builder, StoreType_val)
@@ -13779,6 +14875,27 @@ def pack_ProductSelectionGroupExcel(builder: flatbuffers.Builder, data: dict, en
     ProductSelectionGroupExcel.AddConditionParcelType(builder, ConditionParcelType_val)
     ProductSelectionGroupExcel.AddConditionParcelId(builder, ConditionParcelId_val)
     return ProductSelectionGroupExcel.End(builder)
+
+def pack_RaidContentPlayGuideExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
+    password = create_key("RaidContentPlayGuide") if encrypt else None
+    GuideImagePath_off = builder.CreateString(encrypt_string(data.get('GuideImagePath', ''), password))
+    Id_val = convert_long(data.get('Id', 0), password)
+    RaidBossGroupType_val = convert_int(getattr(RaidBossGroupType, data.get('RaidBossGroupType', 0)), password)
+    IsPCBuild_val = data.get('IsPCBuild', 0)
+    IdExport_val = data.get('IdExport', 0)
+    DisplayOrder_val = convert_int(data.get('DisplayOrder', 0), password)
+    GuideTitle_val = convert_uint(data.get('GuideTitle', 0), password)
+    GuideText_val = convert_uint(data.get('GuideText', 0), password)
+    RaidContentPlayGuideExcel.Start(builder)
+    RaidContentPlayGuideExcel.AddId(builder, Id_val)
+    RaidContentPlayGuideExcel.AddRaidBossGroupType(builder, RaidBossGroupType_val)
+    RaidContentPlayGuideExcel.AddIsPCBuild(builder, IsPCBuild_val)
+    RaidContentPlayGuideExcel.AddIdExport(builder, IdExport_val)
+    RaidContentPlayGuideExcel.AddDisplayOrder(builder, DisplayOrder_val)
+    RaidContentPlayGuideExcel.AddGuideTitle(builder, GuideTitle_val)
+    RaidContentPlayGuideExcel.AddGuideImagePath(builder, GuideImagePath_off)
+    RaidContentPlayGuideExcel.AddGuideText(builder, GuideText_val)
+    return RaidContentPlayGuideExcel.End(builder)
 
 def pack_RaidRankingRewardExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
     password = create_key("RaidRankingReward") if encrypt else None
@@ -13890,7 +15007,6 @@ def pack_RaidStageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) 
     RaidBossGroup_off = builder.CreateString(encrypt_string(data.get('RaidBossGroup', ''), password))
     PortraitPath_off = builder.CreateString(encrypt_string(data.get('PortraitPath', ''), password))
     BGPath_off = builder.CreateString(encrypt_string(data.get('BGPath', ''), password))
-    GroundDevName_off = builder.CreateString(encrypt_string(data.get('GroundDevName', ''), password))
     EnterTimeLine_off = builder.CreateString(encrypt_string(data.get('EnterTimeLine', ''), password))
     VictoryTimelinePath_off = builder.CreateString(encrypt_string(data.get('VictoryTimelinePath', ''), password))
     PhaseChangeTimelinePath_off = builder.CreateString(encrypt_string(data.get('PhaseChangeTimelinePath', ''), password))
@@ -13933,6 +15049,7 @@ def pack_RaidStageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) 
     RaidRoomLifeTime_val = convert_int(data.get('RaidRoomLifeTime', 0), password)
     BattleDuration_val = convert_long(data.get('BattleDuration', 0), password)
     GroundId_val = convert_long(data.get('GroundId', 0), password)
+    RaidBossGroupType_val = convert_int(getattr(RaidBossGroupType, data.get('RaidBossGroupType', 0)), password)
     TacticEnvironment_val = convert_int(getattr(TacticEnvironment, data.get('TacticEnvironment', 0)), password)
     DefaultClearScore_val = convert_long(data.get('DefaultClearScore', 0), password)
     MaximumScore_val = convert_long(data.get('MaximumScore', 0), password)
@@ -13962,7 +15079,7 @@ def pack_RaidStageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) 
     RaidStageExcel.AddRaidRoomLifeTime(builder, RaidRoomLifeTime_val)
     RaidStageExcel.AddBattleDuration(builder, BattleDuration_val)
     RaidStageExcel.AddGroundId(builder, GroundId_val)
-    RaidStageExcel.AddGroundDevName(builder, GroundDevName_off)
+    RaidStageExcel.AddRaidBossGroupType(builder, RaidBossGroupType_val)
     RaidStageExcel.AddEnterTimeLine(builder, EnterTimeLine_off)
     RaidStageExcel.AddTacticEnvironment(builder, TacticEnvironment_val)
     RaidStageExcel.AddDefaultClearScore(builder, DefaultClearScore_val)
@@ -14739,11 +15856,16 @@ def pack_ShopCashExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -
     Id_val = convert_long(data.get('Id', 0), password)
     CashProductId_val = convert_long(data.get('CashProductId', 0), password)
     PackageType_val = convert_int(getattr(PurchaseSourceType, data.get('PackageType', 0)), password)
+    TargetGroup_val = convert_int(getattr(TargetGroup, data.get('TargetGroup', 0)), password)
     LocalizeEtcId_val = convert_uint(data.get('LocalizeEtcId', 0), password)
+    InMailPurchaseLock_val = data.get('InMailPurchaseLock', 0)
+    UseMailParcel_val = data.get('UseMailParcel', 0)
     DisplayOrder_val = convert_long(data.get('DisplayOrder', 0), password)
     RenewalDisplayOrder_val = convert_long(data.get('RenewalDisplayOrder', 0), password)
     CategoryType_val = convert_int(getattr(ProductCategory, data.get('CategoryType', 0)), password)
     DisplayTag_val = convert_int(getattr(ProductDisplayTag, data.get('DisplayTag', 0)), password)
+    ProductSaleType_val = convert_int(getattr(ProductSaleType, data.get('ProductSaleType', 0)), password)
+    ProductSaleDay_val = convert_long(data.get('ProductSaleDay', 0), password)
     PeriodTag_val = data.get('PeriodTag', 0)
     AccountLevelLimit_val = convert_long(data.get('AccountLevelLimit', 0), password)
     AccountLevelHide_val = data.get('AccountLevelHide', 0)
@@ -14756,14 +15878,19 @@ def pack_ShopCashExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -
     ShopCashExcel.AddId(builder, Id_val)
     ShopCashExcel.AddCashProductId(builder, CashProductId_val)
     ShopCashExcel.AddPackageType(builder, PackageType_val)
+    ShopCashExcel.AddTargetGroup(builder, TargetGroup_val)
     ShopCashExcel.AddLocalizeEtcId(builder, LocalizeEtcId_val)
+    ShopCashExcel.AddInMailPurchaseLock(builder, InMailPurchaseLock_val)
+    ShopCashExcel.AddUseMailParcel(builder, UseMailParcel_val)
     ShopCashExcel.AddIconPath(builder, IconPath_off)
     ShopCashExcel.AddDisplayOrder(builder, DisplayOrder_val)
     ShopCashExcel.AddRenewalDisplayOrder(builder, RenewalDisplayOrder_val)
     ShopCashExcel.AddCategoryType(builder, CategoryType_val)
     ShopCashExcel.AddDisplayTag(builder, DisplayTag_val)
+    ShopCashExcel.AddProductSaleType(builder, ProductSaleType_val)
     ShopCashExcel.AddSalePeriodFrom(builder, SalePeriodFrom_off)
     ShopCashExcel.AddSalePeriodTo(builder, SalePeriodTo_off)
+    ShopCashExcel.AddProductSaleDay(builder, ProductSaleDay_val)
     ShopCashExcel.AddPeriodTag(builder, PeriodTag_val)
     ShopCashExcel.AddAccountLevelLimit(builder, AccountLevelLimit_val)
     ShopCashExcel.AddAccountLevelHide(builder, AccountLevelHide_val)
@@ -15739,6 +16866,7 @@ def pack_TutorialFailureImageExcel(builder: flatbuffers.Builder, data: dict, enc
     ImagePathTh_off = builder.CreateString(encrypt_string(data.get('ImagePathTh', ''), password))
     ImagePathTw_off = builder.CreateString(encrypt_string(data.get('ImagePathTw', ''), password))
     ImagePathEn_off = builder.CreateString(encrypt_string(data.get('ImagePathEn', ''), password))
+    ReplaceLocalizeKey_off = builder.CreateString(encrypt_string(data.get('ReplaceLocalizeKey', ''), password))
     Id_val = convert_long(data.get('Id', 0), password)
     Contents_val = convert_int(getattr(TutorialFailureContentType, data.get('Contents', 0)), password)
     TutorialFailureImageExcel.Start(builder)
@@ -15750,6 +16878,7 @@ def pack_TutorialFailureImageExcel(builder: flatbuffers.Builder, data: dict, enc
     TutorialFailureImageExcel.AddImagePathTh(builder, ImagePathTh_off)
     TutorialFailureImageExcel.AddImagePathTw(builder, ImagePathTw_off)
     TutorialFailureImageExcel.AddImagePathEn(builder, ImagePathEn_off)
+    TutorialFailureImageExcel.AddReplaceLocalizeKey(builder, ReplaceLocalizeKey_off)
     return TutorialFailureImageExcel.End(builder)
 
 def pack_UnderCoverStageExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:
@@ -16319,7 +17448,7 @@ def pack_WorldRaidSeasonManageExcel(builder: flatbuffers.Builder, data: dict, en
             builder.PrependInt64(convert_long(item, password))
         ConditionScenarioGroupid_vec = builder.EndVector(len(ConditionScenarioGroupid_items))
     SeasonId_val = convert_long(data.get('SeasonId', 0), password)
-    EventContentId_val = convert_long(data.get('EventContentId', 0), password)
+    PhaseId_val = convert_long(data.get('PhaseId', 0), password)
     EnterTicket_val = convert_int(getattr(CurrencyTypes, data.get('EnterTicket', 0)), password)
     WorldRaidLobbyBannerShow_val = data.get('WorldRaidLobbyBannerShow', 0)
     SeasonOpenCondition_val = convert_long(data.get('SeasonOpenCondition', 0), password)
@@ -16333,7 +17462,7 @@ def pack_WorldRaidSeasonManageExcel(builder: flatbuffers.Builder, data: dict, en
     UseFavorRankBuff_val = data.get('UseFavorRankBuff', 0)
     WorldRaidSeasonManageExcel.Start(builder)
     WorldRaidSeasonManageExcel.AddSeasonId(builder, SeasonId_val)
-    WorldRaidSeasonManageExcel.AddEventContentId(builder, EventContentId_val)
+    WorldRaidSeasonManageExcel.AddPhaseId(builder, PhaseId_val)
     WorldRaidSeasonManageExcel.AddEnterTicket(builder, EnterTicket_val)
     WorldRaidSeasonManageExcel.AddWorldRaidLobbyScene(builder, WorldRaidLobbyScene_off)
     WorldRaidSeasonManageExcel.AddWorldRaidLobbyBanner(builder, WorldRaidLobbyBanner_off)
@@ -17110,30 +18239,6 @@ def pack_KatakanaConvertExcelTable(builder: flatbuffers.Builder, dump_list: list
     KatakanaConvertExcelTable.Start(builder)
     KatakanaConvertExcelTable.AddDataList(builder, data_list)
     return KatakanaConvertExcelTable.End(builder)
-
-def pack_KeyMappingExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
-    offsets = []
-    for record in dump_list:
-        offsets.append(pack_KeyMappingExcel(builder, record, encrypt))
-    KeyMappingExcelTable.StartDataListVector(builder, len(offsets))
-    for offset in reversed(offsets):
-        builder.PrependUOffsetTRelative(offset)
-    data_list = builder.EndVector(len(offsets))
-    KeyMappingExcelTable.Start(builder)
-    KeyMappingExcelTable.AddDataList(builder, data_list)
-    return KeyMappingExcelTable.End(builder)
-
-def pack_KeyMappingPopupExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
-    offsets = []
-    for record in dump_list:
-        offsets.append(pack_KeyMappingPopupExcel(builder, record, encrypt))
-    KeyMappingPopupExcelTable.StartDataListVector(builder, len(offsets))
-    for offset in reversed(offsets):
-        builder.PrependUOffsetTRelative(offset)
-    data_list = builder.EndVector(len(offsets))
-    KeyMappingPopupExcelTable.Start(builder)
-    KeyMappingPopupExcelTable.AddDataList(builder, data_list)
-    return KeyMappingPopupExcelTable.End(builder)
 
 def pack_KnockBackExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
@@ -18599,6 +19704,18 @@ def pack_ContentsShortcutExcelTable(builder: flatbuffers.Builder, dump_list: lis
     ContentsShortcutExcelTable.AddDataList(builder, data_list)
     return ContentsShortcutExcelTable.End(builder)
 
+def pack_ContentTargetGroupExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_ContentTargetGroupExcel(builder, record, encrypt))
+    ContentTargetGroupExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    ContentTargetGroupExcelTable.Start(builder)
+    ContentTargetGroupExcelTable.AddDataList(builder, data_list)
+    return ContentTargetGroupExcelTable.End(builder)
+
 def pack_CostumeExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -18898,6 +20015,54 @@ def pack_EventContentCharacterBonusExcelTable(builder: flatbuffers.Builder, dump
     EventContentCharacterBonusExcelTable.Start(builder)
     EventContentCharacterBonusExcelTable.AddDataList(builder, data_list)
     return EventContentCharacterBonusExcelTable.End(builder)
+
+def pack_EventContentClueExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_EventContentClueExcel(builder, record, encrypt))
+    EventContentClueExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    EventContentClueExcelTable.Start(builder)
+    EventContentClueExcelTable.AddDataList(builder, data_list)
+    return EventContentClueExcelTable.End(builder)
+
+def pack_EventContentClueSearchExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_EventContentClueSearchExcel(builder, record, encrypt))
+    EventContentClueSearchExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    EventContentClueSearchExcelTable.Start(builder)
+    EventContentClueSearchExcelTable.AddDataList(builder, data_list)
+    return EventContentClueSearchExcelTable.End(builder)
+
+def pack_EventContentClueSearchRewardExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_EventContentClueSearchRewardExcel(builder, record, encrypt))
+    EventContentClueSearchRewardExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    EventContentClueSearchRewardExcelTable.Start(builder)
+    EventContentClueSearchRewardExcelTable.AddDataList(builder, data_list)
+    return EventContentClueSearchRewardExcelTable.End(builder)
+
+def pack_EventContentClueSearchRoundExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_EventContentClueSearchRoundExcel(builder, record, encrypt))
+    EventContentClueSearchRoundExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    EventContentClueSearchRoundExcelTable.Start(builder)
+    EventContentClueSearchRoundExcelTable.AddDataList(builder, data_list)
+    return EventContentClueSearchRoundExcelTable.End(builder)
 
 def pack_EventContentCollectionExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
@@ -19655,6 +20820,18 @@ def pack_GoodsExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=
     GoodsExcelTable.AddDataList(builder, data_list)
     return GoodsExcelTable.End(builder)
 
+def pack_GooglePlayAchievementExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_GooglePlayAchievementExcel(builder, record, encrypt))
+    GooglePlayAchievementExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    GooglePlayAchievementExcelTable.Start(builder)
+    GooglePlayAchievementExcelTable.AddDataList(builder, data_list)
+    return GooglePlayAchievementExcelTable.End(builder)
+
 def pack_GroundExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -19739,6 +20916,18 @@ def pack_HpBarAbbreviationExcelTable(builder: flatbuffers.Builder, dump_list: li
     HpBarAbbreviationExcelTable.AddDataList(builder, data_list)
     return HpBarAbbreviationExcelTable.End(builder)
 
+def pack_IAWorldRaidStageRewardExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_IAWorldRaidStageRewardExcel(builder, record, encrypt))
+    IAWorldRaidStageRewardExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    IAWorldRaidStageRewardExcelTable.Start(builder)
+    IAWorldRaidStageRewardExcelTable.AddDataList(builder, data_list)
+    return IAWorldRaidStageRewardExcelTable.End(builder)
+
 def pack_IdCardBackgroundExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -19775,6 +20964,126 @@ def pack_InformationStrategyObjectExcelTable(builder: flatbuffers.Builder, dump_
     InformationStrategyObjectExcelTable.AddDataList(builder, data_list)
     return InformationStrategyObjectExcelTable.End(builder)
 
+def pack_InteractiveWorldRaidArcadeMachineExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidArcadeMachineExcel(builder, record, encrypt))
+    InteractiveWorldRaidArcadeMachineExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidArcadeMachineExcelTable.Start(builder)
+    InteractiveWorldRaidArcadeMachineExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidArcadeMachineExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidBossGroupExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidBossGroupExcel(builder, record, encrypt))
+    InteractiveWorldRaidBossGroupExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidBossGroupExcelTable.Start(builder)
+    InteractiveWorldRaidBossGroupExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidBossGroupExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidCarrierExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidCarrierExcel(builder, record, encrypt))
+    InteractiveWorldRaidCarrierExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidCarrierExcelTable.Start(builder)
+    InteractiveWorldRaidCarrierExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidCarrierExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidCarrierMapExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidCarrierMapExcel(builder, record, encrypt))
+    InteractiveWorldRaidCarrierMapExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidCarrierMapExcelTable.Start(builder)
+    InteractiveWorldRaidCarrierMapExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidCarrierMapExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidCarrierRecipeExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidCarrierRecipeExcel(builder, record, encrypt))
+    InteractiveWorldRaidCarrierRecipeExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidCarrierRecipeExcelTable.Start(builder)
+    InteractiveWorldRaidCarrierRecipeExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidCarrierRecipeExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidConditionExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidConditionExcel(builder, record, encrypt))
+    InteractiveWorldRaidConditionExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidConditionExcelTable.Start(builder)
+    InteractiveWorldRaidConditionExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidConditionExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidSeasonManageExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidSeasonManageExcel(builder, record, encrypt))
+    InteractiveWorldRaidSeasonManageExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidSeasonManageExcelTable.Start(builder)
+    InteractiveWorldRaidSeasonManageExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidSeasonManageExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidSkillDescriptionListExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidSkillDescriptionListExcel(builder, record, encrypt))
+    InteractiveWorldRaidSkillDescriptionListExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidSkillDescriptionListExcelTable.Start(builder)
+    InteractiveWorldRaidSkillDescriptionListExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidSkillDescriptionListExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidStageExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidStageExcel(builder, record, encrypt))
+    InteractiveWorldRaidStageExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidStageExcelTable.Start(builder)
+    InteractiveWorldRaidStageExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidStageExcelTable.End(builder)
+
+def pack_InteractiveWorldRaidStatusPresetExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_InteractiveWorldRaidStatusPresetExcel(builder, record, encrypt))
+    InteractiveWorldRaidStatusPresetExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    InteractiveWorldRaidStatusPresetExcelTable.Start(builder)
+    InteractiveWorldRaidStatusPresetExcelTable.AddDataList(builder, data_list)
+    return InteractiveWorldRaidStatusPresetExcelTable.End(builder)
+
 def pack_ItemExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -19787,6 +21096,30 @@ def pack_ItemExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=T
     ItemExcelTable.AddDataList(builder, data_list)
     return ItemExcelTable.End(builder)
 
+def pack_KeyControllerImageExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_KeyControllerImageExcel(builder, record, encrypt))
+    KeyControllerImageExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    KeyControllerImageExcelTable.Start(builder)
+    KeyControllerImageExcelTable.AddDataList(builder, data_list)
+    return KeyControllerImageExcelTable.End(builder)
+
+def pack_KeyMappingDisplayInfoExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_KeyMappingDisplayInfoExcel(builder, record, encrypt))
+    KeyMappingDisplayInfoExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    KeyMappingDisplayInfoExcelTable.Start(builder)
+    KeyMappingDisplayInfoExcelTable.AddDataList(builder, data_list)
+    return KeyMappingDisplayInfoExcelTable.End(builder)
+
 def pack_KeyMappingExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -19798,6 +21131,54 @@ def pack_KeyMappingExcelTable(builder: flatbuffers.Builder, dump_list: list, enc
     KeyMappingExcelTable.Start(builder)
     KeyMappingExcelTable.AddDataList(builder, data_list)
     return KeyMappingExcelTable.End(builder)
+
+def pack_KeyMappingGroupInfoExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_KeyMappingGroupInfoExcel(builder, record, encrypt))
+    KeyMappingGroupInfoExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    KeyMappingGroupInfoExcelTable.Start(builder)
+    KeyMappingGroupInfoExcelTable.AddDataList(builder, data_list)
+    return KeyMappingGroupInfoExcelTable.End(builder)
+
+def pack_KeyMappingPopupExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_KeyMappingPopupExcel(builder, record, encrypt))
+    KeyMappingPopupExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    KeyMappingPopupExcelTable.Start(builder)
+    KeyMappingPopupExcelTable.AddDataList(builder, data_list)
+    return KeyMappingPopupExcelTable.End(builder)
+
+def pack_KeyMappingPopupNoneFocusExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_KeyMappingPopupNoneFocusExcel(builder, record, encrypt))
+    KeyMappingPopupNoneFocusExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    KeyMappingPopupNoneFocusExcelTable.Start(builder)
+    KeyMappingPopupNoneFocusExcelTable.AddDataList(builder, data_list)
+    return KeyMappingPopupNoneFocusExcelTable.End(builder)
+
+def pack_KeyMappingTabExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_KeyMappingTabExcel(builder, record, encrypt))
+    KeyMappingTabExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    KeyMappingTabExcelTable.Start(builder)
+    KeyMappingTabExcelTable.AddDataList(builder, data_list)
+    return KeyMappingTabExcelTable.End(builder)
 
 def pack_LevelExpMasterCoinExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
@@ -20831,6 +22212,18 @@ def pack_ParcelAutoSynthExcelTable(builder: flatbuffers.Builder, dump_list: list
     ParcelAutoSynthExcelTable.AddDataList(builder, data_list)
     return ParcelAutoSynthExcelTable.End(builder)
 
+def pack_PermanentRaidManageExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_PermanentRaidManageExcel(builder, record, encrypt))
+    PermanentRaidManageExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    PermanentRaidManageExcelTable.Start(builder)
+    PermanentRaidManageExcelTable.AddDataList(builder, data_list)
+    return PermanentRaidManageExcelTable.End(builder)
+
 def pack_PersonalityExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -20927,6 +22320,18 @@ def pack_PresetParcelsExcelTable(builder: flatbuffers.Builder, dump_list: list, 
     PresetParcelsExcelTable.AddDataList(builder, data_list)
     return PresetParcelsExcelTable.End(builder)
 
+def pack_ProductAutoSelectionGroupExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_ProductAutoSelectionGroupExcel(builder, record, encrypt))
+    ProductAutoSelectionGroupExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    ProductAutoSelectionGroupExcelTable.Start(builder)
+    ProductAutoSelectionGroupExcelTable.AddDataList(builder, data_list)
+    return ProductAutoSelectionGroupExcelTable.End(builder)
+
 def pack_ProductBattlePassExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []
     for record in dump_list:
@@ -21022,6 +22427,18 @@ def pack_ProductSelectionGroupExcelTable(builder: flatbuffers.Builder, dump_list
     ProductSelectionGroupExcelTable.Start(builder)
     ProductSelectionGroupExcelTable.AddDataList(builder, data_list)
     return ProductSelectionGroupExcelTable.End(builder)
+
+def pack_RaidContentPlayGuideExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
+    offsets = []
+    for record in dump_list:
+        offsets.append(pack_RaidContentPlayGuideExcel(builder, record, encrypt))
+    RaidContentPlayGuideExcelTable.StartDataListVector(builder, len(offsets))
+    for offset in reversed(offsets):
+        builder.PrependUOffsetTRelative(offset)
+    data_list = builder.EndVector(len(offsets))
+    RaidContentPlayGuideExcelTable.Start(builder)
+    RaidContentPlayGuideExcelTable.AddDataList(builder, data_list)
+    return RaidContentPlayGuideExcelTable.End(builder)
 
 def pack_RaidRankingRewardExcelTable(builder: flatbuffers.Builder, dump_list: list, encrypt=True) -> int:
     offsets = []

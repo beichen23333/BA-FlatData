@@ -31,36 +31,43 @@ class MiniGamePlayGuideExcel:
         return 0
 
 
-    def IsPcBuild(self):
+    def MiniGameType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def IsPcBuild(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def DisplayOrder(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GuideTitle(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def GuideImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def GuideText(self):
+    def GuideImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def GuideText(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -69,7 +76,7 @@ class MiniGamePlayGuideExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(7)
+    def Start(builder): builder.StartObject(8)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -83,18 +90,22 @@ class MiniGamePlayGuideExcel:
 
 
     @staticmethod
-    def AddIsPcBuild(builder, IsPcBuild): builder.PrependBoolSlot(2, IsPcBuild, 0)
+    def AddMiniGameType(builder, MiniGameType): builder.PrependInt32Slot(2, MiniGameType, 0)
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(3, DisplayOrder, 0)
+    def AddIsPcBuild(builder, IsPcBuild): builder.PrependBoolSlot(3, IsPcBuild, 0)
 
 
     @staticmethod
-    def AddGuideTitle(builder, GuideTitle): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(GuideTitle), 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(4, DisplayOrder, 0)
+
 
     @staticmethod
-    def AddGuideImagePath(builder, GuideImagePath): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(GuideImagePath), 0)
+    def AddGuideTitle(builder, GuideTitle): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(GuideTitle), 0)
 
     @staticmethod
-    def AddGuideText(builder, GuideText): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(GuideText), 0)
+    def AddGuideImagePath(builder, GuideImagePath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(GuideImagePath), 0)
+
+    @staticmethod
+    def AddGuideText(builder, GuideText): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(GuideText), 0)

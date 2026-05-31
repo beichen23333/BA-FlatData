@@ -1488,17 +1488,73 @@ class ConstCommonExcel:
         return 0
 
 
-    def CafeCopyPresetSlotCount(self):
+    def ComebackUserStandardDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(400))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
+    def ComebackUserLogSaveDay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(402))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ComeBackActivateCooldown(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(404))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CafeCopyPresetSlotCount(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(406))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ExpiryProductDailyRecordItemReceiveDay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(408))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def NewbieUserStandardDay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(410))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def NewbieStateHoldDay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(412))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def QRIconUrlDev(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(414))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def QRIconUrlLive(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(416))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(199)
+    def Start(builder): builder.StartObject(207)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -2301,5 +2357,35 @@ class ConstCommonExcel:
 
 
     @staticmethod
-    def AddCafeCopyPresetSlotCount(builder, CafeCopyPresetSlotCount): builder.PrependInt32Slot(198, CafeCopyPresetSlotCount, 0)
+    def AddComebackUserStandardDay(builder, ComebackUserStandardDay): builder.PrependInt32Slot(198, ComebackUserStandardDay, 0)
 
+
+    @staticmethod
+    def AddComebackUserLogSaveDay(builder, ComebackUserLogSaveDay): builder.PrependInt32Slot(199, ComebackUserLogSaveDay, 0)
+
+
+    @staticmethod
+    def AddComeBackActivateCooldown(builder, ComeBackActivateCooldown): builder.PrependInt32Slot(200, ComeBackActivateCooldown, 0)
+
+
+    @staticmethod
+    def AddCafeCopyPresetSlotCount(builder, CafeCopyPresetSlotCount): builder.PrependInt32Slot(201, CafeCopyPresetSlotCount, 0)
+
+
+    @staticmethod
+    def AddExpiryProductDailyRecordItemReceiveDay(builder, ExpiryProductDailyRecordItemReceiveDay): builder.PrependInt32Slot(202, ExpiryProductDailyRecordItemReceiveDay, 0)
+
+
+    @staticmethod
+    def AddNewbieUserStandardDay(builder, NewbieUserStandardDay): builder.PrependInt32Slot(203, NewbieUserStandardDay, 0)
+
+
+    @staticmethod
+    def AddNewbieStateHoldDay(builder, NewbieStateHoldDay): builder.PrependInt32Slot(204, NewbieStateHoldDay, 0)
+
+
+    @staticmethod
+    def AddQRIconUrlDev(builder, QRIconUrlDev): builder.PrependUOffsetTRelativeSlot(205, flatbuffers.number_types.UOffsetTFlags.py_type(QRIconUrlDev), 0)
+
+    @staticmethod
+    def AddQRIconUrlLive(builder, QRIconUrlLive): builder.PrependUOffsetTRelativeSlot(206, flatbuffers.number_types.UOffsetTFlags.py_type(QRIconUrlLive), 0)

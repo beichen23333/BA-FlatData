@@ -406,94 +406,101 @@ class GroundExcel:
         return 0
 
 
-    def AllyPassiveSkillId(self, j):
+    def CarrierSkillGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def AllyPassiveSkillId(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return ""
 
     def AllyPassiveSkillIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def AllyPassiveSkillIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         return o == 0
 
 
     def AllyPassiveSkillLevel(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return 0
 
     def AllyPassiveSkillLevelAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     def AllyPassiveSkillLevelLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def AllyPassiveSkillLevelIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         return o == 0
 
 
     def EnemyPassiveSkillId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return ""
 
     def EnemyPassiveSkillIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def EnemyPassiveSkillIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         return o == 0
 
 
     def EnemyPassiveSkillLevel(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return 0
 
     def EnemyPassiveSkillLevelAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     def EnemyPassiveSkillLevelLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     def EnemyPassiveSkillLevelIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         return o == 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(58)
+    def Start(builder): builder.StartObject(59)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -714,25 +721,29 @@ class GroundExcel:
 
 
     @staticmethod
-    def AddAllyPassiveSkillId(builder, AllyPassiveSkillId): builder.PrependUOffsetTRelativeSlot(54, flatbuffers.number_types.UOffsetTFlags.py_type(AllyPassiveSkillId), 0)
+    def AddCarrierSkillGroupId(builder, CarrierSkillGroupId): builder.PrependInt64Slot(54, CarrierSkillGroupId, 0)
+
+
+    @staticmethod
+    def AddAllyPassiveSkillId(builder, AllyPassiveSkillId): builder.PrependUOffsetTRelativeSlot(55, flatbuffers.number_types.UOffsetTFlags.py_type(AllyPassiveSkillId), 0)
     @staticmethod
     def StartAllyPassiveSkillIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
 
     @staticmethod
-    def AddAllyPassiveSkillLevel(builder, AllyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(55, flatbuffers.number_types.UOffsetTFlags.py_type(AllyPassiveSkillLevel), 0)
+    def AddAllyPassiveSkillLevel(builder, AllyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(56, flatbuffers.number_types.UOffsetTFlags.py_type(AllyPassiveSkillLevel), 0)
     @staticmethod
     def StartAllyPassiveSkillLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
 
     @staticmethod
-    def AddEnemyPassiveSkillId(builder, EnemyPassiveSkillId): builder.PrependUOffsetTRelativeSlot(56, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPassiveSkillId), 0)
+    def AddEnemyPassiveSkillId(builder, EnemyPassiveSkillId): builder.PrependUOffsetTRelativeSlot(57, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPassiveSkillId), 0)
     @staticmethod
     def StartEnemyPassiveSkillIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
 
     @staticmethod
-    def AddEnemyPassiveSkillLevel(builder, EnemyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(57, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPassiveSkillLevel), 0)
+    def AddEnemyPassiveSkillLevel(builder, EnemyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(58, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPassiveSkillLevel), 0)
     @staticmethod
     def StartEnemyPassiveSkillLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 

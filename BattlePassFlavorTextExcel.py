@@ -31,17 +31,31 @@ class BattlePassFlavorTextExcel:
         return 0
 
 
-    def LocalizeCodeId(self):
+    def TextGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+        return 0
+
+
+    def LocalizeCodeId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def Sort(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(3)
+    def Start(builder): builder.StartObject(5)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -55,5 +69,13 @@ class BattlePassFlavorTextExcel:
 
 
     @staticmethod
-    def AddLocalizeCodeId(builder, LocalizeCodeId): builder.PrependUint32Slot(2, LocalizeCodeId, 0)
+    def AddTextGroup(builder, TextGroup): builder.PrependInt64Slot(2, TextGroup, 0)
+
+
+    @staticmethod
+    def AddLocalizeCodeId(builder, LocalizeCodeId): builder.PrependUint32Slot(3, LocalizeCodeId, 0)
+
+
+    @staticmethod
+    def AddSort(builder, Sort): builder.PrependInt64Slot(4, Sort, 0)
 

@@ -738,10 +738,24 @@ class ConstCombatExcel:
         return 0
 
 
+    def ObstacleColliderHeightJumpable(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(210))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ObstacleColliderHeightNotJumpable(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(212))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(103)
+    def Start(builder): builder.StartObject(105)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -1147,4 +1161,12 @@ class ConstCombatExcel:
 
     @staticmethod
     def AddMoveCorrectionSkipRatio(builder, MoveCorrectionSkipRatio): builder.PrependInt32Slot(102, MoveCorrectionSkipRatio, 0)
+
+
+    @staticmethod
+    def AddObstacleColliderHeightJumpable(builder, ObstacleColliderHeightJumpable): builder.PrependFloat32Slot(103, ObstacleColliderHeightJumpable, 0)
+
+
+    @staticmethod
+    def AddObstacleColliderHeightNotJumpable(builder, ObstacleColliderHeightNotJumpable): builder.PrependFloat32Slot(104, ObstacleColliderHeightNotJumpable, 0)
 

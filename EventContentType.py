@@ -41,3 +41,5 @@ class EventContentType:
     MiniGameRoad = 39
     MiniGameCCG = 40
     Concentration = 41
+    InteractiveWorldRaid = 42
+    ClueSearch = 43
