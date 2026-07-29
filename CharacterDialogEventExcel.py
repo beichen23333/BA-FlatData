@@ -178,8 +178,15 @@ class CharacterDialogEventExcel:
         return None
 
 
-    def DurationCN(self):
+    def ScenarioCharacterShapes(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def DurationCN(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -188,7 +195,7 @@ class CharacterDialogEventExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(24)
+    def Start(builder): builder.StartObject(25)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -281,5 +288,9 @@ class CharacterDialogEventExcel:
     def AddLocalizeCVGroup(builder, LocalizeCVGroup): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeCVGroup), 0)
 
     @staticmethod
-    def AddDurationCN(builder, DurationCN): builder.PrependInt32Slot(23, DurationCN, 0)
+    def AddScenarioCharacterShapes(builder, ScenarioCharacterShapes): builder.PrependInt32Slot(23, ScenarioCharacterShapes, 0)
+
+
+    @staticmethod
+    def AddDurationCN(builder, DurationCN): builder.PrependInt32Slot(24, DurationCN, 0)
 

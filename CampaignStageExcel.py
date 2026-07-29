@@ -157,71 +157,92 @@ class CampaignStageExcel:
         return 0
 
 
-    def BgmId(self):
+    def RecommandLevelGapForGuide(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StrategyEnvironment(self):
+    def MinEquipmentTierForGuideLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def GroundId(self):
+    def MinSkillLevelForGuideLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StrategySkipGroundId(self):
+    def BgmId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ContentType(self):
+    def StrategyEnvironment(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BGMId(self):
+    def GroundId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FirstClearReportEventName(self):
+    def StrategySkipGroundId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def TacticRewardExp(self):
+    def ContentType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FixedEchelonId(self):
+    def BGMId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EchelonExtensionType(self):
+    def FirstClearReportEventName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def TacticRewardExp(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def FixedEchelonId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EchelonExtensionType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -230,7 +251,7 @@ class CampaignStageExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(30)
+    def Start(builder): builder.StartObject(33)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -312,40 +333,52 @@ class CampaignStageExcel:
 
 
     @staticmethod
-    def AddBgmId(builder, BgmId): builder.PrependInt32Slot(20, BgmId, 0)
+    def AddRecommandLevelGapForGuide(builder, RecommandLevelGapForGuide): builder.PrependInt32Slot(20, RecommandLevelGapForGuide, 0)
 
 
     @staticmethod
-    def AddStrategyEnvironment(builder, StrategyEnvironment): builder.PrependInt32Slot(21, StrategyEnvironment, 0)
+    def AddMinEquipmentTierForGuideLength(builder, MinEquipmentTierForGuideLength): builder.PrependInt32Slot(21, MinEquipmentTierForGuideLength, 0)
 
 
     @staticmethod
-    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(22, GroundId, 0)
+    def AddMinSkillLevelForGuideLength(builder, MinSkillLevelForGuideLength): builder.PrependInt32Slot(22, MinSkillLevelForGuideLength, 0)
 
 
     @staticmethod
-    def AddStrategySkipGroundId(builder, StrategySkipGroundId): builder.PrependInt32Slot(23, StrategySkipGroundId, 0)
+    def AddBgmId(builder, BgmId): builder.PrependInt32Slot(23, BgmId, 0)
 
 
     @staticmethod
-    def AddContentType(builder, ContentType): builder.PrependInt32Slot(24, ContentType, 0)
+    def AddStrategyEnvironment(builder, StrategyEnvironment): builder.PrependInt32Slot(24, StrategyEnvironment, 0)
 
 
     @staticmethod
-    def AddBGMId(builder, BGMId): builder.PrependInt32Slot(25, BGMId, 0)
+    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(25, GroundId, 0)
 
 
     @staticmethod
-    def AddFirstClearReportEventName(builder, FirstClearReportEventName): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(FirstClearReportEventName), 0)
-
-    @staticmethod
-    def AddTacticRewardExp(builder, TacticRewardExp): builder.PrependInt32Slot(27, TacticRewardExp, 0)
+    def AddStrategySkipGroundId(builder, StrategySkipGroundId): builder.PrependInt32Slot(26, StrategySkipGroundId, 0)
 
 
     @staticmethod
-    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt32Slot(28, FixedEchelonId, 0)
+    def AddContentType(builder, ContentType): builder.PrependInt32Slot(27, ContentType, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionType(builder, EchelonExtensionType): builder.PrependInt32Slot(29, EchelonExtensionType, 0)
+    def AddBGMId(builder, BGMId): builder.PrependInt32Slot(28, BGMId, 0)
+
+
+    @staticmethod
+    def AddFirstClearReportEventName(builder, FirstClearReportEventName): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(FirstClearReportEventName), 0)
+
+    @staticmethod
+    def AddTacticRewardExp(builder, TacticRewardExp): builder.PrependInt32Slot(30, TacticRewardExp, 0)
+
+
+    @staticmethod
+    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt32Slot(31, FixedEchelonId, 0)
+
+
+    @staticmethod
+    def AddEchelonExtensionType(builder, EchelonExtensionType): builder.PrependInt32Slot(32, EchelonExtensionType, 0)
 

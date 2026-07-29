@@ -150,10 +150,17 @@ class EquipmentExcel:
         return 0
 
 
+    def RedirectItemId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(19)
+    def Start(builder): builder.StartObject(20)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -230,4 +237,8 @@ class EquipmentExcel:
 
     @staticmethod
     def AddShortcutTypeId(builder, ShortcutTypeId): builder.PrependInt32Slot(18, ShortcutTypeId, 0)
+
+
+    @staticmethod
+    def AddRedirectItemId(builder, RedirectItemId): builder.PrependInt32Slot(19, RedirectItemId, 0)
 

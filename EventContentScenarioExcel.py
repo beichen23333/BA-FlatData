@@ -31,120 +31,127 @@ class EventContentScenarioExcel:
         return 0
 
 
-    def ReplayDisplayGroup(self):
+    def ReturnScenarioPlay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def Order(self):
+    def ReplayDisplayGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RecollectionNumber(self):
+    def Order(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def IsRecollection(self):
+    def RecollectionNumber(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def IsMeetup(self):
+    def IsRecollection(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def IsOmnibus(self):
+    def IsMeetup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def ScenarioGroupIdLength(self):
+    def IsOmnibus(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def ScenarioConditionType(self):
+    def ScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ConditionAmount(self):
+    def ScenarioConditionType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ConditionEventContentId(self):
+    def ConditionAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearedScenarioGroupId(self):
+    def ConditionEventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RecollectionSummaryLocalizeScenarioId(self):
+    def ClearedScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def RecollectionSummaryLocalizeScenarioId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
     def RecollectionResource(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def IsRecollectionHorizon(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def RewardParcelTypeLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def RewardIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RewardAmountLength(self):
+    def RewardIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def RewardAmountLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -153,7 +160,7 @@ class EventContentScenarioExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(19)
+    def Start(builder): builder.StartObject(20)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -167,68 +174,72 @@ class EventContentScenarioExcel:
 
 
     @staticmethod
-    def AddReplayDisplayGroup(builder, ReplayDisplayGroup): builder.PrependInt32Slot(2, ReplayDisplayGroup, 0)
+    def AddReturnScenarioPlay(builder, ReturnScenarioPlay): builder.PrependBoolSlot(2, ReturnScenarioPlay, 0)
 
 
     @staticmethod
-    def AddOrder(builder, Order): builder.PrependInt32Slot(3, Order, 0)
+    def AddReplayDisplayGroup(builder, ReplayDisplayGroup): builder.PrependInt32Slot(3, ReplayDisplayGroup, 0)
 
 
     @staticmethod
-    def AddRecollectionNumber(builder, RecollectionNumber): builder.PrependInt32Slot(4, RecollectionNumber, 0)
+    def AddOrder(builder, Order): builder.PrependInt32Slot(4, Order, 0)
 
 
     @staticmethod
-    def AddIsRecollection(builder, IsRecollection): builder.PrependBoolSlot(5, IsRecollection, 0)
+    def AddRecollectionNumber(builder, RecollectionNumber): builder.PrependInt32Slot(5, RecollectionNumber, 0)
 
 
     @staticmethod
-    def AddIsMeetup(builder, IsMeetup): builder.PrependBoolSlot(6, IsMeetup, 0)
+    def AddIsRecollection(builder, IsRecollection): builder.PrependBoolSlot(6, IsRecollection, 0)
 
 
     @staticmethod
-    def AddIsOmnibus(builder, IsOmnibus): builder.PrependBoolSlot(7, IsOmnibus, 0)
+    def AddIsMeetup(builder, IsMeetup): builder.PrependBoolSlot(7, IsMeetup, 0)
 
 
     @staticmethod
-    def AddScenarioGroupIdLength(builder, ScenarioGroupIdLength): builder.PrependInt32Slot(8, ScenarioGroupIdLength, 0)
+    def AddIsOmnibus(builder, IsOmnibus): builder.PrependBoolSlot(8, IsOmnibus, 0)
 
 
     @staticmethod
-    def AddScenarioConditionType(builder, ScenarioConditionType): builder.PrependInt32Slot(9, ScenarioConditionType, 0)
+    def AddScenarioGroupIdLength(builder, ScenarioGroupIdLength): builder.PrependInt32Slot(9, ScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddConditionAmount(builder, ConditionAmount): builder.PrependInt32Slot(10, ConditionAmount, 0)
+    def AddScenarioConditionType(builder, ScenarioConditionType): builder.PrependInt32Slot(10, ScenarioConditionType, 0)
 
 
     @staticmethod
-    def AddConditionEventContentId(builder, ConditionEventContentId): builder.PrependInt32Slot(11, ConditionEventContentId, 0)
+    def AddConditionAmount(builder, ConditionAmount): builder.PrependInt32Slot(11, ConditionAmount, 0)
 
 
     @staticmethod
-    def AddClearedScenarioGroupId(builder, ClearedScenarioGroupId): builder.PrependInt32Slot(12, ClearedScenarioGroupId, 0)
+    def AddConditionEventContentId(builder, ConditionEventContentId): builder.PrependInt32Slot(12, ConditionEventContentId, 0)
 
 
     @staticmethod
-    def AddRecollectionSummaryLocalizeScenarioId(builder, RecollectionSummaryLocalizeScenarioId): builder.PrependUint32Slot(13, RecollectionSummaryLocalizeScenarioId, 0)
+    def AddClearedScenarioGroupId(builder, ClearedScenarioGroupId): builder.PrependInt32Slot(13, ClearedScenarioGroupId, 0)
 
 
     @staticmethod
-    def AddRecollectionResource(builder, RecollectionResource): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(RecollectionResource), 0)
-
-    @staticmethod
-    def AddIsRecollectionHorizon(builder, IsRecollectionHorizon): builder.PrependBoolSlot(15, IsRecollectionHorizon, 0)
+    def AddRecollectionSummaryLocalizeScenarioId(builder, RecollectionSummaryLocalizeScenarioId): builder.PrependUint32Slot(14, RecollectionSummaryLocalizeScenarioId, 0)
 
 
     @staticmethod
-    def AddRewardParcelTypeLength(builder, RewardParcelTypeLength): builder.PrependInt32Slot(16, RewardParcelTypeLength, 0)
+    def AddRecollectionResource(builder, RecollectionResource): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(RecollectionResource), 0)
+
+    @staticmethod
+    def AddIsRecollectionHorizon(builder, IsRecollectionHorizon): builder.PrependBoolSlot(16, IsRecollectionHorizon, 0)
 
 
     @staticmethod
-    def AddRewardIdLength(builder, RewardIdLength): builder.PrependInt32Slot(17, RewardIdLength, 0)
+    def AddRewardParcelTypeLength(builder, RewardParcelTypeLength): builder.PrependInt32Slot(17, RewardParcelTypeLength, 0)
 
 
     @staticmethod
-    def AddRewardAmountLength(builder, RewardAmountLength): builder.PrependInt32Slot(18, RewardAmountLength, 0)
+    def AddRewardIdLength(builder, RewardIdLength): builder.PrependInt32Slot(18, RewardIdLength, 0)
+
+
+    @staticmethod
+    def AddRewardAmountLength(builder, RewardAmountLength): builder.PrependInt32Slot(19, RewardAmountLength, 0)
 

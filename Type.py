@@ -1,2 +1,4 @@
 class Type:
-    LeftStick = 0
+    LevelMeter = 0
+    SpectrumAnalyzer = 1
+    PcmCapture = 2

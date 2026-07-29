@@ -45,31 +45,10 @@ class FavorLevelRewardExcel:
         return 0
 
 
-    def RewardParcelTypeLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def RewardParcelIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def RewardAmountLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(7)
+    def Start(builder): builder.StartObject(4)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -88,16 +67,4 @@ class FavorLevelRewardExcel:
 
     @staticmethod
     def AddStatValueLength(builder, StatValueLength): builder.PrependInt32Slot(3, StatValueLength, 0)
-
-
-    @staticmethod
-    def AddRewardParcelTypeLength(builder, RewardParcelTypeLength): builder.PrependInt32Slot(4, RewardParcelTypeLength, 0)
-
-
-    @staticmethod
-    def AddRewardParcelIdLength(builder, RewardParcelIdLength): builder.PrependInt32Slot(5, RewardParcelIdLength, 0)
-
-
-    @staticmethod
-    def AddRewardAmountLength(builder, RewardAmountLength): builder.PrependInt32Slot(6, RewardAmountLength, 0)
 

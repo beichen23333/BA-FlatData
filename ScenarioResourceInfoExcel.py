@@ -31,57 +31,71 @@ class ScenarioResourceInfoExcel:
         return 0
 
 
-    def VideoId(self):
+    def PriorityOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BgmId(self):
+    def PVDisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AudioName(self):
+    def VideoId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def BgmId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def AudioName(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def SpinePath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def Ratio(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def LobbyAniPath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def MovieCGPath(self):
+    def Ratio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def LobbyAniPath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def MovieCGPath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def LocalizeId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
@@ -90,7 +104,7 @@ class ScenarioResourceInfoExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(10)
+    def Start(builder): builder.StartObject(12)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -104,29 +118,37 @@ class ScenarioResourceInfoExcel:
 
 
     @staticmethod
-    def AddVideoId(builder, VideoId): builder.PrependInt32Slot(2, VideoId, 0)
+    def AddPriorityOrder(builder, PriorityOrder): builder.PrependInt32Slot(2, PriorityOrder, 0)
 
 
     @staticmethod
-    def AddBgmId(builder, BgmId): builder.PrependInt32Slot(3, BgmId, 0)
+    def AddPVDisplayOrder(builder, PVDisplayOrder): builder.PrependInt32Slot(3, PVDisplayOrder, 0)
 
 
     @staticmethod
-    def AddAudioName(builder, AudioName): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(AudioName), 0)
-
-    @staticmethod
-    def AddSpinePath(builder, SpinePath): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(SpinePath), 0)
-
-    @staticmethod
-    def AddRatio(builder, Ratio): builder.PrependInt32Slot(6, Ratio, 0)
+    def AddVideoId(builder, VideoId): builder.PrependInt32Slot(4, VideoId, 0)
 
 
     @staticmethod
-    def AddLobbyAniPath(builder, LobbyAniPath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(LobbyAniPath), 0)
+    def AddBgmId(builder, BgmId): builder.PrependInt32Slot(5, BgmId, 0)
+
 
     @staticmethod
-    def AddMovieCGPath(builder, MovieCGPath): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(MovieCGPath), 0)
+    def AddAudioName(builder, AudioName): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(AudioName), 0)
 
     @staticmethod
-    def AddLocalizeId(builder, LocalizeId): builder.PrependUint32Slot(9, LocalizeId, 0)
+    def AddSpinePath(builder, SpinePath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(SpinePath), 0)
+
+    @staticmethod
+    def AddRatio(builder, Ratio): builder.PrependInt32Slot(8, Ratio, 0)
+
+
+    @staticmethod
+    def AddLobbyAniPath(builder, LobbyAniPath): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(LobbyAniPath), 0)
+
+    @staticmethod
+    def AddMovieCGPath(builder, MovieCGPath): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(MovieCGPath), 0)
+
+    @staticmethod
+    def AddLocalizeId(builder, LocalizeId): builder.PrependUint32Slot(11, LocalizeId, 0)
 

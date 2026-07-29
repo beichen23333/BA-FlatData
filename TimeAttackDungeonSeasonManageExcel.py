@@ -31,43 +31,50 @@ class TimeAttackDungeonSeasonManageExcel:
         return None
 
 
-    def EndDate(self):
+    def EndNoteLabelStartDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def UISlot(self):
+    def EndDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def DungeonId(self):
+    def UISlot(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def DifficultyGeasLength(self):
+    def DungeonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TimeAttackDungeonRewardId(self):
+    def DifficultyGeasLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RoomLifeTimeInSeconds(self):
+    def TimeAttackDungeonRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def RoomLifeTimeInSeconds(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -76,7 +83,7 @@ class TimeAttackDungeonSeasonManageExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(8)
+    def Start(builder): builder.StartObject(9)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -89,24 +96,27 @@ class TimeAttackDungeonSeasonManageExcel:
     def AddStartDate(builder, StartDate): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(StartDate), 0)
 
     @staticmethod
-    def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
+    def AddEndNoteLabelStartDate(builder, EndNoteLabelStartDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(EndNoteLabelStartDate), 0)
 
     @staticmethod
-    def AddUISlot(builder, UISlot): builder.PrependInt32Slot(3, UISlot, 0)
-
-
-    @staticmethod
-    def AddDungeonId(builder, DungeonId): builder.PrependInt32Slot(4, DungeonId, 0)
-
+    def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
 
     @staticmethod
-    def AddDifficultyGeasLength(builder, DifficultyGeasLength): builder.PrependInt32Slot(5, DifficultyGeasLength, 0)
+    def AddUISlot(builder, UISlot): builder.PrependInt32Slot(4, UISlot, 0)
 
 
     @staticmethod
-    def AddTimeAttackDungeonRewardId(builder, TimeAttackDungeonRewardId): builder.PrependInt32Slot(6, TimeAttackDungeonRewardId, 0)
+    def AddDungeonId(builder, DungeonId): builder.PrependInt32Slot(5, DungeonId, 0)
 
 
     @staticmethod
-    def AddRoomLifeTimeInSeconds(builder, RoomLifeTimeInSeconds): builder.PrependInt32Slot(7, RoomLifeTimeInSeconds, 0)
+    def AddDifficultyGeasLength(builder, DifficultyGeasLength): builder.PrependInt32Slot(6, DifficultyGeasLength, 0)
+
+
+    @staticmethod
+    def AddTimeAttackDungeonRewardId(builder, TimeAttackDungeonRewardId): builder.PrependInt32Slot(7, TimeAttackDungeonRewardId, 0)
+
+
+    @staticmethod
+    def AddRoomLifeTimeInSeconds(builder, RoomLifeTimeInSeconds): builder.PrependInt32Slot(8, RoomLifeTimeInSeconds, 0)
 

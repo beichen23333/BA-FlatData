@@ -73,78 +73,85 @@ class GoodsExcel:
         return 0
 
 
-    def ConsumeGachaTicketType(self):
+    def ConsumeGachaTicketTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ConsumeGachaTicketTypeAmount(self):
+    def ConsumeGachaTicketTypeAmountLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ProductIdAOS(self):
+    def CombinedGachaCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ProductIdiOS(self):
+    def ProductIdAOS(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ProductIdHarmony(self):
+    def ProductIdiOS(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ConsumeExtraStepLength(self):
+    def ProductIdHarmony(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ConsumeExtraAmountLength(self):
+    def ConsumeExtraStepLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def State(self):
+    def ConsumeExtraAmountLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ParcelTypeLength(self):
+    def State(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ParcelIdLength(self):
+    def ParcelTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ParcelAmountLength(self):
+    def ParcelIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ParcelAmountLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -153,7 +160,7 @@ class GoodsExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(19)
+    def Start(builder): builder.StartObject(20)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -190,45 +197,49 @@ class GoodsExcel:
 
 
     @staticmethod
-    def AddConsumeGachaTicketType(builder, ConsumeGachaTicketType): builder.PrependInt32Slot(8, ConsumeGachaTicketType, 0)
+    def AddConsumeGachaTicketTypeLength(builder, ConsumeGachaTicketTypeLength): builder.PrependInt32Slot(8, ConsumeGachaTicketTypeLength, 0)
 
 
     @staticmethod
-    def AddConsumeGachaTicketTypeAmount(builder, ConsumeGachaTicketTypeAmount): builder.PrependInt32Slot(9, ConsumeGachaTicketTypeAmount, 0)
+    def AddConsumeGachaTicketTypeAmountLength(builder, ConsumeGachaTicketTypeAmountLength): builder.PrependInt32Slot(9, ConsumeGachaTicketTypeAmountLength, 0)
 
 
     @staticmethod
-    def AddProductIdAOS(builder, ProductIdAOS): builder.PrependInt32Slot(10, ProductIdAOS, 0)
+    def AddCombinedGachaCostId(builder, CombinedGachaCostId): builder.PrependInt32Slot(10, CombinedGachaCostId, 0)
 
 
     @staticmethod
-    def AddProductIdiOS(builder, ProductIdiOS): builder.PrependInt32Slot(11, ProductIdiOS, 0)
+    def AddProductIdAOS(builder, ProductIdAOS): builder.PrependInt32Slot(11, ProductIdAOS, 0)
 
 
     @staticmethod
-    def AddProductIdHarmony(builder, ProductIdHarmony): builder.PrependInt32Slot(12, ProductIdHarmony, 0)
+    def AddProductIdiOS(builder, ProductIdiOS): builder.PrependInt32Slot(12, ProductIdiOS, 0)
 
 
     @staticmethod
-    def AddConsumeExtraStepLength(builder, ConsumeExtraStepLength): builder.PrependInt32Slot(13, ConsumeExtraStepLength, 0)
+    def AddProductIdHarmony(builder, ProductIdHarmony): builder.PrependInt32Slot(13, ProductIdHarmony, 0)
 
 
     @staticmethod
-    def AddConsumeExtraAmountLength(builder, ConsumeExtraAmountLength): builder.PrependInt32Slot(14, ConsumeExtraAmountLength, 0)
+    def AddConsumeExtraStepLength(builder, ConsumeExtraStepLength): builder.PrependInt32Slot(14, ConsumeExtraStepLength, 0)
 
 
     @staticmethod
-    def AddState(builder, State): builder.PrependInt32Slot(15, State, 0)
+    def AddConsumeExtraAmountLength(builder, ConsumeExtraAmountLength): builder.PrependInt32Slot(15, ConsumeExtraAmountLength, 0)
 
 
     @staticmethod
-    def AddParcelTypeLength(builder, ParcelTypeLength): builder.PrependInt32Slot(16, ParcelTypeLength, 0)
+    def AddState(builder, State): builder.PrependInt32Slot(16, State, 0)
 
 
     @staticmethod
-    def AddParcelIdLength(builder, ParcelIdLength): builder.PrependInt32Slot(17, ParcelIdLength, 0)
+    def AddParcelTypeLength(builder, ParcelTypeLength): builder.PrependInt32Slot(17, ParcelTypeLength, 0)
 
 
     @staticmethod
-    def AddParcelAmountLength(builder, ParcelAmountLength): builder.PrependInt32Slot(18, ParcelAmountLength, 0)
+    def AddParcelIdLength(builder, ParcelIdLength): builder.PrependInt32Slot(18, ParcelIdLength, 0)
+
+
+    @staticmethod
+    def AddParcelAmountLength(builder, ParcelAmountLength): builder.PrependInt32Slot(19, ParcelAmountLength, 0)
 

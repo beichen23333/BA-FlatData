@@ -80,15 +80,8 @@ class RaidRankingRewardExcel:
         return 0
 
 
-    def RewardParcelUniqueNameLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
     def RewardParcelAmountLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -97,7 +90,7 @@ class RaidRankingRewardExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(11)
+    def Start(builder): builder.StartObject(10)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -139,9 +132,5 @@ class RaidRankingRewardExcel:
 
 
     @staticmethod
-    def AddRewardParcelUniqueNameLength(builder, RewardParcelUniqueNameLength): builder.PrependInt32Slot(9, RewardParcelUniqueNameLength, 0)
-
-
-    @staticmethod
-    def AddRewardParcelAmountLength(builder, RewardParcelAmountLength): builder.PrependInt32Slot(10, RewardParcelAmountLength, 0)
+    def AddRewardParcelAmountLength(builder, RewardParcelAmountLength): builder.PrependInt32Slot(9, RewardParcelAmountLength, 0)
 

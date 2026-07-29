@@ -27,21 +27,21 @@ class EventContentSpoilerPopupExcel:
     def SpoilerPopupTitle(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+        return 0
 
 
     def SpoilerPopupDescription(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def IsWarningPopUp(self):
+    def PopupType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -65,13 +65,15 @@ class EventContentSpoilerPopupExcel:
 
 
     @staticmethod
-    def AddSpoilerPopupTitle(builder, SpoilerPopupTitle): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(SpoilerPopupTitle), 0)
+    def AddSpoilerPopupTitle(builder, SpoilerPopupTitle): builder.PrependUint32Slot(1, SpoilerPopupTitle, 0)
+
 
     @staticmethod
-    def AddSpoilerPopupDescription(builder, SpoilerPopupDescription): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(SpoilerPopupDescription), 0)
+    def AddSpoilerPopupDescription(builder, SpoilerPopupDescription): builder.PrependUint32Slot(2, SpoilerPopupDescription, 0)
+
 
     @staticmethod
-    def AddIsWarningPopUp(builder, IsWarningPopUp): builder.PrependBoolSlot(3, IsWarningPopUp, 0)
+    def AddPopupType(builder, PopupType): builder.PrependInt32Slot(3, PopupType, 0)
 
 
     @staticmethod

@@ -31,8 +31,15 @@ class EventContentFortuneGachaExcel:
         return 0
 
 
-    def IconPath(self):
+    def NameImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def IconPath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -41,7 +48,7 @@ class EventContentFortuneGachaExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(3)
+    def Start(builder): builder.StartObject(4)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -55,4 +62,7 @@ class EventContentFortuneGachaExcel:
 
 
     @staticmethod
-    def AddIconPath(builder, IconPath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(IconPath), 0)
+    def AddNameImagePath(builder, NameImagePath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(NameImagePath), 0)
+
+    @staticmethod
+    def AddIconPath(builder, IconPath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(IconPath), 0)

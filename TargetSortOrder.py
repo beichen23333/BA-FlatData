@@ -3,3 +3,4 @@ class TargetSortOrder:
     Highest = 1
     Lowest = 2
     Random = 3
+    CyclicRandom = 4

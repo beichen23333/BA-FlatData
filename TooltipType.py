@@ -5,5 +5,6 @@ class TooltipType:
     ParcelCannotUseShortcut = 3
     ShortcutOnly = 4
     Stat = 5
-    Max = 6
-    SkillInfo = 7
+    SkillInfo = 6
+    SelectExSkillInfo = 7
+    Max = 8

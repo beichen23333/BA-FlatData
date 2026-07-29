@@ -2,11 +2,11 @@ class LoginMethod:
     None_ = 0
     Device = 1
     MigrationCode = 2
-    PublisherPlatform = 3
-    Twitter = 4
-    FaceBook = 5
+    Twitter = 3
+    Facebook = 4
+    Yostar = 5
     Google = 6
-    GooglePlay = 7
-    Apple = 8
+    Apple = 7
+    YostarPass = 8
     Amazon = 9
-    Nintendo = 10
+    Steam = 10

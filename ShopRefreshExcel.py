@@ -52,50 +52,71 @@ class ShopRefreshExcel:
         return 0
 
 
-    def VisibleAmount(self):
+    def ShopPurchasePopupType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def DisplayOrder(self):
+    def VisibleAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CategoryType(self):
+    def PurchaseCountLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RefreshGroup(self):
+    def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def Prob(self):
+    def CategoryType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def RefreshGroup(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def Prob(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BuyReportEventName(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def ProductUpdateTime(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def DisplayTag(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -104,7 +125,7 @@ class ShopRefreshExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(12)
+    def Start(builder): builder.StartObject(15)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -130,28 +151,39 @@ class ShopRefreshExcel:
 
 
     @staticmethod
-    def AddVisibleAmount(builder, VisibleAmount): builder.PrependInt32Slot(5, VisibleAmount, 0)
+    def AddShopPurchasePopupType(builder, ShopPurchasePopupType): builder.PrependInt32Slot(5, ShopPurchasePopupType, 0)
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(6, DisplayOrder, 0)
+    def AddVisibleAmount(builder, VisibleAmount): builder.PrependInt32Slot(6, VisibleAmount, 0)
 
 
     @staticmethod
-    def AddCategoryType(builder, CategoryType): builder.PrependFloat32Slot(7, CategoryType, 0)
+    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt32Slot(7, PurchaseCountLimit, 0)
 
 
     @staticmethod
-    def AddRefreshGroup(builder, RefreshGroup): builder.PrependInt32Slot(8, RefreshGroup, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(8, DisplayOrder, 0)
 
 
     @staticmethod
-    def AddProb(builder, Prob): builder.PrependInt32Slot(9, Prob, 0)
+    def AddCategoryType(builder, CategoryType): builder.PrependFloat32Slot(9, CategoryType, 0)
 
 
     @staticmethod
-    def AddBuyReportEventName(builder, BuyReportEventName): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(BuyReportEventName), 0)
+    def AddRefreshGroup(builder, RefreshGroup): builder.PrependInt32Slot(10, RefreshGroup, 0)
+
 
     @staticmethod
-    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(11, DisplayTag, 0)
+    def AddProb(builder, Prob): builder.PrependInt32Slot(11, Prob, 0)
+
+
+    @staticmethod
+    def AddBuyReportEventName(builder, BuyReportEventName): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(BuyReportEventName), 0)
+
+    @staticmethod
+    def AddProductUpdateTime(builder, ProductUpdateTime): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(ProductUpdateTime), 0)
+
+    @staticmethod
+    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(14, DisplayTag, 0)
 

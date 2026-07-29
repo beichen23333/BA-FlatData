@@ -6,3 +6,4 @@ class BulletType:
     Mystic = 4
     None_ = 5
     Sonic = 6
+    Chemical = 7

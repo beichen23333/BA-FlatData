@@ -87,64 +87,71 @@ class CharacterSkillListExcel:
         return 0
 
 
-    def ExSkillGroupIdLength(self):
+    def SelectExSkillActionSkillSlot(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExSkillCutInTimeLineIndexLength(self):
+    def ExSkillGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExSkillLevelTimeLineIndexLength(self):
+    def ExSkillCutInTimeLineIndexLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PublicSkillGroupIdLength(self):
+    def ExSkillLevelTimeLineIndexLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PublicSkillTimeLineIndexLength(self):
+    def PublicSkillGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PassiveSkillGroupIdLength(self):
+    def PublicSkillTimeLineIndexLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LeaderSkillGroupIdLength(self):
+    def PassiveSkillGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExtraPassiveSkillGroupIdLength(self):
+    def LeaderSkillGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def HiddenPassiveSkillGroupIdLength(self):
+    def ExtraPassiveSkillGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def HiddenPassiveSkillGroupIdLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -153,7 +160,7 @@ class CharacterSkillListExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(19)
+    def Start(builder): builder.StartObject(20)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -199,37 +206,41 @@ class CharacterSkillListExcel:
 
 
     @staticmethod
-    def AddExSkillGroupIdLength(builder, ExSkillGroupIdLength): builder.PrependInt32Slot(10, ExSkillGroupIdLength, 0)
+    def AddSelectExSkillActionSkillSlot(builder, SelectExSkillActionSkillSlot): builder.PrependInt32Slot(10, SelectExSkillActionSkillSlot, 0)
 
 
     @staticmethod
-    def AddExSkillCutInTimeLineIndexLength(builder, ExSkillCutInTimeLineIndexLength): builder.PrependInt32Slot(11, ExSkillCutInTimeLineIndexLength, 0)
+    def AddExSkillGroupIdLength(builder, ExSkillGroupIdLength): builder.PrependInt32Slot(11, ExSkillGroupIdLength, 0)
 
 
     @staticmethod
-    def AddExSkillLevelTimeLineIndexLength(builder, ExSkillLevelTimeLineIndexLength): builder.PrependInt32Slot(12, ExSkillLevelTimeLineIndexLength, 0)
+    def AddExSkillCutInTimeLineIndexLength(builder, ExSkillCutInTimeLineIndexLength): builder.PrependInt32Slot(12, ExSkillCutInTimeLineIndexLength, 0)
 
 
     @staticmethod
-    def AddPublicSkillGroupIdLength(builder, PublicSkillGroupIdLength): builder.PrependInt32Slot(13, PublicSkillGroupIdLength, 0)
+    def AddExSkillLevelTimeLineIndexLength(builder, ExSkillLevelTimeLineIndexLength): builder.PrependInt32Slot(13, ExSkillLevelTimeLineIndexLength, 0)
 
 
     @staticmethod
-    def AddPublicSkillTimeLineIndexLength(builder, PublicSkillTimeLineIndexLength): builder.PrependInt32Slot(14, PublicSkillTimeLineIndexLength, 0)
+    def AddPublicSkillGroupIdLength(builder, PublicSkillGroupIdLength): builder.PrependInt32Slot(14, PublicSkillGroupIdLength, 0)
 
 
     @staticmethod
-    def AddPassiveSkillGroupIdLength(builder, PassiveSkillGroupIdLength): builder.PrependInt32Slot(15, PassiveSkillGroupIdLength, 0)
+    def AddPublicSkillTimeLineIndexLength(builder, PublicSkillTimeLineIndexLength): builder.PrependInt32Slot(15, PublicSkillTimeLineIndexLength, 0)
 
 
     @staticmethod
-    def AddLeaderSkillGroupIdLength(builder, LeaderSkillGroupIdLength): builder.PrependInt32Slot(16, LeaderSkillGroupIdLength, 0)
+    def AddPassiveSkillGroupIdLength(builder, PassiveSkillGroupIdLength): builder.PrependInt32Slot(16, PassiveSkillGroupIdLength, 0)
 
 
     @staticmethod
-    def AddExtraPassiveSkillGroupIdLength(builder, ExtraPassiveSkillGroupIdLength): builder.PrependInt32Slot(17, ExtraPassiveSkillGroupIdLength, 0)
+    def AddLeaderSkillGroupIdLength(builder, LeaderSkillGroupIdLength): builder.PrependInt32Slot(17, LeaderSkillGroupIdLength, 0)
 
 
     @staticmethod
-    def AddHiddenPassiveSkillGroupIdLength(builder, HiddenPassiveSkillGroupIdLength): builder.PrependInt32Slot(18, HiddenPassiveSkillGroupIdLength, 0)
+    def AddExtraPassiveSkillGroupIdLength(builder, ExtraPassiveSkillGroupIdLength): builder.PrependInt32Slot(18, ExtraPassiveSkillGroupIdLength, 0)
+
+
+    @staticmethod
+    def AddHiddenPassiveSkillGroupIdLength(builder, HiddenPassiveSkillGroupIdLength): builder.PrependInt32Slot(19, HiddenPassiveSkillGroupIdLength, 0)
 

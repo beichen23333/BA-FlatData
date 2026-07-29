@@ -31,22 +31,29 @@ class InformationExcel:
         return None
 
 
-    def LocalizeCodeId(self):
+    def IsPcBuild(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def LocalizeCodeId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def TutorialParentNameLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UINameLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -55,7 +62,7 @@ class InformationExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(5)
+    def Start(builder): builder.StartObject(6)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -68,12 +75,16 @@ class InformationExcel:
     def AddPageName(builder, PageName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(PageName), 0)
 
     @staticmethod
-    def AddLocalizeCodeId(builder, LocalizeCodeId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeCodeId), 0)
-
-    @staticmethod
-    def AddTutorialParentNameLength(builder, TutorialParentNameLength): builder.PrependInt32Slot(3, TutorialParentNameLength, 0)
+    def AddIsPcBuild(builder, IsPcBuild): builder.PrependBoolSlot(2, IsPcBuild, 0)
 
 
     @staticmethod
-    def AddUINameLength(builder, UINameLength): builder.PrependInt32Slot(4, UINameLength, 0)
+    def AddLocalizeCodeId(builder, LocalizeCodeId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeCodeId), 0)
+
+    @staticmethod
+    def AddTutorialParentNameLength(builder, TutorialParentNameLength): builder.PrependInt32Slot(4, TutorialParentNameLength, 0)
+
+
+    @staticmethod
+    def AddUINameLength(builder, UINameLength): builder.PrependInt32Slot(5, UINameLength, 0)
 

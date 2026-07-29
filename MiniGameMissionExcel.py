@@ -101,7 +101,7 @@ class MiniGameMissionExcel:
         return 0
 
 
-    def AccountType(self):
+    def TargetGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -164,22 +164,57 @@ class MiniGameMissionExcel:
         return None
 
 
-    def MissionRewardParcelTypeLength(self):
+    def CompleteConditionMissionIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MissionRewardParcelIdLength(self):
+    def CompleteConditionMissionCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MissionRewardAmountLength(self):
+    def MissionRewardParcelTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def MissionRewardParcelIdLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def MissionRewardAmountLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ConditionRewardParcelTypeLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ConditionRewardParcelIdLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ConditionRewardAmountLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -188,7 +223,7 @@ class MiniGameMissionExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(24)
+    def Start(builder): builder.StartObject(29)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -240,7 +275,7 @@ class MiniGameMissionExcel:
 
 
     @staticmethod
-    def AddAccountType(builder, AccountType): builder.PrependInt32Slot(12, AccountType, 0)
+    def AddTargetGroup(builder, TargetGroup): builder.PrependInt32Slot(12, TargetGroup, 0)
 
 
     @staticmethod
@@ -275,13 +310,33 @@ class MiniGameMissionExcel:
     def AddRewardIcon(builder, RewardIcon): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(RewardIcon), 0)
 
     @staticmethod
-    def AddMissionRewardParcelTypeLength(builder, MissionRewardParcelTypeLength): builder.PrependInt32Slot(21, MissionRewardParcelTypeLength, 0)
+    def AddCompleteConditionMissionIdLength(builder, CompleteConditionMissionIdLength): builder.PrependInt32Slot(21, CompleteConditionMissionIdLength, 0)
 
 
     @staticmethod
-    def AddMissionRewardParcelIdLength(builder, MissionRewardParcelIdLength): builder.PrependInt32Slot(22, MissionRewardParcelIdLength, 0)
+    def AddCompleteConditionMissionCount(builder, CompleteConditionMissionCount): builder.PrependInt32Slot(22, CompleteConditionMissionCount, 0)
 
 
     @staticmethod
-    def AddMissionRewardAmountLength(builder, MissionRewardAmountLength): builder.PrependInt32Slot(23, MissionRewardAmountLength, 0)
+    def AddMissionRewardParcelTypeLength(builder, MissionRewardParcelTypeLength): builder.PrependInt32Slot(23, MissionRewardParcelTypeLength, 0)
+
+
+    @staticmethod
+    def AddMissionRewardParcelIdLength(builder, MissionRewardParcelIdLength): builder.PrependInt32Slot(24, MissionRewardParcelIdLength, 0)
+
+
+    @staticmethod
+    def AddMissionRewardAmountLength(builder, MissionRewardAmountLength): builder.PrependInt32Slot(25, MissionRewardAmountLength, 0)
+
+
+    @staticmethod
+    def AddConditionRewardParcelTypeLength(builder, ConditionRewardParcelTypeLength): builder.PrependInt32Slot(26, ConditionRewardParcelTypeLength, 0)
+
+
+    @staticmethod
+    def AddConditionRewardParcelIdLength(builder, ConditionRewardParcelIdLength): builder.PrependInt32Slot(27, ConditionRewardParcelIdLength, 0)
+
+
+    @staticmethod
+    def AddConditionRewardAmountLength(builder, ConditionRewardAmountLength): builder.PrependInt32Slot(28, ConditionRewardAmountLength, 0)
 

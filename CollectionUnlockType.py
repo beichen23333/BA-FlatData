@@ -10,3 +10,4 @@ class CollectionUnlockType:
     MinigameEnter = 8
     MinigameDreamMakerParameter = 9
     ClearSpecificScenario = 10
+    MinigameCCGBuyPerk = 11

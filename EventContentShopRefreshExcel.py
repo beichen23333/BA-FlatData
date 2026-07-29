@@ -87,10 +87,17 @@ class EventContentShopRefreshExcel:
         return None
 
 
+    def ProductUpdateTime(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(10)
+    def Start(builder): builder.StartObject(11)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -133,3 +140,6 @@ class EventContentShopRefreshExcel:
 
     @staticmethod
     def AddBuyReportEventName(builder, BuyReportEventName): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(BuyReportEventName), 0)
+
+    @staticmethod
+    def AddProductUpdateTime(builder, ProductUpdateTime): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(ProductUpdateTime), 0)

@@ -59,50 +59,57 @@ class AudioAnimatorExcel:
         return 0
 
 
-    def Volume(self):
+    def IgnoreVelocity(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def Delay(self):
+    def Volume(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RandomPitchMin(self):
+    def Delay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RandomPitchMax(self):
+    def RandomPitchMin(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AudioPriority(self):
+    def RandomPitchMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AudioClipPathLength(self):
+    def AudioPriority(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def VoiceHashLength(self):
+    def AudioClipPathLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def VoiceHashLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -111,7 +118,7 @@ class AudioAnimatorExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(13)
+    def Start(builder): builder.StartObject(14)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -139,29 +146,33 @@ class AudioAnimatorExcel:
 
 
     @staticmethod
-    def AddVolume(builder, Volume): builder.PrependFloat32Slot(6, Volume, 0)
+    def AddIgnoreVelocity(builder, IgnoreVelocity): builder.PrependBoolSlot(6, IgnoreVelocity, 0)
 
 
     @staticmethod
-    def AddDelay(builder, Delay): builder.PrependFloat32Slot(7, Delay, 0)
+    def AddVolume(builder, Volume): builder.PrependFloat32Slot(7, Volume, 0)
 
 
     @staticmethod
-    def AddRandomPitchMin(builder, RandomPitchMin): builder.PrependInt32Slot(8, RandomPitchMin, 0)
+    def AddDelay(builder, Delay): builder.PrependFloat32Slot(8, Delay, 0)
 
 
     @staticmethod
-    def AddRandomPitchMax(builder, RandomPitchMax): builder.PrependInt32Slot(9, RandomPitchMax, 0)
+    def AddRandomPitchMin(builder, RandomPitchMin): builder.PrependInt32Slot(9, RandomPitchMin, 0)
 
 
     @staticmethod
-    def AddAudioPriority(builder, AudioPriority): builder.PrependInt32Slot(10, AudioPriority, 0)
+    def AddRandomPitchMax(builder, RandomPitchMax): builder.PrependInt32Slot(10, RandomPitchMax, 0)
 
 
     @staticmethod
-    def AddAudioClipPathLength(builder, AudioClipPathLength): builder.PrependInt32Slot(11, AudioClipPathLength, 0)
+    def AddAudioPriority(builder, AudioPriority): builder.PrependInt32Slot(11, AudioPriority, 0)
 
 
     @staticmethod
-    def AddVoiceHashLength(builder, VoiceHashLength): builder.PrependInt32Slot(12, VoiceHashLength, 0)
+    def AddAudioClipPathLength(builder, AudioClipPathLength): builder.PrependInt32Slot(12, AudioClipPathLength, 0)
+
+
+    @staticmethod
+    def AddVoiceHashLength(builder, VoiceHashLength): builder.PrependInt32Slot(13, VoiceHashLength, 0)
 

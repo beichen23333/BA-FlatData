@@ -41,8 +41,8 @@ class GroundNodeFlatNew:
     def Position(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            from .Type_0x00004EEB import Type_0x00004EEB
-            obj = Type_0x00004EEB()
+            from .Type_0x000061BE import Type_0x000061BE
+            obj = Type_0x000061BE()
             obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None

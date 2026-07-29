@@ -34,3 +34,9 @@ class ShopCategoryType:
     BeforehandGacha = 32
     EliminateRaid = 33
     GlobalSpecialGacha = 34
+    SelectPickupGacha = 35
+    GemDaily = 36
+    GemWeekly = 37
+    CafeSummonTicket = 38
+    SelectPickupFesGacha = 39
+    SelectPickupLimitedGacha = 40

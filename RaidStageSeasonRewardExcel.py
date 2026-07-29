@@ -38,15 +38,8 @@ class RaidStageSeasonRewardExcel:
         return 0
 
 
-    def SeasonRewardParcelUniqueNameLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
     def SeasonRewardAmountLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -55,7 +48,7 @@ class RaidStageSeasonRewardExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(5)
+    def Start(builder): builder.StartObject(4)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -73,9 +66,5 @@ class RaidStageSeasonRewardExcel:
 
 
     @staticmethod
-    def AddSeasonRewardParcelUniqueNameLength(builder, SeasonRewardParcelUniqueNameLength): builder.PrependInt32Slot(3, SeasonRewardParcelUniqueNameLength, 0)
-
-
-    @staticmethod
-    def AddSeasonRewardAmountLength(builder, SeasonRewardAmountLength): builder.PrependInt32Slot(4, SeasonRewardAmountLength, 0)
+    def AddSeasonRewardAmountLength(builder, SeasonRewardAmountLength): builder.PrependInt32Slot(3, SeasonRewardAmountLength, 0)
 

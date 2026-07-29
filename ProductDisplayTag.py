@@ -4,3 +4,4 @@ class ProductDisplayTag:
     Hot = 2
     Sale = 3
     Limited = 4
+    Free = 5

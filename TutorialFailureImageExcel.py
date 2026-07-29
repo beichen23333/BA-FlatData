@@ -52,10 +52,17 @@ class TutorialFailureImageExcel:
         return None
 
 
+    def ReplaceLocalizeKey(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(5)
+    def Start(builder): builder.StartObject(6)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -76,3 +83,6 @@ class TutorialFailureImageExcel:
 
     @staticmethod
     def AddImagePathJp(builder, ImagePathJp): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(ImagePathJp), 0)
+
+    @staticmethod
+    def AddReplaceLocalizeKey(builder, ReplaceLocalizeKey): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ReplaceLocalizeKey), 0)

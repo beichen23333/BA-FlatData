@@ -4,3 +4,4 @@ class EmblemFromUIType:
     ListPopup_Element = 2
     InfoOnly = 3
     ContentsDisplay = 4
+    BattlePass = 5

@@ -52,10 +52,17 @@ class ArenaSeasonExcel:
         return 0
 
 
+    def InformationGroupId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(5)
+    def Start(builder): builder.StartObject(6)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -76,4 +83,8 @@ class ArenaSeasonExcel:
 
     @staticmethod
     def AddPrevSeasonId(builder, PrevSeasonId): builder.PrependInt32Slot(4, PrevSeasonId, 0)
+
+
+    @staticmethod
+    def AddInformationGroupId(builder, InformationGroupId): builder.PrependInt32Slot(5, InformationGroupId, 0)
 

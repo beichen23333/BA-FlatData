@@ -1,5 +1,6 @@
 class TimerType:
     None_ = 0
-    ArenaLobby = 1
-    ArenaEntry = 2
-    ArenaFormation = 3
+    System = 1
+    Audio = 2
+    User = 3
+    Manual = 4

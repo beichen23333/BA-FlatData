@@ -45,50 +45,57 @@ class MultiFloorRaidSeasonManageExcel:
         return None
 
 
-    def SeasonEndDate(self):
+    def EndNoteLabelStartDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def SettlementEndDate(self):
+    def SeasonEndDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def OpenRaidBossGroupId(self):
+    def SettlementEndDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def EnterScenarioKey(self):
+    def OpenRaidBossGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def EnterScenarioKey(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
     def LobbyImgPath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def LevelImgPath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def PlayTip(self):
+    def LevelImgPath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def PlayTip(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -97,7 +104,7 @@ class MultiFloorRaidSeasonManageExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(11)
+    def Start(builder): builder.StartObject(12)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -118,23 +125,26 @@ class MultiFloorRaidSeasonManageExcel:
     def AddSeasonStartDate(builder, SeasonStartDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(SeasonStartDate), 0)
 
     @staticmethod
-    def AddSeasonEndDate(builder, SeasonEndDate): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(SeasonEndDate), 0)
+    def AddEndNoteLabelStartDate(builder, EndNoteLabelStartDate): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(EndNoteLabelStartDate), 0)
 
     @staticmethod
-    def AddSettlementEndDate(builder, SettlementEndDate): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(SettlementEndDate), 0)
+    def AddSeasonEndDate(builder, SeasonEndDate): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(SeasonEndDate), 0)
 
     @staticmethod
-    def AddOpenRaidBossGroupId(builder, OpenRaidBossGroupId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(OpenRaidBossGroupId), 0)
+    def AddSettlementEndDate(builder, SettlementEndDate): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(SettlementEndDate), 0)
 
     @staticmethod
-    def AddEnterScenarioKey(builder, EnterScenarioKey): builder.PrependUint32Slot(7, EnterScenarioKey, 0)
+    def AddOpenRaidBossGroupId(builder, OpenRaidBossGroupId): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(OpenRaidBossGroupId), 0)
+
+    @staticmethod
+    def AddEnterScenarioKey(builder, EnterScenarioKey): builder.PrependUint32Slot(8, EnterScenarioKey, 0)
 
 
     @staticmethod
-    def AddLobbyImgPath(builder, LobbyImgPath): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(LobbyImgPath), 0)
+    def AddLobbyImgPath(builder, LobbyImgPath): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(LobbyImgPath), 0)
 
     @staticmethod
-    def AddLevelImgPath(builder, LevelImgPath): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(LevelImgPath), 0)
+    def AddLevelImgPath(builder, LevelImgPath): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(LevelImgPath), 0)
 
     @staticmethod
-    def AddPlayTip(builder, PlayTip): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(PlayTip), 0)
+    def AddPlayTip(builder, PlayTip): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(PlayTip), 0)

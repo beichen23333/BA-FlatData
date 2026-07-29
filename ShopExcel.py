@@ -45,78 +45,85 @@ class ShopExcel:
         return 0
 
 
-    def GoodsIdLength(self):
+    def UseBigPopup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def DisplayOrder(self):
+    def GoodsIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SalePeriodFrom(self):
+    def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def SalePeriodTo(self):
+    def SalePeriodFrom(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def PurchaseCooltimeMin(self):
+    def SalePeriodTo(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def PurchaseCountLimit(self):
+    def PurchaseCooltimeMin(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PurchaseCountResetType(self):
+    def PurchaseCountLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BuyReportEventName(self):
+    def PurchaseCountResetType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def BuyReportEventName(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def RestrictBuyWhenInventoryFull(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def DisplayTag(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShopUpdateGroupId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -125,7 +132,7 @@ class ShopExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(15)
+    def Start(builder): builder.StartObject(16)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -147,42 +154,46 @@ class ShopExcel:
 
 
     @staticmethod
-    def AddGoodsIdLength(builder, GoodsIdLength): builder.PrependInt32Slot(4, GoodsIdLength, 0)
+    def AddUseBigPopup(builder, UseBigPopup): builder.PrependBoolSlot(4, UseBigPopup, 0)
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(5, DisplayOrder, 0)
+    def AddGoodsIdLength(builder, GoodsIdLength): builder.PrependInt32Slot(5, GoodsIdLength, 0)
 
 
     @staticmethod
-    def AddSalePeriodFrom(builder, SalePeriodFrom): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodFrom), 0)
-
-    @staticmethod
-    def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
-
-    @staticmethod
-    def AddPurchaseCooltimeMin(builder, PurchaseCooltimeMin): builder.PrependInt32Slot(8, PurchaseCooltimeMin, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(6, DisplayOrder, 0)
 
 
     @staticmethod
-    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt32Slot(9, PurchaseCountLimit, 0)
+    def AddSalePeriodFrom(builder, SalePeriodFrom): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodFrom), 0)
+
+    @staticmethod
+    def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
+
+    @staticmethod
+    def AddPurchaseCooltimeMin(builder, PurchaseCooltimeMin): builder.PrependInt32Slot(9, PurchaseCooltimeMin, 0)
 
 
     @staticmethod
-    def AddPurchaseCountResetType(builder, PurchaseCountResetType): builder.PrependInt32Slot(10, PurchaseCountResetType, 0)
+    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt32Slot(10, PurchaseCountLimit, 0)
 
 
     @staticmethod
-    def AddBuyReportEventName(builder, BuyReportEventName): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(BuyReportEventName), 0)
-
-    @staticmethod
-    def AddRestrictBuyWhenInventoryFull(builder, RestrictBuyWhenInventoryFull): builder.PrependBoolSlot(12, RestrictBuyWhenInventoryFull, 0)
+    def AddPurchaseCountResetType(builder, PurchaseCountResetType): builder.PrependInt32Slot(11, PurchaseCountResetType, 0)
 
 
     @staticmethod
-    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(13, DisplayTag, 0)
+    def AddBuyReportEventName(builder, BuyReportEventName): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(BuyReportEventName), 0)
+
+    @staticmethod
+    def AddRestrictBuyWhenInventoryFull(builder, RestrictBuyWhenInventoryFull): builder.PrependBoolSlot(13, RestrictBuyWhenInventoryFull, 0)
 
 
     @staticmethod
-    def AddShopUpdateGroupId(builder, ShopUpdateGroupId): builder.PrependInt32Slot(14, ShopUpdateGroupId, 0)
+    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(14, DisplayTag, 0)
+
+
+    @staticmethod
+    def AddShopUpdateGroupId(builder, ShopUpdateGroupId): builder.PrependInt32Slot(15, ShopUpdateGroupId, 0)
 

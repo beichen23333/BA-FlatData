@@ -5,3 +5,5 @@ class OptionTab:
     Sound = 3
     Notice = 4
     Title = 5
+    Story = 6
+    Control = 7

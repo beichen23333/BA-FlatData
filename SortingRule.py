@@ -49,3 +49,10 @@ class SortingRule:
     Gear = 47
     ExSkillCost = 48
     HealPower = 49
+    MailReceive = 50
+    MailDuration = 51
+    GrowthScore = 52
+    CCGSkillCost = 53
+    CCGCardType = 54
+    PlacedFurniture = 55
+    WeekDungeonSchoolBuff = 56

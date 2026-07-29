@@ -66,15 +66,8 @@ class ArenaRewardExcel:
         return 0
 
 
-    def RewardParcelUniqueNameLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
     def RewardParcelAmountLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -83,7 +76,7 @@ class ArenaRewardExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(9)
+    def Start(builder): builder.StartObject(8)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -116,9 +109,5 @@ class ArenaRewardExcel:
 
 
     @staticmethod
-    def AddRewardParcelUniqueNameLength(builder, RewardParcelUniqueNameLength): builder.PrependInt32Slot(7, RewardParcelUniqueNameLength, 0)
-
-
-    @staticmethod
-    def AddRewardParcelAmountLength(builder, RewardParcelAmountLength): builder.PrependInt32Slot(8, RewardParcelAmountLength, 0)
+    def AddRewardParcelAmountLength(builder, RewardParcelAmountLength): builder.PrependInt32Slot(7, RewardParcelAmountLength, 0)
 

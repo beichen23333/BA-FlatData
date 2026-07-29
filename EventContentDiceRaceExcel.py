@@ -52,8 +52,15 @@ class EventContentDiceRaceExcel:
         return 0
 
 
-    def DiceRaceEventTypeLength(self):
+    def FixedDiceIconLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def DiceRaceEventTypeLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -62,7 +69,7 @@ class EventContentDiceRaceExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(6)
+    def Start(builder): builder.StartObject(7)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -87,5 +94,9 @@ class EventContentDiceRaceExcel:
 
 
     @staticmethod
-    def AddDiceRaceEventTypeLength(builder, DiceRaceEventTypeLength): builder.PrependInt32Slot(5, DiceRaceEventTypeLength, 0)
+    def AddFixedDiceIconLength(builder, FixedDiceIconLength): builder.PrependInt32Slot(5, FixedDiceIconLength, 0)
+
+
+    @staticmethod
+    def AddDiceRaceEventTypeLength(builder, DiceRaceEventTypeLength): builder.PrependInt32Slot(6, DiceRaceEventTypeLength, 0)
 

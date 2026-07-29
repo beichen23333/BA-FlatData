@@ -409,57 +409,64 @@ class CharacterExcel:
         return 0
 
 
-    def IsAirUnit(self):
+    def IgnoreObstacle(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def AirUnitHeight(self):
+    def IsAirUnit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def TagsLength(self):
+    def AirUnitHeight(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SecretStoneItemId(self):
+    def TagsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SecretStoneItemAmount(self):
+    def SecretStoneItemId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(124))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharacterPieceItemId(self):
+    def SecretStoneItemAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(126))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharacterPieceItemAmount(self):
+    def CharacterPieceItemId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(128))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CombineRecipeId(self):
+    def CharacterPieceItemAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(130))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CombineRecipeId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -468,7 +475,7 @@ class CharacterExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(64)
+    def Start(builder): builder.StartObject(65)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -693,33 +700,37 @@ class CharacterExcel:
 
 
     @staticmethod
-    def AddIsAirUnit(builder, IsAirUnit): builder.PrependBoolSlot(56, IsAirUnit, 0)
+    def AddIgnoreObstacle(builder, IgnoreObstacle): builder.PrependBoolSlot(56, IgnoreObstacle, 0)
 
 
     @staticmethod
-    def AddAirUnitHeight(builder, AirUnitHeight): builder.PrependInt32Slot(57, AirUnitHeight, 0)
+    def AddIsAirUnit(builder, IsAirUnit): builder.PrependBoolSlot(57, IsAirUnit, 0)
 
 
     @staticmethod
-    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(58, TagsLength, 0)
+    def AddAirUnitHeight(builder, AirUnitHeight): builder.PrependInt32Slot(58, AirUnitHeight, 0)
 
 
     @staticmethod
-    def AddSecretStoneItemId(builder, SecretStoneItemId): builder.PrependInt32Slot(59, SecretStoneItemId, 0)
+    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(59, TagsLength, 0)
 
 
     @staticmethod
-    def AddSecretStoneItemAmount(builder, SecretStoneItemAmount): builder.PrependInt32Slot(60, SecretStoneItemAmount, 0)
+    def AddSecretStoneItemId(builder, SecretStoneItemId): builder.PrependInt32Slot(60, SecretStoneItemId, 0)
 
 
     @staticmethod
-    def AddCharacterPieceItemId(builder, CharacterPieceItemId): builder.PrependInt32Slot(61, CharacterPieceItemId, 0)
+    def AddSecretStoneItemAmount(builder, SecretStoneItemAmount): builder.PrependInt32Slot(61, SecretStoneItemAmount, 0)
 
 
     @staticmethod
-    def AddCharacterPieceItemAmount(builder, CharacterPieceItemAmount): builder.PrependInt32Slot(62, CharacterPieceItemAmount, 0)
+    def AddCharacterPieceItemId(builder, CharacterPieceItemId): builder.PrependInt32Slot(62, CharacterPieceItemId, 0)
 
 
     @staticmethod
-    def AddCombineRecipeId(builder, CombineRecipeId): builder.PrependInt32Slot(63, CombineRecipeId, 0)
+    def AddCharacterPieceItemAmount(builder, CharacterPieceItemAmount): builder.PrependInt32Slot(63, CharacterPieceItemAmount, 0)
+
+
+    @staticmethod
+    def AddCombineRecipeId(builder, CombineRecipeId): builder.PrependInt32Slot(64, CombineRecipeId, 0)
 

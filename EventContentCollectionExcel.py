@@ -108,15 +108,22 @@ class EventContentCollectionExcel:
         return None
 
 
-    def LocalizeEtcId(self):
+    def Decoration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def LocalizeEtcId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
     def SubNameLocalizeCodeId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -125,7 +132,7 @@ class EventContentCollectionExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(15)
+    def Start(builder): builder.StartObject(16)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -180,8 +187,11 @@ class EventContentCollectionExcel:
     def AddFullResource(builder, FullResource): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(FullResource), 0)
 
     @staticmethod
-    def AddLocalizeEtcId(builder, LocalizeEtcId): builder.PrependUint32Slot(13, LocalizeEtcId, 0)
+    def AddDecoration(builder, Decoration): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(Decoration), 0)
+
+    @staticmethod
+    def AddLocalizeEtcId(builder, LocalizeEtcId): builder.PrependUint32Slot(14, LocalizeEtcId, 0)
 
 
     @staticmethod
-    def AddSubNameLocalizeCodeId(builder, SubNameLocalizeCodeId): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(SubNameLocalizeCodeId), 0)
+    def AddSubNameLocalizeCodeId(builder, SubNameLocalizeCodeId): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(SubNameLocalizeCodeId), 0)

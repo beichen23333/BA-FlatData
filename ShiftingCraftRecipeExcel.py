@@ -80,15 +80,43 @@ class ShiftingCraftRecipeExcel:
         return 0
 
 
-    def IngredientTagLength(self):
+    def AdditionalCostParcelType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def IngredientExp(self):
+    def AdditionalCostParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def AdditionalCostParcelAmount(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def IngredientTagLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def IngredientExp(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def RecipeDisplayOptions(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -97,7 +125,7 @@ class ShiftingCraftRecipeExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(11)
+    def Start(builder): builder.StartObject(15)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -139,9 +167,25 @@ class ShiftingCraftRecipeExcel:
 
 
     @staticmethod
-    def AddIngredientTagLength(builder, IngredientTagLength): builder.PrependInt32Slot(9, IngredientTagLength, 0)
+    def AddAdditionalCostParcelType(builder, AdditionalCostParcelType): builder.PrependInt32Slot(9, AdditionalCostParcelType, 0)
 
 
     @staticmethod
-    def AddIngredientExp(builder, IngredientExp): builder.PrependInt32Slot(10, IngredientExp, 0)
+    def AddAdditionalCostParcelId(builder, AdditionalCostParcelId): builder.PrependInt32Slot(10, AdditionalCostParcelId, 0)
+
+
+    @staticmethod
+    def AddAdditionalCostParcelAmount(builder, AdditionalCostParcelAmount): builder.PrependInt32Slot(11, AdditionalCostParcelAmount, 0)
+
+
+    @staticmethod
+    def AddIngredientTagLength(builder, IngredientTagLength): builder.PrependInt32Slot(12, IngredientTagLength, 0)
+
+
+    @staticmethod
+    def AddIngredientExp(builder, IngredientExp): builder.PrependInt32Slot(13, IngredientExp, 0)
+
+
+    @staticmethod
+    def AddRecipeDisplayOptions(builder, RecipeDisplayOptions): builder.PrependInt32Slot(14, RecipeDisplayOptions, 0)
 

@@ -206,15 +206,22 @@ class SkillExcel:
         return 0
 
 
-    def TextureSkillCardForFormConversion(self):
+    def SelectExSkillToolTipId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def TextureSkillCardForFormConversion(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def SkillCardLabelPath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -223,7 +230,7 @@ class SkillExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(29)
+    def Start(builder): builder.StartObject(30)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -333,7 +340,11 @@ class SkillExcel:
 
 
     @staticmethod
-    def AddTextureSkillCardForFormConversion(builder, TextureSkillCardForFormConversion): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(TextureSkillCardForFormConversion), 0)
+    def AddSelectExSkillToolTipId(builder, SelectExSkillToolTipId): builder.PrependInt32Slot(27, SelectExSkillToolTipId, 0)
+
 
     @staticmethod
-    def AddSkillCardLabelPath(builder, SkillCardLabelPath): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(SkillCardLabelPath), 0)
+    def AddTextureSkillCardForFormConversion(builder, TextureSkillCardForFormConversion): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(TextureSkillCardForFormConversion), 0)
+
+    @staticmethod
+    def AddSkillCardLabelPath(builder, SkillCardLabelPath): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(SkillCardLabelPath), 0)

@@ -3,4 +3,3 @@ class PlatformServiceState:
     WaitInitResponded = 1
     Ready = 2
     InitFailed = 3
-    NeedReInit = 4

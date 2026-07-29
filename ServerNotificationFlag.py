@@ -14,3 +14,4 @@ class ServerNotificationFlag:
     CheckConquest = 12
     CanReceiveEliminateRaidReward = 13
     CanReceiveMultiFloorRaidReward = 14
+    CanReceiveProductDailyRecordReward = 15

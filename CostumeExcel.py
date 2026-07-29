@@ -129,113 +129,120 @@ class CostumeExcel:
         return None
 
 
-    def CafeModelPrefabName(self):
+    def AnimatorName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def EchelonModelPrefabName(self):
+    def CafeModelPrefabName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def StrategyModelPrefabName(self):
+    def EchelonModelPrefabName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def TextureDir(self):
+    def StrategyModelPrefabName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CollectionTexturePath(self):
+    def TextureDir(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CollectionBGTexturePath(self):
+    def CollectionTexturePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CombatStyleTexturePath(self):
+    def CollectionBGTexturePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def UseObjectHPBAR(self):
+    def CombatStyleTexturePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def UseObjectHPBAR(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def TextureBoss(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def TextureSkillCardLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def InformationPacel(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def AnimationSSR(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def EnterStrategyAnimationName(self):
+    def AnimationSSR(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def AnimationValidator(self):
+    def EnterStrategyAnimationName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def AnimationValidator(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def CharacterVoiceGroupId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShowObjectHpStatus(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
@@ -244,7 +251,7 @@ class CostumeExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(32)
+    def Start(builder): builder.StartObject(33)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -307,54 +314,57 @@ class CostumeExcel:
     def AddModelPrefabName(builder, ModelPrefabName): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(ModelPrefabName), 0)
 
     @staticmethod
-    def AddCafeModelPrefabName(builder, CafeModelPrefabName): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(CafeModelPrefabName), 0)
+    def AddAnimatorName(builder, AnimatorName): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(AnimatorName), 0)
 
     @staticmethod
-    def AddEchelonModelPrefabName(builder, EchelonModelPrefabName): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(EchelonModelPrefabName), 0)
+    def AddCafeModelPrefabName(builder, CafeModelPrefabName): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(CafeModelPrefabName), 0)
 
     @staticmethod
-    def AddStrategyModelPrefabName(builder, StrategyModelPrefabName): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(StrategyModelPrefabName), 0)
+    def AddEchelonModelPrefabName(builder, EchelonModelPrefabName): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(EchelonModelPrefabName), 0)
 
     @staticmethod
-    def AddTextureDir(builder, TextureDir): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(TextureDir), 0)
+    def AddStrategyModelPrefabName(builder, StrategyModelPrefabName): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(StrategyModelPrefabName), 0)
 
     @staticmethod
-    def AddCollectionTexturePath(builder, CollectionTexturePath): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(CollectionTexturePath), 0)
+    def AddTextureDir(builder, TextureDir): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(TextureDir), 0)
 
     @staticmethod
-    def AddCollectionBGTexturePath(builder, CollectionBGTexturePath): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(CollectionBGTexturePath), 0)
+    def AddCollectionTexturePath(builder, CollectionTexturePath): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(CollectionTexturePath), 0)
 
     @staticmethod
-    def AddCombatStyleTexturePath(builder, CombatStyleTexturePath): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(CombatStyleTexturePath), 0)
+    def AddCollectionBGTexturePath(builder, CollectionBGTexturePath): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(CollectionBGTexturePath), 0)
 
     @staticmethod
-    def AddUseObjectHPBAR(builder, UseObjectHPBAR): builder.PrependBoolSlot(23, UseObjectHPBAR, 0)
-
-
-    @staticmethod
-    def AddTextureBoss(builder, TextureBoss): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(TextureBoss), 0)
+    def AddCombatStyleTexturePath(builder, CombatStyleTexturePath): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(CombatStyleTexturePath), 0)
 
     @staticmethod
-    def AddTextureSkillCardLength(builder, TextureSkillCardLength): builder.PrependInt32Slot(25, TextureSkillCardLength, 0)
+    def AddUseObjectHPBAR(builder, UseObjectHPBAR): builder.PrependBoolSlot(24, UseObjectHPBAR, 0)
 
 
     @staticmethod
-    def AddInformationPacel(builder, InformationPacel): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(InformationPacel), 0)
+    def AddTextureBoss(builder, TextureBoss): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(TextureBoss), 0)
 
     @staticmethod
-    def AddAnimationSSR(builder, AnimationSSR): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(AnimationSSR), 0)
-
-    @staticmethod
-    def AddEnterStrategyAnimationName(builder, EnterStrategyAnimationName): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(EnterStrategyAnimationName), 0)
-
-    @staticmethod
-    def AddAnimationValidator(builder, AnimationValidator): builder.PrependBoolSlot(29, AnimationValidator, 0)
+    def AddTextureSkillCardLength(builder, TextureSkillCardLength): builder.PrependInt32Slot(26, TextureSkillCardLength, 0)
 
 
     @staticmethod
-    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt32Slot(30, CharacterVoiceGroupId, 0)
+    def AddInformationPacel(builder, InformationPacel): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(InformationPacel), 0)
+
+    @staticmethod
+    def AddAnimationSSR(builder, AnimationSSR): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(AnimationSSR), 0)
+
+    @staticmethod
+    def AddEnterStrategyAnimationName(builder, EnterStrategyAnimationName): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(EnterStrategyAnimationName), 0)
+
+    @staticmethod
+    def AddAnimationValidator(builder, AnimationValidator): builder.PrependBoolSlot(30, AnimationValidator, 0)
 
 
     @staticmethod
-    def AddShowObjectHpStatus(builder, ShowObjectHpStatus): builder.PrependBoolSlot(31, ShowObjectHpStatus, 0)
+    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt32Slot(31, CharacterVoiceGroupId, 0)
+
+
+    @staticmethod
+    def AddShowObjectHpStatus(builder, ShowObjectHpStatus): builder.PrependBoolSlot(32, ShowObjectHpStatus, 0)
 

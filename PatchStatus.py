@@ -14,7 +14,8 @@ class PatchStatus:
     DownloadingPatch = 12
     DownloadComplete = 13
     DownloadStart = 14
-    ValidatingPatch = 15
-    ValidateFailed = 16
-    ProcessComplete = 17
-    DiskFull = 18
+    PatchPackUnZip = 15
+    ValidatingPatch = 16
+    ValidateFailed = 17
+    ProcessComplete = 18
+    DiskFull = 19

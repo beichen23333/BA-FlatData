@@ -549,31 +549,101 @@ class ConstCombatExcel:
         return 0
 
 
-    def EchelonExtensionEchelonInitCommonCost(self):
+    def EchelonMaxOverloadCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(156))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EchelonExtensionCostRegenRatio(self):
+    def EchelonExtensionMaxOverloadCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(158))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CheckCheaterMaxUseCostMultiFloorRaid(self):
+    def EchelonExtensionEchelonInitCommonCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(160))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
+    def EchelonExtensionCostRegenRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(162))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EchelonOverloadCostRegenRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(164))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EchelonExtensionOverloadCostRegenRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(166))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CheckCheaterMaxUseCostMultiFloorRaid(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(168))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ExcessiveTouchCheckTime(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(170))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ExcessiveTouchCheckCount(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(172))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CampaignAlertPopupLevelGap(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(174))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def MoveCorrectionSkipRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(176))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ObstacleColliderHeightJumpable(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(178))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ObstacleColliderHeightNotJumpable(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(180))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(79)
+    def Start(builder): builder.StartObject(89)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -874,13 +944,53 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddEchelonExtensionEchelonInitCommonCost(builder, EchelonExtensionEchelonInitCommonCost): builder.PrependInt32Slot(76, EchelonExtensionEchelonInitCommonCost, 0)
+    def AddEchelonMaxOverloadCost(builder, EchelonMaxOverloadCost): builder.PrependInt32Slot(76, EchelonMaxOverloadCost, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio): builder.PrependInt32Slot(77, EchelonExtensionCostRegenRatio, 0)
+    def AddEchelonExtensionMaxOverloadCost(builder, EchelonExtensionMaxOverloadCost): builder.PrependInt32Slot(77, EchelonExtensionMaxOverloadCost, 0)
 
 
     @staticmethod
-    def AddCheckCheaterMaxUseCostMultiFloorRaid(builder, CheckCheaterMaxUseCostMultiFloorRaid): builder.PrependInt32Slot(78, CheckCheaterMaxUseCostMultiFloorRaid, 0)
+    def AddEchelonExtensionEchelonInitCommonCost(builder, EchelonExtensionEchelonInitCommonCost): builder.PrependInt32Slot(78, EchelonExtensionEchelonInitCommonCost, 0)
+
+
+    @staticmethod
+    def AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio): builder.PrependInt32Slot(79, EchelonExtensionCostRegenRatio, 0)
+
+
+    @staticmethod
+    def AddEchelonOverloadCostRegenRatio(builder, EchelonOverloadCostRegenRatio): builder.PrependInt32Slot(80, EchelonOverloadCostRegenRatio, 0)
+
+
+    @staticmethod
+    def AddEchelonExtensionOverloadCostRegenRatio(builder, EchelonExtensionOverloadCostRegenRatio): builder.PrependInt32Slot(81, EchelonExtensionOverloadCostRegenRatio, 0)
+
+
+    @staticmethod
+    def AddCheckCheaterMaxUseCostMultiFloorRaid(builder, CheckCheaterMaxUseCostMultiFloorRaid): builder.PrependInt32Slot(82, CheckCheaterMaxUseCostMultiFloorRaid, 0)
+
+
+    @staticmethod
+    def AddExcessiveTouchCheckTime(builder, ExcessiveTouchCheckTime): builder.PrependFloat32Slot(83, ExcessiveTouchCheckTime, 0)
+
+
+    @staticmethod
+    def AddExcessiveTouchCheckCount(builder, ExcessiveTouchCheckCount): builder.PrependInt32Slot(84, ExcessiveTouchCheckCount, 0)
+
+
+    @staticmethod
+    def AddCampaignAlertPopupLevelGap(builder, CampaignAlertPopupLevelGap): builder.PrependInt32Slot(85, CampaignAlertPopupLevelGap, 0)
+
+
+    @staticmethod
+    def AddMoveCorrectionSkipRatio(builder, MoveCorrectionSkipRatio): builder.PrependInt32Slot(86, MoveCorrectionSkipRatio, 0)
+
+
+    @staticmethod
+    def AddObstacleColliderHeightJumpable(builder, ObstacleColliderHeightJumpable): builder.PrependFloat32Slot(87, ObstacleColliderHeightJumpable, 0)
+
+
+    @staticmethod
+    def AddObstacleColliderHeightNotJumpable(builder, ObstacleColliderHeightNotJumpable): builder.PrependFloat32Slot(88, ObstacleColliderHeightNotJumpable, 0)
 

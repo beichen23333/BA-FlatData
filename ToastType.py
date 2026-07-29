@@ -6,3 +6,4 @@ class ToastType:
     Social_Mission = 4
     Social_Right = 5
     Notice_Center = 6
+    PC_LeftCenter = 7

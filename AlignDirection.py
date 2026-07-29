@@ -6,3 +6,4 @@ class AlignDirection:
     TargetToCaster = 4
     CasterToTarget = 5
     EntityDirection = 6
+    Identity = 7

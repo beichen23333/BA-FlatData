@@ -52,262 +52,276 @@ class FurnitureExcel:
         return 0
 
 
-    def LocalizeEtcId(self):
+    def CheckFloorDecoration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def LocalizeEtcId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
     def StarGradeInit(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def Tier(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def Icon(self):
+    def Tier(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def Icon(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def SizeWidth(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def SizeHeight(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def OtherSize(self):
+    def SizeHeight(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExpandWidth(self):
+    def OtherSize(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def Enable(self):
+    def ExpandWidth(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ReverseRotation(self):
+    def Enable(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def Prefab(self):
+    def ReverseRotation(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
 
 
-    def PrefabExpand(self):
+    def Prefab(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def SubPrefab(self):
+    def PrefabExpand(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def SubExpandPrefab(self):
+    def SubPrefab(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CornerPrefab(self):
+    def SubExpandPrefab(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def StackableMax(self):
+    def CornerPrefab(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def RecipeCraftId(self):
+    def StackableMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SetGroudpId(self):
+    def RecipeCraftId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ComfortBonus(self):
+    def SetGroudpId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def VisitOperationType(self):
+    def ComfortBonus(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def VisitBonusOperationType(self):
+    def VisitOperationType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TagsLength(self):
+    def VisitBonusOperationType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CraftQualityTier0(self):
+    def TagsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CraftQualityTier1(self):
+    def CraftQualityTier0(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CraftQualityTier2(self):
+    def CraftQualityTier1(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShiftingCraftQuality(self):
+    def CraftQualityTier2(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FurnitureFunctionType(self):
+    def ShiftingCraftQuality(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FurnitureFunctionParameterLength(self):
+    def FurnitureFunctionType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def VideoId(self):
+    def FurnitureFunctionParameterLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EventCollectionId(self):
+    def VideoId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FurnitureBubbleOffsetX(self):
+    def EventCollectionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FurnitureBubbleOffsetY(self):
+    def FurnitureBubbleOffsetX(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeCharacterStateReqLength(self):
+    def FurnitureBubbleOffsetY(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeCharacterStateAddLength(self):
+    def CafeCharacterStateReqLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeCharacterStateMakeLength(self):
+    def CafeCharacterStateAddLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeCharacterStateOnlyLength(self):
+    def CafeCharacterStateMakeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
+    def CafeCharacterStateOnlyLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def HideCraftShortcut(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(41)
+    def Start(builder): builder.StartObject(43)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -333,139 +347,147 @@ class FurnitureExcel:
 
 
     @staticmethod
-    def AddLocalizeEtcId(builder, LocalizeEtcId): builder.PrependUint32Slot(5, LocalizeEtcId, 0)
+    def AddCheckFloorDecoration(builder, CheckFloorDecoration): builder.PrependBoolSlot(5, CheckFloorDecoration, 0)
 
 
     @staticmethod
-    def AddStarGradeInit(builder, StarGradeInit): builder.PrependInt32Slot(6, StarGradeInit, 0)
+    def AddLocalizeEtcId(builder, LocalizeEtcId): builder.PrependUint32Slot(6, LocalizeEtcId, 0)
 
 
     @staticmethod
-    def AddTier(builder, Tier): builder.PrependInt32Slot(7, Tier, 0)
+    def AddStarGradeInit(builder, StarGradeInit): builder.PrependInt32Slot(7, StarGradeInit, 0)
 
 
     @staticmethod
-    def AddIcon(builder, Icon): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(Icon), 0)
-
-    @staticmethod
-    def AddSizeWidth(builder, SizeWidth): builder.PrependInt32Slot(9, SizeWidth, 0)
+    def AddTier(builder, Tier): builder.PrependInt32Slot(8, Tier, 0)
 
 
     @staticmethod
-    def AddSizeHeight(builder, SizeHeight): builder.PrependInt32Slot(10, SizeHeight, 0)
+    def AddIcon(builder, Icon): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(Icon), 0)
+
+    @staticmethod
+    def AddSizeWidth(builder, SizeWidth): builder.PrependInt32Slot(10, SizeWidth, 0)
 
 
     @staticmethod
-    def AddOtherSize(builder, OtherSize): builder.PrependInt32Slot(11, OtherSize, 0)
+    def AddSizeHeight(builder, SizeHeight): builder.PrependInt32Slot(11, SizeHeight, 0)
 
 
     @staticmethod
-    def AddExpandWidth(builder, ExpandWidth): builder.PrependInt32Slot(12, ExpandWidth, 0)
+    def AddOtherSize(builder, OtherSize): builder.PrependInt32Slot(12, OtherSize, 0)
 
 
     @staticmethod
-    def AddEnable(builder, Enable): builder.PrependBoolSlot(13, Enable, 0)
+    def AddExpandWidth(builder, ExpandWidth): builder.PrependInt32Slot(13, ExpandWidth, 0)
 
 
     @staticmethod
-    def AddReverseRotation(builder, ReverseRotation): builder.PrependBoolSlot(14, ReverseRotation, 0)
+    def AddEnable(builder, Enable): builder.PrependBoolSlot(14, Enable, 0)
 
 
     @staticmethod
-    def AddPrefab(builder, Prefab): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(Prefab), 0)
-
-    @staticmethod
-    def AddPrefabExpand(builder, PrefabExpand): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(PrefabExpand), 0)
-
-    @staticmethod
-    def AddSubPrefab(builder, SubPrefab): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(SubPrefab), 0)
-
-    @staticmethod
-    def AddSubExpandPrefab(builder, SubExpandPrefab): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(SubExpandPrefab), 0)
-
-    @staticmethod
-    def AddCornerPrefab(builder, CornerPrefab): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(CornerPrefab), 0)
-
-    @staticmethod
-    def AddStackableMax(builder, StackableMax): builder.PrependInt32Slot(20, StackableMax, 0)
+    def AddReverseRotation(builder, ReverseRotation): builder.PrependBoolSlot(15, ReverseRotation, 0)
 
 
     @staticmethod
-    def AddRecipeCraftId(builder, RecipeCraftId): builder.PrependInt32Slot(21, RecipeCraftId, 0)
+    def AddPrefab(builder, Prefab): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(Prefab), 0)
+
+    @staticmethod
+    def AddPrefabExpand(builder, PrefabExpand): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(PrefabExpand), 0)
+
+    @staticmethod
+    def AddSubPrefab(builder, SubPrefab): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(SubPrefab), 0)
+
+    @staticmethod
+    def AddSubExpandPrefab(builder, SubExpandPrefab): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(SubExpandPrefab), 0)
+
+    @staticmethod
+    def AddCornerPrefab(builder, CornerPrefab): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(CornerPrefab), 0)
+
+    @staticmethod
+    def AddStackableMax(builder, StackableMax): builder.PrependInt32Slot(21, StackableMax, 0)
 
 
     @staticmethod
-    def AddSetGroudpId(builder, SetGroudpId): builder.PrependInt32Slot(22, SetGroudpId, 0)
+    def AddRecipeCraftId(builder, RecipeCraftId): builder.PrependInt32Slot(22, RecipeCraftId, 0)
 
 
     @staticmethod
-    def AddComfortBonus(builder, ComfortBonus): builder.PrependInt32Slot(23, ComfortBonus, 0)
+    def AddSetGroudpId(builder, SetGroudpId): builder.PrependInt32Slot(23, SetGroudpId, 0)
 
 
     @staticmethod
-    def AddVisitOperationType(builder, VisitOperationType): builder.PrependInt32Slot(24, VisitOperationType, 0)
+    def AddComfortBonus(builder, ComfortBonus): builder.PrependInt32Slot(24, ComfortBonus, 0)
 
 
     @staticmethod
-    def AddVisitBonusOperationType(builder, VisitBonusOperationType): builder.PrependInt32Slot(25, VisitBonusOperationType, 0)
+    def AddVisitOperationType(builder, VisitOperationType): builder.PrependInt32Slot(25, VisitOperationType, 0)
 
 
     @staticmethod
-    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(26, TagsLength, 0)
+    def AddVisitBonusOperationType(builder, VisitBonusOperationType): builder.PrependInt32Slot(26, VisitBonusOperationType, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier0(builder, CraftQualityTier0): builder.PrependInt32Slot(27, CraftQualityTier0, 0)
+    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(27, TagsLength, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier1(builder, CraftQualityTier1): builder.PrependInt32Slot(28, CraftQualityTier1, 0)
+    def AddCraftQualityTier0(builder, CraftQualityTier0): builder.PrependInt32Slot(28, CraftQualityTier0, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier2(builder, CraftQualityTier2): builder.PrependInt32Slot(29, CraftQualityTier2, 0)
+    def AddCraftQualityTier1(builder, CraftQualityTier1): builder.PrependInt32Slot(29, CraftQualityTier1, 0)
 
 
     @staticmethod
-    def AddShiftingCraftQuality(builder, ShiftingCraftQuality): builder.PrependInt32Slot(30, ShiftingCraftQuality, 0)
+    def AddCraftQualityTier2(builder, CraftQualityTier2): builder.PrependInt32Slot(30, CraftQualityTier2, 0)
 
 
     @staticmethod
-    def AddFurnitureFunctionType(builder, FurnitureFunctionType): builder.PrependInt32Slot(31, FurnitureFunctionType, 0)
+    def AddShiftingCraftQuality(builder, ShiftingCraftQuality): builder.PrependInt32Slot(31, ShiftingCraftQuality, 0)
 
 
     @staticmethod
-    def AddFurnitureFunctionParameterLength(builder, FurnitureFunctionParameterLength): builder.PrependInt32Slot(32, FurnitureFunctionParameterLength, 0)
+    def AddFurnitureFunctionType(builder, FurnitureFunctionType): builder.PrependInt32Slot(32, FurnitureFunctionType, 0)
 
 
     @staticmethod
-    def AddVideoId(builder, VideoId): builder.PrependInt32Slot(33, VideoId, 0)
+    def AddFurnitureFunctionParameterLength(builder, FurnitureFunctionParameterLength): builder.PrependInt32Slot(33, FurnitureFunctionParameterLength, 0)
 
 
     @staticmethod
-    def AddEventCollectionId(builder, EventCollectionId): builder.PrependInt32Slot(34, EventCollectionId, 0)
+    def AddVideoId(builder, VideoId): builder.PrependInt32Slot(34, VideoId, 0)
 
 
     @staticmethod
-    def AddFurnitureBubbleOffsetX(builder, FurnitureBubbleOffsetX): builder.PrependInt32Slot(35, FurnitureBubbleOffsetX, 0)
+    def AddEventCollectionId(builder, EventCollectionId): builder.PrependInt32Slot(35, EventCollectionId, 0)
 
 
     @staticmethod
-    def AddFurnitureBubbleOffsetY(builder, FurnitureBubbleOffsetY): builder.PrependInt32Slot(36, FurnitureBubbleOffsetY, 0)
+    def AddFurnitureBubbleOffsetX(builder, FurnitureBubbleOffsetX): builder.PrependInt32Slot(36, FurnitureBubbleOffsetX, 0)
 
 
     @staticmethod
-    def AddCafeCharacterStateReqLength(builder, CafeCharacterStateReqLength): builder.PrependInt32Slot(37, CafeCharacterStateReqLength, 0)
+    def AddFurnitureBubbleOffsetY(builder, FurnitureBubbleOffsetY): builder.PrependInt32Slot(37, FurnitureBubbleOffsetY, 0)
 
 
     @staticmethod
-    def AddCafeCharacterStateAddLength(builder, CafeCharacterStateAddLength): builder.PrependInt32Slot(38, CafeCharacterStateAddLength, 0)
+    def AddCafeCharacterStateReqLength(builder, CafeCharacterStateReqLength): builder.PrependInt32Slot(38, CafeCharacterStateReqLength, 0)
 
 
     @staticmethod
-    def AddCafeCharacterStateMakeLength(builder, CafeCharacterStateMakeLength): builder.PrependInt32Slot(39, CafeCharacterStateMakeLength, 0)
+    def AddCafeCharacterStateAddLength(builder, CafeCharacterStateAddLength): builder.PrependInt32Slot(39, CafeCharacterStateAddLength, 0)
 
 
     @staticmethod
-    def AddCafeCharacterStateOnlyLength(builder, CafeCharacterStateOnlyLength): builder.PrependInt32Slot(40, CafeCharacterStateOnlyLength, 0)
+    def AddCafeCharacterStateMakeLength(builder, CafeCharacterStateMakeLength): builder.PrependInt32Slot(40, CafeCharacterStateMakeLength, 0)
+
+
+    @staticmethod
+    def AddCafeCharacterStateOnlyLength(builder, CafeCharacterStateOnlyLength): builder.PrependInt32Slot(41, CafeCharacterStateOnlyLength, 0)
+
+
+    @staticmethod
+    def AddHideCraftShortcut(builder, HideCraftShortcut): builder.PrependBoolSlot(42, HideCraftShortcut, 0)
 

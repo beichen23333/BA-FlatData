@@ -1,4 +1,4 @@
 class InputType:
-    Nickname = 0
-    Callname = 1
-    Comment = 2
+    Standard = 0
+    AutoCorrect = 1
+    Password = 2

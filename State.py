@@ -1,3 +1,4 @@
 class State:
-    Download = 0
-    Complete = 1
+    Success = 0
+    Failure = 1
+    Running = 2

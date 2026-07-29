@@ -10,3 +10,8 @@ class EntitySpawnCondition:
     SkillLevel = 8
     IncludeTag = 9
     ExcludeTag = 10
+    UsedExtraSkillCostSameOrOver = 11
+    UsedExtraSkillCostSameOrUnder = 12
+    IncludeFormIndex = 13
+    ExcludeFormIndex = 14
+    TargetSideId = 15

@@ -20,3 +20,4 @@ class WeaponType:
     Relic = 18
     FT = 19
     Akemi = 20
+    KetherCannon = 21

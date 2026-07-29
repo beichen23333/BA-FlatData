@@ -9,3 +9,10 @@ class GachaTicketType:
     PackagePropertyThreeStar = 7
     Temp_1 = 8
     PackageAcademyThreeStar = 9
+    SelectPickup = 10
+    SelectPickupOnce = 11
+    PackageLimitedThreeStar = 12
+    PackageThreeStar_R88_Explosion = 13
+    PackageThreeStar_R88_Mystic = 14
+    PackageThreeStar_R88_Pierce = 15
+    PackageThreeStar_R88_Sonic = 16

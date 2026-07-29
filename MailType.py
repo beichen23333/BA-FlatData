@@ -26,3 +26,14 @@ class MailType:
     CbtRechargeReward = 24
     FromCS = 25
     ExpiryChangeCurrency = 26
+    ExpiryBattlePassItem = 27
+    FreeProductReward = 28
+    Temp_4 = 29
+    Temp_5 = 30
+    Temp_6 = 31
+    ProductGooglePointReward = 32
+    PaymentCenterProduct = 33
+    PaymentCenterMonthly = 34
+    PaymentCenterBattlePass = 35
+    PaymentCenterDailyRecord = 36
+    ExpiryProductDailyRecordItem = 37

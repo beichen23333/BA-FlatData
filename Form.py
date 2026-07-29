@@ -20,8 +20,8 @@ class Form:
     def MoveEnd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            from .Type_0x00004F4F import Type_0x00004F4F
-            obj = Type_0x00004F4F()
+            from .Type_0x0000625D import Type_0x0000625D
+            obj = Type_0x0000625D()
             obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
@@ -30,8 +30,8 @@ class Form:
     def PublicSkill(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            from .Type_0x00004F4E import Type_0x00004F4E
-            obj = Type_0x00004F4E()
+            from .Type_0x0000625C import Type_0x0000625C
+            obj = Type_0x0000625C()
             obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None

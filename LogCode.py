@@ -106,3 +106,8 @@ class LogCode:
     Clan_Transfer = 104
     ClientSetting_Default = 105
     Issue_Default = 106
+    Violation_Default = 107
+    Violation_ExcessiveTouch = 108
+    EventContent_ConcentrationDefault = 109
+    EventContent_ConcentrationRoundSkip = 110
+    EventContent_ConcentrationFlipCard = 111

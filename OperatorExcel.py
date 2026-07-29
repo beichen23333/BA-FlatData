@@ -101,10 +101,17 @@ class OperatorExcel:
         return 0
 
 
+    def CharacterVoiceOverridePriority(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(12)
+    def Start(builder): builder.StartObject(13)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -152,4 +159,8 @@ class OperatorExcel:
 
     @staticmethod
     def AddOperatorWaitQueue(builder, OperatorWaitQueue): builder.PrependBoolSlot(11, OperatorWaitQueue, 0)
+
+
+    @staticmethod
+    def AddCharacterVoiceOverridePriority(builder, CharacterVoiceOverridePriority): builder.PrependInt32Slot(12, CharacterVoiceOverridePriority, 0)
 

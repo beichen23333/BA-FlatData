@@ -7,3 +7,6 @@ class GachaDisplayTag:
     New = 5
     Fes = 6
     SelectRecruit = 7
+    LimitedThreeStar = 8
+    Revival = 9
+    SelectLimited = 10

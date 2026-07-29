@@ -1,8 +1,7 @@
 class States:
-    Initialize = 0
-    Playing = 1
-    Detected = 2
-    LoadingSavePoint = 3
-    EnterStageAction = 4
-    GameOver = 5
-    ClearStage = 6
+    Initial = 0
+    Connecting = 1
+    Open = 2
+    Retrying = 3
+    Closing = 4
+    Closed = 5

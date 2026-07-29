@@ -52,8 +52,15 @@ class ShopFreeRecruitExcel:
         return None
 
 
-    def ShopRecruitIdLength(self):
+    def TenRecruitCountOnly(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def ShopRecruitIdLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -62,7 +69,7 @@ class ShopFreeRecruitExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(6)
+    def Start(builder): builder.StartObject(7)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -85,5 +92,9 @@ class ShopFreeRecruitExcel:
     def AddFreeRecruitDecorationImagePath(builder, FreeRecruitDecorationImagePath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(FreeRecruitDecorationImagePath), 0)
 
     @staticmethod
-    def AddShopRecruitIdLength(builder, ShopRecruitIdLength): builder.PrependInt32Slot(5, ShopRecruitIdLength, 0)
+    def AddTenRecruitCountOnly(builder, TenRecruitCountOnly): builder.PrependBoolSlot(5, TenRecruitCountOnly, 0)
+
+
+    @staticmethod
+    def AddShopRecruitIdLength(builder, ShopRecruitIdLength): builder.PrependInt32Slot(6, ShopRecruitIdLength, 0)
 

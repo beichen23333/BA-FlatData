@@ -5,3 +5,6 @@ class ProductCategory:
     Package = 3
     GachaDirect = 4
     TimeLimit = 5
+    BattlePass = 6
+    GooglePoint = 7
+    DailyRecord = 8

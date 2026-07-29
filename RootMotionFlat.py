@@ -34,8 +34,8 @@ class RootMotionFlat:
     def MoveLeft(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            from .Type_0x00004F4E import Type_0x00004F4E
-            obj = Type_0x00004F4E()
+            from .Type_0x0000625C import Type_0x0000625C
+            obj = Type_0x0000625C()
             obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
@@ -44,8 +44,8 @@ class RootMotionFlat:
     def MoveRight(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            from .Type_0x00004F4E import Type_0x00004F4E
-            obj = Type_0x00004F4E()
+            from .Type_0x0000625C import Type_0x0000625C
+            obj = Type_0x0000625C()
             obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None

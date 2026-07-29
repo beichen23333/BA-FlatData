@@ -17,64 +17,71 @@ class ArenaMapExcel:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def UniqueId(self):
+    def ArenaSeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TerrainType(self):
+    def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TerrainTypeLocalizeKey(self):
+    def TerrainType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def ImagePath(self):
+    def TerrainTypeLocalizeKey(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def GroundGroupId(self):
+    def ImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def GroundGroupId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroundGroupNameLocalizeKey(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def StartRank(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def EndRank(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def GroundId(self):
+    def EndRank(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def GroundId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -83,40 +90,44 @@ class ArenaMapExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(9)
+    def Start(builder): builder.StartObject(10)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
+    def AddArenaSeasonId(builder, ArenaSeasonId): builder.PrependInt32Slot(0, ArenaSeasonId, 0)
 
 
     @staticmethod
-    def AddTerrainType(builder, TerrainType): builder.PrependInt32Slot(1, TerrainType, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(1, UniqueId, 0)
 
 
     @staticmethod
-    def AddTerrainTypeLocalizeKey(builder, TerrainTypeLocalizeKey): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(TerrainTypeLocalizeKey), 0)
-
-    @staticmethod
-    def AddImagePath(builder, ImagePath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(ImagePath), 0)
-
-    @staticmethod
-    def AddGroundGroupId(builder, GroundGroupId): builder.PrependInt32Slot(4, GroundGroupId, 0)
+    def AddTerrainType(builder, TerrainType): builder.PrependInt32Slot(2, TerrainType, 0)
 
 
     @staticmethod
-    def AddGroundGroupNameLocalizeKey(builder, GroundGroupNameLocalizeKey): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(GroundGroupNameLocalizeKey), 0)
+    def AddTerrainTypeLocalizeKey(builder, TerrainTypeLocalizeKey): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(TerrainTypeLocalizeKey), 0)
 
     @staticmethod
-    def AddStartRank(builder, StartRank): builder.PrependInt32Slot(6, StartRank, 0)
+    def AddImagePath(builder, ImagePath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(ImagePath), 0)
+
+    @staticmethod
+    def AddGroundGroupId(builder, GroundGroupId): builder.PrependInt32Slot(5, GroundGroupId, 0)
 
 
     @staticmethod
-    def AddEndRank(builder, EndRank): builder.PrependInt32Slot(7, EndRank, 0)
+    def AddGroundGroupNameLocalizeKey(builder, GroundGroupNameLocalizeKey): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(GroundGroupNameLocalizeKey), 0)
+
+    @staticmethod
+    def AddStartRank(builder, StartRank): builder.PrependInt32Slot(7, StartRank, 0)
 
 
     @staticmethod
-    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(8, GroundId, 0)
+    def AddEndRank(builder, EndRank): builder.PrependInt32Slot(8, EndRank, 0)
+
+
+    @staticmethod
+    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(9, GroundId, 0)
 

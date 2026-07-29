@@ -1,4 +1,3 @@
 class AntiAliasing:
     Off = 0
-    Low = 1
-    High = 2
+    On = 1

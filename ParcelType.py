@@ -22,3 +22,7 @@ class ParcelType:
     Emblem = 20
     Sticker = 21
     Costume = 22
+    PossessionCheck = 23
+    BattlePassExp = 24
+    SelectedCharacter = 25
+    UnSelectedCharacter = 26

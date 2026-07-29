@@ -241,10 +241,24 @@ class ItemExcel:
         return 0
 
 
+    def AlertPopupId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ShiftingCraftRecipe(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(32)
+    def Start(builder): builder.StartObject(34)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -372,4 +386,12 @@ class ItemExcel:
 
     @staticmethod
     def AddGachaTicket(builder, GachaTicket): builder.PrependInt32Slot(31, GachaTicket, 0)
+
+
+    @staticmethod
+    def AddAlertPopupId(builder, AlertPopupId): builder.PrependInt32Slot(32, AlertPopupId, 0)
+
+
+    @staticmethod
+    def AddShiftingCraftRecipe(builder, ShiftingCraftRecipe): builder.PrependInt32Slot(33, ShiftingCraftRecipe, 0)
 

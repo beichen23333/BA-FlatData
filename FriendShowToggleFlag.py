@@ -4,4 +4,5 @@ class FriendShowToggleFlag:
     RaidRanking = 2
     EliminateRaidRanking = 3
     ArenaRanking = 4
-    All = 5
+    MultiFloorRaidClearedDifficulty = 5
+    All = 6

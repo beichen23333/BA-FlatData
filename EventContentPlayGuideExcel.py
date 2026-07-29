@@ -31,29 +31,36 @@ class EventContentPlayGuideExcel:
         return 0
 
 
-    def DisplayOrder(self):
+    def IsPcBuild(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def DisplayOrder(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GuideTitle(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def GuideImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def GuideText(self):
+    def GuideImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def GuideText(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -62,7 +69,7 @@ class EventContentPlayGuideExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(6)
+    def Start(builder): builder.StartObject(7)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -76,14 +83,18 @@ class EventContentPlayGuideExcel:
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(2, DisplayOrder, 0)
+    def AddIsPcBuild(builder, IsPcBuild): builder.PrependBoolSlot(2, IsPcBuild, 0)
 
 
     @staticmethod
-    def AddGuideTitle(builder, GuideTitle): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(GuideTitle), 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(3, DisplayOrder, 0)
+
 
     @staticmethod
-    def AddGuideImagePath(builder, GuideImagePath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(GuideImagePath), 0)
+    def AddGuideTitle(builder, GuideTitle): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(GuideTitle), 0)
 
     @staticmethod
-    def AddGuideText(builder, GuideText): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(GuideText), 0)
+    def AddGuideImagePath(builder, GuideImagePath): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(GuideImagePath), 0)
+
+    @staticmethod
+    def AddGuideText(builder, GuideText): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(GuideText), 0)
