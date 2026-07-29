@@ -38,10 +38,17 @@ class KeyControllerImageExcel:
         return None
 
 
+    def SteamDeckIconName(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(3)
+    def Start(builder): builder.StartObject(4)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -54,3 +61,6 @@ class KeyControllerImageExcel:
 
     @staticmethod
     def AddXBoxIconName(builder, XBoxIconName): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(XBoxIconName), 0)
+
+    @staticmethod
+    def AddSteamDeckIconName(builder, SteamDeckIconName): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(SteamDeckIconName), 0)

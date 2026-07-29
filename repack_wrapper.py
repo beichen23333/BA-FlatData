@@ -11362,10 +11362,12 @@ def pack_KeyControllerImageExcel(builder: flatbuffers.Builder, data: dict, encry
     ControllerKeyCode_off = builder.CreateString(encrypt_string(data.get('ControllerKeyCode', ''), password))
     PSIconName_off = builder.CreateString(encrypt_string(data.get('PSIconName', ''), password))
     XBoxIconName_off = builder.CreateString(encrypt_string(data.get('XBoxIconName', ''), password))
+    SteamDeckIconName_off = builder.CreateString(encrypt_string(data.get('SteamDeckIconName', ''), password))
     KeyControllerImageExcel.Start(builder)
     KeyControllerImageExcel.AddControllerKeyCode(builder, ControllerKeyCode_off)
     KeyControllerImageExcel.AddPSIconName(builder, PSIconName_off)
     KeyControllerImageExcel.AddXBoxIconName(builder, XBoxIconName_off)
+    KeyControllerImageExcel.AddSteamDeckIconName(builder, SteamDeckIconName_off)
     return KeyControllerImageExcel.End(builder)
 
 def pack_KeyMappingDisplayInfoExcel(builder: flatbuffers.Builder, data: dict, encrypt=True) -> int:

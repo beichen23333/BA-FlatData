@@ -11271,6 +11271,7 @@ def dump_KeyControllerImageExcel(excel_instance, password: bytes = b"") -> dict:
         "ControllerKeyCode": convert_string(excel_instance.ControllerKeyCode(), password),
         "PSIconName": convert_string(excel_instance.PSIconName(), password),
         "XBoxIconName": convert_string(excel_instance.XBoxIconName(), password),
+        "SteamDeckIconName": convert_string(excel_instance.SteamDeckIconName(), password),
     }
 
 def dump_KeyMappingDisplayInfoExcel(excel_instance, password: bytes = b"") -> dict:
