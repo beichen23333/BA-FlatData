@@ -20,28 +20,28 @@ class PickupDuplicateBonusExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShopCategoryType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShopId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PickupCharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,14 +55,14 @@ class PickupDuplicateBonusExcel:
     def RewardParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,19 +75,19 @@ class PickupDuplicateBonusExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddShopCategoryType(builder, ShopCategoryType): builder.PrependInt32Slot(1, ShopCategoryType, 0)
+    def AddShopCategoryType(builder, ShopCategoryType): builder.PrependFloat32Slot(1, ShopCategoryType, 0)
 
 
     @staticmethod
-    def AddShopId(builder, ShopId): builder.PrependInt64Slot(2, ShopId, 0)
+    def AddShopId(builder, ShopId): builder.PrependInt32Slot(2, ShopId, 0)
 
 
     @staticmethod
-    def AddPickupCharacterId(builder, PickupCharacterId): builder.PrependInt64Slot(3, PickupCharacterId, 0)
+    def AddPickupCharacterId(builder, PickupCharacterId): builder.PrependInt32Slot(3, PickupCharacterId, 0)
 
 
     @staticmethod
@@ -95,9 +95,9 @@ class PickupDuplicateBonusExcel:
 
 
     @staticmethod
-    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt64Slot(5, RewardParcelId, 0)
+    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt32Slot(5, RewardParcelId, 0)
 
 
     @staticmethod
-    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt64Slot(6, RewardParcelAmount, 0)
+    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt32Slot(6, RewardParcelAmount, 0)
 

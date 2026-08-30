@@ -24,50 +24,18 @@ class PropMotion:
         return None
 
 
-    def Positions(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            from .PropVector3 import PropVector3
-            obj = PropVector3()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
-
     def PositionsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def PositionsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
-
-
-    def Rotations(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            from .PropVector3 import PropVector3
-            obj = PropVector3()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
 
     def RotationsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def RotationsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
 
 
 
@@ -82,13 +50,9 @@ class PropMotion:
     def AddName(builder, Name): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(Name), 0)
 
     @staticmethod
-    def AddPositions(builder, Positions): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(Positions), 0)
-    @staticmethod
-    def StartPositionsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddPositionsLength(builder, PositionsLength): builder.PrependInt32Slot(1, PositionsLength, 0)
 
 
     @staticmethod
-    def AddRotations(builder, Rotations): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(Rotations), 0)
-    @staticmethod
-    def StartRotationsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddRotationsLength(builder, RotationsLength): builder.PrependInt32Slot(2, RotationsLength, 0)
 

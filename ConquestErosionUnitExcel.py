@@ -20,14 +20,14 @@ class ConquestErosionUnitExcel:
     def TilePrefabId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MassErosionUnitId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class ConquestErosionUnitExcel:
     def IndividualErosionUnitId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -61,11 +61,11 @@ class ConquestErosionUnitExcel:
 
 
     @staticmethod
-    def AddTilePrefabId(builder, TilePrefabId): builder.PrependInt64Slot(0, TilePrefabId, 0)
+    def AddTilePrefabId(builder, TilePrefabId): builder.PrependInt32Slot(0, TilePrefabId, 0)
 
 
     @staticmethod
-    def AddMassErosionUnitId(builder, MassErosionUnitId): builder.PrependInt64Slot(1, MassErosionUnitId, 0)
+    def AddMassErosionUnitId(builder, MassErosionUnitId): builder.PrependInt32Slot(1, MassErosionUnitId, 0)
 
 
     @staticmethod
@@ -73,7 +73,7 @@ class ConquestErosionUnitExcel:
 
 
     @staticmethod
-    def AddIndividualErosionUnitId(builder, IndividualErosionUnitId): builder.PrependInt64Slot(3, IndividualErosionUnitId, 0)
+    def AddIndividualErosionUnitId(builder, IndividualErosionUnitId): builder.PrependInt32Slot(3, IndividualErosionUnitId, 0)
 
 
     @staticmethod

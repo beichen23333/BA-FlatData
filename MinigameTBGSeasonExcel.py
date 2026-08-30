@@ -20,7 +20,7 @@ class MinigameTBGSeasonExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,35 +41,35 @@ class MinigameTBGSeasonExcel:
     def DefaultItemDiceId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonSlot1CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonSlot2CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonSlot3CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonSlot4CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -111,7 +111,7 @@ class MinigameTBGSeasonExcel:
     def EventUseCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -125,7 +125,7 @@ class MinigameTBGSeasonExcel:
     def EchelonRevivalCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -229,7 +229,7 @@ class MinigameTBGSeasonExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
@@ -241,23 +241,23 @@ class MinigameTBGSeasonExcel:
 
 
     @staticmethod
-    def AddDefaultItemDiceId(builder, DefaultItemDiceId): builder.PrependInt64Slot(3, DefaultItemDiceId, 0)
+    def AddDefaultItemDiceId(builder, DefaultItemDiceId): builder.PrependInt32Slot(3, DefaultItemDiceId, 0)
 
 
     @staticmethod
-    def AddEchelonSlot1CharacterId(builder, EchelonSlot1CharacterId): builder.PrependInt64Slot(4, EchelonSlot1CharacterId, 0)
+    def AddEchelonSlot1CharacterId(builder, EchelonSlot1CharacterId): builder.PrependInt32Slot(4, EchelonSlot1CharacterId, 0)
 
 
     @staticmethod
-    def AddEchelonSlot2CharacterId(builder, EchelonSlot2CharacterId): builder.PrependInt64Slot(5, EchelonSlot2CharacterId, 0)
+    def AddEchelonSlot2CharacterId(builder, EchelonSlot2CharacterId): builder.PrependInt32Slot(5, EchelonSlot2CharacterId, 0)
 
 
     @staticmethod
-    def AddEchelonSlot3CharacterId(builder, EchelonSlot3CharacterId): builder.PrependInt64Slot(6, EchelonSlot3CharacterId, 0)
+    def AddEchelonSlot3CharacterId(builder, EchelonSlot3CharacterId): builder.PrependInt32Slot(6, EchelonSlot3CharacterId, 0)
 
 
     @staticmethod
-    def AddEchelonSlot4CharacterId(builder, EchelonSlot4CharacterId): builder.PrependInt64Slot(7, EchelonSlot4CharacterId, 0)
+    def AddEchelonSlot4CharacterId(builder, EchelonSlot4CharacterId): builder.PrependInt32Slot(7, EchelonSlot4CharacterId, 0)
 
 
     @staticmethod
@@ -277,7 +277,7 @@ class MinigameTBGSeasonExcel:
 
 
     @staticmethod
-    def AddEventUseCostId(builder, EventUseCostId): builder.PrependInt64Slot(13, EventUseCostId, 0)
+    def AddEventUseCostId(builder, EventUseCostId): builder.PrependInt32Slot(13, EventUseCostId, 0)
 
 
     @staticmethod
@@ -285,7 +285,7 @@ class MinigameTBGSeasonExcel:
 
 
     @staticmethod
-    def AddEchelonRevivalCostId(builder, EchelonRevivalCostId): builder.PrependInt64Slot(15, EchelonRevivalCostId, 0)
+    def AddEchelonRevivalCostId(builder, EchelonRevivalCostId): builder.PrependInt32Slot(15, EchelonRevivalCostId, 0)
 
 
     @staticmethod

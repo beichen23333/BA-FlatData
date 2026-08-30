@@ -20,14 +20,14 @@ class EventContentScenarioExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,14 +48,14 @@ class EventContentScenarioExcel:
     def Order(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RecollectionNumber(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -80,28 +80,11 @@ class EventContentScenarioExcel:
         return 0
 
 
-    def ScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def ScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        return o == 0
 
 
     def ScenarioConditionType(self):
@@ -114,21 +97,21 @@ class EventContentScenarioExcel:
     def ConditionAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ConditionEventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ClearedScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -153,76 +136,25 @@ class EventContentScenarioExcel:
         return 0
 
 
-    def RewardParcelType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def RewardParcelTypeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def RewardParcelTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def RewardParcelTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        return o == 0
-
-
-    def RewardId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def RewardIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def RewardIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def RewardIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        return o == 0
-
-
-    def RewardAmount(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def RewardAmountAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def RewardAmountLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def RewardAmountIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        return o == 0
 
 
 
@@ -234,11 +166,11 @@ class EventContentScenarioExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(1, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(1, EventContentId, 0)
 
 
     @staticmethod
@@ -250,11 +182,11 @@ class EventContentScenarioExcel:
 
 
     @staticmethod
-    def AddOrder(builder, Order): builder.PrependInt64Slot(4, Order, 0)
+    def AddOrder(builder, Order): builder.PrependInt32Slot(4, Order, 0)
 
 
     @staticmethod
-    def AddRecollectionNumber(builder, RecollectionNumber): builder.PrependInt64Slot(5, RecollectionNumber, 0)
+    def AddRecollectionNumber(builder, RecollectionNumber): builder.PrependInt32Slot(5, RecollectionNumber, 0)
 
 
     @staticmethod
@@ -270,9 +202,7 @@ class EventContentScenarioExcel:
 
 
     @staticmethod
-    def AddScenarioGroupId(builder, ScenarioGroupId): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioGroupId), 0)
-    @staticmethod
-    def StartScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddScenarioGroupIdLength(builder, ScenarioGroupIdLength): builder.PrependInt32Slot(9, ScenarioGroupIdLength, 0)
 
 
     @staticmethod
@@ -280,15 +210,15 @@ class EventContentScenarioExcel:
 
 
     @staticmethod
-    def AddConditionAmount(builder, ConditionAmount): builder.PrependInt64Slot(11, ConditionAmount, 0)
+    def AddConditionAmount(builder, ConditionAmount): builder.PrependInt32Slot(11, ConditionAmount, 0)
 
 
     @staticmethod
-    def AddConditionEventContentId(builder, ConditionEventContentId): builder.PrependInt64Slot(12, ConditionEventContentId, 0)
+    def AddConditionEventContentId(builder, ConditionEventContentId): builder.PrependInt32Slot(12, ConditionEventContentId, 0)
 
 
     @staticmethod
-    def AddClearedScenarioGroupId(builder, ClearedScenarioGroupId): builder.PrependInt64Slot(13, ClearedScenarioGroupId, 0)
+    def AddClearedScenarioGroupId(builder, ClearedScenarioGroupId): builder.PrependInt32Slot(13, ClearedScenarioGroupId, 0)
 
 
     @staticmethod
@@ -303,19 +233,13 @@ class EventContentScenarioExcel:
 
 
     @staticmethod
-    def AddRewardParcelType(builder, RewardParcelType): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(RewardParcelType), 0)
-    @staticmethod
-    def StartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddRewardParcelTypeLength(builder, RewardParcelTypeLength): builder.PrependInt32Slot(17, RewardParcelTypeLength, 0)
 
 
     @staticmethod
-    def AddRewardId(builder, RewardId): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(RewardId), 0)
-    @staticmethod
-    def StartRewardIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddRewardIdLength(builder, RewardIdLength): builder.PrependInt32Slot(18, RewardIdLength, 0)
 
 
     @staticmethod
-    def AddRewardAmount(builder, RewardAmount): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(RewardAmount), 0)
-    @staticmethod
-    def StartRewardAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddRewardAmountLength(builder, RewardAmountLength): builder.PrependInt32Slot(19, RewardAmountLength, 0)
 

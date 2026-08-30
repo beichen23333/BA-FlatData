@@ -20,14 +20,14 @@ class EventContentSeasonExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OriginalEventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,21 +90,21 @@ class EventContentSeasonExcel:
     def EventItemId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MainEventId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventChangeOpenCondition(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -167,32 +167,15 @@ class EventContentSeasonExcel:
     def MinigamePrologScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def BeforehandScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def BeforehandScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def BeforehandScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def BeforehandScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        return o == 0
 
 
     def MainBannerImagePath(self):
@@ -212,7 +195,7 @@ class EventContentSeasonExcel:
     def ShiftTriggerStageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -275,28 +258,28 @@ class EventContentSeasonExcel:
     def EventContentStageRewardIdPermanent(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardTagPermanent(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
     def MiniEventShortCutScenarioModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScenarioContentCollectionGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -309,11 +292,11 @@ class EventContentSeasonExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddOriginalEventContentId(builder, OriginalEventContentId): builder.PrependInt64Slot(1, OriginalEventContentId, 0)
+    def AddOriginalEventContentId(builder, OriginalEventContentId): builder.PrependInt32Slot(1, OriginalEventContentId, 0)
 
 
     @staticmethod
@@ -348,15 +331,15 @@ class EventContentSeasonExcel:
 
 
     @staticmethod
-    def AddEventItemId(builder, EventItemId): builder.PrependInt64Slot(10, EventItemId, 0)
+    def AddEventItemId(builder, EventItemId): builder.PrependInt32Slot(10, EventItemId, 0)
 
 
     @staticmethod
-    def AddMainEventId(builder, MainEventId): builder.PrependInt64Slot(11, MainEventId, 0)
+    def AddMainEventId(builder, MainEventId): builder.PrependInt32Slot(11, MainEventId, 0)
 
 
     @staticmethod
-    def AddEventChangeOpenCondition(builder, EventChangeOpenCondition): builder.PrependInt64Slot(12, EventChangeOpenCondition, 0)
+    def AddEventChangeOpenCondition(builder, EventChangeOpenCondition): builder.PrependInt32Slot(12, EventChangeOpenCondition, 0)
 
 
     @staticmethod
@@ -384,13 +367,11 @@ class EventContentSeasonExcel:
     def AddBeforehandBgImagePath(builder, BeforehandBgImagePath): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(BeforehandBgImagePath), 0)
 
     @staticmethod
-    def AddMinigamePrologScenarioGroupId(builder, MinigamePrologScenarioGroupId): builder.PrependInt64Slot(21, MinigamePrologScenarioGroupId, 0)
+    def AddMinigamePrologScenarioGroupId(builder, MinigamePrologScenarioGroupId): builder.PrependInt32Slot(21, MinigamePrologScenarioGroupId, 0)
 
 
     @staticmethod
-    def AddBeforehandScenarioGroupId(builder, BeforehandScenarioGroupId): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(BeforehandScenarioGroupId), 0)
-    @staticmethod
-    def StartBeforehandScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddBeforehandScenarioGroupIdLength(builder, BeforehandScenarioGroupIdLength): builder.PrependInt32Slot(22, BeforehandScenarioGroupIdLength, 0)
 
 
     @staticmethod
@@ -400,7 +381,7 @@ class EventContentSeasonExcel:
     def AddMainBgImagePath(builder, MainBgImagePath): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(MainBgImagePath), 0)
 
     @staticmethod
-    def AddShiftTriggerStageId(builder, ShiftTriggerStageId): builder.PrependInt64Slot(25, ShiftTriggerStageId, 0)
+    def AddShiftTriggerStageId(builder, ShiftTriggerStageId): builder.PrependInt32Slot(25, ShiftTriggerStageId, 0)
 
 
     @staticmethod
@@ -430,17 +411,17 @@ class EventContentSeasonExcel:
 
 
     @staticmethod
-    def AddEventContentStageRewardIdPermanent(builder, EventContentStageRewardIdPermanent): builder.PrependInt64Slot(34, EventContentStageRewardIdPermanent, 0)
+    def AddEventContentStageRewardIdPermanent(builder, EventContentStageRewardIdPermanent): builder.PrependInt32Slot(34, EventContentStageRewardIdPermanent, 0)
 
 
     @staticmethod
-    def AddRewardTagPermanent(builder, RewardTagPermanent): builder.PrependInt32Slot(35, RewardTagPermanent, 0)
+    def AddRewardTagPermanent(builder, RewardTagPermanent): builder.PrependFloat32Slot(35, RewardTagPermanent, 0)
 
 
     @staticmethod
-    def AddMiniEventShortCutScenarioModeId(builder, MiniEventShortCutScenarioModeId): builder.PrependInt64Slot(36, MiniEventShortCutScenarioModeId, 0)
+    def AddMiniEventShortCutScenarioModeId(builder, MiniEventShortCutScenarioModeId): builder.PrependInt32Slot(36, MiniEventShortCutScenarioModeId, 0)
 
 
     @staticmethod
-    def AddScenarioContentCollectionGroupId(builder, ScenarioContentCollectionGroupId): builder.PrependInt64Slot(37, ScenarioContentCollectionGroupId, 0)
+    def AddScenarioContentCollectionGroupId(builder, ScenarioContentCollectionGroupId): builder.PrependInt32Slot(37, ScenarioContentCollectionGroupId, 0)
 

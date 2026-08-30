@@ -20,7 +20,7 @@ class ShopRefreshExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class ShopRefreshExcel:
     def GoodsId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,28 +62,28 @@ class ShopRefreshExcel:
     def VisibleAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PurchaseCountLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CategoryType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -131,7 +131,7 @@ class ShopRefreshExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -143,7 +143,7 @@ class ShopRefreshExcel:
 
 
     @staticmethod
-    def AddGoodsId(builder, GoodsId): builder.PrependInt64Slot(3, GoodsId, 0)
+    def AddGoodsId(builder, GoodsId): builder.PrependInt32Slot(3, GoodsId, 0)
 
 
     @staticmethod
@@ -155,19 +155,19 @@ class ShopRefreshExcel:
 
 
     @staticmethod
-    def AddVisibleAmount(builder, VisibleAmount): builder.PrependInt64Slot(6, VisibleAmount, 0)
+    def AddVisibleAmount(builder, VisibleAmount): builder.PrependInt32Slot(6, VisibleAmount, 0)
 
 
     @staticmethod
-    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt64Slot(7, PurchaseCountLimit, 0)
+    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt32Slot(7, PurchaseCountLimit, 0)
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(8, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(8, DisplayOrder, 0)
 
 
     @staticmethod
-    def AddCategoryType(builder, CategoryType): builder.PrependInt32Slot(9, CategoryType, 0)
+    def AddCategoryType(builder, CategoryType): builder.PrependFloat32Slot(9, CategoryType, 0)
 
 
     @staticmethod

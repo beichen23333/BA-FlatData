@@ -20,21 +20,21 @@ class ScenarioScriptExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SelectionGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BGMId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -131,15 +131,15 @@ class ScenarioScriptExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
-    def AddSelectionGroup(builder, SelectionGroup): builder.PrependInt64Slot(1, SelectionGroup, 0)
+    def AddSelectionGroup(builder, SelectionGroup): builder.PrependInt32Slot(1, SelectionGroup, 0)
 
 
     @staticmethod
-    def AddBGMId(builder, BGMId): builder.PrependInt64Slot(2, BGMId, 0)
+    def AddBGMId(builder, BGMId): builder.PrependInt32Slot(2, BGMId, 0)
 
 
     @staticmethod

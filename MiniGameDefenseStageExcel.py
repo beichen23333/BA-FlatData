@@ -20,7 +20,7 @@ class MiniGameDefenseStageExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class MiniGameDefenseStageExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class MiniGameDefenseStageExcel:
     def PrevStageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -83,7 +83,7 @@ class MiniGameDefenseStageExcel:
     def BattleDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -97,7 +97,7 @@ class MiniGameDefenseStageExcel:
     def StageEnterCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -111,56 +111,22 @@ class MiniGameDefenseStageExcel:
     def EventContentStageRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def EnterScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def EnterScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def EnterScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def EnterScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        return o == 0
-
-
-    def ClearScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ClearScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ClearScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ClearScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        return o == 0
 
 
     def StageTopography(self):
@@ -180,7 +146,7 @@ class MiniGameDefenseStageExcel:
     def GroundID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -191,52 +157,18 @@ class MiniGameDefenseStageExcel:
         return 0
 
 
-    def StarGoal(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StarGoalAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def StarGoalLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def StarGoalIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
-        return o == 0
-
-
-    def StarGoalAmount(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StarGoalAmountAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def StarGoalAmountLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def StarGoalAmountIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        return o == 0
 
 
     def DefenseFormationBGPrefab(self):
@@ -256,14 +188,14 @@ class MiniGameDefenseStageExcel:
     def FixedEchelon(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MininageDefenseFixedStatId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -283,14 +215,14 @@ class MiniGameDefenseStageExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
     def AddName(builder, Name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(Name), 0)
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(2, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(2, EventContentId, 0)
 
 
     @staticmethod
@@ -310,7 +242,7 @@ class MiniGameDefenseStageExcel:
 
 
     @staticmethod
-    def AddPrevStageId(builder, PrevStageId): builder.PrependInt64Slot(7, PrevStageId, 0)
+    def AddPrevStageId(builder, PrevStageId): builder.PrependInt32Slot(7, PrevStageId, 0)
 
 
     @staticmethod
@@ -318,7 +250,7 @@ class MiniGameDefenseStageExcel:
 
 
     @staticmethod
-    def AddBattleDuration(builder, BattleDuration): builder.PrependInt64Slot(9, BattleDuration, 0)
+    def AddBattleDuration(builder, BattleDuration): builder.PrependInt32Slot(9, BattleDuration, 0)
 
 
     @staticmethod
@@ -326,7 +258,7 @@ class MiniGameDefenseStageExcel:
 
 
     @staticmethod
-    def AddStageEnterCostId(builder, StageEnterCostId): builder.PrependInt64Slot(11, StageEnterCostId, 0)
+    def AddStageEnterCostId(builder, StageEnterCostId): builder.PrependInt32Slot(11, StageEnterCostId, 0)
 
 
     @staticmethod
@@ -334,19 +266,15 @@ class MiniGameDefenseStageExcel:
 
 
     @staticmethod
-    def AddEventContentStageRewardId(builder, EventContentStageRewardId): builder.PrependInt64Slot(13, EventContentStageRewardId, 0)
+    def AddEventContentStageRewardId(builder, EventContentStageRewardId): builder.PrependInt32Slot(13, EventContentStageRewardId, 0)
 
 
     @staticmethod
-    def AddEnterScenarioGroupId(builder, EnterScenarioGroupId): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(EnterScenarioGroupId), 0)
-    @staticmethod
-    def StartEnterScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddEnterScenarioGroupIdLength(builder, EnterScenarioGroupIdLength): builder.PrependInt32Slot(14, EnterScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddClearScenarioGroupId(builder, ClearScenarioGroupId): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(ClearScenarioGroupId), 0)
-    @staticmethod
-    def StartClearScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddClearScenarioGroupIdLength(builder, ClearScenarioGroupIdLength): builder.PrependInt32Slot(15, ClearScenarioGroupIdLength, 0)
 
 
     @staticmethod
@@ -358,7 +286,7 @@ class MiniGameDefenseStageExcel:
 
 
     @staticmethod
-    def AddGroundID(builder, GroundID): builder.PrependInt64Slot(18, GroundID, 0)
+    def AddGroundID(builder, GroundID): builder.PrependInt32Slot(18, GroundID, 0)
 
 
     @staticmethod
@@ -366,15 +294,11 @@ class MiniGameDefenseStageExcel:
 
 
     @staticmethod
-    def AddStarGoal(builder, StarGoal): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(StarGoal), 0)
-    @staticmethod
-    def StartStarGoalVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStarGoalLength(builder, StarGoalLength): builder.PrependInt32Slot(20, StarGoalLength, 0)
 
 
     @staticmethod
-    def AddStarGoalAmount(builder, StarGoalAmount): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(StarGoalAmount), 0)
-    @staticmethod
-    def StartStarGoalAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStarGoalAmountLength(builder, StarGoalAmountLength): builder.PrependInt32Slot(21, StarGoalAmountLength, 0)
 
 
     @staticmethod
@@ -385,11 +309,11 @@ class MiniGameDefenseStageExcel:
 
 
     @staticmethod
-    def AddFixedEchelon(builder, FixedEchelon): builder.PrependInt64Slot(24, FixedEchelon, 0)
+    def AddFixedEchelon(builder, FixedEchelon): builder.PrependInt32Slot(24, FixedEchelon, 0)
 
 
     @staticmethod
-    def AddMininageDefenseFixedStatId(builder, MininageDefenseFixedStatId): builder.PrependInt64Slot(25, MininageDefenseFixedStatId, 0)
+    def AddMininageDefenseFixedStatId(builder, MininageDefenseFixedStatId): builder.PrependInt32Slot(25, MininageDefenseFixedStatId, 0)
 
 
     @staticmethod

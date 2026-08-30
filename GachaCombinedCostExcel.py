@@ -20,14 +20,14 @@ class GachaCombinedCostExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Priority(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class GachaCombinedCostExcel:
     def ConsumeGachaTicketTypeAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,14 +55,14 @@ class GachaCombinedCostExcel:
     def ConsumeParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ConsumeParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,11 +75,11 @@ class GachaCombinedCostExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
-    def AddPriority(builder, Priority): builder.PrependInt64Slot(1, Priority, 0)
+    def AddPriority(builder, Priority): builder.PrependInt32Slot(1, Priority, 0)
 
 
     @staticmethod
@@ -87,7 +87,7 @@ class GachaCombinedCostExcel:
 
 
     @staticmethod
-    def AddConsumeGachaTicketTypeAmount(builder, ConsumeGachaTicketTypeAmount): builder.PrependInt64Slot(3, ConsumeGachaTicketTypeAmount, 0)
+    def AddConsumeGachaTicketTypeAmount(builder, ConsumeGachaTicketTypeAmount): builder.PrependInt32Slot(3, ConsumeGachaTicketTypeAmount, 0)
 
 
     @staticmethod
@@ -95,9 +95,9 @@ class GachaCombinedCostExcel:
 
 
     @staticmethod
-    def AddConsumeParcelId(builder, ConsumeParcelId): builder.PrependInt64Slot(5, ConsumeParcelId, 0)
+    def AddConsumeParcelId(builder, ConsumeParcelId): builder.PrependInt32Slot(5, ConsumeParcelId, 0)
 
 
     @staticmethod
-    def AddConsumeParcelAmount(builder, ConsumeParcelAmount): builder.PrependInt64Slot(6, ConsumeParcelAmount, 0)
+    def AddConsumeParcelAmount(builder, ConsumeParcelAmount): builder.PrependInt32Slot(6, ConsumeParcelAmount, 0)
 

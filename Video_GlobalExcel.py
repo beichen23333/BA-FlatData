@@ -20,7 +20,7 @@ class Video_GlobalExcel:
     def VideoId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -89,7 +89,7 @@ class Video_GlobalExcel:
 
 
     @staticmethod
-    def AddVideoId(builder, VideoId): builder.PrependInt64Slot(0, VideoId, 0)
+    def AddVideoId(builder, VideoId): builder.PrependInt32Slot(0, VideoId, 0)
 
 
     @staticmethod

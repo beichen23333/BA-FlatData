@@ -11,3 +11,4 @@ class ConditionType:
     OpenSeasonBirthdayPlayerDialog = 9
     AssistUsedByOther = 10
     EquipCharacterGear = 11
+    CompleteTutorial = 12

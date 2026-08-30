@@ -20,32 +20,15 @@ class ConquestGroupBuffExcel:
     def ConquestBuffId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def School(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def SchoolAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def SchoolLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def SchoolIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
 
 
     def RecommandLocalizeEtcId(self):
@@ -71,13 +54,11 @@ class ConquestGroupBuffExcel:
 
 
     @staticmethod
-    def AddConquestBuffId(builder, ConquestBuffId): builder.PrependInt64Slot(0, ConquestBuffId, 0)
+    def AddConquestBuffId(builder, ConquestBuffId): builder.PrependInt32Slot(0, ConquestBuffId, 0)
 
 
     @staticmethod
-    def AddSchool(builder, School): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(School), 0)
-    @staticmethod
-    def StartSchoolVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddSchoolLength(builder, SchoolLength): builder.PrependInt32Slot(1, SchoolLength, 0)
 
 
     @staticmethod

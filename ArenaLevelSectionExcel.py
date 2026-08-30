@@ -20,28 +20,28 @@ class ArenaLevelSectionExcel:
     def ArenaSeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StartLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def LastLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UserCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -54,17 +54,17 @@ class ArenaLevelSectionExcel:
 
 
     @staticmethod
-    def AddArenaSeasonId(builder, ArenaSeasonId): builder.PrependInt64Slot(0, ArenaSeasonId, 0)
+    def AddArenaSeasonId(builder, ArenaSeasonId): builder.PrependInt32Slot(0, ArenaSeasonId, 0)
 
 
     @staticmethod
-    def AddStartLevel(builder, StartLevel): builder.PrependInt64Slot(1, StartLevel, 0)
+    def AddStartLevel(builder, StartLevel): builder.PrependInt32Slot(1, StartLevel, 0)
 
 
     @staticmethod
-    def AddLastLevel(builder, LastLevel): builder.PrependInt64Slot(2, LastLevel, 0)
+    def AddLastLevel(builder, LastLevel): builder.PrependInt32Slot(2, LastLevel, 0)
 
 
     @staticmethod
-    def AddUserCount(builder, UserCount): builder.PrependInt64Slot(3, UserCount, 0)
+    def AddUserCount(builder, UserCount): builder.PrependInt32Slot(3, UserCount, 0)
 

@@ -20,7 +20,7 @@ class SchoolDungeonRewardExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class SchoolDungeonRewardExcel:
     def RewardTag(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,21 +48,21 @@ class SchoolDungeonRewardExcel:
     def RewardParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardParcelProbability(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -82,7 +82,7 @@ class SchoolDungeonRewardExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
@@ -90,7 +90,7 @@ class SchoolDungeonRewardExcel:
 
 
     @staticmethod
-    def AddRewardTag(builder, RewardTag): builder.PrependInt32Slot(2, RewardTag, 0)
+    def AddRewardTag(builder, RewardTag): builder.PrependFloat32Slot(2, RewardTag, 0)
 
 
     @staticmethod
@@ -98,15 +98,15 @@ class SchoolDungeonRewardExcel:
 
 
     @staticmethod
-    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt64Slot(4, RewardParcelId, 0)
+    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt32Slot(4, RewardParcelId, 0)
 
 
     @staticmethod
-    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt64Slot(5, RewardParcelAmount, 0)
+    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt32Slot(5, RewardParcelAmount, 0)
 
 
     @staticmethod
-    def AddRewardParcelProbability(builder, RewardParcelProbability): builder.PrependInt64Slot(6, RewardParcelProbability, 0)
+    def AddRewardParcelProbability(builder, RewardParcelProbability): builder.PrependInt32Slot(6, RewardParcelProbability, 0)
 
 
     @staticmethod

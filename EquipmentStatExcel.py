@@ -20,7 +20,7 @@ class EquipmentStatExcel:
     def EquipmentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -31,76 +31,25 @@ class EquipmentStatExcel:
         return 0
 
 
-    def StatType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StatTypeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def StatTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def StatTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
-
-
-    def MinStat(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def MinStatAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def MinStatLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def MinStatIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
-
-
-    def MaxStat(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def MaxStatAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def MaxStatLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def MaxStatIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        return o == 0
 
 
     def LevelUpInsertLimit(self):
@@ -113,7 +62,7 @@ class EquipmentStatExcel:
     def LevelUpFeedExp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -127,7 +76,7 @@ class EquipmentStatExcel:
     def LevelUpFeedCostAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -141,7 +90,7 @@ class EquipmentStatExcel:
     def LevelUpFeedAddExp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -175,7 +124,7 @@ class EquipmentStatExcel:
 
 
     @staticmethod
-    def AddEquipmentId(builder, EquipmentId): builder.PrependInt64Slot(0, EquipmentId, 0)
+    def AddEquipmentId(builder, EquipmentId): builder.PrependInt32Slot(0, EquipmentId, 0)
 
 
     @staticmethod
@@ -183,21 +132,15 @@ class EquipmentStatExcel:
 
 
     @staticmethod
-    def AddStatType(builder, StatType): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(StatType), 0)
-    @staticmethod
-    def StartStatTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStatTypeLength(builder, StatTypeLength): builder.PrependInt32Slot(2, StatTypeLength, 0)
 
 
     @staticmethod
-    def AddMinStat(builder, MinStat): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(MinStat), 0)
-    @staticmethod
-    def StartMinStatVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddMinStatLength(builder, MinStatLength): builder.PrependInt32Slot(3, MinStatLength, 0)
 
 
     @staticmethod
-    def AddMaxStat(builder, MaxStat): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(MaxStat), 0)
-    @staticmethod
-    def StartMaxStatVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddMaxStatLength(builder, MaxStatLength): builder.PrependInt32Slot(4, MaxStatLength, 0)
 
 
     @staticmethod
@@ -205,7 +148,7 @@ class EquipmentStatExcel:
 
 
     @staticmethod
-    def AddLevelUpFeedExp(builder, LevelUpFeedExp): builder.PrependInt64Slot(6, LevelUpFeedExp, 0)
+    def AddLevelUpFeedExp(builder, LevelUpFeedExp): builder.PrependInt32Slot(6, LevelUpFeedExp, 0)
 
 
     @staticmethod
@@ -213,7 +156,7 @@ class EquipmentStatExcel:
 
 
     @staticmethod
-    def AddLevelUpFeedCostAmount(builder, LevelUpFeedCostAmount): builder.PrependInt64Slot(8, LevelUpFeedCostAmount, 0)
+    def AddLevelUpFeedCostAmount(builder, LevelUpFeedCostAmount): builder.PrependInt32Slot(8, LevelUpFeedCostAmount, 0)
 
 
     @staticmethod
@@ -221,7 +164,7 @@ class EquipmentStatExcel:
 
 
     @staticmethod
-    def AddLevelUpFeedAddExp(builder, LevelUpFeedAddExp): builder.PrependInt64Slot(10, LevelUpFeedAddExp, 0)
+    def AddLevelUpFeedAddExp(builder, LevelUpFeedAddExp): builder.PrependInt32Slot(10, LevelUpFeedAddExp, 0)
 
 
     @staticmethod

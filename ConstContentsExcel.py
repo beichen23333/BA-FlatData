@@ -31,10 +31,24 @@ class ConstContentsExcel:
         return 0
 
 
+    def LobbyDayTimeFrom(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def LobbyNightTimeFrom(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(2)
+    def Start(builder): builder.StartObject(4)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -45,4 +59,12 @@ class ConstContentsExcel:
 
     @staticmethod
     def AddSearchUpdateTime(builder, SearchUpdateTime): builder.PrependFloat32Slot(1, SearchUpdateTime, 0)
+
+
+    @staticmethod
+    def AddLobbyDayTimeFrom(builder, LobbyDayTimeFrom): builder.PrependInt32Slot(2, LobbyDayTimeFrom, 0)
+
+
+    @staticmethod
+    def AddLobbyNightTimeFrom(builder, LobbyNightTimeFrom): builder.PrependInt32Slot(3, LobbyNightTimeFrom, 0)
 

@@ -20,14 +20,14 @@ class MinigameCCGLevelExcel:
     def LevelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CCGId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class MinigameCCGLevelExcel:
     def BGMId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -61,11 +61,11 @@ class MinigameCCGLevelExcel:
 
 
     @staticmethod
-    def AddLevelId(builder, LevelId): builder.PrependInt64Slot(0, LevelId, 0)
+    def AddLevelId(builder, LevelId): builder.PrependInt32Slot(0, LevelId, 0)
 
 
     @staticmethod
-    def AddCCGId(builder, CCGId): builder.PrependInt64Slot(1, CCGId, 0)
+    def AddCCGId(builder, CCGId): builder.PrependInt32Slot(1, CCGId, 0)
 
 
     @staticmethod
@@ -76,5 +76,5 @@ class MinigameCCGLevelExcel:
     def AddBackgroundPath(builder, BackgroundPath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(BackgroundPath), 0)
 
     @staticmethod
-    def AddBGMId(builder, BGMId): builder.PrependInt64Slot(4, BGMId, 0)
+    def AddBGMId(builder, BGMId): builder.PrependInt32Slot(4, BGMId, 0)
 

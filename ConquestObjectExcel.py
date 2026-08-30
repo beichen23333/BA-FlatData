@@ -20,14 +20,14 @@ class ConquestObjectExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class ConquestObjectExcel:
     def ConquestRewardID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -110,11 +110,11 @@ class ConquestObjectExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(1, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(1, EventContentId, 0)
 
 
     @staticmethod
@@ -136,7 +136,7 @@ class ConquestObjectExcel:
 
 
     @staticmethod
-    def AddConquestRewardID(builder, ConquestRewardID): builder.PrependInt64Slot(7, ConquestRewardID, 0)
+    def AddConquestRewardID(builder, ConquestRewardID): builder.PrependInt32Slot(7, ConquestRewardID, 0)
 
 
     @staticmethod

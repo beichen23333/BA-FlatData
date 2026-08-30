@@ -20,7 +20,7 @@ class MiniGameShootingGeasExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class MiniGameShootingGeasExcel:
     def Probability(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class MiniGameShootingGeasExcel:
     def NeedGeasId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -82,7 +82,7 @@ class MiniGameShootingGeasExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
@@ -93,7 +93,7 @@ class MiniGameShootingGeasExcel:
     def AddIcon(builder, Icon): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(Icon), 0)
 
     @staticmethod
-    def AddProbability(builder, Probability): builder.PrependInt64Slot(3, Probability, 0)
+    def AddProbability(builder, Probability): builder.PrependInt32Slot(3, Probability, 0)
 
 
     @staticmethod
@@ -104,7 +104,7 @@ class MiniGameShootingGeasExcel:
     def AddGeasData(builder, GeasData): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(GeasData), 0)
 
     @staticmethod
-    def AddNeedGeasId(builder, NeedGeasId): builder.PrependInt64Slot(6, NeedGeasId, 0)
+    def AddNeedGeasId(builder, NeedGeasId): builder.PrependInt32Slot(6, NeedGeasId, 0)
 
 
     @staticmethod

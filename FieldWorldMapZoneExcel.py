@@ -20,7 +20,7 @@ class FieldWorldMapZoneExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class FieldWorldMapZoneExcel:
     def OpenConditionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,21 +62,21 @@ class FieldWorldMapZoneExcel:
     def CloseConditionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ResultFieldScene(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FieldStageInteractionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -110,7 +110,7 @@ class FieldWorldMapZoneExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -126,7 +126,7 @@ class FieldWorldMapZoneExcel:
 
 
     @staticmethod
-    def AddOpenConditionId(builder, OpenConditionId): builder.PrependInt64Slot(4, OpenConditionId, 0)
+    def AddOpenConditionId(builder, OpenConditionId): builder.PrependInt32Slot(4, OpenConditionId, 0)
 
 
     @staticmethod
@@ -134,15 +134,15 @@ class FieldWorldMapZoneExcel:
 
 
     @staticmethod
-    def AddCloseConditionId(builder, CloseConditionId): builder.PrependInt64Slot(6, CloseConditionId, 0)
+    def AddCloseConditionId(builder, CloseConditionId): builder.PrependInt32Slot(6, CloseConditionId, 0)
 
 
     @staticmethod
-    def AddResultFieldScene(builder, ResultFieldScene): builder.PrependInt64Slot(7, ResultFieldScene, 0)
+    def AddResultFieldScene(builder, ResultFieldScene): builder.PrependInt32Slot(7, ResultFieldScene, 0)
 
 
     @staticmethod
-    def AddFieldStageInteractionId(builder, FieldStageInteractionId): builder.PrependInt64Slot(8, FieldStageInteractionId, 0)
+    def AddFieldStageInteractionId(builder, FieldStageInteractionId): builder.PrependInt32Slot(8, FieldStageInteractionId, 0)
 
 
     @staticmethod

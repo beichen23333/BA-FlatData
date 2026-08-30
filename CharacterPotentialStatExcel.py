@@ -20,7 +20,7 @@ class CharacterPotentialStatExcel:
     def PotentialStatGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,14 +34,14 @@ class CharacterPotentialStatExcel:
     def RecipeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StatBonusRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -54,7 +54,7 @@ class CharacterPotentialStatExcel:
 
 
     @staticmethod
-    def AddPotentialStatGroupId(builder, PotentialStatGroupId): builder.PrependInt64Slot(0, PotentialStatGroupId, 0)
+    def AddPotentialStatGroupId(builder, PotentialStatGroupId): builder.PrependInt32Slot(0, PotentialStatGroupId, 0)
 
 
     @staticmethod
@@ -62,9 +62,9 @@ class CharacterPotentialStatExcel:
 
 
     @staticmethod
-    def AddRecipeId(builder, RecipeId): builder.PrependInt64Slot(2, RecipeId, 0)
+    def AddRecipeId(builder, RecipeId): builder.PrependInt32Slot(2, RecipeId, 0)
 
 
     @staticmethod
-    def AddStatBonusRate(builder, StatBonusRate): builder.PrependInt64Slot(3, StatBonusRate, 0)
+    def AddStatBonusRate(builder, StatBonusRate): builder.PrependInt32Slot(3, StatBonusRate, 0)
 

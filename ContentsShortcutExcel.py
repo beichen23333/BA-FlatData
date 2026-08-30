@@ -20,7 +20,7 @@ class ContentsShortcutExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class ContentsShortcutExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -45,82 +45,78 @@ class ContentsShortcutExcel:
         return 0
 
 
-    def ScenarioModeVolume(self):
+    def ScenarioModeSubType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ScenarioModeVolume(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScenarioModeChapter(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShortcutOpenTime(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def ShortcutCloseTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def ConditionContentId(self):
+    def ShortcutCloseTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def ConquestMapDifficulty(self):
+    def ConditionContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ConquestStepIndex(self):
+    def ConquestMapDifficulty(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShortcutContentId(self):
+    def ConquestStepIndex(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShortcutUIName(self, j):
+    def ShortcutContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
 
     def ShortcutUINameLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ShortcutUINameIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        return o == 0
 
 
     def Localize(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -129,13 +125,13 @@ class ContentsShortcutExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(14)
+    def Start(builder): builder.StartObject(15)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
@@ -143,7 +139,7 @@ class ContentsShortcutExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(2, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(2, EventContentId, 0)
 
 
     @staticmethod
@@ -151,40 +147,42 @@ class ContentsShortcutExcel:
 
 
     @staticmethod
-    def AddScenarioModeVolume(builder, ScenarioModeVolume): builder.PrependInt64Slot(4, ScenarioModeVolume, 0)
+    def AddScenarioModeSubType(builder, ScenarioModeSubType): builder.PrependInt32Slot(4, ScenarioModeSubType, 0)
 
 
     @staticmethod
-    def AddScenarioModeChapter(builder, ScenarioModeChapter): builder.PrependInt64Slot(5, ScenarioModeChapter, 0)
+    def AddScenarioModeVolume(builder, ScenarioModeVolume): builder.PrependInt32Slot(5, ScenarioModeVolume, 0)
 
 
     @staticmethod
-    def AddShortcutOpenTime(builder, ShortcutOpenTime): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(ShortcutOpenTime), 0)
-
-    @staticmethod
-    def AddShortcutCloseTime(builder, ShortcutCloseTime): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ShortcutCloseTime), 0)
-
-    @staticmethod
-    def AddConditionContentId(builder, ConditionContentId): builder.PrependInt64Slot(8, ConditionContentId, 0)
+    def AddScenarioModeChapter(builder, ScenarioModeChapter): builder.PrependInt32Slot(6, ScenarioModeChapter, 0)
 
 
     @staticmethod
-    def AddConquestMapDifficulty(builder, ConquestMapDifficulty): builder.PrependInt32Slot(9, ConquestMapDifficulty, 0)
+    def AddShortcutOpenTime(builder, ShortcutOpenTime): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ShortcutOpenTime), 0)
+
+    @staticmethod
+    def AddShortcutCloseTime(builder, ShortcutCloseTime): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(ShortcutCloseTime), 0)
+
+    @staticmethod
+    def AddConditionContentId(builder, ConditionContentId): builder.PrependInt32Slot(9, ConditionContentId, 0)
 
 
     @staticmethod
-    def AddConquestStepIndex(builder, ConquestStepIndex): builder.PrependInt32Slot(10, ConquestStepIndex, 0)
+    def AddConquestMapDifficulty(builder, ConquestMapDifficulty): builder.PrependInt32Slot(10, ConquestMapDifficulty, 0)
 
 
     @staticmethod
-    def AddShortcutContentId(builder, ShortcutContentId): builder.PrependInt64Slot(11, ShortcutContentId, 0)
+    def AddConquestStepIndex(builder, ConquestStepIndex): builder.PrependInt32Slot(11, ConquestStepIndex, 0)
 
 
     @staticmethod
-    def AddShortcutUIName(builder, ShortcutUIName): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(ShortcutUIName), 0)
-    @staticmethod
-    def StartShortcutUINameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddShortcutContentId(builder, ShortcutContentId): builder.PrependInt32Slot(12, ShortcutContentId, 0)
 
 
     @staticmethod
-    def AddLocalize(builder, Localize): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(Localize), 0)
+    def AddShortcutUINameLength(builder, ShortcutUINameLength): builder.PrependInt32Slot(13, ShortcutUINameLength, 0)
+
+
+    @staticmethod
+    def AddLocalize(builder, Localize): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(Localize), 0)

@@ -20,7 +20,7 @@ class BattlePassExpLimitExcel:
     def BattlePassId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class BattlePassExpLimitExcel:
     def ExpLimitAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -54,7 +54,7 @@ class BattlePassExpLimitExcel:
 
 
     @staticmethod
-    def AddBattlePassId(builder, BattlePassId): builder.PrependInt64Slot(0, BattlePassId, 0)
+    def AddBattlePassId(builder, BattlePassId): builder.PrependInt32Slot(0, BattlePassId, 0)
 
 
     @staticmethod
@@ -64,5 +64,5 @@ class BattlePassExpLimitExcel:
     def AddLimitEndTime(builder, LimitEndTime): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(LimitEndTime), 0)
 
     @staticmethod
-    def AddExpLimitAmount(builder, ExpLimitAmount): builder.PrependInt64Slot(3, ExpLimitAmount, 0)
+    def AddExpLimitAmount(builder, ExpLimitAmount): builder.PrependInt32Slot(3, ExpLimitAmount, 0)
 

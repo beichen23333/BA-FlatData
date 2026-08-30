@@ -24,27 +24,11 @@ class Motion:
         return None
 
 
-    def Positions(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            from .Position import Position
-            obj = Position()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
-
     def PositionsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def PositionsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
 
 
 
@@ -59,7 +43,5 @@ class Motion:
     def AddName(builder, Name): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(Name), 0)
 
     @staticmethod
-    def AddPositions(builder, Positions): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(Positions), 0)
-    @staticmethod
-    def StartPositionsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddPositionsLength(builder, PositionsLength): builder.PrependInt32Slot(1, PositionsLength, 0)
 

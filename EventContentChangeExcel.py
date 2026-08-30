@@ -20,14 +20,14 @@ class EventContentChangeExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChangeCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class EventContentChangeExcel:
     def RewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class EventContentChangeExcel:
     def ChangeCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -89,11 +89,11 @@ class EventContentChangeExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddChangeCount(builder, ChangeCount): builder.PrependInt64Slot(1, ChangeCount, 0)
+    def AddChangeCount(builder, ChangeCount): builder.PrependInt32Slot(1, ChangeCount, 0)
 
 
     @staticmethod
@@ -105,7 +105,7 @@ class EventContentChangeExcel:
 
 
     @staticmethod
-    def AddRewardId(builder, RewardId): builder.PrependInt64Slot(4, RewardId, 0)
+    def AddRewardId(builder, RewardId): builder.PrependInt32Slot(4, RewardId, 0)
 
 
     @staticmethod
@@ -117,7 +117,7 @@ class EventContentChangeExcel:
 
 
     @staticmethod
-    def AddChangeCostId(builder, ChangeCostId): builder.PrependInt64Slot(7, ChangeCostId, 0)
+    def AddChangeCostId(builder, ChangeCostId): builder.PrependInt32Slot(7, ChangeCostId, 0)
 
 
     @staticmethod

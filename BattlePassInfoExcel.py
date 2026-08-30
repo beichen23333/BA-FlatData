@@ -20,42 +20,42 @@ class BattlePassInfoExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FreeRewardGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PurchaseRewardGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NormalProductGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PremiumProductGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DiscountPremiumProductGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class BattlePassInfoExcel:
     def PassLvUpGoodsID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -94,48 +94,31 @@ class BattlePassInfoExcel:
         return None
 
 
-    def VideoId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def VideoIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def VideoIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def VideoIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        return o == 0
 
 
     def FlavorTextGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ExclusiveRewardID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ExclusiveEmblemID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -176,27 +159,27 @@ class BattlePassInfoExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddFreeRewardGroupID(builder, FreeRewardGroupID): builder.PrependInt64Slot(1, FreeRewardGroupID, 0)
+    def AddFreeRewardGroupID(builder, FreeRewardGroupID): builder.PrependInt32Slot(1, FreeRewardGroupID, 0)
 
 
     @staticmethod
-    def AddPurchaseRewardGroupID(builder, PurchaseRewardGroupID): builder.PrependInt64Slot(2, PurchaseRewardGroupID, 0)
+    def AddPurchaseRewardGroupID(builder, PurchaseRewardGroupID): builder.PrependInt32Slot(2, PurchaseRewardGroupID, 0)
 
 
     @staticmethod
-    def AddNormalProductGroupID(builder, NormalProductGroupID): builder.PrependInt64Slot(3, NormalProductGroupID, 0)
+    def AddNormalProductGroupID(builder, NormalProductGroupID): builder.PrependInt32Slot(3, NormalProductGroupID, 0)
 
 
     @staticmethod
-    def AddPremiumProductGroupID(builder, PremiumProductGroupID): builder.PrependInt64Slot(4, PremiumProductGroupID, 0)
+    def AddPremiumProductGroupID(builder, PremiumProductGroupID): builder.PrependInt32Slot(4, PremiumProductGroupID, 0)
 
 
     @staticmethod
-    def AddDiscountPremiumProductGroupID(builder, DiscountPremiumProductGroupID): builder.PrependInt64Slot(5, DiscountPremiumProductGroupID, 0)
+    def AddDiscountPremiumProductGroupID(builder, DiscountPremiumProductGroupID): builder.PrependInt32Slot(5, DiscountPremiumProductGroupID, 0)
 
 
     @staticmethod
@@ -204,7 +187,7 @@ class BattlePassInfoExcel:
 
 
     @staticmethod
-    def AddPassLvUpGoodsID(builder, PassLvUpGoodsID): builder.PrependInt64Slot(7, PassLvUpGoodsID, 0)
+    def AddPassLvUpGoodsID(builder, PassLvUpGoodsID): builder.PrependInt32Slot(7, PassLvUpGoodsID, 0)
 
 
     @staticmethod
@@ -218,21 +201,19 @@ class BattlePassInfoExcel:
     def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
 
     @staticmethod
-    def AddVideoId(builder, VideoId): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(VideoId), 0)
-    @staticmethod
-    def StartVideoIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddVideoIdLength(builder, VideoIdLength): builder.PrependInt32Slot(11, VideoIdLength, 0)
 
 
     @staticmethod
-    def AddFlavorTextGroupID(builder, FlavorTextGroupID): builder.PrependInt64Slot(12, FlavorTextGroupID, 0)
+    def AddFlavorTextGroupID(builder, FlavorTextGroupID): builder.PrependInt32Slot(12, FlavorTextGroupID, 0)
 
 
     @staticmethod
-    def AddExclusiveRewardID(builder, ExclusiveRewardID): builder.PrependInt64Slot(13, ExclusiveRewardID, 0)
+    def AddExclusiveRewardID(builder, ExclusiveRewardID): builder.PrependInt32Slot(13, ExclusiveRewardID, 0)
 
 
     @staticmethod
-    def AddExclusiveEmblemID(builder, ExclusiveEmblemID): builder.PrependInt64Slot(14, ExclusiveEmblemID, 0)
+    def AddExclusiveEmblemID(builder, ExclusiveEmblemID): builder.PrependInt32Slot(14, ExclusiveEmblemID, 0)
 
 
     @staticmethod

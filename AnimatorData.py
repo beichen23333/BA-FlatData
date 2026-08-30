@@ -31,27 +31,11 @@ class AnimatorData:
         return None
 
 
-    def DataList(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            from .AniStateData import AniStateData
-            obj = AniStateData()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
-
     def DataListLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def DataListIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
 
 
 
@@ -69,7 +53,5 @@ class AnimatorData:
     def AddName(builder, Name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(Name), 0)
 
     @staticmethod
-    def AddDataList(builder, DataList): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(DataList), 0)
-    @staticmethod
-    def StartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddDataListLength(builder, DataListLength): builder.PrependInt32Slot(2, DataListLength, 0)
 

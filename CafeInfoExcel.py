@@ -20,7 +20,7 @@ class CafeInfoExcel:
     def CafeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,21 +55,21 @@ class CafeInfoExcel:
     def SummonParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SummonParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CategoryType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -89,7 +89,7 @@ class CafeInfoExcel:
 
 
     @staticmethod
-    def AddCafeId(builder, CafeId): builder.PrependInt64Slot(0, CafeId, 0)
+    def AddCafeId(builder, CafeId): builder.PrependInt32Slot(0, CafeId, 0)
 
 
     @staticmethod
@@ -109,15 +109,15 @@ class CafeInfoExcel:
 
 
     @staticmethod
-    def AddSummonParcelId(builder, SummonParcelId): builder.PrependInt64Slot(5, SummonParcelId, 0)
+    def AddSummonParcelId(builder, SummonParcelId): builder.PrependInt32Slot(5, SummonParcelId, 0)
 
 
     @staticmethod
-    def AddSummonParcelAmount(builder, SummonParcelAmount): builder.PrependInt64Slot(6, SummonParcelAmount, 0)
+    def AddSummonParcelAmount(builder, SummonParcelAmount): builder.PrependInt32Slot(6, SummonParcelAmount, 0)
 
 
     @staticmethod
-    def AddCategoryType(builder, CategoryType): builder.PrependInt32Slot(7, CategoryType, 0)
+    def AddCategoryType(builder, CategoryType): builder.PrependFloat32Slot(7, CategoryType, 0)
 
 
     @staticmethod

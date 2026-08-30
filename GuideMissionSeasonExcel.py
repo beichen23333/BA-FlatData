@@ -20,7 +20,7 @@ class GuideMissionSeasonExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -97,28 +97,28 @@ class GuideMissionSeasonExcel:
     def MaximumLoginCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ExpiryDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def IconOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SpineCharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -167,7 +167,7 @@ class GuideMissionSeasonExcel:
     def RequirementParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -195,7 +195,7 @@ class GuideMissionSeasonExcel:
     def PreSeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -208,7 +208,7 @@ class GuideMissionSeasonExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -245,19 +245,19 @@ class GuideMissionSeasonExcel:
 
 
     @staticmethod
-    def AddMaximumLoginCount(builder, MaximumLoginCount): builder.PrependInt64Slot(11, MaximumLoginCount, 0)
+    def AddMaximumLoginCount(builder, MaximumLoginCount): builder.PrependInt32Slot(11, MaximumLoginCount, 0)
 
 
     @staticmethod
-    def AddExpiryDate(builder, ExpiryDate): builder.PrependInt64Slot(12, ExpiryDate, 0)
+    def AddExpiryDate(builder, ExpiryDate): builder.PrependInt32Slot(12, ExpiryDate, 0)
 
 
     @staticmethod
-    def AddIconOrder(builder, IconOrder): builder.PrependInt64Slot(13, IconOrder, 0)
+    def AddIconOrder(builder, IconOrder): builder.PrependInt32Slot(13, IconOrder, 0)
 
 
     @staticmethod
-    def AddSpineCharacterId(builder, SpineCharacterId): builder.PrependInt64Slot(14, SpineCharacterId, 0)
+    def AddSpineCharacterId(builder, SpineCharacterId): builder.PrependInt32Slot(14, SpineCharacterId, 0)
 
 
     @staticmethod
@@ -280,7 +280,7 @@ class GuideMissionSeasonExcel:
 
 
     @staticmethod
-    def AddRequirementParcelId(builder, RequirementParcelId): builder.PrependInt64Slot(21, RequirementParcelId, 0)
+    def AddRequirementParcelId(builder, RequirementParcelId): builder.PrependInt32Slot(21, RequirementParcelId, 0)
 
 
     @staticmethod
@@ -296,5 +296,5 @@ class GuideMissionSeasonExcel:
 
 
     @staticmethod
-    def AddPreSeasonId(builder, PreSeasonId): builder.PrependInt64Slot(25, PreSeasonId, 0)
+    def AddPreSeasonId(builder, PreSeasonId): builder.PrependInt32Slot(25, PreSeasonId, 0)
 

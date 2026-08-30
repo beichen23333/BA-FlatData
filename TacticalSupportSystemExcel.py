@@ -20,21 +20,21 @@ class TacticalSupportSystemExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SummonedTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefaultPersonalityId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class TacticalSupportSystemExcel:
     def ObstacleCoverRange(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,14 +76,14 @@ class TacticalSupportSystemExcel:
     def CrashObstacleOBBWidth(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CrashObstacleOBBHeight(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -125,14 +125,14 @@ class TacticalSupportSystemExcel:
     def InteractionChar(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CharacterInteractionStartDelay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -153,7 +153,7 @@ class TacticalSupportSystemExcel:
     def SummonerCharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -167,7 +167,7 @@ class TacticalSupportSystemExcel:
     def TSAInteractionAddDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -215,15 +215,15 @@ class TacticalSupportSystemExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddSummonedTime(builder, SummonedTime): builder.PrependInt64Slot(1, SummonedTime, 0)
+    def AddSummonedTime(builder, SummonedTime): builder.PrependInt32Slot(1, SummonedTime, 0)
 
 
     @staticmethod
-    def AddDefaultPersonalityId(builder, DefaultPersonalityId): builder.PrependInt64Slot(2, DefaultPersonalityId, 0)
+    def AddDefaultPersonalityId(builder, DefaultPersonalityId): builder.PrependInt32Slot(2, DefaultPersonalityId, 0)
 
 
     @staticmethod
@@ -238,18 +238,18 @@ class TacticalSupportSystemExcel:
     def AddObstacleUniqueName(builder, ObstacleUniqueName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ObstacleUniqueName), 0)
 
     @staticmethod
-    def AddObstacleCoverRange(builder, ObstacleCoverRange): builder.PrependInt64Slot(6, ObstacleCoverRange, 0)
+    def AddObstacleCoverRange(builder, ObstacleCoverRange): builder.PrependInt32Slot(6, ObstacleCoverRange, 0)
 
 
     @staticmethod
     def AddSummonSkilllGroupId(builder, SummonSkilllGroupId): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(SummonSkilllGroupId), 0)
 
     @staticmethod
-    def AddCrashObstacleOBBWidth(builder, CrashObstacleOBBWidth): builder.PrependInt64Slot(8, CrashObstacleOBBWidth, 0)
+    def AddCrashObstacleOBBWidth(builder, CrashObstacleOBBWidth): builder.PrependInt32Slot(8, CrashObstacleOBBWidth, 0)
 
 
     @staticmethod
-    def AddCrashObstacleOBBHeight(builder, CrashObstacleOBBHeight): builder.PrependInt64Slot(9, CrashObstacleOBBHeight, 0)
+    def AddCrashObstacleOBBHeight(builder, CrashObstacleOBBHeight): builder.PrependInt32Slot(9, CrashObstacleOBBHeight, 0)
 
 
     @staticmethod
@@ -273,11 +273,11 @@ class TacticalSupportSystemExcel:
 
 
     @staticmethod
-    def AddInteractionChar(builder, InteractionChar): builder.PrependInt64Slot(15, InteractionChar, 0)
+    def AddInteractionChar(builder, InteractionChar): builder.PrependInt32Slot(15, InteractionChar, 0)
 
 
     @staticmethod
-    def AddCharacterInteractionStartDelay(builder, CharacterInteractionStartDelay): builder.PrependInt64Slot(16, CharacterInteractionStartDelay, 0)
+    def AddCharacterInteractionStartDelay(builder, CharacterInteractionStartDelay): builder.PrependInt32Slot(16, CharacterInteractionStartDelay, 0)
 
 
     @staticmethod
@@ -287,7 +287,7 @@ class TacticalSupportSystemExcel:
     def AddGetOnEndEffectPath(builder, GetOnEndEffectPath): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(GetOnEndEffectPath), 0)
 
     @staticmethod
-    def AddSummonerCharacterId(builder, SummonerCharacterId): builder.PrependInt64Slot(19, SummonerCharacterId, 0)
+    def AddSummonerCharacterId(builder, SummonerCharacterId): builder.PrependInt32Slot(19, SummonerCharacterId, 0)
 
 
     @staticmethod
@@ -295,7 +295,7 @@ class TacticalSupportSystemExcel:
 
 
     @staticmethod
-    def AddTSAInteractionAddDuration(builder, TSAInteractionAddDuration): builder.PrependInt64Slot(21, TSAInteractionAddDuration, 0)
+    def AddTSAInteractionAddDuration(builder, TSAInteractionAddDuration): builder.PrependInt32Slot(21, TSAInteractionAddDuration, 0)
 
 
     @staticmethod

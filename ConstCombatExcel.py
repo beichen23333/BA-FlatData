@@ -111,14 +111,14 @@ class ConstCombatExcel:
     def MaxRaidTicketCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MaxRaidBossSkillSlot(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -146,7 +146,7 @@ class ConstCombatExcel:
     def TimeLimitAlarm(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -167,35 +167,35 @@ class ConstCombatExcel:
     def SkillSlotCoolTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EnemyRegenCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChampionRegenCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PlayerRegenCostDelay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CrowdControlFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -216,84 +216,84 @@ class ConstCombatExcel:
     def DefenceConstA(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefenceConstB(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefenceConstC(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefenceConstD(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyConstA(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyConstB(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyConstC(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyConstD(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalConstA(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalConstB(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalConstC(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalConstD(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -314,42 +314,42 @@ class ConstCombatExcel:
     def TimeLineActionRotateSpeed(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BodyRotateSpeed(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NormalTimeScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FastTimeScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BulletTimeScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(96))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UIDisplayDelayAfterSkillCutIn(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -363,7 +363,7 @@ class ConstCombatExcel:
     def SlowTimeScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(102))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -412,21 +412,21 @@ class ConstCombatExcel:
     def AllowedMaxTimeScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RandomAnimationOutput(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SummonedTeleportDistance(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -440,168 +440,168 @@ class ConstCombatExcel:
     def WORLDBOSSBATTLELITTLE(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(124))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLELITTLETw(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(126))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLELITTLEAsia(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(128))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLELITTLENa(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(130))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLELITTLEGlobal(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEMIDDLE(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(134))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEMIDDLETw(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(136))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEMIDDLEAsia(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(138))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEMIDDLENa(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(140))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEMIDDLEGlobal(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEHIGH(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(144))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEHIGHTw(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(146))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEHIGHAsia(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(148))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEHIGHNa(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(150))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEHIGHGlobal(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(152))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEVERYHIGH(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(154))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEVERYHIGHTw(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(156))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEVERYHIGHAsia(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(158))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEVERYHIGHNa(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(160))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEVERYHIGHGlobal(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(162))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidAutoSyncTermSecond(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(164))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidBossHpDecreaseTerm(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(166))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidBossParcelReactionDelay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(168))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RaidRankingJumpMinimumWaitingTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(170))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -615,21 +615,21 @@ class ConstCombatExcel:
     def AuraExitThresholdMargin(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(174))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def TSAInteractionDamageFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(176))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def VictoryInteractionRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(178))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -664,14 +664,14 @@ class ConstCombatExcel:
     def EchelonMaxOverloadCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(188))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonExtensionMaxOverloadCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(190))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -685,21 +685,21 @@ class ConstCombatExcel:
     def EchelonExtensionCostRegenRatio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(194))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonOverloadCostRegenRatio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(196))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonExtensionOverloadCostRegenRatio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(198))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -812,11 +812,11 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddMaxRaidTicketCount(builder, MaxRaidTicketCount): builder.PrependInt64Slot(13, MaxRaidTicketCount, 0)
+    def AddMaxRaidTicketCount(builder, MaxRaidTicketCount): builder.PrependInt32Slot(13, MaxRaidTicketCount, 0)
 
 
     @staticmethod
-    def AddMaxRaidBossSkillSlot(builder, MaxRaidBossSkillSlot): builder.PrependInt64Slot(14, MaxRaidBossSkillSlot, 0)
+    def AddMaxRaidBossSkillSlot(builder, MaxRaidBossSkillSlot): builder.PrependInt32Slot(14, MaxRaidBossSkillSlot, 0)
 
 
     @staticmethod
@@ -829,7 +829,7 @@ class ConstCombatExcel:
     def AddVictoryTimelinePath(builder, VictoryTimelinePath): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(VictoryTimelinePath), 0)
 
     @staticmethod
-    def AddTimeLimitAlarm(builder, TimeLimitAlarm): builder.PrependInt64Slot(18, TimeLimitAlarm, 0)
+    def AddTimeLimitAlarm(builder, TimeLimitAlarm): builder.PrependInt32Slot(18, TimeLimitAlarm, 0)
 
 
     @staticmethod
@@ -841,23 +841,23 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddSkillSlotCoolTime(builder, SkillSlotCoolTime): builder.PrependInt64Slot(21, SkillSlotCoolTime, 0)
+    def AddSkillSlotCoolTime(builder, SkillSlotCoolTime): builder.PrependInt32Slot(21, SkillSlotCoolTime, 0)
 
 
     @staticmethod
-    def AddEnemyRegenCost(builder, EnemyRegenCost): builder.PrependInt64Slot(22, EnemyRegenCost, 0)
+    def AddEnemyRegenCost(builder, EnemyRegenCost): builder.PrependInt32Slot(22, EnemyRegenCost, 0)
 
 
     @staticmethod
-    def AddChampionRegenCost(builder, ChampionRegenCost): builder.PrependInt64Slot(23, ChampionRegenCost, 0)
+    def AddChampionRegenCost(builder, ChampionRegenCost): builder.PrependInt32Slot(23, ChampionRegenCost, 0)
 
 
     @staticmethod
-    def AddPlayerRegenCostDelay(builder, PlayerRegenCostDelay): builder.PrependInt64Slot(24, PlayerRegenCostDelay, 0)
+    def AddPlayerRegenCostDelay(builder, PlayerRegenCostDelay): builder.PrependInt32Slot(24, PlayerRegenCostDelay, 0)
 
 
     @staticmethod
-    def AddCrowdControlFactor(builder, CrowdControlFactor): builder.PrependInt64Slot(25, CrowdControlFactor, 0)
+    def AddCrowdControlFactor(builder, CrowdControlFactor): builder.PrependInt32Slot(25, CrowdControlFactor, 0)
 
 
     @staticmethod
@@ -867,51 +867,51 @@ class ConstCombatExcel:
     def AddEliminateRaidOpenScenarioId(builder, EliminateRaidOpenScenarioId): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(EliminateRaidOpenScenarioId), 0)
 
     @staticmethod
-    def AddDefenceConstA(builder, DefenceConstA): builder.PrependInt64Slot(28, DefenceConstA, 0)
+    def AddDefenceConstA(builder, DefenceConstA): builder.PrependInt32Slot(28, DefenceConstA, 0)
 
 
     @staticmethod
-    def AddDefenceConstB(builder, DefenceConstB): builder.PrependInt64Slot(29, DefenceConstB, 0)
+    def AddDefenceConstB(builder, DefenceConstB): builder.PrependInt32Slot(29, DefenceConstB, 0)
 
 
     @staticmethod
-    def AddDefenceConstC(builder, DefenceConstC): builder.PrependInt64Slot(30, DefenceConstC, 0)
+    def AddDefenceConstC(builder, DefenceConstC): builder.PrependInt32Slot(30, DefenceConstC, 0)
 
 
     @staticmethod
-    def AddDefenceConstD(builder, DefenceConstD): builder.PrependInt64Slot(31, DefenceConstD, 0)
+    def AddDefenceConstD(builder, DefenceConstD): builder.PrependInt32Slot(31, DefenceConstD, 0)
 
 
     @staticmethod
-    def AddAccuracyConstA(builder, AccuracyConstA): builder.PrependInt64Slot(32, AccuracyConstA, 0)
+    def AddAccuracyConstA(builder, AccuracyConstA): builder.PrependInt32Slot(32, AccuracyConstA, 0)
 
 
     @staticmethod
-    def AddAccuracyConstB(builder, AccuracyConstB): builder.PrependInt64Slot(33, AccuracyConstB, 0)
+    def AddAccuracyConstB(builder, AccuracyConstB): builder.PrependInt32Slot(33, AccuracyConstB, 0)
 
 
     @staticmethod
-    def AddAccuracyConstC(builder, AccuracyConstC): builder.PrependInt64Slot(34, AccuracyConstC, 0)
+    def AddAccuracyConstC(builder, AccuracyConstC): builder.PrependInt32Slot(34, AccuracyConstC, 0)
 
 
     @staticmethod
-    def AddAccuracyConstD(builder, AccuracyConstD): builder.PrependInt64Slot(35, AccuracyConstD, 0)
+    def AddAccuracyConstD(builder, AccuracyConstD): builder.PrependInt32Slot(35, AccuracyConstD, 0)
 
 
     @staticmethod
-    def AddCriticalConstA(builder, CriticalConstA): builder.PrependInt64Slot(36, CriticalConstA, 0)
+    def AddCriticalConstA(builder, CriticalConstA): builder.PrependInt32Slot(36, CriticalConstA, 0)
 
 
     @staticmethod
-    def AddCriticalConstB(builder, CriticalConstB): builder.PrependInt64Slot(37, CriticalConstB, 0)
+    def AddCriticalConstB(builder, CriticalConstB): builder.PrependInt32Slot(37, CriticalConstB, 0)
 
 
     @staticmethod
-    def AddCriticalConstC(builder, CriticalConstC): builder.PrependInt64Slot(38, CriticalConstC, 0)
+    def AddCriticalConstC(builder, CriticalConstC): builder.PrependInt32Slot(38, CriticalConstC, 0)
 
 
     @staticmethod
-    def AddCriticalConstD(builder, CriticalConstD): builder.PrependInt64Slot(39, CriticalConstD, 0)
+    def AddCriticalConstD(builder, CriticalConstD): builder.PrependInt32Slot(39, CriticalConstD, 0)
 
 
     @staticmethod
@@ -923,27 +923,27 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddTimeLineActionRotateSpeed(builder, TimeLineActionRotateSpeed): builder.PrependInt64Slot(42, TimeLineActionRotateSpeed, 0)
+    def AddTimeLineActionRotateSpeed(builder, TimeLineActionRotateSpeed): builder.PrependInt32Slot(42, TimeLineActionRotateSpeed, 0)
 
 
     @staticmethod
-    def AddBodyRotateSpeed(builder, BodyRotateSpeed): builder.PrependInt64Slot(43, BodyRotateSpeed, 0)
+    def AddBodyRotateSpeed(builder, BodyRotateSpeed): builder.PrependInt32Slot(43, BodyRotateSpeed, 0)
 
 
     @staticmethod
-    def AddNormalTimeScale(builder, NormalTimeScale): builder.PrependInt64Slot(44, NormalTimeScale, 0)
+    def AddNormalTimeScale(builder, NormalTimeScale): builder.PrependInt32Slot(44, NormalTimeScale, 0)
 
 
     @staticmethod
-    def AddFastTimeScale(builder, FastTimeScale): builder.PrependInt64Slot(45, FastTimeScale, 0)
+    def AddFastTimeScale(builder, FastTimeScale): builder.PrependInt32Slot(45, FastTimeScale, 0)
 
 
     @staticmethod
-    def AddBulletTimeScale(builder, BulletTimeScale): builder.PrependInt64Slot(46, BulletTimeScale, 0)
+    def AddBulletTimeScale(builder, BulletTimeScale): builder.PrependInt32Slot(46, BulletTimeScale, 0)
 
 
     @staticmethod
-    def AddUIDisplayDelayAfterSkillCutIn(builder, UIDisplayDelayAfterSkillCutIn): builder.PrependInt64Slot(47, UIDisplayDelayAfterSkillCutIn, 0)
+    def AddUIDisplayDelayAfterSkillCutIn(builder, UIDisplayDelayAfterSkillCutIn): builder.PrependInt32Slot(47, UIDisplayDelayAfterSkillCutIn, 0)
 
 
     @staticmethod
@@ -951,7 +951,7 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddSlowTimeScale(builder, SlowTimeScale): builder.PrependInt64Slot(49, SlowTimeScale, 0)
+    def AddSlowTimeScale(builder, SlowTimeScale): builder.PrependInt32Slot(49, SlowTimeScale, 0)
 
 
     @staticmethod
@@ -979,15 +979,15 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddAllowedMaxTimeScale(builder, AllowedMaxTimeScale): builder.PrependInt64Slot(56, AllowedMaxTimeScale, 0)
+    def AddAllowedMaxTimeScale(builder, AllowedMaxTimeScale): builder.PrependInt32Slot(56, AllowedMaxTimeScale, 0)
 
 
     @staticmethod
-    def AddRandomAnimationOutput(builder, RandomAnimationOutput): builder.PrependInt64Slot(57, RandomAnimationOutput, 0)
+    def AddRandomAnimationOutput(builder, RandomAnimationOutput): builder.PrependInt32Slot(57, RandomAnimationOutput, 0)
 
 
     @staticmethod
-    def AddSummonedTeleportDistance(builder, SummonedTeleportDistance): builder.PrependInt64Slot(58, SummonedTeleportDistance, 0)
+    def AddSummonedTeleportDistance(builder, SummonedTeleportDistance): builder.PrependInt32Slot(58, SummonedTeleportDistance, 0)
 
 
     @staticmethod
@@ -995,99 +995,99 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLELITTLE(builder, WORLDBOSSBATTLELITTLE): builder.PrependInt64Slot(60, WORLDBOSSBATTLELITTLE, 0)
+    def AddWORLDBOSSBATTLELITTLE(builder, WORLDBOSSBATTLELITTLE): builder.PrependInt32Slot(60, WORLDBOSSBATTLELITTLE, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLELITTLETw(builder, WORLDBOSSBATTLELITTLETw): builder.PrependInt64Slot(61, WORLDBOSSBATTLELITTLETw, 0)
+    def AddWORLDBOSSBATTLELITTLETw(builder, WORLDBOSSBATTLELITTLETw): builder.PrependInt32Slot(61, WORLDBOSSBATTLELITTLETw, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLELITTLEAsia(builder, WORLDBOSSBATTLELITTLEAsia): builder.PrependInt64Slot(62, WORLDBOSSBATTLELITTLEAsia, 0)
+    def AddWORLDBOSSBATTLELITTLEAsia(builder, WORLDBOSSBATTLELITTLEAsia): builder.PrependInt32Slot(62, WORLDBOSSBATTLELITTLEAsia, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLELITTLENa(builder, WORLDBOSSBATTLELITTLENa): builder.PrependInt64Slot(63, WORLDBOSSBATTLELITTLENa, 0)
+    def AddWORLDBOSSBATTLELITTLENa(builder, WORLDBOSSBATTLELITTLENa): builder.PrependInt32Slot(63, WORLDBOSSBATTLELITTLENa, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLELITTLEGlobal(builder, WORLDBOSSBATTLELITTLEGlobal): builder.PrependInt64Slot(64, WORLDBOSSBATTLELITTLEGlobal, 0)
+    def AddWORLDBOSSBATTLELITTLEGlobal(builder, WORLDBOSSBATTLELITTLEGlobal): builder.PrependInt32Slot(64, WORLDBOSSBATTLELITTLEGlobal, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEMIDDLE(builder, WORLDBOSSBATTLEMIDDLE): builder.PrependInt64Slot(65, WORLDBOSSBATTLEMIDDLE, 0)
+    def AddWORLDBOSSBATTLEMIDDLE(builder, WORLDBOSSBATTLEMIDDLE): builder.PrependInt32Slot(65, WORLDBOSSBATTLEMIDDLE, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEMIDDLETw(builder, WORLDBOSSBATTLEMIDDLETw): builder.PrependInt64Slot(66, WORLDBOSSBATTLEMIDDLETw, 0)
+    def AddWORLDBOSSBATTLEMIDDLETw(builder, WORLDBOSSBATTLEMIDDLETw): builder.PrependInt32Slot(66, WORLDBOSSBATTLEMIDDLETw, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEMIDDLEAsia(builder, WORLDBOSSBATTLEMIDDLEAsia): builder.PrependInt64Slot(67, WORLDBOSSBATTLEMIDDLEAsia, 0)
+    def AddWORLDBOSSBATTLEMIDDLEAsia(builder, WORLDBOSSBATTLEMIDDLEAsia): builder.PrependInt32Slot(67, WORLDBOSSBATTLEMIDDLEAsia, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEMIDDLENa(builder, WORLDBOSSBATTLEMIDDLENa): builder.PrependInt64Slot(68, WORLDBOSSBATTLEMIDDLENa, 0)
+    def AddWORLDBOSSBATTLEMIDDLENa(builder, WORLDBOSSBATTLEMIDDLENa): builder.PrependInt32Slot(68, WORLDBOSSBATTLEMIDDLENa, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEMIDDLEGlobal(builder, WORLDBOSSBATTLEMIDDLEGlobal): builder.PrependInt64Slot(69, WORLDBOSSBATTLEMIDDLEGlobal, 0)
+    def AddWORLDBOSSBATTLEMIDDLEGlobal(builder, WORLDBOSSBATTLEMIDDLEGlobal): builder.PrependInt32Slot(69, WORLDBOSSBATTLEMIDDLEGlobal, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEHIGH(builder, WORLDBOSSBATTLEHIGH): builder.PrependInt64Slot(70, WORLDBOSSBATTLEHIGH, 0)
+    def AddWORLDBOSSBATTLEHIGH(builder, WORLDBOSSBATTLEHIGH): builder.PrependInt32Slot(70, WORLDBOSSBATTLEHIGH, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEHIGHTw(builder, WORLDBOSSBATTLEHIGHTw): builder.PrependInt64Slot(71, WORLDBOSSBATTLEHIGHTw, 0)
+    def AddWORLDBOSSBATTLEHIGHTw(builder, WORLDBOSSBATTLEHIGHTw): builder.PrependInt32Slot(71, WORLDBOSSBATTLEHIGHTw, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEHIGHAsia(builder, WORLDBOSSBATTLEHIGHAsia): builder.PrependInt64Slot(72, WORLDBOSSBATTLEHIGHAsia, 0)
+    def AddWORLDBOSSBATTLEHIGHAsia(builder, WORLDBOSSBATTLEHIGHAsia): builder.PrependInt32Slot(72, WORLDBOSSBATTLEHIGHAsia, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEHIGHNa(builder, WORLDBOSSBATTLEHIGHNa): builder.PrependInt64Slot(73, WORLDBOSSBATTLEHIGHNa, 0)
+    def AddWORLDBOSSBATTLEHIGHNa(builder, WORLDBOSSBATTLEHIGHNa): builder.PrependInt32Slot(73, WORLDBOSSBATTLEHIGHNa, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEHIGHGlobal(builder, WORLDBOSSBATTLEHIGHGlobal): builder.PrependInt64Slot(74, WORLDBOSSBATTLEHIGHGlobal, 0)
+    def AddWORLDBOSSBATTLEHIGHGlobal(builder, WORLDBOSSBATTLEHIGHGlobal): builder.PrependInt32Slot(74, WORLDBOSSBATTLEHIGHGlobal, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEVERYHIGH(builder, WORLDBOSSBATTLEVERYHIGH): builder.PrependInt64Slot(75, WORLDBOSSBATTLEVERYHIGH, 0)
+    def AddWORLDBOSSBATTLEVERYHIGH(builder, WORLDBOSSBATTLEVERYHIGH): builder.PrependInt32Slot(75, WORLDBOSSBATTLEVERYHIGH, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEVERYHIGHTw(builder, WORLDBOSSBATTLEVERYHIGHTw): builder.PrependInt64Slot(76, WORLDBOSSBATTLEVERYHIGHTw, 0)
+    def AddWORLDBOSSBATTLEVERYHIGHTw(builder, WORLDBOSSBATTLEVERYHIGHTw): builder.PrependInt32Slot(76, WORLDBOSSBATTLEVERYHIGHTw, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEVERYHIGHAsia(builder, WORLDBOSSBATTLEVERYHIGHAsia): builder.PrependInt64Slot(77, WORLDBOSSBATTLEVERYHIGHAsia, 0)
+    def AddWORLDBOSSBATTLEVERYHIGHAsia(builder, WORLDBOSSBATTLEVERYHIGHAsia): builder.PrependInt32Slot(77, WORLDBOSSBATTLEVERYHIGHAsia, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEVERYHIGHNa(builder, WORLDBOSSBATTLEVERYHIGHNa): builder.PrependInt64Slot(78, WORLDBOSSBATTLEVERYHIGHNa, 0)
+    def AddWORLDBOSSBATTLEVERYHIGHNa(builder, WORLDBOSSBATTLEVERYHIGHNa): builder.PrependInt32Slot(78, WORLDBOSSBATTLEVERYHIGHNa, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEVERYHIGHGlobal(builder, WORLDBOSSBATTLEVERYHIGHGlobal): builder.PrependInt64Slot(79, WORLDBOSSBATTLEVERYHIGHGlobal, 0)
+    def AddWORLDBOSSBATTLEVERYHIGHGlobal(builder, WORLDBOSSBATTLEVERYHIGHGlobal): builder.PrependInt32Slot(79, WORLDBOSSBATTLEVERYHIGHGlobal, 0)
 
 
     @staticmethod
-    def AddWorldRaidAutoSyncTermSecond(builder, WorldRaidAutoSyncTermSecond): builder.PrependInt64Slot(80, WorldRaidAutoSyncTermSecond, 0)
+    def AddWorldRaidAutoSyncTermSecond(builder, WorldRaidAutoSyncTermSecond): builder.PrependInt32Slot(80, WorldRaidAutoSyncTermSecond, 0)
 
 
     @staticmethod
-    def AddWorldRaidBossHpDecreaseTerm(builder, WorldRaidBossHpDecreaseTerm): builder.PrependInt64Slot(81, WorldRaidBossHpDecreaseTerm, 0)
+    def AddWorldRaidBossHpDecreaseTerm(builder, WorldRaidBossHpDecreaseTerm): builder.PrependInt32Slot(81, WorldRaidBossHpDecreaseTerm, 0)
 
 
     @staticmethod
-    def AddWorldRaidBossParcelReactionDelay(builder, WorldRaidBossParcelReactionDelay): builder.PrependInt64Slot(82, WorldRaidBossParcelReactionDelay, 0)
+    def AddWorldRaidBossParcelReactionDelay(builder, WorldRaidBossParcelReactionDelay): builder.PrependInt32Slot(82, WorldRaidBossParcelReactionDelay, 0)
 
 
     @staticmethod
-    def AddRaidRankingJumpMinimumWaitingTime(builder, RaidRankingJumpMinimumWaitingTime): builder.PrependInt64Slot(83, RaidRankingJumpMinimumWaitingTime, 0)
+    def AddRaidRankingJumpMinimumWaitingTime(builder, RaidRankingJumpMinimumWaitingTime): builder.PrependInt32Slot(83, RaidRankingJumpMinimumWaitingTime, 0)
 
 
     @staticmethod
@@ -1095,15 +1095,15 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddAuraExitThresholdMargin(builder, AuraExitThresholdMargin): builder.PrependInt64Slot(85, AuraExitThresholdMargin, 0)
+    def AddAuraExitThresholdMargin(builder, AuraExitThresholdMargin): builder.PrependInt32Slot(85, AuraExitThresholdMargin, 0)
 
 
     @staticmethod
-    def AddTSAInteractionDamageFactor(builder, TSAInteractionDamageFactor): builder.PrependInt64Slot(86, TSAInteractionDamageFactor, 0)
+    def AddTSAInteractionDamageFactor(builder, TSAInteractionDamageFactor): builder.PrependInt32Slot(86, TSAInteractionDamageFactor, 0)
 
 
     @staticmethod
-    def AddVictoryInteractionRate(builder, VictoryInteractionRate): builder.PrependInt64Slot(87, VictoryInteractionRate, 0)
+    def AddVictoryInteractionRate(builder, VictoryInteractionRate): builder.PrependInt32Slot(87, VictoryInteractionRate, 0)
 
 
     @staticmethod
@@ -1120,11 +1120,11 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddEchelonMaxOverloadCost(builder, EchelonMaxOverloadCost): builder.PrependInt64Slot(92, EchelonMaxOverloadCost, 0)
+    def AddEchelonMaxOverloadCost(builder, EchelonMaxOverloadCost): builder.PrependInt32Slot(92, EchelonMaxOverloadCost, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionMaxOverloadCost(builder, EchelonExtensionMaxOverloadCost): builder.PrependInt64Slot(93, EchelonExtensionMaxOverloadCost, 0)
+    def AddEchelonExtensionMaxOverloadCost(builder, EchelonExtensionMaxOverloadCost): builder.PrependInt32Slot(93, EchelonExtensionMaxOverloadCost, 0)
 
 
     @staticmethod
@@ -1132,15 +1132,15 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio): builder.PrependInt64Slot(95, EchelonExtensionCostRegenRatio, 0)
+    def AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio): builder.PrependInt32Slot(95, EchelonExtensionCostRegenRatio, 0)
 
 
     @staticmethod
-    def AddEchelonOverloadCostRegenRatio(builder, EchelonOverloadCostRegenRatio): builder.PrependInt64Slot(96, EchelonOverloadCostRegenRatio, 0)
+    def AddEchelonOverloadCostRegenRatio(builder, EchelonOverloadCostRegenRatio): builder.PrependInt32Slot(96, EchelonOverloadCostRegenRatio, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionOverloadCostRegenRatio(builder, EchelonExtensionOverloadCostRegenRatio): builder.PrependInt64Slot(97, EchelonExtensionOverloadCostRegenRatio, 0)
+    def AddEchelonExtensionOverloadCostRegenRatio(builder, EchelonExtensionOverloadCostRegenRatio): builder.PrependInt32Slot(97, EchelonExtensionOverloadCostRegenRatio, 0)
 
 
     @staticmethod

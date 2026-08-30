@@ -34,7 +34,7 @@ class ServiceActionExcel:
     def GoodsId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,5 +55,5 @@ class ServiceActionExcel:
 
 
     @staticmethod
-    def AddGoodsId(builder, GoodsId): builder.PrependInt64Slot(2, GoodsId, 0)
+    def AddGoodsId(builder, GoodsId): builder.PrependInt32Slot(2, GoodsId, 0)
 

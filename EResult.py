@@ -1,0 +1,5 @@
+class EResult:
+    OK = 0
+    NOT_INITIALIZED = 1
+    ALREADY_EXISTS = 2
+    NOT_IN_COLLECTION = 3

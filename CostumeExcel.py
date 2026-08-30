@@ -20,14 +20,14 @@ class CostumeExcel:
     def CostumeGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CostumeUniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,7 +90,7 @@ class CostumeExcel:
     def CharacterSkillListGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -108,22 +108,11 @@ class CostumeExcel:
         return None
 
 
-    def SpineResourceNameDioramaForFormConversion(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def SpineResourceNameDioramaForFormConversionLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def SpineResourceNameDioramaForFormConversionIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        return o == 0
 
 
     def EntityMaterialType(self):
@@ -210,22 +199,11 @@ class CostumeExcel:
         return None
 
 
-    def TextureSkillCard(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def TextureSkillCardLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def TextureSkillCardIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
-        return o == 0
 
 
     def InformationPacel(self):
@@ -259,7 +237,7 @@ class CostumeExcel:
     def CharacterVoiceGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -279,11 +257,11 @@ class CostumeExcel:
 
 
     @staticmethod
-    def AddCostumeGroupId(builder, CostumeGroupId): builder.PrependInt64Slot(0, CostumeGroupId, 0)
+    def AddCostumeGroupId(builder, CostumeGroupId): builder.PrependInt32Slot(0, CostumeGroupId, 0)
 
 
     @staticmethod
-    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt64Slot(1, CostumeUniqueId, 0)
+    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt32Slot(1, CostumeUniqueId, 0)
 
 
     @staticmethod
@@ -315,7 +293,7 @@ class CostumeExcel:
 
 
     @staticmethod
-    def AddCharacterSkillListGroupId(builder, CharacterSkillListGroupId): builder.PrependInt64Slot(10, CharacterSkillListGroupId, 0)
+    def AddCharacterSkillListGroupId(builder, CharacterSkillListGroupId): builder.PrependInt32Slot(10, CharacterSkillListGroupId, 0)
 
 
     @staticmethod
@@ -325,9 +303,7 @@ class CostumeExcel:
     def AddSpineResourceNameDiorama(builder, SpineResourceNameDiorama): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(SpineResourceNameDiorama), 0)
 
     @staticmethod
-    def AddSpineResourceNameDioramaForFormConversion(builder, SpineResourceNameDioramaForFormConversion): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(SpineResourceNameDioramaForFormConversion), 0)
-    @staticmethod
-    def StartSpineResourceNameDioramaForFormConversionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddSpineResourceNameDioramaForFormConversionLength(builder, SpineResourceNameDioramaForFormConversionLength): builder.PrependInt32Slot(13, SpineResourceNameDioramaForFormConversionLength, 0)
 
 
     @staticmethod
@@ -369,9 +345,7 @@ class CostumeExcel:
     def AddTextureBoss(builder, TextureBoss): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(TextureBoss), 0)
 
     @staticmethod
-    def AddTextureSkillCard(builder, TextureSkillCard): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(TextureSkillCard), 0)
-    @staticmethod
-    def StartTextureSkillCardVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddTextureSkillCardLength(builder, TextureSkillCardLength): builder.PrependInt32Slot(26, TextureSkillCardLength, 0)
 
 
     @staticmethod
@@ -388,7 +362,7 @@ class CostumeExcel:
 
 
     @staticmethod
-    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt64Slot(31, CharacterVoiceGroupId, 0)
+    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt32Slot(31, CharacterVoiceGroupId, 0)
 
 
     @staticmethod

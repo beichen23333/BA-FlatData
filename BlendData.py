@@ -24,27 +24,11 @@ class BlendData:
         return 0
 
 
-    def InfoList(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            from .BlendInfo import BlendInfo
-            obj = BlendInfo()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
-
     def InfoListLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def InfoListIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
 
 
 
@@ -60,7 +44,5 @@ class BlendData:
 
 
     @staticmethod
-    def AddInfoList(builder, InfoList): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(InfoList), 0)
-    @staticmethod
-    def StartInfoListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddInfoListLength(builder, InfoListLength): builder.PrependInt32Slot(1, InfoListLength, 0)
 

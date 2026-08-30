@@ -24,28 +24,11 @@ class ContentTargetGroupExcel:
         return 0
 
 
-    def AccountType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def AccountTypeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def AccountTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def AccountTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
 
 
 
@@ -61,7 +44,5 @@ class ContentTargetGroupExcel:
 
 
     @staticmethod
-    def AddAccountType(builder, AccountType): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(AccountType), 0)
-    @staticmethod
-    def StartAccountTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddAccountTypeLength(builder, AccountTypeLength): builder.PrependInt32Slot(1, AccountTypeLength, 0)
 

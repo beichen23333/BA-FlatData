@@ -1,0 +1,4 @@
+class InputActionType:
+    Value = 0
+    Button = 1
+    PassThrough = 2

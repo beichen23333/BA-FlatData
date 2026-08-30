@@ -20,7 +20,7 @@ class ConquestMapExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,50 +55,22 @@ class ConquestMapExcel:
     def StepEnterScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def StepOpenConditionType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StepOpenConditionTypeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def StepOpenConditionTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def StepOpenConditionTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
-
-
-    def StepOpenConditionParameter(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def StepOpenConditionParameterLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def StepOpenConditionParameterIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        return o == 0
 
 
     def MapGoalLocalize(self):
@@ -132,7 +104,7 @@ class ConquestMapExcel:
     def CameraSettingId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -145,7 +117,7 @@ class ConquestMapExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
@@ -163,19 +135,15 @@ class ConquestMapExcel:
     def AddConquestMap(builder, ConquestMap): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(ConquestMap), 0)
 
     @staticmethod
-    def AddStepEnterScenarioGroupId(builder, StepEnterScenarioGroupId): builder.PrependInt64Slot(5, StepEnterScenarioGroupId, 0)
+    def AddStepEnterScenarioGroupId(builder, StepEnterScenarioGroupId): builder.PrependInt32Slot(5, StepEnterScenarioGroupId, 0)
 
 
     @staticmethod
-    def AddStepOpenConditionType(builder, StepOpenConditionType): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(StepOpenConditionType), 0)
-    @staticmethod
-    def StartStepOpenConditionTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStepOpenConditionTypeLength(builder, StepOpenConditionTypeLength): builder.PrependInt32Slot(6, StepOpenConditionTypeLength, 0)
 
 
     @staticmethod
-    def AddStepOpenConditionParameter(builder, StepOpenConditionParameter): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(StepOpenConditionParameter), 0)
-    @staticmethod
-    def StartStepOpenConditionParameterVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStepOpenConditionParameterLength(builder, StepOpenConditionParameterLength): builder.PrependInt32Slot(7, StepOpenConditionParameterLength, 0)
 
 
     @staticmethod
@@ -191,5 +159,5 @@ class ConquestMapExcel:
     def AddConquestMapBG(builder, ConquestMapBG): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(ConquestMapBG), 0)
 
     @staticmethod
-    def AddCameraSettingId(builder, CameraSettingId): builder.PrependInt64Slot(12, CameraSettingId, 0)
+    def AddCameraSettingId(builder, CameraSettingId): builder.PrependInt32Slot(12, CameraSettingId, 0)
 

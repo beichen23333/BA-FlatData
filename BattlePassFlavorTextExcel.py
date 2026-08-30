@@ -20,21 +20,21 @@ class BattlePassFlavorTextExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def TextGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class BattlePassFlavorTextExcel:
     def Sort(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -61,15 +61,15 @@ class BattlePassFlavorTextExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(1, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(1, Id, 0)
 
 
     @staticmethod
-    def AddTextGroup(builder, TextGroup): builder.PrependInt64Slot(2, TextGroup, 0)
+    def AddTextGroup(builder, TextGroup): builder.PrependInt32Slot(2, TextGroup, 0)
 
 
     @staticmethod
@@ -77,5 +77,5 @@ class BattlePassFlavorTextExcel:
 
 
     @staticmethod
-    def AddSort(builder, Sort): builder.PrependInt64Slot(4, Sort, 0)
+    def AddSort(builder, Sort): builder.PrependInt32Slot(4, Sort, 0)
 

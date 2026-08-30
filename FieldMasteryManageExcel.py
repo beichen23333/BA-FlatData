@@ -20,7 +20,7 @@ class FieldMasteryManageExcel:
     def FieldSeason(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class FieldMasteryManageExcel:
     def LevelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -54,7 +54,7 @@ class FieldMasteryManageExcel:
 
 
     @staticmethod
-    def AddFieldSeason(builder, FieldSeason): builder.PrependInt64Slot(0, FieldSeason, 0)
+    def AddFieldSeason(builder, FieldSeason): builder.PrependInt32Slot(0, FieldSeason, 0)
 
 
     @staticmethod
@@ -65,5 +65,5 @@ class FieldMasteryManageExcel:
     def AddImagePath(builder, ImagePath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(ImagePath), 0)
 
     @staticmethod
-    def AddLevelId(builder, LevelId): builder.PrependInt64Slot(3, LevelId, 0)
+    def AddLevelId(builder, LevelId): builder.PrependInt32Slot(3, LevelId, 0)
 

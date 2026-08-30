@@ -41,10 +41,9 @@ class GroundNodeFlat:
     def Position(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            x = self._tab.Indirect(o + self._tab.Pos)
-            from .GroundVector3 import GroundVector3
-            obj = GroundVector3()
-            obj.Init(self._tab.Bytes, x)
+            from .Type_0x0000605D import Type_0x0000605D
+            obj = Type_0x0000605D()
+            obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
 
@@ -85,6 +84,9 @@ class GroundNodeFlat:
 
     @staticmethod
     def AddPosition(builder, Position): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(Position), 0)
+    @staticmethod
+    def StartPositionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+
 
     @staticmethod
     def AddNodeType(builder, NodeType): builder.PrependInt32Slot(4, NodeType, 0)

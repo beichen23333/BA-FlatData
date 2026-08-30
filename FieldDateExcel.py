@@ -20,21 +20,21 @@ class FieldDateExcel:
     def SeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class FieldDateExcel:
     def EntrySceneId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class FieldDateExcel:
     def StartConditionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,7 +76,7 @@ class FieldDateExcel:
     def EndConditionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,14 +90,14 @@ class FieldDateExcel:
     def EndReadyConditionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenConditionStage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -138,22 +138,22 @@ class FieldDateExcel:
 
 
     @staticmethod
-    def AddSeasonId(builder, SeasonId): builder.PrependInt64Slot(0, SeasonId, 0)
+    def AddSeasonId(builder, SeasonId): builder.PrependInt32Slot(0, SeasonId, 0)
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(1, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(1, UniqueId, 0)
 
 
     @staticmethod
-    def AddOpenDate(builder, OpenDate): builder.PrependInt64Slot(2, OpenDate, 0)
+    def AddOpenDate(builder, OpenDate): builder.PrependInt32Slot(2, OpenDate, 0)
 
 
     @staticmethod
     def AddDateLocalizeKey(builder, DateLocalizeKey): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(DateLocalizeKey), 0)
 
     @staticmethod
-    def AddEntrySceneId(builder, EntrySceneId): builder.PrependInt64Slot(4, EntrySceneId, 0)
+    def AddEntrySceneId(builder, EntrySceneId): builder.PrependInt32Slot(4, EntrySceneId, 0)
 
 
     @staticmethod
@@ -161,7 +161,7 @@ class FieldDateExcel:
 
 
     @staticmethod
-    def AddStartConditionId(builder, StartConditionId): builder.PrependInt64Slot(6, StartConditionId, 0)
+    def AddStartConditionId(builder, StartConditionId): builder.PrependInt32Slot(6, StartConditionId, 0)
 
 
     @staticmethod
@@ -169,7 +169,7 @@ class FieldDateExcel:
 
 
     @staticmethod
-    def AddEndConditionId(builder, EndConditionId): builder.PrependInt64Slot(8, EndConditionId, 0)
+    def AddEndConditionId(builder, EndConditionId): builder.PrependInt32Slot(8, EndConditionId, 0)
 
 
     @staticmethod
@@ -177,11 +177,11 @@ class FieldDateExcel:
 
 
     @staticmethod
-    def AddEndReadyConditionId(builder, EndReadyConditionId): builder.PrependInt64Slot(10, EndReadyConditionId, 0)
+    def AddEndReadyConditionId(builder, EndReadyConditionId): builder.PrependInt32Slot(10, EndReadyConditionId, 0)
 
 
     @staticmethod
-    def AddOpenConditionStage(builder, OpenConditionStage): builder.PrependInt64Slot(11, OpenConditionStage, 0)
+    def AddOpenConditionStage(builder, OpenConditionStage): builder.PrependInt32Slot(11, OpenConditionStage, 0)
 
 
     @staticmethod

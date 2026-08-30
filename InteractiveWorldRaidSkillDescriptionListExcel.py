@@ -20,7 +20,7 @@ class InteractiveWorldRaidSkillDescriptionListExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -31,160 +31,53 @@ class InteractiveWorldRaidSkillDescriptionListExcel:
         return 0
 
 
-    def GlobalSkillGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def GlobalSkillGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def GlobalSkillGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
-
-
-    def GlobalSkillRemoveCondition(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def GlobalSkillRemoveConditionAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def GlobalSkillRemoveConditionLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def GlobalSkillRemoveConditionIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
-
-
-    def GlobalSkillShowSkillSlot(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def GlobalSkillShowSkillSlotAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def GlobalSkillShowSkillSlotLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def GlobalSkillShowSkillSlotIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        return o == 0
-
-
-    def GlobalSkillHighlightResource(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def GlobalSkillHighlightResourceAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def GlobalSkillHighlightResourceLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def GlobalSkillHighlightResourceIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
-
-
-    def SkillGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def SkillGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def SkillGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
-
-
-    def ShowSkillSlot(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def ShowSkillSlotAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def ShowSkillSlotLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ShowSkillSlotIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        return o == 0
-
-
-    def HighlightResource(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def HighlightResourceAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def HighlightResourceLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def HighlightResourceIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        return o == 0
 
 
 
@@ -196,7 +89,7 @@ class InteractiveWorldRaidSkillDescriptionListExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -204,43 +97,29 @@ class InteractiveWorldRaidSkillDescriptionListExcel:
 
 
     @staticmethod
-    def AddGlobalSkillGroupId(builder, GlobalSkillGroupId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(GlobalSkillGroupId), 0)
-    @staticmethod
-    def StartGlobalSkillGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddGlobalSkillGroupIdLength(builder, GlobalSkillGroupIdLength): builder.PrependInt32Slot(2, GlobalSkillGroupIdLength, 0)
 
 
     @staticmethod
-    def AddGlobalSkillRemoveCondition(builder, GlobalSkillRemoveCondition): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(GlobalSkillRemoveCondition), 0)
-    @staticmethod
-    def StartGlobalSkillRemoveConditionVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddGlobalSkillRemoveConditionLength(builder, GlobalSkillRemoveConditionLength): builder.PrependInt32Slot(3, GlobalSkillRemoveConditionLength, 0)
 
 
     @staticmethod
-    def AddGlobalSkillShowSkillSlot(builder, GlobalSkillShowSkillSlot): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(GlobalSkillShowSkillSlot), 0)
-    @staticmethod
-    def StartGlobalSkillShowSkillSlotVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddGlobalSkillShowSkillSlotLength(builder, GlobalSkillShowSkillSlotLength): builder.PrependInt32Slot(4, GlobalSkillShowSkillSlotLength, 0)
 
 
     @staticmethod
-    def AddGlobalSkillHighlightResource(builder, GlobalSkillHighlightResource): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(GlobalSkillHighlightResource), 0)
-    @staticmethod
-    def StartGlobalSkillHighlightResourceVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddGlobalSkillHighlightResourceLength(builder, GlobalSkillHighlightResourceLength): builder.PrependInt32Slot(5, GlobalSkillHighlightResourceLength, 0)
 
 
     @staticmethod
-    def AddSkillGroupId(builder, SkillGroupId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(SkillGroupId), 0)
-    @staticmethod
-    def StartSkillGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddSkillGroupIdLength(builder, SkillGroupIdLength): builder.PrependInt32Slot(6, SkillGroupIdLength, 0)
 
 
     @staticmethod
-    def AddShowSkillSlot(builder, ShowSkillSlot): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ShowSkillSlot), 0)
-    @staticmethod
-    def StartShowSkillSlotVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddShowSkillSlotLength(builder, ShowSkillSlotLength): builder.PrependInt32Slot(7, ShowSkillSlotLength, 0)
 
 
     @staticmethod
-    def AddHighlightResource(builder, HighlightResource): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(HighlightResource), 0)
-    @staticmethod
-    def StartHighlightResourceVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddHighlightResourceLength(builder, HighlightResourceLength): builder.PrependInt32Slot(8, HighlightResourceLength, 0)
 

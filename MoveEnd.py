@@ -20,10 +20,9 @@ class MoveEnd:
     def Normal(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
-            obj = Motion()
-            obj.Init(self._tab.Bytes, x)
+            from .Type_0x000060F8 import Type_0x000060F8
+            obj = Type_0x000060F8()
+            obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
 
@@ -31,10 +30,9 @@ class MoveEnd:
     def Stand(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
-            obj = Motion()
-            obj.Init(self._tab.Bytes, x)
+            from .Type_0x000060F8 import Type_0x000060F8
+            obj = Type_0x000060F8()
+            obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
 
@@ -42,10 +40,9 @@ class MoveEnd:
     def Kneel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
-            obj = Motion()
-            obj.Init(self._tab.Bytes, x)
+            from .Type_0x000060F8 import Type_0x000060F8
+            obj = Type_0x000060F8()
+            obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
 
@@ -60,9 +57,18 @@ class MoveEnd:
 
     @staticmethod
     def AddNormal(builder, Normal): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(Normal), 0)
+    @staticmethod
+    def StartNormalVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+
 
     @staticmethod
     def AddStand(builder, Stand): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(Stand), 0)
+    @staticmethod
+    def StartStandVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+
 
     @staticmethod
     def AddKneel(builder, Kneel): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(Kneel), 0)
+    @staticmethod
+    def StartKneelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+

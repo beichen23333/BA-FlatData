@@ -24,40 +24,18 @@ class KeyMappingPopupExcel:
         return None
 
 
-    def ButtonName(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def ButtonNameLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ButtonNameIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
-
-
-    def KeyMappingId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def KeyMappingIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def KeyMappingIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
 
 
 
@@ -72,13 +50,9 @@ class KeyMappingPopupExcel:
     def AddPrefabName(builder, PrefabName): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(PrefabName), 0)
 
     @staticmethod
-    def AddButtonName(builder, ButtonName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(ButtonName), 0)
-    @staticmethod
-    def StartButtonNameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddButtonNameLength(builder, ButtonNameLength): builder.PrependInt32Slot(1, ButtonNameLength, 0)
 
 
     @staticmethod
-    def AddKeyMappingId(builder, KeyMappingId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(KeyMappingId), 0)
-    @staticmethod
-    def StartKeyMappingIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddKeyMappingIdLength(builder, KeyMappingIdLength): builder.PrependInt32Slot(2, KeyMappingIdLength, 0)
 

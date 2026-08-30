@@ -1,0 +1,7 @@
+class FFTWindow:
+    Rectangular = 0
+    Triangle = 1
+    Hamming = 2
+    Hanning = 3
+    Blackman = 4
+    BlackmanHarris = 5

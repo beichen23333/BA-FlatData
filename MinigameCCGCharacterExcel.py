@@ -20,7 +20,7 @@ class MinigameCCGCharacterExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class MinigameCCGCharacterExcel:
     def ActiveSkillId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -66,28 +66,11 @@ class MinigameCCGCharacterExcel:
         return 0
 
 
-    def PassiveSkillId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def PassiveSkillIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def PassiveSkillIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def PassiveSkillIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        return o == 0
 
 
     def Name(self):
@@ -118,28 +101,11 @@ class MinigameCCGCharacterExcel:
         return None
 
 
-    def Tags(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def TagsAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def TagsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def TagsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        return o == 0
 
 
 
@@ -151,7 +117,7 @@ class MinigameCCGCharacterExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -159,7 +125,7 @@ class MinigameCCGCharacterExcel:
 
 
     @staticmethod
-    def AddActiveSkillId(builder, ActiveSkillId): builder.PrependInt64Slot(2, ActiveSkillId, 0)
+    def AddActiveSkillId(builder, ActiveSkillId): builder.PrependInt32Slot(2, ActiveSkillId, 0)
 
 
     @staticmethod
@@ -179,9 +145,7 @@ class MinigameCCGCharacterExcel:
 
 
     @staticmethod
-    def AddPassiveSkillId(builder, PassiveSkillId): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(PassiveSkillId), 0)
-    @staticmethod
-    def StartPassiveSkillIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddPassiveSkillIdLength(builder, PassiveSkillIdLength): builder.PrependInt32Slot(7, PassiveSkillIdLength, 0)
 
 
     @staticmethod
@@ -198,7 +162,5 @@ class MinigameCCGCharacterExcel:
     def AddUIImagePath(builder, UIImagePath): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(UIImagePath), 0)
 
     @staticmethod
-    def AddTags(builder, Tags): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(Tags), 0)
-    @staticmethod
-    def StartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(12, TagsLength, 0)
 

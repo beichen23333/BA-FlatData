@@ -20,14 +20,14 @@ class EmoticonSpecialExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CharacterUniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -47,11 +47,11 @@ class EmoticonSpecialExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
-    def AddCharacterUniqueId(builder, CharacterUniqueId): builder.PrependInt64Slot(1, CharacterUniqueId, 0)
+    def AddCharacterUniqueId(builder, CharacterUniqueId): builder.PrependInt32Slot(1, CharacterUniqueId, 0)
 
 
     @staticmethod

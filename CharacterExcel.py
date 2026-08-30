@@ -20,7 +20,7 @@ class CharacterExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class CharacterExcel:
     def CostumeGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -139,7 +139,7 @@ class CharacterExcel:
     def TacticRole(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -230,28 +230,28 @@ class CharacterExcel:
     def PersonalityId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CharacterAIId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ExternalBTId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MainCombatStyleId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -262,267 +262,247 @@ class CharacterExcel:
         return 0
 
 
-    def ScenarioCharacter(self):
+    def UseRepStyleOnCharacterGrowth(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def ScenarioCharacter(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def SpawnTemplateId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
     def FavorLevelupType(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EquipmentSlot(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def EquipmentSlotAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def EquipmentSlotLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def EquipmentSlotIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        return o == 0
 
 
     def WeaponLocalizeId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
     def DisplayEnemyInfo(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def BodyRadius(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RandomEffectRadius(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def HPBarHide(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def HpBarHeight(self):
+    def TargetGuideScale(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def HighlightFloaterHeight(self):
+    def HPBarHide(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def EmojiOffsetX(self):
+    def HpBarHeight(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(96))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EmojiOffsetY(self):
+    def HighlightFloaterHeight(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MoveStartFrame(self):
+    def EmojiOffsetX(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(100))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MoveEndFrame(self):
+    def EmojiOffsetY(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(102))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def JumpMotionFrame(self):
+    def MoveStartFrame(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(104))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AppearFrame(self):
+    def MoveEndFrame(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(106))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CanMove(self):
+    def JumpMotionFrame(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(108))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CanFix(self):
+    def AppearFrame(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(110))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CanCrowdControl(self):
+    def CanMove(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def CanBattleItemMove(self):
+    def CanFix(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def IgnoreObstacle(self):
+    def CanCrowdControl(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def IsAirUnit(self):
+    def CanBattleItemMove(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def AirUnitHeight(self):
+    def IgnoreObstacle(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def Tags(self, j):
+    def IsAirUnit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
-    def TagsAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
-    def TagsLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
-        if o != 0:
-            return self._tab.VectorLen(o)
-        return 0
-
-    def TagsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
-        return o == 0
-
-
-    def SecretStoneItemId(self):
+    def AirUnitHeight(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(124))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SecretStoneItemAmount(self):
+    def TagsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(126))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharacterPieceItemId(self):
+    def SecretStoneItemId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(128))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharacterPieceItemAmount(self):
+    def SecretStoneItemAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(130))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CombineRecipeId(self):
+    def CharacterPieceItemId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CharacterPieceItemAmount(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(134))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CombineRecipeId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(136))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(65)
+    def Start(builder): builder.StartObject(67)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
     def AddDevName(builder, DevName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(DevName), 0)
 
     @staticmethod
-    def AddCostumeGroupId(builder, CostumeGroupId): builder.PrependInt64Slot(2, CostumeGroupId, 0)
+    def AddCostumeGroupId(builder, CostumeGroupId): builder.PrependInt32Slot(2, CostumeGroupId, 0)
 
 
     @staticmethod
@@ -579,7 +559,7 @@ class CharacterExcel:
 
 
     @staticmethod
-    def AddTacticRole(builder, TacticRole): builder.PrependInt32Slot(17, TacticRole, 0)
+    def AddTacticRole(builder, TacticRole): builder.PrependFloat32Slot(17, TacticRole, 0)
 
 
     @staticmethod
@@ -631,19 +611,19 @@ class CharacterExcel:
 
 
     @staticmethod
-    def AddPersonalityId(builder, PersonalityId): builder.PrependInt64Slot(30, PersonalityId, 0)
+    def AddPersonalityId(builder, PersonalityId): builder.PrependInt32Slot(30, PersonalityId, 0)
 
 
     @staticmethod
-    def AddCharacterAIId(builder, CharacterAIId): builder.PrependInt64Slot(31, CharacterAIId, 0)
+    def AddCharacterAIId(builder, CharacterAIId): builder.PrependInt32Slot(31, CharacterAIId, 0)
 
 
     @staticmethod
-    def AddExternalBTId(builder, ExternalBTId): builder.PrependInt64Slot(32, ExternalBTId, 0)
+    def AddExternalBTId(builder, ExternalBTId): builder.PrependInt32Slot(32, ExternalBTId, 0)
 
 
     @staticmethod
-    def AddMainCombatStyleId(builder, MainCombatStyleId): builder.PrependInt64Slot(33, MainCombatStyleId, 0)
+    def AddMainCombatStyleId(builder, MainCombatStyleId): builder.PrependInt32Slot(33, MainCombatStyleId, 0)
 
 
     @staticmethod
@@ -651,124 +631,128 @@ class CharacterExcel:
 
 
     @staticmethod
-    def AddScenarioCharacter(builder, ScenarioCharacter): builder.PrependUOffsetTRelativeSlot(35, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioCharacter), 0)
-
-    @staticmethod
-    def AddSpawnTemplateId(builder, SpawnTemplateId): builder.PrependUint32Slot(36, SpawnTemplateId, 0)
+    def AddUseRepStyleOnCharacterGrowth(builder, UseRepStyleOnCharacterGrowth): builder.PrependBoolSlot(35, UseRepStyleOnCharacterGrowth, 0)
 
 
     @staticmethod
-    def AddFavorLevelupType(builder, FavorLevelupType): builder.PrependInt32Slot(37, FavorLevelupType, 0)
+    def AddScenarioCharacter(builder, ScenarioCharacter): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioCharacter), 0)
+
+    @staticmethod
+    def AddSpawnTemplateId(builder, SpawnTemplateId): builder.PrependUint32Slot(37, SpawnTemplateId, 0)
 
 
     @staticmethod
-    def AddEquipmentSlot(builder, EquipmentSlot): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(EquipmentSlot), 0)
-    @staticmethod
-    def StartEquipmentSlotVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddFavorLevelupType(builder, FavorLevelupType): builder.PrependInt32Slot(38, FavorLevelupType, 0)
 
 
     @staticmethod
-    def AddWeaponLocalizeId(builder, WeaponLocalizeId): builder.PrependUint32Slot(39, WeaponLocalizeId, 0)
+    def AddEquipmentSlotLength(builder, EquipmentSlotLength): builder.PrependInt32Slot(39, EquipmentSlotLength, 0)
 
 
     @staticmethod
-    def AddDisplayEnemyInfo(builder, DisplayEnemyInfo): builder.PrependBoolSlot(40, DisplayEnemyInfo, 0)
+    def AddWeaponLocalizeId(builder, WeaponLocalizeId): builder.PrependUint32Slot(40, WeaponLocalizeId, 0)
 
 
     @staticmethod
-    def AddBodyRadius(builder, BodyRadius): builder.PrependInt64Slot(41, BodyRadius, 0)
+    def AddDisplayEnemyInfo(builder, DisplayEnemyInfo): builder.PrependBoolSlot(41, DisplayEnemyInfo, 0)
 
 
     @staticmethod
-    def AddRandomEffectRadius(builder, RandomEffectRadius): builder.PrependInt64Slot(42, RandomEffectRadius, 0)
+    def AddBodyRadius(builder, BodyRadius): builder.PrependInt32Slot(42, BodyRadius, 0)
 
 
     @staticmethod
-    def AddHPBarHide(builder, HPBarHide): builder.PrependBoolSlot(43, HPBarHide, 0)
+    def AddRandomEffectRadius(builder, RandomEffectRadius): builder.PrependInt32Slot(43, RandomEffectRadius, 0)
 
 
     @staticmethod
-    def AddHpBarHeight(builder, HpBarHeight): builder.PrependFloat32Slot(44, HpBarHeight, 0)
+    def AddTargetGuideScale(builder, TargetGuideScale): builder.PrependFloat32Slot(44, TargetGuideScale, 0)
 
 
     @staticmethod
-    def AddHighlightFloaterHeight(builder, HighlightFloaterHeight): builder.PrependFloat32Slot(45, HighlightFloaterHeight, 0)
+    def AddHPBarHide(builder, HPBarHide): builder.PrependBoolSlot(45, HPBarHide, 0)
 
 
     @staticmethod
-    def AddEmojiOffsetX(builder, EmojiOffsetX): builder.PrependFloat32Slot(46, EmojiOffsetX, 0)
+    def AddHpBarHeight(builder, HpBarHeight): builder.PrependFloat32Slot(46, HpBarHeight, 0)
 
 
     @staticmethod
-    def AddEmojiOffsetY(builder, EmojiOffsetY): builder.PrependFloat32Slot(47, EmojiOffsetY, 0)
+    def AddHighlightFloaterHeight(builder, HighlightFloaterHeight): builder.PrependFloat32Slot(47, HighlightFloaterHeight, 0)
 
 
     @staticmethod
-    def AddMoveStartFrame(builder, MoveStartFrame): builder.PrependInt32Slot(48, MoveStartFrame, 0)
+    def AddEmojiOffsetX(builder, EmojiOffsetX): builder.PrependFloat32Slot(48, EmojiOffsetX, 0)
 
 
     @staticmethod
-    def AddMoveEndFrame(builder, MoveEndFrame): builder.PrependInt32Slot(49, MoveEndFrame, 0)
+    def AddEmojiOffsetY(builder, EmojiOffsetY): builder.PrependFloat32Slot(49, EmojiOffsetY, 0)
 
 
     @staticmethod
-    def AddJumpMotionFrame(builder, JumpMotionFrame): builder.PrependInt32Slot(50, JumpMotionFrame, 0)
+    def AddMoveStartFrame(builder, MoveStartFrame): builder.PrependInt32Slot(50, MoveStartFrame, 0)
 
 
     @staticmethod
-    def AddAppearFrame(builder, AppearFrame): builder.PrependInt32Slot(51, AppearFrame, 0)
+    def AddMoveEndFrame(builder, MoveEndFrame): builder.PrependInt32Slot(51, MoveEndFrame, 0)
 
 
     @staticmethod
-    def AddCanMove(builder, CanMove): builder.PrependBoolSlot(52, CanMove, 0)
+    def AddJumpMotionFrame(builder, JumpMotionFrame): builder.PrependInt32Slot(52, JumpMotionFrame, 0)
 
 
     @staticmethod
-    def AddCanFix(builder, CanFix): builder.PrependBoolSlot(53, CanFix, 0)
+    def AddAppearFrame(builder, AppearFrame): builder.PrependInt32Slot(53, AppearFrame, 0)
 
 
     @staticmethod
-    def AddCanCrowdControl(builder, CanCrowdControl): builder.PrependBoolSlot(54, CanCrowdControl, 0)
+    def AddCanMove(builder, CanMove): builder.PrependBoolSlot(54, CanMove, 0)
 
 
     @staticmethod
-    def AddCanBattleItemMove(builder, CanBattleItemMove): builder.PrependBoolSlot(55, CanBattleItemMove, 0)
+    def AddCanFix(builder, CanFix): builder.PrependBoolSlot(55, CanFix, 0)
 
 
     @staticmethod
-    def AddIgnoreObstacle(builder, IgnoreObstacle): builder.PrependBoolSlot(56, IgnoreObstacle, 0)
+    def AddCanCrowdControl(builder, CanCrowdControl): builder.PrependBoolSlot(56, CanCrowdControl, 0)
 
 
     @staticmethod
-    def AddIsAirUnit(builder, IsAirUnit): builder.PrependBoolSlot(57, IsAirUnit, 0)
+    def AddCanBattleItemMove(builder, CanBattleItemMove): builder.PrependBoolSlot(57, CanBattleItemMove, 0)
 
 
     @staticmethod
-    def AddAirUnitHeight(builder, AirUnitHeight): builder.PrependInt64Slot(58, AirUnitHeight, 0)
+    def AddIgnoreObstacle(builder, IgnoreObstacle): builder.PrependBoolSlot(58, IgnoreObstacle, 0)
 
 
     @staticmethod
-    def AddTags(builder, Tags): builder.PrependUOffsetTRelativeSlot(59, flatbuffers.number_types.UOffsetTFlags.py_type(Tags), 0)
-    @staticmethod
-    def StartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddIsAirUnit(builder, IsAirUnit): builder.PrependBoolSlot(59, IsAirUnit, 0)
 
 
     @staticmethod
-    def AddSecretStoneItemId(builder, SecretStoneItemId): builder.PrependInt64Slot(60, SecretStoneItemId, 0)
+    def AddAirUnitHeight(builder, AirUnitHeight): builder.PrependInt32Slot(60, AirUnitHeight, 0)
 
 
     @staticmethod
-    def AddSecretStoneItemAmount(builder, SecretStoneItemAmount): builder.PrependInt32Slot(61, SecretStoneItemAmount, 0)
+    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(61, TagsLength, 0)
 
 
     @staticmethod
-    def AddCharacterPieceItemId(builder, CharacterPieceItemId): builder.PrependInt64Slot(62, CharacterPieceItemId, 0)
+    def AddSecretStoneItemId(builder, SecretStoneItemId): builder.PrependInt32Slot(62, SecretStoneItemId, 0)
 
 
     @staticmethod
-    def AddCharacterPieceItemAmount(builder, CharacterPieceItemAmount): builder.PrependInt32Slot(63, CharacterPieceItemAmount, 0)
+    def AddSecretStoneItemAmount(builder, SecretStoneItemAmount): builder.PrependInt32Slot(63, SecretStoneItemAmount, 0)
 
 
     @staticmethod
-    def AddCombineRecipeId(builder, CombineRecipeId): builder.PrependInt64Slot(64, CombineRecipeId, 0)
+    def AddCharacterPieceItemId(builder, CharacterPieceItemId): builder.PrependInt32Slot(64, CharacterPieceItemId, 0)
+
+
+    @staticmethod
+    def AddCharacterPieceItemAmount(builder, CharacterPieceItemAmount): builder.PrependInt32Slot(65, CharacterPieceItemAmount, 0)
+
+
+    @staticmethod
+    def AddCombineRecipeId(builder, CombineRecipeId): builder.PrependInt32Slot(66, CombineRecipeId, 0)
 

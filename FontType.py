@@ -13,3 +13,4 @@ class FontType:
     CriticalWeak = 11
     Effective = 12
     CriticalEffective = 13
+    ShieldHeal = 14

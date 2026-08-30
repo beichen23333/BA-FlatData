@@ -20,7 +20,7 @@ class CharacterAIExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,35 +48,35 @@ class CharacterAIExcel:
     def DistanceReduceRatioObstaclePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DistanceReduceObstaclePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DistanceReduceRatioFormationPath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DistanceReduceFormationPath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MinimumPositionGap(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -110,7 +110,7 @@ class CharacterAIExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -126,23 +126,23 @@ class CharacterAIExcel:
 
 
     @staticmethod
-    def AddDistanceReduceRatioObstaclePath(builder, DistanceReduceRatioObstaclePath): builder.PrependInt64Slot(4, DistanceReduceRatioObstaclePath, 0)
+    def AddDistanceReduceRatioObstaclePath(builder, DistanceReduceRatioObstaclePath): builder.PrependInt32Slot(4, DistanceReduceRatioObstaclePath, 0)
 
 
     @staticmethod
-    def AddDistanceReduceObstaclePath(builder, DistanceReduceObstaclePath): builder.PrependInt64Slot(5, DistanceReduceObstaclePath, 0)
+    def AddDistanceReduceObstaclePath(builder, DistanceReduceObstaclePath): builder.PrependInt32Slot(5, DistanceReduceObstaclePath, 0)
 
 
     @staticmethod
-    def AddDistanceReduceRatioFormationPath(builder, DistanceReduceRatioFormationPath): builder.PrependInt64Slot(6, DistanceReduceRatioFormationPath, 0)
+    def AddDistanceReduceRatioFormationPath(builder, DistanceReduceRatioFormationPath): builder.PrependInt32Slot(6, DistanceReduceRatioFormationPath, 0)
 
 
     @staticmethod
-    def AddDistanceReduceFormationPath(builder, DistanceReduceFormationPath): builder.PrependInt64Slot(7, DistanceReduceFormationPath, 0)
+    def AddDistanceReduceFormationPath(builder, DistanceReduceFormationPath): builder.PrependInt32Slot(7, DistanceReduceFormationPath, 0)
 
 
     @staticmethod
-    def AddMinimumPositionGap(builder, MinimumPositionGap): builder.PrependInt64Slot(8, MinimumPositionGap, 0)
+    def AddMinimumPositionGap(builder, MinimumPositionGap): builder.PrependInt32Slot(8, MinimumPositionGap, 0)
 
 
     @staticmethod

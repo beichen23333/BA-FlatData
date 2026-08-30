@@ -20,82 +20,89 @@ class FieldSeasonExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def FieldContentType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventContentId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EntryDateId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def InstantEntryDateId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StartDate(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def EndDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def LobbyBGMChangeStageId(self):
+    def EndDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def LobbyBGMChangeStageId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FieldPrefabControlID(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def FieldGetKeywordCallDialogEnum(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MasteryImagePath(self):
+    def FieldGetKeywordCallDialogEnum(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def FieldLobbyTitleImagePath(self):
+    def MasteryImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def KeywordLogoImagePath(self):
+    def FieldLobbyTitleImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def KeywordLogoImagePath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -104,50 +111,54 @@ class FieldSeasonExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(12)
+    def Start(builder): builder.StartObject(13)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(1, EventContentId, 0)
+    def AddFieldContentType(builder, FieldContentType): builder.PrependInt32Slot(1, FieldContentType, 0)
 
 
     @staticmethod
-    def AddEntryDateId(builder, EntryDateId): builder.PrependInt64Slot(2, EntryDateId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(2, EventContentId, 0)
 
 
     @staticmethod
-    def AddInstantEntryDateId(builder, InstantEntryDateId): builder.PrependInt64Slot(3, InstantEntryDateId, 0)
+    def AddEntryDateId(builder, EntryDateId): builder.PrependInt32Slot(3, EntryDateId, 0)
 
 
     @staticmethod
-    def AddStartDate(builder, StartDate): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(StartDate), 0)
-
-    @staticmethod
-    def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
-
-    @staticmethod
-    def AddLobbyBGMChangeStageId(builder, LobbyBGMChangeStageId): builder.PrependInt64Slot(6, LobbyBGMChangeStageId, 0)
+    def AddInstantEntryDateId(builder, InstantEntryDateId): builder.PrependInt32Slot(4, InstantEntryDateId, 0)
 
 
     @staticmethod
-    def AddFieldPrefabControlID(builder, FieldPrefabControlID): builder.PrependInt64Slot(7, FieldPrefabControlID, 0)
+    def AddStartDate(builder, StartDate): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(StartDate), 0)
+
+    @staticmethod
+    def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
+
+    @staticmethod
+    def AddLobbyBGMChangeStageId(builder, LobbyBGMChangeStageId): builder.PrependInt32Slot(7, LobbyBGMChangeStageId, 0)
 
 
     @staticmethod
-    def AddFieldGetKeywordCallDialogEnum(builder, FieldGetKeywordCallDialogEnum): builder.PrependInt32Slot(8, FieldGetKeywordCallDialogEnum, 0)
+    def AddFieldPrefabControlID(builder, FieldPrefabControlID): builder.PrependInt32Slot(8, FieldPrefabControlID, 0)
 
 
     @staticmethod
-    def AddMasteryImagePath(builder, MasteryImagePath): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(MasteryImagePath), 0)
+    def AddFieldGetKeywordCallDialogEnum(builder, FieldGetKeywordCallDialogEnum): builder.PrependInt32Slot(9, FieldGetKeywordCallDialogEnum, 0)
+
 
     @staticmethod
-    def AddFieldLobbyTitleImagePath(builder, FieldLobbyTitleImagePath): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(FieldLobbyTitleImagePath), 0)
+    def AddMasteryImagePath(builder, MasteryImagePath): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(MasteryImagePath), 0)
 
     @staticmethod
-    def AddKeywordLogoImagePath(builder, KeywordLogoImagePath): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(KeywordLogoImagePath), 0)
+    def AddFieldLobbyTitleImagePath(builder, FieldLobbyTitleImagePath): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(FieldLobbyTitleImagePath), 0)
+
+    @staticmethod
+    def AddKeywordLogoImagePath(builder, KeywordLogoImagePath): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(KeywordLogoImagePath), 0)

@@ -34,21 +34,21 @@ class GroundModuleRewardExcel:
     def RewardParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardParcelProbability(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -83,15 +83,15 @@ class GroundModuleRewardExcel:
 
 
     @staticmethod
-    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt64Slot(2, RewardParcelId, 0)
+    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt32Slot(2, RewardParcelId, 0)
 
 
     @staticmethod
-    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt64Slot(3, RewardParcelAmount, 0)
+    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt32Slot(3, RewardParcelAmount, 0)
 
 
     @staticmethod
-    def AddRewardParcelProbability(builder, RewardParcelProbability): builder.PrependInt64Slot(4, RewardParcelProbability, 0)
+    def AddRewardParcelProbability(builder, RewardParcelProbability): builder.PrependInt32Slot(4, RewardParcelProbability, 0)
 
 
     @staticmethod

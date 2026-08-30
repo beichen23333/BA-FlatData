@@ -20,14 +20,14 @@ class CharacterVictoryInteractionExcel:
     def InteractionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CostumeId01(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class CharacterVictoryInteractionExcel:
     def CostumeId02(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -97,7 +97,7 @@ class CharacterVictoryInteractionExcel:
     def CostumeId03(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -132,7 +132,7 @@ class CharacterVictoryInteractionExcel:
     def CostumeId04(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -167,7 +167,7 @@ class CharacterVictoryInteractionExcel:
     def CostumeId05(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -202,7 +202,7 @@ class CharacterVictoryInteractionExcel:
     def CostumeId06(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -243,11 +243,11 @@ class CharacterVictoryInteractionExcel:
 
 
     @staticmethod
-    def AddInteractionId(builder, InteractionId): builder.PrependInt64Slot(0, InteractionId, 0)
+    def AddInteractionId(builder, InteractionId): builder.PrependInt32Slot(0, InteractionId, 0)
 
 
     @staticmethod
-    def AddCostumeId01(builder, CostumeId01): builder.PrependInt64Slot(1, CostumeId01, 0)
+    def AddCostumeId01(builder, CostumeId01): builder.PrependInt32Slot(1, CostumeId01, 0)
 
 
     @staticmethod
@@ -265,7 +265,7 @@ class CharacterVictoryInteractionExcel:
 
 
     @staticmethod
-    def AddCostumeId02(builder, CostumeId02): builder.PrependInt64Slot(6, CostumeId02, 0)
+    def AddCostumeId02(builder, CostumeId02): builder.PrependInt32Slot(6, CostumeId02, 0)
 
 
     @staticmethod
@@ -283,7 +283,7 @@ class CharacterVictoryInteractionExcel:
 
 
     @staticmethod
-    def AddCostumeId03(builder, CostumeId03): builder.PrependInt64Slot(11, CostumeId03, 0)
+    def AddCostumeId03(builder, CostumeId03): builder.PrependInt32Slot(11, CostumeId03, 0)
 
 
     @staticmethod
@@ -301,7 +301,7 @@ class CharacterVictoryInteractionExcel:
 
 
     @staticmethod
-    def AddCostumeId04(builder, CostumeId04): builder.PrependInt64Slot(16, CostumeId04, 0)
+    def AddCostumeId04(builder, CostumeId04): builder.PrependInt32Slot(16, CostumeId04, 0)
 
 
     @staticmethod
@@ -319,7 +319,7 @@ class CharacterVictoryInteractionExcel:
 
 
     @staticmethod
-    def AddCostumeId05(builder, CostumeId05): builder.PrependInt64Slot(21, CostumeId05, 0)
+    def AddCostumeId05(builder, CostumeId05): builder.PrependInt32Slot(21, CostumeId05, 0)
 
 
     @staticmethod
@@ -337,7 +337,7 @@ class CharacterVictoryInteractionExcel:
 
 
     @staticmethod
-    def AddCostumeId06(builder, CostumeId06): builder.PrependInt64Slot(26, CostumeId06, 0)
+    def AddCostumeId06(builder, CostumeId06): builder.PrependInt32Slot(26, CostumeId06, 0)
 
 
     @staticmethod

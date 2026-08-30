@@ -20,14 +20,14 @@ class AcademyTicketExcel:
     def LocationRankSum(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScheduleTicktetMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -40,9 +40,9 @@ class AcademyTicketExcel:
 
 
     @staticmethod
-    def AddLocationRankSum(builder, LocationRankSum): builder.PrependInt64Slot(0, LocationRankSum, 0)
+    def AddLocationRankSum(builder, LocationRankSum): builder.PrependInt32Slot(0, LocationRankSum, 0)
 
 
     @staticmethod
-    def AddScheduleTicktetMax(builder, ScheduleTicktetMax): builder.PrependInt64Slot(1, ScheduleTicktetMax, 0)
+    def AddScheduleTicktetMax(builder, ScheduleTicktetMax): builder.PrependInt32Slot(1, ScheduleTicktetMax, 0)
 

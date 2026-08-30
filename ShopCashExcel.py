@@ -20,14 +20,14 @@ class ShopCashExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CashProductId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,14 +76,14 @@ class ShopCashExcel:
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RenewalDisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -125,7 +125,7 @@ class ShopCashExcel:
     def ProductSaleDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -139,7 +139,7 @@ class ShopCashExcel:
     def AccountLevelLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -153,7 +153,7 @@ class ShopCashExcel:
     def ClearMissionLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -201,11 +201,11 @@ class ShopCashExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddCashProductId(builder, CashProductId): builder.PrependInt64Slot(1, CashProductId, 0)
+    def AddCashProductId(builder, CashProductId): builder.PrependInt32Slot(1, CashProductId, 0)
 
 
     @staticmethod
@@ -232,11 +232,11 @@ class ShopCashExcel:
     def AddIconPath(builder, IconPath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(IconPath), 0)
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(8, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(8, DisplayOrder, 0)
 
 
     @staticmethod
-    def AddRenewalDisplayOrder(builder, RenewalDisplayOrder): builder.PrependInt64Slot(9, RenewalDisplayOrder, 0)
+    def AddRenewalDisplayOrder(builder, RenewalDisplayOrder): builder.PrependInt32Slot(9, RenewalDisplayOrder, 0)
 
 
     @staticmethod
@@ -258,7 +258,7 @@ class ShopCashExcel:
     def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
 
     @staticmethod
-    def AddProductSaleDay(builder, ProductSaleDay): builder.PrependInt64Slot(15, ProductSaleDay, 0)
+    def AddProductSaleDay(builder, ProductSaleDay): builder.PrependInt32Slot(15, ProductSaleDay, 0)
 
 
     @staticmethod
@@ -266,7 +266,7 @@ class ShopCashExcel:
 
 
     @staticmethod
-    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt64Slot(17, AccountLevelLimit, 0)
+    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt32Slot(17, AccountLevelLimit, 0)
 
 
     @staticmethod
@@ -274,7 +274,7 @@ class ShopCashExcel:
 
 
     @staticmethod
-    def AddClearMissionLimit(builder, ClearMissionLimit): builder.PrependInt64Slot(19, ClearMissionLimit, 0)
+    def AddClearMissionLimit(builder, ClearMissionLimit): builder.PrependInt32Slot(19, ClearMissionLimit, 0)
 
 
     @staticmethod

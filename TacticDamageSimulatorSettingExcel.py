@@ -34,28 +34,28 @@ class TacticDamageSimulatorSettingExcel:
     def TestPreset(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def TestBattleTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StrikerSquard(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SpecialSquard(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -125,32 +125,15 @@ class TacticDamageSimulatorSettingExcel:
     def GroundId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def FixedCharacter(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def FixedCharacterAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def FixedCharacterLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def FixedCharacterIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        return o == 0
 
 
 
@@ -170,19 +153,19 @@ class TacticDamageSimulatorSettingExcel:
 
 
     @staticmethod
-    def AddTestPreset(builder, TestPreset): builder.PrependInt64Slot(2, TestPreset, 0)
+    def AddTestPreset(builder, TestPreset): builder.PrependInt32Slot(2, TestPreset, 0)
 
 
     @staticmethod
-    def AddTestBattleTime(builder, TestBattleTime): builder.PrependInt64Slot(3, TestBattleTime, 0)
+    def AddTestBattleTime(builder, TestBattleTime): builder.PrependInt32Slot(3, TestBattleTime, 0)
 
 
     @staticmethod
-    def AddStrikerSquard(builder, StrikerSquard): builder.PrependInt64Slot(4, StrikerSquard, 0)
+    def AddStrikerSquard(builder, StrikerSquard): builder.PrependInt32Slot(4, StrikerSquard, 0)
 
 
     @staticmethod
-    def AddSpecialSquard(builder, SpecialSquard): builder.PrependInt64Slot(5, SpecialSquard, 0)
+    def AddSpecialSquard(builder, SpecialSquard): builder.PrependInt32Slot(5, SpecialSquard, 0)
 
 
     @staticmethod
@@ -222,11 +205,9 @@ class TacticDamageSimulatorSettingExcel:
 
 
     @staticmethod
-    def AddGroundId(builder, GroundId): builder.PrependInt64Slot(15, GroundId, 0)
+    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(15, GroundId, 0)
 
 
     @staticmethod
-    def AddFixedCharacter(builder, FixedCharacter): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(FixedCharacter), 0)
-    @staticmethod
-    def StartFixedCharacterVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddFixedCharacterLength(builder, FixedCharacterLength): builder.PrependInt32Slot(16, FixedCharacterLength, 0)
 

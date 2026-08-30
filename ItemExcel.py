@@ -20,14 +20,14 @@ class ItemExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class ItemExcel:
     def Quality(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -111,14 +111,14 @@ class ItemExcel:
     def UsingResultId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UsingResultAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -139,14 +139,14 @@ class ItemExcel:
     def ExpiryChangeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ExpiryChangeAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -160,149 +160,129 @@ class ItemExcel:
     def TierUpgradeRecipeCraftId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def Tags(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def TagsAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def TagsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def TagsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        return o == 0
+
+    def IsCollaboration(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
 
 
     def CraftQualityTier0(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CraftQualityTier1(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CraftQualityTier2(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShiftingCraftQuality(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def MaxGiftTags(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShopCategory(self, j):
+    def MaxGiftTags(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ShopCategoryAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def ShopCategoryLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ShopCategoryIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
-        return o == 0
 
 
     def ExpirationDateTime(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def ExpirationNotifyDateIn(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShortcutTypeId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
+    def IsOverrideExpiration(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def ShortcutTypeId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GachaTicket(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AlertPopupId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShiftingCraftRecipe(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(34)
+    def Start(builder): builder.StartObject(36)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(1, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(1, GroupId, 0)
 
 
     @staticmethod
@@ -322,7 +302,7 @@ class ItemExcel:
 
 
     @staticmethod
-    def AddQuality(builder, Quality): builder.PrependInt64Slot(6, Quality, 0)
+    def AddQuality(builder, Quality): builder.PrependInt32Slot(6, Quality, 0)
 
 
     @staticmethod
@@ -348,11 +328,11 @@ class ItemExcel:
 
 
     @staticmethod
-    def AddUsingResultId(builder, UsingResultId): builder.PrependInt64Slot(13, UsingResultId, 0)
+    def AddUsingResultId(builder, UsingResultId): builder.PrependInt32Slot(13, UsingResultId, 0)
 
 
     @staticmethod
-    def AddUsingResultAmount(builder, UsingResultAmount): builder.PrependInt64Slot(14, UsingResultAmount, 0)
+    def AddUsingResultAmount(builder, UsingResultAmount): builder.PrependInt32Slot(14, UsingResultAmount, 0)
 
 
     @staticmethod
@@ -364,11 +344,11 @@ class ItemExcel:
 
 
     @staticmethod
-    def AddExpiryChangeId(builder, ExpiryChangeId): builder.PrependInt64Slot(17, ExpiryChangeId, 0)
+    def AddExpiryChangeId(builder, ExpiryChangeId): builder.PrependInt32Slot(17, ExpiryChangeId, 0)
 
 
     @staticmethod
-    def AddExpiryChangeAmount(builder, ExpiryChangeAmount): builder.PrependInt64Slot(18, ExpiryChangeAmount, 0)
+    def AddExpiryChangeAmount(builder, ExpiryChangeAmount): builder.PrependInt32Slot(18, ExpiryChangeAmount, 0)
 
 
     @staticmethod
@@ -376,60 +356,64 @@ class ItemExcel:
 
 
     @staticmethod
-    def AddTierUpgradeRecipeCraftId(builder, TierUpgradeRecipeCraftId): builder.PrependInt64Slot(20, TierUpgradeRecipeCraftId, 0)
+    def AddTierUpgradeRecipeCraftId(builder, TierUpgradeRecipeCraftId): builder.PrependInt32Slot(20, TierUpgradeRecipeCraftId, 0)
 
 
     @staticmethod
-    def AddTags(builder, Tags): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(Tags), 0)
-    @staticmethod
-    def StartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(21, TagsLength, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier0(builder, CraftQualityTier0): builder.PrependInt64Slot(22, CraftQualityTier0, 0)
+    def AddIsCollaboration(builder, IsCollaboration): builder.PrependBoolSlot(22, IsCollaboration, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier1(builder, CraftQualityTier1): builder.PrependInt64Slot(23, CraftQualityTier1, 0)
+    def AddCraftQualityTier0(builder, CraftQualityTier0): builder.PrependInt32Slot(23, CraftQualityTier0, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier2(builder, CraftQualityTier2): builder.PrependInt64Slot(24, CraftQualityTier2, 0)
+    def AddCraftQualityTier1(builder, CraftQualityTier1): builder.PrependInt32Slot(24, CraftQualityTier1, 0)
 
 
     @staticmethod
-    def AddShiftingCraftQuality(builder, ShiftingCraftQuality): builder.PrependInt64Slot(25, ShiftingCraftQuality, 0)
+    def AddCraftQualityTier2(builder, CraftQualityTier2): builder.PrependInt32Slot(25, CraftQualityTier2, 0)
 
 
     @staticmethod
-    def AddMaxGiftTags(builder, MaxGiftTags): builder.PrependInt32Slot(26, MaxGiftTags, 0)
+    def AddShiftingCraftQuality(builder, ShiftingCraftQuality): builder.PrependInt32Slot(26, ShiftingCraftQuality, 0)
 
 
     @staticmethod
-    def AddShopCategory(builder, ShopCategory): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(ShopCategory), 0)
-    @staticmethod
-    def StartShopCategoryVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddMaxGiftTags(builder, MaxGiftTags): builder.PrependInt32Slot(27, MaxGiftTags, 0)
 
 
     @staticmethod
-    def AddExpirationDateTime(builder, ExpirationDateTime): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(ExpirationDateTime), 0)
-
-    @staticmethod
-    def AddExpirationNotifyDateIn(builder, ExpirationNotifyDateIn): builder.PrependInt32Slot(29, ExpirationNotifyDateIn, 0)
+    def AddShopCategoryLength(builder, ShopCategoryLength): builder.PrependInt32Slot(28, ShopCategoryLength, 0)
 
 
     @staticmethod
-    def AddShortcutTypeId(builder, ShortcutTypeId): builder.PrependInt64Slot(30, ShortcutTypeId, 0)
+    def AddExpirationDateTime(builder, ExpirationDateTime): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(ExpirationDateTime), 0)
+
+    @staticmethod
+    def AddExpirationNotifyDateIn(builder, ExpirationNotifyDateIn): builder.PrependInt32Slot(30, ExpirationNotifyDateIn, 0)
 
 
     @staticmethod
-    def AddGachaTicket(builder, GachaTicket): builder.PrependInt32Slot(31, GachaTicket, 0)
+    def AddIsOverrideExpiration(builder, IsOverrideExpiration): builder.PrependBoolSlot(31, IsOverrideExpiration, 0)
 
 
     @staticmethod
-    def AddAlertPopupId(builder, AlertPopupId): builder.PrependInt64Slot(32, AlertPopupId, 0)
+    def AddShortcutTypeId(builder, ShortcutTypeId): builder.PrependInt32Slot(32, ShortcutTypeId, 0)
 
 
     @staticmethod
-    def AddShiftingCraftRecipe(builder, ShiftingCraftRecipe): builder.PrependInt64Slot(33, ShiftingCraftRecipe, 0)
+    def AddGachaTicket(builder, GachaTicket): builder.PrependInt32Slot(33, GachaTicket, 0)
+
+
+    @staticmethod
+    def AddAlertPopupId(builder, AlertPopupId): builder.PrependInt32Slot(34, AlertPopupId, 0)
+
+
+    @staticmethod
+    def AddShiftingCraftRecipe(builder, ShiftingCraftRecipe): builder.PrependInt32Slot(35, ShiftingCraftRecipe, 0)
 

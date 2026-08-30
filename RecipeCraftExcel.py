@@ -20,7 +20,7 @@ class RecipeCraftExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class RecipeCraftExcel:
     def RecipeIngredientId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -52,118 +52,39 @@ class RecipeCraftExcel:
         return None
 
 
-    def ParcelType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def ParcelTypeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def ParcelTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ParcelTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
-
-
-    def ParcelId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ParcelIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ParcelIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ParcelIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
-
-
-    def ParcelDevName(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def ParcelDevNameLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ParcelDevNameIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        return o == 0
-
-
-    def ResultAmountMin(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ResultAmountMinAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ResultAmountMinLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ResultAmountMinIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        return o == 0
-
-
-    def ResultAmountMax(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ResultAmountMaxAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ResultAmountMaxLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ResultAmountMaxIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        return o == 0
 
 
 
@@ -175,7 +96,7 @@ class RecipeCraftExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -186,38 +107,28 @@ class RecipeCraftExcel:
 
 
     @staticmethod
-    def AddRecipeIngredientId(builder, RecipeIngredientId): builder.PrependInt64Slot(3, RecipeIngredientId, 0)
+    def AddRecipeIngredientId(builder, RecipeIngredientId): builder.PrependInt32Slot(3, RecipeIngredientId, 0)
 
 
     @staticmethod
     def AddRecipeIngredientDevName(builder, RecipeIngredientDevName): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(RecipeIngredientDevName), 0)
 
     @staticmethod
-    def AddParcelType(builder, ParcelType): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ParcelType), 0)
-    @staticmethod
-    def StartParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddParcelTypeLength(builder, ParcelTypeLength): builder.PrependInt32Slot(5, ParcelTypeLength, 0)
 
 
     @staticmethod
-    def AddParcelId(builder, ParcelId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(ParcelId), 0)
-    @staticmethod
-    def StartParcelIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddParcelIdLength(builder, ParcelIdLength): builder.PrependInt32Slot(6, ParcelIdLength, 0)
 
 
     @staticmethod
-    def AddParcelDevName(builder, ParcelDevName): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ParcelDevName), 0)
-    @staticmethod
-    def StartParcelDevNameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddParcelDevNameLength(builder, ParcelDevNameLength): builder.PrependInt32Slot(7, ParcelDevNameLength, 0)
 
 
     @staticmethod
-    def AddResultAmountMin(builder, ResultAmountMin): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(ResultAmountMin), 0)
-    @staticmethod
-    def StartResultAmountMinVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddResultAmountMinLength(builder, ResultAmountMinLength): builder.PrependInt32Slot(8, ResultAmountMinLength, 0)
 
 
     @staticmethod
-    def AddResultAmountMax(builder, ResultAmountMax): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(ResultAmountMax), 0)
-    @staticmethod
-    def StartResultAmountMaxVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddResultAmountMaxLength(builder, ResultAmountMaxLength): builder.PrependInt32Slot(9, ResultAmountMaxLength, 0)
 

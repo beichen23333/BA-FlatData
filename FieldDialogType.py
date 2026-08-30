@@ -26,3 +26,8 @@ class FieldDialogType:
     Twinkle_Nobubble = 24
     ZZZ_Nobubble = 25
     Chat_Nobubble = 26
+    Keyword_90101000 = 27
+    SNS = 28
+    ItemSack = 29
+    ItemFlyer = 30
+    ItemDocument = 31

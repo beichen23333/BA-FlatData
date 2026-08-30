@@ -20,7 +20,7 @@ class EchelonConstraintExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -31,52 +31,18 @@ class EchelonConstraintExcel:
         return 0
 
 
-    def CharacterId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def CharacterIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def CharacterIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def CharacterIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
-
-
-    def PersonalityId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def PersonalityIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def PersonalityIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def PersonalityIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
 
 
     def WeaponType(self):
@@ -103,7 +69,7 @@ class EchelonConstraintExcel:
     def Role(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -116,7 +82,7 @@ class EchelonConstraintExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
@@ -124,15 +90,11 @@ class EchelonConstraintExcel:
 
 
     @staticmethod
-    def AddCharacterId(builder, CharacterId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterId), 0)
-    @staticmethod
-    def StartCharacterIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddCharacterIdLength(builder, CharacterIdLength): builder.PrependInt32Slot(2, CharacterIdLength, 0)
 
 
     @staticmethod
-    def AddPersonalityId(builder, PersonalityId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(PersonalityId), 0)
-    @staticmethod
-    def StartPersonalityIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddPersonalityIdLength(builder, PersonalityIdLength): builder.PrependInt32Slot(3, PersonalityIdLength, 0)
 
 
     @staticmethod
@@ -148,5 +110,5 @@ class EchelonConstraintExcel:
 
 
     @staticmethod
-    def AddRole(builder, Role): builder.PrependInt32Slot(7, Role, 0)
+    def AddRole(builder, Role): builder.PrependFloat32Slot(7, Role, 0)
 

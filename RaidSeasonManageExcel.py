@@ -20,14 +20,14 @@ class RaidSeasonManageExcel:
     def SeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SeasonDisplay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -59,28 +59,17 @@ class RaidSeasonManageExcel:
         return None
 
 
-    def OpenRaidBossGroup(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def OpenRaidBossGroupLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def OpenRaidBossGroupIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
 
 
     def RankingRewardGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -91,52 +80,18 @@ class RaidSeasonManageExcel:
         return 0
 
 
-    def StackedSeasonRewardGauge(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def StackedSeasonRewardGaugeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def StackedSeasonRewardGaugeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def StackedSeasonRewardGaugeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        return o == 0
-
-
-    def SeasonRewardId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def SeasonRewardIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def SeasonRewardIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def SeasonRewardIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
-        return o == 0
 
 
 
@@ -148,11 +103,11 @@ class RaidSeasonManageExcel:
 
 
     @staticmethod
-    def AddSeasonId(builder, SeasonId): builder.PrependInt64Slot(0, SeasonId, 0)
+    def AddSeasonId(builder, SeasonId): builder.PrependInt32Slot(0, SeasonId, 0)
 
 
     @staticmethod
-    def AddSeasonDisplay(builder, SeasonDisplay): builder.PrependInt64Slot(1, SeasonDisplay, 0)
+    def AddSeasonDisplay(builder, SeasonDisplay): builder.PrependInt32Slot(1, SeasonDisplay, 0)
 
 
     @staticmethod
@@ -168,13 +123,11 @@ class RaidSeasonManageExcel:
     def AddSettlementEndDate(builder, SettlementEndDate): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(SettlementEndDate), 0)
 
     @staticmethod
-    def AddOpenRaidBossGroup(builder, OpenRaidBossGroup): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(OpenRaidBossGroup), 0)
-    @staticmethod
-    def StartOpenRaidBossGroupVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddOpenRaidBossGroupLength(builder, OpenRaidBossGroupLength): builder.PrependInt32Slot(6, OpenRaidBossGroupLength, 0)
 
 
     @staticmethod
-    def AddRankingRewardGroupId(builder, RankingRewardGroupId): builder.PrependInt64Slot(7, RankingRewardGroupId, 0)
+    def AddRankingRewardGroupId(builder, RankingRewardGroupId): builder.PrependInt32Slot(7, RankingRewardGroupId, 0)
 
 
     @staticmethod
@@ -182,13 +135,9 @@ class RaidSeasonManageExcel:
 
 
     @staticmethod
-    def AddStackedSeasonRewardGauge(builder, StackedSeasonRewardGauge): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(StackedSeasonRewardGauge), 0)
-    @staticmethod
-    def StartStackedSeasonRewardGaugeVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddStackedSeasonRewardGaugeLength(builder, StackedSeasonRewardGaugeLength): builder.PrependInt32Slot(9, StackedSeasonRewardGaugeLength, 0)
 
 
     @staticmethod
-    def AddSeasonRewardId(builder, SeasonRewardId): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(SeasonRewardId), 0)
-    @staticmethod
-    def StartSeasonRewardIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddSeasonRewardIdLength(builder, SeasonRewardIdLength): builder.PrependInt32Slot(10, SeasonRewardIdLength, 0)
 

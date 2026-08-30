@@ -20,14 +20,14 @@ class MinigameCCGRewardItemExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CCGId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class MinigameCCGRewardItemExcel:
     def RewardParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class MinigameCCGRewardItemExcel:
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,11 +75,11 @@ class MinigameCCGRewardItemExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddCCGId(builder, CCGId): builder.PrependInt64Slot(1, CCGId, 0)
+    def AddCCGId(builder, CCGId): builder.PrependInt32Slot(1, CCGId, 0)
 
 
     @staticmethod
@@ -91,7 +91,7 @@ class MinigameCCGRewardItemExcel:
 
 
     @staticmethod
-    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt64Slot(4, RewardParcelId, 0)
+    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt32Slot(4, RewardParcelId, 0)
 
 
     @staticmethod
@@ -99,5 +99,5 @@ class MinigameCCGRewardItemExcel:
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(6, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(6, DisplayOrder, 0)
 

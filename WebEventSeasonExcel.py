@@ -20,7 +20,7 @@ class WebEventSeasonExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,32 +34,15 @@ class WebEventSeasonExcel:
     def IconOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def WebEventId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def WebEventIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def WebEventIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def WebEventIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
 
 
     def IsFull(self):
@@ -127,7 +110,7 @@ class WebEventSeasonExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -135,13 +118,11 @@ class WebEventSeasonExcel:
 
 
     @staticmethod
-    def AddIconOrder(builder, IconOrder): builder.PrependInt64Slot(2, IconOrder, 0)
+    def AddIconOrder(builder, IconOrder): builder.PrependInt32Slot(2, IconOrder, 0)
 
 
     @staticmethod
-    def AddWebEventId(builder, WebEventId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(WebEventId), 0)
-    @staticmethod
-    def StartWebEventIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddWebEventIdLength(builder, WebEventIdLength): builder.PrependInt32Slot(3, WebEventIdLength, 0)
 
 
     @staticmethod

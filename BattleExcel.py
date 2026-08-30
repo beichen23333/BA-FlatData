@@ -17,28 +17,11 @@ class BattleExcel:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def None_(self, j):
+    def NoneLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def None_AsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
-    def None_Length(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        if o != 0:
-            return self._tab.VectorLen(o)
-        return 0
-
-    def None_IsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        return o == 0
 
 
     def Single(self):
@@ -69,28 +52,11 @@ class BattleExcel:
         return 0
 
 
-    def Normal(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def NormalAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def NormalLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def NormalIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
 
 
     def Crush(self):
@@ -128,28 +94,11 @@ class BattleExcel:
         return 0
 
 
-    def All(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def AllAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def AllLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def AllIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        return o == 0
 
 
     def DISTANCE(self):
@@ -169,8 +118,11 @@ class BattleExcel:
     def Students(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
+            from .TacticEntityType[] import TacticEntityType[]
+            obj = TacticEntityType[]()
+            obj.Init(self._tab.Bytes, o + self._tab.Pos)
+            return obj
+        return None
 
 
     def Sequence(self):
@@ -315,9 +267,7 @@ class BattleExcel:
 
 
     @staticmethod
-    def AddNone_(builder, None_): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(None_), 0)
-    @staticmethod
-    def StartNone_Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddNoneLength(builder, NoneLength): builder.PrependInt32Slot(0, NoneLength, 0)
 
 
     @staticmethod
@@ -337,9 +287,7 @@ class BattleExcel:
 
 
     @staticmethod
-    def AddNormal(builder, Normal): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(Normal), 0)
-    @staticmethod
-    def StartNormalVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddNormalLength(builder, NormalLength): builder.PrependInt32Slot(5, NormalLength, 0)
 
 
     @staticmethod
@@ -363,9 +311,7 @@ class BattleExcel:
 
 
     @staticmethod
-    def AddAll(builder, All): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(All), 0)
-    @staticmethod
-    def StartAllVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddAllLength(builder, AllLength): builder.PrependInt32Slot(11, AllLength, 0)
 
 
     @staticmethod
@@ -377,7 +323,9 @@ class BattleExcel:
 
 
     @staticmethod
-    def AddStudents(builder, Students): builder.PrependInt32Slot(14, Students, 0)
+    def AddStudents(builder, Students): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(Students), 0)
+    @staticmethod
+    def StartStudentsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 
 
     @staticmethod

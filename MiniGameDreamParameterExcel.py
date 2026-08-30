@@ -20,14 +20,14 @@ class MiniGameDreamParameterExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,28 +55,28 @@ class MiniGameDreamParameterExcel:
     def ParameterBase(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ParameterBaseMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ParameterMin(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ParameterMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -89,11 +89,11 @@ class MiniGameDreamParameterExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(1, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(1, EventContentId, 0)
 
 
     @staticmethod
@@ -108,17 +108,17 @@ class MiniGameDreamParameterExcel:
     def AddIconPath(builder, IconPath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(IconPath), 0)
 
     @staticmethod
-    def AddParameterBase(builder, ParameterBase): builder.PrependInt64Slot(5, ParameterBase, 0)
+    def AddParameterBase(builder, ParameterBase): builder.PrependInt32Slot(5, ParameterBase, 0)
 
 
     @staticmethod
-    def AddParameterBaseMax(builder, ParameterBaseMax): builder.PrependInt64Slot(6, ParameterBaseMax, 0)
+    def AddParameterBaseMax(builder, ParameterBaseMax): builder.PrependInt32Slot(6, ParameterBaseMax, 0)
 
 
     @staticmethod
-    def AddParameterMin(builder, ParameterMin): builder.PrependInt64Slot(7, ParameterMin, 0)
+    def AddParameterMin(builder, ParameterMin): builder.PrependInt32Slot(7, ParameterMin, 0)
 
 
     @staticmethod
-    def AddParameterMax(builder, ParameterMax): builder.PrependInt64Slot(8, ParameterMax, 0)
+    def AddParameterMax(builder, ParameterMax): builder.PrependInt32Slot(8, ParameterMax, 0)
 

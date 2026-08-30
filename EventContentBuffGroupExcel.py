@@ -20,21 +20,21 @@ class EventContentBuffGroupExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BuffContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BuffGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class EventContentBuffGroupExcel:
     def EventContentBuffId1(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class EventContentBuffGroupExcel:
     def EventContentBuffId2(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,7 +90,7 @@ class EventContentBuffGroupExcel:
     def EventContentDebuffId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -111,7 +111,7 @@ class EventContentBuffGroupExcel:
     def BuffGroupProb(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -124,22 +124,22 @@ class EventContentBuffGroupExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddBuffContentId(builder, BuffContentId): builder.PrependInt64Slot(1, BuffContentId, 0)
+    def AddBuffContentId(builder, BuffContentId): builder.PrependInt32Slot(1, BuffContentId, 0)
 
 
     @staticmethod
-    def AddBuffGroupId(builder, BuffGroupId): builder.PrependInt64Slot(2, BuffGroupId, 0)
+    def AddBuffGroupId(builder, BuffGroupId): builder.PrependInt32Slot(2, BuffGroupId, 0)
 
 
     @staticmethod
     def AddBuffGroupNameLocalizeCodeId(builder, BuffGroupNameLocalizeCodeId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(BuffGroupNameLocalizeCodeId), 0)
 
     @staticmethod
-    def AddEventContentBuffId1(builder, EventContentBuffId1): builder.PrependInt64Slot(4, EventContentBuffId1, 0)
+    def AddEventContentBuffId1(builder, EventContentBuffId1): builder.PrependInt32Slot(4, EventContentBuffId1, 0)
 
 
     @staticmethod
@@ -149,7 +149,7 @@ class EventContentBuffGroupExcel:
     def AddBuffDescriptionIconPath1(builder, BuffDescriptionIconPath1): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(BuffDescriptionIconPath1), 0)
 
     @staticmethod
-    def AddEventContentBuffId2(builder, EventContentBuffId2): builder.PrependInt64Slot(7, EventContentBuffId2, 0)
+    def AddEventContentBuffId2(builder, EventContentBuffId2): builder.PrependInt32Slot(7, EventContentBuffId2, 0)
 
 
     @staticmethod
@@ -159,7 +159,7 @@ class EventContentBuffGroupExcel:
     def AddBuffDescriptionIconPath2(builder, BuffDescriptionIconPath2): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(BuffDescriptionIconPath2), 0)
 
     @staticmethod
-    def AddEventContentDebuffId(builder, EventContentDebuffId): builder.PrependInt64Slot(10, EventContentDebuffId, 0)
+    def AddEventContentDebuffId(builder, EventContentDebuffId): builder.PrependInt32Slot(10, EventContentDebuffId, 0)
 
 
     @staticmethod
@@ -169,5 +169,5 @@ class EventContentBuffGroupExcel:
     def AddDeBuffDescriptionIconPath(builder, DeBuffDescriptionIconPath): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(DeBuffDescriptionIconPath), 0)
 
     @staticmethod
-    def AddBuffGroupProb(builder, BuffGroupProb): builder.PrependInt64Slot(13, BuffGroupProb, 0)
+    def AddBuffGroupProb(builder, BuffGroupProb): builder.PrependInt32Slot(13, BuffGroupProb, 0)
 

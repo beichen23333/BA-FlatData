@@ -20,21 +20,21 @@ class AcademyMessangerExcel:
     def MessageGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,42 +48,42 @@ class AcademyMessangerExcel:
     def ConditionValue(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PreConditionGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PreConditionFavorScheduleId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FavorScheduleId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NextGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FeedbackTimeMillisec(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -145,15 +145,15 @@ class AcademyMessangerExcel:
 
 
     @staticmethod
-    def AddMessageGroupId(builder, MessageGroupId): builder.PrependInt64Slot(0, MessageGroupId, 0)
+    def AddMessageGroupId(builder, MessageGroupId): builder.PrependInt32Slot(0, MessageGroupId, 0)
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(1, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(1, Id, 0)
 
 
     @staticmethod
-    def AddCharacterId(builder, CharacterId): builder.PrependInt64Slot(2, CharacterId, 0)
+    def AddCharacterId(builder, CharacterId): builder.PrependInt32Slot(2, CharacterId, 0)
 
 
     @staticmethod
@@ -161,27 +161,27 @@ class AcademyMessangerExcel:
 
 
     @staticmethod
-    def AddConditionValue(builder, ConditionValue): builder.PrependInt64Slot(4, ConditionValue, 0)
+    def AddConditionValue(builder, ConditionValue): builder.PrependInt32Slot(4, ConditionValue, 0)
 
 
     @staticmethod
-    def AddPreConditionGroupId(builder, PreConditionGroupId): builder.PrependInt64Slot(5, PreConditionGroupId, 0)
+    def AddPreConditionGroupId(builder, PreConditionGroupId): builder.PrependInt32Slot(5, PreConditionGroupId, 0)
 
 
     @staticmethod
-    def AddPreConditionFavorScheduleId(builder, PreConditionFavorScheduleId): builder.PrependInt64Slot(6, PreConditionFavorScheduleId, 0)
+    def AddPreConditionFavorScheduleId(builder, PreConditionFavorScheduleId): builder.PrependInt32Slot(6, PreConditionFavorScheduleId, 0)
 
 
     @staticmethod
-    def AddFavorScheduleId(builder, FavorScheduleId): builder.PrependInt64Slot(7, FavorScheduleId, 0)
+    def AddFavorScheduleId(builder, FavorScheduleId): builder.PrependInt32Slot(7, FavorScheduleId, 0)
 
 
     @staticmethod
-    def AddNextGroupId(builder, NextGroupId): builder.PrependInt64Slot(8, NextGroupId, 0)
+    def AddNextGroupId(builder, NextGroupId): builder.PrependInt32Slot(8, NextGroupId, 0)
 
 
     @staticmethod
-    def AddFeedbackTimeMillisec(builder, FeedbackTimeMillisec): builder.PrependInt64Slot(9, FeedbackTimeMillisec, 0)
+    def AddFeedbackTimeMillisec(builder, FeedbackTimeMillisec): builder.PrependInt32Slot(9, FeedbackTimeMillisec, 0)
 
 
     @staticmethod

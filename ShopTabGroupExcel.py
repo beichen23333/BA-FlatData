@@ -20,7 +20,7 @@ class ShopTabGroupExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -38,28 +38,11 @@ class ShopTabGroupExcel:
         return 0
 
 
-    def ShopCategoryTypes(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def ShopCategoryTypesAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def ShopCategoryTypesLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ShopCategoryTypesIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
 
 
 
@@ -71,7 +54,7 @@ class ShopTabGroupExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -83,7 +66,5 @@ class ShopTabGroupExcel:
 
 
     @staticmethod
-    def AddShopCategoryTypes(builder, ShopCategoryTypes): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(ShopCategoryTypes), 0)
-    @staticmethod
-    def StartShopCategoryTypesVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddShopCategoryTypesLength(builder, ShopCategoryTypesLength): builder.PrependInt32Slot(3, ShopCategoryTypesLength, 0)
 

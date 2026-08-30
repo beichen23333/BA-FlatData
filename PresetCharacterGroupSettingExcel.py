@@ -20,7 +20,7 @@ class PresetCharacterGroupSettingExcel:
     def CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -31,22 +31,11 @@ class PresetCharacterGroupSettingExcel:
         return 0
 
 
-    def PresetType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def PresetTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def PresetTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
 
 
 
@@ -58,7 +47,7 @@ class PresetCharacterGroupSettingExcel:
 
 
     @staticmethod
-    def AddCharacterId(builder, CharacterId): builder.PrependInt64Slot(0, CharacterId, 0)
+    def AddCharacterId(builder, CharacterId): builder.PrependInt32Slot(0, CharacterId, 0)
 
 
     @staticmethod
@@ -66,7 +55,5 @@ class PresetCharacterGroupSettingExcel:
 
 
     @staticmethod
-    def AddPresetType(builder, PresetType): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(PresetType), 0)
-    @staticmethod
-    def StartPresetTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddPresetTypeLength(builder, PresetTypeLength): builder.PrependInt32Slot(2, PresetTypeLength, 0)
 

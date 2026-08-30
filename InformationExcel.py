@@ -20,7 +20,7 @@ class InformationExcel:
     def GroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -45,40 +45,18 @@ class InformationExcel:
         return None
 
 
-    def TutorialParentName(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def TutorialParentNameLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def TutorialParentNameIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        return o == 0
-
-
-    def UIName(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def UINameLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def UINameIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
 
 
 
@@ -90,7 +68,7 @@ class InformationExcel:
 
 
     @staticmethod
-    def AddGroupID(builder, GroupID): builder.PrependInt64Slot(0, GroupID, 0)
+    def AddGroupID(builder, GroupID): builder.PrependInt32Slot(0, GroupID, 0)
 
 
     @staticmethod
@@ -104,13 +82,9 @@ class InformationExcel:
     def AddLocalizeCodeId(builder, LocalizeCodeId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeCodeId), 0)
 
     @staticmethod
-    def AddTutorialParentName(builder, TutorialParentName): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(TutorialParentName), 0)
-    @staticmethod
-    def StartTutorialParentNameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddTutorialParentNameLength(builder, TutorialParentNameLength): builder.PrependInt32Slot(4, TutorialParentNameLength, 0)
 
 
     @staticmethod
-    def AddUIName(builder, UIName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(UIName), 0)
-    @staticmethod
-    def StartUINameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddUINameLength(builder, UINameLength): builder.PrependInt32Slot(5, UINameLength, 0)
 

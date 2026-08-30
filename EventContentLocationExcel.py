@@ -20,14 +20,14 @@ class EventContentLocationExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,14 +62,14 @@ class EventContentLocationExcel:
     def ScheduleEventPointCostParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScheduleEventPointCostParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -83,14 +83,14 @@ class EventContentLocationExcel:
     def RewardParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def InformationGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -103,11 +103,11 @@ class EventContentLocationExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(1, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(1, Id, 0)
 
 
     @staticmethod
@@ -126,11 +126,11 @@ class EventContentLocationExcel:
 
 
     @staticmethod
-    def AddScheduleEventPointCostParcelId(builder, ScheduleEventPointCostParcelId): builder.PrependInt64Slot(6, ScheduleEventPointCostParcelId, 0)
+    def AddScheduleEventPointCostParcelId(builder, ScheduleEventPointCostParcelId): builder.PrependInt32Slot(6, ScheduleEventPointCostParcelId, 0)
 
 
     @staticmethod
-    def AddScheduleEventPointCostParcelAmount(builder, ScheduleEventPointCostParcelAmount): builder.PrependInt64Slot(7, ScheduleEventPointCostParcelAmount, 0)
+    def AddScheduleEventPointCostParcelAmount(builder, ScheduleEventPointCostParcelAmount): builder.PrependInt32Slot(7, ScheduleEventPointCostParcelAmount, 0)
 
 
     @staticmethod
@@ -138,9 +138,9 @@ class EventContentLocationExcel:
 
 
     @staticmethod
-    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt64Slot(9, RewardParcelId, 0)
+    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt32Slot(9, RewardParcelId, 0)
 
 
     @staticmethod
-    def AddInformationGroupId(builder, InformationGroupId): builder.PrependInt64Slot(10, InformationGroupId, 0)
+    def AddInformationGroupId(builder, InformationGroupId): builder.PrependInt32Slot(10, InformationGroupId, 0)
 

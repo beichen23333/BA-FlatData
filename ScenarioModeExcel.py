@@ -20,7 +20,7 @@ class ScenarioModeExcel:
     def ModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -38,325 +38,302 @@ class ScenarioModeExcel:
         return 0
 
 
-    def VolumeId(self):
+    def DisplayVolumeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def VolumeId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChapterId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EpisodeId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ExposedTime(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def Hide(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
-
-
-    def Open(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def ScenarioOpenDate(self):
+    def Open(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
 
 
-    def ScenarioCloseDate(self):
+    def ScenarioOpenDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def IsContinue(self):
+    def ScenarioCloseDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def IsContinue(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def EpisodeContinueModeId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def FrontScenarioGroupId(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def FrontScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def FrontScenarioGroupIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def FrontScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        return o == 0
 
 
     def StrategyId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroundId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def IsDefeatBattle(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def BattleDuration(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def BackScenarioGroupId(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def BackScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
+
+    def FieldDateId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
+
 
     def BackScenarioGroupIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def BackScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        return o == 0
-
-
-    def ClearedModeId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ClearedModeIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ClearedModeIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ClearedModeIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        return o == 0
 
 
     def ScenarioModeRewardId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def IsScenarioSpecialReward(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def SpecialRewardPrefabName(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def SpecialRewardLogOut(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def AccountLevelLimit(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ClearedStageId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def NeedClub(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def NeedClubStudentCount(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def EventContentId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def EventContentType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EventContentCondition(self):
+    def NeedClub(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EventContentConditionGroup(self):
+    def NeedClubStudentCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MapDifficulty(self):
+    def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StepIndex(self):
+    def EventContentType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RecommendLevel(self):
+    def EventContentCondition(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EventIconParcelPath(self):
+    def EventContentConditionGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def EventBannerTitle(self):
+    def MapDifficulty(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def Lof(self):
+    def StepIndex(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageTopography(self):
+    def RecommendLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FixedEchelonId(self):
+    def EventIconParcelPath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def EventBannerTitle(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def Lof(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def StageTopography(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def FixedEchelonId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CompleteReportEventName(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def EchelonExtensionType(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CollectionGroupId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FirstClearFunnelMessage(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -365,13 +342,13 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(42)
+    def Start(builder): builder.StartObject(46)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddModeId(builder, ModeId): builder.PrependInt64Slot(0, ModeId, 0)
+    def AddModeId(builder, ModeId): builder.PrependInt32Slot(0, ModeId, 0)
 
 
     @staticmethod
@@ -383,157 +360,165 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddVolumeId(builder, VolumeId): builder.PrependInt64Slot(3, VolumeId, 0)
+    def AddDisplayVolumeId(builder, DisplayVolumeId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(DisplayVolumeId), 0)
+
+    @staticmethod
+    def AddVolumeId(builder, VolumeId): builder.PrependInt32Slot(4, VolumeId, 0)
 
 
     @staticmethod
-    def AddChapterId(builder, ChapterId): builder.PrependInt64Slot(4, ChapterId, 0)
+    def AddChapterId(builder, ChapterId): builder.PrependInt32Slot(5, ChapterId, 0)
 
 
     @staticmethod
-    def AddEpisodeId(builder, EpisodeId): builder.PrependInt64Slot(5, EpisodeId, 0)
+    def AddEpisodeId(builder, EpisodeId): builder.PrependInt32Slot(6, EpisodeId, 0)
 
 
     @staticmethod
-    def AddExposedTime(builder, ExposedTime): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(ExposedTime), 0)
+    def AddExposedTime(builder, ExposedTime): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ExposedTime), 0)
 
     @staticmethod
-    def AddHide(builder, Hide): builder.PrependBoolSlot(7, Hide, 0)
-
-
-    @staticmethod
-    def AddOpen(builder, Open): builder.PrependBoolSlot(8, Open, 0)
+    def AddHide(builder, Hide): builder.PrependBoolSlot(8, Hide, 0)
 
 
     @staticmethod
-    def AddScenarioOpenDate(builder, ScenarioOpenDate): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioOpenDate), 0)
-
-    @staticmethod
-    def AddScenarioCloseDate(builder, ScenarioCloseDate): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioCloseDate), 0)
-
-    @staticmethod
-    def AddIsContinue(builder, IsContinue): builder.PrependBoolSlot(11, IsContinue, 0)
+    def AddOpen(builder, Open): builder.PrependBoolSlot(9, Open, 0)
 
 
     @staticmethod
-    def AddEpisodeContinueModeId(builder, EpisodeContinueModeId): builder.PrependInt64Slot(12, EpisodeContinueModeId, 0)
+    def AddScenarioOpenDate(builder, ScenarioOpenDate): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioOpenDate), 0)
+
+    @staticmethod
+    def AddScenarioCloseDate(builder, ScenarioCloseDate): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioCloseDate), 0)
+
+    @staticmethod
+    def AddIsContinue(builder, IsContinue): builder.PrependBoolSlot(12, IsContinue, 0)
 
 
     @staticmethod
-    def AddFrontScenarioGroupId(builder, FrontScenarioGroupId): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(FrontScenarioGroupId), 0)
-    @staticmethod
-    def StartFrontScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddEpisodeContinueModeId(builder, EpisodeContinueModeId): builder.PrependInt32Slot(13, EpisodeContinueModeId, 0)
 
 
     @staticmethod
-    def AddStrategyId(builder, StrategyId): builder.PrependInt64Slot(14, StrategyId, 0)
+    def AddFrontScenarioGroupIdLength(builder, FrontScenarioGroupIdLength): builder.PrependInt32Slot(14, FrontScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddGroundId(builder, GroundId): builder.PrependInt64Slot(15, GroundId, 0)
+    def AddStrategyId(builder, StrategyId): builder.PrependInt32Slot(15, StrategyId, 0)
 
 
     @staticmethod
-    def AddIsDefeatBattle(builder, IsDefeatBattle): builder.PrependBoolSlot(16, IsDefeatBattle, 0)
+    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(16, GroundId, 0)
 
 
     @staticmethod
-    def AddBattleDuration(builder, BattleDuration): builder.PrependInt64Slot(17, BattleDuration, 0)
+    def AddIsDefeatBattle(builder, IsDefeatBattle): builder.PrependBoolSlot(17, IsDefeatBattle, 0)
 
 
     @staticmethod
-    def AddBackScenarioGroupId(builder, BackScenarioGroupId): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(BackScenarioGroupId), 0)
-    @staticmethod
-    def StartBackScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddBattleDuration(builder, BattleDuration): builder.PrependInt32Slot(18, BattleDuration, 0)
 
 
     @staticmethod
-    def AddClearedModeId(builder, ClearedModeId): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(ClearedModeId), 0)
-    @staticmethod
-    def StartClearedModeIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddFieldDateId(builder, FieldDateId): builder.PrependInt32Slot(19, FieldDateId, 0)
 
 
     @staticmethod
-    def AddScenarioModeRewardId(builder, ScenarioModeRewardId): builder.PrependInt64Slot(20, ScenarioModeRewardId, 0)
+    def AddBackScenarioGroupIdLength(builder, BackScenarioGroupIdLength): builder.PrependInt32Slot(20, BackScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddIsScenarioSpecialReward(builder, IsScenarioSpecialReward): builder.PrependBoolSlot(21, IsScenarioSpecialReward, 0)
+    def AddClearedModeIdLength(builder, ClearedModeIdLength): builder.PrependInt32Slot(21, ClearedModeIdLength, 0)
 
 
     @staticmethod
-    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt64Slot(22, AccountLevelLimit, 0)
+    def AddScenarioModeRewardId(builder, ScenarioModeRewardId): builder.PrependInt32Slot(22, ScenarioModeRewardId, 0)
 
 
     @staticmethod
-    def AddClearedStageId(builder, ClearedStageId): builder.PrependInt64Slot(23, ClearedStageId, 0)
+    def AddIsScenarioSpecialReward(builder, IsScenarioSpecialReward): builder.PrependBoolSlot(23, IsScenarioSpecialReward, 0)
 
 
     @staticmethod
-    def AddNeedClub(builder, NeedClub): builder.PrependInt32Slot(24, NeedClub, 0)
+    def AddSpecialRewardPrefabName(builder, SpecialRewardPrefabName): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(SpecialRewardPrefabName), 0)
+
+    @staticmethod
+    def AddSpecialRewardLogOut(builder, SpecialRewardLogOut): builder.PrependBoolSlot(25, SpecialRewardLogOut, 0)
 
 
     @staticmethod
-    def AddNeedClubStudentCount(builder, NeedClubStudentCount): builder.PrependInt32Slot(25, NeedClubStudentCount, 0)
+    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt32Slot(26, AccountLevelLimit, 0)
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(26, EventContentId, 0)
+    def AddClearedStageId(builder, ClearedStageId): builder.PrependInt32Slot(27, ClearedStageId, 0)
 
 
     @staticmethod
-    def AddEventContentType(builder, EventContentType): builder.PrependInt32Slot(27, EventContentType, 0)
+    def AddNeedClub(builder, NeedClub): builder.PrependInt32Slot(28, NeedClub, 0)
 
 
     @staticmethod
-    def AddEventContentCondition(builder, EventContentCondition): builder.PrependInt64Slot(28, EventContentCondition, 0)
+    def AddNeedClubStudentCount(builder, NeedClubStudentCount): builder.PrependInt32Slot(29, NeedClubStudentCount, 0)
 
 
     @staticmethod
-    def AddEventContentConditionGroup(builder, EventContentConditionGroup): builder.PrependInt64Slot(29, EventContentConditionGroup, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(30, EventContentId, 0)
 
 
     @staticmethod
-    def AddMapDifficulty(builder, MapDifficulty): builder.PrependInt32Slot(30, MapDifficulty, 0)
+    def AddEventContentType(builder, EventContentType): builder.PrependInt32Slot(31, EventContentType, 0)
 
 
     @staticmethod
-    def AddStepIndex(builder, StepIndex): builder.PrependInt32Slot(31, StepIndex, 0)
+    def AddEventContentCondition(builder, EventContentCondition): builder.PrependInt32Slot(32, EventContentCondition, 0)
 
 
     @staticmethod
-    def AddRecommendLevel(builder, RecommendLevel): builder.PrependInt32Slot(32, RecommendLevel, 0)
+    def AddEventContentConditionGroup(builder, EventContentConditionGroup): builder.PrependInt32Slot(33, EventContentConditionGroup, 0)
 
 
     @staticmethod
-    def AddEventIconParcelPath(builder, EventIconParcelPath): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(EventIconParcelPath), 0)
-
-    @staticmethod
-    def AddEventBannerTitle(builder, EventBannerTitle): builder.PrependUint32Slot(34, EventBannerTitle, 0)
+    def AddMapDifficulty(builder, MapDifficulty): builder.PrependInt32Slot(34, MapDifficulty, 0)
 
 
     @staticmethod
-    def AddLof(builder, Lof): builder.PrependBoolSlot(35, Lof, 0)
+    def AddStepIndex(builder, StepIndex): builder.PrependInt32Slot(35, StepIndex, 0)
 
 
     @staticmethod
-    def AddStageTopography(builder, StageTopography): builder.PrependInt32Slot(36, StageTopography, 0)
+    def AddRecommendLevel(builder, RecommendLevel): builder.PrependInt32Slot(36, RecommendLevel, 0)
 
 
     @staticmethod
-    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt64Slot(37, FixedEchelonId, 0)
+    def AddEventIconParcelPath(builder, EventIconParcelPath): builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(EventIconParcelPath), 0)
+
+    @staticmethod
+    def AddEventBannerTitle(builder, EventBannerTitle): builder.PrependUint32Slot(38, EventBannerTitle, 0)
 
 
     @staticmethod
-    def AddCompleteReportEventName(builder, CompleteReportEventName): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(CompleteReportEventName), 0)
-
-    @staticmethod
-    def AddEchelonExtensionType(builder, EchelonExtensionType): builder.PrependInt32Slot(39, EchelonExtensionType, 0)
+    def AddLof(builder, Lof): builder.PrependBoolSlot(39, Lof, 0)
 
 
     @staticmethod
-    def AddCollectionGroupId(builder, CollectionGroupId): builder.PrependInt64Slot(40, CollectionGroupId, 0)
+    def AddStageTopography(builder, StageTopography): builder.PrependInt32Slot(40, StageTopography, 0)
 
 
     @staticmethod
-    def AddFirstClearFunnelMessage(builder, FirstClearFunnelMessage): builder.PrependUOffsetTRelativeSlot(41, flatbuffers.number_types.UOffsetTFlags.py_type(FirstClearFunnelMessage), 0)
+    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt32Slot(41, FixedEchelonId, 0)
+
+
+    @staticmethod
+    def AddCompleteReportEventName(builder, CompleteReportEventName): builder.PrependUOffsetTRelativeSlot(42, flatbuffers.number_types.UOffsetTFlags.py_type(CompleteReportEventName), 0)
+
+    @staticmethod
+    def AddEchelonExtensionType(builder, EchelonExtensionType): builder.PrependInt32Slot(43, EchelonExtensionType, 0)
+
+
+    @staticmethod
+    def AddCollectionGroupId(builder, CollectionGroupId): builder.PrependInt32Slot(44, CollectionGroupId, 0)
+
+
+    @staticmethod
+    def AddFirstClearFunnelMessage(builder, FirstClearFunnelMessage): builder.PrependUOffsetTRelativeSlot(45, flatbuffers.number_types.UOffsetTFlags.py_type(FirstClearFunnelMessage), 0)

@@ -20,7 +20,7 @@ class GrowthScoreCalculationExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class GrowthScoreCalculationExcel:
     def ConversionCoefficient(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -47,7 +47,7 @@ class GrowthScoreCalculationExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -55,5 +55,5 @@ class GrowthScoreCalculationExcel:
 
 
     @staticmethod
-    def AddConversionCoefficient(builder, ConversionCoefficient): builder.PrependInt64Slot(2, ConversionCoefficient, 0)
+    def AddConversionCoefficient(builder, ConversionCoefficient): builder.PrependInt32Slot(2, ConversionCoefficient, 0)
 

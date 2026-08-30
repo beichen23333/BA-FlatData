@@ -34,42 +34,49 @@ class TerrainAdaptationFactorExcel:
     def ShotFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BlockFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DodgeFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AttackPowerFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
+
+
+    def TerrainFactorDescription(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(7)
+    def Start(builder): builder.StartObject(8)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -83,21 +90,24 @@ class TerrainAdaptationFactorExcel:
 
 
     @staticmethod
-    def AddShotFactor(builder, ShotFactor): builder.PrependInt64Slot(2, ShotFactor, 0)
+    def AddShotFactor(builder, ShotFactor): builder.PrependInt32Slot(2, ShotFactor, 0)
 
 
     @staticmethod
-    def AddBlockFactor(builder, BlockFactor): builder.PrependInt64Slot(3, BlockFactor, 0)
+    def AddBlockFactor(builder, BlockFactor): builder.PrependInt32Slot(3, BlockFactor, 0)
 
 
     @staticmethod
-    def AddAccuracyFactor(builder, AccuracyFactor): builder.PrependInt64Slot(4, AccuracyFactor, 0)
+    def AddAccuracyFactor(builder, AccuracyFactor): builder.PrependInt32Slot(4, AccuracyFactor, 0)
 
 
     @staticmethod
-    def AddDodgeFactor(builder, DodgeFactor): builder.PrependInt64Slot(5, DodgeFactor, 0)
+    def AddDodgeFactor(builder, DodgeFactor): builder.PrependInt32Slot(5, DodgeFactor, 0)
 
 
     @staticmethod
-    def AddAttackPowerFactor(builder, AttackPowerFactor): builder.PrependInt64Slot(6, AttackPowerFactor, 0)
+    def AddAttackPowerFactor(builder, AttackPowerFactor): builder.PrependInt32Slot(6, AttackPowerFactor, 0)
 
+
+    @staticmethod
+    def AddTerrainFactorDescription(builder, TerrainFactorDescription): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(TerrainFactorDescription), 0)

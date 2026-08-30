@@ -1,0 +1,4 @@
+class NXPLocalPushType:
+    LOCAL_PUSH_TYPE_ON = 0
+    LOCAL_PUSH_TYPE_AFTER = 1
+    LOCAL_PUSH_TYPE_NOW = 2

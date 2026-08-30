@@ -20,14 +20,14 @@ class BossExternalBTExcel:
     def ExternalBTId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AIPhase(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,7 +55,7 @@ class BossExternalBTExcel:
     def BehaviorRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -82,11 +82,11 @@ class BossExternalBTExcel:
 
 
     @staticmethod
-    def AddExternalBTId(builder, ExternalBTId): builder.PrependInt64Slot(0, ExternalBTId, 0)
+    def AddExternalBTId(builder, ExternalBTId): builder.PrependInt32Slot(0, ExternalBTId, 0)
 
 
     @staticmethod
-    def AddAIPhase(builder, AIPhase): builder.PrependInt64Slot(1, AIPhase, 0)
+    def AddAIPhase(builder, AIPhase): builder.PrependInt32Slot(1, AIPhase, 0)
 
 
     @staticmethod
@@ -101,7 +101,7 @@ class BossExternalBTExcel:
     def AddTriggerArgument(builder, TriggerArgument): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(TriggerArgument), 0)
 
     @staticmethod
-    def AddBehaviorRate(builder, BehaviorRate): builder.PrependInt64Slot(5, BehaviorRate, 0)
+    def AddBehaviorRate(builder, BehaviorRate): builder.PrependInt32Slot(5, BehaviorRate, 0)
 
 
     @staticmethod

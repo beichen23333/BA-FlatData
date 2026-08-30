@@ -20,7 +20,7 @@ class ConquestTileExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class ConquestTileExcel:
     def EventId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,7 +90,7 @@ class ConquestTileExcel:
     def GroupBonusId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -104,7 +104,7 @@ class ConquestTileExcel:
     def ConquestCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -125,7 +125,7 @@ class ConquestTileExcel:
     def ManageCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -139,14 +139,14 @@ class ConquestTileExcel:
     def ConquestRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MassErosionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -160,7 +160,7 @@ class ConquestTileExcel:
     def Upgrade2CostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -181,7 +181,7 @@ class ConquestTileExcel:
     def Upgrade3CostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -201,14 +201,14 @@ class ConquestTileExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
     def AddName(builder, Name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(Name), 0)
 
     @staticmethod
-    def AddEventId(builder, EventId): builder.PrependInt64Slot(2, EventId, 0)
+    def AddEventId(builder, EventId): builder.PrependInt32Slot(2, EventId, 0)
 
 
     @staticmethod
@@ -237,7 +237,7 @@ class ConquestTileExcel:
 
 
     @staticmethod
-    def AddGroupBonusId(builder, GroupBonusId): builder.PrependInt64Slot(10, GroupBonusId, 0)
+    def AddGroupBonusId(builder, GroupBonusId): builder.PrependInt32Slot(10, GroupBonusId, 0)
 
 
     @staticmethod
@@ -245,7 +245,7 @@ class ConquestTileExcel:
 
 
     @staticmethod
-    def AddConquestCostId(builder, ConquestCostId): builder.PrependInt64Slot(12, ConquestCostId, 0)
+    def AddConquestCostId(builder, ConquestCostId): builder.PrependInt32Slot(12, ConquestCostId, 0)
 
 
     @staticmethod
@@ -257,7 +257,7 @@ class ConquestTileExcel:
 
 
     @staticmethod
-    def AddManageCostId(builder, ManageCostId): builder.PrependInt64Slot(15, ManageCostId, 0)
+    def AddManageCostId(builder, ManageCostId): builder.PrependInt32Slot(15, ManageCostId, 0)
 
 
     @staticmethod
@@ -265,11 +265,11 @@ class ConquestTileExcel:
 
 
     @staticmethod
-    def AddConquestRewardId(builder, ConquestRewardId): builder.PrependInt64Slot(17, ConquestRewardId, 0)
+    def AddConquestRewardId(builder, ConquestRewardId): builder.PrependInt32Slot(17, ConquestRewardId, 0)
 
 
     @staticmethod
-    def AddMassErosionId(builder, MassErosionId): builder.PrependInt64Slot(18, MassErosionId, 0)
+    def AddMassErosionId(builder, MassErosionId): builder.PrependInt32Slot(18, MassErosionId, 0)
 
 
     @staticmethod
@@ -277,7 +277,7 @@ class ConquestTileExcel:
 
 
     @staticmethod
-    def AddUpgrade2CostId(builder, Upgrade2CostId): builder.PrependInt64Slot(20, Upgrade2CostId, 0)
+    def AddUpgrade2CostId(builder, Upgrade2CostId): builder.PrependInt32Slot(20, Upgrade2CostId, 0)
 
 
     @staticmethod
@@ -289,7 +289,7 @@ class ConquestTileExcel:
 
 
     @staticmethod
-    def AddUpgrade3CostId(builder, Upgrade3CostId): builder.PrependInt64Slot(23, Upgrade3CostId, 0)
+    def AddUpgrade3CostId(builder, Upgrade3CostId): builder.PrependInt32Slot(23, Upgrade3CostId, 0)
 
 
     @staticmethod

@@ -20,14 +20,14 @@ class MinigameTBGThemaExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -59,46 +59,18 @@ class MinigameTBGThemaExcel:
         return None
 
 
-    def PortalCondition(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def PortalConditionAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def PortalConditionLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def PortalConditionIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
-
-
-    def PortalConditionParameter(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def PortalConditionParameterLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def PortalConditionParameterIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        return o == 0
 
 
     def ThemaNameLocalize(self):
@@ -125,7 +97,7 @@ class MinigameTBGThemaExcel:
     def ThemaLeaderId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -139,7 +111,7 @@ class MinigameTBGThemaExcel:
     def InstantClearCostAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -159,11 +131,11 @@ class MinigameTBGThemaExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(1, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(1, UniqueId, 0)
 
 
     @staticmethod
@@ -181,15 +153,11 @@ class MinigameTBGThemaExcel:
     def AddThemaMapBG(builder, ThemaMapBG): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ThemaMapBG), 0)
 
     @staticmethod
-    def AddPortalCondition(builder, PortalCondition): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(PortalCondition), 0)
-    @staticmethod
-    def StartPortalConditionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddPortalConditionLength(builder, PortalConditionLength): builder.PrependInt32Slot(6, PortalConditionLength, 0)
 
 
     @staticmethod
-    def AddPortalConditionParameter(builder, PortalConditionParameter): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(PortalConditionParameter), 0)
-    @staticmethod
-    def StartPortalConditionParameterVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddPortalConditionParameterLength(builder, PortalConditionParameterLength): builder.PrependInt32Slot(7, PortalConditionParameterLength, 0)
 
 
     @staticmethod
@@ -202,14 +170,14 @@ class MinigameTBGThemaExcel:
     def AddThemaPlayerPrefab(builder, ThemaPlayerPrefab): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(ThemaPlayerPrefab), 0)
 
     @staticmethod
-    def AddThemaLeaderId(builder, ThemaLeaderId): builder.PrependInt64Slot(11, ThemaLeaderId, 0)
+    def AddThemaLeaderId(builder, ThemaLeaderId): builder.PrependInt32Slot(11, ThemaLeaderId, 0)
 
 
     @staticmethod
     def AddThemaGoalLocalize(builder, ThemaGoalLocalize): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(ThemaGoalLocalize), 0)
 
     @staticmethod
-    def AddInstantClearCostAmount(builder, InstantClearCostAmount): builder.PrependInt64Slot(13, InstantClearCostAmount, 0)
+    def AddInstantClearCostAmount(builder, InstantClearCostAmount): builder.PrependInt32Slot(13, InstantClearCostAmount, 0)
 
 
     @staticmethod

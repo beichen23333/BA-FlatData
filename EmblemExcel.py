@@ -20,7 +20,7 @@ class EmblemExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class EmblemExcel:
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class EmblemExcel:
     def UseAtLocalizeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -181,14 +181,14 @@ class EmblemExcel:
     def EmblemParameter(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CheckPassCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -201,7 +201,7 @@ class EmblemExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -213,7 +213,7 @@ class EmblemExcel:
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(3, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(3, DisplayOrder, 0)
 
 
     @staticmethod
@@ -225,7 +225,7 @@ class EmblemExcel:
 
 
     @staticmethod
-    def AddUseAtLocalizeId(builder, UseAtLocalizeId): builder.PrependInt64Slot(6, UseAtLocalizeId, 0)
+    def AddUseAtLocalizeId(builder, UseAtLocalizeId): builder.PrependInt32Slot(6, UseAtLocalizeId, 0)
 
 
     @staticmethod
@@ -282,9 +282,9 @@ class EmblemExcel:
 
 
     @staticmethod
-    def AddEmblemParameter(builder, EmblemParameter): builder.PrependInt64Slot(23, EmblemParameter, 0)
+    def AddEmblemParameter(builder, EmblemParameter): builder.PrependInt32Slot(23, EmblemParameter, 0)
 
 
     @staticmethod
-    def AddCheckPassCount(builder, CheckPassCount): builder.PrependInt64Slot(24, CheckPassCount, 0)
+    def AddCheckPassCount(builder, CheckPassCount): builder.PrependInt32Slot(24, CheckPassCount, 0)
 

@@ -1,0 +1,4 @@
+class SeekOrigin:
+    Begin = 0
+    Current = 1
+    End = 2

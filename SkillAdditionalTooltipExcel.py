@@ -20,7 +20,7 @@ class SkillAdditionalTooltipExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -38,16 +38,23 @@ class SkillAdditionalTooltipExcel:
         return None
 
 
+    def DisplayIconBg(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(3)
+    def Start(builder): builder.StartObject(4)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
@@ -55,3 +62,7 @@ class SkillAdditionalTooltipExcel:
 
     @staticmethod
     def AddShowSkillSlot(builder, ShowSkillSlot): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(ShowSkillSlot), 0)
+
+    @staticmethod
+    def AddDisplayIconBg(builder, DisplayIconBg): builder.PrependBoolSlot(3, DisplayIconBg, 0)
+

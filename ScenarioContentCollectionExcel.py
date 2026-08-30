@@ -20,14 +20,14 @@ class ScenarioContentCollectionExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -38,28 +38,11 @@ class ScenarioContentCollectionExcel:
         return 0
 
 
-    def UnlockConditionParameter(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def UnlockConditionParameterAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def UnlockConditionParameterLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def UnlockConditionParameterIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
 
 
     def MultipleConditionCheckType(self):
@@ -72,7 +55,7 @@ class ScenarioContentCollectionExcel:
     def UnlockConditionCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -134,11 +117,11 @@ class ScenarioContentCollectionExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(1, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(1, GroupId, 0)
 
 
     @staticmethod
@@ -146,9 +129,7 @@ class ScenarioContentCollectionExcel:
 
 
     @staticmethod
-    def AddUnlockConditionParameter(builder, UnlockConditionParameter): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(UnlockConditionParameter), 0)
-    @staticmethod
-    def StartUnlockConditionParameterVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddUnlockConditionParameterLength(builder, UnlockConditionParameterLength): builder.PrependInt32Slot(3, UnlockConditionParameterLength, 0)
 
 
     @staticmethod
@@ -156,7 +137,7 @@ class ScenarioContentCollectionExcel:
 
 
     @staticmethod
-    def AddUnlockConditionCount(builder, UnlockConditionCount): builder.PrependInt64Slot(5, UnlockConditionCount, 0)
+    def AddUnlockConditionCount(builder, UnlockConditionCount): builder.PrependInt32Slot(5, UnlockConditionCount, 0)
 
 
     @staticmethod

@@ -20,7 +20,7 @@ class MultiFloorRaidStageExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class MultiFloorRaidStageExcel:
     def StageOpenCondition(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class MultiFloorRaidStageExcel:
     def FloorListSectionOpenCondition(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -111,150 +111,71 @@ class MultiFloorRaidStageExcel:
     def RaidCharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def BossCharacterId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def BossCharacterIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def BossCharacterIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def BossCharacterIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        return o == 0
-
-
-    def StatChangeId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def StatChangeIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def StatChangeIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def StatChangeIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        return o == 0
 
 
     def BattleDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroundId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RecommendLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def BattleReadyTimelinePath(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def BattleReadyTimelinePathLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def BattleReadyTimelinePathIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
-        return o == 0
-
-
-    def BattleReadyTimelinePhaseStart(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def BattleReadyTimelinePhaseStartAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def BattleReadyTimelinePhaseStartLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def BattleReadyTimelinePhaseStartIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        return o == 0
-
-
-    def BattleReadyTimelinePhaseEnd(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def BattleReadyTimelinePhaseEndAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def BattleReadyTimelinePhaseEndLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def BattleReadyTimelinePhaseEndIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        return o == 0
 
 
     def VictoryTimelinePath(self):
@@ -280,7 +201,7 @@ class MultiFloorRaidStageExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -295,7 +216,7 @@ class MultiFloorRaidStageExcel:
 
 
     @staticmethod
-    def AddStageOpenCondition(builder, StageOpenCondition): builder.PrependInt64Slot(4, StageOpenCondition, 0)
+    def AddStageOpenCondition(builder, StageOpenCondition): builder.PrependInt32Slot(4, StageOpenCondition, 0)
 
 
     @staticmethod
@@ -303,7 +224,7 @@ class MultiFloorRaidStageExcel:
 
 
     @staticmethod
-    def AddFloorListSectionOpenCondition(builder, FloorListSectionOpenCondition): builder.PrependInt64Slot(6, FloorListSectionOpenCondition, 0)
+    def AddFloorListSectionOpenCondition(builder, FloorListSectionOpenCondition): builder.PrependInt32Slot(6, FloorListSectionOpenCondition, 0)
 
 
     @staticmethod
@@ -329,53 +250,43 @@ class MultiFloorRaidStageExcel:
     def AddFloorImgPath(builder, FloorImgPath): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(FloorImgPath), 0)
 
     @staticmethod
-    def AddRaidCharacterId(builder, RaidCharacterId): builder.PrependInt64Slot(13, RaidCharacterId, 0)
+    def AddRaidCharacterId(builder, RaidCharacterId): builder.PrependInt32Slot(13, RaidCharacterId, 0)
 
 
     @staticmethod
-    def AddBossCharacterId(builder, BossCharacterId): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(BossCharacterId), 0)
-    @staticmethod
-    def StartBossCharacterIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddBossCharacterIdLength(builder, BossCharacterIdLength): builder.PrependInt32Slot(14, BossCharacterIdLength, 0)
 
 
     @staticmethod
-    def AddStatChangeId(builder, StatChangeId): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(StatChangeId), 0)
-    @staticmethod
-    def StartStatChangeIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddStatChangeIdLength(builder, StatChangeIdLength): builder.PrependInt32Slot(15, StatChangeIdLength, 0)
 
 
     @staticmethod
-    def AddBattleDuration(builder, BattleDuration): builder.PrependInt64Slot(16, BattleDuration, 0)
+    def AddBattleDuration(builder, BattleDuration): builder.PrependInt32Slot(16, BattleDuration, 0)
 
 
     @staticmethod
-    def AddGroundId(builder, GroundId): builder.PrependInt64Slot(17, GroundId, 0)
+    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(17, GroundId, 0)
 
 
     @staticmethod
-    def AddRecommendLevel(builder, RecommendLevel): builder.PrependInt64Slot(18, RecommendLevel, 0)
+    def AddRecommendLevel(builder, RecommendLevel): builder.PrependInt32Slot(18, RecommendLevel, 0)
 
 
     @staticmethod
-    def AddRewardGroupId(builder, RewardGroupId): builder.PrependInt64Slot(19, RewardGroupId, 0)
+    def AddRewardGroupId(builder, RewardGroupId): builder.PrependInt32Slot(19, RewardGroupId, 0)
 
 
     @staticmethod
-    def AddBattleReadyTimelinePath(builder, BattleReadyTimelinePath): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(BattleReadyTimelinePath), 0)
-    @staticmethod
-    def StartBattleReadyTimelinePathVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddBattleReadyTimelinePathLength(builder, BattleReadyTimelinePathLength): builder.PrependInt32Slot(20, BattleReadyTimelinePathLength, 0)
 
 
     @staticmethod
-    def AddBattleReadyTimelinePhaseStart(builder, BattleReadyTimelinePhaseStart): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(BattleReadyTimelinePhaseStart), 0)
-    @staticmethod
-    def StartBattleReadyTimelinePhaseStartVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddBattleReadyTimelinePhaseStartLength(builder, BattleReadyTimelinePhaseStartLength): builder.PrependInt32Slot(21, BattleReadyTimelinePhaseStartLength, 0)
 
 
     @staticmethod
-    def AddBattleReadyTimelinePhaseEnd(builder, BattleReadyTimelinePhaseEnd): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(BattleReadyTimelinePhaseEnd), 0)
-    @staticmethod
-    def StartBattleReadyTimelinePhaseEndVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddBattleReadyTimelinePhaseEndLength(builder, BattleReadyTimelinePhaseEndLength): builder.PrependInt32Slot(22, BattleReadyTimelinePhaseEndLength, 0)
 
 
     @staticmethod

@@ -20,14 +20,14 @@ class MinigameCCGStartDeckCardExcel:
     def CCGId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -40,9 +40,9 @@ class MinigameCCGStartDeckCardExcel:
 
 
     @staticmethod
-    def AddCCGId(builder, CCGId): builder.PrependInt64Slot(0, CCGId, 0)
+    def AddCCGId(builder, CCGId): builder.PrependInt32Slot(0, CCGId, 0)
 
 
     @staticmethod
-    def AddCardId(builder, CardId): builder.PrependInt64Slot(1, CardId, 0)
+    def AddCardId(builder, CardId): builder.PrependInt32Slot(1, CardId, 0)
 

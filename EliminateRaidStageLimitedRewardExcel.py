@@ -20,80 +20,29 @@ class EliminateRaidStageLimitedRewardExcel:
     def LimitedRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def LimitedRewardParcelType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def LimitedRewardParcelTypeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def LimitedRewardParcelTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def LimitedRewardParcelTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
-
-
-    def LimitedRewardParcelUniqueId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def LimitedRewardParcelUniqueIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def LimitedRewardParcelUniqueIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def LimitedRewardParcelUniqueIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
-
-
-    def LimitedRewardAmount(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def LimitedRewardAmountAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def LimitedRewardAmountLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def LimitedRewardAmountIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
 
 
 
@@ -105,23 +54,17 @@ class EliminateRaidStageLimitedRewardExcel:
 
 
     @staticmethod
-    def AddLimitedRewardId(builder, LimitedRewardId): builder.PrependInt64Slot(0, LimitedRewardId, 0)
+    def AddLimitedRewardId(builder, LimitedRewardId): builder.PrependInt32Slot(0, LimitedRewardId, 0)
 
 
     @staticmethod
-    def AddLimitedRewardParcelType(builder, LimitedRewardParcelType): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(LimitedRewardParcelType), 0)
-    @staticmethod
-    def StartLimitedRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddLimitedRewardParcelTypeLength(builder, LimitedRewardParcelTypeLength): builder.PrependInt32Slot(1, LimitedRewardParcelTypeLength, 0)
 
 
     @staticmethod
-    def AddLimitedRewardParcelUniqueId(builder, LimitedRewardParcelUniqueId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(LimitedRewardParcelUniqueId), 0)
-    @staticmethod
-    def StartLimitedRewardParcelUniqueIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddLimitedRewardParcelUniqueIdLength(builder, LimitedRewardParcelUniqueIdLength): builder.PrependInt32Slot(2, LimitedRewardParcelUniqueIdLength, 0)
 
 
     @staticmethod
-    def AddLimitedRewardAmount(builder, LimitedRewardAmount): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(LimitedRewardAmount), 0)
-    @staticmethod
-    def StartLimitedRewardAmountVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddLimitedRewardAmountLength(builder, LimitedRewardAmountLength): builder.PrependInt32Slot(3, LimitedRewardAmountLength, 0)
 

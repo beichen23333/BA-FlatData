@@ -20,7 +20,7 @@ class MinigameCCGRewardCardRateExcel:
     def RarityGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -47,7 +47,7 @@ class MinigameCCGRewardCardRateExcel:
 
 
     @staticmethod
-    def AddRarityGroupId(builder, RarityGroupId): builder.PrependInt64Slot(0, RarityGroupId, 0)
+    def AddRarityGroupId(builder, RarityGroupId): builder.PrependInt32Slot(0, RarityGroupId, 0)
 
 
     @staticmethod

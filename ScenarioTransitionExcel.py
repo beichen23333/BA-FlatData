@@ -34,7 +34,7 @@ class ScenarioTransitionExcel:
     def TransitionOutDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,7 +55,7 @@ class ScenarioTransitionExcel:
     def TransitionInDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -82,7 +82,7 @@ class ScenarioTransitionExcel:
     def AddTransitionOut(builder, TransitionOut): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(TransitionOut), 0)
 
     @staticmethod
-    def AddTransitionOutDuration(builder, TransitionOutDuration): builder.PrependInt64Slot(2, TransitionOutDuration, 0)
+    def AddTransitionOutDuration(builder, TransitionOutDuration): builder.PrependInt32Slot(2, TransitionOutDuration, 0)
 
 
     @staticmethod
@@ -92,7 +92,7 @@ class ScenarioTransitionExcel:
     def AddTransitionIn(builder, TransitionIn): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(TransitionIn), 0)
 
     @staticmethod
-    def AddTransitionInDuration(builder, TransitionInDuration): builder.PrependInt64Slot(5, TransitionInDuration, 0)
+    def AddTransitionInDuration(builder, TransitionInDuration): builder.PrependInt32Slot(5, TransitionInDuration, 0)
 
 
     @staticmethod

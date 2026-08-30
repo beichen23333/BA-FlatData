@@ -20,7 +20,7 @@ class ConquestUnitExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -97,83 +97,49 @@ class ConquestUnitExcel:
     def UnitGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PrevUnitGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BattleDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroundId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def StarGoal(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StarGoalAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def StarGoalLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def StarGoalIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        return o == 0
-
-
-    def StarGoalAmount(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StarGoalAmountAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def StarGoalAmountLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def StarGoalAmountIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        return o == 0
 
 
     def GroupBuffId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -187,7 +153,7 @@ class ConquestUnitExcel:
     def StageEnterCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -208,7 +174,7 @@ class ConquestUnitExcel:
     def ManageEchelonStageEnterCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -222,21 +188,21 @@ class ConquestUnitExcel:
     def EnterScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ClearScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ConquestRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -257,14 +223,14 @@ class ConquestUnitExcel:
     def TacticRewardExp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FixedEchelonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -284,7 +250,7 @@ class ConquestUnitExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -323,35 +289,31 @@ class ConquestUnitExcel:
 
 
     @staticmethod
-    def AddUnitGroup(builder, UnitGroup): builder.PrependInt64Slot(11, UnitGroup, 0)
+    def AddUnitGroup(builder, UnitGroup): builder.PrependInt32Slot(11, UnitGroup, 0)
 
 
     @staticmethod
-    def AddPrevUnitGroup(builder, PrevUnitGroup): builder.PrependInt64Slot(12, PrevUnitGroup, 0)
+    def AddPrevUnitGroup(builder, PrevUnitGroup): builder.PrependInt32Slot(12, PrevUnitGroup, 0)
 
 
     @staticmethod
-    def AddBattleDuration(builder, BattleDuration): builder.PrependInt64Slot(13, BattleDuration, 0)
+    def AddBattleDuration(builder, BattleDuration): builder.PrependInt32Slot(13, BattleDuration, 0)
 
 
     @staticmethod
-    def AddGroundId(builder, GroundId): builder.PrependInt64Slot(14, GroundId, 0)
+    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(14, GroundId, 0)
 
 
     @staticmethod
-    def AddStarGoal(builder, StarGoal): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(StarGoal), 0)
-    @staticmethod
-    def StartStarGoalVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStarGoalLength(builder, StarGoalLength): builder.PrependInt32Slot(15, StarGoalLength, 0)
 
 
     @staticmethod
-    def AddStarGoalAmount(builder, StarGoalAmount): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(StarGoalAmount), 0)
-    @staticmethod
-    def StartStarGoalAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStarGoalAmountLength(builder, StarGoalAmountLength): builder.PrependInt32Slot(16, StarGoalAmountLength, 0)
 
 
     @staticmethod
-    def AddGroupBuffId(builder, GroupBuffId): builder.PrependInt64Slot(17, GroupBuffId, 0)
+    def AddGroupBuffId(builder, GroupBuffId): builder.PrependInt32Slot(17, GroupBuffId, 0)
 
 
     @staticmethod
@@ -359,7 +321,7 @@ class ConquestUnitExcel:
 
 
     @staticmethod
-    def AddStageEnterCostId(builder, StageEnterCostId): builder.PrependInt64Slot(19, StageEnterCostId, 0)
+    def AddStageEnterCostId(builder, StageEnterCostId): builder.PrependInt32Slot(19, StageEnterCostId, 0)
 
 
     @staticmethod
@@ -371,7 +333,7 @@ class ConquestUnitExcel:
 
 
     @staticmethod
-    def AddManageEchelonStageEnterCostId(builder, ManageEchelonStageEnterCostId): builder.PrependInt64Slot(22, ManageEchelonStageEnterCostId, 0)
+    def AddManageEchelonStageEnterCostId(builder, ManageEchelonStageEnterCostId): builder.PrependInt32Slot(22, ManageEchelonStageEnterCostId, 0)
 
 
     @staticmethod
@@ -379,15 +341,15 @@ class ConquestUnitExcel:
 
 
     @staticmethod
-    def AddEnterScenarioGroupId(builder, EnterScenarioGroupId): builder.PrependInt64Slot(24, EnterScenarioGroupId, 0)
+    def AddEnterScenarioGroupId(builder, EnterScenarioGroupId): builder.PrependInt32Slot(24, EnterScenarioGroupId, 0)
 
 
     @staticmethod
-    def AddClearScenarioGroupId(builder, ClearScenarioGroupId): builder.PrependInt64Slot(25, ClearScenarioGroupId, 0)
+    def AddClearScenarioGroupId(builder, ClearScenarioGroupId): builder.PrependInt32Slot(25, ClearScenarioGroupId, 0)
 
 
     @staticmethod
-    def AddConquestRewardId(builder, ConquestRewardId): builder.PrependInt64Slot(26, ConquestRewardId, 0)
+    def AddConquestRewardId(builder, ConquestRewardId): builder.PrependInt32Slot(26, ConquestRewardId, 0)
 
 
     @staticmethod
@@ -399,11 +361,11 @@ class ConquestUnitExcel:
 
 
     @staticmethod
-    def AddTacticRewardExp(builder, TacticRewardExp): builder.PrependInt64Slot(29, TacticRewardExp, 0)
+    def AddTacticRewardExp(builder, TacticRewardExp): builder.PrependInt32Slot(29, TacticRewardExp, 0)
 
 
     @staticmethod
-    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt64Slot(30, FixedEchelonId, 0)
+    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt32Slot(30, FixedEchelonId, 0)
 
 
     @staticmethod

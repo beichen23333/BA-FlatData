@@ -41,7 +41,7 @@ class SystemMailExcel:
     def ExpiredDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -80,7 +80,7 @@ class SystemMailExcel:
 
 
     @staticmethod
-    def AddExpiredDay(builder, ExpiredDay): builder.PrependInt64Slot(3, ExpiredDay, 0)
+    def AddExpiredDay(builder, ExpiredDay): builder.PrependInt32Slot(3, ExpiredDay, 0)
 
 
     @staticmethod

@@ -20,21 +20,21 @@ class BattlePassRewardExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Level(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,14 +48,14 @@ class BattlePassRewardExcel:
     def RewardParcelUniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,15 +68,15 @@ class BattlePassRewardExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddRewardGroupId(builder, RewardGroupId): builder.PrependInt64Slot(1, RewardGroupId, 0)
+    def AddRewardGroupId(builder, RewardGroupId): builder.PrependInt32Slot(1, RewardGroupId, 0)
 
 
     @staticmethod
-    def AddLevel(builder, Level): builder.PrependInt64Slot(2, Level, 0)
+    def AddLevel(builder, Level): builder.PrependInt32Slot(2, Level, 0)
 
 
     @staticmethod
@@ -84,9 +84,9 @@ class BattlePassRewardExcel:
 
 
     @staticmethod
-    def AddRewardParcelUniqueId(builder, RewardParcelUniqueId): builder.PrependInt64Slot(4, RewardParcelUniqueId, 0)
+    def AddRewardParcelUniqueId(builder, RewardParcelUniqueId): builder.PrependInt32Slot(4, RewardParcelUniqueId, 0)
 
 
     @staticmethod
-    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt64Slot(5, RewardParcelAmount, 0)
+    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt32Slot(5, RewardParcelAmount, 0)
 

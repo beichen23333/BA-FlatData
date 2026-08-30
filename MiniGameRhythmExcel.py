@@ -20,14 +20,14 @@ class MiniGameRhythmExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RhythmBgmId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,63 +55,63 @@ class MiniGameRhythmExcel:
     def OpenStageScoreAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MaxHp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MissDamage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalHPRestoreValue(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MaxScore(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FeverScoreRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NoteScoreRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ComboScoreRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AttackScoreRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -132,7 +132,7 @@ class MiniGameRhythmExcel:
     def MaxHpScore(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -166,11 +166,11 @@ class MiniGameRhythmExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
-    def AddRhythmBgmId(builder, RhythmBgmId): builder.PrependInt64Slot(1, RhythmBgmId, 0)
+    def AddRhythmBgmId(builder, RhythmBgmId): builder.PrependInt32Slot(1, RhythmBgmId, 0)
 
 
     @staticmethod
@@ -185,39 +185,39 @@ class MiniGameRhythmExcel:
 
 
     @staticmethod
-    def AddOpenStageScoreAmount(builder, OpenStageScoreAmount): builder.PrependInt64Slot(5, OpenStageScoreAmount, 0)
+    def AddOpenStageScoreAmount(builder, OpenStageScoreAmount): builder.PrependInt32Slot(5, OpenStageScoreAmount, 0)
 
 
     @staticmethod
-    def AddMaxHp(builder, MaxHp): builder.PrependInt64Slot(6, MaxHp, 0)
+    def AddMaxHp(builder, MaxHp): builder.PrependInt32Slot(6, MaxHp, 0)
 
 
     @staticmethod
-    def AddMissDamage(builder, MissDamage): builder.PrependInt64Slot(7, MissDamage, 0)
+    def AddMissDamage(builder, MissDamage): builder.PrependInt32Slot(7, MissDamage, 0)
 
 
     @staticmethod
-    def AddCriticalHPRestoreValue(builder, CriticalHPRestoreValue): builder.PrependInt64Slot(8, CriticalHPRestoreValue, 0)
+    def AddCriticalHPRestoreValue(builder, CriticalHPRestoreValue): builder.PrependInt32Slot(8, CriticalHPRestoreValue, 0)
 
 
     @staticmethod
-    def AddMaxScore(builder, MaxScore): builder.PrependInt64Slot(9, MaxScore, 0)
+    def AddMaxScore(builder, MaxScore): builder.PrependInt32Slot(9, MaxScore, 0)
 
 
     @staticmethod
-    def AddFeverScoreRate(builder, FeverScoreRate): builder.PrependInt64Slot(10, FeverScoreRate, 0)
+    def AddFeverScoreRate(builder, FeverScoreRate): builder.PrependInt32Slot(10, FeverScoreRate, 0)
 
 
     @staticmethod
-    def AddNoteScoreRate(builder, NoteScoreRate): builder.PrependInt64Slot(11, NoteScoreRate, 0)
+    def AddNoteScoreRate(builder, NoteScoreRate): builder.PrependInt32Slot(11, NoteScoreRate, 0)
 
 
     @staticmethod
-    def AddComboScoreRate(builder, ComboScoreRate): builder.PrependInt64Slot(12, ComboScoreRate, 0)
+    def AddComboScoreRate(builder, ComboScoreRate): builder.PrependInt32Slot(12, ComboScoreRate, 0)
 
 
     @staticmethod
-    def AddAttackScoreRate(builder, AttackScoreRate): builder.PrependInt64Slot(13, AttackScoreRate, 0)
+    def AddAttackScoreRate(builder, AttackScoreRate): builder.PrependInt32Slot(13, AttackScoreRate, 0)
 
 
     @staticmethod
@@ -229,7 +229,7 @@ class MiniGameRhythmExcel:
 
 
     @staticmethod
-    def AddMaxHpScore(builder, MaxHpScore): builder.PrependInt64Slot(16, MaxHpScore, 0)
+    def AddMaxHpScore(builder, MaxHpScore): builder.PrependInt32Slot(16, MaxHpScore, 0)
 
 
     @staticmethod

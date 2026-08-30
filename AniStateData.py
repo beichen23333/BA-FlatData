@@ -94,27 +94,11 @@ class AniStateData:
         return 0
 
 
-    def Events(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            from .AniEventData import AniEventData
-            obj = AniEventData()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
-
     def EventsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def EventsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        return o == 0
 
 
 
@@ -164,7 +148,5 @@ class AniStateData:
 
 
     @staticmethod
-    def AddEvents(builder, Events): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(Events), 0)
-    @staticmethod
-    def StartEventsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddEventsLength(builder, EventsLength): builder.PrependInt32Slot(11, EventsLength, 0)
 

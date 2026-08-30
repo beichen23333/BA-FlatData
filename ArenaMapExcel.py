@@ -20,21 +20,21 @@ class ArenaMapExcel:
     def ArenaSeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def TerrainType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,7 +55,7 @@ class ArenaMapExcel:
     def GroundGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,21 +69,21 @@ class ArenaMapExcel:
     def StartRank(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EndRank(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroundId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -96,15 +96,15 @@ class ArenaMapExcel:
 
 
     @staticmethod
-    def AddArenaSeasonId(builder, ArenaSeasonId): builder.PrependInt64Slot(0, ArenaSeasonId, 0)
+    def AddArenaSeasonId(builder, ArenaSeasonId): builder.PrependInt32Slot(0, ArenaSeasonId, 0)
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(1, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(1, UniqueId, 0)
 
 
     @staticmethod
-    def AddTerrainType(builder, TerrainType): builder.PrependInt64Slot(2, TerrainType, 0)
+    def AddTerrainType(builder, TerrainType): builder.PrependInt32Slot(2, TerrainType, 0)
 
 
     @staticmethod
@@ -114,20 +114,20 @@ class ArenaMapExcel:
     def AddImagePath(builder, ImagePath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(ImagePath), 0)
 
     @staticmethod
-    def AddGroundGroupId(builder, GroundGroupId): builder.PrependInt64Slot(5, GroundGroupId, 0)
+    def AddGroundGroupId(builder, GroundGroupId): builder.PrependInt32Slot(5, GroundGroupId, 0)
 
 
     @staticmethod
     def AddGroundGroupNameLocalizeKey(builder, GroundGroupNameLocalizeKey): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(GroundGroupNameLocalizeKey), 0)
 
     @staticmethod
-    def AddStartRank(builder, StartRank): builder.PrependInt64Slot(7, StartRank, 0)
+    def AddStartRank(builder, StartRank): builder.PrependInt32Slot(7, StartRank, 0)
 
 
     @staticmethod
-    def AddEndRank(builder, EndRank): builder.PrependInt64Slot(8, EndRank, 0)
+    def AddEndRank(builder, EndRank): builder.PrependInt32Slot(8, EndRank, 0)
 
 
     @staticmethod
-    def AddGroundId(builder, GroundId): builder.PrependInt64Slot(9, GroundId, 0)
+    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(9, GroundId, 0)
 

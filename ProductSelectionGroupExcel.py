@@ -20,21 +20,21 @@ class ProductSelectionGroupExcel:
     def ProductSelectionGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ProductSelectionGroupComponentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,14 +48,14 @@ class ProductSelectionGroupExcel:
     def ParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ResultAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class ProductSelectionGroupExcel:
     def ConditionParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -82,15 +82,15 @@ class ProductSelectionGroupExcel:
 
 
     @staticmethod
-    def AddProductSelectionGroupId(builder, ProductSelectionGroupId): builder.PrependInt64Slot(0, ProductSelectionGroupId, 0)
+    def AddProductSelectionGroupId(builder, ProductSelectionGroupId): builder.PrependInt32Slot(0, ProductSelectionGroupId, 0)
 
 
     @staticmethod
-    def AddProductSelectionGroupComponentId(builder, ProductSelectionGroupComponentId): builder.PrependInt64Slot(1, ProductSelectionGroupComponentId, 0)
+    def AddProductSelectionGroupComponentId(builder, ProductSelectionGroupComponentId): builder.PrependInt32Slot(1, ProductSelectionGroupComponentId, 0)
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(2, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(2, DisplayOrder, 0)
 
 
     @staticmethod
@@ -98,11 +98,11 @@ class ProductSelectionGroupExcel:
 
 
     @staticmethod
-    def AddParcelId(builder, ParcelId): builder.PrependInt64Slot(4, ParcelId, 0)
+    def AddParcelId(builder, ParcelId): builder.PrependInt32Slot(4, ParcelId, 0)
 
 
     @staticmethod
-    def AddResultAmount(builder, ResultAmount): builder.PrependInt64Slot(5, ResultAmount, 0)
+    def AddResultAmount(builder, ResultAmount): builder.PrependInt32Slot(5, ResultAmount, 0)
 
 
     @staticmethod
@@ -110,5 +110,5 @@ class ProductSelectionGroupExcel:
 
 
     @staticmethod
-    def AddConditionParcelId(builder, ConditionParcelId): builder.PrependInt64Slot(7, ConditionParcelId, 0)
+    def AddConditionParcelId(builder, ConditionParcelId): builder.PrependInt32Slot(7, ConditionParcelId, 0)
 

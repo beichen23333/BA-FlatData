@@ -1,6 +1,10 @@
 class ConquestConditionType:
     None_ = 0
-    OpenDateOffset = 1
-    ItemAcquire = 2
-    ParcelUse = 3
-    KillUnit = 4
+    TileFriendlyTerritory = 1
+    StepTileComplete = 2
+    StepBossDead = 3
+    StepOpen = 4
+    DeadUnitLeader = 5
+    TileUniqueId = 6
+    UnitOpen = 7
+    StepObjectComplete = 8

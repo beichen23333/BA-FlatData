@@ -27,14 +27,14 @@ class ConstKeyMappingExcel:
     def PcInformationGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PcControllerInformationGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -149,11 +149,11 @@ class ConstKeyMappingExcel:
 
 
     @staticmethod
-    def AddPcInformationGroupID(builder, PcInformationGroupID): builder.PrependInt64Slot(1, PcInformationGroupID, 0)
+    def AddPcInformationGroupID(builder, PcInformationGroupID): builder.PrependInt32Slot(1, PcInformationGroupID, 0)
 
 
     @staticmethod
-    def AddPcControllerInformationGroupID(builder, PcControllerInformationGroupID): builder.PrependInt64Slot(2, PcControllerInformationGroupID, 0)
+    def AddPcControllerInformationGroupID(builder, PcControllerInformationGroupID): builder.PrependInt32Slot(2, PcControllerInformationGroupID, 0)
 
 
     @staticmethod

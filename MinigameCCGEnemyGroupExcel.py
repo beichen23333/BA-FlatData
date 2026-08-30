@@ -20,7 +20,7 @@ class MinigameCCGEnemyGroupExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class MinigameCCGEnemyGroupExcel:
     def EnemyBGM(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -61,14 +61,14 @@ class MinigameCCGEnemyGroupExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
     def AddEnemyAI(builder, EnemyAI): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyAI), 0)
 
     @staticmethod
-    def AddEnemyBGM(builder, EnemyBGM): builder.PrependInt64Slot(2, EnemyBGM, 0)
+    def AddEnemyBGM(builder, EnemyBGM): builder.PrependInt32Slot(2, EnemyBGM, 0)
 
 
     @staticmethod

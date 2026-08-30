@@ -20,7 +20,7 @@ class ContentEnterCostReduceExcel:
     def EnterCostReduceGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class ContentEnterCostReduceExcel:
     def StageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,14 +48,14 @@ class ContentEnterCostReduceExcel:
     def ReduceEnterCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ReduceAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,7 +68,7 @@ class ContentEnterCostReduceExcel:
 
 
     @staticmethod
-    def AddEnterCostReduceGroupId(builder, EnterCostReduceGroupId): builder.PrependInt64Slot(0, EnterCostReduceGroupId, 0)
+    def AddEnterCostReduceGroupId(builder, EnterCostReduceGroupId): builder.PrependInt32Slot(0, EnterCostReduceGroupId, 0)
 
 
     @staticmethod
@@ -76,7 +76,7 @@ class ContentEnterCostReduceExcel:
 
 
     @staticmethod
-    def AddStageId(builder, StageId): builder.PrependInt64Slot(2, StageId, 0)
+    def AddStageId(builder, StageId): builder.PrependInt32Slot(2, StageId, 0)
 
 
     @staticmethod
@@ -84,9 +84,9 @@ class ContentEnterCostReduceExcel:
 
 
     @staticmethod
-    def AddReduceEnterCostId(builder, ReduceEnterCostId): builder.PrependInt64Slot(4, ReduceEnterCostId, 0)
+    def AddReduceEnterCostId(builder, ReduceEnterCostId): builder.PrependInt32Slot(4, ReduceEnterCostId, 0)
 
 
     @staticmethod
-    def AddReduceAmount(builder, ReduceAmount): builder.PrependInt64Slot(5, ReduceAmount, 0)
+    def AddReduceAmount(builder, ReduceAmount): builder.PrependInt32Slot(5, ReduceAmount, 0)
 

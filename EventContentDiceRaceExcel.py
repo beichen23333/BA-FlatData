@@ -20,14 +20,14 @@ class EventContentDiceRaceExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DiceCostGoodsId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -52,40 +52,18 @@ class EventContentDiceRaceExcel:
         return 0
 
 
-    def FixedDiceIcon(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def FixedDiceIconLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def FixedDiceIconIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
-
-
-    def DiceRaceEventType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def DiceRaceEventTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def DiceRaceEventTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
 
 
 
@@ -97,11 +75,11 @@ class EventContentDiceRaceExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddDiceCostGoodsId(builder, DiceCostGoodsId): builder.PrependInt64Slot(1, DiceCostGoodsId, 0)
+    def AddDiceCostGoodsId(builder, DiceCostGoodsId): builder.PrependInt32Slot(1, DiceCostGoodsId, 0)
 
 
     @staticmethod
@@ -116,13 +94,9 @@ class EventContentDiceRaceExcel:
 
 
     @staticmethod
-    def AddFixedDiceIcon(builder, FixedDiceIcon): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(FixedDiceIcon), 0)
-    @staticmethod
-    def StartFixedDiceIconVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddFixedDiceIconLength(builder, FixedDiceIconLength): builder.PrependInt32Slot(5, FixedDiceIconLength, 0)
 
 
     @staticmethod
-    def AddDiceRaceEventType(builder, DiceRaceEventType): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(DiceRaceEventType), 0)
-    @staticmethod
-    def StartDiceRaceEventTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddDiceRaceEventTypeLength(builder, DiceRaceEventTypeLength): builder.PrependInt32Slot(6, DiceRaceEventTypeLength, 0)
 

@@ -27,7 +27,7 @@ class CharacterVoiceSubtitleExcel:
     def CharacterVoiceGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,14 +41,14 @@ class CharacterVoiceSubtitleExcel:
     def Duration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DurationKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -106,18 +106,18 @@ class CharacterVoiceSubtitleExcel:
     def AddLocalizeCVGroup(builder, LocalizeCVGroup): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeCVGroup), 0)
 
     @staticmethod
-    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt64Slot(1, CharacterVoiceGroupId, 0)
+    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt32Slot(1, CharacterVoiceGroupId, 0)
 
 
     @staticmethod
     def AddTLMID(builder, TLMID): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(TLMID), 0)
 
     @staticmethod
-    def AddDuration(builder, Duration): builder.PrependInt64Slot(3, Duration, 0)
+    def AddDuration(builder, Duration): builder.PrependInt32Slot(3, Duration, 0)
 
 
     @staticmethod
-    def AddDurationKr(builder, DurationKr): builder.PrependInt64Slot(4, DurationKr, 0)
+    def AddDurationKr(builder, DurationKr): builder.PrependInt32Slot(4, DurationKr, 0)
 
 
     @staticmethod

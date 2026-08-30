@@ -20,14 +20,14 @@ class ShopCashScenarioResourceInfoExcel:
     def ScenarioResrouceInfoId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShopCashId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -47,11 +47,11 @@ class ShopCashScenarioResourceInfoExcel:
 
 
     @staticmethod
-    def AddScenarioResrouceInfoId(builder, ScenarioResrouceInfoId): builder.PrependInt64Slot(0, ScenarioResrouceInfoId, 0)
+    def AddScenarioResrouceInfoId(builder, ScenarioResrouceInfoId): builder.PrependInt32Slot(0, ScenarioResrouceInfoId, 0)
 
 
     @staticmethod
-    def AddShopCashId(builder, ShopCashId): builder.PrependInt64Slot(1, ShopCashId, 0)
+    def AddShopCashId(builder, ShopCashId): builder.PrependInt32Slot(1, ShopCashId, 0)
 
 
     @staticmethod

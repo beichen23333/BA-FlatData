@@ -20,21 +20,21 @@ class AccountLevelExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Level(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Exp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,7 +55,7 @@ class AccountLevelExcel:
     def APAutoChargeMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,15 +75,15 @@ class AccountLevelExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddLevel(builder, Level): builder.PrependInt64Slot(1, Level, 0)
+    def AddLevel(builder, Level): builder.PrependInt32Slot(1, Level, 0)
 
 
     @staticmethod
-    def AddExp(builder, Exp): builder.PrependInt64Slot(2, Exp, 0)
+    def AddExp(builder, Exp): builder.PrependInt32Slot(2, Exp, 0)
 
 
     @staticmethod
@@ -95,7 +95,7 @@ class AccountLevelExcel:
 
 
     @staticmethod
-    def AddAPAutoChargeMax(builder, APAutoChargeMax): builder.PrependInt64Slot(5, APAutoChargeMax, 0)
+    def AddAPAutoChargeMax(builder, APAutoChargeMax): builder.PrependInt32Slot(5, APAutoChargeMax, 0)
 
 
     @staticmethod

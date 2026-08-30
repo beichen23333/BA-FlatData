@@ -20,14 +20,14 @@ class ShopFilterClassifiedExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CategoryType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class ShopFilterClassifiedExcel:
     def ConsumeParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,7 +55,7 @@ class ShopFilterClassifiedExcel:
     def GoodsId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,11 +68,11 @@ class ShopFilterClassifiedExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddCategoryType(builder, CategoryType): builder.PrependInt32Slot(1, CategoryType, 0)
+    def AddCategoryType(builder, CategoryType): builder.PrependFloat32Slot(1, CategoryType, 0)
 
 
     @staticmethod
@@ -80,7 +80,7 @@ class ShopFilterClassifiedExcel:
 
 
     @staticmethod
-    def AddConsumeParcelId(builder, ConsumeParcelId): builder.PrependInt64Slot(3, ConsumeParcelId, 0)
+    def AddConsumeParcelId(builder, ConsumeParcelId): builder.PrependInt32Slot(3, ConsumeParcelId, 0)
 
 
     @staticmethod
@@ -88,5 +88,5 @@ class ShopFilterClassifiedExcel:
 
 
     @staticmethod
-    def AddGoodsId(builder, GoodsId): builder.PrependInt64Slot(5, GoodsId, 0)
+    def AddGoodsId(builder, GoodsId): builder.PrependInt32Slot(5, GoodsId, 0)
 

@@ -20,14 +20,14 @@ class MinigameCCGLevelNodeExcel:
     def LevelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NodeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,32 +41,15 @@ class MinigameCCGLevelNodeExcel:
     def StageGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def NextNodeId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def NextNodeIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def NextNodeIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def NextNodeIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        return o == 0
 
 
 
@@ -78,11 +61,11 @@ class MinigameCCGLevelNodeExcel:
 
 
     @staticmethod
-    def AddLevelId(builder, LevelId): builder.PrependInt64Slot(0, LevelId, 0)
+    def AddLevelId(builder, LevelId): builder.PrependInt32Slot(0, LevelId, 0)
 
 
     @staticmethod
-    def AddNodeId(builder, NodeId): builder.PrependInt64Slot(1, NodeId, 0)
+    def AddNodeId(builder, NodeId): builder.PrependInt32Slot(1, NodeId, 0)
 
 
     @staticmethod
@@ -90,11 +73,9 @@ class MinigameCCGLevelNodeExcel:
 
 
     @staticmethod
-    def AddStageGroupId(builder, StageGroupId): builder.PrependInt64Slot(3, StageGroupId, 0)
+    def AddStageGroupId(builder, StageGroupId): builder.PrependInt32Slot(3, StageGroupId, 0)
 
 
     @staticmethod
-    def AddNextNodeId(builder, NextNodeId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(NextNodeId), 0)
-    @staticmethod
-    def StartNextNodeIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddNextNodeIdLength(builder, NextNodeIdLength): builder.PrependInt32Slot(4, NextNodeIdLength, 0)
 

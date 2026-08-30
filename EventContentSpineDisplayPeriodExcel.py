@@ -20,7 +20,7 @@ class EventContentSpineDisplayPeriodExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class EventContentSpineDisplayPeriodExcel:
     def CostumeUniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,14 +55,14 @@ class EventContentSpineDisplayPeriodExcel:
     def ShowWorldRaidConditionIDFrom(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShowWorldRaidConditionIDTo(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,7 +75,7 @@ class EventContentSpineDisplayPeriodExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
@@ -83,7 +83,7 @@ class EventContentSpineDisplayPeriodExcel:
 
 
     @staticmethod
-    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt64Slot(2, CostumeUniqueId, 0)
+    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt32Slot(2, CostumeUniqueId, 0)
 
 
     @staticmethod
@@ -93,9 +93,9 @@ class EventContentSpineDisplayPeriodExcel:
     def AddShowPeriodTo(builder, ShowPeriodTo): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(ShowPeriodTo), 0)
 
     @staticmethod
-    def AddShowWorldRaidConditionIDFrom(builder, ShowWorldRaidConditionIDFrom): builder.PrependInt64Slot(5, ShowWorldRaidConditionIDFrom, 0)
+    def AddShowWorldRaidConditionIDFrom(builder, ShowWorldRaidConditionIDFrom): builder.PrependInt32Slot(5, ShowWorldRaidConditionIDFrom, 0)
 
 
     @staticmethod
-    def AddShowWorldRaidConditionIDTo(builder, ShowWorldRaidConditionIDTo): builder.PrependInt64Slot(6, ShowWorldRaidConditionIDTo, 0)
+    def AddShowWorldRaidConditionIDTo(builder, ShowWorldRaidConditionIDTo): builder.PrependInt32Slot(6, ShowWorldRaidConditionIDTo, 0)
 

@@ -17,27 +17,11 @@ class PropRootMotionFlat:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def RootMotions(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            from .PropMotion import PropMotion
-            obj = PropMotion()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
-
     def RootMotionsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def RootMotionsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        return o == 0
 
 
 
@@ -49,7 +33,5 @@ class PropRootMotionFlat:
 
 
     @staticmethod
-    def AddRootMotions(builder, RootMotions): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(RootMotions), 0)
-    @staticmethod
-    def StartRootMotionsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddRootMotionsLength(builder, RootMotionsLength): builder.PrependInt32Slot(0, RootMotionsLength, 0)
 

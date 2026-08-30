@@ -20,28 +20,28 @@ class InteractiveWorldRaidConditionExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidSeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidPhaseId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Priority(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,56 +55,22 @@ class InteractiveWorldRaidConditionExcel:
     def MultipleConditionCheckParameter(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def ConditionType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def ConditionTypeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def ConditionTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ConditionTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
-
-
-    def ConditionValue(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ConditionValueAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ConditionValueLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ConditionValueIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        return o == 0
 
 
 
@@ -116,19 +82,19 @@ class InteractiveWorldRaidConditionExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddWorldRaidSeasonId(builder, WorldRaidSeasonId): builder.PrependInt64Slot(1, WorldRaidSeasonId, 0)
+    def AddWorldRaidSeasonId(builder, WorldRaidSeasonId): builder.PrependInt32Slot(1, WorldRaidSeasonId, 0)
 
 
     @staticmethod
-    def AddWorldRaidPhaseId(builder, WorldRaidPhaseId): builder.PrependInt64Slot(2, WorldRaidPhaseId, 0)
+    def AddWorldRaidPhaseId(builder, WorldRaidPhaseId): builder.PrependInt32Slot(2, WorldRaidPhaseId, 0)
 
 
     @staticmethod
-    def AddPriority(builder, Priority): builder.PrependInt64Slot(3, Priority, 0)
+    def AddPriority(builder, Priority): builder.PrependInt32Slot(3, Priority, 0)
 
 
     @staticmethod
@@ -136,17 +102,13 @@ class InteractiveWorldRaidConditionExcel:
 
 
     @staticmethod
-    def AddMultipleConditionCheckParameter(builder, MultipleConditionCheckParameter): builder.PrependInt64Slot(5, MultipleConditionCheckParameter, 0)
+    def AddMultipleConditionCheckParameter(builder, MultipleConditionCheckParameter): builder.PrependInt32Slot(5, MultipleConditionCheckParameter, 0)
 
 
     @staticmethod
-    def AddConditionType(builder, ConditionType): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(ConditionType), 0)
-    @staticmethod
-    def StartConditionTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddConditionTypeLength(builder, ConditionTypeLength): builder.PrependInt32Slot(6, ConditionTypeLength, 0)
 
 
     @staticmethod
-    def AddConditionValue(builder, ConditionValue): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ConditionValue), 0)
-    @staticmethod
-    def StartConditionValueVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddConditionValueLength(builder, ConditionValueLength): builder.PrependInt32Slot(7, ConditionValueLength, 0)
 

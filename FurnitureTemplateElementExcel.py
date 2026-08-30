@@ -20,14 +20,14 @@ class FurnitureTemplateElementExcel:
     def FurnitureTemplateId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FurnitureId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class FurnitureTemplateElementExcel:
     def Order(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,11 +75,11 @@ class FurnitureTemplateElementExcel:
 
 
     @staticmethod
-    def AddFurnitureTemplateId(builder, FurnitureTemplateId): builder.PrependInt64Slot(0, FurnitureTemplateId, 0)
+    def AddFurnitureTemplateId(builder, FurnitureTemplateId): builder.PrependInt32Slot(0, FurnitureTemplateId, 0)
 
 
     @staticmethod
-    def AddFurnitureId(builder, FurnitureId): builder.PrependInt64Slot(1, FurnitureId, 0)
+    def AddFurnitureId(builder, FurnitureId): builder.PrependInt32Slot(1, FurnitureId, 0)
 
 
     @staticmethod
@@ -99,5 +99,5 @@ class FurnitureTemplateElementExcel:
 
 
     @staticmethod
-    def AddOrder(builder, Order): builder.PrependInt64Slot(6, Order, 0)
+    def AddOrder(builder, Order): builder.PrependInt32Slot(6, Order, 0)
 

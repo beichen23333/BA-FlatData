@@ -20,39 +20,22 @@ class MinigameCCGLevelStageExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def EnemyGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def EnemyGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def EnemyGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def EnemyGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
 
 
     def StageType(self):
@@ -100,14 +83,14 @@ class MinigameCCGLevelStageExcel:
     def RewardCardGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CardRarityGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -121,7 +104,7 @@ class MinigameCCGLevelStageExcel:
     def IntroScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -135,7 +118,7 @@ class MinigameCCGLevelStageExcel:
     def OutroScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -148,17 +131,15 @@ class MinigameCCGLevelStageExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(1, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(1, GroupId, 0)
 
 
     @staticmethod
-    def AddEnemyGroupId(builder, EnemyGroupId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyGroupId), 0)
-    @staticmethod
-    def StartEnemyGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddEnemyGroupIdLength(builder, EnemyGroupIdLength): builder.PrependInt32Slot(2, EnemyGroupIdLength, 0)
 
 
     @staticmethod
@@ -184,11 +165,11 @@ class MinigameCCGLevelStageExcel:
 
 
     @staticmethod
-    def AddRewardCardGroupId(builder, RewardCardGroupId): builder.PrependInt64Slot(9, RewardCardGroupId, 0)
+    def AddRewardCardGroupId(builder, RewardCardGroupId): builder.PrependInt32Slot(9, RewardCardGroupId, 0)
 
 
     @staticmethod
-    def AddCardRarityGroupId(builder, CardRarityGroupId): builder.PrependInt64Slot(10, CardRarityGroupId, 0)
+    def AddCardRarityGroupId(builder, CardRarityGroupId): builder.PrependInt32Slot(10, CardRarityGroupId, 0)
 
 
     @staticmethod
@@ -196,7 +177,7 @@ class MinigameCCGLevelStageExcel:
 
 
     @staticmethod
-    def AddIntroScenarioGroupId(builder, IntroScenarioGroupId): builder.PrependInt64Slot(12, IntroScenarioGroupId, 0)
+    def AddIntroScenarioGroupId(builder, IntroScenarioGroupId): builder.PrependInt32Slot(12, IntroScenarioGroupId, 0)
 
 
     @staticmethod
@@ -204,5 +185,5 @@ class MinigameCCGLevelStageExcel:
 
 
     @staticmethod
-    def AddOutroScenarioGroupId(builder, OutroScenarioGroupId): builder.PrependInt64Slot(14, OutroScenarioGroupId, 0)
+    def AddOutroScenarioGroupId(builder, OutroScenarioGroupId): builder.PrependInt32Slot(14, OutroScenarioGroupId, 0)
 

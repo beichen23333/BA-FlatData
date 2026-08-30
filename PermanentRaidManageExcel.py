@@ -24,26 +24,22 @@ class PermanentRaidManageExcel:
         return 0
 
 
-    def OpenRaidBossGroup(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def OpenRaidBossGroupLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def OpenRaidBossGroupIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
+
+    def HideDifficultyLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
     def OpenDate(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -52,7 +48,7 @@ class PermanentRaidManageExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(3)
+    def Start(builder): builder.StartObject(4)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -62,10 +58,12 @@ class PermanentRaidManageExcel:
 
 
     @staticmethod
-    def AddOpenRaidBossGroup(builder, OpenRaidBossGroup): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(OpenRaidBossGroup), 0)
-    @staticmethod
-    def StartOpenRaidBossGroupVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddOpenRaidBossGroupLength(builder, OpenRaidBossGroupLength): builder.PrependInt32Slot(1, OpenRaidBossGroupLength, 0)
 
 
     @staticmethod
-    def AddOpenDate(builder, OpenDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(OpenDate), 0)
+    def AddHideDifficultyLength(builder, HideDifficultyLength): builder.PrependInt32Slot(2, HideDifficultyLength, 0)
+
+
+    @staticmethod
+    def AddOpenDate(builder, OpenDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(OpenDate), 0)

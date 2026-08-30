@@ -101,46 +101,18 @@ class AudioAnimatorExcel:
         return 0
 
 
-    def AudioClipPath(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def AudioClipPathLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def AudioClipPathIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        return o == 0
-
-
-    def VoiceHash(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Uint32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def VoiceHashAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
-        return 0
 
     def VoiceHashLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def VoiceHashIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        return o == 0
 
 
 
@@ -198,13 +170,9 @@ class AudioAnimatorExcel:
 
 
     @staticmethod
-    def AddAudioClipPath(builder, AudioClipPath): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(AudioClipPath), 0)
-    @staticmethod
-    def StartAudioClipPathVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddAudioClipPathLength(builder, AudioClipPathLength): builder.PrependInt32Slot(12, AudioClipPathLength, 0)
 
 
     @staticmethod
-    def AddVoiceHash(builder, VoiceHash): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(VoiceHash), 0)
-    @staticmethod
-    def StartVoiceHashVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddVoiceHashLength(builder, VoiceHashLength): builder.PrependInt32Slot(13, VoiceHashLength, 0)
 

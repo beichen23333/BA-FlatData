@@ -20,28 +20,28 @@ class StickerPageContentExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StickerGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StickerPageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StickerSlot(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,56 +69,22 @@ class StickerPageContentExcel:
     def StickerGetConditionCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def StickerGetConditionParameter(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def StickerGetConditionParameterAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def StickerGetConditionParameterLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def StickerGetConditionParameterIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        return o == 0
-
-
-    def StickerGetConditionParameterTag(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StickerGetConditionParameterTagAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def StickerGetConditionParameterTagLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def StickerGetConditionParameterTagIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        return o == 0
 
 
     def PackedStickerIconLocalizeEtcId(self):
@@ -158,19 +124,19 @@ class StickerPageContentExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddStickerGroupId(builder, StickerGroupId): builder.PrependInt64Slot(1, StickerGroupId, 0)
+    def AddStickerGroupId(builder, StickerGroupId): builder.PrependInt32Slot(1, StickerGroupId, 0)
 
 
     @staticmethod
-    def AddStickerPageId(builder, StickerPageId): builder.PrependInt64Slot(2, StickerPageId, 0)
+    def AddStickerPageId(builder, StickerPageId): builder.PrependInt32Slot(2, StickerPageId, 0)
 
 
     @staticmethod
-    def AddStickerSlot(builder, StickerSlot): builder.PrependInt64Slot(3, StickerSlot, 0)
+    def AddStickerSlot(builder, StickerSlot): builder.PrependInt32Slot(3, StickerSlot, 0)
 
 
     @staticmethod
@@ -186,19 +152,15 @@ class StickerPageContentExcel:
 
 
     @staticmethod
-    def AddStickerGetConditionCount(builder, StickerGetConditionCount): builder.PrependInt64Slot(7, StickerGetConditionCount, 0)
+    def AddStickerGetConditionCount(builder, StickerGetConditionCount): builder.PrependInt32Slot(7, StickerGetConditionCount, 0)
 
 
     @staticmethod
-    def AddStickerGetConditionParameter(builder, StickerGetConditionParameter): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(StickerGetConditionParameter), 0)
-    @staticmethod
-    def StartStickerGetConditionParameterVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddStickerGetConditionParameterLength(builder, StickerGetConditionParameterLength): builder.PrependInt32Slot(8, StickerGetConditionParameterLength, 0)
 
 
     @staticmethod
-    def AddStickerGetConditionParameterTag(builder, StickerGetConditionParameterTag): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(StickerGetConditionParameterTag), 0)
-    @staticmethod
-    def StartStickerGetConditionParameterTagVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStickerGetConditionParameterTagLength(builder, StickerGetConditionParameterTagLength): builder.PrependInt32Slot(9, StickerGetConditionParameterTagLength, 0)
 
 
     @staticmethod
