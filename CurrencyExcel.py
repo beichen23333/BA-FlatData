@@ -20,7 +20,7 @@ class CurrencyExcel:
     def ID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,14 +90,14 @@ class CurrencyExcel:
     def ChargeLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OverChargeLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -118,32 +118,15 @@ class CurrencyExcel:
     def DailyRefillAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def DailyRefillTime(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def DailyRefillTimeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def DailyRefillTimeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def DailyRefillTimeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        return o == 0
 
 
     def ExpirationDateTime(self):
@@ -170,14 +153,14 @@ class CurrencyExcel:
     def ExpiryChangeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ExpiryChangeAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -191,7 +174,7 @@ class CurrencyExcel:
     def ResetAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -204,7 +187,7 @@ class CurrencyExcel:
 
 
     @staticmethod
-    def AddID(builder, ID): builder.PrependInt64Slot(0, ID, 0)
+    def AddID(builder, ID): builder.PrependInt32Slot(0, ID, 0)
 
 
     @staticmethod
@@ -242,11 +225,11 @@ class CurrencyExcel:
 
 
     @staticmethod
-    def AddChargeLimit(builder, ChargeLimit): builder.PrependInt64Slot(10, ChargeLimit, 0)
+    def AddChargeLimit(builder, ChargeLimit): builder.PrependInt32Slot(10, ChargeLimit, 0)
 
 
     @staticmethod
-    def AddOverChargeLimit(builder, OverChargeLimit): builder.PrependInt64Slot(11, OverChargeLimit, 0)
+    def AddOverChargeLimit(builder, OverChargeLimit): builder.PrependInt32Slot(11, OverChargeLimit, 0)
 
 
     @staticmethod
@@ -257,13 +240,11 @@ class CurrencyExcel:
 
 
     @staticmethod
-    def AddDailyRefillAmount(builder, DailyRefillAmount): builder.PrependInt64Slot(14, DailyRefillAmount, 0)
+    def AddDailyRefillAmount(builder, DailyRefillAmount): builder.PrependInt32Slot(14, DailyRefillAmount, 0)
 
 
     @staticmethod
-    def AddDailyRefillTime(builder, DailyRefillTime): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(DailyRefillTime), 0)
-    @staticmethod
-    def StartDailyRefillTimeVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddDailyRefillTimeLength(builder, DailyRefillTimeLength): builder.PrependInt32Slot(15, DailyRefillTimeLength, 0)
 
 
     @staticmethod
@@ -278,11 +259,11 @@ class CurrencyExcel:
 
 
     @staticmethod
-    def AddExpiryChangeId(builder, ExpiryChangeId): builder.PrependInt64Slot(19, ExpiryChangeId, 0)
+    def AddExpiryChangeId(builder, ExpiryChangeId): builder.PrependInt32Slot(19, ExpiryChangeId, 0)
 
 
     @staticmethod
-    def AddExpiryChangeAmount(builder, ExpiryChangeAmount): builder.PrependInt64Slot(20, ExpiryChangeAmount, 0)
+    def AddExpiryChangeAmount(builder, ExpiryChangeAmount): builder.PrependInt32Slot(20, ExpiryChangeAmount, 0)
 
 
     @staticmethod
@@ -290,5 +271,5 @@ class CurrencyExcel:
 
 
     @staticmethod
-    def AddResetAmount(builder, ResetAmount): builder.PrependInt64Slot(22, ResetAmount, 0)
+    def AddResetAmount(builder, ResetAmount): builder.PrependInt32Slot(22, ResetAmount, 0)
 

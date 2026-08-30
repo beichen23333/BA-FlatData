@@ -20,7 +20,7 @@ class FarmingDungeonLocationManageExcel:
     def FarmingDungeonLocationId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class FarmingDungeonLocationManageExcel:
     def WeekDungeonType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class FarmingDungeonLocationManageExcel:
     def Order(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -96,7 +96,7 @@ class FarmingDungeonLocationManageExcel:
 
 
     @staticmethod
-    def AddFarmingDungeonLocationId(builder, FarmingDungeonLocationId): builder.PrependInt64Slot(0, FarmingDungeonLocationId, 0)
+    def AddFarmingDungeonLocationId(builder, FarmingDungeonLocationId): builder.PrependInt32Slot(0, FarmingDungeonLocationId, 0)
 
 
     @staticmethod
@@ -104,7 +104,7 @@ class FarmingDungeonLocationManageExcel:
 
 
     @staticmethod
-    def AddWeekDungeonType(builder, WeekDungeonType): builder.PrependInt32Slot(2, WeekDungeonType, 0)
+    def AddWeekDungeonType(builder, WeekDungeonType): builder.PrependFloat32Slot(2, WeekDungeonType, 0)
 
 
     @staticmethod
@@ -112,7 +112,7 @@ class FarmingDungeonLocationManageExcel:
 
 
     @staticmethod
-    def AddOrder(builder, Order): builder.PrependInt64Slot(4, Order, 0)
+    def AddOrder(builder, Order): builder.PrependInt32Slot(4, Order, 0)
 
 
     @staticmethod

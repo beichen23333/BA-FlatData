@@ -20,14 +20,14 @@ class FieldQuestExcel:
     def FieldSeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,21 +41,21 @@ class FieldQuestExcel:
     def FieldDateId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Opendate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def QuestGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class FieldQuestExcel:
     def RewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -103,11 +103,11 @@ class FieldQuestExcel:
 
 
     @staticmethod
-    def AddFieldSeasonId(builder, FieldSeasonId): builder.PrependInt64Slot(0, FieldSeasonId, 0)
+    def AddFieldSeasonId(builder, FieldSeasonId): builder.PrependInt32Slot(0, FieldSeasonId, 0)
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(1, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(1, UniqueId, 0)
 
 
     @staticmethod
@@ -115,22 +115,22 @@ class FieldQuestExcel:
 
 
     @staticmethod
-    def AddFieldDateId(builder, FieldDateId): builder.PrependInt64Slot(3, FieldDateId, 0)
+    def AddFieldDateId(builder, FieldDateId): builder.PrependInt32Slot(3, FieldDateId, 0)
 
 
     @staticmethod
-    def AddOpendate(builder, Opendate): builder.PrependInt64Slot(4, Opendate, 0)
+    def AddOpendate(builder, Opendate): builder.PrependInt32Slot(4, Opendate, 0)
 
 
     @staticmethod
-    def AddQuestGroupId(builder, QuestGroupId): builder.PrependInt64Slot(5, QuestGroupId, 0)
+    def AddQuestGroupId(builder, QuestGroupId): builder.PrependInt32Slot(5, QuestGroupId, 0)
 
 
     @staticmethod
     def AddAssetPath(builder, AssetPath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(AssetPath), 0)
 
     @staticmethod
-    def AddRewardId(builder, RewardId): builder.PrependInt64Slot(7, RewardId, 0)
+    def AddRewardId(builder, RewardId): builder.PrependInt32Slot(7, RewardId, 0)
 
 
     @staticmethod

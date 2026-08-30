@@ -20,28 +20,28 @@ class PickupFirstGetBonus2Excel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShopRecruitId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RecruitSellectionShopId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PickupCharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,39 +55,46 @@ class PickupFirstGetBonus2Excel:
     def RewardParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ShopCashIdsLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(7)
+    def Start(builder): builder.StartObject(8)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddShopRecruitId(builder, ShopRecruitId): builder.PrependInt64Slot(1, ShopRecruitId, 0)
+    def AddShopRecruitId(builder, ShopRecruitId): builder.PrependInt32Slot(1, ShopRecruitId, 0)
 
 
     @staticmethod
-    def AddRecruitSellectionShopId(builder, RecruitSellectionShopId): builder.PrependInt64Slot(2, RecruitSellectionShopId, 0)
+    def AddRecruitSellectionShopId(builder, RecruitSellectionShopId): builder.PrependInt32Slot(2, RecruitSellectionShopId, 0)
 
 
     @staticmethod
-    def AddPickupCharacterId(builder, PickupCharacterId): builder.PrependInt64Slot(3, PickupCharacterId, 0)
+    def AddPickupCharacterId(builder, PickupCharacterId): builder.PrependInt32Slot(3, PickupCharacterId, 0)
 
 
     @staticmethod
@@ -95,9 +102,13 @@ class PickupFirstGetBonus2Excel:
 
 
     @staticmethod
-    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt64Slot(5, RewardParcelId, 0)
+    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt32Slot(5, RewardParcelId, 0)
 
 
     @staticmethod
-    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt64Slot(6, RewardParcelAmount, 0)
+    def AddRewardParcelAmount(builder, RewardParcelAmount): builder.PrependInt32Slot(6, RewardParcelAmount, 0)
+
+
+    @staticmethod
+    def AddShopCashIdsLength(builder, ShopCashIdsLength): builder.PrependInt32Slot(7, ShopCashIdsLength, 0)
 

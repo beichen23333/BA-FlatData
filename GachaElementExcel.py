@@ -20,14 +20,14 @@ class GachaElementExcel:
     def ID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GachaGroupID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class GachaElementExcel:
     def ParcelID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -89,11 +89,11 @@ class GachaElementExcel:
 
 
     @staticmethod
-    def AddID(builder, ID): builder.PrependInt64Slot(0, ID, 0)
+    def AddID(builder, ID): builder.PrependInt32Slot(0, ID, 0)
 
 
     @staticmethod
-    def AddGachaGroupID(builder, GachaGroupID): builder.PrependInt64Slot(1, GachaGroupID, 0)
+    def AddGachaGroupID(builder, GachaGroupID): builder.PrependInt32Slot(1, GachaGroupID, 0)
 
 
     @staticmethod
@@ -101,7 +101,7 @@ class GachaElementExcel:
 
 
     @staticmethod
-    def AddParcelID(builder, ParcelID): builder.PrependInt64Slot(3, ParcelID, 0)
+    def AddParcelID(builder, ParcelID): builder.PrependInt32Slot(3, ParcelID, 0)
 
 
     @staticmethod

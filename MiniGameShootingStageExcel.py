@@ -20,38 +20,21 @@ class MiniGameShootingStageExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def BgmId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def BgmIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def BgmIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def BgmIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
 
 
     def CostGoodsId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -79,14 +62,14 @@ class MiniGameShootingStageExcel:
     def StartBattleDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefaultBattleDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -107,7 +90,7 @@ class MiniGameShootingStageExcel:
     def EventContentStageRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -120,17 +103,15 @@ class MiniGameShootingStageExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
-    def AddBgmId(builder, BgmId): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(BgmId), 0)
-    @staticmethod
-    def StartBgmIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddBgmIdLength(builder, BgmIdLength): builder.PrependInt32Slot(1, BgmIdLength, 0)
 
 
     @staticmethod
-    def AddCostGoodsId(builder, CostGoodsId): builder.PrependInt64Slot(2, CostGoodsId, 0)
+    def AddCostGoodsId(builder, CostGoodsId): builder.PrependInt32Slot(2, CostGoodsId, 0)
 
 
     @staticmethod
@@ -144,11 +125,11 @@ class MiniGameShootingStageExcel:
     def AddArtLevel(builder, ArtLevel): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ArtLevel), 0)
 
     @staticmethod
-    def AddStartBattleDuration(builder, StartBattleDuration): builder.PrependInt64Slot(6, StartBattleDuration, 0)
+    def AddStartBattleDuration(builder, StartBattleDuration): builder.PrependInt32Slot(6, StartBattleDuration, 0)
 
 
     @staticmethod
-    def AddDefaultBattleDuration(builder, DefaultBattleDuration): builder.PrependInt64Slot(7, DefaultBattleDuration, 0)
+    def AddDefaultBattleDuration(builder, DefaultBattleDuration): builder.PrependInt32Slot(7, DefaultBattleDuration, 0)
 
 
     @staticmethod
@@ -159,5 +140,5 @@ class MiniGameShootingStageExcel:
 
 
     @staticmethod
-    def AddEventContentStageRewardId(builder, EventContentStageRewardId): builder.PrependInt64Slot(10, EventContentStageRewardId, 0)
+    def AddEventContentStageRewardId(builder, EventContentStageRewardId): builder.PrependInt32Slot(10, EventContentStageRewardId, 0)
 

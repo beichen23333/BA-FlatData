@@ -20,7 +20,7 @@ class ObstacleExcel:
     def Index(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -38,28 +38,11 @@ class ObstacleExcel:
         return 0
 
 
-    def SubOffset(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def SubOffsetAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
-        return 0
-
     def SubOffsetLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def SubOffsetIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
 
 
     def X(self):
@@ -79,14 +62,14 @@ class ObstacleExcel:
     def Hp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MaxHp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -111,124 +94,39 @@ class ObstacleExcel:
         return 0
 
 
-    def Point1Offeset(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def Point1OffesetAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
-        return 0
-
     def Point1OffesetLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def Point1OffesetIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        return o == 0
-
-
-    def EnemyPoint1Osset(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def EnemyPoint1OssetAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
-        return 0
 
     def EnemyPoint1OssetLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def EnemyPoint1OssetIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        return o == 0
-
-
-    def Point2Offeset(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def Point2OffesetAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
-        return 0
 
     def Point2OffesetLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def Point2OffesetIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        return o == 0
-
-
-    def EnemyPoint2Osset(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def EnemyPoint2OssetAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
-        return 0
 
     def EnemyPoint2OssetLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def EnemyPoint2OssetIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        return o == 0
-
-
-    def SubObstacleID(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def SubObstacleIDAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def SubObstacleIDLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def SubObstacleIDIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        return o == 0
 
 
 
@@ -240,7 +138,7 @@ class ObstacleExcel:
 
 
     @staticmethod
-    def AddIndex(builder, Index): builder.PrependInt64Slot(0, Index, 0)
+    def AddIndex(builder, Index): builder.PrependInt32Slot(0, Index, 0)
 
 
     @staticmethod
@@ -251,9 +149,7 @@ class ObstacleExcel:
 
 
     @staticmethod
-    def AddSubOffset(builder, SubOffset): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(SubOffset), 0)
-    @staticmethod
-    def StartSubOffsetVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddSubOffsetLength(builder, SubOffsetLength): builder.PrependInt32Slot(3, SubOffsetLength, 0)
 
 
     @staticmethod
@@ -265,11 +161,11 @@ class ObstacleExcel:
 
 
     @staticmethod
-    def AddHp(builder, Hp): builder.PrependInt64Slot(6, Hp, 0)
+    def AddHp(builder, Hp): builder.PrependInt32Slot(6, Hp, 0)
 
 
     @staticmethod
-    def AddMaxHp(builder, MaxHp): builder.PrependInt64Slot(7, MaxHp, 0)
+    def AddMaxHp(builder, MaxHp): builder.PrependInt32Slot(7, MaxHp, 0)
 
 
     @staticmethod
@@ -285,31 +181,21 @@ class ObstacleExcel:
 
 
     @staticmethod
-    def AddPoint1Offeset(builder, Point1Offeset): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(Point1Offeset), 0)
-    @staticmethod
-    def StartPoint1OffesetVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddPoint1OffesetLength(builder, Point1OffesetLength): builder.PrependInt32Slot(11, Point1OffesetLength, 0)
 
 
     @staticmethod
-    def AddEnemyPoint1Osset(builder, EnemyPoint1Osset): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPoint1Osset), 0)
-    @staticmethod
-    def StartEnemyPoint1OssetVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddEnemyPoint1OssetLength(builder, EnemyPoint1OssetLength): builder.PrependInt32Slot(12, EnemyPoint1OssetLength, 0)
 
 
     @staticmethod
-    def AddPoint2Offeset(builder, Point2Offeset): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(Point2Offeset), 0)
-    @staticmethod
-    def StartPoint2OffesetVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddPoint2OffesetLength(builder, Point2OffesetLength): builder.PrependInt32Slot(13, Point2OffesetLength, 0)
 
 
     @staticmethod
-    def AddEnemyPoint2Osset(builder, EnemyPoint2Osset): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(EnemyPoint2Osset), 0)
-    @staticmethod
-    def StartEnemyPoint2OssetVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddEnemyPoint2OssetLength(builder, EnemyPoint2OssetLength): builder.PrependInt32Slot(14, EnemyPoint2OssetLength, 0)
 
 
     @staticmethod
-    def AddSubObstacleID(builder, SubObstacleID): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(SubObstacleID), 0)
-    @staticmethod
-    def StartSubObstacleIDVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddSubObstacleIDLength(builder, SubObstacleIDLength): builder.PrependInt32Slot(15, SubObstacleIDLength, 0)
 

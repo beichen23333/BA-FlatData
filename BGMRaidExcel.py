@@ -20,21 +20,21 @@ class BGMRaidExcel:
     def StageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PhaseIndex(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BGMId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -47,13 +47,13 @@ class BGMRaidExcel:
 
 
     @staticmethod
-    def AddStageId(builder, StageId): builder.PrependInt64Slot(0, StageId, 0)
+    def AddStageId(builder, StageId): builder.PrependInt32Slot(0, StageId, 0)
 
 
     @staticmethod
-    def AddPhaseIndex(builder, PhaseIndex): builder.PrependInt64Slot(1, PhaseIndex, 0)
+    def AddPhaseIndex(builder, PhaseIndex): builder.PrependInt32Slot(1, PhaseIndex, 0)
 
 
     @staticmethod
-    def AddBGMId(builder, BGMId): builder.PrependInt64Slot(2, BGMId, 0)
+    def AddBGMId(builder, BGMId): builder.PrependInt32Slot(2, BGMId, 0)
 

@@ -20,7 +20,7 @@ class EventContentDiceRaceProbExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class EventContentDiceRaceProbExcel:
     def CostItemId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,7 +68,7 @@ class EventContentDiceRaceProbExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
@@ -76,7 +76,7 @@ class EventContentDiceRaceProbExcel:
 
 
     @staticmethod
-    def AddCostItemId(builder, CostItemId): builder.PrependInt64Slot(2, CostItemId, 0)
+    def AddCostItemId(builder, CostItemId): builder.PrependInt32Slot(2, CostItemId, 0)
 
 
     @staticmethod

@@ -20,14 +20,14 @@ class FieldMasteryExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class FieldMasteryExcel:
     def ExpAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,14 +55,14 @@ class FieldMasteryExcel:
     def TokenId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def TokenRequirement(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,7 +76,7 @@ class FieldMasteryExcel:
     def AccomplishmentConditionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -89,11 +89,11 @@ class FieldMasteryExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
-    def AddSeasonId(builder, SeasonId): builder.PrependInt64Slot(1, SeasonId, 0)
+    def AddSeasonId(builder, SeasonId): builder.PrependInt32Slot(1, SeasonId, 0)
 
 
     @staticmethod
@@ -101,7 +101,7 @@ class FieldMasteryExcel:
 
 
     @staticmethod
-    def AddExpAmount(builder, ExpAmount): builder.PrependInt64Slot(3, ExpAmount, 0)
+    def AddExpAmount(builder, ExpAmount): builder.PrependInt32Slot(3, ExpAmount, 0)
 
 
     @staticmethod
@@ -109,11 +109,11 @@ class FieldMasteryExcel:
 
 
     @staticmethod
-    def AddTokenId(builder, TokenId): builder.PrependInt64Slot(5, TokenId, 0)
+    def AddTokenId(builder, TokenId): builder.PrependInt32Slot(5, TokenId, 0)
 
 
     @staticmethod
-    def AddTokenRequirement(builder, TokenRequirement): builder.PrependInt64Slot(6, TokenRequirement, 0)
+    def AddTokenRequirement(builder, TokenRequirement): builder.PrependInt32Slot(6, TokenRequirement, 0)
 
 
     @staticmethod
@@ -121,5 +121,5 @@ class FieldMasteryExcel:
 
 
     @staticmethod
-    def AddAccomplishmentConditionId(builder, AccomplishmentConditionId): builder.PrependInt64Slot(8, AccomplishmentConditionId, 0)
+    def AddAccomplishmentConditionId(builder, AccomplishmentConditionId): builder.PrependInt32Slot(8, AccomplishmentConditionId, 0)
 

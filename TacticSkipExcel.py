@@ -27,7 +27,7 @@ class TacticSkipExcel:
     def HPResult(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -44,5 +44,5 @@ class TacticSkipExcel:
 
 
     @staticmethod
-    def AddHPResult(builder, HPResult): builder.PrependInt64Slot(1, HPResult, 0)
+    def AddHPResult(builder, HPResult): builder.PrependInt32Slot(1, HPResult, 0)
 

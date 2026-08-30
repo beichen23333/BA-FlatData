@@ -20,21 +20,21 @@ class EquipmentChangePieceExcel:
     def EquipmentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChangeEquipmentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChangeAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -47,13 +47,13 @@ class EquipmentChangePieceExcel:
 
 
     @staticmethod
-    def AddEquipmentId(builder, EquipmentId): builder.PrependInt64Slot(0, EquipmentId, 0)
+    def AddEquipmentId(builder, EquipmentId): builder.PrependInt32Slot(0, EquipmentId, 0)
 
 
     @staticmethod
-    def AddChangeEquipmentId(builder, ChangeEquipmentId): builder.PrependInt64Slot(1, ChangeEquipmentId, 0)
+    def AddChangeEquipmentId(builder, ChangeEquipmentId): builder.PrependInt32Slot(1, ChangeEquipmentId, 0)
 
 
     @staticmethod
-    def AddChangeAmount(builder, ChangeAmount): builder.PrependInt64Slot(2, ChangeAmount, 0)
+    def AddChangeAmount(builder, ChangeAmount): builder.PrependInt32Slot(2, ChangeAmount, 0)
 

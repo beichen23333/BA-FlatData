@@ -24,47 +24,25 @@ class OpenConditionExcel:
         return 0
 
 
-    def LockUI(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def LockUILength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def LockUIIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
 
 
     def ShortcutPopupPriority(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def ShortcutUIName(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def ShortcutUINameLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ShortcutUINameIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
-        return o == 0
 
 
     def ShortcutParam(self):
@@ -91,21 +69,21 @@ class OpenConditionExcel:
     def AccountLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScenarioModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CampaignStageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -126,7 +104,7 @@ class OpenConditionExcel:
     def OpenHour(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -140,28 +118,28 @@ class OpenConditionExcel:
     def CloseHour(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenedCafeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CafeIdforCafeRank(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CafeRank(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -192,19 +170,15 @@ class OpenConditionExcel:
 
 
     @staticmethod
-    def AddLockUI(builder, LockUI): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(LockUI), 0)
-    @staticmethod
-    def StartLockUIVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddLockUILength(builder, LockUILength): builder.PrependInt32Slot(1, LockUILength, 0)
 
 
     @staticmethod
-    def AddShortcutPopupPriority(builder, ShortcutPopupPriority): builder.PrependInt64Slot(2, ShortcutPopupPriority, 0)
+    def AddShortcutPopupPriority(builder, ShortcutPopupPriority): builder.PrependInt32Slot(2, ShortcutPopupPriority, 0)
 
 
     @staticmethod
-    def AddShortcutUIName(builder, ShortcutUIName): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(ShortcutUIName), 0)
-    @staticmethod
-    def StartShortcutUINameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddShortcutUINameLength(builder, ShortcutUINameLength): builder.PrependInt32Slot(3, ShortcutUINameLength, 0)
 
 
     @staticmethod
@@ -219,15 +193,15 @@ class OpenConditionExcel:
 
 
     @staticmethod
-    def AddAccountLevel(builder, AccountLevel): builder.PrependInt64Slot(7, AccountLevel, 0)
+    def AddAccountLevel(builder, AccountLevel): builder.PrependInt32Slot(7, AccountLevel, 0)
 
 
     @staticmethod
-    def AddScenarioModeId(builder, ScenarioModeId): builder.PrependInt64Slot(8, ScenarioModeId, 0)
+    def AddScenarioModeId(builder, ScenarioModeId): builder.PrependInt32Slot(8, ScenarioModeId, 0)
 
 
     @staticmethod
-    def AddCampaignStageId(builder, CampaignStageId): builder.PrependInt64Slot(9, CampaignStageId, 0)
+    def AddCampaignStageId(builder, CampaignStageId): builder.PrependInt32Slot(9, CampaignStageId, 0)
 
 
     @staticmethod
@@ -239,7 +213,7 @@ class OpenConditionExcel:
 
 
     @staticmethod
-    def AddOpenHour(builder, OpenHour): builder.PrependInt64Slot(12, OpenHour, 0)
+    def AddOpenHour(builder, OpenHour): builder.PrependInt32Slot(12, OpenHour, 0)
 
 
     @staticmethod
@@ -247,19 +221,19 @@ class OpenConditionExcel:
 
 
     @staticmethod
-    def AddCloseHour(builder, CloseHour): builder.PrependInt64Slot(14, CloseHour, 0)
+    def AddCloseHour(builder, CloseHour): builder.PrependInt32Slot(14, CloseHour, 0)
 
 
     @staticmethod
-    def AddOpenedCafeId(builder, OpenedCafeId): builder.PrependInt64Slot(15, OpenedCafeId, 0)
+    def AddOpenedCafeId(builder, OpenedCafeId): builder.PrependInt32Slot(15, OpenedCafeId, 0)
 
 
     @staticmethod
-    def AddCafeIdforCafeRank(builder, CafeIdforCafeRank): builder.PrependInt64Slot(16, CafeIdforCafeRank, 0)
+    def AddCafeIdforCafeRank(builder, CafeIdforCafeRank): builder.PrependInt32Slot(16, CafeIdforCafeRank, 0)
 
 
     @staticmethod
-    def AddCafeRank(builder, CafeRank): builder.PrependInt64Slot(17, CafeRank, 0)
+    def AddCafeRank(builder, CafeRank): builder.PrependInt32Slot(17, CafeRank, 0)
 
 
     @staticmethod

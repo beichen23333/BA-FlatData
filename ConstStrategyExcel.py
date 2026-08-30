@@ -59,28 +59,11 @@ class ConstStrategyExcel:
         return 0
 
 
-    def HealCostAmount(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def HealCostAmountAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def HealCostAmountLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def HealCostAmountIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
 
 
     def CanHealHpRate(self):
@@ -93,7 +76,7 @@ class ConstStrategyExcel:
     def PlayTimeLimitInSeconds(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -202,10 +185,17 @@ class ConstStrategyExcel:
         return 0
 
 
+    def TacticalRelayEchelonCount(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(24)
+    def Start(builder): builder.StartObject(25)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -235,9 +225,7 @@ class ConstStrategyExcel:
 
 
     @staticmethod
-    def AddHealCostAmount(builder, HealCostAmount): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(HealCostAmount), 0)
-    @staticmethod
-    def StartHealCostAmountVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddHealCostAmountLength(builder, HealCostAmountLength): builder.PrependInt32Slot(6, HealCostAmountLength, 0)
 
 
     @staticmethod
@@ -245,7 +233,7 @@ class ConstStrategyExcel:
 
 
     @staticmethod
-    def AddPlayTimeLimitInSeconds(builder, PlayTimeLimitInSeconds): builder.PrependInt64Slot(8, PlayTimeLimitInSeconds, 0)
+    def AddPlayTimeLimitInSeconds(builder, PlayTimeLimitInSeconds): builder.PrependInt32Slot(8, PlayTimeLimitInSeconds, 0)
 
 
     @staticmethod
@@ -306,4 +294,8 @@ class ConstStrategyExcel:
 
     @staticmethod
     def AddMultiSweepPresetSelectParcelMaxCount(builder, MultiSweepPresetSelectParcelMaxCount): builder.PrependInt32Slot(23, MultiSweepPresetSelectParcelMaxCount, 0)
+
+
+    @staticmethod
+    def AddTacticalRelayEchelonCount(builder, TacticalRelayEchelonCount): builder.PrependInt32Slot(24, TacticalRelayEchelonCount, 0)
 

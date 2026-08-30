@@ -20,14 +20,14 @@ class EventContentShopExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class EventContentShopExcel:
     def CategoryType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -52,34 +52,17 @@ class EventContentShopExcel:
         return 0
 
 
-    def GoodsId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def GoodsIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def GoodsIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def GoodsIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
 
 
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -100,14 +83,14 @@ class EventContentShopExcel:
     def PurchaseCooltimeMin(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PurchaseCountLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -141,11 +124,11 @@ class EventContentShopExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(1, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(1, Id, 0)
 
 
     @staticmethod
@@ -153,7 +136,7 @@ class EventContentShopExcel:
 
 
     @staticmethod
-    def AddCategoryType(builder, CategoryType): builder.PrependInt32Slot(3, CategoryType, 0)
+    def AddCategoryType(builder, CategoryType): builder.PrependFloat32Slot(3, CategoryType, 0)
 
 
     @staticmethod
@@ -161,13 +144,11 @@ class EventContentShopExcel:
 
 
     @staticmethod
-    def AddGoodsId(builder, GoodsId): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(GoodsId), 0)
-    @staticmethod
-    def StartGoodsIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddGoodsIdLength(builder, GoodsIdLength): builder.PrependInt32Slot(5, GoodsIdLength, 0)
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(6, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(6, DisplayOrder, 0)
 
 
     @staticmethod
@@ -177,11 +158,11 @@ class EventContentShopExcel:
     def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
 
     @staticmethod
-    def AddPurchaseCooltimeMin(builder, PurchaseCooltimeMin): builder.PrependInt64Slot(9, PurchaseCooltimeMin, 0)
+    def AddPurchaseCooltimeMin(builder, PurchaseCooltimeMin): builder.PrependInt32Slot(9, PurchaseCooltimeMin, 0)
 
 
     @staticmethod
-    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt64Slot(10, PurchaseCountLimit, 0)
+    def AddPurchaseCountLimit(builder, PurchaseCountLimit): builder.PrependInt32Slot(10, PurchaseCountLimit, 0)
 
 
     @staticmethod

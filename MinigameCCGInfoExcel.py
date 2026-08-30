@@ -20,14 +20,14 @@ class MinigameCCGInfoExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CCGId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class MinigameCCGInfoExcel:
     def CostParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class MinigameCCGInfoExcel:
     def PerkCostParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -82,11 +82,11 @@ class MinigameCCGInfoExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddCCGId(builder, CCGId): builder.PrependInt64Slot(1, CCGId, 0)
+    def AddCCGId(builder, CCGId): builder.PrependInt32Slot(1, CCGId, 0)
 
 
     @staticmethod
@@ -94,7 +94,7 @@ class MinigameCCGInfoExcel:
 
 
     @staticmethod
-    def AddCostParcelId(builder, CostParcelId): builder.PrependInt64Slot(3, CostParcelId, 0)
+    def AddCostParcelId(builder, CostParcelId): builder.PrependInt32Slot(3, CostParcelId, 0)
 
 
     @staticmethod
@@ -109,5 +109,5 @@ class MinigameCCGInfoExcel:
 
 
     @staticmethod
-    def AddPerkCostParcelId(builder, PerkCostParcelId): builder.PrependInt64Slot(7, PerkCostParcelId, 0)
+    def AddPerkCostParcelId(builder, PerkCostParcelId): builder.PrependInt32Slot(7, PerkCostParcelId, 0)
 

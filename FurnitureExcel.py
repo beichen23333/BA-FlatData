@@ -20,7 +20,7 @@ class FurnitureExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,7 +76,7 @@ class FurnitureExcel:
     def Tier(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -167,94 +167,77 @@ class FurnitureExcel:
     def StackableMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RecipeCraftId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SetGroudpId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ComfortBonus(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def VisitOperationType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def VisitBonusOperationType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def Tags(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def TagsAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def TagsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def TagsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
-        return o == 0
 
 
     def CraftQualityTier0(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CraftQualityTier1(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CraftQualityTier2(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShiftingCraftQuality(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -265,128 +248,67 @@ class FurnitureExcel:
         return 0
 
 
-    def FurnitureFunctionParameter(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def FurnitureFunctionParameterAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def FurnitureFunctionParameterLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def FurnitureFunctionParameterIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
-        return o == 0
 
 
     def VideoId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventCollectionId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FurnitureBubbleOffsetX(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FurnitureBubbleOffsetY(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def CafeCharacterStateReq(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def CafeCharacterStateReqLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def CafeCharacterStateReqIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        return o == 0
-
-
-    def CafeCharacterStateAdd(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def CafeCharacterStateAddLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def CafeCharacterStateAddIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
-        return o == 0
-
-
-    def CafeCharacterStateMake(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def CafeCharacterStateMakeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def CafeCharacterStateMakeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
-        return o == 0
-
-
-    def CafeCharacterStateOnly(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def CafeCharacterStateOnlyLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def CafeCharacterStateOnlyIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
-        return o == 0
 
 
     def HideCraftShortcut(self):
@@ -405,7 +327,7 @@ class FurnitureExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -437,7 +359,7 @@ class FurnitureExcel:
 
 
     @staticmethod
-    def AddTier(builder, Tier): builder.PrependInt64Slot(8, Tier, 0)
+    def AddTier(builder, Tier): builder.PrependInt32Slot(8, Tier, 0)
 
 
     @staticmethod
@@ -483,49 +405,47 @@ class FurnitureExcel:
     def AddCornerPrefab(builder, CornerPrefab): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(CornerPrefab), 0)
 
     @staticmethod
-    def AddStackableMax(builder, StackableMax): builder.PrependInt64Slot(21, StackableMax, 0)
+    def AddStackableMax(builder, StackableMax): builder.PrependInt32Slot(21, StackableMax, 0)
 
 
     @staticmethod
-    def AddRecipeCraftId(builder, RecipeCraftId): builder.PrependInt64Slot(22, RecipeCraftId, 0)
+    def AddRecipeCraftId(builder, RecipeCraftId): builder.PrependInt32Slot(22, RecipeCraftId, 0)
 
 
     @staticmethod
-    def AddSetGroudpId(builder, SetGroudpId): builder.PrependInt64Slot(23, SetGroudpId, 0)
+    def AddSetGroudpId(builder, SetGroudpId): builder.PrependInt32Slot(23, SetGroudpId, 0)
 
 
     @staticmethod
-    def AddComfortBonus(builder, ComfortBonus): builder.PrependInt64Slot(24, ComfortBonus, 0)
+    def AddComfortBonus(builder, ComfortBonus): builder.PrependInt32Slot(24, ComfortBonus, 0)
 
 
     @staticmethod
-    def AddVisitOperationType(builder, VisitOperationType): builder.PrependInt64Slot(25, VisitOperationType, 0)
+    def AddVisitOperationType(builder, VisitOperationType): builder.PrependInt32Slot(25, VisitOperationType, 0)
 
 
     @staticmethod
-    def AddVisitBonusOperationType(builder, VisitBonusOperationType): builder.PrependInt64Slot(26, VisitBonusOperationType, 0)
+    def AddVisitBonusOperationType(builder, VisitBonusOperationType): builder.PrependInt32Slot(26, VisitBonusOperationType, 0)
 
 
     @staticmethod
-    def AddTags(builder, Tags): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(Tags), 0)
-    @staticmethod
-    def StartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(27, TagsLength, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier0(builder, CraftQualityTier0): builder.PrependInt64Slot(28, CraftQualityTier0, 0)
+    def AddCraftQualityTier0(builder, CraftQualityTier0): builder.PrependInt32Slot(28, CraftQualityTier0, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier1(builder, CraftQualityTier1): builder.PrependInt64Slot(29, CraftQualityTier1, 0)
+    def AddCraftQualityTier1(builder, CraftQualityTier1): builder.PrependInt32Slot(29, CraftQualityTier1, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier2(builder, CraftQualityTier2): builder.PrependInt64Slot(30, CraftQualityTier2, 0)
+    def AddCraftQualityTier2(builder, CraftQualityTier2): builder.PrependInt32Slot(30, CraftQualityTier2, 0)
 
 
     @staticmethod
-    def AddShiftingCraftQuality(builder, ShiftingCraftQuality): builder.PrependInt64Slot(31, ShiftingCraftQuality, 0)
+    def AddShiftingCraftQuality(builder, ShiftingCraftQuality): builder.PrependInt32Slot(31, ShiftingCraftQuality, 0)
 
 
     @staticmethod
@@ -533,49 +453,39 @@ class FurnitureExcel:
 
 
     @staticmethod
-    def AddFurnitureFunctionParameter(builder, FurnitureFunctionParameter): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(FurnitureFunctionParameter), 0)
-    @staticmethod
-    def StartFurnitureFunctionParameterVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddFurnitureFunctionParameterLength(builder, FurnitureFunctionParameterLength): builder.PrependInt32Slot(33, FurnitureFunctionParameterLength, 0)
 
 
     @staticmethod
-    def AddVideoId(builder, VideoId): builder.PrependInt64Slot(34, VideoId, 0)
+    def AddVideoId(builder, VideoId): builder.PrependInt32Slot(34, VideoId, 0)
 
 
     @staticmethod
-    def AddEventCollectionId(builder, EventCollectionId): builder.PrependInt64Slot(35, EventCollectionId, 0)
+    def AddEventCollectionId(builder, EventCollectionId): builder.PrependInt32Slot(35, EventCollectionId, 0)
 
 
     @staticmethod
-    def AddFurnitureBubbleOffsetX(builder, FurnitureBubbleOffsetX): builder.PrependInt64Slot(36, FurnitureBubbleOffsetX, 0)
+    def AddFurnitureBubbleOffsetX(builder, FurnitureBubbleOffsetX): builder.PrependInt32Slot(36, FurnitureBubbleOffsetX, 0)
 
 
     @staticmethod
-    def AddFurnitureBubbleOffsetY(builder, FurnitureBubbleOffsetY): builder.PrependInt64Slot(37, FurnitureBubbleOffsetY, 0)
+    def AddFurnitureBubbleOffsetY(builder, FurnitureBubbleOffsetY): builder.PrependInt32Slot(37, FurnitureBubbleOffsetY, 0)
 
 
     @staticmethod
-    def AddCafeCharacterStateReq(builder, CafeCharacterStateReq): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(CafeCharacterStateReq), 0)
-    @staticmethod
-    def StartCafeCharacterStateReqVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddCafeCharacterStateReqLength(builder, CafeCharacterStateReqLength): builder.PrependInt32Slot(38, CafeCharacterStateReqLength, 0)
 
 
     @staticmethod
-    def AddCafeCharacterStateAdd(builder, CafeCharacterStateAdd): builder.PrependUOffsetTRelativeSlot(39, flatbuffers.number_types.UOffsetTFlags.py_type(CafeCharacterStateAdd), 0)
-    @staticmethod
-    def StartCafeCharacterStateAddVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddCafeCharacterStateAddLength(builder, CafeCharacterStateAddLength): builder.PrependInt32Slot(39, CafeCharacterStateAddLength, 0)
 
 
     @staticmethod
-    def AddCafeCharacterStateMake(builder, CafeCharacterStateMake): builder.PrependUOffsetTRelativeSlot(40, flatbuffers.number_types.UOffsetTFlags.py_type(CafeCharacterStateMake), 0)
-    @staticmethod
-    def StartCafeCharacterStateMakeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddCafeCharacterStateMakeLength(builder, CafeCharacterStateMakeLength): builder.PrependInt32Slot(40, CafeCharacterStateMakeLength, 0)
 
 
     @staticmethod
-    def AddCafeCharacterStateOnly(builder, CafeCharacterStateOnly): builder.PrependUOffsetTRelativeSlot(41, flatbuffers.number_types.UOffsetTFlags.py_type(CafeCharacterStateOnly), 0)
-    @staticmethod
-    def StartCafeCharacterStateOnlyVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddCafeCharacterStateOnlyLength(builder, CafeCharacterStateOnlyLength): builder.PrependInt32Slot(41, CafeCharacterStateOnlyLength, 0)
 
 
     @staticmethod

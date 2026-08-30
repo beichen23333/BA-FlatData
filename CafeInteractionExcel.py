@@ -20,7 +20,7 @@ class CafeInteractionExcel:
     def CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -45,52 +45,18 @@ class CafeInteractionExcel:
         return None
 
 
-    def BubbleType(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def BubbleTypeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def BubbleTypeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def BubbleTypeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        return o == 0
-
-
-    def BubbleDuration(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def BubbleDurationAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def BubbleDurationLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def BubbleDurationIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
 
 
     def FavorEmoticonRewardParcelType(self):
@@ -103,33 +69,22 @@ class CafeInteractionExcel:
     def FavorEmoticonRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FavorEmoticonRewardAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def CafeCharacterState(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def CafeCharacterStateLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def CafeCharacterStateIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        return o == 0
 
 
 
@@ -141,7 +96,7 @@ class CafeInteractionExcel:
 
 
     @staticmethod
-    def AddCharacterId(builder, CharacterId): builder.PrependInt64Slot(0, CharacterId, 0)
+    def AddCharacterId(builder, CharacterId): builder.PrependInt32Slot(0, CharacterId, 0)
 
 
     @staticmethod
@@ -155,15 +110,11 @@ class CafeInteractionExcel:
     def AddIgnoreIfUnobtainedEndDate(builder, IgnoreIfUnobtainedEndDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(IgnoreIfUnobtainedEndDate), 0)
 
     @staticmethod
-    def AddBubbleType(builder, BubbleType): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(BubbleType), 0)
-    @staticmethod
-    def StartBubbleTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddBubbleTypeLength(builder, BubbleTypeLength): builder.PrependInt32Slot(4, BubbleTypeLength, 0)
 
 
     @staticmethod
-    def AddBubbleDuration(builder, BubbleDuration): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(BubbleDuration), 0)
-    @staticmethod
-    def StartBubbleDurationVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddBubbleDurationLength(builder, BubbleDurationLength): builder.PrependInt32Slot(5, BubbleDurationLength, 0)
 
 
     @staticmethod
@@ -171,15 +122,13 @@ class CafeInteractionExcel:
 
 
     @staticmethod
-    def AddFavorEmoticonRewardId(builder, FavorEmoticonRewardId): builder.PrependInt64Slot(7, FavorEmoticonRewardId, 0)
+    def AddFavorEmoticonRewardId(builder, FavorEmoticonRewardId): builder.PrependInt32Slot(7, FavorEmoticonRewardId, 0)
 
 
     @staticmethod
-    def AddFavorEmoticonRewardAmount(builder, FavorEmoticonRewardAmount): builder.PrependInt64Slot(8, FavorEmoticonRewardAmount, 0)
+    def AddFavorEmoticonRewardAmount(builder, FavorEmoticonRewardAmount): builder.PrependInt32Slot(8, FavorEmoticonRewardAmount, 0)
 
 
     @staticmethod
-    def AddCafeCharacterState(builder, CafeCharacterState): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(CafeCharacterState), 0)
-    @staticmethod
-    def StartCafeCharacterStateVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddCafeCharacterStateLength(builder, CafeCharacterStateLength): builder.PrependInt32Slot(9, CafeCharacterStateLength, 0)
 

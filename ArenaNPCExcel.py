@@ -20,139 +20,71 @@ class ArenaNPCExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Rank(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NPCAccountLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NPCLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NPCLevelDeviation(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NPCStarGrade(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def ExceptionCharacterRarities(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def ExceptionCharacterRaritiesAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def ExceptionCharacterRaritiesLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ExceptionCharacterRaritiesIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
-
-
-    def ExceptionMainCharacterIds(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ExceptionMainCharacterIdsAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ExceptionMainCharacterIdsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ExceptionMainCharacterIdsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        return o == 0
-
-
-    def ExceptionSupportCharacterIds(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ExceptionSupportCharacterIdsAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ExceptionSupportCharacterIdsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ExceptionSupportCharacterIdsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
-        return o == 0
-
-
-    def ExceptionTSSIds(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ExceptionTSSIdsAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ExceptionTSSIdsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ExceptionTSSIdsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        return o == 0
 
 
 
@@ -164,49 +96,41 @@ class ArenaNPCExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
-    def AddRank(builder, Rank): builder.PrependInt64Slot(1, Rank, 0)
+    def AddRank(builder, Rank): builder.PrependInt32Slot(1, Rank, 0)
 
 
     @staticmethod
-    def AddNPCAccountLevel(builder, NPCAccountLevel): builder.PrependInt64Slot(2, NPCAccountLevel, 0)
+    def AddNPCAccountLevel(builder, NPCAccountLevel): builder.PrependInt32Slot(2, NPCAccountLevel, 0)
 
 
     @staticmethod
-    def AddNPCLevel(builder, NPCLevel): builder.PrependInt64Slot(3, NPCLevel, 0)
+    def AddNPCLevel(builder, NPCLevel): builder.PrependInt32Slot(3, NPCLevel, 0)
 
 
     @staticmethod
-    def AddNPCLevelDeviation(builder, NPCLevelDeviation): builder.PrependInt64Slot(4, NPCLevelDeviation, 0)
+    def AddNPCLevelDeviation(builder, NPCLevelDeviation): builder.PrependInt32Slot(4, NPCLevelDeviation, 0)
 
 
     @staticmethod
-    def AddNPCStarGrade(builder, NPCStarGrade): builder.PrependInt64Slot(5, NPCStarGrade, 0)
+    def AddNPCStarGrade(builder, NPCStarGrade): builder.PrependInt32Slot(5, NPCStarGrade, 0)
 
 
     @staticmethod
-    def AddExceptionCharacterRarities(builder, ExceptionCharacterRarities): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(ExceptionCharacterRarities), 0)
-    @staticmethod
-    def StartExceptionCharacterRaritiesVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddExceptionCharacterRaritiesLength(builder, ExceptionCharacterRaritiesLength): builder.PrependInt32Slot(6, ExceptionCharacterRaritiesLength, 0)
 
 
     @staticmethod
-    def AddExceptionMainCharacterIds(builder, ExceptionMainCharacterIds): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ExceptionMainCharacterIds), 0)
-    @staticmethod
-    def StartExceptionMainCharacterIdsVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddExceptionMainCharacterIdsLength(builder, ExceptionMainCharacterIdsLength): builder.PrependInt32Slot(7, ExceptionMainCharacterIdsLength, 0)
 
 
     @staticmethod
-    def AddExceptionSupportCharacterIds(builder, ExceptionSupportCharacterIds): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(ExceptionSupportCharacterIds), 0)
-    @staticmethod
-    def StartExceptionSupportCharacterIdsVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddExceptionSupportCharacterIdsLength(builder, ExceptionSupportCharacterIdsLength): builder.PrependInt32Slot(8, ExceptionSupportCharacterIdsLength, 0)
 
 
     @staticmethod
-    def AddExceptionTSSIds(builder, ExceptionTSSIds): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(ExceptionTSSIds), 0)
-    @staticmethod
-    def StartExceptionTSSIdsVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddExceptionTSSIdsLength(builder, ExceptionTSSIdsLength): builder.PrependInt32Slot(9, ExceptionTSSIdsLength, 0)
 

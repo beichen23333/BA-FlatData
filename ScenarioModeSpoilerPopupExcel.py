@@ -34,14 +34,14 @@ class ScenarioModeSpoilerPopupExcel:
     def VolumeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChapterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,7 +69,7 @@ class ScenarioModeSpoilerPopupExcel:
     def ConditionScenarioModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,11 +90,11 @@ class ScenarioModeSpoilerPopupExcel:
 
 
     @staticmethod
-    def AddVolumeId(builder, VolumeId): builder.PrependInt64Slot(2, VolumeId, 0)
+    def AddVolumeId(builder, VolumeId): builder.PrependInt32Slot(2, VolumeId, 0)
 
 
     @staticmethod
-    def AddChapterId(builder, ChapterId): builder.PrependInt64Slot(3, ChapterId, 0)
+    def AddChapterId(builder, ChapterId): builder.PrependInt32Slot(3, ChapterId, 0)
 
 
     @staticmethod
@@ -110,5 +110,5 @@ class ScenarioModeSpoilerPopupExcel:
 
 
     @staticmethod
-    def AddConditionScenarioModeId(builder, ConditionScenarioModeId): builder.PrependInt64Slot(7, ConditionScenarioModeId, 0)
+    def AddConditionScenarioModeId(builder, ConditionScenarioModeId): builder.PrependInt32Slot(7, ConditionScenarioModeId, 0)
 

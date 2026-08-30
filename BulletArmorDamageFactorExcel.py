@@ -41,7 +41,7 @@ class BulletArmorDamageFactorExcel:
     def DamageRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,14 +55,14 @@ class BulletArmorDamageFactorExcel:
     def MinDamageRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MaxDamageRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -93,7 +93,7 @@ class BulletArmorDamageFactorExcel:
 
 
     @staticmethod
-    def AddDamageRate(builder, DamageRate): builder.PrependInt64Slot(3, DamageRate, 0)
+    def AddDamageRate(builder, DamageRate): builder.PrependInt32Slot(3, DamageRate, 0)
 
 
     @staticmethod
@@ -101,11 +101,11 @@ class BulletArmorDamageFactorExcel:
 
 
     @staticmethod
-    def AddMinDamageRate(builder, MinDamageRate): builder.PrependInt64Slot(5, MinDamageRate, 0)
+    def AddMinDamageRate(builder, MinDamageRate): builder.PrependInt32Slot(5, MinDamageRate, 0)
 
 
     @staticmethod
-    def AddMaxDamageRate(builder, MaxDamageRate): builder.PrependInt64Slot(6, MaxDamageRate, 0)
+    def AddMaxDamageRate(builder, MaxDamageRate): builder.PrependInt32Slot(6, MaxDamageRate, 0)
 
 
     @staticmethod

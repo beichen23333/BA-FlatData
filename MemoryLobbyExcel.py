@@ -20,7 +20,7 @@ class MemoryLobbyExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class MemoryLobbyExcel:
     def CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,7 +76,7 @@ class MemoryLobbyExcel:
     def BGMId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -103,7 +103,7 @@ class MemoryLobbyExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -115,7 +115,7 @@ class MemoryLobbyExcel:
 
 
     @staticmethod
-    def AddCharacterId(builder, CharacterId): builder.PrependInt64Slot(3, CharacterId, 0)
+    def AddCharacterId(builder, CharacterId): builder.PrependInt32Slot(3, CharacterId, 0)
 
 
     @staticmethod
@@ -132,7 +132,7 @@ class MemoryLobbyExcel:
     def AddRewardTextureName(builder, RewardTextureName): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(RewardTextureName), 0)
 
     @staticmethod
-    def AddBGMId(builder, BGMId): builder.PrependInt64Slot(8, BGMId, 0)
+    def AddBGMId(builder, BGMId): builder.PrependInt32Slot(8, BGMId, 0)
 
 
     @staticmethod

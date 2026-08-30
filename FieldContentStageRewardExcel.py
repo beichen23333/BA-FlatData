@@ -20,14 +20,14 @@ class FieldContentStageRewardExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardTag(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class FieldContentStageRewardExcel:
     def RewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,11 +75,11 @@ class FieldContentStageRewardExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
-    def AddRewardTag(builder, RewardTag): builder.PrependInt32Slot(1, RewardTag, 0)
+    def AddRewardTag(builder, RewardTag): builder.PrependFloat32Slot(1, RewardTag, 0)
 
 
     @staticmethod
@@ -91,7 +91,7 @@ class FieldContentStageRewardExcel:
 
 
     @staticmethod
-    def AddRewardId(builder, RewardId): builder.PrependInt64Slot(4, RewardId, 0)
+    def AddRewardId(builder, RewardId): builder.PrependInt32Slot(4, RewardId, 0)
 
 
     @staticmethod

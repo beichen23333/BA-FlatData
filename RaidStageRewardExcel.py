@@ -20,7 +20,7 @@ class RaidStageRewardExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class RaidStageRewardExcel:
     def ClearStageRewardProb(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,14 +48,14 @@ class RaidStageRewardExcel:
     def ClearStageRewardParcelUniqueID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ClearStageRewardAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,7 +68,7 @@ class RaidStageRewardExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
@@ -76,7 +76,7 @@ class RaidStageRewardExcel:
 
 
     @staticmethod
-    def AddClearStageRewardProb(builder, ClearStageRewardProb): builder.PrependInt64Slot(2, ClearStageRewardProb, 0)
+    def AddClearStageRewardProb(builder, ClearStageRewardProb): builder.PrependInt32Slot(2, ClearStageRewardProb, 0)
 
 
     @staticmethod
@@ -84,9 +84,9 @@ class RaidStageRewardExcel:
 
 
     @staticmethod
-    def AddClearStageRewardParcelUniqueID(builder, ClearStageRewardParcelUniqueID): builder.PrependInt64Slot(4, ClearStageRewardParcelUniqueID, 0)
+    def AddClearStageRewardParcelUniqueID(builder, ClearStageRewardParcelUniqueID): builder.PrependInt32Slot(4, ClearStageRewardParcelUniqueID, 0)
 
 
     @staticmethod
-    def AddClearStageRewardAmount(builder, ClearStageRewardAmount): builder.PrependInt64Slot(5, ClearStageRewardAmount, 0)
+    def AddClearStageRewardAmount(builder, ClearStageRewardAmount): builder.PrependInt32Slot(5, ClearStageRewardAmount, 0)
 

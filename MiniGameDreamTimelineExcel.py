@@ -20,49 +20,49 @@ class MiniGameDreamTimelineExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DreamMakerDays(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DreamMakerActionPoint(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EnterScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Bgm(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -89,31 +89,31 @@ class MiniGameDreamTimelineExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(1, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(1, EventContentId, 0)
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(2, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(2, GroupId, 0)
 
 
     @staticmethod
-    def AddDreamMakerDays(builder, DreamMakerDays): builder.PrependInt64Slot(3, DreamMakerDays, 0)
+    def AddDreamMakerDays(builder, DreamMakerDays): builder.PrependInt32Slot(3, DreamMakerDays, 0)
 
 
     @staticmethod
-    def AddDreamMakerActionPoint(builder, DreamMakerActionPoint): builder.PrependInt64Slot(4, DreamMakerActionPoint, 0)
+    def AddDreamMakerActionPoint(builder, DreamMakerActionPoint): builder.PrependInt32Slot(4, DreamMakerActionPoint, 0)
 
 
     @staticmethod
-    def AddEnterScenarioGroupId(builder, EnterScenarioGroupId): builder.PrependInt64Slot(5, EnterScenarioGroupId, 0)
+    def AddEnterScenarioGroupId(builder, EnterScenarioGroupId): builder.PrependInt32Slot(5, EnterScenarioGroupId, 0)
 
 
     @staticmethod
-    def AddBgm(builder, Bgm): builder.PrependInt64Slot(6, Bgm, 0)
+    def AddBgm(builder, Bgm): builder.PrependInt32Slot(6, Bgm, 0)
 
 
     @staticmethod

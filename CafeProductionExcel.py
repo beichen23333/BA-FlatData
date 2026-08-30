@@ -20,14 +20,14 @@ class CafeProductionExcel:
     def CafeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Rank(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,28 +41,28 @@ class CafeProductionExcel:
     def CafeProductionParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ParcelProductionCoefficient(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ParcelProductionCorrectionValue(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ParcelStorageMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,11 +75,11 @@ class CafeProductionExcel:
 
 
     @staticmethod
-    def AddCafeId(builder, CafeId): builder.PrependInt64Slot(0, CafeId, 0)
+    def AddCafeId(builder, CafeId): builder.PrependInt32Slot(0, CafeId, 0)
 
 
     @staticmethod
-    def AddRank(builder, Rank): builder.PrependInt64Slot(1, Rank, 0)
+    def AddRank(builder, Rank): builder.PrependInt32Slot(1, Rank, 0)
 
 
     @staticmethod
@@ -87,17 +87,17 @@ class CafeProductionExcel:
 
 
     @staticmethod
-    def AddCafeProductionParcelId(builder, CafeProductionParcelId): builder.PrependInt64Slot(3, CafeProductionParcelId, 0)
+    def AddCafeProductionParcelId(builder, CafeProductionParcelId): builder.PrependInt32Slot(3, CafeProductionParcelId, 0)
 
 
     @staticmethod
-    def AddParcelProductionCoefficient(builder, ParcelProductionCoefficient): builder.PrependInt64Slot(4, ParcelProductionCoefficient, 0)
+    def AddParcelProductionCoefficient(builder, ParcelProductionCoefficient): builder.PrependInt32Slot(4, ParcelProductionCoefficient, 0)
 
 
     @staticmethod
-    def AddParcelProductionCorrectionValue(builder, ParcelProductionCorrectionValue): builder.PrependInt64Slot(5, ParcelProductionCorrectionValue, 0)
+    def AddParcelProductionCorrectionValue(builder, ParcelProductionCorrectionValue): builder.PrependInt32Slot(5, ParcelProductionCorrectionValue, 0)
 
 
     @staticmethod
-    def AddParcelStorageMax(builder, ParcelStorageMax): builder.PrependInt64Slot(6, ParcelStorageMax, 0)
+    def AddParcelStorageMax(builder, ParcelStorageMax): builder.PrependInt32Slot(6, ParcelStorageMax, 0)
 

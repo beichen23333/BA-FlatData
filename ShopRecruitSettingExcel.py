@@ -20,21 +20,21 @@ class ShopRecruitSettingExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RecruitChangeScenarioModeID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PriorityOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -82,15 +82,15 @@ class ShopRecruitSettingExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddRecruitChangeScenarioModeID(builder, RecruitChangeScenarioModeID): builder.PrependInt64Slot(1, RecruitChangeScenarioModeID, 0)
+    def AddRecruitChangeScenarioModeID(builder, RecruitChangeScenarioModeID): builder.PrependInt32Slot(1, RecruitChangeScenarioModeID, 0)
 
 
     @staticmethod
-    def AddPriorityOrder(builder, PriorityOrder): builder.PrependInt64Slot(2, PriorityOrder, 0)
+    def AddPriorityOrder(builder, PriorityOrder): builder.PrependInt32Slot(2, PriorityOrder, 0)
 
 
     @staticmethod

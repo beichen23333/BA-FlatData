@@ -20,14 +20,14 @@ class MinigameTBGEncounterRewardExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class MinigameTBGEncounterRewardExcel:
     def Paremeter(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,14 +55,14 @@ class MinigameTBGEncounterRewardExcel:
     def ParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Amount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -82,11 +82,11 @@ class MinigameTBGEncounterRewardExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(1, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(1, UniqueId, 0)
 
 
     @staticmethod
@@ -94,7 +94,7 @@ class MinigameTBGEncounterRewardExcel:
 
 
     @staticmethod
-    def AddParemeter(builder, Paremeter): builder.PrependInt64Slot(3, Paremeter, 0)
+    def AddParemeter(builder, Paremeter): builder.PrependInt32Slot(3, Paremeter, 0)
 
 
     @staticmethod
@@ -102,11 +102,11 @@ class MinigameTBGEncounterRewardExcel:
 
 
     @staticmethod
-    def AddParcelId(builder, ParcelId): builder.PrependInt64Slot(5, ParcelId, 0)
+    def AddParcelId(builder, ParcelId): builder.PrependInt32Slot(5, ParcelId, 0)
 
 
     @staticmethod
-    def AddAmount(builder, Amount): builder.PrependInt64Slot(6, Amount, 0)
+    def AddAmount(builder, Amount): builder.PrependInt32Slot(6, Amount, 0)
 
 
     @staticmethod

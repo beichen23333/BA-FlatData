@@ -6,3 +6,4 @@ class PurchaseSourceType:
     ProductSelect = 4
     ProductGooglePoint = 5
     ProductDailyRecord = 6
+    ProductStreakRecord = 7

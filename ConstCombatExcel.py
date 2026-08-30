@@ -73,577 +73,598 @@ class ConstCombatExcel:
         return 0
 
 
-    def SuppliesConditionStringId(self):
+    def ShowBufficonApcSynergyPassiveSkill(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def SuppliesConditionStringId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def PublicSpeechBubbleOffsetX(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def PublicSpeechBubbleOffsetY(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PublicSpeechBubbleOffsetZ(self):
+    def PublicSpeechBubbleOffsetY(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShowRaidListCount(self):
+    def PublicSpeechBubbleOffsetZ(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ShowRaidListCount(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MaxRaidTicketCount(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MaxRaidBossSkillSlot(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EngageTimelinePath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def EngageWithSupporterTimelinePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def VictoryTimelinePath(self):
+    def EngageWithSupporterTimelinePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def TimeLimitAlarm(self):
+    def VictoryTimelinePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def EchelonMaxCommonCost(self):
+    def TimeLimitAlarm(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EchelonInitCommonCost(self):
+    def EchelonMaxCommonCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SkillSlotCoolTime(self):
+    def EchelonInitCommonCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def SkillSlotCoolTime(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EnemyRegenCost(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChampionRegenCost(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PlayerRegenCostDelay(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def PlayerAutoUseStartDelay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CrowdControlFactor(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RaidOpenScenarioId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def EliminateRaidOpenScenarioId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def DefenceConstA(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefenceConstB(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefenceConstC(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefenceConstD(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyConstA(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyConstB(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyConstC(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyConstD(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalConstA(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalConstB(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalConstC(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def CriticalConstD(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def MaxGroupBuffLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EmojiDefaultTime(self):
+    def CriticalConstD(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TimeLineActionRotateSpeed(self):
+    def MaxGroupBuffLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EmojiDefaultTime(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def TimeLineActionRotateSpeed(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BodyRotateSpeed(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NormalTimeScale(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(96))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FastTimeScale(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BulletTimeScale(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(96))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(100))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UIDisplayDelayAfterSkillCutIn(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(102))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def UseInitialRangeForCoverMove(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(100))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(104))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def SlowTimeScale(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(102))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(106))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AimIKMinDegree(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(104))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(108))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
     def AimIKMaxDegree(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(106))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(110))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
     def MinimumClearTime(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(108))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def MinimumClearLevelGap(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(110))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def CheckCheaterMaxUseCostNonArena(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CheckCheaterMaxUseCostArena(self):
+    def MinimumClearLevelGap(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AllowedMaxTimeScale(self):
+    def CheckCheaterMaxUseCostNonArena(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CheckCheaterMaxUseCostArena(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def AllowedMaxTimeScale(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RandomAnimationOutput(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def SummonedTeleportDistance(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def ArenaMinimumClearTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def WORLDBOSSBATTLELITTLE(self):
+    def SummonedTeleportDistance(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(124))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ArenaMinimumClearTime(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(126))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def WORLDBOSSBATTLELITTLE(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(128))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEMIDDLE(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(126))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(130))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEHIGH(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(128))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WORLDBOSSBATTLEVERYHIGH(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(130))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(134))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidAutoSyncTermSecond(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(136))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidBossHpDecreaseTerm(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(134))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(138))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidBossParcelReactionDelay(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(136))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(140))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RaidRankingJumpMinimumWaitingTime(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(138))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EffectTeleportDistance(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(140))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(144))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
     def AuraExitThresholdMargin(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(146))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def TSAInteractionDamageFactor(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(144))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(148))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def VictoryInteractionRate(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(146))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(150))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonExtensionEngageTimelinePath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(148))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def EchelonExtensionEngageWithSupporterTimelinePath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(150))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def EchelonExtensionVictoryTimelinePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(152))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def EchelonExtensionEchelonMaxCommonCost(self):
+    def EchelonExtensionEngageWithSupporterTimelinePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(154))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def EchelonExtensionVictoryTimelinePath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(156))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def EchelonExtensionEchelonMaxCommonCost(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(158))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonMaxOverloadCost(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(156))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def EchelonExtensionMaxOverloadCost(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(158))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def EchelonExtensionEchelonInitCommonCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(160))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EchelonExtensionCostRegenRatio(self):
+    def EchelonExtensionMaxOverloadCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(162))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EchelonExtensionEchelonInitCommonCost(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(164))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EchelonExtensionCostRegenRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(166))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EchelonOverloadCostRegenRatio(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(164))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def EchelonExtensionOverloadCostRegenRatio(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(166))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def CheckCheaterMaxUseCostMultiFloorRaid(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(168))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExcessiveTouchCheckTime(self):
+    def EchelonExtensionOverloadCostRegenRatio(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(170))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExcessiveTouchCheckCount(self):
+    def CheckCheaterMaxUseCostMultiFloorRaid(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(172))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CampaignAlertPopupLevelGap(self):
+    def ExcessiveTouchCheckTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(174))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MoveCorrectionSkipRatio(self):
+    def ExcessiveTouchCheckCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(176))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ObstacleColliderHeightJumpable(self):
+    def CampaignAlertPopupLevelGap(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(178))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def MoveCorrectionSkipRatio(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(180))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ObstacleColliderHeightJumpable(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(182))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
     def ObstacleColliderHeightNotJumpable(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(180))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(184))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def CheckCheaterMaxUseCostTacticalRelay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(186))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(89)
+    def Start(builder): builder.StartObject(92)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -681,316 +702,328 @@ class ConstCombatExcel:
 
 
     @staticmethod
-    def AddSuppliesConditionStringId(builder, SuppliesConditionStringId): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(SuppliesConditionStringId), 0)
+    def AddShowBufficonApcSynergyPassiveSkill(builder, ShowBufficonApcSynergyPassiveSkill): builder.PrependBoolSlot(8, ShowBufficonApcSynergyPassiveSkill, 0)
 
+
+    @staticmethod
+    def AddSuppliesConditionStringId(builder, SuppliesConditionStringId): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(SuppliesConditionStringId), 0)
+
     @staticmethod
-    def AddPublicSpeechBubbleOffsetX(builder, PublicSpeechBubbleOffsetX): builder.PrependFloat32Slot(9, PublicSpeechBubbleOffsetX, 0)
+    def AddPublicSpeechBubbleOffsetX(builder, PublicSpeechBubbleOffsetX): builder.PrependFloat32Slot(10, PublicSpeechBubbleOffsetX, 0)
 
 
     @staticmethod
-    def AddPublicSpeechBubbleOffsetY(builder, PublicSpeechBubbleOffsetY): builder.PrependFloat32Slot(10, PublicSpeechBubbleOffsetY, 0)
+    def AddPublicSpeechBubbleOffsetY(builder, PublicSpeechBubbleOffsetY): builder.PrependFloat32Slot(11, PublicSpeechBubbleOffsetY, 0)
 
 
     @staticmethod
-    def AddPublicSpeechBubbleOffsetZ(builder, PublicSpeechBubbleOffsetZ): builder.PrependFloat32Slot(11, PublicSpeechBubbleOffsetZ, 0)
+    def AddPublicSpeechBubbleOffsetZ(builder, PublicSpeechBubbleOffsetZ): builder.PrependFloat32Slot(12, PublicSpeechBubbleOffsetZ, 0)
 
 
     @staticmethod
-    def AddShowRaidListCount(builder, ShowRaidListCount): builder.PrependInt32Slot(12, ShowRaidListCount, 0)
+    def AddShowRaidListCount(builder, ShowRaidListCount): builder.PrependInt32Slot(13, ShowRaidListCount, 0)
 
 
     @staticmethod
-    def AddMaxRaidTicketCount(builder, MaxRaidTicketCount): builder.PrependInt64Slot(13, MaxRaidTicketCount, 0)
+    def AddMaxRaidTicketCount(builder, MaxRaidTicketCount): builder.PrependInt32Slot(14, MaxRaidTicketCount, 0)
 
 
     @staticmethod
-    def AddMaxRaidBossSkillSlot(builder, MaxRaidBossSkillSlot): builder.PrependInt64Slot(14, MaxRaidBossSkillSlot, 0)
+    def AddMaxRaidBossSkillSlot(builder, MaxRaidBossSkillSlot): builder.PrependInt32Slot(15, MaxRaidBossSkillSlot, 0)
+
 
+    @staticmethod
+    def AddEngageTimelinePath(builder, EngageTimelinePath): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(EngageTimelinePath), 0)
 
     @staticmethod
-    def AddEngageTimelinePath(builder, EngageTimelinePath): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(EngageTimelinePath), 0)
+    def AddEngageWithSupporterTimelinePath(builder, EngageWithSupporterTimelinePath): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(EngageWithSupporterTimelinePath), 0)
 
     @staticmethod
-    def AddEngageWithSupporterTimelinePath(builder, EngageWithSupporterTimelinePath): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(EngageWithSupporterTimelinePath), 0)
+    def AddVictoryTimelinePath(builder, VictoryTimelinePath): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(VictoryTimelinePath), 0)
 
     @staticmethod
-    def AddVictoryTimelinePath(builder, VictoryTimelinePath): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(VictoryTimelinePath), 0)
+    def AddTimeLimitAlarm(builder, TimeLimitAlarm): builder.PrependInt32Slot(19, TimeLimitAlarm, 0)
+
 
     @staticmethod
-    def AddTimeLimitAlarm(builder, TimeLimitAlarm): builder.PrependInt64Slot(18, TimeLimitAlarm, 0)
+    def AddEchelonMaxCommonCost(builder, EchelonMaxCommonCost): builder.PrependInt32Slot(20, EchelonMaxCommonCost, 0)
 
 
     @staticmethod
-    def AddEchelonMaxCommonCost(builder, EchelonMaxCommonCost): builder.PrependInt32Slot(19, EchelonMaxCommonCost, 0)
+    def AddEchelonInitCommonCost(builder, EchelonInitCommonCost): builder.PrependInt32Slot(21, EchelonInitCommonCost, 0)
 
 
     @staticmethod
-    def AddEchelonInitCommonCost(builder, EchelonInitCommonCost): builder.PrependInt32Slot(20, EchelonInitCommonCost, 0)
+    def AddSkillSlotCoolTime(builder, SkillSlotCoolTime): builder.PrependInt32Slot(22, SkillSlotCoolTime, 0)
 
 
     @staticmethod
-    def AddSkillSlotCoolTime(builder, SkillSlotCoolTime): builder.PrependInt64Slot(21, SkillSlotCoolTime, 0)
+    def AddEnemyRegenCost(builder, EnemyRegenCost): builder.PrependInt32Slot(23, EnemyRegenCost, 0)
 
 
     @staticmethod
-    def AddEnemyRegenCost(builder, EnemyRegenCost): builder.PrependInt64Slot(22, EnemyRegenCost, 0)
+    def AddChampionRegenCost(builder, ChampionRegenCost): builder.PrependInt32Slot(24, ChampionRegenCost, 0)
 
 
     @staticmethod
-    def AddChampionRegenCost(builder, ChampionRegenCost): builder.PrependInt64Slot(23, ChampionRegenCost, 0)
+    def AddPlayerRegenCostDelay(builder, PlayerRegenCostDelay): builder.PrependInt32Slot(25, PlayerRegenCostDelay, 0)
 
 
     @staticmethod
-    def AddPlayerRegenCostDelay(builder, PlayerRegenCostDelay): builder.PrependInt64Slot(24, PlayerRegenCostDelay, 0)
+    def AddPlayerAutoUseStartDelay(builder, PlayerAutoUseStartDelay): builder.PrependInt32Slot(26, PlayerAutoUseStartDelay, 0)
 
 
     @staticmethod
-    def AddCrowdControlFactor(builder, CrowdControlFactor): builder.PrependInt64Slot(25, CrowdControlFactor, 0)
+    def AddCrowdControlFactor(builder, CrowdControlFactor): builder.PrependInt32Slot(27, CrowdControlFactor, 0)
 
 
     @staticmethod
-    def AddRaidOpenScenarioId(builder, RaidOpenScenarioId): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(RaidOpenScenarioId), 0)
+    def AddRaidOpenScenarioId(builder, RaidOpenScenarioId): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(RaidOpenScenarioId), 0)
 
     @staticmethod
-    def AddEliminateRaidOpenScenarioId(builder, EliminateRaidOpenScenarioId): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(EliminateRaidOpenScenarioId), 0)
+    def AddEliminateRaidOpenScenarioId(builder, EliminateRaidOpenScenarioId): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(EliminateRaidOpenScenarioId), 0)
 
     @staticmethod
-    def AddDefenceConstA(builder, DefenceConstA): builder.PrependInt64Slot(28, DefenceConstA, 0)
+    def AddDefenceConstA(builder, DefenceConstA): builder.PrependInt32Slot(30, DefenceConstA, 0)
 
 
     @staticmethod
-    def AddDefenceConstB(builder, DefenceConstB): builder.PrependInt64Slot(29, DefenceConstB, 0)
+    def AddDefenceConstB(builder, DefenceConstB): builder.PrependInt32Slot(31, DefenceConstB, 0)
 
 
     @staticmethod
-    def AddDefenceConstC(builder, DefenceConstC): builder.PrependInt64Slot(30, DefenceConstC, 0)
+    def AddDefenceConstC(builder, DefenceConstC): builder.PrependInt32Slot(32, DefenceConstC, 0)
 
 
     @staticmethod
-    def AddDefenceConstD(builder, DefenceConstD): builder.PrependInt64Slot(31, DefenceConstD, 0)
+    def AddDefenceConstD(builder, DefenceConstD): builder.PrependInt32Slot(33, DefenceConstD, 0)
 
 
     @staticmethod
-    def AddAccuracyConstA(builder, AccuracyConstA): builder.PrependInt64Slot(32, AccuracyConstA, 0)
+    def AddAccuracyConstA(builder, AccuracyConstA): builder.PrependInt32Slot(34, AccuracyConstA, 0)
 
 
     @staticmethod
-    def AddAccuracyConstB(builder, AccuracyConstB): builder.PrependInt64Slot(33, AccuracyConstB, 0)
+    def AddAccuracyConstB(builder, AccuracyConstB): builder.PrependInt32Slot(35, AccuracyConstB, 0)
 
 
     @staticmethod
-    def AddAccuracyConstC(builder, AccuracyConstC): builder.PrependInt64Slot(34, AccuracyConstC, 0)
+    def AddAccuracyConstC(builder, AccuracyConstC): builder.PrependInt32Slot(36, AccuracyConstC, 0)
 
 
     @staticmethod
-    def AddAccuracyConstD(builder, AccuracyConstD): builder.PrependInt64Slot(35, AccuracyConstD, 0)
+    def AddAccuracyConstD(builder, AccuracyConstD): builder.PrependInt32Slot(37, AccuracyConstD, 0)
 
 
     @staticmethod
-    def AddCriticalConstA(builder, CriticalConstA): builder.PrependInt64Slot(36, CriticalConstA, 0)
+    def AddCriticalConstA(builder, CriticalConstA): builder.PrependInt32Slot(38, CriticalConstA, 0)
 
 
     @staticmethod
-    def AddCriticalConstB(builder, CriticalConstB): builder.PrependInt64Slot(37, CriticalConstB, 0)
+    def AddCriticalConstB(builder, CriticalConstB): builder.PrependInt32Slot(39, CriticalConstB, 0)
 
 
     @staticmethod
-    def AddCriticalConstC(builder, CriticalConstC): builder.PrependInt64Slot(38, CriticalConstC, 0)
+    def AddCriticalConstC(builder, CriticalConstC): builder.PrependInt32Slot(40, CriticalConstC, 0)
 
 
     @staticmethod
-    def AddCriticalConstD(builder, CriticalConstD): builder.PrependInt64Slot(39, CriticalConstD, 0)
+    def AddCriticalConstD(builder, CriticalConstD): builder.PrependInt32Slot(41, CriticalConstD, 0)
 
 
     @staticmethod
-    def AddMaxGroupBuffLevel(builder, MaxGroupBuffLevel): builder.PrependInt32Slot(40, MaxGroupBuffLevel, 0)
+    def AddMaxGroupBuffLevel(builder, MaxGroupBuffLevel): builder.PrependInt32Slot(42, MaxGroupBuffLevel, 0)
 
 
     @staticmethod
-    def AddEmojiDefaultTime(builder, EmojiDefaultTime): builder.PrependInt32Slot(41, EmojiDefaultTime, 0)
+    def AddEmojiDefaultTime(builder, EmojiDefaultTime): builder.PrependInt32Slot(43, EmojiDefaultTime, 0)
 
 
     @staticmethod
-    def AddTimeLineActionRotateSpeed(builder, TimeLineActionRotateSpeed): builder.PrependInt64Slot(42, TimeLineActionRotateSpeed, 0)
+    def AddTimeLineActionRotateSpeed(builder, TimeLineActionRotateSpeed): builder.PrependInt32Slot(44, TimeLineActionRotateSpeed, 0)
 
 
     @staticmethod
-    def AddBodyRotateSpeed(builder, BodyRotateSpeed): builder.PrependInt64Slot(43, BodyRotateSpeed, 0)
+    def AddBodyRotateSpeed(builder, BodyRotateSpeed): builder.PrependInt32Slot(45, BodyRotateSpeed, 0)
 
 
     @staticmethod
-    def AddNormalTimeScale(builder, NormalTimeScale): builder.PrependInt64Slot(44, NormalTimeScale, 0)
+    def AddNormalTimeScale(builder, NormalTimeScale): builder.PrependInt32Slot(46, NormalTimeScale, 0)
 
 
     @staticmethod
-    def AddFastTimeScale(builder, FastTimeScale): builder.PrependInt64Slot(45, FastTimeScale, 0)
+    def AddFastTimeScale(builder, FastTimeScale): builder.PrependInt32Slot(47, FastTimeScale, 0)
 
 
     @staticmethod
-    def AddBulletTimeScale(builder, BulletTimeScale): builder.PrependInt64Slot(46, BulletTimeScale, 0)
+    def AddBulletTimeScale(builder, BulletTimeScale): builder.PrependInt32Slot(48, BulletTimeScale, 0)
 
 
     @staticmethod
-    def AddUIDisplayDelayAfterSkillCutIn(builder, UIDisplayDelayAfterSkillCutIn): builder.PrependInt64Slot(47, UIDisplayDelayAfterSkillCutIn, 0)
+    def AddUIDisplayDelayAfterSkillCutIn(builder, UIDisplayDelayAfterSkillCutIn): builder.PrependInt32Slot(49, UIDisplayDelayAfterSkillCutIn, 0)
 
 
     @staticmethod
-    def AddUseInitialRangeForCoverMove(builder, UseInitialRangeForCoverMove): builder.PrependBoolSlot(48, UseInitialRangeForCoverMove, 0)
+    def AddUseInitialRangeForCoverMove(builder, UseInitialRangeForCoverMove): builder.PrependBoolSlot(50, UseInitialRangeForCoverMove, 0)
 
 
     @staticmethod
-    def AddSlowTimeScale(builder, SlowTimeScale): builder.PrependInt64Slot(49, SlowTimeScale, 0)
+    def AddSlowTimeScale(builder, SlowTimeScale): builder.PrependInt32Slot(51, SlowTimeScale, 0)
 
 
     @staticmethod
-    def AddAimIKMinDegree(builder, AimIKMinDegree): builder.PrependFloat32Slot(50, AimIKMinDegree, 0)
+    def AddAimIKMinDegree(builder, AimIKMinDegree): builder.PrependFloat32Slot(52, AimIKMinDegree, 0)
 
 
     @staticmethod
-    def AddAimIKMaxDegree(builder, AimIKMaxDegree): builder.PrependFloat32Slot(51, AimIKMaxDegree, 0)
+    def AddAimIKMaxDegree(builder, AimIKMaxDegree): builder.PrependFloat32Slot(53, AimIKMaxDegree, 0)
 
 
     @staticmethod
-    def AddMinimumClearTime(builder, MinimumClearTime): builder.PrependInt32Slot(52, MinimumClearTime, 0)
+    def AddMinimumClearTime(builder, MinimumClearTime): builder.PrependInt32Slot(54, MinimumClearTime, 0)
 
 
     @staticmethod
-    def AddMinimumClearLevelGap(builder, MinimumClearLevelGap): builder.PrependInt32Slot(53, MinimumClearLevelGap, 0)
+    def AddMinimumClearLevelGap(builder, MinimumClearLevelGap): builder.PrependInt32Slot(55, MinimumClearLevelGap, 0)
 
 
     @staticmethod
-    def AddCheckCheaterMaxUseCostNonArena(builder, CheckCheaterMaxUseCostNonArena): builder.PrependInt32Slot(54, CheckCheaterMaxUseCostNonArena, 0)
+    def AddCheckCheaterMaxUseCostNonArena(builder, CheckCheaterMaxUseCostNonArena): builder.PrependInt32Slot(56, CheckCheaterMaxUseCostNonArena, 0)
 
 
     @staticmethod
-    def AddCheckCheaterMaxUseCostArena(builder, CheckCheaterMaxUseCostArena): builder.PrependInt32Slot(55, CheckCheaterMaxUseCostArena, 0)
+    def AddCheckCheaterMaxUseCostArena(builder, CheckCheaterMaxUseCostArena): builder.PrependInt32Slot(57, CheckCheaterMaxUseCostArena, 0)
 
 
     @staticmethod
-    def AddAllowedMaxTimeScale(builder, AllowedMaxTimeScale): builder.PrependInt64Slot(56, AllowedMaxTimeScale, 0)
+    def AddAllowedMaxTimeScale(builder, AllowedMaxTimeScale): builder.PrependInt32Slot(58, AllowedMaxTimeScale, 0)
 
 
     @staticmethod
-    def AddRandomAnimationOutput(builder, RandomAnimationOutput): builder.PrependInt64Slot(57, RandomAnimationOutput, 0)
+    def AddRandomAnimationOutput(builder, RandomAnimationOutput): builder.PrependInt32Slot(59, RandomAnimationOutput, 0)
 
 
     @staticmethod
-    def AddSummonedTeleportDistance(builder, SummonedTeleportDistance): builder.PrependInt64Slot(58, SummonedTeleportDistance, 0)
+    def AddSummonedTeleportDistance(builder, SummonedTeleportDistance): builder.PrependInt32Slot(60, SummonedTeleportDistance, 0)
 
 
     @staticmethod
-    def AddArenaMinimumClearTime(builder, ArenaMinimumClearTime): builder.PrependInt32Slot(59, ArenaMinimumClearTime, 0)
+    def AddArenaMinimumClearTime(builder, ArenaMinimumClearTime): builder.PrependInt32Slot(61, ArenaMinimumClearTime, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLELITTLE(builder, WORLDBOSSBATTLELITTLE): builder.PrependInt64Slot(60, WORLDBOSSBATTLELITTLE, 0)
+    def AddWORLDBOSSBATTLELITTLE(builder, WORLDBOSSBATTLELITTLE): builder.PrependInt32Slot(62, WORLDBOSSBATTLELITTLE, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEMIDDLE(builder, WORLDBOSSBATTLEMIDDLE): builder.PrependInt64Slot(61, WORLDBOSSBATTLEMIDDLE, 0)
+    def AddWORLDBOSSBATTLEMIDDLE(builder, WORLDBOSSBATTLEMIDDLE): builder.PrependInt32Slot(63, WORLDBOSSBATTLEMIDDLE, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEHIGH(builder, WORLDBOSSBATTLEHIGH): builder.PrependInt64Slot(62, WORLDBOSSBATTLEHIGH, 0)
+    def AddWORLDBOSSBATTLEHIGH(builder, WORLDBOSSBATTLEHIGH): builder.PrependInt32Slot(64, WORLDBOSSBATTLEHIGH, 0)
 
 
     @staticmethod
-    def AddWORLDBOSSBATTLEVERYHIGH(builder, WORLDBOSSBATTLEVERYHIGH): builder.PrependInt64Slot(63, WORLDBOSSBATTLEVERYHIGH, 0)
+    def AddWORLDBOSSBATTLEVERYHIGH(builder, WORLDBOSSBATTLEVERYHIGH): builder.PrependInt32Slot(65, WORLDBOSSBATTLEVERYHIGH, 0)
 
 
     @staticmethod
-    def AddWorldRaidAutoSyncTermSecond(builder, WorldRaidAutoSyncTermSecond): builder.PrependInt64Slot(64, WorldRaidAutoSyncTermSecond, 0)
+    def AddWorldRaidAutoSyncTermSecond(builder, WorldRaidAutoSyncTermSecond): builder.PrependInt32Slot(66, WorldRaidAutoSyncTermSecond, 0)
 
 
     @staticmethod
-    def AddWorldRaidBossHpDecreaseTerm(builder, WorldRaidBossHpDecreaseTerm): builder.PrependInt64Slot(65, WorldRaidBossHpDecreaseTerm, 0)
+    def AddWorldRaidBossHpDecreaseTerm(builder, WorldRaidBossHpDecreaseTerm): builder.PrependInt32Slot(67, WorldRaidBossHpDecreaseTerm, 0)
 
 
     @staticmethod
-    def AddWorldRaidBossParcelReactionDelay(builder, WorldRaidBossParcelReactionDelay): builder.PrependInt64Slot(66, WorldRaidBossParcelReactionDelay, 0)
+    def AddWorldRaidBossParcelReactionDelay(builder, WorldRaidBossParcelReactionDelay): builder.PrependInt32Slot(68, WorldRaidBossParcelReactionDelay, 0)
 
 
     @staticmethod
-    def AddRaidRankingJumpMinimumWaitingTime(builder, RaidRankingJumpMinimumWaitingTime): builder.PrependInt64Slot(67, RaidRankingJumpMinimumWaitingTime, 0)
+    def AddRaidRankingJumpMinimumWaitingTime(builder, RaidRankingJumpMinimumWaitingTime): builder.PrependInt32Slot(69, RaidRankingJumpMinimumWaitingTime, 0)
 
 
     @staticmethod
-    def AddEffectTeleportDistance(builder, EffectTeleportDistance): builder.PrependFloat32Slot(68, EffectTeleportDistance, 0)
+    def AddEffectTeleportDistance(builder, EffectTeleportDistance): builder.PrependFloat32Slot(70, EffectTeleportDistance, 0)
 
 
     @staticmethod
-    def AddAuraExitThresholdMargin(builder, AuraExitThresholdMargin): builder.PrependInt64Slot(69, AuraExitThresholdMargin, 0)
+    def AddAuraExitThresholdMargin(builder, AuraExitThresholdMargin): builder.PrependInt32Slot(71, AuraExitThresholdMargin, 0)
 
 
     @staticmethod
-    def AddTSAInteractionDamageFactor(builder, TSAInteractionDamageFactor): builder.PrependInt64Slot(70, TSAInteractionDamageFactor, 0)
+    def AddTSAInteractionDamageFactor(builder, TSAInteractionDamageFactor): builder.PrependInt32Slot(72, TSAInteractionDamageFactor, 0)
 
 
     @staticmethod
-    def AddVictoryInteractionRate(builder, VictoryInteractionRate): builder.PrependInt64Slot(71, VictoryInteractionRate, 0)
+    def AddVictoryInteractionRate(builder, VictoryInteractionRate): builder.PrependInt32Slot(73, VictoryInteractionRate, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionEngageTimelinePath(builder, EchelonExtensionEngageTimelinePath): builder.PrependUOffsetTRelativeSlot(72, flatbuffers.number_types.UOffsetTFlags.py_type(EchelonExtensionEngageTimelinePath), 0)
+    def AddEchelonExtensionEngageTimelinePath(builder, EchelonExtensionEngageTimelinePath): builder.PrependUOffsetTRelativeSlot(74, flatbuffers.number_types.UOffsetTFlags.py_type(EchelonExtensionEngageTimelinePath), 0)
 
     @staticmethod
-    def AddEchelonExtensionEngageWithSupporterTimelinePath(builder, EchelonExtensionEngageWithSupporterTimelinePath): builder.PrependUOffsetTRelativeSlot(73, flatbuffers.number_types.UOffsetTFlags.py_type(EchelonExtensionEngageWithSupporterTimelinePath), 0)
+    def AddEchelonExtensionEngageWithSupporterTimelinePath(builder, EchelonExtensionEngageWithSupporterTimelinePath): builder.PrependUOffsetTRelativeSlot(75, flatbuffers.number_types.UOffsetTFlags.py_type(EchelonExtensionEngageWithSupporterTimelinePath), 0)
 
     @staticmethod
-    def AddEchelonExtensionVictoryTimelinePath(builder, EchelonExtensionVictoryTimelinePath): builder.PrependUOffsetTRelativeSlot(74, flatbuffers.number_types.UOffsetTFlags.py_type(EchelonExtensionVictoryTimelinePath), 0)
+    def AddEchelonExtensionVictoryTimelinePath(builder, EchelonExtensionVictoryTimelinePath): builder.PrependUOffsetTRelativeSlot(76, flatbuffers.number_types.UOffsetTFlags.py_type(EchelonExtensionVictoryTimelinePath), 0)
+
+    @staticmethod
+    def AddEchelonExtensionEchelonMaxCommonCost(builder, EchelonExtensionEchelonMaxCommonCost): builder.PrependInt32Slot(77, EchelonExtensionEchelonMaxCommonCost, 0)
+
 
     @staticmethod
-    def AddEchelonExtensionEchelonMaxCommonCost(builder, EchelonExtensionEchelonMaxCommonCost): builder.PrependInt32Slot(75, EchelonExtensionEchelonMaxCommonCost, 0)
+    def AddEchelonMaxOverloadCost(builder, EchelonMaxOverloadCost): builder.PrependInt32Slot(78, EchelonMaxOverloadCost, 0)
 
 
     @staticmethod
-    def AddEchelonMaxOverloadCost(builder, EchelonMaxOverloadCost): builder.PrependInt64Slot(76, EchelonMaxOverloadCost, 0)
+    def AddEchelonExtensionMaxOverloadCost(builder, EchelonExtensionMaxOverloadCost): builder.PrependInt32Slot(79, EchelonExtensionMaxOverloadCost, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionMaxOverloadCost(builder, EchelonExtensionMaxOverloadCost): builder.PrependInt64Slot(77, EchelonExtensionMaxOverloadCost, 0)
+    def AddEchelonExtensionEchelonInitCommonCost(builder, EchelonExtensionEchelonInitCommonCost): builder.PrependInt32Slot(80, EchelonExtensionEchelonInitCommonCost, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionEchelonInitCommonCost(builder, EchelonExtensionEchelonInitCommonCost): builder.PrependInt32Slot(78, EchelonExtensionEchelonInitCommonCost, 0)
+    def AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio): builder.PrependInt32Slot(81, EchelonExtensionCostRegenRatio, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio): builder.PrependInt64Slot(79, EchelonExtensionCostRegenRatio, 0)
+    def AddEchelonOverloadCostRegenRatio(builder, EchelonOverloadCostRegenRatio): builder.PrependInt32Slot(82, EchelonOverloadCostRegenRatio, 0)
 
 
     @staticmethod
-    def AddEchelonOverloadCostRegenRatio(builder, EchelonOverloadCostRegenRatio): builder.PrependInt64Slot(80, EchelonOverloadCostRegenRatio, 0)
+    def AddEchelonExtensionOverloadCostRegenRatio(builder, EchelonExtensionOverloadCostRegenRatio): builder.PrependInt32Slot(83, EchelonExtensionOverloadCostRegenRatio, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionOverloadCostRegenRatio(builder, EchelonExtensionOverloadCostRegenRatio): builder.PrependInt64Slot(81, EchelonExtensionOverloadCostRegenRatio, 0)
+    def AddCheckCheaterMaxUseCostMultiFloorRaid(builder, CheckCheaterMaxUseCostMultiFloorRaid): builder.PrependInt32Slot(84, CheckCheaterMaxUseCostMultiFloorRaid, 0)
 
 
     @staticmethod
-    def AddCheckCheaterMaxUseCostMultiFloorRaid(builder, CheckCheaterMaxUseCostMultiFloorRaid): builder.PrependInt32Slot(82, CheckCheaterMaxUseCostMultiFloorRaid, 0)
+    def AddExcessiveTouchCheckTime(builder, ExcessiveTouchCheckTime): builder.PrependFloat32Slot(85, ExcessiveTouchCheckTime, 0)
 
 
     @staticmethod
-    def AddExcessiveTouchCheckTime(builder, ExcessiveTouchCheckTime): builder.PrependFloat32Slot(83, ExcessiveTouchCheckTime, 0)
+    def AddExcessiveTouchCheckCount(builder, ExcessiveTouchCheckCount): builder.PrependInt32Slot(86, ExcessiveTouchCheckCount, 0)
 
 
     @staticmethod
-    def AddExcessiveTouchCheckCount(builder, ExcessiveTouchCheckCount): builder.PrependInt32Slot(84, ExcessiveTouchCheckCount, 0)
+    def AddCampaignAlertPopupLevelGap(builder, CampaignAlertPopupLevelGap): builder.PrependInt32Slot(87, CampaignAlertPopupLevelGap, 0)
 
 
     @staticmethod
-    def AddCampaignAlertPopupLevelGap(builder, CampaignAlertPopupLevelGap): builder.PrependInt32Slot(85, CampaignAlertPopupLevelGap, 0)
+    def AddMoveCorrectionSkipRatio(builder, MoveCorrectionSkipRatio): builder.PrependInt32Slot(88, MoveCorrectionSkipRatio, 0)
 
 
     @staticmethod
-    def AddMoveCorrectionSkipRatio(builder, MoveCorrectionSkipRatio): builder.PrependInt32Slot(86, MoveCorrectionSkipRatio, 0)
+    def AddObstacleColliderHeightJumpable(builder, ObstacleColliderHeightJumpable): builder.PrependFloat32Slot(89, ObstacleColliderHeightJumpable, 0)
 
 
     @staticmethod
-    def AddObstacleColliderHeightJumpable(builder, ObstacleColliderHeightJumpable): builder.PrependFloat32Slot(87, ObstacleColliderHeightJumpable, 0)
+    def AddObstacleColliderHeightNotJumpable(builder, ObstacleColliderHeightNotJumpable): builder.PrependFloat32Slot(90, ObstacleColliderHeightNotJumpable, 0)
 
 
     @staticmethod
-    def AddObstacleColliderHeightNotJumpable(builder, ObstacleColliderHeightNotJumpable): builder.PrependFloat32Slot(88, ObstacleColliderHeightNotJumpable, 0)
+    def AddCheckCheaterMaxUseCostTacticalRelay(builder, CheckCheaterMaxUseCostTacticalRelay): builder.PrependInt32Slot(91, CheckCheaterMaxUseCostTacticalRelay, 0)
 

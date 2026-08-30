@@ -20,7 +20,7 @@ class SkillExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -167,7 +167,7 @@ class SkillExcel:
     def RequireLevelUpMaterial(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -202,14 +202,14 @@ class SkillExcel:
     def AdditionalToolTipId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SelectExSkillToolTipId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -227,16 +227,23 @@ class SkillExcel:
         return None
 
 
+    def SkillRemainCountOverride(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(30)
+    def Start(builder): builder.StartObject(31)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -317,7 +324,7 @@ class SkillExcel:
 
 
     @staticmethod
-    def AddRequireLevelUpMaterial(builder, RequireLevelUpMaterial): builder.PrependInt64Slot(21, RequireLevelUpMaterial, 0)
+    def AddRequireLevelUpMaterial(builder, RequireLevelUpMaterial): builder.PrependInt32Slot(21, RequireLevelUpMaterial, 0)
 
 
     @staticmethod
@@ -336,11 +343,11 @@ class SkillExcel:
 
 
     @staticmethod
-    def AddAdditionalToolTipId(builder, AdditionalToolTipId): builder.PrependInt64Slot(26, AdditionalToolTipId, 0)
+    def AddAdditionalToolTipId(builder, AdditionalToolTipId): builder.PrependInt32Slot(26, AdditionalToolTipId, 0)
 
 
     @staticmethod
-    def AddSelectExSkillToolTipId(builder, SelectExSkillToolTipId): builder.PrependInt64Slot(27, SelectExSkillToolTipId, 0)
+    def AddSelectExSkillToolTipId(builder, SelectExSkillToolTipId): builder.PrependInt32Slot(27, SelectExSkillToolTipId, 0)
 
 
     @staticmethod
@@ -348,3 +355,6 @@ class SkillExcel:
 
     @staticmethod
     def AddSkillCardLabelPath(builder, SkillCardLabelPath): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(SkillCardLabelPath), 0)
+
+    @staticmethod
+    def AddSkillRemainCountOverride(builder, SkillRemainCountOverride): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(SkillRemainCountOverride), 0)

@@ -20,21 +20,21 @@ class SNSInfoExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenScenarioModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CloseScenarioModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,15 +75,15 @@ class SNSInfoExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddOpenScenarioModeId(builder, OpenScenarioModeId): builder.PrependInt64Slot(1, OpenScenarioModeId, 0)
+    def AddOpenScenarioModeId(builder, OpenScenarioModeId): builder.PrependInt32Slot(1, OpenScenarioModeId, 0)
 
 
     @staticmethod
-    def AddCloseScenarioModeId(builder, CloseScenarioModeId): builder.PrependInt64Slot(2, CloseScenarioModeId, 0)
+    def AddCloseScenarioModeId(builder, CloseScenarioModeId): builder.PrependInt32Slot(2, CloseScenarioModeId, 0)
 
 
     @staticmethod

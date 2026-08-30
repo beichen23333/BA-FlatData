@@ -20,7 +20,7 @@ class EventContentStageExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class EventContentStageExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,42 +62,42 @@ class EventContentStageExcel:
     def PrevStageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenEventPoint(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenConditionScenarioPermanentSubEventId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PrevStageSubEventId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenConditionScenarioId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -111,14 +111,14 @@ class EventContentStageExcel:
     def OpenConditionContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BattleDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -132,7 +132,7 @@ class EventContentStageExcel:
     def StageEnterCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -153,63 +153,29 @@ class EventContentStageExcel:
     def StarConditionTacticRankSCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StarConditionTurnCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def EnterScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def EnterScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def EnterScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def EnterScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
-        return o == 0
-
-
-    def ClearScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ClearScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ClearScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ClearScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        return o == 0
 
 
     def StrategyMap(self):
@@ -229,7 +195,7 @@ class EventContentStageExcel:
     def EventContentStageRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -257,8 +223,8 @@ class EventContentStageExcel:
     def BgmId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
     def StrategyEnvironment(self):
@@ -271,7 +237,7 @@ class EventContentStageExcel:
     def GroundID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -285,7 +251,7 @@ class EventContentStageExcel:
     def BGMId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -299,14 +265,14 @@ class EventContentStageExcel:
     def BuffContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FixedEchelonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -317,52 +283,18 @@ class EventContentStageExcel:
         return 0
 
 
-    def StarGoal(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StarGoalAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def StarGoalLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def StarGoalIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
-        return o == 0
-
-
-    def StarGoalAmount(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def StarGoalAmountAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def StarGoalAmountLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def StarGoalAmountIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
-        return o == 0
 
 
     def IsDefeatBattle(self):
@@ -395,14 +327,14 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
     def AddName(builder, Name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(Name), 0)
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(2, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(2, EventContentId, 0)
 
 
     @staticmethod
@@ -417,27 +349,27 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddPrevStageId(builder, PrevStageId): builder.PrependInt64Slot(6, PrevStageId, 0)
+    def AddPrevStageId(builder, PrevStageId): builder.PrependInt32Slot(6, PrevStageId, 0)
 
 
     @staticmethod
-    def AddOpenDate(builder, OpenDate): builder.PrependInt64Slot(7, OpenDate, 0)
+    def AddOpenDate(builder, OpenDate): builder.PrependInt32Slot(7, OpenDate, 0)
 
 
     @staticmethod
-    def AddOpenEventPoint(builder, OpenEventPoint): builder.PrependInt64Slot(8, OpenEventPoint, 0)
+    def AddOpenEventPoint(builder, OpenEventPoint): builder.PrependInt32Slot(8, OpenEventPoint, 0)
 
 
     @staticmethod
-    def AddOpenConditionScenarioPermanentSubEventId(builder, OpenConditionScenarioPermanentSubEventId): builder.PrependInt64Slot(9, OpenConditionScenarioPermanentSubEventId, 0)
+    def AddOpenConditionScenarioPermanentSubEventId(builder, OpenConditionScenarioPermanentSubEventId): builder.PrependInt32Slot(9, OpenConditionScenarioPermanentSubEventId, 0)
 
 
     @staticmethod
-    def AddPrevStageSubEventId(builder, PrevStageSubEventId): builder.PrependInt64Slot(10, PrevStageSubEventId, 0)
+    def AddPrevStageSubEventId(builder, PrevStageSubEventId): builder.PrependInt32Slot(10, PrevStageSubEventId, 0)
 
 
     @staticmethod
-    def AddOpenConditionScenarioId(builder, OpenConditionScenarioId): builder.PrependInt64Slot(11, OpenConditionScenarioId, 0)
+    def AddOpenConditionScenarioId(builder, OpenConditionScenarioId): builder.PrependInt32Slot(11, OpenConditionScenarioId, 0)
 
 
     @staticmethod
@@ -445,11 +377,11 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddOpenConditionContentId(builder, OpenConditionContentId): builder.PrependInt64Slot(13, OpenConditionContentId, 0)
+    def AddOpenConditionContentId(builder, OpenConditionContentId): builder.PrependInt32Slot(13, OpenConditionContentId, 0)
 
 
     @staticmethod
-    def AddBattleDuration(builder, BattleDuration): builder.PrependInt64Slot(14, BattleDuration, 0)
+    def AddBattleDuration(builder, BattleDuration): builder.PrependInt32Slot(14, BattleDuration, 0)
 
 
     @staticmethod
@@ -457,7 +389,7 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddStageEnterCostId(builder, StageEnterCostId): builder.PrependInt64Slot(16, StageEnterCostId, 0)
+    def AddStageEnterCostId(builder, StageEnterCostId): builder.PrependInt32Slot(16, StageEnterCostId, 0)
 
 
     @staticmethod
@@ -469,23 +401,19 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddStarConditionTacticRankSCount(builder, StarConditionTacticRankSCount): builder.PrependInt64Slot(19, StarConditionTacticRankSCount, 0)
+    def AddStarConditionTacticRankSCount(builder, StarConditionTacticRankSCount): builder.PrependInt32Slot(19, StarConditionTacticRankSCount, 0)
 
 
     @staticmethod
-    def AddStarConditionTurnCount(builder, StarConditionTurnCount): builder.PrependInt64Slot(20, StarConditionTurnCount, 0)
+    def AddStarConditionTurnCount(builder, StarConditionTurnCount): builder.PrependInt32Slot(20, StarConditionTurnCount, 0)
 
 
     @staticmethod
-    def AddEnterScenarioGroupId(builder, EnterScenarioGroupId): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(EnterScenarioGroupId), 0)
-    @staticmethod
-    def StartEnterScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddEnterScenarioGroupIdLength(builder, EnterScenarioGroupIdLength): builder.PrependInt32Slot(21, EnterScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddClearScenarioGroupId(builder, ClearScenarioGroupId): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(ClearScenarioGroupId), 0)
-    @staticmethod
-    def StartClearScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddClearScenarioGroupIdLength(builder, ClearScenarioGroupIdLength): builder.PrependInt32Slot(22, ClearScenarioGroupIdLength, 0)
 
 
     @staticmethod
@@ -495,7 +423,7 @@ class EventContentStageExcel:
     def AddStrategyMapBG(builder, StrategyMapBG): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(StrategyMapBG), 0)
 
     @staticmethod
-    def AddEventContentStageRewardId(builder, EventContentStageRewardId): builder.PrependInt64Slot(25, EventContentStageRewardId, 0)
+    def AddEventContentStageRewardId(builder, EventContentStageRewardId): builder.PrependInt32Slot(25, EventContentStageRewardId, 0)
 
 
     @staticmethod
@@ -511,14 +439,15 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddBgmId(builder, BgmId): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(BgmId), 0)
+    def AddBgmId(builder, BgmId): builder.PrependInt32Slot(29, BgmId, 0)
+
 
     @staticmethod
     def AddStrategyEnvironment(builder, StrategyEnvironment): builder.PrependInt32Slot(30, StrategyEnvironment, 0)
 
 
     @staticmethod
-    def AddGroundID(builder, GroundID): builder.PrependInt64Slot(31, GroundID, 0)
+    def AddGroundID(builder, GroundID): builder.PrependInt32Slot(31, GroundID, 0)
 
 
     @staticmethod
@@ -526,7 +455,7 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddBGMId(builder, BGMId): builder.PrependInt64Slot(33, BGMId, 0)
+    def AddBGMId(builder, BGMId): builder.PrependInt32Slot(33, BGMId, 0)
 
 
     @staticmethod
@@ -534,11 +463,11 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddBuffContentId(builder, BuffContentId): builder.PrependInt64Slot(35, BuffContentId, 0)
+    def AddBuffContentId(builder, BuffContentId): builder.PrependInt32Slot(35, BuffContentId, 0)
 
 
     @staticmethod
-    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt64Slot(36, FixedEchelonId, 0)
+    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt32Slot(36, FixedEchelonId, 0)
 
 
     @staticmethod
@@ -546,15 +475,11 @@ class EventContentStageExcel:
 
 
     @staticmethod
-    def AddStarGoal(builder, StarGoal): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(StarGoal), 0)
-    @staticmethod
-    def StartStarGoalVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStarGoalLength(builder, StarGoalLength): builder.PrependInt32Slot(38, StarGoalLength, 0)
 
 
     @staticmethod
-    def AddStarGoalAmount(builder, StarGoalAmount): builder.PrependUOffsetTRelativeSlot(39, flatbuffers.number_types.UOffsetTFlags.py_type(StarGoalAmount), 0)
-    @staticmethod
-    def StartStarGoalAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddStarGoalAmountLength(builder, StarGoalAmountLength): builder.PrependInt32Slot(39, StarGoalAmountLength, 0)
 
 
     @staticmethod

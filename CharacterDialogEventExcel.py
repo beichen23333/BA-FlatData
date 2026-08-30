@@ -20,28 +20,28 @@ class CharacterDialogEventExcel:
     def CostumeUniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OriginalCharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,14 +76,14 @@ class CharacterDialogEventExcel:
     def DialogConditionDetailValue(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -104,7 +104,7 @@ class CharacterDialogEventExcel:
     def Duration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -129,28 +129,11 @@ class CharacterDialogEventExcel:
         return None
 
 
-    def VoiceId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Uint32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def VoiceIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
-        return 0
-
     def VoiceIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def VoiceIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        return o == 0
 
 
     def CollectionVisible(self):
@@ -177,14 +160,14 @@ class CharacterDialogEventExcel:
     def UnlockEventSeason(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -211,19 +194,19 @@ class CharacterDialogEventExcel:
 
 
     @staticmethod
-    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt64Slot(0, CostumeUniqueId, 0)
+    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt32Slot(0, CostumeUniqueId, 0)
 
 
     @staticmethod
-    def AddOriginalCharacterId(builder, OriginalCharacterId): builder.PrependInt64Slot(1, OriginalCharacterId, 0)
+    def AddOriginalCharacterId(builder, OriginalCharacterId): builder.PrependInt32Slot(1, OriginalCharacterId, 0)
 
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(2, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(2, DisplayOrder, 0)
 
 
     @staticmethod
-    def AddEventID(builder, EventID): builder.PrependInt64Slot(3, EventID, 0)
+    def AddEventID(builder, EventID): builder.PrependInt32Slot(3, EventID, 0)
 
 
     @staticmethod
@@ -243,11 +226,11 @@ class CharacterDialogEventExcel:
 
 
     @staticmethod
-    def AddDialogConditionDetailValue(builder, DialogConditionDetailValue): builder.PrependInt64Slot(8, DialogConditionDetailValue, 0)
+    def AddDialogConditionDetailValue(builder, DialogConditionDetailValue): builder.PrependInt32Slot(8, DialogConditionDetailValue, 0)
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(9, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(9, GroupId, 0)
 
 
     @staticmethod
@@ -258,7 +241,7 @@ class CharacterDialogEventExcel:
     def AddActionName(builder, ActionName): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(ActionName), 0)
 
     @staticmethod
-    def AddDuration(builder, Duration): builder.PrependInt64Slot(12, Duration, 0)
+    def AddDuration(builder, Duration): builder.PrependInt32Slot(12, Duration, 0)
 
 
     @staticmethod
@@ -271,9 +254,7 @@ class CharacterDialogEventExcel:
     def AddLocalizeJP(builder, LocalizeJP): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeJP), 0)
 
     @staticmethod
-    def AddVoiceId(builder, VoiceId): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(VoiceId), 0)
-    @staticmethod
-    def StartVoiceIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddVoiceIdLength(builder, VoiceIdLength): builder.PrependInt32Slot(16, VoiceIdLength, 0)
 
 
     @staticmethod
@@ -289,11 +270,11 @@ class CharacterDialogEventExcel:
 
 
     @staticmethod
-    def AddUnlockEventSeason(builder, UnlockEventSeason): builder.PrependInt64Slot(20, UnlockEventSeason, 0)
+    def AddUnlockEventSeason(builder, UnlockEventSeason): builder.PrependInt32Slot(20, UnlockEventSeason, 0)
 
 
     @staticmethod
-    def AddScenarioGroupId(builder, ScenarioGroupId): builder.PrependInt64Slot(21, ScenarioGroupId, 0)
+    def AddScenarioGroupId(builder, ScenarioGroupId): builder.PrependInt32Slot(21, ScenarioGroupId, 0)
 
 
     @staticmethod

@@ -20,7 +20,7 @@ class WelcomeCampaignEnterRewardExcel:
     def GroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,14 +34,14 @@ class WelcomeCampaignEnterRewardExcel:
     def RewardParcelUniqueID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -54,7 +54,7 @@ class WelcomeCampaignEnterRewardExcel:
 
 
     @staticmethod
-    def AddGroupId(builder, GroupId): builder.PrependInt64Slot(0, GroupId, 0)
+    def AddGroupId(builder, GroupId): builder.PrependInt32Slot(0, GroupId, 0)
 
 
     @staticmethod
@@ -62,9 +62,9 @@ class WelcomeCampaignEnterRewardExcel:
 
 
     @staticmethod
-    def AddRewardParcelUniqueID(builder, RewardParcelUniqueID): builder.PrependInt64Slot(2, RewardParcelUniqueID, 0)
+    def AddRewardParcelUniqueID(builder, RewardParcelUniqueID): builder.PrependInt32Slot(2, RewardParcelUniqueID, 0)
 
 
     @staticmethod
-    def AddRewardAmount(builder, RewardAmount): builder.PrependInt64Slot(3, RewardAmount, 0)
+    def AddRewardAmount(builder, RewardAmount): builder.PrependInt32Slot(3, RewardAmount, 0)
 

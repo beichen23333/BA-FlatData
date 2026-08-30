@@ -20,7 +20,7 @@ class PossessionCheckExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class PossessionCheckExcel:
     def DefaultParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,7 +55,7 @@ class PossessionCheckExcel:
     def ReplaceParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,7 +75,7 @@ class PossessionCheckExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
@@ -83,7 +83,7 @@ class PossessionCheckExcel:
 
 
     @staticmethod
-    def AddDefaultParcelId(builder, DefaultParcelId): builder.PrependInt64Slot(2, DefaultParcelId, 0)
+    def AddDefaultParcelId(builder, DefaultParcelId): builder.PrependInt32Slot(2, DefaultParcelId, 0)
 
 
     @staticmethod
@@ -95,7 +95,7 @@ class PossessionCheckExcel:
 
 
     @staticmethod
-    def AddReplaceParcelId(builder, ReplaceParcelId): builder.PrependInt64Slot(5, ReplaceParcelId, 0)
+    def AddReplaceParcelId(builder, ReplaceParcelId): builder.PrependInt32Slot(5, ReplaceParcelId, 0)
 
 
     @staticmethod

@@ -17,28 +17,11 @@ class GroundNodeLayerFlat:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def Layers(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int8Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def LayersAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int8Flags, o)
-        return 0
-
     def LayersLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def LayersIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        return o == 0
 
 
 
@@ -50,7 +33,5 @@ class GroundNodeLayerFlat:
 
 
     @staticmethod
-    def AddLayers(builder, Layers): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(Layers), 0)
-    @staticmethod
-    def StartLayersVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddLayersLength(builder, LayersLength): builder.PrependInt32Slot(0, LayersLength, 0)
 

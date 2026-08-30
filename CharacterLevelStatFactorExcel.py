@@ -20,35 +20,35 @@ class CharacterLevelStatFactorExcel:
     def Level(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def StabilityFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefenceFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AccuracyFactor(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -61,21 +61,21 @@ class CharacterLevelStatFactorExcel:
 
 
     @staticmethod
-    def AddLevel(builder, Level): builder.PrependInt64Slot(0, Level, 0)
+    def AddLevel(builder, Level): builder.PrependInt32Slot(0, Level, 0)
 
 
     @staticmethod
-    def AddCriticalFactor(builder, CriticalFactor): builder.PrependInt64Slot(1, CriticalFactor, 0)
+    def AddCriticalFactor(builder, CriticalFactor): builder.PrependInt32Slot(1, CriticalFactor, 0)
 
 
     @staticmethod
-    def AddStabilityFactor(builder, StabilityFactor): builder.PrependInt64Slot(2, StabilityFactor, 0)
+    def AddStabilityFactor(builder, StabilityFactor): builder.PrependInt32Slot(2, StabilityFactor, 0)
 
 
     @staticmethod
-    def AddDefenceFactor(builder, DefenceFactor): builder.PrependInt64Slot(3, DefenceFactor, 0)
+    def AddDefenceFactor(builder, DefenceFactor): builder.PrependInt32Slot(3, DefenceFactor, 0)
 
 
     @staticmethod
-    def AddAccuracyFactor(builder, AccuracyFactor): builder.PrependInt64Slot(4, AccuracyFactor, 0)
+    def AddAccuracyFactor(builder, AccuracyFactor): builder.PrependInt32Slot(4, AccuracyFactor, 0)
 

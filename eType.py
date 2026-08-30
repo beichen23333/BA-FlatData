@@ -1,0 +1,3 @@
+class eType:
+    NOISE_DISTORTION = 0
+    CHROMATIC_ABERRAION = 1

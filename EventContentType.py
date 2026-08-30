@@ -43,3 +43,4 @@ class EventContentType:
     Concentration = 41
     InteractiveWorldRaid = 42
     ClueSearch = 43
+    MinigameJanken = 44

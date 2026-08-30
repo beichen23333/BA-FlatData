@@ -20,7 +20,7 @@ class ArenaSeasonExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,21 +41,21 @@ class ArenaSeasonExcel:
     def SeasonGroupLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PrevSeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def InformationGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,7 +68,7 @@ class ArenaSeasonExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
@@ -78,13 +78,13 @@ class ArenaSeasonExcel:
     def AddSeasonEndDate(builder, SeasonEndDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(SeasonEndDate), 0)
 
     @staticmethod
-    def AddSeasonGroupLimit(builder, SeasonGroupLimit): builder.PrependInt64Slot(3, SeasonGroupLimit, 0)
+    def AddSeasonGroupLimit(builder, SeasonGroupLimit): builder.PrependInt32Slot(3, SeasonGroupLimit, 0)
 
 
     @staticmethod
-    def AddPrevSeasonId(builder, PrevSeasonId): builder.PrependInt64Slot(4, PrevSeasonId, 0)
+    def AddPrevSeasonId(builder, PrevSeasonId): builder.PrependInt32Slot(4, PrevSeasonId, 0)
 
 
     @staticmethod
-    def AddInformationGroupId(builder, InformationGroupId): builder.PrependInt64Slot(5, InformationGroupId, 0)
+    def AddInformationGroupId(builder, InformationGroupId): builder.PrependInt32Slot(5, InformationGroupId, 0)
 

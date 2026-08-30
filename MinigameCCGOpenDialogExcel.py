@@ -20,7 +20,7 @@ class MinigameCCGOpenDialogExcel:
     def DialogId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class MinigameCCGOpenDialogExcel:
     def ConditionCard(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class MinigameCCGOpenDialogExcel:
     def Duration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,7 +68,7 @@ class MinigameCCGOpenDialogExcel:
 
 
     @staticmethod
-    def AddDialogId(builder, DialogId): builder.PrependInt64Slot(0, DialogId, 0)
+    def AddDialogId(builder, DialogId): builder.PrependInt32Slot(0, DialogId, 0)
 
 
     @staticmethod
@@ -76,7 +76,7 @@ class MinigameCCGOpenDialogExcel:
 
 
     @staticmethod
-    def AddConditionCard(builder, ConditionCard): builder.PrependInt64Slot(2, ConditionCard, 0)
+    def AddConditionCard(builder, ConditionCard): builder.PrependInt32Slot(2, ConditionCard, 0)
 
 
     @staticmethod
@@ -84,7 +84,7 @@ class MinigameCCGOpenDialogExcel:
 
 
     @staticmethod
-    def AddDuration(builder, Duration): builder.PrependInt64Slot(4, Duration, 0)
+    def AddDuration(builder, Duration): builder.PrependInt32Slot(4, Duration, 0)
 
 
     @staticmethod

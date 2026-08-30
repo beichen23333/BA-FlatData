@@ -20,7 +20,7 @@ class PresetCharacterGroupExcel:
     def PresetCharacterGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -248,16 +248,37 @@ class PresetCharacterGroupExcel:
         return 0
 
 
+    def EngraveLevelEgo(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EngraveLevelConscious(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def EngraveLevelUnconscious(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(33)
+    def Start(builder): builder.StartObject(36)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddPresetCharacterGroupId(builder, PresetCharacterGroupId): builder.PrependInt64Slot(0, PresetCharacterGroupId, 0)
+    def AddPresetCharacterGroupId(builder, PresetCharacterGroupId): builder.PrependInt32Slot(0, PresetCharacterGroupId, 0)
 
 
     @staticmethod
@@ -385,4 +406,16 @@ class PresetCharacterGroupExcel:
 
     @staticmethod
     def AddPotentialLevel03(builder, PotentialLevel03): builder.PrependInt32Slot(32, PotentialLevel03, 0)
+
+
+    @staticmethod
+    def AddEngraveLevelEgo(builder, EngraveLevelEgo): builder.PrependInt32Slot(33, EngraveLevelEgo, 0)
+
+
+    @staticmethod
+    def AddEngraveLevelConscious(builder, EngraveLevelConscious): builder.PrependInt32Slot(34, EngraveLevelConscious, 0)
+
+
+    @staticmethod
+    def AddEngraveLevelUnconscious(builder, EngraveLevelUnconscious): builder.PrependInt32Slot(35, EngraveLevelUnconscious, 0)
 

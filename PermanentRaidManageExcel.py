@@ -24,40 +24,18 @@ class PermanentRaidManageExcel:
         return 0
 
 
-    def OpenRaidBossGroup(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def OpenRaidBossGroupLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def OpenRaidBossGroupIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        return o == 0
-
-
-    def HideDifficulty(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def HideDifficultyLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def HideDifficultyIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
-        return o == 0
 
 
     def OpenDate(self):
@@ -80,15 +58,11 @@ class PermanentRaidManageExcel:
 
 
     @staticmethod
-    def AddOpenRaidBossGroup(builder, OpenRaidBossGroup): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(OpenRaidBossGroup), 0)
-    @staticmethod
-    def StartOpenRaidBossGroupVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddOpenRaidBossGroupLength(builder, OpenRaidBossGroupLength): builder.PrependInt32Slot(1, OpenRaidBossGroupLength, 0)
 
 
     @staticmethod
-    def AddHideDifficulty(builder, HideDifficulty): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(HideDifficulty), 0)
-    @staticmethod
-    def StartHideDifficultyVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddHideDifficultyLength(builder, HideDifficultyLength): builder.PrependInt32Slot(2, HideDifficultyLength, 0)
 
 
     @staticmethod

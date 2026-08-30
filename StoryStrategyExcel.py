@@ -20,7 +20,7 @@ class StoryStrategyExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,14 +48,14 @@ class StoryStrategyExcel:
     def BattleDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WhiteListId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -104,7 +104,7 @@ class StoryStrategyExcel:
     def BGMId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -124,7 +124,7 @@ class StoryStrategyExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -138,11 +138,11 @@ class StoryStrategyExcel:
 
 
     @staticmethod
-    def AddBattleDuration(builder, BattleDuration): builder.PrependInt64Slot(4, BattleDuration, 0)
+    def AddBattleDuration(builder, BattleDuration): builder.PrependInt32Slot(4, BattleDuration, 0)
 
 
     @staticmethod
-    def AddWhiteListId(builder, WhiteListId): builder.PrependInt64Slot(5, WhiteListId, 0)
+    def AddWhiteListId(builder, WhiteListId): builder.PrependInt32Slot(5, WhiteListId, 0)
 
 
     @staticmethod
@@ -168,7 +168,7 @@ class StoryStrategyExcel:
 
 
     @staticmethod
-    def AddBGMId(builder, BGMId): builder.PrependInt64Slot(12, BGMId, 0)
+    def AddBGMId(builder, BGMId): builder.PrependInt32Slot(12, BGMId, 0)
 
 
     @staticmethod

@@ -20,14 +20,14 @@ class ShopCashExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CashProductId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,96 +76,124 @@ class ShopCashExcel:
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RenewalDisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CategoryType(self):
+    def ShopCashStepupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def DisplayTag(self):
+    def CategoryType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ProductSaleType(self):
+    def DisplayTag(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SalePeriodFrom(self):
+    def ProductSaleType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def SalePeriodTo(self):
+    def SalePeriodFrom(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def ProductSaleDay(self):
+    def SalePeriodTo(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def ProductSaleDay(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ProductSaleMilliSeconds(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PeriodTag(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
-        return 0
-
-
-    def AccountLevelLimit(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def AccountLevelHide(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def ClearMissionLimit(self):
+    def AccountLevelLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearMissionHide(self):
+    def AccountLevelHide(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def PurchaseReportEventName(self):
+    def ClearMissionLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def ClearMissionHide(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def PurchaseReportEventName(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def RecommendIconPath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def RecommendPrefabPath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -174,17 +202,17 @@ class ShopCashExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(22)
+    def Start(builder): builder.StartObject(26)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddCashProductId(builder, CashProductId): builder.PrependInt64Slot(1, CashProductId, 0)
+    def AddCashProductId(builder, CashProductId): builder.PrependInt32Slot(1, CashProductId, 0)
 
 
     @staticmethod
@@ -211,54 +239,68 @@ class ShopCashExcel:
     def AddIconPath(builder, IconPath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(IconPath), 0)
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(8, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(8, DisplayOrder, 0)
 
 
     @staticmethod
-    def AddRenewalDisplayOrder(builder, RenewalDisplayOrder): builder.PrependInt64Slot(9, RenewalDisplayOrder, 0)
+    def AddRenewalDisplayOrder(builder, RenewalDisplayOrder): builder.PrependInt32Slot(9, RenewalDisplayOrder, 0)
 
 
     @staticmethod
-    def AddCategoryType(builder, CategoryType): builder.PrependInt32Slot(10, CategoryType, 0)
+    def AddShopCashStepupId(builder, ShopCashStepupId): builder.PrependInt32Slot(10, ShopCashStepupId, 0)
 
 
     @staticmethod
-    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(11, DisplayTag, 0)
+    def AddCategoryType(builder, CategoryType): builder.PrependInt32Slot(11, CategoryType, 0)
 
 
     @staticmethod
-    def AddProductSaleType(builder, ProductSaleType): builder.PrependInt32Slot(12, ProductSaleType, 0)
+    def AddDisplayTag(builder, DisplayTag): builder.PrependInt32Slot(12, DisplayTag, 0)
 
 
     @staticmethod
-    def AddSalePeriodFrom(builder, SalePeriodFrom): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodFrom), 0)
-
-    @staticmethod
-    def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
-
-    @staticmethod
-    def AddProductSaleDay(builder, ProductSaleDay): builder.PrependInt64Slot(15, ProductSaleDay, 0)
+    def AddProductSaleType(builder, ProductSaleType): builder.PrependInt32Slot(13, ProductSaleType, 0)
 
 
     @staticmethod
-    def AddPeriodTag(builder, PeriodTag): builder.PrependBoolSlot(16, PeriodTag, 0)
+    def AddSalePeriodFrom(builder, SalePeriodFrom): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodFrom), 0)
+
+    @staticmethod
+    def AddSalePeriodTo(builder, SalePeriodTo): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(SalePeriodTo), 0)
+
+    @staticmethod
+    def AddProductSaleDay(builder, ProductSaleDay): builder.PrependInt32Slot(16, ProductSaleDay, 0)
 
 
     @staticmethod
-    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt64Slot(17, AccountLevelLimit, 0)
+    def AddProductSaleMilliSeconds(builder, ProductSaleMilliSeconds): builder.PrependInt32Slot(17, ProductSaleMilliSeconds, 0)
 
 
     @staticmethod
-    def AddAccountLevelHide(builder, AccountLevelHide): builder.PrependBoolSlot(18, AccountLevelHide, 0)
+    def AddPeriodTag(builder, PeriodTag): builder.PrependBoolSlot(18, PeriodTag, 0)
 
 
     @staticmethod
-    def AddClearMissionLimit(builder, ClearMissionLimit): builder.PrependInt64Slot(19, ClearMissionLimit, 0)
+    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt32Slot(19, AccountLevelLimit, 0)
 
 
     @staticmethod
-    def AddClearMissionHide(builder, ClearMissionHide): builder.PrependBoolSlot(20, ClearMissionHide, 0)
+    def AddAccountLevelHide(builder, AccountLevelHide): builder.PrependBoolSlot(20, AccountLevelHide, 0)
 
 
     @staticmethod
-    def AddPurchaseReportEventName(builder, PurchaseReportEventName): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(PurchaseReportEventName), 0)
+    def AddClearMissionLimit(builder, ClearMissionLimit): builder.PrependInt32Slot(21, ClearMissionLimit, 0)
+
+
+    @staticmethod
+    def AddClearMissionHide(builder, ClearMissionHide): builder.PrependBoolSlot(22, ClearMissionHide, 0)
+
+
+    @staticmethod
+    def AddPurchaseReportEventName(builder, PurchaseReportEventName): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(PurchaseReportEventName), 0)
+
+    @staticmethod
+    def AddRecommendIconPath(builder, RecommendIconPath): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(RecommendIconPath), 0)
+
+    @staticmethod
+    def AddRecommendPrefabPath(builder, RecommendPrefabPath): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(RecommendPrefabPath), 0)

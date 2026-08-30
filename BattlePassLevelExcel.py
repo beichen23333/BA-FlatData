@@ -20,14 +20,14 @@ class BattlePassLevelExcel:
     def BattlePassId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Level(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -47,11 +47,11 @@ class BattlePassLevelExcel:
 
 
     @staticmethod
-    def AddBattlePassId(builder, BattlePassId): builder.PrependInt64Slot(0, BattlePassId, 0)
+    def AddBattlePassId(builder, BattlePassId): builder.PrependInt32Slot(0, BattlePassId, 0)
 
 
     @staticmethod
-    def AddLevel(builder, Level): builder.PrependInt64Slot(1, Level, 0)
+    def AddLevel(builder, Level): builder.PrependInt32Slot(1, Level, 0)
 
 
     @staticmethod

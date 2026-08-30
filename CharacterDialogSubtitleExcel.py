@@ -27,14 +27,14 @@ class CharacterDialogSubtitleExcel:
     def CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Duration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -71,11 +71,11 @@ class CharacterDialogSubtitleExcel:
     def AddLocalizeCVGroup(builder, LocalizeCVGroup): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeCVGroup), 0)
 
     @staticmethod
-    def AddCharacterId(builder, CharacterId): builder.PrependInt64Slot(1, CharacterId, 0)
+    def AddCharacterId(builder, CharacterId): builder.PrependInt32Slot(1, CharacterId, 0)
 
 
     @staticmethod
-    def AddDuration(builder, Duration): builder.PrependInt64Slot(2, Duration, 0)
+    def AddDuration(builder, Duration): builder.PrependInt32Slot(2, Duration, 0)
 
 
     @staticmethod

@@ -27,14 +27,14 @@ class ConstEventCommonExcel:
     def EventStrategyPlayTimeLimitInSeconds(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SubEventChangeLimitSeconds(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class ConstEventCommonExcel:
     def CardShopProbWeightCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -76,7 +76,7 @@ class ConstEventCommonExcel:
     def SpecialOperactionCollectionGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -128,11 +128,11 @@ class ConstEventCommonExcel:
 
 
     @staticmethod
-    def AddEventStrategyPlayTimeLimitInSeconds(builder, EventStrategyPlayTimeLimitInSeconds): builder.PrependInt64Slot(1, EventStrategyPlayTimeLimitInSeconds, 0)
+    def AddEventStrategyPlayTimeLimitInSeconds(builder, EventStrategyPlayTimeLimitInSeconds): builder.PrependInt32Slot(1, EventStrategyPlayTimeLimitInSeconds, 0)
 
 
     @staticmethod
-    def AddSubEventChangeLimitSeconds(builder, SubEventChangeLimitSeconds): builder.PrependInt64Slot(2, SubEventChangeLimitSeconds, 0)
+    def AddSubEventChangeLimitSeconds(builder, SubEventChangeLimitSeconds): builder.PrependInt32Slot(2, SubEventChangeLimitSeconds, 0)
 
 
     @staticmethod
@@ -140,7 +140,7 @@ class ConstEventCommonExcel:
 
 
     @staticmethod
-    def AddCardShopProbWeightCount(builder, CardShopProbWeightCount): builder.PrependInt64Slot(4, CardShopProbWeightCount, 0)
+    def AddCardShopProbWeightCount(builder, CardShopProbWeightCount): builder.PrependInt32Slot(4, CardShopProbWeightCount, 0)
 
 
     @staticmethod
@@ -154,7 +154,7 @@ class ConstEventCommonExcel:
     def AddMeetupScenarioReplayTitleLocalize(builder, MeetupScenarioReplayTitleLocalize): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(MeetupScenarioReplayTitleLocalize), 0)
 
     @staticmethod
-    def AddSpecialOperactionCollectionGroupId(builder, SpecialOperactionCollectionGroupId): builder.PrependInt64Slot(8, SpecialOperactionCollectionGroupId, 0)
+    def AddSpecialOperactionCollectionGroupId(builder, SpecialOperactionCollectionGroupId): builder.PrependInt32Slot(8, SpecialOperactionCollectionGroupId, 0)
 
 
     @staticmethod

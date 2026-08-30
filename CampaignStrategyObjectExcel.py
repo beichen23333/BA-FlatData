@@ -20,7 +20,7 @@ class CampaignStrategyObjectExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class CampaignStrategyObjectExcel:
     def StrategyRewardID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -83,7 +83,7 @@ class CampaignStrategyObjectExcel:
     def StrategySightRange(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -131,7 +131,7 @@ class CampaignStrategyObjectExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -153,7 +153,7 @@ class CampaignStrategyObjectExcel:
 
 
     @staticmethod
-    def AddStrategyRewardID(builder, StrategyRewardID): builder.PrependInt64Slot(6, StrategyRewardID, 0)
+    def AddStrategyRewardID(builder, StrategyRewardID): builder.PrependInt32Slot(6, StrategyRewardID, 0)
 
 
     @staticmethod
@@ -164,7 +164,7 @@ class CampaignStrategyObjectExcel:
 
 
     @staticmethod
-    def AddStrategySightRange(builder, StrategySightRange): builder.PrependInt64Slot(9, StrategySightRange, 0)
+    def AddStrategySightRange(builder, StrategySightRange): builder.PrependInt32Slot(9, StrategySightRange, 0)
 
 
     @staticmethod

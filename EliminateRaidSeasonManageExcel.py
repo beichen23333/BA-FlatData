@@ -20,14 +20,14 @@ class EliminateRaidSeasonManageExcel:
     def SeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SeasonDisplay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -97,7 +97,7 @@ class EliminateRaidSeasonManageExcel:
     def RankingRewardGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -108,100 +108,66 @@ class EliminateRaidSeasonManageExcel:
         return 0
 
 
-    def StackedSeasonRewardGauge(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def StackedSeasonRewardGaugeAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def StackedSeasonRewardGaugeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def StackedSeasonRewardGaugeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        return o == 0
-
-
-    def SeasonRewardId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def SeasonRewardIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def SeasonRewardIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def SeasonRewardIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        return o == 0
 
 
     def LimitedRewardIdNormal(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def LimitedRewardIdHard(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def LimitedRewardIdVeryhard(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def LimitedRewardIdHardcore(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def LimitedRewardIdExtreme(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def LimitedRewardIdInsane(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def LimitedRewardIdTorment(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -214,11 +180,11 @@ class EliminateRaidSeasonManageExcel:
 
 
     @staticmethod
-    def AddSeasonId(builder, SeasonId): builder.PrependInt64Slot(0, SeasonId, 0)
+    def AddSeasonId(builder, SeasonId): builder.PrependInt32Slot(0, SeasonId, 0)
 
 
     @staticmethod
-    def AddSeasonDisplay(builder, SeasonDisplay): builder.PrependInt64Slot(1, SeasonDisplay, 0)
+    def AddSeasonDisplay(builder, SeasonDisplay): builder.PrependInt32Slot(1, SeasonDisplay, 0)
 
 
     @staticmethod
@@ -249,7 +215,7 @@ class EliminateRaidSeasonManageExcel:
     def AddOpenRaidBossGroup03(builder, OpenRaidBossGroup03): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(OpenRaidBossGroup03), 0)
 
     @staticmethod
-    def AddRankingRewardGroupId(builder, RankingRewardGroupId): builder.PrependInt64Slot(11, RankingRewardGroupId, 0)
+    def AddRankingRewardGroupId(builder, RankingRewardGroupId): builder.PrependInt32Slot(11, RankingRewardGroupId, 0)
 
 
     @staticmethod
@@ -257,41 +223,37 @@ class EliminateRaidSeasonManageExcel:
 
 
     @staticmethod
-    def AddStackedSeasonRewardGauge(builder, StackedSeasonRewardGauge): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(StackedSeasonRewardGauge), 0)
-    @staticmethod
-    def StartStackedSeasonRewardGaugeVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddStackedSeasonRewardGaugeLength(builder, StackedSeasonRewardGaugeLength): builder.PrependInt32Slot(13, StackedSeasonRewardGaugeLength, 0)
 
 
     @staticmethod
-    def AddSeasonRewardId(builder, SeasonRewardId): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(SeasonRewardId), 0)
-    @staticmethod
-    def StartSeasonRewardIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddSeasonRewardIdLength(builder, SeasonRewardIdLength): builder.PrependInt32Slot(14, SeasonRewardIdLength, 0)
 
 
     @staticmethod
-    def AddLimitedRewardIdNormal(builder, LimitedRewardIdNormal): builder.PrependInt64Slot(15, LimitedRewardIdNormal, 0)
+    def AddLimitedRewardIdNormal(builder, LimitedRewardIdNormal): builder.PrependInt32Slot(15, LimitedRewardIdNormal, 0)
 
 
     @staticmethod
-    def AddLimitedRewardIdHard(builder, LimitedRewardIdHard): builder.PrependInt64Slot(16, LimitedRewardIdHard, 0)
+    def AddLimitedRewardIdHard(builder, LimitedRewardIdHard): builder.PrependInt32Slot(16, LimitedRewardIdHard, 0)
 
 
     @staticmethod
-    def AddLimitedRewardIdVeryhard(builder, LimitedRewardIdVeryhard): builder.PrependInt64Slot(17, LimitedRewardIdVeryhard, 0)
+    def AddLimitedRewardIdVeryhard(builder, LimitedRewardIdVeryhard): builder.PrependInt32Slot(17, LimitedRewardIdVeryhard, 0)
 
 
     @staticmethod
-    def AddLimitedRewardIdHardcore(builder, LimitedRewardIdHardcore): builder.PrependInt64Slot(18, LimitedRewardIdHardcore, 0)
+    def AddLimitedRewardIdHardcore(builder, LimitedRewardIdHardcore): builder.PrependInt32Slot(18, LimitedRewardIdHardcore, 0)
 
 
     @staticmethod
-    def AddLimitedRewardIdExtreme(builder, LimitedRewardIdExtreme): builder.PrependInt64Slot(19, LimitedRewardIdExtreme, 0)
+    def AddLimitedRewardIdExtreme(builder, LimitedRewardIdExtreme): builder.PrependInt32Slot(19, LimitedRewardIdExtreme, 0)
 
 
     @staticmethod
-    def AddLimitedRewardIdInsane(builder, LimitedRewardIdInsane): builder.PrependInt64Slot(20, LimitedRewardIdInsane, 0)
+    def AddLimitedRewardIdInsane(builder, LimitedRewardIdInsane): builder.PrependInt32Slot(20, LimitedRewardIdInsane, 0)
 
 
     @staticmethod
-    def AddLimitedRewardIdTorment(builder, LimitedRewardIdTorment): builder.PrependInt64Slot(21, LimitedRewardIdTorment, 0)
+    def AddLimitedRewardIdTorment(builder, LimitedRewardIdTorment): builder.PrependInt32Slot(21, LimitedRewardIdTorment, 0)
 

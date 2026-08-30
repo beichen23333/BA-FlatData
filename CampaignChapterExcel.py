@@ -20,7 +20,7 @@ class CampaignChapterExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,149 +48,64 @@ class CampaignChapterExcel:
     def Order(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def PreChapterId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def PreChapterIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def PreChapterIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def PreChapterIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
 
 
     def ChapterRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChapterHardRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChapterVeryHardRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def NormalCampaignStageId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def NormalCampaignStageIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def NormalCampaignStageIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def NormalCampaignStageIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
-        return o == 0
-
-
-    def NormalExtraStageId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def NormalExtraStageIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def NormalExtraStageIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def NormalExtraStageIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
-        return o == 0
-
-
-    def HardCampaignStageId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def HardCampaignStageIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def HardCampaignStageIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def HardCampaignStageIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
-        return o == 0
-
-
-    def VeryHardCampaignStageId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def VeryHardCampaignStageIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def VeryHardCampaignStageIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def VeryHardCampaignStageIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        return o == 0
 
 
     def IsTacticSkip(self):
@@ -209,7 +124,7 @@ class CampaignChapterExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -222,49 +137,39 @@ class CampaignChapterExcel:
     def AddHardImagePath(builder, HardImagePath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(HardImagePath), 0)
 
     @staticmethod
-    def AddOrder(builder, Order): builder.PrependInt64Slot(4, Order, 0)
+    def AddOrder(builder, Order): builder.PrependInt32Slot(4, Order, 0)
 
 
     @staticmethod
-    def AddPreChapterId(builder, PreChapterId): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(PreChapterId), 0)
-    @staticmethod
-    def StartPreChapterIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddPreChapterIdLength(builder, PreChapterIdLength): builder.PrependInt32Slot(5, PreChapterIdLength, 0)
 
 
     @staticmethod
-    def AddChapterRewardId(builder, ChapterRewardId): builder.PrependInt64Slot(6, ChapterRewardId, 0)
+    def AddChapterRewardId(builder, ChapterRewardId): builder.PrependInt32Slot(6, ChapterRewardId, 0)
 
 
     @staticmethod
-    def AddChapterHardRewardId(builder, ChapterHardRewardId): builder.PrependInt64Slot(7, ChapterHardRewardId, 0)
+    def AddChapterHardRewardId(builder, ChapterHardRewardId): builder.PrependInt32Slot(7, ChapterHardRewardId, 0)
 
 
     @staticmethod
-    def AddChapterVeryHardRewardId(builder, ChapterVeryHardRewardId): builder.PrependInt64Slot(8, ChapterVeryHardRewardId, 0)
+    def AddChapterVeryHardRewardId(builder, ChapterVeryHardRewardId): builder.PrependInt32Slot(8, ChapterVeryHardRewardId, 0)
 
 
     @staticmethod
-    def AddNormalCampaignStageId(builder, NormalCampaignStageId): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(NormalCampaignStageId), 0)
-    @staticmethod
-    def StartNormalCampaignStageIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddNormalCampaignStageIdLength(builder, NormalCampaignStageIdLength): builder.PrependInt32Slot(9, NormalCampaignStageIdLength, 0)
 
 
     @staticmethod
-    def AddNormalExtraStageId(builder, NormalExtraStageId): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(NormalExtraStageId), 0)
-    @staticmethod
-    def StartNormalExtraStageIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddNormalExtraStageIdLength(builder, NormalExtraStageIdLength): builder.PrependInt32Slot(10, NormalExtraStageIdLength, 0)
 
 
     @staticmethod
-    def AddHardCampaignStageId(builder, HardCampaignStageId): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(HardCampaignStageId), 0)
-    @staticmethod
-    def StartHardCampaignStageIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddHardCampaignStageIdLength(builder, HardCampaignStageIdLength): builder.PrependInt32Slot(11, HardCampaignStageIdLength, 0)
 
 
     @staticmethod
-    def AddVeryHardCampaignStageId(builder, VeryHardCampaignStageId): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(VeryHardCampaignStageId), 0)
-    @staticmethod
-    def StartVeryHardCampaignStageIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddVeryHardCampaignStageIdLength(builder, VeryHardCampaignStageIdLength): builder.PrependInt32Slot(12, VeryHardCampaignStageIdLength, 0)
 
 
     @staticmethod

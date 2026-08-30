@@ -20,14 +20,14 @@ class GuideMissionOpenStageConditionExcel:
     def SeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OrderNumber(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class GuideMissionOpenStageConditionExcel:
     def ClearScenarioModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class GuideMissionOpenStageConditionExcel:
     def ClearStageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -89,18 +89,18 @@ class GuideMissionOpenStageConditionExcel:
 
 
     @staticmethod
-    def AddSeasonId(builder, SeasonId): builder.PrependInt64Slot(0, SeasonId, 0)
+    def AddSeasonId(builder, SeasonId): builder.PrependInt32Slot(0, SeasonId, 0)
 
 
     @staticmethod
-    def AddOrderNumber(builder, OrderNumber): builder.PrependInt64Slot(1, OrderNumber, 0)
+    def AddOrderNumber(builder, OrderNumber): builder.PrependInt32Slot(1, OrderNumber, 0)
 
 
     @staticmethod
     def AddTabLocalizeCode(builder, TabLocalizeCode): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(TabLocalizeCode), 0)
 
     @staticmethod
-    def AddClearScenarioModeId(builder, ClearScenarioModeId): builder.PrependInt64Slot(3, ClearScenarioModeId, 0)
+    def AddClearScenarioModeId(builder, ClearScenarioModeId): builder.PrependInt32Slot(3, ClearScenarioModeId, 0)
 
 
     @staticmethod
@@ -110,7 +110,7 @@ class GuideMissionOpenStageConditionExcel:
     def AddShortcutScenarioUI(builder, ShortcutScenarioUI): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ShortcutScenarioUI), 0)
 
     @staticmethod
-    def AddClearStageId(builder, ClearStageId): builder.PrependInt64Slot(6, ClearStageId, 0)
+    def AddClearStageId(builder, ClearStageId): builder.PrependInt32Slot(6, ClearStageId, 0)
 
 
     @staticmethod

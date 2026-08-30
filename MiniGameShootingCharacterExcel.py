@@ -20,7 +20,7 @@ class MiniGameShootingCharacterExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -52,22 +52,11 @@ class MiniGameShootingCharacterExcel:
         return None
 
 
-    def PublicSkillData(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
-
     def PublicSkillDataLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def PublicSkillDataIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
 
 
     def DeathSkillData(self):
@@ -80,56 +69,56 @@ class MiniGameShootingCharacterExcel:
     def MaxHP(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AttackPower(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DefensePower(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CriticalDamageRate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AttackRange(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MoveSpeed(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShotTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -157,7 +146,7 @@ class MiniGameShootingCharacterExcel:
     def CharacterVoiceGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -170,7 +159,7 @@ class MiniGameShootingCharacterExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
@@ -187,44 +176,42 @@ class MiniGameShootingCharacterExcel:
     def AddNormalAttackSkillData(builder, NormalAttackSkillData): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(NormalAttackSkillData), 0)
 
     @staticmethod
-    def AddPublicSkillData(builder, PublicSkillData): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(PublicSkillData), 0)
-    @staticmethod
-    def StartPublicSkillDataVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddPublicSkillDataLength(builder, PublicSkillDataLength): builder.PrependInt32Slot(5, PublicSkillDataLength, 0)
 
 
     @staticmethod
     def AddDeathSkillData(builder, DeathSkillData): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(DeathSkillData), 0)
 
     @staticmethod
-    def AddMaxHP(builder, MaxHP): builder.PrependInt64Slot(7, MaxHP, 0)
+    def AddMaxHP(builder, MaxHP): builder.PrependInt32Slot(7, MaxHP, 0)
 
 
     @staticmethod
-    def AddAttackPower(builder, AttackPower): builder.PrependInt64Slot(8, AttackPower, 0)
+    def AddAttackPower(builder, AttackPower): builder.PrependInt32Slot(8, AttackPower, 0)
 
 
     @staticmethod
-    def AddDefensePower(builder, DefensePower): builder.PrependInt64Slot(9, DefensePower, 0)
+    def AddDefensePower(builder, DefensePower): builder.PrependInt32Slot(9, DefensePower, 0)
 
 
     @staticmethod
-    def AddCriticalRate(builder, CriticalRate): builder.PrependInt64Slot(10, CriticalRate, 0)
+    def AddCriticalRate(builder, CriticalRate): builder.PrependInt32Slot(10, CriticalRate, 0)
 
 
     @staticmethod
-    def AddCriticalDamageRate(builder, CriticalDamageRate): builder.PrependInt64Slot(11, CriticalDamageRate, 0)
+    def AddCriticalDamageRate(builder, CriticalDamageRate): builder.PrependInt32Slot(11, CriticalDamageRate, 0)
 
 
     @staticmethod
-    def AddAttackRange(builder, AttackRange): builder.PrependInt64Slot(12, AttackRange, 0)
+    def AddAttackRange(builder, AttackRange): builder.PrependInt32Slot(12, AttackRange, 0)
 
 
     @staticmethod
-    def AddMoveSpeed(builder, MoveSpeed): builder.PrependInt64Slot(13, MoveSpeed, 0)
+    def AddMoveSpeed(builder, MoveSpeed): builder.PrependInt32Slot(13, MoveSpeed, 0)
 
 
     @staticmethod
-    def AddShotTime(builder, ShotTime): builder.PrependInt64Slot(14, ShotTime, 0)
+    def AddShotTime(builder, ShotTime): builder.PrependInt32Slot(14, ShotTime, 0)
 
 
     @staticmethod
@@ -240,5 +227,5 @@ class MiniGameShootingCharacterExcel:
 
 
     @staticmethod
-    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt64Slot(18, CharacterVoiceGroupId, 0)
+    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt32Slot(18, CharacterVoiceGroupId, 0)
 

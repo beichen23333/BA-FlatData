@@ -5,3 +5,5 @@ class StarGoalType:
     GetBoxes = 3
     ClearTimeInSec = 4
     AllyBaseDamage = 5
+    UsedTurn = 6
+    LeftHitPoint = 7

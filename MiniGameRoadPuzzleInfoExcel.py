@@ -20,7 +20,7 @@ class MiniGameRoadPuzzleInfoExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,21 +34,21 @@ class MiniGameRoadPuzzleInfoExcel:
     def EventUseCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CostGoodsId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RailSetRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,7 +68,7 @@ class MiniGameRoadPuzzleInfoExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
@@ -76,15 +76,15 @@ class MiniGameRoadPuzzleInfoExcel:
 
 
     @staticmethod
-    def AddEventUseCostId(builder, EventUseCostId): builder.PrependInt64Slot(2, EventUseCostId, 0)
+    def AddEventUseCostId(builder, EventUseCostId): builder.PrependInt32Slot(2, EventUseCostId, 0)
 
 
     @staticmethod
-    def AddCostGoodsId(builder, CostGoodsId): builder.PrependInt64Slot(3, CostGoodsId, 0)
+    def AddCostGoodsId(builder, CostGoodsId): builder.PrependInt32Slot(3, CostGoodsId, 0)
 
 
     @staticmethod
-    def AddRailSetRewardId(builder, RailSetRewardId): builder.PrependInt64Slot(4, RailSetRewardId, 0)
+    def AddRailSetRewardId(builder, RailSetRewardId): builder.PrependInt32Slot(4, RailSetRewardId, 0)
 
 
     @staticmethod

@@ -20,14 +20,14 @@ class WelcomeCampaignAttendanceRewardExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class WelcomeCampaignAttendanceRewardExcel:
     def Day(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,14 +55,14 @@ class WelcomeCampaignAttendanceRewardExcel:
     def RewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,11 +75,11 @@ class WelcomeCampaignAttendanceRewardExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddSeasonId(builder, SeasonId): builder.PrependInt64Slot(1, SeasonId, 0)
+    def AddSeasonId(builder, SeasonId): builder.PrependInt32Slot(1, SeasonId, 0)
 
 
     @staticmethod
@@ -87,7 +87,7 @@ class WelcomeCampaignAttendanceRewardExcel:
 
 
     @staticmethod
-    def AddDay(builder, Day): builder.PrependInt64Slot(3, Day, 0)
+    def AddDay(builder, Day): builder.PrependInt32Slot(3, Day, 0)
 
 
     @staticmethod
@@ -95,9 +95,9 @@ class WelcomeCampaignAttendanceRewardExcel:
 
 
     @staticmethod
-    def AddRewardId(builder, RewardId): builder.PrependInt64Slot(5, RewardId, 0)
+    def AddRewardId(builder, RewardId): builder.PrependInt32Slot(5, RewardId, 0)
 
 
     @staticmethod
-    def AddRewardAmount(builder, RewardAmount): builder.PrependInt64Slot(6, RewardAmount, 0)
+    def AddRewardAmount(builder, RewardAmount): builder.PrependInt32Slot(6, RewardAmount, 0)
 

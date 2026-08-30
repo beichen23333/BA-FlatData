@@ -25,3 +25,5 @@ class AccountAchievementType:
     TotalRaidTicketUseCount = 23
     TotalEliminateTicketUseCount = 24
     TotalCharacterPotentialUpCount = 25
+    TotalClearTacticalRelayCount = 26
+    TotalEngraveLevelUpCount = 27

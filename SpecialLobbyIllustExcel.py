@@ -20,7 +20,7 @@ class SpecialLobbyIllustExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class SpecialLobbyIllustExcel:
     def CharacterCostumeUniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,14 +68,14 @@ class SpecialLobbyIllustExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
     def AddDevName(builder, DevName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(DevName), 0)
 
     @staticmethod
-    def AddCharacterCostumeUniqueId(builder, CharacterCostumeUniqueId): builder.PrependInt64Slot(2, CharacterCostumeUniqueId, 0)
+    def AddCharacterCostumeUniqueId(builder, CharacterCostumeUniqueId): builder.PrependInt32Slot(2, CharacterCostumeUniqueId, 0)
 
 
     @staticmethod

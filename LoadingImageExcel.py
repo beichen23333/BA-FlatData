@@ -20,7 +20,7 @@ class LoadingImageExcel:
     def ID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -54,7 +54,7 @@ class LoadingImageExcel:
 
 
     @staticmethod
-    def AddID(builder, ID): builder.PrependInt64Slot(0, ID, 0)
+    def AddID(builder, ID): builder.PrependInt32Slot(0, ID, 0)
 
 
     @staticmethod

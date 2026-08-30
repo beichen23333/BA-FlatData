@@ -20,7 +20,7 @@ class LocalizeCharProfileExcel:
     def CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -115,183 +115,190 @@ class LocalizeCharProfileExcel:
         return 0
 
 
-    def ClubNameForGachaJp(self):
+    def ClubNameForGachaKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def SchoolYearKr(self):
+    def ClubNameForGachaJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def SchoolYearJp(self):
+    def SchoolYearKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CharacterAgeKr(self):
+    def SchoolYearJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CharacterAgeJp(self):
+    def CharacterAgeKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def BirthDay(self):
+    def CharacterAgeJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def BirthdayKr(self):
+    def BirthDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def BirthdayJp(self):
+    def BirthdayKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CharHeightKr(self):
+    def BirthdayJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CharHeightJp(self):
+    def CharHeightKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def DesignerNameKr(self):
+    def CharHeightJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def DesignerNameJp(self):
+    def DesignerNameKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def IllustratorNameKr(self):
+    def DesignerNameJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def IllustratorNameJp(self):
+    def IllustratorNameKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CharacterVoiceKr(self):
+    def IllustratorNameJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CharacterVoiceJp(self):
+    def CharacterVoiceKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def HobbyKr(self):
+    def CharacterVoiceJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def HobbyJp(self):
+    def HobbyKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def WeaponNameKr(self):
+    def HobbyJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def WeaponDescKr(self):
+    def WeaponNameKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def WeaponNameJp(self):
+    def WeaponDescKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def WeaponDescJp(self):
+    def WeaponNameJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def ProfileIntroductionKr(self):
+    def WeaponDescJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def ProfileIntroductionJp(self):
+    def ProfileIntroductionKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CharacterSSRNewKr(self):
+    def ProfileIntroductionJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CharacterSSRNewJp(self):
+    def CharacterSSRNewKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def CharacterSSRNewJp(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -300,13 +307,13 @@ class LocalizeCharProfileExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(40)
+    def Start(builder): builder.StartObject(41)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddCharacterId(builder, CharacterId): builder.PrependInt64Slot(0, CharacterId, 0)
+    def AddCharacterId(builder, CharacterId): builder.PrependInt32Slot(0, CharacterId, 0)
 
 
     @staticmethod
@@ -350,79 +357,82 @@ class LocalizeCharProfileExcel:
 
 
     @staticmethod
-    def AddClubNameForGachaJp(builder, ClubNameForGachaJp): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(ClubNameForGachaJp), 0)
+    def AddClubNameForGachaKr(builder, ClubNameForGachaKr): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(ClubNameForGachaKr), 0)
 
     @staticmethod
-    def AddSchoolYearKr(builder, SchoolYearKr): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(SchoolYearKr), 0)
+    def AddClubNameForGachaJp(builder, ClubNameForGachaJp): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(ClubNameForGachaJp), 0)
 
     @staticmethod
-    def AddSchoolYearJp(builder, SchoolYearJp): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(SchoolYearJp), 0)
+    def AddSchoolYearKr(builder, SchoolYearKr): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(SchoolYearKr), 0)
 
     @staticmethod
-    def AddCharacterAgeKr(builder, CharacterAgeKr): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterAgeKr), 0)
+    def AddSchoolYearJp(builder, SchoolYearJp): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(SchoolYearJp), 0)
 
     @staticmethod
-    def AddCharacterAgeJp(builder, CharacterAgeJp): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterAgeJp), 0)
+    def AddCharacterAgeKr(builder, CharacterAgeKr): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterAgeKr), 0)
 
     @staticmethod
-    def AddBirthDay(builder, BirthDay): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(BirthDay), 0)
+    def AddCharacterAgeJp(builder, CharacterAgeJp): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterAgeJp), 0)
 
     @staticmethod
-    def AddBirthdayKr(builder, BirthdayKr): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(BirthdayKr), 0)
+    def AddBirthDay(builder, BirthDay): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(BirthDay), 0)
 
     @staticmethod
-    def AddBirthdayJp(builder, BirthdayJp): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(BirthdayJp), 0)
+    def AddBirthdayKr(builder, BirthdayKr): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(BirthdayKr), 0)
 
     @staticmethod
-    def AddCharHeightKr(builder, CharHeightKr): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(CharHeightKr), 0)
+    def AddBirthdayJp(builder, BirthdayJp): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(BirthdayJp), 0)
 
     @staticmethod
-    def AddCharHeightJp(builder, CharHeightJp): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(CharHeightJp), 0)
+    def AddCharHeightKr(builder, CharHeightKr): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(CharHeightKr), 0)
 
     @staticmethod
-    def AddDesignerNameKr(builder, DesignerNameKr): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(DesignerNameKr), 0)
+    def AddCharHeightJp(builder, CharHeightJp): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(CharHeightJp), 0)
 
     @staticmethod
-    def AddDesignerNameJp(builder, DesignerNameJp): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(DesignerNameJp), 0)
+    def AddDesignerNameKr(builder, DesignerNameKr): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(DesignerNameKr), 0)
 
     @staticmethod
-    def AddIllustratorNameKr(builder, IllustratorNameKr): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(IllustratorNameKr), 0)
+    def AddDesignerNameJp(builder, DesignerNameJp): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(DesignerNameJp), 0)
 
     @staticmethod
-    def AddIllustratorNameJp(builder, IllustratorNameJp): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(IllustratorNameJp), 0)
+    def AddIllustratorNameKr(builder, IllustratorNameKr): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(IllustratorNameKr), 0)
 
     @staticmethod
-    def AddCharacterVoiceKr(builder, CharacterVoiceKr): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterVoiceKr), 0)
+    def AddIllustratorNameJp(builder, IllustratorNameJp): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(IllustratorNameJp), 0)
 
     @staticmethod
-    def AddCharacterVoiceJp(builder, CharacterVoiceJp): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterVoiceJp), 0)
+    def AddCharacterVoiceKr(builder, CharacterVoiceKr): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterVoiceKr), 0)
 
     @staticmethod
-    def AddHobbyKr(builder, HobbyKr): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(HobbyKr), 0)
+    def AddCharacterVoiceJp(builder, CharacterVoiceJp): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterVoiceJp), 0)
 
     @staticmethod
-    def AddHobbyJp(builder, HobbyJp): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(HobbyJp), 0)
+    def AddHobbyKr(builder, HobbyKr): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(HobbyKr), 0)
 
     @staticmethod
-    def AddWeaponNameKr(builder, WeaponNameKr): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(WeaponNameKr), 0)
+    def AddHobbyJp(builder, HobbyJp): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(HobbyJp), 0)
 
     @staticmethod
-    def AddWeaponDescKr(builder, WeaponDescKr): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(WeaponDescKr), 0)
+    def AddWeaponNameKr(builder, WeaponNameKr): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(WeaponNameKr), 0)
 
     @staticmethod
-    def AddWeaponNameJp(builder, WeaponNameJp): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(WeaponNameJp), 0)
+    def AddWeaponDescKr(builder, WeaponDescKr): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(WeaponDescKr), 0)
 
     @staticmethod
-    def AddWeaponDescJp(builder, WeaponDescJp): builder.PrependUOffsetTRelativeSlot(35, flatbuffers.number_types.UOffsetTFlags.py_type(WeaponDescJp), 0)
+    def AddWeaponNameJp(builder, WeaponNameJp): builder.PrependUOffsetTRelativeSlot(35, flatbuffers.number_types.UOffsetTFlags.py_type(WeaponNameJp), 0)
 
     @staticmethod
-    def AddProfileIntroductionKr(builder, ProfileIntroductionKr): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(ProfileIntroductionKr), 0)
+    def AddWeaponDescJp(builder, WeaponDescJp): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(WeaponDescJp), 0)
 
     @staticmethod
-    def AddProfileIntroductionJp(builder, ProfileIntroductionJp): builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(ProfileIntroductionJp), 0)
+    def AddProfileIntroductionKr(builder, ProfileIntroductionKr): builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(ProfileIntroductionKr), 0)
 
     @staticmethod
-    def AddCharacterSSRNewKr(builder, CharacterSSRNewKr): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterSSRNewKr), 0)
+    def AddProfileIntroductionJp(builder, ProfileIntroductionJp): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(ProfileIntroductionJp), 0)
 
     @staticmethod
-    def AddCharacterSSRNewJp(builder, CharacterSSRNewJp): builder.PrependUOffsetTRelativeSlot(39, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterSSRNewJp), 0)
+    def AddCharacterSSRNewKr(builder, CharacterSSRNewKr): builder.PrependUOffsetTRelativeSlot(39, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterSSRNewKr), 0)
+
+    @staticmethod
+    def AddCharacterSSRNewJp(builder, CharacterSSRNewJp): builder.PrependUOffsetTRelativeSlot(40, flatbuffers.number_types.UOffsetTFlags.py_type(CharacterSSRNewJp), 0)

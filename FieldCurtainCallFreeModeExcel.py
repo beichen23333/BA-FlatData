@@ -20,28 +20,28 @@ class FieldCurtainCallFreeModeExcel:
     def UniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OpenDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SetFieldDateID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def SetFieldQuestOpenDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -54,17 +54,17 @@ class FieldCurtainCallFreeModeExcel:
 
 
     @staticmethod
-    def AddUniqueId(builder, UniqueId): builder.PrependInt64Slot(0, UniqueId, 0)
+    def AddUniqueId(builder, UniqueId): builder.PrependInt32Slot(0, UniqueId, 0)
 
 
     @staticmethod
-    def AddOpenDate(builder, OpenDate): builder.PrependInt64Slot(1, OpenDate, 0)
+    def AddOpenDate(builder, OpenDate): builder.PrependInt32Slot(1, OpenDate, 0)
 
 
     @staticmethod
-    def AddSetFieldDateID(builder, SetFieldDateID): builder.PrependInt64Slot(2, SetFieldDateID, 0)
+    def AddSetFieldDateID(builder, SetFieldDateID): builder.PrependInt32Slot(2, SetFieldDateID, 0)
 
 
     @staticmethod
-    def AddSetFieldQuestOpenDate(builder, SetFieldQuestOpenDate): builder.PrependInt64Slot(3, SetFieldQuestOpenDate, 0)
+    def AddSetFieldQuestOpenDate(builder, SetFieldQuestOpenDate): builder.PrependInt32Slot(3, SetFieldQuestOpenDate, 0)
 

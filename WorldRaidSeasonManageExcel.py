@@ -20,14 +20,14 @@ class WorldRaidSeasonManageExcel:
     def SeasonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PhaseId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,14 +69,14 @@ class WorldRaidSeasonManageExcel:
     def SeasonOpenCondition(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidLobbyEnterScenario(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -129,112 +129,39 @@ class WorldRaidSeasonManageExcel:
         return 0
 
 
-    def OpenRaidBossGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def OpenRaidBossGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def OpenRaidBossGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def OpenRaidBossGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
-        return o == 0
-
-
-    def BossSpawnTime(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def BossSpawnTimeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def BossSpawnTimeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        return o == 0
-
-
-    def EliminateTime(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def EliminateTimeLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def EliminateTimeIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        return o == 0
-
-
-    def ScenarioOutputConditionId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ScenarioOutputConditionIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ScenarioOutputConditionIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def ScenarioOutputConditionIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        return o == 0
-
-
-    def ConditionScenarioGroupid(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ConditionScenarioGroupidAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ConditionScenarioGroupidLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ConditionScenarioGroupidIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
-        return o == 0
 
 
     def WorldRaidMapEnterOperator(self):
@@ -260,11 +187,11 @@ class WorldRaidSeasonManageExcel:
 
 
     @staticmethod
-    def AddSeasonId(builder, SeasonId): builder.PrependInt64Slot(0, SeasonId, 0)
+    def AddSeasonId(builder, SeasonId): builder.PrependInt32Slot(0, SeasonId, 0)
 
 
     @staticmethod
-    def AddPhaseId(builder, PhaseId): builder.PrependInt64Slot(1, PhaseId, 0)
+    def AddPhaseId(builder, PhaseId): builder.PrependInt32Slot(1, PhaseId, 0)
 
 
     @staticmethod
@@ -285,11 +212,11 @@ class WorldRaidSeasonManageExcel:
 
 
     @staticmethod
-    def AddSeasonOpenCondition(builder, SeasonOpenCondition): builder.PrependInt64Slot(7, SeasonOpenCondition, 0)
+    def AddSeasonOpenCondition(builder, SeasonOpenCondition): builder.PrependInt32Slot(7, SeasonOpenCondition, 0)
 
 
     @staticmethod
-    def AddWorldRaidLobbyEnterScenario(builder, WorldRaidLobbyEnterScenario): builder.PrependInt64Slot(8, WorldRaidLobbyEnterScenario, 0)
+    def AddWorldRaidLobbyEnterScenario(builder, WorldRaidLobbyEnterScenario): builder.PrependInt32Slot(8, WorldRaidLobbyEnterScenario, 0)
 
 
     @staticmethod
@@ -320,33 +247,23 @@ class WorldRaidSeasonManageExcel:
 
 
     @staticmethod
-    def AddOpenRaidBossGroupId(builder, OpenRaidBossGroupId): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(OpenRaidBossGroupId), 0)
-    @staticmethod
-    def StartOpenRaidBossGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddOpenRaidBossGroupIdLength(builder, OpenRaidBossGroupIdLength): builder.PrependInt32Slot(16, OpenRaidBossGroupIdLength, 0)
 
 
     @staticmethod
-    def AddBossSpawnTime(builder, BossSpawnTime): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(BossSpawnTime), 0)
-    @staticmethod
-    def StartBossSpawnTimeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddBossSpawnTimeLength(builder, BossSpawnTimeLength): builder.PrependInt32Slot(17, BossSpawnTimeLength, 0)
 
 
     @staticmethod
-    def AddEliminateTime(builder, EliminateTime): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(EliminateTime), 0)
-    @staticmethod
-    def StartEliminateTimeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddEliminateTimeLength(builder, EliminateTimeLength): builder.PrependInt32Slot(18, EliminateTimeLength, 0)
 
 
     @staticmethod
-    def AddScenarioOutputConditionId(builder, ScenarioOutputConditionId): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioOutputConditionId), 0)
-    @staticmethod
-    def StartScenarioOutputConditionIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddScenarioOutputConditionIdLength(builder, ScenarioOutputConditionIdLength): builder.PrependInt32Slot(19, ScenarioOutputConditionIdLength, 0)
 
 
     @staticmethod
-    def AddConditionScenarioGroupid(builder, ConditionScenarioGroupid): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(ConditionScenarioGroupid), 0)
-    @staticmethod
-    def StartConditionScenarioGroupidVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddConditionScenarioGroupidLength(builder, ConditionScenarioGroupidLength): builder.PrependInt32Slot(20, ConditionScenarioGroupidLength, 0)
 
 
     @staticmethod

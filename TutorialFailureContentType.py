@@ -9,3 +9,4 @@ class TutorialFailureContentType:
     EliminateRaid = 7
     MultiFloorRaid = 8
     InteractiveWorldRaid = 9
+    TacticalRelay = 10

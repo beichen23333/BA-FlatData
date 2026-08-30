@@ -20,42 +20,42 @@ class ScenarioResourceInfoExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScenarioModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PriorityOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PVDisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def VideoId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BgmId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -108,46 +108,18 @@ class ScenarioResourceInfoExcel:
         return 0
 
 
-    def AcademyLobbyCharacterId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def AcademyLobbyCharacterIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def AcademyLobbyCharacterIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def AcademyLobbyCharacterIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        return o == 0
-
-
-    def SweepAnimation(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return ""
 
     def SweepAnimationLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def SweepAnimationIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        return o == 0
 
 
 
@@ -159,27 +131,27 @@ class ScenarioResourceInfoExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddScenarioModeId(builder, ScenarioModeId): builder.PrependInt64Slot(1, ScenarioModeId, 0)
+    def AddScenarioModeId(builder, ScenarioModeId): builder.PrependInt32Slot(1, ScenarioModeId, 0)
 
 
     @staticmethod
-    def AddPriorityOrder(builder, PriorityOrder): builder.PrependInt64Slot(2, PriorityOrder, 0)
+    def AddPriorityOrder(builder, PriorityOrder): builder.PrependInt32Slot(2, PriorityOrder, 0)
 
 
     @staticmethod
-    def AddPVDisplayOrder(builder, PVDisplayOrder): builder.PrependInt64Slot(3, PVDisplayOrder, 0)
+    def AddPVDisplayOrder(builder, PVDisplayOrder): builder.PrependInt32Slot(3, PVDisplayOrder, 0)
 
 
     @staticmethod
-    def AddVideoId(builder, VideoId): builder.PrependInt64Slot(4, VideoId, 0)
+    def AddVideoId(builder, VideoId): builder.PrependInt32Slot(4, VideoId, 0)
 
 
     @staticmethod
-    def AddBgmId(builder, BgmId): builder.PrependInt64Slot(5, BgmId, 0)
+    def AddBgmId(builder, BgmId): builder.PrependInt32Slot(5, BgmId, 0)
 
 
     @staticmethod
@@ -207,13 +179,9 @@ class ScenarioResourceInfoExcel:
 
 
     @staticmethod
-    def AddAcademyLobbyCharacterId(builder, AcademyLobbyCharacterId): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(AcademyLobbyCharacterId), 0)
-    @staticmethod
-    def StartAcademyLobbyCharacterIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddAcademyLobbyCharacterIdLength(builder, AcademyLobbyCharacterIdLength): builder.PrependInt32Slot(13, AcademyLobbyCharacterIdLength, 0)
 
 
     @staticmethod
-    def AddSweepAnimation(builder, SweepAnimation): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(SweepAnimation), 0)
-    @staticmethod
-    def StartSweepAnimationVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddSweepAnimationLength(builder, SweepAnimationLength): builder.PrependInt32Slot(14, SweepAnimationLength, 0)
 

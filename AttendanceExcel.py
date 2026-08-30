@@ -20,7 +20,7 @@ class AttendanceExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class AttendanceExcel:
     def DisplayOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -55,7 +55,7 @@ class AttendanceExcel:
     def AccountLevelLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,7 +90,7 @@ class AttendanceExcel:
     def BookSize(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -118,7 +118,7 @@ class AttendanceExcel:
     def ExpiryDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -166,7 +166,7 @@ class AttendanceExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -177,7 +177,7 @@ class AttendanceExcel:
     def AddCountdownPrefab(builder, CountdownPrefab): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(CountdownPrefab), 0)
 
     @staticmethod
-    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt64Slot(3, DisplayOrder, 0)
+    def AddDisplayOrder(builder, DisplayOrder): builder.PrependInt32Slot(3, DisplayOrder, 0)
 
 
     @staticmethod
@@ -185,7 +185,7 @@ class AttendanceExcel:
 
 
     @staticmethod
-    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt64Slot(5, AccountLevelLimit, 0)
+    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt32Slot(5, AccountLevelLimit, 0)
 
 
     @staticmethod
@@ -203,7 +203,7 @@ class AttendanceExcel:
 
 
     @staticmethod
-    def AddBookSize(builder, BookSize): builder.PrependInt64Slot(10, BookSize, 0)
+    def AddBookSize(builder, BookSize): builder.PrependInt32Slot(10, BookSize, 0)
 
 
     @staticmethod
@@ -216,7 +216,7 @@ class AttendanceExcel:
     def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
 
     @staticmethod
-    def AddExpiryDate(builder, ExpiryDate): builder.PrependInt64Slot(14, ExpiryDate, 0)
+    def AddExpiryDate(builder, ExpiryDate): builder.PrependInt32Slot(14, ExpiryDate, 0)
 
 
     @staticmethod

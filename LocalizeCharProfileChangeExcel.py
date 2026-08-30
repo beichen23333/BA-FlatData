@@ -20,21 +20,21 @@ class LocalizeCharProfileChangeExcel:
     def CharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScenarioModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChangeCharacterID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -54,15 +54,15 @@ class LocalizeCharProfileChangeExcel:
 
 
     @staticmethod
-    def AddCharacterId(builder, CharacterId): builder.PrependInt64Slot(0, CharacterId, 0)
+    def AddCharacterId(builder, CharacterId): builder.PrependInt32Slot(0, CharacterId, 0)
 
 
     @staticmethod
-    def AddScenarioModeId(builder, ScenarioModeId): builder.PrependInt64Slot(1, ScenarioModeId, 0)
+    def AddScenarioModeId(builder, ScenarioModeId): builder.PrependInt32Slot(1, ScenarioModeId, 0)
 
 
     @staticmethod
-    def AddChangeCharacterID(builder, ChangeCharacterID): builder.PrependInt64Slot(2, ChangeCharacterID, 0)
+    def AddChangeCharacterID(builder, ChangeCharacterID): builder.PrependInt32Slot(2, ChangeCharacterID, 0)
 
 
     @staticmethod

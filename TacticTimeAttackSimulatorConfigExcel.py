@@ -20,42 +20,42 @@ class TacticTimeAttackSimulatorConfigExcel:
     def Order(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Repeat(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def PresetGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AttackStrikerNum(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AttackSpecialNum(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GeasId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,25 +68,25 @@ class TacticTimeAttackSimulatorConfigExcel:
 
 
     @staticmethod
-    def AddOrder(builder, Order): builder.PrependInt64Slot(0, Order, 0)
+    def AddOrder(builder, Order): builder.PrependInt32Slot(0, Order, 0)
 
 
     @staticmethod
-    def AddRepeat(builder, Repeat): builder.PrependInt64Slot(1, Repeat, 0)
+    def AddRepeat(builder, Repeat): builder.PrependInt32Slot(1, Repeat, 0)
 
 
     @staticmethod
-    def AddPresetGroupId(builder, PresetGroupId): builder.PrependInt64Slot(2, PresetGroupId, 0)
+    def AddPresetGroupId(builder, PresetGroupId): builder.PrependInt32Slot(2, PresetGroupId, 0)
 
 
     @staticmethod
-    def AddAttackStrikerNum(builder, AttackStrikerNum): builder.PrependInt64Slot(3, AttackStrikerNum, 0)
+    def AddAttackStrikerNum(builder, AttackStrikerNum): builder.PrependInt32Slot(3, AttackStrikerNum, 0)
 
 
     @staticmethod
-    def AddAttackSpecialNum(builder, AttackSpecialNum): builder.PrependInt64Slot(4, AttackSpecialNum, 0)
+    def AddAttackSpecialNum(builder, AttackSpecialNum): builder.PrependInt32Slot(4, AttackSpecialNum, 0)
 
 
     @staticmethod
-    def AddGeasId(builder, GeasId): builder.PrependInt64Slot(5, GeasId, 0)
+    def AddGeasId(builder, GeasId): builder.PrependInt32Slot(5, GeasId, 0)
 

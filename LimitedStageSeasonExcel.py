@@ -20,7 +20,7 @@ class LimitedStageSeasonExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,21 +41,21 @@ class LimitedStageSeasonExcel:
     def TypeACount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def TypeBCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def TypeCCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -68,7 +68,7 @@ class LimitedStageSeasonExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -78,13 +78,13 @@ class LimitedStageSeasonExcel:
     def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
 
     @staticmethod
-    def AddTypeACount(builder, TypeACount): builder.PrependInt64Slot(3, TypeACount, 0)
+    def AddTypeACount(builder, TypeACount): builder.PrependInt32Slot(3, TypeACount, 0)
 
 
     @staticmethod
-    def AddTypeBCount(builder, TypeBCount): builder.PrependInt64Slot(4, TypeBCount, 0)
+    def AddTypeBCount(builder, TypeBCount): builder.PrependInt32Slot(4, TypeBCount, 0)
 
 
     @staticmethod
-    def AddTypeCCount(builder, TypeCCount): builder.PrependInt64Slot(5, TypeCCount, 0)
+    def AddTypeCCount(builder, TypeCCount): builder.PrependInt32Slot(5, TypeCCount, 0)
 

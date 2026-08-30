@@ -20,10 +20,9 @@ class Form:
     def MoveEnd(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            x = self._tab.Indirect(o + self._tab.Pos)
-            from .MoveEnd import MoveEnd
-            obj = MoveEnd()
-            obj.Init(self._tab.Bytes, x)
+            from .Type_0x00006755 import Type_0x00006755
+            obj = Type_0x00006755()
+            obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
 
@@ -31,10 +30,9 @@ class Form:
     def PublicSkill(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            x = self._tab.Indirect(o + self._tab.Pos)
-            from .Motion import Motion
-            obj = Motion()
-            obj.Init(self._tab.Bytes, x)
+            from .Type_0x00006754 import Type_0x00006754
+            obj = Type_0x00006754()
+            obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
 
@@ -49,6 +47,12 @@ class Form:
 
     @staticmethod
     def AddMoveEnd(builder, MoveEnd): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(MoveEnd), 0)
+    @staticmethod
+    def StartMoveEndVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+
 
     @staticmethod
     def AddPublicSkill(builder, PublicSkill): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(PublicSkill), 0)
+    @staticmethod
+    def StartPublicSkillVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+

@@ -1,0 +1,5 @@
+class MediaType:
+    None_ = 0
+    Audio = 1
+    Video = 2
+    Texture = 3

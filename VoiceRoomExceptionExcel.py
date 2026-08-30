@@ -20,7 +20,7 @@ class VoiceRoomExceptionExcel:
     def CostumeUniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -34,7 +34,7 @@ class VoiceRoomExceptionExcel:
     def LinkedCostumeUniqueId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -47,7 +47,7 @@ class VoiceRoomExceptionExcel:
 
 
     @staticmethod
-    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt64Slot(0, CostumeUniqueId, 0)
+    def AddCostumeUniqueId(builder, CostumeUniqueId): builder.PrependInt32Slot(0, CostumeUniqueId, 0)
 
 
     @staticmethod
@@ -55,5 +55,5 @@ class VoiceRoomExceptionExcel:
 
 
     @staticmethod
-    def AddLinkedCostumeUniqueId(builder, LinkedCostumeUniqueId): builder.PrependInt64Slot(2, LinkedCostumeUniqueId, 0)
+    def AddLinkedCostumeUniqueId(builder, LinkedCostumeUniqueId): builder.PrependInt32Slot(2, LinkedCostumeUniqueId, 0)
 

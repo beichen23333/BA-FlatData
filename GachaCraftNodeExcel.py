@@ -20,14 +20,14 @@ class GachaCraftNodeExcel:
     def ID(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def Tier(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -41,7 +41,7 @@ class GachaCraftNodeExcel:
     def NodeQuality(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class GachaCraftNodeExcel:
     def Property(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,11 +75,11 @@ class GachaCraftNodeExcel:
 
 
     @staticmethod
-    def AddID(builder, ID): builder.PrependInt64Slot(0, ID, 0)
+    def AddID(builder, ID): builder.PrependInt32Slot(0, ID, 0)
 
 
     @staticmethod
-    def AddTier(builder, Tier): builder.PrependInt64Slot(1, Tier, 0)
+    def AddTier(builder, Tier): builder.PrependInt32Slot(1, Tier, 0)
 
 
     @staticmethod
@@ -87,7 +87,7 @@ class GachaCraftNodeExcel:
 
 
     @staticmethod
-    def AddNodeQuality(builder, NodeQuality): builder.PrependInt64Slot(3, NodeQuality, 0)
+    def AddNodeQuality(builder, NodeQuality): builder.PrependInt32Slot(3, NodeQuality, 0)
 
 
     @staticmethod
@@ -98,5 +98,5 @@ class GachaCraftNodeExcel:
 
 
     @staticmethod
-    def AddProperty(builder, Property): builder.PrependInt64Slot(6, Property, 0)
+    def AddProperty(builder, Property): builder.PrependInt32Slot(6, Property, 0)
 

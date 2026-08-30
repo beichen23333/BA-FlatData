@@ -20,14 +20,14 @@ class ScenarioModeRewardExcel:
     def ScenarioModeRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardTag(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class ScenarioModeRewardExcel:
     def RewardParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -75,11 +75,11 @@ class ScenarioModeRewardExcel:
 
 
     @staticmethod
-    def AddScenarioModeRewardId(builder, ScenarioModeRewardId): builder.PrependInt64Slot(0, ScenarioModeRewardId, 0)
+    def AddScenarioModeRewardId(builder, ScenarioModeRewardId): builder.PrependInt32Slot(0, ScenarioModeRewardId, 0)
 
 
     @staticmethod
-    def AddRewardTag(builder, RewardTag): builder.PrependInt32Slot(1, RewardTag, 0)
+    def AddRewardTag(builder, RewardTag): builder.PrependFloat32Slot(1, RewardTag, 0)
 
 
     @staticmethod
@@ -91,7 +91,7 @@ class ScenarioModeRewardExcel:
 
 
     @staticmethod
-    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt64Slot(4, RewardParcelId, 0)
+    def AddRewardParcelId(builder, RewardParcelId): builder.PrependInt32Slot(4, RewardParcelId, 0)
 
 
     @staticmethod

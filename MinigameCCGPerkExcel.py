@@ -20,14 +20,14 @@ class MinigameCCGPerkExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CCGId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -52,52 +52,18 @@ class MinigameCCGPerkExcel:
         return 0
 
 
-    def EnvironmentLogicEffectId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def EnvironmentLogicEffectIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def EnvironmentLogicEffectIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def EnvironmentLogicEffectIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        return o == 0
-
-
-    def RequiredPerkId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def RequiredPerkIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def RequiredPerkIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def RequiredPerkIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
 
 
     def ShopOrder(self):
@@ -137,11 +103,11 @@ class MinigameCCGPerkExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddCCGId(builder, CCGId): builder.PrependInt64Slot(1, CCGId, 0)
+    def AddCCGId(builder, CCGId): builder.PrependInt32Slot(1, CCGId, 0)
 
 
     @staticmethod
@@ -157,15 +123,11 @@ class MinigameCCGPerkExcel:
 
 
     @staticmethod
-    def AddEnvironmentLogicEffectId(builder, EnvironmentLogicEffectId): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(EnvironmentLogicEffectId), 0)
-    @staticmethod
-    def StartEnvironmentLogicEffectIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddEnvironmentLogicEffectIdLength(builder, EnvironmentLogicEffectIdLength): builder.PrependInt32Slot(5, EnvironmentLogicEffectIdLength, 0)
 
 
     @staticmethod
-    def AddRequiredPerkId(builder, RequiredPerkId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(RequiredPerkId), 0)
-    @staticmethod
-    def StartRequiredPerkIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddRequiredPerkIdLength(builder, RequiredPerkIdLength): builder.PrependInt32Slot(6, RequiredPerkIdLength, 0)
 
 
     @staticmethod

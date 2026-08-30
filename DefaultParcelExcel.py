@@ -27,14 +27,14 @@ class DefaultParcelExcel:
     def ParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -51,9 +51,9 @@ class DefaultParcelExcel:
 
 
     @staticmethod
-    def AddParcelId(builder, ParcelId): builder.PrependInt64Slot(1, ParcelId, 0)
+    def AddParcelId(builder, ParcelId): builder.PrependInt32Slot(1, ParcelId, 0)
 
 
     @staticmethod
-    def AddParcelAmount(builder, ParcelAmount): builder.PrependInt64Slot(2, ParcelAmount, 0)
+    def AddParcelAmount(builder, ParcelAmount): builder.PrependInt32Slot(2, ParcelAmount, 0)
 

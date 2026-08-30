@@ -20,14 +20,14 @@ class EventContentSeasonExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def OriginalEventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -59,261 +59,265 @@ class EventContentSeasonExcel:
         return 0
 
 
-    def EventDisplay(self):
+    def EventCampaignStageIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def IconOrder(self):
+    def ScenarioModeIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SubEventType(self):
+    def ScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SubEvent(self):
+    def EventDisplay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def EventItemId(self):
+    def IconOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def SubEventType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def SubEvent(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def EventItemId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MainEventId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventChangeOpenCondition(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def BeforehandExposedTime(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def EventContentOpenTime(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def EventContentCloseNoteTime(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def EventContentCloseTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def ExtensionTime(self):
+    def EventContentOpenTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def MainIconParcelPath(self):
+    def EventContentCloseNoteTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def SubIconParcelPath(self):
+    def EventContentCloseTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def BeforehandBgImagePath(self):
+    def ExtensionTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def MinigamePrologScenarioGroupId(self):
+    def MainIconParcelPath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def BeforehandScenarioGroupId(self, j):
+    def SubIconParcelPath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def BeforehandScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
-    def BeforehandScenarioGroupIdLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        if o != 0:
-            return self._tab.VectorLen(o)
-        return 0
-
-    def BeforehandScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
-        return o == 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
-    def MainBannerImagePath(self):
+    def BeforehandBgImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def MainBgImagePath(self):
+    def MinigamePrologScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def ShiftTriggerStageId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShiftMainBgImagePath(self):
+    def BeforehandScenarioGroupIdLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def MainBannerImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def MinigameLobbyPrefabName(self):
+    def MainBgImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def MinigameVictoryPrefabName(self):
+    def ShiftTriggerStageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
-    def MinigameMissionBgPrefabName(self):
+    def ShiftMainBgImagePath(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def MinigameMissionBgImagePath(self):
+    def MinigameLobbyPrefabName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def CardBgImagePath(self):
+    def MinigameVictoryPrefabName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def EventAssist(self):
+    def MinigameMissionBgPrefabName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def MinigameMissionBgImagePath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def CardBgImagePath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def EventAssist(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def EventContentReleaseType(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventContentStageRewardIdPermanent(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
-        return 0
-
-
-    def RewardTagPermanent(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MiniEventShortCutScenarioModeId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
+    def RewardTagPermanent(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def MiniEventShortCutScenarioModeId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ScenarioContentCollectionGroupId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(38)
+    def Start(builder): builder.StartObject(41)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddOriginalEventContentId(builder, OriginalEventContentId): builder.PrependInt64Slot(1, OriginalEventContentId, 0)
+    def AddOriginalEventContentId(builder, OriginalEventContentId): builder.PrependInt32Slot(1, OriginalEventContentId, 0)
 
 
     @staticmethod
@@ -332,115 +336,125 @@ class EventContentSeasonExcel:
 
 
     @staticmethod
-    def AddEventDisplay(builder, EventDisplay): builder.PrependBoolSlot(6, EventDisplay, 0)
+    def AddEventCampaignStageIdLength(builder, EventCampaignStageIdLength): builder.PrependInt32Slot(6, EventCampaignStageIdLength, 0)
 
 
     @staticmethod
-    def AddIconOrder(builder, IconOrder): builder.PrependInt32Slot(7, IconOrder, 0)
+    def AddScenarioModeIdLength(builder, ScenarioModeIdLength): builder.PrependInt32Slot(7, ScenarioModeIdLength, 0)
 
 
     @staticmethod
-    def AddSubEventType(builder, SubEventType): builder.PrependInt32Slot(8, SubEventType, 0)
+    def AddScenarioGroupIdLength(builder, ScenarioGroupIdLength): builder.PrependInt32Slot(8, ScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddSubEvent(builder, SubEvent): builder.PrependBoolSlot(9, SubEvent, 0)
+    def AddEventDisplay(builder, EventDisplay): builder.PrependBoolSlot(9, EventDisplay, 0)
 
 
     @staticmethod
-    def AddEventItemId(builder, EventItemId): builder.PrependInt64Slot(10, EventItemId, 0)
+    def AddIconOrder(builder, IconOrder): builder.PrependInt32Slot(10, IconOrder, 0)
 
 
     @staticmethod
-    def AddMainEventId(builder, MainEventId): builder.PrependInt64Slot(11, MainEventId, 0)
+    def AddSubEventType(builder, SubEventType): builder.PrependInt32Slot(11, SubEventType, 0)
 
 
     @staticmethod
-    def AddEventChangeOpenCondition(builder, EventChangeOpenCondition): builder.PrependInt64Slot(12, EventChangeOpenCondition, 0)
+    def AddSubEvent(builder, SubEvent): builder.PrependBoolSlot(12, SubEvent, 0)
 
 
     @staticmethod
-    def AddBeforehandExposedTime(builder, BeforehandExposedTime): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(BeforehandExposedTime), 0)
-
-    @staticmethod
-    def AddEventContentOpenTime(builder, EventContentOpenTime): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(EventContentOpenTime), 0)
-
-    @staticmethod
-    def AddEventContentCloseNoteTime(builder, EventContentCloseNoteTime): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(EventContentCloseNoteTime), 0)
-
-    @staticmethod
-    def AddEventContentCloseTime(builder, EventContentCloseTime): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(EventContentCloseTime), 0)
-
-    @staticmethod
-    def AddExtensionTime(builder, ExtensionTime): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(ExtensionTime), 0)
-
-    @staticmethod
-    def AddMainIconParcelPath(builder, MainIconParcelPath): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(MainIconParcelPath), 0)
-
-    @staticmethod
-    def AddSubIconParcelPath(builder, SubIconParcelPath): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(SubIconParcelPath), 0)
-
-    @staticmethod
-    def AddBeforehandBgImagePath(builder, BeforehandBgImagePath): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(BeforehandBgImagePath), 0)
-
-    @staticmethod
-    def AddMinigamePrologScenarioGroupId(builder, MinigamePrologScenarioGroupId): builder.PrependInt64Slot(21, MinigamePrologScenarioGroupId, 0)
+    def AddEventItemId(builder, EventItemId): builder.PrependInt32Slot(13, EventItemId, 0)
 
 
     @staticmethod
-    def AddBeforehandScenarioGroupId(builder, BeforehandScenarioGroupId): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(BeforehandScenarioGroupId), 0)
-    @staticmethod
-    def StartBeforehandScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddMainEventId(builder, MainEventId): builder.PrependInt32Slot(14, MainEventId, 0)
 
 
     @staticmethod
-    def AddMainBannerImagePath(builder, MainBannerImagePath): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(MainBannerImagePath), 0)
-
-    @staticmethod
-    def AddMainBgImagePath(builder, MainBgImagePath): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(MainBgImagePath), 0)
-
-    @staticmethod
-    def AddShiftTriggerStageId(builder, ShiftTriggerStageId): builder.PrependInt64Slot(25, ShiftTriggerStageId, 0)
+    def AddEventChangeOpenCondition(builder, EventChangeOpenCondition): builder.PrependInt32Slot(15, EventChangeOpenCondition, 0)
 
 
     @staticmethod
-    def AddShiftMainBgImagePath(builder, ShiftMainBgImagePath): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(ShiftMainBgImagePath), 0)
+    def AddBeforehandExposedTime(builder, BeforehandExposedTime): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(BeforehandExposedTime), 0)
 
     @staticmethod
-    def AddMinigameLobbyPrefabName(builder, MinigameLobbyPrefabName): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(MinigameLobbyPrefabName), 0)
+    def AddEventContentOpenTime(builder, EventContentOpenTime): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(EventContentOpenTime), 0)
 
     @staticmethod
-    def AddMinigameVictoryPrefabName(builder, MinigameVictoryPrefabName): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(MinigameVictoryPrefabName), 0)
+    def AddEventContentCloseNoteTime(builder, EventContentCloseNoteTime): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(EventContentCloseNoteTime), 0)
 
     @staticmethod
-    def AddMinigameMissionBgPrefabName(builder, MinigameMissionBgPrefabName): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(MinigameMissionBgPrefabName), 0)
+    def AddEventContentCloseTime(builder, EventContentCloseTime): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(EventContentCloseTime), 0)
 
     @staticmethod
-    def AddMinigameMissionBgImagePath(builder, MinigameMissionBgImagePath): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(MinigameMissionBgImagePath), 0)
+    def AddExtensionTime(builder, ExtensionTime): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(ExtensionTime), 0)
 
     @staticmethod
-    def AddCardBgImagePath(builder, CardBgImagePath): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(CardBgImagePath), 0)
+    def AddMainIconParcelPath(builder, MainIconParcelPath): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(MainIconParcelPath), 0)
 
     @staticmethod
-    def AddEventAssist(builder, EventAssist): builder.PrependBoolSlot(32, EventAssist, 0)
-
-
-    @staticmethod
-    def AddEventContentReleaseType(builder, EventContentReleaseType): builder.PrependInt32Slot(33, EventContentReleaseType, 0)
-
+    def AddSubIconParcelPath(builder, SubIconParcelPath): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(SubIconParcelPath), 0)
 
     @staticmethod
-    def AddEventContentStageRewardIdPermanent(builder, EventContentStageRewardIdPermanent): builder.PrependInt64Slot(34, EventContentStageRewardIdPermanent, 0)
+    def AddBeforehandBgImagePath(builder, BeforehandBgImagePath): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(BeforehandBgImagePath), 0)
+
+    @staticmethod
+    def AddMinigamePrologScenarioGroupId(builder, MinigamePrologScenarioGroupId): builder.PrependInt32Slot(24, MinigamePrologScenarioGroupId, 0)
 
 
     @staticmethod
-    def AddRewardTagPermanent(builder, RewardTagPermanent): builder.PrependInt32Slot(35, RewardTagPermanent, 0)
+    def AddBeforehandScenarioGroupIdLength(builder, BeforehandScenarioGroupIdLength): builder.PrependInt32Slot(25, BeforehandScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddMiniEventShortCutScenarioModeId(builder, MiniEventShortCutScenarioModeId): builder.PrependInt64Slot(36, MiniEventShortCutScenarioModeId, 0)
+    def AddMainBannerImagePath(builder, MainBannerImagePath): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(MainBannerImagePath), 0)
+
+    @staticmethod
+    def AddMainBgImagePath(builder, MainBgImagePath): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(MainBgImagePath), 0)
+
+    @staticmethod
+    def AddShiftTriggerStageId(builder, ShiftTriggerStageId): builder.PrependInt32Slot(28, ShiftTriggerStageId, 0)
 
 
     @staticmethod
-    def AddScenarioContentCollectionGroupId(builder, ScenarioContentCollectionGroupId): builder.PrependInt64Slot(37, ScenarioContentCollectionGroupId, 0)
+    def AddShiftMainBgImagePath(builder, ShiftMainBgImagePath): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(ShiftMainBgImagePath), 0)
+
+    @staticmethod
+    def AddMinigameLobbyPrefabName(builder, MinigameLobbyPrefabName): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(MinigameLobbyPrefabName), 0)
+
+    @staticmethod
+    def AddMinigameVictoryPrefabName(builder, MinigameVictoryPrefabName): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(MinigameVictoryPrefabName), 0)
+
+    @staticmethod
+    def AddMinigameMissionBgPrefabName(builder, MinigameMissionBgPrefabName): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(MinigameMissionBgPrefabName), 0)
+
+    @staticmethod
+    def AddMinigameMissionBgImagePath(builder, MinigameMissionBgImagePath): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(MinigameMissionBgImagePath), 0)
+
+    @staticmethod
+    def AddCardBgImagePath(builder, CardBgImagePath): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(CardBgImagePath), 0)
+
+    @staticmethod
+    def AddEventAssist(builder, EventAssist): builder.PrependBoolSlot(35, EventAssist, 0)
+
+
+    @staticmethod
+    def AddEventContentReleaseType(builder, EventContentReleaseType): builder.PrependInt32Slot(36, EventContentReleaseType, 0)
+
+
+    @staticmethod
+    def AddEventContentStageRewardIdPermanent(builder, EventContentStageRewardIdPermanent): builder.PrependInt32Slot(37, EventContentStageRewardIdPermanent, 0)
+
+
+    @staticmethod
+    def AddRewardTagPermanent(builder, RewardTagPermanent): builder.PrependFloat32Slot(38, RewardTagPermanent, 0)
+
+
+    @staticmethod
+    def AddMiniEventShortCutScenarioModeId(builder, MiniEventShortCutScenarioModeId): builder.PrependInt32Slot(39, MiniEventShortCutScenarioModeId, 0)
+
+
+    @staticmethod
+    def AddScenarioContentCollectionGroupId(builder, ScenarioContentCollectionGroupId): builder.PrependInt32Slot(40, ScenarioContentCollectionGroupId, 0)
 

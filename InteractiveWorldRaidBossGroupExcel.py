@@ -20,21 +20,21 @@ class InteractiveWorldRaidBossGroupExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldRaidBossGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def WorldBossHPLinkGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -83,7 +83,7 @@ class InteractiveWorldRaidBossGroupExcel:
     def WorldBossHP(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -104,38 +104,21 @@ class InteractiveWorldRaidBossGroupExcel:
     def WorldBossClearRewardGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def AnotherBossKilled(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def AnotherBossKilledAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def AnotherBossKilledLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def AnotherBossKilledIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
-        return o == 0
 
 
     def EchelonConstraintGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -170,7 +153,7 @@ class InteractiveWorldRaidBossGroupExcel:
     def BossGroupOpenCondition(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -197,15 +180,15 @@ class InteractiveWorldRaidBossGroupExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddWorldRaidBossGroupId(builder, WorldRaidBossGroupId): builder.PrependInt64Slot(1, WorldRaidBossGroupId, 0)
+    def AddWorldRaidBossGroupId(builder, WorldRaidBossGroupId): builder.PrependInt32Slot(1, WorldRaidBossGroupId, 0)
 
 
     @staticmethod
-    def AddWorldBossHPLinkGroup(builder, WorldBossHPLinkGroup): builder.PrependInt64Slot(2, WorldBossHPLinkGroup, 0)
+    def AddWorldBossHPLinkGroup(builder, WorldBossHPLinkGroup): builder.PrependInt32Slot(2, WorldBossHPLinkGroup, 0)
 
 
     @staticmethod
@@ -227,7 +210,7 @@ class InteractiveWorldRaidBossGroupExcel:
     def AddWorldBossListParcel(builder, WorldBossListParcel): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(WorldBossListParcel), 0)
 
     @staticmethod
-    def AddWorldBossHP(builder, WorldBossHP): builder.PrependInt64Slot(9, WorldBossHP, 0)
+    def AddWorldBossHP(builder, WorldBossHP): builder.PrependInt32Slot(9, WorldBossHP, 0)
 
 
     @staticmethod
@@ -239,17 +222,15 @@ class InteractiveWorldRaidBossGroupExcel:
 
 
     @staticmethod
-    def AddWorldBossClearRewardGroupId(builder, WorldBossClearRewardGroupId): builder.PrependInt64Slot(12, WorldBossClearRewardGroupId, 0)
+    def AddWorldBossClearRewardGroupId(builder, WorldBossClearRewardGroupId): builder.PrependInt32Slot(12, WorldBossClearRewardGroupId, 0)
 
 
     @staticmethod
-    def AddAnotherBossKilled(builder, AnotherBossKilled): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(AnotherBossKilled), 0)
-    @staticmethod
-    def StartAnotherBossKilledVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddAnotherBossKilledLength(builder, AnotherBossKilledLength): builder.PrependInt32Slot(13, AnotherBossKilledLength, 0)
 
 
     @staticmethod
-    def AddEchelonConstraintGroupId(builder, EchelonConstraintGroupId): builder.PrependInt64Slot(14, EchelonConstraintGroupId, 0)
+    def AddEchelonConstraintGroupId(builder, EchelonConstraintGroupId): builder.PrependInt32Slot(14, EchelonConstraintGroupId, 0)
 
 
     @staticmethod
@@ -265,7 +246,7 @@ class InteractiveWorldRaidBossGroupExcel:
     def AddExclusiveOperatorBossDamaged(builder, ExclusiveOperatorBossDamaged): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(ExclusiveOperatorBossDamaged), 0)
 
     @staticmethod
-    def AddBossGroupOpenCondition(builder, BossGroupOpenCondition): builder.PrependInt64Slot(19, BossGroupOpenCondition, 0)
+    def AddBossGroupOpenCondition(builder, BossGroupOpenCondition): builder.PrependInt32Slot(19, BossGroupOpenCondition, 0)
 
 
     @staticmethod

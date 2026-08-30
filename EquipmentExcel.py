@@ -20,7 +20,7 @@ class EquipmentExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -69,14 +69,14 @@ class EquipmentExcel:
     def TierInit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def NextTierEquipment(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -101,93 +101,59 @@ class EquipmentExcel:
         return None
 
 
-    def Tags(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def TagsAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
-
     def TagsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def TagsIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        return o == 0
 
 
     def CraftQualityTier0(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CraftQualityTier1(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def CraftQualityTier2(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShiftingCraftQuality(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def ShopCategory(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
-        return 0
-
-    def ShopCategoryAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
-        return 0
 
     def ShopCategoryLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ShopCategoryIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
-        return o == 0
 
 
     def ShortcutTypeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RedirectItemId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -200,7 +166,7 @@ class EquipmentExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -228,11 +194,11 @@ class EquipmentExcel:
 
 
     @staticmethod
-    def AddTierInit(builder, TierInit): builder.PrependInt64Slot(7, TierInit, 0)
+    def AddTierInit(builder, TierInit): builder.PrependInt32Slot(7, TierInit, 0)
 
 
     @staticmethod
-    def AddNextTierEquipment(builder, NextTierEquipment): builder.PrependInt64Slot(8, NextTierEquipment, 0)
+    def AddNextTierEquipment(builder, NextTierEquipment): builder.PrependInt32Slot(8, NextTierEquipment, 0)
 
 
     @staticmethod
@@ -246,37 +212,33 @@ class EquipmentExcel:
     def AddImageName(builder, ImageName): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(ImageName), 0)
 
     @staticmethod
-    def AddTags(builder, Tags): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(Tags), 0)
-    @staticmethod
-    def StartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddTagsLength(builder, TagsLength): builder.PrependInt32Slot(12, TagsLength, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier0(builder, CraftQualityTier0): builder.PrependInt64Slot(13, CraftQualityTier0, 0)
+    def AddCraftQualityTier0(builder, CraftQualityTier0): builder.PrependInt32Slot(13, CraftQualityTier0, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier1(builder, CraftQualityTier1): builder.PrependInt64Slot(14, CraftQualityTier1, 0)
+    def AddCraftQualityTier1(builder, CraftQualityTier1): builder.PrependInt32Slot(14, CraftQualityTier1, 0)
 
 
     @staticmethod
-    def AddCraftQualityTier2(builder, CraftQualityTier2): builder.PrependInt64Slot(15, CraftQualityTier2, 0)
+    def AddCraftQualityTier2(builder, CraftQualityTier2): builder.PrependInt32Slot(15, CraftQualityTier2, 0)
 
 
     @staticmethod
-    def AddShiftingCraftQuality(builder, ShiftingCraftQuality): builder.PrependInt64Slot(16, ShiftingCraftQuality, 0)
+    def AddShiftingCraftQuality(builder, ShiftingCraftQuality): builder.PrependInt32Slot(16, ShiftingCraftQuality, 0)
 
 
     @staticmethod
-    def AddShopCategory(builder, ShopCategory): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(ShopCategory), 0)
-    @staticmethod
-    def StartShopCategoryVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddShopCategoryLength(builder, ShopCategoryLength): builder.PrependInt32Slot(17, ShopCategoryLength, 0)
 
 
     @staticmethod
-    def AddShortcutTypeId(builder, ShortcutTypeId): builder.PrependInt64Slot(18, ShortcutTypeId, 0)
+    def AddShortcutTypeId(builder, ShortcutTypeId): builder.PrependInt32Slot(18, ShortcutTypeId, 0)
 
 
     @staticmethod
-    def AddRedirectItemId(builder, RedirectItemId): builder.PrependInt64Slot(19, RedirectItemId, 0)
+    def AddRedirectItemId(builder, RedirectItemId): builder.PrependInt32Slot(19, RedirectItemId, 0)
 

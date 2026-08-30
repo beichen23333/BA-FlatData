@@ -20,14 +20,14 @@ class ConquestEventExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MainStoryEventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -83,7 +83,7 @@ class ConquestEventExcel:
     def MapEnterScenarioGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -195,7 +195,7 @@ class ConquestEventExcel:
     def IndividualErosionDailyCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -208,11 +208,11 @@ class ConquestEventExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(0, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
 
 
     @staticmethod
-    def AddMainStoryEventContentId(builder, MainStoryEventContentId): builder.PrependInt64Slot(1, MainStoryEventContentId, 0)
+    def AddMainStoryEventContentId(builder, MainStoryEventContentId): builder.PrependInt32Slot(1, MainStoryEventContentId, 0)
 
 
     @staticmethod
@@ -242,7 +242,7 @@ class ConquestEventExcel:
     def AddEvnetMapNameLocalize(builder, EvnetMapNameLocalize): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(EvnetMapNameLocalize), 0)
 
     @staticmethod
-    def AddMapEnterScenarioGroupId(builder, MapEnterScenarioGroupId): builder.PrependInt64Slot(9, MapEnterScenarioGroupId, 0)
+    def AddMapEnterScenarioGroupId(builder, MapEnterScenarioGroupId): builder.PrependInt32Slot(9, MapEnterScenarioGroupId, 0)
 
 
     @staticmethod
@@ -297,5 +297,5 @@ class ConquestEventExcel:
     def AddLocalizeTreasureBox(builder, LocalizeTreasureBox): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(LocalizeTreasureBox), 0)
 
     @staticmethod
-    def AddIndividualErosionDailyCount(builder, IndividualErosionDailyCount): builder.PrependInt64Slot(25, IndividualErosionDailyCount, 0)
+    def AddIndividualErosionDailyCount(builder, IndividualErosionDailyCount): builder.PrependInt32Slot(25, IndividualErosionDailyCount, 0)
 

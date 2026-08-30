@@ -1,0 +1,6 @@
+class ParticleSystemRenderSpace:
+    View = 0
+    World = 1
+    Local = 2
+    Facing = 3
+    Velocity = 4

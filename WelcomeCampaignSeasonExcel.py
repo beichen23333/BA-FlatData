@@ -20,7 +20,7 @@ class WelcomeCampaignSeasonExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class WelcomeCampaignSeasonExcel:
     def ExpiryDate(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -90,28 +90,28 @@ class WelcomeCampaignSeasonExcel:
     def EnterRewardGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RewardIncreaseId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def MaximumLoginCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def AttendanceBookSize(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -131,7 +131,7 @@ class WelcomeCampaignSeasonExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -153,7 +153,7 @@ class WelcomeCampaignSeasonExcel:
     def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
 
     @staticmethod
-    def AddExpiryDate(builder, ExpiryDate): builder.PrependInt64Slot(6, ExpiryDate, 0)
+    def AddExpiryDate(builder, ExpiryDate): builder.PrependInt32Slot(6, ExpiryDate, 0)
 
 
     @staticmethod
@@ -166,19 +166,19 @@ class WelcomeCampaignSeasonExcel:
     def AddTitleImage(builder, TitleImage): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(TitleImage), 0)
 
     @staticmethod
-    def AddEnterRewardGroupId(builder, EnterRewardGroupId): builder.PrependInt64Slot(10, EnterRewardGroupId, 0)
+    def AddEnterRewardGroupId(builder, EnterRewardGroupId): builder.PrependInt32Slot(10, EnterRewardGroupId, 0)
 
 
     @staticmethod
-    def AddRewardIncreaseId(builder, RewardIncreaseId): builder.PrependInt64Slot(11, RewardIncreaseId, 0)
+    def AddRewardIncreaseId(builder, RewardIncreaseId): builder.PrependInt32Slot(11, RewardIncreaseId, 0)
 
 
     @staticmethod
-    def AddMaximumLoginCount(builder, MaximumLoginCount): builder.PrependInt64Slot(12, MaximumLoginCount, 0)
+    def AddMaximumLoginCount(builder, MaximumLoginCount): builder.PrependInt32Slot(12, MaximumLoginCount, 0)
 
 
     @staticmethod
-    def AddAttendanceBookSize(builder, AttendanceBookSize): builder.PrependInt64Slot(13, AttendanceBookSize, 0)
+    def AddAttendanceBookSize(builder, AttendanceBookSize): builder.PrependInt32Slot(13, AttendanceBookSize, 0)
 
 
     @staticmethod

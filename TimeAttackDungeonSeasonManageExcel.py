@@ -20,7 +20,7 @@ class TimeAttackDungeonSeasonManageExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,52 +48,35 @@ class TimeAttackDungeonSeasonManageExcel:
     def UISlot(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def DungeonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def DifficultyGeas(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def DifficultyGeasAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def DifficultyGeasLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def DifficultyGeasIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
-        return o == 0
 
 
     def TimeAttackDungeonRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def RoomLifeTimeInSeconds(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -106,7 +89,7 @@ class TimeAttackDungeonSeasonManageExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -119,23 +102,21 @@ class TimeAttackDungeonSeasonManageExcel:
     def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
 
     @staticmethod
-    def AddUISlot(builder, UISlot): builder.PrependInt64Slot(4, UISlot, 0)
+    def AddUISlot(builder, UISlot): builder.PrependInt32Slot(4, UISlot, 0)
 
 
     @staticmethod
-    def AddDungeonId(builder, DungeonId): builder.PrependInt64Slot(5, DungeonId, 0)
+    def AddDungeonId(builder, DungeonId): builder.PrependInt32Slot(5, DungeonId, 0)
 
 
     @staticmethod
-    def AddDifficultyGeas(builder, DifficultyGeas): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(DifficultyGeas), 0)
-    @staticmethod
-    def StartDifficultyGeasVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddDifficultyGeasLength(builder, DifficultyGeasLength): builder.PrependInt32Slot(6, DifficultyGeasLength, 0)
 
 
     @staticmethod
-    def AddTimeAttackDungeonRewardId(builder, TimeAttackDungeonRewardId): builder.PrependInt64Slot(7, TimeAttackDungeonRewardId, 0)
+    def AddTimeAttackDungeonRewardId(builder, TimeAttackDungeonRewardId): builder.PrependInt32Slot(7, TimeAttackDungeonRewardId, 0)
 
 
     @staticmethod
-    def AddRoomLifeTimeInSeconds(builder, RoomLifeTimeInSeconds): builder.PrependInt64Slot(8, RoomLifeTimeInSeconds, 0)
+    def AddRoomLifeTimeInSeconds(builder, RoomLifeTimeInSeconds): builder.PrependInt32Slot(8, RoomLifeTimeInSeconds, 0)
 

@@ -20,7 +20,7 @@ class StickerGroupExcel:
     def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,7 +48,7 @@ class StickerGroupExcel:
     def PageCompleteSlot(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -62,7 +62,7 @@ class StickerGroupExcel:
     def PageCompleteRewardParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -103,7 +103,7 @@ class StickerGroupExcel:
 
 
     @staticmethod
-    def AddId(builder, Id): builder.PrependInt64Slot(0, Id, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
@@ -116,7 +116,7 @@ class StickerGroupExcel:
     def AddStickerGroupIconpath(builder, StickerGroupIconpath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(StickerGroupIconpath), 0)
 
     @staticmethod
-    def AddPageCompleteSlot(builder, PageCompleteSlot): builder.PrependInt64Slot(4, PageCompleteSlot, 0)
+    def AddPageCompleteSlot(builder, PageCompleteSlot): builder.PrependInt32Slot(4, PageCompleteSlot, 0)
 
 
     @staticmethod
@@ -124,7 +124,7 @@ class StickerGroupExcel:
 
 
     @staticmethod
-    def AddPageCompleteRewardParcelId(builder, PageCompleteRewardParcelId): builder.PrependInt64Slot(6, PageCompleteRewardParcelId, 0)
+    def AddPageCompleteRewardParcelId(builder, PageCompleteRewardParcelId): builder.PrependInt32Slot(6, PageCompleteRewardParcelId, 0)
 
 
     @staticmethod

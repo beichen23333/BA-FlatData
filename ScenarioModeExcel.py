@@ -20,7 +20,7 @@ class ScenarioModeExcel:
     def ModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -48,21 +48,21 @@ class ScenarioModeExcel:
     def VolumeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ChapterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EpisodeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -97,45 +97,28 @@ class ScenarioModeExcel:
     def EpisodeContinueModeId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def FrontScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def FrontScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def FrontScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def FrontScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
-        return o == 0
 
 
     def StrategyId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def GroundId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -149,69 +132,35 @@ class ScenarioModeExcel:
     def BattleDuration(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def FieldDateId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-
-    def BackScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def BackScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def BackScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    def BackScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
-        return o == 0
-
-
-    def ClearedModeId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ClearedModeIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
 
     def ClearedModeIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ClearedModeIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
-        return o == 0
 
 
     def ScenarioModeRewardId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -239,14 +188,14 @@ class ScenarioModeExcel:
     def AccountLevelLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ClearedStageId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -267,7 +216,7 @@ class ScenarioModeExcel:
     def EventContentId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -281,14 +230,14 @@ class ScenarioModeExcel:
     def EventContentCondition(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def EventContentConditionGroup(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -344,7 +293,7 @@ class ScenarioModeExcel:
     def FixedEchelonId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -365,7 +314,7 @@ class ScenarioModeExcel:
     def CollectionGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
@@ -378,7 +327,7 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddModeId(builder, ModeId): builder.PrependInt64Slot(0, ModeId, 0)
+    def AddModeId(builder, ModeId): builder.PrependInt32Slot(0, ModeId, 0)
 
 
     @staticmethod
@@ -393,15 +342,15 @@ class ScenarioModeExcel:
     def AddDisplayVolumeId(builder, DisplayVolumeId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(DisplayVolumeId), 0)
 
     @staticmethod
-    def AddVolumeId(builder, VolumeId): builder.PrependInt64Slot(4, VolumeId, 0)
+    def AddVolumeId(builder, VolumeId): builder.PrependInt32Slot(4, VolumeId, 0)
 
 
     @staticmethod
-    def AddChapterId(builder, ChapterId): builder.PrependInt64Slot(5, ChapterId, 0)
+    def AddChapterId(builder, ChapterId): builder.PrependInt32Slot(5, ChapterId, 0)
 
 
     @staticmethod
-    def AddEpisodeId(builder, EpisodeId): builder.PrependInt64Slot(6, EpisodeId, 0)
+    def AddEpisodeId(builder, EpisodeId): builder.PrependInt32Slot(6, EpisodeId, 0)
 
 
     @staticmethod
@@ -420,21 +369,19 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddEpisodeContinueModeId(builder, EpisodeContinueModeId): builder.PrependInt64Slot(11, EpisodeContinueModeId, 0)
+    def AddEpisodeContinueModeId(builder, EpisodeContinueModeId): builder.PrependInt32Slot(11, EpisodeContinueModeId, 0)
 
 
     @staticmethod
-    def AddFrontScenarioGroupId(builder, FrontScenarioGroupId): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(FrontScenarioGroupId), 0)
-    @staticmethod
-    def StartFrontScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddFrontScenarioGroupIdLength(builder, FrontScenarioGroupIdLength): builder.PrependInt32Slot(12, FrontScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddStrategyId(builder, StrategyId): builder.PrependInt64Slot(13, StrategyId, 0)
+    def AddStrategyId(builder, StrategyId): builder.PrependInt32Slot(13, StrategyId, 0)
 
 
     @staticmethod
-    def AddGroundId(builder, GroundId): builder.PrependInt64Slot(14, GroundId, 0)
+    def AddGroundId(builder, GroundId): builder.PrependInt32Slot(14, GroundId, 0)
 
 
     @staticmethod
@@ -442,27 +389,23 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddBattleDuration(builder, BattleDuration): builder.PrependInt64Slot(16, BattleDuration, 0)
+    def AddBattleDuration(builder, BattleDuration): builder.PrependInt32Slot(16, BattleDuration, 0)
 
 
     @staticmethod
-    def AddFieldDateId(builder, FieldDateId): builder.PrependInt64Slot(17, FieldDateId, 0)
+    def AddFieldDateId(builder, FieldDateId): builder.PrependInt32Slot(17, FieldDateId, 0)
 
 
     @staticmethod
-    def AddBackScenarioGroupId(builder, BackScenarioGroupId): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(BackScenarioGroupId), 0)
-    @staticmethod
-    def StartBackScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddBackScenarioGroupIdLength(builder, BackScenarioGroupIdLength): builder.PrependInt32Slot(18, BackScenarioGroupIdLength, 0)
 
 
     @staticmethod
-    def AddClearedModeId(builder, ClearedModeId): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(ClearedModeId), 0)
-    @staticmethod
-    def StartClearedModeIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddClearedModeIdLength(builder, ClearedModeIdLength): builder.PrependInt32Slot(19, ClearedModeIdLength, 0)
 
 
     @staticmethod
-    def AddScenarioModeRewardId(builder, ScenarioModeRewardId): builder.PrependInt64Slot(20, ScenarioModeRewardId, 0)
+    def AddScenarioModeRewardId(builder, ScenarioModeRewardId): builder.PrependInt32Slot(20, ScenarioModeRewardId, 0)
 
 
     @staticmethod
@@ -477,11 +420,11 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt64Slot(24, AccountLevelLimit, 0)
+    def AddAccountLevelLimit(builder, AccountLevelLimit): builder.PrependInt32Slot(24, AccountLevelLimit, 0)
 
 
     @staticmethod
-    def AddClearedStageId(builder, ClearedStageId): builder.PrependInt64Slot(25, ClearedStageId, 0)
+    def AddClearedStageId(builder, ClearedStageId): builder.PrependInt32Slot(25, ClearedStageId, 0)
 
 
     @staticmethod
@@ -493,7 +436,7 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt64Slot(28, EventContentId, 0)
+    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(28, EventContentId, 0)
 
 
     @staticmethod
@@ -501,11 +444,11 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddEventContentCondition(builder, EventContentCondition): builder.PrependInt64Slot(30, EventContentCondition, 0)
+    def AddEventContentCondition(builder, EventContentCondition): builder.PrependInt32Slot(30, EventContentCondition, 0)
 
 
     @staticmethod
-    def AddEventContentConditionGroup(builder, EventContentConditionGroup): builder.PrependInt64Slot(31, EventContentConditionGroup, 0)
+    def AddEventContentConditionGroup(builder, EventContentConditionGroup): builder.PrependInt32Slot(31, EventContentConditionGroup, 0)
 
 
     @staticmethod
@@ -536,7 +479,7 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt64Slot(39, FixedEchelonId, 0)
+    def AddFixedEchelonId(builder, FixedEchelonId): builder.PrependInt32Slot(39, FixedEchelonId, 0)
 
 
     @staticmethod
@@ -547,5 +490,5 @@ class ScenarioModeExcel:
 
 
     @staticmethod
-    def AddCollectionGroupId(builder, CollectionGroupId): builder.PrependInt64Slot(42, CollectionGroupId, 0)
+    def AddCollectionGroupId(builder, CollectionGroupId): builder.PrependInt32Slot(42, CollectionGroupId, 0)
 

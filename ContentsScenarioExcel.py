@@ -45,28 +45,11 @@ class ContentsScenarioExcel:
         return 0
 
 
-    def ScenarioGroupId(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            a = self._tab.Vector(o)
-            return self._tab.Get(flatbuffers.number_types.Int64Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 8))
-        return 0
-
-    def ScenarioGroupIdAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int64Flags, o)
-        return 0
-
     def ScenarioGroupIdLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def ScenarioGroupIdIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        return o == 0
 
 
 
@@ -94,7 +77,5 @@ class ContentsScenarioExcel:
 
 
     @staticmethod
-    def AddScenarioGroupId(builder, ScenarioGroupId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(ScenarioGroupId), 0)
-    @staticmethod
-    def StartScenarioGroupIdVector(builder, numElems): return builder.StartVector(8, numElems, 8)
+    def AddScenarioGroupIdLength(builder, ScenarioGroupIdLength): builder.PrependInt32Slot(4, ScenarioGroupIdLength, 0)
 

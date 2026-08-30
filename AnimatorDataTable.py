@@ -17,27 +17,11 @@ class AnimatorDataTable:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def DataList(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        if o != 0:
-            x = self._tab.Vector(o)
-            x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
-            x = self._tab.Indirect(x)
-            from .AnimatorData import AnimatorData
-            obj = AnimatorData()
-            obj.Init(self._tab.Bytes, x)
-            return obj
-        return None
-
     def DataListLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.VectorLen(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
-
-    def DataListIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
-        return o == 0
 
 
 
@@ -49,7 +33,5 @@ class AnimatorDataTable:
 
 
     @staticmethod
-    def AddDataList(builder, DataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(DataList), 0)
-    @staticmethod
-    def StartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+    def AddDataListLength(builder, DataListLength): builder.PrependInt32Slot(0, DataListLength, 0)
 
