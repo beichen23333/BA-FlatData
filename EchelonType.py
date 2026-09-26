@@ -32,3 +32,5 @@ class EchelonType:
     TacticalRelayMystic = 30
     TacticalRelaySonic = 31
     TacticalRelayChemical = 32
+    WeekDungeonChaserD = 33
+    WeekDungeonChaserE = 34

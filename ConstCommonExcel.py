@@ -374,1044 +374,1058 @@ class ConstCommonExcel:
         return 0
 
 
-    def ClanRejoinCoolTimeFromSecond(self):
+    def ClanKickHistoryMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(106))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClanWordBalloonMaxCharacter(self):
+    def ClanRejoinCoolTimeFromSecond(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(108))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CallNameRenameCoolTimeFromHour(self):
+    def ClanWordBalloonMaxCharacter(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(110))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CallNameMinimumLength(self):
+    def CallNameRenameCoolTimeFromHour(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CallNameMaximumLength(self):
+    def CallNameMinimumLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LobbyToScreenModeWaitTime(self):
+    def CallNameMaximumLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ScreenshotToLobbyButtonHideDelay(self):
+    def LobbyToScreenModeWaitTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PrologueScenarioID01(self):
+    def ScreenshotToLobbyButtonHideDelay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PrologueScenarioID02(self):
+    def PrologueScenarioID01(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TutorialHardStage11(self):
+    def PrologueScenarioID02(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(124))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TutorialSpeedButtonStage(self):
+    def TutorialHardStage11(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(126))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TutorialCharacterDefaultCount(self):
+    def TutorialSpeedButtonStage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(128))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TutorialShopCategoryType(self):
+    def TutorialCharacterDefaultCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(130))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def TutorialShopCategoryType(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
     def AdventureStrategyPlayTimeLimitInSeconds(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def WeekDungoenTacticPlayTimeLimitInSeconds(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(134))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RaidTacticPlayTimeLimitInSeconds(self):
+    def WeekDungoenTacticPlayTimeLimitInSeconds(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(136))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RaidOpponentListAmount(self):
+    def RaidTacticPlayTimeLimitInSeconds(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(138))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CraftBaseGoldRequiredLength(self):
+    def RaidOpponentListAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(140))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PostExpiredDayAttendance(self):
+    def CraftBaseGoldRequiredLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PostExpiredDayInventoryOverflow(self):
+    def PostExpiredDayAttendance(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(144))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PostExpiredDayGameManager(self):
+    def PostExpiredDayInventoryOverflow(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(146))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def UILabelCharacterWrap(self):
+    def PostExpiredDayGameManager(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(148))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def UILabelCharacterWrap(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(150))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def MailStorageSoftCap(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(150))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def MailStorageHardCap(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(152))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeckStorageSize(self):
+    def MailStorageHardCap(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(154))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeckNoStarViewCount(self):
+    def ClearDeckStorageSize(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(156))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeck1StarViewCount(self):
+    def ClearDeckNoStarViewCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(158))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeck2StarViewCount(self):
+    def ClearDeck1StarViewCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(160))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeck3StarViewCount(self):
+    def ClearDeck2StarViewCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(162))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExSkillLevelMax(self):
+    def ClearDeck3StarViewCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(164))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PublicSkillLevelMax(self):
+    def ExSkillLevelMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(166))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PassiveSkillLevelMax(self):
+    def PublicSkillLevelMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(168))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExtraPassiveSkillLevelMax(self):
+    def PassiveSkillLevelMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(170))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AccountCommentMaxLength(self):
+    def ExtraPassiveSkillLevelMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(172))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeSummonCoolTimeFromHour(self):
+    def AccountCommentMaxLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(174))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LimitedStageDailyClearCount(self):
+    def CafeSummonCoolTimeFromHour(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(176))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LimitedStageEntryTimeLimit(self):
+    def LimitedStageDailyClearCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(178))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LimitedStageEntryTimeBuffer(self):
+    def LimitedStageEntryTimeLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(180))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LimitedStagePointAmount(self):
+    def LimitedStageEntryTimeBuffer(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(182))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LimitedStagePointPerApMin(self):
+    def LimitedStagePointAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(184))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def LimitedStagePointPerApMax(self):
+    def LimitedStagePointPerApMin(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(186))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AccountLinkReward(self):
+    def LimitedStagePointPerApMax(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(188))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MonthlyProductCheckDays(self):
+    def AccountLinkReward(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(190))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def WeaponLvUpCoefficient(self):
+    def MonthlyProductCheckDays(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(192))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ShowRaidMyListCount(self):
+    def WeaponLvUpCoefficient(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(194))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RaidEnterCostType(self):
+    def ShowRaidMyListCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(196))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RaidEnterCostId(self):
+    def RaidEnterCostType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(198))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RaidTicketCost(self):
+    def RaidEnterCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(200))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TimeAttackDungeonScenarioId(self):
+    def RaidTicketCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(202))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def TimeAttackDungeonScenarioId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(204))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def TimeAttackDungoenPlayCountPerTicket(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(204))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def TimeAttackDungeonEnterCostType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(206))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TimeAttackDungeonEnterCostId(self):
+    def TimeAttackDungeonEnterCostType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(208))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TimeAttackDungeonEnterCost(self):
+    def TimeAttackDungeonEnterCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(210))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClanLeaderTransferLastLoginLimit(self):
+    def TimeAttackDungeonEnterCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(212))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MonthlyProductRepurchasePopupLimit(self):
+    def ClanLeaderTransferLastLoginLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(214))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CommonFavorItemTagsLength(self):
+    def MonthlyProductRepurchasePopupLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(216))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MaxApMasterCoinPerWeek(self):
+    def CommonFavorItemTagsLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(218))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlusMaxApMasterCoinPerWeekProductMonthlyId1Length(self):
+    def MaxApMasterCoinPerWeek(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(220))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlusMaxApMasterCoinPerWeek1(self):
+    def PlusMaxApMasterCoinPerWeekProductMonthlyId1Length(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(222))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlusMaxApMasterCoinPerWeekProductMonthlyId2Length(self):
+    def PlusMaxApMasterCoinPerWeek1(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(224))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PlusMaxApMasterCoinPerWeek2(self):
+    def PlusMaxApMasterCoinPerWeekProductMonthlyId2Length(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(226))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CraftOpenExpTier1(self):
+    def PlusMaxApMasterCoinPerWeek2(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(228))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CraftOpenExpTier2(self):
+    def CraftOpenExpTier1(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(230))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CraftOpenExpTier3(self):
+    def CraftOpenExpTier2(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(232))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharacterEquipmentGearSlot(self):
+    def CraftOpenExpTier3(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(234))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BirthDayDDay(self):
+    def CharacterEquipmentGearSlot(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(236))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RecommendedFriendsLvDifferenceLimit(self):
+    def BirthDayDDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(238))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def DDosDetectCount(self):
+    def RecommendedFriendsLvDifferenceLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(240))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def DDosCheckIntervalInSeconds(self):
+    def DDosDetectCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(242))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MaxFriendsCount(self):
+    def DDosCheckIntervalInSeconds(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(244))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MaxFriendsRequest(self):
+    def MaxFriendsCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(246))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FriendsSearchRequestCount(self):
+    def MaxFriendsRequest(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(248))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FriendsMaxApplicant(self):
+    def FriendsSearchRequestCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(250))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def IdCardDefaultCharacterId(self):
+    def FriendsMaxApplicant(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(252))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def IdCardDefaultBgId(self):
+    def IdCardDefaultCharacterId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(254))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def WorldRaidGemEnterCost(self):
+    def IdCardDefaultBgId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(256))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def WorldRaidGemEnterAmout(self):
+    def WorldRaidGemEnterCost(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(258))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FriendIdCardCommentMaxLength(self):
+    def WorldRaidGemEnterAmout(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(260))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FormationPresetNumberOfEchelonTab(self):
+    def FriendIdCardCommentMaxLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(262))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FormationPresetNumberOfEchelon(self):
+    def FormationPresetNumberOfEchelonTab(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(264))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FormationPresetRecentNumberOfEchelon(self):
+    def FormationPresetNumberOfEchelon(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(266))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FormationPresetEchelonTabTextLength(self):
+    def FormationPresetRecentNumberOfEchelon(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(268))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FormationPresetEchelonSlotTextLength(self):
+    def FormationPresetEchelonTabTextLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(270))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharProfileRowIntervalKr(self):
+    def FormationPresetEchelonSlotTextLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(272))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharProfileRowIntervalJp(self):
+    def CharProfileRowIntervalKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(274))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharProfilePopupRowIntervalKr(self):
+    def CharProfileRowIntervalJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(276))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharProfilePopupRowIntervalJp(self):
+    def CharProfilePopupRowIntervalKr(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(278))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BeforehandGachaCount(self):
+    def CharProfilePopupRowIntervalJp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(280))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BeforehandGachaGroupId(self):
+    def BeforehandGachaCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(282))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RenewalDisplayOrderDay(self):
+    def BeforehandGachaGroupId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(284))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EmblemDefaultId(self):
+    def RenewalDisplayOrderDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(286))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StudentFrameDefaultId(self):
+    def EmblemDefaultId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(288))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BirthdayMailStartDate(self):
+    def StudentFrameDefaultId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(290))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def BirthdayMailStartDate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(292))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def BirthdayMailRemainDate(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(292))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def BirthdayMailParcelType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(294))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BirthdayMailParcelId(self):
+    def BirthdayMailParcelType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(296))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BirthdayMailParcelAmount(self):
+    def BirthdayMailParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(298))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeckAverageDeckCount(self):
+    def BirthdayMailParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(300))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeckWorldRaidSaveConditionCoefficient(self):
+    def ClearDeckAverageDeckCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(302))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeckShowCount(self):
+    def ClearDeckWorldRaidSaveConditionCoefficient(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(304))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CharacterMaxLevel(self):
+    def ClearDeckShowCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(306))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PotentialBonusStatMaxLevelMaxHP(self):
+    def CharacterMaxLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(308))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PotentialBonusStatMaxLevelAttackPower(self):
+    def PotentialBonusStatMaxLevelMaxHP(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(310))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PotentialBonusStatMaxLevelHealPower(self):
+    def PotentialBonusStatMaxLevelAttackPower(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(312))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PotentialOpenConditionCharacterLevel(self):
+    def PotentialBonusStatMaxLevelHealPower(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(314))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AssistStrangerMinLevel(self):
+    def PotentialOpenConditionCharacterLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(316))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AssistStrangerMaxLevel(self):
+    def AssistStrangerMinLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(318))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MaxBlockedUserCount(self):
+    def AssistStrangerMaxLevel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(320))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeRandomVisitMinComfortBonus(self):
+    def MaxBlockedUserCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(322))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeRandomVisitMinLastLogin(self):
+    def CafeRandomVisitMinComfortBonus(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(324))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeTravelSyncIntervalByMillisec(self):
+    def CafeRandomVisitMinLastLogin(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(326))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RankBracketPercentage1(self):
+    def CafeTravelSyncIntervalByMillisec(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(328))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RankBracketPercentage2(self):
+    def RankBracketPercentage1(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(330))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RankBracketPercentage3(self):
+    def RankBracketPercentage2(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(332))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RankBracketPercentage4(self):
+    def RankBracketPercentage3(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(334))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RankBracketPercentage5(self):
+    def RankBracketPercentage4(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(336))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RankBracketPercentage6(self):
+    def RankBracketPercentage5(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(338))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RankBracketPercentage7(self):
+    def RankBracketPercentage6(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(340))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExpiryBattlePassItemReceiveDay(self):
+    def RankBracketPercentage7(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(342))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BattlePassFlavorTextIdleDurationMilliSec(self):
+    def ExpiryBattlePassItemReceiveDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(344))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BattlePassEndImminentDay(self):
+    def BattlePassFlavorTextIdleDurationMilliSec(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(346))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def BattlePassExpIconPath(self):
+    def BattlePassEndImminentDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(348))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def BattlePassExpIconPath(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(350))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
     def CafeCameraDragThreshold(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(350))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(352))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
     def CafeSummonTicketBuyLimitForValidate(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(352))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def AutoCraftPresetCountLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(354))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AutoCraftNodeSelectCount(self):
+    def AutoCraftPresetCountLimit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(356))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CraftPresetNameMaxLength(self):
+    def AutoCraftNodeSelectCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(358))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SelectionWaitTime(self):
+    def CraftPresetNameMaxLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(360))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def RewardWaitTime(self):
+    def SelectionWaitTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(362))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EpisodeContinueWaitTime(self):
+    def RewardWaitTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(364))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ScenarioAutoDelayMillisecLong(self):
+    def EpisodeContinueWaitTime(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(366))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ScenarioAutoDelayMillisec(self):
+    def ScenarioAutoDelayMillisecLong(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(368))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ScenarioAutoDelayMillisecShort(self):
+    def ScenarioAutoDelayMillisec(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(370))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ScenarioAutoDelayMillisecVeryShort(self):
+    def ScenarioAutoDelayMillisecShort(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(372))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def PcBuildEnterInformation(self):
+    def ScenarioAutoDelayMillisecVeryShort(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(374))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ComebackUserStandardDay(self):
+    def PcBuildEnterInformation(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(376))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ComebackUserLogSaveDay(self):
+    def ComebackUserStandardDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(378))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ComeBackActivateCooldown(self):
+    def ComebackUserLogSaveDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(380))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def CafeCopyPresetSlotCount(self):
+    def ComeBackActivateCooldown(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(382))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExpiryProductDailyRecordItemReceiveDay(self):
+    def CafeCopyPresetSlotCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(384))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def NewbieUserStandardDay(self):
+    def ExpiryProductDailyRecordItemReceiveDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(386))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def NewbieStateHoldDay(self):
+    def NewbieUserStandardDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(388))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ClearDeckEchelonShowMaxCount(self):
+    def NewbieStateHoldDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(390))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExpiryStreakRecordItemReceiveDay(self):
+    def ClearDeckEchelonShowMaxCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(392))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ExpirySeasonRecordItemReceiveDay(self):
+    def ExpiryStreakRecordItemReceiveDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(394))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EngraveContentsIsOpen(self):
+    def ExpirySeasonRecordItemReceiveDay(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(396))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TacticalRelayContentsIsOpen(self):
+    def EngraveContentsIsOpen(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(398))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def ExSkillLevelMaxByEngrave(self):
+    def TacticalRelayContentsIsOpen(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(400))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
+    def ExSkillLevelMaxByEngrave(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(402))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ExSkillUpgradeLevelMax(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(402))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(404))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def RaidResetCount(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(406))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -1420,7 +1434,7 @@ class ConstCommonExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(200)
+    def Start(builder): builder.StartObject(202)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -1630,593 +1644,601 @@ class ConstCommonExcel:
 
 
     @staticmethod
-    def AddClanRejoinCoolTimeFromSecond(builder, ClanRejoinCoolTimeFromSecond): builder.PrependInt32Slot(51, ClanRejoinCoolTimeFromSecond, 0)
+    def AddClanKickHistoryMax(builder, ClanKickHistoryMax): builder.PrependInt32Slot(51, ClanKickHistoryMax, 0)
 
 
     @staticmethod
-    def AddClanWordBalloonMaxCharacter(builder, ClanWordBalloonMaxCharacter): builder.PrependInt32Slot(52, ClanWordBalloonMaxCharacter, 0)
+    def AddClanRejoinCoolTimeFromSecond(builder, ClanRejoinCoolTimeFromSecond): builder.PrependInt32Slot(52, ClanRejoinCoolTimeFromSecond, 0)
 
 
     @staticmethod
-    def AddCallNameRenameCoolTimeFromHour(builder, CallNameRenameCoolTimeFromHour): builder.PrependInt32Slot(53, CallNameRenameCoolTimeFromHour, 0)
+    def AddClanWordBalloonMaxCharacter(builder, ClanWordBalloonMaxCharacter): builder.PrependInt32Slot(53, ClanWordBalloonMaxCharacter, 0)
 
 
     @staticmethod
-    def AddCallNameMinimumLength(builder, CallNameMinimumLength): builder.PrependInt32Slot(54, CallNameMinimumLength, 0)
+    def AddCallNameRenameCoolTimeFromHour(builder, CallNameRenameCoolTimeFromHour): builder.PrependInt32Slot(54, CallNameRenameCoolTimeFromHour, 0)
 
 
     @staticmethod
-    def AddCallNameMaximumLength(builder, CallNameMaximumLength): builder.PrependInt32Slot(55, CallNameMaximumLength, 0)
+    def AddCallNameMinimumLength(builder, CallNameMinimumLength): builder.PrependInt32Slot(55, CallNameMinimumLength, 0)
 
 
     @staticmethod
-    def AddLobbyToScreenModeWaitTime(builder, LobbyToScreenModeWaitTime): builder.PrependInt32Slot(56, LobbyToScreenModeWaitTime, 0)
+    def AddCallNameMaximumLength(builder, CallNameMaximumLength): builder.PrependInt32Slot(56, CallNameMaximumLength, 0)
 
 
     @staticmethod
-    def AddScreenshotToLobbyButtonHideDelay(builder, ScreenshotToLobbyButtonHideDelay): builder.PrependInt32Slot(57, ScreenshotToLobbyButtonHideDelay, 0)
+    def AddLobbyToScreenModeWaitTime(builder, LobbyToScreenModeWaitTime): builder.PrependInt32Slot(57, LobbyToScreenModeWaitTime, 0)
 
 
     @staticmethod
-    def AddPrologueScenarioID01(builder, PrologueScenarioID01): builder.PrependInt32Slot(58, PrologueScenarioID01, 0)
+    def AddScreenshotToLobbyButtonHideDelay(builder, ScreenshotToLobbyButtonHideDelay): builder.PrependInt32Slot(58, ScreenshotToLobbyButtonHideDelay, 0)
 
 
     @staticmethod
-    def AddPrologueScenarioID02(builder, PrologueScenarioID02): builder.PrependInt32Slot(59, PrologueScenarioID02, 0)
+    def AddPrologueScenarioID01(builder, PrologueScenarioID01): builder.PrependInt32Slot(59, PrologueScenarioID01, 0)
 
 
     @staticmethod
-    def AddTutorialHardStage11(builder, TutorialHardStage11): builder.PrependInt32Slot(60, TutorialHardStage11, 0)
+    def AddPrologueScenarioID02(builder, PrologueScenarioID02): builder.PrependInt32Slot(60, PrologueScenarioID02, 0)
 
 
     @staticmethod
-    def AddTutorialSpeedButtonStage(builder, TutorialSpeedButtonStage): builder.PrependInt32Slot(61, TutorialSpeedButtonStage, 0)
+    def AddTutorialHardStage11(builder, TutorialHardStage11): builder.PrependInt32Slot(61, TutorialHardStage11, 0)
 
 
     @staticmethod
-    def AddTutorialCharacterDefaultCount(builder, TutorialCharacterDefaultCount): builder.PrependInt32Slot(62, TutorialCharacterDefaultCount, 0)
+    def AddTutorialSpeedButtonStage(builder, TutorialSpeedButtonStage): builder.PrependInt32Slot(62, TutorialSpeedButtonStage, 0)
 
 
     @staticmethod
-    def AddTutorialShopCategoryType(builder, TutorialShopCategoryType): builder.PrependFloat32Slot(63, TutorialShopCategoryType, 0)
+    def AddTutorialCharacterDefaultCount(builder, TutorialCharacterDefaultCount): builder.PrependInt32Slot(63, TutorialCharacterDefaultCount, 0)
 
 
     @staticmethod
-    def AddAdventureStrategyPlayTimeLimitInSeconds(builder, AdventureStrategyPlayTimeLimitInSeconds): builder.PrependInt32Slot(64, AdventureStrategyPlayTimeLimitInSeconds, 0)
+    def AddTutorialShopCategoryType(builder, TutorialShopCategoryType): builder.PrependFloat32Slot(64, TutorialShopCategoryType, 0)
 
 
     @staticmethod
-    def AddWeekDungoenTacticPlayTimeLimitInSeconds(builder, WeekDungoenTacticPlayTimeLimitInSeconds): builder.PrependInt32Slot(65, WeekDungoenTacticPlayTimeLimitInSeconds, 0)
+    def AddAdventureStrategyPlayTimeLimitInSeconds(builder, AdventureStrategyPlayTimeLimitInSeconds): builder.PrependInt32Slot(65, AdventureStrategyPlayTimeLimitInSeconds, 0)
 
 
     @staticmethod
-    def AddRaidTacticPlayTimeLimitInSeconds(builder, RaidTacticPlayTimeLimitInSeconds): builder.PrependInt32Slot(66, RaidTacticPlayTimeLimitInSeconds, 0)
+    def AddWeekDungoenTacticPlayTimeLimitInSeconds(builder, WeekDungoenTacticPlayTimeLimitInSeconds): builder.PrependInt32Slot(66, WeekDungoenTacticPlayTimeLimitInSeconds, 0)
 
 
     @staticmethod
-    def AddRaidOpponentListAmount(builder, RaidOpponentListAmount): builder.PrependInt32Slot(67, RaidOpponentListAmount, 0)
+    def AddRaidTacticPlayTimeLimitInSeconds(builder, RaidTacticPlayTimeLimitInSeconds): builder.PrependInt32Slot(67, RaidTacticPlayTimeLimitInSeconds, 0)
 
 
     @staticmethod
-    def AddCraftBaseGoldRequiredLength(builder, CraftBaseGoldRequiredLength): builder.PrependInt32Slot(68, CraftBaseGoldRequiredLength, 0)
+    def AddRaidOpponentListAmount(builder, RaidOpponentListAmount): builder.PrependInt32Slot(68, RaidOpponentListAmount, 0)
 
 
     @staticmethod
-    def AddPostExpiredDayAttendance(builder, PostExpiredDayAttendance): builder.PrependInt32Slot(69, PostExpiredDayAttendance, 0)
+    def AddCraftBaseGoldRequiredLength(builder, CraftBaseGoldRequiredLength): builder.PrependInt32Slot(69, CraftBaseGoldRequiredLength, 0)
 
 
     @staticmethod
-    def AddPostExpiredDayInventoryOverflow(builder, PostExpiredDayInventoryOverflow): builder.PrependInt32Slot(70, PostExpiredDayInventoryOverflow, 0)
+    def AddPostExpiredDayAttendance(builder, PostExpiredDayAttendance): builder.PrependInt32Slot(70, PostExpiredDayAttendance, 0)
 
 
     @staticmethod
-    def AddPostExpiredDayGameManager(builder, PostExpiredDayGameManager): builder.PrependInt32Slot(71, PostExpiredDayGameManager, 0)
+    def AddPostExpiredDayInventoryOverflow(builder, PostExpiredDayInventoryOverflow): builder.PrependInt32Slot(71, PostExpiredDayInventoryOverflow, 0)
 
 
     @staticmethod
-    def AddUILabelCharacterWrap(builder, UILabelCharacterWrap): builder.PrependUOffsetTRelativeSlot(72, flatbuffers.number_types.UOffsetTFlags.py_type(UILabelCharacterWrap), 0)
+    def AddPostExpiredDayGameManager(builder, PostExpiredDayGameManager): builder.PrependInt32Slot(72, PostExpiredDayGameManager, 0)
 
+
+    @staticmethod
+    def AddUILabelCharacterWrap(builder, UILabelCharacterWrap): builder.PrependUOffsetTRelativeSlot(73, flatbuffers.number_types.UOffsetTFlags.py_type(UILabelCharacterWrap), 0)
+
     @staticmethod
-    def AddMailStorageSoftCap(builder, MailStorageSoftCap): builder.PrependInt32Slot(73, MailStorageSoftCap, 0)
+    def AddMailStorageSoftCap(builder, MailStorageSoftCap): builder.PrependInt32Slot(74, MailStorageSoftCap, 0)
 
 
     @staticmethod
-    def AddMailStorageHardCap(builder, MailStorageHardCap): builder.PrependInt32Slot(74, MailStorageHardCap, 0)
+    def AddMailStorageHardCap(builder, MailStorageHardCap): builder.PrependInt32Slot(75, MailStorageHardCap, 0)
 
 
     @staticmethod
-    def AddClearDeckStorageSize(builder, ClearDeckStorageSize): builder.PrependInt32Slot(75, ClearDeckStorageSize, 0)
+    def AddClearDeckStorageSize(builder, ClearDeckStorageSize): builder.PrependInt32Slot(76, ClearDeckStorageSize, 0)
 
 
     @staticmethod
-    def AddClearDeckNoStarViewCount(builder, ClearDeckNoStarViewCount): builder.PrependInt32Slot(76, ClearDeckNoStarViewCount, 0)
+    def AddClearDeckNoStarViewCount(builder, ClearDeckNoStarViewCount): builder.PrependInt32Slot(77, ClearDeckNoStarViewCount, 0)
 
 
     @staticmethod
-    def AddClearDeck1StarViewCount(builder, ClearDeck1StarViewCount): builder.PrependInt32Slot(77, ClearDeck1StarViewCount, 0)
+    def AddClearDeck1StarViewCount(builder, ClearDeck1StarViewCount): builder.PrependInt32Slot(78, ClearDeck1StarViewCount, 0)
 
 
     @staticmethod
-    def AddClearDeck2StarViewCount(builder, ClearDeck2StarViewCount): builder.PrependInt32Slot(78, ClearDeck2StarViewCount, 0)
+    def AddClearDeck2StarViewCount(builder, ClearDeck2StarViewCount): builder.PrependInt32Slot(79, ClearDeck2StarViewCount, 0)
 
 
     @staticmethod
-    def AddClearDeck3StarViewCount(builder, ClearDeck3StarViewCount): builder.PrependInt32Slot(79, ClearDeck3StarViewCount, 0)
+    def AddClearDeck3StarViewCount(builder, ClearDeck3StarViewCount): builder.PrependInt32Slot(80, ClearDeck3StarViewCount, 0)
 
 
     @staticmethod
-    def AddExSkillLevelMax(builder, ExSkillLevelMax): builder.PrependInt32Slot(80, ExSkillLevelMax, 0)
+    def AddExSkillLevelMax(builder, ExSkillLevelMax): builder.PrependInt32Slot(81, ExSkillLevelMax, 0)
 
 
     @staticmethod
-    def AddPublicSkillLevelMax(builder, PublicSkillLevelMax): builder.PrependInt32Slot(81, PublicSkillLevelMax, 0)
+    def AddPublicSkillLevelMax(builder, PublicSkillLevelMax): builder.PrependInt32Slot(82, PublicSkillLevelMax, 0)
 
 
     @staticmethod
-    def AddPassiveSkillLevelMax(builder, PassiveSkillLevelMax): builder.PrependInt32Slot(82, PassiveSkillLevelMax, 0)
+    def AddPassiveSkillLevelMax(builder, PassiveSkillLevelMax): builder.PrependInt32Slot(83, PassiveSkillLevelMax, 0)
 
 
     @staticmethod
-    def AddExtraPassiveSkillLevelMax(builder, ExtraPassiveSkillLevelMax): builder.PrependInt32Slot(83, ExtraPassiveSkillLevelMax, 0)
+    def AddExtraPassiveSkillLevelMax(builder, ExtraPassiveSkillLevelMax): builder.PrependInt32Slot(84, ExtraPassiveSkillLevelMax, 0)
 
 
     @staticmethod
-    def AddAccountCommentMaxLength(builder, AccountCommentMaxLength): builder.PrependInt32Slot(84, AccountCommentMaxLength, 0)
+    def AddAccountCommentMaxLength(builder, AccountCommentMaxLength): builder.PrependInt32Slot(85, AccountCommentMaxLength, 0)
 
 
     @staticmethod
-    def AddCafeSummonCoolTimeFromHour(builder, CafeSummonCoolTimeFromHour): builder.PrependInt32Slot(85, CafeSummonCoolTimeFromHour, 0)
+    def AddCafeSummonCoolTimeFromHour(builder, CafeSummonCoolTimeFromHour): builder.PrependInt32Slot(86, CafeSummonCoolTimeFromHour, 0)
 
 
     @staticmethod
-    def AddLimitedStageDailyClearCount(builder, LimitedStageDailyClearCount): builder.PrependInt32Slot(86, LimitedStageDailyClearCount, 0)
+    def AddLimitedStageDailyClearCount(builder, LimitedStageDailyClearCount): builder.PrependInt32Slot(87, LimitedStageDailyClearCount, 0)
 
 
     @staticmethod
-    def AddLimitedStageEntryTimeLimit(builder, LimitedStageEntryTimeLimit): builder.PrependInt32Slot(87, LimitedStageEntryTimeLimit, 0)
+    def AddLimitedStageEntryTimeLimit(builder, LimitedStageEntryTimeLimit): builder.PrependInt32Slot(88, LimitedStageEntryTimeLimit, 0)
 
 
     @staticmethod
-    def AddLimitedStageEntryTimeBuffer(builder, LimitedStageEntryTimeBuffer): builder.PrependInt32Slot(88, LimitedStageEntryTimeBuffer, 0)
+    def AddLimitedStageEntryTimeBuffer(builder, LimitedStageEntryTimeBuffer): builder.PrependInt32Slot(89, LimitedStageEntryTimeBuffer, 0)
 
 
     @staticmethod
-    def AddLimitedStagePointAmount(builder, LimitedStagePointAmount): builder.PrependInt32Slot(89, LimitedStagePointAmount, 0)
+    def AddLimitedStagePointAmount(builder, LimitedStagePointAmount): builder.PrependInt32Slot(90, LimitedStagePointAmount, 0)
 
 
     @staticmethod
-    def AddLimitedStagePointPerApMin(builder, LimitedStagePointPerApMin): builder.PrependInt32Slot(90, LimitedStagePointPerApMin, 0)
+    def AddLimitedStagePointPerApMin(builder, LimitedStagePointPerApMin): builder.PrependInt32Slot(91, LimitedStagePointPerApMin, 0)
 
 
     @staticmethod
-    def AddLimitedStagePointPerApMax(builder, LimitedStagePointPerApMax): builder.PrependInt32Slot(91, LimitedStagePointPerApMax, 0)
+    def AddLimitedStagePointPerApMax(builder, LimitedStagePointPerApMax): builder.PrependInt32Slot(92, LimitedStagePointPerApMax, 0)
 
 
     @staticmethod
-    def AddAccountLinkReward(builder, AccountLinkReward): builder.PrependInt32Slot(92, AccountLinkReward, 0)
+    def AddAccountLinkReward(builder, AccountLinkReward): builder.PrependInt32Slot(93, AccountLinkReward, 0)
 
 
     @staticmethod
-    def AddMonthlyProductCheckDays(builder, MonthlyProductCheckDays): builder.PrependInt32Slot(93, MonthlyProductCheckDays, 0)
+    def AddMonthlyProductCheckDays(builder, MonthlyProductCheckDays): builder.PrependInt32Slot(94, MonthlyProductCheckDays, 0)
 
 
     @staticmethod
-    def AddWeaponLvUpCoefficient(builder, WeaponLvUpCoefficient): builder.PrependInt32Slot(94, WeaponLvUpCoefficient, 0)
+    def AddWeaponLvUpCoefficient(builder, WeaponLvUpCoefficient): builder.PrependInt32Slot(95, WeaponLvUpCoefficient, 0)
 
 
     @staticmethod
-    def AddShowRaidMyListCount(builder, ShowRaidMyListCount): builder.PrependInt32Slot(95, ShowRaidMyListCount, 0)
+    def AddShowRaidMyListCount(builder, ShowRaidMyListCount): builder.PrependInt32Slot(96, ShowRaidMyListCount, 0)
 
 
     @staticmethod
-    def AddRaidEnterCostType(builder, RaidEnterCostType): builder.PrependInt32Slot(96, RaidEnterCostType, 0)
+    def AddRaidEnterCostType(builder, RaidEnterCostType): builder.PrependInt32Slot(97, RaidEnterCostType, 0)
 
 
     @staticmethod
-    def AddRaidEnterCostId(builder, RaidEnterCostId): builder.PrependInt32Slot(97, RaidEnterCostId, 0)
+    def AddRaidEnterCostId(builder, RaidEnterCostId): builder.PrependInt32Slot(98, RaidEnterCostId, 0)
 
 
     @staticmethod
-    def AddRaidTicketCost(builder, RaidTicketCost): builder.PrependInt32Slot(98, RaidTicketCost, 0)
+    def AddRaidTicketCost(builder, RaidTicketCost): builder.PrependInt32Slot(99, RaidTicketCost, 0)
 
 
     @staticmethod
-    def AddTimeAttackDungeonScenarioId(builder, TimeAttackDungeonScenarioId): builder.PrependUOffsetTRelativeSlot(99, flatbuffers.number_types.UOffsetTFlags.py_type(TimeAttackDungeonScenarioId), 0)
+    def AddTimeAttackDungeonScenarioId(builder, TimeAttackDungeonScenarioId): builder.PrependUOffsetTRelativeSlot(100, flatbuffers.number_types.UOffsetTFlags.py_type(TimeAttackDungeonScenarioId), 0)
 
     @staticmethod
-    def AddTimeAttackDungoenPlayCountPerTicket(builder, TimeAttackDungoenPlayCountPerTicket): builder.PrependInt32Slot(100, TimeAttackDungoenPlayCountPerTicket, 0)
+    def AddTimeAttackDungoenPlayCountPerTicket(builder, TimeAttackDungoenPlayCountPerTicket): builder.PrependInt32Slot(101, TimeAttackDungoenPlayCountPerTicket, 0)
 
 
     @staticmethod
-    def AddTimeAttackDungeonEnterCostType(builder, TimeAttackDungeonEnterCostType): builder.PrependInt32Slot(101, TimeAttackDungeonEnterCostType, 0)
+    def AddTimeAttackDungeonEnterCostType(builder, TimeAttackDungeonEnterCostType): builder.PrependInt32Slot(102, TimeAttackDungeonEnterCostType, 0)
 
 
     @staticmethod
-    def AddTimeAttackDungeonEnterCostId(builder, TimeAttackDungeonEnterCostId): builder.PrependInt32Slot(102, TimeAttackDungeonEnterCostId, 0)
+    def AddTimeAttackDungeonEnterCostId(builder, TimeAttackDungeonEnterCostId): builder.PrependInt32Slot(103, TimeAttackDungeonEnterCostId, 0)
 
 
     @staticmethod
-    def AddTimeAttackDungeonEnterCost(builder, TimeAttackDungeonEnterCost): builder.PrependInt32Slot(103, TimeAttackDungeonEnterCost, 0)
+    def AddTimeAttackDungeonEnterCost(builder, TimeAttackDungeonEnterCost): builder.PrependInt32Slot(104, TimeAttackDungeonEnterCost, 0)
 
 
     @staticmethod
-    def AddClanLeaderTransferLastLoginLimit(builder, ClanLeaderTransferLastLoginLimit): builder.PrependInt32Slot(104, ClanLeaderTransferLastLoginLimit, 0)
+    def AddClanLeaderTransferLastLoginLimit(builder, ClanLeaderTransferLastLoginLimit): builder.PrependInt32Slot(105, ClanLeaderTransferLastLoginLimit, 0)
 
 
     @staticmethod
-    def AddMonthlyProductRepurchasePopupLimit(builder, MonthlyProductRepurchasePopupLimit): builder.PrependInt32Slot(105, MonthlyProductRepurchasePopupLimit, 0)
+    def AddMonthlyProductRepurchasePopupLimit(builder, MonthlyProductRepurchasePopupLimit): builder.PrependInt32Slot(106, MonthlyProductRepurchasePopupLimit, 0)
 
 
     @staticmethod
-    def AddCommonFavorItemTagsLength(builder, CommonFavorItemTagsLength): builder.PrependInt32Slot(106, CommonFavorItemTagsLength, 0)
+    def AddCommonFavorItemTagsLength(builder, CommonFavorItemTagsLength): builder.PrependInt32Slot(107, CommonFavorItemTagsLength, 0)
 
 
     @staticmethod
-    def AddMaxApMasterCoinPerWeek(builder, MaxApMasterCoinPerWeek): builder.PrependInt32Slot(107, MaxApMasterCoinPerWeek, 0)
+    def AddMaxApMasterCoinPerWeek(builder, MaxApMasterCoinPerWeek): builder.PrependInt32Slot(108, MaxApMasterCoinPerWeek, 0)
 
 
     @staticmethod
-    def AddPlusMaxApMasterCoinPerWeekProductMonthlyId1Length(builder, PlusMaxApMasterCoinPerWeekProductMonthlyId1Length): builder.PrependInt32Slot(108, PlusMaxApMasterCoinPerWeekProductMonthlyId1Length, 0)
+    def AddPlusMaxApMasterCoinPerWeekProductMonthlyId1Length(builder, PlusMaxApMasterCoinPerWeekProductMonthlyId1Length): builder.PrependInt32Slot(109, PlusMaxApMasterCoinPerWeekProductMonthlyId1Length, 0)
 
 
     @staticmethod
-    def AddPlusMaxApMasterCoinPerWeek1(builder, PlusMaxApMasterCoinPerWeek1): builder.PrependInt32Slot(109, PlusMaxApMasterCoinPerWeek1, 0)
+    def AddPlusMaxApMasterCoinPerWeek1(builder, PlusMaxApMasterCoinPerWeek1): builder.PrependInt32Slot(110, PlusMaxApMasterCoinPerWeek1, 0)
 
 
     @staticmethod
-    def AddPlusMaxApMasterCoinPerWeekProductMonthlyId2Length(builder, PlusMaxApMasterCoinPerWeekProductMonthlyId2Length): builder.PrependInt32Slot(110, PlusMaxApMasterCoinPerWeekProductMonthlyId2Length, 0)
+    def AddPlusMaxApMasterCoinPerWeekProductMonthlyId2Length(builder, PlusMaxApMasterCoinPerWeekProductMonthlyId2Length): builder.PrependInt32Slot(111, PlusMaxApMasterCoinPerWeekProductMonthlyId2Length, 0)
 
 
     @staticmethod
-    def AddPlusMaxApMasterCoinPerWeek2(builder, PlusMaxApMasterCoinPerWeek2): builder.PrependInt32Slot(111, PlusMaxApMasterCoinPerWeek2, 0)
+    def AddPlusMaxApMasterCoinPerWeek2(builder, PlusMaxApMasterCoinPerWeek2): builder.PrependInt32Slot(112, PlusMaxApMasterCoinPerWeek2, 0)
 
 
     @staticmethod
-    def AddCraftOpenExpTier1(builder, CraftOpenExpTier1): builder.PrependInt32Slot(112, CraftOpenExpTier1, 0)
+    def AddCraftOpenExpTier1(builder, CraftOpenExpTier1): builder.PrependInt32Slot(113, CraftOpenExpTier1, 0)
 
 
     @staticmethod
-    def AddCraftOpenExpTier2(builder, CraftOpenExpTier2): builder.PrependInt32Slot(113, CraftOpenExpTier2, 0)
+    def AddCraftOpenExpTier2(builder, CraftOpenExpTier2): builder.PrependInt32Slot(114, CraftOpenExpTier2, 0)
 
 
     @staticmethod
-    def AddCraftOpenExpTier3(builder, CraftOpenExpTier3): builder.PrependInt32Slot(114, CraftOpenExpTier3, 0)
+    def AddCraftOpenExpTier3(builder, CraftOpenExpTier3): builder.PrependInt32Slot(115, CraftOpenExpTier3, 0)
 
 
     @staticmethod
-    def AddCharacterEquipmentGearSlot(builder, CharacterEquipmentGearSlot): builder.PrependInt32Slot(115, CharacterEquipmentGearSlot, 0)
+    def AddCharacterEquipmentGearSlot(builder, CharacterEquipmentGearSlot): builder.PrependInt32Slot(116, CharacterEquipmentGearSlot, 0)
 
 
     @staticmethod
-    def AddBirthDayDDay(builder, BirthDayDDay): builder.PrependInt32Slot(116, BirthDayDDay, 0)
+    def AddBirthDayDDay(builder, BirthDayDDay): builder.PrependInt32Slot(117, BirthDayDDay, 0)
 
 
     @staticmethod
-    def AddRecommendedFriendsLvDifferenceLimit(builder, RecommendedFriendsLvDifferenceLimit): builder.PrependInt32Slot(117, RecommendedFriendsLvDifferenceLimit, 0)
+    def AddRecommendedFriendsLvDifferenceLimit(builder, RecommendedFriendsLvDifferenceLimit): builder.PrependInt32Slot(118, RecommendedFriendsLvDifferenceLimit, 0)
 
 
     @staticmethod
-    def AddDDosDetectCount(builder, DDosDetectCount): builder.PrependInt32Slot(118, DDosDetectCount, 0)
+    def AddDDosDetectCount(builder, DDosDetectCount): builder.PrependInt32Slot(119, DDosDetectCount, 0)
 
 
     @staticmethod
-    def AddDDosCheckIntervalInSeconds(builder, DDosCheckIntervalInSeconds): builder.PrependInt32Slot(119, DDosCheckIntervalInSeconds, 0)
+    def AddDDosCheckIntervalInSeconds(builder, DDosCheckIntervalInSeconds): builder.PrependInt32Slot(120, DDosCheckIntervalInSeconds, 0)
 
 
     @staticmethod
-    def AddMaxFriendsCount(builder, MaxFriendsCount): builder.PrependInt32Slot(120, MaxFriendsCount, 0)
+    def AddMaxFriendsCount(builder, MaxFriendsCount): builder.PrependInt32Slot(121, MaxFriendsCount, 0)
 
 
     @staticmethod
-    def AddMaxFriendsRequest(builder, MaxFriendsRequest): builder.PrependInt32Slot(121, MaxFriendsRequest, 0)
+    def AddMaxFriendsRequest(builder, MaxFriendsRequest): builder.PrependInt32Slot(122, MaxFriendsRequest, 0)
 
 
     @staticmethod
-    def AddFriendsSearchRequestCount(builder, FriendsSearchRequestCount): builder.PrependInt32Slot(122, FriendsSearchRequestCount, 0)
+    def AddFriendsSearchRequestCount(builder, FriendsSearchRequestCount): builder.PrependInt32Slot(123, FriendsSearchRequestCount, 0)
 
 
     @staticmethod
-    def AddFriendsMaxApplicant(builder, FriendsMaxApplicant): builder.PrependInt32Slot(123, FriendsMaxApplicant, 0)
+    def AddFriendsMaxApplicant(builder, FriendsMaxApplicant): builder.PrependInt32Slot(124, FriendsMaxApplicant, 0)
 
 
     @staticmethod
-    def AddIdCardDefaultCharacterId(builder, IdCardDefaultCharacterId): builder.PrependInt32Slot(124, IdCardDefaultCharacterId, 0)
+    def AddIdCardDefaultCharacterId(builder, IdCardDefaultCharacterId): builder.PrependInt32Slot(125, IdCardDefaultCharacterId, 0)
 
 
     @staticmethod
-    def AddIdCardDefaultBgId(builder, IdCardDefaultBgId): builder.PrependInt32Slot(125, IdCardDefaultBgId, 0)
+    def AddIdCardDefaultBgId(builder, IdCardDefaultBgId): builder.PrependInt32Slot(126, IdCardDefaultBgId, 0)
 
 
     @staticmethod
-    def AddWorldRaidGemEnterCost(builder, WorldRaidGemEnterCost): builder.PrependInt32Slot(126, WorldRaidGemEnterCost, 0)
+    def AddWorldRaidGemEnterCost(builder, WorldRaidGemEnterCost): builder.PrependInt32Slot(127, WorldRaidGemEnterCost, 0)
 
 
     @staticmethod
-    def AddWorldRaidGemEnterAmout(builder, WorldRaidGemEnterAmout): builder.PrependInt32Slot(127, WorldRaidGemEnterAmout, 0)
+    def AddWorldRaidGemEnterAmout(builder, WorldRaidGemEnterAmout): builder.PrependInt32Slot(128, WorldRaidGemEnterAmout, 0)
 
 
     @staticmethod
-    def AddFriendIdCardCommentMaxLength(builder, FriendIdCardCommentMaxLength): builder.PrependInt32Slot(128, FriendIdCardCommentMaxLength, 0)
+    def AddFriendIdCardCommentMaxLength(builder, FriendIdCardCommentMaxLength): builder.PrependInt32Slot(129, FriendIdCardCommentMaxLength, 0)
 
 
     @staticmethod
-    def AddFormationPresetNumberOfEchelonTab(builder, FormationPresetNumberOfEchelonTab): builder.PrependInt32Slot(129, FormationPresetNumberOfEchelonTab, 0)
+    def AddFormationPresetNumberOfEchelonTab(builder, FormationPresetNumberOfEchelonTab): builder.PrependInt32Slot(130, FormationPresetNumberOfEchelonTab, 0)
 
 
     @staticmethod
-    def AddFormationPresetNumberOfEchelon(builder, FormationPresetNumberOfEchelon): builder.PrependInt32Slot(130, FormationPresetNumberOfEchelon, 0)
+    def AddFormationPresetNumberOfEchelon(builder, FormationPresetNumberOfEchelon): builder.PrependInt32Slot(131, FormationPresetNumberOfEchelon, 0)
 
 
     @staticmethod
-    def AddFormationPresetRecentNumberOfEchelon(builder, FormationPresetRecentNumberOfEchelon): builder.PrependInt32Slot(131, FormationPresetRecentNumberOfEchelon, 0)
+    def AddFormationPresetRecentNumberOfEchelon(builder, FormationPresetRecentNumberOfEchelon): builder.PrependInt32Slot(132, FormationPresetRecentNumberOfEchelon, 0)
 
 
     @staticmethod
-    def AddFormationPresetEchelonTabTextLength(builder, FormationPresetEchelonTabTextLength): builder.PrependInt32Slot(132, FormationPresetEchelonTabTextLength, 0)
+    def AddFormationPresetEchelonTabTextLength(builder, FormationPresetEchelonTabTextLength): builder.PrependInt32Slot(133, FormationPresetEchelonTabTextLength, 0)
 
 
     @staticmethod
-    def AddFormationPresetEchelonSlotTextLength(builder, FormationPresetEchelonSlotTextLength): builder.PrependInt32Slot(133, FormationPresetEchelonSlotTextLength, 0)
+    def AddFormationPresetEchelonSlotTextLength(builder, FormationPresetEchelonSlotTextLength): builder.PrependInt32Slot(134, FormationPresetEchelonSlotTextLength, 0)
 
 
     @staticmethod
-    def AddCharProfileRowIntervalKr(builder, CharProfileRowIntervalKr): builder.PrependInt32Slot(134, CharProfileRowIntervalKr, 0)
+    def AddCharProfileRowIntervalKr(builder, CharProfileRowIntervalKr): builder.PrependInt32Slot(135, CharProfileRowIntervalKr, 0)
 
 
     @staticmethod
-    def AddCharProfileRowIntervalJp(builder, CharProfileRowIntervalJp): builder.PrependInt32Slot(135, CharProfileRowIntervalJp, 0)
+    def AddCharProfileRowIntervalJp(builder, CharProfileRowIntervalJp): builder.PrependInt32Slot(136, CharProfileRowIntervalJp, 0)
 
 
     @staticmethod
-    def AddCharProfilePopupRowIntervalKr(builder, CharProfilePopupRowIntervalKr): builder.PrependInt32Slot(136, CharProfilePopupRowIntervalKr, 0)
+    def AddCharProfilePopupRowIntervalKr(builder, CharProfilePopupRowIntervalKr): builder.PrependInt32Slot(137, CharProfilePopupRowIntervalKr, 0)
 
 
     @staticmethod
-    def AddCharProfilePopupRowIntervalJp(builder, CharProfilePopupRowIntervalJp): builder.PrependInt32Slot(137, CharProfilePopupRowIntervalJp, 0)
+    def AddCharProfilePopupRowIntervalJp(builder, CharProfilePopupRowIntervalJp): builder.PrependInt32Slot(138, CharProfilePopupRowIntervalJp, 0)
 
 
     @staticmethod
-    def AddBeforehandGachaCount(builder, BeforehandGachaCount): builder.PrependInt32Slot(138, BeforehandGachaCount, 0)
+    def AddBeforehandGachaCount(builder, BeforehandGachaCount): builder.PrependInt32Slot(139, BeforehandGachaCount, 0)
 
 
     @staticmethod
-    def AddBeforehandGachaGroupId(builder, BeforehandGachaGroupId): builder.PrependInt32Slot(139, BeforehandGachaGroupId, 0)
+    def AddBeforehandGachaGroupId(builder, BeforehandGachaGroupId): builder.PrependInt32Slot(140, BeforehandGachaGroupId, 0)
 
 
     @staticmethod
-    def AddRenewalDisplayOrderDay(builder, RenewalDisplayOrderDay): builder.PrependInt32Slot(140, RenewalDisplayOrderDay, 0)
+    def AddRenewalDisplayOrderDay(builder, RenewalDisplayOrderDay): builder.PrependInt32Slot(141, RenewalDisplayOrderDay, 0)
 
 
     @staticmethod
-    def AddEmblemDefaultId(builder, EmblemDefaultId): builder.PrependInt32Slot(141, EmblemDefaultId, 0)
+    def AddEmblemDefaultId(builder, EmblemDefaultId): builder.PrependInt32Slot(142, EmblemDefaultId, 0)
 
 
     @staticmethod
-    def AddStudentFrameDefaultId(builder, StudentFrameDefaultId): builder.PrependInt32Slot(142, StudentFrameDefaultId, 0)
+    def AddStudentFrameDefaultId(builder, StudentFrameDefaultId): builder.PrependInt32Slot(143, StudentFrameDefaultId, 0)
 
 
     @staticmethod
-    def AddBirthdayMailStartDate(builder, BirthdayMailStartDate): builder.PrependUOffsetTRelativeSlot(143, flatbuffers.number_types.UOffsetTFlags.py_type(BirthdayMailStartDate), 0)
+    def AddBirthdayMailStartDate(builder, BirthdayMailStartDate): builder.PrependUOffsetTRelativeSlot(144, flatbuffers.number_types.UOffsetTFlags.py_type(BirthdayMailStartDate), 0)
 
     @staticmethod
-    def AddBirthdayMailRemainDate(builder, BirthdayMailRemainDate): builder.PrependInt32Slot(144, BirthdayMailRemainDate, 0)
+    def AddBirthdayMailRemainDate(builder, BirthdayMailRemainDate): builder.PrependInt32Slot(145, BirthdayMailRemainDate, 0)
 
 
     @staticmethod
-    def AddBirthdayMailParcelType(builder, BirthdayMailParcelType): builder.PrependInt32Slot(145, BirthdayMailParcelType, 0)
+    def AddBirthdayMailParcelType(builder, BirthdayMailParcelType): builder.PrependInt32Slot(146, BirthdayMailParcelType, 0)
 
 
     @staticmethod
-    def AddBirthdayMailParcelId(builder, BirthdayMailParcelId): builder.PrependInt32Slot(146, BirthdayMailParcelId, 0)
+    def AddBirthdayMailParcelId(builder, BirthdayMailParcelId): builder.PrependInt32Slot(147, BirthdayMailParcelId, 0)
 
 
     @staticmethod
-    def AddBirthdayMailParcelAmount(builder, BirthdayMailParcelAmount): builder.PrependInt32Slot(147, BirthdayMailParcelAmount, 0)
+    def AddBirthdayMailParcelAmount(builder, BirthdayMailParcelAmount): builder.PrependInt32Slot(148, BirthdayMailParcelAmount, 0)
 
 
     @staticmethod
-    def AddClearDeckAverageDeckCount(builder, ClearDeckAverageDeckCount): builder.PrependInt32Slot(148, ClearDeckAverageDeckCount, 0)
+    def AddClearDeckAverageDeckCount(builder, ClearDeckAverageDeckCount): builder.PrependInt32Slot(149, ClearDeckAverageDeckCount, 0)
 
 
     @staticmethod
-    def AddClearDeckWorldRaidSaveConditionCoefficient(builder, ClearDeckWorldRaidSaveConditionCoefficient): builder.PrependInt32Slot(149, ClearDeckWorldRaidSaveConditionCoefficient, 0)
+    def AddClearDeckWorldRaidSaveConditionCoefficient(builder, ClearDeckWorldRaidSaveConditionCoefficient): builder.PrependInt32Slot(150, ClearDeckWorldRaidSaveConditionCoefficient, 0)
 
 
     @staticmethod
-    def AddClearDeckShowCount(builder, ClearDeckShowCount): builder.PrependInt32Slot(150, ClearDeckShowCount, 0)
+    def AddClearDeckShowCount(builder, ClearDeckShowCount): builder.PrependInt32Slot(151, ClearDeckShowCount, 0)
 
 
     @staticmethod
-    def AddCharacterMaxLevel(builder, CharacterMaxLevel): builder.PrependInt32Slot(151, CharacterMaxLevel, 0)
+    def AddCharacterMaxLevel(builder, CharacterMaxLevel): builder.PrependInt32Slot(152, CharacterMaxLevel, 0)
 
 
     @staticmethod
-    def AddPotentialBonusStatMaxLevelMaxHP(builder, PotentialBonusStatMaxLevelMaxHP): builder.PrependInt32Slot(152, PotentialBonusStatMaxLevelMaxHP, 0)
+    def AddPotentialBonusStatMaxLevelMaxHP(builder, PotentialBonusStatMaxLevelMaxHP): builder.PrependInt32Slot(153, PotentialBonusStatMaxLevelMaxHP, 0)
 
 
     @staticmethod
-    def AddPotentialBonusStatMaxLevelAttackPower(builder, PotentialBonusStatMaxLevelAttackPower): builder.PrependInt32Slot(153, PotentialBonusStatMaxLevelAttackPower, 0)
+    def AddPotentialBonusStatMaxLevelAttackPower(builder, PotentialBonusStatMaxLevelAttackPower): builder.PrependInt32Slot(154, PotentialBonusStatMaxLevelAttackPower, 0)
 
 
     @staticmethod
-    def AddPotentialBonusStatMaxLevelHealPower(builder, PotentialBonusStatMaxLevelHealPower): builder.PrependInt32Slot(154, PotentialBonusStatMaxLevelHealPower, 0)
+    def AddPotentialBonusStatMaxLevelHealPower(builder, PotentialBonusStatMaxLevelHealPower): builder.PrependInt32Slot(155, PotentialBonusStatMaxLevelHealPower, 0)
 
 
     @staticmethod
-    def AddPotentialOpenConditionCharacterLevel(builder, PotentialOpenConditionCharacterLevel): builder.PrependInt32Slot(155, PotentialOpenConditionCharacterLevel, 0)
+    def AddPotentialOpenConditionCharacterLevel(builder, PotentialOpenConditionCharacterLevel): builder.PrependInt32Slot(156, PotentialOpenConditionCharacterLevel, 0)
 
 
     @staticmethod
-    def AddAssistStrangerMinLevel(builder, AssistStrangerMinLevel): builder.PrependInt32Slot(156, AssistStrangerMinLevel, 0)
+    def AddAssistStrangerMinLevel(builder, AssistStrangerMinLevel): builder.PrependInt32Slot(157, AssistStrangerMinLevel, 0)
 
 
     @staticmethod
-    def AddAssistStrangerMaxLevel(builder, AssistStrangerMaxLevel): builder.PrependInt32Slot(157, AssistStrangerMaxLevel, 0)
+    def AddAssistStrangerMaxLevel(builder, AssistStrangerMaxLevel): builder.PrependInt32Slot(158, AssistStrangerMaxLevel, 0)
 
 
     @staticmethod
-    def AddMaxBlockedUserCount(builder, MaxBlockedUserCount): builder.PrependInt32Slot(158, MaxBlockedUserCount, 0)
+    def AddMaxBlockedUserCount(builder, MaxBlockedUserCount): builder.PrependInt32Slot(159, MaxBlockedUserCount, 0)
 
 
     @staticmethod
-    def AddCafeRandomVisitMinComfortBonus(builder, CafeRandomVisitMinComfortBonus): builder.PrependInt32Slot(159, CafeRandomVisitMinComfortBonus, 0)
+    def AddCafeRandomVisitMinComfortBonus(builder, CafeRandomVisitMinComfortBonus): builder.PrependInt32Slot(160, CafeRandomVisitMinComfortBonus, 0)
 
 
     @staticmethod
-    def AddCafeRandomVisitMinLastLogin(builder, CafeRandomVisitMinLastLogin): builder.PrependInt32Slot(160, CafeRandomVisitMinLastLogin, 0)
+    def AddCafeRandomVisitMinLastLogin(builder, CafeRandomVisitMinLastLogin): builder.PrependInt32Slot(161, CafeRandomVisitMinLastLogin, 0)
 
 
     @staticmethod
-    def AddCafeTravelSyncIntervalByMillisec(builder, CafeTravelSyncIntervalByMillisec): builder.PrependInt32Slot(161, CafeTravelSyncIntervalByMillisec, 0)
+    def AddCafeTravelSyncIntervalByMillisec(builder, CafeTravelSyncIntervalByMillisec): builder.PrependInt32Slot(162, CafeTravelSyncIntervalByMillisec, 0)
 
 
     @staticmethod
-    def AddRankBracketPercentage1(builder, RankBracketPercentage1): builder.PrependInt32Slot(162, RankBracketPercentage1, 0)
+    def AddRankBracketPercentage1(builder, RankBracketPercentage1): builder.PrependInt32Slot(163, RankBracketPercentage1, 0)
 
 
     @staticmethod
-    def AddRankBracketPercentage2(builder, RankBracketPercentage2): builder.PrependInt32Slot(163, RankBracketPercentage2, 0)
+    def AddRankBracketPercentage2(builder, RankBracketPercentage2): builder.PrependInt32Slot(164, RankBracketPercentage2, 0)
 
 
     @staticmethod
-    def AddRankBracketPercentage3(builder, RankBracketPercentage3): builder.PrependInt32Slot(164, RankBracketPercentage3, 0)
+    def AddRankBracketPercentage3(builder, RankBracketPercentage3): builder.PrependInt32Slot(165, RankBracketPercentage3, 0)
 
 
     @staticmethod
-    def AddRankBracketPercentage4(builder, RankBracketPercentage4): builder.PrependInt32Slot(165, RankBracketPercentage4, 0)
+    def AddRankBracketPercentage4(builder, RankBracketPercentage4): builder.PrependInt32Slot(166, RankBracketPercentage4, 0)
 
 
     @staticmethod
-    def AddRankBracketPercentage5(builder, RankBracketPercentage5): builder.PrependInt32Slot(166, RankBracketPercentage5, 0)
+    def AddRankBracketPercentage5(builder, RankBracketPercentage5): builder.PrependInt32Slot(167, RankBracketPercentage5, 0)
 
 
     @staticmethod
-    def AddRankBracketPercentage6(builder, RankBracketPercentage6): builder.PrependInt32Slot(167, RankBracketPercentage6, 0)
+    def AddRankBracketPercentage6(builder, RankBracketPercentage6): builder.PrependInt32Slot(168, RankBracketPercentage6, 0)
 
 
     @staticmethod
-    def AddRankBracketPercentage7(builder, RankBracketPercentage7): builder.PrependInt32Slot(168, RankBracketPercentage7, 0)
+    def AddRankBracketPercentage7(builder, RankBracketPercentage7): builder.PrependInt32Slot(169, RankBracketPercentage7, 0)
 
 
     @staticmethod
-    def AddExpiryBattlePassItemReceiveDay(builder, ExpiryBattlePassItemReceiveDay): builder.PrependInt32Slot(169, ExpiryBattlePassItemReceiveDay, 0)
+    def AddExpiryBattlePassItemReceiveDay(builder, ExpiryBattlePassItemReceiveDay): builder.PrependInt32Slot(170, ExpiryBattlePassItemReceiveDay, 0)
 
 
     @staticmethod
-    def AddBattlePassFlavorTextIdleDurationMilliSec(builder, BattlePassFlavorTextIdleDurationMilliSec): builder.PrependInt32Slot(170, BattlePassFlavorTextIdleDurationMilliSec, 0)
+    def AddBattlePassFlavorTextIdleDurationMilliSec(builder, BattlePassFlavorTextIdleDurationMilliSec): builder.PrependInt32Slot(171, BattlePassFlavorTextIdleDurationMilliSec, 0)
 
 
     @staticmethod
-    def AddBattlePassEndImminentDay(builder, BattlePassEndImminentDay): builder.PrependInt32Slot(171, BattlePassEndImminentDay, 0)
+    def AddBattlePassEndImminentDay(builder, BattlePassEndImminentDay): builder.PrependInt32Slot(172, BattlePassEndImminentDay, 0)
 
 
     @staticmethod
-    def AddBattlePassExpIconPath(builder, BattlePassExpIconPath): builder.PrependUOffsetTRelativeSlot(172, flatbuffers.number_types.UOffsetTFlags.py_type(BattlePassExpIconPath), 0)
+    def AddBattlePassExpIconPath(builder, BattlePassExpIconPath): builder.PrependUOffsetTRelativeSlot(173, flatbuffers.number_types.UOffsetTFlags.py_type(BattlePassExpIconPath), 0)
+
+    @staticmethod
+    def AddCafeCameraDragThreshold(builder, CafeCameraDragThreshold): builder.PrependFloat32Slot(174, CafeCameraDragThreshold, 0)
+
 
     @staticmethod
-    def AddCafeCameraDragThreshold(builder, CafeCameraDragThreshold): builder.PrependFloat32Slot(173, CafeCameraDragThreshold, 0)
+    def AddCafeSummonTicketBuyLimitForValidate(builder, CafeSummonTicketBuyLimitForValidate): builder.PrependInt32Slot(175, CafeSummonTicketBuyLimitForValidate, 0)
 
 
     @staticmethod
-    def AddCafeSummonTicketBuyLimitForValidate(builder, CafeSummonTicketBuyLimitForValidate): builder.PrependInt32Slot(174, CafeSummonTicketBuyLimitForValidate, 0)
+    def AddAutoCraftPresetCountLimit(builder, AutoCraftPresetCountLimit): builder.PrependInt32Slot(176, AutoCraftPresetCountLimit, 0)
 
 
     @staticmethod
-    def AddAutoCraftPresetCountLimit(builder, AutoCraftPresetCountLimit): builder.PrependInt32Slot(175, AutoCraftPresetCountLimit, 0)
+    def AddAutoCraftNodeSelectCount(builder, AutoCraftNodeSelectCount): builder.PrependInt32Slot(177, AutoCraftNodeSelectCount, 0)
 
 
     @staticmethod
-    def AddAutoCraftNodeSelectCount(builder, AutoCraftNodeSelectCount): builder.PrependInt32Slot(176, AutoCraftNodeSelectCount, 0)
+    def AddCraftPresetNameMaxLength(builder, CraftPresetNameMaxLength): builder.PrependInt32Slot(178, CraftPresetNameMaxLength, 0)
 
 
     @staticmethod
-    def AddCraftPresetNameMaxLength(builder, CraftPresetNameMaxLength): builder.PrependInt32Slot(177, CraftPresetNameMaxLength, 0)
+    def AddSelectionWaitTime(builder, SelectionWaitTime): builder.PrependInt32Slot(179, SelectionWaitTime, 0)
 
 
     @staticmethod
-    def AddSelectionWaitTime(builder, SelectionWaitTime): builder.PrependInt32Slot(178, SelectionWaitTime, 0)
+    def AddRewardWaitTime(builder, RewardWaitTime): builder.PrependInt32Slot(180, RewardWaitTime, 0)
 
 
     @staticmethod
-    def AddRewardWaitTime(builder, RewardWaitTime): builder.PrependInt32Slot(179, RewardWaitTime, 0)
+    def AddEpisodeContinueWaitTime(builder, EpisodeContinueWaitTime): builder.PrependInt32Slot(181, EpisodeContinueWaitTime, 0)
 
 
     @staticmethod
-    def AddEpisodeContinueWaitTime(builder, EpisodeContinueWaitTime): builder.PrependInt32Slot(180, EpisodeContinueWaitTime, 0)
+    def AddScenarioAutoDelayMillisecLong(builder, ScenarioAutoDelayMillisecLong): builder.PrependFloat32Slot(182, ScenarioAutoDelayMillisecLong, 0)
 
 
     @staticmethod
-    def AddScenarioAutoDelayMillisecLong(builder, ScenarioAutoDelayMillisecLong): builder.PrependFloat32Slot(181, ScenarioAutoDelayMillisecLong, 0)
+    def AddScenarioAutoDelayMillisec(builder, ScenarioAutoDelayMillisec): builder.PrependFloat32Slot(183, ScenarioAutoDelayMillisec, 0)
 
 
     @staticmethod
-    def AddScenarioAutoDelayMillisec(builder, ScenarioAutoDelayMillisec): builder.PrependFloat32Slot(182, ScenarioAutoDelayMillisec, 0)
+    def AddScenarioAutoDelayMillisecShort(builder, ScenarioAutoDelayMillisecShort): builder.PrependFloat32Slot(184, ScenarioAutoDelayMillisecShort, 0)
 
 
     @staticmethod
-    def AddScenarioAutoDelayMillisecShort(builder, ScenarioAutoDelayMillisecShort): builder.PrependFloat32Slot(183, ScenarioAutoDelayMillisecShort, 0)
+    def AddScenarioAutoDelayMillisecVeryShort(builder, ScenarioAutoDelayMillisecVeryShort): builder.PrependFloat32Slot(185, ScenarioAutoDelayMillisecVeryShort, 0)
 
 
     @staticmethod
-    def AddScenarioAutoDelayMillisecVeryShort(builder, ScenarioAutoDelayMillisecVeryShort): builder.PrependFloat32Slot(184, ScenarioAutoDelayMillisecVeryShort, 0)
+    def AddPcBuildEnterInformation(builder, PcBuildEnterInformation): builder.PrependInt32Slot(186, PcBuildEnterInformation, 0)
 
 
     @staticmethod
-    def AddPcBuildEnterInformation(builder, PcBuildEnterInformation): builder.PrependInt32Slot(185, PcBuildEnterInformation, 0)
+    def AddComebackUserStandardDay(builder, ComebackUserStandardDay): builder.PrependInt32Slot(187, ComebackUserStandardDay, 0)
 
 
     @staticmethod
-    def AddComebackUserStandardDay(builder, ComebackUserStandardDay): builder.PrependInt32Slot(186, ComebackUserStandardDay, 0)
+    def AddComebackUserLogSaveDay(builder, ComebackUserLogSaveDay): builder.PrependInt32Slot(188, ComebackUserLogSaveDay, 0)
 
 
     @staticmethod
-    def AddComebackUserLogSaveDay(builder, ComebackUserLogSaveDay): builder.PrependInt32Slot(187, ComebackUserLogSaveDay, 0)
+    def AddComeBackActivateCooldown(builder, ComeBackActivateCooldown): builder.PrependInt32Slot(189, ComeBackActivateCooldown, 0)
 
 
     @staticmethod
-    def AddComeBackActivateCooldown(builder, ComeBackActivateCooldown): builder.PrependInt32Slot(188, ComeBackActivateCooldown, 0)
+    def AddCafeCopyPresetSlotCount(builder, CafeCopyPresetSlotCount): builder.PrependInt32Slot(190, CafeCopyPresetSlotCount, 0)
 
 
     @staticmethod
-    def AddCafeCopyPresetSlotCount(builder, CafeCopyPresetSlotCount): builder.PrependInt32Slot(189, CafeCopyPresetSlotCount, 0)
+    def AddExpiryProductDailyRecordItemReceiveDay(builder, ExpiryProductDailyRecordItemReceiveDay): builder.PrependInt32Slot(191, ExpiryProductDailyRecordItemReceiveDay, 0)
 
 
     @staticmethod
-    def AddExpiryProductDailyRecordItemReceiveDay(builder, ExpiryProductDailyRecordItemReceiveDay): builder.PrependInt32Slot(190, ExpiryProductDailyRecordItemReceiveDay, 0)
+    def AddNewbieUserStandardDay(builder, NewbieUserStandardDay): builder.PrependInt32Slot(192, NewbieUserStandardDay, 0)
 
 
     @staticmethod
-    def AddNewbieUserStandardDay(builder, NewbieUserStandardDay): builder.PrependInt32Slot(191, NewbieUserStandardDay, 0)
+    def AddNewbieStateHoldDay(builder, NewbieStateHoldDay): builder.PrependInt32Slot(193, NewbieStateHoldDay, 0)
 
 
     @staticmethod
-    def AddNewbieStateHoldDay(builder, NewbieStateHoldDay): builder.PrependInt32Slot(192, NewbieStateHoldDay, 0)
+    def AddClearDeckEchelonShowMaxCount(builder, ClearDeckEchelonShowMaxCount): builder.PrependInt32Slot(194, ClearDeckEchelonShowMaxCount, 0)
 
 
     @staticmethod
-    def AddClearDeckEchelonShowMaxCount(builder, ClearDeckEchelonShowMaxCount): builder.PrependInt32Slot(193, ClearDeckEchelonShowMaxCount, 0)
+    def AddExpiryStreakRecordItemReceiveDay(builder, ExpiryStreakRecordItemReceiveDay): builder.PrependInt32Slot(195, ExpiryStreakRecordItemReceiveDay, 0)
 
 
     @staticmethod
-    def AddExpiryStreakRecordItemReceiveDay(builder, ExpiryStreakRecordItemReceiveDay): builder.PrependInt32Slot(194, ExpiryStreakRecordItemReceiveDay, 0)
+    def AddExpirySeasonRecordItemReceiveDay(builder, ExpirySeasonRecordItemReceiveDay): builder.PrependInt32Slot(196, ExpirySeasonRecordItemReceiveDay, 0)
 
 
     @staticmethod
-    def AddExpirySeasonRecordItemReceiveDay(builder, ExpirySeasonRecordItemReceiveDay): builder.PrependInt32Slot(195, ExpirySeasonRecordItemReceiveDay, 0)
+    def AddEngraveContentsIsOpen(builder, EngraveContentsIsOpen): builder.PrependBoolSlot(197, EngraveContentsIsOpen, 0)
 
 
     @staticmethod
-    def AddEngraveContentsIsOpen(builder, EngraveContentsIsOpen): builder.PrependBoolSlot(196, EngraveContentsIsOpen, 0)
+    def AddTacticalRelayContentsIsOpen(builder, TacticalRelayContentsIsOpen): builder.PrependBoolSlot(198, TacticalRelayContentsIsOpen, 0)
 
 
     @staticmethod
-    def AddTacticalRelayContentsIsOpen(builder, TacticalRelayContentsIsOpen): builder.PrependBoolSlot(197, TacticalRelayContentsIsOpen, 0)
+    def AddExSkillLevelMaxByEngrave(builder, ExSkillLevelMaxByEngrave): builder.PrependInt32Slot(199, ExSkillLevelMaxByEngrave, 0)
 
 
     @staticmethod
-    def AddExSkillLevelMaxByEngrave(builder, ExSkillLevelMaxByEngrave): builder.PrependInt32Slot(198, ExSkillLevelMaxByEngrave, 0)
+    def AddExSkillUpgradeLevelMax(builder, ExSkillUpgradeLevelMax): builder.PrependInt32Slot(200, ExSkillUpgradeLevelMax, 0)
 
 
     @staticmethod
-    def AddExSkillUpgradeLevelMax(builder, ExSkillUpgradeLevelMax): builder.PrependInt32Slot(199, ExSkillUpgradeLevelMax, 0)
+    def AddRaidResetCount(builder, RaidResetCount): builder.PrependInt32Slot(201, RaidResetCount, 0)
 

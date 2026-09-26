@@ -1147,6 +1147,16 @@ class MessangerDisplayType(IntEnum):
     Student = 0
     Chat = 1
 
+class UIAdaptationMode(IntEnum):
+    CharacterSelect = 0
+    AdaptationTraining = 1
+
+class UIAdaptationCharacterCardState(IntEnum):
+    Default = 0
+    Selected = 1
+    Complete = 2
+    Lock = 3
+
 class TimerType(IntEnum):
     None_ = 0
     ArenaLobby = 1
@@ -1231,9 +1241,11 @@ class State(IntEnum):
 
 class CharacterDetailDisplayState(IntEnum):
     None_ = 0
-    HasCharacter = 1
+    Owned = 1
     DefaultInfo = 2
     ExchangeCharacterByGoods = 3
+    Adaptation_NotOwned = 4
+    Adaptation_Owned = 5
 
 class EngraveActiveReceiverType(IntEnum):
     EngraveActivated = 0
@@ -1379,6 +1391,8 @@ class From(IntEnum):
     MinigameDefense = 26
     PermanentRaid = 27
     TacticalRelay = 28
+    WeekDungeonChaserD = 29
+    WeekDungeonChaserE = 30
 
 class TouchState(IntEnum):
     None_ = 0
@@ -2526,6 +2540,13 @@ class EngraveTreeType(IntEnum):
     Conscious = 2
     Unconscious = 3
 
+class GrowthReturnType(IntEnum):
+    None_ = 0
+    ExpItemReturn = 1
+    ExpCreditReturn = 2
+    EquipmentExpItemReturn = 3
+    EquipmentCreditReturn = 4
+
 class ClanSocialGrade(IntEnum):
     None_ = 0
     President = 1
@@ -2713,6 +2734,8 @@ class WeekDungeonType(IntEnum):
     ChaserC = 3
     FindGift = 4
     Blood = 5
+    ChaserD = 6
+    ChaserE = 7
 
 class StarGoalType(IntEnum):
     None_ = 0
@@ -3080,6 +3103,7 @@ class RaidBossGroupType(IntEnum):
     EN0010 = 12
     EN0013 = 13
     EN0022 = 14
+    EN0023 = 15
 
 class TacticalRelayStageType(IntEnum):
     None_ = 0
@@ -3280,6 +3304,8 @@ class EchelonType(IntEnum):
     TacticalRelayMystic = 30
     TacticalRelaySonic = 31
     TacticalRelayChemical = 32
+    WeekDungeonChaserD = 33
+    WeekDungeonChaserE = 34
 
 class EchelonExtensionType(IntEnum):
     Base = 0
@@ -3995,6 +4021,7 @@ class MissionCategory(IntEnum):
     DailyFixed = 10
     EventFixed = 11
     WelcomeMission = 12
+    CharacterAdaptationMission = 13
 
 class MissionResetType(IntEnum):
     None_ = 0
@@ -4672,6 +4699,13 @@ class ParcelChangeReason(IntEnum):
     MiniGame_RoadPuzzleClearStage = 219
     MiniGame_CCGSweep = 220
     Conquest_Discard = 221
+    Character_AdaptationComplete = 222
+    WeekDungeon_EnterChaserD = 223
+    WeekDungeon_EnterChaserE = 224
+    WeekDungeon_ChaserDResult = 225
+    WeekDungeon_ChaserEResult = 226
+    ClueSearch_Investigate = 227
+    ClueSearch_Reveal = 228
 
 class ConsumeCondition(IntEnum):
     And = 0
@@ -4708,6 +4742,8 @@ class ScenarioCharacterAction(IntEnum):
     Stiff = 5
     Hophop = 6
     Jump = 7
+    FalldownLeftAuto = 8
+    FalldownRightAuto = 9
 
 class ScenarioCharacterBehaviors(IntEnum):
     None_ = 0
@@ -8448,6 +8484,7 @@ class Club(IntEnum):
     PublishingDepartment = 56
     FoxSquad = 57
     DivingClub = 58
+    Class183 = 59
 
 class UnderCoverItemCategory(IntEnum):
     Consumable = 0
@@ -9144,373 +9181,386 @@ class Protocol(IntEnum):
     Raid_Sweep = 151
     Raid_GetBestTeam = 152
     Raid_RankingIndex = 153
-    SkipHistory_List = 154
-    SkipHistory_Save = 155
-    Scenario_List = 156
-    Scenario_Clear = 157
-    Scenario_GroupHistoryUpdate = 158
-    Scenario_Skip = 159
-    Scenario_Select = 160
-    Scenario_AccountStudentChange = 161
-    Scenario_LobbyStudentChange = 162
-    Scenario_SpecialLobbyChange = 163
-    Scenario_Enter = 164
-    Scenario_EnterMainStage = 165
-    Scenario_ConfirmMainStage = 166
-    Scenario_DeployEchelon = 167
-    Scenario_WithdrawEchelon = 168
-    Scenario_MapMove = 169
-    Scenario_EndTurn = 170
-    Scenario_EnterTactic = 171
-    Scenario_TacticResult = 172
-    Scenario_Retreat = 173
-    Scenario_Portal = 174
-    Scenario_RestartMainStage = 175
-    Scenario_SkipMainStage = 176
-    Cafe_Get = 177
-    Cafe_Ack = 178
-    Cafe_Deploy = 179
-    Cafe_Relocate = 180
-    Cafe_Remove = 181
-    Cafe_RemoveAll = 182
-    Cafe_Interact = 183
-    Cafe_ListPreset = 184
-    Cafe_RenamePreset = 185
-    Cafe_ClearPreset = 186
-    Cafe_UpdatePresetFurniture = 187
-    Cafe_ApplyPreset = 188
-    Cafe_RankUp = 189
-    Cafe_ReceiveCurrency = 190
-    Cafe_GiveGift = 191
-    Cafe_SummonCharacter = 192
-    Cafe_TrophyHistory = 193
-    Cafe_ApplyTemplate = 194
-    Cafe_Open = 195
-    Cafe_Travel = 196
-    Cafe_SummonCharacterTicketUse = 197
-    Cafe_PresetDetail = 198
-    Cafe_UpdateCopyPresetFurniture = 199
-    Craft_List = 200
-    Craft_SelectNode = 201
-    Craft_UpdateNodeLevel = 202
-    Craft_BeginProcess = 203
-    Craft_CompleteProcess = 204
-    Craft_Reward = 205
-    Craft_HistoryList = 206
-    Craft_ShiftingBeginProcess = 207
-    Craft_ShiftingCompleteProcess = 208
-    Craft_ShiftingReward = 209
-    Craft_AutoBeginProcess = 210
-    Craft_CompleteProcessAll = 211
-    Craft_RewardAll = 212
-    Craft_ShiftingCompleteProcessAll = 213
-    Craft_ShiftingRewardAll = 214
-    Craft_SavePreset = 215
-    Craft_SavePresetName = 216
-    Arena_EnterLobby = 217
-    Arena_Login = 218
-    Arena_SettingChange = 219
-    Arena_OpponentList = 220
-    Arena_EnterBattle = 221
-    Arena_EnterBattlePart1 = 222
-    Arena_EnterBattlePart2 = 223
-    Arena_BattleResult = 224
-    Arena_CumulativeTimeReward = 225
-    Arena_DailyReward = 226
-    Arena_RankList = 227
-    Arena_History = 228
-    Arena_RecordSync = 229
-    Arena_TicketPurchase = 230
-    Arena_DamageReport = 231
-    Arena_CheckSeasonCloseReward = 232
-    Arena_SyncEchelonSettingTime = 233
-    Arena_SettingAnonymous = 234
-    WeekDungeon_List = 235
-    WeekDungeon_EnterBattle = 236
-    WeekDungeon_BattleResult = 237
-    WeekDungeon_Retreat = 238
-    Academy_GetInfo = 239
-    Academy_AttendSchedule = 240
-    Academy_AttendFavorSchedule = 241
-    Event_GetList = 242
-    Event_GetImage = 243
-    Event_UseCoupon = 244
-    Event_RewardIncrease = 245
-    ContentSave_Get = 246
-    ContentSave_Discard = 247
-    ContentSweep_Request = 248
-    ContentSweep_MultiSweep = 249
-    ContentSweep_MultiSweepPresetList = 250
-    ContentSweep_SetMultiSweepPreset = 251
-    ContentSweep_SetMultiSweepPresetName = 252
-    Clan_Lobby = 253
-    Clan_Login = 254
-    Clan_Search = 255
-    Clan_Create = 256
-    Clan_Member = 257
-    Clan_Applicant = 258
-    Clan_Join = 259
-    Clan_Quit = 260
-    Clan_Permit = 261
-    Clan_Kick = 262
-    Clan_Setting = 263
-    Clan_Confer = 264
-    Clan_Dismiss = 265
-    Clan_AutoJoin = 266
-    Clan_MemberList = 267
-    Clan_CancelApply = 268
-    Clan_MyAssistList = 269
-    Clan_SetAssist = 270
-    Clan_ChatLog = 271
-    Clan_Check = 272
-    Clan_AllAssistList = 273
-    Billing_TransactionStartByYostar = 274
-    Billing_TransactionEndByYostar = 275
-    Billing_PurchaseListByYostar = 276
-    Billing_PurchaseFreeProduct = 277
-    EventContent_AdventureList = 278
-    EventContent_EnterMainStage = 279
-    EventContent_ConfirmMainStage = 280
-    EventContent_EnterTactic = 281
-    EventContent_TacticResult = 282
-    EventContent_EnterSubStage = 283
-    EventContent_SubStageResult = 284
-    EventContent_DeployEchelon = 285
-    EventContent_WithdrawEchelon = 286
-    EventContent_MapMove = 287
-    EventContent_EndTurn = 288
-    EventContent_Retreat = 289
-    EventContent_Portal = 290
-    EventContent_PurchasePlayCountHardStage = 291
-    EventContent_ShopList = 292
-    EventContent_ShopRefresh = 293
-    EventContent_ReceiveStageTotalReward = 294
-    EventContent_EnterMainGroundStage = 295
-    EventContent_MainGroundStageResult = 296
-    EventContent_ShopBuyMerchandise = 297
-    EventContent_ShopBuyRefreshMerchandise = 298
-    EventContent_SelectBuff = 299
-    EventContent_BoxGachaShopList = 300
-    EventContent_BoxGachaShopPurchase = 301
-    EventContent_BoxGachaShopRefresh = 302
-    EventContent_CollectionList = 303
-    EventContent_CollectionForMission = 304
-    EventContent_ScenarioGroupHistoryUpdate = 305
-    EventContent_CardShopList = 306
-    EventContent_CardShopShuffle = 307
-    EventContent_CardShopPurchase = 308
-    EventContent_RestartMainStage = 309
-    EventContent_LocationGetInfo = 310
-    EventContent_LocationAttendSchedule = 311
-    EventContent_FortuneGachaPurchase = 312
-    EventContent_SubEventLobby = 313
-    EventContent_EnterStoryStage = 314
-    EventContent_StoryStageResult = 315
-    EventContent_DiceRaceLobby = 316
-    EventContent_DiceRaceRoll = 317
-    EventContent_DiceRaceLapReward = 318
-    EventContent_PermanentList = 319
-    EventContent_DiceRaceUseItem = 320
-    EventContent_CardShopPurchaseAll = 321
-    EventContent_TreasureLobby = 322
-    EventContent_TreasureFlip = 323
-    EventContent_TreasureNextRound = 324
-    EventContent_ConcentrationGetInfo = 325
-    EventContent_ConcentrationFlipCard = 326
-    EventContent_ConcentrationRoundComplete = 327
-    EventContent_ConcentrationRoundSkip = 328
-    EventContent_ClueSearchGetInfo = 329
-    EventContent_ClueSearchSubmit = 330
-    EventContent_ClueSearchRoundComplete = 331
-    TTS_GetFile = 332
-    ContentLog_UIOpenStatistics = 333
-    MomoTalk_OutLine = 334
-    MomoTalk_MessageList = 335
-    MomoTalk_Read = 336
-    MomoTalk_Reply = 337
-    MomoTalk_FavorSchedule = 338
-    ClearDeck_List = 339
-    ClearDeck_GroupedList = 340
-    MiniGame_StageList = 341
-    MiniGame_EnterStage = 342
-    MiniGame_Result = 343
-    MiniGame_MissionList = 344
-    MiniGame_MissionReward = 345
-    MiniGame_MissionMultipleReward = 346
-    MiniGame_ShootingLobby = 347
-    MiniGame_ShootingBattleEnter = 348
-    MiniGame_ShootingBattleResult = 349
-    MiniGame_ShootingSweep = 350
-    MiniGame_TableBoardSync = 351
-    MiniGame_TableBoardMove = 352
-    MiniGame_TableBoardEncounterInput = 353
-    MiniGame_TableBoardBattleEncounter = 354
-    MiniGame_TableBoardBattleRunAway = 355
-    MiniGame_TableBoardClearThema = 356
-    MiniGame_TableBoardUseItem = 357
-    MiniGame_TableBoardResurrect = 358
-    MiniGame_TableBoardSweep = 359
-    MiniGame_TableBoardMoveThema = 360
-    MiniGame_DreamMakerGetInfo = 361
-    MiniGame_DreamMakerNewGame = 362
-    MiniGame_DreamMakerRestart = 363
-    MiniGame_DreamMakerAttendSchedule = 364
-    MiniGame_DreamMakerDailyClosing = 365
-    MiniGame_DreamMakerEnding = 366
-    MiniGame_DefenseGetInfo = 367
-    MiniGame_DefenseEnterBattle = 368
-    MiniGame_DefenseBattleResult = 369
-    MiniGame_RoadPuzzleGetInfo = 370
-    MiniGame_RoadPuzzleTilePlace = 371
-    MiniGame_RoadPuzzleSaveStage = 372
-    MiniGame_RoadPuzzleClearStage = 373
-    MiniGame_CCGLobby = 374
-    MiniGame_CCGCreateGame = 375
-    MiniGame_CCGSweep = 376
-    MiniGame_CCGEnterStage = 377
-    MiniGame_CCGEndStageDual = 378
-    MiniGame_CCGEndStageEvent = 379
-    MiniGame_CCGSelectRewardCard = 380
-    Minigame_CCGReplaceCharacter = 381
-    MiniGame_CCGSelectCampAction = 382
-    MiniGame_CCGCompleteGame = 383
-    MiniGame_CCGGiveupGame = 384
-    MiniGame_CCGRerollReward = 385
-    MiniGame_CCGBuyPerk = 386
-    MiniGame_JankenLobby = 387
-    MiniGame_JankenSetEchelon = 388
-    MiniGame_JankenEquipmentLevelUp = 389
-    MiniGame_JankenEnterBattle = 390
-    MiniGame_JankenEndBattle = 391
-    MiniGame_JankenScoreReward = 392
-    Notification_LobbyCheck = 393
-    Notification_EventContentReddotCheck = 394
-    ProofToken_RequestQuestion = 395
-    ProofToken_Submit = 396
-    SchoolDungeon_List = 397
-    SchoolDungeon_EnterBattle = 398
-    SchoolDungeon_BattleResult = 399
-    SchoolDungeon_Retreat = 400
-    TimeAttackDungeon_Lobby = 401
-    TimeAttackDungeon_CreateBattle = 402
-    TimeAttackDungeon_EnterBattle = 403
-    TimeAttackDungeon_EndBattle = 404
-    TimeAttackDungeon_Sweep = 405
-    TimeAttackDungeon_GiveUp = 406
-    TimeAttackDungeon_Login = 407
-    WorldRaid_Lobby = 408
-    WorldRaid_BossList = 409
-    WorldRaid_EnterBattle = 410
-    WorldRaid_BattleResult = 411
-    WorldRaid_ReceiveReward = 412
-    WorldRaid_UpdateCarrierSkill = 413
-    ResetableContent_Get = 414
-    Conquest_GetInfo = 415
-    Conquest_Conquer = 416
-    Conquest_ConquerWithBattleStart = 417
-    Conquest_ConquerWithBattleResult = 418
-    Conquest_DeployEchelon = 419
-    Conquest_ManageBase = 420
-    Conquest_UpgradeBase = 421
-    Conquest_TakeEventObject = 422
-    Conquest_EventObjectBattleStart = 423
-    Conquest_EventObjectBattleResult = 424
-    Conquest_ReceiveCalculateRewards = 425
-    Conquest_NormalizeEchelon = 426
-    Conquest_Check = 427
-    Conquest_ErosionBattleStart = 428
-    Conquest_ErosionBattleResult = 429
-    Conquest_MainStoryGetInfo = 430
-    Conquest_MainStoryConquer = 431
-    Conquest_MainStoryConquerWithBattleStart = 432
-    Conquest_MainStoryConquerWithBattleResult = 433
-    Conquest_MainStoryCheck = 434
-    Friend_List = 435
-    Friend_Remove = 436
-    Friend_GetFriendDetailedInfo = 437
-    Friend_GetIdCard = 438
-    Friend_SetIdCard = 439
-    Friend_Search = 440
-    Friend_SendFriendRequest = 441
-    Friend_AcceptFriendRequest = 442
-    Friend_DeclineFriendRequest = 443
-    Friend_CancelFriendRequest = 444
-    Friend_Check = 445
-    Friend_ListByIds = 446
-    Friend_Block = 447
-    Friend_Unblock = 448
-    CharacterGear_List = 449
-    CharacterGear_Unlock = 450
-    CharacterGear_TierUp = 451
-    EliminateRaid_Login = 452
-    EliminateRaid_Lobby = 453
-    EliminateRaid_OpponentList = 454
-    EliminateRaid_GetBestTeam = 455
-    EliminateRaid_CreateBattle = 456
-    EliminateRaid_EnterBattle = 457
-    EliminateRaid_EndBattle = 458
-    EliminateRaid_GiveUp = 459
-    EliminateRaid_Sweep = 460
-    EliminateRaid_SeasonReward = 461
-    EliminateRaid_RankingReward = 462
-    EliminateRaid_LimitedReward = 463
-    EliminateRaid_RankingIndex = 464
-    Attachment_Get = 465
-    Attachment_EmblemList = 466
-    Attachment_EmblemAcquire = 467
-    Attachment_EmblemAttach = 468
-    Attachment_StudentFrameList = 469
-    Attachment_StudentFrameAcquire = 470
-    Attachment_StudentFrameAttach = 471
-    Sticker_Login = 472
-    Sticker_Lobby = 473
-    Sticker_UseSticker = 474
-    Field_Sync = 475
-    Field_Interaction = 476
-    Field_QuestClear = 477
-    Field_SceneChanged = 478
-    Field_EndDate = 479
-    Field_EnterStage = 480
-    Field_StageResult = 481
-    MultiFloorRaid_Sync = 482
-    MultiFloorRaid_EnterBattle = 483
-    MultiFloorRaid_EndBattle = 484
-    MultiFloorRaid_ReceiveReward = 485
-    MultiFloorRaid_Login = 486
-    Queuing_GetTicket = 487
-    Queuing_GetCryptoKeys = 488
-    Queuing_GetAuthTicket = 489
-    Queuing_ProcessWaitingQueue = 490
-    BattlePass_GetInfo = 491
-    BattlePass_BuyLevel = 492
-    BattlePass_ReceiveReward = 493
-    BattlePass_MissionList = 494
-    BattlePass_MissionSingleReward = 495
-    BattlePass_MissionMultipleReward = 496
-    BattlePass_Check = 497
-    DailyRecord_Reward = 498
-    DailyRecord_ClaimStreakReward = 499
-    DailyRecord_SupplementSeasonAttendance = 500
-    DailyRecord_ClaimSeasonReward = 501
-    DailyRecord_RestoreStreakAttendance = 502
-    Option_Save = 503
-    PermanentRaid_Lobby = 504
-    PermanentRaid_EnterBattle = 505
-    PermanentRaid_EndBattle = 506
-    PermanentRaid_GiveUp = 507
-    SNS_PostRead = 508
-    WelcomeCampaign_GetInfo = 509
-    WelcomeCampaign_ReceiveEnterReward = 510
-    WelcomeCampaign_AttendanceReward = 511
-    WelcomeCampaign_MissionList = 512
-    WelcomeCampaign_MissionReward = 513
-    WelcomeCampaign_MissionMultipleReward = 514
-    WelcomeCampaign_Check = 515
-    TacticalRelay_Lobby = 516
-    TacticalRelay_RankingInfo = 517
-    TacticalRelay_EnterBattle = 518
-    TacticalRelay_EndBattle = 519
-    TacticalRelay_GiveUp = 520
+    Raid_Reset = 154
+    SkipHistory_List = 155
+    SkipHistory_Save = 156
+    Scenario_List = 157
+    Scenario_Clear = 158
+    Scenario_GroupHistoryUpdate = 159
+    Scenario_Skip = 160
+    Scenario_Select = 161
+    Scenario_AccountStudentChange = 162
+    Scenario_LobbyStudentChange = 163
+    Scenario_SpecialLobbyChange = 164
+    Scenario_Enter = 165
+    Scenario_EnterMainStage = 166
+    Scenario_ConfirmMainStage = 167
+    Scenario_DeployEchelon = 168
+    Scenario_WithdrawEchelon = 169
+    Scenario_MapMove = 170
+    Scenario_EndTurn = 171
+    Scenario_EnterTactic = 172
+    Scenario_TacticResult = 173
+    Scenario_Retreat = 174
+    Scenario_Portal = 175
+    Scenario_RestartMainStage = 176
+    Scenario_SkipMainStage = 177
+    Scenario_Collection = 178
+    Cafe_Get = 179
+    Cafe_Ack = 180
+    Cafe_Deploy = 181
+    Cafe_Relocate = 182
+    Cafe_Remove = 183
+    Cafe_RemoveAll = 184
+    Cafe_Interact = 185
+    Cafe_ListPreset = 186
+    Cafe_RenamePreset = 187
+    Cafe_ClearPreset = 188
+    Cafe_UpdatePresetFurniture = 189
+    Cafe_ApplyPreset = 190
+    Cafe_RankUp = 191
+    Cafe_ReceiveCurrency = 192
+    Cafe_GiveGift = 193
+    Cafe_SummonCharacter = 194
+    Cafe_TrophyHistory = 195
+    Cafe_ApplyTemplate = 196
+    Cafe_Open = 197
+    Cafe_Travel = 198
+    Cafe_SummonCharacterTicketUse = 199
+    Cafe_PresetDetail = 200
+    Cafe_UpdateCopyPresetFurniture = 201
+    Craft_List = 202
+    Craft_SelectNode = 203
+    Craft_UpdateNodeLevel = 204
+    Craft_BeginProcess = 205
+    Craft_CompleteProcess = 206
+    Craft_Reward = 207
+    Craft_HistoryList = 208
+    Craft_ShiftingBeginProcess = 209
+    Craft_ShiftingCompleteProcess = 210
+    Craft_ShiftingReward = 211
+    Craft_AutoBeginProcess = 212
+    Craft_CompleteProcessAll = 213
+    Craft_RewardAll = 214
+    Craft_ShiftingCompleteProcessAll = 215
+    Craft_ShiftingRewardAll = 216
+    Craft_SavePreset = 217
+    Craft_SavePresetName = 218
+    Arena_EnterLobby = 219
+    Arena_Login = 220
+    Arena_SettingChange = 221
+    Arena_OpponentList = 222
+    Arena_EnterBattle = 223
+    Arena_EnterBattlePart1 = 224
+    Arena_EnterBattlePart2 = 225
+    Arena_BattleResult = 226
+    Arena_CumulativeTimeReward = 227
+    Arena_DailyReward = 228
+    Arena_RankList = 229
+    Arena_History = 230
+    Arena_RecordSync = 231
+    Arena_TicketPurchase = 232
+    Arena_DamageReport = 233
+    Arena_CheckSeasonCloseReward = 234
+    Arena_SyncEchelonSettingTime = 235
+    Arena_SettingAnonymous = 236
+    WeekDungeon_List = 237
+    WeekDungeon_EnterBattle = 238
+    WeekDungeon_BattleResult = 239
+    WeekDungeon_Retreat = 240
+    Academy_GetInfo = 241
+    Academy_AttendSchedule = 242
+    Academy_AttendFavorSchedule = 243
+    Event_GetList = 244
+    Event_GetImage = 245
+    Event_UseCoupon = 246
+    Event_RewardIncrease = 247
+    ContentSave_Get = 248
+    ContentSave_Discard = 249
+    ContentSweep_Request = 250
+    ContentSweep_MultiSweep = 251
+    ContentSweep_MultiSweepPresetList = 252
+    ContentSweep_SetMultiSweepPreset = 253
+    ContentSweep_SetMultiSweepPresetName = 254
+    Clan_Lobby = 255
+    Clan_Login = 256
+    Clan_Search = 257
+    Clan_Create = 258
+    Clan_Member = 259
+    Clan_Applicant = 260
+    Clan_Join = 261
+    Clan_Quit = 262
+    Clan_Permit = 263
+    Clan_Kick = 264
+    Clan_Setting = 265
+    Clan_Confer = 266
+    Clan_Dismiss = 267
+    Clan_AutoJoin = 268
+    Clan_MemberList = 269
+    Clan_CancelApply = 270
+    Clan_MyAssistList = 271
+    Clan_SetAssist = 272
+    Clan_ChatLog = 273
+    Clan_Check = 274
+    Clan_AllAssistList = 275
+    Clan_KickHistoryCancel = 276
+    Clan_KickHistoryList = 277
+    Billing_TransactionStartByYostar = 278
+    Billing_TransactionEndByYostar = 279
+    Billing_PurchaseListByYostar = 280
+    Billing_PurchaseFreeProduct = 281
+    EventContent_AdventureList = 282
+    EventContent_EnterMainStage = 283
+    EventContent_ConfirmMainStage = 284
+    EventContent_EnterTactic = 285
+    EventContent_TacticResult = 286
+    EventContent_EnterSubStage = 287
+    EventContent_SubStageResult = 288
+    EventContent_DeployEchelon = 289
+    EventContent_WithdrawEchelon = 290
+    EventContent_MapMove = 291
+    EventContent_EndTurn = 292
+    EventContent_Retreat = 293
+    EventContent_Portal = 294
+    EventContent_PurchasePlayCountHardStage = 295
+    EventContent_ShopList = 296
+    EventContent_ShopRefresh = 297
+    EventContent_ReceiveStageTotalReward = 298
+    EventContent_EnterMainGroundStage = 299
+    EventContent_MainGroundStageResult = 300
+    EventContent_ShopBuyMerchandise = 301
+    EventContent_ShopBuyRefreshMerchandise = 302
+    EventContent_SelectBuff = 303
+    EventContent_BoxGachaShopList = 304
+    EventContent_BoxGachaShopPurchase = 305
+    EventContent_BoxGachaShopRefresh = 306
+    EventContent_CollectionList = 307
+    EventContent_CollectionForMission = 308
+    EventContent_ScenarioGroupHistoryUpdate = 309
+    EventContent_CardShopList = 310
+    EventContent_CardShopShuffle = 311
+    EventContent_CardShopPurchase = 312
+    EventContent_RestartMainStage = 313
+    EventContent_LocationGetInfo = 314
+    EventContent_LocationAttendSchedule = 315
+    EventContent_FortuneGachaPurchase = 316
+    EventContent_SubEventLobby = 317
+    EventContent_EnterStoryStage = 318
+    EventContent_StoryStageResult = 319
+    EventContent_DiceRaceLobby = 320
+    EventContent_DiceRaceRoll = 321
+    EventContent_DiceRaceLapReward = 322
+    EventContent_PermanentList = 323
+    EventContent_DiceRaceUseItem = 324
+    EventContent_CardShopPurchaseAll = 325
+    EventContent_TreasureLobby = 326
+    EventContent_TreasureFlip = 327
+    EventContent_TreasureNextRound = 328
+    EventContent_ConcentrationGetInfo = 329
+    EventContent_ConcentrationFlipCard = 330
+    EventContent_ConcentrationRoundComplete = 331
+    EventContent_ConcentrationRoundSkip = 332
+    EventContent_ClueSearchGetInfo = 333
+    EventContent_ClueSearchSubmit = 334
+    EventContent_ClueSearchRoundComplete = 335
+    EventContent_ClueSearchInvestigate = 336
+    EventContent_ClueSearchReveal = 337
+    EventContent_ClueSearchBatchSubmit = 338
+    TTS_GetFile = 339
+    ContentLog_UIOpenStatistics = 340
+    ContentLog_BannerClickLog = 341
+    MomoTalk_OutLine = 342
+    MomoTalk_MessageList = 343
+    MomoTalk_Read = 344
+    MomoTalk_Reply = 345
+    MomoTalk_FavorSchedule = 346
+    ClearDeck_List = 347
+    ClearDeck_GroupedList = 348
+    MiniGame_StageList = 349
+    MiniGame_EnterStage = 350
+    MiniGame_Result = 351
+    MiniGame_MissionList = 352
+    MiniGame_MissionReward = 353
+    MiniGame_MissionMultipleReward = 354
+    MiniGame_ShootingLobby = 355
+    MiniGame_ShootingBattleEnter = 356
+    MiniGame_ShootingBattleResult = 357
+    MiniGame_ShootingSweep = 358
+    MiniGame_TableBoardSync = 359
+    MiniGame_TableBoardMove = 360
+    MiniGame_TableBoardEncounterInput = 361
+    MiniGame_TableBoardBattleEncounter = 362
+    MiniGame_TableBoardBattleRunAway = 363
+    MiniGame_TableBoardClearThema = 364
+    MiniGame_TableBoardUseItem = 365
+    MiniGame_TableBoardResurrect = 366
+    MiniGame_TableBoardSweep = 367
+    MiniGame_TableBoardMoveThema = 368
+    MiniGame_DreamMakerGetInfo = 369
+    MiniGame_DreamMakerNewGame = 370
+    MiniGame_DreamMakerRestart = 371
+    MiniGame_DreamMakerAttendSchedule = 372
+    MiniGame_DreamMakerDailyClosing = 373
+    MiniGame_DreamMakerEnding = 374
+    MiniGame_DefenseGetInfo = 375
+    MiniGame_DefenseEnterBattle = 376
+    MiniGame_DefenseBattleResult = 377
+    MiniGame_RoadPuzzleGetInfo = 378
+    MiniGame_RoadPuzzleTilePlace = 379
+    MiniGame_RoadPuzzleSaveStage = 380
+    MiniGame_RoadPuzzleClearStage = 381
+    MiniGame_CCGLobby = 382
+    MiniGame_CCGCreateGame = 383
+    MiniGame_CCGSweep = 384
+    MiniGame_CCGEnterStage = 385
+    MiniGame_CCGEndStageDual = 386
+    MiniGame_CCGEndStageEvent = 387
+    MiniGame_CCGSelectRewardCard = 388
+    Minigame_CCGReplaceCharacter = 389
+    MiniGame_CCGSelectCampAction = 390
+    MiniGame_CCGCompleteGame = 391
+    MiniGame_CCGGiveupGame = 392
+    MiniGame_CCGRerollReward = 393
+    MiniGame_CCGBuyPerk = 394
+    MiniGame_JankenLobby = 395
+    MiniGame_JankenSetEchelon = 396
+    MiniGame_JankenEquipmentLevelUp = 397
+    MiniGame_JankenEnterBattle = 398
+    MiniGame_JankenEndBattle = 399
+    MiniGame_JankenScoreReward = 400
+    Notification_LobbyCheck = 401
+    Notification_EventContentReddotCheck = 402
+    ProofToken_RequestQuestion = 403
+    ProofToken_Submit = 404
+    SchoolDungeon_List = 405
+    SchoolDungeon_EnterBattle = 406
+    SchoolDungeon_BattleResult = 407
+    SchoolDungeon_Retreat = 408
+    TimeAttackDungeon_Lobby = 409
+    TimeAttackDungeon_CreateBattle = 410
+    TimeAttackDungeon_EnterBattle = 411
+    TimeAttackDungeon_EndBattle = 412
+    TimeAttackDungeon_Sweep = 413
+    TimeAttackDungeon_GiveUp = 414
+    TimeAttackDungeon_Login = 415
+    WorldRaid_Lobby = 416
+    WorldRaid_BossList = 417
+    WorldRaid_EnterBattle = 418
+    WorldRaid_BattleResult = 419
+    WorldRaid_ReceiveReward = 420
+    WorldRaid_UpdateCarrierSkill = 421
+    ResetableContent_Get = 422
+    Conquest_GetInfo = 423
+    Conquest_Conquer = 424
+    Conquest_ConquerWithBattleStart = 425
+    Conquest_ConquerWithBattleResult = 426
+    Conquest_DeployEchelon = 427
+    Conquest_ManageBase = 428
+    Conquest_UpgradeBase = 429
+    Conquest_TakeEventObject = 430
+    Conquest_EventObjectBattleStart = 431
+    Conquest_EventObjectBattleResult = 432
+    Conquest_ReceiveCalculateRewards = 433
+    Conquest_NormalizeEchelon = 434
+    Conquest_Check = 435
+    Conquest_ErosionBattleStart = 436
+    Conquest_ErosionBattleResult = 437
+    Conquest_MainStoryGetInfo = 438
+    Conquest_MainStoryConquer = 439
+    Conquest_MainStoryConquerWithBattleStart = 440
+    Conquest_MainStoryConquerWithBattleResult = 441
+    Conquest_MainStoryCheck = 442
+    Friend_List = 443
+    Friend_Remove = 444
+    Friend_GetFriendDetailedInfo = 445
+    Friend_GetIdCard = 446
+    Friend_SetIdCard = 447
+    Friend_Search = 448
+    Friend_SendFriendRequest = 449
+    Friend_AcceptFriendRequest = 450
+    Friend_DeclineFriendRequest = 451
+    Friend_CancelFriendRequest = 452
+    Friend_Check = 453
+    Friend_ListByIds = 454
+    Friend_Block = 455
+    Friend_Unblock = 456
+    CharacterGear_List = 457
+    CharacterGear_Unlock = 458
+    CharacterGear_TierUp = 459
+    EliminateRaid_Login = 460
+    EliminateRaid_Lobby = 461
+    EliminateRaid_OpponentList = 462
+    EliminateRaid_GetBestTeam = 463
+    EliminateRaid_CreateBattle = 464
+    EliminateRaid_EnterBattle = 465
+    EliminateRaid_EndBattle = 466
+    EliminateRaid_GiveUp = 467
+    EliminateRaid_Sweep = 468
+    EliminateRaid_SeasonReward = 469
+    EliminateRaid_RankingReward = 470
+    EliminateRaid_LimitedReward = 471
+    EliminateRaid_RankingIndex = 472
+    EliminateRaid_Reset = 473
+    Attachment_Get = 474
+    Attachment_EmblemList = 475
+    Attachment_EmblemAcquire = 476
+    Attachment_EmblemAttach = 477
+    Attachment_StudentFrameList = 478
+    Attachment_StudentFrameAcquire = 479
+    Attachment_StudentFrameAttach = 480
+    Sticker_Login = 481
+    Sticker_Lobby = 482
+    Sticker_UseSticker = 483
+    Field_Sync = 484
+    Field_Interaction = 485
+    Field_QuestClear = 486
+    Field_SceneChanged = 487
+    Field_EndDate = 488
+    Field_EnterStage = 489
+    Field_StageResult = 490
+    MultiFloorRaid_Sync = 491
+    MultiFloorRaid_EnterBattle = 492
+    MultiFloorRaid_EndBattle = 493
+    MultiFloorRaid_ReceiveReward = 494
+    MultiFloorRaid_Login = 495
+    Queuing_GetTicket = 496
+    Queuing_GetCryptoKeys = 497
+    Queuing_GetAuthTicket = 498
+    Queuing_ProcessWaitingQueue = 499
+    BattlePass_GetInfo = 500
+    BattlePass_BuyLevel = 501
+    BattlePass_ReceiveReward = 502
+    BattlePass_MissionList = 503
+    BattlePass_MissionSingleReward = 504
+    BattlePass_MissionMultipleReward = 505
+    BattlePass_Check = 506
+    DailyRecord_Reward = 507
+    DailyRecord_ClaimStreakReward = 508
+    DailyRecord_SupplementSeasonAttendance = 509
+    DailyRecord_ClaimSeasonReward = 510
+    DailyRecord_RestoreStreakAttendance = 511
+    Option_Save = 512
+    PermanentRaid_Lobby = 513
+    PermanentRaid_EnterBattle = 514
+    PermanentRaid_EndBattle = 515
+    PermanentRaid_GiveUp = 516
+    SNS_PostRead = 517
+    WelcomeCampaign_GetInfo = 518
+    WelcomeCampaign_ReceiveEnterReward = 519
+    WelcomeCampaign_AttendanceReward = 520
+    WelcomeCampaign_MissionList = 521
+    WelcomeCampaign_MissionReward = 522
+    WelcomeCampaign_MissionMultipleReward = 523
+    WelcomeCampaign_Check = 524
+    TacticalRelay_Lobby = 525
+    TacticalRelay_RankingInfo = 526
+    TacticalRelay_EnterBattle = 527
+    TacticalRelay_EndBattle = 528
+    TacticalRelay_GiveUp = 529
+    CharacterAdaptation_Sync = 530
+    CharacterAdaptation_Start = 531
+    CharacterAdaptation_GrowthStep = 532
+    CharacterAdaptation_Receive = 533
 
 class ServerNotificationFlag(IntEnum):
     None_ = 0
@@ -9855,364 +9905,378 @@ class WebAPIErrorCode(IntEnum):
     RaidSeasonOpen = 292
     RaidRoomIsAlreadyClose = 293
     RaidRankingNotFound = 294
-    WeekDungeonInfoNotFound = 295
-    WeekDungeonNotOpenToday = 296
-    WeekDungeonBattleWinnerInvalid = 297
-    WeekDungeonInvalidSaveData = 298
-    FindGiftRewardNotFound = 299
-    FindGiftRewardAlreadyAcquired = 300
-    FindGiftClearCountOverTotalCount = 301
-    ArenaInfoNotFound = 302
-    ArenaGroupNotFound = 303
-    ArenaRankHistoryNotFound = 304
-    ArenaRankInvalid = 305
-    ArenaBattleFail = 306
-    ArenaDailyRewardAlreadyBeenReceived = 307
-    ArenaNoSeasonAvailable = 308
-    ArenaAttackCoolTime = 309
-    ArenaOpponentAlreadyBeenAttacked = 310
-    ArenaOpponentRankInvalid = 311
-    ArenaNeedFormationSetting = 312
-    ArenaNoHistory = 313
-    ArenaInvalidRequest = 314
-    ArenaInvalidIndex = 315
-    ArenaNotFoundBattle = 316
-    ArenaBattleTimeOver = 317
-    ArenaRefreshTimeOver = 318
-    ArenaEchelonSettingTimeOver = 319
-    ArenaCannotReceiveReward = 320
-    ArenaRewardNotExist = 321
-    ArenaCannotSetMap = 322
-    ArenaDefenderRankChange = 323
-    AcademyNotFound = 324
-    AcademyScheduleTableNotFound = 325
-    AcademyScheduleOperationNotFound = 326
-    AcademyAlreadyAttendedSchedule = 327
-    AcademyAlreadyAttendedFavorSchedule = 328
-    AcademyRewardCharacterNotFound = 329
-    AcademyScheduleCanNotAttend = 330
-    AcademyTicketZero = 331
-    AcademyMessageCanNotSend = 332
-    ContentSaveDBNotFound = 333
-    ContentSaveDBEntranceFeeEmpty = 334
-    AccountBanned = 335
-    ServerNowLoadingProhibitedWord = 336
-    ServerIsUnderMaintenance = 337
-    ServerMaintenanceSoon = 338
-    AccountIsNotInWhiteList = 339
-    ServerContentsLockUpdating = 340
-    ServerContentsLock = 341
-    CouponIsEmpty = 342
-    CouponIsInvalid = 343
-    UseCouponUsedListReadFail = 344
-    UseCouponUsedCoupon = 345
-    UseCouponNotFoundSerials = 346
-    UseCouponDeleteSerials = 347
-    UseCouponUnapprovedSerials = 348
-    UseCouponExpiredSerials = 349
-    UseCouponMaximumSerials = 350
-    UseCouponNotFoundMeta = 351
-    UseCouponDuplicateUseCoupon = 352
-    UseCouponDuplicateUseSerial = 353
-    BillingStartShopCashIdNotFound = 354
-    BillingStartNotServiceTime = 355
-    BillingStartUseConditionCheckError = 356
-    BillingStartSmallLevel = 357
-    BillingStartMaxPurchaseCount = 358
-    BillingStartFailAddOrder = 359
-    BillingStartExistPurchase = 360
-    BillingEndFailGetOrder = 361
-    BillingEndShopCashIdNotFound = 362
-    BillingEndProductIdNotFound = 363
-    BillingEndMonthlyProductIdNotFound = 364
-    BillingEndInvalidState = 365
-    BillingEndFailUpdteState = 366
-    BillingEndFailSendMail = 367
-    BillingEndInvalidAccount = 368
-    BillingEndNotFoundPurchaseCount = 369
-    BillingEndFailUpdteMonthlyProduct = 370
-    BillingStartMailFull = 371
-    BillingStartInventoryAndMailFull = 372
-    BillingEndRecvedErrorMonthlyProduct = 373
-    MonthlyProductNotOutdated = 374
-    BillingBattlePassProductNotExist = 375
-    BillingBattlePassInfo = 376
-    BillingBattlePassInvalidBuyStep = 377
-    BillingNotFreeProduct = 378
-    BillingPurchaseFreeProduct = 379
-    BillingProductSelectionSlotEmpty = 380
-    BillingProductSelectionSlotNotMatch = 381
-    BillingProductSelectConditionFailed = 382
-    BillingProductSelectionSlotNotFound = 383
-    BillingRewardParcelNotFound = 384
-    BillingCannotAcquireLock = 385
-    BillingPendingProductExists = 386
-    BillingNotStepupProduct = 387
-    BillingStepupInvalidStep = 388
-    ClanNotFound = 389
-    ClanSearchFailed = 390
-    ClanEmptySearchString = 391
-    ClanAccountAlreadyJoinedClan = 392
-    ClanAccountAlreadyQuitClan = 393
-    ClanCreateFailed = 394
-    ClanMemberExceedCapacity = 395
-    ClanDoesNotHavePermission = 396
-    ClanTargetAccountIsNotApplicant = 397
-    ClanMemberNotFound = 398
-    ClanCanNotKick = 399
-    ClanCanNotDismiss = 400
-    ClanCanNotQuit = 401
-    ClanRejoinCoolOff = 402
-    ClanChangeMemberGradeFailed = 403
-    ClanHasBeenDisMissed = 404
-    ClanCannotChangeJoinOption = 405
-    ClanExceedConferCountLimit = 406
-    ClanBusy = 407
-    ClanNameEmptyString = 408
-    ClanNameWithInvalidLength = 409
-    ClanAssistCharacterAlreadyDeployed = 410
-    ClanAssistNotValidUse = 411
-    ClanAssistCharacterChanged = 412
-    ClanAssistCoolTime = 413
-    ClanAssistAlreadyUsedInRaidRoom = 414
-    ClanAssistAlreadyUsedInTimeAttackDungeonRoom = 415
-    ClanAssistEchelonHasAssistOnly = 416
-    PaymentInvalidSign = 417
-    PaymentInvalidSeed1 = 418
-    PaymentInvalidSeed2 = 419
-    PaymentInvalidInput = 420
-    PaymentNotFoundPurchase = 421
-    PaymentGetPurchaseOrderNotZero = 422
-    PaymentSetPurchaseOrderNotZero = 423
-    PaymentException = 424
-    PaymentInvalidState = 425
-    SessionNotFound = 426
-    SessionParseFail = 427
-    SessionInvalidInput = 428
-    SessionNotAuth = 429
-    SessionDuplicateLogin = 430
-    SessionTimeOver = 431
-    SessionInvalidVersion = 432
-    SessionChangeDate = 433
-    CallName_RenameCoolTime = 434
-    CallName_EmptyString = 435
-    CallName_InvalidString = 436
-    CallName_TTSServerIsNotAvailable = 437
-    CouchbaseInvalidCas = 438
-    CouchbaseOperationFailed = 439
-    CouchbaseRollBackFailed = 440
-    EventContentCannotSelectBuff = 441
-    EventContentNoBuffGroupAvailable = 442
-    EventContentBuffGroupIdDuplicated = 443
-    EventContentNotOpen = 444
-    EventContentNoTotalRewardAvailable = 445
-    EventContentBoxGachaPurchaseFailed = 446
-    EventContentBoxGachaCannotRefresh = 447
-    EventContentCardShopCannotShuffle = 448
-    EventContentElementDoesNotExist = 449
-    EventContentElementAlreadyPurchased = 450
-    EventContentLocationNotFound = 451
-    EventContentLocationScheduleCanNotAttend = 452
-    EventContentDiceRaceDataNotFound = 453
-    EventContentDiceRaceAlreadyReceiveLapRewardAll = 454
-    EventContentDiceRaceInvalidDiceRaceResultType = 455
-    EventContentTreasureDataNotFound = 456
-    EventContentTreasureNotComplete = 457
-    EventContentTreasureFlipFailed = 458
-    EventcontentConcentrationFlipCountZero = 459
-    EventContentConcentrationRequestSameIndex = 460
-    EventContentConcentrationAlreadyMatchedIndex = 461
-    EventContentConcentrationCannotCompleteRound = 462
-    EventContentConcentrationCannotSkipRound = 463
-    EventContentClueSearchCannotSubmit = 464
-    EventContentClueSearchCannotCompleteRound = 465
-    MiniGameStageIsNotOpen = 466
-    MiniGameStageInvalidResult = 467
-    MiniGameShootingStageInvlid = 468
-    MiniGameShootingCannotSweep = 469
-    MiniGameTableBoardSaveNotExist = 470
-    MiniGameTableBoardPlayerCannotMove = 471
-    MiniGameTableBoardNoActiveEncounter = 472
-    MiniGameTableBoardInvalidEncounterRequest = 473
-    MiniGameTableBoardProcessEncounterFailed = 474
-    MiniGameTableBoardItemNotExist = 475
-    MiniGameTableBoardInvalidItemUse = 476
-    MiniGameTableBoardInvalidClearThemaRequest = 477
-    MiniGameTableBoardInvalidSeason = 478
-    MiniGameTableBoardInvalidResurrectRequest = 479
-    MiniGameTableBoardSweepConditionFail = 480
-    MiniGameTableBoardInvalidData = 481
-    MiniGameDreamCannotStartNewGame = 482
-    MiniGameDreamCannotApplyMultiplier = 483
-    MiniGameDreamCannotReset = 484
-    MiniGameDreamNotEnoughActionCount = 485
-    MiniGameDreamSaveNotExist = 486
-    MiniGameDreamActionCountRemain = 487
-    MiniGameDreamRoundNotComplete = 488
-    MiniGameDreamRewardAlreadyReceived = 489
-    MiniGameDreamRoundCompleted = 490
-    MiniGameShouldReceiveEndingReward = 491
-    MiniGameDefenseCannotUseCharacter = 492
-    MiniGameDefenseNotOpenStage = 493
-    MiniGameDefenseCannotApplyMultiplier = 494
-    MiniGameRoadPuzzleInvalidTilePlacement = 495
-    MiniGameRoadPuzzleCannotTrainDeparture = 496
-    MiniGameRoadPuzzleAlreadyCleared = 497
-    MiniGameRoadPuzzleCannotSave = 498
-    MiniGameCCGPlayingSaveAlreadyExists = 499
-    MiniGameCCGSaveNotExists = 500
-    MiniGameCCGPlayingStageAlreadyExists = 501
-    MiniGameCCGPlayingStageNotExists = 502
-    MiniGameCCGInvalidOperation = 503
-    MiniGameCCGSaveNotComplete = 504
-    MiniGameCCGNoRerollPoint = 505
-    MiniGameJankenCannotEnterStage = 506
-    MiniGameJankenConditionNotSatisfied = 507
-    MiniGameJankenEchelonNotSet = 508
-    MiniGameJankenInvalidScore = 509
-    ProofTokenNotSubmitted = 510
-    SchoolDungeonInfoNotFound = 511
-    SchoolDungeonNotOpened = 512
-    SchoolDungeonInvalidSaveData = 513
-    SchoolDungeonBattleWinnerInvalid = 514
-    SchoolDungeonInvalidReward = 515
-    TimeAttackDungeonDataNotFound = 516
-    TimeAttackDungeonNotOpen = 517
-    TimeAttackDungeonRoomTimeOut = 518
-    TimeAttackDungeonRoomPlayCountOver = 519
-    TimeAttackDungeonRoomAlreadyExists = 520
-    TimeAttackDungeonRoomAlreadyClosed = 521
-    TimeAttackDungeonRoomNotExist = 522
-    TimeAttackDungeonInvalidRequest = 523
-    TimeAttackDungeonInvalidData = 524
-    WorldRaidDataNotFound = 525
-    WorldRaidSeasonNotOpen = 526
-    WorldRaidBossGroupNotOpen = 527
-    WorldRaidInvalidOpenCondition = 528
-    WorldRaidDifficultyNotOpen = 529
-    WorldRaidAssistCharacterLimitOver = 530
-    WorldRaidContainBlackListCharacter = 531
-    WorldRaidValidFixedEchelonSetting = 532
-    WorldRaidAlredayReceiveRewardAll = 533
-    WorldRaidCannotReceiveReward = 534
-    WorldRaidBossAlreadyDead = 535
-    WorldRaidNotAnotherBossKilled = 536
-    WorldRaidBattleResultUpdateFailed = 537
-    WorldRaidGemEnterCountLimitOver = 538
-    WorldRaidCannotGemEnter = 539
-    WorldRaidNeedClearScenarioBoss = 540
-    WorldRaidBossIsAlive = 541
-    WorldRaidInvalidCarrierSkillLevel = 542
-    ConquestDataNotFound = 543
-    ConquestAlreadyConquested = 544
-    ConquestNotFullyConquested = 545
-    ConquestStepNotOpened = 546
-    ConquestUnableToReach = 547
-    ConquestUnableToAttack = 548
-    ConquestEchelonChangedCountMax = 549
-    ConquestEchelonNotFound = 550
-    ConquestCharacterAlreadyDeployed = 551
-    ConquestMaxUpgrade = 552
-    ConquestUnitNotFound = 553
-    ConquestObjectNotFound = 554
-    ConquestCalculateRewardNotFound = 555
-    ConquestInvalidTileType = 556
-    ConquestInvalidObjectType = 557
-    ConquestInvalidSaveData = 558
-    ConquestMaxAssistCountReached = 559
-    ConquestErosionConditionNotSatisfied = 560
-    ConquestAdditionalContentNotInUse = 561
-    ConquestCannotUseManageEchelon = 562
-    FriendUserIsNotFriend = 563
-    FriendFailedToCreateFriendIdCard = 564
-    FriendRequestNotFound = 565
-    FriendInvalidFriendCode = 566
-    FriendAlreadyFriend = 567
-    FriendMaxSentRequestReached = 568
-    FriendMaxReceivedRequestReached = 569
-    FriendCannotRequestMaxFriendCountReached = 570
-    FriendCannotAcceptMaxFriendCountReached = 571
-    FriendOpponentMaxFriendCountReached = 572
-    FriendTargetIsBusy = 573
-    FriendRequestTargetIsYourself = 574
-    FriendSearchTargetIsYourself = 575
-    FriendInvalidBackgroundId = 576
-    FriendIdCardCommentLengthOverLimit = 577
-    FriendBackgroundNotOwned = 578
-    FriendBlockTargetIsYourself = 579
-    FriendBlockTargetIsAlreadyBlocked = 580
-    FriendBlockTargetIsExceedMaxCount = 581
-    FriendBlockUserCannotOpenProfile = 582
-    FriendBlockUserCannotSendRequest = 583
-    FriendSearchResultIsEmpty = 584
-    EliminateStageIsNotOpened = 585
-    MultiSweepPresetDocumentNotFound = 586
-    MultiSweepPresetNameEmpty = 587
-    MultiSweepPresetInvalidStageId = 588
-    MultiSweepPresetInvalidId = 589
-    MultiSweepPresetNameInvalidLength = 590
-    MultiSweepPresetTooManySelectStageId = 591
-    MultiSweepPresetInvalidSweepCount = 592
-    MultiSweepPresetTooManySelectParcelId = 593
-    EmblemDataNotFound = 594
-    EmblemAttachFailed = 595
-    EmblemCannotReceive = 596
-    EmblemPassCheckEmblemIsEmpty = 597
-    StickerDataNotFound = 598
-    StickerNotAcquired = 599
-    StickerDocumentNotFound = 600
-    StickerAlreadyUsed = 601
-    ClearDeckInvalidKey = 602
-    ClearDeckOutOfDate = 603
-    FieldDataNotFound = 604
-    FieldInteracionFailed = 605
-    FieldQuestClearFailed = 606
-    FieldInvalidSceneChangedRequest = 607
-    FieldInvalidEndDateRequest = 608
-    FieldCreateDailyQuestFailed = 609
-    FieldResetReplayFailed = 610
-    FieldIncreaseMasteryFailed = 611
-    FieldStageDataInvalid = 612
-    FieldStageEnterFail = 613
-    FieldContentIsClosed = 614
-    FieldEventStageNotCleared = 615
-    MultiFloorRaidSeasonNotOpened = 616
-    MultiFloorRaidDataNotFound = 617
-    MultiFloorRaidAssistCharacterLimitOver = 618
-    MultiFloorRaidStageOpenConditionFail = 619
-    MultiFloorRaidInvalidSummary = 620
-    MultiFloorRaidInvalidRewardRequest = 621
-    BattlePassSeasonNotOpen = 622
-    BattlePassBuyLevelAlreadyMaxLevel = 623
-    BattlePassBuyLevelMaxLevelOver = 624
-    BattlePassBuyLevelBuyCountError = 625
-    BattlePassAlreadyGetRewardAll = 626
-    DailyRecordNotFound = 627
-    DailyRecordAlreadyExpired = 628
-    DailyRecordRewardNotExist = 629
-    PermanentRaidNotOpen = 630
-    PermanentRaidDataNotFound = 631
-    PermanentRaidBossIsLocked = 632
-    PermanentRaidBossIsAlreadyClosed = 633
-    SNSPostNotExistToRead = 634
-    WelcomeCampaignInitError = 635
-    WelcomeCampaignNotOpen = 636
-    WelcomeCampaignEnterRewardFailed = 637
-    StreakRecordInvalidSeasonId = 638
-    StreakRecordAlreadyGetRewardAll = 639
-    StreakRecordRewardMailEmpty = 640
-    BillingStreakRecordInfo = 641
-    BillingStreakRecordProductNotExist = 642
-    SeasonRecordInvalidSeasonId = 643
-    SeasonRecordAlreaydAttendaceAll = 644
-    SeasonRecordInvalideSupplementRequest = 645
-    SeasonRecordRewardMailEmpty = 646
-    SeasonRecordNotRestoreTarget = 647
-    TacticalRelayInvalidData = 648
-    StudentFrameDataNotFound = 649
-    StudentFrameAttachFailed = 650
-    StudentFrameCannotReceive = 651
-    StudentFramePassCheckIsEmpty = 652
+    RaidRoomAlreadyReset = 295
+    WeekDungeonInfoNotFound = 296
+    WeekDungeonNotOpenToday = 297
+    WeekDungeonBattleWinnerInvalid = 298
+    WeekDungeonInvalidSaveData = 299
+    FindGiftRewardNotFound = 300
+    FindGiftRewardAlreadyAcquired = 301
+    FindGiftClearCountOverTotalCount = 302
+    ArenaInfoNotFound = 303
+    ArenaGroupNotFound = 304
+    ArenaRankHistoryNotFound = 305
+    ArenaRankInvalid = 306
+    ArenaBattleFail = 307
+    ArenaDailyRewardAlreadyBeenReceived = 308
+    ArenaNoSeasonAvailable = 309
+    ArenaAttackCoolTime = 310
+    ArenaOpponentAlreadyBeenAttacked = 311
+    ArenaOpponentRankInvalid = 312
+    ArenaNeedFormationSetting = 313
+    ArenaNoHistory = 314
+    ArenaInvalidRequest = 315
+    ArenaInvalidIndex = 316
+    ArenaNotFoundBattle = 317
+    ArenaBattleTimeOver = 318
+    ArenaRefreshTimeOver = 319
+    ArenaEchelonSettingTimeOver = 320
+    ArenaCannotReceiveReward = 321
+    ArenaRewardNotExist = 322
+    ArenaCannotSetMap = 323
+    ArenaDefenderRankChange = 324
+    AcademyNotFound = 325
+    AcademyScheduleTableNotFound = 326
+    AcademyScheduleOperationNotFound = 327
+    AcademyAlreadyAttendedSchedule = 328
+    AcademyAlreadyAttendedFavorSchedule = 329
+    AcademyRewardCharacterNotFound = 330
+    AcademyScheduleCanNotAttend = 331
+    AcademyTicketZero = 332
+    AcademyMessageCanNotSend = 333
+    ContentSaveDBNotFound = 334
+    ContentSaveDBEntranceFeeEmpty = 335
+    AccountBanned = 336
+    ServerNowLoadingProhibitedWord = 337
+    ServerIsUnderMaintenance = 338
+    ServerMaintenanceSoon = 339
+    AccountIsNotInWhiteList = 340
+    ServerContentsLockUpdating = 341
+    ServerContentsLock = 342
+    CouponIsEmpty = 343
+    CouponIsInvalid = 344
+    UseCouponUsedListReadFail = 345
+    UseCouponUsedCoupon = 346
+    UseCouponNotFoundSerials = 347
+    UseCouponDeleteSerials = 348
+    UseCouponUnapprovedSerials = 349
+    UseCouponExpiredSerials = 350
+    UseCouponMaximumSerials = 351
+    UseCouponNotFoundMeta = 352
+    UseCouponDuplicateUseCoupon = 353
+    UseCouponDuplicateUseSerial = 354
+    BillingStartShopCashIdNotFound = 355
+    BillingStartNotServiceTime = 356
+    BillingStartUseConditionCheckError = 357
+    BillingStartSmallLevel = 358
+    BillingStartMaxPurchaseCount = 359
+    BillingStartFailAddOrder = 360
+    BillingStartExistPurchase = 361
+    BillingEndFailGetOrder = 362
+    BillingEndShopCashIdNotFound = 363
+    BillingEndProductIdNotFound = 364
+    BillingEndMonthlyProductIdNotFound = 365
+    BillingEndInvalidState = 366
+    BillingEndFailUpdteState = 367
+    BillingEndFailSendMail = 368
+    BillingEndInvalidAccount = 369
+    BillingEndNotFoundPurchaseCount = 370
+    BillingEndFailUpdteMonthlyProduct = 371
+    BillingStartMailFull = 372
+    BillingStartInventoryAndMailFull = 373
+    BillingEndRecvedErrorMonthlyProduct = 374
+    MonthlyProductNotOutdated = 375
+    BillingBattlePassProductNotExist = 376
+    BillingBattlePassInfo = 377
+    BillingBattlePassInvalidBuyStep = 378
+    BillingNotFreeProduct = 379
+    BillingPurchaseFreeProduct = 380
+    BillingProductSelectionSlotEmpty = 381
+    BillingProductSelectionSlotNotMatch = 382
+    BillingProductSelectConditionFailed = 383
+    BillingProductSelectionSlotNotFound = 384
+    BillingRewardParcelNotFound = 385
+    BillingCannotAcquireLock = 386
+    BillingPendingProductExists = 387
+    BillingNotStepupProduct = 388
+    BillingStepupInvalidStep = 389
+    ClanNotFound = 390
+    ClanSearchFailed = 391
+    ClanEmptySearchString = 392
+    ClanAccountAlreadyJoinedClan = 393
+    ClanAccountAlreadyQuitClan = 394
+    ClanCreateFailed = 395
+    ClanMemberExceedCapacity = 396
+    ClanDoesNotHavePermission = 397
+    ClanTargetAccountIsNotApplicant = 398
+    ClanMemberNotFound = 399
+    ClanCanNotKick = 400
+    ClanCanNotDismiss = 401
+    ClanCanNotQuit = 402
+    ClanRejoinCoolOff = 403
+    ClanChangeMemberGradeFailed = 404
+    ClanHasBeenDisMissed = 405
+    ClanCannotChangeJoinOption = 406
+    ClanExceedConferCountLimit = 407
+    ClanBusy = 408
+    ClanNameEmptyString = 409
+    ClanNameWithInvalidLength = 410
+    ClanAssistCharacterAlreadyDeployed = 411
+    ClanAssistNotValidUse = 412
+    ClanAssistCharacterChanged = 413
+    ClanAssistCoolTime = 414
+    ClanAssistAlreadyUsedInRaidRoom = 415
+    ClanAssistAlreadyUsedInTimeAttackDungeonRoom = 416
+    ClanAssistEchelonHasAssistOnly = 417
+    ClanKickedMember = 418
+    PaymentInvalidSign = 419
+    PaymentInvalidSeed1 = 420
+    PaymentInvalidSeed2 = 421
+    PaymentInvalidInput = 422
+    PaymentNotFoundPurchase = 423
+    PaymentGetPurchaseOrderNotZero = 424
+    PaymentSetPurchaseOrderNotZero = 425
+    PaymentException = 426
+    PaymentInvalidState = 427
+    SessionNotFound = 428
+    SessionParseFail = 429
+    SessionInvalidInput = 430
+    SessionNotAuth = 431
+    SessionDuplicateLogin = 432
+    SessionTimeOver = 433
+    SessionInvalidVersion = 434
+    SessionChangeDate = 435
+    CallName_RenameCoolTime = 436
+    CallName_EmptyString = 437
+    CallName_InvalidString = 438
+    CallName_TTSServerIsNotAvailable = 439
+    CouchbaseInvalidCas = 440
+    CouchbaseOperationFailed = 441
+    CouchbaseRollBackFailed = 442
+    EventContentCannotSelectBuff = 443
+    EventContentNoBuffGroupAvailable = 444
+    EventContentBuffGroupIdDuplicated = 445
+    EventContentNotOpen = 446
+    EventContentNoTotalRewardAvailable = 447
+    EventContentBoxGachaPurchaseFailed = 448
+    EventContentBoxGachaCannotRefresh = 449
+    EventContentCardShopCannotShuffle = 450
+    EventContentElementDoesNotExist = 451
+    EventContentElementAlreadyPurchased = 452
+    EventContentLocationNotFound = 453
+    EventContentLocationScheduleCanNotAttend = 454
+    EventContentDiceRaceDataNotFound = 455
+    EventContentDiceRaceAlreadyReceiveLapRewardAll = 456
+    EventContentDiceRaceInvalidDiceRaceResultType = 457
+    EventContentTreasureDataNotFound = 458
+    EventContentTreasureNotComplete = 459
+    EventContentTreasureFlipFailed = 460
+    EventcontentConcentrationFlipCountZero = 461
+    EventContentConcentrationRequestSameIndex = 462
+    EventContentConcentrationAlreadyMatchedIndex = 463
+    EventContentConcentrationCannotCompleteRound = 464
+    EventContentConcentrationCannotSkipRound = 465
+    EventContentClueSearchCannotSubmit = 466
+    EventContentClueSearchCannotCompleteRound = 467
+    MiniGameStageIsNotOpen = 468
+    MiniGameStageInvalidResult = 469
+    MiniGameShootingStageInvlid = 470
+    MiniGameShootingCannotSweep = 471
+    MiniGameTableBoardSaveNotExist = 472
+    MiniGameTableBoardPlayerCannotMove = 473
+    MiniGameTableBoardNoActiveEncounter = 474
+    MiniGameTableBoardInvalidEncounterRequest = 475
+    MiniGameTableBoardProcessEncounterFailed = 476
+    MiniGameTableBoardItemNotExist = 477
+    MiniGameTableBoardInvalidItemUse = 478
+    MiniGameTableBoardInvalidClearThemaRequest = 479
+    MiniGameTableBoardInvalidSeason = 480
+    MiniGameTableBoardInvalidResurrectRequest = 481
+    MiniGameTableBoardSweepConditionFail = 482
+    MiniGameTableBoardInvalidData = 483
+    MiniGameDreamCannotStartNewGame = 484
+    MiniGameDreamCannotApplyMultiplier = 485
+    MiniGameDreamCannotReset = 486
+    MiniGameDreamNotEnoughActionCount = 487
+    MiniGameDreamSaveNotExist = 488
+    MiniGameDreamActionCountRemain = 489
+    MiniGameDreamRoundNotComplete = 490
+    MiniGameDreamRewardAlreadyReceived = 491
+    MiniGameDreamRoundCompleted = 492
+    MiniGameShouldReceiveEndingReward = 493
+    MiniGameDefenseCannotUseCharacter = 494
+    MiniGameDefenseNotOpenStage = 495
+    MiniGameDefenseCannotApplyMultiplier = 496
+    MiniGameRoadPuzzleInvalidTilePlacement = 497
+    MiniGameRoadPuzzleCannotTrainDeparture = 498
+    MiniGameRoadPuzzleAlreadyCleared = 499
+    MiniGameRoadPuzzleCannotSave = 500
+    MiniGameCCGPlayingSaveAlreadyExists = 501
+    MiniGameCCGSaveNotExists = 502
+    MiniGameCCGPlayingStageAlreadyExists = 503
+    MiniGameCCGPlayingStageNotExists = 504
+    MiniGameCCGInvalidOperation = 505
+    MiniGameCCGSaveNotComplete = 506
+    MiniGameCCGNoRerollPoint = 507
+    MiniGameJankenCannotEnterStage = 508
+    MiniGameJankenConditionNotSatisfied = 509
+    MiniGameJankenEchelonNotSet = 510
+    MiniGameJankenInvalidScore = 511
+    ProofTokenNotSubmitted = 512
+    SchoolDungeonInfoNotFound = 513
+    SchoolDungeonNotOpened = 514
+    SchoolDungeonInvalidSaveData = 515
+    SchoolDungeonBattleWinnerInvalid = 516
+    SchoolDungeonInvalidReward = 517
+    TimeAttackDungeonDataNotFound = 518
+    TimeAttackDungeonNotOpen = 519
+    TimeAttackDungeonRoomTimeOut = 520
+    TimeAttackDungeonRoomPlayCountOver = 521
+    TimeAttackDungeonRoomAlreadyExists = 522
+    TimeAttackDungeonRoomAlreadyClosed = 523
+    TimeAttackDungeonRoomNotExist = 524
+    TimeAttackDungeonInvalidRequest = 525
+    TimeAttackDungeonInvalidData = 526
+    WorldRaidDataNotFound = 527
+    WorldRaidSeasonNotOpen = 528
+    WorldRaidBossGroupNotOpen = 529
+    WorldRaidInvalidOpenCondition = 530
+    WorldRaidDifficultyNotOpen = 531
+    WorldRaidAssistCharacterLimitOver = 532
+    WorldRaidContainBlackListCharacter = 533
+    WorldRaidValidFixedEchelonSetting = 534
+    WorldRaidAlredayReceiveRewardAll = 535
+    WorldRaidCannotReceiveReward = 536
+    WorldRaidBossAlreadyDead = 537
+    WorldRaidNotAnotherBossKilled = 538
+    WorldRaidBattleResultUpdateFailed = 539
+    WorldRaidGemEnterCountLimitOver = 540
+    WorldRaidCannotGemEnter = 541
+    WorldRaidNeedClearScenarioBoss = 542
+    WorldRaidBossIsAlive = 543
+    WorldRaidInvalidCarrierSkillLevel = 544
+    ConquestDataNotFound = 545
+    ConquestAlreadyConquested = 546
+    ConquestNotFullyConquested = 547
+    ConquestStepNotOpened = 548
+    ConquestUnableToReach = 549
+    ConquestUnableToAttack = 550
+    ConquestEchelonChangedCountMax = 551
+    ConquestEchelonNotFound = 552
+    ConquestCharacterAlreadyDeployed = 553
+    ConquestMaxUpgrade = 554
+    ConquestUnitNotFound = 555
+    ConquestObjectNotFound = 556
+    ConquestCalculateRewardNotFound = 557
+    ConquestInvalidTileType = 558
+    ConquestInvalidObjectType = 559
+    ConquestInvalidSaveData = 560
+    ConquestMaxAssistCountReached = 561
+    ConquestErosionConditionNotSatisfied = 562
+    ConquestAdditionalContentNotInUse = 563
+    ConquestCannotUseManageEchelon = 564
+    FriendUserIsNotFriend = 565
+    FriendFailedToCreateFriendIdCard = 566
+    FriendRequestNotFound = 567
+    FriendInvalidFriendCode = 568
+    FriendAlreadyFriend = 569
+    FriendMaxSentRequestReached = 570
+    FriendMaxReceivedRequestReached = 571
+    FriendCannotRequestMaxFriendCountReached = 572
+    FriendCannotAcceptMaxFriendCountReached = 573
+    FriendOpponentMaxFriendCountReached = 574
+    FriendTargetIsBusy = 575
+    FriendRequestTargetIsYourself = 576
+    FriendSearchTargetIsYourself = 577
+    FriendInvalidBackgroundId = 578
+    FriendIdCardCommentLengthOverLimit = 579
+    FriendBackgroundNotOwned = 580
+    FriendBlockTargetIsYourself = 581
+    FriendBlockTargetIsAlreadyBlocked = 582
+    FriendBlockTargetIsExceedMaxCount = 583
+    FriendBlockUserCannotOpenProfile = 584
+    FriendBlockUserCannotSendRequest = 585
+    FriendSearchResultIsEmpty = 586
+    EliminateStageIsNotOpened = 587
+    MultiSweepPresetDocumentNotFound = 588
+    MultiSweepPresetNameEmpty = 589
+    MultiSweepPresetInvalidStageId = 590
+    MultiSweepPresetInvalidId = 591
+    MultiSweepPresetNameInvalidLength = 592
+    MultiSweepPresetTooManySelectStageId = 593
+    MultiSweepPresetInvalidSweepCount = 594
+    MultiSweepPresetTooManySelectParcelId = 595
+    EmblemDataNotFound = 596
+    EmblemAttachFailed = 597
+    EmblemCannotReceive = 598
+    EmblemPassCheckEmblemIsEmpty = 599
+    StickerDataNotFound = 600
+    StickerNotAcquired = 601
+    StickerDocumentNotFound = 602
+    StickerAlreadyUsed = 603
+    ClearDeckInvalidKey = 604
+    ClearDeckOutOfDate = 605
+    FieldDataNotFound = 606
+    FieldInteracionFailed = 607
+    FieldQuestClearFailed = 608
+    FieldInvalidSceneChangedRequest = 609
+    FieldInvalidEndDateRequest = 610
+    FieldCreateDailyQuestFailed = 611
+    FieldResetReplayFailed = 612
+    FieldIncreaseMasteryFailed = 613
+    FieldStageDataInvalid = 614
+    FieldStageEnterFail = 615
+    FieldContentIsClosed = 616
+    FieldEventStageNotCleared = 617
+    MultiFloorRaidSeasonNotOpened = 618
+    MultiFloorRaidDataNotFound = 619
+    MultiFloorRaidAssistCharacterLimitOver = 620
+    MultiFloorRaidStageOpenConditionFail = 621
+    MultiFloorRaidInvalidSummary = 622
+    MultiFloorRaidInvalidRewardRequest = 623
+    BattlePassSeasonNotOpen = 624
+    BattlePassBuyLevelAlreadyMaxLevel = 625
+    BattlePassBuyLevelMaxLevelOver = 626
+    BattlePassBuyLevelBuyCountError = 627
+    BattlePassAlreadyGetRewardAll = 628
+    DailyRecordNotFound = 629
+    DailyRecordAlreadyExpired = 630
+    DailyRecordRewardNotExist = 631
+    PermanentRaidNotOpen = 632
+    PermanentRaidDataNotFound = 633
+    PermanentRaidBossIsLocked = 634
+    PermanentRaidBossIsAlreadyClosed = 635
+    SNSPostNotExistToRead = 636
+    WelcomeCampaignInitError = 637
+    WelcomeCampaignNotOpen = 638
+    WelcomeCampaignEnterRewardFailed = 639
+    StreakRecordInvalidSeasonId = 640
+    StreakRecordAlreadyGetRewardAll = 641
+    StreakRecordRewardMailEmpty = 642
+    BillingStreakRecordInfo = 643
+    BillingStreakRecordProductNotExist = 644
+    SeasonRecordInvalidSeasonId = 645
+    SeasonRecordAlreaydAttendaceAll = 646
+    SeasonRecordInvalideSupplementRequest = 647
+    SeasonRecordRewardMailEmpty = 648
+    SeasonRecordNotRestoreTarget = 649
+    TacticalRelayInvalidData = 650
+    StudentFrameDataNotFound = 651
+    StudentFrameAttachFailed = 652
+    StudentFrameCannotReceive = 653
+    StudentFramePassCheckIsEmpty = 654
+    CharacterAdaptationSeasonNotOpened = 655
+    CharacterAdaptationInvalidCharacter = 656
+    CharacterAdaptationProgressOrderNotSatisfied = 657
+    CharacterAdaptationAlreadyInProgress = 658
+    CharacterAdaptationAlreadyReceived = 659
+    CharacterAdaptationStartDeniedByAssist = 660
+    CharacterAdaptationStartDeniedByArenaDefence = 661
+    CharacterAdaptationNotInProgress = 662
+    CharacterAdaptationGrowthStepNotCleared = 663
+    CharacterAdaptationAlreadyMaxStep = 664
+    ClanAssistDeniedByCharacterAdaptation = 665
+    EchelonDeniedByCharacterAdaptation = 666
 
 class StepState(IntEnum):
     Default = 0
@@ -10399,6 +10463,8 @@ class LogCode(IntEnum):
     TacticalRelay_Reward = 117
     TacticalRelay_Detail = 118
     TacticalRelay_Squad = 119
+    CharacterAdaptation_Advance = 120
+    CharacterAdaptation_Receive = 121
 
 class AssistRelation(IntEnum):
     None_ = 0
@@ -10432,6 +10498,11 @@ class EchelonStatusFlag(IntEnum):
     BeforeDeploy = 1
     OnDuty = 2
 
+class ConcentrationCardState(IntEnum):
+    None_ = 0
+    Matched = 1
+    Touched = 2
+
 class IssueAlertTypeCode(IntEnum):
     All = 0
     File_Target = 1
@@ -10462,6 +10533,7 @@ class ShopProductType(IntEnum):
 class SystemAssistType(IntEnum):
     None_ = 0
     Bot = 1
+    CharacterAdaptation = 2
 
 class IrcMessageType(IntEnum):
     None_ = 0
@@ -10855,9 +10927,10 @@ class HeroStatus(IntEnum):
     ImmuneGroggyGaugeAdd = 59
     Rage = 60
     Untargetable = 61
-    Metamorph = 62
-    Thorns = 63
-    All = 64
+    AlwaysHit = 62
+    Metamorph = 63
+    Thorns = 64
+    All = 65
 
 class HeroSummaryDetailFlag(IntEnum):
     None_ = 0
@@ -11037,22 +11110,24 @@ class BattleTypes(IntEnum):
     EliminateRaid = 13
     MultiFloorRaid = 14
     TacticalRelay = 15
-    MinigameDefense = 16
-    Arena = 17
-    TimeAttack = 18
-    SchoolDungeonA = 19
-    SchoolDungeonB = 20
-    SchoolDungeonC = 21
-    WorldRaid = 22
-    Conquest = 23
-    FieldStory = 24
-    FieldContent = 25
-    PvE = 26
-    WeekDungeon = 27
-    SchoolDungeon = 28
-    Raid = 29
-    PvP = 30
-    All = 31
+    WeekDungeonChaserD = 16
+    WeekDungeonChaserE = 17
+    MinigameDefense = 18
+    Arena = 19
+    TimeAttack = 20
+    SchoolDungeonA = 21
+    SchoolDungeonB = 22
+    SchoolDungeonC = 23
+    WorldRaid = 24
+    Conquest = 25
+    FieldStory = 26
+    FieldContent = 27
+    PvE = 28
+    WeekDungeon = 29
+    SchoolDungeon = 30
+    Raid = 31
+    PvP = 32
+    All = 33
 
 class EchelonSlotType(IntEnum):
     Main = 0
@@ -11623,6 +11698,12 @@ class ExtraStatType(IntEnum):
     TargetDefaultDefense = 10
     InvokerCurrentDefense = 11
     TargetCurrentDefense = 12
+
+class LogicEffectCheckType(IntEnum):
+    None_ = 0
+    LogicEffectTemplate = 1
+    LogicEffectGroupId = 2
+    LogicEffectCategory = 3
 
 class MovingAreaOptions(IntEnum):
     None_ = 0
@@ -20426,8 +20507,6 @@ class Orientation(IntEnum):
     LANDSCAPE = 0
     PORTRAIT = 1
 
-class LinkPlatform(IntEnum):
-
 class PayStore(IntEnum):
     googleplay = 0
     appstore = 1
@@ -23382,6 +23461,7 @@ def dump_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "ClanMaxMember": convert_int(excel_instance.ClanMaxMember(), password),
         "ClanSearchResultCount": convert_int(excel_instance.ClanSearchResultCount(), password),
         "ClanMaxApplicant": convert_int(excel_instance.ClanMaxApplicant(), password),
+        "ClanKickHistoryMax": convert_int(excel_instance.ClanKickHistoryMax(), password),
         "ClanRejoinCoolTimeFromSecond": convert_int(excel_instance.ClanRejoinCoolTimeFromSecond(), password),
         "ClanWordBalloonMaxCharacter": convert_int(excel_instance.ClanWordBalloonMaxCharacter(), password),
         "CallNameRenameCoolTimeFromHour": convert_int(excel_instance.CallNameRenameCoolTimeFromHour(), password),
@@ -23531,6 +23611,7 @@ def dump_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "TacticalRelayContentsIsOpen": bool(excel_instance.TacticalRelayContentsIsOpen()),
         "ExSkillLevelMaxByEngrave": convert_int(excel_instance.ExSkillLevelMaxByEngrave(), password),
         "ExSkillUpgradeLevelMax": convert_int(excel_instance.ExSkillUpgradeLevelMax(), password),
+        "RaidResetCount": convert_int(excel_instance.RaidResetCount(), password),
     }
 
 def dump_ConstConquestExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25093,6 +25174,76 @@ def dump_CharacterAcademyTagsExcel(excel_instance, password: bytes = b"") -> dic
         "ZoneWhiteListTagsLength": convert_int(excel_instance.ZoneWhiteListTagsLength(), password),
     }
 
+def dump_CharacterAdaptationExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "SeasonId": convert_int(excel_instance.SeasonId(), password),
+        "AdaptationCharacterId": convert_int(excel_instance.AdaptationCharacterId(), password),
+        "ChooseBtnPath": convert_string(excel_instance.ChooseBtnPath(), password),
+        "ProgressOrder": convert_int(excel_instance.ProgressOrder(), password),
+        "AdaptationMissionStepCount": convert_int(excel_instance.AdaptationMissionStepCount(), password),
+        "CharacterStepGrowthGroupId": convert_int(excel_instance.CharacterStepGrowthGroupId(), password),
+    }
+
+def dump_CharacterAdaptationGrowthReturnExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_int(excel_instance.Id(), password),
+        "GrowthReturnType": GrowthReturnType(convert_int(excel_instance.GrowthReturnType(), password)).name,
+        "ReturnStep": convert_int(excel_instance.ReturnStep(), password),
+        "ReturnDivideUnit": convert_int(excel_instance.ReturnDivideUnit(), password),
+        "ReturnParcelType": ParcelType(convert_int(excel_instance.ReturnParcelType(), password)).name,
+        "ReturnParcelId": convert_int(excel_instance.ReturnParcelId(), password),
+        "ReturnParcelAmount": convert_int(excel_instance.ReturnParcelAmount(), password),
+    }
+
+def dump_CharacterAdaptationMissionExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "SeasonId": convert_int(excel_instance.SeasonId(), password),
+        "CharacterId": convert_int(excel_instance.CharacterId(), password),
+        "Id": convert_int(excel_instance.Id(), password),
+        "Category": MissionCategory(convert_int(excel_instance.Category(), password)).name,
+        "IsLegacy": bool(excel_instance.IsLegacy()),
+        "Step": convert_int(excel_instance.Step(), password),
+        "Description": convert_uint(excel_instance.Description(), password),
+        "ToastDisplayType": MissionToastDisplayConditionType(convert_int(excel_instance.ToastDisplayType(), password)).name,
+        "ToastImagePath": convert_string(excel_instance.ToastImagePath(), password),
+        "ShortcutUILength": convert_int(excel_instance.ShortcutUILength(), password),
+        "CompleteConditionType": MissionCompleteConditionType(convert_int(excel_instance.CompleteConditionType(), password)).name,
+        "CompleteConditionCount": convert_int(excel_instance.CompleteConditionCount(), password),
+        "CompleteConditionParameterLength": convert_int(excel_instance.CompleteConditionParameterLength(), password),
+        "CompleteConditionParameterTagLength": convert_int(excel_instance.CompleteConditionParameterTagLength(), password),
+        "MissionRewardParcelTypeLength": convert_int(excel_instance.MissionRewardParcelTypeLength(), password),
+        "MissionRewardParcelIdLength": convert_int(excel_instance.MissionRewardParcelIdLength(), password),
+        "MissionRewardAmountLength": convert_int(excel_instance.MissionRewardAmountLength(), password),
+    }
+
+def dump_CharacterAdaptationSeasonExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_int(excel_instance.Id(), password),
+        "Enabled": bool(excel_instance.Enabled()),
+        "StartDate": convert_string(excel_instance.StartDate(), password),
+        "EndDate": convert_string(excel_instance.EndDate(), password),
+        "IconOrder": convert_int(excel_instance.IconOrder(), password),
+        "LobbyBannerImage": convert_string(excel_instance.LobbyBannerImage(), password),
+    }
+
+def dump_CharacterAdaptationStepGrowthExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_int(excel_instance.Id(), password),
+        "GroupId": convert_int(excel_instance.GroupId(), password),
+        "MissionStep": convert_int(excel_instance.MissionStep(), password),
+        "CharacterLevel": convert_int(excel_instance.CharacterLevel(), password),
+        "EquipSlot1Tier": convert_int(excel_instance.EquipSlot1Tier(), password),
+        "EquipSlot1Level": convert_int(excel_instance.EquipSlot1Level(), password),
+        "EquipSlot2Tier": convert_int(excel_instance.EquipSlot2Tier(), password),
+        "EquipSlot2Level": convert_int(excel_instance.EquipSlot2Level(), password),
+        "EquipSlot3Tier": convert_int(excel_instance.EquipSlot3Tier(), password),
+        "EquipSlot3Level": convert_int(excel_instance.EquipSlot3Level(), password),
+        "ExSkillLevel": convert_int(excel_instance.ExSkillLevel(), password),
+        "PublicSkillLevel": convert_int(excel_instance.PublicSkillLevel(), password),
+        "PassiveSkillLevel": convert_int(excel_instance.PassiveSkillLevel(), password),
+        "ExtraPassiveSkillLevel": convert_int(excel_instance.ExtraPassiveSkillLevel(), password),
+    }
+
 def dump_CharacterAIExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
@@ -26085,6 +26236,7 @@ def dump_CostumeExcel(excel_instance, password: bytes = b"") -> dict:
         "UseObjectHPBAR": bool(excel_instance.UseObjectHPBAR()),
         "TextureBoss": convert_string(excel_instance.TextureBoss(), password),
         "TextureSkillCardLength": convert_int(excel_instance.TextureSkillCardLength(), password),
+        "TextureGachaCard": convert_string(excel_instance.TextureGachaCard(), password),
         "InformationPacel": convert_string(excel_instance.InformationPacel(), password),
         "AnimationSSR": convert_string(excel_instance.AnimationSSR(), password),
         "EnterStrategyAnimationName": convert_string(excel_instance.EnterStrategyAnimationName(), password),
@@ -26495,6 +26647,10 @@ def dump_EventContentClueSearchExcel(excel_instance, password: bytes = b"") -> d
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "TitleLocalize": convert_uint(excel_instance.TitleLocalize(), password),
+        "SearchCostGoodsId": convert_int(excel_instance.SearchCostGoodsId(), password),
+        "DeductionPointItemId": convert_int(excel_instance.DeductionPointItemId(), password),
+        "InspirationConvertCount": convert_int(excel_instance.InspirationConvertCount(), password),
+        "MaxSearchCount": convert_int(excel_instance.MaxSearchCount(), password),
         "UsePrefabName": convert_string(excel_instance.UsePrefabName(), password),
         "ClueBGImagePath": convert_string(excel_instance.ClueBGImagePath(), password),
     }
@@ -26704,6 +26860,7 @@ def dump_EventContentLocationExcel(excel_instance, password: bytes = b"") -> dic
         "Id": convert_int(excel_instance.Id(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "PrefabPath": convert_string(excel_instance.PrefabPath(), password),
+        "BGPath": convert_string(excel_instance.BGPath(), password),
         "LocationResetScheduleCount": convert_int(excel_instance.LocationResetScheduleCount(), password),
         "ScheduleEventPointCostParcelType": ParcelType(convert_int(excel_instance.ScheduleEventPointCostParcelType(), password)).name,
         "ScheduleEventPointCostParcelId": convert_int(excel_instance.ScheduleEventPointCostParcelId(), password),
@@ -27305,6 +27462,7 @@ def dump_FloaterCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "FloaterOffsetPosY": convert_int(excel_instance.FloaterOffsetPosY(), password),
         "FloaterRandomPosRangeX": convert_int(excel_instance.FloaterRandomPosRangeX(), password),
         "FloaterRandomPosRangeY": convert_int(excel_instance.FloaterRandomPosRangeY(), password),
+        "LimitedFloaterRandomPosRangeY": convert_int(excel_instance.LimitedFloaterRandomPosRangeY(), password),
     }
 
 def dump_FormationLocationExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27925,6 +28083,7 @@ def dump_ItemExcel(excel_instance, password: bytes = b"") -> dict:
         "GachaTicket": GachaTicketType(convert_int(excel_instance.GachaTicket(), password)).name,
         "AlertPopupId": convert_int(excel_instance.AlertPopupId(), password),
         "ShiftingCraftRecipe": convert_int(excel_instance.ShiftingCraftRecipe(), password),
+        "ShowContents": bool(excel_instance.ShowContents()),
     }
 
 def dump_KeyMappingExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27954,6 +28113,13 @@ def dump_LevelExpMasterCoinExcel(excel_instance, password: bytes = b"") -> dict:
         "MinLevel": convert_int(excel_instance.MinLevel(), password),
         "MaxLevel": convert_int(excel_instance.MaxLevel(), password),
         "Ratio": convert_int(excel_instance.Ratio(), password),
+        "ProductMonthlyId1Length": convert_int(excel_instance.ProductMonthlyId1Length(), password),
+        "PlusMasterCoinRatio1": convert_int(excel_instance.PlusMasterCoinRatio1(), password),
+        "PlusMasterCoinIconName1": convert_string(excel_instance.PlusMasterCoinIconName1(), password),
+        "ProductMonthlyId2Length": convert_int(excel_instance.ProductMonthlyId2Length(), password),
+        "PlusMasterCoinRatio2": convert_int(excel_instance.PlusMasterCoinRatio2(), password),
+        "PlusMasterCoinIconName2": convert_string(excel_instance.PlusMasterCoinIconName2(), password),
+        "PlusMasterCoinIconName3": convert_string(excel_instance.PlusMasterCoinIconName3(), password),
     }
 
 def dump_LoadingImageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29757,6 +29923,9 @@ def dump_ScenarioContentCollectionExcel(excel_instance, password: bytes = b"") -
         "EmblemResource": convert_string(excel_instance.EmblemResource(), password),
         "ThumbResource": convert_string(excel_instance.ThumbResource(), password),
         "FullResource": convert_string(excel_instance.FullResource(), password),
+        "FullResourcePosX": convert_float(excel_instance.FullResourcePosX(), password),
+        "FullResourcePosY": convert_float(excel_instance.FullResourcePosY(), password),
+        "FullResourceScale": convert_float(excel_instance.FullResourceScale(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "SubNameLocalizeCodeId": convert_string(excel_instance.SubNameLocalizeCodeId(), password),
     }
@@ -29984,6 +30153,7 @@ def dump_ShopCashExcel(excel_instance, password: bytes = b"") -> dict:
         "InMailPurchaseLock": bool(excel_instance.InMailPurchaseLock()),
         "UseMailParcel": bool(excel_instance.UseMailParcel()),
         "IconPath": convert_string(excel_instance.IconPath(), password),
+        "SubIconPath": convert_string(excel_instance.SubIconPath(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "RenewalDisplayOrder": convert_int(excel_instance.RenewalDisplayOrder(), password),
         "ShopCashStepupId": convert_int(excel_instance.ShopCashStepupId(), password),
@@ -30205,6 +30375,7 @@ def dump_ShopRecruitExcel(excel_instance, password: bytes = b"") -> dict:
         "WishListConfig": WishListConfig(convert_int(excel_instance.WishListConfig(), password)).name,
         "WishListHalfStackGachaGroupId": convert_int(excel_instance.WishListHalfStackGachaGroupId(), password),
         "WishListFullStackGachaGroupId": convert_int(excel_instance.WishListFullStackGachaGroupId(), password),
+        "RecruitSeason": convert_int(excel_instance.RecruitSeason(), password),
     }
 
 def dump_ShopRecruitMileageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -30526,6 +30697,8 @@ def dump_TacticalRelayStageExcel(excel_instance, password: bytes = b"") -> dict:
         "PrevStageId": convert_int(excel_instance.PrevStageId(), password),
         "GroundID": convert_int(excel_instance.GroundID(), password),
         "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "EnemyArmorType": ArmorType(convert_int(excel_instance.EnemyArmorType(), password)).name,
+        "EnemySubArmorType": ArmorType(convert_int(excel_instance.EnemySubArmorType(), password)).name,
         "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
         "StageEnterCostId": convert_int(excel_instance.StageEnterCostId(), password),
         "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
@@ -31654,6 +31827,31 @@ def dump_CampaignUnitExcelTable(excel_instance, password: bytes = b"") -> dict:
 def dump_CharacterAcademyTagsExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [dump_CharacterAcademyTagsExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterAdaptationExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterAdaptationExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterAdaptationGrowthReturnExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterAdaptationGrowthReturnExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterAdaptationMissionExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterAdaptationMissionExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterAdaptationSeasonExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterAdaptationSeasonExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
+    }
+
+def dump_CharacterAdaptationStepGrowthExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [dump_CharacterAdaptationStepGrowthExcel(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_CharacterAIExcelTable(excel_instance, password: bytes = b"") -> dict:

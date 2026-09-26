@@ -122,127 +122,141 @@ class TacticalRelayStageExcel:
         return 0
 
 
-    def StageEnterCostType(self):
+    def EnemyArmorType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageEnterCostId(self):
+    def EnemySubArmorType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageEnterCostAmount(self):
+    def StageEnterCostType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TacticRewardExp(self):
+    def StageEnterCostId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageRewardIdEgo(self):
+    def StageEnterCostAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageRewardIdConscious(self):
+    def TacticRewardExp(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageRewardIdUnconscious(self):
+    def StageRewardIdEgo(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageRewardLocalizePrefabId01(self):
+    def StageRewardIdConscious(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageRewardLocalizePrefabId02(self):
+    def StageRewardIdUnconscious(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageRewardLocalizePrefabId03(self):
+    def StageRewardLocalizePrefabId01(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EchelonCount(self):
+    def StageRewardLocalizePrefabId02(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
-    def ApcSlotDefineId(self):
+    def StageRewardLocalizePrefabId03(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
-    def FavorCollectionScoreBonusId(self):
+    def EchelonCount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def EchelonExtensionType(self):
+    def ApcSlotDefineId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def AssistSlot(self):
+    def FavorCollectionScoreBonusId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def StageHint(self):
+    def EchelonExtensionType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def WaveInfoTipIconPathLength(self):
+    def AssistSlot(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def WaveInfoTipLocalizeEtcIdLength(self):
+    def StageHint(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def WaveInfoTipIconPathLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def WaveInfoTipLocalizeEtcIdLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
@@ -251,7 +265,7 @@ class TacticalRelayStageExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(33)
+    def Start(builder): builder.StartObject(35)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -315,73 +329,81 @@ class TacticalRelayStageExcel:
 
 
     @staticmethod
-    def AddStageEnterCostType(builder, StageEnterCostType): builder.PrependInt32Slot(15, StageEnterCostType, 0)
+    def AddEnemyArmorType(builder, EnemyArmorType): builder.PrependInt32Slot(15, EnemyArmorType, 0)
 
 
     @staticmethod
-    def AddStageEnterCostId(builder, StageEnterCostId): builder.PrependInt32Slot(16, StageEnterCostId, 0)
+    def AddEnemySubArmorType(builder, EnemySubArmorType): builder.PrependInt32Slot(16, EnemySubArmorType, 0)
 
 
     @staticmethod
-    def AddStageEnterCostAmount(builder, StageEnterCostAmount): builder.PrependInt32Slot(17, StageEnterCostAmount, 0)
+    def AddStageEnterCostType(builder, StageEnterCostType): builder.PrependInt32Slot(17, StageEnterCostType, 0)
 
 
     @staticmethod
-    def AddTacticRewardExp(builder, TacticRewardExp): builder.PrependInt32Slot(18, TacticRewardExp, 0)
+    def AddStageEnterCostId(builder, StageEnterCostId): builder.PrependInt32Slot(18, StageEnterCostId, 0)
 
 
     @staticmethod
-    def AddStageRewardIdEgo(builder, StageRewardIdEgo): builder.PrependInt32Slot(19, StageRewardIdEgo, 0)
+    def AddStageEnterCostAmount(builder, StageEnterCostAmount): builder.PrependInt32Slot(19, StageEnterCostAmount, 0)
 
 
     @staticmethod
-    def AddStageRewardIdConscious(builder, StageRewardIdConscious): builder.PrependInt32Slot(20, StageRewardIdConscious, 0)
+    def AddTacticRewardExp(builder, TacticRewardExp): builder.PrependInt32Slot(20, TacticRewardExp, 0)
 
 
     @staticmethod
-    def AddStageRewardIdUnconscious(builder, StageRewardIdUnconscious): builder.PrependInt32Slot(21, StageRewardIdUnconscious, 0)
+    def AddStageRewardIdEgo(builder, StageRewardIdEgo): builder.PrependInt32Slot(21, StageRewardIdEgo, 0)
 
 
     @staticmethod
-    def AddStageRewardLocalizePrefabId01(builder, StageRewardLocalizePrefabId01): builder.PrependUint32Slot(22, StageRewardLocalizePrefabId01, 0)
+    def AddStageRewardIdConscious(builder, StageRewardIdConscious): builder.PrependInt32Slot(22, StageRewardIdConscious, 0)
 
 
     @staticmethod
-    def AddStageRewardLocalizePrefabId02(builder, StageRewardLocalizePrefabId02): builder.PrependUint32Slot(23, StageRewardLocalizePrefabId02, 0)
+    def AddStageRewardIdUnconscious(builder, StageRewardIdUnconscious): builder.PrependInt32Slot(23, StageRewardIdUnconscious, 0)
 
 
     @staticmethod
-    def AddStageRewardLocalizePrefabId03(builder, StageRewardLocalizePrefabId03): builder.PrependUint32Slot(24, StageRewardLocalizePrefabId03, 0)
+    def AddStageRewardLocalizePrefabId01(builder, StageRewardLocalizePrefabId01): builder.PrependUint32Slot(24, StageRewardLocalizePrefabId01, 0)
 
 
     @staticmethod
-    def AddEchelonCount(builder, EchelonCount): builder.PrependInt32Slot(25, EchelonCount, 0)
+    def AddStageRewardLocalizePrefabId02(builder, StageRewardLocalizePrefabId02): builder.PrependUint32Slot(25, StageRewardLocalizePrefabId02, 0)
 
 
     @staticmethod
-    def AddApcSlotDefineId(builder, ApcSlotDefineId): builder.PrependInt32Slot(26, ApcSlotDefineId, 0)
+    def AddStageRewardLocalizePrefabId03(builder, StageRewardLocalizePrefabId03): builder.PrependUint32Slot(26, StageRewardLocalizePrefabId03, 0)
 
 
     @staticmethod
-    def AddFavorCollectionScoreBonusId(builder, FavorCollectionScoreBonusId): builder.PrependInt32Slot(27, FavorCollectionScoreBonusId, 0)
+    def AddEchelonCount(builder, EchelonCount): builder.PrependInt32Slot(27, EchelonCount, 0)
 
 
     @staticmethod
-    def AddEchelonExtensionType(builder, EchelonExtensionType): builder.PrependInt32Slot(28, EchelonExtensionType, 0)
+    def AddApcSlotDefineId(builder, ApcSlotDefineId): builder.PrependInt32Slot(28, ApcSlotDefineId, 0)
 
 
     @staticmethod
-    def AddAssistSlot(builder, AssistSlot): builder.PrependInt32Slot(29, AssistSlot, 0)
+    def AddFavorCollectionScoreBonusId(builder, FavorCollectionScoreBonusId): builder.PrependInt32Slot(29, FavorCollectionScoreBonusId, 0)
 
 
     @staticmethod
-    def AddStageHint(builder, StageHint): builder.PrependUint32Slot(30, StageHint, 0)
+    def AddEchelonExtensionType(builder, EchelonExtensionType): builder.PrependInt32Slot(30, EchelonExtensionType, 0)
 
 
     @staticmethod
-    def AddWaveInfoTipIconPathLength(builder, WaveInfoTipIconPathLength): builder.PrependInt32Slot(31, WaveInfoTipIconPathLength, 0)
+    def AddAssistSlot(builder, AssistSlot): builder.PrependInt32Slot(31, AssistSlot, 0)
 
 
     @staticmethod
-    def AddWaveInfoTipLocalizeEtcIdLength(builder, WaveInfoTipLocalizeEtcIdLength): builder.PrependInt32Slot(32, WaveInfoTipLocalizeEtcIdLength, 0)
+    def AddStageHint(builder, StageHint): builder.PrependUint32Slot(32, StageHint, 0)
+
+
+    @staticmethod
+    def AddWaveInfoTipIconPathLength(builder, WaveInfoTipIconPathLength): builder.PrependInt32Slot(33, WaveInfoTipIconPathLength, 0)
+
+
+    @staticmethod
+    def AddWaveInfoTipLocalizeEtcIdLength(builder, WaveInfoTipLocalizeEtcIdLength): builder.PrependInt32Slot(34, WaveInfoTipLocalizeEtcIdLength, 0)
 

@@ -269,10 +269,17 @@ class ItemExcel:
         return 0
 
 
+    def ShowContents(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(36)
+    def Start(builder): builder.StartObject(37)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -416,4 +423,8 @@ class ItemExcel:
 
     @staticmethod
     def AddShiftingCraftRecipe(builder, ShiftingCraftRecipe): builder.PrependInt32Slot(35, ShiftingCraftRecipe, 0)
+
+
+    @staticmethod
+    def AddShowContents(builder, ShowContents): builder.PrependBoolSlot(36, ShowContents, 0)
 

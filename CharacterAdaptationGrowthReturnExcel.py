@@ -3,13 +3,13 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class EventContentClueSearchExcel:
+class CharacterAdaptationGrowthReturnExcel:
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = EventContentClueSearchExcel()
+        x = CharacterAdaptationGrowthReturnExcel()
         x.Init(buf, n + offset)
         return x
 
@@ -17,96 +17,87 @@ class EventContentClueSearchExcel:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def EventContentId(self):
+    def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def TitleLocalize(self):
+    def GrowthReturnType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def SearchCostGoodsId(self):
+    def ReturnStep(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def DeductionPointItemId(self):
+    def ReturnDivideUnit(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def InspirationConvertCount(self):
+    def ReturnParcelType(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def MaxSearchCount(self):
+    def ReturnParcelId(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def UsePrefabName(self):
+    def ReturnParcelAmount(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-
-    def ClueBGImagePath(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
 
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(8)
+    def Start(builder): builder.StartObject(7)
     @staticmethod
     def End(builder): return builder.EndObject()
 
 
     @staticmethod
-    def AddEventContentId(builder, EventContentId): builder.PrependInt32Slot(0, EventContentId, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddTitleLocalize(builder, TitleLocalize): builder.PrependUint32Slot(1, TitleLocalize, 0)
+    def AddGrowthReturnType(builder, GrowthReturnType): builder.PrependInt32Slot(1, GrowthReturnType, 0)
 
 
     @staticmethod
-    def AddSearchCostGoodsId(builder, SearchCostGoodsId): builder.PrependInt32Slot(2, SearchCostGoodsId, 0)
+    def AddReturnStep(builder, ReturnStep): builder.PrependInt32Slot(2, ReturnStep, 0)
 
 
     @staticmethod
-    def AddDeductionPointItemId(builder, DeductionPointItemId): builder.PrependInt32Slot(3, DeductionPointItemId, 0)
+    def AddReturnDivideUnit(builder, ReturnDivideUnit): builder.PrependInt32Slot(3, ReturnDivideUnit, 0)
 
 
     @staticmethod
-    def AddInspirationConvertCount(builder, InspirationConvertCount): builder.PrependInt32Slot(4, InspirationConvertCount, 0)
+    def AddReturnParcelType(builder, ReturnParcelType): builder.PrependInt32Slot(4, ReturnParcelType, 0)
 
 
     @staticmethod
-    def AddMaxSearchCount(builder, MaxSearchCount): builder.PrependInt32Slot(5, MaxSearchCount, 0)
+    def AddReturnParcelId(builder, ReturnParcelId): builder.PrependInt32Slot(5, ReturnParcelId, 0)
 
 
     @staticmethod
-    def AddUsePrefabName(builder, UsePrefabName): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(UsePrefabName), 0)
+    def AddReturnParcelAmount(builder, ReturnParcelAmount): builder.PrependInt32Slot(6, ReturnParcelAmount, 0)
 
-    @staticmethod
-    def AddClueBGImagePath(builder, ClueBGImagePath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ClueBGImagePath), 0)

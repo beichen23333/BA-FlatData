@@ -168,6 +168,8 @@ from .IconType import IconType
 from .Phase import Phase
 from .UISiblingPriority import UISiblingPriority
 from .MessangerDisplayType import MessangerDisplayType
+from .UIAdaptationMode import UIAdaptationMode
+from .UIAdaptationCharacterCardState import UIAdaptationCharacterCardState
 from .TimerType import TimerType
 from .TabType import TabType
 from .ArenaRecordType import ArenaRecordType
@@ -339,6 +341,7 @@ from .CVExceptionTarget import CVExceptionTarget
 from .PotentialStatBonusRateType import PotentialStatBonusRateType
 from .GrowthFactor import GrowthFactor
 from .EngraveTreeType import EngraveTreeType
+from .GrowthReturnType import GrowthReturnType
 from .ClanSocialGrade import ClanSocialGrade
 from .ClanJoinOption import ClanJoinOption
 from .ClanSearchOption import ClanSearchOption
@@ -646,6 +649,7 @@ from .ShopCashBlockType import ShopCashBlockType
 from .CraftProcessCompleteType import CraftProcessCompleteType
 from .CraftState import CraftState
 from .EchelonStatusFlag import EchelonStatusFlag
+from .ConcentrationCardState import ConcentrationCardState
 from .IssueAlertTypeCode import IssueAlertTypeCode
 from .CompensationTarget import CompensationTarget
 from .MiniGameCCGCampOption import MiniGameCCGCampOption
@@ -761,6 +765,7 @@ from .EntitySpawnCondition import EntitySpawnCondition
 from .EntitySpawnConditionCheckTarget import EntitySpawnConditionCheckTarget
 from .EntitySpawnRule import EntitySpawnRule
 from .ExtraStatType import ExtraStatType
+from .LogicEffectCheckType import LogicEffectCheckType
 from .MovingAreaOptions import MovingAreaOptions
 from .ProjectileTypes import ProjectileTypes
 from .DamageCriticalType import DamageCriticalType
@@ -1707,7 +1712,6 @@ from .ReqType import ReqType
 from .LoginPlatform import LoginPlatform
 from .ServiceType import ServiceType
 from .Orientation import Orientation
-from .LinkPlatform import LinkPlatform
 from .PayStore import PayStore
 from .GMOPayMethod import GMOPayMethod
 from .PaymentMode import PaymentMode
@@ -2122,6 +2126,11 @@ from .CampaignStageRewardExcel import CampaignStageRewardExcel
 from .CampaignStrategyObjectExcel import CampaignStrategyObjectExcel
 from .CampaignUnitExcel import CampaignUnitExcel
 from .CharacterAcademyTagsExcel import CharacterAcademyTagsExcel
+from .CharacterAdaptationExcel import CharacterAdaptationExcel
+from .CharacterAdaptationGrowthReturnExcel import CharacterAdaptationGrowthReturnExcel
+from .CharacterAdaptationMissionExcel import CharacterAdaptationMissionExcel
+from .CharacterAdaptationSeasonExcel import CharacterAdaptationSeasonExcel
+from .CharacterAdaptationStepGrowthExcel import CharacterAdaptationStepGrowthExcel
 from .CharacterAIExcel import CharacterAIExcel
 from .CharacterCalculationLimitExcel import CharacterCalculationLimitExcel
 from .CharacterCombatSkinExcel import CharacterCombatSkinExcel
@@ -2653,6 +2662,11 @@ from .CampaignStageRewardExcelTable import CampaignStageRewardExcelTable
 from .CampaignStrategyObjectExcelTable import CampaignStrategyObjectExcelTable
 from .CampaignUnitExcelTable import CampaignUnitExcelTable
 from .CharacterAcademyTagsExcelTable import CharacterAcademyTagsExcelTable
+from .CharacterAdaptationExcelTable import CharacterAdaptationExcelTable
+from .CharacterAdaptationGrowthReturnExcelTable import CharacterAdaptationGrowthReturnExcelTable
+from .CharacterAdaptationMissionExcelTable import CharacterAdaptationMissionExcelTable
+from .CharacterAdaptationSeasonExcelTable import CharacterAdaptationSeasonExcelTable
+from .CharacterAdaptationStepGrowthExcelTable import CharacterAdaptationStepGrowthExcelTable
 from .CharacterAIExcelTable import CharacterAIExcelTable
 from .CharacterCalculationLimitExcelTable import CharacterCalculationLimitExcelTable
 from .CharacterCombatSkinExcelTable import CharacterCombatSkinExcelTable

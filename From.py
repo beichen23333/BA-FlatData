@@ -28,3 +28,5 @@ class From:
     MinigameDefense = 26
     PermanentRaid = 27
     TacticalRelay = 28
+    WeekDungeonChaserD = 29
+    WeekDungeonChaserE = 30

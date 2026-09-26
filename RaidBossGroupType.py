@@ -14,3 +14,4 @@ class RaidBossGroupType:
     EN0010 = 12
     EN0013 = 13
     EN0022 = 14
+    EN0023 = 15

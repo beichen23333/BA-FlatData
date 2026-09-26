@@ -61,6 +61,7 @@ class HeroStatus:
     ImmuneGroggyGaugeAdd = 59
     Rage = 60
     Untargetable = 61
-    Metamorph = 62
-    Thorns = 63
-    All = 64
+    AlwaysHit = 62
+    Metamorph = 63
+    Thorns = 64
+    All = 65

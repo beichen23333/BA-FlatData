@@ -119,3 +119,5 @@ class LogCode:
     TacticalRelay_Reward = 117
     TacticalRelay_Detail = 118
     TacticalRelay_Squad = 119
+    CharacterAdaptation_Advance = 120
+    CharacterAdaptation_Receive = 121

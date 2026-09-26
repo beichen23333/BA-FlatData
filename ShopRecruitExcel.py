@@ -297,10 +297,17 @@ class ShopRecruitExcel:
         return 0
 
 
+    def RecruitSeason(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(40)
+    def Start(builder): builder.StartObject(41)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -458,4 +465,8 @@ class ShopRecruitExcel:
 
     @staticmethod
     def AddWishListFullStackGachaGroupId(builder, WishListFullStackGachaGroupId): builder.PrependInt32Slot(39, WishListFullStackGachaGroupId, 0)
+
+
+    @staticmethod
+    def AddRecruitSeason(builder, RecruitSeason): builder.PrependInt32Slot(40, RecruitSeason, 0)
 

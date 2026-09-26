@@ -220,43 +220,50 @@ class CostumeExcel:
         return 0
 
 
-    def InformationPacel(self):
+    def TextureGachaCard(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def AnimationSSR(self):
+    def InformationPacel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def EnterStrategyAnimationName(self):
+    def AnimationSSR(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def AnimationValidator(self):
+    def EnterStrategyAnimationName(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def AnimationValidator(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
     def CharacterVoiceGroupId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
     def ShowObjectHpStatus(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
@@ -265,7 +272,7 @@ class CostumeExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(35)
+    def Start(builder): builder.StartObject(36)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -369,22 +376,25 @@ class CostumeExcel:
 
 
     @staticmethod
-    def AddInformationPacel(builder, InformationPacel): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(InformationPacel), 0)
+    def AddTextureGachaCard(builder, TextureGachaCard): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(TextureGachaCard), 0)
 
     @staticmethod
-    def AddAnimationSSR(builder, AnimationSSR): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(AnimationSSR), 0)
+    def AddInformationPacel(builder, InformationPacel): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(InformationPacel), 0)
 
     @staticmethod
-    def AddEnterStrategyAnimationName(builder, EnterStrategyAnimationName): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(EnterStrategyAnimationName), 0)
+    def AddAnimationSSR(builder, AnimationSSR): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(AnimationSSR), 0)
 
     @staticmethod
-    def AddAnimationValidator(builder, AnimationValidator): builder.PrependBoolSlot(32, AnimationValidator, 0)
+    def AddEnterStrategyAnimationName(builder, EnterStrategyAnimationName): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(EnterStrategyAnimationName), 0)
+
+    @staticmethod
+    def AddAnimationValidator(builder, AnimationValidator): builder.PrependBoolSlot(33, AnimationValidator, 0)
 
 
     @staticmethod
-    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt32Slot(33, CharacterVoiceGroupId, 0)
+    def AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId): builder.PrependInt32Slot(34, CharacterVoiceGroupId, 0)
 
 
     @staticmethod
-    def AddShowObjectHpStatus(builder, ShowObjectHpStatus): builder.PrependBoolSlot(34, ShowObjectHpStatus, 0)
+    def AddShowObjectHpStatus(builder, ShowObjectHpStatus): builder.PrependBoolSlot(35, ShowObjectHpStatus, 0)
 

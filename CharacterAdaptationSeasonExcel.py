@@ -3,13 +3,13 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class GroundNodeFlat:
+class CharacterAdaptationSeasonExcel:
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = GroundNodeFlat()
+        x = CharacterAdaptationSeasonExcel()
         x.Init(buf, n + offset)
         return x
 
@@ -17,49 +17,46 @@ class GroundNodeFlat:
         self._tab = flatbuffers.table.Table(buf, pos)
 
 
-    def X(self):
+    def Id(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def Y(self):
+    def Enabled(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-
-    def IsCanNotUseSkill(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos)
         return 0
 
 
-    def Position(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+    def StartDate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            from .Type_0x0000672C import Type_0x0000672C
-            obj = Type_0x0000672C()
-            obj.Init(self._tab.Bytes, o + self._tab.Pos)
-            return obj
+            return self._tab.String(o + self._tab.Pos)
         return None
 
 
-    def NodeType(self):
+    def EndDate(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+
+    def IconOrder(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
 
-    def OriginalNodeType(self):
+    def LobbyBannerImage(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.String(o + self._tab.Pos)
+        return None
 
 
 
@@ -71,27 +68,22 @@ class GroundNodeFlat:
 
 
     @staticmethod
-    def AddX(builder, X): builder.PrependInt32Slot(0, X, 0)
+    def AddId(builder, Id): builder.PrependInt32Slot(0, Id, 0)
 
 
     @staticmethod
-    def AddY(builder, Y): builder.PrependInt32Slot(1, Y, 0)
+    def AddEnabled(builder, Enabled): builder.PrependBoolSlot(1, Enabled, 0)
 
 
     @staticmethod
-    def AddIsCanNotUseSkill(builder, IsCanNotUseSkill): builder.PrependBoolSlot(2, IsCanNotUseSkill, 0)
+    def AddStartDate(builder, StartDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(StartDate), 0)
+
+    @staticmethod
+    def AddEndDate(builder, EndDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(EndDate), 0)
+
+    @staticmethod
+    def AddIconOrder(builder, IconOrder): builder.PrependInt32Slot(4, IconOrder, 0)
 
 
     @staticmethod
-    def AddPosition(builder, Position): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(Position), 0)
-    @staticmethod
-    def StartPositionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-
-
-    @staticmethod
-    def AddNodeType(builder, NodeType): builder.PrependInt32Slot(4, NodeType, 0)
-
-
-    @staticmethod
-    def AddOriginalNodeType(builder, OriginalNodeType): builder.PrependInt32Slot(5, OriginalNodeType, 0)
-
+    def AddLobbyBannerImage(builder, LobbyBannerImage): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(LobbyBannerImage), 0)

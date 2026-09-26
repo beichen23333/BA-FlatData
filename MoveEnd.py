@@ -20,8 +20,8 @@ class MoveEnd:
     def Normal(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            from .Type_0x00006754 import Type_0x00006754
-            obj = Type_0x00006754()
+            from .Type_0x000067E1 import Type_0x000067E1
+            obj = Type_0x000067E1()
             obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
@@ -30,8 +30,8 @@ class MoveEnd:
     def Stand(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            from .Type_0x00006754 import Type_0x00006754
-            obj = Type_0x00006754()
+            from .Type_0x000067E1 import Type_0x000067E1
+            obj = Type_0x000067E1()
             obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None
@@ -40,8 +40,8 @@ class MoveEnd:
     def Kneel(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            from .Type_0x00006754 import Type_0x00006754
-            obj = Type_0x00006754()
+            from .Type_0x000067E1 import Type_0x000067E1
+            obj = Type_0x000067E1()
             obj.Init(self._tab.Bytes, o + self._tab.Pos)
             return obj
         return None

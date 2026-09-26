@@ -94,15 +94,36 @@ class ScenarioContentCollectionExcel:
         return None
 
 
-    def LocalizeEtcId(self):
+    def FullResourcePosX(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def FullResourcePosY(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def FullResourceScale(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0
+
+
+    def LocalizeEtcId(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
 
     def SubNameLocalizeCodeId(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
@@ -111,7 +132,7 @@ class ScenarioContentCollectionExcel:
 
 
     @staticmethod
-    def Start(builder): builder.StartObject(13)
+    def Start(builder): builder.StartObject(16)
     @staticmethod
     def End(builder): return builder.EndObject()
 
@@ -158,8 +179,20 @@ class ScenarioContentCollectionExcel:
     def AddFullResource(builder, FullResource): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(FullResource), 0)
 
     @staticmethod
-    def AddLocalizeEtcId(builder, LocalizeEtcId): builder.PrependUint32Slot(11, LocalizeEtcId, 0)
+    def AddFullResourcePosX(builder, FullResourcePosX): builder.PrependFloat32Slot(11, FullResourcePosX, 0)
 
 
     @staticmethod
-    def AddSubNameLocalizeCodeId(builder, SubNameLocalizeCodeId): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(SubNameLocalizeCodeId), 0)
+    def AddFullResourcePosY(builder, FullResourcePosY): builder.PrependFloat32Slot(12, FullResourcePosY, 0)
+
+
+    @staticmethod
+    def AddFullResourceScale(builder, FullResourceScale): builder.PrependFloat32Slot(13, FullResourceScale, 0)
+
+
+    @staticmethod
+    def AddLocalizeEtcId(builder, LocalizeEtcId): builder.PrependUint32Slot(14, LocalizeEtcId, 0)
+
+
+    @staticmethod
+    def AddSubNameLocalizeCodeId(builder, SubNameLocalizeCodeId): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(SubNameLocalizeCodeId), 0)
