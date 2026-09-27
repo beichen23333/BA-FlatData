@@ -1,22670 +1,13 @@
 from enum import IntEnum
-from lib.encryption import convert_short, convert_ushort, convert_int, convert_long, convert_float, convert_double, convert_string, convert_uint, convert_ulong, create_key
+from utils.encryption import convert_short, convert_ushort, convert_int, convert_long, convert_float, convert_double, convert_string, convert_uint, convert_ulong, create_key
 import inspect
 
 def dump_table(table_instance) -> list:
     excel_name = table_instance.__class__.__name__.removesuffix("Table")
     current_module = inspect.getmodule(inspect.currentframe())
-    dump_func = next(
-        f
-        for n, f in inspect.getmembers(current_module, inspect.isfunction)
-        if n.removeprefix("dump_") == excel_name
-    )
+    dump_func = next(f for n, f in inspect.getmembers(current_module, inspect.isfunction) if n.removeprefix("dump_") == excel_name)
     password = create_key(excel_name.removesuffix("Excel"))
     return [dump_func(table_instance.DataList(j), password) for j in range(table_instance.DataListLength())]
-
-class State(IntEnum):
-    Normal = 0
-    Hover = 1
-    Pressed = 2
-    Disabled = 3
-
-class Trigger(IntEnum):
-    OnClick = 0
-    OnMouseOver = 1
-    OnMouseOut = 2
-    OnPress = 3
-    OnRelease = 4
-    OnDoubleClick = 5
-
-class Restriction(IntEnum):
-    None_ = 0
-    Horizontal = 1
-    Vertical = 2
-    PressAndHold = 3
-
-class DragEffect(IntEnum):
-    None_ = 0
-    Momentum = 1
-    MomentumAndSpring = 2
-
-class Arrangement(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-    CellSnap = 2
-
-class Sorting(IntEnum):
-    None_ = 0
-    Alphabetic = 1
-    Horizontal = 2
-    Vertical = 3
-    Custom = 4
-
-class Action(IntEnum):
-    PressAndClick = 0
-    Select = 1
-    All = 2
-
-class Modifier(IntEnum):
-    Any = 0
-    Shift = 1
-    Ctrl = 2
-    Alt = 3
-    None_ = 4
-
-class Constraint(IntEnum):
-    None_ = 0
-    Vertical = 1
-    Horizontal = 2
-    Explicit = 3
-
-class Trigger(IntEnum):
-    OnClick = 0
-    OnMouseOver = 1
-    OnMouseOut = 2
-    OnPress = 3
-    OnRelease = 4
-    Custom = 5
-    OnEnable = 6
-    OnDisable = 7
-
-class Position(IntEnum):
-    Auto = 0
-    Above = 1
-    Below = 2
-
-class Selection(IntEnum):
-    OnPress = 0
-    OnClick = 1
-
-class OpenOn(IntEnum):
-    ClickOrTap = 0
-    RightClick = 1
-    DoubleClick = 2
-    Manual = 3
-
-class FillDirection(IntEnum):
-    LeftToRight = 0
-    RightToLeft = 1
-    BottomToTop = 2
-    TopToBottom = 3
-
-class Movement(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-    Unrestricted = 2
-    Custom = 3
-
-class DragEffect(IntEnum):
-    None_ = 0
-    Momentum = 1
-    MomentumAndSpring = 2
-
-class ShowCondition(IntEnum):
-    Always = 0
-    OnlyIfNeeded = 1
-    WhenDragging = 2
-
-class Direction(IntEnum):
-    Down = 0
-    Up = 1
-
-class Sorting(IntEnum):
-    None_ = 0
-    Alphabetic = 1
-    Horizontal = 2
-    Vertical = 3
-    Custom = 4
-
-class Alignment(IntEnum):
-    Automatic = 0
-    Left = 1
-    Center = 2
-    Right = 3
-    Justified = 4
-
-class SymbolStyle(IntEnum):
-    None_ = 0
-    Normal = 1
-    Colored = 2
-    NoOutline = 3
-
-class UpdateCondition(IntEnum):
-    OnStart = 0
-    OnUpdate = 1
-    OnLateUpdate = 2
-    OnFixedUpdate = 3
-
-class Direction(IntEnum):
-    SourceUpdatesTarget = 0
-    TargetUpdatesSource = 1
-    BiDirectional = 2
-
-class Type(IntEnum):
-    Simple = 0
-    Sliced = 1
-    Tiled = 2
-    Filled = 3
-    Advanced = 4
-
-class FillDirection(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-    Radial90 = 2
-    Radial180 = 3
-    Radial360 = 4
-
-class AdvancedType(IntEnum):
-    Invisible = 0
-    Sliced = 1
-    Tiled = 2
-
-class Flip(IntEnum):
-    Nothing = 0
-    Horizontally = 1
-    Vertically = 2
-    Both = 3
-
-class Clipping(IntEnum):
-    None_ = 0
-    TextureMask = 1
-    SoftClip = 2
-    ConstrainButDontClip = 3
-
-class ShadowMode(IntEnum):
-    None_ = 0
-    Receive = 1
-    CastAndReceive = 2
-
-class AnchorUpdate(IntEnum):
-    OnEnable = 0
-    OnUpdate = 1
-    OnStart = 2
-
-class Pivot(IntEnum):
-    TopLeft = 0
-    Top = 1
-    TopRight = 2
-    Left = 3
-    Center = 4
-    Right = 5
-    BottomLeft = 6
-    Bottom = 7
-    BottomRight = 8
-
-class AspectRatioSource(IntEnum):
-    Free = 0
-    BasedOnWidth = 1
-    BasedOnHeight = 2
-
-class AnimationLetterOrder(IntEnum):
-    Forward = 0
-    Reverse = 1
-    Random = 2
-
-class Method(IntEnum):
-    Linear = 0
-    EaseIn = 1
-    EaseOut = 2
-    EaseInOut = 3
-    BounceIn = 4
-    BounceOut = 5
-
-class Style(IntEnum):
-    Once = 0
-    Loop = 1
-    PingPong = 2
-
-class Side(IntEnum):
-    BottomLeft = 0
-    Left = 1
-    TopLeft = 2
-    Top = 3
-    TopRight = 4
-    Right = 5
-    BottomRight = 6
-    Bottom = 7
-    Center = 8
-
-class ControlScheme(IntEnum):
-    Mouse = 0
-    Touch = 1
-    Controller = 2
-
-class ClickNotification(IntEnum):
-    None_ = 0
-    Always = 1
-    BasedOnDelta = 2
-
-class EventType(IntEnum):
-    World_3D = 0
-    UI_3D = 1
-    World_2D = 2
-    UI_2D = 3
-
-class ProcessEventsIn(IntEnum):
-    Update = 0
-    LateUpdate = 1
-
-class InputType(IntEnum):
-    Standard = 0
-    AutoCorrect = 1
-    Password = 2
-
-class Validation(IntEnum):
-    None_ = 0
-    Integer = 1
-    Float = 2
-    Alphanumeric = 3
-    Username = 4
-    Name = 5
-    Filename = 6
-
-class KeyboardType(IntEnum):
-    Default = 0
-    ASCIICapable = 1
-    NumbersAndPunctuation = 2
-    URL = 3
-    NumberPad = 4
-    PhonePad = 5
-    NamePhonePad = 6
-    EmailAddress = 7
-
-class OnReturnKey(IntEnum):
-    Default = 0
-    Submit = 1
-    NewLine = 2
-
-class Effect(IntEnum):
-    None_ = 0
-    Shadow = 1
-    Outline = 2
-    Outline8 = 3
-    OutlineShadow1 = 4
-    OutlineShadow = 5
-
-class Overflow(IntEnum):
-    ShrinkContent = 0
-    ClampContent = 1
-    ResizeFreely = 2
-    ResizeHeight = 3
-
-class Crispness(IntEnum):
-    Never = 0
-    OnDesktop = 1
-    Always = 2
-
-class Modifier(IntEnum):
-    None_ = 0
-    ToUppercase = 1
-    ToLowercase = 2
-    Custom = 3
-
-class RenderQueue(IntEnum):
-    Automatic = 0
-    StartAt = 1
-    Explicit = 2
-
-class Scaling(IntEnum):
-    Flexible = 0
-    Constrained = 1
-    ConstrainedOnMobiles = 2
-
-class Constraint(IntEnum):
-    Fit = 0
-    Fill = 1
-    FitWidth = 2
-    FitHeight = 3
-
-class Style(IntEnum):
-    None_ = 0
-    Horizontal = 1
-    Vertical = 2
-    Both = 3
-    BasedOnHeight = 4
-    FillKeepingRatio = 5
-    FitInternalKeepingRatio = 6
-
-class Style(IntEnum):
-    Text = 0
-    Chat = 1
-
-class UIType(IntEnum):
-    WorldMap = 0
-    SkillUpgrade = 1
-    MinigamePopup = 2
-    InformationPopup = 3
-
-class TriggerType(IntEnum):
-    EnterWorldMap = 0
-    ExitWorldMap = 1
-    OpenSkillUpgradeUI = 2
-    CloseSkillUpgradeUI = 3
-    HideUI = 4
-    ShowUI = 5
-
-class EntityType(IntEnum):
-    Striker = 0
-    special = 1
-    equipment = 2
-    spell = 3
-
-class ComparerType(IntEnum):
-    GREATER = 0
-    LessOrEqual = 1
-
-class OperatorType(IntEnum):
-    AND = 0
-    OR = 1
-
-class SoP(IntEnum):
-    SingleEvent = 0
-    PersistentEvent = 1
-
-class NoteLine(IntEnum):
-    Left = 0
-    Right = 1
-    Both = 2
-
-class NoteType(IntEnum):
-    Normal = 0
-    Long = 1
-    Boom = 2
-
-class NoteProperty(IntEnum):
-    Flick = 0
-    LongEnd = 1
-    Normal = 2
-
-class BattleResultType(IntEnum):
-    Victory = 0
-    Defeat = 1
-
-class AnimatorStateName(IntEnum):
-    Idle = 0
-    AttackStart = 1
-    AttackIng = 2
-    AttackDelay = 3
-    AttackEnd = 4
-    Reload = 5
-    Callsign = 6
-    MoveEnd = 7
-    MoveIng = 8
-    MoveJump = 9
-    MoveCallsign = 10
-    RearrangeStart = 11
-    RearrangeIdle = 12
-    RearrangeReaction = 13
-    VitalPanic = 14
-    VitalDyingIng = 15
-    VitalReatreat = 16
-    VitalDeath = 17
-    VictoryStart = 18
-    VictoryEnd = 19
-    Exs1 = 20
-    MoveIngStart = 21
-    MoveIngEnd = 22
-    MoveEndRootMotion = 23
-    MoveAttack = 24
-    AttackReadyStart = 25
-    AttackReadyEnd = 26
-    Appear = 27
-    Exs2 = 28
-    Exs3 = 29
-    PublicSkill1 = 30
-    PublicSkill2 = 31
-    PublicSkill3 = 32
-    TSSInteractIdle = 33
-    TSSInteractAttack = 34
-    VitalDeathGroggy = 35
-    VitalHit = 36
-    MoveLeft = 37
-    MoveRight = 38
-    Exs4 = 39
-    Exs5 = 40
-    Exs6 = 41
-    Exs7 = 42
-    Exs8 = 43
-    Exs9 = 44
-    Exs10 = 45
-    PublicSkill4 = 46
-    PublicSkill5 = 47
-    PublicSkill6 = 48
-    PublicSkill7 = 49
-    PublicSkill8 = 50
-    PublicSkill9 = 51
-    PublicSkill10 = 52
-    TSSInteract = 53
-
-class AttendResultProcess(IntEnum):
-    Progress = 0
-    LocationRank = 1
-    FavorGrowth = 2
-    Rewards = 3
-
-class EquipType(IntEnum):
-    Account = 0
-    IDCard = 1
-
-class BattlePassType(IntEnum):
-    Free = 0
-    NormalPaid = 1
-    Premium = 2
-    DiscountPremium = 3
-
-class CafeInputState(IntEnum):
-    Default = 0
-    GiveGift = 1
-    EditReady = 2
-    Edit = 3
-
-class CommonEventType(IntEnum):
-    TileConquer = 0
-    TileUpgrade = 1
-    BossOpen = 2
-    StepComplete = 3
-    MassErosion = 4
-    Erosion = 5
-    ErosionRemove = 6
-    UnexpectedEvent = 7
-    TileConquerReward = 8
-
-class AttendResultProcess(IntEnum):
-    Progress = 0
-    LocationRank = 1
-    FavorGrowth = 2
-
-class FriendBlockListType(IntEnum):
-    None_ = 0
-    Friend = 1
-    Block = 2
-
-class FurnitureTimelineType(IntEnum):
-    Idle = 0
-    Req = 1
-    Add = 2
-    Make = 3
-    Only = 4
-    InteractionBGM = 5
-
-class ScenarioCharacterTarget(IntEnum):
-    Invalid = 0
-    Front1 = 1
-    Front2 = 2
-    Front3 = 3
-    Front4 = 4
-    Front5 = 5
-    Back1 = 6
-    Back2 = 7
-    Back3 = 8
-    All_Front = 9
-    All_Back = 10
-    All = 11
-
-class ScenarioTitleType(IntEnum):
-    None_ = 0
-    Default = 1
-    Trailer = 2
-
-class ScenarioEndingType(IntEnum):
-    None_ = 0
-    Finish = 1
-    ToBeContinue = 2
-
-class TextType(IntEnum):
-    Normal = 0
-    FadeIn = 1
-    TypeWriter = 2
-
-class LabelAlign(IntEnum):
-    Left = 0
-    Center = 1
-    Right = 2
-
-class StickerHasInfo(IntEnum):
-    None_ = 0
-    CanUnlock = 1
-    Unlock = 2
-
-class BossAppearState(IntEnum):
-    Ready = 0
-    World = 1
-    Scenario = 2
-    Clear = 3
-
-class FromUIScene(IntEnum):
-    Lobby = 0
-    Work = 1
-    ScenarioMode = 2
-
-class SyncType(IntEnum):
-    None_ = 0
-    Manual = 1
-    Auto = 2
-
-class CharacterMemorialFilterType(IntEnum):
-    None_ = 0
-    One = 1
-    OverOne = 2
-
-class CharacterGearFilterType(IntEnum):
-    DoesntExist = 0
-    NotEquipped = 1
-    Equipped = 2
-
-class CharacterObscurationFilterType(IntEnum):
-    Able = 0
-    Unable = 1
-
-class CharacterGearType(IntEnum):
-    DoesntExist = 0
-    NotEquipped = 1
-    Tier1 = 2
-    Tier2 = 3
-
-class ContentBlockType(IntEnum):
-    MinusGem = 0
-
-class MemoryUnitType(IntEnum):
-    B = 0
-    KB = 1
-    MB = 2
-    GB = 3
-    TB = 4
-
-class MemorySpaceType(IntEnum):
-    FreeSpace = 0
-    BusySpace = 1
-    TotalSpace = 2
-
-class InputLayer(IntEnum):
-    Network = 0
-    Login = 1
-    UIOpen = 2
-    FadeInOrOut = 3
-    Animation = 4
-    BattleLoad = 5
-    BattleUnLoad = 6
-    Temp1 = 7
-    Temp2 = 8
-    Temp3 = 9
-    Temp4 = 10
-    BattleResult = 11
-    PlatformService = 12
-    CashShop = 13
-    HexaPlayerMove = 14
-    ArenaSimulation = 15
-    UIDirector = 16
-    CampaignEnter = 17
-    InitEchelon = 18
-    UIGetAsync = 19
-    Transition = 20
-    MailCheck = 21
-    RuntimeHierarchy = 22
-    TTS = 23
-
-class SortingRule(IntEnum):
-    StarGrade = 0
-    Rarity = 1
-    Level = 2
-    FavorLevel = 3
-    School = 4
-    Name = 5
-    ExSkillLevel = 6
-    StreetBattleAdaptation = 7
-    OutdoorBattleAdaptation = 8
-    IndoorBattleAdaptation = 9
-    ArmorType = 10
-    WeaponType = 11
-    GetTime = 12
-    AttackPower = 13
-    DefensePower = 14
-    MaxHP = 15
-    AttackRange = 16
-    UniqueId = 17
-    Count = 18
-    ComfortBonus = 19
-    SetGroudpId = 20
-    BulletType = 21
-    ExpirationTime = 22
-    EventItem = 23
-    EventToken1 = 24
-    EventToken2 = 25
-    EventToken3 = 26
-    EventToken4 = 27
-    EventToken5 = 28
-    TacticRole = 29
-    SkillLevel = 30
-    Interaction = 31
-    DisplayOrder = 32
-    BirthDay = 33
-    Favorite = 34
-    ConquestStep = 35
-    ConquestBaseLevel = 36
-    ConquestTileId = 37
-    EventArchive_Default = 38
-    EventArchive_Name = 39
-    EventArchive_Incomplete = 40
-    PotentialMaxHp = 41
-    PotentialAttackPower = 42
-    PotentialHealPower = 43
-    WeaponGrade = 44
-    AccountLevel = 45
-    LastConnectTime = 46
-    Gear = 47
-    ExSkillCost = 48
-    HealPower = 49
-    MailReceive = 50
-    MailDuration = 51
-    GrowthScore = 52
-    CCGSkillCost = 53
-    CCGCardType = 54
-    PlacedFurniture = 55
-    WeekDungeonSchoolBuff = 56
-
-class ChatSortingRule(IntEnum):
-    DateTime = 0
-    Unread = 1
-    Name = 2
-    FavorLevel = 3
-    Favorite = 4
-
-class SortingOrder(IntEnum):
-    Ascending = 0
-    Descending = 1
-
-class MultiSweepFilterOption(IntEnum):
-    None_ = 0
-    SecretStone = 1
-    Equipment = 2
-    Material = 3
-
-class MultiSweepStageDifficultyFilterOption(IntEnum):
-    None_ = 0
-    Normal = 1
-    Hard = 2
-
-class MultiSweepStageFilterOption(IntEnum):
-    None_ = 0
-    Possible = 1
-    Impossible = 2
-
-class CraftFilterOption(IntEnum):
-    None_ = 0
-    Equipment = 1
-    Furniture = 2
-    Decoration = 3
-    Interior = 4
-    SecretStone = 5
-    Coin = 6
-    Material = 7
-    Favor = 8
-
-class ShiftingCraftFilterOption(IntEnum):
-    None_ = 0
-    ShiftingCraftCategory_CommonMaterial = 1
-    ShiftingCraftCategory_CDItem = 2
-    ShiftingCraftCategory_BookItem = 3
-    ShiftingCraftCategory_Furniture = 4
-    ShiftingCraftCategory_FavorItem = 5
-
-class ItemFilter(IntEnum):
-    None_ = 0
-    SecretStone = 1
-    Coin = 2
-    Material = 3
-    Consumable = 4
-    Favor = 5
-    Collectible = 6
-    All = 7
-
-class EquipmentFilter(IntEnum):
-    All = 0
-
-class MultiSweepFilter(IntEnum):
-    None_ = 0
-    SecretStone = 1
-    Equipment = 2
-    Material = 3
-
-class MultiSweepStageDifficultyFilter(IntEnum):
-    None_ = 0
-    Normal = 1
-    Hard = 2
-
-class MultiSweepStageFilter(IntEnum):
-    None_ = 0
-    Possible = 1
-    Impossible = 2
-
-class CraftFilter(IntEnum):
-    None_ = 0
-    Equipment = 1
-    Furniture = 2
-    Decoration = 3
-    Interior = 4
-    SecretStone = 5
-    Coin = 6
-    Material = 7
-    Favor = 8
-    All = 9
-
-class ShiftingCraftRecipeFilter(IntEnum):
-    None_ = 0
-    ShiftingCraftCategory_CommonMaterial = 1
-    ShiftingCraftCategory_CDItem = 2
-    ShiftingCraftCategory_BookItem = 3
-    ShiftingCraftCategory_Furniture = 4
-    ShiftingCraftCategory_FavorItem = 5
-    All = 6
-
-class ClanJoinFilter(IntEnum):
-    Free = 0
-    Permission = 1
-    All = 2
-
-class ShopFilter(IntEnum):
-    Resource1 = 0
-    Resource2 = 1
-    All = 2
-
-class TBGState(IntEnum):
-    Move = 0
-    Dead = 1
-    Encounter = 2
-
-class PlayMode(IntEnum):
-    Random = 0
-    Sequential = 1
-    UserInteractionSelection = 2
-
-class AudioType(IntEnum):
-    SFX = 0
-    Voice = 1
-
-class Character(IntEnum):
-    Main = 0
-    Sub = 1
-
-class Type(IntEnum):
-    Start = 0
-    End = 1
-
-class InteractionState(IntEnum):
-    None_ = 0
-    Success = 1
-    Fail = 2
-
-class WaitPlan(IntEnum):
-    WaitByStop = 0
-    WaitByLoop = 1
-    TimeoutFail = 2
-
-class FailInputHandle(IntEnum):
-    IgnoreFailInput = 0
-    Todo_Fail = 1
-
-class ProgressEffectType(IntEnum):
-    None_ = 0
-    BGM_VolumeSet = 1
-
-class Trigger(IntEnum):
-    OnClick = 0
-    LongPress = 1
-    OnPress = 2
-    Count = 3
-
-class MXToggleState(IntEnum):
-    On = 0
-    Off = 1
-    Disable = 2
-
-class Axis(IntEnum):
-    None_ = 0
-    X = 1
-    Y = 2
-    Z = 3
-
-class Axis(IntEnum):
-    X = 0
-    Y = 1
-    Z = 2
-
-class Bound(IntEnum):
-    OUTSIDE = 0
-    INSIDE = 1
-
-class DeviceTier(IntEnum):
-    Low = 0
-    Normal = 1
-    High = 2
-    VeryHigh = 3
-
-class LifeType(IntEnum):
-    ParticleStopAction = 0
-    ScaledTimer = 1
-    UnscaledTimer = 2
-    SyncParentTimeline = 3
-    ParentTimelineTimer = 4
-
-class ResizeType(IntEnum):
-    Off = 0
-    FullScreen = 1
-    Relative = 2
-    FitWithFixedRatio = 3
-
-class ScaleAxis(IntEnum):
-    LocalScaleXY = 0
-    LocalScaleXYZ = 1
-
-class MaterialPropertyType(IntEnum):
-    VALUE = 0
-    COLOR = 1
-
-class CurveType(IntEnum):
-    IncreaseLinear = 0
-    IncreaseEaseIn = 1
-    IncreaseEaseOut = 2
-    IncreaseEaseInOut = 3
-    DecreaseLinear = 4
-    DecreaseEaseIn = 5
-    DecreaseEaseOut = 6
-    DecreaseEaseInOut = 7
-    Constant = 8
-
-class Trigger(IntEnum):
-    BattleEnd = 0
-    OnDisable = 1
-
-class OutRimLightType(IntEnum):
-    Point = 0
-    Spot = 1
-
-class CameraFindType(IntEnum):
-    None_ = 0
-    MainCameraTag = 1
-    FxCameraTag = 2
-    Parent = 3
-    Child = 4
-    GameMain = 5
-    Current = 6
-    UICamera = 7
-
-class eAmbientType(IntEnum):
-    Skybox = 0
-    Gradient = 1
-    Color = 2
-
-class ScenarioCharacterFade(IntEnum):
-    NONE = 0
-    FADE_IN = 1
-    FADE_OUT = 2
-
-class BehaviorType(IntEnum):
-    BaseTrack = 0
-    BaseRandom = 1
-    Masked = 2
-    MaskedRandomTiming = 3
-
-class FinishType(IntEnum):
-    DoNothing = 0
-    PlayIdle = 1
-    FinishMask = 2
-    PlayNext = 3
-
-class PreDelayType(IntEnum):
-    Immediate = 0
-    Random = 1
-    DelayedRandom = 2
-
-class LockScreenDisplay(IntEnum):
-    Secret = 0
-    Private = 1
-    Public = 2
-
-class NotificationStyle(IntEnum):
-    None_ = 0
-    NoSound = 1
-    Default = 2
-    Popup = 3
-
-class LoginMethod(IntEnum):
-    None_ = 0
-    Device = 1
-    MigrationCode = 2
-    Twitter = 3
-    Facebook = 4
-    Yostar = 5
-    Google = 6
-    Apple = 7
-    YostarPass = 8
-    Amazon = 9
-    Steam = 10
-
-class Platform(IntEnum):
-    None_ = 0
-    Yostar = 1
-
-class PlatformServiceState(IntEnum):
-    Default = 0
-    WaitInitResponded = 1
-    Ready = 2
-    InitFailed = 3
-
-class TweenType(IntEnum):
-    LinearTween = 0
-    EaseInQuad = 1
-    EaseOutQuad = 2
-    EaseInOutQuad = 3
-    EaseInCubic = 4
-    EaseOutCubic = 5
-    EaseInOutCubic = 6
-    EaseInQuart = 7
-    EaseOutQuart = 8
-    EaseInOutQuart = 9
-    EaseInQuint = 10
-    EaseOutQuint = 11
-    EaseInOutQuint = 12
-    EaseInSine = 13
-    EaseOutSine = 14
-    EaseInOutSine = 15
-    EaseInExpo = 16
-    EaseOutExpo = 17
-    EaseInOutExpo = 18
-    EaseInCirc = 19
-    EaseOutCirc = 20
-    EaseInOutCirc = 21
-
-class StatFeature(IntEnum):
-    NotSupported = 0
-    Fixed = 1
-    Leveling = 2
-
-class EventRewardRealType(IntEnum):
-    ItemCampaignNormal = 0
-    ItemCampaignHard = 1
-    ItemChaser = 2
-    ItemFindGift = 3
-    ItemBlood = 4
-    ItemSchoolDungeon = 5
-    ItemAcademy = 6
-    ItemTimeAttack = 7
-    ItemRaid = 8
-    ExpAccount = 9
-
-class IconType(IntEnum):
-    Text = 0
-    Image = 1
-
-class Phase(IntEnum):
-    None_ = 0
-    Start = 1
-    Dragging = 2
-    End = 3
-
-class UISiblingPriority(IntEnum):
-    VeryLow = 0
-    Low = 1
-    Normal = 2
-    High = 3
-    VeryHigh = 4
-
-class MessangerDisplayType(IntEnum):
-    Student = 0
-    Chat = 1
-
-class TimerType(IntEnum):
-    None_ = 0
-    ArenaLobby = 1
-    ArenaEntry = 2
-    ArenaFormation = 3
-
-class TabType(IntEnum):
-    Battle = 0
-    Time = 1
-    Daily = 2
-    Season = 3
-    NewRecord = 4
-
-class ArenaRecordType(IntEnum):
-    Season = 0
-    AllTime = 1
-
-class SwipeDir(IntEnum):
-    Left = 0
-    Right = 1
-    Up = 2
-    Down = 3
-
-class UITargetFPS(IntEnum):
-    DontCare = 0
-    FPS15 = 1
-    FPS20 = 2
-    FPS30 = 3
-
-class CostSign(IntEnum):
-    Plus = 0
-    Minus = 1
-    _MAX_ = 2
-
-class UseType(IntEnum):
-    CanUse = 0
-    CanNotUse = 1
-    NotEnoughCost = 2
-    InvalidStatus = 3
-    OnTSS = 4
-
-class BattlePassPreviousAction(IntEnum):
-    None_ = 0
-    MissionShortcut = 1
-    PurchaseProduct = 2
-
-class BattleResultType(IntEnum):
-    Victory = 0
-    Defeat = 1
-
-class SocialList(IntEnum):
-    Friend = 0
-    Clan = 1
-
-class UIType(IntEnum):
-    Start = 0
-    Story = 1
-    Enemy = 2
-    Player = 3
-
-class CharacterDetailDisplayState(IntEnum):
-    None_ = 0
-    HasCharacter = 1
-    DefaultInfo = 2
-    ExchangeCharacterByGoods = 3
-
-class TileState(IntEnum):
-    Conquested = 0
-    Conquestable = 1
-    Enemy = 2
-    TreasureBox = 3
-    Operating = 4
-
-class UICraftDurationSubNodeMode(IntEnum):
-    Normal = 0
-    Quick = 1
-
-class UIState(IntEnum):
-    Enabled = 0
-    Disabled = 1
-
-class UIState(IntEnum):
-    Enabled = 0
-    Setting = 1
-    Disabled = 2
-
-class Damage(IntEnum):
-    Damage = 0
-    Damaged = 1
-    Heal = 2
-    Max = 3
-
-class Target(IntEnum):
-    All = 0
-    Obstacle = 1
-    Character = 2
-    Max = 3
-
-class Path(IntEnum):
-    All = 0
-    Normal = 1
-    Ex = 2
-    Public = 3
-    Passive = 4
-    ExtraPassive = 5
-    Max = 6
-
-class PopupType(IntEnum):
-    None_ = 0
-    Rank = 1
-    MissionFailed = 2
-    LevelUp = 3
-    Refund = 4
-    Reward = 5
-    TutorialFailure = 6
-    EventResult = 7
-    Max = 8
-
-class DiceAnimatorState(IntEnum):
-    DiceRace_Idle = 0
-    DiceRace_Run = 1
-    DiceRace_Run_End = 2
-    DiceRace_Finish = 3
-    DiceRace_Reward = 4
-    None_ = 5
-
-class CharacterState(IntEnum):
-    Buff = 0
-    Possesion = 1
-    NotHeld = 2
-
-class ClueSlotState(IntEnum):
-    None_ = 0
-    Pending = 1
-    Registered = 2
-
-class CGOrientation(IntEnum):
-    Landscape = 0
-    Portrait = 1
-
-class UITreasureObjectRotationType(IntEnum):
-    None_ = 0
-    Clockwise = 1
-    CounterClockwise = 2
-
-class FormationSupportStatChange(IntEnum):
-    None_ = 0
-    Up = 1
-    Down = 2
-
-class From(IntEnum):
-    Campaign = 0
-    EventContent = 1
-    Raid = 2
-    WeekDungeonChaserA = 3
-    WeekDungeonChaserB = 4
-    WeekDungeonChaserC = 5
-    ArenaOffense = 6
-    ArenaDefense = 7
-    Scenario = 8
-    SubStage = 9
-    EventSubStage = 10
-    Lobby = 11
-    WeekDungeonBlood = 12
-    WeekDungeonFindGift = 13
-    TutorialStage = 14
-    SchoolDungeonA = 15
-    SchoolDungeonB = 16
-    SchoolDungeonC = 17
-    TimeAttackDungeon = 18
-    WorldRaid = 19
-    Conquest = 20
-    StoryStrategy = 21
-    EliminateRaid = 22
-    Field = 23
-    MultiFloorRaid = 24
-    CampaignStrategySkip = 25
-    MinigameDefense = 26
-
-class TouchState(IntEnum):
-    None_ = 0
-    Down = 1
-    Press = 2
-    Drag = 3
-    Up = 4
-
-class NoticePrefabType(IntEnum):
-    None_ = 0
-    Import = 1
-    Overwrite = 2
-    EditName = 3
-
-class FriendTab(IntEnum):
-    MyFriend = 0
-    RequestSent = 1
-    RequestReceived = 2
-    Search = 3
-
-class FriendShowToggleFlag(IntEnum):
-    AccountLevel = 0
-    FriendCode = 1
-    RaidRanking = 2
-    EliminateRaidRanking = 3
-    ArenaRanking = 4
-    MultiFloorRaidClearedDifficulty = 5
-    All = 6
-
-class UIUserInfoTab(IntEnum):
-    Profile = 0
-    Record = 1
-    Support = 2
-
-class ShowDirectingType(IntEnum):
-    None_ = 0
-    Normal = 1
-    SSR = 2
-    FakeSSR = 3
-
-class RetryType(IntEnum):
-    Ticket = 0
-    Gem = 1
-    Mix = 2
-
-class IconType(IntEnum):
-    None_ = 0
-    Stat = 1
-    Status = 2
-    Dot = 3
-    Max = 4
-
-class AnimationEnableFlag(IntEnum):
-    New = 0
-    NewRefresh = 1
-    NearEnd = 2
-    Dispel = 3
-    DispelRefresh = 4
-    All = 5
-    None_ = 6
-
-class GaugeType(IntEnum):
-    ProgressBar = 0
-    Dial = 1
-
-class InvisibleFlag(IntEnum):
-    None_ = 0
-    EmojiPlay = 1
-    HideUI = 2
-    Timeline = 3
-    Dead = 4
-    All = 5
-
-class ActionType(IntEnum):
-    SetActive = 0
-    ChangeColor = 1
-    TextureChange = 2
-    PlayAnimation = 3
-    MaterialChange = 4
-    BoolValueChange = 5
-
-class TriggerType(IntEnum):
-    UIType = 0
-    GaugeEqual = 1
-    GaugeEqualOver = 2
-    GaugeEqualUnder = 3
-    FormIndex = 4
-    StatusLevelEqual = 5
-    StatusLevelOver = 6
-    StatusLevelUnder = 7
-    StatusLevelEqualOver = 8
-    StatusLevelEqualUnder = 9
-    AddLogicEffectTemplate = 10
-
-class InvisibleFlag(IntEnum):
-    None_ = 0
-    HideUI = 1
-    HPBarHideExcel = 2
-    HideHPBarComponent = 3
-    BulletTime = 4
-    ConfrontationGauge = 5
-    Dead = 6
-    Timeline = 7
-    LogicEffectHide = 8
-    All = 9
-
-class GimmickStateEN0015(IntEnum):
-    Normal = 0
-    Normal_NoNew100PercentLock = 1
-    WeakAll = 2
-
-class UISiblingPriority(IntEnum):
-    VeryLow = 0
-    Low = 1
-    Normal = 2
-    High = 3
-    VeryHigh = 4
-
-class UIOpenType(IntEnum):
-    FromLobby = 0
-    FromFloor = 1
-    MoveAnimation = 2
-
-class TooltipType(IntEnum):
-    None_ = 0
-    Description = 1
-    Parcel = 2
-    ParcelCannotUseShortcut = 3
-    ShortcutOnly = 4
-    Stat = 5
-    SkillInfo = 6
-    SelectExSkillInfo = 7
-    Max = 8
-
-class ButtonLayout(IntEnum):
-    NoButton = 0
-    OneButton = 1
-    TwoButton = 2
-    MAX_BUTTON_LAYOUT = 3
-
-class State(IntEnum):
-    Download = 0
-    Complete = 1
-
-class InputType(IntEnum):
-    Nickname = 0
-    Callname = 1
-    Comment = 2
-
-class UIPopup_Input_CommentMode(IntEnum):
-    None_ = 0
-    Account = 1
-    IdCard = 2
-
-class RankRequestType(IntEnum):
-    Rank = 0
-    Score = 1
-    Bracket = 2
-
-class RaidRewardSubTab(IntEnum):
-    Ranking = 0
-    Point = 1
-    Limited = 2
-
-class RaidRewardTab(IntEnum):
-    RewardEnd = 0
-    RewardSeason = 1
-
-class RedDotRaidType(IntEnum):
-    Raid = 0
-    EliminateRaid = 1
-    Playing = 2
-
-class RailConnectionType(IntEnum):
-    None_ = 0
-    Entrance = 1
-    Exit = 2
-
-class RewardType(IntEnum):
-    Round = 0
-    AdditionalTile = 1
-    Placement = 2
-
-class UIStyle(IntEnum):
-    None_ = 0
-    Placement = 1
-    AlreadyPlaced = 2
-    SwapSelection = 3
-    SwapConfirm = 4
-
-class ScenarioType(IntEnum):
-    Enter = 0
-    End = 1
-
-class BeforehandGachaSelectResultType(IntEnum):
-    SAVE = 0
-    CURRENT = 1
-
-class CategoryShopParcelDisplayType(IntEnum):
-    None_ = 0
-    ByCost = 1
-    ByCategoryToCurrency = 2
-
-class GachaCountType(IntEnum):
-    ONE = 0
-    TEN = 1
-
-class BeforehandGachaPopupOpenType(IntEnum):
-    SAVE = 0
-    SAVEINFO = 1
-    SELECT = 2
-
-class WidgetDisplayType(IntEnum):
-    Accumulate = 0
-    Each = 1
-
-class SortUIType(IntEnum):
-    CharStar = 0
-    Label = 1
-    Event = 2
-    School = 3
-
-class ItemState(IntEnum):
-    IS_NORMAL = 0
-    IS_DISABLE = 1
-    END = 2
-
-class AssetDataClearType(IntEnum):
-    None_ = 0
-    RESTORE = 1
-    CACHE_CLEAR = 2
-    CACHE_CLEAR_ALL = 3
-    INIT_GAMESETTING = 4
-
-class InteractionAnim(IntEnum):
-    None_ = 0
-    Idle = 1
-    Open = 2
-    Success = 3
-    Fail = 4
-
-class UIType(IntEnum):
-    TouchSquare = 0
-    TouchSquareFullScreen = 1
-    TouchSquareTransparent = 2
-    SlideShort = 3
-
-class PopupType(IntEnum):
-    None_ = 0
-    Rank = 1
-    StageClear = 2
-    LevelUp = 3
-    StageMission = 4
-    Reward = 5
-    EventResult = 6
-    Max = 7
-
-class CanNotTouchTypes(IntEnum):
-    None_ = 0
-    Never = 1
-    TouchableByMode = 2
-
-class FitType(IntEnum):
-    Fullscreen = 0
-    FitWidth = 1
-    FitHeight = 2
-
-class ConnectState(IntEnum):
-    Prepare = 0
-    Connecting = 1
-    Success = 2
-    Fail = 3
-
-class StateResultCode(IntEnum):
-    Maintain = 0
-    Normal = 1
-    AppUpdate = 2
-
-class DataHashException(IntEnum):
-    GET_LOCAL_DATAHASH_STORE = 0
-    SAVE_LOCAL_DATAHASH = 1
-    SAVE_LOADL_DATAHASH_DICTIONARY = 2
-    GET_LOCAL_DATAHASH = 3
-    DELETE_LOCAL_DATAHASH = 4
-    DELETE_LOCAL_DATAHASH_BY_LIST = 5
-    DELETE_ALL_LOCAL_DATAHASH = 6
-    GET_ALL_LOCAL_DATAHASH_PATTERN = 7
-
-class SensitiveCheckType(IntEnum):
-    CallName = 0
-    Name = 1
-    SelfIntroduction = 2
-    ClanIntroduction = 3
-    ClanChat = 4
-    BirthDay = 5
-
-class SensitiveResultType(IntEnum):
-    Success = 0
-    NullValue = 1
-    OnlyCN = 2
-    OnlyCNAZ09 = 3
-    OnlyCNAZ09Sign = 4
-    Only09 = 5
-    NumLimit = 6
-    Sensitive = 7
-    BirthDayLimit = 8
-
-class UCBTNodeTag(IntEnum):
-    Begin = 0
-    GetNextPath = 1
-    MovePath = 2
-    AfterMovePath = 3
-    GuardMode = 4
-    IsStunned = 5
-    IsStunnedReady = 6
-    IsConfused_UNUSED = 7
-    Stun = 8
-    StunReady = 9
-    FindNoiseMaker = 10
-    LookAtNoiseMaker = 11
-    CustomAnimation = 12
-    End = 13
-
-class UCEntityTypes(IntEnum):
-    Plain = 0
-    Player = 1
-    NPC = 2
-    Boss = 3
-    Obstacle = 4
-    Projectile = 5
-    Particle = 6
-    Prop = 7
-
-class UCEntityStatus(IntEnum):
-    None_ = 0
-    StunReady = 1
-    Stun = 2
-
-class DebugLogType(IntEnum):
-    Debug = 0
-    Warning = 1
-    Error = 2
-
-class UCPersonalityType(IntEnum):
-    None_ = 0
-    All = 1
-    CH0070 = 2
-    CH0280 = 3
-
-class UIButtonBindType(IntEnum):
-    None_ = 0
-    SkillButton_1 = 1
-    SkillButton_2 = 2
-    ItemButton = 3
-
-class UIItemQuickSlotBindType(IntEnum):
-    None_ = 0
-    ItemQuickSlot_1 = 1
-    ItemQuickSlot_2 = 2
-    ItemQuickSlot_3 = 3
-
-class Type(IntEnum):
-    LeftStick = 0
-
-class Clockwise(IntEnum):
-    DontCare = 0
-    Clockwise = 1
-    CounterClockwise = 2
-
-class RefreshEventType(IntEnum):
-    None_ = 0
-    DisableAll = 1
-    ByQuickSlot = 2
-    ByPolymorph = 3
-    ByHide = 4
-    BySwitch = 5
-    ByActionButtonEffect = 6
-
-class UCRuntimeObjectType(IntEnum):
-    Common = 0
-    Skill_NoiseMaker = 1
-
-class States(IntEnum):
-    Initialize = 0
-    Playing = 1
-    Detected = 2
-    LoadingSavePoint = 3
-    EnterStageAction = 4
-    GameOver = 5
-    ClearStage = 6
-
-class UCButtonStateFlags(IntEnum):
-    None_ = 0
-    Press = 1
-    Drag = 2
-    DragOut = 3
-
-class UCButtonVisualState(IntEnum):
-    Empty = 0
-    Enable = 1
-    Disable = 2
-    Cooltime = 3
-    InBox = 4
-    InCabinet = 5
-
-class CommandMode(IntEnum):
-    MoveImmediately = 0
-    MovePosition = 1
-    MovePositionDelta = 2
-    RotateImmediately = 3
-
-class UCNPCAnimations(IntEnum):
-    Enter = 0
-    IdleAndMove_01 = 1
-    CatchPlayer = 2
-    EX_01 = 3
-    Panic_01 = 4
-    Exit = 5
-
-class UCPlayerAnimations(IntEnum):
-    Enter = 0
-    Idle = 1
-    IdleAndMoveMixer_01 = 2
-    RotateRun = 3
-    UseSkill_01 = 4
-    UseSkill_02 = 5
-    GetItem_01 = 6
-    UseItem_Self_01 = 7
-    UseItem_Throw_01 = 8
-    UseItem_Shot_01 = 9
-    Interaction_Use_01 = 10
-    Interaction_Use_WalkiTalkie_01 = 11
-    Panic_01 = 12
-    Exit = 13
-
-class UCPropAnimations(IntEnum):
-    Enter = 0
-    Idle = 1
-    IdleAndMoveMixer = 2
-    Open = 3
-    Close = 4
-    Off = 5
-    Interation_01 = 6
-    Interation_02 = 7
-    Interation_03 = 8
-    Interation_04 = 9
-    CatchPlayer = 10
-    Exit = 11
-
-class ErrorCode(IntEnum):
-    PROCESS_TIMEOUT = 0
-    APPLICATION_SUSPEND = 1
-    HTTP_CLIENT_ERROR = 2
-    HTTP_SERVER_ERROR = 3
-    NETWORK_ERROR = 4
-    FILESYSTEM_ERROR = 5
-    APPLICATION_ERROR = 6
-    CONSISTENCY_ERROR = 7
-
-class GroundNodeType(IntEnum):
-    None_ = 0
-    WalkAble = 1
-    JumpAble = 2
-    TSSOnly = 3
-    NotWalkAble = 4
-
-class BubbleType(IntEnum):
-    Idle = 0
-    Monologue = 1
-    EmoticonNormal = 2
-    EmoticonFavorite = 3
-    EmoticonReward = 4
-    EmoticonGiveGift = 5
-
-class FurnitureCategory(IntEnum):
-    Furnitures = 0
-    Decorations = 1
-    Interiors = 2
-
-class FurnitureSubCategory(IntEnum):
-    Table = 0
-    Closet = 1
-    Chair = 2
-    Bed = 3
-    Prop = 4
-    FurnitureEtc = 5
-    FurnitureSubCategory1 = 6
-    HomeAppliance = 7
-    Trophy = 8
-    WallDecoration = 9
-    FloorDecoration = 10
-    DecorationEtc = 11
-    DecorationSubCategory1 = 12
-    Floor = 13
-    Background = 14
-    Wallpaper = 15
-    InteriorsSubCategory1 = 16
-    All = 17
-
-class FurnitureLocation(IntEnum):
-    None_ = 0
-    Inventory = 1
-    Floor = 2
-    WallLeft = 3
-    WallRight = 4
-
-class AcademyMessageConditions(IntEnum):
-    None_ = 0
-    FavorRankUp = 1
-    AcademySchedule = 2
-    Answer = 3
-    Feedback = 4
-
-class AcademyMessageTypes(IntEnum):
-    None_ = 0
-    Text = 1
-    Image = 2
-
-class CafePresetType(IntEnum):
-    None_ = 0
-    Preset = 1
-    CopyPreset = 2
-
-class VoiceEvent(IntEnum):
-    OnTSA = 0
-    FormationPickUp = 1
-    CampaignResultDefeat = 2
-    CampaignResultVictory = 3
-    CharacterLevelUp = 4
-    CharacterTranscendence = 5
-    SkillLevelUp = 6
-    Formation = 7
-    CampaignCharacterSpawn = 8
-    BattleStartTimeline = 9
-    BattleVictoryTimeline = 10
-    CharacterFavor = 11
-    BattleMiss = 12
-    BattleBlock = 13
-    BattleCover = 14
-    BattleMove = 15
-    BattleMoveToForamtionBeacon = 16
-    MGS_GameStart = 17
-    MGS_CharacterSelect = 18
-    MGS_Attacking = 19
-    MGS_GeasGet = 20
-    EXSkill = 21
-    EXSkillLevel = 22
-    EXSkill2 = 23
-    EXSkillLevel2 = 24
-    EXSkill3 = 25
-    EXSkillLevel3 = 26
-    EXSkill4 = 27
-    EXSkillLevel4 = 28
-    PublicSkill01 = 29
-    PublicSkill02 = 30
-    InteractionPublicSkill01 = 31
-    InteractionPublicSkill02 = 32
-    FormationStyleChange = 33
-    BattleInteractionVictoryTimeline = 34
-
-class UnitType(IntEnum):
-    None_ = 0
-    AR = 1
-    RF = 2
-    HG = 3
-    MG = 4
-    SMG = 5
-    SG = 6
-    HZ = 7
-    Melee = 8
-
-class AttackType(IntEnum):
-    Single = 0
-    Splash = 1
-    Through = 2
-    Heal = 3
-
-class ProjectileType(IntEnum):
-    Guided = 0
-    Ground = 1
-    GuidedExplosion = 2
-    GroundConstDistance = 3
-    AirConstDistance = 4
-
-class DamageFontColor(IntEnum):
-    Blue = 0
-    White = 1
-    Yellow = 2
-    Red = 3
-    Green = 4
-
-class TargetingCellType(IntEnum):
-    None_ = 0
-    Near = 1
-    Far = 2
-
-class TargetingUnitType(IntEnum):
-    None_ = 0
-    Near = 1
-    Far = 2
-    MinHp = 3
-    MaxHp = 4
-    Random = 5
-
-class ProjectileAction(IntEnum):
-    None_ = 0
-    Damage = 1
-    Heal = 2
-
-class FontType(IntEnum):
-    None_ = 0
-    Damage = 1
-    Block = 2
-    Heal = 3
-    Miss = 4
-    Critical = 5
-    Skill = 6
-    Immune = 7
-    DamageResist = 8
-    DamageWeak = 9
-    CriticalResist = 10
-    CriticalWeak = 11
-    Effective = 12
-    CriticalEffective = 13
-
-class EmoticonEvent(IntEnum):
-    CoverEnter = 0
-    ShelterEnter = 1
-    Panic = 2
-    NearlyDead = 3
-    Reload = 4
-    Found = 5
-    GetBeacon = 6
-    Warning = 7
-
-class BulletType(IntEnum):
-    Normal = 0
-    Pierce = 1
-    Explosion = 2
-    Siege = 3
-    Mystic = 4
-    None_ = 5
-    Sonic = 6
-    Chemical = 7
-
-class ActionType(IntEnum):
-    Crush = 0
-    Courage = 1
-    Tactic = 2
-
-class BuffOverlap(IntEnum):
-    Able = 0
-    Unable = 1
-    Change = 2
-    Additive = 3
-
-class ReArrangeTargetType(IntEnum):
-    AllySelf = 0
-    AllyAll = 1
-    AllyUnitType = 2
-    AllyGroup = 3
-
-class ArmorType(IntEnum):
-    LightArmor = 0
-    HeavyArmor = 1
-    Unarmed = 2
-    Structure = 3
-    Normal = 4
-    ElasticArmor = 5
-    CompositeArmor = 6
-
-class WeaponType(IntEnum):
-    None_ = 0
-    SG = 1
-    SMG = 2
-    AR = 3
-    GL = 4
-    HG = 5
-    RL = 6
-    SR = 7
-    DSMG = 8
-    RG = 9
-    DSG = 10
-    Vulcan = 11
-    Missile = 12
-    Cannon = 13
-    Taser = 14
-    MG = 15
-    Binah = 16
-    MT = 17
-    Relic = 18
-    FT = 19
-    Akemi = 20
-    KetherCannon = 21
-
-class EntityMaterialType(IntEnum):
-    Wood = 0
-    Stone = 1
-    Flesh = 2
-    Metal = 3
-
-class CoverMotionType(IntEnum):
-    All = 0
-    Kneel = 1
-
-class TargetSortBy(IntEnum):
-    DISTANCE = 0
-    HP = 1
-    DAMAGE_EFFICIENCY = 2
-    TARGETED_COUNT = 3
-    RANDOM = 4
-    FRONT_FORMATION = 5
-
-class PositioningType(IntEnum):
-    CloseToObstacle = 0
-    CloseToTarget = 1
-
-class DamageType(IntEnum):
-    Normal = 0
-    Critical = 1
-    IgnoreDefence = 2
-
-class FormationLine(IntEnum):
-    Students = 0
-    TSS = 1
-
-class ExternalBTNodeType(IntEnum):
-    Sequence = 0
-    Selector = 1
-    Instant = 2
-    SubNode = 3
-    ExecuteAll = 4
-
-class ExternalBTTrigger(IntEnum):
-    None_ = 0
-    HPUnder = 1
-    ApplySkillEffectCategory = 2
-    HaveNextExSkillActiveGauge = 3
-    UseNormalSkill = 4
-    UseExSkill = 5
-    CheckActiveGaugeOver = 6
-    CheckPeriod = 7
-    CheckSummonCharacterCountOver = 8
-    CheckSummonCharacterCountUnder = 9
-    ApplyGroggy = 10
-    ApplyLogicEffectTemplateId = 11
-    OnSpawned = 12
-    CheckActiveGaugeBetween = 13
-    DestroyParts = 14
-    CheckHallucinationCountOver = 15
-    CheckHallucinationCountUnder = 16
-    UseSkillEndGroupId = 17
-
-class ExternalBehavior(IntEnum):
-    UseNextExSkill = 0
-    ChangePhase = 1
-    ChangeSection = 2
-    AddActiveGauge = 3
-    UseSelectExSkill = 4
-    ClearNormalSkill = 5
-    MoveLeft = 6
-    MoveRight = 7
-    AllUseSelectExSkill = 8
-    ConnectCharacterToDummy = 9
-    ConnectExSkillToParts = 10
-    SetMaxHPToParts = 11
-    AlivePartsUseExSkill = 12
-    ActivatePart = 13
-    AddGroggy = 14
-    SelectTargetToUseSkillAlly = 15
-    ForceChangePhase = 16
-    ClearUseSkillEndGroupId = 17
-    ChangePhaseKeepATG = 18
-    ForceChangePhaseKeepATG = 19
-
-class TacticEntityType(IntEnum):
-    None_ = 0
-    Student = 1
-    Minion = 2
-    Elite = 3
-    Champion = 4
-    Boss = 5
-    Obstacle = 6
-    Servant = 7
-    Vehicle = 8
-    Summoned = 9
-    Hallucination = 10
-    DestructibleProjectile = 11
-
-class BuffIconType(IntEnum):
-    None_ = 0
-    Debuff_DyingPenalty = 1
-    CC_MindControl = 2
-    CC_Inoperative = 3
-    CC_Confusion = 4
-    CC_Provoke = 5
-    CC_Silence = 6
-    CC_Blind = 7
-    Dot_Damage = 8
-    Dot_Heal = 9
-    Buff_AttackPower = 10
-    Buff_CriticalChance = 11
-    Buff_CriticalDamage = 12
-    Buff_DefensePower = 13
-    Buff_Dodge = 14
-    Buff_Hit = 15
-    Buff_WeaponRange = 16
-    Buff_SightRange = 17
-    Buff_MoveSpeed = 18
-    Buff_Mind = 19
-    Debuf_AttackPower = 20
-    Debuff_CriticalChance = 21
-    Debuff_CriticalDamage = 22
-    Debuff_DefensePower = 23
-    Debuff_Dodge = 24
-    Debuff_Hit = 25
-    Debuff_WeaponRange = 26
-    Debuff_SightRange = 27
-    Debuff_MoveSpeed = 28
-    Debuff_Mind = 29
-    Buff_AttackTime = 30
-    Debuff_AttackTime = 31
-    Buff_MaxHp = 32
-    Debuff_MaxHp = 33
-    Buff_MaxBulletCount = 34
-    Debuff_MaxBulletCount = 35
-    Debuff_SuppliesCondition = 36
-    Buff_HealEffectivenessRate = 37
-    Debuff_HealEffectivenessRate = 38
-    Buff_HealPower = 39
-    Debuff_HealPower = 40
-    Buff_CriticalChanceResistPoint = 41
-    Debuff_CriticalChanceResistPoint = 42
-    CC_Stunned = 43
-    Debuff_ConcentratedTarget = 44
-    Buff_Immortal = 45
-    Max = 46
-
-class Difficulty(IntEnum):
-    Normal = 0
-    Hard = 1
-    VeryHard = 2
-    Hardcore = 3
-    Extreme = 4
-    Insane = 5
-    Torment = 6
-    Lunatic = 7
-
-class EngageType(IntEnum):
-    SearchAndMove = 0
-    HoldPosition = 1
-
-class HitEffectPosition(IntEnum):
-    Position = 0
-    HeadBone = 1
-    BodyBone = 2
-    Follow = 3
-
-class StageTopography(IntEnum):
-    Street = 0
-    Outdoor = 1
-    Indoor = 2
-
-class TerrainAdaptationStat(IntEnum):
-    D = 0
-    C = 1
-    B = 2
-    A = 3
-    S = 4
-    SS = 5
-
-class SquadType(IntEnum):
-    None_ = 0
-    Main = 1
-    Support = 2
-    TSS = 3
-
-class ObstacleClass(IntEnum):
-    MAIN = 0
-    SUB = 1
-
-class ObstacleDestroyType(IntEnum):
-    Remain = 0
-    Remove = 1
-
-class ObstacleHeightType(IntEnum):
-    Low = 0
-    Middle = 1
-    High = 2
-
-class ObstacleCoverType(IntEnum):
-    None_ = 0
-    Cover = 1
-    Shelter = 2
-
-class SkillCategory(IntEnum):
-    None_ = 0
-
-class LogicEffectCategory(IntEnum):
-    None_ = 0
-    Attack = 1
-    Heal = 2
-    Buff = 3
-    Debuff = 4
-    CrowdControl = 5
-    Boss = 6
-    Dummy = 7
-
-class AimIKType(IntEnum):
-    None_ = 0
-    OneHandRight = 1
-    OneHandLeft = 2
-    TwoHandRight = 3
-    TwoHandLeft = 4
-    Tripod = 5
-    Dual = 6
-    Max = 7
-
-class DamageAttribute(IntEnum):
-    Resist = 0
-    Normal = 1
-    Weak = 2
-    Effective = 3
-
-class SkillPriorityCheckCondition(IntEnum):
-    None_ = 0
-    HPRateUnder = 1
-    DebuffCountOver = 2
-    BuffCountOver = 3
-    CrowdControlOver = 4
-
-class SkillPriorityCheckTarget(IntEnum):
-    Ally = 0
-    Enemy = 1
-    All = 2
-
-class StageType(IntEnum):
-    Main = 0
-    Sub = 1
-
-class OperatorCondition(IntEnum):
-    None_ = 0
-    StrategyStart = 1
-    StrategyVictory = 2
-    StrategyDefeat = 3
-    AdventureCombatStart = 4
-    AdventureCombatVictory = 5
-    AdventureCombatDefeat = 6
-    ArenaCombatStart = 7
-    ArenaCombatVictory = 8
-    ArenaCombatDefeat = 9
-    WeekDungeonCombatStart = 10
-    WeekDungeonCombatVictory = 11
-    WeekDungeonCombatDefeat = 12
-    SchoolDungeonCombatStart = 13
-    SchoolDungeonCombatVictory = 14
-    SchoolDungeonCombatDefeat = 15
-    StrategyWarpUnitFromHideTile = 16
-    TimeAttackDungeonStart = 17
-    TimeAttackDungeonVictory = 18
-    TimeAttackDungeonDefeat = 19
-    WorldRaidBossSpawn = 20
-    WorldRaidBossKill = 21
-    WorldRaidBossDamaged = 22
-    WorldRaidScenarioBattle = 23
-    MinigameTBGThemaOpen = 24
-    MinigameTBGThemaComeback = 25
-    MinigameTBGAllyRevive = 26
-    MinigameTBGItemUse = 27
-
-class KnockbackDirection(IntEnum):
-    TargetToCaster = 0
-    CasterToTarget = 1
-    TargetToHitPosition = 2
-    HitPositionToTarget = 3
-    CasterToHitPosition = 4
-    HitPositionToCaster = 5
-    Caster = 6
-    Target = 7
-
-class EndCondition(IntEnum):
-    Duration = 0
-    ReloadCount = 1
-    AmmoCount = 2
-    AmmoHit = 3
-    HitCount = 4
-    None_ = 5
-    UseExSkillCount = 6
-    UseTargetSlotExSkillCount = 7
-    UseExSkillOverloadedCount = 8
-
-class AmplifyDoTRemoveCondition(IntEnum):
-    None_ = 0
-    ApplyCount = 1
-
-class LogicEffectSound(IntEnum):
-    None_ = 0
-    Damage = 1
-    Heal = 2
-    Knockback = 3
-
-class EffectBone(IntEnum):
-    None_ = 0
-    Shot = 1
-    Head = 2
-    Body = 3
-    Shot2 = 4
-    Shot3 = 5
-    Extra = 6
-    Extra2 = 7
-    Extra3 = 8
-
-class ArenaSimulatorServer(IntEnum):
-    Preset = 0
-    Live = 1
-    Dev = 2
-    QA = 3
-
-class ClearCheck(IntEnum):
-    None_ = 0
-    Success_Play = 1
-    Success_Sweep = 2
-    Fail_Timeout = 3
-    Fail_PlayerGiveUp = 4
-    Fail_Annihilation = 5
-
-class BuffType(IntEnum):
-    None_ = 0
-    Buff_AttackPower = 1
-    Buff_CriticalChance = 2
-    Buff_CriticalDamage = 3
-    Buff_DefensePower = 4
-    Buff_Dodge = 5
-    Buff_Hit = 6
-    Buff_WeaponRange = 7
-    Buff_SightRange = 8
-    Buff_MoveSpeed = 9
-    Buff_AttackTime = 10
-    Buff_MaxHp = 11
-    Buff_MaxBulletCount = 12
-    DeBuff_AttackPower = 13
-    DeBuff_CriticalChance = 14
-    DeBuff_CriticalDamage = 15
-    DeBuff_DefensePower = 16
-    DeBuff_Dodge = 17
-    DeBuff_Hit = 18
-    DeBuff_WeaponRange = 19
-    DeBuff_SightRange = 20
-    DeBuff_MoveSpeed = 21
-    DeBuff_AttackTime = 22
-    DeBuff_MaxHp = 23
-    DeBuff_MaxBulletCount = 24
-
-class WorldRaidDifficulty(IntEnum):
-    None_ = 0
-    A = 1
-    B = 2
-    C = 3
-    D = 4
-    E = 5
-    F = 6
-    G = 7
-
-class TacticSpeed(IntEnum):
-    None_ = 0
-    Slow = 1
-    Normal = 2
-    Fast = 3
-
-class TacticSkillUse(IntEnum):
-    None_ = 0
-    Auto = 1
-    Manual = 2
-
-class ShowSkillCutIn(IntEnum):
-    None_ = 0
-    Once = 1
-    Always = 2
-
-class BattleCalculationStat(IntEnum):
-    FinalDamage = 0
-    FinalHeal = 1
-    FinalDamageRatio = 2
-    FinalDamageRatio2 = 3
-    FinalCriticalRate = 4
-
-class StatTransType(IntEnum):
-    SpecialTransStat = 0
-    TSATransStat = 1
-
-class BattleDialogType(IntEnum):
-    Talk = 0
-    Think = 1
-    Shout = 2
-
-class UIEnemyCountType(IntEnum):
-    Normal = 0
-    None_ = 1
-    Wave = 2
-    FindGift = 3
-
-class BulletTimeType(IntEnum):
-    All = 0
-    SkillCard = 1
-    CarrierSkillCard = 2
-
-class EchelonSlot(IntEnum):
-    None_ = 0
-    StrikerEchelon = 1
-    SpecialEchelon = 2
-
-class CharacterVoiceOverridePriority(IntEnum):
-    None_ = 0
-    High = 1
-    Low = 2
-
-class SkillSlotShowType(IntEnum):
-    None_ = 0
-    Ex = 1
-    Public = 2
-    Passive = 3
-    Global = 4
-
-class SkillSlotHighLightType(IntEnum):
-    None_ = 0
-    New = 1
-    Upgrade = 2
-
-class ConcentratedTargetType(IntEnum):
-    None_ = 0
-    InvokerOnly = 1
-
-class StatLevelUpType(IntEnum):
-    Standard = 0
-    Premature = 1
-    LateBloom = 2
-    Obstacle = 3
-    TimeAttack = 4
-
-class GrowthCategory(IntEnum):
-    None_ = 0
-    LevelUp = 1
-    Transcend = 2
-    SkillLevelUp = 3
-
-class StatType(IntEnum):
-    None_ = 0
-    MaxHP = 1
-    AttackPower = 2
-    DefensePower = 3
-    HealPower = 4
-    AccuracyPoint = 5
-    AccuracyRate = 6
-    DodgePoint = 7
-    DodgeRate = 8
-    CriticalPoint = 9
-    CriticalChanceRate = 10
-    CriticalResistChanceRate = 11
-    CriticalDamageRate = 12
-    MoveSpeed = 13
-    SightRange = 14
-    ActiveGauge = 15
-    StabilityPoint = 16
-    StabilityRate = 17
-    ReloadTime = 18
-    MaxBulletCount = 19
-    IgnoreDelayCount = 20
-    WeaponRange = 21
-    BlockRate = 22
-    BodyRadius = 23
-    ActionCount = 24
-    StrategyMobility = 25
-    StrategySightRange = 26
-    StreetBattleAdaptation = 27
-    OutdoorBattleAdaptation = 28
-    IndoorBattleAdaptation = 29
-    HealEffectivenessRate = 30
-    CriticalChanceResistPoint = 31
-    CriticalDamageResistRate = 32
-    LifeRecoverOnHit = 33
-    NormalAttackSpeed = 34
-    AmmoCost = 35
-    GroggyGauge = 36
-    GroggyTime = 37
-    DamageRatio = 38
-    DamagedRatio = 39
-    OppressionPower = 40
-    OppressionResist = 41
-    RegenCost = 42
-    InitialWeaponRangeRate = 43
-    DefensePenetration = 44
-    DefensePenetrationResisit = 45
-    ExtendBuffDuration = 46
-    ExtendDebuffDuration = 47
-    ExtendCrowdControlDuration = 48
-    EnhanceExplosionRate = 49
-    EnhancePierceRate = 50
-    EnhanceMysticRate = 51
-    EnhanceLightArmorRate = 52
-    EnhanceHeavyArmorRate = 53
-    EnhanceUnarmedRate = 54
-    EnhanceSiegeRate = 55
-    EnhanceNormalRate = 56
-    EnhanceStructureRate = 57
-    EnhanceNormalArmorRate = 58
-    DamageRatio2Increase = 59
-    DamageRatio2Decrease = 60
-    DamagedRatio2Increase = 61
-    DamagedRatio2Decrease = 62
-    EnhanceSonicRate = 63
-    EnhanceElasticArmorRate = 64
-    ExDamagedRatioIncrease = 65
-    ExDamagedRatioDecrease = 66
-    EnhanceExDamageRate = 67
-    ReduceExDamagedRate = 68
-    EnhanceBasicsDamageRate = 69
-    ReduceBasicsDamagedRate = 70
-    HealRate = 71
-    HealLightArmorRate = 72
-    HealHeavyArmorRate = 73
-    HealUnarmedRate = 74
-    HealElasticArmorRate = 75
-    HealNormalArmorRate = 76
-    HealedExplosionRate = 77
-    HealedPierceRate = 78
-    HealedMysticRate = 79
-    HealedSonicRate = 80
-    HealedNormalRate = 81
-    GrowthScore = 82
-    CharacterBulletTypeEnhanceRate = 83
-    MaxCostIncrease = 84
-    EnhanceChemicalRate = 85
-    EnhanceCompositeArmorRate = 86
-    EnhanceWeakDamageRate = 87
-    ReduceWeakDamagedRate = 88
-    Max = 89
-
-class ProductionStep(IntEnum):
-    ToDo = 0
-    Doing = 1
-    Complete = 2
-    Release = 3
-
-class TacticRole(IntEnum):
-    None_ = 0
-    DamageDealer = 1
-    Tanker = 2
-    Supporter = 3
-    Healer = 4
-    Vehicle = 5
-
-class TacticRange(IntEnum):
-    Back = 0
-    Front = 1
-    Middle = 2
-
-class CVCollectionType(IntEnum):
-    CVNormal = 0
-    CVEvent = 1
-    CVEtc = 2
-
-class CVPrintType(IntEnum):
-    CharacterOverwrite = 0
-    PrefabOverwrite = 1
-    Add = 2
-
-class CVExceptionTarget(IntEnum):
-    CharacterId = 0
-    SquadType = 1
-
-class PotentialStatBonusRateType(IntEnum):
-    None_ = 0
-    MaxHP = 1
-    AttackPower = 2
-    HealPower = 3
-
-class GrowthFactor(IntEnum):
-    CharacterLevel = 0
-    CharacterGrade = 1
-    ExSkillLevel = 2
-    PublicSkillLevel = 3
-    PassiveSkillLevel = 4
-    ExtraPassiveSkillLevel = 5
-    Equipment01Tier = 6
-    Equipment01Level = 7
-    Equipment02Tier = 8
-    Equipment02Level = 9
-    Equipment03Tier = 10
-    Equipment03Level = 11
-    CharacterWeaponTier = 12
-    CharacterWeponLevel = 13
-    PotentialStat01Level = 14
-    PotentialStat02Level = 15
-    PotentialStat03Level = 16
-    FavorRank = 17
-    Max = 18
-
-class ClanSocialGrade(IntEnum):
-    None_ = 0
-    President = 1
-    Manager = 2
-    Member = 3
-    Applicant = 4
-    Refused = 5
-    Kicked = 6
-    Quit = 7
-    VicePredisident = 8
-
-class ClanJoinOption(IntEnum):
-    Free = 0
-    Permission = 1
-    All = 2
-
-class ClanSearchOption(IntEnum):
-    Name = 0
-    Id = 1
-
-class ClanRewardType(IntEnum):
-    None_ = 0
-    AssistTerm = 1
-    AssistRent = 2
-    Attendance = 3
-
-class ConquestEnemyType(IntEnum):
-    None_ = 0
-    Normal = 1
-    MiddleBoss = 2
-    Boss = 3
-    UnexpectedEvent = 4
-    Challenge = 5
-    IndividualErosion = 6
-    MassErosion = 7
-
-class ConquestTeamType(IntEnum):
-    None_ = 0
-    Team1 = 1
-    Team2 = 2
-    Team3 = 3
-
-class ConquestTileType(IntEnum):
-    None_ = 0
-    Start = 1
-    Normal = 2
-    Battle = 3
-    Base = 4
-
-class ConquestObjectType(IntEnum):
-    None_ = 0
-    ParcelOneTimePerAccount = 1
-
-class ConquestItemType(IntEnum):
-    None_ = 0
-    EventPoint = 1
-    EventToken1 = 2
-    EventToken2 = 3
-    EventToken3 = 4
-    EventToken4 = 5
-    EventToken5 = 6
-
-class ConquestProgressType(IntEnum):
-    None_ = 0
-    Upgrade = 1
-    Manage = 2
-
-class TileState(IntEnum):
-    None_ = 0
-    PartiallyConquested = 1
-    FullyConquested = 2
-
-class ConquestEventType(IntEnum):
-    None_ = 0
-    Event01 = 1
-    Event02 = 2
-
-class ConquestConditionType(IntEnum):
-    None_ = 0
-    OpenDateOffset = 1
-    ItemAcquire = 2
-    ParcelUse = 3
-    KillUnit = 4
-
-class ConquestErosionType(IntEnum):
-    None_ = 0
-    IndividualErosion = 1
-    MassErosion = 2
-
-class ContentType(IntEnum):
-    None_ = 0
-    CampaignMainStage = 1
-    CampaignSubStage = 2
-    WeekDungeon = 3
-    EventContentMainStage = 4
-    EventContentSubStage = 5
-    CampaignTutorialStage = 6
-    EventContentMainGroundStage = 7
-    SchoolDungeon = 8
-    TimeAttackDungeon = 9
-    Raid = 10
-    Conquest = 11
-    EventContentStoryStage = 12
-    CampaignExtraStage = 13
-    StoryStrategyStage = 14
-    ScenarioMode = 15
-    EventContent = 16
-    WorldRaid = 17
-    EliminateRaid = 18
-    Chaser = 19
-    FieldContentStage = 20
-    MultiFloorRaid = 21
-    MinigameDefense = 22
-    InteractiveWorldRaid = 23
-    PermanentRaid = 24
-
-class EventContentType(IntEnum):
-    Stage = 0
-    Gacha = 1
-    Mission = 2
-    Shop = 3
-    Raid = 4
-    Arena = 5
-    BoxGacha = 6
-    Collection = 7
-    Recollection = 8
-    MiniGameRhythm = 9
-    CardShop = 10
-    EventLocation = 11
-    MinigameRhythmEvent = 12
-    FortuneGachaShop = 13
-    SubEvent = 14
-    EventMeetup = 15
-    BoxGachaResult = 16
-    Conquest = 17
-    WorldRaid = 18
-    DiceRace = 19
-    MiniGameRhythmMission = 20
-    WorldRaidEntrance = 21
-    MiniEvent = 22
-    MiniGameShooting = 23
-    MiniGameShootingMission = 24
-    MiniGameTBG = 25
-    TimeAttackDungeon = 26
-    EliminateRaid = 27
-    Treasure = 28
-    Field = 29
-    MultiFloorRaid = 30
-    MinigameDreamMaker = 31
-    MiniGameDefense = 32
-    OpenWebView = 33
-    SpecialMiniEvent = 34
-    ScenarioCollection = 35
-    ScenarioShortcut = 36
-    SeasonalEvent = 37
-    MiniShop = 38
-    MiniGameRoad = 39
-    MiniGameCCG = 40
-    Concentration = 41
-    InteractiveWorldRaid = 42
-    ClueSearch = 43
-    Browser = 44
-    Webview = 45
-    Survey = 46
-    Browser_Arg = 47
-    Webview_Arg = 48
-
-class OpenCondition(IntEnum):
-    Hide = 0
-    Lock = 1
-    Open = 2
-
-class ResetContentType(IntEnum):
-    None_ = 0
-    HardStagePlay = 1
-    StarategyMapHeal = 2
-    ShopRefresh = 3
-    ArenaDefenseVictoryReward = 4
-    WeeklyMasterCoin = 5
-    WorldRaidGemEnterCount = 6
-    ConquestDailyErosionCheck = 7
-    MiniEventToken = 8
-
-class WeekDungeonType(IntEnum):
-    None_ = 0
-    ChaserA = 1
-    ChaserB = 2
-    ChaserC = 3
-    FindGift = 4
-    Blood = 5
-
-class StarGoalType(IntEnum):
-    None_ = 0
-    AllAlive = 1
-    Clear = 2
-    GetBoxes = 3
-    ClearTimeInSec = 4
-    AllyBaseDamage = 5
-
-class OpenConditionContent(IntEnum):
-    Shop = 0
-    Gacha = 1
-    LobbyIllust = 2
-    Raid = 3
-    Cafe = 4
-    Unit_Growth_Skill = 5
-    Unit_Growth_LevelUp = 6
-    Unit_Growth_Transcendence = 7
-    Arena = 8
-    Academy = 9
-    Equip = 10
-    Item = 11
-    Favor = 12
-    Prologue = 13
-    Mission = 14
-    WeekDungeon_Chase = 15
-    __Deprecated_WeekDungeon_FindGift = 16
-    __Deprecated_WeekDungeon_Blood = 17
-    Story_Sub = 18
-    Story_Replay = 19
-    WeekDungeon = 20
-    None_ = 21
-    Shop_Gem = 22
-    Craft = 23
-    Student = 24
-    GuideMission = 25
-    Clan = 26
-    Echelon = 27
-    Campaign = 28
-    EventContent = 29
-    Guild = 30
-    EventStage_1 = 31
-    EventStage_2 = 32
-    Talk = 33
-    Billing = 34
-    Schedule = 35
-    Story = 36
-    Tactic_Speed = 37
-    Cafe_Invite = 38
-    EventMiniGame_1 = 39
-    SchoolDungeon = 40
-    TimeAttackDungeon = 41
-    ShiftingCraft = 42
-    WorldRaid = 43
-    Tactic_Skip = 44
-    Mulligan = 45
-    EventPermanent = 46
-    Main_L_1_2 = 47
-    Main_L_1_3 = 48
-    Main_L_1_4 = 49
-    EliminateRaid = 50
-    Cafe_2 = 51
-    Cafe_Invite_2 = 52
-    MultiFloorRaid = 53
-    StrategySkip = 54
-    MinigameDreamMaker = 55
-    MiniGameDefense = 56
-    MiniGameCCG = 57
-    Main_L_1_5 = 58
-
-class ContentLockType(IntEnum):
-    None_ = 0
-    NotUseControlledByOtherSetting = 1
-    Academy = 2
-    MultiFloorRaid = 3
-    EventContent = 4
-    EventNotice = 5
-    GuideMission = 6
-    Campaign = 7
-    Story = 8
-    WeekDungeon_Chase = 9
-    WeekDungeon = 10
-    SchoolDungeon = 11
-    Raid = 12
-    EliminateRaid = 13
-    TimeAttackDungeon = 14
-    Arena = 15
-    Cafe = 16
-    GemShop = 17
-    Gacha = 18
-    Craft = 19
-    MomoTalk = 20
-
-class TutorialFailureContentType(IntEnum):
-    None_ = 0
-    Campaign = 1
-    WeekDungeon = 2
-    Raid = 3
-    TimeAttackDungeon = 4
-    WorldRaid = 5
-    Conquest = 6
-    EliminateRaid = 7
-    MultiFloorRaid = 8
-    InteractiveWorldRaid = 9
-
-class FeverBattleType(IntEnum):
-    Campaign = 0
-    Raid = 1
-    WeekDungeon = 2
-    Arena = 3
-
-class EventContentScenarioConditionType(IntEnum):
-    None_ = 0
-    DayAfter = 1
-    EventPoint = 2
-
-class EventTargetType(IntEnum):
-    WeekDungeon = 0
-    Chaser = 1
-    Campaign_Normal = 2
-    Campaign_Hard = 3
-    SchoolDungeon = 4
-    AcademySchedule = 5
-    TimeAttackDungeon = 6
-    AccountLevelExpIncrease = 7
-    Raid = 8
-    EliminateRaid = 9
-    MultiFloorRaid = 10
-
-class ContentResultType(IntEnum):
-    Failure = 0
-    Success = 1
-
-class EventContentItemType(IntEnum):
-    EventPoint = 0
-    EventToken1 = 1
-    EventToken2 = 2
-    EventToken3 = 3
-    EventToken4 = 4
-    EventToken5 = 5
-    EventMeetUpTicket = 6
-    EventEtcItem = 7
-    Concentration = 8
-
-class RaidSeasonType(IntEnum):
-    None_ = 0
-    Open = 1
-    Close = 2
-    Settlement = 3
-
-class BuffConditionType(IntEnum):
-    All = 0
-    Character = 1
-    School = 2
-    Weapon = 3
-
-class CollectionUnlockType(IntEnum):
-    None_ = 0
-    ClearSpecificEventStage = 1
-    ClearSpecificEventScenario = 2
-    ClearSpecificEventMission = 3
-    PurchaseSpecificItemCount = 4
-    SpecificEventLocationRank = 5
-    DiceRaceConsumeDiceCount = 6
-    MinigameTBGThemaClear = 7
-    MinigameEnter = 8
-    MinigameDreamMakerParameter = 9
-    ClearSpecificScenario = 10
-    MinigameCCGBuyPerk = 11
-
-class ShortcutContentType(IntEnum):
-    None_ = 0
-    CampaignStage = 1
-    EventStage = 2
-    Blood = 3
-    WeekDungeon = 4
-    Arena = 5
-    Raid = 6
-    Shop = 7
-    ItemInventory = 8
-    Craft = 9
-    SchoolDungeon = 10
-    Academy = 11
-    Mission = 12
-    MultiFloorRaid = 13
-
-class JudgeGrade(IntEnum):
-    None_ = 0
-    Miss = 1
-    Attack = 2
-    Critical = 3
-
-class SchoolDungeonType(IntEnum):
-    SchoolA = 0
-    SchoolB = 1
-    SchoolC = 2
-    None_ = 3
-
-class EventContentBuffFindRule(IntEnum):
-    None_ = 0
-    WeaponType = 1
-    SquadType = 2
-    StreetBattleAdaptation = 3
-    OutdoorBattleAdaptation = 4
-    IndoorBattleAdaptation = 5
-    BulletType = 6
-    School = 7
-    TacticRange = 8
-
-class TimeAttackDungeonRewardType(IntEnum):
-    Fixed = 0
-    TimeWeight = 1
-
-class TimeAttackDungeonType(IntEnum):
-    None_ = 0
-    Defense = 1
-    Shooting = 2
-    Destruction = 3
-    Escort = 4
-
-class SuddenMissionContentType(IntEnum):
-    OrdinaryState = 0
-    CampaignNormalStage = 1
-    CampaignHardStage = 2
-    EventStage = 3
-    WeekDungeon = 4
-    Chaser = 5
-    SchoolDungeon = 6
-    TimeAttackDungeon = 7
-    Raid = 8
-
-class ContentsChangeType(IntEnum):
-    None_ = 0
-    WorldRaidBossDamageRatio = 1
-    WorldRaidBossGroupDate = 2
-
-class EventNotifyType(IntEnum):
-    RewardIncreaseEvent = 0
-    AccountExpIncreaseEvent = 1
-    RaidSeasonManager = 2
-    TimeAttackDungeonSeasonManage = 3
-    EliminateRaidSeasonManage = 4
-    MultiFloorRaidSeasonManage = 5
-
-class EventContentDiceRaceResultType(IntEnum):
-    DiceResult1 = 0
-    DiceResult2 = 1
-    DiceResult3 = 2
-    DiceResult4 = 3
-    DiceResult5 = 4
-    DiceResult6 = 5
-    MoveForward = 6
-    LapFinish = 7
-    EventOccur = 8
-    DiceResultFixed1 = 9
-    DiceResultFixed2 = 10
-    DiceResultFixed3 = 11
-    DiceResultFixed4 = 12
-    DiceResultFixed5 = 13
-    DiceResultFixed6 = 14
-    SpecialReward = 15
-
-class EventContentDiceRaceNodeType(IntEnum):
-    StartNode = 0
-    RewardNode = 1
-    MoveForwardNode = 2
-    SpecialRewardNode = 3
-
-class MeetupConditionType(IntEnum):
-    None_ = 0
-    EventContentStageClear = 1
-    ScenarioClear = 2
-
-class MeetupConditionPrintType(IntEnum):
-    None_ = 0
-    Lock = 1
-    Hide = 2
-
-class GuideMissionTabType(IntEnum):
-    None_ = 0
-    Daily = 1
-    StageClear = 2
-
-class RankingSearchType(IntEnum):
-    None_ = 0
-    Rank = 1
-    Score = 2
-
-class EventContentReleaseType(IntEnum):
-    None_ = 0
-    Permanent = 1
-    MainStory = 2
-    PermanentSpecialOperate = 3
-    PermanentConquest = 4
-
-class CraftSlotIndex(IntEnum):
-    Slot00 = 0
-    Slot01 = 1
-    Slot02 = 2
-    Max = 3
-
-class CraftNodeTier(IntEnum):
-    Base = 0
-    Node01 = 1
-    Node02 = 2
-    Node03 = 3
-    Max = 4
-
-class SubEventType(IntEnum):
-    None_ = 0
-    SubEvent = 1
-    SubEventPermanent = 2
-
-class BattlePassContentType(IntEnum):
-    Lobby = 0
-    Mission = 1
-
-class ConcentrationVoiceCondition(IntEnum):
-    None_ = 0
-    PairMatchFail = 1
-    PairMatchSuccess = 2
-    RoundRenewal = 3
-
-class ConcentrationRewardType(IntEnum):
-    None_ = 0
-    PairMatch = 1
-    RoundRenewal = 2
-
-class RecipeDisplayOptions(IntEnum):
-    None_ = 0
-    Always = 1
-    HideNoMaterials = 2
-
-class SpoilerPopupType(IntEnum):
-    None_ = 0
-    Default = 1
-    Warning = 2
-    WarningNoGo = 3
-
-class RaidBossGroupType(IntEnum):
-    None_ = 0
-    Binah = 1
-    Chesed = 2
-    ShiroKuro = 3
-    Hieronymus = 4
-    Kaitenger = 5
-    Perorozilla = 6
-    HOD = 7
-    Goz = 8
-    HoverCraft = 9
-    EN0005 = 10
-    EN0006 = 11
-    EN0010 = 12
-    EN0013 = 13
-
-class EquipmentCategory(IntEnum):
-    Unable = 0
-    Exp = 1
-    Bag = 2
-    Hat = 3
-    Gloves = 4
-    Shoes = 5
-    Badge = 6
-    Hairpin = 7
-    Charm = 8
-    Watch = 9
-    Necklace = 10
-    WeaponExpGrowthA = 11
-    WeaponExpGrowthB = 12
-    WeaponExpGrowthC = 13
-    WeaponExpGrowthZ = 14
-
-class EquipmentOptionType(IntEnum):
-    None_ = 0
-    MaxHP_Base = 1
-    MaxHP_Coefficient = 2
-    AttackPower_Base = 3
-    AttackPower_Coefficient = 4
-    DefensePower_Base = 5
-    DefensePower_Coefficient = 6
-    HealPower_Base = 7
-    HealPower_Coefficient = 8
-    CriticalPoint_Base = 9
-    CriticalPoint_Coefficient = 10
-    CriticalChanceRate_Base = 11
-    CriticalDamageRate_Base = 12
-    CriticalDamageRate_Coefficient = 13
-    SightRange_Base = 14
-    SightRange_Coefficient = 15
-    MaxBulletCount_Base = 16
-    MaxBulletCount_Coefficient = 17
-    HPRecoverOnKill_Base = 18
-    HPRecoverOnKill_Coefficient = 19
-    StreetBattleAdaptation_Base = 20
-    OutdoorBattleAdaptation_Base = 21
-    IndoorBattleAdaptation_Base = 22
-    HealEffectivenessRate_Base = 23
-    HealEffectivenessRate_Coefficient = 24
-    CriticalChanceResistPoint_Base = 25
-    CriticalChanceResistPoint_Coefficient = 26
-    CriticalDamageResistRate_Base = 27
-    CriticalDamageResistRate_Coefficient = 28
-    ExSkillUpgrade = 29
-    OppressionPower_Base = 30
-    OppressionPower_Coefficient = 31
-    OppressionResist_Base = 32
-    OppressionResist_Coefficient = 33
-    StabilityPoint_Base = 34
-    StabilityPoint_Coefficient = 35
-    AccuracyPoint_Base = 36
-    AccuracyPoint_Coefficient = 37
-    DodgePoint_Base = 38
-    DodgePoint_Coefficient = 39
-    MoveSpeed_Base = 40
-    MoveSpeed_Coefficient = 41
-    Max = 42
-    NormalAttackSpeed_Base = 43
-    NormalAttackSpeed_Coefficient = 44
-    DefensePenetration_Base = 45
-    DefensePenetrationResisit_Base = 46
-    ExtendBuffDuration_Base = 47
-    ExtendDebuffDuration_Base = 48
-    ExtendCrowdControlDuration_Base = 49
-    EnhanceExplosionRate_Base = 50
-    EnhanceExplosionRate_Coefficient = 51
-    EnhancePierceRate_Base = 52
-    EnhancePierceRate_Coefficient = 53
-    EnhanceMysticRate_Base = 54
-    EnhanceMysticRate_Coefficient = 55
-    EnhanceLightArmorRate_Base = 56
-    EnhanceLightArmorRate_Coefficient = 57
-    EnhanceHeavyArmorRate_Base = 58
-    EnhanceHeavyArmorRate_Coefficient = 59
-    EnhanceUnarmedRate_Base = 60
-    EnhanceUnarmedRate_Coefficient = 61
-    EnhanceSiegeRate_Base = 62
-    EnhanceSiegeRate_Coefficient = 63
-    EnhanceNormalRate_Base = 64
-    EnhanceNormalRate_Coefficient = 65
-    EnhanceStructureRate_Base = 66
-    EnhanceStructureRate_Coefficient = 67
-    EnhanceNormalArmorRate_Base = 68
-    EnhanceNormalArmorRate_Coefficient = 69
-    DamageRatio2Increase_Base = 70
-    DamageRatio2Increase_Coefficient = 71
-    DamageRatio2Decrease_Base = 72
-    DamageRatio2Decrease_Coefficient = 73
-    DamagedRatio2Increase_Base = 74
-    DamagedRatio2Increase_Coefficient = 75
-    DamagedRatio2Decrease_Base = 76
-    DamagedRatio2Decrease_Coefficient = 77
-    EnhanceSonicRate_Base = 78
-    EnhanceSonicRate_Coefficient = 79
-    EnhanceElasticArmorRate_Base = 80
-    EnhanceElasticArmorRate_Coefficient = 81
-    IgnoreDelayCount_Base = 82
-    WeaponRange_Base = 83
-    BlockRate_Base = 84
-    BlockRate_Coefficient = 85
-    AmmoCost_Base = 86
-    RegenCost_Base = 87
-    RegenCost_Coefficient = 88
-    MaxCostIncrease_Base = 89
-    HealRate_Base = 90
-    EnhanceChemicalRate_Base = 91
-    EnhanceChemicalRate_Coefficient = 92
-    EnhanceCompositeArmorRate_Base = 93
-    EnhanceCompositeArmorRate_Coefficient = 94
-
-class MultipleConditionCheckType(IntEnum):
-    And = 0
-    Or = 1
-    Count = 2
-
-class Language(IntEnum):
-    Kr = 0
-    Jp = 1
-    Th = 2
-    Tw = 3
-    En = 4
-
-class SoundType(IntEnum):
-    UI = 0
-    BGM = 1
-    FX = 2
-
-class WeekDay(IntEnum):
-    Sunday = 0
-    Monday = 1
-    Tuesday = 2
-    Wednesday = 3
-    Thursday = 4
-    Friday = 5
-    Saturday = 6
-    All = 7
-
-class EchelonType(IntEnum):
-    None_ = 0
-    Adventure = 1
-    Raid = 2
-    ArenaAttack = 3
-    ArenaDefence = 4
-    WeekDungeonChaserA = 5
-    Scenario = 6
-    WeekDungeonBlood = 7
-    WeekDungeonChaserB = 8
-    WeekDungeonChaserC = 9
-    WeekDungeonFindGift = 10
-    EventContent = 11
-    SchoolDungeonA = 12
-    SchoolDungeonB = 13
-    SchoolDungeonC = 14
-    TimeAttack = 15
-    WorldRaid = 16
-    Conquest = 17
-    ConquestManage = 18
-    StoryStrategyStage = 19
-    EliminateRaid01 = 20
-    EliminateRaid02 = 21
-    EliminateRaid03 = 22
-    Field = 23
-    MultiFloorRaid = 24
-    MinigameDefense = 25
-    PermanentRaid = 26
-
-class EchelonExtensionType(IntEnum):
-    Base = 0
-    Extension = 1
-
-class NoticeType(IntEnum):
-    None_ = 0
-    Notice = 1
-    Event = 2
-
-class RewardTag(IntEnum):
-    Default = 0
-    FirstClear = 1
-    StrategyObject = 2
-    Event = 3
-    ThreeStar = 4
-    ProductMonthly = 5
-    Rare = 6
-    EventBonus = 7
-    TimeWeight = 8
-    ProductWeekly = 9
-    ProductBiweekly = 10
-    EventPermanentReward = 11
-    ConquestManageEvent = 12
-    ConquestManageDefault = 13
-    ConquestCalculateDefault = 14
-    ConquestCalculateLevel2 = 15
-    ConquestCalculateLevel3 = 16
-    ConquestFootholdUpgrade2 = 17
-    ConquestFootholdUpgrade3 = 18
-    ConquestErosionPenalty = 19
-    GemBonus = 20
-    GemPaid = 21
-    ConquestTileConquer = 22
-
-class ArenaRewardType(IntEnum):
-    None_ = 0
-    Time = 1
-    Daily = 2
-    SeasonRecord = 3
-    OverallRecord = 4
-    SeasonClose = 5
-    AttackVictory = 6
-    DefenseVictory = 7
-    RankIcon = 8
-
-class ServiceActionType(IntEnum):
-    ClanCreate = 0
-    HardAdventurePlayCountRecover = 1
-
-class RaidStatus(IntEnum):
-    None_ = 0
-    Playing = 1
-    Clear = 2
-    Close = 3
-
-class WebAPIErrorLevel(IntEnum):
-    None_ = 0
-    Warning = 1
-    Error = 2
-
-class GachaTicketType(IntEnum):
-    None_ = 0
-    PackageThreeStar = 1
-    ThreeStar = 2
-    TwoStar = 3
-    Normal = 4
-    NormalOnce = 5
-    SelectRecruit = 6
-    PackagePropertyThreeStar = 7
-    Temp_1 = 8
-    PackageAcademyThreeStar = 9
-    SelectPickup = 10
-    SelectPickupOnce = 11
-    PackageLimitedThreeStar = 12
-    PackageThreeStar_R88_Explosion = 13
-    PackageThreeStar_R88_Mystic = 14
-    PackageThreeStar_R88_Pierce = 15
-    PackageThreeStar_R88_Sonic = 16
-
-class EventChangeType(IntEnum):
-    MainSub = 0
-    SubMain = 1
-
-class CafeCharacterState(IntEnum):
-    None_ = 0
-    Idle = 1
-    Walk = 2
-    Reaction = 3
-    Interaction = 4
-    Max = 5
-
-class FurnitureFunctionType(IntEnum):
-    None_ = 0
-    EventCollection = 1
-    VideoPlay = 2
-    TrophyCollection = 3
-    InteractionBGMPlay = 4
-
-class NotificationEventReddot(IntEnum):
-    StagePointReward = 0
-    MissionComplete = 1
-    MiniGameMissionComplete = 2
-    WorldRaidReward = 3
-    ConquestCalculateReward = 4
-    DiceRaceLapReward = 5
-
-class EmblemCategory(IntEnum):
-    None_ = 0
-    Default = 1
-    Mission = 2
-    GroupStory = 3
-    Event = 4
-    MainStory = 5
-    Favor = 6
-    Boss = 7
-    Etc = 8
-    Etc_Anniversary = 9
-    MultiFloorRaid = 10
-    Potential = 11
-    BattlePass = 12
-
-class EmblemDisplayType(IntEnum):
-    Always = 0
-    Time = 1
-    Favor = 2
-    Potential = 3
-
-class EmblemCheckPassType(IntEnum):
-    None_ = 0
-    Default = 1
-    Favor = 2
-    Story = 3
-    Potential = 4
-
-class StickerGetConditionType(IntEnum):
-    None_ = 0
-    StickerCheckPass = 1
-    GetStickerCondition = 2
-
-class Nation(IntEnum):
-    None_ = 0
-    All = 1
-    JP = 2
-    GL = 3
-    KR = 4
-
-class FilterCategory(IntEnum):
-    Character = 0
-    Equipment = 1
-    Item = 2
-    Craft = 3
-    ShiftCraft = 4
-    Shop = 5
-    MemoryLobby = 6
-    Trophy = 7
-    Emblem = 8
-
-class FilterIcon(IntEnum):
-    TextOnly = 0
-    TextWithIcon = 1
-    Pin = 2
-    Role = 3
-    CharacterStar = 4
-    WeaponStar = 5
-    Attack = 6
-    Defense = 7
-    Range = 8
-    MemoryLobby = 9
-    Obscuration = 10
-
-class CVUnlockScenarioType(IntEnum):
-    Main = 0
-    Event = 1
-    SpecialOperation = 2
-
-class PeriodType(IntEnum):
-    None_ = 0
-    Daily = 1
-    Weekly = 2
-    Monthly = 3
-
-class AssistRewardType(IntEnum):
-    None_ = 0
-    AssistTerm = 1
-    AssistRent = 2
-
-class WorldRaidConditionType(IntEnum):
-    None_ = 0
-    BossClear = 1
-    EventScenarioClear = 2
-    EventStageClear = 3
-    MainScenarioClear = 4
-    BossHprateUnder = 5
-
-class WorldRaidMapType(IntEnum):
-    None_ = 0
-    Carrier = 1
-    WorldMap = 2
-
-class FieldConditionType(IntEnum):
-    Invalid = 0
-    Interaction = 1
-    QuestInProgress = 2
-    QuestClear = 3
-    Date = 4
-    StageClear = 5
-    HasKeyword = 6
-    HasEvidence = 7
-    OpenDate = 8
-    OpenDateAfter = 9
-
-class FieldInteractionType(IntEnum):
-    None_ = 0
-    Scenario = 1
-    Reward = 2
-    Dialog = 3
-    Stage = 4
-    KeywordFound = 5
-    EvidenceFound = 6
-    SceneChange = 7
-    Timeline = 8
-    ActionTrigger = 9
-    Interplay = 10
-    UnderCoverStage = 11
-
-class FieldConditionClass(IntEnum):
-    AndOr = 0
-    OrAnd = 1
-    Multi = 2
-
-class FieldDialogType(IntEnum):
-    None_ = 0
-    Talk = 1
-    Think = 2
-    Exclaim = 3
-    Question = 4
-    Upset = 5
-    Surprise = 6
-    Bulb = 7
-    Heart = 8
-    Sweat = 9
-    Angry = 10
-    Music = 11
-    Dot = 12
-    Momotalk = 13
-    Phone = 14
-    Keyword = 15
-    Evidence = 16
-    Chat = 17
-    Keyword_843 = 18
-    Angry_Nobubble = 19
-    Sad_Nobubble = 20
-    Steam_Nobubble = 21
-    Respond_Nobubble = 22
-    Sweat_Nobubble = 23
-    Twinkle_Nobubble = 24
-    ZZZ_Nobubble = 25
-    Chat_Nobubble = 26
-
-class FieldTutorialType(IntEnum):
-    None_ = 0
-    MasteryHUD = 1
-    QuestHUD = 2
-    WorldMapHUD = 3
-
-class FieldWorldMapButtonType(IntEnum):
-    DefaultMode = 0
-    Normal = 1
-    Combat = 2
-    Combat_VeryHard = 3
-    UnderCover = 4
-
-class FriendSearchLevelOption(IntEnum):
-    Recommend = 0
-    All = 1
-    Level1To30 = 2
-    Level31To40 = 3
-    Level41To50 = 4
-    Level51To60 = 5
-    Level61To70 = 6
-    Level71To80 = 7
-    Level81To90 = 8
-    Level91To100 = 9
-
-class ItemCategory(IntEnum):
-    Coin = 0
-    CharacterExpGrowth = 1
-    SecretStone = 2
-    Material = 3
-    Consumable = 4
-    Collectible = 5
-    Favor = 6
-    RecruitCoin = 7
-    InvisibleToken = 8
-
-class MailType(IntEnum):
-    System = 0
-    Attendance = 1
-    Event = 2
-    MassTrade = 3
-    InventoryFull = 4
-    ArenaDefenseVictory = 5
-    CouponUsageReward = 6
-    ArenaSeasonClose = 7
-    ProductReward = 8
-    MonthlyProductReward = 9
-    ExpiryChangeItem = 10
-    ClanAttendance = 11
-    AccountLink = 12
-    NewUserBonus = 13
-    LeftClanAssistReward = 14
-    AttendanceImmediately = 15
-    WeeklyProductReward = 16
-    BiweeklyProductReward = 17
-    Temp_1 = 18
-    Temp_2 = 19
-    Temp_3 = 20
-    CouponCompleteReward = 21
-    BirthdayGift = 22
-    SurveyReward = 23
-    CbtRechargeReward = 24
-    FromCS = 25
-    ExpiryChangeCurrency = 26
-    ExpiryBattlePassItem = 27
-    FreeProductReward = 28
-    Temp_4 = 29
-    Temp_5 = 30
-    Temp_6 = 31
-    ProductGooglePointReward = 32
-    PaymentCenterProduct = 33
-    PaymentCenterMonthly = 34
-    PaymentCenterBattlePass = 35
-    PaymentCenterDailyRecord = 36
-    ExpiryProductDailyRecordItem = 37
-
-class AttendanceType(IntEnum):
-    Basic = 0
-    Event = 1
-    Newbie = 2
-    EventCountDown = 3
-    Event20Days = 4
-
-class AttendanceCountRule(IntEnum):
-    Accumulation = 0
-    Date = 1
-
-class AttendanceResetType(IntEnum):
-    User = 0
-    Server = 1
-
-class MailSortingRule(IntEnum):
-    ReceiptDate = 0
-    ExpireDate = 1
-
-class CCGCharacterType(IntEnum):
-    None_ = 0
-    Striker = 1
-    Special = 2
-
-class CCGCardType(IntEnum):
-    None_ = 0
-    Spell = 1
-    Equipment = 2
-    Zone = 3
-
-class CCGEntityType(IntEnum):
-    None_ = 0
-    Character = 1
-    Card = 2
-
-class CCGStageType(IntEnum):
-    None_ = 0
-    Battle = 1
-    Event = 2
-    Camp = 3
-
-class CCGStageRewardType(IntEnum):
-    None_ = 0
-    All = 1
-    Random = 2
-    Select = 3
-
-class CCGLevelNodeIcon(IntEnum):
-    None_ = 0
-    Battle = 1
-    Event = 2
-    Camp = 3
-    Boss = 4
-
-class CCGTagType(IntEnum):
-    None_ = 0
-    Token = 1
-    Supply = 2
-    Trinity = 3
-    Gehenna = 4
-    Hyakkiyako = 5
-    Kronos = 6
-    Odyssey = 7
-    Justice = 8
-    TeaParty = 9
-    HotSprings = 10
-    GourmetResearch = 11
-    Helmet = 12
-    Sukeban = 13
-    Pursuer = 14
-    Kaitenger = 15
-    PrefectTeam = 16
-    MakeUpWork = 17
-    FestivalOperations = 18
-    NinjutsuResearch = 19
-    Striker = 20
-    Special = 21
-    Spell = 22
-    Equipment = 23
-    Zone = 24
-    Summoned = 25
-
-class DreamMakerMultiplierCondition(IntEnum):
-    None_ = 0
-    Round = 1
-    CollectionCount = 2
-    EndingCount = 3
-
-class DreamMakerParameterType(IntEnum):
-    None_ = 0
-    Param01 = 1
-    Param02 = 2
-    Param03 = 3
-    Param04 = 4
-
-class DreamMakerResult(IntEnum):
-    None_ = 0
-    Fail = 1
-    Success = 2
-    Perfect = 3
-
-class DreamMakerParamOperationType(IntEnum):
-    None_ = 0
-    GrowUpHigh = 1
-    GrowUp = 2
-    GrowDownHigh = 3
-    GrowDown = 4
-
-class DreamMakerEndingCondition(IntEnum):
-    None_ = 0
-    Param01 = 1
-    Param02 = 2
-    Param03 = 3
-    Param04 = 4
-    Round = 5
-    CollectionCount = 6
-
-class DreamMakerVoiceCondition(IntEnum):
-    None_ = 0
-    Fail = 1
-    Success = 2
-    Perfect = 3
-    DailyResult = 4
-
-class DreamMakerEndingType(IntEnum):
-    None_ = 0
-    Normal = 1
-    Special = 2
-
-class DreamMakerEndingRewardType(IntEnum):
-    None_ = 0
-    FirstEndingReward = 1
-    LoopEndingReward = 2
-
-class RoadPuzzleMapTileType(IntEnum):
-    None_ = 0
-    Start = 1
-    End = 2
-    Transit = 3
-    Obstacle = 4
-    Empty = 5
-
-class RoadPuzzleRailTileType(IntEnum):
-    None_ = 0
-    Straight = 1
-    CurveBig = 2
-    CurveSmall = 3
-
-class RoadPuzzleVoiceCondition(IntEnum):
-    None_ = 0
-    TrainDepart = 1
-    RailConnectSuccess = 2
-    SaveSuccess = 3
-
-class Geas(IntEnum):
-    ForwardProjectile = 0
-    DiagonalProjectile = 1
-    SideProjectile = 2
-    Pierce = 3
-    Reflect = 4
-    Burn = 5
-    Chill = 6
-    AttackPower = 7
-    AttackSpeed = 8
-    Critical = 9
-    Heal = 10
-    MoveSpeed = 11
-    LifeSteal = 12
-    Evasion = 13
-
-class TBGObjectType(IntEnum):
-    None_ = 0
-    EnemyBoss = 1
-    EnemyMinion = 2
-    Random = 3
-    Facility = 4
-    TreasureBox = 5
-    Start = 6
-    Portal = 7
-
-class TBGOptionSuccessType(IntEnum):
-    None_ = 0
-    TBGItemAcquire = 1
-    ItemAcquire = 2
-    TBGDiceAcquire = 3
-    Portal = 4
-
-class TBGItemType(IntEnum):
-    None_ = 0
-    Dice = 1
-    Heal = 2
-    HealExpansion = 3
-    Defence = 4
-    Guide = 5
-    DiceResultValue = 6
-    DefenceCritical = 7
-    DiceResultConfirm = 8
-
-class TBGItemEffectType(IntEnum):
-    None_ = 0
-    PermanentContinuity = 1
-    TemporaryContinuation = 2
-    Immediately = 3
-
-class TBGTileType(IntEnum):
-    None_ = 0
-    Start = 1
-    Movable = 2
-    UnMovable = 3
-
-class TBGThemaType(IntEnum):
-    None_ = 0
-    Normal = 1
-    Hidden = 2
-
-class TBGPortalCondition(IntEnum):
-    None_ = 0
-    ObjectAllEncounter = 1
-    Round = 2
-
-class TBGProbModifyCondition(IntEnum):
-    None_ = 0
-    AllyRevive = 1
-    DicePlayFail = 2
-
-class TBGVoiceCondition(IntEnum):
-    None_ = 0
-    DiceResultSuccess = 1
-    DiceResultFailBattle = 2
-    DiceResultFailRandom = 3
-    EnemyDie = 4
-    TreasureBoxNormal = 5
-    TreasureBoxSpecial = 6
-    FacilityResult = 7
-
-class MiniGameTBGThemaRewardType(IntEnum):
-    TreasureReward = 0
-    EmptyTreasureReward = 1
-    HiddenThemaTreasureReward = 2
-
-class MissionCategory(IntEnum):
-    Challenge = 0
-    Daily = 1
-    Weekly = 2
-    Achievement = 3
-    GuideMission = 4
-    All = 5
-    MiniGameScore = 6
-    MiniGameEvent = 7
-    EventAchievement = 8
-    DailySudden = 9
-    DailyFixed = 10
-    EventFixed = 11
-
-class MissionResetType(IntEnum):
-    None_ = 0
-    Daily = 1
-    Weekly = 2
-    Limit = 3
-
-class MissionCompleteConditionType(IntEnum):
-    None_ = 0
-    Reset_DailyLogin = 1
-    Reset_DailyLoginCount = 2
-    Reset_CompleteMission = 3
-    Achieve_EquipmentLevelUpCount = 4
-    Achieve_EquipmentTierUpCount = 5
-    Achieve_CharacterLevelUpCount = 6
-    Reset_CharacterTranscendenceCount = 7
-    Reset_ClearTaticBattleCount = 8
-    Achieve_ClearCampaignStageCount = 9
-    Reset_KillSpecificEnemyCount = 10
-    Reset_KillEnemyWithTagCount = 11
-    Reset_GetCharacterCount = 12
-    Reset_GetCharacterWithTagCount = 13
-    Reset_GetSpecificCharacterCount = 14
-    Reset_AccountLevelUp = 15
-    Reset_GetEquipmentCount = 16
-    Reset_GachaCount = 17
-    Reset_UseGem = 18
-    Reset_GetGem = 19
-    Reset_GetGemPaid = 20
-    Achieve_GetGold = 21
-    Achieve_GetItem = 22
-    Reset_GetFavorLevel = 23
-    Reset___Deprecated_EquipmentAtSpecificLevelCount = 24
-    Achieve_EquipmentAtSpecificTierUpCount = 25
-    Reset_CharacterAtSpecificLevelCount = 26
-    Reset_CharacterAtSpecificTranscendenceCount = 27
-    Achieve_CharacterSkillLevelUpCount = 28
-    Reset_CharacterAtSpecificSkillLevelCount = 29
-    Reset_CompleteScheduleCount = 30
-    Reset_CompleteScheduleGroupCount = 31
-    Reset_AcademyLocationRankSum = 32
-    Reset_CraftCount = 33
-    Achieve_GetComfortPoint = 34
-    Achieve_GetWeaponCount = 35
-    Reset_EquipWeaponCount_Obsolete = 36
-    Reset_CompleteScheduleWithSpecificCharacter = 37
-    Reset_CafeInteractionCount = 38
-    Reset_SpecificCharacterAtSpecificLevel = 39
-    Reset_SpecificCharacterAtSpecificTranscendence = 40
-    Reset_LobbyInteraction = 41
-    Achieve_ClearFindGiftAndBloodDungeonCount = 42
-    Reset_ClearSpecificFindGiftAndBloodDungeonCount = 43
-    Achieve_JoinRaidCount = 44
-    Reset_JoinSpecificRaidCount = 45
-    Achieve_JoinArenaCount = 46
-    Reset_ArenaVictoryCount = 47
-    Reset_RaidDamageAmountOnOneBattle = 48
-    Reset_ClearEventStageCount = 49
-    Reset_UseSpecificCharacterCount = 50
-    Achieve_UseGold = 51
-    Reset_UseTiket = 52
-    Reset_ShopBuyCount = 53
-    Reset_ShopBuyActionPointCount = 54
-    Reset_SpecificCharacterAtSpecificFavorRank = 55
-    Reset_ClearSpecificScenario = 56
-    Reset_GetSpecificItemCount = 57
-    Achieve_TotalGetClearStarCount = 58
-    Reset_CompleteCampaignStageMinimumTurn = 59
-    Achieve_TotalLoginCount = 60
-    Reset_LoginAtSpecificTime = 61
-    Reset_CompleteFavorSchedule = 62
-    Reset_CompleteFavorScheduleAtSpecificCharacter = 63
-    Reset_GetMemoryLobbyCount = 64
-    Reset_GetFurnitureGroupCount = 65
-    Reset_AcademyLocationAtSpecificRank = 66
-    Reset_ClearCampaignStageDifficultyNormal = 67
-    Reset_ClearCampaignStageDifficultyHard = 68
-    Achieve_ClearChaserDungeonCount = 69
-    Reset_ClearSpecificChaserDungeonCount = 70
-    Reset_GetCafeRank = 71
-    Reset_SpecificStarCharacterCount = 72
-    Reset_EventClearCampaignStageCount = 73
-    Reset_EventClearSpecificCampaignStageCount = 74
-    Reset_EventCompleteCampaignStageMinimumTurn = 75
-    Reset_EventClearCampaignStageDifficultyNormal = 76
-    Reset_EventClearCampaignStageDifficultyHard = 77
-    Reset_ClearSpecificCampaignStageCount = 78
-    Reset_GetItemWithTagCount = 79
-    Reset_GetFurnitureWithTagCount = 80
-    Reset_GetEquipmentWithTagCount = 81
-    Reset_ClearCampaignStageTimeLimitFromSecond = 82
-    Reset_ClearEventStageTimeLimitFromSecond = 83
-    Reset_ClearRaidTimeLimitFromSecond = 84
-    Reset_ClearBattleWithTagCount = 85
-    Reset_ClearFindGiftAndBloodDungeonTimeLimitFromSecond = 86
-    Reset_CompleteScheduleWithTagCount = 87
-    Reset_ClearChaserDungeonTimeLimitFromSecond = 88
-    Reset_GetTotalScoreRhythm = 89
-    Reset_GetBestScoreRhythm = 90
-    Reset_GetSpecificScoreRhythm = 91
-    Reset_ClearStageRhythm = 92
-    Reset_GetComboCountRhythm = 93
-    Reset_GetFullComboRhythm = 94
-    Reset_GetFeverCountRhythm = 95
-    Reset_UseActionPoint = 96
-    Achieve_ClearSchoolDungeonCount = 97
-    Reset_ClearSchoolDungeonTimeLimitFromSecond = 98
-    Reset_ClearSpecificSchoolDungeonCount = 99
-    Reset_GetCriticalCountRhythm = 100
-    Achieve_WeaponTranscendenceCount = 101
-    Achieve_WeaponLevelUpCount = 102
-    Reset_WeaponAtSpecificTranscendenceCount = 103
-    Reset_WeaponAtSpecificLevelUpCount = 104
-    Reset_BuyShopGoods = 105
-    Reset_ClanLogin = 106
-    Reset_AssistCharacterSetting = 107
-    Reset_DailyMissionFulfill = 108
-    Reset_SelectedMissionFulfill = 109
-    Reset_TotalDamageToWorldRaid = 110
-    Reset_JoinWorldRaidTypeNumber = 111
-    Reset_JoinWorldRaidBattleWithTagCount = 112
-    Reset_ClearWorldRaidTimeLimitFromSecond = 113
-    Achieve_KillEnemyWithDecagrammatonSPOTagCount = 114
-    Reset_ConquerTileCount = 115
-    Reset_ConquerSpecificStepTileCount = 116
-    Reset_ConquerSpecificStepTileAll = 117
-    Reset_UpgradeConquestBaseTileCount = 118
-    Reset_KillConquestBoss = 119
-    Reset_ClearEventConquestTileTimeLimitFromSecond = 120
-    Reset_DiceRaceUseDiceCount = 121
-    Reset_DiceRaceFinishLapCount = 122
-    Reset_FortuneGachaCount = 123
-    Reset_FortuneGachaCountByGrade = 124
-    Reset_ClearCountShooting = 125
-    Reset_ClearSpecificStageShooting = 126
-    Reset_ClearSpecificCharacterShooting = 127
-    Reset_ClearSpecificSectionShooting = 128
-    Achieve_JoinEliminateRaidCount = 129
-    Reset_TBGCompleteRoundCount = 130
-    Reset_CompleteStage = 131
-    Reset_TBGClearSpecificThema = 132
-    Reset_ClearGeneralChaserDungeonCount = 133
-    Reset_ClearGeneralFindGiftAndBloodDungeonCount = 134
-    Reset_ClearGeneralSchoolDungeonCount = 135
-    Reset_JoinArenaCount = 136
-    Reset_GetCafe2ndRank = 137
-    Achieve_GetComfort2ndPoint = 138
-    Reset_ClearSpecificTimeAttackDungeonCount = 139
-    Reset_GetScoreTimeAttackDungeon = 140
-    Reset_GetTotalScoreTimeAttackDungeon = 141
-    Reset_JoinRaidCount = 142
-    Reset_ClearTimeAttackDungeonCount = 143
-    Reset_JoinEliminateRaidCount = 144
-    Reset_FieldClearSpecificDate = 145
-    Reset_FieldGetEvidenceCount = 146
-    Reset_FieldMasteryLevel = 147
-    Reset_TreasureCheckedCellCount = 148
-    Reset_TreasureGetTreasureCount = 149
-    Reset_TreasureRoundRefreshCount = 150
-    Achieve_UseTicketCount = 151
-    Reset_ClearMultiFloorRaidStage = 152
-    Achieve_CharacterPotentialUpCount = 153
-    Reset_CharacterPotentialUpCount = 154
-    Reset_CharacterAtSpecificPotentialCount = 155
-    Reset_PotentialAttackPowerAtSpecificLevel = 156
-    Reset_PotentialMaxHPAtSpecificLevel = 157
-    Reset_PotentialHealPowerAtSpecificLevel = 158
-    Reset_DreamGetSpecificParameter = 159
-    Reset_DreamGetSpecificScheduleCount = 160
-    Reset_DreamGetScheduleCount = 161
-    Reset_DreamGetEndingCount = 162
-    Reset_DreamGetSpecificEndingCount = 163
-    Reset_DreamGetCollectionScenarioCount = 164
-    Reset_ClearCountDefense = 165
-    Reset_ClearSpecificDefenseStage = 166
-    Reset_ClearCharacterLimitDefense = 167
-    Reset_ClearTimeLimitDefenseFromSecond = 168
-    Reset_JoinMultiFloorRaidCount = 169
-    Reset_GivePresentCharacterCount = 170
-    Reset_CharacterInviteCount = 171
-    Reset_RoadpuzzleTileCount = 172
-    Reset_ClearSpecificRoundRoadpuzzle = 173
-    Reset_ClearCountRoadpuzzle = 174
-    Reset_CCGResultCount = 175
-    Reset_CCGCompleteCount = 176
-    Reset_CCGUseCostCount = 177
-    Reset_CCGTotalDamageCount = 178
-    Reset_CCGRetreatCount = 179
-    Reset_CCGSkillWithTagCount = 180
-    Reset_CCGActivatePerkCount = 181
-    Reset_ClearMultiFloorRaid = 182
-    Reset_DayCompleteMission = 183
-    Reset_ConcentrationCardMatchCount = 184
-    Reset_ConcentrationClearCount = 185
-    Reset_WorldRaidSpecificBossClear = 186
-    Reset_WorldRaidActivateCoreCount = 187
-    Reset_WorldRaidActivateUSBCount = 188
-
-class AccountAchievementType(IntEnum):
-    TotalLoginCount = 0
-    TotalGetClearStarCount = 1
-    TotalCharacterLevelUpCount = 2
-    TotalCharacterSkillLevelUpCount = 3
-    TotalClearCampaignStageCount = 4
-    TotalClearChaserDungeonCount = 5
-    TotalClearFindGiftAndBloodDungeonCount = 6
-    TotalEquipmentLevelUpCount = 7
-    TotalEquipmentTierUpCount = 8
-    MaxComfortPoint = 9
-    TotalGetGold = 10
-    TotalUseGold = 11
-    TotalJoinArenaCount = 12
-    TotalJoinRaidCount = 13
-    TotalClearSchoolDungeonCount = 14
-    TotalGetWeaponCount = 15
-    TotalWeaponLevelUpCount = 16
-    TotalWeaponTranscendenceCount = 17
-    KillEnemyWithDecagrammatonSPOTagCount = 18
-    EventPoint = 19
-    ConquestCalculateReward = 20
-    TotalJoinEliminateRaidCount = 21
-    Cafe2MaxComfortPoint = 22
-    TotalRaidTicketUseCount = 23
-    TotalEliminateTicketUseCount = 24
-    TotalCharacterPotentialUpCount = 25
-
-class MissionToastDisplayConditionType(IntEnum):
-    Always = 0
-    Complete = 1
-    Never = 2
-
-class GetStickerConditionType(IntEnum):
-    None_ = 0
-    Reset_StikcerGetCondition_AccountLevel = 1
-    Reset_StickerGetCondition_ScenarioModeId = 2
-    Reset_StickerGetCondition_EnemyKillCount = 3
-    Reset_StickerGetCondition_GetItemCount = 4
-    Reset_StickerGetCondition_BuyItemCount = 5
-    Reset_StickerGetCondition_ScheduleRank = 6
-    Reset_StickerGetCondition_Change_LobbyCharacter = 7
-    Reset_StickerGetCondition_Cafe_Character_Visit_Count = 8
-    Reset_StickerGetCondition_Cafe_Chracter_Invite_Count = 9
-    Reset_StickerGetCondition_GetChracterCount = 10
-    Reset_StickerGetCondition_Cafe_Furniture_Interaction = 11
-    Reset_StickerGetCondition_GetFurniture = 12
-    Reset_StickerGetCondition_SetFurniture = 13
-    Reset_StickerGetCondition_GivePresentChracterCount = 14
-    Reset_StickerGetCondition_GivePresentCount = 15
-    Reset_StickerGetCondition_MomotalkStudentCount = 16
-    Reset_StickerGetCondition_CombatwithCharacterCount = 17
-    Reset_StickerGetCondition_GachaCharacterCount = 18
-    Reset_StickerGetCondition_TouchLobbyCharacter = 19
-    Reset_StickerGetCondition_UseCircleEmoticonCount = 20
-    Reset_StickerGetCondition_CraftCount = 21
-    Reset_StickerGetCondition_NormalStageClear = 22
-    Reset_StickerGetCondition_NormalStageClear3Star = 23
-    Reset_StickerGetCondition_HardStageClear = 24
-    Reset_StickerGetCondition_HardStageClear3Star = 25
-    Achieve_StikcerGetCondition_AccountLevel = 26
-    Achieve_StickerGetCondition_ClearStageId = 27
-    Achieve_StickerGetCondition_ScenarioModeId = 28
-    Achieve_StickerGetCondition_EnemyKillCount = 29
-    Achieve_StickerGetCondition_GetItemCount = 30
-    Achieve_StickerGetCondition_BuyItemCount = 31
-    Achieve_StickerGetCondition_ScheduleRank = 32
-    Achieve_StickerGetCondition_Change_LobbyCharacter = 33
-    Achieve_StickerGetCondition_Cafe_Character_Visit_Count = 34
-    Achieve_StickerGetCondition_Cafe_Chracter_Invite_Count = 35
-    Achieve_StickerGetCondition_GetChracterCount = 36
-    Achieve_StickerGetCondition_Cafe_Furniture_Interaction = 37
-    Achieve_StickerGetCondition_GetFurniture = 38
-    Achieve_StickerGetCondition_SetFurniture = 39
-    Achieve_StickerGetCondition_GivePresentChracterCount = 40
-    Achieve_StickerGetCondition_GivePresentCount = 41
-    Achieve_StickerGetCondition_MomotalkStudentCount = 42
-    Achieve_StickerGetCondition_CombatwithCharacterCount = 43
-    Achieve_StickerGetCondition_GachaCharacterCount = 44
-    Achieve_StickerGetCondition_TouchLobbyCharacter = 45
-    Achieve_StickerGetCondition_UseCircleEmoticonCount = 46
-    Achieve_StickerGetCondition_CraftCount = 47
-    Achieve_StickerGetCondition_NormalStageClear = 48
-    Achieve_StickerGetCondition_NormalStageClear3Star = 49
-    Achieve_StickerGetCondition_HardStageClear = 50
-    Achieve_StickerGetCondition_HardStageClear3Star = 51
-    Reset_StickerGetCondition_EnemyKillCountbyTag = 52
-    Reset_StickerGetCondition_GetItemCountbyTag = 53
-    Reset_StickerGetCondition_ClearCampaignOrEventStageCount = 54
-    Reset_StickerGetCondition_CompleteCampaignStageMinimumTurn = 55
-    Reset_StickerGetCondition_ClearCampaignStageDifficultyNormal = 56
-    Reset_StickerGetCondition_ClearCampaignStageDifficultyHard = 57
-    Reset_StickerGetCondition_EventClearCampaignStageCount = 58
-    Reset_StickerGetCondition_EventClearSpecificCampaignStageCount = 59
-    Reset_StickerGetCondition_EventCompleteCampaignStageMinimumTurn = 60
-    Reset_StickerGetCondition_EventClearCampaignStageDifficultyNormal = 61
-    Reset_StickerGetCondition_EventClearCampaignStageDifficultyHard = 62
-    Reset_StickerGetCondition_ClearSpecificCampaignStageCount = 63
-    Reset_StickerGetCondition_ClearCampaignStageTimeLimitFromSecond = 64
-    Reset_StickerGetCondition_ClearEventStageTimeLimitFromSecond = 65
-    Reset_StickerGetCondition_ClearStageRhythm = 66
-    Reset_StickerGetCondition_ClearSpecificStageShooting = 67
-    Reset_StickerGetCondition_CompleteStage = 68
-    Achieve_StickerGetCondition_ClearCampaignStageCount = 69
-    Achieve_StickerGetCondition_ClearChaserDungeonCount = 70
-    Reset_StickerGetCondition_ClearSpecificChaserDungeonCount = 71
-    Achieve_StickerGetCondition_ClearSchoolDungeonCount = 72
-    Reset_StickerGetCondition_ClearSpecificSchoolDungeonCount = 73
-    Reset_StickerGetCondition_ClearSpecificWeekDungeonCount = 74
-    Achieve_StickerGetCondition_ClearFindGiftAndBloodDungeonCount = 75
-
-class StickerCheckPassType(IntEnum):
-    None_ = 0
-    ClearScenarioModeId = 1
-    ClearCampaignStageId = 2
-
-class ParcelType(IntEnum):
-    None_ = 0
-    Character = 1
-    Currency = 2
-    Equipment = 3
-    Item = 4
-    GachaGroup = 5
-    Product = 6
-    Shop = 7
-    MemoryLobby = 8
-    AccountExp = 9
-    CharacterExp = 10
-    FavorExp = 11
-    TSS = 12
-    Furniture = 13
-    ShopRefresh = 14
-    LocationExp = 15
-    Recipe = 16
-    CharacterWeapon = 17
-    CharacterGear = 18
-    IdCardBackground = 19
-    Emblem = 20
-    Sticker = 21
-    Costume = 22
-    PossessionCheck = 23
-    BattlePassExp = 24
-    SelectedCharacter = 25
-    UnSelectedCharacter = 26
-
-class Rarity(IntEnum):
-    N = 0
-    R = 1
-    SR = 2
-    SSR = 3
-
-class Tier(IntEnum):
-    T1 = 0
-    T2 = 1
-    T3 = 2
-    T4 = 3
-
-class CurrencyTypes(IntEnum):
-    Invalid = 0
-    Gold = 1
-    GemPaid = 2
-    GemBonus = 3
-    Gem = 4
-    ActionPoint = 5
-    AcademyTicket = 6
-    ArenaTicket = 7
-    RaidTicket = 8
-    WeekDungeonChaserATicket = 9
-    WeekDungeonFindGiftTicket = 10
-    WeekDungeonBloodTicket = 11
-    WeekDungeonChaserBTicket = 12
-    WeekDungeonChaserCTicket = 13
-    SchoolDungeonATicket = 14
-    SchoolDungeonBTicket = 15
-    SchoolDungeonCTicket = 16
-    TimeAttackDungeonTicket = 17
-    MasterCoin = 18
-    WorldRaidTicketA = 19
-    WorldRaidTicketB = 20
-    WorldRaidTicketC = 21
-    ChaserTotalTicket = 22
-    SchoolDungeonTotalTicket = 23
-    EliminateTicketA = 24
-    EliminateTicketB = 25
-    EliminateTicketC = 26
-    EliminateTicketD = 27
-    CafeSummonTicket1 = 28
-    CafeSummonTicket2 = 29
-    Max = 30
-
-class SortingTarget(IntEnum):
-    None_ = 0
-    Rarity = 1
-    Level = 2
-    StarGrade = 3
-    Tier = 4
-
-class CurrencyOverChargeType(IntEnum):
-    CanNotCharge = 0
-    FitToLimit = 1
-    ChargeOverLimit = 2
-
-class CurrencyAdditionalChargeType(IntEnum):
-    EnableAutoChargeOverLimit = 0
-    DisableAutoChargeOverLimit = 1
-
-class RecipeType(IntEnum):
-    None_ = 0
-    Craft = 1
-    SkillLevelUp = 2
-    CharacterTranscendence = 3
-    EquipmentTierUp = 4
-    CafeRankUp = 5
-    SelectionItem = 6
-    WeaponTranscendence = 7
-    SelectRecruit = 8
-    CharacterPotential = 9
-
-class GachaGroupType(IntEnum):
-    None_ = 0
-    Reward_General = 1
-    System_Craft = 2
-    Reward_Pack = 3
-
-class ParcelChangeReason(IntEnum):
-    None_ = 0
-    Acquire_NewAccount = 1
-    Acquire_PlayReward = 2
-    Acquire_ChapterReward = 3
-    Acquire_LoginReward = 4
-    Acquire_EventReward = 5
-    Acquire_GMPush = 6
-    Acquire_ShopBuy = 7
-    Acquire_GachaBuy = 8
-    Acquire_CurrencyBuy = 9
-    Equipment_Equip = 10
-    Equipment_Unequip = 11
-    Equipment_Levelup = 12
-    Equipment_LimitBreak = 13
-    Equipment_Transcendence = 14
-    Equipment_Enchant = 15
-    Item_Use = 16
-    Item_Lock = 17
-    Item_CharacterGrowthMaterial = 18
-    Item_Change = 19
-    Item_Delete = 20
-    Item_Consume = 21
-    Item_SelectTicket = 22
-    Character_ExpGrowth = 23
-    Character_Transcendence = 24
-    Character_SkillLevelUp = 25
-    Character_FavorGrowth = 26
-    Furniture_CafeSet = 27
-    Furniture_CafeRecall = 28
-    Academy_AttendSchedule = 29
-    Academy_MessageList = 30
-    Adventure_EnterMainStage = 31
-    Adventure_EnterSubStage = 32
-    Adventure_MainStageBattleResult = 33
-    Adventure_SubStageBattleResult = 34
-    Adventure_ChapterClearReward = 35
-    Adventure_Retreat = 36
-    Adventure_PurchasePlayCountHardStage = 37
-    Adventure_TutorialStage = 38
-    Adventure_TutorialStageBattleResult = 39
-    ContentSweep_Sweep = 40
-    Arena_TimeReward = 41
-    Arena_DailyReward = 42
-    Arena_EnterBattle = 43
-    Arena_BattleResult = 44
-    Cafe_Interact = 45
-    Cafe_Production = 46
-    Cafe_RankUp = 47
-    Cafe_GiveGift = 48
-    WeekDungeon_BattleResult = 49
-    WeekDungeon_EnterBattle = 50
-    WeekDungeon_Retreat = 51
-    Mission_Clear = 52
-    Shop_Refresh = 53
-    Shop_BuyEligma = 54
-    Shop_BuyMerchandise = 55
-    Shop_BuyGacha = 56
-    Scenario_Clear = 57
-    Recipe_Craft = 58
-    Raid_Failed = 59
-    Raid_Reward = 60
-    Raid_SeasonReward = 61
-    Raid_CreateBattle = 62
-    CumulativeTimeReward_Reward = 63
-    Mail_Receive = 64
-    MomoTalk_FavorSchedule = 65
-    WeekDungeon_EnterBlood = 66
-    WeekDungeon_EnterGift = 67
-    Acquire_ActionPoint = 68
-    Acquire_ArenaTicket = 69
-    EventContent_TotalReward = 70
-    Craft_UpdateNode = 71
-    Craft_CompleteProcess = 72
-    Craft_Reward = 73
-    EventContent_BattleResult = 74
-    Adventure_Sweep = 75
-    EventContent_Sweep = 76
-    WeekDungeon_Sweep = 77
-    Acquire_MonthlyProduct = 78
-    Acquire_DailyReward = 79
-    Billing_PurchaseProduct = 80
-    EventContent_EnterMainStage = 81
-    EventContent_EnterSubStage = 82
-    EventContent_MainStageResult = 83
-    EventContent_SubStageResult = 84
-    EventContent_Retreat = 85
-    WeekDungeon_BloodResult = 86
-    WeekDungeon_GiftResult = 87
-    WeekDungeon_EnterChaserA = 88
-    WeekDungeon_EnterChaserB = 89
-    WeekDungeon_EnterChaserC = 90
-    WeekDungeon_ChaserAResult = 91
-    WeekDungeon_ChaserBResult = 92
-    WeekDungeon_ChaserCResult = 93
-    EventContent_BoxGacha = 94
-    Raid_Sweep = 95
-    Clan_AssistReward = 96
-    EventContent_CardShop = 97
-    CharacterWeapon_ExpGrowth = 98
-    CharacterWeapon_Transcendence = 99
-    MiniGameMission_Clear = 100
-    SchoolDungeon_EnterSchoolA = 101
-    SchoolDungeon_EnterSchoolB = 102
-    SchoolDungeon_EnterSchoolC = 103
-    SchoolDungeon_SchoolAResult = 104
-    SchoolDungeon_SchoolBResult = 105
-    SchoolDungeon_SchoolCResult = 106
-    TimeAttackDungeon_CreateBattle = 107
-    TimeAttackDungeon_EndBattle = 108
-    TimeAttackDungeon_Reward = 109
-    Clan_Create = 110
-    Arena_SeasonReward = 111
-    Arena_OverallReward = 112
-    EventContent_AttendSchedule = 113
-    EventContent_BuyFortuneGacha = 114
-    Equipment_BatchGrowth = 115
-    EventContent_EnterStoryStage = 116
-    EventContent_StoryStageResult = 117
-    WorldRaid_EndBattle = 118
-    WorldRaid_Reward = 119
-    Conquest_EnterBattle = 120
-    Conquest_EnterUnExpectBattle = 121
-    Conquest_BattleResult = 122
-    Conquest_UnExpectBattleResult = 123
-    Conquest_UpgradeBase = 124
-    Conquest_ManageBase = 125
-    Conquest_CalculatedReward = 126
-    Conquest_TakeEventBoxObject = 127
-    Conquest_ConquerNormalTile = 128
-    Item_SelectRecruit = 129
-    Adventure_EnterExtraStage = 130
-    Adventure_ExtraStageBattleResult = 131
-    Scenario_EnterMainStage = 132
-    Scenario_MainStageResult = 133
-    Scenario_RetreatMainStage = 134
-    EventContent_DiceRaceRollReward = 135
-    EventContent_DiceRaceLapReward = 136
-    ShiftingCraft_BeginProcess = 137
-    ShiftingCraft_CompleteProcess = 138
-    ShiftingCraft_Reward = 139
-    MiniGame_ShootingBattleResult = 140
-    MiniGame_ShootingSweep = 141
-    EliminateRaid_Failed = 142
-    EliminateRaid_Reward = 143
-    EliminateRaid_SeasonReward = 144
-    EliminateRaid_CreateBattle = 145
-    EliminateRaid_Sweep = 146
-    Item_AutoSynth = 147
-    ContentSweep_MultiSweep = 148
-    Emblem_Acquire = 149
-    MiniGame_TBGMove = 150
-    MiniGame_TBGEncounterInput = 151
-    MiniGame_TBGResurrect = 152
-    MiniGame_TBGSweep = 153
-    Shop_BeforehandGacha = 154
-    EliminateRaid_LimitedReward = 155
-    Craft_AutoBeginProcess = 156
-    Craft_CompleteProcessAll = 157
-    Craft_RewardAll = 158
-    ShiftingCraft_CompleteProcessAll = 159
-    ShiftingCraft_RewardAll = 160
-    Temp_1 = 161
-    Temp_2 = 162
-    Temp_3 = 163
-    Temp_4 = 164
-    EventContent_Treasure = 165
-    Field_EnterStage = 166
-    Field_StageResult = 167
-    Field_Interaction = 168
-    Field_Quest = 169
-    Character_PotentialGrowth = 170
-    MultiFloorRaid_EndBattle = 171
-    MultiFloorRaid_Reward = 172
-    MiniGame_DreamSchedule = 173
-    MiniGame_DreamDailyClosing = 174
-    MiniGame_DreamEnding = 175
-    Item_ExpireChange = 176
-    MiniGame_DefenseBattleResult = 177
-    Raid_FailCompensateReward = 178
-    EliminateRaid_FailCompensateReward = 179
-    Currency_ExpireChange = 180
-    Conquest_ErosionBattleResult = 181
-    Conquest_EnterErosionBattle = 182
-    BattlePass_BuyLevel = 183
-    BattlePass_Reward = 184
-    Shop_SelectedPickupGacha = 185
-    Billing_PurchaseProductSelect = 186
-    Account_LevelReward = 187
-    MiniGame_CCGCompleteGame = 188
-    MiniGame_CCGBuyPerk = 189
-    Cafe_SummonCharacterTicketUse = 190
-    WorldRaid_UpdateCarrierLevel = 191
-    Concentration_FlipCard = 192
-    Concentration_RoundComplete = 193
-    Concentration_RoundSkip = 194
-    Mail_ReceiveSemiPermanentMail = 195
-    ClueSearch_Submit = 196
-    ClueSearch_RoundComplete = 197
-
-class ConsumeCondition(IntEnum):
-    And = 0
-    Or = 1
-
-class DailyRefillType(IntEnum):
-    None_ = 0
-    Default = 1
-    Login = 2
-
-class ScenarioBGType(IntEnum):
-    None_ = 0
-    Image = 1
-    BlurRT = 2
-    Spine = 3
-    Hide = 4
-
-class ScenarioType(IntEnum):
-    None_ = 0
-    Title = 1
-    Place = 2
-
-class ScenarioTypes(IntEnum):
-    None_ = 0
-    Title = 1
-    Place = 2
-
-class ScenarioCharacterAction(IntEnum):
-    Idle = 0
-    Shake = 1
-    Greeting = 2
-    FalldownLeft = 3
-    FalldownRight = 4
-    Stiff = 5
-    Hophop = 6
-    Jump = 7
-
-class ScenarioCharacterBehaviors(IntEnum):
-    None_ = 0
-    Appear = 1
-    Disappear = 2
-    AppearToLeft = 3
-    ApperToRight = 4
-    DisappearToLeft = 5
-    DisappearToRight = 6
-    MoveToTarget = 7
-
-class ScenarioCharacterShapes(IntEnum):
-    None_ = 0
-    Signal = 1
-    BlackSilhouette = 2
-    Closeup = 3
-    Highlight = 4
-    WhiteSilhouette = 5
-
-class ScenarioBGScroll(IntEnum):
-    None_ = 0
-    Vertical = 1
-    Horizontal = 2
-
-class DialogCategory(IntEnum):
-    Cafe = 0
-    Echelon = 1
-    CharacterSSRNew = 2
-    CharacterGet = 3
-    Birthday = 4
-    Dating = 5
-    Title = 6
-    UILobby = 7
-    UILobbySpecial = 8
-    UIShop = 9
-    UIGacha = 10
-    UIRaidLobby = 11
-    UIWork = 12
-    UITitle = 13
-    UIWeekDungeon = 14
-    UIAcademyLobby = 15
-    UIRaidLobbySeasonOff = 16
-    UIRaidLobbySeasonOn = 17
-    UIWorkAronaSit = 18
-    UIWorkAronaSleep = 19
-    UIWorkAronaWatch = 20
-    UIGuideMission = 21
-    UILobby2 = 22
-    UIClanSearchList = 23
-    UIAttendance = 24
-    UIAttendanceEvent01 = 25
-    UIEventLobby = 26
-    UIEventShop = 27
-    UIEventBoxGachaShop = 28
-    UIAttendanceEvent02 = 29
-    UIAttendanceEvent03 = 30
-    UIEventCardShop = 31
-    UISchoolDungeon = 32
-    UIAttendanceEvent = 33
-    UISpecialOperationLobby = 34
-    WeaponGet = 35
-    UIAttendanceEvent04 = 36
-    UIEventFortuneGachaShop = 37
-    UIAttendanceEvent05 = 38
-    UIAttendanceEvent06 = 39
-    UIMission = 40
-    UIEventMission = 41
-    UIAttendanceEvent08 = 42
-    UIAttendanceEvent07 = 43
-    UIEventMiniGameMission = 44
-    UIAttendanceEvent09 = 45
-    UIAttendanceEvent10 = 46
-    UIAttendanceEvent11 = 47
-    UIWorkPlanaSit = 48
-    UIWorkPlanaUmbrella = 49
-    UIWorkPlanaCabinet = 50
-    UIWorkCoexist_AronaSleepSit = 51
-    UIWorkCoexist_PlanaWatchSky = 52
-    UIWorkCoexist_PlanaSitPeek = 53
-    UIWorkCoexist_AronaSleepPeek = 54
-    UIEventArchive = 55
-    UIAttendanceEvent12 = 56
-    UIAttendanceEvent13 = 57
-    UIAttendanceEvent14 = 58
-    Temp_1 = 59
-    Temp_2 = 60
-    Temp_3 = 61
-    Temp_4 = 62
-    Temp_5 = 63
-    UIAttendanceEvent15 = 64
-    UILobbySpecial2 = 65
-    UIAttendanceEvent16 = 66
-    UIEventTreasure = 67
-    UIMultiFloorRaid = 68
-    UIEventMiniGameDreamMaker = 69
-    UIAttendanceEvent17 = 70
-    UIAttendanceEvent18 = 71
-    UIBattlePassLobby = 72
-    UIBattlePassMission = 73
-    UIAttendanceEvent19 = 74
-    UIAttendanceEvent20 = 75
-    UIAttendanceEvent21 = 76
-    UIEventClueSearch = 77
-
-class DialogCondition(IntEnum):
-    Idle = 0
-    Enter = 1
-    Exit = 2
-    Buy = 3
-    SoldOut = 4
-    BoxGachaNormal = 5
-    BoxGachaPrize = 6
-    Prize0 = 7
-    Prize1 = 8
-    Prize2 = 9
-    Prize3 = 10
-    Interaction = 11
-    Luck0 = 12
-    Luck1 = 13
-    Luck2 = 14
-    Luck3 = 15
-    Luck4 = 16
-    Luck5 = 17
-    StoryOpen = 18
-    CollectionOpen = 19
-    BoxGachaFinish = 20
-    FindTreasure = 21
-    GetTreasure = 22
-    RoundRenewal = 23
-    MiniGameDreamMakerEnough01 = 24
-    MiniGameDreamMakerEnough02 = 25
-    MiniGameDreamMakerEnough03 = 26
-    MiniGameDreamMakerEnough04 = 27
-    MiniGameDreamMakerDefault = 28
-    PassLevelUp = 29
-    UnlockPassReward = 30
-    ClueSearch = 31
-    ClueRegistration = 32
-    ClueCompletion = 33
-
-class DialogConditionDetail(IntEnum):
-    None_ = 0
-    Day = 1
-    Close = 2
-    MiniGameDreamMakerDay = 3
-    PassLevel = 4
-
-class DialogType(IntEnum):
-    Talk = 0
-    Think = 1
-    UITalk = 2
-
-class Anniversary(IntEnum):
-    None_ = 0
-    UserBDay = 1
-    StudentBDay = 2
-
-class School(IntEnum):
-    None_ = 0
-    Hyakkiyako = 1
-    RedWinter = 2
-    Trinity = 3
-    Gehenna = 4
-    Abydos = 5
-    Millennium = 6
-    Arius = 7
-    Shanhaijing = 8
-    Valkyrie = 9
-    WildHunt = 10
-    SRT = 11
-    SCHALE = 12
-    ETC = 13
-    Tokiwadai = 14
-    Sakugawa = 15
-    Highlander = 16
-
-class EtcSchool(IntEnum):
-    None_ = 0
-    ETC = 1
-    Tokiwadai = 2
-    Sakugawa = 3
-    Max = 4
-
-class StoryCondition(IntEnum):
-    Open = 0
-    Locked = 1
-    ComingSoon = 2
-    Hide = 3
-
-class EmojiEvent(IntEnum):
-    EnterConver = 0
-    EnterShelter = 1
-    SignalLeader = 2
-    Nice = 3
-    Reload = 4
-    Blind = 5
-    Panic = 6
-    Silence = 7
-    NearyDead = 8
-    Run = 9
-    TerrainAdaptionS = 10
-    TerrainAdaptionA = 11
-    TerrainAdaptionB = 12
-    TerrainAdaptionC = 13
-    TerrainAdaptionD = 14
-    TerrainAdaptionSS = 15
-    Dot = 16
-    Angry = 17
-    Bulb = 18
-    Exclaim = 19
-    Surprise = 20
-    Sad = 21
-    Sigh = 22
-    Steam = 23
-    Upset = 24
-    Respond = 25
-    Question = 26
-    Sweat = 27
-    Music = 28
-    Chat = 29
-    Twinkle = 30
-    Zzz = 31
-    Tear = 32
-    Heart = 33
-    Shy = 34
-    Think = 35
-
-class ScenarioModeTypes(IntEnum):
-    None_ = 0
-    Main = 1
-    Sub = 2
-    Replay = 3
-    Mini = 4
-    SpecialOperation = 5
-    Prologue = 6
-
-class ScenarioModeSubTypes(IntEnum):
-    None_ = 0
-    Club = 1
-
-class ScenarioModeReplayTypes(IntEnum):
-    None_ = 0
-    Event = 1
-    Favor = 2
-    Work = 3
-    EventMeetup = 4
-
-class ScenarioEffectDepth(IntEnum):
-    None_ = 0
-    AboveBg = 1
-    AboveCharacter = 2
-    AboveAll = 3
-
-class ScenarioZoomAnchors(IntEnum):
-    Center = 0
-    LeftTop = 1
-    LeftBottom = 2
-    RightTop = 3
-    RightBottom = 4
-
-class ScenarioZoomType(IntEnum):
-    Instant = 0
-    Slide = 1
-
-class ScenarioContentType(IntEnum):
-    Prologue = 0
-    WeekDungeon = 1
-    Raid = 2
-    Arena = 3
-    Favor = 4
-    Shop = 5
-    EventContent = 6
-    Craft = 7
-    Chaser = 8
-    EventContentMeetup = 9
-    TimeAttack = 10
-    Mission = 11
-    EventContentPermanentPrologue = 12
-    EventContentReturnSeason = 13
-    MiniEvent = 14
-    EliminateRaid = 15
-    MultiFloorRaid = 16
-    EventContentPermanent = 17
-
-class MemoryLobbyCategory(IntEnum):
-    None_ = 0
-    UILobbySpecial = 1
-    UILobbySpecial2 = 2
-
-class PurchaseCountResetType(IntEnum):
-    None_ = 0
-    Day = 1
-    Week = 2
-    Month = 3
-
-class ShopGroupType(IntEnum):
-    None_ = 0
-    General = 1
-    SecretStone = 2
-    Raid = 3
-    Arena = 4
-    MasterCoin = 5
-    SecretStoneGrowth = 6
-    TimeAttack = 7
-    EliminateRaid = 8
-    Gem = 9
-    Chaser = 10
-
-class ShopCategoryType(IntEnum):
-    General = 0
-    SecretStone = 1
-    Raid = 2
-    Gold = 3
-    Ap = 4
-    PickupGacha = 5
-    NormalGacha = 6
-    PointGacha = 7
-    EventGacha = 8
-    ArenaTicket = 9
-    Arena = 10
-    TutoGacha = 11
-    RecruitSellection = 12
-    EventContent_0 = 13
-    EventContent_1 = 14
-    EventContent_2 = 15
-    EventContent_3 = 16
-    EventContent_4 = 17
-    _Obsolete = 18
-    LimitedGacha = 19
-    MasterCoin = 20
-    SecretStoneGrowth = 21
-    TicketGacha = 22
-    DirectPayGacha = 23
-    FesGacha = 24
-    TimeAttack = 25
-    Chaser = 26
-    ChaserTicket = 27
-    SchoolDungeonTicket = 28
-    AcademyTicket = 29
-    Special = 30
-    Care = 31
-    BeforehandGacha = 32
-    EliminateRaid = 33
-    GlobalSpecialGacha = 34
-    SelectPickupGacha = 35
-    GemDaily = 36
-    GemWeekly = 37
-    CafeSummonTicket = 38
-    SelectPickupFesGacha = 39
-    SelectPickupLimitedGacha = 40
-
-class PurchaseServerTag(IntEnum):
-    Audit = 0
-    PreAudit = 1
-    Production = 2
-    Hotfix = 3
-    Standby2 = 4
-    Standby1 = 5
-    Major = 6
-    Minor = 7
-    Temp = 8
-    Test = 9
-    TestIn = 10
-
-class PurchaseStatusCode(IntEnum):
-    None_ = 0
-    Start = 1
-    PublishSuccess = 2
-    End = 3
-    Error = 4
-    DuplicateOrder = 5
-    Refund = 6
-
-class StoreType(IntEnum):
-    None_ = 0
-    GooglePlay = 1
-    AppStore = 2
-    Harmony = 3
-    OneStore = 4
-    MicrosoftStore = 5
-    GalaxyStore = 6
-    STEAM = 7
-    FreeProduct = 8
-    Twitch = 9
-    Chzzk = 10
-    PaymentCenter = 11
-    PCStore = 12
-
-class PurchasePeriodType(IntEnum):
-    None_ = 0
-    Day = 1
-    Week = 2
-    Month = 3
-    day21 = 4
-
-class PurchaseSourceType(IntEnum):
-    None_ = 0
-    Product = 1
-    ProductMonthly = 2
-    ProductBattlePass = 3
-    ProductSelect = 4
-    ProductGooglePoint = 5
-    ProductDailyRecord = 6
-
-class ProductCategory(IntEnum):
-    None_ = 0
-    Gem = 1
-    Monthly = 2
-    Package = 3
-    GachaDirect = 4
-    TimeLimit = 5
-    BattlePass = 6
-    GooglePoint = 7
-    DailyRecord = 8
-
-class ProductDisplayTag(IntEnum):
-    None_ = 0
-    New = 1
-    Hot = 2
-    Sale = 3
-    Limited = 4
-    Free = 5
-
-class ProductTagType(IntEnum):
-    Monthly = 0
-    Weekly = 1
-    Biweekly = 2
-    BundleMonthly = 3
-
-class BillingTransactionEndType(IntEnum):
-    None_ = 0
-    Success = 1
-    Cancel = 2
-
-class GachaRewardType(IntEnum):
-    None_ = 0
-    Eligma = 1
-    Eleph = 2
-
-class ShopFreeRecruitType(IntEnum):
-    None_ = 0
-    Accumulation = 1
-    Reset = 2
-
-class GachaDisplayTag(IntEnum):
-    None_ = 0
-    Limited = 1
-    TwoStar = 2
-    ThreeStar = 3
-    Free = 4
-    New = 5
-    Fes = 6
-    SelectRecruit = 7
-    LimitedThreeStar = 8
-    Revival = 9
-    SelectLimited = 10
-
-class ShopFilterType(IntEnum):
-    GachaTicket = 0
-    SecretStone = 1
-    SecretStone_1 = 2
-    SkillBook_Ultimate = 3
-    ExSkill = 4
-    SkillBook = 5
-    Craft = 6
-    AP = 7
-    CharacterExpItem = 8
-    Equip = 9
-    Material = 10
-    Creddit = 11
-    Furniture = 12
-    SelectItem = 13
-    Currency = 14
-    Hyakkiyako = 15
-    RedWinter = 16
-    Trinity = 17
-    Gehenna = 18
-    Abydos = 19
-    Millennium = 20
-    Arius = 21
-    Shanhaijing = 22
-    Valkyrie = 23
-    WildHunt = 24
-    Event = 25
-    ChaserTotalTicket = 26
-    SchoolTotalTicket = 27
-    SRT = 28
-    Highlander = 29
-    ShopFilterDUMMY_3 = 30
-    ShopFilterDUMMY_4 = 31
-    ShopFilterDUMMY_5 = 32
-    ShopFilterDUMMY_6 = 33
-    ShopFilterDUMMY_7 = 34
-    ETC = 35
-    Bundle = 36
-    FavorItem = 37
-
-class ShopRefresherType(IntEnum):
-    None_ = 0
-    User = 1
-    Server = 2
-
-class ShopRefreshPeriodType(IntEnum):
-    None_ = 0
-    Day = 1
-    Week = 2
-    Month = 3
-
-class ShopPurchasePopupType(IntEnum):
-    None_ = 0
-    Bundle = 1
-    Piece = 2
-
-class ProductSaleType(IntEnum):
-    Limited = 0
-    SaleDay = 1
-
-class SocialMode(IntEnum):
-    TITLE = 0
-    LOBBY = 1
-    FORMATION = 2
-    STAGE_SELECT = 3
-    BATTLE = 4
-    POPUP = 5
-    BATTLE_RESULT = 6
-    BATTLE_RESULT_VICTORY = 7
-    BATTLE_RESULT_DEFEAT = 8
-    INVALID = 9
-    TACTIC = 10
-    STRATEGY = 11
-    ACCONT = 12
-    CAMPAIGN_STORY = 13
-    CAMPAIGN_STAGE = 14
-    TACTICREADY = 15
-
-class AccountState(IntEnum):
-    WaitingSignIn = 0
-    Normal = 1
-    Dormant = 2
-    Comeback = 3
-    Newbie = 4
-
-class MessagePopupLayout(IntEnum):
-    TextOnly = 0
-    ImageBig = 1
-    ImageSmall = 2
-    UnlockCondition = 3
-
-class MessagePopupImagePositionType(IntEnum):
-    ImageFirst = 0
-    TextFirst = 1
-
-class MessagePopupButtonType(IntEnum):
-    Accept = 0
-    Cancel = 1
-    Command = 2
-
-class ToastType(IntEnum):
-    None_ = 0
-    Tactic_Left = 1
-    Tactic_Right = 2
-    Social_Center = 3
-    Social_Mission = 4
-    Social_Right = 5
-    Notice_Center = 6
-    PC_LeftCenter = 7
-
-class TargetGroup(IntEnum):
-    WaitingSignIn = 0
-    Normal = 1
-    Dormant = 2
-    Comeback = 3
-    Newbie = 4
-
-class StrategyAIType(IntEnum):
-    None_ = 0
-    Guard = 1
-    Pursuit = 2
-
-class StageDifficulty(IntEnum):
-    None_ = 0
-    Normal = 1
-    Hard = 2
-    VeryHard = 3
-    VeryHard_Ex = 4
-
-class HexaUnitGrade(IntEnum):
-    Grade1 = 0
-    Grade2 = 1
-    Grade3 = 2
-    Boss = 3
-
-class TacticEnvironment(IntEnum):
-    None_ = 0
-    WarFog = 1
-
-class StrategyObjectType(IntEnum):
-    None_ = 0
-    Start = 1
-    Heal = 2
-    Skill = 3
-    StatBuff = 4
-    Parcel = 5
-    ParcelOneTimePerAccount = 6
-    Portal = 7
-    PortalOneWayEnterance = 8
-    PortalOneWayExit = 9
-    Observatory = 10
-    Beacon = 11
-    BeaconOneTime = 12
-    EnemySpawn = 13
-    SwitchToggle = 14
-    SwitchMovableWhenToggleOff = 15
-    SwitchMovableWhenToggleOn = 16
-    FixedStart01 = 17
-    FixedStart02 = 18
-    FixedStart03 = 19
-    FixedStart04 = 20
-
-class StrategyEnvironment(IntEnum):
-    None_ = 0
-    MapFog = 1
-
-class Tag(IntEnum):
-    Furniture = 0
-    MovieMania = 1
-    Scientific = 2
-    Military = 3
-    Machine = 4
-    Gamer = 5
-    Cook = 6
-    Farmer = 7
-    Sociable = 8
-    Officer = 9
-    Eerie = 10
-    Intellectual = 11
-    Healthy = 12
-    Gourmet = 13
-    TreasureHunter = 14
-    CraftItem = 15
-    CDItem = 16
-    ExpItem = 17
-    SecretStone = 18
-    BookItem = 19
-    FavorItem = 20
-    MaterialItem = 21
-    Item = 22
-    CraftCommitment = 23
-    ExpendableItem = 24
-    Equipment = 25
-    EnemyLarge = 26
-    Decagram = 27
-    EnemySmall = 28
-    EnemyMedium = 29
-    EnemyXLarge = 30
-    Gehenna = 31
-    Millennium = 32
-    Valkyrie = 33
-    Hyakkiyako = 34
-    RedWinter = 35
-    Shanhaijing = 36
-    Abydos = 37
-    Trinity = 38
-    Hanger = 39
-    StudyRoom = 40
-    ClassRoom = 41
-    Library = 42
-    Lobby = 43
-    ShootingRange = 44
-    Office = 45
-    SchaleResidence = 46
-    SchaleOffice = 47
-    Restaurant = 48
-    Laboratory = 49
-    AVRoom = 50
-    ArcadeCenter = 51
-    Gym = 52
-    Garden = 53
-    Convenience = 54
-    Soldiery = 55
-    Lounge = 56
-    SchoolBuilding = 57
-    Club = 58
-    Campus = 59
-    SchoolYard = 60
-    Plaza = 61
-    StudentCouncilOffice = 62
-    ClosedBuilding = 63
-    Annex = 64
-    Pool = 65
-    AllySmall = 66
-    AllyMedium = 67
-    AllyLarge = 68
-    AllyXLarge = 69
-    Dessert = 70
-    Sports = 71
-    Bedding = 72
-    Curios = 73
-    Electronic = 74
-    Toy = 75
-    Reservation = 76
-    Household = 77
-    Horticulture = 78
-    Fashion = 79
-    Functional = 80
-    Delicious = 81
-    Freakish = 82
-    MomoFriends = 83
-    Music = 84
-    LoveStory = 85
-    Game = 86
-    Girlish = 87
-    Beauty = 88
-    Army = 89
-    Humanities = 90
-    Observational = 91
-    Jellyz = 92
-    Detective = 93
-    Roman = 94
-    CuriousFellow = 95
-    Mystery = 96
-    Doll = 97
-    Movie = 98
-    Art = 99
-    PureLiterature = 100
-    Food = 101
-    Smart = 102
-    BigMeal = 103
-    Simplicity = 104
-    Specialized = 105
-    Books = 106
-    Cosmetics = 107
-    Gift1 = 108
-    Gift2 = 109
-    F_Aru = 110
-    F_Eimi = 111
-    F_Haruna = 112
-    F_Hihumi = 113
-    F_Hina = 114
-    F_Hoshino = 115
-    F_Iori = 116
-    F_Maki = 117
-    F_Neru = 118
-    F_Izumi = 119
-    F_Shiroko = 120
-    F_Shun = 121
-    F_Sumire = 122
-    F_Tsurugi = 123
-    F_Akane = 124
-    F_Chise = 125
-    F_Akari = 126
-    F_Hasumi = 127
-    F_Nonomi = 128
-    F_Kayoko = 129
-    F_Mutsuki = 130
-    F_Zunko = 131
-    F_Serika = 132
-    F_Tsubaki = 133
-    F_Yuuka = 134
-    F_Haruka = 135
-    F_Asuna = 136
-    F_Kotori = 137
-    F_Suzumi = 138
-    F_Pina = 139
-    F_Aris = 140
-    F_Azusa = 141
-    F_Cherino = 142
-    TagName0004 = 143
-    TagName0005 = 144
-    F_Koharu = 145
-    F_Hanako = 146
-    F_Midori = 147
-    F_Momoi = 148
-    F_Hibiki = 149
-    F_Karin = 150
-    F_Saya = 151
-    F_Mashiro = 152
-    F_Airi = 153
-    F_Fuuka = 154
-    F_Hanae = 155
-    F_Hare = 156
-    F_Utaha = 157
-    F_Ayane = 158
-    F_Chinatsu = 159
-    F_Kotama = 160
-    F_Juri = 161
-    F_Serina = 162
-    F_Shimiko = 163
-    F_Yoshimi = 164
-    TagName0009 = 165
-    F_Shizuko = 166
-    F_Izuna = 167
-    F_Nodoka = 168
-    F_Yuzu = 169
-    Shield = 170
-    Helmet = 171
-    RedHelmet = 172
-    Helicopter = 173
-    RangeAttack = 174
-    MeleeAttack = 175
-    Sweeper = 176
-    Blackmarket = 177
-    Yoheki = 178
-    Kaiserpmc = 179
-    Crusader = 180
-    Goliath = 181
-    Drone = 182
-    Piece = 183
-    ChampionHeavyArmor = 184
-    Sukeban = 185
-    Arius = 186
-    EnemyKotori = 187
-    EnemyYuuka = 188
-    KaiserpmcHeavyArmor = 189
-    BlackmarketHeavyArmor = 190
-    YohekiHeavyArmor = 191
-    SweeperBlack = 192
-    SweeperYellow = 193
-    GasMaskLightArmor = 194
-    GehennaFuuki = 195
-    ChampionAutomata = 196
-    YohekiAutomata = 197
-    Automata = 198
-    EnemyIori = 199
-    EnemyAkari = 200
-    NewAutomata = 201
-    NewAutomataBlack = 202
-    NewAutomataYellow = 203
-    Hat = 204
-    Gloves = 205
-    Shoes = 206
-    Bag = 207
-    Badge = 208
-    Hairpin = 209
-    Charm = 210
-    Watch = 211
-    Necklace = 212
-    Cafe = 213
-    GameCenter = 214
-    ChocolateCafe = 215
-    Main = 216
-    Support = 217
-    Explosion = 218
-    Pierce = 219
-    Mystic = 220
-    LightArmor = 221
-    HeavyArmor = 222
-    Unarmed = 223
-    Cover = 224
-    Uncover = 225
-    AR = 226
-    SR = 227
-    DSG = 228
-    SMG = 229
-    MG = 230
-    HG = 231
-    GL = 232
-    SG = 233
-    MT = 234
-    RG = 235
-    Front = 236
-    Middle = 237
-    Back = 238
-    StreetBattle_Over_A = 239
-    OutdoorBattle_Over_A = 240
-    IndoorBattle_Over_A = 241
-    StreetBattle_Under_B = 242
-    OutdoorBattle_Under_B = 243
-    IndoorBattle_Under_B = 244
-    Kaitenranger = 245
-    Transport = 246
-    Itcenter = 247
-    Powerplant = 248
-    SukebanSwim_SMG = 249
-    SukebanSwim_MG = 250
-    SukebanSwim_SR = 251
-    SukebanSwim_Champion = 252
-    Token_S6 = 253
-    Swimsuit = 254
-    WaterPlay = 255
-    F_Hihumi_Swimsuit = 256
-    F_Azusa_Swimsuit = 257
-    F_Tsurugi_Swimsuit = 258
-    F_Mashiro_Swimsuit = 259
-    F_Hina_swimsuit = 260
-    F_Iori_swimsuit = 261
-    F_Izumi_swimsuit = 262
-    F_Shiroko_RidingSuit = 263
-    Church = 264
-    Stronghold = 265
-    Gallery = 266
-    MusicRoom = 267
-    Emotional = 268
-    F_Shun_Kid = 269
-    F_Kirino_default = 270
-    F_Saya_Casual = 271
-    F_Neru_BunnyGirl = 272
-    F_Karin_BunnyGirl = 273
-    F_Asuna_BunnyGirl = 274
-    DecagrammatonSPO = 275
-    Justice = 276
-    F_Natsu = 277
-    F_Miku = 278
-    F_Ako = 279
-    F_Mari = 280
-    F_Chinatsu_Onsen = 281
-    F_Tomoe = 282
-    F_Cherino_Onsen = 283
-    F_Nodoka_Onsen = 284
-    F_Aru_Newyear = 285
-    F_Mutsuki_Newyear = 286
-    F_Serika_Newyear = 287
-    Boss = 288
-    F_Wakamo = 289
-    F_Sena = 290
-    F_Chihiro = 291
-    F_Fubuki = 292
-    F_Mimori = 293
-    SkillBookUltimatePieace = 294
-    MaterialItemN = 295
-    MaterialItemR = 296
-    MaterialItemSR = 297
-    MaterialItemSSR = 298
-    CDItemN = 299
-    CDItemR = 300
-    CDItemSR = 301
-    CDItemSSR = 302
-    BookItemN = 303
-    BookItemR = 304
-    BookItemSR = 305
-    BookItemSSR = 306
-    ShiftingCraftMaterial_Furniture = 307
-    TrophyBronzeGroup001 = 308
-    TrophySilverGroup001 = 309
-    TrophyGoldGroup001 = 310
-    TrophyPlatinumGroup001 = 311
-    ShiftingCraftCategory_CommonMaterial = 312
-    ShiftingCraftCategory_CDItem = 313
-    ShiftingCraftCategory_BookItem = 314
-    ShiftingCraftCategory_Furniture = 315
-    Token_S14 = 316
-    F_Ui = 317
-    F_Hinata = 318
-    F_Marina = 319
-    SRT = 320
-    F_Miyako = 321
-    F_Miyu = 322
-    F_Saki = 323
-    Ninja = 324
-    F_Tsukuyo = 325
-    F_Michiru = 326
-    F_Kaede = 327
-    F_Iroha = 328
-    F_Misaki = 329
-    F_Atsuko = 330
-    F_Hiyori = 331
-    F_Wakamo_Swimsuit = 332
-    F_Nonomi_Swimsuit = 333
-    F_Ayane_Swimsuit = 334
-    CraftMaterial_SecretStone = 335
-    CraftMaterial_FurnitureN = 336
-    CraftMaterial_FurnitureR = 337
-    CraftMaterial_FurnitureSR = 338
-    CraftMaterial_FurnitureSSR = 339
-    ExpEquip = 340
-    WeaponExpEquip = 341
-    TheSeminar = 342
-    Fuuki = 343
-    Kohshinjo68 = 344
-    GameDev = 345
-    Countermeasure = 346
-    CleanNClearing = 347
-    GourmetClub = 348
-    F_Hoshino_Swimsuit = 349
-    F_Izuna_Swimsuit = 350
-    F_Chise_Swimsuit = 351
-    F_Shizuko_Swimsuit = 352
-    F_Saori = 353
-    CraftMaterial_FavorItemSR = 354
-    CraftMaterial_FavorItemSSR = 355
-    ShiftingCraftCategory_FavorItem = 356
-    F_Akari2 = 357
-    F_Aris2 = 358
-    F_Asuna2 = 359
-    F_Asuna_BunnyGirl2 = 360
-    F_Atsuko2 = 361
-    F_Ayane_Swimsuit2 = 362
-    F_Azusa_Swimsuit2 = 363
-    F_Cherino_Onsen2 = 364
-    F_Chinatsu2 = 365
-    F_Hare2 = 366
-    F_Haruna2 = 367
-    F_Hihumi2 = 368
-    F_Hihumi_Swimsuit2 = 369
-    F_Hina2 = 370
-    F_Hina_swimsuit2 = 371
-    F_Hinata2 = 372
-    F_Hoshino2 = 373
-    F_Hoshino_Swimsuit2 = 374
-    F_Juri2 = 375
-    F_Karin2 = 376
-    F_Karin_BunnyGirl2 = 377
-    F_Kirino_default2 = 378
-    F_Kotori2 = 379
-    F_Mashiro2 = 380
-    F_Mashiro_Swimsuit2 = 381
-    F_Midori2 = 382
-    F_Misaki2 = 383
-    F_Miyako2 = 384
-    F_Miyu2 = 385
-    F_Momoi2 = 386
-    F_Neru_BunnyGirl2 = 387
-    F_Pina2 = 388
-    F_Saya_Casual2 = 389
-    F_Sena2 = 390
-    F_Serina2 = 391
-    F_Suzumi2 = 392
-    F_Tomoe2 = 393
-    F_Tsubaki2 = 394
-    F_Tsurugi2 = 395
-    F_Tsurugi_Swimsuit2 = 396
-    F_Ui2 = 397
-    F_Utaha2 = 398
-    F_Wakamo2 = 399
-    F_Wakamo_Swimsuit2 = 400
-    F_Yuuka2 = 401
-    CraftMaterial_Furniture = 402
-    TrophyBronzeGroup002 = 403
-    TrophySilverGroup002 = 404
-    TrophyGoldGroup002 = 405
-    TrophyPlatinumGroup002 = 406
-    F_Kazusa = 407
-    F_Kokona = 408
-    F_Moe = 409
-    F_Kokona2 = 410
-    AtsukoOriginal = 411
-    FromAriusSquad = 412
-    EventChallenge_ExplosionTarget = 413
-    F_Utaha_Cheerleader = 414
-    F_Hibiki_Cheerleader = 415
-    F_Akane_BunnyGirl = 416
-    F_Noa = 417
-    F_Utaha_Cheerleader2 = 418
-    F_Hibiki_Cheerleader2 = 419
-    F_Akane_BunnyGirl2 = 420
-    F_Yuuka_Track = 421
-    F_Mari_Track = 422
-    F_Hasumi_Track = 423
-    F_Himari = 424
-    F_Mari_Track2 = 425
-    F_Hasumi_Track2 = 426
-    F_Himari2 = 427
-    Veritas = 428
-    SPTF = 429
-    Engineer = 430
-    F_Shigure = 431
-    F_Serina_Holiday = 432
-    F_Hanae_Holiday = 433
-    F_Shigure2 = 434
-    F_Serina_Holiday2 = 435
-    F_Hanae_Holiday2 = 436
-    Holiday = 437
-    Perorozilla_MiddleSize = 438
-    Perorozilla_SmallSize = 439
-    F_Haruna_Newyear = 440
-    F_Haruna_Newyear2 = 441
-    F_Mine = 442
-    F_Mine2 = 443
-    F_Junko_Newyear = 444
-    F_Junko_Newyear2 = 445
-    F_Fuuka_Newyear = 446
-    F_Fuuka_Newyear2 = 447
-    F_Megu = 448
-    F_Megu2 = 449
-    F_Sakurako = 450
-    F_Sakurako2 = 451
-    F_Kanna = 452
-    F_Kanna2 = 453
-    F_Mika = 454
-    F_Mika2 = 455
-    UnNamedGuardianMiddle = 456
-    F_Toki = 457
-    F_Toki2 = 458
-    F_Koyuki = 459
-    F_Koyuki2 = 460
-    F_Nagisa = 461
-    F_Nagisa2 = 462
-    F_Kayoko_Newyear = 463
-    F_Kayoko_Newyear2 = 464
-    F_Haruka_Newyear = 465
-    F_Haruka_Newyear2 = 466
-    F_Kaho = 467
-    F_Kaho2 = 468
-    DUArea = 469
-    F_Aris_Maid = 470
-    F_Aris_Maid2 = 471
-    F_Yuzu_Maid = 472
-    F_Yuzu_Maid2 = 473
-    F_Toki_BunnyGirl = 474
-    F_Toki_BunnyGirl2 = 475
-    F_Reisa = 476
-    F_Reisa2 = 477
-    Genryumon = 478
-    BlackTortoisePromenade = 479
-    LaborParty = 480
-    F_Rumi = 481
-    F_Rumi2 = 482
-    F_Mina = 483
-    F_Mina2 = 484
-    F_Minori = 485
-    F_Minori2 = 486
-    ValkyrieCD = 487
-    ValkyrieBook = 488
-    F_Miyako_Swimsuit = 489
-    F_Miyako_Swimsuit2 = 490
-    F_Saki_Swimsuit = 491
-    F_Saki_Swimsuit2 = 492
-    F_Miyu_Swimsuit = 493
-    F_Miyu_Swimsuit2 = 494
-    F_Shiroko_Swimsuit = 495
-    F_Shiroko_Swimsuit2 = 496
-    EN0005_CenterPipe = 497
-    F_Koharu_Swimsuit = 498
-    F_Koharu_Swimsuit2 = 499
-    F_Ui_Swimsuit = 500
-    F_Ui_Swimsuit2 = 501
-    F_Hanako_Swimsuit = 502
-    F_Hanako_Swimsuit2 = 503
-    F_Hinata_Swimsuit = 504
-    F_Hinata_Swimsuit2 = 505
-    F_Mimori_Swimsuit = 506
-    F_Mimori_Swimsuit2 = 507
-    Hostage = 508
-    HoverMissile = 509
-    HoverObject = 510
-    HoverGuidedDevice = 511
-    HoverStealthMissile = 512
-    Gift3 = 513
-    HoverResort = 514
-    Raid_Normal = 515
-    Raid_Hard = 516
-    Raid_VeryHard = 517
-    Raid_HardCore = 518
-    Raid_Extreme = 519
-    Raid_Insane = 520
-    Raid_Torment = 521
-    KnowledgeLiberationFront = 522
-    SummerRemedialClass = 523
-    F_Momiji = 524
-    F_Momiji2 = 525
-    F_Meru = 526
-    F_Meru2 = 527
-    F_Kotori_Cheerleader = 528
-    F_Kotori_Cheerleader2 = 529
-    F_Haruna_Track = 530
-    F_Haruna_Track2 = 531
-    F_Ichika = 532
-    F_Ichika2 = 533
-    F_Kasumi = 534
-    F_Kasumi2 = 535
-    F_Shigure_Onsen = 536
-    F_Shigure_Onsen2 = 537
-    Highlander = 538
-    SentryGun = 539
-    Token_S32 = 540
-    Tier2Piece = 541
-    Tier3Piece = 542
-    Tier4Piece = 543
-    Tier5Piece = 544
-    Sticker_102_Tag_01 = 545
-    Sticker_102_Tag_02 = 546
-    F_Misaka_Mikoto = 547
-    F_Shokuho_Misaki = 548
-    F_Saten_Ruiko = 549
-    F_Yukari = 550
-    F_Misaka_Mikoto2 = 551
-    F_Shokuho_Misaki2 = 552
-    F_Saten_Ruiko2 = 553
-    F_Yukari2 = 554
-    StreetGhostes = 555
-    F_Renge = 556
-    F_Renge2 = 557
-    F_Kikyo = 558
-    F_Kikyo2 = 559
-    F_Eimi_Swimsuit = 560
-    F_Eimi_Swimsuit2 = 561
-    Hyakkayouran = 562
-    Totem701 = 563
-    MatsuriOffice = 564
-    Shugyobu = 565
-    Onmyobu = 566
-    NinpoKenkyubu = 567
-    Kurokage_Scenario = 568
-    F_Kotama_Camping = 569
-    F_Kotama_Camping2 = 570
-    F_Hare_Camping = 571
-    F_Hare_Camping2 = 572
-    Hina_Dress = 573
-    F_Hina_Dress = 574
-    F_Hina_Dress2 = 575
-    F_Ako_Dress = 576
-    F_Ako_Dress2 = 577
-    F_Ibuki = 578
-    F_Ibuki2 = 579
-    F_Makoto = 580
-    F_Makoto2 = 581
-    Avantgardekun_Escort_TimeAttack = 582
-    F_Kayoko_Dress = 583
-    F_Kayoko_Dress2 = 584
-    F_Aru_Dress = 585
-    F_Aru_Dress2 = 586
-    F_Akari_Newyear = 587
-    F_Akari_Newyear2 = 588
-    RemedialClass = 589
-    Meihuayuan = 590
-    TrainingClub = 591
-    RedwinterSecretary = 592
-    HoukagoDessert = 593
-    BookClub = 594
-    SisterHood = 595
-    RabbitPlatoon = 596
-    Class227 = 597
-    KnightsHospitaller = 598
-    TeaParty = 599
-    HotSpringsDepartment = 600
-    TrinityVigilance = 601
-    anzenkyoku = 602
-    PandemoniumSociety = 603
-    Endanbou = 604
-    Emergentology = 605
-    FoodService = 606
-    PublicPeaceBureau = 607
-    F_Umika = 608
-    F_Umika2 = 609
-    F_Tsubaki_Guide = 610
-    F_Tsubaki_Guide2 = 611
-    EventChallenge_Turret = 612
-    HyakkiyakoMatsuriScore = 613
-    AbydosCD = 614
-    AbydosBook = 615
-    FireworkFireDevice = 616
-    FireworkFireDeviceMaster = 617
-    F_Kazusa_Band = 618
-    F_Kazusa_Band2 = 619
-    F_Yoshimi_Band = 620
-    F_Yoshimi_Band2 = 621
-    F_Airi_Band = 622
-    F_Airi_Band2 = 623
-    F_Kirara = 624
-    F_Kirara2 = 625
-    ShinySparkleSociety = 626
-    F_Momoi_Maid = 627
-    F_Momoi_Maid2 = 628
-    F_Midori_Maid = 629
-    F_Midori_Maid2 = 630
-    F_Serika_Swimsuit = 631
-    F_Serika_Swimsuit2 = 632
-    F_Kanna_Swimsuit = 633
-    F_Kanna_Swimsuit2 = 634
-    F_Moe_Swimsuit = 635
-    F_Moe_Swimsuit2 = 636
-    F_Fubuki_Swimsuit = 637
-    F_Fubuki_Swimsuit2 = 638
-    F_Kirino_Swimsuit = 639
-    F_Kirino_Swimsuit2 = 640
-    F_Hoshino_HWS = 641
-    F_Hoshino_HWS2 = 642
-    F_Shiroko_Terror = 643
-    F_Shiroko_Terror2 = 644
-    F_Saori_Swimsuit = 645
-    F_Saori_Swimsuit2 = 646
-    F_Hiyori_Swimsuit = 647
-    F_Hiyori_Swimsuit2 = 648
-    F_Atsuko_Swimsuit = 649
-    F_Atsuko_Swimsuit2 = 650
-    AbydosStudentCouncil = 651
-    F_Marina_Qipao = 652
-    F_Marina_Qipao2 = 653
-    F_Tomoe_Qipao = 654
-    F_Tomoe_Qipao2 = 655
-    Haruhabara = 656
-    ObjectA = 657
-    ObjectB = 658
-    F_Reizyo = 659
-    F_Reizyo2 = 660
-    F_Kisaki = 661
-    F_Kisaki2 = 662
-    F_Mari_Idol = 663
-    F_Mari_Idol2 = 664
-    F_Sakurako_Idol = 665
-    F_Sakurako_Idol2 = 666
-    F_Mine_Idol = 667
-    F_Mine_Idol2 = 668
-    En0009_Section01 = 669
-    En0009_Section02 = 670
-    En0009_Section03 = 671
-    En0009_Section04 = 672
-    En0009_Section05 = 673
-    AntiqueSeraphim = 674
-    F_CH0238_1 = 675
-    F_CH0238_2 = 676
-    F_CH0080_1 = 677
-    F_CH0080_2 = 678
-    F_CH0284_1 = 679
-    F_CH0284_2 = 680
-    F_CH0285_1 = 681
-    F_CH0285_2 = 682
-    En0010_Heater = 683
-    F_CH0070_1 = 684
-    F_CH0281_1 = 685
-    F_CH0282_1 = 686
-    F_CH0158_1 = 687
-    F_CH0280_1 = 688
-    F_CH0235_1 = 689
-    F_CH0070_2 = 690
-    F_CH0281_2 = 691
-    F_CH0282_2 = 692
-    F_CH0158_2 = 693
-    F_CH0280_2 = 694
-    F_CH0235_2 = 695
-    Raid_Lunatic = 696
-    F_CH0082_1 = 697
-    F_CH0082_2 = 698
-    F_CH0286_1 = 699
-    F_CH0286_2 = 700
-    F_CH0197_1 = 701
-    F_CH0197_2 = 702
-    F_CH0245_1 = 703
-    F_CH0245_2 = 704
-    F_CH0259_1 = 705
-    F_CH0259_2 = 706
-    F_CH0287_1 = 707
-    F_CH0287_2 = 708
-    EN0011_Section01 = 709
-    EN0011_Section02 = 710
-    EN0011_Section03 = 711
-    EN0011_Section04 = 712
-    EN0011_Section05 = 713
-    EN0011_Boss = 714
-    EN0011_SubCoreBlue = 715
-    EN0011_SubCoreRed = 716
-    EN0011_SubCoreYellow = 717
-    EN0011_Summoned = 718
-    EN0011_Path = 719
-    EN0011_SubCore = 720
-    EN0011_Dummy = 721
-    CentralControlCenter = 722
-    FreightLogisticsDepartment = 723
-    F_CH0242_1 = 724
-    F_CH0242_2 = 725
-    F_CH0243_1 = 726
-    F_CH0243_2 = 727
-    F_CH0288_1 = 728
-    F_CH0288_2 = 729
-    F_CH0257_1 = 730
-    F_CH0257_2 = 731
-    CCCTwins = 732
-    HyakkiyakoCD = 733
-    HyakkiyakoBook = 734
-    F_CH0221_1 = 735
-    F_CH0221_2 = 736
-    F_CH0109_1 = 737
-    F_CH0109_2 = 738
-    F_CH0222_1 = 739
-    F_CH0222_2 = 740
-    F_CH0301_1 = 741
-    F_CH0301_2 = 742
-    F_CH0302_1 = 743
-    F_CH0302_2 = 744
-    F_CH0300_1 = 745
-    F_CH0300_2 = 746
-    Momoi = 747
-    F_CH0294_1 = 748
-    F_CH0294_2 = 749
-    F_CH0295_1 = 750
-    F_CH0295_2 = 751
-    F_CH0291_1 = 752
-    F_CH0291_2 = 753
-    F_CH0293_1 = 754
-    F_CH0293_2 = 755
-    F_CH0292_1 = 756
-    F_CH0292_2 = 757
-    Wildhunt = 758
-    OccultClub = 759
-    PrefectBrigade = 760
-    F_CH0304_1 = 761
-    F_CH0304_2 = 762
-    F_CH0306_1 = 763
-    F_CH0306_2 = 764
-    F_CH0268_1 = 765
-    F_CH0268_2 = 766
-    FreeTradeCartel = 767
-    F_CH0317_1 = 768
-    F_CH0317_2 = 769
-    F_CH0318_1 = 770
-    F_CH0318_2 = 771
-    F_CH0319_1 = 772
-    F_CH0319_2 = 773
-    CraftMaterialItem = 774
-    EtcItem = 775
-    NicomediasTroop = 776
-    AriusSquad = 777
-    ReisaMagical = 778
-    F_CH0325_1 = 779
-    F_CH0325_2 = 780
-    F_CH0309_1 = 781
-    F_CH0309_2 = 782
-    F_CH0166_1 = 783
-    F_CH0166_2 = 784
-    F_CH0326_1 = 785
-    F_CH0326_2 = 786
-    EN0013_Block = 787
-    EN0013_Reset = 788
-    EN0013_RealBoss = 789
-    EN0013_GrayCore = 790
-    EN0013_BlackCore = 791
-    EN0013_DroneSlot1 = 792
-    EN0013_DroneSlot2 = 793
-    EN0013_DroneSlot3 = 794
-    EN0013_DroneSlot4 = 795
-    PublishingDepartment = 796
-    FrenapatisCard = 797
-    RabuHelmet = 798
-    F_CH0228_1 = 799
-    F_CH0228_2 = 800
-    F_CH0229_1 = 801
-    F_CH0229_2 = 802
-    F_CH0296_1 = 803
-    F_CH0296_2 = 804
-    F_CH0297_1 = 805
-    F_CH0297_2 = 806
-    WorldRaid_01 = 807
-    WorldRaid_02 = 808
-    WorldRaid_03 = 809
-    WorldRaid_04 = 810
-    F_CH0331_1 = 811
-    F_CH0331_2 = 812
-    F_CH0334_1 = 813
-    F_CH0334_2 = 814
-    F_CH0335_1 = 815
-    F_CH0335_2 = 816
-    F_CH0333_1 = 817
-    F_CH0333_2 = 818
-    F_CH0332_1 = 819
-    F_CH0332_2 = 820
-    EN0020_SpawnDummy = 821
-    EN0020_Visual = 822
-    EN0020_Jyaco = 823
-    EN0020_Gauge = 824
-    WorldRaid_A = 825
-    WorldRaid_B = 826
-    WorldRaid_C = 827
-    WorldRaid_D = 828
-    F_CH0337_1 = 829
-    F_CH0337_2 = 830
-    F_CH0336_1 = 831
-    F_CH0336_2 = 832
-    F_CH0310_1 = 833
-    F_CH0310_2 = 834
-    TagName0833 = 835
-    TagName0834 = 836
-    TagName0835 = 837
-    TagName0836 = 838
-    TagName0837 = 839
-    TagName0838 = 840
-    TagName0839 = 841
-    TagName0840 = 842
-    TagName0841 = 843
-    TagName0842 = 844
-    TagName0843 = 845
-    TagName0844 = 846
-    TagName0845 = 847
-    TagName0846 = 848
-    TagName0847 = 849
-    TagName0848 = 850
-    TagName0849 = 851
-    TagName0850 = 852
-    TagName0851 = 853
-    TagName0852 = 854
-    TagName0853 = 855
-    TagName0854 = 856
-    TagName0855 = 857
-    TagName0856 = 858
-    TagName0857 = 859
-    TagName0858 = 860
-    TagName0859 = 861
-    TagName0860 = 862
-    TagName0861 = 863
-    TagName0862 = 864
-    TagName0863 = 865
-    TagName0864 = 866
-    TagName0865 = 867
-    TagName0866 = 868
-    TagName0867 = 869
-    TagName0868 = 870
-    TagName0869 = 871
-    TagName0870 = 872
-    TagName0871 = 873
-    TagName0872 = 874
-    TagName0873 = 875
-    TagName0874 = 876
-    TagName0875 = 877
-    TagName0876 = 878
-    TagName0877 = 879
-    TagName0878 = 880
-    TagName0879 = 881
-    TagName0880 = 882
-    TagName0881 = 883
-    TagName0882 = 884
-    TagName0883 = 885
-    TagName0884 = 886
-    TagName0885 = 887
-    TagName0886 = 888
-    TagName0887 = 889
-    TagName0888 = 890
-    TagName0889 = 891
-    TagName0890 = 892
-    TagName0891 = 893
-    TagName0892 = 894
-    TagName0893 = 895
-    TagName0894 = 896
-    TagName0895 = 897
-    TagName0896 = 898
-    TagName0897 = 899
-    TagName0898 = 900
-    TagName0899 = 901
-    TagName0900 = 902
-    TagName0901 = 903
-    TagName0902 = 904
-    TagName0903 = 905
-    TagName0904 = 906
-    TagName0905 = 907
-    TagName0906 = 908
-    TagName0907 = 909
-    TagName0908 = 910
-    TagName0909 = 911
-    TagName0910 = 912
-    TagName0911 = 913
-    TagName0912 = 914
-    TagName0913 = 915
-    TagName0914 = 916
-    TagName0915 = 917
-    TagName0916 = 918
-    TagName0917 = 919
-    TagName0918 = 920
-    TagName0919 = 921
-    TagName0920 = 922
-    TagName0921 = 923
-    TagName0922 = 924
-    TagName0923 = 925
-    TagName0924 = 926
-    TagName0925 = 927
-    TagName0926 = 928
-    TagName0927 = 929
-    TagName0928 = 930
-    TagName0929 = 931
-    TagName0930 = 932
-    TagName0931 = 933
-    TagName0932 = 934
-    TagName0933 = 935
-    TagName0934 = 936
-    TagName0935 = 937
-    TagName0936 = 938
-    TagName0937 = 939
-    TagName0938 = 940
-    TagName0939 = 941
-    TagName0940 = 942
-    TagName0941 = 943
-    TagName0942 = 944
-    TagName0943 = 945
-    TagName0944 = 946
-    TagName0945 = 947
-    TagName0946 = 948
-    TagName0947 = 949
-    TagName0948 = 950
-    TagName0949 = 951
-    TagName0950 = 952
-    TagName0951 = 953
-    TagName0952 = 954
-    TagName0953 = 955
-    TagName0954 = 956
-    TagName0955 = 957
-    TagName0956 = 958
-    TagName0957 = 959
-    TagName0958 = 960
-    TagName0959 = 961
-    TagName0960 = 962
-    TagName0961 = 963
-    TagName0962 = 964
-    TagName0963 = 965
-    TagName0964 = 966
-    TagName0965 = 967
-    TagName0966 = 968
-    TagName0967 = 969
-    TagName0968 = 970
-    TagName0969 = 971
-    TagName0970 = 972
-    TagName0971 = 973
-    TagName0972 = 974
-    TagName0973 = 975
-    TagName0974 = 976
-    TagName0975 = 977
-    TagName0976 = 978
-    TagName0977 = 979
-    TagName0978 = 980
-    TagName0979 = 981
-    TagName0980 = 982
-    TagName0981 = 983
-    TagName0982 = 984
-    TagName0983 = 985
-    TagName0984 = 986
-    TagName0985 = 987
-    TagName0986 = 988
-    TagName0987 = 989
-    TagName0988 = 990
-    TagName0989 = 991
-    TagName0990 = 992
-    TagName0991 = 993
-    TagName0992 = 994
-    TagName0993 = 995
-    TagName0994 = 996
-    TagName0995 = 997
-    TagName0996 = 998
-    TagName0997 = 999
-    TagName0998 = 1000
-    TagName0999 = 1001
-    TagName1000 = 1002
-    TagName1001 = 1003
-    TagName1002 = 1004
-    TagName1003 = 1005
-    TagName1004 = 1006
-    TagName1005 = 1007
-    TagName1006 = 1008
-    TagName1007 = 1009
-    TagName1008 = 1010
-    TagName1009 = 1011
-    TagName1010 = 1012
-    TagName1011 = 1013
-    TagName1012 = 1014
-    TagName1013 = 1015
-    TagName1014 = 1016
-    TagName1015 = 1017
-    TagName1016 = 1018
-    TagName1017 = 1019
-    TagName1018 = 1020
-    TagName1019 = 1021
-    TagName1020 = 1022
-    TagName1021 = 1023
-    TagName1022 = 1024
-    TagName1023 = 1025
-    TagName1024 = 1026
-    TagName1025 = 1027
-    TagName1026 = 1028
-    TagName1027 = 1029
-    TagName1028 = 1030
-    TagName1029 = 1031
-    TagName1030 = 1032
-    TagName1031 = 1033
-    TagName1032 = 1034
-    TagName1033 = 1035
-    TagName1034 = 1036
-    TagName1035 = 1037
-    TagName1036 = 1038
-    TagName1037 = 1039
-    TagName1038 = 1040
-    TagName1039 = 1041
-    TagName1040 = 1042
-    TagName1041 = 1043
-    TagName1042 = 1044
-    TagName1043 = 1045
-    TagName1044 = 1046
-    TagName1045 = 1047
-    TagName1046 = 1048
-    TagName1047 = 1049
-    TagName1048 = 1050
-    TagName1049 = 1051
-    TagName1050 = 1052
-    TagName1051 = 1053
-    TagName1052 = 1054
-    TagName1053 = 1055
-    TagName1054 = 1056
-    TagName1055 = 1057
-    TagName1056 = 1058
-    TagName1057 = 1059
-    TagName1058 = 1060
-    TagName1059 = 1061
-    TagName1060 = 1062
-    TagName1061 = 1063
-    TagName1062 = 1064
-    TagName1063 = 1065
-    TagName1064 = 1066
-    TagName1065 = 1067
-    TagName1066 = 1068
-    TagName1067 = 1069
-    TagName1068 = 1070
-    TagName1069 = 1071
-    TagName1070 = 1072
-    TagName1071 = 1073
-    TagName1072 = 1074
-    TagName1073 = 1075
-    TagName1074 = 1076
-    TagName1075 = 1077
-    TagName1076 = 1078
-    TagName1077 = 1079
-    TagName1078 = 1080
-    TagName1079 = 1081
-    TagName1080 = 1082
-    TagName1081 = 1083
-    TagName1082 = 1084
-    TagName1083 = 1085
-    TagName1084 = 1086
-    TagName1085 = 1087
-    TagName1086 = 1088
-    TagName1087 = 1089
-    TagName1088 = 1090
-    TagName1089 = 1091
-    TagName1090 = 1092
-    TagName1091 = 1093
-    TagName1092 = 1094
-    TagName1093 = 1095
-    TagName1094 = 1096
-    TagName1095 = 1097
-    TagName1096 = 1098
-    TagName1097 = 1099
-    TagName1098 = 1100
-    TagName1099 = 1101
-    TagName1100 = 1102
-    TagName1101 = 1103
-    TagName1102 = 1104
-    TagName1103 = 1105
-    TagName1104 = 1106
-    TagName1105 = 1107
-    TagName1106 = 1108
-    TagName1107 = 1109
-    TagName1108 = 1110
-    TagName1109 = 1111
-    TagName1110 = 1112
-    TagName1111 = 1113
-    TagName1112 = 1114
-    TagName1113 = 1115
-    TagName1114 = 1116
-    TagName1115 = 1117
-    TagName1116 = 1118
-    TagName1117 = 1119
-    TagName1118 = 1120
-    TagName1119 = 1121
-    TagName1120 = 1122
-    TagName1121 = 1123
-    TagName1122 = 1124
-    TagName1123 = 1125
-    TagName1124 = 1126
-    TagName1125 = 1127
-    TagName1126 = 1128
-    TagName1127 = 1129
-    TagName1128 = 1130
-    TagName1129 = 1131
-    TagName1130 = 1132
-    TagName1131 = 1133
-    TagName1132 = 1134
-    TagName1133 = 1135
-    TagName1134 = 1136
-    TagName1135 = 1137
-    TagName1136 = 1138
-    TagName1137 = 1139
-    TagName1138 = 1140
-    TagName1139 = 1141
-    TagName1140 = 1142
-    TagName1141 = 1143
-    TagName1142 = 1144
-    TagName1143 = 1145
-    TagName1144 = 1146
-    TagName1145 = 1147
-    TagName1146 = 1148
-    TagName1147 = 1149
-    TagName1148 = 1150
-    TagName1149 = 1151
-    TagName1150 = 1152
-    TagName1151 = 1153
-    TagName1152 = 1154
-    TagName1153 = 1155
-    TagName1154 = 1156
-    TagName1155 = 1157
-    TagName1156 = 1158
-    TagName1157 = 1159
-    TagName1158 = 1160
-    TagName1159 = 1161
-    TagName1160 = 1162
-    TagName1161 = 1163
-    TagName1162 = 1164
-    TagName1163 = 1165
-    TagName1164 = 1166
-    TagName1165 = 1167
-    TagName1166 = 1168
-    TagName1167 = 1169
-    TagName1168 = 1170
-    TagName1169 = 1171
-    TagName1170 = 1172
-    TagName1171 = 1173
-    TagName1172 = 1174
-    TagName1173 = 1175
-    TagName1174 = 1176
-    TagName1175 = 1177
-    TagName1176 = 1178
-    TagName1177 = 1179
-    TagName1178 = 1180
-    TagName1179 = 1181
-    TagName1180 = 1182
-    TagName1181 = 1183
-    TagName1182 = 1184
-    TagName1183 = 1185
-    TagName1184 = 1186
-    TagName1185 = 1187
-    TagName1186 = 1188
-    TagName1187 = 1189
-    TagName1188 = 1190
-    TagName1189 = 1191
-    TagName1190 = 1192
-    TagName1191 = 1193
-    TagName1192 = 1194
-    TagName1193 = 1195
-    TagName1194 = 1196
-    TagName1195 = 1197
-    TagName1196 = 1198
-    TagName1197 = 1199
-    TagName1198 = 1200
-    TagName1199 = 1201
-    TagName1200 = 1202
-    TagName1201 = 1203
-    TagName1202 = 1204
-    TagName1203 = 1205
-    TagName1204 = 1206
-    TagName1205 = 1207
-    TagName1206 = 1208
-    TagName1207 = 1209
-    TagName1208 = 1210
-    TagName1209 = 1211
-    TagName1210 = 1212
-    TagName1211 = 1213
-    TagName1212 = 1214
-    TagName1213 = 1215
-    TagName1214 = 1216
-    TagName1215 = 1217
-    TagName1216 = 1218
-    TagName1217 = 1219
-    TagName1218 = 1220
-    TagName1219 = 1221
-    TagName1220 = 1222
-    TagName1221 = 1223
-    TagName1222 = 1224
-    TagName1223 = 1225
-    TagName1224 = 1226
-    TagName1225 = 1227
-    TagName1226 = 1228
-    TagName1227 = 1229
-    TagName1228 = 1230
-    TagName1229 = 1231
-    TagName1230 = 1232
-    TagName1231 = 1233
-    TagName1232 = 1234
-    TagName1233 = 1235
-    TagName1234 = 1236
-    TagName1235 = 1237
-    TagName1236 = 1238
-    TagName1237 = 1239
-    TagName1238 = 1240
-    TagName1239 = 1241
-    TagName1240 = 1242
-    TagName1241 = 1243
-    TagName1242 = 1244
-    TagName1243 = 1245
-    TagName1244 = 1246
-    TagName1245 = 1247
-    TagName1246 = 1248
-    TagName1247 = 1249
-    TagName1248 = 1250
-    TagName1249 = 1251
-    TagName1250 = 1252
-    TagName1251 = 1253
-    TagName1252 = 1254
-    TagName1253 = 1255
-    TagName1254 = 1256
-    TagName1255 = 1257
-    TagName1256 = 1258
-    TagName1257 = 1259
-    TagName1258 = 1260
-    TagName1259 = 1261
-    TagName1260 = 1262
-    TagName1261 = 1263
-    TagName1262 = 1264
-    TagName1263 = 1265
-    TagName1264 = 1266
-    TagName1265 = 1267
-    TagName1266 = 1268
-    TagName1267 = 1269
-    TagName1268 = 1270
-    TagName1269 = 1271
-    TagName1270 = 1272
-    TagName1271 = 1273
-    TagName1272 = 1274
-    TagName1273 = 1275
-    TagName1274 = 1276
-    TagName1275 = 1277
-    TagName1276 = 1278
-    TagName1277 = 1279
-    TagName1278 = 1280
-    TagName1279 = 1281
-    TagName1280 = 1282
-    TagName1281 = 1283
-    TagName1282 = 1284
-    TagName1283 = 1285
-    TagName1284 = 1286
-    TagName1285 = 1287
-    TagName1286 = 1288
-    TagName1287 = 1289
-    TagName1288 = 1290
-    TagName1289 = 1291
-    TagName1290 = 1292
-    TagName1291 = 1293
-    TagName1292 = 1294
-    TagName1293 = 1295
-    TagName1294 = 1296
-    TagName1295 = 1297
-    TagName1296 = 1298
-    TagName1297 = 1299
-    TagName1298 = 1300
-    TagName1299 = 1301
-    TagName1300 = 1302
-    TagName1301 = 1303
-    TagName1302 = 1304
-    TagName1303 = 1305
-    TagName1304 = 1306
-    TagName1305 = 1307
-    TagName1306 = 1308
-    TagName1307 = 1309
-    TagName1308 = 1310
-    TagName1309 = 1311
-    TagName1310 = 1312
-    TagName1311 = 1313
-    TagName1312 = 1314
-    TagName1313 = 1315
-    TagName1314 = 1316
-    TagName1315 = 1317
-    TagName1316 = 1318
-    TagName1317 = 1319
-    TagName1318 = 1320
-    TagName1319 = 1321
-    TagName1320 = 1322
-    TagName1321 = 1323
-    TagName1322 = 1324
-    TagName1323 = 1325
-    TagName1324 = 1326
-    TagName1325 = 1327
-    TagName1326 = 1328
-    TagName1327 = 1329
-    TagName1328 = 1330
-    TagName1329 = 1331
-    TagName1330 = 1332
-    TagName1331 = 1333
-    TagName1332 = 1334
-    TagName1333 = 1335
-    TagName1334 = 1336
-    TagName1335 = 1337
-    TagName1336 = 1338
-    TagName1337 = 1339
-    TagName1338 = 1340
-    TagName1339 = 1341
-    TagName1340 = 1342
-    TagName1341 = 1343
-    TagName1342 = 1344
-    TagName1343 = 1345
-    TagName1344 = 1346
-    TagName1345 = 1347
-    TagName1346 = 1348
-    TagName1347 = 1349
-    TagName1348 = 1350
-    TagName1349 = 1351
-    TagName1350 = 1352
-    TagName1351 = 1353
-    TagName1352 = 1354
-    TagName1353 = 1355
-    TagName1354 = 1356
-    TagName1355 = 1357
-    TagName1356 = 1358
-    TagName1357 = 1359
-    TagName1358 = 1360
-    TagName1359 = 1361
-    TagName1360 = 1362
-    TagName1361 = 1363
-    TagName1362 = 1364
-    TagName1363 = 1365
-    TagName1364 = 1366
-    TagName1365 = 1367
-    TagName1366 = 1368
-    TagName1367 = 1369
-    TagName1368 = 1370
-    TagName1369 = 1371
-    TagName1370 = 1372
-    TagName1371 = 1373
-    TagName1372 = 1374
-    TagName1373 = 1375
-    TagName1374 = 1376
-    TagName1375 = 1377
-    TagName1376 = 1378
-    TagName1377 = 1379
-    TagName1378 = 1380
-    TagName1379 = 1381
-    TagName1380 = 1382
-    TagName1381 = 1383
-    TagName1382 = 1384
-    TagName1383 = 1385
-    TagName1384 = 1386
-    TagName1385 = 1387
-    TagName1386 = 1388
-    TagName1387 = 1389
-    TagName1388 = 1390
-    TagName1389 = 1391
-    TagName1390 = 1392
-    TagName1391 = 1393
-    TagName1392 = 1394
-    TagName1393 = 1395
-    TagName1394 = 1396
-    TagName1395 = 1397
-    TagName1396 = 1398
-    TagName1397 = 1399
-    TagName1398 = 1400
-    TagName1399 = 1401
-    TagName1400 = 1402
-    TagName1401 = 1403
-    TagName1402 = 1404
-    TagName1403 = 1405
-    TagName1404 = 1406
-    TagName1405 = 1407
-    TagName1406 = 1408
-    TagName1407 = 1409
-    TagName1408 = 1410
-    TagName1409 = 1411
-    TagName1410 = 1412
-    TagName1411 = 1413
-    TagName1412 = 1414
-    TagName1413 = 1415
-    TagName1414 = 1416
-    TagName1415 = 1417
-    TagName1416 = 1418
-    TagName1417 = 1419
-    TagName1418 = 1420
-    TagName1419 = 1421
-    TagName1420 = 1422
-    TagName1421 = 1423
-    TagName1422 = 1424
-    TagName1423 = 1425
-    TagName1424 = 1426
-    TagName1425 = 1427
-    TagName1426 = 1428
-    TagName1427 = 1429
-    TagName1428 = 1430
-    TagName1429 = 1431
-    TagName1430 = 1432
-    TagName1431 = 1433
-    TagName1432 = 1434
-    TagName1433 = 1435
-    TagName1434 = 1436
-    TagName1435 = 1437
-    TagName1436 = 1438
-    TagName1437 = 1439
-    TagName1438 = 1440
-    TagName1439 = 1441
-    TagName1440 = 1442
-    TagName1441 = 1443
-    TagName1442 = 1444
-    TagName1443 = 1445
-    TagName1444 = 1446
-    TagName1445 = 1447
-    TagName1446 = 1448
-    TagName1447 = 1449
-    TagName1448 = 1450
-    TagName1449 = 1451
-    TagName1450 = 1452
-    TagName1451 = 1453
-    TagName1452 = 1454
-    TagName1453 = 1455
-    TagName1454 = 1456
-    TagName1455 = 1457
-    TagName1456 = 1458
-    TagName1457 = 1459
-    TagName1458 = 1460
-    TagName1459 = 1461
-    TagName1460 = 1462
-    TagName1461 = 1463
-    TagName1462 = 1464
-    TagName1463 = 1465
-    TagName1464 = 1466
-    TagName1465 = 1467
-    TagName1466 = 1468
-    TagName1467 = 1469
-    TagName1468 = 1470
-    TagName1469 = 1471
-    TagName1470 = 1472
-    TagName1471 = 1473
-    TagName1472 = 1474
-    TagName1473 = 1475
-    TagName1474 = 1476
-    TagName1475 = 1477
-    TagName1476 = 1478
-    TagName1477 = 1479
-    TagName1478 = 1480
-    TagName1479 = 1481
-    TagName1480 = 1482
-    TagName1481 = 1483
-    TagName1482 = 1484
-    TagName1483 = 1485
-    TagName1484 = 1486
-    TagName1485 = 1487
-    TagName1486 = 1488
-    TagName1487 = 1489
-    TagName1488 = 1490
-    TagName1489 = 1491
-    TagName1490 = 1492
-    TagName1491 = 1493
-    TagName1492 = 1494
-    TagName1493 = 1495
-    TagName1494 = 1496
-    TagName1495 = 1497
-    TagName1496 = 1498
-    TagName1497 = 1499
-    TagName1498 = 1500
-    TagName1499 = 1501
-    TagName1500 = 1502
-    TagName1501 = 1503
-    TagName1502 = 1504
-    TagName1503 = 1505
-    TagName1504 = 1506
-    TagName1505 = 1507
-    TagName1506 = 1508
-    TagName1507 = 1509
-    TagName1508 = 1510
-    TagName1509 = 1511
-    TagName1510 = 1512
-    TagName1511 = 1513
-    TagName1512 = 1514
-    TagName1513 = 1515
-    TagName1514 = 1516
-    TagName1515 = 1517
-    TagName1516 = 1518
-    TagName1517 = 1519
-    TagName1518 = 1520
-    TagName1519 = 1521
-    TagName1520 = 1522
-    TagName1521 = 1523
-    TagName1522 = 1524
-    TagName1523 = 1525
-    TagName1524 = 1526
-    TagName1525 = 1527
-    TagName1526 = 1528
-    TagName1527 = 1529
-    TagName1528 = 1530
-    TagName1529 = 1531
-    TagName1530 = 1532
-    TagName1531 = 1533
-    TagName1532 = 1534
-    TagName1533 = 1535
-    TagName1534 = 1536
-    TagName1535 = 1537
-    TagName1536 = 1538
-    TagName1537 = 1539
-    TagName1538 = 1540
-    TagName1539 = 1541
-    TagName1540 = 1542
-    TagName1541 = 1543
-    TagName1542 = 1544
-    TagName1543 = 1545
-    TagName1544 = 1546
-    TagName1545 = 1547
-    TagName1546 = 1548
-    TagName1547 = 1549
-    TagName1548 = 1550
-    TagName1549 = 1551
-    TagName1550 = 1552
-    TagName1551 = 1553
-    TagName1552 = 1554
-    TagName1553 = 1555
-    TagName1554 = 1556
-    TagName1555 = 1557
-    TagName1556 = 1558
-    TagName1557 = 1559
-    TagName1558 = 1560
-    TagName1559 = 1561
-    TagName1560 = 1562
-    TagName1561 = 1563
-    TagName1562 = 1564
-    TagName1563 = 1565
-    TagName1564 = 1566
-    TagName1565 = 1567
-    TagName1566 = 1568
-    TagName1567 = 1569
-    TagName1568 = 1570
-    TagName1569 = 1571
-    TagName1570 = 1572
-    TagName1571 = 1573
-    TagName1572 = 1574
-    TagName1573 = 1575
-    TagName1574 = 1576
-    TagName1575 = 1577
-    TagName1576 = 1578
-    TagName1577 = 1579
-    TagName1578 = 1580
-    TagName1579 = 1581
-    TagName1580 = 1582
-    TagName1581 = 1583
-    TagName1582 = 1584
-    TagName1583 = 1585
-    TagName1584 = 1586
-    TagName1585 = 1587
-    TagName1586 = 1588
-    TagName1587 = 1589
-    TagName1588 = 1590
-    TagName1589 = 1591
-    TagName1590 = 1592
-    TagName1591 = 1593
-    TagName1592 = 1594
-    TagName1593 = 1595
-    TagName1594 = 1596
-    TagName1595 = 1597
-    TagName1596 = 1598
-    TagName1597 = 1599
-    TagName1598 = 1600
-    TagName1599 = 1601
-    TagName1600 = 1602
-    TagName1601 = 1603
-    TagName1602 = 1604
-    TagName1603 = 1605
-    TagName1604 = 1606
-    TagName1605 = 1607
-    TagName1606 = 1608
-    TagName1607 = 1609
-    TagName1608 = 1610
-    TagName1609 = 1611
-    TagName1610 = 1612
-    TagName1611 = 1613
-    TagName1612 = 1614
-    TagName1613 = 1615
-    TagName1614 = 1616
-    TagName1615 = 1617
-    TagName1616 = 1618
-    TagName1617 = 1619
-    TagName1618 = 1620
-    TagName1619 = 1621
-    TagName1620 = 1622
-    TagName1621 = 1623
-    TagName1622 = 1624
-    TagName1623 = 1625
-    TagName1624 = 1626
-    TagName1625 = 1627
-    TagName1626 = 1628
-    TagName1627 = 1629
-    TagName1628 = 1630
-    TagName1629 = 1631
-    TagName1630 = 1632
-    TagName1631 = 1633
-    TagName1632 = 1634
-    TagName1633 = 1635
-    TagName1634 = 1636
-    TagName1635 = 1637
-    TagName1636 = 1638
-    TagName1637 = 1639
-    TagName1638 = 1640
-    TagName1639 = 1641
-    TagName1640 = 1642
-    TagName1641 = 1643
-    TagName1642 = 1644
-    TagName1643 = 1645
-    TagName1644 = 1646
-    TagName1645 = 1647
-    TagName1646 = 1648
-    TagName1647 = 1649
-    TagName1648 = 1650
-    TagName1649 = 1651
-    TagName1650 = 1652
-    TagName1651 = 1653
-    TagName1652 = 1654
-    TagName1653 = 1655
-    TagName1654 = 1656
-    TagName1655 = 1657
-    TagName1656 = 1658
-    TagName1657 = 1659
-    TagName1658 = 1660
-    TagName1659 = 1661
-    TagName1660 = 1662
-    TagName1661 = 1663
-    TagName1662 = 1664
-    TagName1663 = 1665
-    TagName1664 = 1666
-    TagName1665 = 1667
-    TagName1666 = 1668
-    TagName1667 = 1669
-    TagName1668 = 1670
-    TagName1669 = 1671
-    TagName1670 = 1672
-    TagName1671 = 1673
-    TagName1672 = 1674
-    TagName1673 = 1675
-    TagName1674 = 1676
-    TagName1675 = 1677
-    TagName1676 = 1678
-    TagName1677 = 1679
-    TagName1678 = 1680
-    TagName1679 = 1681
-    TagName1680 = 1682
-    TagName1681 = 1683
-    TagName1682 = 1684
-    TagName1683 = 1685
-    TagName1684 = 1686
-    TagName1685 = 1687
-    TagName1686 = 1688
-    TagName1687 = 1689
-    TagName1688 = 1690
-    TagName1689 = 1691
-    TagName1690 = 1692
-    TagName1691 = 1693
-    TagName1692 = 1694
-    TagName1693 = 1695
-    TagName1694 = 1696
-    TagName1695 = 1697
-    TagName1696 = 1698
-    TagName1697 = 1699
-    TagName1698 = 1700
-    TagName1699 = 1701
-    TagName1700 = 1702
-    TagName1701 = 1703
-    TagName1702 = 1704
-    TagName1703 = 1705
-    TagName1704 = 1706
-    TagName1705 = 1707
-    TagName1706 = 1708
-    TagName1707 = 1709
-    TagName1708 = 1710
-    TagName1709 = 1711
-    TagName1710 = 1712
-    TagName1711 = 1713
-    TagName1712 = 1714
-    TagName1713 = 1715
-    TagName1714 = 1716
-    TagName1715 = 1717
-    TagName1716 = 1718
-    TagName1717 = 1719
-    TagName1718 = 1720
-    TagName1719 = 1721
-    TagName1720 = 1722
-    TagName1721 = 1723
-    TagName1722 = 1724
-    TagName1723 = 1725
-    TagName1724 = 1726
-    TagName1725 = 1727
-    TagName1726 = 1728
-    TagName1727 = 1729
-    TagName1728 = 1730
-    TagName1729 = 1731
-    TagName1730 = 1732
-    TagName1731 = 1733
-    TagName1732 = 1734
-    TagName1733 = 1735
-    TagName1734 = 1736
-    TagName1735 = 1737
-    TagName1736 = 1738
-    TagName1737 = 1739
-    TagName1738 = 1740
-    TagName1739 = 1741
-    TagName1740 = 1742
-    TagName1741 = 1743
-    TagName1742 = 1744
-    TagName1743 = 1745
-    TagName1744 = 1746
-    TagName1745 = 1747
-    TagName1746 = 1748
-    TagName1747 = 1749
-    TagName1748 = 1750
-    TagName1749 = 1751
-    TagName1750 = 1752
-    TagName1751 = 1753
-    TagName1752 = 1754
-    TagName1753 = 1755
-    TagName1754 = 1756
-    TagName1755 = 1757
-    TagName1756 = 1758
-    TagName1757 = 1759
-    TagName1758 = 1760
-    TagName1759 = 1761
-    TagName1760 = 1762
-    TagName1761 = 1763
-    TagName1762 = 1764
-    TagName1763 = 1765
-    TagName1764 = 1766
-    TagName1765 = 1767
-    TagName1766 = 1768
-    TagName1767 = 1769
-    TagName1768 = 1770
-    TagName1769 = 1771
-    TagName1770 = 1772
-    TagName1771 = 1773
-    TagName1772 = 1774
-    TagName1773 = 1775
-    TagName1774 = 1776
-    TagName1775 = 1777
-    TagName1776 = 1778
-    TagName1777 = 1779
-    TagName1778 = 1780
-    TagName1779 = 1781
-    TagName1780 = 1782
-    TagName1781 = 1783
-    TagName1782 = 1784
-    TagName1783 = 1785
-    TagName1784 = 1786
-    TagName1785 = 1787
-    TagName1786 = 1788
-    TagName1787 = 1789
-    TagName1788 = 1790
-    TagName1789 = 1791
-    TagName1790 = 1792
-    TagName1791 = 1793
-    TagName1792 = 1794
-    TagName1793 = 1795
-    TagName1794 = 1796
-    TagName1795 = 1797
-    TagName1796 = 1798
-    TagName1797 = 1799
-    TagName1798 = 1800
-    TagName1799 = 1801
-    TagName1800 = 1802
-    TagName1801 = 1803
-    TagName1802 = 1804
-    TagName1803 = 1805
-    TagName1804 = 1806
-    TagName1805 = 1807
-    TagName1806 = 1808
-    TagName1807 = 1809
-    TagName1808 = 1810
-    TagName1809 = 1811
-    TagName1810 = 1812
-    TagName1811 = 1813
-    TagName1812 = 1814
-    TagName1813 = 1815
-    TagName1814 = 1816
-    TagName1815 = 1817
-    TagName1816 = 1818
-    TagName1817 = 1819
-    TagName1818 = 1820
-    TagName1819 = 1821
-    TagName1820 = 1822
-    TagName1821 = 1823
-    TagName1822 = 1824
-    TagName1823 = 1825
-    TagName1824 = 1826
-    TagName1825 = 1827
-    TagName1826 = 1828
-    TagName1827 = 1829
-    TagName1828 = 1830
-    TagName1829 = 1831
-    TagName1830 = 1832
-    TagName1831 = 1833
-    TagName1832 = 1834
-    TagName1833 = 1835
-    TagName1834 = 1836
-    TagName1835 = 1837
-    TagName1836 = 1838
-    TagName1837 = 1839
-    TagName1838 = 1840
-    TagName1839 = 1841
-    TagName1840 = 1842
-    TagName1841 = 1843
-    TagName1842 = 1844
-    TagName1843 = 1845
-    TagName1844 = 1846
-    TagName1845 = 1847
-    TagName1846 = 1848
-    TagName1847 = 1849
-    TagName1848 = 1850
-    TagName1849 = 1851
-    TagName1850 = 1852
-    TagName1851 = 1853
-    TagName1852 = 1854
-    TagName1853 = 1855
-    TagName1854 = 1856
-    TagName1855 = 1857
-    TagName1856 = 1858
-    TagName1857 = 1859
-    TagName1858 = 1860
-    TagName1859 = 1861
-    TagName1860 = 1862
-    TagName1861 = 1863
-    TagName1862 = 1864
-    TagName1863 = 1865
-    TagName1864 = 1866
-    TagName1865 = 1867
-    TagName1866 = 1868
-    TagName1867 = 1869
-    TagName1868 = 1870
-    TagName1869 = 1871
-    TagName1870 = 1872
-    TagName1871 = 1873
-    TagName1872 = 1874
-    TagName1873 = 1875
-    TagName1874 = 1876
-    TagName1875 = 1877
-    TagName1876 = 1878
-    TagName1877 = 1879
-    TagName1878 = 1880
-    TagName1879 = 1881
-    TagName1880 = 1882
-    TagName1881 = 1883
-    TagName1882 = 1884
-    TagName1883 = 1885
-    TagName1884 = 1886
-    TagName1885 = 1887
-    TagName1886 = 1888
-    TagName1887 = 1889
-    TagName1888 = 1890
-    TagName1889 = 1891
-    TagName1890 = 1892
-    TagName1891 = 1893
-    TagName1892 = 1894
-    TagName1893 = 1895
-    TagName1894 = 1896
-    TagName1895 = 1897
-    TagName1896 = 1898
-    TagName1897 = 1899
-    TagName1898 = 1900
-    TagName1899 = 1901
-    TagName1900 = 1902
-    TagName1901 = 1903
-    TagName1902 = 1904
-    TagName1903 = 1905
-    TagName1904 = 1906
-    TagName1905 = 1907
-    TagName1906 = 1908
-    TagName1907 = 1909
-    TagName1908 = 1910
-    TagName1909 = 1911
-    TagName1910 = 1912
-    TagName1911 = 1913
-    TagName1912 = 1914
-    TagName1913 = 1915
-    TagName1914 = 1916
-    TagName1915 = 1917
-    TagName1916 = 1918
-    TagName1917 = 1919
-    TagName1918 = 1920
-    TagName1919 = 1921
-    TagName1920 = 1922
-    TagName1921 = 1923
-    TagName1922 = 1924
-    TagName1923 = 1925
-    TagName1924 = 1926
-    TagName1925 = 1927
-    TagName1926 = 1928
-    TagName1927 = 1929
-    TagName1928 = 1930
-    TagName1929 = 1931
-    TagName1930 = 1932
-    TagName1931 = 1933
-    TagName1932 = 1934
-    TagName1933 = 1935
-    TagName1934 = 1936
-    TagName1935 = 1937
-    TagName1936 = 1938
-    TagName1937 = 1939
-    TagName1938 = 1940
-    TagName1939 = 1941
-    TagName1940 = 1942
-    TagName1941 = 1943
-    TagName1942 = 1944
-    TagName1943 = 1945
-    TagName1944 = 1946
-    TagName1945 = 1947
-    TagName1946 = 1948
-    TagName1947 = 1949
-    TagName1948 = 1950
-    TagName1949 = 1951
-    TagName1950 = 1952
-    TagName1951 = 1953
-    TagName1952 = 1954
-    TagName1953 = 1955
-    TagName1954 = 1956
-    TagName1955 = 1957
-    TagName1956 = 1958
-    TagName1957 = 1959
-    TagName1958 = 1960
-    TagName1959 = 1961
-    TagName1960 = 1962
-    TagName1961 = 1963
-    TagName1962 = 1964
-    TagName1963 = 1965
-    TagName1964 = 1966
-    TagName1965 = 1967
-    TagName1966 = 1968
-    TagName1967 = 1969
-    TagName1968 = 1970
-    TagName1969 = 1971
-    TagName1970 = 1972
-    TagName1971 = 1973
-    TagName1972 = 1974
-    TagName1973 = 1975
-    TagName1974 = 1976
-    TagName1975 = 1977
-    TagName1976 = 1978
-    TagName1977 = 1979
-    TagName1978 = 1980
-    TagName1979 = 1981
-    TagName1980 = 1982
-    TagName1981 = 1983
-    TagName1982 = 1984
-    TagName1983 = 1985
-    TagName1984 = 1986
-    TagName1985 = 1987
-    TagName1986 = 1988
-    TagName1987 = 1989
-    TagName1988 = 1990
-    TagName1989 = 1991
-    TagName1990 = 1992
-    TagName1991 = 1993
-    TagName1992 = 1994
-    TagName1993 = 1995
-    TagName1994 = 1996
-    TagName1995 = 1997
-    TagName1996 = 1998
-    TagName1997 = 1999
-    TagName1998 = 2000
-    TagName1999 = 2001
-    TagName2000 = 2002
-    TagName2001 = 2003
-    TagName2002 = 2004
-    TagName2003 = 2005
-    TagName2004 = 2006
-    TagName2005 = 2007
-    TagName2006 = 2008
-    TagName2007 = 2009
-    TagName2008 = 2010
-    TagName2009 = 2011
-    TagName2010 = 2012
-    TagName2011 = 2013
-    TagName2012 = 2014
-    TagName2013 = 2015
-    TagName2014 = 2016
-    TagName2015 = 2017
-    TagName2016 = 2018
-    TagName2017 = 2019
-    TagName2018 = 2020
-    TagName2019 = 2021
-    TagName2020 = 2022
-    TagName2021 = 2023
-    TagName2022 = 2024
-    TagName2023 = 2025
-    TagName2024 = 2026
-    TagName2025 = 2027
-    TagName2026 = 2028
-    TagName2027 = 2029
-    TagName2028 = 2030
-    TagName2029 = 2031
-    TagName2030 = 2032
-    TagName2031 = 2033
-    TagName2032 = 2034
-    TagName2033 = 2035
-    TagName2034 = 2036
-    TagName2035 = 2037
-    TagName2036 = 2038
-    TagName2037 = 2039
-    TagName2038 = 2040
-    TagName2039 = 2041
-    TagName2040 = 2042
-    TagName2041 = 2043
-    TagName2042 = 2044
-    TagName2043 = 2045
-    TagName2044 = 2046
-    TagName2045 = 2047
-    TagName2046 = 2048
-    TagName2047 = 2049
-    TagName2048 = 2050
-    TagName2049 = 2051
-    TagName2050 = 2052
-    TagName2051 = 2053
-    TagName2052 = 2054
-    TagName2053 = 2055
-    TagName2054 = 2056
-    TagName2055 = 2057
-    TagName2056 = 2058
-    TagName2057 = 2059
-    TagName2058 = 2060
-    TagName2059 = 2061
-    TagName2060 = 2062
-    TagName2061 = 2063
-    TagName2062 = 2064
-    TagName2063 = 2065
-    TagName2064 = 2066
-    TagName2065 = 2067
-    TagName2066 = 2068
-    TagName2067 = 2069
-    TagName2068 = 2070
-    TagName2069 = 2071
-    TagName2070 = 2072
-    TagName2071 = 2073
-    TagName2072 = 2074
-    TagName2073 = 2075
-    TagName2074 = 2076
-    TagName2075 = 2077
-    TagName2076 = 2078
-    TagName2077 = 2079
-    TagName2078 = 2080
-    TagName2079 = 2081
-    TagName2080 = 2082
-    TagName2081 = 2083
-    TagName2082 = 2084
-    TagName2083 = 2085
-    TagName2084 = 2086
-    TagName2085 = 2087
-    TagName2086 = 2088
-    TagName2087 = 2089
-    TagName2088 = 2090
-    TagName2089 = 2091
-    TagName2090 = 2092
-    TagName2091 = 2093
-    TagName2092 = 2094
-    TagName2093 = 2095
-    TagName2094 = 2096
-    TagName2095 = 2097
-    TagName2096 = 2098
-    TagName2097 = 2099
-    TagName2098 = 2100
-    TagName2099 = 2101
-    TagName2100 = 2102
-    TagName2101 = 2103
-    TagName2102 = 2104
-    TagName2103 = 2105
-    TagName2104 = 2106
-    TagName2105 = 2107
-    TagName2106 = 2108
-    TagName2107 = 2109
-    TagName2108 = 2110
-    TagName2109 = 2111
-    TagName2110 = 2112
-    TagName2111 = 2113
-    TagName2112 = 2114
-    TagName2113 = 2115
-    TagName2114 = 2116
-    TagName2115 = 2117
-    TagName2116 = 2118
-    TagName2117 = 2119
-    TagName2118 = 2120
-    TagName2119 = 2121
-    TagName2120 = 2122
-    TagName2121 = 2123
-    TagName2122 = 2124
-    TagName2123 = 2125
-    TagName2124 = 2126
-    TagName2125 = 2127
-    TagName2126 = 2128
-    TagName2127 = 2129
-    TagName2128 = 2130
-    TagName2129 = 2131
-    TagName2130 = 2132
-    TagName2131 = 2133
-    TagName2132 = 2134
-    TagName2133 = 2135
-    TagName2134 = 2136
-    TagName2135 = 2137
-    TagName2136 = 2138
-    TagName2137 = 2139
-    TagName2138 = 2140
-    TagName2139 = 2141
-    TagName2140 = 2142
-    TagName2141 = 2143
-    TagName2142 = 2144
-    TagName2143 = 2145
-    TagName2144 = 2146
-    TagName2145 = 2147
-    TagName2146 = 2148
-    TagName2147 = 2149
-    TagName2148 = 2150
-    TagName2149 = 2151
-    TagName2150 = 2152
-    TagName2151 = 2153
-    TagName2152 = 2154
-    TagName2153 = 2155
-    TagName2154 = 2156
-    TagName2155 = 2157
-    TagName2156 = 2158
-    TagName2157 = 2159
-    TagName2158 = 2160
-    TagName2159 = 2161
-    TagName2160 = 2162
-    TagName2161 = 2163
-    TagName2162 = 2164
-    TagName2163 = 2165
-    TagName2164 = 2166
-    TagName2165 = 2167
-    TagName2166 = 2168
-    TagName2167 = 2169
-    TagName2168 = 2170
-    TagName2169 = 2171
-    TagName2170 = 2172
-    TagName2171 = 2173
-    TagName2172 = 2174
-    TagName2173 = 2175
-    TagName2174 = 2176
-    TagName2175 = 2177
-    TagName2176 = 2178
-    TagName2177 = 2179
-    TagName2178 = 2180
-    TagName2179 = 2181
-    TagName2180 = 2182
-    TagName2181 = 2183
-    TagName2182 = 2184
-    TagName2183 = 2185
-    TagName2184 = 2186
-    TagName2185 = 2187
-    TagName2186 = 2188
-    TagName2187 = 2189
-    TagName2188 = 2190
-    TagName2189 = 2191
-    TagName2190 = 2192
-    TagName2191 = 2193
-    TagName2192 = 2194
-    TagName2193 = 2195
-    TagName2194 = 2196
-    TagName2195 = 2197
-    TagName2196 = 2198
-    TagName2197 = 2199
-    TagName2198 = 2200
-    TagName2199 = 2201
-    TagName2200 = 2202
-    TagName2201 = 2203
-    TagName2202 = 2204
-    TagName2203 = 2205
-    TagName2204 = 2206
-    TagName2205 = 2207
-    TagName2206 = 2208
-    TagName2207 = 2209
-    TagName2208 = 2210
-    TagName2209 = 2211
-    TagName2210 = 2212
-    TagName2211 = 2213
-    TagName2212 = 2214
-    TagName2213 = 2215
-    TagName2214 = 2216
-    TagName2215 = 2217
-    TagName2216 = 2218
-    TagName2217 = 2219
-    TagName2218 = 2220
-    TagName2219 = 2221
-    TagName2220 = 2222
-    TagName2221 = 2223
-    TagName2222 = 2224
-    TagName2223 = 2225
-    TagName2224 = 2226
-    TagName2225 = 2227
-    TagName2226 = 2228
-    TagName2227 = 2229
-    TagName2228 = 2230
-    TagName2229 = 2231
-    TagName2230 = 2232
-    TagName2231 = 2233
-    TagName2232 = 2234
-    TagName2233 = 2235
-    TagName2234 = 2236
-    TagName2235 = 2237
-    TagName2236 = 2238
-    TagName2237 = 2239
-    TagName2238 = 2240
-    TagName2239 = 2241
-    TagName2240 = 2242
-    TagName2241 = 2243
-    TagName2242 = 2244
-    TagName2243 = 2245
-    TagName2244 = 2246
-    TagName2245 = 2247
-    TagName2246 = 2248
-    TagName2247 = 2249
-    TagName2248 = 2250
-    TagName2249 = 2251
-    TagName2250 = 2252
-    TagName2251 = 2253
-    TagName2252 = 2254
-    TagName2253 = 2255
-    TagName2254 = 2256
-    TagName2255 = 2257
-    TagName2256 = 2258
-    TagName2257 = 2259
-    TagName2258 = 2260
-    TagName2259 = 2261
-    TagName2260 = 2262
-    TagName2261 = 2263
-    TagName2262 = 2264
-    TagName2263 = 2265
-    TagName2264 = 2266
-    TagName2265 = 2267
-    TagName2266 = 2268
-    TagName2267 = 2269
-    TagName2268 = 2270
-    TagName2269 = 2271
-    TagName2270 = 2272
-    TagName2271 = 2273
-    TagName2272 = 2274
-    TagName2273 = 2275
-    TagName2274 = 2276
-    TagName2275 = 2277
-    TagName2276 = 2278
-    TagName2277 = 2279
-    TagName2278 = 2280
-    TagName2279 = 2281
-    TagName2280 = 2282
-    TagName2281 = 2283
-    TagName2282 = 2284
-    TagName2283 = 2285
-    TagName2284 = 2286
-    TagName2285 = 2287
-    TagName2286 = 2288
-    TagName2287 = 2289
-    TagName2288 = 2290
-    TagName2289 = 2291
-    TagName2290 = 2292
-    TagName2291 = 2293
-    TagName2292 = 2294
-    TagName2293 = 2295
-    TagName2294 = 2296
-    TagName2295 = 2297
-    TagName2296 = 2298
-    TagName2297 = 2299
-    TagName2298 = 2300
-    TagName2299 = 2301
-    TagName2300 = 2302
-    TagName2301 = 2303
-    TagName2302 = 2304
-    TagName2303 = 2305
-    TagName2304 = 2306
-    TagName2305 = 2307
-    TagName2306 = 2308
-    TagName2307 = 2309
-    TagName2308 = 2310
-    TagName2309 = 2311
-    TagName2310 = 2312
-    TagName2311 = 2313
-    TagName2312 = 2314
-    TagName2313 = 2315
-    TagName2314 = 2316
-    TagName2315 = 2317
-    TagName2316 = 2318
-    TagName2317 = 2319
-    TagName2318 = 2320
-    TagName2319 = 2321
-    TagName2320 = 2322
-    TagName2321 = 2323
-    TagName2322 = 2324
-    TagName2323 = 2325
-    TagName2324 = 2326
-    TagName2325 = 2327
-    TagName2326 = 2328
-    TagName2327 = 2329
-    TagName2328 = 2330
-    TagName2329 = 2331
-    TagName2330 = 2332
-    TagName2331 = 2333
-    TagName2332 = 2334
-    TagName2333 = 2335
-    TagName2334 = 2336
-    TagName2335 = 2337
-    TagName2336 = 2338
-    TagName2337 = 2339
-    TagName2338 = 2340
-    TagName2339 = 2341
-    TagName2340 = 2342
-    TagName2341 = 2343
-    TagName2342 = 2344
-    TagName2343 = 2345
-    TagName2344 = 2346
-    TagName2345 = 2347
-    TagName2346 = 2348
-    TagName2347 = 2349
-    TagName2348 = 2350
-    TagName2349 = 2351
-    TagName2350 = 2352
-    TagName2351 = 2353
-    TagName2352 = 2354
-    TagName2353 = 2355
-    TagName2354 = 2356
-    TagName2355 = 2357
-    TagName2356 = 2358
-    TagName2357 = 2359
-    TagName2358 = 2360
-    TagName2359 = 2361
-    TagName2360 = 2362
-    TagName2361 = 2363
-    TagName2362 = 2364
-    TagName2363 = 2365
-    TagName2364 = 2366
-    TagName2365 = 2367
-    TagName2366 = 2368
-    TagName2367 = 2369
-    TagName2368 = 2370
-    TagName2369 = 2371
-    TagName2370 = 2372
-    TagName2371 = 2373
-    TagName2372 = 2374
-    TagName2373 = 2375
-    TagName2374 = 2376
-    TagName2375 = 2377
-    TagName2376 = 2378
-    TagName2377 = 2379
-    TagName2378 = 2380
-    TagName2379 = 2381
-    TagName2380 = 2382
-    TagName2381 = 2383
-    TagName2382 = 2384
-    TagName2383 = 2385
-    TagName2384 = 2386
-    TagName2385 = 2387
-    TagName2386 = 2388
-    TagName2387 = 2389
-    TagName2388 = 2390
-    TagName2389 = 2391
-    TagName2390 = 2392
-    TagName2391 = 2393
-    TagName2392 = 2394
-    TagName2393 = 2395
-    TagName2394 = 2396
-    TagName2395 = 2397
-    TagName2396 = 2398
-    TagName2397 = 2399
-    TagName2398 = 2400
-    TagName2399 = 2401
-    TagName2400 = 2402
-    TagName2401 = 2403
-    TagName2402 = 2404
-    TagName2403 = 2405
-    TagName2404 = 2406
-    TagName2405 = 2407
-    TagName2406 = 2408
-    TagName2407 = 2409
-    TagName2408 = 2410
-    TagName2409 = 2411
-    TagName2410 = 2412
-    TagName2411 = 2413
-    TagName2412 = 2414
-    TagName2413 = 2415
-    TagName2414 = 2416
-    TagName2415 = 2417
-    TagName2416 = 2418
-    TagName2417 = 2419
-    TagName2418 = 2420
-    TagName2419 = 2421
-    TagName2420 = 2422
-    TagName2421 = 2423
-    TagName2422 = 2424
-    TagName2423 = 2425
-    TagName2424 = 2426
-    TagName2425 = 2427
-    TagName2426 = 2428
-    TagName2427 = 2429
-    TagName2428 = 2430
-    TagName2429 = 2431
-    TagName2430 = 2432
-    TagName2431 = 2433
-    TagName2432 = 2434
-    TagName2433 = 2435
-    TagName2434 = 2436
-    TagName2435 = 2437
-    TagName2436 = 2438
-    TagName2437 = 2439
-    TagName2438 = 2440
-    TagName2439 = 2441
-    TagName2440 = 2442
-    TagName2441 = 2443
-    TagName2442 = 2444
-    TagName2443 = 2445
-    TagName2444 = 2446
-    TagName2445 = 2447
-    TagName2446 = 2448
-    TagName2447 = 2449
-    TagName2448 = 2450
-    TagName2449 = 2451
-    TagName2450 = 2452
-    TagName2451 = 2453
-    TagName2452 = 2454
-    TagName2453 = 2455
-    TagName2454 = 2456
-    TagName2455 = 2457
-    TagName2456 = 2458
-    TagName2457 = 2459
-    TagName2458 = 2460
-    TagName2459 = 2461
-    TagName2460 = 2462
-    TagName2461 = 2463
-    TagName2462 = 2464
-    TagName2463 = 2465
-    TagName2464 = 2466
-    TagName2465 = 2467
-    TagName2466 = 2468
-    TagName2467 = 2469
-    TagName2468 = 2470
-    TagName2469 = 2471
-    TagName2470 = 2472
-    TagName2471 = 2473
-    TagName2472 = 2474
-    TagName2473 = 2475
-    TagName2474 = 2476
-    TagName2475 = 2477
-    TagName2476 = 2478
-    TagName2477 = 2479
-    TagName2478 = 2480
-    TagName2479 = 2481
-    TagName2480 = 2482
-    TagName2481 = 2483
-    TagName2482 = 2484
-    TagName2483 = 2485
-    TagName2484 = 2486
-    TagName2485 = 2487
-    TagName2486 = 2488
-    TagName2487 = 2489
-    TagName2488 = 2490
-    TagName2489 = 2491
-    TagName2490 = 2492
-    TagName2491 = 2493
-    TagName2492 = 2494
-    TagName2493 = 2495
-    TagName2494 = 2496
-    TagName2495 = 2497
-    TagName2496 = 2498
-    TagName2497 = 2499
-    TagName2498 = 2500
-    TagName2499 = 2501
-    TagName2500 = 2502
-    TagName2501 = 2503
-    TagName2502 = 2504
-    TagName2503 = 2505
-    TagName2504 = 2506
-    TagName2505 = 2507
-    TagName2506 = 2508
-    TagName2507 = 2509
-    TagName2508 = 2510
-    TagName2509 = 2511
-    TagName2510 = 2512
-    TagName2511 = 2513
-    TagName2512 = 2514
-    TagName2513 = 2515
-    TagName2514 = 2516
-    TagName2515 = 2517
-    TagName2516 = 2518
-    TagName2517 = 2519
-    TagName2518 = 2520
-    TagName2519 = 2521
-    TagName2520 = 2522
-    TagName2521 = 2523
-    TagName2522 = 2524
-    TagName2523 = 2525
-    TagName2524 = 2526
-    TagName2525 = 2527
-    TagName2526 = 2528
-    TagName2527 = 2529
-    TagName2528 = 2530
-    TagName2529 = 2531
-    TagName2530 = 2532
-    TagName2531 = 2533
-    TagName2532 = 2534
-    TagName2533 = 2535
-    TagName2534 = 2536
-    TagName2535 = 2537
-    TagName2536 = 2538
-    TagName2537 = 2539
-    TagName2538 = 2540
-    TagName2539 = 2541
-    TagName2540 = 2542
-    TagName2541 = 2543
-    TagName2542 = 2544
-    TagName2543 = 2545
-    TagName2544 = 2546
-    TagName2545 = 2547
-    TagName2546 = 2548
-    TagName2547 = 2549
-    TagName2548 = 2550
-    TagName2549 = 2551
-    TagName2550 = 2552
-    TagName2551 = 2553
-    TagName2552 = 2554
-    TagName2553 = 2555
-    TagName2554 = 2556
-    TagName2555 = 2557
-    TagName2556 = 2558
-    TagName2557 = 2559
-    TagName2558 = 2560
-    TagName2559 = 2561
-    TagName2560 = 2562
-    TagName2561 = 2563
-    TagName2562 = 2564
-    TagName2563 = 2565
-    TagName2564 = 2566
-    TagName2565 = 2567
-    TagName2566 = 2568
-    TagName2567 = 2569
-    TagName2568 = 2570
-    TagName2569 = 2571
-    TagName2570 = 2572
-    TagName2571 = 2573
-    TagName2572 = 2574
-    TagName2573 = 2575
-    TagName2574 = 2576
-    TagName2575 = 2577
-    TagName2576 = 2578
-    TagName2577 = 2579
-    TagName2578 = 2580
-    TagName2579 = 2581
-    TagName2580 = 2582
-    TagName2581 = 2583
-    TagName2582 = 2584
-    TagName2583 = 2585
-    TagName2584 = 2586
-    TagName2585 = 2587
-    TagName2586 = 2588
-    TagName2587 = 2589
-    TagName2588 = 2590
-    TagName2589 = 2591
-    TagName2590 = 2592
-    TagName2591 = 2593
-    TagName2592 = 2594
-    TagName2593 = 2595
-    TagName2594 = 2596
-    TagName2595 = 2597
-    TagName2596 = 2598
-    TagName2597 = 2599
-    TagName2598 = 2600
-    TagName2599 = 2601
-    TagName2600 = 2602
-    TagName2601 = 2603
-    TagName2602 = 2604
-    TagName2603 = 2605
-    TagName2604 = 2606
-    TagName2605 = 2607
-    TagName2606 = 2608
-    TagName2607 = 2609
-    TagName2608 = 2610
-    TagName2609 = 2611
-    TagName2610 = 2612
-    TagName2611 = 2613
-    TagName2612 = 2614
-    TagName2613 = 2615
-    TagName2614 = 2616
-    TagName2615 = 2617
-    TagName2616 = 2618
-    TagName2617 = 2619
-    TagName2618 = 2620
-    TagName2619 = 2621
-    TagName2620 = 2622
-    TagName2621 = 2623
-    TagName2622 = 2624
-    TagName2623 = 2625
-    TagName2624 = 2626
-    TagName2625 = 2627
-    TagName2626 = 2628
-    TagName2627 = 2629
-    TagName2628 = 2630
-    TagName2629 = 2631
-    TagName2630 = 2632
-    TagName2631 = 2633
-    TagName2632 = 2634
-    TagName2633 = 2635
-    TagName2634 = 2636
-    TagName2635 = 2637
-    TagName2636 = 2638
-    TagName2637 = 2639
-    TagName2638 = 2640
-    TagName2639 = 2641
-    TagName2640 = 2642
-    TagName2641 = 2643
-    TagName2642 = 2644
-    TagName2643 = 2645
-    TagName2644 = 2646
-    TagName2645 = 2647
-    TagName2646 = 2648
-    TagName2647 = 2649
-    TagName2648 = 2650
-    TagName2649 = 2651
-    TagName2650 = 2652
-    TagName2651 = 2653
-    TagName2652 = 2654
-    TagName2653 = 2655
-    TagName2654 = 2656
-    TagName2655 = 2657
-    TagName2656 = 2658
-    TagName2657 = 2659
-    TagName2658 = 2660
-    TagName2659 = 2661
-    TagName2660 = 2662
-    TagName2661 = 2663
-    TagName2662 = 2664
-    TagName2663 = 2665
-    TagName2664 = 2666
-    TagName2665 = 2667
-    TagName2666 = 2668
-    TagName2667 = 2669
-    TagName2668 = 2670
-    TagName2669 = 2671
-    TagName2670 = 2672
-    TagName2671 = 2673
-    TagName2672 = 2674
-    TagName2673 = 2675
-    TagName2674 = 2676
-    TagName2675 = 2677
-    TagName2676 = 2678
-    TagName2677 = 2679
-    TagName2678 = 2680
-    TagName2679 = 2681
-    TagName2680 = 2682
-    TagName2681 = 2683
-    TagName2682 = 2684
-    TagName2683 = 2685
-    TagName2684 = 2686
-    TagName2685 = 2687
-    TagName2686 = 2688
-    TagName2687 = 2689
-    TagName2688 = 2690
-    TagName2689 = 2691
-    TagName2690 = 2692
-    TagName2691 = 2693
-    TagName2692 = 2694
-    TagName2693 = 2695
-    TagName2694 = 2696
-    TagName2695 = 2697
-    TagName2696 = 2698
-    TagName2697 = 2699
-    TagName2698 = 2700
-    TagName2699 = 2701
-    TagName2700 = 2702
-    TagName2701 = 2703
-    TagName2702 = 2704
-    TagName2703 = 2705
-    TagName2704 = 2706
-    TagName2705 = 2707
-    TagName2706 = 2708
-    TagName2707 = 2709
-    TagName2708 = 2710
-    TagName2709 = 2711
-    TagName2710 = 2712
-    TagName2711 = 2713
-    TagName2712 = 2714
-    TagName2713 = 2715
-    TagName2714 = 2716
-    TagName2715 = 2717
-    TagName2716 = 2718
-    TagName2717 = 2719
-    TagName2718 = 2720
-    TagName2719 = 2721
-    TagName2720 = 2722
-    TagName2721 = 2723
-    TagName2722 = 2724
-    TagName2723 = 2725
-    TagName2724 = 2726
-    TagName2725 = 2727
-    TagName2726 = 2728
-    TagName2727 = 2729
-    TagName2728 = 2730
-    TagName2729 = 2731
-    TagName2730 = 2732
-    TagName2731 = 2733
-    TagName2732 = 2734
-    TagName2733 = 2735
-    TagName2734 = 2736
-    TagName2735 = 2737
-    TagName2736 = 2738
-    TagName2737 = 2739
-    TagName2738 = 2740
-    TagName2739 = 2741
-    TagName2740 = 2742
-    TagName2741 = 2743
-    TagName2742 = 2744
-    TagName2743 = 2745
-    TagName2744 = 2746
-    TagName2745 = 2747
-    TagName2746 = 2748
-    TagName2747 = 2749
-    TagName2748 = 2750
-    TagName2749 = 2751
-    TagName2750 = 2752
-    TagName2751 = 2753
-    TagName2752 = 2754
-    TagName2753 = 2755
-    TagName2754 = 2756
-    TagName2755 = 2757
-    TagName2756 = 2758
-    TagName2757 = 2759
-    TagName2758 = 2760
-    TagName2759 = 2761
-    TagName2760 = 2762
-    TagName2761 = 2763
-    TagName2762 = 2764
-    TagName2763 = 2765
-    TagName2764 = 2766
-    TagName2765 = 2767
-    TagName2766 = 2768
-    TagName2767 = 2769
-    TagName2768 = 2770
-    TagName2769 = 2771
-    TagName2770 = 2772
-    TagName2771 = 2773
-    TagName2772 = 2774
-    TagName2773 = 2775
-    TagName2774 = 2776
-    TagName2775 = 2777
-    TagName2776 = 2778
-    TagName2777 = 2779
-    TagName2778 = 2780
-    TagName2779 = 2781
-    TagName2780 = 2782
-    TagName2781 = 2783
-    TagName2782 = 2784
-    TagName2783 = 2785
-    TagName2784 = 2786
-    TagName2785 = 2787
-    TagName2786 = 2788
-    TagName2787 = 2789
-    TagName2788 = 2790
-    TagName2789 = 2791
-    TagName2790 = 2792
-    TagName2791 = 2793
-    TagName2792 = 2794
-    TagName2793 = 2795
-    TagName2794 = 2796
-    TagName2795 = 2797
-    TagName2796 = 2798
-    TagName2797 = 2799
-    TagName2798 = 2800
-    TagName2799 = 2801
-    TagName2800 = 2802
-    TagName2801 = 2803
-    TagName2802 = 2804
-    TagName2803 = 2805
-    TagName2804 = 2806
-    TagName2805 = 2807
-    TagName2806 = 2808
-    TagName2807 = 2809
-    TagName2808 = 2810
-    TagName2809 = 2811
-    TagName2810 = 2812
-    TagName2811 = 2813
-    TagName2812 = 2814
-    TagName2813 = 2815
-    TagName2814 = 2816
-    TagName2815 = 2817
-    TagName2816 = 2818
-    TagName2817 = 2819
-    TagName2818 = 2820
-    TagName2819 = 2821
-    TagName2820 = 2822
-    TagName2821 = 2823
-    TagName2822 = 2824
-    TagName2823 = 2825
-    TagName2824 = 2826
-    TagName2825 = 2827
-    TagName2826 = 2828
-    TagName2827 = 2829
-    TagName2828 = 2830
-    TagName2829 = 2831
-    TagName2830 = 2832
-    TagName2831 = 2833
-    TagName2832 = 2834
-    TagName2833 = 2835
-    TagName2834 = 2836
-    TagName2835 = 2837
-    TagName2836 = 2838
-    TagName2837 = 2839
-    TagName2838 = 2840
-    TagName2839 = 2841
-    TagName2840 = 2842
-    TagName2841 = 2843
-    TagName2842 = 2844
-    TagName2843 = 2845
-    TagName2844 = 2846
-    TagName2845 = 2847
-    TagName2846 = 2848
-    TagName2847 = 2849
-    TagName2848 = 2850
-    TagName2849 = 2851
-    TagName2850 = 2852
-    TagName2851 = 2853
-    TagName2852 = 2854
-    TagName2853 = 2855
-    TagName2854 = 2856
-    TagName2855 = 2857
-    TagName2856 = 2858
-    TagName2857 = 2859
-    TagName2858 = 2860
-    TagName2859 = 2861
-    TagName2860 = 2862
-    TagName2861 = 2863
-    TagName2862 = 2864
-    TagName2863 = 2865
-    TagName2864 = 2866
-    TagName2865 = 2867
-    TagName2866 = 2868
-    TagName2867 = 2869
-    TagName2868 = 2870
-    TagName2869 = 2871
-    TagName2870 = 2872
-    TagName2871 = 2873
-    TagName2872 = 2874
-    TagName2873 = 2875
-    TagName2874 = 2876
-    TagName2875 = 2877
-    TagName2876 = 2878
-    TagName2877 = 2879
-    TagName2878 = 2880
-    TagName2879 = 2881
-    TagName2880 = 2882
-    TagName2881 = 2883
-    TagName2882 = 2884
-    TagName2883 = 2885
-    TagName2884 = 2886
-    TagName2885 = 2887
-    TagName2886 = 2888
-    TagName2887 = 2889
-    TagName2888 = 2890
-    TagName2889 = 2891
-    TagName2890 = 2892
-    TagName2891 = 2893
-    TagName2892 = 2894
-    TagName2893 = 2895
-    TagName2894 = 2896
-    TagName2895 = 2897
-    TagName2896 = 2898
-    TagName2897 = 2899
-    TagName2898 = 2900
-    TagName2899 = 2901
-    TagName2900 = 2902
-    TagName2901 = 2903
-    TagName2902 = 2904
-    TagName2903 = 2905
-    TagName2904 = 2906
-    TagName2905 = 2907
-    TagName2906 = 2908
-    TagName2907 = 2909
-    TagName2908 = 2910
-    TagName2909 = 2911
-    TagName2910 = 2912
-    TagName2911 = 2913
-    TagName2912 = 2914
-    TagName2913 = 2915
-    TagName2914 = 2916
-    TagName2915 = 2917
-    TagName2916 = 2918
-    TagName2917 = 2919
-    TagName2918 = 2920
-    TagName2919 = 2921
-    TagName2920 = 2922
-    TagName2921 = 2923
-    TagName2922 = 2924
-    TagName2923 = 2925
-    TagName2924 = 2926
-    TagName2925 = 2927
-    TagName2926 = 2928
-    TagName2927 = 2929
-    TagName2928 = 2930
-    TagName2929 = 2931
-    TagName2930 = 2932
-    TagName2931 = 2933
-    TagName2932 = 2934
-    TagName2933 = 2935
-    TagName2934 = 2936
-    TagName2935 = 2937
-    TagName2936 = 2938
-    TagName2937 = 2939
-    TagName2938 = 2940
-    TagName2939 = 2941
-    TagName2940 = 2942
-    TagName2941 = 2943
-    TagName2942 = 2944
-    TagName2943 = 2945
-    TagName2944 = 2946
-    TagName2945 = 2947
-    TagName2946 = 2948
-    TagName2947 = 2949
-    TagName2948 = 2950
-    TagName2949 = 2951
-    TagName2950 = 2952
-    TagName2951 = 2953
-    TagName2952 = 2954
-    TagName2953 = 2955
-    TagName2954 = 2956
-    TagName2955 = 2957
-    TagName2956 = 2958
-    TagName2957 = 2959
-    TagName2958 = 2960
-    TagName2959 = 2961
-    TagName2960 = 2962
-    TagName2961 = 2963
-    TagName2962 = 2964
-    TagName2963 = 2965
-    TagName2964 = 2966
-    TagName2965 = 2967
-    TagName2966 = 2968
-    TagName2967 = 2969
-    TagName2968 = 2970
-    TagName2969 = 2971
-    TagName2970 = 2972
-    TagName2971 = 2973
-    TagName2972 = 2974
-    TagName2973 = 2975
-    TagName2974 = 2976
-    TagName2975 = 2977
-    TagName2976 = 2978
-    TagName2977 = 2979
-    TagName2978 = 2980
-    TagName2979 = 2981
-    TagName2980 = 2982
-    TagName2981 = 2983
-    TagName2982 = 2984
-    TagName2983 = 2985
-    TagName2984 = 2986
-    TagName2985 = 2987
-    TagName2986 = 2988
-    TagName2987 = 2989
-    TagName2988 = 2990
-    TagName2989 = 2991
-    TagName2990 = 2992
-    TagName2991 = 2993
-    TagName2992 = 2994
-    TagName2993 = 2995
-    TagName2994 = 2996
-    TagName2995 = 2997
-    TagName2996 = 2998
-    TagName2997 = 2999
-    TagName2998 = 3000
-    TagName2999 = 3001
-    TagName3000 = 3002
-    TagName3001 = 3003
-
-class Club(IntEnum):
-    None_ = 0
-    Engineer = 1
-    CleanNClearing = 2
-    KnightsHospitaller = 3
-    IndeGEHENNA = 4
-    IndeMILLENNIUM = 5
-    IndeHyakkiyako = 6
-    IndeShanhaijing = 7
-    IndeTrinity = 8
-    FoodService = 9
-    Countermeasure = 10
-    BookClub = 11
-    MatsuriOffice = 12
-    GourmetClub = 13
-    HoukagoDessert = 14
-    RedwinterSecretary = 15
-    Schale = 16
-    TheSeminar = 17
-    AriusSqud = 18
-    Justice = 19
-    Fuuki = 20
-    Kohshinjo68 = 21
-    Meihuayuan = 22
-    SisterHood = 23
-    GameDev = 24
-    anzenkyoku = 25
-    RemedialClass = 26
-    SPTF = 27
-    TrinityVigilance = 28
-    Veritas = 29
-    TrainingClub = 30
-    Onmyobu = 31
-    Shugyobu = 32
-    Endanbou = 33
-    NinpoKenkyubu = 34
-    Class227 = 35
-    EmptyClub = 36
-    Emergentology = 37
-    RabbitPlatoon = 38
-    PandemoniumSociety = 39
-    HotSpringsDepartment = 40
-    TeaParty = 41
-    PublicPeaceBureau = 42
-    Genryumon = 43
-    BlackTortoisePromenade = 44
-    LaborParty = 45
-    KnowledgeLiberationFront = 46
-    Hyakkayouran = 47
-    ShinySparkleSociety = 48
-    AbydosStudentCouncil = 49
-    CentralControlCenter = 50
-    FreightLogisticsDepartment = 51
-    OccultClub = 52
-    PrefectBrigade = 53
-    FreeTradeCartel = 54
-    NicomediasTroop = 55
-    PublishingDepartment = 56
-
-class UnderCoverItemCategory(IntEnum):
-    Consumable = 0
-    Interaction = 1
-    Skill = 2
-    Collection = 3
-
-class CharacterLogType(IntEnum):
-    Targeting = 0
-    Pathfinding = 1
-    Debug = 2
-
-class CheatProbType(IntEnum):
-    None_ = 0
-    Always = 1
-    Never = 2
-
-class CheatDamageApplyType(IntEnum):
-    None_ = 0
-    Nodie = 1
-    Survive = 2
-
-class DrawType(IntEnum):
-    Debug = 0
-    Gizmo = 1
-
-class NotifyCollectionChangedAction(IntEnum):
-    Add = 0
-    Remove = 1
-    Replace = 2
-    Move = 3
-    Reset = 4
-
-class MediaType(IntEnum):
-    none = 0
-    ogg = 1
-    mp4 = 2
-    jpg = 3
-    png = 4
-    acb = 5
-    awb = 6
-
-class MediaManifestCollumnType(IntEnum):
-    key = 0
-    hash = 1
-    mediaType = 2
-    size = 3
-
-class FocusingType(IntEnum):
-    Distance = 0
-    Object = 1
-    Owner = 2
-
-class TimelineEntityIndex(IntEnum):
-    MainFirst = 0
-    MainSecond = 1
-    MainThird = 2
-    MainFourth = 3
-    SupportFirst = 4
-    SupportSecond = 5
-    MainFifth = 6
-    MainSixth = 7
-    SupportThird = 8
-    SupportFourth = 9
-
-class TimelineType(IntEnum):
-    Default = 0
-    Victory = 1
-
-class FinishType(IntEnum):
-    Return = 0
-    ReturnAndDisable = 1
-    ReturnAndDestroy = 2
-    Hold = 3
-    ManualDestroy = 4
-
-class ProcessedErrorAction(IntEnum):
-    None_ = 0
-    WebAPIError = 1
-    CustomError = 2
-    DefaultError = 3
-
-class GameObjectLifecycle(IntEnum):
-    None_ = 0
-    Game = 1
-    Scene = 2
-
-class SessionState(IntEnum):
-    NONE = 0
-    WAITING_SERVER_RESPONSE = 1
-    RECEIVED_SERVER_RESPONSE = 2
-    FILE_NOT_FOUND = 3
-    FAILED = 4
-    SUCCESS = 5
-    CLIENT_NETWORK_NOT_REACHABLE = 6
-    SERVER_RESPONSE_ERROR = 7
-    SERVER_NOT_RESPONSE = 8
-
-class HttpMethodType(IntEnum):
-    GET = 0
-    POST = 1
-
-class IrcState(IntEnum):
-    None_ = 0
-    Initialized = 1
-    Connected = 2
-    ConnectFailed = 3
-    Disconnected = 4
-    Registered = 5
-    Kicked = 6
-
-class IrcUserMode(IntEnum):
-    Away = 0
-    Invisible = 1
-    Wallops = 2
-    Restricted = 3
-    Operator = 4
-    LocalOperator = 5
-    Notices = 6
-
-class ReplyCode(IntEnum):
-    NONE = 0
-    RPL_NONE = 1
-    RPL_WELCOME = 2
-    RPL_YOURHOST = 3
-    RPL_CREATED = 4
-    RPL_MYINFO = 5
-    RPL_MAP = 6
-    RPL_ENDOFMAP = 7
-    RPL_MOTDSTART = 8
-    RPL_MOTD = 9
-    RPL_MOTDALT = 10
-    RPL_MOTDALT2 = 11
-    RPL_MOTDEND = 12
-    RPL_UMODEIS = 13
-    RPL_USERHOST = 14
-    RPL_ISON = 15
-    RPL_AWAY = 16
-    RPL_UNAWAY = 17
-    RPL_NOWAWAY = 18
-    RPL_WHOISHELPER = 19
-    RPL_WHOISUSER = 20
-    RPL_WHOISSERVER = 21
-    RPL_WHOISOPERATOR = 22
-    RPL_WHOISIDLE = 23
-    RPL_ENDOFWHOIS = 24
-    RPL_WHOISCHANNEL = 25
-    RPL_WHOWASUSER = 26
-    RPL_ENDOFWHOWAS = 27
-    RPL_WHOREPLY = 28
-    RPL_ENDOFWHO = 29
-    RPL_USERIPS = 30
-    RPL_USERIP = 31
-    RPL_LISTSTART = 32
-    RPL_LIST = 33
-    RPL_LISTEND = 34
-    RPL_LINKS = 35
-    RPL_ENDOFLINKS = 36
-    RPL_UNIQOPIS = 37
-    RPL_CHANNELMODEIS = 38
-    RPL_CHANNELURL = 39
-    RPL_CHANNELCREATED = 40
-    RPL_NOTOPIC = 41
-    RPL_TOPIC = 42
-    RPL_TOPICSETBY = 43
-    RPL_NAMEREPLY = 44
-    RPL_ENDOFNAMES = 45
-    RPL_INVITING = 46
-    RPL_SUMMONING = 47
-    RPL_INVITELIST = 48
-    RPL_ENDOFINVITELIST = 49
-    RPL_EXCEPTLIST = 50
-    RPL_ENDOFEXCEPTLIST = 51
-    RPL_BANLIST = 52
-    RPL_ENDOFBANLIST = 53
-    RPL_VERSION = 54
-    RPL_INFO = 55
-    RPL_ENDOFINFO = 56
-    RPL_YOUREOPER = 57
-    RPL_REHASHING = 58
-    RPL_YOURESERVICE = 59
-    RPL_TIME = 60
-    RPL_USERSSTART = 61
-    RPL_USERS = 62
-    RPL_ENDOFUSERS = 63
-    RPL_NOUSERS = 64
-    RPL_SERVLIST = 65
-    RPL_SERVLISTEND = 66
-    RPL_ADMINME = 67
-    RPL_ADMINLOC1 = 68
-    RPL_ADMINLOC2 = 69
-    RPL_ADMINEMAIL = 70
-    RPL_TRYAGAIN = 71
-    RPL_TRACELINK = 72
-    RPL_TRACECONNECTING = 73
-    RPL_TRACEHANDSHAKE = 74
-    RPL_TRACEUNKNOWN = 75
-    RPL_TRACEOPERATOR = 76
-    RPL_TRACEUSER = 77
-    RPL_TRACESERVER = 78
-    RPL_TRACESERVICE = 79
-    RPL_TRACENEWTYPE = 80
-    RPL_TRACECLASS = 81
-    RPL_TRACERECONNECT = 82
-    RPL_TRACELOG = 83
-    RPL_TRACEEND = 84
-    RPL_STATSLINKINFO = 85
-    RPL_STATSCOMMANDS = 86
-    RPL_STATSCLINE = 87
-    RPL_STATSNLINE = 88
-    RPL_STATSILINE = 89
-    RPL_STATSKLINE = 90
-    RplStatsPLine = 91
-    RplStatsQLine = 92
-    RplStatsELine = 93
-    RplStatsDLine = 94
-    RplStatsLLine = 95
-    RplStatsuLine = 96
-    RplStatsoLine = 97
-    RplStatsHLine = 98
-    RplStatsGLine = 99
-    RplStatsULine = 100
-    RplStatsZLine = 101
-    RplStatsYLine = 102
-    RPL_ENDOFSTATS = 103
-    RPL_STATSUPTIME = 104
-    RPL_STATSPING = 105
-    RPL_STATSDLINE = 106
-    RplGLineList = 107
-    RplEndOfGLineList = 108
-    RplSilenceList = 109
-    RplEndOfSilenceList = 110
-    RPL_LUSERCLIENT = 111
-    RPL_LUSEROP = 112
-    RPL_LUSERUNKNOWN = 113
-    RPL_LUSERCHANNELS = 114
-    RPL_LUSERME = 115
-    RplLUserLocalUser = 116
-    RplLUserGlobalUser = 117
-    ERR_NOSUCHNICK = 118
-    ERR_NOSUCHSERVER = 119
-    ERR_NOSUCHCHANNEL = 120
-    ERR_CANNOTSENDTOCHAN = 121
-    ERR_TOOMANYCHANNELS = 122
-    ERR_WASNOSUCHNICK = 123
-    ERR_TOOMANYTARGETS = 124
-    ERR_NOSUCHSERVICE = 125
-    ERR_NOORIGIN = 126
-    ERR_NORECIPIENT = 127
-    ERR_NOTEXTTOSEND = 128
-    ERR_NOTOPLEVEL = 129
-    ERR_WILDTOPLEVEL = 130
-    ERR_BADMASK = 131
-    ErrTooMuchInfo = 132
-    ERR_UNKNOWNCOMMAND = 133
-    ERR_NOMOTD = 134
-    ERR_NOADMININFO = 135
-    ERR_FILEERROR = 136
-    ERR_NONICKNAMEGIVEN = 137
-    ERR_ERRONEUSNICKNAME = 138
-    ERR_NICKNAMEINUSE = 139
-    ERR_NICKCOLLISION = 140
-    ERR_UNAVAILRESOURCE = 141
-    ErrNickTooFast = 142
-    ErrTargetTooFast = 143
-    ERR_USERNOTINCHANNEL = 144
-    ERR_NOTONCHANNEL = 145
-    ERR_USERONCHANNEL = 146
-    ERR_NOLOGIN = 147
-    ERR_SUMMONDISABLED = 148
-    ERR_USERSDISABLED = 149
-    ERR_NOTREGISTERED = 150
-    ERR_NEEDMOREPARAMS = 151
-    ERR_ALREADYREGISTRED = 152
-    ERR_NOPERMFORHOST = 153
-    ERR_PASSWDMISMATCH = 154
-    ERR_YOUREBANNEDCREEP = 155
-    ERR_YOUWILLBEBANNED = 156
-    ERR_KEYSET = 157
-    ErrServerCanChange = 158
-    ERR_CHANNELISFULL = 159
-    ERR_UNKNOWNMODE = 160
-    ERR_INVITEONLYCHAN = 161
-    ERR_BANNEDFROMCHAN = 162
-    ERR_BADCHANNELKEY = 163
-    ERR_BADCHANMASK = 164
-    ERR_NOCHANMODES = 165
-    ERR_BANLISTFULL = 166
-    ERR_NOPRIVILEGES = 167
-    ERR_CHANOPRIVSNEEDED = 168
-    ERR_CANTKILLSERVER = 169
-    ERR_RESTRICTED = 170
-    ERR_UNIQOPPRIVSNEEDED = 171
-    ERR_NOOPERHOST = 172
-    ERR_UMODEUNKNOWNFLAG = 173
-    ERR_USERSDONTMATCH = 174
-    ErrSilenceListFull = 175
-
-class UIFieldWorldMapButtonState(IntEnum):
-    Locked = 0
-    Normal = 1
-    Selected = 2
-    Toggle = 3
-    Combat = 4
-    Combat_VeryHard = 5
-    Inactive = 6
-    UnderCover = 7
-
-class QuestStatus(IntEnum):
-    Disabled = 0
-    InProgress = 1
-    Clear = 2
-
-class CommonEventType(IntEnum):
-    None_ = 0
-    Timeline = 1
-    ActionTrigger = 2
-
-class Type(IntEnum):
-    IdleOverride = 0
-    IdleThink = 1
-    MoveEnd = 2
-    Interact = 3
-    ParcelFound = 4
-    Rotate = 5
-
-class TBGPreBattleOption(IntEnum):
-    Attack = 0
-    RunAway = 1
-
-class TBGPostBattleOption(IntEnum):
-    Retry = 0
-    Retreat = 1
-
-class TBGBattleEncounterStage(IntEnum):
-    None_ = 0
-    BeforeStoryOption = 1
-    PreBattlePhase = 2
-    InBattlePhase = 3
-    PostBattlePhase = 4
-    ExitRunAway = 5
-    ExitBattleVictory = 6
-    EncounterRewardOption = 7
-    ExitBattleRetreat = 8
-
-class TBGEncounterState(IntEnum):
-    None_ = 0
-    Active = 1
-    Disposing = 2
-
-class TBGFacilityEncounterStage(IntEnum):
-    None_ = 0
-    EncounterOption = 1
-    EncounterRewardOption = 2
-    Exit = 3
-
-class TBGHexaObjectSpawnRule(IntEnum):
-    Nothing = 0
-    ObjectId = 1
-    ObjectType = 2
-
-class TBGObjectInteractionType(IntEnum):
-    None_ = 0
-    Encounter = 1
-    Portal = 2
-
-class TBGRandomEncounterStage(IntEnum):
-    None_ = 0
-    BeforeStoryOption = 1
-    EncounterOption = 2
-    EncounterRewardOption = 3
-    Exit = 4
-
-class TBGTreasureEncounterStage(IntEnum):
-    None_ = 0
-    PreReceiveReward = 1
-    PostReceiveReward = 2
-    ExitTreasureFake = 3
-    ExitToClearThema = 4
-    ExitToContinue = 5
-
-class TBGDiceRollResult(IntEnum):
-    Failure = 0
-    Success = 1
-    CriticalSuccess = 2
-
-class Protocol(IntEnum):
-    Common_Cheat = 0
-    Error = 1
-    None_ = 2
-    System_Version = 3
-    Session_Info = 4
-    NetworkTime_Sync = 5
-    NetworkTime_SyncReply = 6
-    Audit_GachaStatistics = 7
-    Account_Create = 8
-    Account_Nickname = 9
-    Account_Auth = 10
-    Account_CurrencySync = 11
-    Account_SetRepresentCharacterAndComment = 12
-    Account_GetTutorial = 13
-    Account_SetTutorial = 14
-    Account_PassCheck = 15
-    Account_VerifyForYostar = 16
-    Account_CheckYostar = 17
-    Account_CallName = 18
-    Account_BirthDay = 19
-    Account_Auth2 = 20
-    Account_LinkReward = 21
-    Account_ReportXignCodeCheater = 22
-    Account_DismissRepurchasablePopup = 23
-    Account_InvalidateToken = 24
-    Account_LoginSync = 25
-    Account_Reset = 26
-    Account_RequestBirthdayMail = 27
-    Account_CheckAccountLevelReward = 28
-    Account_ReceiveAccountLevelReward = 29
-    Character_List = 30
-    Character_Transcendence = 31
-    Character_ExpGrowth = 32
-    Character_FavorGrowth = 33
-    Character_UpdateSkillLevel = 34
-    Character_UnlockWeapon = 35
-    Character_WeaponExpGrowth = 36
-    Character_WeaponTranscendence = 37
-    Character_SetFavorites = 38
-    Character_SetCostume = 39
-    Character_BatchSkillLevelUpdate = 40
-    Character_PotentialGrowth = 41
-    Equipment_List = 42
-    Equipment_Sell = 43
-    Equipment_Equip = 44
-    Equipment_LevelUp = 45
-    Equipment_TierUp = 46
-    Equipment_Lock = 47
-    Equipment_BatchGrowth = 48
-    Item_List = 49
-    Item_Sell = 50
-    Item_Consume = 51
-    Item_Lock = 52
-    Item_BulkConsume = 53
-    Item_SelectTicket = 54
-    Item_AutoSynth = 55
-    Echelon_List = 56
-    Echelon_Save = 57
-    Echelon_PresetList = 58
-    Echelon_PresetSave = 59
-    Echelon_PresetGroupRename = 60
-    Campaign_List = 61
-    Campaign_EnterMainStage = 62
-    Campaign_ConfirmMainStage = 63
-    Campaign_DeployEchelon = 64
-    Campaign_WithdrawEchelon = 65
-    Campaign_MapMove = 66
-    Campaign_EndTurn = 67
-    Campaign_EnterTactic = 68
-    Campaign_TacticResult = 69
-    Campaign_Retreat = 70
-    Campaign_ChapterClearReward = 71
-    Campaign_Heal = 72
-    Campaign_EnterSubStage = 73
-    Campaign_SubStageResult = 74
-    Campaign_Portal = 75
-    Campaign_ConfirmTutorialStage = 76
-    Campaign_PurchasePlayCountHardStage = 77
-    Campaign_EnterTutorialStage = 78
-    Campaign_TutorialStageResult = 79
-    Campaign_RestartMainStage = 80
-    Campaign_EnterMainStageStrategySkip = 81
-    Campaign_MainStageStrategySkipResult = 82
-    Mail_List = 83
-    Mail_Check = 84
-    Mail_Receive = 85
-    Mail_ListSemiPermanent = 86
-    Mail_ReceiveSemiPermanent = 87
-    Mission_List = 88
-    Mission_Reward = 89
-    Mission_MultipleReward = 90
-    Mission_GuideReward = 91
-    Mission_MultipleGuideReward = 92
-    Mission_Sync = 93
-    Mission_GuideMissionSeasonList = 94
-    Attendance_List = 95
-    Attendance_Check = 96
-    Attendance_Reward = 97
-    Shop_BuyMerchandise = 98
-    Shop_BuyGacha = 99
-    Shop_List = 100
-    Shop_Refresh = 101
-    Shop_BuyEligma = 102
-    Shop_BuyGacha2 = 103
-    Shop_GachaRecruitList = 104
-    Shop_BuyRefreshMerchandise = 105
-    Shop_BuyGacha3 = 106
-    Shop_BuyAP = 107
-    Shop_BeforehandGachaGet = 108
-    Shop_BeforehandGachaRun = 109
-    Shop_BeforehandGachaSave = 110
-    Shop_BeforehandGachaPick = 111
-    Shop_PickupSelectionGachaGet = 112
-    Shop_PickupSelectionGachaSet = 113
-    Shop_PickupSelectionGachaBuy = 114
-    Recipe_Craft = 115
-    MemoryLobby_List = 116
-    MemoryLobby_SetMain = 117
-    MemoryLobby_UpdateLobbyMode = 118
-    MemoryLobby_Interact = 119
-    CumulativeTimeReward_List = 120
-    CumulativeTimeReward_Reward = 121
-    OpenCondition_List = 122
-    OpenCondition_Set = 123
-    OpenCondition_EventList = 124
-    Toast_List = 125
-    Raid_List = 126
-    Raid_CompleteList = 127
-    Raid_Detail = 128
-    Raid_Search = 129
-    Raid_CreateBattle = 130
-    Raid_EnterBattle = 131
-    Raid_BattleUpdate = 132
-    Raid_EndBattle = 133
-    Raid_Reward = 134
-    Raid_RewardAll = 135
-    Raid_Revive = 136
-    Raid_Share = 137
-    Raid_SeasonInfo = 138
-    Raid_SeasonReward = 139
-    Raid_Lobby = 140
-    Raid_GiveUp = 141
-    Raid_OpponentList = 142
-    Raid_RankingReward = 143
-    Raid_Login = 144
-    Raid_Sweep = 145
-    Raid_GetBestTeam = 146
-    Raid_RankingIndex = 147
-    SkipHistory_List = 148
-    SkipHistory_Save = 149
-    Scenario_List = 150
-    Scenario_Clear = 151
-    Scenario_GroupHistoryUpdate = 152
-    Scenario_Skip = 153
-    Scenario_Select = 154
-    Scenario_AccountStudentChange = 155
-    Scenario_LobbyStudentChange = 156
-    Scenario_SpecialLobbyChange = 157
-    Scenario_Enter = 158
-    Scenario_EnterMainStage = 159
-    Scenario_ConfirmMainStage = 160
-    Scenario_DeployEchelon = 161
-    Scenario_WithdrawEchelon = 162
-    Scenario_MapMove = 163
-    Scenario_EndTurn = 164
-    Scenario_EnterTactic = 165
-    Scenario_TacticResult = 166
-    Scenario_Retreat = 167
-    Scenario_Portal = 168
-    Scenario_RestartMainStage = 169
-    Scenario_SkipMainStage = 170
-    Cafe_Get = 171
-    Cafe_Ack = 172
-    Cafe_Deploy = 173
-    Cafe_Relocate = 174
-    Cafe_Remove = 175
-    Cafe_RemoveAll = 176
-    Cafe_Interact = 177
-    Cafe_ListPreset = 178
-    Cafe_RenamePreset = 179
-    Cafe_ClearPreset = 180
-    Cafe_UpdatePresetFurniture = 181
-    Cafe_ApplyPreset = 182
-    Cafe_RankUp = 183
-    Cafe_ReceiveCurrency = 184
-    Cafe_GiveGift = 185
-    Cafe_SummonCharacter = 186
-    Cafe_TrophyHistory = 187
-    Cafe_ApplyTemplate = 188
-    Cafe_Open = 189
-    Cafe_Travel = 190
-    Cafe_SummonCharacterTicketUse = 191
-    Cafe_PresetDetail = 192
-    Cafe_UpdateCopyPresetFurniture = 193
-    Craft_List = 194
-    Craft_SelectNode = 195
-    Craft_UpdateNodeLevel = 196
-    Craft_BeginProcess = 197
-    Craft_CompleteProcess = 198
-    Craft_Reward = 199
-    Craft_HistoryList = 200
-    Craft_ShiftingBeginProcess = 201
-    Craft_ShiftingCompleteProcess = 202
-    Craft_ShiftingReward = 203
-    Craft_AutoBeginProcess = 204
-    Craft_CompleteProcessAll = 205
-    Craft_RewardAll = 206
-    Craft_ShiftingCompleteProcessAll = 207
-    Craft_ShiftingRewardAll = 208
-    Craft_SavePreset = 209
-    Craft_SavePresetName = 210
-    Arena_EnterLobby = 211
-    Arena_Login = 212
-    Arena_SettingChange = 213
-    Arena_OpponentList = 214
-    Arena_EnterBattle = 215
-    Arena_EnterBattlePart1 = 216
-    Arena_EnterBattlePart2 = 217
-    Arena_BattleResult = 218
-    Arena_CumulativeTimeReward = 219
-    Arena_DailyReward = 220
-    Arena_RankList = 221
-    Arena_History = 222
-    Arena_RecordSync = 223
-    Arena_TicketPurchase = 224
-    Arena_DamageReport = 225
-    Arena_CheckSeasonCloseReward = 226
-    Arena_SyncEchelonSettingTime = 227
-    Arena_SettingAnonymous = 228
-    WeekDungeon_List = 229
-    WeekDungeon_EnterBattle = 230
-    WeekDungeon_BattleResult = 231
-    WeekDungeon_Retreat = 232
-    Academy_GetInfo = 233
-    Academy_AttendSchedule = 234
-    Academy_AttendFavorSchedule = 235
-    Event_GetList = 236
-    Event_GetImage = 237
-    Event_UseCoupon = 238
-    Event_RewardIncrease = 239
-    ContentSave_Get = 240
-    ContentSave_Discard = 241
-    ContentSweep_Request = 242
-    ContentSweep_MultiSweep = 243
-    ContentSweep_MultiSweepPresetList = 244
-    ContentSweep_SetMultiSweepPreset = 245
-    ContentSweep_SetMultiSweepPresetName = 246
-    Clan_Lobby = 247
-    Clan_Login = 248
-    Clan_Search = 249
-    Clan_Create = 250
-    Clan_Member = 251
-    Clan_Applicant = 252
-    Clan_Join = 253
-    Clan_Quit = 254
-    Clan_Permit = 255
-    Clan_Kick = 256
-    Clan_Setting = 257
-    Clan_Confer = 258
-    Clan_Dismiss = 259
-    Clan_AutoJoin = 260
-    Clan_MemberList = 261
-    Clan_CancelApply = 262
-    Clan_MyAssistList = 263
-    Clan_SetAssist = 264
-    Clan_ChatLog = 265
-    Clan_Check = 266
-    Clan_AllAssistList = 267
-    Billing_TransactionStartByYostar = 268
-    Billing_TransactionEndByYostar = 269
-    Billing_PurchaseListByYostar = 270
-    Billing_PurchaseFreeProduct = 271
-    EventContent_AdventureList = 272
-    EventContent_EnterMainStage = 273
-    EventContent_ConfirmMainStage = 274
-    EventContent_EnterTactic = 275
-    EventContent_TacticResult = 276
-    EventContent_EnterSubStage = 277
-    EventContent_SubStageResult = 278
-    EventContent_DeployEchelon = 279
-    EventContent_WithdrawEchelon = 280
-    EventContent_MapMove = 281
-    EventContent_EndTurn = 282
-    EventContent_Retreat = 283
-    EventContent_Portal = 284
-    EventContent_PurchasePlayCountHardStage = 285
-    EventContent_ShopList = 286
-    EventContent_ShopRefresh = 287
-    EventContent_ReceiveStageTotalReward = 288
-    EventContent_EnterMainGroundStage = 289
-    EventContent_MainGroundStageResult = 290
-    EventContent_ShopBuyMerchandise = 291
-    EventContent_ShopBuyRefreshMerchandise = 292
-    EventContent_SelectBuff = 293
-    EventContent_BoxGachaShopList = 294
-    EventContent_BoxGachaShopPurchase = 295
-    EventContent_BoxGachaShopRefresh = 296
-    EventContent_CollectionList = 297
-    EventContent_CollectionForMission = 298
-    EventContent_ScenarioGroupHistoryUpdate = 299
-    EventContent_CardShopList = 300
-    EventContent_CardShopShuffle = 301
-    EventContent_CardShopPurchase = 302
-    EventContent_RestartMainStage = 303
-    EventContent_LocationGetInfo = 304
-    EventContent_LocationAttendSchedule = 305
-    EventContent_FortuneGachaPurchase = 306
-    EventContent_SubEventLobby = 307
-    EventContent_EnterStoryStage = 308
-    EventContent_StoryStageResult = 309
-    EventContent_DiceRaceLobby = 310
-    EventContent_DiceRaceRoll = 311
-    EventContent_DiceRaceLapReward = 312
-    EventContent_PermanentList = 313
-    EventContent_DiceRaceUseItem = 314
-    EventContent_CardShopPurchaseAll = 315
-    EventContent_TreasureLobby = 316
-    EventContent_TreasureFlip = 317
-    EventContent_TreasureNextRound = 318
-    EventContent_ConcentrationGetInfo = 319
-    EventContent_ConcentrationFlipCard = 320
-    EventContent_ConcentrationRoundComplete = 321
-    EventContent_ConcentrationRoundSkip = 322
-    EventContent_ClueSearchGetInfo = 323
-    EventContent_ClueSearchSubmit = 324
-    EventContent_ClueSearchRoundComplete = 325
-    TTS_GetFile = 326
-    ContentLog_UIOpenStatistics = 327
-    MomoTalk_OutLine = 328
-    MomoTalk_MessageList = 329
-    MomoTalk_Read = 330
-    MomoTalk_Reply = 331
-    MomoTalk_FavorSchedule = 332
-    ClearDeck_List = 333
-    ClearDeck_GroupedList = 334
-    MiniGame_StageList = 335
-    MiniGame_EnterStage = 336
-    MiniGame_Result = 337
-    MiniGame_MissionList = 338
-    MiniGame_MissionReward = 339
-    MiniGame_MissionMultipleReward = 340
-    MiniGame_ShootingLobby = 341
-    MiniGame_ShootingBattleEnter = 342
-    MiniGame_ShootingBattleResult = 343
-    MiniGame_ShootingSweep = 344
-    MiniGame_TableBoardSync = 345
-    MiniGame_TableBoardMove = 346
-    MiniGame_TableBoardEncounterInput = 347
-    MiniGame_TableBoardBattleEncounter = 348
-    MiniGame_TableBoardBattleRunAway = 349
-    MiniGame_TableBoardClearThema = 350
-    MiniGame_TableBoardUseItem = 351
-    MiniGame_TableBoardResurrect = 352
-    MiniGame_TableBoardSweep = 353
-    MiniGame_TableBoardMoveThema = 354
-    MiniGame_DreamMakerGetInfo = 355
-    MiniGame_DreamMakerNewGame = 356
-    MiniGame_DreamMakerRestart = 357
-    MiniGame_DreamMakerAttendSchedule = 358
-    MiniGame_DreamMakerDailyClosing = 359
-    MiniGame_DreamMakerEnding = 360
-    MiniGame_DefenseGetInfo = 361
-    MiniGame_DefenseEnterBattle = 362
-    MiniGame_DefenseBattleResult = 363
-    MiniGame_RoadPuzzleGetInfo = 364
-    MiniGame_RoadPuzzleTilePlace = 365
-    MiniGame_RoadPuzzleSaveStage = 366
-    MiniGame_RoadPuzzleClearStage = 367
-    MiniGame_CCGLobby = 368
-    MiniGame_CCGCreateGame = 369
-    MiniGame_CCGSweep = 370
-    MiniGame_CCGEnterStage = 371
-    MiniGame_CCGEndStageDual = 372
-    MiniGame_CCGEndStageEvent = 373
-    MiniGame_CCGSelectRewardCard = 374
-    Minigame_CCGReplaceCharacter = 375
-    MiniGame_CCGSelectCampAction = 376
-    MiniGame_CCGCompleteGame = 377
-    MiniGame_CCGGiveupGame = 378
-    MiniGame_CCGRerollReward = 379
-    MiniGame_CCGBuyPerk = 380
-    Notification_LobbyCheck = 381
-    Notification_EventContentReddotCheck = 382
-    ProofToken_RequestQuestion = 383
-    ProofToken_Submit = 384
-    SchoolDungeon_List = 385
-    SchoolDungeon_EnterBattle = 386
-    SchoolDungeon_BattleResult = 387
-    SchoolDungeon_Retreat = 388
-    TimeAttackDungeon_Lobby = 389
-    TimeAttackDungeon_CreateBattle = 390
-    TimeAttackDungeon_EnterBattle = 391
-    TimeAttackDungeon_EndBattle = 392
-    TimeAttackDungeon_Sweep = 393
-    TimeAttackDungeon_GiveUp = 394
-    TimeAttackDungeon_Login = 395
-    WorldRaid_Lobby = 396
-    WorldRaid_BossList = 397
-    WorldRaid_EnterBattle = 398
-    WorldRaid_BattleResult = 399
-    WorldRaid_ReceiveReward = 400
-    WorldRaid_UpdateCarrierSkill = 401
-    ResetableContent_Get = 402
-    Conquest_GetInfo = 403
-    Conquest_Conquer = 404
-    Conquest_ConquerWithBattleStart = 405
-    Conquest_ConquerWithBattleResult = 406
-    Conquest_DeployEchelon = 407
-    Conquest_ManageBase = 408
-    Conquest_UpgradeBase = 409
-    Conquest_TakeEventObject = 410
-    Conquest_EventObjectBattleStart = 411
-    Conquest_EventObjectBattleResult = 412
-    Conquest_ReceiveCalculateRewards = 413
-    Conquest_NormalizeEchelon = 414
-    Conquest_Check = 415
-    Conquest_ErosionBattleStart = 416
-    Conquest_ErosionBattleResult = 417
-    Conquest_MainStoryGetInfo = 418
-    Conquest_MainStoryConquer = 419
-    Conquest_MainStoryConquerWithBattleStart = 420
-    Conquest_MainStoryConquerWithBattleResult = 421
-    Conquest_MainStoryCheck = 422
-    Friend_List = 423
-    Friend_Remove = 424
-    Friend_GetFriendDetailedInfo = 425
-    Friend_GetIdCard = 426
-    Friend_SetIdCard = 427
-    Friend_Search = 428
-    Friend_SendFriendRequest = 429
-    Friend_AcceptFriendRequest = 430
-    Friend_DeclineFriendRequest = 431
-    Friend_CancelFriendRequest = 432
-    Friend_Check = 433
-    Friend_ListByIds = 434
-    Friend_Block = 435
-    Friend_Unblock = 436
-    CharacterGear_List = 437
-    CharacterGear_Unlock = 438
-    CharacterGear_TierUp = 439
-    EliminateRaid_Login = 440
-    EliminateRaid_Lobby = 441
-    EliminateRaid_OpponentList = 442
-    EliminateRaid_GetBestTeam = 443
-    EliminateRaid_CreateBattle = 444
-    EliminateRaid_EnterBattle = 445
-    EliminateRaid_EndBattle = 446
-    EliminateRaid_GiveUp = 447
-    EliminateRaid_Sweep = 448
-    EliminateRaid_SeasonReward = 449
-    EliminateRaid_RankingReward = 450
-    EliminateRaid_LimitedReward = 451
-    EliminateRaid_RankingIndex = 452
-    Attachment_Get = 453
-    Attachment_EmblemList = 454
-    Attachment_EmblemAcquire = 455
-    Attachment_EmblemAttach = 456
-    Sticker_Login = 457
-    Sticker_Lobby = 458
-    Sticker_UseSticker = 459
-    Field_Sync = 460
-    Field_Interaction = 461
-    Field_QuestClear = 462
-    Field_SceneChanged = 463
-    Field_EndDate = 464
-    Field_EnterStage = 465
-    Field_StageResult = 466
-    MultiFloorRaid_Sync = 467
-    MultiFloorRaid_EnterBattle = 468
-    MultiFloorRaid_EndBattle = 469
-    MultiFloorRaid_ReceiveReward = 470
-    MultiFloorRaid_Login = 471
-    Queuing_GetTicket = 472
-    Queuing_GetCryptoKeys = 473
-    BattlePass_GetInfo = 474
-    BattlePass_BuyLevel = 475
-    BattlePass_ReceiveReward = 476
-    BattlePass_MissionList = 477
-    BattlePass_MissionSingleReward = 478
-    BattlePass_MissionMultipleReward = 479
-    BattlePass_Check = 480
-    DailyRecord_Reward = 481
-    Option_Save = 482
-    PermanentRaid_Lobby = 483
-    PermanentRaid_EnterBattle = 484
-    PermanentRaid_EndBattle = 485
-    PermanentRaid_GiveUp = 486
-    Log_TestBattleCheckAsync = 487
-    Log_TestBattleCheckSync = 488
-    Log_TestBattleCheckSyncWithBattleSetting = 489
-    Management_Data = 490
-    Order_Notify = 491
-    Battle_Notify = 492
-    Survey_Notify = 493
-    Web_Notify = 494
-    Clan_Chat_Records = 495
-    Clan_Send_Chat = 496
-    Shop_ListTutorialGacha = 497
-    Shop_BuyTutorialGacha = 498
-    Shop_SaveTutorialGacha = 499
-    Shop_ConfirmTutorialGacha = 500
-
-class ServerNotificationFlag(IntEnum):
-    None_ = 0
-    NewMailArrived = 1
-    HasUnreadMail = 2
-    NewToastDetected = 3
-    CanReceiveArenaDailyReward = 4
-    CanReceiveRaidReward = 5
-    ServerMaintenance = 6
-    CannotReceiveMail = 7
-    InventoryFullRewardMail = 8
-    CanReceiveClanAttendanceReward = 9
-    HasClanApplicant = 10
-    HasFriendRequest = 11
-    CheckConquest = 12
-    CanReceiveEliminateRaidReward = 13
-    CanReceiveMultiFloorRaidReward = 14
-    CanReceiveProductDailyRecordReward = 15
-
-class CampaignState(IntEnum):
-    BeforeStart = 0
-    BeginPlayerPhase = 1
-    PlayerPhase = 2
-    EndPlayerPhase = 3
-    BeginEnemyPhase = 4
-    EnemyPhase = 5
-    EndEnemyPhase = 6
-    Win = 7
-    Lose = 8
-    StrategySkip = 9
-
-class CampaignEndBattle(IntEnum):
-    None_ = 0
-    Win = 1
-    Lose = 2
-
-class CheatFlags(IntEnum):
-    None_ = 0
-    Conquest = 1
-    Mission = 2
-
-class RaidRoomSortOption(IntEnum):
-    HPHigh = 0
-    HPLow = 1
-    RemainTimeHigh = 2
-    RemainTimeLow = 3
-
-class WebAPIErrorCode(IntEnum):
-    None_ = 0
-    InvalidPacket = 1
-    InvalidProtocol = 2
-    InvalidSession = 3
-    InvalidVersion = 4
-    InternalServerError = 5
-    DBError = 6
-    InvalidToken = 7
-    FailedToLockAccount = 8
-    InvalidCheatError = 9
-    AccountCurrencyCannotAffordCost = 10
-    ExceedTranscendenceCountLimit = 11
-    MailBoxFull = 12
-    InventoryAlreadyFull = 13
-    AccountNotFound = 14
-    DataClassNotFound = 15
-    DataEntityNotFound = 16
-    AccountGemPaidCannotAffordCost = 17
-    AccountGemBonusCannotAffordCost = 18
-    AccountItemCannotAffordCost = 19
-    APITimeoutError = 20
-    FunctionTimeoutError = 21
-    DBDistributeTransactionError = 22
-    OccasionalJobError = 23
-    FailedToConsumeParcel = 24
-    InvalidString = 25
-    InvalidStringLength = 26
-    EmptyString = 27
-    SpecialSymbolNotAllowed = 28
-    InvalidDate = 29
-    CoolTimeRemain = 30
-    TimeElapseError = 31
-    ClientSendBadRequest = 32
-    ClientSendTooManyRequest = 33
-    ClientSuspectedAsCheater = 34
-    CombatVerificationFailedInDev = 35
-    ServerFailedToHandleRequest = 36
-    DocumentDBFailedToHandleRequest = 37
-    ServerCacheFailedToHandleRequest = 38
-    ReconnectBundleUpdateRequired = 39
-    GatewayMakeStandbyNotSupport = 40
-    GatewayPassCheckNotSupport = 41
-    GatewayWaitingTicketTimeOut = 42
-    ClientUpdateRequire = 43
-    AccountCreateNoDevId = 44
-    AccountCreateDuplicatedDevId = 45
-    AccountAuthEmptyDevId = 46
-    AccountAuthNotCreated = 47
-    AccountAccessControlWithoutPermission = 48
-    AccountNicknameEmptyString = 49
-    AccountNicknameSameName = 50
-    AccountNicknameWithInvalidString = 51
-    AccountNicknameWithInvalidLength = 52
-    YostarServerNotSuccessStatusCode = 53
-    YostarNetworkException = 54
-    YostarException = 55
-    AccountPassCheckNotSupportCheat = 56
-    AccountCreateFail = 57
-    AccountAddPubliserAccountFail = 58
-    AccountAddDevIdFail = 59
-    AccountCreateAlreadyPublisherAccoundId = 60
-    AccountUpdateStateFail = 61
-    YostarCheckFail = 62
-    EnterTicketInvalid = 63
-    EnterTicketTimeOut = 64
-    EnterTicketUsed = 65
-    AccountCommentLengthOverLimit = 66
-    AccountUpdateBirthdayFailed = 67
-    AccountLoginError = 68
-    AccountCurrencySyncError = 69
-    InvalidClientCookie = 70
-    InappositeNicknameRestricted = 71
-    InappositeCommentRestricted = 72
-    InappositeCallnameRestricted = 73
-    AccountContentBan = 74
-    InvalidAccountOptionsRequest = 75
-    CharacterNotFound = 76
-    CharacterLocked = 77
-    CharacterAlreadyHas = 78
-    CharacterAssignedEchelon = 79
-    CharacterFavorDownException = 80
-    CharacterFavorMaxLevelExceed = 81
-    CannotLevelUpSkill = 82
-    CharacterLevelAlreadyMax = 83
-    InvalidCharacterExpGrowthRequest = 84
-    CharacterWeaponDataNotFound = 85
-    CharacterWeaponNotFound = 86
-    CharacterWeaponAlreadyUnlocked = 87
-    CharacterWeaponUnlockConditionFail = 88
-    CharacterWeaponExpGrowthNotValidItem = 89
-    InvalidCharacterWeaponExpGrowthRequest = 90
-    CharacterWeaponTranscendenceRecipeNotFound = 91
-    CharacterWeaponTranscendenceConditionFail = 92
-    CharacterWeaponUpdateFail = 93
-    CharacterGearNotFound = 94
-    CharacterGearAlreadyEquiped = 95
-    CharacterGearCannotTierUp = 96
-    CharacterGearCannotUnlock = 97
-    CharacterCostumeNotFound = 98
-    CharacterCostumeAlreadySet = 99
-    CharacterCannotEquipCostume = 100
-    InvalidCharacterSkillLevelUpdateRequest = 101
-    InvalidCharacterPotentialGrowthRequest = 102
-    CharacterPotentialGrowthDataNotFound = 103
-    EquipmentNotFound = 104
-    InvalidEquipmentExpGrowthRequest = 105
-    EquipmentNotMatchingSlotItemCategory = 106
-    EquipmentLocked = 107
-    EquipmentAlreadyEquiped = 108
-    EquipmentConsumeItemLimitCountOver = 109
-    EquipmentNotEquiped = 110
-    EquipmentCanNotEquip = 111
-    EquipmentIngredientEmtpy = 112
-    EquipmentCannotLevelUp = 113
-    EquipmentCannotTierUp = 114
-    EquipmentGearCannotUnlock = 115
-    EquipmentBatchGrowthNotValid = 116
-    ItemNotFound = 117
-    ItemLocked = 118
-    ItemCreateWithoutStackCount = 119
-    ItemCreateStackCountFull = 120
-    ItemNotUsingType = 121
-    ItemEnchantIngredientFail = 122
-    ItemInvalidConsumeRequest = 123
-    ItemInsufficientStackCount = 124
-    ItemOverExpirationDateTime = 125
-    ItemCannotAutoSynth = 126
-    EchelonEmptyLeader = 127
-    EchelonNotFound = 128
-    EchelonNotDeployed = 129
-    EchelonSlotOverMaxCount = 130
-    EchelonAssignCharacterOnOtherEchelon = 131
-    EchelonTypeNotAcceptable = 132
-    EchelonEmptyNotAcceptable = 133
-    EchelonPresetInvalidSave = 134
-    EchelonPresetLabelLengthInvalid = 135
-    CampaignStageNotOpen = 136
-    CampaignStagePlayLimit = 137
-    CampaignStageEnterFail = 138
-    CampaignStageInvalidSaveData = 139
-    CampaignStageNotPlayerTurn = 140
-    CampaignStageStageNotFound = 141
-    CampaignStageHistoryNotFound = 142
-    CampaignStageChapterNotFound = 143
-    CampaignStageEchelonNotFound = 144
-    CampaignStageWithdrawedCannotReUse = 145
-    CampaignStageChapterRewardInvalidReward = 146
-    CampaignStageChapterRewardAlreadyReceived = 147
-    CampaignStageTacticWinnerInvalid = 148
-    CampaignStageActionCountZero = 149
-    CampaignStageHealNotAcceptable = 150
-    CampaignStageHealLimit = 151
-    CampaignStageLocationCanNotEngage = 152
-    CampaignEncounterWaitingCannotEndTurn = 153
-    CampaignTacticResultEmpty = 154
-    CampaignPortalExitNotFound = 155
-    CampaignCannotReachDestination = 156
-    CampaignChapterRewardConditionNotSatisfied = 157
-    CampaignStageDataInvalid = 158
-    ContentSweepNotOpened = 159
-    CampaignTacticSkipFailed = 160
-    CampaignUnableToRemoveFixedEchelon = 161
-    CampaignCharacterIsNotWhitelist = 162
-    CampaignFailedToSkipStrategy = 163
-    InvalidSweepRequest = 164
-    MailReceiveRequestInvalid = 165
-    MissionCannotComplete = 166
-    MissionRewardInvalid = 167
-    AttendanceInvalid = 168
-    ShopExcelNotFound = 169
-    ShopAndGoodsNotMatched = 170
-    ShopGoodsNotFound = 171
-    ShopExceedPurchaseCountLimit = 172
-    ShopCannotRefresh = 173
-    ShopInfoNotFound = 174
-    ShopCannotPurchaseActionPointLimitOver = 175
-    ShopNotOpened = 176
-    ShopInvalidGoods = 177
-    ShopInvalidCostOrReward = 178
-    ShopEligmaOverPurchase = 179
-    ShopFreeRecruitInvalid = 180
-    ShopNewbieGachaInvalid = 181
-    ShopCannotNewGoodsRefresh = 182
-    GachaCostNotValid = 183
-    ShopRestrictBuyWhenInventoryFull = 184
-    BeforehandGachaMetadataNotFound = 185
-    BeforehandGachaCandidateNotFound = 186
-    BeforehandGachaInvalidLastIndex = 187
-    BeforehandGachaInvalidSaveIndex = 188
-    BeforehandGachaInvalidPickIndex = 189
-    BeforehandGachaDuplicatedResults = 190
-    ShopCannotRefreshManually = 191
-    PickupSelectionDataNotFound = 192
-    PickupSelectionDataInvalid = 193
-    RecipeCraftNoData = 194
-    RecipeCraftInsufficientIngredients = 195
-    RecipeCraftDataError = 196
-    MemoryLobbyNotFound = 197
-    LobbyModeChangeFailed = 198
-    CumulativeTimeRewardNotFound = 199
-    CumulativeTimeRewardAlreadyReceipt = 200
-    CumulativeTimeRewardInsufficientConnectionTime = 201
-    OpenConditionClosed = 202
-    OpenConditionSetNotSupport = 203
-    CafeNotFound = 204
-    CafeFurnitureNotFound = 205
-    CafeDeployFail = 206
-    CafeRelocateFail = 207
-    CafeInteractionNotFound = 208
-    CafeProductionEmpty = 209
-    CafeRankUpFail = 210
-    CafePresetNotFound = 211
-    CafeRenamePresetFail = 212
-    CafeClearPresetFail = 213
-    CafeUpdatePresetFurnitureFail = 214
-    CafeReservePresetActivationTimeFail = 215
-    CafePresetApplyFail = 216
-    CafePresetIsEmpty = 217
-    CafeAlreadyVisitCharacter = 218
-    CafeCannotSummonCharacter = 219
-    CafeCanRefreshVisitCharacter = 220
-    CafeAlreadyInteraction = 221
-    CafeTemplateNotFound = 222
-    CafeAlreadyOpened = 223
-    CafeNoPlaceToTravel = 224
-    CafeCannotTravelToOwnCafe = 225
-    CafeCannotTravel = 226
-    CafeCannotTravel_CafeLock = 227
-    CafePresetCopyNotAllowed = 228
-    CafePresetNotVisitingCafe = 229
-    ScenarioMode_Fail = 230
-    ScenarioMode_DuplicatedScenarioModeId = 231
-    ScenarioMode_LimitClearedScenario = 232
-    ScenarioMode_LimitAccountLevel = 233
-    ScenarioMode_LimitClearedStage = 234
-    ScenarioMode_LimitClubStudent = 235
-    ScenarioMode_FailInDBProcess = 236
-    ScenarioGroup_DuplicatedScenarioGroupId = 237
-    ScenarioGroup_FailInDBProcess = 238
-    ScenarioGroup_DataNotFound = 239
-    ScenarioGroup_MeetupConditionFail = 240
-    CraftInfoNotFound = 241
-    CraftCanNotCreateNode = 242
-    CraftCanNotUpdateNode = 243
-    CraftCanNotBeginProcess = 244
-    CraftNodeDepthError = 245
-    CraftAlreadyProcessing = 246
-    CraftCanNotCompleteProcess = 247
-    CraftProcessNotComplete = 248
-    CraftInvalidIngredient = 249
-    CraftError = 250
-    CraftInvalidData = 251
-    CraftNotAvailableToCafePresets = 252
-    CraftNotEnoughEmptySlotCount = 253
-    CraftInvalidPresetSlotDB = 254
-    RaidExcelDataNotFound = 255
-    RaidSeasonNotOpen = 256
-    RaidDBDataNotFound = 257
-    RaidBattleNotFound = 258
-    RaidBattleUpdateFail = 259
-    RaidCompleteListEmpty = 260
-    RaidRoomCanNotCreate = 261
-    RaidActionPointZero = 262
-    RaidTicketZero = 263
-    RaidRoomCanNotJoin = 264
-    RaidRoomMaxPlayer = 265
-    RaidRewardDataNotFound = 266
-    RaidSeasonRewardNotFound = 267
-    RaidSeasonAlreadyReceiveReward = 268
-    RaidSeasonAddRewardPointError = 269
-    RaidSeasonRewardNotUpdate = 270
-    RaidSeasonReceiveRewardFail = 271
-    RaidSearchNotFound = 272
-    RaidShareNotFound = 273
-    RaidEndRewardFlagError = 274
-    RaidCanNotFoundPlayer = 275
-    RaidAlreadyParticipateCharacters = 276
-    RaidClearHistoryNotSave = 277
-    RaidBattleAlreadyEnd = 278
-    RaidEchelonNotFound = 279
-    RaidSeasonOpen = 280
-    RaidRoomIsAlreadyClose = 281
-    RaidRankingNotFound = 282
-    WeekDungeonInfoNotFound = 283
-    WeekDungeonNotOpenToday = 284
-    WeekDungeonBattleWinnerInvalid = 285
-    WeekDungeonInvalidSaveData = 286
-    FindGiftRewardNotFound = 287
-    FindGiftRewardAlreadyAcquired = 288
-    FindGiftClearCountOverTotalCount = 289
-    ArenaInfoNotFound = 290
-    ArenaGroupNotFound = 291
-    ArenaRankHistoryNotFound = 292
-    ArenaRankInvalid = 293
-    ArenaBattleFail = 294
-    ArenaDailyRewardAlreadyBeenReceived = 295
-    ArenaNoSeasonAvailable = 296
-    ArenaAttackCoolTime = 297
-    ArenaOpponentAlreadyBeenAttacked = 298
-    ArenaOpponentRankInvalid = 299
-    ArenaNeedFormationSetting = 300
-    ArenaNoHistory = 301
-    ArenaInvalidRequest = 302
-    ArenaInvalidIndex = 303
-    ArenaNotFoundBattle = 304
-    ArenaBattleTimeOver = 305
-    ArenaRefreshTimeOver = 306
-    ArenaEchelonSettingTimeOver = 307
-    ArenaCannotReceiveReward = 308
-    ArenaRewardNotExist = 309
-    ArenaCannotSetMap = 310
-    ArenaDefenderRankChange = 311
-    AcademyNotFound = 312
-    AcademyScheduleTableNotFound = 313
-    AcademyScheduleOperationNotFound = 314
-    AcademyAlreadyAttendedSchedule = 315
-    AcademyAlreadyAttendedFavorSchedule = 316
-    AcademyRewardCharacterNotFound = 317
-    AcademyScheduleCanNotAttend = 318
-    AcademyTicketZero = 319
-    AcademyMessageCanNotSend = 320
-    ContentSaveDBNotFound = 321
-    ContentSaveDBEntranceFeeEmpty = 322
-    AccountBanned = 323
-    ServerNowLoadingProhibitedWord = 324
-    ServerIsUnderMaintenance = 325
-    ServerMaintenanceSoon = 326
-    AccountIsNotInWhiteList = 327
-    ServerContentsLockUpdating = 328
-    ServerContentsLock = 329
-    CouponIsEmpty = 330
-    CouponIsInvalid = 331
-    UseCouponUsedListReadFail = 332
-    UseCouponUsedCoupon = 333
-    UseCouponNotFoundSerials = 334
-    UseCouponDeleteSerials = 335
-    UseCouponUnapprovedSerials = 336
-    UseCouponExpiredSerials = 337
-    UseCouponMaximumSerials = 338
-    UseCouponNotFoundMeta = 339
-    UseCouponDuplicateUseCoupon = 340
-    UseCouponDuplicateUseSerial = 341
-    BillingStartShopCashIdNotFound = 342
-    BillingStartNotServiceTime = 343
-    BillingStartUseConditionCheckError = 344
-    BillingStartSmallLevel = 345
-    BillingStartMaxPurchaseCount = 346
-    BillingStartFailAddOrder = 347
-    BillingStartExistPurchase = 348
-    BillingEndFailGetOrder = 349
-    BillingEndShopCashIdNotFound = 350
-    BillingEndProductIdNotFound = 351
-    BillingEndMonthlyProductIdNotFound = 352
-    BillingEndInvalidState = 353
-    BillingEndFailUpdteState = 354
-    BillingEndFailSendMail = 355
-    BillingEndInvalidAccount = 356
-    BillingEndNotFoundPurchaseCount = 357
-    BillingEndFailUpdteMonthlyProduct = 358
-    BillingStartMailFull = 359
-    BillingStartInventoryAndMailFull = 360
-    BillingEndRecvedErrorMonthlyProduct = 361
-    MonthlyProductNotOutdated = 362
-    BillingBattlePassProductNotExist = 363
-    BillingBattlePassInfo = 364
-    BillingBattlePassInvalidBuyStep = 365
-    BillingNotFreeProduct = 366
-    BillingPurchaseFreeProduct = 367
-    BillingProductSelectionSlotEmpty = 368
-    BillingProductSelectionSlotNotMatch = 369
-    BillingProductSelectConditionFailed = 370
-    BillingProductSelectionSlotNotFound = 371
-    BillingRewardParcelNotFound = 372
-    BillingCannotAcquireLock = 373
-    BillingPendingProductExists = 374
-    ClanNotFound = 375
-    ClanSearchFailed = 376
-    ClanEmptySearchString = 377
-    ClanAccountAlreadyJoinedClan = 378
-    ClanAccountAlreadyQuitClan = 379
-    ClanCreateFailed = 380
-    ClanMemberExceedCapacity = 381
-    ClanDoesNotHavePermission = 382
-    ClanTargetAccountIsNotApplicant = 383
-    ClanMemberNotFound = 384
-    ClanCanNotKick = 385
-    ClanCanNotDismiss = 386
-    ClanCanNotQuit = 387
-    ClanRejoinCoolOff = 388
-    ClanChangeMemberGradeFailed = 389
-    ClanHasBeenDisMissed = 390
-    ClanCannotChangeJoinOption = 391
-    ClanExceedConferCountLimit = 392
-    ClanBusy = 393
-    ClanNameEmptyString = 394
-    ClanNameWithInvalidLength = 395
-    ClanAssistCharacterAlreadyDeployed = 396
-    ClanAssistNotValidUse = 397
-    ClanAssistCharacterChanged = 398
-    ClanAssistCoolTime = 399
-    ClanAssistAlreadyUsedInRaidRoom = 400
-    ClanAssistAlreadyUsedInTimeAttackDungeonRoom = 401
-    ClanAssistEchelonHasAssistOnly = 402
-    PaymentInvalidSign = 403
-    PaymentInvalidSeed1 = 404
-    PaymentInvalidSeed2 = 405
-    PaymentInvalidInput = 406
-    PaymentNotFoundPurchase = 407
-    PaymentGetPurchaseOrderNotZero = 408
-    PaymentSetPurchaseOrderNotZero = 409
-    PaymentException = 410
-    PaymentInvalidState = 411
-    SessionNotFound = 412
-    SessionParseFail = 413
-    SessionInvalidInput = 414
-    SessionNotAuth = 415
-    SessionDuplicateLogin = 416
-    SessionTimeOver = 417
-    SessionInvalidVersion = 418
-    SessionChangeDate = 419
-    CallName_RenameCoolTime = 420
-    CallName_EmptyString = 421
-    CallName_InvalidString = 422
-    CallName_TTSServerIsNotAvailable = 423
-    CouchbaseInvalidCas = 424
-    CouchbaseOperationFailed = 425
-    CouchbaseRollBackFailed = 426
-    EventContentCannotSelectBuff = 427
-    EventContentNoBuffGroupAvailable = 428
-    EventContentBuffGroupIdDuplicated = 429
-    EventContentNotOpen = 430
-    EventContentNoTotalRewardAvailable = 431
-    EventContentBoxGachaPurchaseFailed = 432
-    EventContentBoxGachaCannotRefresh = 433
-    EventContentCardShopCannotShuffle = 434
-    EventContentElementDoesNotExist = 435
-    EventContentElementAlreadyPurchased = 436
-    EventContentLocationNotFound = 437
-    EventContentLocationScheduleCanNotAttend = 438
-    EventContentDiceRaceDataNotFound = 439
-    EventContentDiceRaceAlreadyReceiveLapRewardAll = 440
-    EventContentDiceRaceInvalidDiceRaceResultType = 441
-    EventContentTreasureDataNotFound = 442
-    EventContentTreasureNotComplete = 443
-    EventContentTreasureFlipFailed = 444
-    EventcontentConcentrationFlipCountZero = 445
-    EventContentConcentrationRequestSameIndex = 446
-    EventContentConcentrationAlreadyMatchedIndex = 447
-    EventContentConcentrationCannotCompleteRound = 448
-    EventContentConcentrationCannotSkipRound = 449
-    EventContentClueSearchCannotSubmit = 450
-    EventContentClueSearchCannotCompleteRound = 451
-    MiniGameStageIsNotOpen = 452
-    MiniGameStageInvalidResult = 453
-    MiniGameShootingStageInvlid = 454
-    MiniGameShootingCannotSweep = 455
-    MiniGameTableBoardSaveNotExist = 456
-    MiniGameTableBoardPlayerCannotMove = 457
-    MiniGameTableBoardNoActiveEncounter = 458
-    MiniGameTableBoardInvalidEncounterRequest = 459
-    MiniGameTableBoardProcessEncounterFailed = 460
-    MiniGameTableBoardItemNotExist = 461
-    MiniGameTableBoardInvalidItemUse = 462
-    MiniGameTableBoardInvalidClearThemaRequest = 463
-    MiniGameTableBoardInvalidSeason = 464
-    MiniGameTableBoardInvalidResurrectRequest = 465
-    MiniGameTableBoardSweepConditionFail = 466
-    MiniGameTableBoardInvalidData = 467
-    MiniGameDreamCannotStartNewGame = 468
-    MiniGameDreamCannotApplyMultiplier = 469
-    MiniGameDreamCannotReset = 470
-    MiniGameDreamNotEnoughActionCount = 471
-    MiniGameDreamSaveNotExist = 472
-    MiniGameDreamActionCountRemain = 473
-    MiniGameDreamRoundNotComplete = 474
-    MiniGameDreamRewardAlreadyReceived = 475
-    MiniGameDreamRoundCompleted = 476
-    MiniGameShouldReceiveEndingReward = 477
-    MiniGameDefenseCannotUseCharacter = 478
-    MiniGameDefenseNotOpenStage = 479
-    MiniGameDefenseCannotApplyMultiplier = 480
-    MiniGameRoadPuzzleInvalidTilePlacement = 481
-    MiniGameRoadPuzzleCannotTrainDeparture = 482
-    MiniGameRoadPuzzleAlreadyCleared = 483
-    MiniGameRoadPuzzleCannotSave = 484
-    MiniGameCCGPlayingSaveAlreadyExists = 485
-    MiniGameCCGSaveNotExists = 486
-    MiniGameCCGPlayingStageAlreadyExists = 487
-    MiniGameCCGPlayingStageNotExists = 488
-    MiniGameCCGInvalidOperation = 489
-    MiniGameCCGSaveNotComplete = 490
-    MiniGameCCGNoRerollPoint = 491
-    ProofTokenNotSubmitted = 492
-    SchoolDungeonInfoNotFound = 493
-    SchoolDungeonNotOpened = 494
-    SchoolDungeonInvalidSaveData = 495
-    SchoolDungeonBattleWinnerInvalid = 496
-    SchoolDungeonInvalidReward = 497
-    TimeAttackDungeonDataNotFound = 498
-    TimeAttackDungeonNotOpen = 499
-    TimeAttackDungeonRoomTimeOut = 500
-    TimeAttackDungeonRoomPlayCountOver = 501
-    TimeAttackDungeonRoomAlreadyExists = 502
-    TimeAttackDungeonRoomAlreadyClosed = 503
-    TimeAttackDungeonRoomNotExist = 504
-    TimeAttackDungeonInvalidRequest = 505
-    TimeAttackDungeonInvalidData = 506
-    WorldRaidDataNotFound = 507
-    WorldRaidSeasonNotOpen = 508
-    WorldRaidBossGroupNotOpen = 509
-    WorldRaidInvalidOpenCondition = 510
-    WorldRaidDifficultyNotOpen = 511
-    WorldRaidAssistCharacterLimitOver = 512
-    WorldRaidContainBlackListCharacter = 513
-    WorldRaidValidFixedEchelonSetting = 514
-    WorldRaidAlredayReceiveRewardAll = 515
-    WorldRaidCannotReceiveReward = 516
-    WorldRaidBossAlreadyDead = 517
-    WorldRaidNotAnotherBossKilled = 518
-    WorldRaidBattleResultUpdateFailed = 519
-    WorldRaidGemEnterCountLimitOver = 520
-    WorldRaidCannotGemEnter = 521
-    WorldRaidNeedClearScenarioBoss = 522
-    WorldRaidBossIsAlive = 523
-    WorldRaidInvalidCarrierSkillLevel = 524
-    ConquestDataNotFound = 525
-    ConquestAlreadyConquested = 526
-    ConquestNotFullyConquested = 527
-    ConquestStepNotOpened = 528
-    ConquestUnableToReach = 529
-    ConquestUnableToAttack = 530
-    ConquestEchelonChangedCountMax = 531
-    ConquestEchelonNotFound = 532
-    ConquestCharacterAlreadyDeployed = 533
-    ConquestMaxUpgrade = 534
-    ConquestUnitNotFound = 535
-    ConquestObjectNotFound = 536
-    ConquestCalculateRewardNotFound = 537
-    ConquestInvalidTileType = 538
-    ConquestInvalidObjectType = 539
-    ConquestInvalidSaveData = 540
-    ConquestMaxAssistCountReached = 541
-    ConquestErosionConditionNotSatisfied = 542
-    ConquestAdditionalContentNotInUse = 543
-    ConquestCannotUseManageEchelon = 544
-    FriendUserIsNotFriend = 545
-    FriendFailedToCreateFriendIdCard = 546
-    FriendRequestNotFound = 547
-    FriendInvalidFriendCode = 548
-    FriendAlreadyFriend = 549
-    FriendMaxSentRequestReached = 550
-    FriendMaxReceivedRequestReached = 551
-    FriendCannotRequestMaxFriendCountReached = 552
-    FriendCannotAcceptMaxFriendCountReached = 553
-    FriendOpponentMaxFriendCountReached = 554
-    FriendTargetIsBusy = 555
-    FriendRequestTargetIsYourself = 556
-    FriendSearchTargetIsYourself = 557
-    FriendInvalidBackgroundId = 558
-    FriendIdCardCommentLengthOverLimit = 559
-    FriendBackgroundNotOwned = 560
-    FriendBlockTargetIsYourself = 561
-    FriendBlockTargetIsAlreadyBlocked = 562
-    FriendBlockTargetIsExceedMaxCount = 563
-    FriendBlockUserCannotOpenProfile = 564
-    FriendBlockUserCannotSendRequest = 565
-    EliminateStageIsNotOpened = 566
-    MultiSweepPresetDocumentNotFound = 567
-    MultiSweepPresetNameEmpty = 568
-    MultiSweepPresetInvalidStageId = 569
-    MultiSweepPresetInvalidId = 570
-    MultiSweepPresetNameInvalidLength = 571
-    MultiSweepPresetTooManySelectStageId = 572
-    MultiSweepPresetInvalidSweepCount = 573
-    MultiSweepPresetTooManySelectParcelId = 574
-    EmblemDataNotFound = 575
-    EmblemAttachFailed = 576
-    EmblemCannotReceive = 577
-    EmblemPassCheckEmblemIsEmpty = 578
-    StickerDataNotFound = 579
-    StickerNotAcquired = 580
-    StickerDocumentNotFound = 581
-    StickerAlreadyUsed = 582
-    ClearDeckInvalidKey = 583
-    ClearDeckOutOfDate = 584
-    FieldDataNotFound = 585
-    FieldInteracionFailed = 586
-    FieldQuestClearFailed = 587
-    FieldInvalidSceneChangedRequest = 588
-    FieldInvalidEndDateRequest = 589
-    FieldCreateDailyQuestFailed = 590
-    FieldResetReplayFailed = 591
-    FieldIncreaseMasteryFailed = 592
-    FieldStageDataInvalid = 593
-    FieldStageEnterFail = 594
-    FieldContentIsClosed = 595
-    FieldEventStageNotCleared = 596
-    MultiFloorRaidSeasonNotOpened = 597
-    MultiFloorRaidDataNotFound = 598
-    MultiFloorRaidAssistCharacterLimitOver = 599
-    MultiFloorRaidStageOpenConditionFail = 600
-    MultiFloorRaidInvalidSummary = 601
-    MultiFloorRaidInvalidRewardRequest = 602
-    BattlePassSeasonNotOpen = 603
-    BattlePassBuyLevelAlreadyMaxLevel = 604
-    BattlePassBuyLevelMaxLevelOver = 605
-    BattlePassBuyLevelBuyCountError = 606
-    BattlePassAlreadyGetRewardAll = 607
-    DailyRecordNotFound = 608
-    DailyRecordAlreadyExpired = 609
-    DailyRecordRewardNotExist = 610
-    PermanentRaidNotOpen = 611
-    PermanentRaidDataNotFound = 612
-    PermanentRaidBossIsLocked = 613
-    PermanentRaidBossIsAlreadyClosed = 614
-    BattleServerError = 615
-    ServerBusy = 616
-    UseCopuonDuplicateUseCoupon = 617
-    ClanNotHaveApplication = 618
-    ClanBeKickedOut = 619
-    SessionCrossDay = 620
-    AppUpdate = 621
-    ResourceUpdate = 622
-    GachaDailyPurchaseLimit = 623
-    ClanCantConferInactivePlayer = 624
-    FeatureSuspendedNotice = 625
-    CouponAreaNotMatch = 626
-    UseCouponFrequentRequests = 627
-    UseCouponExceededLimit = 628
-
-class StepState(IntEnum):
-    Default = 0
-    StandBy = 1
-    Eroding = 2
-    Complete = 3
-
-class OpenConditionLockReason(IntEnum):
-    None_ = 0
-    Level = 1
-    StageClear = 2
-    Time = 3
-    Day = 4
-    CafeRank = 5
-    ScenarioModeClear = 6
-    CafeOpen = 7
-
-class CafeAllowCopyPreset(IntEnum):
-    All = 0
-    None_ = 1
-    CircleAndFriend = 2
-    CircleOnly = 3
-    FriendOnly = 4
-
-class SweepSortingOrder(IntEnum):
-    None_ = 0
-    Item_Coin = 1
-    Item_SceretStone = 2
-    Equipment = 3
-    Item_CharacterExpGrowth = 4
-    Item_Material = 5
-    Currency = 6
-
-class ProhibitWordType(IntEnum):
-    BlackList = 0
-    WhiteList = 1
-
-class NarrowOrWide(IntEnum):
-    None_ = 0
-    Narrow = 1
-    Wide = 2
-
-class ResetableContentBandWidth(IntEnum):
-    MiniEventToken = 0
-
-class ParcelProcessActionType(IntEnum):
-    None_ = 0
-    Cost = 1
-    Reward = 2
-
-class ParcelChangeType(IntEnum):
-    NoChange = 0
-    Terminated = 1
-    MailSend = 2
-    Converted = 3
-
-class UserType(IntEnum):
-    None_ = 0
-    GM = 1
-    Tester = 2
-    Bot = 3
-
-class LogCode(IntEnum):
-    None_ = 0
-    AccountLogin = 1
-    AccountLogOut = 2
-    AccountStatusChange = 3
-    AccountCharacterChange = 4
-    AccountEquipmentChange = 5
-    AccountItemChange = 6
-    AccountFurnitureChange = 7
-    AccountCharacterWeaponChange = 8
-    AccountCurrency = 9
-    AccountCurrencyChange = 10
-    AccountApCurrencyCharge = 11
-    AccountGemCurrencyCharge = 12
-    AccountTicketChange = 13
-    AccountMonthlyProductFix = 14
-    Adventure_Default = 15
-    Adventure_Squad = 16
-    Adventure_Detail = 17
-    Adventure_Ground = 18
-    Adventure_Reward = 19
-    Adventure_Hero = 20
-    Adventure_Supporter = 21
-    Adventure_Deck = 22
-    Raid_Default = 23
-    Raid_Squad = 24
-    Raid_Detail = 25
-    Raid_Reward = 26
-    Raid_SeasonReward = 27
-    Raid_BestRecord = 28
-    WeekDungeon_Default = 29
-    WeekDungeon_Squad = 30
-    WeekDungeon_Detail = 31
-    WeekDungeon_Reward = 32
-    Arena_Default = 33
-    Arena_Squad = 34
-    Arena_Detail = 35
-    Arena_Reward = 36
-    Arena_Performance = 37
-    SchoolDungeon_Default = 38
-    SchoolDungeon_Squad = 39
-    SchoolDungeon_Detail = 40
-    SchoolDungeon_Reward = 41
-    Battle_Character = 42
-    Student_FavorRankChange = 43
-    Parcel_CharacterChange = 44
-    Parcel_EquipmentChange = 45
-    Parcel_ItemChange = 46
-    Parcel_Item = 47
-    Parcel_MemoryLobby = 48
-    Parcel_Furniture = 49
-    Scenario_Default = 50
-    Scenario_Skip = 51
-    Scenario_Select = 52
-    Scenario_AccountStudent = 53
-    Scenario_LobbyStudent = 54
-    Scenario_SpecialLobby = 55
-    Scenario_AccountStudentChange = 56
-    Scenario_LobbyStudentChange = 57
-    Scenario_SpecialLobbyChange = 58
-    Scenario_Schedule = 59
-    Scene_Default = 60
-    Cafe_Default = 61
-    Cafe_Character = 62
-    Cafe_ChangeFurniture = 63
-    Cafe_FurnitureInfo = 64
-    Goods_Gacha = 65
-    Goods_Shop = 66
-    Goods_UseGold = 67
-    Mission_Default = 68
-    ItemInfo_Default = 69
-    ProofToken_Default = 70
-    ProofToken_QuestionSent = 71
-    ProofToken_WrongProtocolEncoding = 72
-    FortuneGacha_Default = 73
-    TimeAttackDungeon_Default = 74
-    TimeAttackDungeon_Reward = 75
-    TimeAttackDungeon_Sweep = 76
-    Conquest_Default = 77
-    Conquest_Squad = 78
-    Conquest_Detail = 79
-    Conquest_Reward = 80
-    WorldRaid_Default = 81
-    WorldRaid_Detail = 82
-    WorldRaid_Squad = 83
-    Craft_PreReward = 84
-    Friend_SendRequest = 85
-    Friend_RequestAccept = 86
-    Friend_RequestDecline = 87
-    Friend_Remove = 88
-    Friend_IdCardBackgroundChange = 89
-    EliminateRaid_Default = 90
-    EliminateRaid_Squad = 91
-    EliminateRaid_Detail = 92
-    EliminateRaid_Reward = 93
-    EliminateRaid_SeasonReward = 94
-    EliminateRaid_BestRecord = 95
-    EliminateRaid_LimitedReward = 96
-    AccountAttachment_Emblem = 97
-    MiniGameShooting_Default = 98
-    MiniGameShooting_Sweep = 99
-    MultiFloorRaid_Default = 100
-    MultiFloorRaid_Detail = 101
-    MultiFloorRaid_Squad = 102
-    MultiFloorRaid_Reward = 103
-    Clan_Transfer = 104
-    ClientSetting_Default = 105
-    Issue_Default = 106
-    Violation_Default = 107
-    Violation_ExcessiveTouch = 108
-    EventContent_ConcentrationDefault = 109
-    EventContent_ConcentrationRoundSkip = 110
-    EventContent_ConcentrationFlipCard = 111
-
-class AssistRelation(IntEnum):
-    None_ = 0
-    Clan = 1
-    Friend = 2
-    Cheat = 3
-    Stranger = 4
-
-class ShopCashBlockType(IntEnum):
-    All = 0
-    AppStore = 1
-    GooglePlay = 2
-    PaymentCenter = 3
-    None_ = 4
-
-class CraftProcessCompleteType(IntEnum):
-    None_ = 0
-    ByTimeElapse = 1
-    ByPlayer = 2
-
-class CraftState(IntEnum):
-    None_ = 0
-    BaseNode = 1
-    NodeSelecting = 2
-    Crafting = 3
-    Complete = 4
-
-class EchelonStatusFlag(IntEnum):
-    None_ = 0
-    BeforeDeploy = 1
-    OnDuty = 2
-
-class IssueAlertTypeCode(IntEnum):
-    All = 0
-    File_Target = 1
-    AllButFile_Exception = 2
-
-class MiniGameCCGCampOption(IntEnum):
-    Invalid = 0
-    Heal = 1
-    Revive = 2
-    RemoveCard = 3
-    Skip = 4
-
-class MiniGameCCGStageRewardType(IntEnum):
-    Invalid = 0
-    All = 1
-    Select = 2
-
-class ShopProductType(IntEnum):
-    None_ = 0
-    General = 1
-    Refresh = 2
-
-class IrcMessageType(IntEnum):
-    None_ = 0
-    Notice = 1
-    Sticker = 2
-    Chat = 3
-    HistoryCount = 4
-
-class IrcNoticeType(IntEnum):
-    None_ = 0
-    Apply = 1
-    Join = 2
-    Confer = 3
-    Leave = 4
-    Dismiss = 5
-
-class RotationType(IntEnum):
-    None_ = 0
-    Clockwise = 1
-    CounterClockwise = 2
-
-class ShapeType(IntEnum):
-    None_ = 0
-    Circle = 1
-    Donut = 2
-    Fan = 3
-    LineSegment = 4
-    OBB = 5
-
-class DiffOperatorType(IntEnum):
-    None_ = 0
-    GreaterOrEqual = 1
-    LessOrEqual = 2
-    Equal = 3
-    NotEqual = 4
-
-class TransitionType(IntEnum):
-    None_ = 0
-    Linear = 1
-    EaseIn = 2
-    EaseOut = 3
-    EaseInSine = 4
-    EaseOutSine = 5
-    EaseInOutSine = 6
-    EaseInQuad = 7
-    EaseOutQuad = 8
-    EaseInOutQuad = 9
-    EaseInCubic = 10
-    EaseOutCubic = 11
-    EaseInOutCubic = 12
-    EaseInQuart = 13
-    EaseOutQuart = 14
-    EaseInOutQuart = 15
-    EaseInQuint = 16
-    EaseOutQuint = 17
-    EaseInOutQuint = 18
-    EaseInExpo = 19
-    EaseOutExpo = 20
-    EaseInOutExpo = 21
-    EaseInCirc = 22
-    EaseOutCirc = 23
-    EaseInOutCirc = 24
-    EaseInBack = 25
-    EaseOutBack = 26
-    EaseInOutBack = 27
-    EaseInElastic = 28
-    EaseOutElastic = 29
-    EaseInOutElastic = 30
-    EaseInBounce = 31
-    EaseOutBounce = 32
-    EaseInOutBounce = 33
-
-class CRCResult(IntEnum):
-    None_ = 0
-    FileNotExists = 1
-    Valid = 2
-    Invalid = 3
-
-class MissingFieldAction(IntEnum):
-    ParseError = 0
-    ReplaceByEmpty = 1
-    ReplaceByNull = 2
-
-class ParseErrorAction(IntEnum):
-    RaiseEvent = 0
-    AdvanceToNextLine = 1
-    ThrowException = 2
-
-class ValueTrimmingOptions(IntEnum):
-    None_ = 0
-    UnquotedOnly = 1
-    QuotedOnly = 2
-    All = 3
-
-class EvaluateOptions(IntEnum):
-    None_ = 0
-    IgnoreCase = 1
-    NoCache = 2
-    IterateParameters = 3
-    RoundAwayFromZero = 4
-
-class BinaryExpressionType(IntEnum):
-    And = 0
-    Or = 1
-    NotEqual = 2
-    LesserOrEqual = 3
-    GreaterOrEqual = 4
-    Lesser = 5
-    Greater = 6
-    Equal = 7
-    Minus = 8
-    Plus = 9
-    Modulo = 10
-    Div = 11
-    Times = 12
-    BitwiseOr = 13
-    BitwiseAnd = 14
-    BitwiseXOr = 15
-    LeftShift = 16
-    RightShift = 17
-    Unknown = 18
-
-class FunctionType(IntEnum):
-    Invalid = 0
-    Abs = 1
-    Acos = 2
-    Asin = 3
-    Atan = 4
-    Ceiling = 5
-    Cos = 6
-    Exp = 7
-    Floor = 8
-    IEEERemainder = 9
-    Log = 10
-    Log10 = 11
-    Pow = 12
-    Round = 13
-    Sign = 14
-    Sin = 15
-    Sqrt = 16
-    Tan = 17
-    Truncate = 18
-    Max = 19
-    Min = 20
-    If = 21
-    In = 22
-    GetCurrentFrame = 23
-    GroggyGaugeRate = 24
-    MaxHpCapGaugeValue = 25
-    GetHPRate = 26
-    GetBossAIPhase = 27
-    GetHPInteger = 28
-    GetCurrentBehavior = 29
-    IsReloading = 30
-    HasCrowdControl = 31
-    GetActiveParts = 32
-    HasLogicEffectTemplate = 33
-    StatGaugeRate = 34
-    GetFormIndex = 35
-    GetAmmoCount = 36
-
-class UnaryExpressionType(IntEnum):
-    Not = 0
-    Negate = 1
-    BitwiseNot = 2
-
-class ValueType(IntEnum):
-    Integer = 0
-    String = 1
-    DateTime = 2
-    Float = 3
-    Boolean = 4
-
-class EquipSlot(IntEnum):
-    None_ = 0
-    Weapon = 1
-    Helmet = 2
-    Armor = 3
-    Shoes = 4
-    Accessory = 5
-
-class CompareOperator(IntEnum):
-    Less = 0
-    LessOrEqual = 1
-    Equal = 2
-    GreatorOrEqual = 3
-    Greator = 4
-    NotEqual = 5
-
-class TimeSpanAccuracyType(IntEnum):
-    Seconds = 0
-    MillisecondThreeDigit = 1
-
-class ActionProgress(IntEnum):
-    None_ = 0
-    Running = 1
-    Finished = 2
-
-class ActionState(IntEnum):
-    Default = 0
-    Phase01 = 1
-    Phase02 = 2
-    Phase03 = 3
-    Phase04 = 4
-    Phase05 = 5
-    Phase06 = 6
-    Phase07 = 7
-    Phase08 = 8
-    Phase09 = 9
-    None_ = 10
-
-class NormalAttackAnimationFrameKey(IntEnum):
-    None_ = 0
-    AttackEnterDuration = 1
-    AttackStartDuration = 2
-    AttackEndDuration = 3
-    AttackBurstRoundOverDelay = 4
-    AttackIngDuration = 5
-    AttackReloadDuration = 6
-    AttackReadyStartDuration = 7
-    AttackReadyEndDuration = 8
-
-class LogicEffectEndCondition(IntEnum):
-    None_ = 0
-    Duration = 1
-    ReloadCount = 2
-    AmmoCount = 3
-    AmmoHit = 4
-    UseExSkillCount = 5
-
-class TSAInteractionState(IntEnum):
-    NotInteracting = 0
-    Interacting = 1
-    TSADying = 2
-
-class ObstacleState(IntEnum):
-    Pre = 0
-    Idle = 1
-    Destroy = 2
-    Retreat = 3
-    Remain = 4
-    Remove = 5
-
-class TargetSortOrder(IntEnum):
-    None_ = 0
-    Highest = 1
-    Lowest = 2
-    Random = 3
-    CyclicRandom = 4
-
-class BattleEntityType(IntEnum):
-    None_ = 0
-    Character = 1
-    SkillActor = 2
-    Obstacle = 3
-    Point = 4
-    Projectile = 5
-    EffectArea = 6
-    Supporter = 7
-    BattleItem = 8
-
-class BehaviorType(IntEnum):
-    None_ = 0
-    NormalAttack01 = 1
-    NormalAttack02 = 2
-    NormalAttack03 = 3
-    NormalAttack04 = 4
-    NormalAttack05 = 5
-    NormalAttack06 = 6
-    NormalAttack07 = 7
-    NormalAttack08 = 8
-    NormalAttack09 = 9
-    NormalAttack10 = 10
-    UseExSkill01 = 11
-    UseExSkill02 = 12
-    UseExSkill03 = 13
-    UseExSkill04 = 14
-    UseExSkill05 = 15
-    UseExSkill06 = 16
-    UseExSkill07 = 17
-    UseExSkill08 = 18
-    UseExSkill09 = 19
-    UseExSkill10 = 20
-    UsePublicSkill01 = 21
-    UsePublicSkill02 = 22
-    UsePublicSkill03 = 23
-    UsePublicSkill04 = 24
-    UsePublicSkill05 = 25
-    UsePublicSkill06 = 26
-    UsePublicSkill07 = 27
-    UsePublicSkill08 = 28
-    UsePublicSkill09 = 29
-    UsePublicSkill10 = 30
-    Dead = 31
-    Dying = 32
-    Retreat = 33
-    EnterGround = 34
-    TSSInteract = 35
-    Idle = 36
-    Stunned = 37
-    Hit = 38
-    Knockback = 39
-    Panic = 40
-    Paralysis = 41
-    Emp = 42
-    Purify = 43
-    Groggy = 44
-    GroggyDead = 45
-    Frozen = 46
-    Move = 47
-    MoveToFormationBeacon = 48
-    MoveLeft = 49
-    MoveRight = 50
-    MoveAttack = 51
-    ReleaseFormConversion = 52
-    Walk = 53
-    Stop = 54
-    Seek = 55
-    Flee = 56
-    Evade = 57
-    Wander = 58
-    SeekPosition = 59
-    Feared = 60
-    Airborn = 61
-    Charmed = 62
-    Pulling = 63
-    Stasis = 64
-    Following = 65
-    MetamorphNormalAttack01 = 66
-
-class HeroStatus(IntEnum):
-    None_ = 0
-    Dead = 1
-    Dying = 2
-    Exiled = 3
-    Suppressed = 4
-    Stasis = 5
-    Knockback = 6
-    Pulling = 7
-    Airborn = 8
-    Stoned = 9
-    Stunned = 10
-    Paralysis = 11
-    Emp = 12
-    Purify = 13
-    Groggy = 14
-    Hit = 15
-    Frozen = 16
-    Panic = 17
-    Charmed = 18
-    Fear = 19
-    Polymorph = 20
-    ForcedIdle = 21
-    Taunted = 22
-    ConcentratedTarget = 23
-    Confusion = 24
-    MindControlled = 25
-    Silence = 26
-    Blind = 27
-    Entangle = 28
-    Slow = 29
-    Immortal = 30
-    Indestructible = 31
-    DisableNormalAttack = 32
-    DisableExSkill = 33
-    DisablePassiveSkill = 34
-    DisablePublicSkill = 35
-    ImmuneDamageAttack = 36
-    ImmuneDamageAll = 37
-    ImmuneDamageBySkillType = 38
-    ImmuneDead = 39
-    ImmuneStoned = 40
-    ImmuneKnockback = 41
-    ImmunePulling = 42
-    ImmuneAirborn = 43
-    ImmuneStunned = 44
-    ImmuneCharmed = 45
-    ImmuneFear = 46
-    ImmunePolymorph = 47
-    ImmuneForcedIdle = 48
-    ImmuneMindControl = 49
-    ImmuneSilence = 50
-    ImmuneBlind = 51
-    ImmuneParalysis = 52
-    ImmuneEmp = 53
-    ImmunePurify = 54
-    ImmuneGroggy = 55
-    ImmuneConcentratedTarget = 56
-    ImmuneConfusion = 57
-    ImmuneCrowdControl = 58
-    ImmuneGroggyGaugeAdd = 59
-    Rage = 60
-    Untargetable = 61
-    Metamorph = 62
-    Thorns = 63
-    All = 64
-
-class HeroSummaryDetailFlag(IntEnum):
-    None_ = 0
-    BattleProperty = 1
-    BattleStatistics = 2
-    NumericLogs = 3
-    StatSnapshot = 4
-    Default = 5
-    All = 6
-
-class SkillActionType(IntEnum):
-    None_ = 0
-    NormalAttackSkill = 1
-    TargetSkill = 2
-    MultipleTargetSkill = 3
-    ProjectileSkill = 4
-    MultipleProjectileSkill = 5
-    AreaSkill = 6
-    MultipleAreaSkill = 7
-    SummonObstacleSkill = 8
-    SummonCharacterSkill = 9
-    SummonBattleItem = 10
-    TimelineSkill = 11
-    PassiveSkill = 12
-
-class TimelineSpawnerComparisonOperator(IntEnum):
-    None_ = 0
-    Equal = 1
-    NotEqual = 2
-    Less = 3
-    LessOrEqual = 4
-    Greater = 5
-    GreaterOrEqual = 6
-
-class SkillSlot(IntEnum):
-    None_ = 0
-    NormalAttack01 = 1
-    NormalAttack02 = 2
-    NormalAttack03 = 3
-    NormalAttack04 = 4
-    NormalAttack05 = 5
-    NormalAttack06 = 6
-    NormalAttack07 = 7
-    NormalAttack08 = 8
-    NormalAttack09 = 9
-    NormalAttack10 = 10
-    ExSkill01 = 11
-    ExSkill02 = 12
-    ExSkill03 = 13
-    ExSkill04 = 14
-    ExSkill05 = 15
-    ExSkill06 = 16
-    ExSkill07 = 17
-    ExSkill08 = 18
-    ExSkill09 = 19
-    ExSkill10 = 20
-    Passive01 = 21
-    Passive02 = 22
-    Passive03 = 23
-    Passive04 = 24
-    Passive05 = 25
-    Passive06 = 26
-    Passive07 = 27
-    Passive08 = 28
-    Passive09 = 29
-    Passive10 = 30
-    ExtraPassive01 = 31
-    ExtraPassive02 = 32
-    ExtraPassive03 = 33
-    ExtraPassive04 = 34
-    ExtraPassive05 = 35
-    ExtraPassive06 = 36
-    ExtraPassive07 = 37
-    ExtraPassive08 = 38
-    ExtraPassive09 = 39
-    ExtraPassive10 = 40
-    Support01 = 41
-    Support02 = 42
-    Support03 = 43
-    Support04 = 44
-    Support05 = 45
-    Support06 = 46
-    Support07 = 47
-    Support08 = 48
-    Support09 = 49
-    Support10 = 50
-    EnterBattleGround = 51
-    LeaderSkill01 = 52
-    LeaderSkill02 = 53
-    LeaderSkill03 = 54
-    LeaderSkill04 = 55
-    LeaderSkill05 = 56
-    LeaderSkill06 = 57
-    LeaderSkill07 = 58
-    LeaderSkill08 = 59
-    LeaderSkill09 = 60
-    LeaderSkill10 = 61
-    Equipment01 = 62
-    Equipment02 = 63
-    Equipment03 = 64
-    Equipment04 = 65
-    Equipment05 = 66
-    Equipment06 = 67
-    Equipment07 = 68
-    Equipment08 = 69
-    Equipment09 = 70
-    Equipment10 = 71
-    PublicSkill01 = 72
-    PublicSkill02 = 73
-    PublicSkill03 = 74
-    PublicSkill04 = 75
-    PublicSkill05 = 76
-    PublicSkill06 = 77
-    PublicSkill07 = 78
-    PublicSkill08 = 79
-    PublicSkill09 = 80
-    PublicSkill10 = 81
-    GroupBuff01 = 82
-    HexaBuff01 = 83
-    EventBuff01 = 84
-    EventBuff02 = 85
-    EventBuff03 = 86
-    MoveAttack01 = 87
-    MetamorphNormalAttack = 88
-    GroundPassive01 = 89
-    GroundPassive02 = 90
-    GroundPassive03 = 91
-    GroundPassive04 = 92
-    GroundPassive05 = 93
-    GroundPassive06 = 94
-    GroundPassive07 = 95
-    GroundPassive08 = 96
-    GroundPassive09 = 97
-    GroundPassive10 = 98
-    HiddenPassive01 = 99
-    HiddenPassive02 = 100
-    HiddenPassive03 = 101
-    HiddenPassive04 = 102
-    HiddenPassive05 = 103
-    HiddenPassive06 = 104
-    HiddenPassive07 = 105
-    HiddenPassive08 = 106
-    HiddenPassive09 = 107
-    HiddenPassive10 = 108
-    Count = 109
-
-class BattleTypes(IntEnum):
-    None_ = 0
-    Adventure = 1
-    ScenarioMode = 2
-    WeekDungeonChaserA = 3
-    WeekDungeonBlood = 4
-    WeekDungeonChaserB = 5
-    WeekDungeonChaserC = 6
-    WeekDungeonFindGift = 7
-    EventContent = 8
-    TutorialAdventure = 9
-    Profiling = 10
-    SingleRaid = 11
-    MultiRaid = 12
-    PracticeRaid = 13
-    EliminateRaid = 14
-    MultiFloorRaid = 15
-    MinigameDefense = 16
-    Arena = 17
-    TimeAttack = 18
-    SchoolDungeonA = 19
-    SchoolDungeonB = 20
-    SchoolDungeonC = 21
-    WorldRaid = 22
-    Conquest = 23
-    FieldStory = 24
-    FieldContent = 25
-    PvE = 26
-    WeekDungeon = 27
-    SchoolDungeon = 28
-    Raid = 29
-    PvP = 30
-    All = 31
-
-class SourceType(IntEnum):
-    OriginEntity_FromSquad = 0
-    OriginEntity_NotFromSquad = 1
-    Summoned_SquadFamily = 2
-    Summoned_NotSquadFamily = 3
-
-class AccumulateCheckType(IntEnum):
-    Damage = 0
-    Heal = 1
-
-class AccumulateDamageActionType(IntEnum):
-    None_ = 0
-    Given = 1
-    Taken = 2
-
-class AccumulateExecuteCondition(IntEnum):
-    OverAccumulateAmount = 0
-    OverDuration = 1
-
-class BarrierShape(IntEnum):
-    Circle = 0
-    Square = 1
-
-class BaseEntityType(IntEnum):
-    Caster = 0
-    Target = 1
-
-class BeamPhase(IntEnum):
-    Expansion = 0
-    Keeping = 1
-    Extinction = 2
-
-class BlackboardKeyType(IntEnum):
-    Invalid = 0
-    Global = 1
-    PerOwner = 2
-    PerTarget = 3
-    PerOwnerPerTarget = 4
-
-class BounceConditionCheckTiming(IntEnum):
-    Defualt = 0
-    AfterHitAbilities = 1
-    AfterFixedDelay = 2
-
-class ChangeSkillCardCostBaseType(IntEnum):
-    Target = 0
-    Caster = 1
-    None_ = 2
-
-class CheckConditionOperator(IntEnum):
-    And = 0
-    Or = 1
-
-class ComparisonOperator(IntEnum):
-    Equal = 0
-    NotEqual = 1
-    Less = 2
-    LessOrEqual = 3
-    Greater = 4
-    GreaterOrEqual = 5
-
-class CrowdControlGaugeApplyType(IntEnum):
-    Default = 0
-    IncludeImmune = 1
-
-class DamageByHitRemoveCondition(IntEnum):
-    None_ = 0
-    HpRateOver = 1
-    HpRateUnder = 2
-    TriggerCountOver = 3
-
-class DamageByHitTriggerType(IntEnum):
-    None_ = 0
-    Damaged = 1
-    Healed = 2
-
-class DamageOverTimeRemoveCondition(IntEnum):
-    None_ = 0
-    HpRateOver = 1
-    HpRateUnder = 2
-
-class ForceApplyCheckTargetSide(IntEnum):
-    None_ = 0
-    Ally = 1
-    Enemy = 2
-
-class GaugeChargeConditionType(IntEnum):
-    None_ = 0
-    Period = 1
-    UseSkill = 2
-
-class HealByHitRemoveCondition(IntEnum):
-    None_ = 0
-    HpRateOver = 1
-    HpRateUnder = 2
-    TriggerCountOver = 3
-
-class HealByHitTriggerType(IntEnum):
-    None_ = 0
-    Damaged = 1
-    Healed = 2
-
-class HighlightOption(IntEnum):
-    None_ = 0
-    Highlight = 1
-    HighlightAndFactor = 2
-
-class HPRateConstraintType(IntEnum):
-    None_ = 0
-    HPOver = 1
-    HPUnder = 2
-
-class IncludeType(IntEnum):
-    None_ = 0
-    Include = 1
-    Exclude = 2
-
-class NontargetBounceCondition(IntEnum):
-    None_ = 0
-    Obstacle = 1
-    Boss = 2
-    Shield = 3
-
-class NormalAttackCondition(IntEnum):
-    None_ = 0
-    IsWeaponMounted = 1
-    MoveEndRequired = 2
-    TargetNotAvailable = 3
-    ForceMoveCommandExists = 4
-    BulletEmpty = 5
-    BurstRoundOver = 6
-    PublicSkillEnabled = 7
-    FormConversionRequired = 8
-    IsOrderByRandom = 9
-
-class NormalAttackPhaseName(IntEnum):
-    AttackEnter = 0
-    Reload = 1
-    AttackStart = 2
-    AttackIng = 3
-    AttackBurstDelay = 4
-    AttackFinish = 5
-    MountWeapon = 6
-    UnmountWeapon = 7
-    SearchNewTarget = 8
-    ExitNormalAttack = 9
-
-class OverLimitBehavior(IntEnum):
-    None_ = 0
-    Kill = 1
-    Retreat = 2
-    OverLimitAbility = 3
-    ApplyAbilityAndRemoveFromGroup = 4
-
-class PassiveTriggerEvent(IntEnum):
-    None_ = 0
-    BattleEntity_NormalAttack = 1
-    BattleEntity_UseSkillStart = 2
-    BattleEntity_Attack = 3
-    BattleEntity_Damaged = 4
-    BattleEntity_Polling = 5
-    BattleEntity_Heal = 6
-    BattleEntity_Healed = 7
-    BattleEntity_Dying = 8
-    BattleEntity_Attacked = 9
-    BattleEntity_Dodged = 10
-    BattleEntity_AttackCritical = 11
-    BattleEntity_Died = 12
-    BattleEntity_KillEnemy = 13
-    BattleEntity_Reload = 14
-    BattleEntity_UseSkillEnd = 15
-    BattleEntity_AddLogicEffectTemplate = 16
-    BattleEntity_CoverStart = 17
-    BattleEntity_CoverEnd = 18
-    BattleEntity_DamageHit = 19
-    BattleEntity_RemoveLogicEffectTemplate = 20
-    BattleEntity_AddLogicEffectCategory = 21
-    BattleEntity_AddLogicEffectGroupId = 22
-    BattleEntity_RemoveLogicEffectGroupId = 23
-    BattleEntity_KillAlly = 24
-    BattleEntity_CountLogicEffectCategory = 25
-    BattleEntity_UseExSkillCost = 26
-    BattleEntity_AppliedLogicEffectCategory = 27
-    BattleEntity_AppliedLogicEffectGroupId = 28
-    BattleEntity_AppliedLogicEffectTemplate = 29
-    BattleEntity_AppliedLogicEffectData = 30
-    BattleEntity_KillShot_Damaged = 31
-    BattleEntity_DecreasedAmmoCount = 32
-    BattleEntity_DispelLogicEffectCategory = 33
-    BattleEntity_DispelledLogicEffectCategory = 34
-    Immediate = 35
-    Battle_Periodic = 36
-    Battle_Polling = 37
-    BattleEntityState_OnOff = 38
-    BattleEntityState_NotMoving = 39
-    BattleEntityState_Reloading = 40
-    BattleEntityState_Moving = 41
-
-class SameAuraCheckCondition(IntEnum):
-    None_ = 0
-    SameInvokerEntityId = 1
-    SameInvokerTeam = 2
-    SameSkillId = 3
-    SameSkillEntityName = 4
-    All = 5
-
-class SkillCardCopyEndCondition(IntEnum):
-    TriggerCount = 0
-    None_ = 1
-
-class SkillLogicType(IntEnum):
-    None_ = 0
-    Active = 1
-    Passive = 2
-    Manual = 3
-
-class StatPhase(IntEnum):
-    Invalid = 0
-    DefaultStat = 1
-    InitialStat = 2
-    CurrentStat = 3
-    ArenaResultStat = 4
-
-class TransformDecideTiming(IntEnum):
-    SkillStart = 0
-    EntitySpawn = 1
-
-class AreaTransformTypes(IntEnum):
-    None_ = 0
-    RadiusIncrement = 1
-    RadiusDecrement = 2
-    ObbCenterIncrement = 3
-    ObbCenterDecrement = 4
-    FanClockWise = 5
-    FanCounterClockWise = 6
-    FanClockwiseRound = 7
-    FanCounterClockwiseRound = 8
-
-class ForceMoveType(IntEnum):
-    None_ = 0
-    ToTarget = 1
-    FromTarget = 2
-    EntityDirection = 3
-    TeamDirection = 4
-    InvokerDirection = 5
-
-class ModifierCheckTarget(IntEnum):
-    Caster = 0
-    Target = 1
-    CasterAlly = 2
-    CasterEnemy = 3
-    All = 4
-    CasterAllyExceptCaster = 5
-
-class AttackLogicEffectType(IntEnum):
-    Damage = 0
-    DeadlyAttack = 1
-    TransferredDamage = 2
-    DamageOverTime = 3
-    ChangeDamageOverTime = 4
-    DamageByHit = 5
-    ExtraStatDamage = 6
-    AccumulateDamage = 7
-    MaxHPCapGauge = 8
-
-class BattleEndType(IntEnum):
-    None_ = 0
-    AllNearlyDead = 1
-    TimeOut = 2
-    EscortFailed = 3
-    Clear = 4
-
-class BattleLogicState(IntEnum):
-    None_ = 0
-    Preparing = 1
-    InProgress = 2
-    Finished = 3
-    Paused = 4
-
-class HitResultTypes(IntEnum):
-    None_ = 0
-    NormalHit = 1
-    CriticalHit = 2
-    Block = 3
-    Dodge = 4
-    Immune = 5
-    All = 6
-
-class PlayEndPointType(IntEnum):
-    End = 0
-    LoopEnd = 1
-
-class PlayStartPointType(IntEnum):
-    Start = 0
-    LoopStart = 1
-
-class EmojiSide(IntEnum):
-    Default = 0
-    Left = 1
-    Right = 2
-
-class AllClearCondition(IntEnum):
-    LastWaveClear = 0
-    AllSpawnedEnemyDied = 1
-
-class AreaShapeType(IntEnum):
-    Rect = 0
-    Circle = 1
-
-class AreaTargetType(IntEnum):
-    Player = 0
-    Enemy = 1
-    Anyone = 2
-    EnemySpawnTemplateId = 3
-    PlayerAll = 4
-    PlayerSpawnTemplateId = 5
-
-class AreaTriggerType(IntEnum):
-    Enter = 0
-    Stay = 1
-    Exit = 2
-
-class CharacterDeadCheckType(IntEnum):
-    SpawnedCharacterDead = 0
-    All = 1
-
-class EndFindGiftCompareType(IntEnum):
-    LessThanOrEqual = 0
-    GreaterThanOrEqual = 1
-
-class GroundEventOperatorType(IntEnum):
-    AND = 0
-    OR = 1
-
-class SkillCardState(IntEnum):
-    None_ = 0
-    InHand = 1
-    InDeck = 2
-    Used = 3
-    Cast = 4
-    InputReceived = 5
-    CoolTime = 6
-    CoolTimeComplete = 7
-    Disabled = 8
-    Waiting = 9
-    Switched = 10
-
-class SkillCardUpdateEvent(IntEnum):
-    New = 0
-    Modify = 1
-    Dispell = 2
-    Remove = 3
-
-class GroupStatTypes(IntEnum):
-    None_ = 0
-    MaxHitPoint = 1
-    CurrentHitPoint = 2
-    PhysicalAttack = 3
-    AliveHeroes = 4
-    DeadHeroes = 5
-    KillCount = 6
-    BestCondition = 7
-    GradeSum = 8
-    LevelSum = 9
-    CardCastCount = 10
-
-class GroupTag(IntEnum):
-    None_ = 0
-    Group01 = 1
-    Group02 = 2
-    Group03 = 3
-    Group04 = 4
-    Group05 = 5
-    Group06 = 6
-    Group07 = 7
-    Group08 = 8
-    Group09 = 9
-    Group10 = 10
-    Group11 = 11
-    Group12 = 12
-    Group13 = 13
-    Group14 = 14
-    Group15 = 15
-    Group16 = 16
-
-class BattleLogActionType(IntEnum):
-    None_ = 0
-    Given = 1
-    Taken = 2
-
-class BattleLogCategory(IntEnum):
-    None_ = 0
-    Damage = 1
-    Heal = 2
-
-class BattleLogSourceType(IntEnum):
-    None_ = 0
-    Normal = 1
-    Ex = 2
-    Public = 3
-    Passive = 4
-    ExtraPassive = 5
-    Etc = 6
-
-class CardStatus(IntEnum):
-    None_ = 0
-    NotCasted = 1
-    Castable = 2
-    Casting = 3
-    Applied = 4
-    Cancelled = 5
-    Fizzled = 6
-
-class SteeringTypes(IntEnum):
-    None_ = 0
-    Seek = 1
-    Flee = 2
-    Forward = 3
-    Backward = 4
-    Wander = 5
-    Separation = 6
-    Alignment = 7
-    Cohesion = 8
-    AvoidObstacle = 9
-    AvoidWall = 10
-    Pursuit = 11
-    Evade = 12
-    Arrive = 13
-    InterPose = 14
-    Breakthrough = 15
-    Stop = 16
-    All = 17
-
-class BehaviorResult(IntEnum):
-    Failure = 0
-    Success = 1
-    Running = 2
-
-class AbilityActivateTag(IntEnum):
-    None_ = 0
-    ActionStart = 1
-    ActionRelease = 2
-    ActionEnd = 3
-
-class AuraProcedureCommandType(IntEnum):
-    None_ = 0
-    AuraCancel = 1
-    SpawnSkillEntity = 2
-
-class AuraProcedureConditionType(IntEnum):
-    None_ = 0
-    LogicEffectTemplate = 1
-    LogicEffectGroupId = 2
-    LogicEffectCategory = 3
-
-class AuraProcedureTriggerType(IntEnum):
-    None_ = 0
-    TargetEnter = 1
-    TargetExit = 2
-    AuraDuration = 3
-
-class AutoUseConditionType(IntEnum):
-    None_ = 0
-    Interval = 1
-    HpUnder = 2
-    HasLogicEffectCategory = 3
-    AmmoCountUnder = 4
-    OnAttackIng = 5
-    KillTarget = 6
-    GainBattleItem = 7
-    HitLogicEffectCategory = 8
-    HpOver = 9
-    CriticalAttack = 10
-    CriticalAttacked = 11
-    Healed = 12
-    Dodged = 13
-    Blocked = 14
-    CoverTime = 15
-    UseSkill = 16
-    HitLogicEffectGroupId = 17
-    HitLogicEffectTemplateId = 18
-    Attacked = 19
-    RemoveLogicEffectTemplateId = 20
-
-class EntitySpawnCondition(IntEnum):
-    None_ = 0
-    HPRateUnder = 1
-    HPRateOver = 2
-    IncludeLogicEffectTemplateId = 3
-    ExcludeLogicEffectTemplateId = 4
-    Rate = 5
-    IncludeArmorType = 6
-    ExcludeArmorType = 7
-    SkillLevel = 8
-    IncludeTag = 9
-    ExcludeTag = 10
-    UsedExtraSkillCostSameOrOver = 11
-    UsedExtraSkillCostSameOrUnder = 12
-    IncludeFormIndex = 13
-    ExcludeFormIndex = 14
-    TargetSideId = 15
-
-class EntitySpawnConditionCheckTarget(IntEnum):
-    Caster = 0
-    Target = 1
-    SpawnEntityTarget = 2
-
-class EntitySpawnRule(IntEnum):
-    SpawnAll = 0
-    SpawnOnlyOne = 1
-    SpawnOnlyOnePerFrame = 2
-
-class ExtraStatType(IntEnum):
-    None_ = 0
-    InvokerCurrentHP = 1
-    TargetCurrentHP = 2
-    InvokerMaxHP = 3
-    TargetMaxHP = 4
-    InvokerLostHP = 5
-    TargetLostHP = 6
-    InvokerMaxHPCapGaugeValue = 7
-    TargetMaxHPCapGaugeValue = 8
-    InvokerDefaultDefense = 9
-    TargetDefaultDefense = 10
-    InvokerCurrentDefense = 11
-    TargetCurrentDefense = 12
-
-class MovingAreaOptions(IntEnum):
-    None_ = 0
-    FixedAim = 1
-    CheckSpawnPositionOutOfMovingArea = 2
-
-class ProjectileTypes(IntEnum):
-    None_ = 0
-    TargetCharacter = 1
-    TargetPosition = 2
-    Nontarget = 3
-    Max = 4
-
-class DamageCriticalType(IntEnum):
-    None_ = 0
-    Never = 1
-    Check = 2
-    Always = 3
-
-class LifeGainType(IntEnum):
-    None_ = 0
-    Heal = 1
-    Recover = 2
-
-class SkillApplyType(IntEnum):
-    None_ = 0
-    Direct = 1
-    Hitscan = 2
-    AlwaysBlocked = 3
-
-class DamageRatioApplyType(IntEnum):
-    None_ = 0
-    Both = 1
-    Caster = 2
-    Target = 3
-
-class SkillProperty(IntEnum):
-    None_ = 0
-    ReuseCoolTime = 1
-    CoolTime = 2
-    CoolTimeAndStartCoolTime = 3
-    ProjectileRange = 4
-    TargetingRange = 5
-    Invalid = 6
-
-class SkillToTargetDistributeType(IntEnum):
-    None_ = 0
-    EachToEachTarget = 1
-    AllToOneTarget = 2
-    OneToAllTarget = 3
-
-class SkillType(IntEnum):
-    None_ = 0
-    Ex = 1
-    Passive = 2
-    Leader = 3
-    Normal = 4
-    ExtraPassive = 5
-    Public = 6
-    GroupBuff = 7
-    HexaBuff = 8
-    EventBuff = 9
-    TimeAttackGeasPassive = 10
-    HiddenPassive = 11
-
-class SpawnDirectionTypes(IntEnum):
-    None_ = 0
-    Invoker = 1
-    Input = 2
-    ToTarget = 3
-    AllyToEnemy = 4
-    EnemyToAlly = 5
-    AliveAllyCenter = 6
-    AliveEnemyCenter = 7
-    WorldPosition = 8
-    CasterToTarget = 9
-    TargetToCaster = 10
-
-class SpawnPositionTypes(IntEnum):
-    None_ = 0
-    Invoker = 1
-    InputPosition = 2
-    InputBattleEntity = 3
-    AliveAllyCenter = 4
-    AliveEnemyCenter = 5
-    GroundCenter = 6
-    BattleEntity = 7
-    WorldPosition = 8
-    SkillCommandSelectedTarget = 9
-    SkillCommandSelectedPosition = 10
-    ProcedureTriggeredTarget = 11
-    ProcedureTriggeredPosition = 12
-
-class AliveState(IntEnum):
-    None_ = 0
-    Alive = 1
-    Dying = 2
-    Dead = 3
-    AliveOrDying = 4
-    AliveOrDead = 5
-    DeadOrDying = 6
-    All = 7
-
-class CoverState(IntEnum):
-    None_ = 0
-    NotCovered = 1
-    Covered = 2
-
-class TargetEntityType(IntEnum):
-    None_ = 0
-    Character = 1
-    Character_Except_TSS = 2
-    TSS = 3
-    Supporter = 4
-    Obstacle = 5
-
-class TargetingType(IntEnum):
-    None_ = 0
-    Target = 1
-    Position = 2
-
-class TargetSideId(IntEnum):
-    None_ = 0
-    Self = 1
-    Ally_Except_Self = 2
-    Enemy = 3
-    Neutral = 4
-    Ally = 5
-    Self_or_Enemy = 6
-    Self_or_Neutral = 7
-    Ally_or_Enemy = 8
-    Ally_or_Neutral = 9
-    Enemy_or_Neutral = 10
-    All_Except_Self = 11
-    ALL = 12
-
-class TargetSortCriteria(IntEnum):
-    None_ = 0
-    CurrentHP = 1
-    MaxHP = 2
-    HPRate = 3
-    Distance = 4
-    AttackPower = 5
-    DefensePower = 6
-    BuffCount = 7
-    DebuffCount = 8
-    CrowdControlCount = 9
-    LogicEffectTemplateCount = 10
-    Stat = 11
-    SummonedTime = 12
-    All = 13
-
-class PassiveSkillTargetType(IntEnum):
-    None_ = 0
-    UseTriggerSource = 1
-    UseTriggerTarget = 2
-    UseSkillEntityTargetingRule = 3
-    UseTriggerTargetExceptSelf = 4
-
-class ManualSkillTypes(IntEnum):
-    None_ = 0
-    GroupBuff = 1
-    StrategyBuff = 2
-    EventBuff = 3
-
-class ChangeStatLogicApplicationGaugeTraceType(IntEnum):
-    None_ = 0
-    HPRate = 1
-
-class DamageSourceType(IntEnum):
-    None_ = 0
-    DamageOverTime = 1
-    ChangeDamageOverTime = 2
-    DamageByHit = 3
-    ExtraStatDamage = 4
-
-class LogicEffectType(IntEnum):
-    None_ = 0
-    Damage = 1
-    Heal = 2
-    StatChange = 3
-    StatusChange = 4
-    KnockBack = 5
-    StatusRemove = 6
-    ModifyCoolTime = 7
-    Revive = 8
-
-class ResolvePriority(IntEnum):
-    Dispel = 0
-    StatChange = 1
-    LifeGain = 2
-    StatusRemove = 3
-    Normal = 4
-    CrowdControlStatusAdd = 5
-    StatusAdd = 6
-    Damage = 7
-
-class StatChangeLayer(IntEnum):
-    Normal = 0
-    ForceApplied = 1
-
-class StatEvalType(IntEnum):
-    None_ = 0
-    Base = 1
-    Coefficient = 2
-
-class ConquestCommandType(IntEnum):
-    None_ = 0
-    PropAnimation = 1
-    Operator = 2
-    TileConquer = 3
-    TileUpgrade = 4
-    BossOpen = 5
-    StepComplete = 6
-    MassErosion = 7
-    Erosion = 8
-    ErosionRemove = 9
-    StepOpen = 10
-    BossClear = 11
-    HideConquestUI = 12
-    ShowConquestUI = 13
-    HideHexaUI = 14
-    ShowHexaUI = 15
-    StepObjectComplete = 16
-    CameraSetting = 17
-    PropAnimationHold = 18
-    CheckTileErosion = 19
-    PlayMapEnterScenario = 20
-    UnexpectedEvent = 21
-    TileConquerReward = 22
-
-class ConquestConditionType(IntEnum):
-    None_ = 0
-    TileFriendlyTerritory = 1
-    StepTileComplete = 2
-    StepBossDead = 3
-    StepOpen = 4
-    DeadUnitLeader = 5
-    TileUniqueId = 6
-    UnitOpen = 7
-    StepObjectComplete = 8
-
-class ConquestDisplayType(IntEnum):
-    None_ = 0
-    TileConquered = 1
-    TileUpgraded = 2
-    UnexpectedEvent = 3
-    BossOpen = 4
-    PropAnimation = 5
-    PropAnimationAndBlock = 6
-    PropAnimationHoldAndPlay = 7
-    Operator = 8
-    StepComplete = 9
-    MassErosion = 10
-    Erosion = 11
-    ErosionRemove = 12
-    CheckTileErosion = 13
-    StepOpen = 14
-    BossClear = 15
-    HideConquestUI = 16
-    ShowConquestUI = 17
-    HideHexaUI = 18
-    ShowHexaUI = 19
-    StepObjectComplete = 20
-    CameraSetting = 21
-    PlayMapEnterScenario = 22
-    ShowTileConquerReward = 23
-
-class MultipleConditionCheckType(IntEnum):
-    And = 0
-    Or = 1
-
-class ConquestTriggerType(IntEnum):
-    None_ = 0
-    TileConquer = 1
-    TileUpgrade = 2
-    MapEnter = 3
-    SyncState = 4
-    AcquireCalculateReward = 5
-    UnexpectedEvent = 6
-    MassErosion = 7
-    MassErosionEnd = 8
-    TileErosion = 9
-    TileErosionEnd = 10
-
-class ClearCondition(IntEnum):
-    EnemyAllDead = 0
-    BossKill = 1
-
-class HexaTileMapCommandType(IntEnum):
-    PlayScenario = 0
-    SpawnUnitInTile = 1
-    SpawnStrategyObjectInTile = 2
-
-class HexaTileMapConditionType(IntEnum):
-    PlayerTurnStart = 0
-    EnemyTurnStart = 1
-    UnitDead = 2
-    PlayerArrivedInTileFirstTime = 3
-
-class Direction(IntEnum):
-    Right = 0
-    RightTop = 1
-    LeftTop = 2
-    Left = 3
-    LeftBottom = 4
-    RightBottom = 5
-
-class HexaDisplayType(IntEnum):
-    None_ = 0
-    EndBattle = 1
-    PlayScenario = 2
-    SpawnUnitFromUniqueId = 3
-    StatBuff = 4
-    DieUnit = 5
-    HideStrategy = 6
-    SpawnUnit = 7
-    SpawnStrategy = 8
-    SpawnTile = 9
-    HideTile = 10
-    ClearFogOfWar = 11
-    MoveUnit = 12
-    WarpUnit = 13
-    SetTileMovablity = 14
-    WarpUnitFromHideTile = 15
-    BossExile = 16
-
-class MultipleConditionCheckType(IntEnum):
-    And = 0
-    Or = 1
-
-class HexaConditionType(IntEnum):
-    None_ = 0
-    StartCampaign = 1
-    TurnBeginEnd = 2
-    UnitDead = 3
-    PlayerArrivedInTileFirstTime = 4
-    AnyEnemyDead = 5
-    EveryTurn = 6
-    EnemyArrivedInTileFirstTime = 7
-    SpecificEnemyArrivedInTileFirstTime = 8
-
-class HexaCommandType(IntEnum):
-    None_ = 0
-    UnitSpawn = 1
-    PlayScenario = 2
-    StrategySpawn = 3
-    TileSpawn = 4
-    TileHide = 5
-    EndBattle = 6
-    WaitTurn = 7
-    StrategyHide = 8
-    UnitDie = 9
-    UnitMove = 10
-    CharacterEmoji = 11
-
-class PatchPackType(IntEnum):
-    None_ = 0
-    Patch = 1
-    Full = 2
-
-class PatchPackType(IntEnum):
-    None_ = 0
-    AssetBundle = 1
-    Table = 2
-    Media = 3
-
-class PatchState(IntEnum):
-    enableUnzip = 0
-    threshold = 1
-
-class PatchType(IntEnum):
-    Asset = 0
-    Table = 1
-    Media = 2
-
-class PatchDownloadType(IntEnum):
-    FULL = 0
-    SPLIT = 1
-    NONE = 2
-
-class BundlePatchMode(IntEnum):
-    FULL_PATCH = 0
-    UPDATE_PATCH = 1
-    NONE = 2
-
-class PatchStatus(IntEnum):
-    None_ = 0
-    ClientNetworkUnreachable = 1
-    PatchServerNotRespond = 2
-    InvalidUri = 3
-    HashFileNotExists = 4
-    PatchRequired = 5
-    PatchUnnecessary = 6
-    DownloadCatalogHashFailed = 7
-    DownloadCatalogFailed = 8
-    DownloadCatalogSuccess = 9
-    NoNeedToDownloadCatalog = 10
-    DownloadBundleFailed = 11
-    DownloadingPatch = 12
-    DownloadComplete = 13
-    DownloadStart = 14
-    PatchPackUnZip = 15
-    ValidatingPatch = 16
-    ValidateFailed = 17
-    ProcessComplete = 18
-    DiskFull = 19
-
-class DownloadBundleStatus(IntEnum):
-    None_ = 0
-    DownloadAddressableCatalogFailed = 1
-    DownloadCatalogSuccess = 2
-    DownloadMediaCatalogFailed = 3
-    DownloadTableCatalogFailed = 4
-    DownloadAssetCatalogFailed = 5
-    DeviceNotEnoughFreeSpace = 6
-    DownloadBundleFailed = 7
-    DownloadSuccess = 8
-    DownloadCRCFailed = 9
-
-class DLAssetType(IntEnum):
-    Bundle = 0
-    Table = 1
-    Media = 2
-    Dir = 3
-
-class AnimatorState(IntEnum):
-    Idle = 0
-    Attack = 1
-    Move = 2
-    Die = 3
-    PublicSkill1 = 4
-    PublicSkill2 = 5
-    PublicSkill3 = 6
-    Delay = 7
-    None_ = 8
-
-class CharacterState(IntEnum):
-    Idle = 0
-    Move = 1
-    Attack = 2
-    Die = 3
-    PublicSkill1 = 4
-    PublicSkill2 = 5
-    PublicSkill3 = 6
-    Delay = 7
-
-class StatType(IntEnum):
-    AttackPower = 0
-    DefensePower = 1
-    MoveSpeed = 2
-    AttackRange = 3
-    CriticalRate = 4
-    CriticalDamageRate = 5
-    ShotTime = 6
-    Hp = 7
-    LifeStealRate = 8
-    EvasionRate = 9
-
-class MGSGameMode(IntEnum):
-    Normal = 0
-    Hard = 1
-    Free = 2
-
-class PassProductType(IntEnum):
-    None_ = 0
-    Normal = 1
-    Premium = 2
-    DiscountPremium = 3
-
-class ConquestEventObjectType(IntEnum):
-    None_ = 0
-    UnexpectedEnemy = 1
-    TreasureBox = 2
-    Erosion = 3
-    End = 4
-
-class ServerStatus(IntEnum):
-    None_ = 0
-    Open = 1
-    WhiteListOnly = 2
-    Error = 3
-    Maintenance = 4
-
-class PopupType(IntEnum):
-    Always = 0
-    OneTime = 1
-
-class BannerDisplayType(IntEnum):
-    Lobby = 0
-    Gacha = 1
-
-class GuidePopupType(IntEnum):
-    SurveyGuidePopup = 0
-    GuidePopup = 1
-
-class CraftType(IntEnum):
-    Craft = 0
-    ShiftingCraft = 1
-
-class CharacterElephBonusType(IntEnum):
-    None_ = 0
-    Pickup = 1
-    Bonus = 2
-    PickupFirstGet = 3
-
-class LayerButtonType(IntEnum):
-    InnerButton = 0
-    Lobby_StudentRecord = 1
-    Lobby_Social = 2
-
-class ReddotType(IntEnum):
-    Off = 0
-    Yellow = 1
-    Red = 2
-
-class EmblemFromUIType(IntEnum):
-    None_ = 0
-    ListPopup_Select = 1
-    ListPopup_Element = 2
-    InfoOnly = 3
-    ContentsDisplay = 4
-    BattlePass = 5
-
-class GameSpeedType(IntEnum):
-    NormalSpeed = 0
-    FastSpeed = 1
-    SlowSpeed = 2
-
-class RaidDifficultyFilter(IntEnum):
-    All = 0
-    Normal = 1
-    Hard = 2
-    VeryHard = 3
-    HardCore = 4
-    Extreme = 5
-    Insane = 6
-    Torment = 7
-    Lunatic = 8
-
-class Mute(IntEnum):
-    On = 0
-    Off = 1
-
-class SkillCutIn(IntEnum):
-    Always = 0
-    OnceADay = 1
-    Never = 2
-
-class RaidRetryCutScene(IntEnum):
-    Always = 0
-    Never = 1
-
-class SupplyCard(IntEnum):
-    Auto = 0
-    Manual = 1
-
-class Resolution(IntEnum):
-    VeryHigh = 0
-    High = 1
-    Normal = 2
-    Low = 3
-
-class FPS(IntEnum):
-    High = 0
-    Normal = 1
-
-class ToggleValue(IntEnum):
-    On = 0
-    Off = 1
-
-class ToggleValueReverse(IntEnum):
-    Off = 0
-    On = 1
-
-class LeftUIValue(IntEnum):
-    Right = 0
-    Left = 1
-
-class DrawcallMode(IntEnum):
-    SRPBatcher = 0
-    DynamicBatching = 1
-    Off = 2
-
-class AntiAliasing(IntEnum):
-    Off = 0
-    On = 1
-
-class ShaderQuality(IntEnum):
-    Normal = 0
-    Low = 1
-
-class MemoryLobbyAni(IntEnum):
-    Always = 0
-    OnceADay = 1
-    Never = 2
-
-class RandomLobby(IntEnum):
-    Always = 0
-    OnceADay = 1
-    Never = 2
-
-class CafeAllowCopyPresetCategory(IntEnum):
-    All = 0
-    Part = 1
-    None_ = 2
-
-class CafeAllowCopyPresetSubCategory(IntEnum):
-    CircleAndFriend = 0
-    CircleOnly = 1
-    FriendOnly = 2
-
-class ScenarioTextDisplaySpeed(IntEnum):
-    Slow = 0
-    Default = 1
-    Fast = 2
-    Instant = 3
-
-class ScenarioAutoWaitTime(IntEnum):
-    Long = 0
-    Default = 1
-    Short = 2
-    VeryShort = 3
-
-class OptionTab(IntEnum):
-    None_ = 0
-    Game = 1
-    Graphic = 2
-    Sound = 3
-    Notice = 4
-    Title = 5
-    Story = 6
-    Control = 7
-
-class MinigameNoteScale(IntEnum):
-    Big = 0
-    Medium = 1
-    Small = 2
-
-class MinigameNoteColor(IntEnum):
-    Set1 = 0
-    Set2 = 1
-
-class RenderScaleMultiplier(IntEnum):
-    X10 = 0
-    X12 = 1
-    X14 = 2
-    X16 = 3
-    X18 = 4
-    X20 = 5
-
-class VoiceLang(IntEnum):
-    CN = 0
-    JP = 1
-
-class OptionType(IntEnum):
-    None_ = 0
-    BGM = 1
-    FXSound = 2
-    VoiceSound = 3
-    SkillCutIn = 4
-    SupplyCard = 5
-    Resolution = 6
-    FPS = 7
-    MemoryLobbyAni = 8
-    RandomLobby = 9
-    AllowSamePersonality = 10
-    NotificationApCharge = 11
-    NotificationCafeCharge = 12
-    ArenaBattleSkip = 13
-    LetterBoxInBattle = 14
-    MemoryClearByUI = 15
-    RaidRetryCutScene = 16
-    TitleVideoAudio = 17
-    VoiceSubtitle = 18
-    HideBuffIconsPassive = 19
-    HideBuffIconsSpecialStudentExtraPassive = 20
-    EXSkillPinPointMyUnit = 21
-    EXSkillPinPointAllyEtc = 22
-    LeftUI = 23
-    ArenaHideOtherUsernames = 24
-    ArenaHideMyUsername = 25
-    CafeAllowCopyPresetCategory = 26
-    CafeAllowCopyPresetSubCategory = 27
-    Master = 28
-    ShowFurnitureBubbles = 29
-    DrawcallMode = 30
-    AllowPostProcess = 31
-    AntiAliasing = 32
-    GraphicsDesc = 33
-    VoiceLanguage = 34
-    ScreenRatio = 35
-    ScreenMode = 36
-    BackgroundSound = 37
-    ControlDisplay = 38
-    VSync = 39
-    MXMouseCursor = 40
-    RenderScale = 41
-    NoteSpeed = 42
-    NoteTiming = 43
-    NoteColor = 44
-    NoteScale = 45
-    Fever = 46
-    NoteSFX = 47
-    AutoSelect = 48
-    AutoSkipReward = 49
-    AutoNextEpisode = 50
-    ScenarioTextDisplaySpeed = 51
-    ScenarioAutoWaitTime = 52
-
-class GaugeAttachType(IntEnum):
-    HPBar = 0
-    BottomUI = 1
-
-class CommandType(IntEnum):
-    Play = 0
-    Stop = 1
-
-class AudioSourceStates(IntEnum):
-    None_ = 0
-    Delay = 1
-    Playing = 2
-    FadeOut = 3
-
-class AlignDirection(IntEnum):
-    None_ = 0
-    EffectBone = 1
-    Target = 2
-    Caster = 3
-    TargetToCaster = 4
-    CasterToTarget = 5
-    EntityDirection = 6
-    Identity = 7
-
-class EffectPositionSource(IntEnum):
-    None_ = 0
-    Invoker = 1
-    Target = 2
-    Position = 3
-    AllyBack = 4
-    EnemyBack = 5
-    WorldPosition = 6
-    ProjectileEntity = 7
-    ProjectileDestination = 8
-
-class HeliState(IntEnum):
-    None_ = 0
-    Ready = 1
-    Appear = 2
-    Idle = 3
-    Disappear = 4
-    Max = 5
-
-class FacingTargetType(IntEnum):
-    Trajectory = 0
-    Target = 1
-    InitDirection = 2
-
-class ShowPointType(IntEnum):
-    Current = 0
-    Original = 1
-    Layer = 2
-
-class BattleResultSkipType(IntEnum):
-    None_ = 0
-    SkipPopup = 1
-    SkipTimeline = 2
-
-class BattleSceneState(IntEnum):
-    None_ = 0
-    Preparing = 1
-    InBattle = 2
-    Ending = 3
-    ShowResult = 4
-    Paused = 5
-    SkillTargetSelect = 6
-    ShowTargetPopup = 7
-    AskContinue = 8
-    ShowUltimate = 9
-    Replicate = 10
-    WaitPeer = 11
-    WaitSyncTurn = 12
-
-class ForwardVector(IntEnum):
-    Forward = 0
-    Right = 1
-    Up = 2
-    Back = 3
-    Left = 4
-    Down = 5
-
-class SkillRangeDecalShapeType(IntEnum):
-    Unknown = 0
-    Rect = 1
-    Circle = 2
-    Fan = 3
-    Donut = 4
-    Custom = 5
-
-class MinigameSFXType(IntEnum):
-    EmptyHit = 0
-    SingleHit = 1
-    DoubleHit = 2
-    FlickHit = 3
-    LongHit = 4
-
-class CCGEntityStatType(IntEnum):
-    None_ = 0
-    MaxHealth = 1
-    ActiveCost = 2
-    ActiveCooldown = 3
-    PassiveActivateCount = 4
-    ActiveSkillPowerOffset = 5
-    PassiveSkillPowerOffset = 6
-    StrikerSwapCost = 7
-
-class CCGLogicEffectDecayFlag(IntEnum):
-    None_ = 0
-    DecayByTurn = 1
-    DecayByPassiveSkillTriggered = 2
-
-class CCGLogicEffectStackOverwriteRule(IntEnum):
-    Ignore = 0
-    Add = 1
-    SetMax = 2
-
-class CCGLogicEffectSourceOverwriteRule(IntEnum):
-    Ignore = 0
-    Overwrite = 1
-
-class CCGBuffType(IntEnum):
-    Buff = 0
-    Debuff = 1
-
-class CCGTargetCategoryRule(IntEnum):
-    Empty = 0
-    User = 1
-    Opponent = 2
-    AnyPlayer = 3
-    FrontStrikerChar = 4
-    BackStrikerChar = 5
-    StrikerChar = 6
-    SpecialChar = 7
-    SpellCard = 8
-    EquipmentCard = 9
-    ZoneCard = 10
-    AnyCharacter = 11
-    AnyCard = 12
-    AnyEntity = 13
-    Deck = 14
-    Hand = 15
-    Grave = 16
-    Battlefield = 17
-    NotBattlefield = 18
-    AnyLocation = 19
-
-class CCGLogAmountType(IntEnum):
-    None_ = 0
-    Heal = 1
-    Damage = 2
-    Shield = 3
-
-class CCGEntityLocation(IntEnum):
-    None_ = 0
-    Deck = 1
-    Grave = 2
-    Hand = 3
-    Battlefield = 4
-    Void = 5
-
-class CCGSkillInvokerType(IntEnum):
-    None_ = 0
-    Character = 1
-    Card = 2
-    LogicEffect = 3
-
-class CCGSkillLogType(IntEnum):
-    None_ = 0
-    Damage = 1
-    Heal = 2
-    Shield = 3
-
-class CCGDamageFlag(IntEnum):
-    Health = 0
-    Shield = 1
-    Default = 2
-
-class CCGButtonToggleTarget(IntEnum):
-    None_ = 0
-    SelectionConfirmed = 1
-    TurnEnd = 2
-    Shift = 3
-
-class CCGSkillType(IntEnum):
-    Active = 0
-    Passive = 1
-
-class NodeGroupClearStateType(IntEnum):
-    NotClearedStartNode = 0
-    NotCleared = 1
-    Cleared_NotNext = 2
-    Cleared_AndNext = 3
-
-class CCGToastPosition(IntEnum):
-    Top = 0
-    UpperTop = 1
-    Center = 2
-
-class CCGToastLifetime(IntEnum):
-    Persistent = 0
-    Timed = 1
-
-class CCGToastType(IntEnum):
-    Normal = 0
-    Rest = 1
-    ReplaceCharacter = 2
-
-class CCGPassiveTriggerLocationFlag(IntEnum):
-    None_ = 0
-    OnBattlefield = 1
-    OnHand = 2
-
-class CCGCompareOperator(IntEnum):
-    Equal = 0
-    NotEqual = 1
-    GreaterEqual = 2
-    Greater = 3
-    LessEqual = 4
-    Less = 5
-
-class CCGSkillVFXType(IntEnum):
-    Invalid = 0
-    EntityPoint = 1
-    Projectile = 2
-    Field = 3
-    Global = 4
-
-class CCGVFXSpawnPosition(IntEnum):
-    None_ = 0
-    bone_Card = 1
-    FX_Positon_Bone = 2
-    Field_Global = 3
-    Field_Side = 4
-
-class CCGHitActiveTiming(IntEnum):
-    OnEveryHit = 0
-    OnFirstHitOnly = 1
-    OnLastHitOnly = 2
-
-class CCGCollectionSelectRule(IntEnum):
-    First = 0
-    Random = 1
-    Last = 2
-
-class CCGInputState(IntEnum):
-    None_ = 0
-    SetFront = 1
-    SelectCharacters = 2
-    PendingUseEntity = 3
-    HandZoom = 4
-    UseEntity = 5
-    Directing = 6
-
-class CCGEffectState(IntEnum):
-    Start = 0
-    Idle = 1
-    End = 2
-
-class Pivot(IntEnum):
-    Left = 0
-    Center = 1
-
-class ScenarioDisplayOption(IntEnum):
-    All = 0
-    IntroOnly = 1
-    OutroOnly = 2
-
-class Trigger(IntEnum):
-    OnClick = 0
-    OnHover = 1
-    OnPress = 2
-    OnHoverTrue = 3
-    OnHoverFalse = 4
-    OnPressTrue = 5
-    OnPressFalse = 6
-    OnActivate = 7
-    OnActivateTrue = 8
-    OnActivateFalse = 9
-    OnDoubleClick = 10
-    OnSelect = 11
-    OnSelectTrue = 12
-    OnSelectFalse = 13
-    Manual = 14
-
-class Direction(IntEnum):
-    Reverse = 0
-    Toggle = 1
-    Forward = 2
-
-class EnableCondition(IntEnum):
-    DoNothing = 0
-    EnableThenPlay = 1
-    IgnoreDisabledState = 2
-
-class DisableCondition(IntEnum):
-    DisableAfterReverse = 0
-    DoNotDisable = 1
-    DisableAfterForward = 2
-
-class NotifyCollectionChangedAction(IntEnum):
-    Add = 0
-    Remove = 1
-    Replace = 2
-    Move = 3
-    Reset = 4
-
-class ShutdownTypes(IntEnum):
-    Running = 0
-    Gentle = 1
-    Immediate = 2
-
-class HTTPMethods(IntEnum):
-    Get = 0
-    Head = 1
-    Post = 2
-    Put = 3
-    Delete = 4
-    Patch = 5
-    Merge = 6
-    Options = 7
-
-class HTTPRequestStates(IntEnum):
-    Initial = 0
-    Queued = 1
-    Processing = 2
-    Finished = 3
-    Error = 4
-    Aborted = 5
-    ConnectionTimedOut = 6
-    TimedOut = 7
-
-class WebSocketStates(IntEnum):
-    Connecting = 0
-    Open = 1
-    Closing = 2
-    Closed = 3
-    Unknown = 4
-
-class WebSocketStausCodes(IntEnum):
-    NormalClosure = 0
-    GoingAway = 1
-    ProtocolError = 2
-    WrongDataType = 3
-    Reserved = 4
-    NoStatusCode = 5
-    ClosedAbnormally = 6
-    DataError = 7
-    PolicyError = 8
-    TooBigMessage = 9
-    ExtensionExpected = 10
-    WrongRequest = 11
-    TLSHandshakeError = 12
-
-class WebSocketFrameTypes(IntEnum):
-    Continuation = 0
-    Text = 1
-    Binary = 2
-    ConnectionClose = 3
-    Ping = 4
-    Pong = 5
-
-class TransportEventTypes(IntEnum):
-    Unknown = 0
-    Open = 1
-    Close = 2
-    Ping = 3
-    Pong = 4
-    Message = 5
-    Upgrade = 6
-    Noop = 7
-
-class SocketIOEventTypes(IntEnum):
-    Unknown = 0
-    Connect = 1
-    Disconnect = 2
-    Event = 3
-    Ack = 4
-    Error = 5
-    BinaryEvent = 6
-    BinaryAck = 7
-
-class SocketIOErrors(IntEnum):
-    UnknownTransport = 0
-    UnknownSid = 1
-    BadHandshakeMethod = 2
-    BadRequest = 3
-    Forbidden = 4
-    Internal = 5
-    User = 6
-    Custom = 7
-
-class States(IntEnum):
-    Initial = 0
-    Opening = 1
-    Open = 2
-    Paused = 3
-    Reconnecting = 4
-    Closed = 5
-
-class SupportedSocketIOVersions(IntEnum):
-    Unknown = 0
-    v2 = 1
-    v3 = 2
-
-class TransportTypes(IntEnum):
-    Polling = 0
-    WebSocket = 1
-
-class TransportStates(IntEnum):
-    Connecting = 0
-    Opening = 1
-    Open = 2
-    Closed = 3
-    Paused = 4
-
-class PayloadTypes(IntEnum):
-    Text = 0
-    Binary = 1
-
-class TransportEventTypes(IntEnum):
-    Unknown = 0
-    Open = 1
-    Close = 2
-    Ping = 3
-    Pong = 4
-    Message = 5
-    Upgrade = 6
-    Noop = 7
-
-class SocketIOEventTypes(IntEnum):
-    Unknown = 0
-    Connect = 1
-    Disconnect = 2
-    Event = 3
-    Ack = 4
-    Error = 5
-    BinaryEvent = 6
-    BinaryAck = 7
-
-class States(IntEnum):
-    Initial = 0
-    Opening = 1
-    Open = 2
-    Paused = 3
-    Reconnecting = 4
-    Closed = 5
-
-class TransportTypes(IntEnum):
-    Polling = 0
-    WebSocket = 1
-
-class TransportStates(IntEnum):
-    Connecting = 0
-    Opening = 1
-    Open = 2
-    Closed = 3
-    Paused = 4
-
-class TransportTypes(IntEnum):
-    WebSocket = 0
-    LongPolling = 1
-
-class TransferModes(IntEnum):
-    Binary = 0
-    Text = 1
-
-class TransportStates(IntEnum):
-    Initial = 0
-    Connecting = 1
-    Connected = 2
-    Closing = 3
-    Failed = 4
-    Closed = 5
-
-class ConnectionStates(IntEnum):
-    Initial = 0
-    Authenticating = 1
-    Negotiating = 2
-    Redirected = 3
-    Reconnecting = 4
-    Connected = 5
-    CloseInitiated = 6
-    Closed = 7
-
-class TransportEvents(IntEnum):
-    SelectedToConnect = 0
-    FailedToConnect = 1
-    Connected = 2
-    Closed = 3
-    ClosedWithError = 4
-
-class MessageTypes(IntEnum):
-    Handshake = 0
-    Invocation = 1
-    StreamItem = 2
-    Completion = 3
-    StreamInvocation = 4
-    CancelInvocation = 5
-    Ping = 6
-    Close = 7
-
-class ProtocolVersions(IntEnum):
-    Protocol_2_0 = 0
-    Protocol_2_1 = 1
-    Protocol_2_2 = 2
-
-class TransportTypes(IntEnum):
-    WebSocket = 0
-    ServerSentEvents = 1
-    LongPoll = 2
-
-class MessageTypes(IntEnum):
-    KeepAlive = 0
-    Data = 1
-    Multiple = 2
-    Result = 3
-    Failure = 4
-    MethodCall = 5
-    Progress = 6
-
-class ConnectionStates(IntEnum):
-    Initial = 0
-    Authenticating = 1
-    Negotiating = 2
-    Connecting = 3
-    Connected = 4
-    Reconnecting = 5
-    Closed = 6
-
-class RequestTypes(IntEnum):
-    Negotiate = 0
-    Connect = 1
-    Start = 2
-    Poll = 3
-    Send = 4
-    Reconnect = 5
-    Abort = 6
-    Ping = 7
-
-class TransportStates(IntEnum):
-    Initial = 0
-    Connecting = 1
-    Reconnecting = 2
-    Starting = 3
-    Started = 4
-    Closing = 5
-    Closed = 6
-
-class States(IntEnum):
-    Initial = 0
-    Connecting = 1
-    Open = 2
-    Retrying = 3
-    Closing = 4
-    Closed = 5
-
-class Algorithm(IntEnum):
-    Ed25519 = 0
-    Ed25519ctx = 1
-    Ed25519ph = 2
-
-class Algorithm(IntEnum):
-    Ed448 = 0
-    Ed448ph = 1
-
-class CmsAttributeTableParameter(IntEnum):
-    ContentType = 0
-    Digest = 1
-    Signature = 2
-    DigestAlgorithmIdentifier = 3
-
-class Choice(IntEnum):
-    Name = 0
-    Group = 1
-
-class Choice(IntEnum):
-    NotYoungerThan = 0
-    FullAgeAtCountry = 1
-    DateOfBirth = 2
-
-class Choice(IntEnum):
-    Certificate = 0
-    PublicKeyCertificate = 1
-    AttributeCertificate = 2
-
-class PkiStatus(IntEnum):
-    Granted = 0
-    GrantedWithMods = 1
-    Rejection = 2
-    Waiting = 3
-    RevocationWarning = 4
-    RevocationNotification = 5
-    KeyUpdateWarning = 6
-
-class Option(IntEnum):
-    NullChecks = 0
-    ArrayBoundsChecks = 1
-    DivideByZeroChecks = 2
-
-class FileStreamModes(IntEnum):
-    Create = 0
-    OpenRead = 1
-    OpenReadWrite = 2
-    Append = 3
-
-class Loglevels(IntEnum):
-    All = 0
-    Information = 1
-    Warning = 2
-    Error = 3
-    Exception = 4
-    None_ = 5
-
-class JsonType(IntEnum):
-    None_ = 0
-    Object = 1
-    Array = 2
-    String = 3
-    Int = 4
-    Long = 5
-    Double = 6
-    Boolean = 7
-
-class JsonToken(IntEnum):
-    None_ = 0
-    ObjectStart = 1
-    PropertyName = 2
-    ObjectEnd = 3
-    ArrayStart = 4
-    ArrayEnd = 5
-    Int = 6
-    Long = 7
-    Double = 8
-    String = 9
-    Boolean = 10
-    Null = 11
-
-class HTTPFormUsage(IntEnum):
-    Automatic = 0
-    UrlEncoded = 1
-    Multipart = 2
-
-class FutureState(IntEnum):
-    Pending = 0
-    Processing = 1
-    Success = 2
-    Error = 3
-
-class FlushType(IntEnum):
-    None_ = 0
-    Partial = 1
-    Sync = 2
-    Full = 3
-    Finish = 4
-
-class CompressionLevel(IntEnum):
-    None_ = 0
-    Level0 = 1
-    BestSpeed = 2
-    Level1 = 3
-    Level2 = 4
-    Level3 = 5
-    Level4 = 6
-    Level5 = 7
-    Default = 8
-    Level6 = 9
-    Level7 = 10
-    Level8 = 11
-    BestCompression = 12
-    Level9 = 13
-
-class CompressionStrategy(IntEnum):
-    Default = 0
-    Filtered = 1
-    HuffmanOnly = 2
-
-class CompressionMode(IntEnum):
-    Compress = 0
-    Decompress = 1
-
-class ConnectionEvents(IntEnum):
-    StateChange = 0
-    ProtocolSupport = 1
-
-class HostProtocolSupport(IntEnum):
-    Unknown = 0
-    HTTP1 = 1
-    HTTP2 = 2
-
-class PluginEvents(IntEnum):
-    SaveCookieLibrary = 0
-    SaveCacheLibrary = 1
-    AltSvcHeader = 2
-    HTTP2ConnectProtocol = 3
-
-class RequestEvents(IntEnum):
-    Upgraded = 0
-    DownloadProgress = 1
-    UploadProgress = 2
-    StreamingData = 3
-    StateChange = 4
-    Resend = 5
-    Headers = 6
-
-class HTTPConnectionStates(IntEnum):
-    Initial = 0
-    Processing = 1
-    WaitForProtocolShutdown = 2
-    Recycle = 3
-    Free = 4
-    Closed = 5
-    ClosedResendRequest = 6
-
-class SupportedProtocols(IntEnum):
-    Unknown = 0
-    HTTP = 1
-    WebSocket = 2
-    ServerSentEvents = 3
-
-class AuthenticationTypes(IntEnum):
-    Unknown = 0
-    Basic = 1
-    Digest = 2
-
-class Sign(IntEnum):
-    Negative = 0
-    Zero = 1
-    Positive = 2
-
-class AttributeTargets(IntEnum):
-    Assembly = 0
-    Module = 1
-    Class = 2
-    Struct = 3
-    Enum = 4
-    Constructor = 5
-    Method = 6
-    Property = 7
-    Field = 8
-    Event = 9
-    Interface = 10
-    Parameter = 11
-    Delegate = 12
-    ReturnValue = 13
-    GenericParameter = 14
-    All = 15
-
-class Base64FormattingOptions(IntEnum):
-    None_ = 0
-    InsertLineBreaks = 1
-
-class DateTimeKind(IntEnum):
-    Unspecified = 0
-    Utc = 1
-    Local = 2
-
-class DayOfWeek(IntEnum):
-    Sunday = 0
-    Monday = 1
-    Tuesday = 2
-    Wednesday = 3
-    Thursday = 4
-    Friday = 5
-    Saturday = 6
-
-class MidpointRounding(IntEnum):
-    ToEven = 0
-    AwayFromZero = 1
-
-class StringComparison(IntEnum):
-    CurrentCulture = 0
-    CurrentCultureIgnoreCase = 1
-    InvariantCulture = 2
-    InvariantCultureIgnoreCase = 3
-    Ordinal = 4
-    OrdinalIgnoreCase = 5
-
-class StringSplitOptions(IntEnum):
-    None_ = 0
-    RemoveEmptyEntries = 1
-
-class TypeCode(IntEnum):
-    Empty = 0
-    Object = 1
-    DBNull = 2
-    Boolean = 3
-    Char = 4
-    SByte = 5
-    Byte = 6
-    Int16 = 7
-    UInt16 = 8
-    Int32 = 9
-    UInt32 = 10
-    Int64 = 11
-    UInt64 = 12
-    Single = 13
-    Double = 14
-    Decimal = 15
-    DateTime = 16
-    String = 17
-
-class ConsoleColor(IntEnum):
-    Black = 0
-    DarkBlue = 1
-    DarkGreen = 2
-    DarkCyan = 3
-    DarkRed = 4
-    DarkMagenta = 5
-    DarkYellow = 6
-    Gray = 7
-    DarkGray = 8
-    Blue = 9
-    Green = 10
-    Cyan = 11
-    Red = 12
-    Magenta = 13
-    Yellow = 14
-    White = 15
-
-class ConsoleKey(IntEnum):
-    Backspace = 0
-    Tab = 1
-    Clear = 2
-    Enter = 3
-    Pause = 4
-    Escape = 5
-    Spacebar = 6
-    PageUp = 7
-    PageDown = 8
-    End = 9
-    Home = 10
-    LeftArrow = 11
-    UpArrow = 12
-    RightArrow = 13
-    DownArrow = 14
-    Select = 15
-    Print = 16
-    Execute = 17
-    PrintScreen = 18
-    Insert = 19
-    Delete = 20
-    Help = 21
-    D0 = 22
-    D1 = 23
-    D2 = 24
-    D3 = 25
-    D4 = 26
-    D5 = 27
-    D6 = 28
-    D7 = 29
-    D8 = 30
-    D9 = 31
-    A = 32
-    B = 33
-    C = 34
-    D = 35
-    E = 36
-    F = 37
-    G = 38
-    H = 39
-    I = 40
-    J = 41
-    K = 42
-    L = 43
-    M = 44
-    N = 45
-    O = 46
-    P = 47
-    Q = 48
-    R = 49
-    S = 50
-    T = 51
-    U = 52
-    V = 53
-    W = 54
-    X = 55
-    Y = 56
-    Z = 57
-    LeftWindows = 58
-    RightWindows = 59
-    Applications = 60
-    Sleep = 61
-    NumPad0 = 62
-    NumPad1 = 63
-    NumPad2 = 64
-    NumPad3 = 65
-    NumPad4 = 66
-    NumPad5 = 67
-    NumPad6 = 68
-    NumPad7 = 69
-    NumPad8 = 70
-    NumPad9 = 71
-    Multiply = 72
-    Add = 73
-    Separator = 74
-    Subtract = 75
-    Decimal = 76
-    Divide = 77
-    F1 = 78
-    F2 = 79
-    F3 = 80
-    F4 = 81
-    F5 = 82
-    F6 = 83
-    F7 = 84
-    F8 = 85
-    F9 = 86
-    F10 = 87
-    F11 = 88
-    F12 = 89
-    F13 = 90
-    F14 = 91
-    F15 = 92
-    F16 = 93
-    F17 = 94
-    F18 = 95
-    F19 = 96
-    F20 = 97
-    F21 = 98
-    F22 = 99
-    F23 = 100
-    F24 = 101
-    BrowserBack = 102
-    BrowserForward = 103
-    BrowserRefresh = 104
-    BrowserStop = 105
-    BrowserSearch = 106
-    BrowserFavorites = 107
-    BrowserHome = 108
-    VolumeMute = 109
-    VolumeDown = 110
-    VolumeUp = 111
-    MediaNext = 112
-    MediaPrevious = 113
-    MediaStop = 114
-    MediaPlay = 115
-    LaunchMail = 116
-    LaunchMediaSelect = 117
-    LaunchApp1 = 118
-    LaunchApp2 = 119
-    Oem1 = 120
-    OemPlus = 121
-    OemComma = 122
-    OemMinus = 123
-    OemPeriod = 124
-    Oem2 = 125
-    Oem3 = 126
-    Oem4 = 127
-    Oem5 = 128
-    Oem6 = 129
-    Oem7 = 130
-    Oem8 = 131
-    Oem102 = 132
-    Process = 133
-    Packet = 134
-    Attention = 135
-    CrSel = 136
-    ExSel = 137
-    EraseEndOfFile = 138
-    Play = 139
-    Zoom = 140
-    NoName = 141
-    Pa1 = 142
-    OemClear = 143
-
-class ConsoleModifiers(IntEnum):
-    Alt = 0
-    Shift = 1
-    Control = 2
-
-class ConsoleSpecialKey(IntEnum):
-    ControlC = 0
-    ControlBreak = 1
-
-class GCCollectionMode(IntEnum):
-    Default = 0
-    Forced = 1
-    Optimized = 2
-
-class SpecialFolder(IntEnum):
-    MyDocuments = 0
-    Desktop = 1
-    MyComputer = 2
-    Programs = 3
-    Personal = 4
-    Favorites = 5
-    Startup = 6
-    Recent = 7
-    SendTo = 8
-    StartMenu = 9
-    MyMusic = 10
-    DesktopDirectory = 11
-    Templates = 12
-    ApplicationData = 13
-    LocalApplicationData = 14
-    InternetCache = 15
-    Cookies = 16
-    History = 17
-    CommonApplicationData = 18
-    System = 19
-    ProgramFiles = 20
-    MyPictures = 21
-    CommonProgramFiles = 22
-    MyVideos = 23
-    NetworkShortcuts = 24
-    Fonts = 25
-    CommonStartMenu = 26
-    CommonPrograms = 27
-    CommonStartup = 28
-    CommonDesktopDirectory = 29
-    PrinterShortcuts = 30
-    Windows = 31
-    UserProfile = 32
-    SystemX86 = 33
-    ProgramFilesX86 = 34
-    CommonProgramFilesX86 = 35
-    CommonTemplates = 36
-    CommonDocuments = 37
-    CommonAdminTools = 38
-    AdminTools = 39
-    CommonMusic = 40
-    CommonPictures = 41
-    CommonVideos = 42
-    Resources = 43
-    LocalizedResources = 44
-    CommonOemLinks = 45
-    CDBurning = 46
-
-class SpecialFolderOption(IntEnum):
-    None_ = 0
-    DoNotVerify = 1
-    Create = 2
-
-class PlatformID(IntEnum):
-    Win32S = 0
-    Win32Windows = 1
-    Win32NT = 2
-    WinCE = 3
-    Unix = 4
-    Xbox = 5
-    MacOSX = 6
-
-class EventResetMode(IntEnum):
-    AutoReset = 0
-    ManualReset = 1
-
-class LazyThreadSafetyMode(IntEnum):
-    None_ = 0
-    PublicationOnly = 1
-    ExecutionAndPublication = 2
-
-class ThreadPriority(IntEnum):
-    Lowest = 0
-    BelowNormal = 1
-    Normal = 2
-    AboveNormal = 3
-    Highest = 4
-
-class ThreadState(IntEnum):
-    Running = 0
-    StopRequested = 1
-    SuspendRequested = 2
-    Background = 3
-    Unstarted = 4
-    Stopped = 5
-    WaitSleepJoin = 6
-    Suspended = 7
-    AbortRequested = 8
-    Aborted = 9
-
-class ForkJoinOperationType(IntEnum):
-    ParallelInvoke = 0
-    ParallelFor = 1
-    ParallelForEach = 2
-
-class TaskStatus(IntEnum):
-    Created = 0
-    WaitingForActivation = 1
-    WaitingToRun = 2
-    Running = 3
-    WaitingForChildrenToComplete = 4
-    RanToCompletion = 5
-    Canceled = 6
-    Faulted = 7
-
-class TaskCreationOptions(IntEnum):
-    None_ = 0
-    PreferFairness = 1
-    LongRunning = 2
-    AttachedToParent = 3
-    DenyChildAttach = 4
-    HideScheduler = 5
-    RunContinuationsAsynchronously = 6
-
-class TaskContinuationOptions(IntEnum):
-    None_ = 0
-    PreferFairness = 1
-    LongRunning = 2
-    AttachedToParent = 3
-    DenyChildAttach = 4
-    HideScheduler = 5
-    LazyCancellation = 6
-    RunContinuationsAsynchronously = 7
-    NotOnRanToCompletion = 8
-    NotOnFaulted = 9
-    NotOnCanceled = 10
-    OnlyOnRanToCompletion = 11
-    OnlyOnFaulted = 12
-    OnlyOnCanceled = 13
-    ExecuteSynchronously = 14
-
-class ValueTaskSourceOnCompletedFlags(IntEnum):
-    None_ = 0
-    UseSchedulingContext = 1
-    FlowExecutionContext = 2
-
-class ValueTaskSourceStatus(IntEnum):
-    Pending = 0
-    Succeeded = 1
-    Faulted = 2
-    Canceled = 3
-
-class NormalizationForm(IntEnum):
-    FormC = 0
-    FormD = 1
-    FormKC = 2
-    FormKD = 3
-
-class PermissionState(IntEnum):
-    None_ = 0
-    Unrestricted = 1
-
-class SecurityAction(IntEnum):
-    Demand = 0
-    Assert = 1
-    Deny = 2
-    PermitOnly = 3
-    LinkDemand = 4
-    InheritanceDemand = 5
-    RequestMinimum = 6
-    RequestOptional = 7
-    RequestRefuse = 8
-
-class KeyNumber(IntEnum):
-    Exchange = 0
-    Signature = 1
-
-class CryptoStreamMode(IntEnum):
-    Read = 0
-    Write = 1
-
-class RSAEncryptionPaddingMode(IntEnum):
-    Pkcs1 = 0
-    Oaep = 1
-
-class RSASignaturePaddingMode(IntEnum):
-    Pkcs1 = 0
-    Pss = 1
-
-class FromBase64TransformMode(IntEnum):
-    IgnoreWhiteSpaces = 0
-    DoNotIgnoreWhiteSpaces = 1
-
-class CipherMode(IntEnum):
-    CBC = 0
-    ECB = 1
-    OFB = 2
-    CFB = 3
-    CTS = 4
-
-class PaddingMode(IntEnum):
-    None_ = 0
-    PKCS7 = 1
-    Zeros = 2
-    ANSIX923 = 3
-    ISO10126 = 4
-
-class CspProviderFlags(IntEnum):
-    NoFlags = 0
-    UseMachineKeyStore = 1
-    UseDefaultKeyContainer = 2
-    UseNonExportableKey = 3
-    UseExistingKey = 4
-    UseArchivableKey = 5
-    UseUserProtectedKey = 6
-    NoPrompt = 7
-    CreateEphemeralKey = 8
-
-class PbeEncryptionAlgorithm(IntEnum):
-    Unknown = 0
-    Aes128Cbc = 1
-    Aes192Cbc = 2
-    Aes256Cbc = 3
-    TripleDes3KeyPkcs12 = 4
-
-class X509ContentType(IntEnum):
-    Unknown = 0
-    Cert = 1
-    SerializedCert = 2
-    Pfx = 3
-    Pkcs12 = 4
-    SerializedStore = 5
-    Pkcs7 = 6
-    Authenticode = 7
-
-class X509KeyStorageFlags(IntEnum):
-    DefaultKeySet = 0
-    UserKeySet = 1
-    MachineKeySet = 2
-    Exportable = 3
-    UserProtected = 4
-    PersistKeySet = 5
-    EphemeralKeySet = 6
-
-class TokenImpersonationLevel(IntEnum):
-    None_ = 0
-    Anonymous = 1
-    Identification = 2
-    Impersonation = 3
-    Delegation = 4
-
-class WindowsAccountType(IntEnum):
-    Normal = 0
-    Guest = 1
-    System = 2
-    Anonymous = 3
-
-class CustomErrorsModes(IntEnum):
-    On = 0
-    Off = 1
-    RemoteOnly = 2
-
-class WellKnownObjectMode(IntEnum):
-    Singleton = 0
-    SingleCall = 1
-
-class LeaseState(IntEnum):
-    Null = 0
-    Initial = 1
-    Active = 2
-    Renewing = 3
-    Expired = 4
-
-class StreamingContextStates(IntEnum):
-    CrossProcess = 0
-    CrossMachine = 1
-    File = 2
-    Persistence = 3
-    Remoting = 4
-    Other = 5
-    Clone = 6
-    CrossAppDomain = 7
-    All = 8
-
-class FormatterTypeStyle(IntEnum):
-    TypesWhenNeeded = 0
-    TypesAlways = 1
-    XsdString = 2
-
-class FormatterAssemblyStyle(IntEnum):
-    Simple = 0
-    Full = 1
-
-class TypeFilterLevel(IntEnum):
-    Low = 0
-    Full = 1
-
-class CharSet(IntEnum):
-    None_ = 0
-    Ansi = 1
-    Unicode = 2
-    Auto = 3
-
-class GCHandleType(IntEnum):
-    Weak = 0
-    WeakTrackResurrection = 1
-    Normal = 2
-    Pinned = 3
-
-class ComInterfaceType(IntEnum):
-    InterfaceIsDual = 0
-    InterfaceIsIUnknown = 1
-    InterfaceIsIDispatch = 2
-    InterfaceIsIInspectable = 3
-
-class ClassInterfaceType(IntEnum):
-    None_ = 0
-    AutoDispatch = 1
-    AutoDual = 2
-
-class VarEnum(IntEnum):
-    VT_EMPTY = 0
-    VT_NULL = 1
-    VT_I2 = 2
-    VT_I4 = 3
-    VT_R4 = 4
-    VT_R8 = 5
-    VT_CY = 6
-    VT_DATE = 7
-    VT_BSTR = 8
-    VT_DISPATCH = 9
-    VT_ERROR = 10
-    VT_BOOL = 11
-    VT_VARIANT = 12
-    VT_UNKNOWN = 13
-    VT_DECIMAL = 14
-    VT_I1 = 15
-    VT_UI1 = 16
-    VT_UI2 = 17
-    VT_UI4 = 18
-    VT_I8 = 19
-    VT_UI8 = 20
-    VT_INT = 21
-    VT_UINT = 22
-    VT_VOID = 23
-    VT_HRESULT = 24
-    VT_PTR = 25
-    VT_SAFEARRAY = 26
-    VT_CARRAY = 27
-    VT_USERDEFINED = 28
-    VT_LPSTR = 29
-    VT_LPWSTR = 30
-    VT_RECORD = 31
-    VT_FILETIME = 32
-    VT_BLOB = 33
-    VT_STREAM = 34
-    VT_STORAGE = 35
-    VT_STREAMED_OBJECT = 36
-    VT_STORED_OBJECT = 37
-    VT_BLOB_OBJECT = 38
-    VT_CF = 39
-    VT_CLSID = 40
-    VT_VECTOR = 41
-    VT_ARRAY = 42
-    VT_BYREF = 43
-
-class UnmanagedType(IntEnum):
-    Bool = 0
-    I1 = 1
-    U1 = 2
-    I2 = 3
-    U2 = 4
-    I4 = 5
-    U4 = 6
-    I8 = 7
-    U8 = 8
-    R4 = 9
-    R8 = 10
-    Currency = 11
-    BStr = 12
-    LPStr = 13
-    LPWStr = 14
-    LPTStr = 15
-    ByValTStr = 16
-    IUnknown = 17
-    IDispatch = 18
-    Struct = 19
-    Interface = 20
-    SafeArray = 21
-    ByValArray = 22
-    SysInt = 23
-    SysUInt = 24
-    VBByRefStr = 25
-    AnsiBStr = 26
-    TBStr = 27
-    VariantBool = 28
-    FunctionPtr = 29
-    AsAny = 30
-    LPArray = 31
-    LPStruct = 32
-    CustomMarshaler = 33
-    Error = 34
-    IInspectable = 35
-    HString = 36
-    LPUTF8Str = 37
-
-class DllImportSearchPath(IntEnum):
-    UseDllDirectoryForDependencies = 0
-    ApplicationDirectory = 1
-    UserDirectories = 2
-    System32 = 3
-    SafeDirectories = 4
-    AssemblyDirectory = 5
-    LegacyBehavior = 6
-
-class CallingConvention(IntEnum):
-    Winapi = 0
-    Cdecl = 1
-    StdCall = 2
-    ThisCall = 3
-    FastCall = 4
-
-class Cer(IntEnum):
-    None_ = 0
-    MayFail = 1
-    Success = 2
-
-class Consistency(IntEnum):
-    MayCorruptProcess = 0
-    MayCorruptAppDomain = 1
-    MayCorruptInstance = 2
-    WillNotCorruptState = 3
-
-class LoadHint(IntEnum):
-    Default = 0
-    Always = 1
-    Sometimes = 2
-
-class CompilationRelaxations(IntEnum):
-    NoStringInterning = 0
-
-class UltimateResourceFallbackLocation(IntEnum):
-    MainAssembly = 0
-    Satellite = 1
-
-class AssemblyContentType(IntEnum):
-    Default = 0
-    WindowsRuntime = 1
-
-class AssemblyNameFlags(IntEnum):
-    None_ = 0
-    PublicKey = 1
-    EnableJITcompileOptimizer = 2
-    EnableJITcompileTracking = 3
-    Retargetable = 4
-
-class BindingFlags(IntEnum):
-    Default = 0
-    IgnoreCase = 1
-    DeclaredOnly = 2
-    Instance = 3
-    Static = 4
-    Public = 5
-    NonPublic = 6
-    FlattenHierarchy = 7
-    InvokeMethod = 8
-    CreateInstance = 9
-    GetField = 10
-    SetField = 11
-    GetProperty = 12
-    SetProperty = 13
-    PutDispProperty = 14
-    PutRefDispProperty = 15
-    ExactBinding = 16
-    SuppressChangeType = 17
-    OptionalParamBinding = 18
-    IgnoreReturn = 19
-    DoNotWrapExceptions = 20
-
-class CallingConventions(IntEnum):
-    Standard = 0
-    VarArgs = 1
-    Any = 2
-    HasThis = 3
-    ExplicitThis = 4
-
-class EventAttributes(IntEnum):
-    None_ = 0
-    SpecialName = 1
-    RTSpecialName = 2
-    ReservedMask = 3
-
-class ExceptionHandlingClauseOptions(IntEnum):
-    Clause = 0
-    Filter = 1
-    Finally = 2
-    Fault = 3
-
-class FieldAttributes(IntEnum):
-    FieldAccessMask = 0
-    PrivateScope = 1
-    Private = 2
-    FamANDAssem = 3
-    Assembly = 4
-    Family = 5
-    FamORAssem = 6
-    Public = 7
-    Static = 8
-    InitOnly = 9
-    Literal = 10
-    NotSerialized = 11
-    SpecialName = 12
-    PinvokeImpl = 13
-    RTSpecialName = 14
-    HasFieldMarshal = 15
-    HasDefault = 16
-    HasFieldRVA = 17
-    ReservedMask = 18
-
-class GenericParameterAttributes(IntEnum):
-    None_ = 0
-    VarianceMask = 1
-    Covariant = 2
-    Contravariant = 3
-    SpecialConstraintMask = 4
-    ReferenceTypeConstraint = 5
-    NotNullableValueTypeConstraint = 6
-    DefaultConstructorConstraint = 7
-
-class MemberTypes(IntEnum):
-    Constructor = 0
-    Event = 1
-    Field = 2
-    Method = 3
-    Property = 4
-    TypeInfo = 5
-    Custom = 6
-    NestedType = 7
-    All = 8
-
-class MethodAttributes(IntEnum):
-    MemberAccessMask = 0
-    PrivateScope = 1
-    Private = 2
-    FamANDAssem = 3
-    Assembly = 4
-    Family = 5
-    FamORAssem = 6
-    Public = 7
-    Static = 8
-    Final = 9
-    Virtual = 10
-    HideBySig = 11
-    CheckAccessOnOverride = 12
-    VtableLayoutMask = 13
-    ReuseSlot = 14
-    NewSlot = 15
-    Abstract = 16
-    SpecialName = 17
-    PinvokeImpl = 18
-    UnmanagedExport = 19
-    RTSpecialName = 20
-    HasSecurity = 21
-    RequireSecObject = 22
-    ReservedMask = 23
-
-class MethodImplAttributes(IntEnum):
-    CodeTypeMask = 0
-    IL = 1
-    Native = 2
-    OPTIL = 3
-    Runtime = 4
-    ManagedMask = 5
-    Unmanaged = 6
-    Managed = 7
-    ForwardRef = 8
-    PreserveSig = 9
-    InternalCall = 10
-    Synchronized = 11
-    NoInlining = 12
-    AggressiveInlining = 13
-    NoOptimization = 14
-    MaxMethodImplVal = 15
-    SecurityMitigations = 16
-
-class ParameterAttributes(IntEnum):
-    None_ = 0
-    In = 1
-    Out = 2
-    Lcid = 3
-    Retval = 4
-    Optional = 5
-    HasDefault = 6
-    HasFieldMarshal = 7
-    Reserved3 = 8
-    Reserved4 = 9
-    ReservedMask = 10
-
-class ProcessorArchitecture(IntEnum):
-    None_ = 0
-    MSIL = 1
-    X86 = 2
-    IA64 = 3
-    Amd64 = 4
-    Arm = 5
-
-class PropertyAttributes(IntEnum):
-    None_ = 0
-    SpecialName = 1
-    RTSpecialName = 2
-    HasDefault = 3
-    Reserved2 = 4
-    Reserved3 = 5
-    Reserved4 = 6
-    ReservedMask = 7
-
-class ResourceLocation(IntEnum):
-    ContainedInAnotherAssembly = 0
-    ContainedInManifestFile = 1
-    Embedded = 2
-
-class TypeAttributes(IntEnum):
-    VisibilityMask = 0
-    NotPublic = 1
-    Public = 2
-    NestedPublic = 3
-    NestedPrivate = 4
-    NestedFamily = 5
-    NestedAssembly = 6
-    NestedFamANDAssem = 7
-    NestedFamORAssem = 8
-    LayoutMask = 9
-    AutoLayout = 10
-    SequentialLayout = 11
-    ExplicitLayout = 12
-    ClassSemanticsMask = 13
-    Class = 14
-    Interface = 15
-    Abstract = 16
-    Sealed = 17
-    SpecialName = 18
-    Import = 19
-    Serializable = 20
-    WindowsRuntime = 21
-    StringFormatMask = 22
-    AnsiClass = 23
-    UnicodeClass = 24
-    AutoClass = 25
-    CustomFormatClass = 26
-    CustomFormatMask = 27
-    BeforeFieldInit = 28
-    RTSpecialName = 29
-    HasSecurity = 30
-    ReservedMask = 31
-
-class FileAccess(IntEnum):
-    Read = 0
-    Write = 1
-    ReadWrite = 2
-
-class FileMode(IntEnum):
-    CreateNew = 0
-    Create = 1
-    Open = 2
-    OpenOrCreate = 3
-    Truncate = 4
-    Append = 5
-
-class FileOptions(IntEnum):
-    None_ = 0
-    WriteThrough = 1
-    Asynchronous = 2
-    RandomAccess = 3
-    DeleteOnClose = 4
-    SequentialScan = 5
-    Encrypted = 6
-
-class FileShare(IntEnum):
-    None_ = 0
-    Read = 1
-    Write = 2
-    ReadWrite = 3
-    Delete = 4
-    Inheritable = 5
-
-class SeekOrigin(IntEnum):
-    Begin = 0
-    Current = 1
-    End = 2
-
-class MatchCasing(IntEnum):
-    PlatformDefault = 0
-    CaseSensitive = 1
-    CaseInsensitive = 2
-
-class MatchType(IntEnum):
-    Simple = 0
-    Win32 = 1
-
-class SearchOption(IntEnum):
-    TopDirectoryOnly = 0
-    AllDirectories = 1
-
-class FileAttributes(IntEnum):
-    ReadOnly = 0
-    Hidden = 1
-    System = 2
-    Directory = 3
-    Archive = 4
-    Device = 5
-    Normal = 6
-    Temporary = 7
-    SparseFile = 8
-    ReparsePoint = 9
-    Compressed = 10
-    Offline = 11
-    NotContentIndexed = 12
-    Encrypted = 13
-    IntegrityStream = 14
-    NoScrubData = 15
-
-class CompareOptions(IntEnum):
-    None_ = 0
-    IgnoreCase = 1
-    IgnoreNonSpace = 2
-    IgnoreSymbols = 3
-    IgnoreKanaType = 4
-    IgnoreWidth = 5
-    OrdinalIgnoreCase = 6
-    StringSort = 7
-    Ordinal = 8
-
-class CultureTypes(IntEnum):
-    NeutralCultures = 0
-    SpecificCultures = 1
-    InstalledWin32Cultures = 2
-    AllCultures = 3
-    UserCustomCulture = 4
-    ReplacementCultures = 5
-    WindowsOnlyCultures = 6
-    FrameworkCultures = 7
-
-class DateTimeStyles(IntEnum):
-    None_ = 0
-    AllowLeadingWhite = 1
-    AllowTrailingWhite = 2
-    AllowInnerWhite = 3
-    AllowWhiteSpaces = 4
-    NoCurrentDateDefault = 5
-    AdjustToUniversal = 6
-    AssumeLocal = 7
-    AssumeUniversal = 8
-    RoundtripKind = 9
-
-class NumberStyles(IntEnum):
-    None_ = 0
-    AllowLeadingWhite = 1
-    AllowTrailingWhite = 2
-    AllowLeadingSign = 3
-    AllowTrailingSign = 4
-    AllowParentheses = 5
-    AllowDecimalPoint = 6
-    AllowThousands = 7
-    AllowExponent = 8
-    AllowCurrencySymbol = 9
-    AllowHexSpecifier = 10
-    Integer = 11
-    HexNumber = 12
-    Number = 13
-    Float = 14
-    Currency = 15
-    Any = 16
-
-class TimeSpanStyles(IntEnum):
-    None_ = 0
-    AssumeNegative = 1
-
-class UnicodeCategory(IntEnum):
-    UppercaseLetter = 0
-    LowercaseLetter = 1
-    TitlecaseLetter = 2
-    ModifierLetter = 3
-    OtherLetter = 4
-    NonSpacingMark = 5
-    SpacingCombiningMark = 6
-    EnclosingMark = 7
-    DecimalDigitNumber = 8
-    LetterNumber = 9
-    OtherNumber = 10
-    SpaceSeparator = 11
-    LineSeparator = 12
-    ParagraphSeparator = 13
-    Control = 14
-    Format = 15
-    Surrogate = 16
-    PrivateUse = 17
-    ConnectorPunctuation = 18
-    DashPunctuation = 19
-    OpenPunctuation = 20
-    ClosePunctuation = 21
-    InitialQuotePunctuation = 22
-    FinalQuotePunctuation = 23
-    OtherPunctuation = 24
-    MathSymbol = 25
-    CurrencySymbol = 26
-    ModifierSymbol = 27
-    OtherSymbol = 28
-    OtherNotAssigned = 29
-
-class GregorianCalendarTypes(IntEnum):
-    Localized = 0
-    USEnglish = 1
-    MiddleEastFrench = 2
-    Arabic = 3
-    TransliteratedEnglish = 4
-    TransliteratedFrench = 5
-
-class DebuggingModes(IntEnum):
-    None_ = 0
-    Default = 1
-    DisableOptimizations = 2
-    IgnoreSymbolStoreSequencePoints = 3
-    EnableEditAndContinue = 4
-
-class DebuggerBrowsableState(IntEnum):
-    Never = 0
-    Collapsed = 1
-    RootHidden = 2
-
-class EventLevel(IntEnum):
-    LogAlways = 0
-    Critical = 1
-    Error = 2
-    Warning = 3
-    Informational = 4
-    Verbose = 5
-
-class EventTask(IntEnum):
-    None_ = 0
-
-class EventOpcode(IntEnum):
-    Info = 0
-    Start = 1
-    Stop = 2
-    DataCollectionStart = 3
-    DataCollectionStop = 4
-    Extension = 5
-    Reply = 6
-    Resume = 7
-    Suspend = 8
-    Send = 9
-    Receive = 10
-
-class EventKeywords(IntEnum):
-    None_ = 0
-    All = 1
-    MicrosoftTelemetry = 2
-    WdiContext = 3
-    WdiDiagnostic = 4
-    Sqm = 5
-    AuditFailure = 6
-    AuditSuccess = 7
-    CorrelationHint = 8
-    EventLogClassic = 9
-
-class AssemblyHashAlgorithm(IntEnum):
-    None_ = 0
-    MD5 = 1
-    SHA1 = 2
-    SHA256 = 3
-    SHA384 = 4
-    SHA512 = 5
-
-class AssemblyVersionCompatibility(IntEnum):
-    SameMachine = 0
-    SameProcess = 1
-    SameDomain = 2
-
-class EnumerablePartitionerOptions(IntEnum):
-    None_ = 0
-    NoBuffering = 1
-
-class OperationStatus(IntEnum):
-    Done = 0
-    DestinationTooSmall = 1
-    NeedMoreData = 2
-    InvalidData = 3
-
-class HexCasing(IntEnum):
-    Uppercase = 0
-    Lowercase = 1
-
-class ConformanceLevel(IntEnum):
-    Auto = 0
-    Fragment = 1
-    Document = 2
-
-class DtdProcessing(IntEnum):
-    Prohibit = 0
-    Ignore = 1
-    Parse = 2
-
-class EntityHandling(IntEnum):
-    ExpandEntities = 0
-    ExpandCharEntities = 1
-
-class NamespaceHandling(IntEnum):
-    Default = 0
-    OmitDuplicates = 1
-
-class NewLineHandling(IntEnum):
-    Replace = 0
-    Entitize = 1
-    None_ = 2
-
-class ReadState(IntEnum):
-    Initial = 0
-    Interactive = 1
-    Error = 2
-    EndOfFile = 3
-    Closed = 4
-
-class ValidationType(IntEnum):
-    None_ = 0
-    Auto = 1
-    DTD = 2
-    XDR = 3
-    Schema = 4
-
-class WhitespaceHandling(IntEnum):
-    All = 0
-    Significant = 1
-    None_ = 2
-
-class XmlSpace(IntEnum):
-    None_ = 0
-    Default = 1
-    Preserve = 2
-
-class Formatting(IntEnum):
-    None_ = 0
-    Indented = 1
-
-class WriteState(IntEnum):
-    Start = 0
-    Prolog = 1
-    Element = 2
-    Attribute = 3
-    Content = 4
-    Closed = 5
-    Error = 6
-
-class XmlOutputMethod(IntEnum):
-    Xml = 0
-    Html = 1
-    Text = 2
-    AutoDetect = 3
-
-class XmlNodeChangedAction(IntEnum):
-    Insert = 0
-    Remove = 1
-    Change = 2
-
-class XmlTokenizedType(IntEnum):
-    CDATA = 0
-    ID = 1
-    IDREF = 2
-    IDREFS = 3
-    ENTITY = 4
-    ENTITIES = 5
-    NMTOKEN = 6
-    NMTOKENS = 7
-    NOTATION = 8
-    ENUMERATION = 9
-    QName = 10
-    NCName = 11
-    None_ = 12
-
-class XmlDateTimeSerializationMode(IntEnum):
-    Local = 0
-    Utc = 1
-    Unspecified = 2
-    RoundtripKind = 3
-
-class XmlNamespaceScope(IntEnum):
-    All = 0
-    ExcludeXml = 1
-    Local = 2
-
-class XmlNodeOrder(IntEnum):
-    Before = 0
-    After = 1
-    Same = 2
-    Unknown = 3
-
-class XmlNodeType(IntEnum):
-    None_ = 0
-    Element = 1
-    Attribute = 2
-    Text = 3
-    CDATA = 4
-    EntityReference = 5
-    Entity = 6
-    ProcessingInstruction = 7
-    Comment = 8
-    Document = 9
-    DocumentType = 10
-    DocumentFragment = 11
-    Notation = 12
-    Whitespace = 13
-    SignificantWhitespace = 14
-    EndElement = 15
-    EndEntity = 16
-    XmlDeclaration = 17
-
-class XPathResultType(IntEnum):
-    Number = 0
-    String = 1
-    Boolean = 2
-    NodeSet = 3
-    Navigator = 4
-    Any = 5
-    Error = 6
-
-class XPathNamespaceScope(IntEnum):
-    All = 0
-    ExcludeXml = 1
-    Local = 2
-
-class XPathNodeType(IntEnum):
-    Root = 0
-    Element = 1
-    Attribute = 2
-    Namespace = 3
-    Text = 4
-    SignificantWhitespace = 5
-    Whitespace = 6
-    ProcessingInstruction = 7
-    Comment = 8
-    All = 9
-
-class ConstraintRole(IntEnum):
-    Unique = 0
-    Key = 1
-    Keyref = 2
-
-class XmlSchemaDatatypeVariety(IntEnum):
-    Atomic = 0
-    List = 1
-    Union = 2
-
-class InferenceOption(IntEnum):
-    Restricted = 0
-    Relaxed = 1
-
-class ListType(IntEnum):
-    Any = 0
-    Other = 1
-    Set = 2
-
-class Token(IntEnum):
-    Empty = 0
-    SchemaName = 1
-    SchemaType = 2
-    SchemaMaxOccurs = 3
-    SchemaMinOccurs = 4
-    SchemaInfinite = 5
-    SchemaModel = 6
-    SchemaOpen = 7
-    SchemaClosed = 8
-    SchemaContent = 9
-    SchemaMixed = 10
-    SchemaEmpty = 11
-    SchemaElementOnly = 12
-    SchemaTextOnly = 13
-    SchemaOrder = 14
-    SchemaSeq = 15
-    SchemaOne = 16
-    SchemaMany = 17
-    SchemaRequired = 18
-    SchemaYes = 19
-    SchemaNo = 20
-    SchemaString = 21
-    SchemaId = 22
-    SchemaIdref = 23
-    SchemaIdrefs = 24
-    SchemaEntity = 25
-    SchemaEntities = 26
-    SchemaNmtoken = 27
-    SchemaNmtokens = 28
-    SchemaEnumeration = 29
-    SchemaDefault = 30
-    XdrRoot = 31
-    XdrElementType = 32
-    XdrElement = 33
-    XdrGroup = 34
-    XdrAttributeType = 35
-    XdrAttribute = 36
-    XdrDatatype = 37
-    XdrDescription = 38
-    XdrExtends = 39
-    SchemaXdrRootAlias = 40
-    SchemaDtType = 41
-    SchemaDtValues = 42
-    SchemaDtMaxLength = 43
-    SchemaDtMinLength = 44
-    SchemaDtMax = 45
-    SchemaDtMin = 46
-    SchemaDtMinExclusive = 47
-    SchemaDtMaxExclusive = 48
-    SchemaTargetNamespace = 49
-    SchemaVersion = 50
-    SchemaFinalDefault = 51
-    SchemaBlockDefault = 52
-    SchemaFixed = 53
-    SchemaAbstract = 54
-    SchemaBlock = 55
-    SchemaSubstitutionGroup = 56
-    SchemaFinal = 57
-    SchemaNillable = 58
-    SchemaRef = 59
-    SchemaBase = 60
-    SchemaDerivedBy = 61
-    SchemaNamespace = 62
-    SchemaProcessContents = 63
-    SchemaRefer = 64
-    SchemaPublic = 65
-    SchemaSystem = 66
-    SchemaSchemaLocation = 67
-    SchemaValue = 68
-    SchemaSource = 69
-    SchemaAttributeFormDefault = 70
-    SchemaElementFormDefault = 71
-    SchemaUse = 72
-    SchemaForm = 73
-    XsdSchema = 74
-    XsdAnnotation = 75
-    XsdInclude = 76
-    XsdImport = 77
-    XsdElement = 78
-    XsdAttribute = 79
-    xsdAttributeGroup = 80
-    XsdAnyAttribute = 81
-    XsdGroup = 82
-    XsdAll = 83
-    XsdChoice = 84
-    XsdSequence = 85
-    XsdAny = 86
-    XsdNotation = 87
-    XsdSimpleType = 88
-    XsdComplexType = 89
-    XsdUnique = 90
-    XsdKey = 91
-    XsdKeyref = 92
-    XsdSelector = 93
-    XsdField = 94
-    XsdMinExclusive = 95
-    XsdMinInclusive = 96
-    XsdMaxExclusive = 97
-    XsdMaxInclusive = 98
-    XsdTotalDigits = 99
-    XsdFractionDigits = 100
-    XsdLength = 101
-    XsdMinLength = 102
-    XsdMaxLength = 103
-    XsdEnumeration = 104
-    XsdPattern = 105
-    XsdDocumentation = 106
-    XsdAppInfo = 107
-    XsdComplexContent = 108
-    XsdComplexContentExtension = 109
-    XsdComplexContentRestriction = 110
-    XsdSimpleContent = 111
-    XsdSimpleContentExtension = 112
-    XsdSimpleContentRestriction = 113
-    XsdSimpleTypeList = 114
-    XsdSimpleTypeRestriction = 115
-    XsdSimpleTypeUnion = 116
-    XsdWhitespace = 117
-    XsdRedefine = 118
-    SchemaItemType = 119
-    SchemaMemberTypes = 120
-    SchemaXPath = 121
-    XmlLang = 122
-
-class XmlSchemaContentProcessing(IntEnum):
-    None_ = 0
-    Skip = 1
-    Lax = 2
-    Strict = 3
-
-class XmlSchemaContentType(IntEnum):
-    TextOnly = 0
-    Empty = 1
-    ElementOnly = 2
-    Mixed = 3
-
-class XmlSchemaDerivationMethod(IntEnum):
-    Empty = 0
-    Substitution = 1
-    Extension = 2
-    Restriction = 3
-    List = 4
-    Union = 5
-    All = 6
-    None_ = 7
-
-class XmlSchemaForm(IntEnum):
-    None_ = 0
-    Qualified = 1
-    Unqualified = 2
-
-class XmlSchemaUse(IntEnum):
-    None_ = 0
-    Optional = 1
-    Prohibited = 2
-    Required = 3
-
-class XmlSchemaValidationFlags(IntEnum):
-    None_ = 0
-    ProcessInlineSchema = 1
-    ProcessSchemaLocation = 2
-    ReportValidationWarnings = 3
-    ProcessIdentityConstraints = 4
-    AllowXmlAttributes = 5
-
-class XmlSchemaValidity(IntEnum):
-    NotKnown = 0
-    Valid = 1
-    Invalid = 2
-
-class XmlSeverityType(IntEnum):
-    Error = 0
-    Warning = 1
-
-class XmlTypeCode(IntEnum):
-    None_ = 0
-    Item = 1
-    Node = 2
-    Document = 3
-    Element = 4
-    Attribute = 5
-    Namespace = 6
-    ProcessingInstruction = 7
-    Comment = 8
-    Text = 9
-    AnyAtomicType = 10
-    UntypedAtomic = 11
-    String = 12
-    Boolean = 13
-    Decimal = 14
-    Float = 15
-    Double = 16
-    Duration = 17
-    DateTime = 18
-    Time = 19
-    Date = 20
-    GYearMonth = 21
-    GYear = 22
-    GMonthDay = 23
-    GDay = 24
-    GMonth = 25
-    HexBinary = 26
-    Base64Binary = 27
-    AnyUri = 28
-    QName = 29
-    Notation = 30
-    NormalizedString = 31
-    Token = 32
-    Language = 33
-    NmToken = 34
-    Name = 35
-    NCName = 36
-    Id = 37
-    Idref = 38
-    Entity = 39
-    Integer = 40
-    NonPositiveInteger = 41
-    NegativeInteger = 42
-    Long = 43
-    Int = 44
-    Short = 45
-    Byte = 46
-    NonNegativeInteger = 47
-    UnsignedLong = 48
-    UnsignedInt = 49
-    UnsignedShort = 50
-    UnsignedByte = 51
-    PositiveInteger = 52
-    YearMonthDuration = 53
-    DayTimeDuration = 54
-
-class DurationType(IntEnum):
-    Duration = 0
-    YearMonthDuration = 1
-    DayTimeDuration = 2
-
-class AstType(IntEnum):
-    Axis = 0
-    Operator = 1
-    Filter = 2
-    ConstantOperand = 3
-    Function = 4
-    Group = 5
-    Root = 6
-    Variable = 7
-    Error = 8
-
-class AxisType(IntEnum):
-    Ancestor = 0
-    AncestorOrSelf = 1
-    Attribute = 2
-    Child = 3
-    Descendant = 4
-    DescendantOrSelf = 5
-    Following = 6
-    FollowingSibling = 7
-    Namespace = 8
-    Parent = 9
-    Preceding = 10
-    PrecedingSibling = 11
-    Self = 12
-    None_ = 13
-
-class FunctionType(IntEnum):
-    FuncLast = 0
-    FuncPosition = 1
-    FuncCount = 2
-    FuncID = 3
-    FuncLocalName = 4
-    FuncNameSpaceUri = 5
-    FuncName = 6
-    FuncString = 7
-    FuncBoolean = 8
-    FuncNumber = 9
-    FuncTrue = 10
-    FuncFalse = 11
-    FuncNot = 12
-    FuncConcat = 13
-    FuncStartsWith = 14
-    FuncContains = 15
-    FuncSubstringBefore = 16
-    FuncSubstringAfter = 17
-    FuncSubstring = 18
-    FuncStringLength = 19
-    FuncNormalize = 20
-    FuncTranslate = 21
-    FuncLang = 22
-    FuncSum = 23
-    FuncFloor = 24
-    FuncCeiling = 25
-    FuncRound = 26
-    FuncUserDefined = 27
-
-class Op(IntEnum):
-    INVALID = 0
-    OR = 1
-    AND = 2
-    EQ = 3
-    NE = 4
-    LT = 5
-    LE = 6
-    GT = 7
-    GE = 8
-    PLUS = 9
-    MINUS = 10
-    MUL = 11
-    DIV = 12
-    MOD = 13
-    UNION = 14
-
-class LexKind(IntEnum):
-    Comma = 0
-    Slash = 1
-    At = 2
-    Dot = 3
-    LParens = 4
-    RParens = 5
-    LBracket = 6
-    RBracket = 7
-    Star = 8
-    Plus = 9
-    Minus = 10
-    Eq = 11
-    Lt = 12
-    Gt = 13
-    Bang = 14
-    Dollar = 15
-    Apos = 16
-    Quote = 17
-    Union = 18
-    Ne = 19
-    Le = 20
-    Ge = 21
-    And = 22
-    Or = 23
-    DotDot = 24
-    SlashSlash = 25
-    Name = 26
-    String = 27
-    Number = 28
-    Axe = 29
-    Eof = 30
-
-class InputActionChange(IntEnum):
-    ActionEnabled = 0
-    ActionDisabled = 1
-    ActionMapEnabled = 2
-    ActionMapDisabled = 3
-    ActionStarted = 4
-    ActionPerformed = 5
-    ActionCanceled = 6
-    BoundControlsAboutToChange = 7
-    BoundControlsChanged = 8
-
-class InputActionPhase(IntEnum):
-    Disabled = 0
-    Waiting = 1
-    Started = 2
-    Performed = 3
-    Canceled = 4
-
-class Flags(IntEnum):
-    ChainsWithNext = 0
-    EndOfChain = 1
-    Composite = 2
-    PartOfComposite = 3
-    InitialStateCheckPending = 4
-    WantsInitialStateCheck = 5
-
-class Flags(IntEnum):
-    HaveMagnitude = 0
-    PassThrough = 1
-    MayNeedConflictResolution = 2
-    HasMultipleConcurrentActuations = 3
-    InProcessing = 4
-    Button = 5
-    Pressed = 6
-
-class InputActionType(IntEnum):
-    Value = 0
-    Button = 1
-    PassThrough = 2
-
-class DisplayStringOptions(IntEnum):
-    DontUseShortDisplayNames = 0
-    DontOmitDevice = 1
-    DontIncludeInteractions = 2
-    IgnoreBindingOverrides = 3
-
-class Enumerate(IntEnum):
-    IgnoreControlsInDefaultState = 0
-    IgnoreControlsInCurrentState = 1
-    IncludeSyntheticControls = 2
-    IncludeNoisyControls = 3
-    IncludeNonLeafControls = 4
-
-class InputControlLayoutChange(IntEnum):
-    Added = 0
-    Removed = 1
-    Replaced = 2
-
-class HumanReadableStringOptions(IntEnum):
-    None_ = 0
-    OmitDevice = 1
-    UseShortNames = 2
-
-class CachingPolicy(IntEnum):
-    CacheResult = 0
-    EvaluateOnEveryRead = 1
-
-class InputDeviceChange(IntEnum):
-    Added = 0
-    Removed = 1
-    Disconnected = 2
-    Reconnected = 3
-    Enabled = 4
-    Disabled = 5
-    UsageChanged = 6
-    ConfigurationChanged = 7
-    SoftReset = 8
-    HardReset = 9
-    Destroyed = 10
-
-class Key(IntEnum):
-    None_ = 0
-    Space = 1
-    Enter = 2
-    Tab = 3
-    Backquote = 4
-    Quote = 5
-    Semicolon = 6
-    Comma = 7
-    Period = 8
-    Slash = 9
-    Backslash = 10
-    LeftBracket = 11
-    RightBracket = 12
-    Minus = 13
-    Equals = 14
-    A = 15
-    B = 16
-    C = 17
-    D = 18
-    E = 19
-    F = 20
-    G = 21
-    H = 22
-    I = 23
-    J = 24
-    K = 25
-    L = 26
-    M = 27
-    N = 28
-    O = 29
-    P = 30
-    Q = 31
-    R = 32
-    S = 33
-    T = 34
-    U = 35
-    V = 36
-    W = 37
-    X = 38
-    Y = 39
-    Z = 40
-    Digit1 = 41
-    Digit2 = 42
-    Digit3 = 43
-    Digit4 = 44
-    Digit5 = 45
-    Digit6 = 46
-    Digit7 = 47
-    Digit8 = 48
-    Digit9 = 49
-    Digit0 = 50
-    LeftShift = 51
-    RightShift = 52
-    LeftAlt = 53
-    RightAlt = 54
-    AltGr = 55
-    LeftCtrl = 56
-    RightCtrl = 57
-    LeftMeta = 58
-    RightMeta = 59
-    LeftWindows = 60
-    RightWindows = 61
-    LeftApple = 62
-    RightApple = 63
-    LeftCommand = 64
-    RightCommand = 65
-    ContextMenu = 66
-    Escape = 67
-    LeftArrow = 68
-    RightArrow = 69
-    UpArrow = 70
-    DownArrow = 71
-    Backspace = 72
-    PageDown = 73
-    PageUp = 74
-    Home = 75
-    End = 76
-    Insert = 77
-    Delete = 78
-    CapsLock = 79
-    NumLock = 80
-    PrintScreen = 81
-    ScrollLock = 82
-    Pause = 83
-    NumpadEnter = 84
-    NumpadDivide = 85
-    NumpadMultiply = 86
-    NumpadPlus = 87
-    NumpadMinus = 88
-    NumpadPeriod = 89
-    NumpadEquals = 90
-    Numpad0 = 91
-    Numpad1 = 92
-    Numpad2 = 93
-    Numpad3 = 94
-    Numpad4 = 95
-    Numpad5 = 96
-    Numpad6 = 97
-    Numpad7 = 98
-    Numpad8 = 99
-    Numpad9 = 100
-    F1 = 101
-    F2 = 102
-    F3 = 103
-    F4 = 104
-    F5 = 105
-    F6 = 106
-    F7 = 107
-    F8 = 108
-    F9 = 109
-    F10 = 110
-    F11 = 111
-    F12 = 112
-    OEM1 = 113
-    OEM2 = 114
-    OEM3 = 115
-    OEM4 = 116
-    OEM5 = 117
-    IMESelected = 118
-
-class PenButton(IntEnum):
-    Tip = 0
-    Eraser = 1
-    BarrelFirst = 2
-    BarrelSecond = 3
-    InRange = 4
-    BarrelThird = 5
-    BarrelFourth = 6
-    Barrel1 = 7
-    Barrel2 = 8
-    Barrel3 = 9
-    Barrel4 = 10
-
-class MessageType(IntEnum):
-    Connect = 0
-    Disconnect = 1
-    NewLayout = 2
-    NewDevice = 3
-    NewEvents = 4
-    RemoveDevice = 5
-    RemoveLayout = 6
-    ChangeUsages = 7
-    StartSending = 8
-    StopSending = 9
-
-class TouchPhase(IntEnum):
-    None_ = 0
-    Began = 1
-    Moved = 2
-    Ended = 3
-    Canceled = 4
-    Stationary = 5
-
-class UpdateMode(IntEnum):
-    ProcessEventsInDynamicUpdate = 0
-    ProcessEventsInFixedUpdate = 1
-    ProcessEventsManually = 2
-
-class BackgroundBehavior(IntEnum):
-    ResetAndDisableNonBackgroundDevices = 0
-    ResetAndDisableAllDevices = 1
-    IgnoreFocus = 2
-
-class EditorInputBehaviorInPlayMode(IntEnum):
-    PointersAndKeyboardsRespectGameViewFocus = 0
-    AllDevicesRespectGameViewFocus = 1
-    AllDeviceInputAlwaysGoesToGameView = 2
-
-class PlayerJoinBehavior(IntEnum):
-    JoinPlayersWhenButtonIsPressed = 0
-    JoinPlayersWhenJoinActionIsTriggered = 1
-    JoinPlayersManually = 2
-
-class PlayerNotifications(IntEnum):
-    SendMessages = 0
-    BroadcastMessages = 1
-    InvokeUnityEvents = 2
-    InvokeCSharpEvents = 3
-
-class TrackingType(IntEnum):
-    RotationAndPosition = 0
-    RotationOnly = 1
-    PositionOnly = 2
-
-class UpdateType(IntEnum):
-    UpdateAndBeforeRender = 0
-    Update = 1
-    BeforeRender = 2
-
-class FeatureType(IntEnum):
-    Custom = 0
-    Binary = 1
-    DiscreteStates = 2
-    Axis1D = 3
-    Axis2D = 4
-    Axis3D = 5
-    Rotation = 6
-    Hand = 7
-    Bone = 8
-    Eyes = 9
-
-class DeviceSubType(IntEnum):
-    Unknown = 0
-    Gamepad = 1
-    Wheel = 2
-    ArcadeStick = 3
-    FlightStick = 4
-    DancePad = 5
-    Guitar = 6
-    GuitarAlternate = 7
-    DrumKit = 8
-    GuitarBass = 9
-    ArcadePad = 10
-
-class DeviceFlags(IntEnum):
-    ForceFeedbackSupported = 0
-    Wireless = 1
-    VoiceSupported = 2
-    PluginModulesSupported = 3
-    NoNavigation = 4
-
-class InputUserChange(IntEnum):
-    Added = 0
-    Removed = 1
-    DevicePaired = 2
-    DeviceUnpaired = 3
-    DeviceLost = 4
-    DeviceRegained = 5
-    AccountChanged = 6
-    AccountNameChanged = 7
-    AccountSelectionInProgress = 8
-    AccountSelectionCanceled = 9
-    AccountSelectionComplete = 10
-    ControlSchemeChanged = 11
-    ControlsChanged = 12
-
-class InputUserPairingOptions(IntEnum):
-    None_ = 0
-    ForcePlatformUserAccountSelection = 1
-    ForceNoPlatformUserAccountSelection = 2
-    UnpairCurrentDevicesFromUser = 3
-
-class UIPointerType(IntEnum):
-    None_ = 0
-    MouseOrPen = 1
-    Touch = 2
-    Tracked = 3
-
-class UIPointerBehavior(IntEnum):
-    SingleMouseOrPenButMultiTouchAndTrack = 0
-    SingleUnifiedPointer = 1
-    AllPointersAsIs = 2
-
-class CursorLockBehavior(IntEnum):
-    OutsideScreen = 0
-    ScreenCenter = 1
-
-class CursorMode(IntEnum):
-    SoftwareCursor = 0
-    HardwareCursorIfAvailable = 1
-
-class Behaviour(IntEnum):
-    RelativePositionWithStaticOrigin = 0
-    ExactPositionWithStaticOrigin = 1
-    ExactPositionWithDynamicOrigin = 2
-
-class HIDReportType(IntEnum):
-    Unknown = 0
-    Input = 1
-    Output = 2
-    Feature = 3
-
-class HIDCollectionType(IntEnum):
-    Physical = 0
-    Application = 1
-    Logical = 2
-    Report = 3
-    NamedArray = 4
-    UsageSwitch = 5
-    UsageModifier = 6
-
-class HIDElementFlags(IntEnum):
-    Constant = 0
-    Variable = 1
-    Relative = 2
-    Wrap = 3
-    NonLinear = 4
-    NoPreferred = 5
-    NullState = 6
-    Volatile = 7
-    BufferedBytes = 8
-
-class UsagePage(IntEnum):
-    Undefined = 0
-    GenericDesktop = 1
-    Simulation = 2
-    VRControls = 3
-    SportControls = 4
-    GameControls = 5
-    GenericDeviceControls = 6
-    Keyboard = 7
-    LEDs = 8
-    Button = 9
-    Ordinal = 10
-    Telephony = 11
-    Consumer = 12
-    Digitizer = 13
-    PID = 14
-    Unicode = 15
-    AlphanumericDisplay = 16
-    MedicalInstruments = 17
-    Monitor = 18
-    Power = 19
-    BarCodeScanner = 20
-    MagneticStripeReader = 21
-    Camera = 22
-    Arcade = 23
-    VendorDefined = 24
-
-class GenericDesktop(IntEnum):
-    Undefined = 0
-    Pointer = 1
-    Mouse = 2
-    Joystick = 3
-    Gamepad = 4
-    Keyboard = 5
-    Keypad = 6
-    MultiAxisController = 7
-    TabletPCControls = 8
-    AssistiveControl = 9
-    X = 10
-    Y = 11
-    Z = 12
-    Rx = 13
-    Ry = 14
-    Rz = 15
-    Slider = 16
-    Dial = 17
-    Wheel = 18
-    HatSwitch = 19
-    CountedBuffer = 20
-    ByteCount = 21
-    MotionWakeup = 22
-    Start = 23
-    Select = 24
-    Vx = 25
-    Vy = 26
-    Vz = 27
-    Vbrx = 28
-    Vbry = 29
-    Vbrz = 30
-    Vno = 31
-    FeatureNotification = 32
-    ResolutionMultiplier = 33
-    SystemControl = 34
-    SystemPowerDown = 35
-    SystemSleep = 36
-    SystemWakeUp = 37
-    SystemContextMenu = 38
-    SystemMainMenu = 39
-    SystemAppMenu = 40
-    SystemMenuHelp = 41
-    SystemMenuExit = 42
-    SystemMenuSelect = 43
-    SystemMenuRight = 44
-    SystemMenuLeft = 45
-    SystemMenuUp = 46
-    SystemMenuDown = 47
-    SystemColdRestart = 48
-    SystemWarmRestart = 49
-    DpadUp = 50
-    DpadDown = 51
-    DpadRight = 52
-    DpadLeft = 53
-    SystemDock = 54
-    SystemUndock = 55
-    SystemSetup = 56
-    SystemBreak = 57
-    SystemDebuggerBreak = 58
-    ApplicationBreak = 59
-    ApplicationDebuggerBreak = 60
-    SystemSpeakerMute = 61
-    SystemHibernate = 62
-    SystemDisplayInvert = 63
-    SystemDisplayInternal = 64
-    SystemDisplayExternal = 65
-    SystemDisplayBoth = 66
-    SystemDisplayDual = 67
-    SystemDisplayToggleIntExt = 68
-    SystemDisplaySwapPrimarySecondary = 69
-    SystemDisplayLCDAutoScale = 70
-
-class Simulation(IntEnum):
-    Undefined = 0
-    FlightSimulationDevice = 1
-    AutomobileSimulationDevice = 2
-    TankSimulationDevice = 3
-    SpaceshipSimulationDevice = 4
-    SubmarineSimulationDevice = 5
-    SailingSimulationDevice = 6
-    MotorcycleSimulationDevice = 7
-    SportsSimulationDevice = 8
-    AirplaneSimulationDevice = 9
-    HelicopterSimulationDevice = 10
-    MagicCarpetSimulationDevice = 11
-    BicylcleSimulationDevice = 12
-    FlightControlStick = 13
-    FlightStick = 14
-    CyclicControl = 15
-    CyclicTrim = 16
-    FlightYoke = 17
-    TrackControl = 18
-    Aileron = 19
-    AileronTrim = 20
-    AntiTorqueControl = 21
-    AutopilotEnable = 22
-    ChaffRelease = 23
-    CollectiveControl = 24
-    DiveBreak = 25
-    ElectronicCountermeasures = 26
-    Elevator = 27
-    ElevatorTrim = 28
-    Rudder = 29
-    Throttle = 30
-    FlightCommunications = 31
-    FlareRelease = 32
-    LandingGear = 33
-    ToeBreak = 34
-    Trigger = 35
-    WeaponsArm = 36
-    WeaponsSelect = 37
-    WingFlaps = 38
-    Accelerator = 39
-    Brake = 40
-    Clutch = 41
-    Shifter = 42
-    Steering = 43
-    TurretDirection = 44
-    BarrelElevation = 45
-    DivePlane = 46
-    Ballast = 47
-    BicycleCrank = 48
-    HandleBars = 49
-    FrontBrake = 50
-    RearBrake = 51
-
-class Button(IntEnum):
-    Undefined = 0
-    Primary = 1
-    Secondary = 2
-    Tertiary = 3
-
-class AndroidAxis(IntEnum):
-    X = 0
-    Y = 1
-    Pressure = 2
-    Size = 3
-    TouchMajor = 4
-    TouchMinor = 5
-    ToolMajor = 6
-    ToolMinor = 7
-    Orientation = 8
-    Vscroll = 9
-    Hscroll = 10
-    Z = 11
-    Rx = 12
-    Ry = 13
-    Rz = 14
-    HatX = 15
-    HatY = 16
-    Ltrigger = 17
-    Rtrigger = 18
-    Throttle = 19
-    Rudder = 20
-    Wheel = 21
-    Gas = 22
-    Brake = 23
-    Distance = 24
-    Tilt = 25
-    Generic1 = 26
-    Generic2 = 27
-    Generic3 = 28
-    Generic4 = 29
-    Generic5 = 30
-    Generic6 = 31
-    Generic7 = 32
-    Generic8 = 33
-    Generic9 = 34
-    Generic10 = 35
-    Generic11 = 36
-    Generic12 = 37
-    Generic13 = 38
-    Generic14 = 39
-    Generic15 = 40
-    Generic16 = 41
-
-class AndroidKeyCode(IntEnum):
-    Unknown = 0
-    SoftLeft = 1
-    SoftRight = 2
-    Home = 3
-    Back = 4
-    Call = 5
-    Endcall = 6
-    Alpha0 = 7
-    Alpha1 = 8
-    Alpha2 = 9
-    Alpha3 = 10
-    Alpha4 = 11
-    Alpha5 = 12
-    Alpha6 = 13
-    Alpha7 = 14
-    Alpha8 = 15
-    Alpha9 = 16
-    Star = 17
-    Pound = 18
-    DpadUp = 19
-    DpadDown = 20
-    DpadLeft = 21
-    DpadRight = 22
-    DpadCenter = 23
-    VolumeUp = 24
-    VolumeDown = 25
-    Power = 26
-    Camera = 27
-    Clear = 28
-    A = 29
-    B = 30
-    C = 31
-    D = 32
-    E = 33
-    F = 34
-    G = 35
-    H = 36
-    I = 37
-    J = 38
-    K = 39
-    L = 40
-    M = 41
-    N = 42
-    O = 43
-    P = 44
-    Q = 45
-    R = 46
-    S = 47
-    T = 48
-    U = 49
-    V = 50
-    W = 51
-    X = 52
-    Y = 53
-    Z = 54
-    Comma = 55
-    Period = 56
-    AltLeft = 57
-    AltRight = 58
-    ShiftLeft = 59
-    ShiftRight = 60
-    Tab = 61
-    Space = 62
-    Sym = 63
-    Explorer = 64
-    Envelope = 65
-    Enter = 66
-    Del = 67
-    Grave = 68
-    Minus = 69
-    Equals = 70
-    LeftBracket = 71
-    RightBracket = 72
-    Backslash = 73
-    Semicolon = 74
-    Apostrophe = 75
-    Slash = 76
-    At = 77
-    Num = 78
-    Headsethook = 79
-    Focus = 80
-    Plus = 81
-    Menu = 82
-    Notification = 83
-    Search = 84
-    MediaPlayPause = 85
-    MediaStop = 86
-    MediaNext = 87
-    MediaPrevious = 88
-    MediaRewind = 89
-    MediaFastForward = 90
-    Mute = 91
-    PageUp = 92
-    PageDown = 93
-    Pictsymbols = 94
-    SwitchCharset = 95
-    ButtonA = 96
-    ButtonB = 97
-    ButtonC = 98
-    ButtonX = 99
-    ButtonY = 100
-    ButtonZ = 101
-    ButtonL1 = 102
-    ButtonR1 = 103
-    ButtonL2 = 104
-    ButtonR2 = 105
-    ButtonThumbl = 106
-    ButtonThumbr = 107
-    ButtonStart = 108
-    ButtonSelect = 109
-    ButtonMode = 110
-    Escape = 111
-    ForwardDel = 112
-    CtrlLeft = 113
-    CtrlRight = 114
-    CapsLock = 115
-    ScrollLock = 116
-    MetaLeft = 117
-    MetaRight = 118
-    Function = 119
-    Sysrq = 120
-    Break = 121
-    MoveHome = 122
-    MoveEnd = 123
-    Insert = 124
-    Forward = 125
-    MediaPlay = 126
-    MediaPause = 127
-    MediaClose = 128
-    MediaEject = 129
-    MediaRecord = 130
-    F1 = 131
-    F2 = 132
-    F3 = 133
-    F4 = 134
-    F5 = 135
-    F6 = 136
-    F7 = 137
-    F8 = 138
-    F9 = 139
-    F10 = 140
-    F11 = 141
-    F12 = 142
-    NumLock = 143
-    Numpad0 = 144
-    Numpad1 = 145
-    Numpad2 = 146
-    Numpad3 = 147
-    Numpad4 = 148
-    Numpad5 = 149
-    Numpad6 = 150
-    Numpad7 = 151
-    Numpad8 = 152
-    Numpad9 = 153
-    NumpadDivide = 154
-    NumpadMultiply = 155
-    NumpadSubtract = 156
-    NumpadAdd = 157
-    NumpadDot = 158
-    NumpadComma = 159
-    NumpadEnter = 160
-    NumpadEquals = 161
-    NumpadLeftParen = 162
-    NumpadRightParen = 163
-    VolumeMute = 164
-    Info = 165
-    ChannelUp = 166
-    ChannelDown = 167
-    ZoomIn = 168
-    ZoomOut = 169
-    Tv = 170
-    Window = 171
-    Guide = 172
-    Dvr = 173
-    Bookmark = 174
-    Captions = 175
-    Settings = 176
-    TvPower = 177
-    TvInput = 178
-    StbPower = 179
-    StbInput = 180
-    AvrPower = 181
-    AvrInput = 182
-    ProgRed = 183
-    ProgGreen = 184
-    ProgYellow = 185
-    ProgBlue = 186
-    AppSwitch = 187
-    Button1 = 188
-    Button2 = 189
-    Button3 = 190
-    Button4 = 191
-    Button5 = 192
-    Button6 = 193
-    Button7 = 194
-    Button8 = 195
-    Button9 = 196
-    Button10 = 197
-    Button11 = 198
-    Button12 = 199
-    Button13 = 200
-    Button14 = 201
-    Button15 = 202
-    Button16 = 203
-    LanguageSwitch = 204
-    MannerMode = 205
-    Mode3D = 206
-    Contacts = 207
-    Calendar = 208
-    Music = 209
-    Calculator = 210
-    ZenkakuHankaku = 211
-    Eisu = 212
-    Muhenkan = 213
-    Henkan = 214
-    KatakanaHiragana = 215
-    Yen = 216
-    Ro = 217
-    Kana = 218
-    Assist = 219
-
-class Result(IntEnum):
-    SuccessfullyInitiated = 0
-    ErrorNotSupported = 1
-    ErrorAlreadyInProgress = 2
-
-class Result(IntEnum):
-    DevicePairedToUserAccount = 0
-    UserAccountSelectionInProgress = 1
-    UserAccountSelectionComplete = 2
-    UserAccountSelectionCanceled = 3
-
-class GamepadButton(IntEnum):
-    DpadUp = 0
-    DpadDown = 1
-    DpadLeft = 2
-    DpadRight = 3
-    North = 4
-    East = 5
-    South = 6
-    West = 7
-    LeftStick = 8
-    RightStick = 9
-    LeftShoulder = 10
-    RightShoulder = 11
-    Start = 12
-    Select = 13
-    LeftTrigger = 14
-    RightTrigger = 15
-    X = 16
-    Y = 17
-    A = 18
-    B = 19
-    Cross = 20
-    Square = 21
-    Triangle = 22
-    Circle = 23
-
-class Button(IntEnum):
-    HatSwitchUp = 0
-    HatSwitchDown = 1
-    HatSwitchLeft = 2
-    HatSwitchRight = 3
-    Trigger = 4
-
-class MouseButton(IntEnum):
-    Left = 0
-    Right = 1
-    Middle = 2
-    Forward = 3
-    Back = 4
-
-class InputUpdateType(IntEnum):
-    None_ = 0
-    Dynamic = 1
-    Fixed = 2
-    BeforeRender = 3
-    Editor = 4
-    Manual = 5
-    Default = 6
-
-class Clamp(IntEnum):
-    None_ = 0
-    BeforeNormalize = 1
-    AfterNormalize = 2
-    ToConstantBeforeNormalize = 3
-
-class WriteMode(IntEnum):
-    WriteDisabled = 0
-    WriteNullAndMaxValue = 1
-
-class PressBehavior(IntEnum):
-    PressOnly = 0
-    ReleaseOnly = 1
-    PressAndRelease = 2
-
-class JsonValueType(IntEnum):
-    None_ = 0
-    Bool = 1
-    Real = 2
-    Integer = 3
-    String = 4
-    Array = 5
-    Object = 6
-    Any = 7
-
-class WhichSideWins(IntEnum):
-    Neither = 0
-    Positive = 1
-    Negative = 2
-
-class Mode(IntEnum):
-    Analog = 0
-    DigitalNormalized = 1
-    Digital = 2
-
-class Mode(IntEnum):
-    Analog = 0
-    DigitalNormalized = 1
-    Digital = 2
-
-class unitytls_error_code(IntEnum):
-    UNITYTLS_SUCCESS = 0
-    UNITYTLS_INVALID_ARGUMENT = 1
-    UNITYTLS_INVALID_FORMAT = 2
-    UNITYTLS_INVALID_PASSWORD = 3
-    UNITYTLS_INVALID_STATE = 4
-    UNITYTLS_BUFFER_OVERFLOW = 5
-    UNITYTLS_OUT_OF_MEMORY = 6
-    UNITYTLS_INTERNAL_ERROR = 7
-    UNITYTLS_NOT_SUPPORTED = 8
-    UNITYTLS_ENTROPY_SOURCE_FAILED = 9
-    UNITYTLS_STREAM_CLOSED = 10
-    UNITYTLS_USER_CUSTOM_ERROR_START = 11
-    UNITYTLS_USER_WOULD_BLOCK = 12
-    UNITYTLS_USER_READ_FAILED = 13
-    UNITYTLS_USER_WRITE_FAILED = 14
-    UNITYTLS_USER_UNKNOWN_ERROR = 15
-    UNITYTLS_USER_CUSTOM_ERROR_END = 16
-
-class unitytls_x509verify_result(IntEnum):
-    UNITYTLS_X509VERIFY_SUCCESS = 0
-    UNITYTLS_X509VERIFY_NOT_DONE = 1
-    UNITYTLS_X509VERIFY_FATAL_ERROR = 2
-    UNITYTLS_X509VERIFY_FLAG_EXPIRED = 3
-    UNITYTLS_X509VERIFY_FLAG_REVOKED = 4
-    UNITYTLS_X509VERIFY_FLAG_CN_MISMATCH = 5
-    UNITYTLS_X509VERIFY_FLAG_NOT_TRUSTED = 6
-    UNITYTLS_X509VERIFY_FLAG_USER_ERROR1 = 7
-    UNITYTLS_X509VERIFY_FLAG_USER_ERROR2 = 8
-    UNITYTLS_X509VERIFY_FLAG_USER_ERROR3 = 9
-    UNITYTLS_X509VERIFY_FLAG_USER_ERROR4 = 10
-    UNITYTLS_X509VERIFY_FLAG_USER_ERROR5 = 11
-    UNITYTLS_X509VERIFY_FLAG_USER_ERROR6 = 12
-    UNITYTLS_X509VERIFY_FLAG_USER_ERROR7 = 13
-    UNITYTLS_X509VERIFY_FLAG_USER_ERROR8 = 14
-    UNITYTLS_X509VERIFY_FLAG_UNKNOWN_ERROR = 15
-
-class unitytls_ciphersuite(IntEnum):
-    UNITYTLS_CIPHERSUITE_INVALID = 0
-
-class unitytls_protocol(IntEnum):
-    UNITYTLS_PROTOCOL_TLS_1_0 = 0
-    UNITYTLS_PROTOCOL_TLS_1_1 = 1
-    UNITYTLS_PROTOCOL_TLS_1_2 = 2
-    UNITYTLS_PROTOCOL_INVALID = 3
-
-class GenericUriParserOptions(IntEnum):
-    Default = 0
-    GenericAuthority = 1
-    AllowEmptyAuthority = 2
-    NoUserInfo = 3
-    NoPort = 4
-    NoQuery = 5
-    NoFragment = 6
-    DontConvertPathBackslashes = 7
-    DontCompressPath = 8
-    DontUnescapePathDotsAndSlashes = 9
-    Idn = 10
-    IriParsing = 11
-
-class UriKind(IntEnum):
-    RelativeOrAbsolute = 0
-    Absolute = 1
-    Relative = 2
-
-class UriComponents(IntEnum):
-    Scheme = 0
-    UserInfo = 1
-    Host = 2
-    Port = 3
-    Path = 4
-    Query = 5
-    Fragment = 6
-    StrongPort = 7
-    NormalizedHost = 8
-    KeepDelimiter = 9
-    SerializationInfoString = 10
-    AbsoluteUri = 11
-    HostAndPort = 12
-    StrongAuthority = 13
-    SchemeAndServer = 14
-    HttpRequestUrl = 15
-    PathAndQuery = 16
-
-class UriFormat(IntEnum):
-    UriEscaped = 0
-    Unescaped = 1
-    SafeUnescaped = 2
-
-class UriIdnScope(IntEnum):
-    None_ = 0
-    AllExceptIntranet = 1
-    All = 2
-
-class UriHostNameType(IntEnum):
-    Unknown = 0
-    Basic = 1
-    Dns = 2
-    IPv4 = 3
-    IPv6 = 4
-
-class RegexOptions(IntEnum):
-    None_ = 0
-    IgnoreCase = 1
-    Multiline = 2
-    ExplicitCapture = 3
-    Compiled = 4
-    Singleline = 5
-    IgnorePatternWhitespace = 6
-    RightToLeft = 7
-    ECMAScript = 8
-    CultureInvariant = 9
-
-class TraceEventType(IntEnum):
-    Critical = 0
-    Error = 1
-    Warning = 2
-    Information = 3
-    Verbose = 4
-    Start = 5
-    Stop = 6
-    Suspend = 7
-    Resume = 8
-    Transfer = 9
-
-class TraceLevel(IntEnum):
-    Off = 0
-    Error = 1
-    Warning = 2
-    Info = 3
-    Verbose = 4
-
-class TraceOptions(IntEnum):
-    None_ = 0
-    LogicalOperationStack = 1
-    DateTime = 2
-    Timestamp = 3
-    ProcessId = 4
-    ThreadId = 5
-    Callstack = 6
-
-class SslProtocols(IntEnum):
-    None_ = 0
-    Ssl2 = 1
-    Ssl3 = 2
-    Tls = 3
-    Tls11 = 4
-    Tls12 = 5
-    Tls13 = 6
-    Default = 7
-
-class OidGroup(IntEnum):
-    All = 0
-    HashAlgorithm = 1
-    EncryptionAlgorithm = 2
-    PublicKeyAlgorithm = 3
-    SignatureAlgorithm = 4
-    Attribute = 5
-    ExtensionOrAttribute = 6
-    EnhancedKeyUsage = 7
-    Policy = 8
-    Template = 9
-    KeyDerivationFunction = 10
-
-class OpenFlags(IntEnum):
-    ReadOnly = 0
-    ReadWrite = 1
-    MaxAllowed = 2
-    OpenExistingOnly = 3
-    IncludeArchived = 4
-
-class StoreLocation(IntEnum):
-    CurrentUser = 0
-    LocalMachine = 1
-
-class StoreName(IntEnum):
-    AddressBook = 0
-    AuthRoot = 1
-    CertificateAuthority = 2
-    Disallowed = 3
-    My = 4
-    Root = 5
-    TrustedPeople = 6
-    TrustedPublisher = 7
-
-class X500DistinguishedNameFlags(IntEnum):
-    None_ = 0
-    Reversed = 1
-    UseSemicolons = 2
-    DoNotUsePlusSign = 3
-    DoNotUseQuotes = 4
-    UseCommas = 5
-    UseNewLines = 6
-    UseUTF8Encoding = 7
-    UseT61Encoding = 8
-    ForceUTF8Encoding = 9
-
-class X509ChainStatusFlags(IntEnum):
-    NoError = 0
-    NotTimeValid = 1
-    NotTimeNested = 2
-    Revoked = 3
-    NotSignatureValid = 4
-    NotValidForUsage = 5
-    UntrustedRoot = 6
-    RevocationStatusUnknown = 7
-    Cyclic = 8
-    InvalidExtension = 9
-    InvalidPolicyConstraints = 10
-    InvalidBasicConstraints = 11
-    InvalidNameConstraints = 12
-    HasNotSupportedNameConstraint = 13
-    HasNotDefinedNameConstraint = 14
-    HasNotPermittedNameConstraint = 15
-    HasExcludedNameConstraint = 16
-    PartialChain = 17
-    CtlNotTimeValid = 18
-    CtlNotSignatureValid = 19
-    CtlNotValidForUsage = 20
-    OfflineRevocation = 21
-    NoIssuanceChainPolicy = 22
-    ExplicitDistrust = 23
-    HasNotSupportedCriticalExtension = 24
-    HasWeakSignature = 25
-
-class X509FindType(IntEnum):
-    FindByThumbprint = 0
-    FindBySubjectName = 1
-    FindBySubjectDistinguishedName = 2
-    FindByIssuerName = 3
-    FindByIssuerDistinguishedName = 4
-    FindBySerialNumber = 5
-    FindByTimeValid = 6
-    FindByTimeNotYetValid = 7
-    FindByTimeExpired = 8
-    FindByTemplateName = 9
-    FindByApplicationPolicy = 10
-    FindByCertificatePolicy = 11
-    FindByExtension = 12
-    FindByKeyUsage = 13
-    FindBySubjectKeyIdentifier = 14
-
-class X509KeyUsageFlags(IntEnum):
-    None_ = 0
-    EncipherOnly = 1
-    CrlSign = 2
-    KeyCertSign = 3
-    KeyAgreement = 4
-    DataEncipherment = 5
-    KeyEncipherment = 6
-    NonRepudiation = 7
-    DigitalSignature = 8
-    DecipherOnly = 9
-
-class X509NameType(IntEnum):
-    SimpleName = 0
-    EmailName = 1
-    UpnName = 2
-    DnsName = 3
-    DnsFromAlternativeName = 4
-    UrlName = 5
-
-class X509RevocationFlag(IntEnum):
-    EndCertificateOnly = 0
-    EntireChain = 1
-    ExcludeRoot = 2
-
-class X509RevocationMode(IntEnum):
-    NoCheck = 0
-    Online = 1
-    Offline = 2
-
-class X509SubjectKeyIdentifierHashAlgorithm(IntEnum):
-    Sha1 = 0
-    ShortSha1 = 1
-    CapiSha1 = 2
-
-class X509VerificationFlags(IntEnum):
-    NoFlag = 0
-    IgnoreNotTimeValid = 1
-    IgnoreCtlNotTimeValid = 2
-    IgnoreNotTimeNested = 3
-    IgnoreInvalidBasicConstraints = 4
-    AllowUnknownCertificateAuthority = 5
-    IgnoreWrongUsage = 6
-    IgnoreInvalidName = 7
-    IgnoreInvalidPolicy = 8
-    IgnoreEndRevocationUnknown = 9
-    IgnoreCtlSignerRevocationUnknown = 10
-    IgnoreCertificateAuthorityRevocationUnknown = 11
-    IgnoreRootRevocationUnknown = 12
-    AllFlags = 13
-
-class EditorBrowsableState(IntEnum):
-    Always = 0
-    Never = 1
-    Advanced = 2
-
-class DesignerSerializationVisibility(IntEnum):
-    Hidden = 0
-    Visible = 1
-    Content = 2
-
-class BindableSupport(IntEnum):
-    No = 0
-    Yes = 1
-    Default = 2
-
-class BindingDirection(IntEnum):
-    OneWay = 0
-    TwoWay = 1
-
-class CollectionChangeAction(IntEnum):
-    Add = 0
-    Remove = 1
-    Refresh = 2
-
-class DataObjectMethodType(IntEnum):
-    Fill = 0
-    Select = 1
-    Update = 2
-    Insert = 3
-    Delete = 4
-
-class InheritanceLevel(IntEnum):
-    Inherited = 0
-    InheritedReadOnly = 1
-    NotInherited = 2
-
-class PropertyTabScope(IntEnum):
-    Static = 0
-    Global = 1
-    Document = 2
-    Component = 3
-
-class LicenseUsageMode(IntEnum):
-    Runtime = 0
-    Designtime = 1
-
-class ListChangedType(IntEnum):
-    Reset = 0
-    ItemAdded = 1
-    ItemDeleted = 2
-    ItemMoved = 3
-    ItemChanged = 4
-    PropertyDescriptorAdded = 5
-    PropertyDescriptorDeleted = 6
-    PropertyDescriptorChanged = 7
-
-class ListSortDirection(IntEnum):
-    Ascending = 0
-    Descending = 1
-
-class MaskedTextResultHint(IntEnum):
-    Unknown = 0
-    CharacterEscaped = 1
-    NoEffect = 2
-    SideEffect = 3
-    Success = 4
-    AsciiCharacterExpected = 5
-    AlphanumericCharacterExpected = 6
-    DigitExpected = 7
-    LetterExpected = 8
-    SignedDigitExpected = 9
-    InvalidInput = 10
-    PromptCharNotAllowed = 11
-    UnavailableEditPosition = 12
-    NonEditPosition = 13
-    PositionOutOfRange = 14
-
-class ToolboxItemFilterType(IntEnum):
-    Allow = 0
-    Custom = 1
-    Prevent = 2
-    Require = 3
-
-class RefreshProperties(IntEnum):
-    None_ = 0
-    All = 1
-    Repaint = 2
-
-class NotifyCollectionChangedAction(IntEnum):
-    Add = 0
-    Remove = 1
-    Replace = 2
-    Move = 3
-    Reset = 4
-
-class CompressionLevel(IntEnum):
-    Optimal = 0
-    Fastest = 1
-    NoCompression = 2
-
-class CompressionMode(IntEnum):
-    Decompress = 0
-    Compress = 1
-
-class HttpStatusCode(IntEnum):
-    Continue = 0
-    SwitchingProtocols = 1
-    Processing = 2
-    EarlyHints = 3
-    OK = 4
-    Created = 5
-    Accepted = 6
-    NonAuthoritativeInformation = 7
-    NoContent = 8
-    ResetContent = 9
-    PartialContent = 10
-    MultiStatus = 11
-    AlreadyReported = 12
-    IMUsed = 13
-    MultipleChoices = 14
-    Ambiguous = 15
-    MovedPermanently = 16
-    Moved = 17
-    Found = 18
-    Redirect = 19
-    SeeOther = 20
-    RedirectMethod = 21
-    NotModified = 22
-    UseProxy = 23
-    Unused = 24
-    TemporaryRedirect = 25
-    RedirectKeepVerb = 26
-    PermanentRedirect = 27
-    BadRequest = 28
-    Unauthorized = 29
-    PaymentRequired = 30
-    Forbidden = 31
-    NotFound = 32
-    MethodNotAllowed = 33
-    NotAcceptable = 34
-    ProxyAuthenticationRequired = 35
-    RequestTimeout = 36
-    Conflict = 37
-    Gone = 38
-    LengthRequired = 39
-    PreconditionFailed = 40
-    RequestEntityTooLarge = 41
-    RequestUriTooLong = 42
-    UnsupportedMediaType = 43
-    RequestedRangeNotSatisfiable = 44
-    ExpectationFailed = 45
-    MisdirectedRequest = 46
-    UnprocessableEntity = 47
-    Locked = 48
-    FailedDependency = 49
-    UpgradeRequired = 50
-    PreconditionRequired = 51
-    TooManyRequests = 52
-    RequestHeaderFieldsTooLarge = 53
-    UnavailableForLegalReasons = 54
-    InternalServerError = 55
-    NotImplemented = 56
-    BadGateway = 57
-    ServiceUnavailable = 58
-    GatewayTimeout = 59
-    HttpVersionNotSupported = 60
-    VariantAlsoNegotiates = 61
-    InsufficientStorage = 62
-    LoopDetected = 63
-    NotExtended = 64
-    NetworkAuthenticationRequired = 65
-
-class SecurityProtocolType(IntEnum):
-    SystemDefault = 0
-    Ssl3 = 1
-    Tls = 2
-    Tls11 = 3
-    Tls12 = 4
-    Tls13 = 5
-
-class FtpStatusCode(IntEnum):
-    Undefined = 0
-    RestartMarker = 1
-    ServiceTemporarilyNotAvailable = 2
-    DataAlreadyOpen = 3
-    OpeningData = 4
-    CommandOK = 5
-    CommandExtraneous = 6
-    DirectoryStatus = 7
-    FileStatus = 8
-    SystemType = 9
-    SendUserCommand = 10
-    ClosingControl = 11
-    ClosingData = 12
-    EnteringPassive = 13
-    LoggedInProceed = 14
-    ServerWantsSecureSession = 15
-    FileActionOK = 16
-    PathnameCreated = 17
-    SendPasswordCommand = 18
-    NeedLoginAccount = 19
-    FileCommandPending = 20
-    ServiceNotAvailable = 21
-    CantOpenData = 22
-    ConnectionClosed = 23
-    ActionNotTakenFileUnavailableOrBusy = 24
-    ActionAbortedLocalProcessingError = 25
-    ActionNotTakenInsufficientSpace = 26
-    CommandSyntaxError = 27
-    ArgumentSyntaxError = 28
-    CommandNotImplemented = 29
-    BadCommandSequence = 30
-    NotLoggedIn = 31
-    AccountNeeded = 32
-    ActionNotTakenFileUnavailable = 33
-    ActionAbortedUnknownPageType = 34
-    FileActionAborted = 35
-    ActionNotTakenFilenameNotAllowed = 36
-
-class HttpRequestHeader(IntEnum):
-    CacheControl = 0
-    Connection = 1
-    Date = 2
-    KeepAlive = 3
-    Pragma = 4
-    Trailer = 5
-    TransferEncoding = 6
-    Upgrade = 7
-    Via = 8
-    Warning = 9
-    Allow = 10
-    ContentLength = 11
-    ContentType = 12
-    ContentEncoding = 13
-    ContentLanguage = 14
-    ContentLocation = 15
-    ContentMd5 = 16
-    ContentRange = 17
-    Expires = 18
-    LastModified = 19
-    Accept = 20
-    AcceptCharset = 21
-    AcceptEncoding = 22
-    AcceptLanguage = 23
-    Authorization = 24
-    Cookie = 25
-    Expect = 26
-    From = 27
-    Host = 28
-    IfMatch = 29
-    IfModifiedSince = 30
-    IfNoneMatch = 31
-    IfRange = 32
-    IfUnmodifiedSince = 33
-    MaxForwards = 34
-    ProxyAuthorization = 35
-    Referer = 36
-    Range = 37
-    Te = 38
-    Translate = 39
-    UserAgent = 40
-
-class WebExceptionStatus(IntEnum):
-    Success = 0
-    NameResolutionFailure = 1
-    ConnectFailure = 2
-    ReceiveFailure = 3
-    SendFailure = 4
-    PipelineFailure = 5
-    RequestCanceled = 6
-    ProtocolError = 7
-    ConnectionClosed = 8
-    TrustFailure = 9
-    SecureChannelFailure = 10
-    ServerProtocolViolation = 11
-    KeepAliveFailure = 12
-    Pending = 13
-    Timeout = 14
-    ProxyNameResolutionFailure = 15
-    UnknownError = 16
-    MessageLengthLimitExceeded = 17
-    CacheEntryNotFound = 18
-    RequestProhibitedByCachePolicy = 19
-    RequestProhibitedByProxy = 20
-
-class DecompressionMethods(IntEnum):
-    None_ = 0
-    GZip = 1
-    Deflate = 2
-
-class NetworkInterfaceComponent(IntEnum):
-    IPv4 = 0
-    IPv6 = 1
-
-class NetworkInterfaceType(IntEnum):
-    Unknown = 0
-    Ethernet = 1
-    TokenRing = 2
-    Fddi = 3
-    BasicIsdn = 4
-    PrimaryIsdn = 5
-    Ppp = 6
-    Loopback = 7
-    Ethernet3Megabit = 8
-    Slip = 9
-    Atm = 10
-    GenericModem = 11
-    FastEthernetT = 12
-    Isdn = 13
-    FastEthernetFx = 14
-    Wireless80211 = 15
-    AsymmetricDsl = 16
-    RateAdaptDsl = 17
-    SymmetricDsl = 18
-    VeryHighSpeedDsl = 19
-    IPOverAtm = 20
-    GigabitEthernet = 21
-    Tunnel = 22
-    MultiRateSymmetricDsl = 23
-    HighPerformanceSerialBus = 24
-    Wman = 25
-    Wwanpp = 26
-    Wwanpp2 = 27
-
-class UnicodeDecodingConformance(IntEnum):
-    Auto = 0
-    Strict = 1
-    Compat = 2
-    Loose = 3
-
-class UnicodeEncodingConformance(IntEnum):
-    Auto = 0
-    Strict = 1
-    Compat = 2
-
-class RequestCacheLevel(IntEnum):
-    Default = 0
-    BypassCache = 1
-    CacheOnly = 2
-    CacheIfAvailable = 3
-    Revalidate = 4
-    Reload = 5
-    NoCacheNoStore = 6
-
-class HttpRequestCacheLevel(IntEnum):
-    Default = 0
-    BypassCache = 1
-    CacheOnly = 2
-    CacheIfAvailable = 3
-    Revalidate = 4
-    Reload = 5
-    NoCacheNoStore = 6
-    CacheOrNextCacheOnly = 7
-    Refresh = 8
-
-class AddressFamily(IntEnum):
-    Unknown = 0
-    Unspecified = 1
-    Unix = 2
-    InterNetwork = 3
-    ImpLink = 4
-    Pup = 5
-    Chaos = 6
-    NS = 7
-    Ipx = 8
-    Iso = 9
-    Osi = 10
-    Ecma = 11
-    DataKit = 12
-    Ccitt = 13
-    Sna = 14
-    DecNet = 15
-    DataLink = 16
-    Lat = 17
-    HyperChannel = 18
-    AppleTalk = 19
-    NetBios = 20
-    VoiceView = 21
-    FireFox = 22
-    Banyan = 23
-    Atm = 24
-    InterNetworkV6 = 25
-    Cluster = 26
-    Ieee12844 = 27
-    Irda = 28
-    NetworkDesigners = 29
-    Max = 30
-
-class IOControlCode(IntEnum):
-    AsyncIO = 0
-    NonBlockingIO = 1
-    DataToRead = 2
-    OobDataRead = 3
-    AssociateHandle = 4
-    EnableCircularQueuing = 5
-    Flush = 6
-    GetBroadcastAddress = 7
-    GetExtensionFunctionPointer = 8
-    GetQos = 9
-    GetGroupQos = 10
-    MultipointLoopback = 11
-    MulticastScope = 12
-    SetQos = 13
-    SetGroupQos = 14
-    TranslateHandle = 15
-    RoutingInterfaceQuery = 16
-    RoutingInterfaceChange = 17
-    AddressListQuery = 18
-    AddressListChange = 19
-    QueryTargetPnpHandle = 20
-    NamespaceChange = 21
-    AddressListSort = 22
-    ReceiveAll = 23
-    ReceiveAllMulticast = 24
-    ReceiveAllIgmpMulticast = 25
-    KeepAliveValues = 26
-    AbsorbRouterAlert = 27
-    UnicastInterface = 28
-    LimitBroadcasts = 29
-    BindToInterface = 30
-    MulticastInterface = 31
-    AddMulticastGroupOnInterface = 32
-    DeleteMulticastGroupFromInterface = 33
-
-class IPProtectionLevel(IntEnum):
-    Unspecified = 0
-    Unrestricted = 1
-    EdgeRestricted = 2
-    Restricted = 3
-
-class ProtocolType(IntEnum):
-    IP = 0
-    IPv6HopByHopOptions = 1
-    Icmp = 2
-    Igmp = 3
-    Ggp = 4
-    IPv4 = 5
-    Tcp = 6
-    Pup = 7
-    Udp = 8
-    Idp = 9
-    IPv6 = 10
-    IPv6RoutingHeader = 11
-    IPv6FragmentHeader = 12
-    IPSecEncapsulatingSecurityPayload = 13
-    IPSecAuthenticationHeader = 14
-    IcmpV6 = 15
-    IPv6NoNextHeader = 16
-    IPv6DestinationOptions = 17
-    ND = 18
-    Raw = 19
-    Unspecified = 20
-    Ipx = 21
-    Spx = 22
-    SpxII = 23
-    Unknown = 24
-
-class SelectMode(IntEnum):
-    SelectRead = 0
-    SelectWrite = 1
-    SelectError = 2
-
-class SocketAsyncOperation(IntEnum):
-    None_ = 0
-    Accept = 1
-    Connect = 2
-    Disconnect = 3
-    Receive = 4
-    ReceiveFrom = 5
-    ReceiveMessageFrom = 6
-    Send = 7
-    SendPackets = 8
-    SendTo = 9
-
-class SocketError(IntEnum):
-    Success = 0
-    SocketError = 1
-    Interrupted = 2
-    AccessDenied = 3
-    Fault = 4
-    InvalidArgument = 5
-    TooManyOpenSockets = 6
-    WouldBlock = 7
-    InProgress = 8
-    AlreadyInProgress = 9
-    NotSocket = 10
-    DestinationAddressRequired = 11
-    MessageSize = 12
-    ProtocolType = 13
-    ProtocolOption = 14
-    ProtocolNotSupported = 15
-    SocketNotSupported = 16
-    OperationNotSupported = 17
-    ProtocolFamilyNotSupported = 18
-    AddressFamilyNotSupported = 19
-    AddressAlreadyInUse = 20
-    AddressNotAvailable = 21
-    NetworkDown = 22
-    NetworkUnreachable = 23
-    NetworkReset = 24
-    ConnectionAborted = 25
-    ConnectionReset = 26
-    NoBufferSpaceAvailable = 27
-    IsConnected = 28
-    NotConnected = 29
-    Shutdown = 30
-    TimedOut = 31
-    ConnectionRefused = 32
-    HostDown = 33
-    HostUnreachable = 34
-    ProcessLimit = 35
-    SystemNotReady = 36
-    VersionNotSupported = 37
-    NotInitialized = 38
-    Disconnecting = 39
-    TypeNotFound = 40
-    HostNotFound = 41
-    TryAgain = 42
-    NoRecovery = 43
-    NoData = 44
-    IOPending = 45
-    OperationAborted = 46
-
-class SocketFlags(IntEnum):
-    None_ = 0
-    OutOfBand = 1
-    Peek = 2
-    DontRoute = 3
-    MaxIOVectorLength = 4
-    Truncated = 5
-    ControlDataTruncated = 6
-    Broadcast = 7
-    Multicast = 8
-    Partial = 9
-
-class SocketOptionLevel(IntEnum):
-    Socket = 0
-    IP = 1
-    IPv6 = 2
-    Tcp = 3
-    Udp = 4
-
-class SocketOptionName(IntEnum):
-    Debug = 0
-    AcceptConnection = 1
-    ReuseAddress = 2
-    KeepAlive = 3
-    DontRoute = 4
-    Broadcast = 5
-    UseLoopback = 6
-    Linger = 7
-    OutOfBandInline = 8
-    DontLinger = 9
-    ExclusiveAddressUse = 10
-    SendBuffer = 11
-    ReceiveBuffer = 12
-    SendLowWater = 13
-    ReceiveLowWater = 14
-    SendTimeout = 15
-    ReceiveTimeout = 16
-    Error = 17
-    Type = 18
-    ReuseUnicastPort = 19
-    MaxConnections = 20
-    IPOptions = 21
-    HeaderIncluded = 22
-    TypeOfService = 23
-    IpTimeToLive = 24
-    MulticastInterface = 25
-    MulticastTimeToLive = 26
-    MulticastLoopback = 27
-    AddMembership = 28
-    DropMembership = 29
-    DontFragment = 30
-    AddSourceMembership = 31
-    DropSourceMembership = 32
-    BlockSource = 33
-    UnblockSource = 34
-    PacketInformation = 35
-    HopLimit = 36
-    IPProtectionLevel = 37
-    IPv6Only = 38
-    NoDelay = 39
-    BsdUrgent = 40
-    Expedited = 41
-    NoChecksum = 42
-    ChecksumCoverage = 43
-    UpdateAcceptContext = 44
-    UpdateConnectContext = 45
-
-class SocketShutdown(IntEnum):
-    Receive = 0
-    Send = 1
-    Both = 2
-
-class SocketType(IntEnum):
-    Stream = 0
-    Dgram = 1
-    Raw = 2
-    Rdm = 3
-    Seqpacket = 4
-    Unknown = 5
-
-class TransmitFileOptions(IntEnum):
-    UseDefaultWorkerThread = 0
-    Disconnect = 1
-    ReuseSocket = 2
-    WriteBehind = 3
-    UseSystemThread = 4
-    UseKernelApc = 5
-
-class SmtpDeliveryFormat(IntEnum):
-    SevenBit = 0
-    International = 1
-
-class SmtpDeliveryMethod(IntEnum):
-    Network = 0
-    SpecifiedPickupDirectory = 1
-    PickupDirectoryFromIis = 2
-
-class AuthenticationLevel(IntEnum):
-    None_ = 0
-    MutualAuthRequested = 1
-    MutualAuthRequired = 2
-
-class EncryptionPolicy(IntEnum):
-    RequireEncryption = 0
-    AllowNoEncryption = 1
-    NoEncryption = 2
-
-class SslPolicyErrors(IntEnum):
-    None_ = 0
-    RemoteCertificateNotAvailable = 1
-    RemoteCertificateNameMismatch = 2
-    RemoteCertificateChainErrors = 3
-
-class SettingsSerializeAs(IntEnum):
-    Binary = 0
-    ProviderSpecific = 1
-    String = 2
-    Xml = 3
-
-class AutoDetectValues(IntEnum):
-    False_ = 0
-    True_ = 1
-    Unspecified = 2
-
-class BypassOnLocalValues(IntEnum):
-    False_ = 0
-    True_ = 1
-    Unspecified = 2
-
-class UseSystemDefaultValues(IntEnum):
-    False_ = 0
-    True_ = 1
-    Unspecified = 2
-
-class SettingsManageability(IntEnum):
-    Roaming = 0
-
-class SpecialSetting(IntEnum):
-    ConnectionString = 0
-    WebServiceUrl = 1
-
-class MeasureMode(IntEnum):
-    Undefined = 0
-    Exactly = 1
-    AtMost = 2
-
-class DynamicAtlasFilters(IntEnum):
-    None_ = 0
-    Readability = 1
-    Size = 2
-    Format = 3
-    ColorSpace = 4
-    FilterMode = 5
-
-class Status(IntEnum):
-    None_ = 0
-    Normal = 1
-    Disabled = 2
-    Checked = 3
-    Hidden = 4
-
-class Position(IntEnum):
-    Relative = 0
-    Absolute = 1
-
-class OverflowClipBox(IntEnum):
-    PaddingBox = 0
-    ContentBox = 1
-
-class FlexDirection(IntEnum):
-    Column = 0
-    ColumnReverse = 1
-    Row = 2
-    RowReverse = 3
-
-class Wrap(IntEnum):
-    NoWrap = 0
-    Wrap = 1
-    WrapReverse = 2
-
-class Align(IntEnum):
-    Auto = 0
-    FlexStart = 1
-    Center = 2
-    FlexEnd = 3
-    Stretch = 4
-
-class Justify(IntEnum):
-    FlexStart = 0
-    Center = 1
-    FlexEnd = 2
-    SpaceBetween = 3
-    SpaceAround = 4
-
-class TextOverflowPosition(IntEnum):
-    End = 0
-    Start = 1
-    Middle = 2
-
-class TextOverflow(IntEnum):
-    Clip = 0
-    Ellipsis = 1
-
-class TransformOriginOffset(IntEnum):
-    Left = 0
-    Right = 1
-    Top = 2
-    Bottom = 3
-    Center = 4
-
-class Visibility(IntEnum):
-    Visible = 0
-    Hidden = 1
-
-class WhiteSpace(IntEnum):
-    Normal = 0
-    NoWrap = 1
-
-class DisplayStyle(IntEnum):
-    Flex = 0
-    None_ = 1
-
-class PickingMode(IntEnum):
-    Position = 0
-    Ignore = 1
-
-class DefaultFocusOrder(IntEnum):
-    ChildOrder = 0
-    PositionXY = 1
-    PositionYX = 2
-
-class KeyboardNavigationOperation(IntEnum):
-    None_ = 0
-    SelectAll = 1
-    Cancel = 2
-    Submit = 3
-    Previous = 4
-    Next = 5
-    PageUp = 6
-    PageDown = 7
-    Begin = 8
-    End = 9
-
-class MouseButton(IntEnum):
-    LeftMouse = 0
-    RightMouse = 1
-    MiddleMouse = 2
-
-class ContextType(IntEnum):
-    Player = 0
-    Editor = 1
-
-class UsageHints(IntEnum):
-    None_ = 0
-    DynamicTransform = 1
-    GroupTransform = 2
-    MaskContainer = 3
-    DynamicColor = 4
-
-class SelectionType(IntEnum):
-    None_ = 0
-    Single = 1
-    Multiple = 2
-
-class UpdateMode(IntEnum):
-    Always = 0
-    IgnoreIfAppNotFocused = 1
-
-class Use(IntEnum):
-    None_ = 0
-    Optional = 1
-    Prohibited = 2
-    Required = 3
-
-class TimeUnit(IntEnum):
-    Second = 0
-    Millisecond = 1
-
-class StyleKeyword(IntEnum):
-    Undefined = 0
-    Null = 1
-    Auto = 2
-    None_ = 3
-    Initial = 4
-
-class AngleUnit(IntEnum):
-    Degree = 0
-    Gradian = 1
-    Radian = 2
-    Turn = 3
-
-class EasingMode(IntEnum):
-    Ease = 0
-    EaseIn = 1
-    EaseOut = 2
-    EaseInOut = 3
-    Linear = 4
-    EaseInSine = 5
-    EaseOutSine = 6
-    EaseInOutSine = 7
-    EaseInCubic = 8
-    EaseOutCubic = 9
-    EaseInOutCubic = 10
-    EaseInCirc = 11
-    EaseOutCirc = 12
-    EaseInOutCirc = 13
-    EaseInElastic = 14
-    EaseOutElastic = 15
-    EaseInOutElastic = 16
-    EaseInBack = 17
-    EaseOutBack = 18
-    EaseInOutBack = 19
-    EaseInBounce = 20
-    EaseOutBounce = 21
-    EaseInOutBounce = 22
-
-class LengthUnit(IntEnum):
-    Pixel = 0
-    Percent = 1
-
-class ListViewReorderMode(IntEnum):
-    Simple = 0
-    Animated = 1
-
-class HelpBoxMessageType(IntEnum):
-    None_ = 0
-    Info = 1
-    Warning = 2
-    Error = 3
-
-class ScrollViewMode(IntEnum):
-    Vertical = 0
-    Horizontal = 1
-    VerticalAndHorizontal = 2
-
-class ScrollerVisibility(IntEnum):
-    Auto = 0
-    AlwaysVisible = 1
-    Hidden = 2
-
-class TouchScrollBehavior(IntEnum):
-    Unrestricted = 0
-    Elastic = 1
-    Clamped = 2
-
-class NestedInteractionKind(IntEnum):
-    Default = 0
-    StopScrolling = 1
-    ForwardScrolling = 2
-
-class TwoPaneSplitViewOrientation(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-
-class AlternatingRowBackground(IntEnum):
-    None_ = 0
-    ContentOnly = 1
-    All = 2
-
-class CollectionVirtualizationMethod(IntEnum):
-    FixedHeight = 0
-    DynamicHeight = 1
-
-class SliderDirection(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-
-class PanelScaleMode(IntEnum):
-    ConstantPixelSize = 0
-    ConstantPhysicalSize = 1
-    ScaleWithScreenSize = 2
-
-class PanelScreenMatchMode(IntEnum):
-    MatchWidthOrHeight = 0
-    Shrink = 1
-    Expand = 2
-
-class Direction(IntEnum):
-    None_ = 0
-    Left = 1
-    Up = 2
-    Right = 3
-    Down = 4
-
-class Direction(IntEnum):
-    None_ = 0
-    Next = 1
-    Previous = 2
-
-class Type(IntEnum):
-    None_ = 0
-    TrickleDown = 1
-    BubbleUp = 2
-
-class PropagationPhase(IntEnum):
-    None_ = 0
-    TrickleDown = 1
-    AtTarget = 2
-    DefaultActionAtTarget = 3
-    BubbleUp = 4
-    DefaultAction = 5
-
-class TrickleDown(IntEnum):
-    NoTrickleDown = 0
-    TrickleDown = 1
-
-class Unit(IntEnum):
-    Unitless = 0
-    Pixel = 1
-    Percent = 2
-    Second = 3
-    Millisecond = 4
-    Degree = 5
-    Gradian = 6
-    Radian = 7
-    Turn = 8
-
-class AcceptRejectRule(IntEnum):
-    None_ = 0
-    Cascade = 1
-
-class DataRowAction(IntEnum):
-    Nothing = 0
-    Delete = 1
-    Change = 2
-    Rollback = 3
-    Commit = 4
-    Add = 5
-    ChangeOriginal = 6
-    ChangeCurrentAndOriginal = 7
-
-class DataRowState(IntEnum):
-    Detached = 0
-    Unchanged = 1
-    Added = 2
-    Deleted = 3
-    Modified = 4
-
-class DataRowVersion(IntEnum):
-    Original = 0
-    Current = 1
-    Proposed = 2
-    Default = 3
-
-class SerializationFormat(IntEnum):
-    Xml = 0
-    Binary = 1
-
-class DataSetDateTime(IntEnum):
-    Local = 0
-    Unspecified = 1
-    UnspecifiedLocal = 2
-    Utc = 3
-
-class DataViewRowState(IntEnum):
-    None_ = 0
-    Unchanged = 1
-    Added = 2
-    Deleted = 3
-    ModifiedCurrent = 4
-    ModifiedOriginal = 5
-    OriginalRows = 6
-    CurrentRows = 7
-
-class MappingType(IntEnum):
-    Element = 0
-    Attribute = 1
-    SimpleContent = 2
-    Hidden = 3
-
-class MissingSchemaAction(IntEnum):
-    Add = 0
-    Ignore = 1
-    Error = 2
-    AddWithKey = 3
-
-class Rule(IntEnum):
-    None_ = 0
-    Cascade = 1
-    SetNull = 2
-    SetDefault = 3
-
-class SchemaSerializationMode(IntEnum):
-    IncludeSchema = 0
-    ExcludeSchema = 1
-
-class XmlReadMode(IntEnum):
-    Auto = 0
-    ReadSchema = 1
-    IgnoreSchema = 2
-    InferSchema = 3
-    DiffGram = 4
-    Fragment = 5
-    InferTypedSchema = 6
-
-class XmlWriteMode(IntEnum):
-    WriteSchema = 0
-    IgnoreSchema = 1
-    DiffGram = 2
-
-class SqlCompareOptions(IntEnum):
-    None_ = 0
-    IgnoreCase = 1
-    IgnoreNonSpace = 2
-    IgnoreKanaType = 3
-    IgnoreWidth = 4
-    BinarySort = 5
-    BinarySort2 = 6
-
-class ProfilerRecorderOptions(IntEnum):
-    None_ = 0
-    StartImmediately = 1
-    KeepAliveDuringDomainReload = 2
-    CollectOnlyOnCurrentThread = 3
-    WrapAroundWhenCapacityReached = 4
-    SumAllSamplesInFrame = 5
-    GpuRecorder = 6
-    Default = 7
-
-class ProfilerMarkerDataUnit(IntEnum):
-    Undefined = 0
-    TimeNanoseconds = 1
-    Bytes = 2
-    Count = 3
-    Percent = 4
-    FrequencyHz = 5
-
-class MarkerFlags(IntEnum):
-    Default = 0
-    Script = 1
-    ScriptInvoke = 2
-    ScriptDeepProfiler = 3
-    AvailabilityEditor = 4
-    AvailabilityNonDevelopment = 5
-    Warning = 6
-    Counter = 7
-    SampleGPU = 8
-
-class ProfilerMarkerDataType(IntEnum):
-    Int32 = 0
-    UInt32 = 1
-    Int64 = 2
-    UInt64 = 3
-    Float = 4
-    Double = 5
-    String16 = 6
-    Blob8 = 7
-
-class ScheduleMode(IntEnum):
-    Run = 0
-    Batched = 1
-    Parallel = 2
-    Single = 3
-
-class NativeArrayOptions(IntEnum):
-    UninitializedMemory = 0
-    ClearMemory = 1
-
-class Allocator(IntEnum):
-    Invalid = 0
-    None_ = 1
-    Temp = 2
-    TempJob = 3
-    Persistent = 4
-    AudioKernel = 5
-
-class BurstLogType(IntEnum):
-    Info = 0
-    Warning = 1
-    Error = 2
-
-class FileState(IntEnum):
-    Absent = 0
-    Exists = 1
-
-class AssetLoadingSubsystem(IntEnum):
-    Other = 0
-    Texture = 1
-    VirtualTexture = 2
-    Mesh = 3
-    Audio = 4
-    Scripts = 5
-    EntitiesScene = 6
-    EntitiesStreamBinaryReader = 7
-    FileInfo = 8
-
-class Priority(IntEnum):
-    PriorityLow = 0
-    PriorityHigh = 1
-
-class ProcessingState(IntEnum):
-    Unknown = 0
-    InQueue = 1
-    Reading = 2
-    Completed = 3
-    Failed = 4
-    Canceled = 5
-
-class FileReadType(IntEnum):
-    Sync = 0
-    Async = 1
-
-class TypeInferenceRules(IntEnum):
-    TypeReferencedByFirstArgument = 0
-    TypeReferencedBySecondArgument = 1
-    ArrayOfTypeReferencedByFirstArgument = 2
-    TypeOfFirstArgument = 3
-
-class SendMessageOptions(IntEnum):
-    RequireReceiver = 0
-    DontRequireReceiver = 1
-
-class PrimitiveType(IntEnum):
-    Sphere = 0
-    Capsule = 1
-    Cylinder = 2
-    Cube = 3
-    Plane = 4
-    Quad = 5
-
-class Space(IntEnum):
-    World = 0
-    Self = 1
-
-class RuntimePlatform(IntEnum):
-    OSXEditor = 0
-    OSXPlayer = 1
-    WindowsPlayer = 2
-    OSXWebPlayer = 3
-    OSXDashboardPlayer = 4
-    WindowsWebPlayer = 5
-    WindowsEditor = 6
-    IPhonePlayer = 7
-    XBOX360 = 8
-    PS3 = 9
-    Android = 10
-    NaCl = 11
-    FlashPlayer = 12
-    LinuxPlayer = 13
-    LinuxEditor = 14
-    WebGLPlayer = 15
-    MetroPlayerX86 = 16
-    WSAPlayerX86 = 17
-    MetroPlayerX64 = 18
-    WSAPlayerX64 = 19
-    MetroPlayerARM = 20
-    WSAPlayerARM = 21
-    WP8Player = 22
-    BlackBerryPlayer = 23
-    TizenPlayer = 24
-    PSP2 = 25
-    PS4 = 26
-    PSM = 27
-    XboxOne = 28
-    SamsungTVPlayer = 29
-    WiiU = 30
-    tvOS = 31
-    Switch = 32
-    Lumin = 33
-    Stadia = 34
-    CloudRendering = 35
-    GameCoreScarlett = 36
-    GameCoreXboxSeries = 37
-    GameCoreXboxOne = 38
-    PS5 = 39
-    EmbeddedLinuxArm64 = 40
-    EmbeddedLinuxArm32 = 41
-    EmbeddedLinuxX64 = 42
-    EmbeddedLinuxX86 = 43
-    LinuxServer = 44
-    WindowsServer = 45
-    OSXServer = 46
-
-class SystemLanguage(IntEnum):
-    Afrikaans = 0
-    Arabic = 1
-    Basque = 2
-    Belarusian = 3
-    Bulgarian = 4
-    Catalan = 5
-    Chinese = 6
-    Czech = 7
-    Danish = 8
-    Dutch = 9
-    English = 10
-    Estonian = 11
-    Faroese = 12
-    Finnish = 13
-    French = 14
-    German = 15
-    Greek = 16
-    Hebrew = 17
-    Icelandic = 18
-    Indonesian = 19
-    Italian = 20
-    Japanese = 21
-    Korean = 22
-    Latvian = 23
-    Lithuanian = 24
-    Norwegian = 25
-    Polish = 26
-    Portuguese = 27
-    Romanian = 28
-    Russian = 29
-    SerboCroatian = 30
-    Slovak = 31
-    Slovenian = 32
-    Spanish = 33
-    Swedish = 34
-    Thai = 35
-    Turkish = 36
-    Ukrainian = 37
-    Vietnamese = 38
-    ChineseSimplified = 39
-    ChineseTraditional = 40
-    Unknown = 41
-    Hungarian = 42
-
-class LogType(IntEnum):
-    Error = 0
-    Assert = 1
-    Warning = 2
-    Log = 3
-    Exception = 4
-
-class LogOption(IntEnum):
-    None_ = 0
-    NoStacktrace = 1
-
-class ThreadPriority(IntEnum):
-    Low = 0
-    BelowNormal = 1
-    Normal = 2
-    High = 3
-
-class GradientMode(IntEnum):
-    Blend = 0
-    Fixed = 1
-
-class NetworkReachability(IntEnum):
-    NotReachable = 0
-    ReachableViaCarrierDataNetwork = 1
-    ReachableViaLocalAreaNetwork = 2
-
-class CursorMode(IntEnum):
-    Auto = 0
-    ForceSoftware = 1
-
-class CursorLockMode(IntEnum):
-    None_ = 0
-    Locked = 1
-    Confined = 2
-
-class KeyCode(IntEnum):
-    None_ = 0
-    Backspace = 1
-    Delete = 2
-    Tab = 3
-    Clear = 4
-    Return = 5
-    Pause = 6
-    Escape = 7
-    Space = 8
-    Keypad0 = 9
-    Keypad1 = 10
-    Keypad2 = 11
-    Keypad3 = 12
-    Keypad4 = 13
-    Keypad5 = 14
-    Keypad6 = 15
-    Keypad7 = 16
-    Keypad8 = 17
-    Keypad9 = 18
-    KeypadPeriod = 19
-    KeypadDivide = 20
-    KeypadMultiply = 21
-    KeypadMinus = 22
-    KeypadPlus = 23
-    KeypadEnter = 24
-    KeypadEquals = 25
-    UpArrow = 26
-    DownArrow = 27
-    RightArrow = 28
-    LeftArrow = 29
-    Insert = 30
-    Home = 31
-    End = 32
-    PageUp = 33
-    PageDown = 34
-    F1 = 35
-    F2 = 36
-    F3 = 37
-    F4 = 38
-    F5 = 39
-    F6 = 40
-    F7 = 41
-    F8 = 42
-    F9 = 43
-    F10 = 44
-    F11 = 45
-    F12 = 46
-    F13 = 47
-    F14 = 48
-    F15 = 49
-    Alpha0 = 50
-    Alpha1 = 51
-    Alpha2 = 52
-    Alpha3 = 53
-    Alpha4 = 54
-    Alpha5 = 55
-    Alpha6 = 56
-    Alpha7 = 57
-    Alpha8 = 58
-    Alpha9 = 59
-    Exclaim = 60
-    DoubleQuote = 61
-    Hash = 62
-    Dollar = 63
-    Percent = 64
-    Ampersand = 65
-    Quote = 66
-    LeftParen = 67
-    RightParen = 68
-    Asterisk = 69
-    Plus = 70
-    Comma = 71
-    Minus = 72
-    Period = 73
-    Slash = 74
-    Colon = 75
-    Semicolon = 76
-    Less = 77
-    Equals = 78
-    Greater = 79
-    Question = 80
-    At = 81
-    LeftBracket = 82
-    Backslash = 83
-    RightBracket = 84
-    Caret = 85
-    Underscore = 86
-    BackQuote = 87
-    A = 88
-    B = 89
-    C = 90
-    D = 91
-    E = 92
-    F = 93
-    G = 94
-    H = 95
-    I = 96
-    J = 97
-    K = 98
-    L = 99
-    M = 100
-    N = 101
-    O = 102
-    P = 103
-    Q = 104
-    R = 105
-    S = 106
-    T = 107
-    U = 108
-    V = 109
-    W = 110
-    X = 111
-    Y = 112
-    Z = 113
-    LeftCurlyBracket = 114
-    Pipe = 115
-    RightCurlyBracket = 116
-    Tilde = 117
-    Numlock = 118
-    CapsLock = 119
-    ScrollLock = 120
-    RightShift = 121
-    LeftShift = 122
-    RightControl = 123
-    LeftControl = 124
-    RightAlt = 125
-    LeftAlt = 126
-    LeftMeta = 127
-    LeftCommand = 128
-    LeftApple = 129
-    LeftWindows = 130
-    RightMeta = 131
-    RightCommand = 132
-    RightApple = 133
-    RightWindows = 134
-    AltGr = 135
-    Help = 136
-    Print = 137
-    SysReq = 138
-    Break = 139
-    Menu = 140
-    Mouse0 = 141
-    Mouse1 = 142
-    Mouse2 = 143
-    Mouse3 = 144
-    Mouse4 = 145
-    Mouse5 = 146
-    Mouse6 = 147
-    JoystickButton0 = 148
-    JoystickButton1 = 149
-    JoystickButton2 = 150
-    JoystickButton3 = 151
-    JoystickButton4 = 152
-    JoystickButton5 = 153
-    JoystickButton6 = 154
-    JoystickButton7 = 155
-    JoystickButton8 = 156
-    JoystickButton9 = 157
-    JoystickButton10 = 158
-    JoystickButton11 = 159
-    JoystickButton12 = 160
-    JoystickButton13 = 161
-    JoystickButton14 = 162
-    JoystickButton15 = 163
-    JoystickButton16 = 164
-    JoystickButton17 = 165
-    JoystickButton18 = 166
-    JoystickButton19 = 167
-    Joystick1Button0 = 168
-    Joystick1Button1 = 169
-    Joystick1Button2 = 170
-    Joystick1Button3 = 171
-    Joystick1Button4 = 172
-    Joystick1Button5 = 173
-    Joystick1Button6 = 174
-    Joystick1Button7 = 175
-    Joystick1Button8 = 176
-    Joystick1Button9 = 177
-    Joystick1Button10 = 178
-    Joystick1Button11 = 179
-    Joystick1Button12 = 180
-    Joystick1Button13 = 181
-    Joystick1Button14 = 182
-    Joystick1Button15 = 183
-    Joystick1Button16 = 184
-    Joystick1Button17 = 185
-    Joystick1Button18 = 186
-    Joystick1Button19 = 187
-    Joystick2Button0 = 188
-    Joystick2Button1 = 189
-    Joystick2Button2 = 190
-    Joystick2Button3 = 191
-    Joystick2Button4 = 192
-    Joystick2Button5 = 193
-    Joystick2Button6 = 194
-    Joystick2Button7 = 195
-    Joystick2Button8 = 196
-    Joystick2Button9 = 197
-    Joystick2Button10 = 198
-    Joystick2Button11 = 199
-    Joystick2Button12 = 200
-    Joystick2Button13 = 201
-    Joystick2Button14 = 202
-    Joystick2Button15 = 203
-    Joystick2Button16 = 204
-    Joystick2Button17 = 205
-    Joystick2Button18 = 206
-    Joystick2Button19 = 207
-    Joystick3Button0 = 208
-    Joystick3Button1 = 209
-    Joystick3Button2 = 210
-    Joystick3Button3 = 211
-    Joystick3Button4 = 212
-    Joystick3Button5 = 213
-    Joystick3Button6 = 214
-    Joystick3Button7 = 215
-    Joystick3Button8 = 216
-    Joystick3Button9 = 217
-    Joystick3Button10 = 218
-    Joystick3Button11 = 219
-    Joystick3Button12 = 220
-    Joystick3Button13 = 221
-    Joystick3Button14 = 222
-    Joystick3Button15 = 223
-    Joystick3Button16 = 224
-    Joystick3Button17 = 225
-    Joystick3Button18 = 226
-    Joystick3Button19 = 227
-    Joystick4Button0 = 228
-    Joystick4Button1 = 229
-    Joystick4Button2 = 230
-    Joystick4Button3 = 231
-    Joystick4Button4 = 232
-    Joystick4Button5 = 233
-    Joystick4Button6 = 234
-    Joystick4Button7 = 235
-    Joystick4Button8 = 236
-    Joystick4Button9 = 237
-    Joystick4Button10 = 238
-    Joystick4Button11 = 239
-    Joystick4Button12 = 240
-    Joystick4Button13 = 241
-    Joystick4Button14 = 242
-    Joystick4Button15 = 243
-    Joystick4Button16 = 244
-    Joystick4Button17 = 245
-    Joystick4Button18 = 246
-    Joystick4Button19 = 247
-    Joystick5Button0 = 248
-    Joystick5Button1 = 249
-    Joystick5Button2 = 250
-    Joystick5Button3 = 251
-    Joystick5Button4 = 252
-    Joystick5Button5 = 253
-    Joystick5Button6 = 254
-    Joystick5Button7 = 255
-    Joystick5Button8 = 256
-    Joystick5Button9 = 257
-    Joystick5Button10 = 258
-    Joystick5Button11 = 259
-    Joystick5Button12 = 260
-    Joystick5Button13 = 261
-    Joystick5Button14 = 262
-    Joystick5Button15 = 263
-    Joystick5Button16 = 264
-    Joystick5Button17 = 265
-    Joystick5Button18 = 266
-    Joystick5Button19 = 267
-    Joystick6Button0 = 268
-    Joystick6Button1 = 269
-    Joystick6Button2 = 270
-    Joystick6Button3 = 271
-    Joystick6Button4 = 272
-    Joystick6Button5 = 273
-    Joystick6Button6 = 274
-    Joystick6Button7 = 275
-    Joystick6Button8 = 276
-    Joystick6Button9 = 277
-    Joystick6Button10 = 278
-    Joystick6Button11 = 279
-    Joystick6Button12 = 280
-    Joystick6Button13 = 281
-    Joystick6Button14 = 282
-    Joystick6Button15 = 283
-    Joystick6Button16 = 284
-    Joystick6Button17 = 285
-    Joystick6Button18 = 286
-    Joystick6Button19 = 287
-    Joystick7Button0 = 288
-    Joystick7Button1 = 289
-    Joystick7Button2 = 290
-    Joystick7Button3 = 291
-    Joystick7Button4 = 292
-    Joystick7Button5 = 293
-    Joystick7Button6 = 294
-    Joystick7Button7 = 295
-    Joystick7Button8 = 296
-    Joystick7Button9 = 297
-    Joystick7Button10 = 298
-    Joystick7Button11 = 299
-    Joystick7Button12 = 300
-    Joystick7Button13 = 301
-    Joystick7Button14 = 302
-    Joystick7Button15 = 303
-    Joystick7Button16 = 304
-    Joystick7Button17 = 305
-    Joystick7Button18 = 306
-    Joystick7Button19 = 307
-    Joystick8Button0 = 308
-    Joystick8Button1 = 309
-    Joystick8Button2 = 310
-    Joystick8Button3 = 311
-    Joystick8Button4 = 312
-    Joystick8Button5 = 313
-    Joystick8Button6 = 314
-    Joystick8Button7 = 315
-    Joystick8Button8 = 316
-    Joystick8Button9 = 317
-    Joystick8Button10 = 318
-    Joystick8Button11 = 319
-    Joystick8Button12 = 320
-    Joystick8Button13 = 321
-    Joystick8Button14 = 322
-    Joystick8Button15 = 323
-    Joystick8Button16 = 324
-    Joystick8Button17 = 325
-    Joystick8Button18 = 326
-    Joystick8Button19 = 327
-
-class RenderingPath(IntEnum):
-    UsePlayerSettings = 0
-    VertexLit = 1
-    Forward = 2
-    DeferredLighting = 3
-    DeferredShading = 4
-
-class TransparencySortMode(IntEnum):
-    Default = 0
-    Perspective = 1
-    Orthographic = 2
-    CustomAxis = 3
-
-class StereoTargetEyeMask(IntEnum):
-    None_ = 0
-    Left = 1
-    Right = 2
-    Both = 3
-
-class CameraType(IntEnum):
-    Game = 0
-    SceneView = 1
-    Preview = 2
-    VR = 3
-    Reflection = 4
-
-class ComputeBufferType(IntEnum):
-    Default = 0
-    Raw = 1
-    Append = 2
-    Counter = 3
-    Constant = 4
-    Structured = 5
-    DrawIndirect = 6
-    IndirectArguments = 7
-    GPUMemory = 8
-
-class LightType(IntEnum):
-    Spot = 0
-    Directional = 1
-    Point = 2
-    Area = 3
-    Rectangle = 4
-    Disc = 5
-
-class LightShape(IntEnum):
-    Cone = 0
-    Pyramid = 1
-    Box = 2
-
-class LightRenderMode(IntEnum):
-    Auto = 0
-    ForcePixel = 1
-    ForceVertex = 2
-
-class LightShadows(IntEnum):
-    None_ = 0
-    Hard = 1
-    Soft = 2
-
-class FogMode(IntEnum):
-    Linear = 0
-    Exponential = 1
-    ExponentialSquared = 2
-
-class LightmapBakeType(IntEnum):
-    Realtime = 0
-    Baked = 1
-    Mixed = 2
-
-class MixedLightingMode(IntEnum):
-    IndirectOnly = 0
-    Shadowmask = 1
-    Subtractive = 2
-
-class ShadowmaskMode(IntEnum):
-    Shadowmask = 0
-    DistanceShadowmask = 1
-
-class ShadowObjectsFilter(IntEnum):
-    AllObjects = 0
-    DynamicOnly = 1
-    StaticOnly = 2
-
-class CameraClearFlags(IntEnum):
-    Skybox = 0
-    Color = 1
-    SolidColor = 2
-    Depth = 3
-    Nothing = 4
-
-class DepthTextureMode(IntEnum):
-    None_ = 0
-    Depth = 1
-    DepthNormals = 2
-    MotionVectors = 3
-
-class MeshTopology(IntEnum):
-    Triangles = 0
-    Quads = 1
-    Lines = 2
-    LineStrip = 3
-    Points = 4
-
-class SkinQuality(IntEnum):
-    Auto = 0
-    Bone1 = 1
-    Bone2 = 2
-    Bone4 = 3
-
-class ColorSpace(IntEnum):
-    Uninitialized = 0
-    Gamma = 1
-    Linear = 2
-
-class ScreenOrientation(IntEnum):
-    Unknown = 0
-    Landscape = 1
-    Portrait = 2
-    PortraitUpsideDown = 3
-    LandscapeLeft = 4
-    LandscapeRight = 5
-    AutoRotation = 6
-
-class FilterMode(IntEnum):
-    Point = 0
-    Bilinear = 1
-    Trilinear = 2
-
-class TextureWrapMode(IntEnum):
-    Repeat = 0
-    Clamp = 1
-    Mirror = 2
-    MirrorOnce = 3
-
-class NPOTSupport(IntEnum):
-    None_ = 0
-    Restricted = 1
-    Full = 2
-
-class TextureFormat(IntEnum):
-    Alpha8 = 0
-    ARGB4444 = 1
-    RGB24 = 2
-    RGBA32 = 3
-    ARGB32 = 4
-    RGB565 = 5
-    R16 = 6
-    DXT1 = 7
-    DXT5 = 8
-    RGBA4444 = 9
-    BGRA32 = 10
-    RHalf = 11
-    RGHalf = 12
-    RGBAHalf = 13
-    RFloat = 14
-    RGFloat = 15
-    RGBAFloat = 16
-    YUY2 = 17
-    RGB9e5Float = 18
-    BC4 = 19
-    BC5 = 20
-    BC6H = 21
-    BC7 = 22
-    DXT1Crunched = 23
-    DXT5Crunched = 24
-    PVRTC_RGB2 = 25
-    PVRTC_RGBA2 = 26
-    PVRTC_RGB4 = 27
-    PVRTC_RGBA4 = 28
-    ETC_RGB4 = 29
-    EAC_R = 30
-    EAC_R_SIGNED = 31
-    EAC_RG = 32
-    EAC_RG_SIGNED = 33
-    ETC2_RGB = 34
-    ETC2_RGBA1 = 35
-    ETC2_RGBA8 = 36
-    ASTC_4x4 = 37
-    ASTC_5x5 = 38
-    ASTC_6x6 = 39
-    ASTC_8x8 = 40
-    ASTC_10x10 = 41
-    ASTC_12x12 = 42
-    ETC_RGB4_3DS = 43
-    ETC_RGBA8_3DS = 44
-    RG16 = 45
-    R8 = 46
-    ETC_RGB4Crunched = 47
-    ETC2_RGBA8Crunched = 48
-    ASTC_HDR_4x4 = 49
-    ASTC_HDR_5x5 = 50
-    ASTC_HDR_6x6 = 51
-    ASTC_HDR_8x8 = 52
-    ASTC_HDR_10x10 = 53
-    ASTC_HDR_12x12 = 54
-    RG32 = 55
-    RGB48 = 56
-    RGBA64 = 57
-    ASTC_RGB_4x4 = 58
-    ASTC_RGB_5x5 = 59
-    ASTC_RGB_6x6 = 60
-    ASTC_RGB_8x8 = 61
-    ASTC_RGB_10x10 = 62
-    ASTC_RGB_12x12 = 63
-    ASTC_RGBA_4x4 = 64
-    ASTC_RGBA_5x5 = 65
-    ASTC_RGBA_6x6 = 66
-    ASTC_RGBA_8x8 = 67
-    ASTC_RGBA_10x10 = 68
-    ASTC_RGBA_12x12 = 69
-
-class CubemapFace(IntEnum):
-    Unknown = 0
-    PositiveX = 1
-    NegativeX = 2
-    PositiveY = 3
-    NegativeY = 4
-    PositiveZ = 5
-    NegativeZ = 6
-
-class RenderTextureFormat(IntEnum):
-    ARGB32 = 0
-    Depth = 1
-    ARGBHalf = 2
-    Shadowmap = 3
-    RGB565 = 4
-    ARGB4444 = 5
-    ARGB1555 = 6
-    Default = 7
-    ARGB2101010 = 8
-    DefaultHDR = 9
-    ARGB64 = 10
-    ARGBFloat = 11
-    RGFloat = 12
-    RGHalf = 13
-    RFloat = 14
-    RHalf = 15
-    R8 = 16
-    ARGBInt = 17
-    RGInt = 18
-    RInt = 19
-    BGRA32 = 20
-    RGB111110Float = 21
-    RG32 = 22
-    RGBAUShort = 23
-    RG16 = 24
-    BGRA10101010_XR = 25
-    BGR101010_XR = 26
-    R16 = 27
-
-class VRTextureUsage(IntEnum):
-    None_ = 0
-    OneEye = 1
-    TwoEyes = 2
-    DeviceSpecific = 3
-
-class RenderTextureCreationFlags(IntEnum):
-    MipMap = 0
-    AutoGenerateMips = 1
-    SRGB = 2
-    EyeTexture = 3
-    EnableRandomWrite = 4
-    CreatedFromScript = 5
-    AllowVerticalFlip = 6
-    NoResolvedColorSurface = 7
-    DynamicallyScalable = 8
-    BindMS = 9
-
-class RenderTextureReadWrite(IntEnum):
-    Default = 0
-    Linear = 1
-    sRGB = 2
-
-class RenderTextureMemoryless(IntEnum):
-    None_ = 0
-    Color = 1
-    Depth = 2
-    MSAA = 3
-
-class LightmapsMode(IntEnum):
-    NonDirectional = 0
-    CombinedDirectional = 1
-
-class MaterialGlobalIlluminationFlags(IntEnum):
-    None_ = 0
-    RealtimeEmissive = 1
-    BakedEmissive = 2
-    EmissiveIsBlack = 3
-    AnyEmissive = 4
-
-class MotionVectorGenerationMode(IntEnum):
-    Camera = 0
-    Object = 1
-    ForceNoMotion = 2
-
-class LineTextureMode(IntEnum):
-    Stretch = 0
-    Tile = 1
-    DistributePerSegment = 2
-    RepeatPerSegment = 3
-
-class LineAlignment(IntEnum):
-    View = 0
-    Local = 1
-    TransformZ = 2
-
-class LightShadowCasterMode(IntEnum):
-    Default = 0
-    NonLightmappedOnly = 1
-    Everything = 2
-
-class FullScreenMode(IntEnum):
-    ExclusiveFullScreen = 0
-    FullScreenWindow = 1
-    MaximizedWindow = 2
-    Windowed = 3
-
-class ComputeBufferMode(IntEnum):
-    Immutable = 0
-    Dynamic = 1
-    Circular = 2
-    StreamOut = 3
-    SubUpdates = 4
-
-class LightmapsModeLegacy(IntEnum):
-    Single = 0
-    Dual = 1
-    Directional = 2
-
-class Target(IntEnum):
-    Vertex = 0
-    Index = 1
-    CopySource = 2
-    CopyDestination = 3
-    Structured = 4
-    Raw = 5
-    Append = 6
-    Counter = 7
-    IndirectArguments = 8
-    Constant = 9
-
-class OperatingSystemFamily(IntEnum):
-    Other = 0
-    MacOSX = 1
-    Windows = 2
-    Linux = 3
-
-class DeviceType(IntEnum):
-    Unknown = 0
-    Handheld = 1
-    Console = 2
-    Desktop = 3
-
-class WrapMode(IntEnum):
-    Once = 0
-    Loop = 1
-    PingPong = 2
-    Default = 3
-    ClampForever = 4
-    Clamp = 5
-
-class AudioType(IntEnum):
-    UNKNOWN = 0
-    ACC = 1
-    AIFF = 2
-    IT = 3
-    MOD = 4
-    MPEG = 5
-    OGGVORBIS = 6
-    S3M = 7
-    WAV = 8
-    XM = 9
-    XMA = 10
-    VAG = 11
-    AUDIOQUEUE = 12
-
-class GateFitMode(IntEnum):
-    Vertical = 0
-    Horizontal = 1
-    Fill = 2
-    Overscan = 3
-    None_ = 4
-
-class StereoscopicEye(IntEnum):
-    Left = 0
-    Right = 1
-
-class MonoOrStereoscopicEye(IntEnum):
-    Left = 0
-    Right = 1
-    Mono = 2
-
-class SceneViewFilterMode(IntEnum):
-    Off = 0
-    ShowFiltered = 1
-
-class RenderRequestMode(IntEnum):
-    None_ = 0
-    ObjectId = 1
-    Depth = 2
-    VertexNormal = 3
-    WorldPosition = 4
-    EntityId = 5
-    BaseColor = 6
-    SpecularColor = 7
-    Metallic = 8
-    Emission = 9
-    Normal = 10
-    Smoothness = 11
-    Occlusion = 12
-    DiffuseColor = 13
-
-class RenderRequestOutputSpace(IntEnum):
-    ScreenSpace = 0
-    UV0 = 1
-    UV1 = 2
-    UV2 = 3
-    UV3 = 4
-    UV4 = 5
-    UV5 = 6
-    UV6 = 7
-    UV7 = 8
-    UV8 = 9
-
-class ReflectionProbeEvent(IntEnum):
-    ReflectionProbeAdded = 0
-    ReflectionProbeRemoved = 1
-
-class TouchScreenKeyboardType(IntEnum):
-    Default = 0
-    ASCIICapable = 1
-    NumbersAndPunctuation = 2
-    URL = 3
-    NumberPad = 4
-    PhonePad = 5
-    NamePhonePad = 6
-    EmailAddress = 7
-    NintendoNetworkAccount = 8
-    Social = 9
-    Search = 10
-    DecimalPad = 11
-    OneTimeCode = 12
-
-class Status(IntEnum):
-    Visible = 0
-    Done = 1
-    Canceled = 2
-    LostFocus = 3
-
-class RuntimeInitializeLoadType(IntEnum):
-    AfterSceneLoad = 0
-    BeforeSceneLoad = 1
-    AfterAssembliesLoaded = 2
-    BeforeSplashScreen = 3
-    SubsystemRegistration = 4
-
-class HideFlags(IntEnum):
-    None_ = 0
-    HideInHierarchy = 1
-    HideInInspector = 2
-    DontSaveInEditor = 3
-    NotEditable = 4
-    DontSaveInBuild = 5
-    DontUnloadUnusedAsset = 6
-    DontSave = 7
-    HideAndDontSave = 8
-
-class FindObjectsSortMode(IntEnum):
-    None_ = 0
-    InstanceID = 1
-
-class FindObjectsInactive(IntEnum):
-    Exclude = 0
-    Include = 1
-
-class DrivenTransformProperties(IntEnum):
-    None_ = 0
-    All = 1
-    AnchoredPositionX = 2
-    AnchoredPositionY = 3
-    AnchoredPositionZ = 4
-    Rotation = 5
-    ScaleX = 6
-    ScaleY = 7
-    ScaleZ = 8
-    AnchorMinX = 9
-    AnchorMinY = 10
-    AnchorMaxX = 11
-    AnchorMaxY = 12
-    SizeDeltaX = 13
-    SizeDeltaY = 14
-    PivotX = 15
-    PivotY = 16
-    AnchoredPosition = 17
-    AnchoredPosition3D = 18
-    Scale = 19
-    AnchorMin = 20
-    AnchorMax = 21
-    Anchors = 22
-    SizeDelta = 23
-    Pivot = 24
-
-class Edge(IntEnum):
-    Left = 0
-    Right = 1
-    Top = 2
-    Bottom = 3
-
-class Axis(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-
-class SpriteDrawMode(IntEnum):
-    Simple = 0
-    Sliced = 1
-    Tiled = 2
-
-class SpriteTileMode(IntEnum):
-    Continuous = 0
-    Adaptive = 1
-
-class SpriteMaskInteraction(IntEnum):
-    None_ = 0
-    VisibleInsideMask = 1
-    VisibleOutsideMask = 2
-
-class SpriteMeshType(IntEnum):
-    FullRect = 0
-    Tight = 1
-
-class SpritePackingMode(IntEnum):
-    Tight = 0
-    Rectangle = 1
-
-class SpritePackingRotation(IntEnum):
-    None_ = 0
-    FlipHorizontal = 1
-    FlipVertical = 2
-    Rotate180 = 3
-    Any = 4
-
-class SpriteSortPoint(IntEnum):
-    Center = 0
-    Pivot = 1
-
-class PlayState(IntEnum):
-    Paused = 0
-    Playing = 1
-    Delayed = 2
-
-class DirectorUpdateMode(IntEnum):
-    DSPClock = 0
-    GameTime = 1
-    UnscaledGameTime = 2
-    Manual = 3
-
-class EvaluationType(IntEnum):
-    Evaluate = 0
-    Playback = 1
-
-class DirectorWrapMode(IntEnum):
-    Hold = 0
-    Loop = 1
-    None_ = 2
-
-class PlayableTraversalMode(IntEnum):
-    Mix = 0
-    Passthrough = 1
-
-class LoadSceneMode(IntEnum):
-    Single = 0
-    Additive = 1
-
-class LocalPhysicsMode(IntEnum):
-    None_ = 0
-    Physics2D = 1
-    Physics3D = 2
-
-class UnloadSceneOptions(IntEnum):
-    None_ = 0
-    UnloadAllEmbeddedSceneObjects = 1
-
-class PersistentListenerMode(IntEnum):
-    EventDefined = 0
-    Void = 1
-    Object = 2
-    Int = 3
-    Float = 4
-    String = 5
-    Bool = 6
-
-class UnityEventCallState(IntEnum):
-    Off = 0
-    EditorAndRuntime = 1
-    RuntimeOnly = 2
-
-class LightType(IntEnum):
-    Directional = 0
-    Point = 1
-    Spot = 2
-    Rectangle = 3
-    Disc = 4
-    SpotPyramidShape = 5
-    SpotBoxShape = 6
-
-class LightMode(IntEnum):
-    Realtime = 0
-    Mixed = 1
-    Baked = 2
-    Unknown = 3
-
-class FalloffType(IntEnum):
-    InverseSquared = 0
-    InverseSquaredNoRangeAttenuation = 1
-    Linear = 2
-    Legacy = 3
-    Undefined = 4
-
-class AngularFalloffType(IntEnum):
-    LUT = 0
-    AnalyticAndInnerAngle = 1
-
-class TextureCreationFlags(IntEnum):
-    None_ = 0
-    MipChain = 1
-    Crunch = 2
-
-class FormatUsage(IntEnum):
-    Sample = 0
-    Linear = 1
-    Sparse = 2
-    Render = 3
-    Blend = 4
-    GetPixels = 5
-    SetPixels = 6
-    SetPixels32 = 7
-    ReadPixels = 8
-    LoadStore = 9
-    MSAA2x = 10
-    MSAA4x = 11
-    MSAA8x = 12
-    StencilSampling = 13
-
-class DefaultFormat(IntEnum):
-    LDR = 0
-    HDR = 1
-    DepthStencil = 2
-    Shadow = 3
-    Video = 4
-
-class GraphicsFormat(IntEnum):
-    None_ = 0
-    R8_SRGB = 1
-    R8G8_SRGB = 2
-    R8G8B8_SRGB = 3
-    R8G8B8A8_SRGB = 4
-    R8_UNorm = 5
-    R8G8_UNorm = 6
-    R8G8B8_UNorm = 7
-    R8G8B8A8_UNorm = 8
-    R8_SNorm = 9
-    R8G8_SNorm = 10
-    R8G8B8_SNorm = 11
-    R8G8B8A8_SNorm = 12
-    R8_UInt = 13
-    R8G8_UInt = 14
-    R8G8B8_UInt = 15
-    R8G8B8A8_UInt = 16
-    R8_SInt = 17
-    R8G8_SInt = 18
-    R8G8B8_SInt = 19
-    R8G8B8A8_SInt = 20
-    R16_UNorm = 21
-    R16G16_UNorm = 22
-    R16G16B16_UNorm = 23
-    R16G16B16A16_UNorm = 24
-    R16_SNorm = 25
-    R16G16_SNorm = 26
-    R16G16B16_SNorm = 27
-    R16G16B16A16_SNorm = 28
-    R16_UInt = 29
-    R16G16_UInt = 30
-    R16G16B16_UInt = 31
-    R16G16B16A16_UInt = 32
-    R16_SInt = 33
-    R16G16_SInt = 34
-    R16G16B16_SInt = 35
-    R16G16B16A16_SInt = 36
-    R32_UInt = 37
-    R32G32_UInt = 38
-    R32G32B32_UInt = 39
-    R32G32B32A32_UInt = 40
-    R32_SInt = 41
-    R32G32_SInt = 42
-    R32G32B32_SInt = 43
-    R32G32B32A32_SInt = 44
-    R16_SFloat = 45
-    R16G16_SFloat = 46
-    R16G16B16_SFloat = 47
-    R16G16B16A16_SFloat = 48
-    R32_SFloat = 49
-    R32G32_SFloat = 50
-    R32G32B32_SFloat = 51
-    R32G32B32A32_SFloat = 52
-    B8G8R8_SRGB = 53
-    B8G8R8A8_SRGB = 54
-    B8G8R8_UNorm = 55
-    B8G8R8A8_UNorm = 56
-    B8G8R8_SNorm = 57
-    B8G8R8A8_SNorm = 58
-    B8G8R8_UInt = 59
-    B8G8R8A8_UInt = 60
-    B8G8R8_SInt = 61
-    B8G8R8A8_SInt = 62
-    R4G4B4A4_UNormPack16 = 63
-    B4G4R4A4_UNormPack16 = 64
-    R5G6B5_UNormPack16 = 65
-    B5G6R5_UNormPack16 = 66
-    R5G5B5A1_UNormPack16 = 67
-    B5G5R5A1_UNormPack16 = 68
-    A1R5G5B5_UNormPack16 = 69
-    E5B9G9R9_UFloatPack32 = 70
-    B10G11R11_UFloatPack32 = 71
-    A2B10G10R10_UNormPack32 = 72
-    A2B10G10R10_UIntPack32 = 73
-    A2B10G10R10_SIntPack32 = 74
-    A2R10G10B10_UNormPack32 = 75
-    A2R10G10B10_UIntPack32 = 76
-    A2R10G10B10_SIntPack32 = 77
-    A2R10G10B10_XRSRGBPack32 = 78
-    A2R10G10B10_XRUNormPack32 = 79
-    R10G10B10_XRSRGBPack32 = 80
-    R10G10B10_XRUNormPack32 = 81
-    A10R10G10B10_XRSRGBPack32 = 82
-    A10R10G10B10_XRUNormPack32 = 83
-    D16_UNorm = 84
-    D24_UNorm = 85
-    D24_UNorm_S8_UInt = 86
-    D32_SFloat = 87
-    D32_SFloat_S8_UInt = 88
-    S8_UInt = 89
-    RGB_DXT1_SRGB = 90
-    RGBA_DXT1_SRGB = 91
-    RGB_DXT1_UNorm = 92
-    RGBA_DXT1_UNorm = 93
-    RGBA_DXT3_SRGB = 94
-    RGBA_DXT3_UNorm = 95
-    RGBA_DXT5_SRGB = 96
-    RGBA_DXT5_UNorm = 97
-    R_BC4_UNorm = 98
-    R_BC4_SNorm = 99
-    RG_BC5_UNorm = 100
-    RG_BC5_SNorm = 101
-    RGB_BC6H_UFloat = 102
-    RGB_BC6H_SFloat = 103
-    RGBA_BC7_SRGB = 104
-    RGBA_BC7_UNorm = 105
-    RGB_PVRTC_2Bpp_SRGB = 106
-    RGB_PVRTC_2Bpp_UNorm = 107
-    RGB_PVRTC_4Bpp_SRGB = 108
-    RGB_PVRTC_4Bpp_UNorm = 109
-    RGBA_PVRTC_2Bpp_SRGB = 110
-    RGBA_PVRTC_2Bpp_UNorm = 111
-    RGBA_PVRTC_4Bpp_SRGB = 112
-    RGBA_PVRTC_4Bpp_UNorm = 113
-    RGB_ETC_UNorm = 114
-    RGB_ETC2_SRGB = 115
-    RGB_ETC2_UNorm = 116
-    RGB_A1_ETC2_SRGB = 117
-    RGB_A1_ETC2_UNorm = 118
-    RGBA_ETC2_SRGB = 119
-    RGBA_ETC2_UNorm = 120
-    R_EAC_UNorm = 121
-    R_EAC_SNorm = 122
-    RG_EAC_UNorm = 123
-    RG_EAC_SNorm = 124
-    RGBA_ASTC4X4_SRGB = 125
-    RGBA_ASTC4X4_UNorm = 126
-    RGBA_ASTC5X5_SRGB = 127
-    RGBA_ASTC5X5_UNorm = 128
-    RGBA_ASTC6X6_SRGB = 129
-    RGBA_ASTC6X6_UNorm = 130
-    RGBA_ASTC8X8_SRGB = 131
-    RGBA_ASTC8X8_UNorm = 132
-    RGBA_ASTC10X10_SRGB = 133
-    RGBA_ASTC10X10_UNorm = 134
-    RGBA_ASTC12X12_SRGB = 135
-    RGBA_ASTC12X12_UNorm = 136
-    YUV2 = 137
-    DepthAuto = 138
-    ShadowAuto = 139
-    VideoAuto = 140
-    RGBA_ASTC4X4_UFloat = 141
-    RGBA_ASTC5X5_UFloat = 142
-    RGBA_ASTC6X6_UFloat = 143
-    RGBA_ASTC8X8_UFloat = 144
-    RGBA_ASTC10X10_UFloat = 145
-    RGBA_ASTC12X12_UFloat = 146
-
-class ShaderPropertyType(IntEnum):
-    Color = 0
-    Vector = 1
-    Float = 2
-    Range = 3
-    Texture = 4
-    Int = 5
-
-class ShaderPropertyFlags(IntEnum):
-    None_ = 0
-    HideInInspector = 1
-    PerRendererData = 2
-    NoScaleOffset = 3
-    Normal = 4
-    HDR = 5
-    Gamma = 6
-    NonModifiableTextureData = 7
-    MainTexture = 8
-    MainColor = 9
-
-class SynchronisationStageFlags(IntEnum):
-    VertexProcessing = 0
-    PixelProcessing = 1
-    ComputeProcessing = 2
-    AllGPUOperations = 3
-
-class GraphicsFenceType(IntEnum):
-    AsyncQueueSynchronisation = 0
-    CPUSynchronisation = 1
-
-class IndexFormat(IntEnum):
-    UInt16 = 0
-    UInt32 = 1
-
-class MeshUpdateFlags(IntEnum):
-    Default = 0
-    DontValidateIndices = 1
-    DontResetBoneBounds = 2
-    DontNotifyMeshUsers = 3
-    DontRecalculateBounds = 4
-
-class VertexAttributeFormat(IntEnum):
-    Float32 = 0
-    Float16 = 1
-    UNorm8 = 2
-    SNorm8 = 3
-    UNorm16 = 4
-    SNorm16 = 5
-    UInt8 = 6
-    SInt8 = 7
-    UInt16 = 8
-    SInt16 = 9
-    UInt32 = 10
-    SInt32 = 11
-
-class VertexAttribute(IntEnum):
-    Position = 0
-    Normal = 1
-    Tangent = 2
-    Color = 3
-    TexCoord0 = 4
-    TexCoord1 = 5
-    TexCoord2 = 6
-    TexCoord3 = 7
-    TexCoord4 = 8
-    TexCoord5 = 9
-    TexCoord6 = 10
-    TexCoord7 = 11
-    BlendWeight = 12
-    BlendIndices = 13
-
-class OpaqueSortMode(IntEnum):
-    Default = 0
-    FrontToBack = 1
-    NoDistanceSort = 2
-
-class RenderBufferLoadAction(IntEnum):
-    Load = 0
-    Clear = 1
-    DontCare = 2
-
-class RenderBufferStoreAction(IntEnum):
-    Store = 0
-    Resolve = 1
-    StoreAndResolve = 2
-    DontCare = 3
-
-class FastMemoryFlags(IntEnum):
-    None_ = 0
-    SpillTop = 1
-    SpillBottom = 2
-
-class BlendMode(IntEnum):
-    Zero = 0
-    One = 1
-    DstColor = 2
-    SrcColor = 3
-    OneMinusDstColor = 4
-    SrcAlpha = 5
-    OneMinusSrcColor = 6
-    DstAlpha = 7
-    OneMinusDstAlpha = 8
-    SrcAlphaSaturate = 9
-    OneMinusSrcAlpha = 10
-
-class BlendOp(IntEnum):
-    Add = 0
-    Subtract = 1
-    ReverseSubtract = 2
-    Min = 3
-    Max = 4
-    LogicalClear = 5
-    LogicalSet = 6
-    LogicalCopy = 7
-    LogicalCopyInverted = 8
-    LogicalNoop = 9
-    LogicalInvert = 10
-    LogicalAnd = 11
-    LogicalNand = 12
-    LogicalOr = 13
-    LogicalNor = 14
-    LogicalXor = 15
-    LogicalEquivalence = 16
-    LogicalAndReverse = 17
-    LogicalAndInverted = 18
-    LogicalOrReverse = 19
-    LogicalOrInverted = 20
-    Multiply = 21
-    Screen = 22
-    Overlay = 23
-    Darken = 24
-    Lighten = 25
-    ColorDodge = 26
-    ColorBurn = 27
-    HardLight = 28
-    SoftLight = 29
-    Difference = 30
-    Exclusion = 31
-    HSLHue = 32
-    HSLSaturation = 33
-    HSLColor = 34
-    HSLLuminosity = 35
-
-class CompareFunction(IntEnum):
-    Disabled = 0
-    Never = 1
-    Less = 2
-    Equal = 3
-    LessEqual = 4
-    Greater = 5
-    NotEqual = 6
-    GreaterEqual = 7
-    Always = 8
-
-class CullMode(IntEnum):
-    Off = 0
-    Front = 1
-    Back = 2
-
-class ColorWriteMask(IntEnum):
-    Alpha = 0
-    Blue = 1
-    Green = 2
-    Red = 3
-    All = 4
-
-class StencilOp(IntEnum):
-    Keep = 0
-    Zero = 1
-    Replace = 2
-    IncrementSaturate = 3
-    DecrementSaturate = 4
-    Invert = 5
-    IncrementWrap = 6
-    DecrementWrap = 7
-
-class AmbientMode(IntEnum):
-    Skybox = 0
-    Trilight = 1
-    Flat = 2
-    Custom = 3
-
-class DefaultReflectionMode(IntEnum):
-    Skybox = 0
-    Custom = 1
-
-class CameraEvent(IntEnum):
-    BeforeDepthTexture = 0
-    AfterDepthTexture = 1
-    BeforeDepthNormalsTexture = 2
-    AfterDepthNormalsTexture = 3
-    BeforeGBuffer = 4
-    AfterGBuffer = 5
-    BeforeLighting = 6
-    AfterLighting = 7
-    BeforeFinalPass = 8
-    AfterFinalPass = 9
-    BeforeForwardOpaque = 10
-    AfterForwardOpaque = 11
-    BeforeImageEffectsOpaque = 12
-    AfterImageEffectsOpaque = 13
-    BeforeSkybox = 14
-    AfterSkybox = 15
-    BeforeForwardAlpha = 16
-    AfterForwardAlpha = 17
-    BeforeImageEffects = 18
-    AfterImageEffects = 19
-    AfterEverything = 20
-    BeforeReflections = 21
-    AfterReflections = 22
-    BeforeHaloAndLensFlares = 23
-    AfterHaloAndLensFlares = 24
-
-class LightEvent(IntEnum):
-    BeforeShadowMap = 0
-    AfterShadowMap = 1
-    BeforeScreenspaceMask = 2
-    AfterScreenspaceMask = 3
-    BeforeShadowMapPass = 4
-    AfterShadowMapPass = 5
-
-class ShadowMapPass(IntEnum):
-    PointlightPositiveX = 0
-    PointlightNegativeX = 1
-    PointlightPositiveY = 2
-    PointlightNegativeY = 3
-    PointlightPositiveZ = 4
-    PointlightNegativeZ = 5
-    DirectionalCascade0 = 6
-    DirectionalCascade1 = 7
-    DirectionalCascade2 = 8
-    DirectionalCascade3 = 9
-    Spotlight = 10
-    Pointlight = 11
-    Directional = 12
-    All = 13
-
-class BuiltinRenderTextureType(IntEnum):
-    PropertyName = 0
-    BufferPtr = 1
-    RenderTexture = 2
-    BindableTexture = 3
-    None_ = 4
-    CurrentActive = 5
-    CameraTarget = 6
-    Depth = 7
-    DepthNormals = 8
-    ResolvedDepth = 9
-    PrepassNormalsSpec = 10
-    PrepassLight = 11
-    PrepassLightSpec = 12
-    GBuffer0 = 13
-    GBuffer1 = 14
-    GBuffer2 = 15
-    GBuffer3 = 16
-    Reflections = 17
-    MotionVectors = 18
-    GBuffer4 = 19
-    GBuffer5 = 20
-    GBuffer6 = 21
-    GBuffer7 = 22
-
-class ShadowCastingMode(IntEnum):
-    Off = 0
-    On = 1
-    TwoSided = 2
-    ShadowsOnly = 3
-
-class LightShadowResolution(IntEnum):
-    FromQualitySettings = 0
-    Low = 1
-    Medium = 2
-    High = 3
-    VeryHigh = 4
-
-class GraphicsDeviceType(IntEnum):
-    OpenGL2 = 0
-    Direct3D9 = 1
-    Direct3D11 = 2
-    PlayStation3 = 3
-    Null = 4
-    Xbox360 = 5
-    OpenGLES2 = 6
-    OpenGLES3 = 7
-    PlayStationVita = 8
-    PlayStation4 = 9
-    XboxOne = 10
-    PlayStationMobile = 11
-    Metal = 12
-    OpenGLCore = 13
-    Direct3D12 = 14
-    N3DS = 15
-    Vulkan = 16
-    Switch = 17
-    XboxOneD3D12 = 18
-    GameCoreXboxOne = 19
-    GameCoreScarlett = 20
-    GameCoreXboxSeries = 21
-    PlayStation5 = 22
-    PlayStation5NGGC = 23
-
-class GraphicsTier(IntEnum):
-    Tier1 = 0
-    Tier2 = 1
-    Tier3 = 2
-
-class FormatSwizzle(IntEnum):
-    FormatSwizzleR = 0
-    FormatSwizzleG = 1
-    FormatSwizzleB = 2
-    FormatSwizzleA = 3
-    FormatSwizzle0 = 4
-    FormatSwizzle1 = 5
-
-class RenderTargetFlags(IntEnum):
-    None_ = 0
-    ReadOnlyDepth = 1
-    ReadOnlyStencil = 2
-    ReadOnlyDepthStencil = 3
-
-class ReflectionProbeUsage(IntEnum):
-    Off = 0
-    BlendProbes = 1
-    BlendProbesAndSkybox = 2
-    Simple = 3
-
-class ShadowSamplingMode(IntEnum):
-    CompareDepths = 0
-    RawDepth = 1
-    None_ = 2
-
-class LightProbeUsage(IntEnum):
-    Off = 0
-    BlendProbes = 1
-    UseProxyVolume = 2
-    CustomProvided = 3
-
-class BuiltinShaderDefine(IntEnum):
-    UNITY_NO_DXT5nm = 0
-    UNITY_NO_RGBM = 1
-    UNITY_USE_NATIVE_HDR = 2
-    UNITY_ENABLE_REFLECTION_BUFFERS = 3
-    UNITY_FRAMEBUFFER_FETCH_AVAILABLE = 4
-    UNITY_ENABLE_NATIVE_SHADOW_LOOKUPS = 5
-    UNITY_METAL_SHADOWS_USE_POINT_FILTERING = 6
-    UNITY_NO_CUBEMAP_ARRAY = 7
-    UNITY_NO_SCREENSPACE_SHADOWS = 8
-    UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS = 9
-    UNITY_PBS_USE_BRDF1 = 10
-    UNITY_PBS_USE_BRDF2 = 11
-    UNITY_PBS_USE_BRDF3 = 12
-    UNITY_NO_FULL_STANDARD_SHADER = 13
-    UNITY_SPECCUBE_BOX_PROJECTION = 14
-    UNITY_SPECCUBE_BLENDING = 15
-    UNITY_ENABLE_DETAIL_NORMALMAP = 16
-    SHADER_API_MOBILE = 17
-    SHADER_API_DESKTOP = 18
-    UNITY_HARDWARE_TIER1 = 19
-    UNITY_HARDWARE_TIER2 = 20
-    UNITY_HARDWARE_TIER3 = 21
-    UNITY_COLORSPACE_GAMMA = 22
-    UNITY_LIGHT_PROBE_PROXY_VOLUME = 23
-    UNITY_HALF_PRECISION_FRAGMENT_SHADER_REGISTERS = 24
-    UNITY_LIGHTMAP_DLDR_ENCODING = 25
-    UNITY_LIGHTMAP_RGBM_ENCODING = 26
-    UNITY_LIGHTMAP_FULL_HDR = 27
-    UNITY_VIRTUAL_TEXTURING = 28
-    UNITY_PRETRANSFORM_TO_DISPLAY_ORIENTATION = 29
-    UNITY_ASTC_NORMALMAP_ENCODING = 30
-    SHADER_API_GLES30 = 31
-    UNITY_UNIFIED_SHADER_PRECISION_MODEL = 32
-
-class TextureDimension(IntEnum):
-    Unknown = 0
-    None_ = 1
-    Any = 2
-    Tex2D = 3
-    Tex3D = 4
-    Cube = 5
-    Tex2DArray = 6
-    CubeArray = 7
-
-class CopyTextureSupport(IntEnum):
-    None_ = 0
-    Basic = 1
-    Copy3D = 2
-    DifferentTypes = 3
-    TextureToRT = 4
-    RTToTexture = 5
-
-class ComputeQueueType(IntEnum):
-    Default = 0
-    Background = 1
-    Urgent = 2
-
-class SinglePassStereoMode(IntEnum):
-    None_ = 0
-    SideBySide = 1
-    Instancing = 2
-    Multiview = 3
-
-class CommandBufferExecutionFlags(IntEnum):
-    None_ = 0
-    AsyncCompute = 1
-
-class RTClearFlags(IntEnum):
-    None_ = 0
-    Color = 1
-    Depth = 2
-    Stencil = 3
-    All = 4
-    DepthStencil = 5
-    ColorDepth = 6
-    ColorStencil = 7
-
-class RenderTextureSubElement(IntEnum):
-    Color = 0
-    Depth = 1
-    Stencil = 2
-    Default = 3
-
-class CameraLateLatchMatrixType(IntEnum):
-    View = 0
-    InverseView = 1
-    ViewProjection = 2
-    InverseViewProjection = 3
-
-class OpenGLESVersion(IntEnum):
-    None_ = 0
-    OpenGLES20 = 1
-    OpenGLES30 = 2
-    OpenGLES31 = 3
-    OpenGLES31AEP = 4
-    OpenGLES32 = 5
-
-class ShaderHardwareTier(IntEnum):
-    Tier1 = 0
-    Tier2 = 1
-    Tier3 = 2
-
-class SynchronisationStage(IntEnum):
-    VertexProcessing = 0
-    PixelProcessing = 1
-
-class CullingOptions(IntEnum):
-    None_ = 0
-    ForceEvenIfCameraIsNotActive = 1
-    OcclusionCull = 2
-    NeedsLighting = 3
-    NeedsReflectionProbes = 4
-    Stereo = 5
-    DisablePerObjectCulling = 6
-    ShadowCasters = 7
-
-class GizmoSubset(IntEnum):
-    PreImageEffects = 0
-    PostImageEffects = 1
-
-class ReflectionProbeModes(IntEnum):
-    None_ = 0
-    Rotation = 1
-
-class LightmapMixedBakeModes(IntEnum):
-    None_ = 0
-    IndirectOnly = 1
-    Subtractive = 2
-    Shadowmask = 3
-
-class RenderStateMask(IntEnum):
-    Nothing = 0
-    Blend = 1
-    Raster = 2
-    Depth = 3
-    Stencil = 4
-    Everything = 5
-
-class DistanceMetric(IntEnum):
-    Perspective = 0
-    Orthographic = 1
-    CustomAxis = 2
-
-class ReflectionProbeSortingCriteria(IntEnum):
-    None_ = 0
-    Importance = 1
-    Size = 2
-    ImportanceThenSize = 3
-
-class SortingCriteria(IntEnum):
-    None_ = 0
-    SortingLayer = 1
-    RenderQueue = 2
-    BackToFront = 3
-    QuantizedFrontToBack = 4
-    OptimizeStateChanges = 5
-    CanvasOrder = 6
-    RendererPriority = 7
-    CommonOpaque = 8
-    CommonTransparent = 9
-
-class PerObjectData(IntEnum):
-    None_ = 0
-    LightProbe = 1
-    ReflectionProbes = 2
-    LightProbeProxyVolume = 3
-    Lightmaps = 4
-    LightData = 5
-    MotionVectors = 6
-    LightIndices = 7
-    ReflectionProbeData = 8
-    OcclusionProbe = 9
-    OcclusionProbeProxyVolume = 10
-    ShadowMask = 11
-
-class RendererListStatus(IntEnum):
-    kRendererListInvalid = 0
-    kRendererListProcessing = 1
-    kRendererListEmpty = 2
-    kRendererListPopulated = 3
-
-class ConstructorHandling(IntEnum):
-    Default = 0
-    AllowNonPublicDefaultConstructor = 1
-
-class DateFormatHandling(IntEnum):
-    IsoDateFormat = 0
-    MicrosoftDateFormat = 1
-
-class DateParseHandling(IntEnum):
-    None_ = 0
-    DateTime = 1
-    DateTimeOffset = 2
-
-class DateTimeZoneHandling(IntEnum):
-    Local = 0
-    Utc = 1
-    Unspecified = 2
-    RoundtripKind = 3
-
-class DefaultValueHandling(IntEnum):
-    Include = 0
-    Ignore = 1
-    Populate = 2
-    IgnoreAndPopulate = 3
-
-class FloatFormatHandling(IntEnum):
-    String = 0
-    Symbol = 1
-    DefaultValue = 2
-
-class FloatParseHandling(IntEnum):
-    Double = 0
-    Decimal = 1
-
-class Formatting(IntEnum):
-    None_ = 0
-    Indented = 1
-
-class JsonToken(IntEnum):
-    None_ = 0
-    StartObject = 1
-    StartArray = 2
-    StartConstructor = 3
-    PropertyName = 4
-    Comment = 5
-    Raw = 6
-    Integer = 7
-    Float = 8
-    String = 9
-    Boolean = 10
-    Null = 11
-    Undefined = 12
-    EndObject = 13
-    EndArray = 14
-    EndConstructor = 15
-    Date = 16
-    Bytes = 17
-
-class MemberSerialization(IntEnum):
-    OptOut = 0
-    OptIn = 1
-    Fields = 2
-
-class MetadataPropertyHandling(IntEnum):
-    Default = 0
-    ReadAhead = 1
-    Ignore = 2
-
-class MissingMemberHandling(IntEnum):
-    Ignore = 0
-    Error = 1
-
-class NullValueHandling(IntEnum):
-    Include = 0
-    Ignore = 1
-
-class ObjectCreationHandling(IntEnum):
-    Auto = 0
-    Reuse = 1
-    Replace = 2
-
-class PreserveReferencesHandling(IntEnum):
-    None_ = 0
-    Objects = 1
-    Arrays = 2
-    All = 3
-
-class ReferenceLoopHandling(IntEnum):
-    Error = 0
-    Ignore = 1
-    Serialize = 2
-
-class Required(IntEnum):
-    Default = 0
-    AllowNull = 1
-    Always = 2
-    DisallowNull = 3
-
-class StringEscapeHandling(IntEnum):
-    Default = 0
-    EscapeNonAscii = 1
-    EscapeHtml = 2
-
-class TypeNameAssemblyFormatHandling(IntEnum):
-    Simple = 0
-    Full = 1
-
-class TypeNameHandling(IntEnum):
-    None_ = 0
-    Objects = 1
-    Arrays = 2
-    All = 3
-    Auto = 4
-
-class WriteState(IntEnum):
-    Error = 0
-    Closed = 1
-    Object = 2
-    Array = 3
-    Constructor = 4
-    Property = 5
-    Start = 6
-
-class JsonSchemaType(IntEnum):
-    None_ = 0
-    String = 1
-    Float = 2
-    Integer = 3
-    Boolean = 4
-    Object = 5
-    Array = 6
-    Null = 7
-    Any = 8
-
-class UndefinedSchemaIdHandling(IntEnum):
-    None_ = 0
-    UseTypeName = 1
-    UseAssemblyQualifiedName = 2
-
-class CommentHandling(IntEnum):
-    Ignore = 0
-    Load = 1
-
-class DuplicatePropertyNameHandling(IntEnum):
-    Replace = 0
-    Ignore = 1
-    Error = 2
-
-class JTokenType(IntEnum):
-    None_ = 0
-    Object = 1
-    Array = 2
-    Constructor = 3
-    Property = 4
-    Comment = 5
-    Integer = 6
-    Float = 7
-    String = 8
-    Boolean = 9
-    Null = 10
-    Undefined = 11
-    Date = 12
-    Raw = 13
-    Bytes = 14
-    Guid = 15
-    Uri = 16
-    TimeSpan = 17
-
-class LineInfoHandling(IntEnum):
-    Ignore = 0
-    Load = 1
-
-class MergeArrayHandling(IntEnum):
-    Concat = 0
-    Union = 1
-    Replace = 2
-    Merge = 3
-
-class MergeNullValueHandling(IntEnum):
-    Ignore = 0
-    Merge = 1
-
-class CropFrame(IntEnum):
-    None_ = 0
-    Pillarbox = 1
-    Letterbox = 2
-    Windowbox = 3
-    StretchFill = 4
-
-class GridSnapping(IntEnum):
-    None_ = 0
-    PixelSnapping = 1
-    UpscaleRenderTexture = 2
-
-class ComponentVersions(IntEnum):
-    Version_Unserialized = 0
-    Version_1 = 1
-
-class RenderQueueType(IntEnum):
-    Opaque = 0
-    Transparent = 1
-
-class ClipType(IntEnum):
-    ctIntersection = 0
-    ctUnion = 1
-    ctDifference = 2
-    ctXor = 3
-
-class PolyType(IntEnum):
-    ptSubject = 0
-    ptClip = 1
-
-class PolyFillType(IntEnum):
-    pftEvenOdd = 0
-    pftNonZero = 1
-    pftPositive = 2
-    pftNegative = 3
-
-class JoinType(IntEnum):
-    jtRound = 0
-
-class EndType(IntEnum):
-    etClosedPolygon = 0
-    etClosedLine = 1
-
-class DeprecatedLightType(IntEnum):
-    Parametric = 0
-
-class LightType(IntEnum):
-    Parametric = 0
-    Freeform = 1
-    Sprite = 2
-    Point = 3
-    Global = 4
-
-class NormalMapQuality(IntEnum):
-    Disabled = 0
-    Fast = 1
-    Accurate = 2
-
-class OverlapOperation(IntEnum):
-    Additive = 0
-    AlphaBlend = 1
-
-class ComponentVersions(IntEnum):
-    Version_Unserialized = 0
-    Version_1 = 1
-
-class ShadowQuality(IntEnum):
-    Disabled = 0
-    HardShadows = 1
-    SoftShadows = 2
-
-class ShadowResolution(IntEnum):
-    _256 = 0
-    _512 = 1
-    _1024 = 2
-    _2048 = 3
-    _4096 = 4
-
-class LightCookieResolution(IntEnum):
-    _256 = 0
-    _512 = 1
-    _1024 = 2
-    _2048 = 3
-    _4096 = 4
-
-class LightCookieFormat(IntEnum):
-    GrayscaleLow = 0
-    GrayscaleHigh = 1
-    ColorLow = 2
-    ColorHigh = 3
-    ColorHDR = 4
-
-class MsaaQuality(IntEnum):
-    Disabled = 0
-    _2x = 1
-    _4x = 2
-    _8x = 3
-
-class Downsampling(IntEnum):
-    None_ = 0
-    _2xBilinear = 1
-    _4xBox = 2
-    _4xBilinear = 3
-
-class LightRenderingMode(IntEnum):
-    Disabled = 0
-    PerVertex = 1
-    PerPixel = 2
-
-class ShaderVariantLogLevel(IntEnum):
-    Disabled = 0
-    OnlyUniversalRPShaders = 1
-    AllShaders = 2
-
-class PipelineDebugLevel(IntEnum):
-    Disabled = 0
-    Profiling = 1
-
-class RendererType(IntEnum):
-    Custom = 0
-    UniversalRenderer = 1
-    _2DRenderer = 2
-    ForwardRenderer = 3
-
-class ColorGradingMode(IntEnum):
-    LowDynamicRange = 0
-    HighDynamicRange = 1
-
-class StoreActionsOptimization(IntEnum):
-    Auto = 0
-    Discard = 1
-    Store = 2
-
-class VolumeFrameworkUpdateMode(IntEnum):
-    EveryFrame = 0
-    ViaScripting = 1
-    UsePipelineSettings = 2
-
-class UpscalingFilterSelection(IntEnum):
-    Auto = 0
-    Linear = 1
-    Point = 2
-    FSR = 3
-
-class DecalScaleMode(IntEnum):
-    ScaleInvariant = 0
-    InheritFromHierarchy = 1
-
-class ShadowCascadesOption(IntEnum):
-    NoCascades = 0
-    TwoCascades = 1
-    FourCascades = 2
-
-class IntermediateTextureMode(IntEnum):
-    Auto = 0
-    Always = 1
-
-class DepthOfFieldMode(IntEnum):
-    Off = 0
-    Gaussian = 1
-    Bokeh = 2
-
-class FilmGrainLookup(IntEnum):
-    Thin1 = 0
-    Thin2 = 1
-    Medium1 = 2
-    Medium2 = 3
-    Medium3 = 4
-    Medium4 = 5
-    Medium5 = 6
-    Medium6 = 7
-    Large01 = 8
-    Large02 = 9
-    Custom = 10
-
-class MotionBlurMode(IntEnum):
-    CameraOnly = 0
-    CameraAndObjects = 1
-
-class MotionBlurQuality(IntEnum):
-    Low = 0
-    Medium = 1
-    High = 2
-
-class MXBlurType(IntEnum):
-    Blur = 0
-    Radial = 1
-
-class MXBlurQuality(IntEnum):
-    LOW = 0
-    MIDDLE = 1
-
-class eMode(IntEnum):
-    UNITY = 0
-    DIRECTION = 1
-
-class eType(IntEnum):
-    NOISE_DISTORTION = 0
-    CHROMATIC_ABERRAION = 1
-
-class eBlendOption(IntEnum):
-    MULTIPLY = 0
-    ADDTIVE = 1
-    ALPHABLEND = 2
-
-class TonemappingMode(IntEnum):
-    None_ = 0
-    Neutral = 1
-    ACES = 2
-
-class ScriptableRenderPassInput(IntEnum):
-    None_ = 0
-    Depth = 1
-    Normal = 2
-    Color = 3
-    Motion = 4
-
-class RenderPassEvent(IntEnum):
-    BeforeRendering = 0
-    BeforeRenderingShadows = 1
-    AfterRenderingShadows = 2
-    BeforeRenderingPrePasses = 3
-    BeforeRenderingPrepasses = 4
-    AfterRenderingPrePasses = 5
-    BeforeRenderingGbuffer = 6
-    AfterRenderingGbuffer = 7
-    BeforeRenderingDeferredLights = 8
-    AfterRenderingDeferredLights = 9
-    BeforeRenderingOpaques = 10
-    AfterRenderingOpaques = 11
-    BeforeRenderingSkybox = 12
-    AfterRenderingSkybox = 13
-    BeforeRenderingTransparents = 14
-    AfterRenderingTransparents = 15
-    BeforeRenderingPostProcessing = 16
-    AfterRenderingPostProcessing = 17
-    AfterRendering = 18
-
-class SampleCount(IntEnum):
-    One = 0
-    Two = 1
-    Four = 2
-
-class ShaderPathID(IntEnum):
-    Lit = 0
-    SimpleLit = 1
-    Unlit = 2
-    TerrainLit = 3
-    ParticlesLit = 4
-    ParticlesSimpleLit = 5
-    ParticlesUnlit = 6
-    BakedLit = 7
-    SpeedTree7 = 8
-    SpeedTree7Billboard = 9
-    SpeedTree8 = 10
-
-class CameraOverrideOption(IntEnum):
-    Off = 0
-    On = 1
-    UsePipelineSettings = 2
-
-class RendererOverrideOption(IntEnum):
-    Custom = 0
-    UsePipelineSettings = 1
-
-class AntialiasingMode(IntEnum):
-    None_ = 0
-    FastApproximateAntialiasing = 1
-    SubpixelMorphologicalAntiAliasing = 2
-
-class CameraRenderType(IntEnum):
-    Base = 0
-    Overlay = 1
-
-class AntialiasingQuality(IntEnum):
-    Low = 0
-    Medium = 1
-    High = 2
-
-class LightLayerEnum(IntEnum):
-    Nothing = 0
-    LightLayerDefault = 1
-    LightLayer1 = 2
-    LightLayer2 = 3
-    LightLayer3 = 4
-    LightLayer4 = 5
-    LightLayer5 = 6
-    LightLayer6 = 7
-    LightLayer7 = 8
-    Everything = 9
-
-class RenderingMode(IntEnum):
-    Forward = 0
-    Deferred = 1
-
-class DepthPrimingMode(IntEnum):
-    Disabled = 0
-    Auto = 1
-    Forced = 2
-
-class MixedLightingSetup(IntEnum):
-    None_ = 0
-    ShadowMask = 1
-    Subtractive = 2
-
-class ExpressionType(IntEnum):
-    Add = 0
-    AddChecked = 1
-    And = 2
-    AndAlso = 3
-    ArrayLength = 4
-    ArrayIndex = 5
-    Call = 6
-    Coalesce = 7
-    Conditional = 8
-    Constant = 9
-    Convert = 10
-    ConvertChecked = 11
-    Divide = 12
-    Equal = 13
-    ExclusiveOr = 14
-    GreaterThan = 15
-    GreaterThanOrEqual = 16
-    Invoke = 17
-    Lambda = 18
-    LeftShift = 19
-    LessThan = 20
-    LessThanOrEqual = 21
-    ListInit = 22
-    MemberAccess = 23
-    MemberInit = 24
-    Modulo = 25
-    Multiply = 26
-    MultiplyChecked = 27
-    Negate = 28
-    UnaryPlus = 29
-    NegateChecked = 30
-    New = 31
-    NewArrayInit = 32
-    NewArrayBounds = 33
-    Not = 34
-    NotEqual = 35
-    Or = 36
-    OrElse = 37
-    Parameter = 38
-    Power = 39
-    Quote = 40
-    RightShift = 41
-    Subtract = 42
-    SubtractChecked = 43
-    TypeAs = 44
-    TypeIs = 45
-    Assign = 46
-    Block = 47
-    DebugInfo = 48
-    Decrement = 49
-    Dynamic = 50
-    Default = 51
-    Extension = 52
-    Goto = 53
-    Increment = 54
-    Index = 55
-    Label = 56
-    RuntimeVariables = 57
-    Loop = 58
-    Switch = 59
-    Throw = 60
-    Try = 61
-    Unbox = 62
-    AddAssign = 63
-    AndAssign = 64
-    DivideAssign = 65
-    ExclusiveOrAssign = 66
-    LeftShiftAssign = 67
-    ModuloAssign = 68
-    MultiplyAssign = 69
-    OrAssign = 70
-    PowerAssign = 71
-    RightShiftAssign = 72
-    SubtractAssign = 73
-    AddAssignChecked = 74
-    MultiplyAssignChecked = 75
-    SubtractAssignChecked = 76
-    PreIncrementAssign = 77
-    PreDecrementAssign = 78
-    PostIncrementAssign = 79
-    PostDecrementAssign = 80
-    TypeEqual = 81
-    OnesComplement = 82
-    IsTrue = 83
-    IsFalse = 84
-
-class GotoExpressionKind(IntEnum):
-    Goto = 0
-    Return = 1
-    Break = 2
-    Continue = 3
-
-class MemberBindingType(IntEnum):
-    Assignment = 0
-    MemberBinding = 1
-    ListBinding = 2
-
-class LockRecursionPolicy(IntEnum):
-    NoRecursion = 0
-    SupportsRecursion = 1
-
-class TextContainerAnchors(IntEnum):
-    TopLeft = 0
-    Top = 1
-    TopRight = 2
-    Left = 3
-    Middle = 4
-    Right = 5
-    BottomLeft = 6
-    Bottom = 7
-    BottomRight = 8
-    Custom = 9
-
-class Compute_DistanceTransform_EventTypes(IntEnum):
-    Processing = 0
-    Completed = 1
-
-class TMP_VertexDataUpdateFlags(IntEnum):
-    None_ = 0
-    Vertices = 1
-    Uv0 = 2
-    Uv2 = 3
-    Uv4 = 4
-    Colors32 = 5
-    All = 6
-
-class ColorMode(IntEnum):
-    Single = 0
-    HorizontalGradient = 1
-    VerticalGradient = 2
-    FourCornersGradient = 3
-
-class AnchorPositions(IntEnum):
-    TopLeft = 0
-    Top = 1
-    TopRight = 2
-    Left = 3
-    Center = 4
-    Right = 5
-    BottomLeft = 6
-    Bottom = 7
-    BottomRight = 8
-    BaseLine = 9
-    None_ = 10
-
-class ColorTweenMode(IntEnum):
-    All = 0
-    RGB = 1
-    Alpha = 2
-
-class AtlasPopulationMode(IntEnum):
-    Static = 0
-    Dynamic = 1
-
-class FontFeatureLookupFlags(IntEnum):
-    None_ = 0
-    IgnoreLigatures = 1
-    IgnoreSpacingAdjustments = 2
-
-class ContentType(IntEnum):
-    Standard = 0
-    Autocorrected = 1
-    IntegerNumber = 2
-    DecimalNumber = 3
-    Alphanumeric = 4
-    Name = 5
-    EmailAddress = 6
-    Password = 7
-    Pin = 8
-    Custom = 9
-
-class InputType(IntEnum):
-    Standard = 0
-    AutoCorrect = 1
-    Password = 2
-
-class CharacterValidation(IntEnum):
-    None_ = 0
-    Digit = 1
-    Integer = 2
-    Decimal = 3
-    Alphanumeric = 4
-    Name = 5
-    Regex = 6
-    EmailAddress = 7
-    CustomValidator = 8
-
-class LineType(IntEnum):
-    SingleLine = 0
-    MultiLineSubmit = 1
-    MultiLineNewline = 2
-
-class VertexSortingOrder(IntEnum):
-    Normal = 0
-    Reverse = 1
-
-class TagValueType(IntEnum):
-    None_ = 0
-    NumericalValue = 1
-    StringValue = 2
-    ColorValue = 3
-
-class TagUnitType(IntEnum):
-    Pixels = 0
-    FontUnits = 1
-    Percentage = 2
-
-class TextAlignmentOptions(IntEnum):
-    TopLeft = 0
-    Top = 1
-    TopRight = 2
-    TopJustified = 3
-    TopFlush = 4
-    TopGeoAligned = 5
-    Left = 6
-    Center = 7
-    Right = 8
-    Justified = 9
-    Flush = 10
-    CenterGeoAligned = 11
-    BottomLeft = 12
-    Bottom = 13
-    BottomRight = 14
-    BottomJustified = 15
-    BottomFlush = 16
-    BottomGeoAligned = 17
-    BaselineLeft = 18
-    Baseline = 19
-    BaselineRight = 20
-    BaselineJustified = 21
-    BaselineFlush = 22
-    BaselineGeoAligned = 23
-    MidlineLeft = 24
-    Midline = 25
-    MidlineRight = 26
-    MidlineJustified = 27
-    MidlineFlush = 28
-    MidlineGeoAligned = 29
-    CaplineLeft = 30
-    Capline = 31
-    CaplineRight = 32
-    CaplineJustified = 33
-    CaplineFlush = 34
-    CaplineGeoAligned = 35
-    Converted = 36
-
-class HorizontalAlignmentOptions(IntEnum):
-    Left = 0
-    Center = 1
-    Right = 2
-    Justified = 3
-    Flush = 4
-    Geometry = 5
-
-class VerticalAlignmentOptions(IntEnum):
-    Top = 0
-    Middle = 1
-    Bottom = 2
-    Baseline = 3
-    Geometry = 4
-    Capline = 5
-
-class TextRenderFlags(IntEnum):
-    DontRender = 0
-    Render = 1
-
-class TMP_TextElementType(IntEnum):
-    Character = 0
-    Sprite = 1
-
-class MaskingTypes(IntEnum):
-    MaskOff = 0
-    MaskHard = 1
-    MaskSoft = 2
-
-class TextOverflowModes(IntEnum):
-    Overflow = 0
-    Ellipsis = 1
-    Masking = 2
-    Truncate = 3
-    ScrollRect = 4
-    Page = 5
-    Linked = 6
-
-class MaskingOffsetMode(IntEnum):
-    Percentage = 0
-    Pixel = 1
-
-class TextureMappingOptions(IntEnum):
-    Character = 0
-    Line = 1
-    Paragraph = 2
-    MatchAspect = 3
-
-class FontStyles(IntEnum):
-    Normal = 0
-    Bold = 1
-    Italic = 2
-    Underline = 3
-    LowerCase = 4
-    UpperCase = 5
-    SmallCaps = 6
-    Strikethrough = 7
-    Superscript = 8
-    Subscript = 9
-    Highlight = 10
-
-class FontWeight(IntEnum):
-    Thin = 0
-    ExtraLight = 1
-    Light = 2
-    Regular = 3
-    Medium = 4
-    SemiBold = 5
-    Bold = 6
-    Heavy = 7
-    Black = 8
-
-class TextElementType(IntEnum):
-    Character = 0
-    Sprite = 1
-
-class CaretPosition(IntEnum):
-    None_ = 0
-    Left = 1
-    Right = 2
-
-class SpriteAssetImportFormats(IntEnum):
-    None_ = 0
-    TexturePackerJsonArray = 1
-
-class UpDirection(IntEnum):
-    World = 0
-    Local = 1
-
-class ProbeVolumeTextureMemoryBudget(IntEnum):
-    MemoryBudgetLow = 0
-    MemoryBudgetMedium = 1
-    MemoryBudgetHigh = 2
-
-class ProbeVolumeSHBands(IntEnum):
-    SphericalHarmonicsL1 = 0
-    SphericalHarmonicsL2 = 1
-
-class DebugProbeShadingMode(IntEnum):
-    SH = 0
-    Validity = 1
-    ValidityOverDilationThreshold = 2
-    Size = 3
-
-class DepthAccess(IntEnum):
-    Read = 0
-    Write = 1
-    ReadWrite = 2
-
-class TextureSizeMode(IntEnum):
-    Explicit = 0
-    Scale = 1
-    Functor = 2
-
-class ClearFlag(IntEnum):
-    None_ = 0
-    Color = 1
-    Depth = 2
-    Stencil = 3
-    DepthStencil = 4
-    ColorStencil = 5
-    All = 6
-
-class DynamicResScalePolicyType(IntEnum):
-    ReturnsPercentage = 0
-    ReturnsMinMaxLerpFactor = 1
-
-class DynamicResScalerSlot(IntEnum):
-    User = 0
-    System = 1
-    Count = 2
-
-class UpsamplerScheduleType(IntEnum):
-    BeforePost = 0
-    AfterPost = 1
-
-class DynamicResolutionType(IntEnum):
-    Software = 0
-    Hardware = 1
-
-class DynamicResUpscaleFilter(IntEnum):
-    Bilinear = 0
-    CatmullRom = 1
-    Lanczos = 2
-    ContrastAdaptiveSharpen = 3
-    EdgeAdaptiveScalingUpres = 4
-    TAAU = 5
-
-class StereoRenderingMode(IntEnum):
-    MultiPass = 0
-    SinglePass = 1
-    SinglePassInstanced = 2
-    SinglePassMultiView = 3
-
-class Flags(IntEnum):
-    None_ = 0
-    EditorOnly = 1
-    RuntimeOnly = 2
-    EditorForceUpdate = 3
-
-class Style(IntEnum):
-    Info = 0
-    Warning = 1
-    Error = 2
-
-class APVConstantBufferRegister(IntEnum):
-    GlobalRegister = 0
-
-class SRPLensFlareBlendMode(IntEnum):
-    Additive = 0
-    Screen = 1
-    Premultiply = 2
-    Lerp = 3
-
-class SRPLensFlareDistribution(IntEnum):
-    Uniform = 0
-    Curve = 1
-    Random = 2
-
-class SRPLensFlareType(IntEnum):
-    Image = 0
-    Circle = 1
-    Polygon = 2
-
-class PackingRules(IntEnum):
-    Exact = 0
-    Aggressive = 1
-
-class FieldPacking(IntEnum):
-    NoPacking = 0
-    R11G11B10 = 1
-    PackedFloat = 2
-    PackedUint = 3
-
-class FieldPrecision(IntEnum):
-    Half = 0
-    Real = 1
-    Default = 2
-
-class DepthBits(IntEnum):
-    None_ = 0
-    Depth8 = 1
-    Depth16 = 2
-    Depth24 = 3
-    Depth32 = 4
-
-class MSAASamples(IntEnum):
-    None_ = 0
-    MSAA2x = 1
-    MSAA4x = 2
-    MSAA8x = 3
-
-class MaterialQuality(IntEnum):
-    Low = 0
-    Medium = 1
-    High = 2
-
-class Package(IntEnum):
-    Builtin = 0
-    Root = 1
-
-class UpdateMethod(IntEnum):
-    FixedUpdate = 0
-    LateUpdate = 1
-    SmartUpdate = 2
-    ManualUpdate = 3
-
-class BrainUpdateMethod(IntEnum):
-    FixedUpdate = 0
-    LateUpdate = 1
-
-class ResolutionStrategy(IntEnum):
-    PullCameraForward = 0
-    PreserveCameraHeight = 1
-    PreserveCameraDistance = 2
-
-class Mode(IntEnum):
-    Confine2D = 0
-    Confine3D = 1
-
-class UpdateMethod(IntEnum):
-    Update = 0
-    FixedUpdate = 1
-    LateUpdate = 2
-
-class FillStrategy(IntEnum):
-    BestFit = 0
-    CropImageToFit = 1
-    StretchToFit = 2
-
-class StoryboardRenderMode(IntEnum):
-    ScreenSpaceOverlay = 0
-    ScreenSpaceCamera = 1
-
-class PositionMode(IntEnum):
-    GroupCenter = 0
-    GroupAverage = 1
-
-class RotationMode(IntEnum):
-    Manual = 0
-    GroupAverage = 1
-
-class UpdateMethod(IntEnum):
-    Update = 0
-    FixedUpdate = 1
-    LateUpdate = 2
-
-class FramingMode(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-    HorizontalAndVertical = 2
-    None_ = 3
-
-class AdjustmentMode(IntEnum):
-    ZoomOnly = 0
-    DollyOnly = 1
-    DollyThenZoom = 2
-
-class FramingMode(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-    HorizontalAndVertical = 2
-
-class AdjustmentMode(IntEnum):
-    ZoomOnly = 0
-    DollyOnly = 1
-    DollyThenZoom = 2
-
-class HeadingDefinition(IntEnum):
-    PositionDelta = 0
-    Velocity = 1
-    TargetForward = 2
-    WorldForward = 3
-
-class RecenterTargetMode(IntEnum):
-    None_ = 0
-    FollowTargetForward = 1
-    LookAtTargetForward = 2
-
-class CameraUpMode(IntEnum):
-    Default = 0
-    Path = 1
-    PathNoRoll = 2
-    FollowTarget = 3
-    FollowTargetNoRoll = 4
-
-class BindingMode(IntEnum):
-    LockToTargetOnAssign = 0
-    LockToTargetWithWorldUp = 1
-    LockToTargetNoRoll = 2
-    LockToTarget = 3
-    WorldSpace = 4
-    SimpleFollowWithWorldUp = 5
-
-class AngularDampingMode(IntEnum):
-    Euler = 0
-    Quaternion = 1
-
-class SpeedMode(IntEnum):
-    MaxSpeed = 0
-    InputValueGain = 1
-
-class BlendHintValue(IntEnum):
-    Nothing = 0
-    NoPosition = 1
-    NoOrientation = 2
-    NoTransform = 3
-    SphericalPositionBlend = 4
-    CylindricalPositionBlend = 5
-    RadialAimBlend = 6
-    IgnoreLookAtTarget = 7
-    NoLens = 8
-
-class Style(IntEnum):
-    Cut = 0
-    EaseInOut = 1
-    EaseIn = 2
-    EaseOut = 3
-    HardIn = 4
-    HardOut = 5
-    Linear = 6
-    Custom = 7
-
-class Stage(IntEnum):
-    Body = 0
-    Aim = 1
-    Noise = 2
-    Finalize = 3
-
-class PositionUnits(IntEnum):
-    PathUnits = 0
-    Distance = 1
-    Normalized = 2
-
-class Level(IntEnum):
-    Undoc = 0
-    API = 1
-    UserRef = 2
-
-class StandbyUpdateMode(IntEnum):
-    Never = 0
-    Always = 1
-    RoundRobin = 2
-
-class BlendHint(IntEnum):
-    None_ = 0
-    SphericalPosition = 1
-    CylindricalPosition = 2
-    ScreenSpaceAimWhenTargetsDiffer = 3
-
-class BakingState(IntEnum):
-    BAKING = 0
-    BAKED = 1
-    TIMEOUT = 2
-
-class OverrideModes(IntEnum):
-    None_ = 0
-    Orthographic = 1
-    Perspective = 2
-    Physical = 3
-
-class Mode(IntEnum):
-    Disabled = 0
-    Record = 1
-    Playback = 2
-
-class UpdateClock(IntEnum):
-    Fixed = 0
-    Late = 1
-
-class Mode(IntEnum):
-    Custom = 0
-    PriorityBoost = 1
-    Activate = 2
-    Deactivate = 3
-    Enable = 4
-    Disable = 5
-    Play = 6
-    Stop = 7
-
-class TimeMode(IntEnum):
-    FromStart = 0
-    FromEnd = 1
-    BeforeNow = 2
-    AfterNow = 3
-
-class ImpulseShapes(IntEnum):
-    Custom = 0
-    Recoil = 1
-    Bump = 2
-    Explosion = 3
-    Rumble = 4
-
-class ImpulseTypes(IntEnum):
-    Uniform = 0
-    Dissipating = 1
-    Propagating = 2
-    Legacy = 3
-
-class RepeatMode(IntEnum):
-    Stretch = 0
-    Loop = 1
-
-class DirectionMode(IntEnum):
-    Fixed = 0
-    RotateTowardSource = 1
-
-class DissipationMode(IntEnum):
-    LinearDecay = 0
-    SoftDecay = 1
-    ExponentialDecay = 2
-
-class ClipType(IntEnum):
-    ctIntersection = 0
-    ctUnion = 1
-    ctDifference = 2
-    ctXor = 3
-
-class PolyType(IntEnum):
-    ptSubject = 0
-    ptClip = 1
-
-class PolyFillType(IntEnum):
-    pftEvenOdd = 0
-    pftNonZero = 1
-    pftPositive = 2
-    pftNegative = 3
-
-class JoinType(IntEnum):
-    jtSquare = 0
-    jtRound = 1
-    jtMiter = 2
-
-class EndType(IntEnum):
-    etClosedPolygon = 0
-    etClosedLine = 1
-    etOpenButt = 2
-    etOpenSquare = 3
-    etOpenRound = 4
-
-class FocusTrackingMode(IntEnum):
-    None_ = 0
-    LookAtTarget = 1
-    FollowTarget = 2
-    CustomTarget = 3
-    Camera = 4
-
-class CSharpArgumentInfoFlags(IntEnum):
-    None_ = 0
-    UseCompileTimeType = 1
-    Constant = 2
-    NamedArgument = 3
-    IsRef = 4
-    IsOut = 5
-    IsStaticType = 6
-
-class CSharpBinderFlags(IntEnum):
-    None_ = 0
-    CheckedContext = 1
-    InvokeSimpleName = 2
-    InvokeSpecialName = 3
-    BinaryOperationLogical = 4
-    ConvertExplicit = 5
-    ConvertArrayIndex = 6
-    ResultIndexed = 7
-    ValueFromCompoundAssignment = 8
-    ResultDiscarded = 9
-
-class NamedArgumentsKind(IntEnum):
-    None_ = 0
-    Positioning = 1
-    NonTrailing = 2
-
-class Casing(IntEnum):
-    Upper = 0
-    Lower = 1
-
-class CanvasUpdate(IntEnum):
-    Prelayout = 0
-    Layout = 1
-    PostLayout = 2
-    PreRender = 3
-    LatePreRender = 4
-    MaxUpdateValue = 5
-
-class BlockingObjects(IntEnum):
-    None_ = 0
-    TwoD = 1
-    ThreeD = 2
-    All = 3
-
-class Type(IntEnum):
-    Simple = 0
-    Sliced = 1
-    Tiled = 2
-    Filled = 3
-
-class FillMethod(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-    Radial90 = 2
-    Radial180 = 3
-    Radial360 = 4
-
-class OriginHorizontal(IntEnum):
-    Left = 0
-    Right = 1
-
-class OriginVertical(IntEnum):
-    Bottom = 0
-    Top = 1
-
-class Origin90(IntEnum):
-    BottomLeft = 0
-    TopLeft = 1
-    TopRight = 2
-    BottomRight = 3
-
-class Origin180(IntEnum):
-    Bottom = 0
-    Left = 1
-    Top = 2
-    Right = 3
-
-class Origin360(IntEnum):
-    Bottom = 0
-    Right = 1
-    Top = 2
-    Left = 3
-
-class ContentType(IntEnum):
-    Standard = 0
-    Autocorrected = 1
-    IntegerNumber = 2
-    DecimalNumber = 3
-    Alphanumeric = 4
-    Name = 5
-    EmailAddress = 6
-    Password = 7
-    Pin = 8
-    Custom = 9
-
-class InputType(IntEnum):
-    Standard = 0
-    AutoCorrect = 1
-    Password = 2
-
-class CharacterValidation(IntEnum):
-    None_ = 0
-    Integer = 1
-    Decimal = 2
-    Alphanumeric = 3
-    Name = 4
-    EmailAddress = 5
-
-class LineType(IntEnum):
-    SingleLine = 0
-    MultiLineSubmit = 1
-    MultiLineNewline = 2
-
-class AspectMode(IntEnum):
-    None_ = 0
-    WidthControlsHeight = 1
-    HeightControlsWidth = 2
-    FitInParent = 3
-    EnvelopeParent = 4
-
-class ScaleMode(IntEnum):
-    ConstantPixelSize = 0
-    ScaleWithScreenSize = 1
-    ConstantPhysicalSize = 2
-
-class ScreenMatchMode(IntEnum):
-    MatchWidthOrHeight = 0
-    Expand = 1
-    Shrink = 2
-
-class Unit(IntEnum):
-    Centimeters = 0
-    Millimeters = 1
-    Inches = 2
-    Points = 3
-    Picas = 4
-
-class FitMode(IntEnum):
-    Unconstrained = 0
-    MinSize = 1
-    PreferredSize = 2
-
-class Corner(IntEnum):
-    UpperLeft = 0
-    UpperRight = 1
-    LowerLeft = 2
-    LowerRight = 3
-
-class Axis(IntEnum):
-    Horizontal = 0
-    Vertical = 1
-
-class Constraint(IntEnum):
-    Flexible = 0
-    FixedColumnCount = 1
-    FixedRowCount = 2
-
-class Mode(IntEnum):
-    None_ = 0
-    Horizontal = 1
-    Vertical = 2
-    Automatic = 3
-    Explicit = 4
-
-class Direction(IntEnum):
-    LeftToRight = 0
-    RightToLeft = 1
-    BottomToTop = 2
-    TopToBottom = 3
-
-class MovementType(IntEnum):
-    Unrestricted = 0
-    Elastic = 1
-    Clamped = 2
-
-class ScrollbarVisibility(IntEnum):
-    Permanent = 0
-    AutoHide = 1
-    AutoHideAndExpandViewport = 2
-
-class Transition(IntEnum):
-    None_ = 0
-    ColorTint = 1
-    SpriteSwap = 2
-    Animation = 3
-
-class Direction(IntEnum):
-    LeftToRight = 0
-    RightToLeft = 1
-    BottomToTop = 2
-    TopToBottom = 3
-
-class ToggleTransition(IntEnum):
-    None_ = 0
-    Fade = 1
-
-class ColorTweenMode(IntEnum):
-    All = 0
-    RGB = 1
-    Alpha = 2
-
-class InputButton(IntEnum):
-    Left = 0
-    Right = 1
-    Middle = 2
-
-class FramePressState(IntEnum):
-    Pressed = 0
-    Released = 1
-    PressedAndReleased = 2
-    NotChanged = 3
-
-class EventHandle(IntEnum):
-    Unused = 0
-    Used = 1
-
-class EventTriggerType(IntEnum):
-    PointerEnter = 0
-    PointerExit = 1
-    PointerDown = 2
-    PointerUp = 3
-    PointerClick = 4
-    Drag = 5
-    Drop = 6
-    Scroll = 7
-    UpdateSelected = 8
-    Select = 9
-    Deselect = 10
-    Move = 11
-    InitializePotentialDrag = 12
-    BeginDrag = 13
-    EndDrag = 14
-    Submit = 15
-    Cancel = 16
-
-class InputMode(IntEnum):
-    Mouse = 0
-    Buttons = 1
-
-class MoveDirection(IntEnum):
-    Left = 0
-    Up = 1
-    Right = 2
-    Down = 3
-    None_ = 4
-
-class OutputDeviceType(IntEnum):
-    BuiltinSpeaker = 0
-    WiredDevice = 1
-    WirelessDevice = 2
-
-class Status(IntEnum):
-    Stop = 0
-    Prep = 1
-    Playing = 2
-    PlayEnd = 3
-    Error = 4
-
-class CharacterEncoding(IntEnum):
-    Utf8 = 0
-    Sjis = 1
-
-class SoundRendererType(IntEnum):
-    Default = 0
-    Native = 1
-    Asr = 2
-    Hw1 = 3
-    Hw2 = 4
-
-class VoiceAllocationMethod(IntEnum):
-    Once = 0
-    Retry = 1
-
-class BiquadFilterType(IntEnum):
-    Off = 0
-    LowPass = 1
-    HighPass = 2
-    Notch = 3
-    LowShelf = 4
-    HighShelf = 5
-    Peaking = 6
-
-class ResumeMode(IntEnum):
-    AllPlayback = 0
-    PausedPlayback = 1
-    PreparedPlayback = 2
-
-class PanType(IntEnum):
-    Unknown = 0
-    Pan3d = 1
-    Pos3d = 2
-    Auto = 3
-
-class VoiceControlMethod(IntEnum):
-    PreferLast = 0
-    PreferFirst = 1
-
-class Parameter(IntEnum):
-    Volume = 0
-    Pitch = 1
-    Pan3dAngle = 2
-    Pan3dDistance = 3
-    Pan3dVolume = 4
-    BusSendLevel0 = 5
-    BusSendLevel1 = 6
-    BusSendLevel2 = 7
-    BusSendLevel3 = 8
-    BusSendLevel4 = 9
-    BusSendLevel5 = 10
-    BusSendLevel6 = 11
-    BusSendLevel7 = 12
-    BandPassFilterCofLow = 13
-    BandPassFilterCofHigh = 14
-    BiquadFilterType = 15
-    BiquadFilterFreq = 16
-    BiquadFIlterQ = 17
-    BiquadFilterGain = 18
-    EnvelopeAttackTime = 19
-    EnvelopeHoldTime = 20
-    EnvelopeDecayTime = 21
-    EnvelopeReleaseTime = 22
-    EnvelopeSustainLevel = 23
-    StartTime = 24
-    Priority = 25
-
-class Speaker(IntEnum):
-    FrontLeft = 0
-    FrontRight = 1
-    FrontCenter = 2
-    LowFrequency = 3
-    SurroundLeft = 4
-    SurroundRight = 5
-    SurroundBackLeft = 6
-    SurroundBackRight = 7
-
-class Format(IntEnum):
-    ADX = 0
-    HCA = 1
-    HCA_MX = 2
-    WAVE = 3
-    RAW_PCM = 4
-
-class Randomize3dCalcType(IntEnum):
-    None_ = 0
-    Rectangle = 1
-    Cuboid = 2
-    Circle = 3
-    Cylinder = 4
-    Sphere = 5
-    List = 6
-
-class Randomize3dParamType(IntEnum):
-    None_ = 0
-    Width = 1
-    Depth = 2
-    Height = 3
-    Radius = 4
-
-class CueType(IntEnum):
-    Polyphonic = 0
-    Sequential = 1
-    Shuffle = 2
-    Random = 3
-    RandomNoRepeat = 4
-    SwitchGameVariable = 5
-    ComboSequential = 6
-    SwitchSelector = 7
-    TrackTransitionBySelector = 8
-
-class ReactType(IntEnum):
-    Ducker = 0
-    AisacModulationTrigger = 1
-
-class ReactDuckerTargetType(IntEnum):
-    Volume = 0
-    AisacControlValue = 1
-
-class ReactDuckerCurveType(IntEnum):
-    Linear = 0
-    Square = 1
-    SquareReverse = 2
-    SCurve = 3
-    FlatAtHalf = 4
-
-class ReactHoldType(IntEnum):
-    WhilePlaying = 0
-    FixedTime = 1
-
-class ReactStatus(IntEnum):
-    Stop = 0
-    FadeOut = 1
-    Hold = 2
-    FadeIn = 3
-    Error = 4
-
-class Status(IntEnum):
-    Stop = 0
-    Processing = 1
-    Done = 2
-    Error = 3
-
-class Status(IntEnum):
-    Stop = 0
-    Loading = 1
-    Complete = 2
-    Error = 3
-
-class AcfDspBusLinkType(IntEnum):
-    preVolume = 0
-    postVolume = 1
-    postPan = 2
-
-class AcfAisacType(IntEnum):
-    normal = 0
-    autoModulation = 1
-
-class AisacGraphType(IntEnum):
-    none = 0
-    volume = 1
-    pitch = 2
-    bandpassHigh = 3
-    bandpassLow = 4
-    biquadFreq = 5
-    biquadQ = 6
-    busSend0 = 7
-    busSend1 = 8
-    busSend2 = 9
-    busSend3 = 10
-    busSend4 = 11
-    busSend5 = 12
-    busSend6 = 13
-    busSend7 = 14
-    pan3dAngel = 15
-    pan3dVolume = 16
-    pan3dInteriorDistance = 17
-    pan3dCenter = 18
-    pan3dLfe = 19
-    aisac0 = 20
-    aisac1 = 21
-    aisac2 = 22
-    aisac3 = 23
-    aisac4 = 24
-    aisac5 = 25
-    aisac6 = 26
-    aisac7 = 27
-    aisac8 = 28
-    aisac9 = 29
-    aisac10 = 30
-    aisac11 = 31
-    aisac12 = 32
-    aisac13 = 33
-    aisac14 = 34
-    aisac15 = 35
-    priority = 36
-    preDelayTime = 37
-    biquadGain = 38
-    pan3dMixdownCenter = 39
-    pan3dMixdownLfe = 40
-    egAttack = 41
-    egRelease = 42
-    playbackRatio = 43
-    drySendL = 44
-    drySendR = 45
-    drySendCenter = 46
-    drySendLfe = 47
-    drySendSl = 48
-    drySendSr = 49
-    drySendEx1 = 50
-    drySendEx2 = 51
-    panSpread = 52
-
-class CharacterEncoding(IntEnum):
-    utf8 = 0
-    sjis = 1
-
-class Status(IntEnum):
-    Prep = 0
-    Playing = 1
-    Removed = 2
-
-class Status(IntEnum):
-    Stop = 0
-    Prep = 1
-    Playing = 2
-    PlayEnd = 3
-    Error = 4
-
-class TimeStretchParameterId(IntEnum):
-    Ratio = 0
-    FrameTime = 1
-    Quality = 2
-
-class PitchShifterParameterId(IntEnum):
-    Pitch = 0
-    Formant = 1
-    Mode = 2
-
-class Type(IntEnum):
-    LevelMeter = 0
-    SpectrumAnalyzer = 1
-    PcmCapture = 2
-
-class ParameterType(IntEnum):
-    Basic = 0
-    Aisac = 1
-
-class VoicePoolId(IntEnum):
-    StandardMemory = 0
-    StandardStreaming = 1
-    HcaMxMemory = 2
-    HcaMxStreaming = 3
-    LowLatencyMemory = 4
-    LowLatencyStreaming = 5
-
-class PitchShifterMode(IntEnum):
-    Music = 0
-    Vocal = 1
-    SoundEffect = 2
-    Speech = 3
-
-class RawPcmFormat(IntEnum):
-    Sint16 = 0
-    Float32 = 1
-
-class Status(IntEnum):
-    Stop = 0
-    Loading = 1
-    Complete = 2
-    Error = 3
-
-class Status(IntEnum):
-    Stop = 0
-    Busy = 1
-    Complete = 2
-    Error = 3
-
-class Status(IntEnum):
-    None_ = 0
-    Analyze = 1
-    Complete = 2
-    Unbind = 3
-    Removed = 4
-    Invalid = 5
-    Error = 6
-
-class BindType(IntEnum):
-    Cpk = 0
-    Directory = 1
-    File = 2
-
-class Status(IntEnum):
-    Stop = 0
-    Busy = 1
-    Complete = 2
-    Error = 3
-
-class Error(IntEnum):
-    None_ = 0
-    Timeout = 1
-    Memory = 2
-    LocalFs = 3
-    DNS = 4
-    Connection = 5
-    SSL = 6
-    HTTP = 7
-    Internal = 8
-
-class MaxFrameDrop(IntEnum):
-    Disabled = 0
-    One = 1
-    Two = 2
-    Three = 3
-    Four = 4
-    Five = 5
-    Six = 6
-    Seven = 7
-    Eight = 8
-    Nine = 9
-    Ten = 10
-    Infinite = 11
-
-class RenderMode(IntEnum):
-    Always = 0
-    OnVisibility = 1
-    Never = 2
-
-class InGamePreviewSwitchMode(IntEnum):
-    Disable = 0
-    Enable = 1
-    FollowBuildSetting = 2
-    Default = 3
-
-class LinuxOutput(IntEnum):
-    Default = 0
-    PulseAudio = 1
-    ALSA = 2
-
-class AisacType(IntEnum):
-    Normal = 0
-    AutoModulation = 1
-
-class ModuleType(IntEnum):
-    Atom = 0
-    AtomMic = 1
-    Fs = 2
-    FsWeb = 3
-    Mana = 4
-    Lips = 5
-    Vip = 6
-
-class CodecType(IntEnum):
-    Unknown = 0
-    SofdecPrime = 1
-    H264 = 2
-    VP9 = 3
-
-class AlphaType(IntEnum):
-    CompoOpaq = 0
-    CompoAlphaFull = 1
-    CompoAlpha3Step = 2
-    CompoAlpha32Bit = 3
-
-class Status(IntEnum):
-    Stop = 0
-    Dechead = 1
-    WaitPrep = 2
-    Prep = 3
-    Ready = 4
-    Playing = 5
-    PlayEnd = 6
-    Error = 7
-    StopProcessing = 8
-    ReadyForRendering = 9
-
-class SetMode(IntEnum):
-    New = 0
-    Append = 1
-    AppendRepeatedly = 2
-
-class MovieEventSyncMode(IntEnum):
-    FrameTime = 0
-    PlayBackTime = 1
-
-class AudioTrack(IntEnum):
-    Off = 0
-    Auto = 1
-
-class TimerType(IntEnum):
-    None_ = 0
-    System = 1
-    Audio = 2
-    User = 3
-    Manual = 4
-
-class CriManaUnityPlayer_RenderEventAction(IntEnum):
-    UPDATE = 0
-    INITIALIZE = 1
-    RENDER = 2
-    DESTROY = 3
-
-class Token(IntEnum):
-    None_ = 0
-    Null = 1
-    True_ = 2
-    False_ = 3
-    Colon = 4
-    Comma = 5
-    String = 6
-    Number = 7
-    CurlyOpen = 8
-    CurlyClose = 9
-    SquaredOpen = 10
-    SquaredClose = 11
-
-class MixBlend(IntEnum):
-    Setup = 0
-    First = 1
-    Replace = 2
-    Add = 3
-
-class MixDirection(IntEnum):
-    In = 0
-    Out = 1
-
-class Property(IntEnum):
-    Rotate = 0
-    X = 1
-    Y = 2
-    ScaleX = 3
-    ScaleY = 4
-    ShearX = 5
-    ShearY = 6
-    Inherit = 7
-    RGB = 8
-    Alpha = 9
-    RGB2 = 10
-    Attachment = 11
-    Deform = 12
-    Event = 13
-    DrawOrder = 14
-    IkConstraint = 15
-    TransformConstraint = 16
-    PathConstraintPosition = 17
-    PathConstraintSpacing = 18
-    PathConstraintMix = 19
-    PhysicsConstraintInertia = 20
-    PhysicsConstraintStrength = 21
-    PhysicsConstraintDamping = 22
-    PhysicsConstraintMass = 23
-    PhysicsConstraintWind = 24
-    PhysicsConstraintGravity = 25
-    PhysicsConstraintMix = 26
-    PhysicsConstraintReset = 27
-    Sequence = 28
-
-class Format(IntEnum):
-    Alpha = 0
-    Intensity = 1
-    LuminanceAlpha = 2
-    RGB565 = 3
-    RGBA4444 = 4
-    RGB888 = 5
-    RGBA8888 = 6
-
-class TextureFilter(IntEnum):
-    Nearest = 0
-    Linear = 1
-    MipMap = 2
-    MipMapNearestNearest = 3
-    MipMapLinearNearest = 4
-    MipMapNearestLinear = 5
-    MipMapLinearLinear = 6
-
-class TextureWrap(IntEnum):
-    MirroredRepeat = 0
-    ClampToEdge = 1
-    Repeat = 2
-
-class AttachmentType(IntEnum):
-    Region = 0
-    Boundingbox = 1
-    Mesh = 2
-    Linkedmesh = 3
-    Path = 4
-    Point = 5
-    Clipping = 6
-    Sequence = 7
-
-class SequenceMode(IntEnum):
-    Hold = 0
-    Once = 1
-    Loop = 2
-    Pingpong = 3
-    OnceReverse = 4
-    LoopReverse = 5
-    PingpongReverse = 6
-
-class BlendMode(IntEnum):
-    Normal = 0
-    Additive = 1
-    Multiply = 2
-    Screen = 3
-
-class Inherit(IntEnum):
-    Normal = 0
-    OnlyTranslation = 1
-    NoRotationOrReflection = 2
-    NoScale = 3
-    NoScaleOrReflection = 4
-
-class PositionMode(IntEnum):
-    Fixed = 0
-    Percent = 1
-
-class SpacingMode(IntEnum):
-    Length = 0
-    Fixed = 1
-    Percent = 2
-    Proportional = 3
-
-class RotateMode(IntEnum):
-    Tangent = 0
-    Chain = 1
-    ChainScale = 2
-
-class Physics(IntEnum):
-    None_ = 0
-    Reset = 1
-    Update = 2
-    Pose = 3
-
-class DisableAction(IntEnum):
-    Stop = 0
-    Pause = 1
-    Continue = 2
-    Reset = 3
-    Destroy = 4
-
-class ActionOnStop(IntEnum):
-    DefaultState = 0
-    RewindTime = 1
-    Continue = 2
-
-class FadeMode(IntEnum):
-    FixedSpeed = 0
-    FixedDuration = 1
-    FromStart = 2
-    NormalizedSpeed = 3
-    NormalizedDuration = 4
-    NormalizedFromStart = 5
-
-class OptionalWarning(IntEnum):
-    ProOnly = 0
-    CreateGraphWhileDisabled = 1
-    CreateGraphDuringGuiEvent = 2
-    AnimatorDisabled = 3
-    NativeControllerHumanoid = 4
-    NativeControllerHybrid = 5
-    DuplicateEvent = 6
-    EndEventInterrupt = 7
-    UselessEvent = 8
-    LockedEvents = 9
-    UnsupportedEvents = 10
-    UnsupportedSpeed = 11
-    UnsupportedIK = 12
-    MixerMinChildren = 13
-    MixerSynchronizeZeroLength = 14
-    CustomFadeBounds = 15
-    CustomFadeNotNull = 16
-    AnimatorSpeed = 17
-    UnusedNode = 18
-    PlayableAssetAnimatorBinding = 19
-    CloneComplexState = 20
-    All = 21
-
-class Value(IntEnum):
-    Any = 0
-    ZeroToOne = 1
-    IsNotNegative = 2
-    IsFinite = 3
-    IsFiniteOrNaN = 4
-
-class Function(IntEnum):
-    Linear = 0
-    QuadraticIn = 1
-    QuadraticOut = 2
-    QuadraticInOut = 3
-    CubicIn = 4
-    CubicOut = 5
-    CubicInOut = 6
-    QuarticIn = 7
-    QuarticOut = 8
-    QuarticInOut = 9
-    QuinticIn = 10
-    QuinticOut = 11
-    QuinticInOut = 12
-    SineIn = 13
-    SineOut = 14
-    SineInOut = 15
-    ExponentialIn = 16
-    ExponentialOut = 17
-    ExponentialInOut = 18
-    CircularIn = 19
-    CircularOut = 20
-    CircularInOut = 21
-    BackIn = 22
-    BackOut = 23
-    BackInOut = 24
-    BounceIn = 25
-    BounceOut = 26
-    BounceInOut = 27
-    ElasticIn = 28
-    ElasticOut = 29
-    ElasticInOut = 30
-
-class Direction(IntEnum):
-    Up = 0
-    Right = 1
-    Down = 2
-    Left = 3
-
-class Direction(IntEnum):
-    Up = 0
-    Right = 1
-    Down = 2
-    Left = 3
-    UpRight = 4
-    DownRight = 5
-    DownLeft = 6
-    UpLeft = 7
-
-class MixerType(IntEnum):
-    Cartesian = 0
-    Directional = 1
-
-class Units(IntEnum):
-    Normalized = 0
-    Seconds = 1
-    Frames = 2
-
-class LoadingMode(IntEnum):
-    Normal = 0
-    OnDemand = 1
-
-class SourceType(IntEnum):
-    Json = 0
-    Binary = 1
-
-class AxisOrientation(IntEnum):
-    XAxis = 0
-    YAxis = 1
-
-class LayoutMode(IntEnum):
-    None_ = 0
-    WidthControlsHeight = 1
-    HeightControlsWidth = 2
-    FitInParent = 3
-    EnvelopeParent = 4
-
-class MixMode(IntEnum):
-    AlwaysMix = 0
-    MixNext = 1
-    Hard = 2
-
-class Mode(IntEnum):
-    Follow = 0
-    Override = 1
-
-class UpdatePhase(IntEnum):
-    Local = 0
-    World = 1
-    Complete = 2
-
-class UpdateMode(IntEnum):
-    Nothing = 0
-    OnlyAnimationStatus = 1
-    OnlyEventTimelines = 2
-    EverythingExceptMesh = 3
-    FullUpdate = 4
-
-class UpdateTiming(IntEnum):
-    ManualUpdate = 0
-    InUpdate = 1
-    InFixedUpdate = 2
-    InLateUpdate = 3
-
-class SettingsTriState(IntEnum):
-    Disable = 0
-    Enable = 1
-    UseGlobalSetting = 2
-
-class AnimationEventTypes(IntEnum):
-    Start = 0
-    Interrupt = 1
-    End = 2
-    Dispose = 3
-    Complete = 4
-
-class GenerateType(IntEnum):
-    Object = 0
-    VersionTolerant = 1
-    CircularReference = 2
-    Collection = 3
-    NoGenerate = 4
-
-class SerializeLayout(IntEnum):
-    Sequential = 0
-    Explicit = 1
-
-class StringEncoding(IntEnum):
-    Utf16 = 0
-    Utf8 = 1
-
-class TextFontWeight(IntEnum):
-    Thin = 0
-    ExtraLight = 1
-    Light = 2
-    Regular = 3
-    Medium = 4
-    SemiBold = 5
-    Bold = 6
-    Heavy = 7
-    Black = 8
-
-class AtlasPopulationMode(IntEnum):
-    Static = 0
-    Dynamic = 1
-    DynamicOS = 2
-
-class FontStyles(IntEnum):
-    Normal = 0
-    Bold = 1
-    Italic = 2
-    Underline = 3
-    LowerCase = 4
-    UpperCase = 5
-    SmallCaps = 6
-    Strikethrough = 7
-    Superscript = 8
-    Subscript = 9
-    Highlight = 10
-
-class TextElementType(IntEnum):
-    Character = 0
-    Sprite = 1
-
-class ColorGradientMode(IntEnum):
-    Single = 0
-    HorizontalGradient = 1
-    VerticalGradient = 2
-    FourCornersGradient = 3
-
-class SelectOptions(IntEnum):
-    None_ = 0
-    Additive = 1
-    FocusOnSelection = 2
-    ForceRevealSelection = 3
-
-class LongPressAction(IntEnum):
-    None_ = 0
-    CreateDraggedReferenceItem = 1
-    ShowMultiSelectionToggles = 2
-    ShowMultiSelectionTogglesThenCreateDraggedReferenceItem = 3
-
-class VariableVisibility(IntEnum):
-    None_ = 0
-    SerializableOnly = 1
-    All = 2
-
-class HeaderVisibility(IntEnum):
-    Collapsible = 0
-    AlwaysVisible = 1
-    Hidden = 2
-
-class ButtonVisibility(IntEnum):
-    None_ = 0
-    InitializedObjects = 1
-    UninitializedObjects = 2
-
-class Mode(IntEnum):
-    OnValueChange = 0
-    OnSubmit = 1
-
-class X509ChainStatusFlags(IntEnum):
-    InvalidBasicConstraints = 0
-    NoError = 1
-    NotSignatureValid = 2
-    NotTimeNested = 3
-    NotTimeValid = 4
-    PartialChain = 5
-    UntrustedRoot = 6
-
-class NtlmAuthLevel(IntEnum):
-    LM_and_NTLM = 0
-    LM_and_NTLM_and_try_NTLMv2_Session = 1
-    NTLM_only = 2
-    NTLMv2_only = 3
-
-class NtlmFlags(IntEnum):
-    NegotiateUnicode = 0
-    NegotiateOem = 1
-    RequestTarget = 2
-    NegotiateNtlm = 3
-    NegotiateDomainSupplied = 4
-    NegotiateWorkstationSupplied = 5
-    NegotiateAlwaysSign = 6
-    NegotiateNtlm2Key = 7
-    Negotiate128 = 8
-    Negotiate56 = 9
-
-class AlertLevel(IntEnum):
-    Warning = 0
-    Fatal = 1
-
-class AlertDescription(IntEnum):
-    CloseNotify = 0
-    UnexpectedMessage = 1
-    BadRecordMAC = 2
-    DecryptionFailed_RESERVED = 3
-    RecordOverflow = 4
-    DecompressionFailure = 5
-    HandshakeFailure = 6
-    NoCertificate_RESERVED = 7
-    BadCertificate = 8
-    UnsupportedCertificate = 9
-    CertificateRevoked = 10
-    CertificateExpired = 11
-    CertificateUnknown = 12
-    IlegalParameter = 13
-    UnknownCA = 14
-    AccessDenied = 15
-    DecodeError = 16
-    DecryptError = 17
-    ExportRestriction = 18
-    ProtocolVersion = 19
-    InsuficientSecurity = 20
-    InternalError = 21
-    UserCancelled = 22
-    NoRenegotiation = 23
-    UnsupportedExtension = 24
-
-class CipherSuiteCode(IntEnum):
-    TLS_NULL_WITH_NULL_NULL = 0
-    TLS_RSA_WITH_NULL_MD5 = 1
-    TLS_RSA_WITH_NULL_SHA = 2
-    TLS_RSA_EXPORT_WITH_RC4_40_MD5 = 3
-    TLS_RSA_WITH_RC4_128_MD5 = 4
-    TLS_RSA_WITH_RC4_128_SHA = 5
-    TLS_RSA_EXPORT_WITH_RC2_CBC_40_MD5 = 6
-    TLS_RSA_WITH_IDEA_CBC_SHA = 7
-    TLS_RSA_EXPORT_WITH_DES40_CBC_SHA = 8
-    TLS_RSA_WITH_DES_CBC_SHA = 9
-    TLS_RSA_WITH_3DES_EDE_CBC_SHA = 10
-    TLS_DH_DSS_EXPORT_WITH_DES40_CBC_SHA = 11
-    TLS_DH_DSS_WITH_DES_CBC_SHA = 12
-    TLS_DH_DSS_WITH_3DES_EDE_CBC_SHA = 13
-    TLS_DH_RSA_EXPORT_WITH_DES40_CBC_SHA = 14
-    TLS_DH_RSA_WITH_DES_CBC_SHA = 15
-    TLS_DH_RSA_WITH_3DES_EDE_CBC_SHA = 16
-    TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA = 17
-    TLS_DHE_DSS_WITH_DES_CBC_SHA = 18
-    TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA = 19
-    TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA = 20
-    TLS_DHE_RSA_WITH_DES_CBC_SHA = 21
-    TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA = 22
-    TLS_DH_anon_EXPORT_WITH_RC4_40_MD5 = 23
-    TLS_DH_anon_WITH_RC4_128_MD5 = 24
-    TLS_DH_anon_EXPORT_WITH_DES40_CBC_SHA = 25
-    TLS_DH_anon_WITH_DES_CBC_SHA = 26
-    TLS_DH_anon_WITH_3DES_EDE_CBC_SHA = 27
-    TLS_RSA_WITH_AES_128_CBC_SHA = 28
-    TLS_DH_DSS_WITH_AES_128_CBC_SHA = 29
-    TLS_DH_RSA_WITH_AES_128_CBC_SHA = 30
-    TLS_DHE_DSS_WITH_AES_128_CBC_SHA = 31
-    TLS_DHE_RSA_WITH_AES_128_CBC_SHA = 32
-    TLS_DH_anon_WITH_AES_128_CBC_SHA = 33
-    TLS_RSA_WITH_AES_256_CBC_SHA = 34
-    TLS_DH_DSS_WITH_AES_256_CBC_SHA = 35
-    TLS_DH_RSA_WITH_AES_256_CBC_SHA = 36
-    TLS_DHE_DSS_WITH_AES_256_CBC_SHA = 37
-    TLS_DHE_RSA_WITH_AES_256_CBC_SHA = 38
-    TLS_DH_anon_WITH_AES_256_CBC_SHA = 39
-    TLS_RSA_WITH_CAMELLIA_128_CBC_SHA = 40
-    TLS_DH_DSS_WITH_CAMELLIA_128_CBC_SHA = 41
-    TLS_DH_RSA_WITH_CAMELLIA_128_CBC_SHA = 42
-    TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA = 43
-    TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA = 44
-    TLS_DH_anon_WITH_CAMELLIA_128_CBC_SHA = 45
-    TLS_RSA_WITH_CAMELLIA_256_CBC_SHA = 46
-    TLS_DH_DSS_WITH_CAMELLIA_256_CBC_SHA = 47
-    TLS_DH_RSA_WITH_CAMELLIA_256_CBC_SHA = 48
-    TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA = 49
-    TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA = 50
-    TLS_DH_anon_WITH_CAMELLIA_256_CBC_SHA = 51
-    TLS_RSA_WITH_CAMELLIA_128_CBC_SHA256 = 52
-    TLS_DH_DSS_WITH_CAMELLIA_128_CBC_SHA256 = 53
-    TLS_DH_RSA_WITH_CAMELLIA_128_CBC_SHA256 = 54
-    TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA256 = 55
-    TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA256 = 56
-    TLS_DH_anon_WITH_CAMELLIA_128_CBC_SHA256 = 57
-    TLS_RSA_WITH_CAMELLIA_256_CBC_SHA256 = 58
-    TLS_DH_DSS_WITH_CAMELLIA_256_CBC_SHA256 = 59
-    TLS_DH_RSA_WITH_CAMELLIA_256_CBC_SHA256 = 60
-    TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA256 = 61
-    TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA256 = 62
-    TLS_DH_anon_WITH_CAMELLIA_256_CBC_SHA256 = 63
-    TLS_RSA_WITH_SEED_CBC_SHA = 64
-    TLS_DH_DSS_WITH_SEED_CBC_SHA = 65
-    TLS_DH_RSA_WITH_SEED_CBC_SHA = 66
-    TLS_DHE_DSS_WITH_SEED_CBC_SHA = 67
-    TLS_DHE_RSA_WITH_SEED_CBC_SHA = 68
-    TLS_DH_anon_WITH_SEED_CBC_SHA = 69
-    TLS_PSK_WITH_RC4_128_SHA = 70
-    TLS_PSK_WITH_3DES_EDE_CBC_SHA = 71
-    TLS_PSK_WITH_AES_128_CBC_SHA = 72
-    TLS_PSK_WITH_AES_256_CBC_SHA = 73
-    TLS_DHE_PSK_WITH_RC4_128_SHA = 74
-    TLS_DHE_PSK_WITH_3DES_EDE_CBC_SHA = 75
-    TLS_DHE_PSK_WITH_AES_128_CBC_SHA = 76
-    TLS_DHE_PSK_WITH_AES_256_CBC_SHA = 77
-    TLS_RSA_PSK_WITH_RC4_128_SHA = 78
-    TLS_RSA_PSK_WITH_3DES_EDE_CBC_SHA = 79
-    TLS_RSA_PSK_WITH_AES_128_CBC_SHA = 80
-    TLS_RSA_PSK_WITH_AES_256_CBC_SHA = 81
-    TLS_ECDH_ECDSA_WITH_NULL_SHA = 82
-    TLS_ECDH_ECDSA_WITH_RC4_128_SHA = 83
-    TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA = 84
-    TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA = 85
-    TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA = 86
-    TLS_ECDHE_ECDSA_WITH_NULL_SHA = 87
-    TLS_ECDHE_ECDSA_WITH_RC4_128_SHA = 88
-    TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA = 89
-    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA = 90
-    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA = 91
-    TLS_ECDH_RSA_WITH_NULL_SHA = 92
-    TLS_ECDH_RSA_WITH_RC4_128_SHA = 93
-    TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA = 94
-    TLS_ECDH_RSA_WITH_AES_128_CBC_SHA = 95
-    TLS_ECDH_RSA_WITH_AES_256_CBC_SHA = 96
-    TLS_ECDHE_RSA_WITH_NULL_SHA = 97
-    TLS_ECDHE_RSA_WITH_RC4_128_SHA = 98
-    TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA = 99
-    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA = 100
-    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA = 101
-    TLS_ECDH_anon_WITH_NULL_SHA = 102
-    TLS_ECDH_anon_WITH_RC4_128_SHA = 103
-    TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA = 104
-    TLS_ECDH_anon_WITH_AES_128_CBC_SHA = 105
-    TLS_ECDH_anon_WITH_AES_256_CBC_SHA = 106
-    TLS_PSK_WITH_NULL_SHA = 107
-    TLS_DHE_PSK_WITH_NULL_SHA = 108
-    TLS_RSA_PSK_WITH_NULL_SHA = 109
-    TLS_SRP_SHA_WITH_3DES_EDE_CBC_SHA = 110
-    TLS_SRP_SHA_RSA_WITH_3DES_EDE_CBC_SHA = 111
-    TLS_SRP_SHA_DSS_WITH_3DES_EDE_CBC_SHA = 112
-    TLS_SRP_SHA_WITH_AES_128_CBC_SHA = 113
-    TLS_SRP_SHA_RSA_WITH_AES_128_CBC_SHA = 114
-    TLS_SRP_SHA_DSS_WITH_AES_128_CBC_SHA = 115
-    TLS_SRP_SHA_WITH_AES_256_CBC_SHA = 116
-    TLS_SRP_SHA_RSA_WITH_AES_256_CBC_SHA = 117
-    TLS_SRP_SHA_DSS_WITH_AES_256_CBC_SHA = 118
-    TLS_RSA_WITH_NULL_SHA256 = 119
-    TLS_RSA_WITH_AES_128_CBC_SHA256 = 120
-    TLS_RSA_WITH_AES_256_CBC_SHA256 = 121
-    TLS_DH_DSS_WITH_AES_128_CBC_SHA256 = 122
-    TLS_DH_RSA_WITH_AES_128_CBC_SHA256 = 123
-    TLS_DHE_DSS_WITH_AES_128_CBC_SHA256 = 124
-    TLS_DHE_RSA_WITH_AES_128_CBC_SHA256 = 125
-    TLS_DH_DSS_WITH_AES_256_CBC_SHA256 = 126
-    TLS_DH_RSA_WITH_AES_256_CBC_SHA256 = 127
-    TLS_DHE_DSS_WITH_AES_256_CBC_SHA256 = 128
-    TLS_DHE_RSA_WITH_AES_256_CBC_SHA256 = 129
-    TLS_DH_anon_WITH_AES_128_CBC_SHA256 = 130
-    TLS_DH_anon_WITH_AES_256_CBC_SHA256 = 131
-    TLS_RSA_WITH_AES_128_GCM_SHA256 = 132
-    TLS_RSA_WITH_AES_256_GCM_SHA384 = 133
-    TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 = 134
-    TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 = 135
-    TLS_DH_RSA_WITH_AES_128_GCM_SHA256 = 136
-    TLS_DH_RSA_WITH_AES_256_GCM_SHA384 = 137
-    TLS_DHE_DSS_WITH_AES_128_GCM_SHA256 = 138
-    TLS_DHE_DSS_WITH_AES_256_GCM_SHA384 = 139
-    TLS_DH_DSS_WITH_AES_128_GCM_SHA256 = 140
-    TLS_DH_DSS_WITH_AES_256_GCM_SHA384 = 141
-    TLS_DH_anon_WITH_AES_128_GCM_SHA256 = 142
-    TLS_DH_anon_WITH_AES_256_GCM_SHA384 = 143
-    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 = 144
-    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 = 145
-    TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256 = 146
-    TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384 = 147
-    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 = 148
-    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 = 149
-    TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256 = 150
-    TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384 = 151
-    TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 = 152
-    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 = 153
-    TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256 = 154
-    TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384 = 155
-    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 = 156
-    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 = 157
-    TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256 = 158
-    TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384 = 159
-    TLS_PSK_WITH_AES_128_GCM_SHA256 = 160
-    TLS_PSK_WITH_AES_256_GCM_SHA384 = 161
-    TLS_DHE_PSK_WITH_AES_128_GCM_SHA256 = 162
-    TLS_DHE_PSK_WITH_AES_256_GCM_SHA384 = 163
-    TLS_RSA_PSK_WITH_AES_128_GCM_SHA256 = 164
-    TLS_RSA_PSK_WITH_AES_256_GCM_SHA384 = 165
-    TLS_PSK_WITH_AES_128_CBC_SHA256 = 166
-    TLS_PSK_WITH_AES_256_CBC_SHA384 = 167
-    TLS_PSK_WITH_NULL_SHA256 = 168
-    TLS_PSK_WITH_NULL_SHA384 = 169
-    TLS_DHE_PSK_WITH_AES_128_CBC_SHA256 = 170
-    TLS_DHE_PSK_WITH_AES_256_CBC_SHA384 = 171
-    TLS_DHE_PSK_WITH_NULL_SHA256 = 172
-    TLS_DHE_PSK_WITH_NULL_SHA384 = 173
-    TLS_RSA_PSK_WITH_AES_128_CBC_SHA256 = 174
-    TLS_RSA_PSK_WITH_AES_256_CBC_SHA384 = 175
-    TLS_RSA_PSK_WITH_NULL_SHA256 = 176
-    TLS_RSA_PSK_WITH_NULL_SHA384 = 177
-    TLS_ECDHE_PSK_WITH_RC4_128_SHA = 178
-    TLS_ECDHE_PSK_WITH_3DES_EDE_CBC_SHA = 179
-    TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA = 180
-    TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA = 181
-    TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA256 = 182
-    TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA384 = 183
-    TLS_ECDHE_PSK_WITH_NULL_SHA = 184
-    TLS_ECDHE_PSK_WITH_NULL_SHA256 = 185
-    TLS_ECDHE_PSK_WITH_NULL_SHA384 = 186
-    TLS_EMPTY_RENEGOTIATION_INFO_SCSV = 187
-    TLS_ECDHE_ECDSA_WITH_CAMELLIA_128_CBC_SHA256 = 188
-    TLS_ECDHE_ECDSA_WITH_CAMELLIA_256_CBC_SHA384 = 189
-    TLS_ECDH_ECDSA_WITH_CAMELLIA_128_CBC_SHA256 = 190
-    TLS_ECDH_ECDSA_WITH_CAMELLIA_256_CBC_SHA384 = 191
-    TLS_ECDHE_RSA_WITH_CAMELLIA_128_CBC_SHA256 = 192
-    TLS_ECDHE_RSA_WITH_CAMELLIA_256_CBC_SHA384 = 193
-    TLS_ECDH_RSA_WITH_CAMELLIA_128_CBC_SHA256 = 194
-    TLS_ECDH_RSA_WITH_CAMELLIA_256_CBC_SHA384 = 195
-    TLS_RSA_WITH_CAMELLIA_128_GCM_SHA256 = 196
-    TLS_RSA_WITH_CAMELLIA_256_GCM_SHA384 = 197
-    TLS_DHE_RSA_WITH_CAMELLIA_128_GCM_SHA256 = 198
-    TLS_DHE_RSA_WITH_CAMELLIA_256_GCM_SHA384 = 199
-    TLS_DH_RSA_WITH_CAMELLIA_128_GCM_SHA256 = 200
-    TLS_DH_RSA_WITH_CAMELLIA_256_GCM_SHA384 = 201
-    TLS_DHE_DSS_WITH_CAMELLIA_128_GCM_SHA256 = 202
-    TLS_DHE_DSS_WITH_CAMELLIA_256_GCM_SHA384 = 203
-    TLS_DH_DSS_WITH_CAMELLIA_128_GCM_SHA256 = 204
-    TLS_DH_DSS_WITH_CAMELLIA_256_GCM_SHA384 = 205
-    TLS_DH_anon_WITH_CAMELLIA_128_GCM_SHA256 = 206
-    TLS_DH_anon_WITH_CAMELLIA_256_GCM_SHA384 = 207
-    TLS_ECDHE_ECDSA_WITH_CAMELLIA_128_GCM_SHA256 = 208
-    TLS_ECDHE_ECDSA_WITH_CAMELLIA_256_GCM_SHA384 = 209
-    TLS_ECDH_ECDSA_WITH_CAMELLIA_128_GCM_SHA256 = 210
-    TLS_ECDH_ECDSA_WITH_CAMELLIA_256_GCM_SHA384 = 211
-    TLS_ECDHE_RSA_WITH_CAMELLIA_128_GCM_SHA256 = 212
-    TLS_ECDHE_RSA_WITH_CAMELLIA_256_GCM_SHA384 = 213
-    TLS_ECDH_RSA_WITH_CAMELLIA_128_GCM_SHA256 = 214
-    TLS_ECDH_RSA_WITH_CAMELLIA_256_GCM_SHA384 = 215
-    TLS_PSK_WITH_CAMELLIA_128_GCM_SHA256 = 216
-    TLS_PSK_WITH_CAMELLIA_256_GCM_SHA384 = 217
-    TLS_DHE_PSK_WITH_CAMELLIA_128_GCM_SHA256 = 218
-    TLS_DHE_PSK_WITH_CAMELLIA_256_GCM_SHA384 = 219
-    TLS_RSA_PSK_WITH_CAMELLIA_128_GCM_SHA256 = 220
-    TLS_RSA_PSK_WITH_CAMELLIA_256_GCM_SHA384 = 221
-    TLS_PSK_WITH_CAMELLIA_128_CBC_SHA256 = 222
-    TLS_PSK_WITH_CAMELLIA_256_CBC_SHA384 = 223
-    TLS_DHE_PSK_WITH_CAMELLIA_128_CBC_SHA256 = 224
-    TLS_DHE_PSK_WITH_CAMELLIA_256_CBC_SHA384 = 225
-    TLS_RSA_PSK_WITH_CAMELLIA_128_CBC_SHA256 = 226
-    TLS_RSA_PSK_WITH_CAMELLIA_256_CBC_SHA384 = 227
-    TLS_ECDHE_PSK_WITH_CAMELLIA_128_CBC_SHA256 = 228
-    TLS_ECDHE_PSK_WITH_CAMELLIA_256_CBC_SHA384 = 229
-    TLS_RSA_WITH_AES_128_CCM = 230
-    TLS_RSA_WITH_AES_256_CCM = 231
-    TLS_DHE_RSA_WITH_AES_128_CCM = 232
-    TLS_DHE_RSA_WITH_AES_256_CCM = 233
-    TLS_RSA_WITH_AES_128_CCM_8 = 234
-    TLS_RSA_WITH_AES_256_CCM_8 = 235
-    TLS_DHE_RSA_WITH_AES_128_CCM_8 = 236
-    TLS_DHE_RSA_WITH_AES_256_CCM_8 = 237
-    TLS_PSK_WITH_AES_128_CCM = 238
-    TLS_PSK_WITH_AES_256_CCM = 239
-    TLS_DHE_PSK_WITH_AES_128_CCM = 240
-    TLS_DHE_PSK_WITH_AES_256_CCM = 241
-    TLS_PSK_WITH_AES_128_CCM_8 = 242
-    TLS_PSK_WITH_AES_256_CCM_8 = 243
-    TLS_PSK_DHE_WITH_AES_128_CCM_8 = 244
-    TLS_PSK_DHE_WITH_AES_256_CCM_8 = 245
-    TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 = 246
-    TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 = 247
-    TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256 = 248
-    TLS_RSA_WITH_ESTREAM_SALSA20_SHA1 = 249
-    TLS_RSA_WITH_SALSA20_SHA1 = 250
-    TLS_ECDHE_RSA_WITH_ESTREAM_SALSA20_SHA1 = 251
-    TLS_ECDHE_RSA_WITH_SALSA20_SHA1 = 252
-    TLS_ECDHE_ECDSA_WITH_ESTREAM_SALSA20_SHA1 = 253
-    TLS_ECDHE_ECDSA_WITH_SALSA20_SHA1 = 254
-    TLS_PSK_WITH_ESTREAM_SALSA20_SHA1 = 255
-    TLS_PSK_WITH_SALSA20_SHA1 = 256
-    TLS_ECDHE_PSK_WITH_ESTREAM_SALSA20_SHA1 = 257
-    TLS_ECDHE_PSK_WITH_SALSA20_SHA1 = 258
-    TLS_RSA_PSK_WITH_ESTREAM_SALSA20_SHA1 = 259
-    TLS_RSA_PSK_WITH_SALSA20_SHA1 = 260
-    TLS_DHE_PSK_WITH_ESTREAM_SALSA20_SHA1 = 261
-    TLS_DHE_PSK_WITH_SALSA20_SHA1 = 262
-    TLS_DHE_RSA_WITH_ESTREAM_SALSA20_SHA1 = 263
-    TLS_DHE_RSA_WITH_SALSA20_SHA1 = 264
-    TLS_FALLBACK_SCSV = 265
-
-class MonoSslPolicyErrors(IntEnum):
-    None_ = 0
-    RemoteCertificateNotAvailable = 1
-    RemoteCertificateNameMismatch = 2
-    RemoteCertificateChainErrors = 3
-
-class TlsProtocols(IntEnum):
-    Zero = 0
-    Tls10Client = 1
-    Tls10Server = 2
-    Tls10 = 3
-    Tls11Client = 4
-    Tls11Server = 5
-    Tls11 = 6
-    Tls12Client = 7
-    Tls12Server = 8
-    Tls12 = 9
-    ClientMask = 10
-    ServerMask = 11
-
-class Sign(IntEnum):
-    Negative = 0
-    Zero = 1
-    Positive = 2
-
-class ConfidenceFactor(IntEnum):
-    ExtraLow = 0
-    Low = 1
-    Medium = 2
-    High = 3
-    ExtraHigh = 4
-    Provable = 5
-
-class UniTaskStatus(IntEnum):
-    Pending = 0
-    Succeeded = 1
-    Faulted = 2
-    Canceled = 3
-
-class PlayerLoopTiming(IntEnum):
-    Initialization = 0
-    LastInitialization = 1
-    EarlyUpdate = 2
-    LastEarlyUpdate = 3
-    FixedUpdate = 4
-    LastFixedUpdate = 5
-    PreUpdate = 6
-    LastPreUpdate = 7
-    Update = 8
-    LastUpdate = 9
-    PreLateUpdate = 10
-    LastPreLateUpdate = 11
-    PostLateUpdate = 12
-    LastPostLateUpdate = 13
-    TimeUpdate = 14
-    LastTimeUpdate = 15
-
-class InjectPlayerLoopTimings(IntEnum):
-    All = 0
-    Standard = 1
-    Minimum = 2
-    Initialization = 3
-    LastInitialization = 4
-    EarlyUpdate = 5
-    LastEarlyUpdate = 6
-    FixedUpdate = 7
-    LastFixedUpdate = 8
-    PreUpdate = 9
-    LastPreUpdate = 10
-    Update = 11
-    LastUpdate = 12
-    PreLateUpdate = 13
-    LastPreLateUpdate = 14
-    PostLateUpdate = 15
-    LastPostLateUpdate = 16
-    TimeUpdate = 17
-    LastTimeUpdate = 18
-
-class DelayType(IntEnum):
-    DeltaTime = 0
-    UnscaledDeltaTime = 1
-    Realtime = 2
-
-class HapticTypes(IntEnum):
-    Selection = 0
-    Success = 1
-    Warning = 2
-    Failure = 3
-    LightImpact = 4
-    MediumImpact = 5
-    HeavyImpact = 6
-
-class MXVibrationType(IntEnum):
-    Success = 0
-    Warning = 1
-    Failure = 2
-    LightImpact = 3
-    MediumImpact = 4
-    HeavyImpact = 5
-    HandledVibrate = 6
-    Vibrate = 7
-    Selection = 8
-
-class NativeErrorCode(IntEnum):
-    ERROR_INVALID_FILEPATH_PARAMETER = 0
-    ERROR_CANNOT_OPEN_FILE_FOR_WRITE = 1
-    ERROR_CANNOT_OPEN_FILE_FOR_READ = 2
-    ERROR_INPUT_FILESTREAM_IS_NOT_OGG_STREAM = 3
-    ERROR_READING_OGG_STREAM = 4
-    ERROR_INVALID_SAMPLES_PARAMETER = 5
-    ERROR_INVALID_SAMPLESLENGTH_PARAMETER = 6
-    ERROR_INVALID_CHANNELS_PARAMETER = 7
-    ERROR_INVALID_FREQUENCY_PARAMETER = 8
-    ERROR_INVALID_BASE_QUALITY_PARAMETER = 9
-    ERROR_MALLOC_RETURNED_NULL = 10
-    ERROR_BYTES_MEMORY_ARRAY_NULL = 11
-    ERROR_INVALID_WRITE_CALLBACK_PARAMETER = 12
-
-class SQLiteOpenFlags(IntEnum):
-    ReadOnly = 0
-    ReadWrite = 1
-    Create = 2
-    NoMutex = 3
-    FullMutex = 4
-    SharedCache = 5
-    PrivateCache = 6
-    ProtectionComplete = 7
-    ProtectionCompleteUnlessOpen = 8
-    ProtectionCompleteUntilFirstUserAuthentication = 9
-    ProtectionNone = 10
-
-class CreateFlags(IntEnum):
-    None_ = 0
-    ImplicitPK = 1
-    ImplicitIndex = 2
-    AllImplicit = 3
-    AutoIncPK = 4
-    FullTextSearch3 = 5
-    FullTextSearch4 = 6
-
-class NotifyTableChangedAction(IntEnum):
-    Insert = 0
-    Update = 1
-    Delete = 2
-
-class CreateTableResult(IntEnum):
-    Created = 0
-    Migrated = 1
-
-class Result(IntEnum):
-    OK = 0
-    Error = 1
-    Internal = 2
-    Perm = 3
-    Abort = 4
-    Busy = 5
-    Locked = 6
-    NoMem = 7
-    ReadOnly = 8
-    Interrupt = 9
-    IOError = 10
-    Corrupt = 11
-    NotFound = 12
-    Full = 13
-    CannotOpen = 14
-    LockErr = 15
-    Empty = 16
-    SchemaChngd = 17
-    TooBig = 18
-    Constraint = 19
-    Mismatch = 20
-    Misuse = 21
-    NotImplementedLFS = 22
-    AccessDenied = 23
-    Format = 24
-    Range = 25
-    NonDBFile = 26
-    Notice = 27
-    Warning = 28
-    Row = 29
-    Done = 30
-
-class ExtendedResult(IntEnum):
-    IOErrorRead = 0
-    IOErrorShortRead = 1
-    IOErrorWrite = 2
-    IOErrorFsync = 3
-    IOErrorDirFSync = 4
-    IOErrorTruncate = 5
-    IOErrorFStat = 6
-    IOErrorUnlock = 7
-    IOErrorRdlock = 8
-    IOErrorDelete = 9
-    IOErrorBlocked = 10
-    IOErrorNoMem = 11
-    IOErrorAccess = 12
-    IOErrorCheckReservedLock = 13
-    IOErrorLock = 14
-    IOErrorClose = 15
-    IOErrorDirClose = 16
-    IOErrorSHMOpen = 17
-    IOErrorSHMSize = 18
-    IOErrorSHMLock = 19
-    IOErrorSHMMap = 20
-    IOErrorSeek = 21
-    IOErrorDeleteNoEnt = 22
-    IOErrorMMap = 23
-    LockedSharedcache = 24
-    BusyRecovery = 25
-    CannottOpenNoTempDir = 26
-    CannotOpenIsDir = 27
-    CannotOpenFullPath = 28
-    CorruptVTab = 29
-    ReadonlyRecovery = 30
-    ReadonlyCannotLock = 31
-    ReadonlyRollback = 32
-    AbortRollback = 33
-    ConstraintCheck = 34
-    ConstraintCommitHook = 35
-    ConstraintForeignKey = 36
-    ConstraintFunction = 37
-    ConstraintNotNull = 38
-    ConstraintPrimaryKey = 39
-    ConstraintTrigger = 40
-    ConstraintUnique = 41
-    ConstraintVTab = 42
-    NoticeRecoverWAL = 43
-    NoticeRecoverRollback = 44
-
-class ConfigOption(IntEnum):
-    SingleThread = 0
-    MultiThread = 1
-    Serialized = 2
-
-class ColType(IntEnum):
-    Integer = 0
-    Float = 1
-    Text = 2
-    Blob = 3
-    Null = 4
-
-class PostPlaybackState(IntEnum):
-    Active = 0
-    Inactive = 1
-    Revert = 2
-    LeaveAsIs = 3
-
-class LoopMode(IntEnum):
-    UseSourceAsset = 0
-    On = 1
-    Off = 2
-
-class MatchTargetFields(IntEnum):
-    PositionX = 0
-    PositionY = 1
-    PositionZ = 2
-    RotationX = 3
-    RotationY = 4
-    RotationZ = 5
-
-class TrackOffset(IntEnum):
-    ApplyTransformOffsets = 0
-    ApplySceneOffsets = 1
-    Auto = 2
-
-class ClipExtrapolation(IntEnum):
-    None_ = 0
-    Hold = 1
-    Loop = 2
-    PingPong = 3
-    Continue = 4
-
-class BlendCurveMode(IntEnum):
-    Auto = 0
-    Manual = 1
-
-class DurationMode(IntEnum):
-    BasedOnClips = 0
-    FixedLength = 1
-
-class ClipCaps(IntEnum):
-    None_ = 0
-    Looping = 1
-    Extrapolation = 2
-    ClipIn = 3
-    SpeedMultiplier = 4
-    Blending = 5
-    AutoScale = 6
-    All = 7
-
-class PostPlaybackState(IntEnum):
-    Active = 0
-    Inactive = 1
-    Revert = 2
-
-class PauseAction(IntEnum):
-    StopDirector = 0
-    PauseDirector = 1
-
-class NotificationFlags(IntEnum):
-    TriggerInEditMode = 0
-    Retroactive = 1
-    TriggerOnce = 2
-
-class TrackBindingFlags(IntEnum):
-    None_ = 0
-    AllowCreateComponent = 1
-    All = 2
-
-class UseEditMode(IntEnum):
-    None_ = 0
-    ApplyEditMode = 1
-
-class DiagnosticEventType(IntEnum):
-    AsyncOperationFail = 0
-    AsyncOperationCreate = 1
-    AsyncOperationPercentComplete = 2
-    AsyncOperationComplete = 3
-    AsyncOperationReferenceCount = 4
-    AsyncOperationDestroy = 5
-
-class AssetLoadMode(IntEnum):
-    RequestedAssetAndDependencies = 0
-    AllPackedAssetsAndDependencies = 1
-
-class ProviderBehaviourFlags(IntEnum):
-    None_ = 0
-    CanProvideWithFailedDependencies = 1
-
-class AsyncOperationStatus(IntEnum):
-    None_ = 0
-    Succeeded = 1
-    Failed = 2
-
-class GroupOperationSettings(IntEnum):
-    None_ = 0
-    ReleaseDependenciesOnFailure = 1
-    AllowFailedDependencies = 2
-
-class HumanBodyBones(IntEnum):
-    Hips = 0
-    LeftUpperLeg = 1
-    RightUpperLeg = 2
-    LeftLowerLeg = 3
-    RightLowerLeg = 4
-    LeftFoot = 5
-    RightFoot = 6
-    Spine = 7
-    Chest = 8
-    UpperChest = 9
-    Neck = 10
-    Head = 11
-    LeftShoulder = 12
-    RightShoulder = 13
-    LeftUpperArm = 14
-    RightUpperArm = 15
-    LeftLowerArm = 16
-    RightLowerArm = 17
-    LeftHand = 18
-    RightHand = 19
-    LeftToes = 20
-    RightToes = 21
-    LeftEye = 22
-    RightEye = 23
-    Jaw = 24
-    LeftThumbProximal = 25
-    LeftThumbIntermediate = 26
-    LeftThumbDistal = 27
-    LeftIndexProximal = 28
-    LeftIndexIntermediate = 29
-    LeftIndexDistal = 30
-    LeftMiddleProximal = 31
-    LeftMiddleIntermediate = 32
-    LeftMiddleDistal = 33
-    LeftRingProximal = 34
-    LeftRingIntermediate = 35
-    LeftRingDistal = 36
-    LeftLittleProximal = 37
-    LeftLittleIntermediate = 38
-    LeftLittleDistal = 39
-    RightThumbProximal = 40
-    RightThumbIntermediate = 41
-    RightThumbDistal = 42
-    RightIndexProximal = 43
-    RightIndexIntermediate = 44
-    RightIndexDistal = 45
-    RightMiddleProximal = 46
-    RightMiddleIntermediate = 47
-    RightMiddleDistal = 48
-    RightRingProximal = 49
-    RightRingIntermediate = 50
-    RightRingDistal = 51
-    RightLittleProximal = 52
-    RightLittleIntermediate = 53
-    RightLittleDistal = 54
-    LastBone = 55
-
-class AvatarTarget(IntEnum):
-    Root = 0
-    Body = 1
-    LeftFoot = 2
-    RightFoot = 3
-    LeftHand = 4
-    RightHand = 5
-
-class AvatarIKGoal(IntEnum):
-    LeftFoot = 0
-    RightFoot = 1
-    LeftHand = 2
-    RightHand = 3
-
-class AvatarIKHint(IntEnum):
-    LeftKnee = 0
-    RightKnee = 1
-    LeftElbow = 2
-    RightElbow = 3
-
-class AnimatorControllerParameterType(IntEnum):
-    Float = 0
-    Int = 1
-    Bool = 2
-    Trigger = 3
-
-class AnimatorRecorderMode(IntEnum):
-    Offline = 0
-    Playback = 1
-    Record = 2
-
-class AnimatorCullingMode(IntEnum):
-    AlwaysAnimate = 0
-    CullUpdateTransforms = 1
-    CullCompletely = 2
-
-class AnimatorUpdateMode(IntEnum):
-    Normal = 0
-    AnimatePhysics = 1
-    UnscaledTime = 2
-
-class PlayMode(IntEnum):
-    StopSameLayer = 0
-    StopAll = 1
-
-class QueueMode(IntEnum):
-    CompleteOthers = 0
-    PlayNow = 1
-
-class AnimationPlayMode(IntEnum):
-    Stop = 0
-    Queue = 1
-    Mix = 2
-
-class AnimationCullingType(IntEnum):
-    AlwaysAnimate = 0
-    BasedOnRenderers = 1
-    BasedOnClipBounds = 2
-    BasedOnUserBounds = 3
-
-class AvatarMaskBodyPart(IntEnum):
-    Root = 0
-    Body = 1
-    Head = 2
-    LeftLeg = 3
-    RightLeg = 4
-    LeftArm = 5
-    RightArm = 6
-    LeftFingers = 7
-    RightFingers = 8
-    LeftFootIK = 9
-    RightFootIK = 10
-    LeftHandIK = 11
-    RightHandIK = 12
-    LastBodyPart = 13
-
-class AnimationStreamSource(IntEnum):
-    DefaultValues = 0
-    PreviousInputs = 1
-
-class Axis(IntEnum):
-    None_ = 0
-    X = 1
-    Y = 2
-    Z = 3
-
-class CustomStreamPropertyType(IntEnum):
-    Float = 0
-    Bool = 1
-    Int = 2
-
-class MergeMode(IntEnum):
-    None_ = 0
-    UseFirst = 1
-    Union = 2
-    Intersection = 3
-
-class AddressablesPlatform(IntEnum):
-    Unknown = 0
-    Windows = 1
-    OSX = 2
-    Linux = 3
-    PS4 = 4
-    Switch = 5
-    XboxOne = 6
-    WebGL = 7
-    iOS = 8
-    Android = 9
-    WindowsUniversal = 10
-
-class DependencyHashIndex(IntEnum):
-    Remote = 0
-    Cache = 1
-    Count = 2
-
-class ScaleMode(IntEnum):
-    StretchToFill = 0
-    ScaleAndCrop = 1
-    ScaleToFit = 2
-
-class FocusType(IntEnum):
-    Native = 0
-    Keyboard = 1
-    Passive = 2
-
-class EventType(IntEnum):
-    MouseDown = 0
-    MouseUp = 1
-    MouseMove = 2
-    MouseDrag = 3
-    KeyDown = 4
-    KeyUp = 5
-    ScrollWheel = 6
-    Repaint = 7
-    Layout = 8
-    DragUpdated = 9
-    DragPerform = 10
-    DragExited = 11
-    Ignore = 12
-    Used = 13
-    ValidateCommand = 14
-    ExecuteCommand = 15
-    ContextClick = 16
-    MouseEnterWindow = 17
-    MouseLeaveWindow = 18
-    TouchDown = 19
-    TouchUp = 20
-    TouchMove = 21
-    TouchEnter = 22
-    TouchLeave = 23
-    TouchStationary = 24
-    mouseDown = 25
-    mouseUp = 26
-    mouseMove = 27
-    mouseDrag = 28
-    keyDown = 29
-    keyUp = 30
-    scrollWheel = 31
-    repaint = 32
-    layout = 33
-    dragUpdated = 34
-    dragPerform = 35
-    ignore = 36
-    used = 37
-
-class EventModifiers(IntEnum):
-    None_ = 0
-    Shift = 1
-    Control = 2
-    Alt = 3
-    Command = 4
-    Numeric = 5
-    CapsLock = 6
-    FunctionKey = 7
-
-class PointerType(IntEnum):
-    Mouse = 0
-    Touch = 1
-    Pen = 2
-
-class DblClickSnapping(IntEnum):
-    WORDS = 0
-    PARAGRAPHS = 1
-
-class TextClipping(IntEnum):
-    Overflow = 0
-    Clip = 1
-
-class AbortType(IntEnum):
-    None_ = 0
-    Self = 1
-    LowPriority = 2
-    Both = 3
-
-class State(IntEnum):
-    Success = 0
-    Failure = 1
-    Running = 2
-
-class NodeTag(IntEnum):
-    Root = 0
-    Selector = 1
-    Sequence = 2
-    Subtree = 3
-    Wait = 4
-    DebugLog = 5
-    TestNode = 6
-    BlackboardConstCompare = 7
-    BlackboardCompare = 8
-    End = 9
-
-class ComparisonOperation(IntEnum):
-    Equal = 0
-    NotEqual = 1
-    Less = 2
-    LessOrEqual = 3
-    Greater = 4
-    GreaterOrEqual = 5
-
-class Orientation(IntEnum):
-    LANDSCAPE = 0
-    PORTRAIT = 1
-
-class OpenType(IntEnum):
-    WEBVIEW = 0
-    BROWSER = 1
-
-class JsonType(IntEnum):
-    None_ = 0
-    Object = 1
-    Array = 2
-    String = 3
-    Int = 4
-    Long = 5
-    Double = 6
-    Boolean = 7
-
-class JsonToken(IntEnum):
-    None_ = 0
-    ObjectStart = 1
-    PropertyName = 2
-    ObjectEnd = 3
-    ArrayStart = 4
-    ArrayEnd = 5
-    Int = 6
-    Long = 7
-    Double = 8
-    String = 9
-    Boolean = 10
-    Null = 11
-
-class Code(IntEnum):
-    Leave = 0
-    Conv_Ovf_U2_Un = 1
-    Conv_Ovf_U1_Un = 2
-    Ldsfld = 3
-    Volatile = 4
-    Ret = 5
-    Ldelem_R4 = 6
-    Sub_Ovf_Un = 7
-    Ldind_I1 = 8
-    Brfalse = 9
-    Conv_U1 = 10
-    Ldind_U1 = 11
-    Localloc = 12
-    Conv_Ovf_U = 13
-    Clt = 14
-    Sizeof = 15
-    Ldind_R4 = 16
-    Ldtype = 17
-    Ldfld = 18
-    Refanyval = 19
-    Beq = 20
-    Newobj = 21
-    Ldelem_U1 = 22
-    Conv_Ovf_I1_Un = 23
-    Stelem_I2 = 24
-    Rem = 25
-    Conv_Ovf_U4 = 26
-    Ble_Un = 27
-    Unaligned = 28
-    Stind_I4 = 29
-    Stind_Ref = 30
-    Bge_Un = 31
-    Or = 32
-    Conv_Ovf_U2 = 33
-    Ldflda = 34
-    Ldvirtftn2 = 35
-    StackSpace = 36
-    Ldind_I = 37
-    Stind_I2 = 38
-    Cgt = 39
-    Callvirt = 40
-    Box = 41
-    Add_Ovf = 42
-    Jmp = 43
-    Stelem_Any = 44
-    Rem_Un = 45
-    Ceq = 46
-    Ldelem_U4 = 47
-    Ldstr = 48
-    Ldelem_I = 49
-    Stelem_I4 = 50
-    Conv_Ovf_I2 = 51
-    Conv_I8 = 52
-    Conv_I = 53
-    Bgt = 54
-    Add = 55
-    Stelem_R8 = 56
-    Add_Ovf_Un = 57
-    Ckfinite = 58
-    Mul = 59
-    Ldind_R8 = 60
-    Conv_R8 = 61
-    Ldc_R8 = 62
-    Conv_Ovf_U4_Un = 63
-    Ldelem_I2 = 64
-    Conv_Ovf_U1 = 65
-    Throw = 66
-    Stelem_R4 = 67
-    Stind_I = 68
-    Readonly = 69
-    Stloc = 70
-    Stind_R4 = 71
-    Ldelema = 72
-    Ldind_I8 = 73
-    Conv_R_Un = 74
-    Ldc_I8 = 75
-    Newanon = 76
-    Newarr = 77
-    Conv_U2 = 78
-    Ldelem_Any = 79
-    Stind_I1 = 80
-    Mul_Ovf = 81
-    Ldelem_Ref = 82
-    Conv_I4 = 83
-    Div_Un = 84
-    Ldftn = 85
-    Tail = 86
-    Call = 87
-    Stelem_I8 = 88
-    Ldarg = 89
-    Ldvirtftn = 90
-    Refanytype = 91
-    Conv_Ovf_I = 92
-    Sub_Ovf = 93
-    Conv_I2 = 94
-    Castclass = 95
-    Conv_U8 = 96
-    Ldind_Ref = 97
-    Ldind_U4 = 98
-    Ldarga = 99
-    Xor = 100
-    Endfinally = 101
-    Ldelem_R8 = 102
-    Ldsflda = 103
-    Unbox_Any = 104
-    Ldc_R4 = 105
-    Shl = 106
-    Conv_Ovf_U8_Un = 107
-    Stobj = 108
-    Arglist = 109
-    Ldlen = 110
-    Ldind_U2 = 111
-    Cpobj = 112
-    Ble = 113
-    Conv_I1 = 114
-    Stind_R8 = 115
-    Initblk = 116
-    Conv_Ovf_U8 = 117
-    Shr_Un = 118
-    Ldelem_I1 = 119
-    Ldc_I4 = 120
-    Conv_Ovf_I8 = 121
-    Stsfld = 122
-    Clt_Un = 123
-    Switch = 124
-    Isinst = 125
-    Conv_Ovf_U_Un = 126
-    Initobj = 127
-    Shr = 128
-    Conv_Ovf_I_Un = 129
-    Break = 130
-    Starg = 131
-    Br = 132
-    Ldtoken = 133
-    Bgt_Un = 134
-    Brtrue = 135
-    Ldelem_I8 = 136
-    Conv_U = 137
-    Ldelem_U2 = 138
-    Bne_Un = 139
-    Cgt_Un = 140
-    Conv_R4 = 141
-    Sub = 142
-    Bge = 143
-    No = 144
-    Rethrow = 145
-    Ldnull = 146
-    Endfilter = 147
-    CallExtern = 148
-    Blt_Un = 149
-    Conv_Ovf_I8_Un = 150
-    Stelem_I = 151
-    Callvirtvirt = 152
-    Unbox = 153
-    Not = 154
-    Constrained = 155
-    Nop = 156
-    Conv_Ovf_I4_Un = 157
-    Mkrefany = 158
-    Neg = 159
-    Stind_I8 = 160
-    Mul_Ovf_Un = 161
-    Conv_U4 = 162
-    Ldind_I4 = 163
-    Cpblk = 164
-    Conv_Ovf_I2_Un = 165
-    And = 166
-    Stelem_Ref = 167
-    Pop = 168
-    Stelem_I1 = 169
-    Ldelem_I4 = 170
-    Div = 171
-    Conv_Ovf_I1 = 172
-    Ldloca = 173
-    Ldobj = 174
-    Stfld = 175
-    Ldloc = 176
-    Conv_Ovf_I4 = 177
-    Ldind_I2 = 178
-    Blt = 179
-    Dup = 180
-
-class ExceptionHandlerType(IntEnum):
-    Catch = 0
-    Filter = 1
-    Finally = 2
-    Fault = 3
-
-class ValueType(IntEnum):
-    Integer = 0
-    Long = 1
-    Float = 2
-    Double = 3
-    StackReference = 4
-    StaticFieldReference = 5
-    FieldReference = 6
-    ChainFieldReference = 7
-    Object = 8
-    ValueType = 9
-    ArrayReference = 10
-
-class AndroidAssetPackStatus(IntEnum):
-    Unknown = 0
-    Pending = 1
-    Downloading = 2
-    Transferring = 3
-    Completed = 4
-    Failed = 5
-    Canceled = 6
-    WaitingForWifi = 7
-    NotInstalled = 8
-
-class AndroidAssetPackError(IntEnum):
-    NoError = 0
-    AppUnavailable = 1
-    PackUnavailable = 2
-    InvalidRequest = 3
-    DownloadNotFound = 4
-    ApiNotAvailable = 5
-    NetworkError = 6
-    AccessDenied = 7
-    InsufficientStorage = 8
-    PlayStoreNotFound = 9
-    NetworkUnrestricted = 10
-    AppNotOwned = 11
-    InternalError = 12
-
-class CurveType(IntEnum):
-    None_ = 0
-    Stepped = 1
-    Bezier = 2
-
-class MouthShape(IntEnum):
-    Invalid = 0
-    A = 1
-    B = 2
-    C = 3
-    D = 4
-    E = 5
-    F = 6
-    G = 7
-    H = 8
-    X = 9
-    LastBasicShape = 10
-
-class ParticleSystemRenderMode(IntEnum):
-    Billboard = 0
-    Stretch = 1
-    HorizontalBillboard = 2
-    VerticalBillboard = 3
-    Mesh = 4
-    None_ = 5
-
-class ParticleSystemMeshDistribution(IntEnum):
-    UniformRandom = 0
-    NonUniformRandom = 1
-
-class ParticleSystemSortMode(IntEnum):
-    None_ = 0
-    Distance = 1
-    OldestInFront = 2
-    YoungestInFront = 3
-    Depth = 4
-
-class ParticleSystemRenderSpace(IntEnum):
-    View = 0
-    World = 1
-    Local = 2
-    Facing = 3
-    Velocity = 4
-
-class ParticleSystemCurveMode(IntEnum):
-    Constant = 0
-    Curve = 1
-    TwoCurves = 2
-    TwoConstants = 3
-
-class ParticleSystemGradientMode(IntEnum):
-    Color = 0
-    Gradient = 1
-    TwoColors = 2
-    TwoGradients = 3
-    RandomColor = 4
-
-class ParticleSystemShapeType(IntEnum):
-    Sphere = 0
-    SphereShell = 1
-    Hemisphere = 2
-    HemisphereShell = 3
-    Cone = 4
-    Box = 5
-    Mesh = 6
-    ConeShell = 7
-    ConeVolume = 8
-    ConeVolumeShell = 9
-    Circle = 10
-    CircleEdge = 11
-    SingleSidedEdge = 12
-    MeshRenderer = 13
-    SkinnedMeshRenderer = 14
-    BoxShell = 15
-    BoxEdge = 16
-    Donut = 17
-    Rectangle = 18
-    Sprite = 19
-    SpriteRenderer = 20
-
-class ParticleSystemSimulationSpace(IntEnum):
-    Local = 0
-    World = 1
-    Custom = 2
-
-class ParticleSystemStopBehavior(IntEnum):
-    StopEmittingAndClear = 0
-    StopEmitting = 1
-
-class ParticleSystemScalingMode(IntEnum):
-    Hierarchy = 0
-    Local = 1
-    Shape = 2
-
-class ParticleSystemVertexStream(IntEnum):
-    Position = 0
-    Normal = 1
-    Tangent = 2
-    Color = 3
-    UV = 4
-    UV2 = 5
-    UV3 = 6
-    UV4 = 7
-    AnimBlend = 8
-    AnimFrame = 9
-    Center = 10
-    VertexID = 11
-    SizeX = 12
-    SizeXY = 13
-    SizeXYZ = 14
-    Rotation = 15
-    Rotation3D = 16
-    RotationSpeed = 17
-    RotationSpeed3D = 18
-    Velocity = 19
-    Speed = 20
-    AgePercent = 21
-    InvStartLifetime = 22
-    StableRandomX = 23
-    StableRandomXY = 24
-    StableRandomXYZ = 25
-    StableRandomXYZW = 26
-    VaryingRandomX = 27
-    VaryingRandomXY = 28
-    VaryingRandomXYZ = 29
-    VaryingRandomXYZW = 30
-    Custom1X = 31
-    Custom1XY = 32
-    Custom1XYZ = 33
-    Custom1XYZW = 34
-    Custom2X = 35
-    Custom2XY = 36
-    Custom2XYZ = 37
-    Custom2XYZW = 38
-    NoiseSumX = 39
-    NoiseSumXY = 40
-    NoiseSumXYZ = 41
-    NoiseImpulseX = 42
-    NoiseImpulseXY = 43
-    NoiseImpulseXYZ = 44
-    MeshIndex = 45
-
-class ParticleSystemCustomData(IntEnum):
-    Custom1 = 0
-    Custom2 = 1
-
-class ParticleSystemVertexStreams(IntEnum):
-    Position = 0
-    Normal = 1
-    Tangent = 2
-    Color = 3
-    UV = 4
-    UV2BlendAndFrame = 5
-    CenterAndVertexID = 6
-    Size = 7
-    Rotation = 8
-    Velocity = 9
-    Lifetime = 10
-    Custom1 = 11
-    Custom2 = 12
-    Random = 13
-    None_ = 14
-    All = 15
-
-class KnownColor(IntEnum):
-    ActiveBorder = 0
-    ActiveCaption = 1
-    ActiveCaptionText = 2
-    AppWorkspace = 3
-    Control = 4
-    ControlDark = 5
-    ControlDarkDark = 6
-    ControlLight = 7
-    ControlLightLight = 8
-    ControlText = 9
-    Desktop = 10
-    GrayText = 11
-    Highlight = 12
-    HighlightText = 13
-    HotTrack = 14
-    InactiveBorder = 15
-    InactiveCaption = 16
-    InactiveCaptionText = 17
-    Info = 18
-    InfoText = 19
-    Menu = 20
-    MenuText = 21
-    ScrollBar = 22
-    Window = 23
-    WindowFrame = 24
-    WindowText = 25
-    Transparent = 26
-    AliceBlue = 27
-    AntiqueWhite = 28
-    Aqua = 29
-    Aquamarine = 30
-    Azure = 31
-    Beige = 32
-    Bisque = 33
-    Black = 34
-    BlanchedAlmond = 35
-    Blue = 36
-    BlueViolet = 37
-    Brown = 38
-    BurlyWood = 39
-    CadetBlue = 40
-    Chartreuse = 41
-    Chocolate = 42
-    Coral = 43
-    CornflowerBlue = 44
-    Cornsilk = 45
-    Crimson = 46
-    Cyan = 47
-    DarkBlue = 48
-    DarkCyan = 49
-    DarkGoldenrod = 50
-    DarkGray = 51
-    DarkGreen = 52
-    DarkKhaki = 53
-    DarkMagenta = 54
-    DarkOliveGreen = 55
-    DarkOrange = 56
-    DarkOrchid = 57
-    DarkRed = 58
-    DarkSalmon = 59
-    DarkSeaGreen = 60
-    DarkSlateBlue = 61
-    DarkSlateGray = 62
-    DarkTurquoise = 63
-    DarkViolet = 64
-    DeepPink = 65
-    DeepSkyBlue = 66
-    DimGray = 67
-    DodgerBlue = 68
-    Firebrick = 69
-    FloralWhite = 70
-    ForestGreen = 71
-    Fuchsia = 72
-    Gainsboro = 73
-    GhostWhite = 74
-    Gold = 75
-    Goldenrod = 76
-    Gray = 77
-    Green = 78
-    GreenYellow = 79
-    Honeydew = 80
-    HotPink = 81
-    IndianRed = 82
-    Indigo = 83
-    Ivory = 84
-    Khaki = 85
-    Lavender = 86
-    LavenderBlush = 87
-    LawnGreen = 88
-    LemonChiffon = 89
-    LightBlue = 90
-    LightCoral = 91
-    LightCyan = 92
-    LightGoldenrodYellow = 93
-    LightGray = 94
-    LightGreen = 95
-    LightPink = 96
-    LightSalmon = 97
-    LightSeaGreen = 98
-    LightSkyBlue = 99
-    LightSlateGray = 100
-    LightSteelBlue = 101
-    LightYellow = 102
-    Lime = 103
-    LimeGreen = 104
-    Linen = 105
-    Magenta = 106
-    Maroon = 107
-    MediumAquamarine = 108
-    MediumBlue = 109
-    MediumOrchid = 110
-    MediumPurple = 111
-    MediumSeaGreen = 112
-    MediumSlateBlue = 113
-    MediumSpringGreen = 114
-    MediumTurquoise = 115
-    MediumVioletRed = 116
-    MidnightBlue = 117
-    MintCream = 118
-    MistyRose = 119
-    Moccasin = 120
-    NavajoWhite = 121
-    Navy = 122
-    OldLace = 123
-    Olive = 124
-    OliveDrab = 125
-    Orange = 126
-    OrangeRed = 127
-    Orchid = 128
-    PaleGoldenrod = 129
-    PaleGreen = 130
-    PaleTurquoise = 131
-    PaleVioletRed = 132
-    PapayaWhip = 133
-    PeachPuff = 134
-    Peru = 135
-    Pink = 136
-    Plum = 137
-    PowderBlue = 138
-    Purple = 139
-    Red = 140
-    RosyBrown = 141
-    RoyalBlue = 142
-    SaddleBrown = 143
-    Salmon = 144
-    SandyBrown = 145
-    SeaGreen = 146
-    SeaShell = 147
-    Sienna = 148
-    Silver = 149
-    SkyBlue = 150
-    SlateBlue = 151
-    SlateGray = 152
-    Snow = 153
-    SpringGreen = 154
-    SteelBlue = 155
-    Tan = 156
-    Teal = 157
-    Thistle = 158
-    Tomato = 159
-    Turquoise = 160
-    Violet = 161
-    Wheat = 162
-    White = 163
-    WhiteSmoke = 164
-    Yellow = 165
-    YellowGreen = 166
-    ButtonFace = 167
-    ButtonHighlight = 168
-    ButtonShadow = 169
-    GradientActiveCaption = 170
-    GradientInactiveCaption = 171
-    MenuBar = 172
-    MenuHighlight = 173
-
-class CompressionMethod(IntEnum):
-    Stored = 0
-    Deflated = 1
-    Deflate64 = 2
-    BZip2 = 3
-    LZMA = 4
-    PPMd = 5
-    WinZipAES = 6
-
-class Flags(IntEnum):
-    ModificationTime = 0
-    AccessTime = 1
-    CreateTime = 2
-
-class WorldUpType(IntEnum):
-    None_ = 0
-    SceneUp = 1
-    ObjectUp = 2
-    ObjectRotationUp = 3
-    Vector = 4
-
-class Axis(IntEnum):
-    X = 0
-    X_NEG = 1
-    Y = 2
-    Y_NEG = 3
-    Z = 4
-    Z_NEG = 5
-
-class WorldUpType(IntEnum):
-    None_ = 0
-    SceneUp = 1
-    ObjectUp = 2
-    ObjectRotationUp = 3
-    Vector = 4
-
-class BoneShape(IntEnum):
-    Line = 0
-    Pyramid = 1
-    Box = 2
-
-class MemoryStreamBufferType(IntEnum):
-    Small = 0
-    Large = 1
-
-class MemoryStreamDiscardReason(IntEnum):
-    TooLarge = 0
-    EnoughFree = 1
-
-class FloatMode(IntEnum):
-    Default = 0
-    Strict = 1
-    Deterministic = 2
-    Fast = 3
-
-class FloatPrecision(IntEnum):
-    Standard = 0
-    High = 1
-    Medium = 2
-    Low = 3
-
-class NumberFormatKind(IntEnum):
-    General = 0
-    Decimal = 1
-    DecimalForceSigned = 2
-    Hexadecimal = 3
-
-class CutoffMode(IntEnum):
-    Unique = 0
-    TotalLength = 1
-    FractionLength = 2
-
-class XObjectChange(IntEnum):
-    Add = 0
-    Remove = 1
-    Name = 2
-    Value = 3
-
-class LoadOptions(IntEnum):
-    None_ = 0
-    PreserveWhitespace = 1
-    SetBaseUri = 2
-    SetLineInfo = 3
-
-class SaveOptions(IntEnum):
-    None_ = 0
-    DisableFormatting = 1
-    OmitDuplicateNamespaces = 2
-
-class RigidbodyConstraints(IntEnum):
-    None_ = 0
-    FreezePositionX = 1
-    FreezePositionY = 2
-    FreezePositionZ = 3
-    FreezeRotationX = 4
-    FreezeRotationY = 5
-    FreezeRotationZ = 6
-    FreezePosition = 7
-    FreezeRotation = 8
-    FreezeAll = 9
-
-class ForceMode(IntEnum):
-    Force = 0
-    Acceleration = 1
-    Impulse = 2
-    VelocityChange = 3
-
-class MeshColliderCookingOptions(IntEnum):
-    None_ = 0
-    InflateConvexMesh = 1
-    CookForFasterSimulation = 2
-    EnableMeshCleaning = 3
-    WeldColocatedVertices = 4
-    UseFastMidphase = 5
-
-class RigidbodyInterpolation(IntEnum):
-    None_ = 0
-    Interpolate = 1
-    Extrapolate = 2
-
-class CollisionFlags(IntEnum):
-    None_ = 0
-    Sides = 1
-    Above = 2
-    Below = 3
-    CollidedSides = 4
-    CollidedAbove = 5
-    CollidedBelow = 6
-
-class QueryTriggerInteraction(IntEnum):
-    UseGlobal = 0
-    Ignore = 1
-    Collide = 2
-
-class CollisionDetectionMode(IntEnum):
-    Discrete = 0
-    Continuous = 1
-    ContinuousDynamic = 2
-    ContinuousSpeculative = 3
-
-class Result(IntEnum):
-    InProgress = 0
-    Success = 1
-    ConnectionError = 2
-    ProtocolError = 3
-    DataProcessingError = 4
-
-class AudioDataLoadState(IntEnum):
-    Unloaded = 0
-    Loading = 1
-    Loaded = 2
-    Failed = 3
-
-class AudioClipLoadType(IntEnum):
-    DecompressOnLoad = 0
-    CompressedInMemory = 1
-    Streaming = 2
-
-class AudioVelocityUpdateMode(IntEnum):
-    Auto = 0
-    Fixed = 1
-    Dynamic = 2
-
-class FFTWindow(IntEnum):
-    Rectangular = 0
-    Triangle = 1
-    Hamming = 2
-    Hanning = 3
-    Blackman = 4
-    BlackmanHarris = 5
-
-class AudioRolloffMode(IntEnum):
-    Logarithmic = 0
-    Linear = 1
-    Custom = 2
-
-class AudioSourceCurveType(IntEnum):
-    CustomRolloff = 0
-    SpatialBlend = 1
-    ReverbZoneMix = 2
-    Spread = 3
-
-class AudioMixerUpdateMode(IntEnum):
-    Normal = 0
-    UnscaledTime = 1
-
-class NavMeshPathStatus(IntEnum):
-    PathComplete = 0
-    PathPartial = 1
-    PathInvalid = 2
-
-class NavMeshBuildSourceShape(IntEnum):
-    Mesh = 0
-    Terrain = 1
-    Box = 2
-    Sphere = 3
-    Capsule = 4
-    ModifierBox = 5
-
-class NavMeshCollectGeometry(IntEnum):
-    RenderMeshes = 0
-    PhysicsColliders = 1
-
-class OffMeshLinkType(IntEnum):
-    LinkTypeManual = 0
-    LinkTypeDropDown = 1
-    LinkTypeJumpAcross = 2
-
-class NavMeshObstacleShape(IntEnum):
-    Capsule = 0
-    Box = 1
-
-class ObstacleAvoidanceType(IntEnum):
-    NoObstacleAvoidance = 0
-    LowQualityObstacleAvoidance = 1
-    MedQualityObstacleAvoidance = 2
-    GoodQualityObstacleAvoidance = 3
-    HighQualityObstacleAvoidance = 4
-
-class GlyphClassDefinitionType(IntEnum):
-    Undefined = 0
-    Base = 1
-    Ligature = 2
-    Mark = 3
-    Component = 4
-
-class FontFeatureLookupFlags(IntEnum):
-    None_ = 0
-    IgnoreLigatures = 1
-    IgnoreSpacingAdjustments = 2
-
-class GlyphLoadFlags(IntEnum):
-    LOAD_DEFAULT = 0
-    LOAD_NO_SCALE = 1
-    LOAD_NO_HINTING = 2
-    LOAD_RENDER = 3
-    LOAD_NO_BITMAP = 4
-    LOAD_FORCE_AUTOHINT = 5
-    LOAD_MONOCHROME = 6
-    LOAD_NO_AUTOHINT = 7
-    LOAD_COLOR = 8
-    LOAD_COMPUTE_METRICS = 9
-    LOAD_BITMAP_METRICS_ONLY = 10
-
-class FontEngineError(IntEnum):
-    Success = 0
-    Invalid_File_Path = 1
-    Invalid_File_Format = 2
-    Invalid_File_Structure = 3
-    Invalid_File = 4
-    Invalid_Table = 5
-    Invalid_Glyph_Index = 6
-    Invalid_Character_Code = 7
-    Invalid_Pixel_Size = 8
-    Invalid_Library = 9
-    Invalid_Face = 10
-    Invalid_Library_or_Face = 11
-    Atlas_Generation_Cancelled = 12
-    Invalid_SharedTextureData = 13
-    OpenTypeLayoutLookup_Mismatch = 14
-
-class GlyphRenderMode(IntEnum):
-    SMOOTH_HINTED = 0
-    SMOOTH = 1
-    COLOR_HINTED = 2
-    COLOR = 3
-    RASTER_HINTED = 4
-    RASTER = 5
-    SDF = 6
-    SDF8 = 7
-    SDF16 = 8
-    SDF32 = 9
-    SDFAA_HINTED = 10
-    SDFAA = 11
-
-class GlyphPackingMode(IntEnum):
-    BestShortSideFit = 0
-    BestLongSideFit = 1
-    BestAreaFit = 2
-    BottomLeftRule = 3
-    ContactPointRule = 4
-
-class TextAlignment(IntEnum):
-    Left = 0
-    Center = 1
-    Right = 2
-
-class TextAnchor(IntEnum):
-    UpperLeft = 0
-    UpperCenter = 1
-    UpperRight = 2
-    MiddleLeft = 3
-    MiddleCenter = 4
-    MiddleRight = 5
-    LowerLeft = 6
-    LowerCenter = 7
-    LowerRight = 8
-
-class HorizontalWrapMode(IntEnum):
-    Wrap = 0
-    Overflow = 1
-
-class VerticalWrapMode(IntEnum):
-    Truncate = 0
-    Overflow = 1
-
-class FontStyle(IntEnum):
-    Normal = 0
-    Bold = 1
-    Italic = 2
-    BoldAndItalic = 3
-
-class InputDeviceCharacteristics(IntEnum):
-    None_ = 0
-    HeadMounted = 1
-    Camera = 2
-    HeldInHand = 3
-    HandTracking = 4
-    EyeTracking = 5
-    TrackedDevice = 6
-    Controller = 7
-    TrackingReference = 8
-    Left = 9
-    Right = 10
-    Simulated6DOF = 11
-
-class InputTrackingState(IntEnum):
-    None_ = 0
-    Position = 1
-    Rotation = 2
-    Velocity = 3
-    AngularVelocity = 4
-    Acceleration = 5
-    AngularAcceleration = 6
-    All = 7
-
-class XRNode(IntEnum):
-    LeftEye = 0
-    RightEye = 1
-    CenterEye = 2
-    Head = 3
-    LeftHand = 4
-    RightHand = 5
-    GameController = 6
-    TrackingReference = 7
-    HardwareTracker = 8
-
-class MeshGenerationStatus(IntEnum):
-    Success = 0
-    InvalidMeshId = 1
-    GenerationAlreadyInProgress = 2
-    Canceled = 3
-    UnknownError = 4
-
-class MeshVertexAttributes(IntEnum):
-    None_ = 0
-    Normals = 1
-    Tangents = 2
-    UVs = 3
-    Colors = 4
-
-class TextureLayout(IntEnum):
-    Texture2DArray = 0
-    SingleTexture2D = 1
-    SeparateTexture2Ds = 2
-
-class RenderMode(IntEnum):
-    ScreenSpaceOverlay = 0
-    ScreenSpaceCamera = 1
-    WorldSpace = 2
-
-class AdditionalCanvasShaderChannels(IntEnum):
-    None_ = 0
-    TexCoord1 = 1
-    TexCoord2 = 2
-    TexCoord3 = 3
-    Normal = 4
-    Tangent = 5
-
-class SampleType(IntEnum):
-    Layout = 0
-    Render = 1
-
-class MemberList(IntEnum):
-    Destination = 0
-    Source = 1
-    None_ = 2
-
-class SupportedPlatforms(IntEnum):
-    WindowsStandalone = 0
-    MacStandalone = 1
-    LinuxStandalone = 2
-    WindowsUniversal = 3
-    WindowsEditor = 4
-    Android = 5
-    MacEditor = 6
-    LinuxEditor = 7
-    IOS = 8
-    Web = 9
-    Lumin = 10
-
-class RigidbodyType2D(IntEnum):
-    Dynamic = 0
-    Kinematic = 1
-    Static = 2
-
-class LineType(IntEnum):
-    Default = 0
-    Rounded = 1
-    Splitted = 2
-
-class MeshBuildMode(IntEnum):
-    Standard = 0
-    Modern = 1
-
-class LineType(IntEnum):
-    Default = 0
-    Rounded = 1
-    Splitted = 2
-
-class MeshBuildMode(IntEnum):
-    Standart = 0
-    Modern = 1
-
-class VideoRenderMode(IntEnum):
-    CameraFarPlane = 0
-    CameraNearPlane = 1
-    RenderTexture = 2
-    MaterialOverride = 3
-    APIOnly = 4
-
-class Video3DLayout(IntEnum):
-    No3D = 0
-    SideBySide3D = 1
-    OverUnder3D = 2
-
-class VideoAspectRatio(IntEnum):
-    NoScaling = 0
-    FitVertically = 1
-    FitHorizontally = 2
-    FitInside = 3
-    FitOutside = 4
-    Stretch = 5
-
-class VideoTimeSource(IntEnum):
-    AudioDSPTimeSource = 0
-    GameTimeSource = 1
-
-class VideoTimeReference(IntEnum):
-    Freerun = 0
-    InternalTime = 1
-    ExternalTime = 2
-
-class VideoSource(IntEnum):
-    VideoClip = 0
-    Url = 1
-
-class VideoAudioOutputMode(IntEnum):
-    None_ = 0
-    AudioSource = 1
-    Direct = 2
-    APIOnly = 3
-
-class AndroidAudioDeviceType(IntEnum):
-    TYPE_AUX_LINE = 0
-    TYPE_BLUETOOTH_A2DP = 1
-    TYPE_BLUETOOTH_SCO = 2
-    TYPE_BUILTIN_EARPIECE = 3
-    TYPE_BUILTIN_MIC = 4
-    TYPE_BUILTIN_SPEAKER = 5
-    TYPE_BUS = 6
-    TYPE_DOCK = 7
-    TYPE_FM = 8
-    TYPE_FM_TUNER = 9
-    TYPE_HDMI = 10
-    TYPE_HDMI_ARC = 11
-    TYPE_HEARING_AID = 12
-    TYPE_IP = 13
-    TYPE_LINE_ANALOG = 14
-    TYPE_LINE_DIGITAL = 15
-    TYPE_TELEPHONY = 16
-    TYPE_TV_TUNER = 17
-    TYPE_UNKNOWN = 18
-    TYPE_USB_ACCESSORY = 19
-    TYPE_USB_DEVICE = 20
-    TYPE_USB_HEADSET = 21
-    TYPE_WIRED_HEADPHONES = 22
-    TYPE_WIRED_HEADSET = 23
-
-class ResamplingQuality(IntEnum):
-    SINC_FASTEST = 0
-    ZERO_ORDER_HOLD = 1
-    LINEAR = 2
-
-class TouchPhase(IntEnum):
-    Began = 0
-    Moved = 1
-    Stationary = 2
-    Ended = 3
-    Canceled = 4
-
-class IMECompositionMode(IntEnum):
-    Auto = 0
-    On = 1
-    Off = 2
-
-class TouchType(IntEnum):
-    Direct = 0
-    Indirect = 1
-    Stylus = 2
-
-class ButtonSizes(IntEnum):
-    Small = 0
-    Medium = 1
-    Large = 2
-    Gigantic = 3
-
-class InlineEditorModes(IntEnum):
-    GUIOnly = 0
-    Header = 1
-    Preview = 2
-    GUIAndPreview = 3
-    GUIAndHeader = 4
-    FullEditor = 5
-
-class TriMessageType(IntEnum):
-    None_ = 0
-    Info = 1
-    Warning = 2
-    Error = 3
-
-class CollectObjects(IntEnum):
-    All = 0
-    Volume = 1
-    Children = 2
-
-class GraphVertexTangentMode(IntEnum):
-    Linear = 0
-    Bezier = 1
-
-class StereoRenderingMode(IntEnum):
-    MultiPass = 0
-    SinglePass = 1
-    SinglePassInstanced = 2
-    SinglePassMultiview = 3
-
-class ConfigurationSaveMode(IntEnum):
-    Full = 0
-    Minimal = 1
-    Modified = 2
-
-class ConfigurationElementCollectionType(IntEnum):
-    AddRemoveClearMap = 0
-    AddRemoveClearMapAlternate = 1
-    BasicMap = 2
-    BasicMapAlternate = 3
-
-class DebugMaterialMode(IntEnum):
-    None_ = 0
-    Albedo = 1
-    Specular = 2
-    Alpha = 3
-    Smoothness = 4
-    AmbientOcclusion = 5
-    Emission = 6
-    NormalWorldSpace = 7
-    NormalTangentSpace = 8
-    LightingComplexity = 9
-    Metallic = 10
-    SpriteMask = 11
-
-class DebugVertexAttributeMode(IntEnum):
-    None_ = 0
-    Texcoord0 = 1
-    Texcoord1 = 2
-    Texcoord2 = 3
-    Texcoord3 = 4
-    Color = 5
-    Tangent = 6
-    Normal = 7
-
-class DebugMaterialValidationMode(IntEnum):
-    None_ = 0
-    Albedo = 1
-    Metallic = 2
-
-class DebugFullScreenMode(IntEnum):
-    None_ = 0
-    Depth = 1
-    AdditionalLightsShadowMap = 2
-    MainLightShadowMap = 3
-
-class DebugSceneOverrideMode(IntEnum):
-    None_ = 0
-    Overdraw = 1
-    Wireframe = 2
-    SolidWireframe = 3
-    ShadedWireframe = 4
-
-class DebugMipInfoMode(IntEnum):
-    None_ = 0
-    Level = 1
-    Count = 2
-    Ratio = 3
-
-class DebugPostProcessingMode(IntEnum):
-    Disabled = 0
-    Auto = 1
-    Enabled = 2
-
-class DebugValidationMode(IntEnum):
-    None_ = 0
-    HighlightNanInfNegative = 1
-    HighlightOutsideOfRange = 2
-
-class PixelValidationChannels(IntEnum):
-    RGB = 0
-    R = 1
-    G = 2
-    B = 3
-    A = 4
-
-class DebugLightingMode(IntEnum):
-    None_ = 0
-    ShadowCascades = 1
-    LightingWithoutNormalMaps = 2
-    LightingWithNormalMaps = 3
-    Reflections = 4
-    ReflectionsWithSmoothness = 5
-
-class DebugLightingFeatureFlags(IntEnum):
-    None_ = 0
-    GlobalIllumination = 1
-    MainLight = 2
-    AdditionalLights = 3
-    VertexLighting = 4
-    Emission = 5
-    AmbientOcclusion = 6
 
 
 def dump_GroundVector3(excel_instance, password: bytes = b"") -> dict:
@@ -22674,45 +17,18 @@ def dump_GroundVector3(excel_instance, password: bytes = b"") -> dict:
         "Z": convert_float(excel_instance.Z(), password),
     }
 
-def dump_GroundGridFlatNew(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "X": convert_int(excel_instance.X(), password),
-        "Y": convert_int(excel_instance.Y(), password),
-        "StartX": convert_float(excel_instance.StartX(), password),
-        "StartY": convert_float(excel_instance.StartY(), password),
-        "Gap": convert_float(excel_instance.Gap(), password),
-        "NodesLength": convert_int(excel_instance.NodesLength(), password),
-        "Version": convert_string(excel_instance.Version(), password),
-    }
-
-def dump_GroundNodeFlatNew(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "X": convert_int(excel_instance.X(), password),
-        "Y": convert_int(excel_instance.Y(), password),
-        "IsCanNotUseSkill": bool(excel_instance.IsCanNotUseSkill()),
-                "NodeType": GroundNodeType(convert_int(excel_instance.NodeType(), password)).name,
-        "OriginalNodeType": GroundNodeType(convert_int(excel_instance.OriginalNodeType(), password)).name,
-    }
-
-def dump_GroundVector3New(excel_instance, password: bytes = b"") -> dict:
-    return {
-        "X": convert_float(excel_instance.X(), password),
-        "Y": convert_float(excel_instance.Y(), password),
-        "Z": convert_float(excel_instance.Z(), password),
-    }
-
 def dump_AddressableBlackListExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "FolderPathLength": convert_int(excel_instance.FolderPathLength(), password),
-        "ResourcePathLength": convert_int(excel_instance.ResourcePathLength(), password),
+        "FolderPath": [convert_string(excel_instance.FolderPath(j), password) for j in range(excel_instance.FolderPathLength())],
+        "ResourcePath": [convert_string(excel_instance.ResourcePath(j), password) for j in range(excel_instance.ResourcePathLength())],
     }
 
 def dump_AddressableWhiteListExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "FolderPathLength": convert_int(excel_instance.FolderPathLength(), password),
-        "ResourcePathLength": convert_int(excel_instance.ResourcePathLength(), password),
+        "FolderPath": [convert_string(excel_instance.FolderPath(j), password) for j in range(excel_instance.FolderPathLength())],
+        "ResourcePath": [convert_string(excel_instance.ResourcePath(j), password) for j in range(excel_instance.ResourcePathLength())],
     }
 
 def dump_AnimationBlendTable(excel_instance, password: bytes = b"") -> dict:
@@ -22723,7 +39,7 @@ def dump_AnimationBlendTable(excel_instance, password: bytes = b"") -> dict:
 def dump_BlendData(excel_instance, password: bytes = b"") -> dict:
     return {
         "Type": convert_int(excel_instance.Type(), password),
-        "InfoListLength": convert_int(excel_instance.InfoListLength(), password),
+        "InfoList": [excel_instance.InfoList(j) for j in range(excel_instance.InfoListLength())],
     }
 
 def dump_BlendInfo(excel_instance, password: bytes = b"") -> dict:
@@ -22735,14 +51,14 @@ def dump_BlendInfo(excel_instance, password: bytes = b"") -> dict:
 
 def dump_AnimatorDataTable(excel_instance, password: bytes = b"") -> dict:
     return {
-        "DataListLength": convert_int(excel_instance.DataListLength(), password),
+        "DataList": [dump_AnimatorData(excel_instance.DataList(j), password) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_AnimatorData(excel_instance, password: bytes = b"") -> dict:
     return {
         "DefaultStateName": convert_string(excel_instance.DefaultStateName(), password),
         "Name": convert_string(excel_instance.Name(), password),
-        "DataListLength": convert_int(excel_instance.DataListLength(), password),
+        "DataList": [excel_instance.DataList(j) for j in range(excel_instance.DataListLength())],
     }
 
 def dump_AniStateData(excel_instance, password: bytes = b"") -> dict:
@@ -22758,7 +74,7 @@ def dump_AniStateData(excel_instance, password: bytes = b"") -> dict:
         "Length": convert_float(excel_instance.Length(), password),
         "FrameRate": convert_float(excel_instance.FrameRate(), password),
         "IsLooping": bool(excel_instance.IsLooping()),
-        "EventsLength": convert_int(excel_instance.EventsLength(), password),
+        "Events": [excel_instance.Events(j) for j in range(excel_instance.EventsLength())],
     }
 
 def dump_AniEventData(excel_instance, password: bytes = b"") -> dict:
@@ -22772,39 +88,40 @@ def dump_AniEventData(excel_instance, password: bytes = b"") -> dict:
 
 def dump_BattleExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "NoneLength": convert_int(excel_instance.NoneLength(), password),
-        "Single": AttackType(convert_int(excel_instance.Single(), password)).name,
-        "Guided": ProjectileType(convert_int(excel_instance.Guided(), password)).name,
-        "Blue": DamageFontColor(convert_int(excel_instance.Blue(), password)).name,
-        "CoverEnter": EmoticonEvent(convert_int(excel_instance.CoverEnter(), password)).name,
-        "NormalLength": convert_int(excel_instance.NormalLength(), password),
-        "Crush": ActionType(convert_int(excel_instance.Crush(), password)).name,
-        "Able": BuffOverlap(convert_int(excel_instance.Able(), password)).name,
-        "AllySelf": ReArrangeTargetType(convert_int(excel_instance.AllySelf(), password)).name,
-        "LightArmor": ArmorType(convert_int(excel_instance.LightArmor(), password)).name,
-        "Wood": EntityMaterialType(convert_int(excel_instance.Wood(), password)).name,
-        "AllLength": convert_int(excel_instance.AllLength(), password),
-        "DISTANCE": TargetSortBy(convert_int(excel_instance.DISTANCE(), password)).name,
-        "CloseToObstacle": PositioningType(convert_int(excel_instance.CloseToObstacle(), password)).name,
-                "Sequence": ExternalBTNodeType(convert_int(excel_instance.Sequence(), password)).name,
-        "UseNextExSkill": ExternalBehavior(convert_int(excel_instance.UseNextExSkill(), password)).name,
-        "Student": TacticEntityType(convert_int(excel_instance.Student(), password)).name,
-        "SearchAndMove": EngageType(convert_int(excel_instance.SearchAndMove(), password)).name,
-        "Position": HitEffectPosition(convert_int(excel_instance.Position(), password)).name,
-        "Street": StageTopography(convert_int(excel_instance.Street(), password)).name,
-        "D": TerrainAdaptationStat(convert_int(excel_instance.D(), password)).name,
-        "MAIN": StageType(convert_int(excel_instance.MAIN(), password)).name,
-        "Remain": ObstacleDestroyType(convert_int(excel_instance.Remain(), password)).name,
-        "Low": ObstacleHeightType(convert_int(excel_instance.Low(), password)).name,
-        "Resist": DamageAttribute(convert_int(excel_instance.Resist(), password)).name,
-        "Ally": SkillPriorityCheckTarget(convert_int(excel_instance.Ally(), password)).name,
-        "Main": StageType(convert_int(excel_instance.Main(), password)).name,
-        "TargetToCaster": KnockbackDirection(convert_int(excel_instance.TargetToCaster(), password)).name,
-        "Duration": EndCondition(convert_int(excel_instance.Duration(), password)).name,
-        "Preset": ArenaSimulatorServer(convert_int(excel_instance.Preset(), password)).name,
-        "FinalDamage": BattleCalculationStat(convert_int(excel_instance.FinalDamage(), password)).name,
-        "SpecialTransStat": StatTransType(convert_int(excel_instance.SpecialTransStat(), password)).name,
-        "Talk": BattleDialogType(convert_int(excel_instance.Talk(), password)).name,
+        "None_": [excel_instance.None_(j) for j in range(excel_instance.None_Length())],
+        "Single": excel_instance.Single(),
+        "Guided": excel_instance.Guided(),
+        "Blue": excel_instance.Blue(),
+        "CoverEnter": excel_instance.CoverEnter(),
+        "Normal": [excel_instance.Normal(j) for j in range(excel_instance.NormalLength())],
+        "Crush": excel_instance.Crush(),
+        "Able": excel_instance.Able(),
+        "AllySelf": excel_instance.AllySelf(),
+        "LightArmor": excel_instance.LightArmor(),
+        "Wood": excel_instance.Wood(),
+        "All": [excel_instance.All(j) for j in range(excel_instance.AllLength())],
+        "DISTANCE": excel_instance.DISTANCE(),
+        "CloseToObstacle": excel_instance.CloseToObstacle(),
+        "Students": [excel_instance.Students(j) for j in range(excel_instance.StudentsLength())],
+        "Sequence": excel_instance.Sequence(),
+        "UseNextExSkill": excel_instance.UseNextExSkill(),
+        "Student": excel_instance.Student(),
+        "SearchAndMove": excel_instance.SearchAndMove(),
+        "Position": excel_instance.Position(),
+        "Street": excel_instance.Street(),
+        "D": excel_instance.D(),
+        "MAIN": excel_instance.MAIN(),
+        "Remain": excel_instance.Remain(),
+        "Low": excel_instance.Low(),
+        "Resist": excel_instance.Resist(),
+        "Ally": excel_instance.Ally(),
+        "Main": excel_instance.Main(),
+        "TargetToCaster": excel_instance.TargetToCaster(),
+        "Duration": excel_instance.Duration(),
+        "Preset": excel_instance.Preset(),
+        "FinalDamage": excel_instance.FinalDamage(),
+        "SpecialTransStat": excel_instance.SpecialTransStat(),
+        "Talk": excel_instance.Talk(),
     }
 
 def dump_BossPhaseExcel(excel_instance, password: bytes = b"") -> dict:
@@ -22812,7 +129,7 @@ def dump_BossPhaseExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "AIPhase": convert_int(excel_instance.AIPhase(), password),
         "NormalAttackSkillUniqueName": convert_string(excel_instance.NormalAttackSkillUniqueName(), password),
-        "UseExSkillLength": convert_int(excel_instance.UseExSkillLength(), password),
+        "UseExSkill": [bool(excel_instance.UseExSkill(j)) for j in range(excel_instance.UseExSkillLength())],
     }
 
 def dump_BuffParticleExcel(excel_instance, password: bytes = b"") -> dict:
@@ -22840,7 +157,7 @@ def dump_CharacterDialogFieldExcel(excel_instance, password: bytes = b"") -> dic
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "Phase": convert_int(excel_instance.Phase(), password),
         "TargetIndex": convert_int(excel_instance.TargetIndex(), password),
-        "DialogType": FieldDialogType(convert_int(excel_instance.DialogType(), password)).name,
+        "DialogType": excel_instance.DialogType(),
         "Duration": convert_int(excel_instance.Duration(), password),
         "MotionName": convert_string(excel_instance.MotionName(), password),
         "IsInteractionDialog": bool(excel_instance.IsInteractionDialog()),
@@ -22851,21 +168,21 @@ def dump_CharacterDialogFieldExcel(excel_instance, password: bytes = b"") -> dic
 
 def dump_ClearDeckRuleExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "ContentType": excel_instance.ContentType(),
         "SizeLimit": convert_int(excel_instance.SizeLimit(), password),
     }
 
 def dump_ConquestStepExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "MapDifficulty": StageDifficulty(convert_int(excel_instance.MapDifficulty(), password)).name,
+        "MapDifficulty": excel_instance.MapDifficulty(),
         "Step": convert_int(excel_instance.Step(), password),
         "StepGoalLocalize": convert_string(excel_instance.StepGoalLocalize(), password),
         "StepEnterScenarioGroupId": convert_int(excel_instance.StepEnterScenarioGroupId(), password),
-        "StepEnterItemType": ParcelType(convert_int(excel_instance.StepEnterItemType(), password)).name,
+        "StepEnterItemType": excel_instance.StepEnterItemType(),
         "StepEnterItemUniqueId": convert_int(excel_instance.StepEnterItemUniqueId(), password),
         "StepEnterItemAmount": convert_int(excel_instance.StepEnterItemAmount(), password),
-        "UnexpectedEventUnitIdLength": convert_int(excel_instance.UnexpectedEventUnitIdLength(), password),
+        "UnexpectedEventUnitId": [convert_int(excel_instance.UnexpectedEventUnitId(j), password) for j in range(excel_instance.UnexpectedEventUnitIdLength())],
         "UnexpectedEventPrefab": convert_string(excel_instance.UnexpectedEventPrefab(), password),
         "TreasureBoxObjectId": convert_int(excel_instance.TreasureBoxObjectId(), password),
         "TreasureBoxCountPerStepOpen": convert_int(excel_instance.TreasureBoxCountPerStepOpen(), password),
@@ -22879,19 +196,19 @@ def dump_ConstArenaExcel(excel_instance, password: bytes = b"") -> dict:
         "TSSStartCoolTime": convert_int(excel_instance.TSSStartCoolTime(), password),
         "EndAlarm": convert_int(excel_instance.EndAlarm(), password),
         "TimeRewardMaxAmount": convert_int(excel_instance.TimeRewardMaxAmount(), password),
-        "EnterCostType": ParcelType(convert_int(excel_instance.EnterCostType(), password)).name,
+        "EnterCostType": excel_instance.EnterCostType(),
         "EnterCostId": convert_int(excel_instance.EnterCostId(), password),
         "TicketCost": convert_int(excel_instance.TicketCost(), password),
         "DailyRewardResetTime": convert_string(excel_instance.DailyRewardResetTime(), password),
         "OpenScenarioId": convert_string(excel_instance.OpenScenarioId(), password),
-        "CharacterSlotHideRankLength": convert_int(excel_instance.CharacterSlotHideRankLength(), password),
+        "CharacterSlotHideRank": [convert_int(excel_instance.CharacterSlotHideRank(j), password) for j in range(excel_instance.CharacterSlotHideRankLength())],
         "MapSlotHideRank": convert_int(excel_instance.MapSlotHideRank(), password),
-        "RelativeOpponentRankStartLength": convert_int(excel_instance.RelativeOpponentRankStartLength(), password),
-        "RelativeOpponentRankEndLength": convert_int(excel_instance.RelativeOpponentRankEndLength(), password),
-        "ModifiedStatTypeLength": convert_int(excel_instance.ModifiedStatTypeLength(), password),
-        "StatMulFactorLength": convert_int(excel_instance.StatMulFactorLength(), password),
-        "StatSumFactorLength": convert_int(excel_instance.StatSumFactorLength(), password),
-        "NPCNameLength": convert_int(excel_instance.NPCNameLength(), password),
+        "RelativeOpponentRankStart": [convert_int(excel_instance.RelativeOpponentRankStart(j), password) for j in range(excel_instance.RelativeOpponentRankStartLength())],
+        "RelativeOpponentRankEnd": [convert_int(excel_instance.RelativeOpponentRankEnd(j), password) for j in range(excel_instance.RelativeOpponentRankEndLength())],
+        "ModifiedStatType": [excel_instance.ModifiedStatType(j) for j in range(excel_instance.ModifiedStatTypeLength())],
+        "StatMulFactor": [convert_int(excel_instance.StatMulFactor(j), password) for j in range(excel_instance.StatMulFactorLength())],
+        "StatSumFactor": [convert_int(excel_instance.StatSumFactor(j), password) for j in range(excel_instance.StatSumFactorLength())],
+        "NPCName": [convert_string(excel_instance.NPCName(j), password) for j in range(excel_instance.NPCNameLength())],
         "NPCMainCharacterCount": convert_int(excel_instance.NPCMainCharacterCount(), password),
         "NPCSupportCharacterCount": convert_int(excel_instance.NPCSupportCharacterCount(), password),
         "NPCCharacterSkillLevel": convert_int(excel_instance.NPCCharacterSkillLevel(), password),
@@ -23042,14 +359,14 @@ def dump_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "ExpEquipInsertLimit": convert_int(excel_instance.ExpEquipInsertLimit(), password),
         "EquipLvUpCoefficient": convert_int(excel_instance.EquipLvUpCoefficient(), password),
         "NicknameLength": convert_int(excel_instance.NicknameLength(), password),
-        "CraftDurationLength": convert_int(excel_instance.CraftDurationLength(), password),
+        "CraftDuration": [convert_int(excel_instance.CraftDuration(j), password) for j in range(excel_instance.CraftDurationLength())],
         "CraftLimitTime": convert_int(excel_instance.CraftLimitTime(), password),
-        "ShiftingCraftDurationLength": convert_int(excel_instance.ShiftingCraftDurationLength(), password),
+        "ShiftingCraftDuration": [convert_int(excel_instance.ShiftingCraftDuration(j), password) for j in range(excel_instance.ShiftingCraftDurationLength())],
         "ShiftingCraftTicketConsumeAmount": convert_int(excel_instance.ShiftingCraftTicketConsumeAmount(), password),
         "ShiftingCraftSlotMaxCapacity": convert_int(excel_instance.ShiftingCraftSlotMaxCapacity(), password),
         "CraftTicketItemUniqueId": convert_int(excel_instance.CraftTicketItemUniqueId(), password),
         "CraftTicketConsumeAmount": convert_int(excel_instance.CraftTicketConsumeAmount(), password),
-        "AcademyEnterCostType": ParcelType(convert_int(excel_instance.AcademyEnterCostType(), password)).name,
+        "AcademyEnterCostType": excel_instance.AcademyEnterCostType(),
         "AcademyEnterCostId": convert_int(excel_instance.AcademyEnterCostId(), password),
         "AcademyTicketCost": convert_int(excel_instance.AcademyTicketCost(), password),
         "MassangerMessageExpireDay": convert_int(excel_instance.MassangerMessageExpireDay(), password),
@@ -23058,7 +375,7 @@ def dump_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "TutorialGachaShopId": convert_int(excel_instance.TutorialGachaShopId(), password),
         "BeforehandGachaShopId": convert_int(excel_instance.BeforehandGachaShopId(), password),
         "TutorialGachaGoodsId": convert_int(excel_instance.TutorialGachaGoodsId(), password),
-        "EquipmentSlotOpenLevelLength": convert_int(excel_instance.EquipmentSlotOpenLevelLength(), password),
+        "EquipmentSlotOpenLevel": [convert_int(excel_instance.EquipmentSlotOpenLevel(j), password) for j in range(excel_instance.EquipmentSlotOpenLevelLength())],
         "JoinOrCreateClanCoolTimeFromHour": convert_int(excel_instance.JoinOrCreateClanCoolTimeFromHour(), password),
         "ClanMaxMember": convert_int(excel_instance.ClanMaxMember(), password),
         "ClanSearchResultCount": convert_int(excel_instance.ClanSearchResultCount(), password),
@@ -23080,7 +397,7 @@ def dump_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "WeekDungoenTacticPlayTimeLimitInSeconds": convert_int(excel_instance.WeekDungoenTacticPlayTimeLimitInSeconds(), password),
         "RaidTacticPlayTimeLimitInSeconds": convert_int(excel_instance.RaidTacticPlayTimeLimitInSeconds(), password),
         "RaidOpponentListAmount": convert_int(excel_instance.RaidOpponentListAmount(), password),
-        "CraftBaseGoldRequiredLength": convert_int(excel_instance.CraftBaseGoldRequiredLength(), password),
+        "CraftBaseGoldRequired": [convert_int(excel_instance.CraftBaseGoldRequired(j), password) for j in range(excel_instance.CraftBaseGoldRequiredLength())],
         "PostExpiredDayAttendance": convert_int(excel_instance.PostExpiredDayAttendance(), password),
         "PostExpiredDayInventoryOverflow": convert_int(excel_instance.PostExpiredDayInventoryOverflow(), password),
         "PostExpiredDayGameManager": convert_int(excel_instance.PostExpiredDayGameManager(), password),
@@ -23109,17 +426,17 @@ def dump_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "MonthlyProductCheckDays": convert_int(excel_instance.MonthlyProductCheckDays(), password),
         "WeaponLvUpCoefficient": convert_int(excel_instance.WeaponLvUpCoefficient(), password),
         "ShowRaidMyListCount": convert_int(excel_instance.ShowRaidMyListCount(), password),
-        "RaidEnterCostType": ParcelType(convert_int(excel_instance.RaidEnterCostType(), password)).name,
+        "RaidEnterCostType": excel_instance.RaidEnterCostType(),
         "RaidEnterCostId": convert_int(excel_instance.RaidEnterCostId(), password),
         "RaidTicketCost": convert_int(excel_instance.RaidTicketCost(), password),
         "TimeAttackDungeonScenarioId": convert_string(excel_instance.TimeAttackDungeonScenarioId(), password),
         "TimeAttackDungoenPlayCountPerTicket": convert_int(excel_instance.TimeAttackDungoenPlayCountPerTicket(), password),
-        "TimeAttackDungeonEnterCostType": ParcelType(convert_int(excel_instance.TimeAttackDungeonEnterCostType(), password)).name,
+        "TimeAttackDungeonEnterCostType": excel_instance.TimeAttackDungeonEnterCostType(),
         "TimeAttackDungeonEnterCostId": convert_int(excel_instance.TimeAttackDungeonEnterCostId(), password),
         "TimeAttackDungeonEnterCost": convert_int(excel_instance.TimeAttackDungeonEnterCost(), password),
         "ClanLeaderTransferLastLoginLimit": convert_int(excel_instance.ClanLeaderTransferLastLoginLimit(), password),
         "MonthlyProductRepurchasePopupLimit": convert_int(excel_instance.MonthlyProductRepurchasePopupLimit(), password),
-        "CommonFavorItemTagsLength": convert_int(excel_instance.CommonFavorItemTagsLength(), password),
+        "CommonFavorItemTags": [excel_instance.CommonFavorItemTags(j) for j in range(excel_instance.CommonFavorItemTagsLength())],
         "MaxApMasterCoinPerWeek": convert_int(excel_instance.MaxApMasterCoinPerWeek(), password),
         "CraftOpenExpTier1": convert_int(excel_instance.CraftOpenExpTier1(), password),
         "CraftOpenExpTier2": convert_int(excel_instance.CraftOpenExpTier2(), password),
@@ -23153,7 +470,7 @@ def dump_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "EmblemDefaultId": convert_int(excel_instance.EmblemDefaultId(), password),
         "BirthdayMailStartDate": convert_string(excel_instance.BirthdayMailStartDate(), password),
         "BirthdayMailRemainDate": convert_int(excel_instance.BirthdayMailRemainDate(), password),
-        "BirthdayMailParcelType": ParcelType(convert_int(excel_instance.BirthdayMailParcelType(), password)).name,
+        "BirthdayMailParcelType": excel_instance.BirthdayMailParcelType(),
         "BirthdayMailParcelId": convert_int(excel_instance.BirthdayMailParcelId(), password),
         "BirthdayMailParcelAmount": convert_int(excel_instance.BirthdayMailParcelAmount(), password),
         "ClearDeckAverageDeckCount": convert_int(excel_instance.ClearDeckAverageDeckCount(), password),
@@ -23227,7 +544,7 @@ def dump_ConstEventCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "SubEventChangeLimitSeconds": convert_int(excel_instance.SubEventChangeLimitSeconds(), password),
         "SubEventInstantClear": bool(excel_instance.SubEventInstantClear()),
         "CardShopProbWeightCount": convert_int(excel_instance.CardShopProbWeightCount(), password),
-        "CardShopProbWeightRarity": Rarity(convert_int(excel_instance.CardShopProbWeightRarity(), password)).name,
+        "CardShopProbWeightRarity": excel_instance.CardShopProbWeightRarity(),
         "MeetupScenarioReplayResource": convert_string(excel_instance.MeetupScenarioReplayResource(), password),
         "MeetupScenarioReplayTitleLocalize": convert_string(excel_instance.MeetupScenarioReplayTitleLocalize(), password),
         "SpecialOperactionCollectionGroupId": convert_int(excel_instance.SpecialOperactionCollectionGroupId(), password),
@@ -23309,7 +626,7 @@ def dump_ConstMiniGameShootingExcel(excel_instance, password: bytes = b"") -> di
         "HardSectionCount": convert_int(excel_instance.HardSectionCount(), password),
         "FreeStageId": convert_int(excel_instance.FreeStageId(), password),
         "FreeSectionCount": convert_int(excel_instance.FreeSectionCount(), password),
-        "PlayerCharacterIdLength": convert_int(excel_instance.PlayerCharacterIdLength(), password),
+        "PlayerCharacterId": [convert_int(excel_instance.PlayerCharacterId(j), password) for j in range(excel_instance.PlayerCharacterIdLength())],
         "HiddenPlayerCharacterId": convert_int(excel_instance.HiddenPlayerCharacterId(), password),
         "CameraSmoothTime": convert_float(excel_instance.CameraSmoothTime(), password),
         "SpawnEffectPath": convert_string(excel_instance.SpawnEffectPath(), password),
@@ -23359,8 +676,8 @@ def dump_ConstStrategyExcel(excel_instance, password: bytes = b"") -> dict:
         "CameraZoomMax": convert_float(excel_instance.CameraZoomMax(), password),
         "CameraZoomMin": convert_float(excel_instance.CameraZoomMin(), password),
         "CameraZoomDefault": convert_float(excel_instance.CameraZoomDefault(), password),
-        "HealCostType": CurrencyTypes(convert_int(excel_instance.HealCostType(), password)).name,
-        "HealCostAmountLength": convert_int(excel_instance.HealCostAmountLength(), password),
+        "HealCostType": excel_instance.HealCostType(),
+        "HealCostAmount": [convert_int(excel_instance.HealCostAmount(j), password) for j in range(excel_instance.HealCostAmountLength())],
         "CanHealHpRate": convert_int(excel_instance.CanHealHpRate(), password),
         "PlayTimeLimitInSeconds": convert_int(excel_instance.PlayTimeLimitInSeconds(), password),
         "AdventureEchelonCount": convert_int(excel_instance.AdventureEchelonCount(), password),
@@ -23383,7 +700,7 @@ def dump_ConstStrategyExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_CouponStuffExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "StuffId": convert_int(excel_instance.StuffId(), password),
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "ParcelId": convert_int(excel_instance.ParcelId(), password),
         "LimitAmount": convert_int(excel_instance.LimitAmount(), password),
         "CouponStuffNameLocalizeKey": convert_string(excel_instance.CouponStuffNameLocalizeKey(), password),
@@ -23395,10 +712,10 @@ def dump_CumulativeTimeRewardExcel(excel_instance, password: bytes = b"") -> dic
         "Description": convert_string(excel_instance.Description(), password),
         "StartDate": convert_string(excel_instance.StartDate(), password),
         "EndDate": convert_string(excel_instance.EndDate(), password),
-        "TimeConditionLength": convert_int(excel_instance.TimeConditionLength(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardIdLength": convert_int(excel_instance.RewardIdLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "TimeCondition": [convert_int(excel_instance.TimeCondition(j), password) for j in range(excel_instance.TimeConditionLength())],
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardId": [convert_int(excel_instance.RewardId(j), password) for j in range(excel_instance.RewardIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
     }
 
 def dump_DefaultCharacterExcel(excel_instance, password: bytes = b"") -> dict:
@@ -23421,15 +738,15 @@ def dump_DefaultEchelonExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EchlonId": convert_int(excel_instance.EchlonId(), password),
         "LeaderId": convert_int(excel_instance.LeaderId(), password),
-        "MainIdLength": convert_int(excel_instance.MainIdLength(), password),
-        "SupportIdLength": convert_int(excel_instance.SupportIdLength(), password),
+        "MainId": [convert_int(excel_instance.MainId(j), password) for j in range(excel_instance.MainIdLength())],
+        "SupportId": [convert_int(excel_instance.SupportId(j), password) for j in range(excel_instance.SupportIdLength())],
         "TssId": convert_int(excel_instance.TssId(), password),
     }
 
 def dump_DefaultFurnitureExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "Location": FurnitureLocation(convert_int(excel_instance.Location(), password)).name,
+        "Location": excel_instance.Location(),
         "PositionX": convert_float(excel_instance.PositionX(), password),
         "PositionY": convert_float(excel_instance.PositionY(), password),
         "Rotation": convert_float(excel_instance.Rotation(), password),
@@ -23439,17 +756,17 @@ def dump_DefaultMailExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "LocalizeCodeId": convert_uint(excel_instance.LocalizeCodeId(), password),
-        "MailType": MailType(convert_int(excel_instance.MailType(), password)).name,
+        "MailType": excel_instance.MailType(),
         "MailSendPeriodFrom": convert_string(excel_instance.MailSendPeriodFrom(), password),
         "MailSendPeriodTo": convert_string(excel_instance.MailSendPeriodTo(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_DefaultParcelExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "ParcelId": convert_int(excel_instance.ParcelId(), password),
         "ParcelAmount": convert_int(excel_instance.ParcelAmount(), password),
     }
@@ -23483,14 +800,14 @@ def dump_FieldContentStageExcel(excel_instance, password: bytes = b"") -> dict:
         "SeasonId": convert_int(excel_instance.SeasonId(), password),
         "AreaId": convert_int(excel_instance.AreaId(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "StageDifficulty": StageDifficulty(convert_int(excel_instance.StageDifficulty(), password)).name,
+        "StageDifficulty": excel_instance.StageDifficulty(),
         "PrevStageId": convert_int(excel_instance.PrevStageId(), password),
         "Name": convert_string(excel_instance.Name(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
-        "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
+        "StageEnterCostType": excel_instance.StageEnterCostType(),
         "StageEnterCostId": convert_int(excel_instance.StageEnterCostId(), password),
         "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "GroundID": convert_int(excel_instance.GroundID(), password),
         "BGMId": convert_int(excel_instance.BGMId(), password),
@@ -23498,8 +815,8 @@ def dump_FieldContentStageExcel(excel_instance, password: bytes = b"") -> dict:
         "FixedEchelonId": convert_int(excel_instance.FixedEchelonId(), password),
         "SkipFormationSettings": bool(excel_instance.SkipFormationSettings()),
         "DailyLastPlay": bool(excel_instance.DailyLastPlay()),
-        "StarGoalLength": convert_int(excel_instance.StarGoalLength(), password),
-        "StarGoalAmountLength": convert_int(excel_instance.StarGoalAmountLength(), password),
+        "StarGoal": [excel_instance.StarGoal(j) for j in range(excel_instance.StarGoalLength())],
+        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmount(j), password) for j in range(excel_instance.StarGoalAmountLength())],
     }
 
 def dump_FieldContentStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -23507,7 +824,7 @@ def dump_FieldContentStageRewardExcel(excel_instance, password: bytes = b"") -> 
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "RewardTag": convert_float(excel_instance.RewardTag(), password),
         "RewardProb": convert_int(excel_instance.RewardProb(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardId": convert_int(excel_instance.RewardId(), password),
         "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
         "IsDisplayed": bool(excel_instance.IsDisplayed()),
@@ -23528,11 +845,11 @@ def dump_FieldDateExcel(excel_instance, password: bytes = b"") -> dict:
         "OpenDate": convert_int(excel_instance.OpenDate(), password),
         "DateLocalizeKey": convert_string(excel_instance.DateLocalizeKey(), password),
         "EntrySceneId": convert_int(excel_instance.EntrySceneId(), password),
-        "StartConditionType": FieldConditionType(convert_int(excel_instance.StartConditionType(), password)).name,
+        "StartConditionType": excel_instance.StartConditionType(),
         "StartConditionId": convert_int(excel_instance.StartConditionId(), password),
-        "EndConditionType": FieldConditionType(convert_int(excel_instance.EndConditionType(), password)).name,
+        "EndConditionType": excel_instance.EndConditionType(),
         "EndConditionId": convert_int(excel_instance.EndConditionId(), password),
-        "EndReadyConditionType": FieldConditionType(convert_int(excel_instance.EndReadyConditionType(), password)).name,
+        "EndReadyConditionType": excel_instance.EndReadyConditionType(),
         "EndReadyConditionId": convert_int(excel_instance.EndReadyConditionId(), password),
         "OpenConditionStage": convert_int(excel_instance.OpenConditionStage(), password),
         "CharacterIconPath": convert_string(excel_instance.CharacterIconPath(), password),
@@ -23558,15 +875,15 @@ def dump_FieldInteractionExcel(excel_instance, password: bytes = b"") -> dict:
         "FieldDateId": convert_long(excel_instance.FieldDateId(), password),
         "ShowEmoji": bool(excel_instance.ShowEmoji()),
         "KeywordLocalize": convert_string(excel_instance.KeywordLocalize(), password),
-        "InteractionTypeLength": convert_int(excel_instance.InteractionTypeLength(), password),
-        "InteractionIdLength": convert_int(excel_instance.InteractionIdLength(), password),
-        "ConditionClass": FieldConditionClass(convert_int(excel_instance.ConditionClass(), password)).name,
-        "ConditionClassParametersLength": convert_int(excel_instance.ConditionClassParametersLength(), password),
+        "InteractionType": [excel_instance.InteractionType(j) for j in range(excel_instance.InteractionTypeLength())],
+        "InteractionId": [convert_long(excel_instance.InteractionId(j), password) for j in range(excel_instance.InteractionIdLength())],
+        "ConditionClass": excel_instance.ConditionClass(),
+        "ConditionClassParameters": [convert_long(excel_instance.ConditionClassParameters(j), password) for j in range(excel_instance.ConditionClassParametersLength())],
         "OnceOnly": bool(excel_instance.OnceOnly()),
-        "ConditionIndexLength": convert_int(excel_instance.ConditionIndexLength(), password),
-        "ConditionTypeLength": convert_int(excel_instance.ConditionTypeLength(), password),
-        "ConditionIdLength": convert_int(excel_instance.ConditionIdLength(), password),
-        "NegateConditionLength": convert_int(excel_instance.NegateConditionLength(), password),
+        "ConditionIndex": [convert_long(excel_instance.ConditionIndex(j), password) for j in range(excel_instance.ConditionIndexLength())],
+        "ConditionType": [excel_instance.ConditionType(j) for j in range(excel_instance.ConditionTypeLength())],
+        "ConditionId": [convert_long(excel_instance.ConditionId(j), password) for j in range(excel_instance.ConditionIdLength())],
+        "NegateCondition": [bool(excel_instance.NegateCondition(j)) for j in range(excel_instance.NegateConditionLength())],
     }
 
 def dump_FieldKeywordExcel(excel_instance, password: bytes = b"") -> dict:
@@ -23584,20 +901,20 @@ def dump_FieldMasteryExcel(excel_instance, password: bytes = b"") -> dict:
         "SeasonId": convert_int(excel_instance.SeasonId(), password),
         "Order": convert_int(excel_instance.Order(), password),
         "ExpAmount": convert_int(excel_instance.ExpAmount(), password),
-        "TokenType": ParcelType(convert_int(excel_instance.TokenType(), password)).name,
+        "TokenType": excel_instance.TokenType(),
         "TokenId": convert_int(excel_instance.TokenId(), password),
         "TokenRequirement": convert_int(excel_instance.TokenRequirement(), password),
-        "AccomplishmentConditionType": FieldConditionType(convert_int(excel_instance.AccomplishmentConditionType(), password)).name,
+        "AccomplishmentConditionType": excel_instance.AccomplishmentConditionType(),
         "AccomplishmentConditionId": convert_int(excel_instance.AccomplishmentConditionId(), password),
     }
 
 def dump_FieldMasteryLevelExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Level": convert_int(excel_instance.Level(), password),
-        "IdLength": convert_int(excel_instance.IdLength(), password),
-        "ExpLength": convert_int(excel_instance.ExpLength(), password),
-        "TotalExpLength": convert_int(excel_instance.TotalExpLength(), password),
-        "RewardIdLength": convert_int(excel_instance.RewardIdLength(), password),
+        "Id": [convert_int(excel_instance.Id(j), password) for j in range(excel_instance.IdLength())],
+        "Exp": [convert_int(excel_instance.Exp(j), password) for j in range(excel_instance.ExpLength())],
+        "TotalExp": [convert_int(excel_instance.TotalExp(j), password) for j in range(excel_instance.TotalExpLength())],
+        "RewardId": [convert_int(excel_instance.RewardId(j), password) for j in range(excel_instance.RewardIdLength())],
     }
 
 def dump_FieldMasteryManageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -23626,7 +943,7 @@ def dump_FieldRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "GroupId": convert_long(excel_instance.GroupId(), password),
         "RewardProb": convert_int(excel_instance.RewardProb(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardId": convert_long(excel_instance.RewardId(), password),
         "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
     }
@@ -23639,12 +956,12 @@ def dump_FieldSceneExcel(excel_instance, password: bytes = b"") -> dict:
         "ArtLevelPath": convert_string(excel_instance.ArtLevelPath(), password),
         "DesignLevelPath": convert_string(excel_instance.DesignLevelPath(), password),
         "BGMId": convert_long(excel_instance.BGMId(), password),
-        "ConditionalBGMQuestIdLength": convert_int(excel_instance.ConditionalBGMQuestIdLength(), password),
-        "BeginConditionalBGMScenarioGroupIdLength": convert_int(excel_instance.BeginConditionalBGMScenarioGroupIdLength(), password),
-        "BeginConditionalBGMInteractionIdLength": convert_int(excel_instance.BeginConditionalBGMInteractionIdLength(), password),
-        "EndConditionalBGMScenarioGroupIdLength": convert_int(excel_instance.EndConditionalBGMScenarioGroupIdLength(), password),
-        "EndConditionalBGMInteractionIdLength": convert_int(excel_instance.EndConditionalBGMInteractionIdLength(), password),
-        "ConditionalBGMIdLength": convert_int(excel_instance.ConditionalBGMIdLength(), password),
+        "ConditionalBGMQuestId": [convert_long(excel_instance.ConditionalBGMQuestId(j), password) for j in range(excel_instance.ConditionalBGMQuestIdLength())],
+        "BeginConditionalBGMScenarioGroupId": [convert_long(excel_instance.BeginConditionalBGMScenarioGroupId(j), password) for j in range(excel_instance.BeginConditionalBGMScenarioGroupIdLength())],
+        "BeginConditionalBGMInteractionId": [convert_long(excel_instance.BeginConditionalBGMInteractionId(j), password) for j in range(excel_instance.BeginConditionalBGMInteractionIdLength())],
+        "EndConditionalBGMScenarioGroupId": [convert_long(excel_instance.EndConditionalBGMScenarioGroupId(j), password) for j in range(excel_instance.EndConditionalBGMScenarioGroupIdLength())],
+        "EndConditionalBGMInteractionId": [convert_long(excel_instance.EndConditionalBGMInteractionId(j), password) for j in range(excel_instance.EndConditionalBGMInteractionIdLength())],
+        "ConditionalBGMId": [convert_long(excel_instance.ConditionalBGMId(j), password) for j in range(excel_instance.ConditionalBGMIdLength())],
     }
 
 def dump_FieldSeasonExcel(excel_instance, password: bytes = b"") -> dict:
@@ -23657,7 +974,7 @@ def dump_FieldSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "EndDate": convert_string(excel_instance.EndDate(), password),
         "LobbyBGMChangeStageId": convert_int(excel_instance.LobbyBGMChangeStageId(), password),
         "FieldPrefabControlID": convert_int(excel_instance.FieldPrefabControlID(), password),
-        "FieldGetKeywordCallDialogEnum": FieldDialogType(convert_int(excel_instance.FieldGetKeywordCallDialogEnum(), password)).name,
+        "FieldGetKeywordCallDialogEnum": excel_instance.FieldGetKeywordCallDialogEnum(),
         "MasteryImagePath": convert_string(excel_instance.MasteryImagePath(), password),
         "FieldLobbyTitleImagePath": convert_string(excel_instance.FieldLobbyTitleImagePath(), password),
         "KeywordLogoImagePath": convert_string(excel_instance.KeywordLogoImagePath(), password),
@@ -23669,7 +986,7 @@ def dump_FieldStoryStageExcel(excel_instance, password: bytes = b"") -> dict:
         "SeasonId": convert_int(excel_instance.SeasonId(), password),
         "Name": convert_string(excel_instance.Name(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "GroundID": convert_int(excel_instance.GroundID(), password),
         "BGMId": convert_int(excel_instance.BGMId(), password),
@@ -23680,9 +997,9 @@ def dump_FieldStoryStageExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_FieldTutorialExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "SeasonId": convert_int(excel_instance.SeasonId(), password),
-        "TutorialTypeLength": convert_int(excel_instance.TutorialTypeLength(), password),
-        "ConditionTypeLength": convert_int(excel_instance.ConditionTypeLength(), password),
-        "ConditionIdLength": convert_int(excel_instance.ConditionIdLength(), password),
+        "TutorialType": [excel_instance.TutorialType(j) for j in range(excel_instance.TutorialTypeLength())],
+        "ConditionType": [excel_instance.ConditionType(j) for j in range(excel_instance.ConditionTypeLength())],
+        "ConditionId": [convert_int(excel_instance.ConditionId(j), password) for j in range(excel_instance.ConditionIdLength())],
     }
 
 def dump_FieldWorldMapZoneExcel(excel_instance, password: bytes = b"") -> dict:
@@ -23690,13 +1007,13 @@ def dump_FieldWorldMapZoneExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "Date": convert_int(excel_instance.Date(), password),
-        "OpenConditionType": FieldConditionType(convert_int(excel_instance.OpenConditionType(), password)).name,
+        "OpenConditionType": excel_instance.OpenConditionType(),
         "OpenConditionId": convert_int(excel_instance.OpenConditionId(), password),
-        "CloseConditionType": FieldConditionType(convert_int(excel_instance.CloseConditionType(), password)).name,
+        "CloseConditionType": excel_instance.CloseConditionType(),
         "CloseConditionId": convert_int(excel_instance.CloseConditionId(), password),
         "ResultFieldScene": convert_int(excel_instance.ResultFieldScene(), password),
         "FieldStageInteractionId": convert_int(excel_instance.FieldStageInteractionId(), password),
-        "WorldMapButtonType": FieldWorldMapButtonType(convert_int(excel_instance.WorldMapButtonType(), password)).name,
+        "WorldMapButtonType": excel_instance.WorldMapButtonType(),
         "LocalizeCode": convert_uint(excel_instance.LocalizeCode(), password),
         "NewTagDisplay": bool(excel_instance.NewTagDisplay()),
     }
@@ -23716,7 +1033,7 @@ def dump_GroundGridFlat(excel_instance, password: bytes = b"") -> dict:
         "StartX": convert_float(excel_instance.StartX(), password),
         "StartY": convert_float(excel_instance.StartY(), password),
         "Gap": convert_float(excel_instance.Gap(), password),
-        "NodesLength": convert_int(excel_instance.NodesLength(), password),
+        "Nodes": [excel_instance.Nodes(j) for j in range(excel_instance.NodesLength())],
         "Version": convert_string(excel_instance.Version(), password),
     }
 
@@ -23725,23 +1042,24 @@ def dump_GroundNodeFlat(excel_instance, password: bytes = b"") -> dict:
         "X": convert_int(excel_instance.X(), password),
         "Y": convert_int(excel_instance.Y(), password),
         "IsCanNotUseSkill": bool(excel_instance.IsCanNotUseSkill()),
-                "NodeType": GroundNodeType(convert_int(excel_instance.NodeType(), password)).name,
-        "OriginalNodeType": GroundNodeType(convert_int(excel_instance.OriginalNodeType(), password)).name,
+        "Position": excel_instance.Position(),
+        "NodeType": excel_instance.NodeType(),
+        "OriginalNodeType": excel_instance.OriginalNodeType(),
     }
 
 def dump_GroundNodeLayerFlat(excel_instance, password: bytes = b"") -> dict:
     return {
-        "LayersLength": convert_int(excel_instance.LayersLength(), password),
+        "Layers": [excel_instance.Layers(j) for j in range(excel_instance.LayersLength())],
     }
 
 def dump_IAWorldRaidSkillDescriptionListExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "GlobalSkillGroupIdLength": convert_int(excel_instance.GlobalSkillGroupIdLength(), password),
-        "GlobalSkillRemoveConditionLength": convert_int(excel_instance.GlobalSkillRemoveConditionLength(), password),
-        "GlobalSkillHighlightResourceLength": convert_int(excel_instance.GlobalSkillHighlightResourceLength(), password),
-        "SkillGroupIdLength": convert_int(excel_instance.SkillGroupIdLength(), password),
-        "HighlightResourceLength": convert_int(excel_instance.HighlightResourceLength(), password),
+        "GlobalSkillGroupId": [convert_string(excel_instance.GlobalSkillGroupId(j), password) for j in range(excel_instance.GlobalSkillGroupIdLength())],
+        "GlobalSkillRemoveCondition": [convert_int(excel_instance.GlobalSkillRemoveCondition(j), password) for j in range(excel_instance.GlobalSkillRemoveConditionLength())],
+        "GlobalSkillHighlightResource": [excel_instance.GlobalSkillHighlightResource(j) for j in range(excel_instance.GlobalSkillHighlightResourceLength())],
+        "SkillGroupId": [convert_string(excel_instance.SkillGroupId(j), password) for j in range(excel_instance.SkillGroupIdLength())],
+        "HighlightResource": [excel_instance.HighlightResource(j) for j in range(excel_instance.HighlightResourceLength())],
     }
 
 def dump_KnockBackExcel(excel_instance, password: bytes = b"") -> dict:
@@ -23756,31 +1074,31 @@ def dump_LimitedStageExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "Name": convert_string(excel_instance.Name(), password),
         "SeasonId": convert_int(excel_instance.SeasonId(), password),
-        "StageDifficulty": StageDifficulty(convert_int(excel_instance.StageDifficulty(), password)).name,
+        "StageDifficulty": excel_instance.StageDifficulty(),
         "StageNumber": convert_string(excel_instance.StageNumber(), password),
         "StageDisplay": convert_int(excel_instance.StageDisplay(), password),
         "PrevStageId": convert_int(excel_instance.PrevStageId(), password),
         "OpenDate": convert_int(excel_instance.OpenDate(), password),
         "OpenEventPoint": convert_int(excel_instance.OpenEventPoint(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
-        "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
+        "StageEnterCostType": excel_instance.StageEnterCostType(),
         "StageEnterCostId": convert_int(excel_instance.StageEnterCostId(), password),
         "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
         "StageEnterEchelonCount": convert_int(excel_instance.StageEnterEchelonCount(), password),
         "StarConditionTacticRankSCount": convert_int(excel_instance.StarConditionTacticRankSCount(), password),
         "StarConditionTurnCount": convert_int(excel_instance.StarConditionTurnCount(), password),
-        "EnterScenarioGroupIdLength": convert_int(excel_instance.EnterScenarioGroupIdLength(), password),
-        "ClearScenarioGroupIdLength": convert_int(excel_instance.ClearScenarioGroupIdLength(), password),
+        "EnterScenarioGroupId": [convert_int(excel_instance.EnterScenarioGroupId(j), password) for j in range(excel_instance.EnterScenarioGroupIdLength())],
+        "ClearScenarioGroupId": [convert_int(excel_instance.ClearScenarioGroupId(j), password) for j in range(excel_instance.ClearScenarioGroupIdLength())],
         "StrategyMap": convert_string(excel_instance.StrategyMap(), password),
         "StrategyMapBG": convert_string(excel_instance.StrategyMapBG(), password),
         "StageRewardId": convert_int(excel_instance.StageRewardId(), password),
         "MaxTurn": convert_int(excel_instance.MaxTurn(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "BgmId": convert_int(excel_instance.BgmId(), password),
-        "StrategyEnvironment": StrategyEnvironment(convert_int(excel_instance.StrategyEnvironment(), password)).name,
+        "StrategyEnvironment": excel_instance.StrategyEnvironment(),
         "GroundID": convert_int(excel_instance.GroundID(), password),
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "ContentType": excel_instance.ContentType(),
         "BGMId": convert_int(excel_instance.BGMId(), password),
         "InstantClear": bool(excel_instance.InstantClear()),
         "BuffContentId": convert_int(excel_instance.BuffContentId(), password),
@@ -23792,7 +1110,7 @@ def dump_LimitedStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "RewardTag": convert_float(excel_instance.RewardTag(), password),
         "RewardProb": convert_int(excel_instance.RewardProb(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardId": convert_int(excel_instance.RewardId(), password),
         "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
         "IsDisplayed": bool(excel_instance.IsDisplayed()),
@@ -23824,12 +1142,12 @@ def dump_LocalizeFieldExcel(excel_instance, password: bytes = b"") -> dict:
 
 def dump_MinigameCardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "NoneLength": convert_int(excel_instance.NoneLength(), password),
+        "None_": [excel_instance.None_(j) for j in range(excel_instance.None_Length())],
     }
 
 def dump_MinigameRoadExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "NoneLength": convert_int(excel_instance.NoneLength(), password),
+        "None_": [excel_instance.None_(j) for j in range(excel_instance.None_Length())],
     }
 
 def dump_NormalSkillTemplateExcel(excel_instance, password: bytes = b"") -> dict:
@@ -23845,19 +1163,19 @@ def dump_ObstacleExcel(excel_instance, password: bytes = b"") -> dict:
         "Index": convert_int(excel_instance.Index(), password),
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
         "JumpAble": bool(excel_instance.JumpAble()),
-        "SubOffsetLength": convert_int(excel_instance.SubOffsetLength(), password),
+        "SubOffset": [convert_float(excel_instance.SubOffset(j), password) for j in range(excel_instance.SubOffsetLength())],
         "X": convert_float(excel_instance.X(), password),
         "Z": convert_float(excel_instance.Z(), password),
         "Hp": convert_int(excel_instance.Hp(), password),
         "MaxHp": convert_int(excel_instance.MaxHp(), password),
         "BlockRate": convert_int(excel_instance.BlockRate(), password),
         "EvasionRate": convert_int(excel_instance.EvasionRate(), password),
-        "DestroyType": ObstacleDestroyType(convert_int(excel_instance.DestroyType(), password)).name,
-        "Point1OffesetLength": convert_int(excel_instance.Point1OffesetLength(), password),
-        "EnemyPoint1OssetLength": convert_int(excel_instance.EnemyPoint1OssetLength(), password),
-        "Point2OffesetLength": convert_int(excel_instance.Point2OffesetLength(), password),
-        "EnemyPoint2OssetLength": convert_int(excel_instance.EnemyPoint2OssetLength(), password),
-        "SubObstacleIDLength": convert_int(excel_instance.SubObstacleIDLength(), password),
+        "DestroyType": excel_instance.DestroyType(),
+        "Point1Offeset": [convert_float(excel_instance.Point1Offeset(j), password) for j in range(excel_instance.Point1OffesetLength())],
+        "EnemyPoint1Osset": [convert_float(excel_instance.EnemyPoint1Osset(j), password) for j in range(excel_instance.EnemyPoint1OssetLength())],
+        "Point2Offeset": [convert_float(excel_instance.Point2Offeset(j), password) for j in range(excel_instance.Point2OffesetLength())],
+        "EnemyPoint2Osset": [convert_float(excel_instance.EnemyPoint2Osset(j), password) for j in range(excel_instance.EnemyPoint2OssetLength())],
+        "SubObstacleID": [convert_int(excel_instance.SubObstacleID(j), password) for j in range(excel_instance.SubObstacleIDLength())],
     }
 
 def dump_PropVector3(excel_instance, password: bytes = b"") -> dict:
@@ -23870,19 +1188,19 @@ def dump_PropVector3(excel_instance, password: bytes = b"") -> dict:
 def dump_PropMotion(excel_instance, password: bytes = b"") -> dict:
     return {
         "Name": convert_string(excel_instance.Name(), password),
-        "PositionsLength": convert_int(excel_instance.PositionsLength(), password),
-        "RotationsLength": convert_int(excel_instance.RotationsLength(), password),
+        "Positions": [excel_instance.Positions(j) for j in range(excel_instance.PositionsLength())],
+        "Rotations": [excel_instance.Rotations(j) for j in range(excel_instance.RotationsLength())],
     }
 
 def dump_PropRootMotionFlat(excel_instance, password: bytes = b"") -> dict:
     return {
-        "RootMotionsLength": convert_int(excel_instance.RootMotionsLength(), password),
+        "RootMotions": [excel_instance.RootMotions(j) for j in range(excel_instance.RootMotionsLength())],
     }
 
 def dump_ProtocolSettingExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Protocol": convert_string(excel_instance.Protocol(), password),
-        "OpenConditionContent": OpenConditionContent(convert_int(excel_instance.OpenConditionContent(), password)).name,
+        "OpenConditionContent": excel_instance.OpenConditionContent(),
         "Currency": bool(excel_instance.Currency()),
         "Inventory": bool(excel_instance.Inventory()),
         "Mail": bool(excel_instance.Mail()),
@@ -23892,14 +1210,14 @@ def dump_RecipeCraftExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "DevName": convert_string(excel_instance.DevName(), password),
-        "RecipeType": RecipeType(convert_int(excel_instance.RecipeType(), password)).name,
+        "RecipeType": excel_instance.RecipeType(),
         "RecipeIngredientId": convert_int(excel_instance.RecipeIngredientId(), password),
         "RecipeIngredientDevName": convert_string(excel_instance.RecipeIngredientDevName(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ParcelDevNameLength": convert_int(excel_instance.ParcelDevNameLength(), password),
-        "ResultAmountMinLength": convert_int(excel_instance.ResultAmountMinLength(), password),
-        "ResultAmountMaxLength": convert_int(excel_instance.ResultAmountMaxLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ParcelDevName": [convert_string(excel_instance.ParcelDevName(j), password) for j in range(excel_instance.ParcelDevNameLength())],
+        "ResultAmountMin": [convert_int(excel_instance.ResultAmountMin(j), password) for j in range(excel_instance.ResultAmountMinLength())],
+        "ResultAmountMax": [convert_int(excel_instance.ResultAmountMax(j), password) for j in range(excel_instance.ResultAmountMaxLength())],
     }
 
 def dump_Position(excel_instance, password: bytes = b"") -> dict:
@@ -23911,47 +1229,54 @@ def dump_Position(excel_instance, password: bytes = b"") -> dict:
 def dump_Motion(excel_instance, password: bytes = b"") -> dict:
     return {
         "Name": convert_string(excel_instance.Name(), password),
-        "PositionsLength": convert_int(excel_instance.PositionsLength(), password),
+        "Positions": [excel_instance.Positions(j) for j in range(excel_instance.PositionsLength())],
     }
 
 def dump_MoveEnd(excel_instance, password: bytes = b"") -> dict:
     return {
-                            }
+        "Normal": excel_instance.Normal(),
+        "Stand": excel_instance.Stand(),
+        "Kneel": excel_instance.Kneel(),
+    }
 
 def dump_Form(excel_instance, password: bytes = b"") -> dict:
     return {
-                    }
+        "MoveEnd": excel_instance.MoveEnd(),
+        "PublicSkill": excel_instance.PublicSkill(),
+    }
 
 def dump_RootMotionFlat(excel_instance, password: bytes = b"") -> dict:
     return {
-        "FormsLength": convert_int(excel_instance.FormsLength(), password),
-        "ExSkillsLength": convert_int(excel_instance.ExSkillsLength(), password),
-                    }
+        "Forms": [excel_instance.Forms(j) for j in range(excel_instance.FormsLength())],
+        "ExSkills": [excel_instance.ExSkills(j) for j in range(excel_instance.ExSkillsLength())],
+        "MoveLeft": excel_instance.MoveLeft(),
+        "MoveRight": excel_instance.MoveRight(),
+    }
 
 def dump_ScenarioExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "NoneLength": convert_int(excel_instance.NoneLength(), password),
-        "IdleLength": convert_int(excel_instance.IdleLength(), password),
-        "Cafe": DialogCategory(convert_int(excel_instance.Cafe(), password)).name,
-        "Talk": DialogType(convert_int(excel_instance.Talk(), password)).name,
-        "Open": StoryCondition(convert_int(excel_instance.Open(), password)).name,
-        "EnterConver": EmojiEvent(convert_int(excel_instance.EnterConver(), password)).name,
-        "Center": ScenarioZoomAnchors(convert_int(excel_instance.Center(), password)).name,
-        "Instant": ScenarioZoomType(convert_int(excel_instance.Instant(), password)).name,
-        "Prologue": ScenarioContentType(convert_int(excel_instance.Prologue(), password)).name,
+        "None_": [excel_instance.None_(j) for j in range(excel_instance.None_Length())],
+        "Idle": [excel_instance.Idle(j) for j in range(excel_instance.IdleLength())],
+        "Cafe": excel_instance.Cafe(),
+        "Talk": excel_instance.Talk(),
+        "Open": excel_instance.Open(),
+        "EnterConver": excel_instance.EnterConver(),
+        "Center": excel_instance.Center(),
+        "Instant": excel_instance.Instant(),
+        "Prologue": excel_instance.Prologue(),
     }
 
 def dump_ScenarioReplayExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "ModeId": convert_int(excel_instance.ModeId(), password),
         "VolumeId": convert_int(excel_instance.VolumeId(), password),
-        "ReplayType": ScenarioModeReplayTypes(convert_int(excel_instance.ReplayType(), password)).name,
+        "ReplayType": excel_instance.ReplayType(),
         "ChapterId": convert_int(excel_instance.ChapterId(), password),
         "EpisodeId": convert_int(excel_instance.EpisodeId(), password),
-        "FrontScenarioGroupIdLength": convert_int(excel_instance.FrontScenarioGroupIdLength(), password),
+        "FrontScenarioGroupId": [convert_int(excel_instance.FrontScenarioGroupId(j), password) for j in range(excel_instance.FrontScenarioGroupIdLength())],
         "GroundId": convert_int(excel_instance.GroundId(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
-        "BackScenarioGroupIdLength": convert_int(excel_instance.BackScenarioGroupIdLength(), password),
+        "BackScenarioGroupId": [convert_int(excel_instance.BackScenarioGroupId(j), password) for j in range(excel_instance.BackScenarioGroupIdLength())],
     }
 
 def dump_ScenarioScriptField1Excel(excel_instance, password: bytes = b"") -> dict:
@@ -23996,14 +1321,14 @@ def dump_SpecialLobbyIllustExcel(excel_instance, password: bytes = b"") -> dict:
 
 def dump_StringTestExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "StringLength": convert_int(excel_instance.StringLength(), password),
+        "String": [convert_string(excel_instance.String(j), password) for j in range(excel_instance.StringLength())],
         "Sentence1": convert_string(excel_instance.Sentence1(), password),
         "Script": convert_string(excel_instance.Script(), password),
     }
 
 def dump_SystemMailExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "MailType": MailType(convert_int(excel_instance.MailType(), password)).name,
+        "MailType": excel_instance.MailType(),
         "IsProductMail": bool(excel_instance.IsProductMail()),
         "IsVariableExpiredDay": bool(excel_instance.IsVariableExpiredDay()),
         "ExpiredDay": convert_int(excel_instance.ExpiredDay(), password),
@@ -24015,13 +1340,13 @@ def dump_TacticArenaSimulatorSettingExcel(excel_instance, password: bytes = b"")
     return {
         "Order": convert_int(excel_instance.Order(), password),
         "Repeat": convert_int(excel_instance.Repeat(), password),
-        "AttackerFrom": ArenaSimulatorServer(convert_int(excel_instance.AttackerFrom(), password)).name,
+        "AttackerFrom": excel_instance.AttackerFrom(),
         "AttackerUserArenaGroup": convert_int(excel_instance.AttackerUserArenaGroup(), password),
         "AttackerUserArenaRank": convert_int(excel_instance.AttackerUserArenaRank(), password),
         "AttackerPresetGroupId": convert_int(excel_instance.AttackerPresetGroupId(), password),
         "AttackerStrikerNum": convert_int(excel_instance.AttackerStrikerNum(), password),
         "AttackerSpecialNum": convert_int(excel_instance.AttackerSpecialNum(), password),
-        "DefenderFrom": ArenaSimulatorServer(convert_int(excel_instance.DefenderFrom(), password)).name,
+        "DefenderFrom": excel_instance.DefenderFrom(),
         "DefenderUserArenaGroup": convert_int(excel_instance.DefenderUserArenaGroup(), password),
         "DefenderUserArenaRank": convert_int(excel_instance.DefenderUserArenaRank(), password),
         "DefenderPresetGroupId": convert_int(excel_instance.DefenderPresetGroupId(), password),
@@ -24041,14 +1366,14 @@ def dump_TacticDamageSimulatorSettingExcel(excel_instance, password: bytes = b""
         "ReplaceCharacterCostRegen": bool(excel_instance.ReplaceCharacterCostRegen()),
         "ReplaceCostRegenValue": convert_int(excel_instance.ReplaceCostRegenValue(), password),
         "UseAutoSkill": bool(excel_instance.UseAutoSkill()),
-        "OverrideStreetAdaptation": TerrainAdaptationStat(convert_int(excel_instance.OverrideStreetAdaptation(), password)).name,
-        "OverrideOutdoorAdaptation": TerrainAdaptationStat(convert_int(excel_instance.OverrideOutdoorAdaptation(), password)).name,
-        "OverrideIndoorAdaptation": TerrainAdaptationStat(convert_int(excel_instance.OverrideIndoorAdaptation(), password)).name,
+        "OverrideStreetAdaptation": excel_instance.OverrideStreetAdaptation(),
+        "OverrideOutdoorAdaptation": excel_instance.OverrideOutdoorAdaptation(),
+        "OverrideIndoorAdaptation": excel_instance.OverrideIndoorAdaptation(),
         "ApplyOverrideAdaptation": bool(excel_instance.ApplyOverrideAdaptation()),
         "OverrideFavorLevel": convert_int(excel_instance.OverrideFavorLevel(), password),
         "ApplyOverrideFavorLevel": bool(excel_instance.ApplyOverrideFavorLevel()),
         "GroundId": convert_int(excel_instance.GroundId(), password),
-        "FixedCharacterLength": convert_int(excel_instance.FixedCharacterLength(), password),
+        "FixedCharacter": [convert_int(excel_instance.FixedCharacter(j), password) for j in range(excel_instance.FixedCharacterLength())],
     }
 
 def dump_TacticSimulatorSettingExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24069,36 +1394,36 @@ def dump_TacticTimeAttackSimulatorConfigExcel(excel_instance, password: bytes = 
 
 def dump_TagExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "Furniture": Tag(convert_int(excel_instance.Furniture(), password)).name,
-        "None_": Club(convert_int(excel_instance.None_(), password)).name,
+        "Furniture": excel_instance.Furniture(),
+        "None_": excel_instance.None_(),
     }
 
 def dump_TranscendenceRecipeExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "DevName": convert_string(excel_instance.DevName(), password),
-        "CostCurrencyType": CurrencyTypes(convert_int(excel_instance.CostCurrencyType(), password)).name,
+        "CostCurrencyType": excel_instance.CostCurrencyType(),
         "CostCurrencyAmount": convert_int(excel_instance.CostCurrencyAmount(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ParcelAmountLength": convert_int(excel_instance.ParcelAmountLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ParcelAmount": [convert_int(excel_instance.ParcelAmount(j), password) for j in range(excel_instance.ParcelAmountLength())],
     }
 
 def dump_VoiceSkillUseExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Name": convert_string(excel_instance.Name(), password),
-        "VoiceHashLength": convert_int(excel_instance.VoiceHashLength(), password),
+        "VoiceHash": [convert_uint(excel_instance.VoiceHash(j), password) for j in range(excel_instance.VoiceHashLength())],
     }
 
 def dump_WeekDungeonFindGiftRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "StageRewardId": convert_int(excel_instance.StageRewardId(), password),
         "DevName": convert_string(excel_instance.DevName(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
-        "RewardParcelProbabilityLength": convert_int(excel_instance.RewardParcelProbabilityLength(), password),
-        "DropItemModelPrefabPathLength": convert_int(excel_instance.DropItemModelPrefabPathLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
+        "RewardParcelProbability": [convert_int(excel_instance.RewardParcelProbability(j), password) for j in range(excel_instance.RewardParcelProbabilityLength())],
+        "DropItemModelPrefabPath": [convert_string(excel_instance.DropItemModelPrefabPath(j), password) for j in range(excel_instance.DropItemModelPrefabPathLength())],
     }
 
 def dump_AcademyFavorScheduleExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24112,9 +1437,9 @@ def dump_AcademyFavorScheduleExcel(excel_instance, password: bytes = b"") -> dic
         "FavorRank": convert_int(excel_instance.FavorRank(), password),
         "SecretStoneAmount": convert_int(excel_instance.SecretStoneAmount(), password),
         "ScenarioSriptGroupId": convert_int(excel_instance.ScenarioSriptGroupId(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
     }
 
 def dump_AcademyLocationExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24123,9 +1448,9 @@ def dump_AcademyLocationExcel(excel_instance, password: bytes = b"") -> dict:
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "PrefabPath": convert_string(excel_instance.PrefabPath(), password),
         "IconImagePath": convert_string(excel_instance.IconImagePath(), password),
-        "OpenConditionLength": convert_int(excel_instance.OpenConditionLength(), password),
-        "OpenConditionCountLength": convert_int(excel_instance.OpenConditionCountLength(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "OpenCondition": [excel_instance.OpenCondition(j) for j in range(excel_instance.OpenConditionLength())],
+        "OpenConditionCount": [convert_int(excel_instance.OpenConditionCount(j), password) for j in range(excel_instance.OpenConditionCountLength())],
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "OpenTeacherRank": convert_int(excel_instance.OpenTeacherRank(), password),
     }
@@ -24142,14 +1467,14 @@ def dump_AcademyMessangerExcel(excel_instance, password: bytes = b"") -> dict:
         "MessageGroupId": convert_int(excel_instance.MessageGroupId(), password),
         "Id": convert_int(excel_instance.Id(), password),
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
-        "MessageCondition": AcademyMessageConditions(convert_int(excel_instance.MessageCondition(), password)).name,
+        "MessageCondition": excel_instance.MessageCondition(),
         "ConditionValue": convert_int(excel_instance.ConditionValue(), password),
         "PreConditionGroupId": convert_int(excel_instance.PreConditionGroupId(), password),
         "PreConditionFavorScheduleId": convert_int(excel_instance.PreConditionFavorScheduleId(), password),
         "FavorScheduleId": convert_int(excel_instance.FavorScheduleId(), password),
         "NextGroupId": convert_int(excel_instance.NextGroupId(), password),
         "FeedbackTimeMillisec": convert_int(excel_instance.FeedbackTimeMillisec(), password),
-        "MessageType": AcademyMessageTypes(convert_int(excel_instance.MessageType(), password)).name,
+        "MessageType": excel_instance.MessageType(),
         "ImagePath": convert_string(excel_instance.ImagePath(), password),
         "MessageKR": convert_string(excel_instance.MessageKR(), password),
         "MessageJP": convert_string(excel_instance.MessageJP(), password),
@@ -24169,14 +1494,14 @@ def dump_AcademyRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "SecretStoneProb": convert_int(excel_instance.SecretStoneProb(), password),
         "ExtraFavorExp": convert_int(excel_instance.ExtraFavorExp(), password),
         "ExtraFavorExpProb": convert_int(excel_instance.ExtraFavorExpProb(), password),
-        "ExtraRewardParcelTypeLength": convert_int(excel_instance.ExtraRewardParcelTypeLength(), password),
-        "ExtraRewardParcelIdLength": convert_int(excel_instance.ExtraRewardParcelIdLength(), password),
-        "ExtraRewardAmountLength": convert_int(excel_instance.ExtraRewardAmountLength(), password),
-        "ExtraRewardProbLength": convert_int(excel_instance.ExtraRewardProbLength(), password),
-        "IsExtraRewardDisplayedLength": convert_int(excel_instance.IsExtraRewardDisplayedLength(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "ExtraRewardParcelType": [excel_instance.ExtraRewardParcelType(j) for j in range(excel_instance.ExtraRewardParcelTypeLength())],
+        "ExtraRewardParcelId": [convert_int(excel_instance.ExtraRewardParcelId(j), password) for j in range(excel_instance.ExtraRewardParcelIdLength())],
+        "ExtraRewardAmount": [convert_int(excel_instance.ExtraRewardAmount(j), password) for j in range(excel_instance.ExtraRewardAmountLength())],
+        "ExtraRewardProb": [convert_int(excel_instance.ExtraRewardProb(j), password) for j in range(excel_instance.ExtraRewardProbLength())],
+        "IsExtraRewardDisplayed": [bool(excel_instance.IsExtraRewardDisplayed(j)) for j in range(excel_instance.IsExtraRewardDisplayedLength())],
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
     }
 
 def dump_AcademyTicketExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24191,9 +1516,9 @@ def dump_AcademyZoneExcel(excel_instance, password: bytes = b"") -> dict:
         "LocationId": convert_int(excel_instance.LocationId(), password),
         "LocationRankForUnlock": convert_int(excel_instance.LocationRankForUnlock(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "StudentVisitProbLength": convert_int(excel_instance.StudentVisitProbLength(), password),
+        "StudentVisitProb": [convert_int(excel_instance.StudentVisitProb(j), password) for j in range(excel_instance.StudentVisitProbLength())],
         "RewardGroupId": convert_int(excel_instance.RewardGroupId(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
     }
 
 def dump_AccountLevelExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24211,7 +1536,7 @@ def dump_AccountLevelRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "Level": convert_int(excel_instance.Level(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -24224,7 +1549,7 @@ def dump_AlertPopupExcel(excel_instance, password: bytes = b"") -> dict:
         "SystemPopupDescription": convert_uint(excel_instance.SystemPopupDescription(), password),
         "SpoilerPopupTitle": convert_uint(excel_instance.SpoilerPopupTitle(), password),
         "SpoilerPopupDescription": convert_uint(excel_instance.SpoilerPopupDescription(), password),
-        "PopupType": SpoilerPopupType(convert_int(excel_instance.PopupType(), password)).name,
+        "PopupType": excel_instance.PopupType(),
     }
 
 def dump_ArenaLevelSectionExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24257,22 +1582,22 @@ def dump_ArenaNPCExcel(excel_instance, password: bytes = b"") -> dict:
         "NPCLevel": convert_int(excel_instance.NPCLevel(), password),
         "NPCLevelDeviation": convert_int(excel_instance.NPCLevelDeviation(), password),
         "NPCStarGrade": convert_int(excel_instance.NPCStarGrade(), password),
-        "ExceptionCharacterRaritiesLength": convert_int(excel_instance.ExceptionCharacterRaritiesLength(), password),
-        "ExceptionMainCharacterIdsLength": convert_int(excel_instance.ExceptionMainCharacterIdsLength(), password),
-        "ExceptionSupportCharacterIdsLength": convert_int(excel_instance.ExceptionSupportCharacterIdsLength(), password),
-        "ExceptionTSSIdsLength": convert_int(excel_instance.ExceptionTSSIdsLength(), password),
+        "ExceptionCharacterRarities": [excel_instance.ExceptionCharacterRarities(j) for j in range(excel_instance.ExceptionCharacterRaritiesLength())],
+        "ExceptionMainCharacterIds": [convert_int(excel_instance.ExceptionMainCharacterIds(j), password) for j in range(excel_instance.ExceptionMainCharacterIdsLength())],
+        "ExceptionSupportCharacterIds": [convert_int(excel_instance.ExceptionSupportCharacterIds(j), password) for j in range(excel_instance.ExceptionSupportCharacterIdsLength())],
+        "ExceptionTSSIds": [convert_int(excel_instance.ExceptionTSSIds(j), password) for j in range(excel_instance.ExceptionTSSIdsLength())],
     }
 
 def dump_ArenaRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "ArenaRewardType": ArenaRewardType(convert_int(excel_instance.ArenaRewardType(), password)).name,
+        "ArenaRewardType": excel_instance.ArenaRewardType(),
         "RankStart": convert_int(excel_instance.RankStart(), password),
         "RankEnd": convert_int(excel_instance.RankEnd(), password),
         "RankIconPath": convert_string(excel_instance.RankIconPath(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelUniqueIdLength": convert_int(excel_instance.RewardParcelUniqueIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelUniqueId": [convert_int(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_ArenaSeasonCloseRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24280,9 +1605,9 @@ def dump_ArenaSeasonCloseRewardExcel(excel_instance, password: bytes = b"") -> d
         "SeasonId": convert_int(excel_instance.SeasonId(), password),
         "RankStart": convert_int(excel_instance.RankStart(), password),
         "RankEnd": convert_int(excel_instance.RankEnd(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelUniqueIdLength": convert_int(excel_instance.RewardParcelUniqueIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelUniqueId": [convert_int(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_ArenaSeasonExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24297,15 +1622,15 @@ def dump_ArenaSeasonExcel(excel_instance, password: bytes = b"") -> dict:
 
 def dump_AssistEchelonTypeConvertExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "Contents": EchelonType(convert_int(excel_instance.Contents(), password)).name,
-        "ConvertTo": EchelonType(convert_int(excel_instance.ConvertTo(), password)).name,
+        "Contents": excel_instance.Contents(),
+        "ConvertTo": excel_instance.ConvertTo(),
     }
 
 def dump_AssistRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "RewardType": AssistRewardType(convert_int(excel_instance.RewardType(), password)).name,
-        "EchelonType": EchelonType(convert_int(excel_instance.EchelonType(), password)).name,
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardType": excel_instance.RewardType(),
+        "EchelonType": excel_instance.EchelonType(),
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -24313,7 +1638,7 @@ def dump_AssistRewardExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_AssistSlotExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "SlotId": convert_int(excel_instance.SlotId(), password),
-        "EchelonType": EchelonType(convert_int(excel_instance.EchelonType(), password)).name,
+        "EchelonType": excel_instance.EchelonType(),
         "SlotNumber": convert_int(excel_instance.SlotNumber(), password),
         "AssistTermRewardPeriodFromSec": convert_int(excel_instance.AssistTermRewardPeriodFromSec(), password),
         "AssistRewardLimit": convert_int(excel_instance.AssistRewardLimit(), password),
@@ -24325,22 +1650,22 @@ def dump_AssistSlotExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_AttendanceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "Type": AttendanceType(convert_int(excel_instance.Type(), password)).name,
+        "Type": excel_instance.Type(),
         "CountdownPrefab": convert_string(excel_instance.CountdownPrefab(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "TargetGroup": TargetGroup(convert_int(excel_instance.TargetGroup(), password)).name,
+        "TargetGroup": excel_instance.TargetGroup(),
         "AccountLevelLimit": convert_int(excel_instance.AccountLevelLimit(), password),
         "Title": convert_string(excel_instance.Title(), password),
         "InfomationLocalizeCode": convert_string(excel_instance.InfomationLocalizeCode(), password),
-        "CountRule": AttendanceCountRule(convert_int(excel_instance.CountRule(), password)).name,
-        "CountReset": AttendanceResetType(convert_int(excel_instance.CountReset(), password)).name,
+        "CountRule": excel_instance.CountRule(),
+        "CountReset": excel_instance.CountReset(),
         "BookSize": convert_int(excel_instance.BookSize(), password),
         "StartDate": convert_string(excel_instance.StartDate(), password),
         "StartableEndDate": convert_string(excel_instance.StartableEndDate(), password),
         "EndDate": convert_string(excel_instance.EndDate(), password),
         "ExpiryDate": convert_int(excel_instance.ExpiryDate(), password),
-        "MailType": MailType(convert_int(excel_instance.MailType(), password)).name,
-        "DialogCategory": DialogCategory(convert_int(excel_instance.DialogCategory(), password)).name,
+        "MailType": excel_instance.MailType(),
+        "DialogCategory": excel_instance.DialogCategory(),
         "TitleImagePath": convert_string(excel_instance.TitleImagePath(), password),
         "DecorationImagePath": convert_string(excel_instance.DecorationImagePath(), password),
         "DecorationGarlandImagePath": convert_string(excel_instance.DecorationGarlandImagePath(), password),
@@ -24351,9 +1676,9 @@ def dump_AttendanceRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "AttendanceId": convert_int(excel_instance.AttendanceId(), password),
         "Day": convert_int(excel_instance.Day(), password),
         "RewardIcon": convert_string(excel_instance.RewardIcon(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardIdLength": convert_int(excel_instance.RewardIdLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardId": [convert_int(excel_instance.RewardId(j), password) for j in range(excel_instance.RewardIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
     }
 
 def dump_AudioAnimatorExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24370,8 +1695,8 @@ def dump_AudioAnimatorExcel(excel_instance, password: bytes = b"") -> dict:
         "RandomPitchMin": convert_int(excel_instance.RandomPitchMin(), password),
         "RandomPitchMax": convert_int(excel_instance.RandomPitchMax(), password),
         "AudioPriority": convert_int(excel_instance.AudioPriority(), password),
-        "AudioClipPathLength": convert_int(excel_instance.AudioClipPathLength(), password),
-        "VoiceHashLength": convert_int(excel_instance.VoiceHashLength(), password),
+        "AudioClipPath": [convert_string(excel_instance.AudioClipPath(j), password) for j in range(excel_instance.AudioClipPathLength())],
+        "VoiceHash": [convert_uint(excel_instance.VoiceHash(j), password) for j in range(excel_instance.VoiceHashLength())],
     }
 
 def dump_BattleLevelFactorExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24410,7 +1735,7 @@ def dump_BattlePassInfoExcel(excel_instance, password: bytes = b"") -> dict:
         "BuyPremiumLvUpAmount": convert_int(excel_instance.BuyPremiumLvUpAmount(), password),
         "SalePeriodFrom": convert_string(excel_instance.SalePeriodFrom(), password),
         "SalePeriodTo": convert_string(excel_instance.SalePeriodTo(), password),
-        "VideoIdLength": convert_int(excel_instance.VideoIdLength(), password),
+        "VideoId": [convert_int(excel_instance.VideoId(j), password) for j in range(excel_instance.VideoIdLength())],
         "FlavorTextGroupID": convert_int(excel_instance.FlavorTextGroupID(), password),
         "ExclusiveRewardID": convert_int(excel_instance.ExclusiveRewardID(), password),
         "ExclusiveEmblemID": convert_int(excel_instance.ExclusiveEmblemID(), password),
@@ -24431,20 +1756,20 @@ def dump_BattlePassMissionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "BattlePassId": convert_int(excel_instance.BattlePassId(), password),
         "Id": convert_int(excel_instance.Id(), password),
-        "Category": MissionCategory(convert_int(excel_instance.Category(), password)).name,
-        "PreMissionIdLength": convert_int(excel_instance.PreMissionIdLength(), password),
+        "Category": excel_instance.Category(),
+        "PreMissionId": [convert_int(excel_instance.PreMissionId(j), password) for j in range(excel_instance.PreMissionIdLength())],
         "Description": convert_uint(excel_instance.Description(), password),
-        "ResetType": MissionResetType(convert_int(excel_instance.ResetType(), password)).name,
-        "ToastDisplayType": MissionToastDisplayConditionType(convert_int(excel_instance.ToastDisplayType(), password)).name,
+        "ResetType": excel_instance.ResetType(),
+        "ToastDisplayType": excel_instance.ToastDisplayType(),
         "ToastImagePath": convert_string(excel_instance.ToastImagePath(), password),
         "ViewFlag": bool(excel_instance.ViewFlag()),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "ShortcutUILength": convert_int(excel_instance.ShortcutUILength(), password),
+        "ShortcutUI": [convert_string(excel_instance.ShortcutUI(j), password) for j in range(excel_instance.ShortcutUILength())],
         "ChallengeStageShortcut": convert_int(excel_instance.ChallengeStageShortcut(), password),
-        "CompleteConditionType": MissionCompleteConditionType(convert_int(excel_instance.CompleteConditionType(), password)).name,
+        "CompleteConditionType": excel_instance.CompleteConditionType(),
         "CompleteConditionCount": convert_int(excel_instance.CompleteConditionCount(), password),
-        "CompleteConditionParameterLength": convert_int(excel_instance.CompleteConditionParameterLength(), password),
-        "CompleteConditionParameterTagLength": convert_int(excel_instance.CompleteConditionParameterTagLength(), password),
+        "CompleteConditionParameter": [convert_int(excel_instance.CompleteConditionParameter(j), password) for j in range(excel_instance.CompleteConditionParameterLength())],
+        "CompleteConditionParameterTag": [excel_instance.CompleteConditionParameterTag(j) for j in range(excel_instance.CompleteConditionParameterTagLength())],
         "BattlePassExpAmount": convert_int(excel_instance.BattlePassExpAmount(), password),
     }
 
@@ -24453,7 +1778,7 @@ def dump_BattlePassRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "RewardGroupId": convert_int(excel_instance.RewardGroupId(), password),
         "Level": convert_int(excel_instance.Level(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelUniqueId": convert_int(excel_instance.RewardParcelUniqueId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -24461,13 +1786,13 @@ def dump_BattlePassRewardExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_BGMExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "NationLength": convert_int(excel_instance.NationLength(), password),
-        "PathLength": convert_int(excel_instance.PathLength(), password),
-        "VolumeLength": convert_int(excel_instance.VolumeLength(), password),
-        "LoopStartTimeLength": convert_int(excel_instance.LoopStartTimeLength(), password),
-        "LoopEndTimeLength": convert_int(excel_instance.LoopEndTimeLength(), password),
-        "LoopTranstionTimeLength": convert_int(excel_instance.LoopTranstionTimeLength(), password),
-        "LoopOffsetTimeLength": convert_int(excel_instance.LoopOffsetTimeLength(), password),
+        "Nation": [excel_instance.Nation(j) for j in range(excel_instance.NationLength())],
+        "Path": [convert_string(excel_instance.Path(j), password) for j in range(excel_instance.PathLength())],
+        "Volume": [convert_float(excel_instance.Volume(j), password) for j in range(excel_instance.VolumeLength())],
+        "LoopStartTime": [convert_float(excel_instance.LoopStartTime(j), password) for j in range(excel_instance.LoopStartTimeLength())],
+        "LoopEndTime": [convert_float(excel_instance.LoopEndTime(j), password) for j in range(excel_instance.LoopEndTimeLength())],
+        "LoopTranstionTime": [convert_float(excel_instance.LoopTranstionTime(j), password) for j in range(excel_instance.LoopTranstionTimeLength())],
+        "LoopOffsetTime": [convert_float(excel_instance.LoopOffsetTime(j), password) for j in range(excel_instance.LoopOffsetTimeLength())],
     }
 
 def dump_BGMRaidExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24490,21 +1815,21 @@ def dump_BossExternalBTExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "ExternalBTId": convert_int(excel_instance.ExternalBTId(), password),
         "AIPhase": convert_int(excel_instance.AIPhase(), password),
-        "ExternalBTNodeType": ExternalBTNodeType(convert_int(excel_instance.ExternalBTNodeType(), password)).name,
-        "ExternalBTTrigger": ExternalBTTrigger(convert_int(excel_instance.ExternalBTTrigger(), password)).name,
+        "ExternalBTNodeType": excel_instance.ExternalBTNodeType(),
+        "ExternalBTTrigger": excel_instance.ExternalBTTrigger(),
         "TriggerArgument": convert_string(excel_instance.TriggerArgument(), password),
         "BehaviorRate": convert_int(excel_instance.BehaviorRate(), password),
-        "ExternalBehavior": ExternalBehavior(convert_int(excel_instance.ExternalBehavior(), password)).name,
+        "ExternalBehavior": excel_instance.ExternalBehavior(),
         "BehaviorArgument": convert_string(excel_instance.BehaviorArgument(), password),
     }
 
 def dump_BulletArmorDamageFactorExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "DamageFactorGroupId": convert_string(excel_instance.DamageFactorGroupId(), password),
-        "BulletType": BulletType(convert_int(excel_instance.BulletType(), password)).name,
-        "ArmorType": ArmorType(convert_int(excel_instance.ArmorType(), password)).name,
+        "BulletType": excel_instance.BulletType(),
+        "ArmorType": excel_instance.ArmorType(),
         "DamageRate": convert_int(excel_instance.DamageRate(), password),
-        "DamageAttribute": DamageAttribute(convert_int(excel_instance.DamageAttribute(), password)).name,
+        "DamageAttribute": excel_instance.DamageAttribute(),
         "MinDamageRate": convert_int(excel_instance.MinDamageRate(), password),
         "MaxDamageRate": convert_int(excel_instance.MaxDamageRate(), password),
         "ShowHighlightFloater": bool(excel_instance.ShowHighlightFloater()),
@@ -24514,9 +1839,9 @@ def dump_CafeInfoExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "CafeId": convert_int(excel_instance.CafeId(), password),
         "IsDefault": bool(excel_instance.IsDefault()),
-        "OpenConditionCafeId": OpenConditionContent(convert_int(excel_instance.OpenConditionCafeId(), password)).name,
-        "OpenConditionCafeInvite": OpenConditionContent(convert_int(excel_instance.OpenConditionCafeInvite(), password)).name,
-        "SummonParcelType": ParcelType(convert_int(excel_instance.SummonParcelType(), password)).name,
+        "OpenConditionCafeId": excel_instance.OpenConditionCafeId(),
+        "OpenConditionCafeInvite": excel_instance.OpenConditionCafeInvite(),
+        "SummonParcelType": excel_instance.SummonParcelType(),
         "SummonParcelId": convert_int(excel_instance.SummonParcelId(), password),
         "SummonParcelAmount": convert_int(excel_instance.SummonParcelAmount(), password),
         "CategoryType": convert_float(excel_instance.CategoryType(), password),
@@ -24529,19 +1854,19 @@ def dump_CafeInteractionExcel(excel_instance, password: bytes = b"") -> dict:
         "IgnoreIfUnobtained": bool(excel_instance.IgnoreIfUnobtained()),
         "IgnoreIfUnobtainedStartDate": convert_string(excel_instance.IgnoreIfUnobtainedStartDate(), password),
         "IgnoreIfUnobtainedEndDate": convert_string(excel_instance.IgnoreIfUnobtainedEndDate(), password),
-        "BubbleTypeLength": convert_int(excel_instance.BubbleTypeLength(), password),
-        "BubbleDurationLength": convert_int(excel_instance.BubbleDurationLength(), password),
-        "FavorEmoticonRewardParcelType": ParcelType(convert_int(excel_instance.FavorEmoticonRewardParcelType(), password)).name,
+        "BubbleType": [excel_instance.BubbleType(j) for j in range(excel_instance.BubbleTypeLength())],
+        "BubbleDuration": [convert_int(excel_instance.BubbleDuration(j), password) for j in range(excel_instance.BubbleDurationLength())],
+        "FavorEmoticonRewardParcelType": excel_instance.FavorEmoticonRewardParcelType(),
         "FavorEmoticonRewardId": convert_int(excel_instance.FavorEmoticonRewardId(), password),
         "FavorEmoticonRewardAmount": convert_int(excel_instance.FavorEmoticonRewardAmount(), password),
-        "CafeCharacterStateLength": convert_int(excel_instance.CafeCharacterStateLength(), password),
+        "CafeCharacterState": [convert_string(excel_instance.CafeCharacterState(j), password) for j in range(excel_instance.CafeCharacterStateLength())],
     }
 
 def dump_CafeProductionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "CafeId": convert_int(excel_instance.CafeId(), password),
         "Rank": convert_int(excel_instance.Rank(), password),
-        "CafeProductionParcelType": ParcelType(convert_int(excel_instance.CafeProductionParcelType(), password)).name,
+        "CafeProductionParcelType": excel_instance.CafeProductionParcelType(),
         "CafeProductionParcelId": convert_int(excel_instance.CafeProductionParcelId(), password),
         "ParcelProductionCoefficient": convert_int(excel_instance.ParcelProductionCoefficient(), password),
         "ParcelProductionCorrectionValue": convert_int(excel_instance.ParcelProductionCorrectionValue(), password),
@@ -24558,8 +1883,8 @@ def dump_CafeRankExcel(excel_instance, password: bytes = b"") -> dict:
         "CharacterVisitMin": convert_int(excel_instance.CharacterVisitMin(), password),
         "CharacterVisitMax": convert_int(excel_instance.CharacterVisitMax(), password),
         "CafeVisitWeightBase": convert_int(excel_instance.CafeVisitWeightBase(), password),
-        "CafeVisitWeightTagBonusStepLength": convert_int(excel_instance.CafeVisitWeightTagBonusStepLength(), password),
-        "CafeVisitWeightTagBonusLength": convert_int(excel_instance.CafeVisitWeightTagBonusLength(), password),
+        "CafeVisitWeightTagBonusStep": [convert_int(excel_instance.CafeVisitWeightTagBonusStep(j), password) for j in range(excel_instance.CafeVisitWeightTagBonusStepLength())],
+        "CafeVisitWeightTagBonus": [convert_int(excel_instance.CafeVisitWeightTagBonus(j), password) for j in range(excel_instance.CafeVisitWeightTagBonusLength())],
     }
 
 def dump_CameraExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24584,14 +1909,14 @@ def dump_CampaignChapterExcel(excel_instance, password: bytes = b"") -> dict:
         "NormalImagePath": convert_string(excel_instance.NormalImagePath(), password),
         "HardImagePath": convert_string(excel_instance.HardImagePath(), password),
         "Order": convert_int(excel_instance.Order(), password),
-        "PreChapterIdLength": convert_int(excel_instance.PreChapterIdLength(), password),
+        "PreChapterId": [convert_int(excel_instance.PreChapterId(j), password) for j in range(excel_instance.PreChapterIdLength())],
         "ChapterRewardId": convert_int(excel_instance.ChapterRewardId(), password),
         "ChapterHardRewardId": convert_int(excel_instance.ChapterHardRewardId(), password),
         "ChapterVeryHardRewardId": convert_int(excel_instance.ChapterVeryHardRewardId(), password),
-        "NormalCampaignStageIdLength": convert_int(excel_instance.NormalCampaignStageIdLength(), password),
-        "NormalExtraStageIdLength": convert_int(excel_instance.NormalExtraStageIdLength(), password),
-        "HardCampaignStageIdLength": convert_int(excel_instance.HardCampaignStageIdLength(), password),
-        "VeryHardCampaignStageIdLength": convert_int(excel_instance.VeryHardCampaignStageIdLength(), password),
+        "NormalCampaignStageId": [convert_int(excel_instance.NormalCampaignStageId(j), password) for j in range(excel_instance.NormalCampaignStageIdLength())],
+        "NormalExtraStageId": [convert_int(excel_instance.NormalExtraStageId(j), password) for j in range(excel_instance.NormalExtraStageIdLength())],
+        "HardCampaignStageId": [convert_int(excel_instance.HardCampaignStageId(j), password) for j in range(excel_instance.HardCampaignStageIdLength())],
+        "VeryHardCampaignStageId": [convert_int(excel_instance.VeryHardCampaignStageId(j), password) for j in range(excel_instance.VeryHardCampaignStageIdLength())],
         "IsTacticSkip": bool(excel_instance.IsTacticSkip()),
     }
 
@@ -24599,9 +1924,9 @@ def dump_CampaignChapterRewardExcel(excel_instance, password: bytes = b"") -> di
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "CampaignChapterStar": convert_int(excel_instance.CampaignChapterStar(), password),
-        "ChapterRewardParcelTypeLength": convert_int(excel_instance.ChapterRewardParcelTypeLength(), password),
-        "ChapterRewardIdLength": convert_int(excel_instance.ChapterRewardIdLength(), password),
-        "ChapterRewardAmountLength": convert_int(excel_instance.ChapterRewardAmountLength(), password),
+        "ChapterRewardParcelType": [excel_instance.ChapterRewardParcelType(j) for j in range(excel_instance.ChapterRewardParcelTypeLength())],
+        "ChapterRewardId": [convert_int(excel_instance.ChapterRewardId(j), password) for j in range(excel_instance.ChapterRewardIdLength())],
+        "ChapterRewardAmount": [convert_int(excel_instance.ChapterRewardAmount(j), password) for j in range(excel_instance.ChapterRewardAmountLength())],
     }
 
 def dump_CampaignStageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24612,33 +1937,33 @@ def dump_CampaignStageExcel(excel_instance, password: bytes = b"") -> dict:
         "StageNumber": convert_string(excel_instance.StageNumber(), password),
         "CleardScenarioId": convert_int(excel_instance.CleardScenarioId(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
-        "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
+        "StageEnterCostType": excel_instance.StageEnterCostType(),
         "StageEnterCostId": convert_int(excel_instance.StageEnterCostId(), password),
         "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
         "StageEnterEchelonCount": convert_int(excel_instance.StageEnterEchelonCount(), password),
         "StarConditionTacticRankSCount": convert_int(excel_instance.StarConditionTacticRankSCount(), password),
         "StarConditionTurnCount": convert_int(excel_instance.StarConditionTurnCount(), password),
-        "EnterScenarioGroupIdLength": convert_int(excel_instance.EnterScenarioGroupIdLength(), password),
-        "ClearScenarioGroupIdLength": convert_int(excel_instance.ClearScenarioGroupIdLength(), password),
+        "EnterScenarioGroupId": [convert_int(excel_instance.EnterScenarioGroupId(j), password) for j in range(excel_instance.EnterScenarioGroupIdLength())],
+        "ClearScenarioGroupId": [convert_int(excel_instance.ClearScenarioGroupId(j), password) for j in range(excel_instance.ClearScenarioGroupIdLength())],
         "StrategyMap": convert_string(excel_instance.StrategyMap(), password),
         "StrategyMapBG": convert_string(excel_instance.StrategyMapBG(), password),
         "CampaignStageRewardId": convert_int(excel_instance.CampaignStageRewardId(), password),
         "MaxTurn": convert_int(excel_instance.MaxTurn(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "RecommandLevelGapForGuide": convert_int(excel_instance.RecommandLevelGapForGuide(), password),
-        "MinEquipmentTierForGuideLength": convert_int(excel_instance.MinEquipmentTierForGuideLength(), password),
-        "MinSkillLevelForGuideLength": convert_int(excel_instance.MinSkillLevelForGuideLength(), password),
+        "MinEquipmentTierForGuide": [convert_int(excel_instance.MinEquipmentTierForGuide(j), password) for j in range(excel_instance.MinEquipmentTierForGuideLength())],
+        "MinSkillLevelForGuide": [convert_int(excel_instance.MinSkillLevelForGuide(j), password) for j in range(excel_instance.MinSkillLevelForGuideLength())],
         "BgmId": convert_int(excel_instance.BgmId(), password),
-        "StrategyEnvironment": StrategyEnvironment(convert_int(excel_instance.StrategyEnvironment(), password)).name,
+        "StrategyEnvironment": excel_instance.StrategyEnvironment(),
         "GroundId": convert_int(excel_instance.GroundId(), password),
         "StrategySkipGroundId": convert_int(excel_instance.StrategySkipGroundId(), password),
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "ContentType": excel_instance.ContentType(),
         "BGMId": convert_int(excel_instance.BGMId(), password),
         "FirstClearReportEventName": convert_string(excel_instance.FirstClearReportEventName(), password),
         "TacticRewardExp": convert_int(excel_instance.TacticRewardExp(), password),
         "FixedEchelonId": convert_int(excel_instance.FixedEchelonId(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_CampaignStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24646,7 +1971,7 @@ def dump_CampaignStageRewardExcel(excel_instance, password: bytes = b"") -> dict
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "RewardTag": convert_float(excel_instance.RewardTag(), password),
         "StageRewardProb": convert_int(excel_instance.StageRewardProb(), password),
-        "StageRewardParcelType": ParcelType(convert_int(excel_instance.StageRewardParcelType(), password)).name,
+        "StageRewardParcelType": excel_instance.StageRewardParcelType(),
         "StageRewardId": convert_int(excel_instance.StageRewardId(), password),
         "StageRewardAmount": convert_int(excel_instance.StageRewardAmount(), password),
         "IsDisplayed": bool(excel_instance.IsDisplayed()),
@@ -24658,8 +1983,8 @@ def dump_CampaignStrategyObjectExcel(excel_instance, password: bytes = b"") -> d
         "Key": convert_uint(excel_instance.Key(), password),
         "Name": convert_string(excel_instance.Name(), password),
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
-        "StrategyObjectType": StrategyObjectType(convert_int(excel_instance.StrategyObjectType(), password)).name,
-        "StrategyRewardParcelType": ParcelType(convert_int(excel_instance.StrategyRewardParcelType(), password)).name,
+        "StrategyObjectType": excel_instance.StrategyObjectType(),
+        "StrategyRewardParcelType": excel_instance.StrategyRewardParcelType(),
         "StrategyRewardID": convert_int(excel_instance.StrategyRewardID(), password),
         "StrategyRewardName": convert_string(excel_instance.StrategyRewardName(), password),
         "StrategyRewardAmount": convert_int(excel_instance.StrategyRewardAmount(), password),
@@ -24678,13 +2003,13 @@ def dump_CampaignUnitExcel(excel_instance, password: bytes = b"") -> dict:
         "Name": convert_string(excel_instance.Name(), password),
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
         "StrategyPrefabName": convert_string(excel_instance.StrategyPrefabName(), password),
-        "EnterScenarioGroupIdLength": convert_int(excel_instance.EnterScenarioGroupIdLength(), password),
-        "ClearScenarioGroupIdLength": convert_int(excel_instance.ClearScenarioGroupIdLength(), password),
+        "EnterScenarioGroupId": [convert_int(excel_instance.EnterScenarioGroupId(j), password) for j in range(excel_instance.EnterScenarioGroupIdLength())],
+        "ClearScenarioGroupId": [convert_int(excel_instance.ClearScenarioGroupId(j), password) for j in range(excel_instance.ClearScenarioGroupIdLength())],
         "GroundId": convert_int(excel_instance.GroundId(), password),
         "MoveRange": convert_int(excel_instance.MoveRange(), password),
-        "AIMoveType": StrategyAIType(convert_int(excel_instance.AIMoveType(), password)).name,
-        "Grade": HexaUnitGrade(convert_int(excel_instance.Grade(), password)).name,
-        "EnvironmentType": TacticEnvironment(convert_int(excel_instance.EnvironmentType(), password)).name,
+        "AIMoveType": excel_instance.AIMoveType(),
+        "Grade": excel_instance.Grade(),
+        "EnvironmentType": excel_instance.EnvironmentType(),
         "Scale": convert_float(excel_instance.Scale(), password),
         "IsTacticSkip": bool(excel_instance.IsTacticSkip()),
     }
@@ -24692,18 +2017,18 @@ def dump_CampaignUnitExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_CharacterAcademyTagsExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "FavorTagsLength": convert_int(excel_instance.FavorTagsLength(), password),
-        "FavorItemTagsLength": convert_int(excel_instance.FavorItemTagsLength(), password),
-        "FavorItemUniqueTagsLength": convert_int(excel_instance.FavorItemUniqueTagsLength(), password),
-        "ForbiddenTagsLength": convert_int(excel_instance.ForbiddenTagsLength(), password),
-        "ZoneWhiteListTagsLength": convert_int(excel_instance.ZoneWhiteListTagsLength(), password),
+        "FavorTags": [excel_instance.FavorTags(j) for j in range(excel_instance.FavorTagsLength())],
+        "FavorItemTags": [excel_instance.FavorItemTags(j) for j in range(excel_instance.FavorItemTagsLength())],
+        "FavorItemUniqueTags": [excel_instance.FavorItemUniqueTags(j) for j in range(excel_instance.FavorItemUniqueTagsLength())],
+        "ForbiddenTags": [excel_instance.ForbiddenTags(j) for j in range(excel_instance.ForbiddenTagsLength())],
+        "ZoneWhiteListTags": [excel_instance.ZoneWhiteListTags(j) for j in range(excel_instance.ZoneWhiteListTagsLength())],
     }
 
 def dump_CharacterAIExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "EngageType": EngageType(convert_int(excel_instance.EngageType(), password)).name,
-        "Positioning": PositioningType(convert_int(excel_instance.Positioning(), password)).name,
+        "EngageType": excel_instance.EngageType(),
+        "Positioning": excel_instance.Positioning(),
         "CheckCanUseAutoSkill": bool(excel_instance.CheckCanUseAutoSkill()),
         "DistanceReduceRatioObstaclePath": convert_int(excel_instance.DistanceReduceRatioObstaclePath(), password),
         "DistanceReduceObstaclePath": convert_int(excel_instance.DistanceReduceObstaclePath(), password),
@@ -24718,12 +2043,12 @@ def dump_CharacterAIExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_CharacterCalculationLimitExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
-        "CalculationValue": BattleCalculationStat(convert_int(excel_instance.CalculationValue(), password)).name,
+        "TacticEntityType": excel_instance.TacticEntityType(),
+        "CalculationValue": excel_instance.CalculationValue(),
         "MinValue": convert_int(excel_instance.MinValue(), password),
         "MaxValue": convert_int(excel_instance.MaxValue(), password),
-        "LimitStartValueLength": convert_int(excel_instance.LimitStartValueLength(), password),
-        "DecreaseRateLength": convert_int(excel_instance.DecreaseRateLength(), password),
+        "LimitStartValue": [convert_int(excel_instance.LimitStartValue(j), password) for j in range(excel_instance.LimitStartValueLength())],
+        "DecreaseRate": [convert_int(excel_instance.DecreaseRate(j), password) for j in range(excel_instance.DecreaseRateLength())],
     }
 
 def dump_CharacterCombatSkinExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24739,20 +2064,20 @@ def dump_CharacterDialogBattlePassExcel(excel_instance, password: bytes = b"") -
         "OriginalCharacterId": convert_int(excel_instance.OriginalCharacterId(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "BattlePassID": convert_int(excel_instance.BattlePassID(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
-        "DialogCategory": DialogCategory(convert_int(excel_instance.DialogCategory(), password)).name,
-        "DialogCondition": DialogCondition(convert_int(excel_instance.DialogCondition(), password)).name,
-        "DialogConditionDetail": DialogConditionDetail(convert_int(excel_instance.DialogConditionDetail(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
+        "DialogCategory": excel_instance.DialogCategory(),
+        "DialogCondition": excel_instance.DialogCondition(),
+        "DialogConditionDetail": excel_instance.DialogConditionDetail(),
         "DialogConditionDetailValue": convert_int(excel_instance.DialogConditionDetailValue(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "DialogType": DialogType(convert_int(excel_instance.DialogType(), password)).name,
+        "DialogType": excel_instance.DialogType(),
         "Duration": convert_int(excel_instance.Duration(), password),
         "AnimationName": convert_string(excel_instance.AnimationName(), password),
         "LocalizeKR": convert_string(excel_instance.LocalizeKR(), password),
         "LocalizeJP": convert_string(excel_instance.LocalizeJP(), password),
-        "VoiceIdLength": convert_int(excel_instance.VoiceIdLength(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
         "CollectionVisible": bool(excel_instance.CollectionVisible()),
-        "CVCollectionType": CVCollectionType(convert_int(excel_instance.CVCollectionType(), password)).name,
+        "CVCollectionType": excel_instance.CVCollectionType(),
         "UnlockBattlePassId": convert_int(excel_instance.UnlockBattlePassId(), password),
         "LocalizeCVGroup": convert_string(excel_instance.LocalizeCVGroup(), password),
         "DurationCN": convert_int(excel_instance.DurationCN(), password),
@@ -24768,13 +2093,13 @@ def dump_CharacterDialogEmojiExcel(excel_instance, password: bytes = b"") -> dic
         "HideUI": bool(excel_instance.HideUI()),
         "LocalizeKR": convert_string(excel_instance.LocalizeKR(), password),
         "LocalizeJP": convert_string(excel_instance.LocalizeJP(), password),
-        "VoiceIdLength": convert_int(excel_instance.VoiceIdLength(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
         "CostumeUniqueId": convert_int(excel_instance.CostumeUniqueId(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "CollectionVisible": bool(excel_instance.CollectionVisible()),
-        "CVCollectionType": CVCollectionType(convert_int(excel_instance.CVCollectionType(), password)).name,
-        "CVUnlockScenarioType": CVUnlockScenarioType(convert_int(excel_instance.CVUnlockScenarioType(), password)).name,
+        "CVCollectionType": excel_instance.CVCollectionType(),
+        "CVUnlockScenarioType": excel_instance.CVUnlockScenarioType(),
         "ScenarioGroupId": convert_int(excel_instance.ScenarioGroupId(), password),
         "UnlockEventSeason": convert_int(excel_instance.UnlockEventSeason(), password),
         "LocalizeCVGroup": convert_string(excel_instance.LocalizeCVGroup(), password),
@@ -24787,26 +2112,26 @@ def dump_CharacterDialogEventExcel(excel_instance, password: bytes = b"") -> dic
         "OriginalCharacterId": convert_int(excel_instance.OriginalCharacterId(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "EventID": convert_int(excel_instance.EventID(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
-        "DialogCategory": DialogCategory(convert_int(excel_instance.DialogCategory(), password)).name,
-        "DialogCondition": DialogCondition(convert_int(excel_instance.DialogCondition(), password)).name,
-        "DialogConditionDetail": DialogConditionDetail(convert_int(excel_instance.DialogConditionDetail(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
+        "DialogCategory": excel_instance.DialogCategory(),
+        "DialogCondition": excel_instance.DialogCondition(),
+        "DialogConditionDetail": excel_instance.DialogConditionDetail(),
         "DialogConditionDetailValue": convert_int(excel_instance.DialogConditionDetailValue(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "DialogType": DialogType(convert_int(excel_instance.DialogType(), password)).name,
+        "DialogType": excel_instance.DialogType(),
         "ActionName": convert_string(excel_instance.ActionName(), password),
         "Duration": convert_int(excel_instance.Duration(), password),
         "AnimationName": convert_string(excel_instance.AnimationName(), password),
         "LocalizeKR": convert_string(excel_instance.LocalizeKR(), password),
         "LocalizeJP": convert_string(excel_instance.LocalizeJP(), password),
-        "VoiceIdLength": convert_int(excel_instance.VoiceIdLength(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
         "CollectionVisible": bool(excel_instance.CollectionVisible()),
-        "CVCollectionType": CVCollectionType(convert_int(excel_instance.CVCollectionType(), password)).name,
-        "CVUnlockScenarioType": CVUnlockScenarioType(convert_int(excel_instance.CVUnlockScenarioType(), password)).name,
+        "CVCollectionType": excel_instance.CVCollectionType(),
+        "CVUnlockScenarioType": excel_instance.CVUnlockScenarioType(),
         "UnlockEventSeason": convert_int(excel_instance.UnlockEventSeason(), password),
         "ScenarioGroupId": convert_int(excel_instance.ScenarioGroupId(), password),
         "LocalizeCVGroup": convert_string(excel_instance.LocalizeCVGroup(), password),
-        "ScenarioCharacterShapes": ScenarioCharacterShapes(convert_int(excel_instance.ScenarioCharacterShapes(), password)).name,
+        "ScenarioCharacterShapes": excel_instance.ScenarioCharacterShapes(),
         "DurationCN": convert_int(excel_instance.DurationCN(), password),
     }
 
@@ -24815,25 +2140,25 @@ def dump_CharacterDialogExcel(excel_instance, password: bytes = b"") -> dict:
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
         "CostumeUniqueId": convert_int(excel_instance.CostumeUniqueId(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
-        "DialogCategory": DialogCategory(convert_int(excel_instance.DialogCategory(), password)).name,
-        "DialogCondition": DialogCondition(convert_int(excel_instance.DialogCondition(), password)).name,
-        "Anniversary": Anniversary(convert_int(excel_instance.Anniversary(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
+        "DialogCategory": excel_instance.DialogCategory(),
+        "DialogCondition": excel_instance.DialogCondition(),
+        "Anniversary": excel_instance.Anniversary(),
         "StartDate": convert_string(excel_instance.StartDate(), password),
         "EndDate": convert_string(excel_instance.EndDate(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "DialogType": DialogType(convert_int(excel_instance.DialogType(), password)).name,
+        "DialogType": excel_instance.DialogType(),
         "ActionName": convert_string(excel_instance.ActionName(), password),
         "Duration": convert_int(excel_instance.Duration(), password),
         "AnimationName": convert_string(excel_instance.AnimationName(), password),
         "LocalizeKR": convert_string(excel_instance.LocalizeKR(), password),
         "LocalizeJP": convert_string(excel_instance.LocalizeJP(), password),
-        "VoiceIdLength": convert_int(excel_instance.VoiceIdLength(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
         "ApplyPosition": bool(excel_instance.ApplyPosition()),
         "PosX": convert_float(excel_instance.PosX(), password),
         "PosY": convert_float(excel_instance.PosY(), password),
         "CollectionVisible": bool(excel_instance.CollectionVisible()),
-        "CVCollectionType": CVCollectionType(convert_int(excel_instance.CVCollectionType(), password)).name,
+        "CVCollectionType": excel_instance.CVCollectionType(),
         "UnlockFavorRank": convert_int(excel_instance.UnlockFavorRank(), password),
         "UnlockEquipWeapon": bool(excel_instance.UnlockEquipWeapon()),
         "LocalizeCVGroup": convert_string(excel_instance.LocalizeCVGroup(), password),
@@ -24857,31 +2182,31 @@ def dump_CharacterExcel(excel_instance, password: bytes = b"") -> dict:
         "DevName": convert_string(excel_instance.DevName(), password),
         "CostumeGroupId": convert_int(excel_instance.CostumeGroupId(), password),
         "IsPlayable": bool(excel_instance.IsPlayable()),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
         "CollectionVisible": bool(excel_instance.CollectionVisible()),
         "ReleaseDate": convert_string(excel_instance.ReleaseDate(), password),
         "CollectionVisibleStartDate": convert_string(excel_instance.CollectionVisibleStartDate(), password),
         "CollectionVisibleEndDate": convert_string(excel_instance.CollectionVisibleEndDate(), password),
         "IsPlayableCharacter": bool(excel_instance.IsPlayableCharacter()),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Rarity": excel_instance.Rarity(),
         "IsNPC": bool(excel_instance.IsNPC()),
-        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
+        "TacticEntityType": excel_instance.TacticEntityType(),
         "CanSurvive": bool(excel_instance.CanSurvive()),
         "IsDummy": bool(excel_instance.IsDummy()),
         "SubPartsCount": convert_int(excel_instance.SubPartsCount(), password),
         "TacticRole": convert_float(excel_instance.TacticRole(), password),
-        "WeaponType": WeaponType(convert_int(excel_instance.WeaponType(), password)).name,
-        "TacticRange": TacticRange(convert_int(excel_instance.TacticRange(), password)).name,
-        "BulletType": BulletType(convert_int(excel_instance.BulletType(), password)).name,
-        "ArmorType": ArmorType(convert_int(excel_instance.ArmorType(), password)).name,
-        "AimIKType": AimIKType(convert_int(excel_instance.AimIKType(), password)).name,
-        "School": School(convert_int(excel_instance.School(), password)).name,
-        "Club": Club(convert_int(excel_instance.Club(), password)).name,
+        "WeaponType": excel_instance.WeaponType(),
+        "TacticRange": excel_instance.TacticRange(),
+        "BulletType": excel_instance.BulletType(),
+        "ArmorType": excel_instance.ArmorType(),
+        "AimIKType": excel_instance.AimIKType(),
+        "School": excel_instance.School(),
+        "Club": excel_instance.Club(),
         "DefaultStarGrade": convert_int(excel_instance.DefaultStarGrade(), password),
         "MaxStarGrade": convert_int(excel_instance.MaxStarGrade(), password),
-        "StatLevelUpType": StatLevelUpType(convert_int(excel_instance.StatLevelUpType(), password)).name,
-        "SquadType": SquadType(convert_int(excel_instance.SquadType(), password)).name,
+        "StatLevelUpType": excel_instance.StatLevelUpType(),
+        "SquadType": excel_instance.SquadType(),
         "Jumpable": bool(excel_instance.Jumpable()),
         "PersonalityId": convert_int(excel_instance.PersonalityId(), password),
         "CharacterAIId": convert_int(excel_instance.CharacterAIId(), password),
@@ -24891,7 +2216,7 @@ def dump_CharacterExcel(excel_instance, password: bytes = b"") -> dict:
         "ScenarioCharacter": convert_string(excel_instance.ScenarioCharacter(), password),
         "SpawnTemplateId": convert_uint(excel_instance.SpawnTemplateId(), password),
         "FavorLevelupType": convert_int(excel_instance.FavorLevelupType(), password),
-        "EquipmentSlotLength": convert_int(excel_instance.EquipmentSlotLength(), password),
+        "EquipmentSlot": [excel_instance.EquipmentSlot(j) for j in range(excel_instance.EquipmentSlotLength())],
         "WeaponLocalizeId": convert_uint(excel_instance.WeaponLocalizeId(), password),
         "DisplayEnemyInfo": bool(excel_instance.DisplayEnemyInfo()),
         "BodyRadius": convert_int(excel_instance.BodyRadius(), password),
@@ -24912,7 +2237,7 @@ def dump_CharacterExcel(excel_instance, password: bytes = b"") -> dict:
         "IgnoreObstacle": bool(excel_instance.IgnoreObstacle()),
         "IsAirUnit": bool(excel_instance.IsAirUnit()),
         "AirUnitHeight": convert_int(excel_instance.AirUnitHeight(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
         "SecretStoneItemId": convert_int(excel_instance.SecretStoneItemId(), password),
         "SecretStoneItemAmount": convert_int(excel_instance.SecretStoneItemAmount(), password),
         "CharacterPieceItemId": convert_int(excel_instance.CharacterPieceItemId(), password),
@@ -24924,26 +2249,26 @@ def dump_CharacterGearExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
-        "StatLevelUpType": StatLevelUpType(convert_int(excel_instance.StatLevelUpType(), password)).name,
+        "StatLevelUpType": excel_instance.StatLevelUpType(),
         "Tier": convert_int(excel_instance.Tier(), password),
         "NextTierEquipment": convert_int(excel_instance.NextTierEquipment(), password),
         "RecipeId": convert_int(excel_instance.RecipeId(), password),
         "OpenFavorLevel": convert_int(excel_instance.OpenFavorLevel(), password),
         "MaxLevel": convert_int(excel_instance.MaxLevel(), password),
         "LearnSkillSlot": convert_string(excel_instance.LearnSkillSlot(), password),
-        "StatTypeLength": convert_int(excel_instance.StatTypeLength(), password),
-        "MinStatValueLength": convert_int(excel_instance.MinStatValueLength(), password),
-        "MaxStatValueLength": convert_int(excel_instance.MaxStatValueLength(), password),
+        "StatType": [excel_instance.StatType(j) for j in range(excel_instance.StatTypeLength())],
+        "MinStatValue": [convert_int(excel_instance.MinStatValue(j), password) for j in range(excel_instance.MinStatValueLength())],
+        "MaxStatValue": [convert_int(excel_instance.MaxStatValue(j), password) for j in range(excel_instance.MaxStatValueLength())],
         "Icon": convert_string(excel_instance.Icon(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
     }
 
 def dump_CharacterGearLevelExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Level": convert_int(excel_instance.Level(), password),
-        "TierLevelExpLength": convert_int(excel_instance.TierLevelExpLength(), password),
-        "TotalExpLength": convert_int(excel_instance.TotalExpLength(), password),
+        "TierLevelExp": [convert_int(excel_instance.TierLevelExp(j), password) for j in range(excel_instance.TierLevelExpLength())],
+        "TotalExp": [convert_int(excel_instance.TotalExp(j), password) for j in range(excel_instance.TotalExpLength())],
     }
 
 def dump_CharacterIllustCoordinateExcel(excel_instance, password: bytes = b"") -> dict:
@@ -24976,16 +2301,16 @@ def dump_CharacterPotentialExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "PotentialStatGroupId": convert_int(excel_instance.PotentialStatGroupId(), password),
-        "PotentialStatBonusRateType": PotentialStatBonusRateType(convert_int(excel_instance.PotentialStatBonusRateType(), password)).name,
+        "PotentialStatBonusRateType": excel_instance.PotentialStatBonusRateType(),
         "IsUnnecessaryStat": bool(excel_instance.IsUnnecessaryStat()),
     }
 
 def dump_CharacterPotentialRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "RequirePotentialStatTypeLength": convert_int(excel_instance.RequirePotentialStatTypeLength(), password),
-        "RequirePotentialStatLevelLength": convert_int(excel_instance.RequirePotentialStatLevelLength(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RequirePotentialStatType": [excel_instance.RequirePotentialStatType(j) for j in range(excel_instance.RequirePotentialStatTypeLength())],
+        "RequirePotentialStatLevel": [convert_int(excel_instance.RequirePotentialStatLevel(j), password) for j in range(excel_instance.RequirePotentialStatLevelLength())],
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardId": convert_int(excel_instance.RewardId(), password),
         "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
     }
@@ -25008,18 +2333,18 @@ def dump_CharacterSkillListExcel(excel_instance, password: bytes = b"") -> dict:
         "IsMoveLeftRight": bool(excel_instance.IsMoveLeftRight()),
         "UseRandomExSkillTimeline": bool(excel_instance.UseRandomExSkillTimeline()),
         "TSAInteractionId": convert_int(excel_instance.TSAInteractionId(), password),
-        "NormalSkillGroupIdLength": convert_int(excel_instance.NormalSkillGroupIdLength(), password),
-        "NormalSkillTimeLineIndexLength": convert_int(excel_instance.NormalSkillTimeLineIndexLength(), password),
+        "NormalSkillGroupId": [convert_string(excel_instance.NormalSkillGroupId(j), password) for j in range(excel_instance.NormalSkillGroupIdLength())],
+        "NormalSkillTimeLineIndex": [convert_int(excel_instance.NormalSkillTimeLineIndex(j), password) for j in range(excel_instance.NormalSkillTimeLineIndexLength())],
         "SelectExSkillActionSkillSlot": convert_int(excel_instance.SelectExSkillActionSkillSlot(), password),
-        "ExSkillGroupIdLength": convert_int(excel_instance.ExSkillGroupIdLength(), password),
-        "ExSkillCutInTimeLineIndexLength": convert_int(excel_instance.ExSkillCutInTimeLineIndexLength(), password),
-        "ExSkillLevelTimeLineIndexLength": convert_int(excel_instance.ExSkillLevelTimeLineIndexLength(), password),
-        "PublicSkillGroupIdLength": convert_int(excel_instance.PublicSkillGroupIdLength(), password),
-        "PublicSkillTimeLineIndexLength": convert_int(excel_instance.PublicSkillTimeLineIndexLength(), password),
-        "PassiveSkillGroupIdLength": convert_int(excel_instance.PassiveSkillGroupIdLength(), password),
-        "LeaderSkillGroupIdLength": convert_int(excel_instance.LeaderSkillGroupIdLength(), password),
-        "ExtraPassiveSkillGroupIdLength": convert_int(excel_instance.ExtraPassiveSkillGroupIdLength(), password),
-        "HiddenPassiveSkillGroupIdLength": convert_int(excel_instance.HiddenPassiveSkillGroupIdLength(), password),
+        "ExSkillGroupId": [convert_string(excel_instance.ExSkillGroupId(j), password) for j in range(excel_instance.ExSkillGroupIdLength())],
+        "ExSkillCutInTimeLineIndex": [convert_string(excel_instance.ExSkillCutInTimeLineIndex(j), password) for j in range(excel_instance.ExSkillCutInTimeLineIndexLength())],
+        "ExSkillLevelTimeLineIndex": [convert_string(excel_instance.ExSkillLevelTimeLineIndex(j), password) for j in range(excel_instance.ExSkillLevelTimeLineIndexLength())],
+        "PublicSkillGroupId": [convert_string(excel_instance.PublicSkillGroupId(j), password) for j in range(excel_instance.PublicSkillGroupIdLength())],
+        "PublicSkillTimeLineIndex": [convert_int(excel_instance.PublicSkillTimeLineIndex(j), password) for j in range(excel_instance.PublicSkillTimeLineIndexLength())],
+        "PassiveSkillGroupId": [convert_string(excel_instance.PassiveSkillGroupId(j), password) for j in range(excel_instance.PassiveSkillGroupIdLength())],
+        "LeaderSkillGroupId": [convert_string(excel_instance.LeaderSkillGroupId(j), password) for j in range(excel_instance.LeaderSkillGroupIdLength())],
+        "ExtraPassiveSkillGroupId": [convert_string(excel_instance.ExtraPassiveSkillGroupId(j), password) for j in range(excel_instance.ExtraPassiveSkillGroupIdLength())],
+        "HiddenPassiveSkillGroupId": [convert_string(excel_instance.HiddenPassiveSkillGroupId(j), password) for j in range(excel_instance.HiddenPassiveSkillGroupIdLength())],
     }
 
 def dump_CharacterStatExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25105,17 +2430,17 @@ def dump_CharacterStatExcel(excel_instance, password: bytes = b"") -> dict:
         "HealedMysticRate": convert_int(excel_instance.HealedMysticRate(), password),
         "HealedSonicRate": convert_int(excel_instance.HealedSonicRate(), password),
         "HealedNormalRate": convert_int(excel_instance.HealedNormalRate(), password),
-        "StreetBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.StreetBattleAdaptation(), password)).name,
-        "OutdoorBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.OutdoorBattleAdaptation(), password)).name,
-        "IndoorBattleAdaptation": TerrainAdaptationStat(convert_int(excel_instance.IndoorBattleAdaptation(), password)).name,
+        "StreetBattleAdaptation": excel_instance.StreetBattleAdaptation(),
+        "OutdoorBattleAdaptation": excel_instance.OutdoorBattleAdaptation(),
+        "IndoorBattleAdaptation": excel_instance.IndoorBattleAdaptation(),
         "RegenCost": convert_int(excel_instance.RegenCost(), password),
     }
 
 def dump_CharacterStatLimitExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
-        "StatType": StatType(convert_int(excel_instance.StatType(), password)).name,
+        "TacticEntityType": excel_instance.TacticEntityType(),
+        "StatType": excel_instance.StatType(),
         "StatMinValue": convert_int(excel_instance.StatMinValue(), password),
         "StatMaxValue": convert_int(excel_instance.StatMaxValue(), password),
         "StatRatioMinValue": convert_int(excel_instance.StatRatioMinValue(), password),
@@ -25125,30 +2450,30 @@ def dump_CharacterStatLimitExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_CharacterStatsDetailExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "DetailShowStatsLength": convert_int(excel_instance.DetailShowStatsLength(), password),
-        "IsStatsPercentLength": convert_int(excel_instance.IsStatsPercentLength(), password),
+        "DetailShowStats": [excel_instance.DetailShowStats(j) for j in range(excel_instance.DetailShowStatsLength())],
+        "IsStatsPercent": [bool(excel_instance.IsStatsPercent(j)) for j in range(excel_instance.IsStatsPercentLength())],
     }
 
 def dump_CharacterStatsTransExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "TransSupportStats": StatType(convert_int(excel_instance.TransSupportStats(), password)).name,
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "TransSupportStats": excel_instance.TransSupportStats(),
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
         "TransSupportStatsFactor": convert_int(excel_instance.TransSupportStatsFactor(), password),
-        "StatTransType": StatTransType(convert_int(excel_instance.StatTransType(), password)).name,
+        "StatTransType": excel_instance.StatTransType(),
     }
 
 def dump_CharacterTranscendenceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
-        "MaxFavorLevelLength": convert_int(excel_instance.MaxFavorLevelLength(), password),
-        "StatBonusRateAttackLength": convert_int(excel_instance.StatBonusRateAttackLength(), password),
-        "StatBonusRateHPLength": convert_int(excel_instance.StatBonusRateHPLength(), password),
-        "StatBonusRateHealLength": convert_int(excel_instance.StatBonusRateHealLength(), password),
-        "RecipeIdLength": convert_int(excel_instance.RecipeIdLength(), password),
-        "SkillSlotALength": convert_int(excel_instance.SkillSlotALength(), password),
-        "SkillSlotBLength": convert_int(excel_instance.SkillSlotBLength(), password),
-        "SkillSlotCLength": convert_int(excel_instance.SkillSlotCLength(), password),
-        "MaxlevelStarLength": convert_int(excel_instance.MaxlevelStarLength(), password),
+        "MaxFavorLevel": [convert_int(excel_instance.MaxFavorLevel(j), password) for j in range(excel_instance.MaxFavorLevelLength())],
+        "StatBonusRateAttack": [convert_int(excel_instance.StatBonusRateAttack(j), password) for j in range(excel_instance.StatBonusRateAttackLength())],
+        "StatBonusRateHP": [convert_int(excel_instance.StatBonusRateHP(j), password) for j in range(excel_instance.StatBonusRateHPLength())],
+        "StatBonusRateHeal": [convert_int(excel_instance.StatBonusRateHeal(j), password) for j in range(excel_instance.StatBonusRateHealLength())],
+        "RecipeId": [convert_int(excel_instance.RecipeId(j), password) for j in range(excel_instance.RecipeIdLength())],
+        "SkillSlotA": [convert_string(excel_instance.SkillSlotA(j), password) for j in range(excel_instance.SkillSlotALength())],
+        "SkillSlotB": [convert_string(excel_instance.SkillSlotB(j), password) for j in range(excel_instance.SkillSlotBLength())],
+        "SkillSlotC": [convert_string(excel_instance.SkillSlotC(j), password) for j in range(excel_instance.SkillSlotCLength())],
+        "MaxlevelStar": [convert_int(excel_instance.MaxlevelStar(j), password) for j in range(excel_instance.MaxlevelStarLength())],
     }
 
 def dump_CharacterVictoryInteractionExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25158,32 +2483,32 @@ def dump_CharacterVictoryInteractionExcel(excel_instance, password: bytes = b"")
         "PositionIndex01": convert_int(excel_instance.PositionIndex01(), password),
         "VictoryStartAnimationPath01": convert_string(excel_instance.VictoryStartAnimationPath01(), password),
         "VictoryEndAnimationPath01": convert_string(excel_instance.VictoryEndAnimationPath01(), password),
-        "VoiceEvent01": VoiceEvent(convert_int(excel_instance.VoiceEvent01(), password)).name,
+        "VoiceEvent01": excel_instance.VoiceEvent01(),
         "CostumeId02": convert_int(excel_instance.CostumeId02(), password),
         "PositionIndex02": convert_int(excel_instance.PositionIndex02(), password),
         "VictoryStartAnimationPath02": convert_string(excel_instance.VictoryStartAnimationPath02(), password),
         "VictoryEndAnimationPath02": convert_string(excel_instance.VictoryEndAnimationPath02(), password),
-        "VoiceEvent02": VoiceEvent(convert_int(excel_instance.VoiceEvent02(), password)).name,
+        "VoiceEvent02": excel_instance.VoiceEvent02(),
         "CostumeId03": convert_int(excel_instance.CostumeId03(), password),
         "PositionIndex03": convert_int(excel_instance.PositionIndex03(), password),
         "VictoryStartAnimationPath03": convert_string(excel_instance.VictoryStartAnimationPath03(), password),
         "VictoryEndAnimationPath03": convert_string(excel_instance.VictoryEndAnimationPath03(), password),
-        "VoiceEvent03": VoiceEvent(convert_int(excel_instance.VoiceEvent03(), password)).name,
+        "VoiceEvent03": excel_instance.VoiceEvent03(),
         "CostumeId04": convert_int(excel_instance.CostumeId04(), password),
         "PositionIndex04": convert_int(excel_instance.PositionIndex04(), password),
         "VictoryStartAnimationPath04": convert_string(excel_instance.VictoryStartAnimationPath04(), password),
         "VictoryEndAnimationPath04": convert_string(excel_instance.VictoryEndAnimationPath04(), password),
-        "VoiceEvent04": VoiceEvent(convert_int(excel_instance.VoiceEvent04(), password)).name,
+        "VoiceEvent04": excel_instance.VoiceEvent04(),
         "CostumeId05": convert_int(excel_instance.CostumeId05(), password),
         "PositionIndex05": convert_int(excel_instance.PositionIndex05(), password),
         "VictoryStartAnimationPath05": convert_string(excel_instance.VictoryStartAnimationPath05(), password),
         "VictoryEndAnimationPath05": convert_string(excel_instance.VictoryEndAnimationPath05(), password),
-        "VoiceEvent05": VoiceEvent(convert_int(excel_instance.VoiceEvent05(), password)).name,
+        "VoiceEvent05": excel_instance.VoiceEvent05(),
         "CostumeId06": convert_int(excel_instance.CostumeId06(), password),
         "PositionIndex06": convert_int(excel_instance.PositionIndex06(), password),
         "VictoryStartAnimationPath06": convert_string(excel_instance.VictoryStartAnimationPath06(), password),
         "VictoryEndAnimationPath06": convert_string(excel_instance.VictoryEndAnimationPath06(), password),
-        "VoiceEvent06": VoiceEvent(convert_int(excel_instance.VoiceEvent06(), password)).name,
+        "VoiceEvent06": excel_instance.VoiceEvent06(),
     }
 
 def dump_CharacterVoiceExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25195,13 +2520,13 @@ def dump_CharacterVoiceExcel(excel_instance, password: bytes = b"") -> dict:
         "Priority": convert_int(excel_instance.Priority(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "CollectionVisible": bool(excel_instance.CollectionVisible()),
-        "CVCollectionType": CVCollectionType(convert_int(excel_instance.CVCollectionType(), password)).name,
+        "CVCollectionType": excel_instance.CVCollectionType(),
         "UnlockFavorRank": convert_int(excel_instance.UnlockFavorRank(), password),
         "LocalizeCVGroup": convert_string(excel_instance.LocalizeCVGroup(), password),
-        "NationLength": convert_int(excel_instance.NationLength(), password),
-        "VolumeLength": convert_int(excel_instance.VolumeLength(), password),
-        "DelayLength": convert_int(excel_instance.DelayLength(), password),
-        "PathLength": convert_int(excel_instance.PathLength(), password),
+        "Nation": [excel_instance.Nation(j) for j in range(excel_instance.NationLength())],
+        "Volume": [convert_float(excel_instance.Volume(j), password) for j in range(excel_instance.VolumeLength())],
+        "Delay": [convert_float(excel_instance.Delay(j), password) for j in range(excel_instance.DelayLength())],
+        "Path": [convert_string(excel_instance.Path(j), password) for j in range(excel_instance.PathLength())],
     }
 
 def dump_CharacterVoiceSubtitleExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25220,24 +2545,24 @@ def dump_CharacterWeaponExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "ImagePath": convert_string(excel_instance.ImagePath(), password),
         "SetRecipe": convert_int(excel_instance.SetRecipe(), password),
-        "StatLevelUpType": StatLevelUpType(convert_int(excel_instance.StatLevelUpType(), password)).name,
+        "StatLevelUpType": excel_instance.StatLevelUpType(),
         "AttackPower": convert_int(excel_instance.AttackPower(), password),
         "AttackPower100": convert_int(excel_instance.AttackPower100(), password),
         "MaxHP": convert_int(excel_instance.MaxHP(), password),
         "MaxHP100": convert_int(excel_instance.MaxHP100(), password),
         "HealPower": convert_int(excel_instance.HealPower(), password),
         "HealPower100": convert_int(excel_instance.HealPower100(), password),
-        "UnlockLength": convert_int(excel_instance.UnlockLength(), password),
-        "RecipeIdLength": convert_int(excel_instance.RecipeIdLength(), password),
-        "MaxLevelLength": convert_int(excel_instance.MaxLevelLength(), password),
-        "LearnSkillSlotLength": convert_int(excel_instance.LearnSkillSlotLength(), password),
-        "StatTypeLength": convert_int(excel_instance.StatTypeLength(), password),
-        "StatValueLength": convert_int(excel_instance.StatValueLength(), password),
+        "Unlock": [bool(excel_instance.Unlock(j)) for j in range(excel_instance.UnlockLength())],
+        "RecipeId": [convert_int(excel_instance.RecipeId(j), password) for j in range(excel_instance.RecipeIdLength())],
+        "MaxLevel": [convert_int(excel_instance.MaxLevel(j), password) for j in range(excel_instance.MaxLevelLength())],
+        "LearnSkillSlot": [convert_string(excel_instance.LearnSkillSlot(j), password) for j in range(excel_instance.LearnSkillSlotLength())],
+        "StatType": [excel_instance.StatType(j) for j in range(excel_instance.StatTypeLength())],
+        "StatValue": [convert_int(excel_instance.StatValue(j), password) for j in range(excel_instance.StatValueLength())],
     }
 
 def dump_CharacterWeaponExpBonusExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "WeaponType": WeaponType(convert_int(excel_instance.WeaponType(), password)).name,
+        "WeaponType": excel_instance.WeaponType(),
         "WeaponExpGrowthA": convert_int(excel_instance.WeaponExpGrowthA(), password),
         "WeaponExpGrowthB": convert_int(excel_instance.WeaponExpGrowthB(), password),
         "WeaponExpGrowthC": convert_int(excel_instance.WeaponExpGrowthC(), password),
@@ -25254,8 +2579,8 @@ def dump_CharacterWeaponLevelExcel(excel_instance, password: bytes = b"") -> dic
 def dump_CheatCodeListExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "CheatCodeLength": convert_int(excel_instance.CheatCodeLength(), password),
-        "InputTitleLength": convert_int(excel_instance.InputTitleLength(), password),
+        "CheatCode": [convert_string(excel_instance.CheatCode(j), password) for j in range(excel_instance.CheatCodeLength())],
+        "InputTitle": [convert_string(excel_instance.InputTitle(j), password) for j in range(excel_instance.InputTitleLength())],
         "Desc": convert_string(excel_instance.Desc(), password),
     }
 
@@ -25270,9 +2595,9 @@ def dump_ClanChattingEmojiExcel(excel_instance, password: bytes = b"") -> dict:
 
 def dump_ClanRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "ClanRewardType": ClanRewardType(convert_int(excel_instance.ClanRewardType(), password)).name,
-        "EchelonType": EchelonType(convert_int(excel_instance.EchelonType(), password)).name,
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "ClanRewardType": excel_instance.ClanRewardType(),
+        "EchelonType": excel_instance.EchelonType(),
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -25280,7 +2605,7 @@ def dump_ClanRewardExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_CombatEmojiExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "EmojiEvent": EmojiEvent(convert_int(excel_instance.EmojiEvent(), password)).name,
+        "EmojiEvent": excel_instance.EmojiEvent(),
         "OrderOfPriority": convert_int(excel_instance.OrderOfPriority(), password),
         "EmojiDuration": bool(excel_instance.EmojiDuration()),
         "EmojiReversal": bool(excel_instance.EmojiReversal()),
@@ -25292,7 +2617,7 @@ def dump_CombatEmojiExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_ConquestCalculateExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "CalculateConditionParcelType": ParcelType(convert_int(excel_instance.CalculateConditionParcelType(), password)).name,
+        "CalculateConditionParcelType": excel_instance.CalculateConditionParcelType(),
         "CalculateConditionParcelUniqueId": convert_int(excel_instance.CalculateConditionParcelUniqueId(), password),
         "CalculateConditionParcelAmount": convert_int(excel_instance.CalculateConditionParcelAmount(), password),
     }
@@ -25316,15 +2641,15 @@ def dump_ConquestErosionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "Id": convert_int(excel_instance.Id(), password),
-        "ErosionType": ConquestErosionType(convert_int(excel_instance.ErosionType(), password)).name,
+        "ErosionType": excel_instance.ErosionType(),
         "Phase": convert_int(excel_instance.Phase(), password),
         "PhaseAlarm": bool(excel_instance.PhaseAlarm()),
         "StepIndex": convert_int(excel_instance.StepIndex(), password),
-        "PhaseStartConditionTypeLength": convert_int(excel_instance.PhaseStartConditionTypeLength(), password),
-        "PhaseStartConditionParameterLength": convert_int(excel_instance.PhaseStartConditionParameterLength(), password),
-        "PhaseBeforeExposeConditionTypeLength": convert_int(excel_instance.PhaseBeforeExposeConditionTypeLength(), password),
-        "PhaseBeforeExposeConditionParameterLength": convert_int(excel_instance.PhaseBeforeExposeConditionParameterLength(), password),
-        "ErosionBattleConditionParcelType": ParcelType(convert_int(excel_instance.ErosionBattleConditionParcelType(), password)).name,
+        "PhaseStartConditionType": [excel_instance.PhaseStartConditionType(j) for j in range(excel_instance.PhaseStartConditionTypeLength())],
+        "PhaseStartConditionParameter": [convert_string(excel_instance.PhaseStartConditionParameter(j), password) for j in range(excel_instance.PhaseStartConditionParameterLength())],
+        "PhaseBeforeExposeConditionType": [excel_instance.PhaseBeforeExposeConditionType(j) for j in range(excel_instance.PhaseBeforeExposeConditionTypeLength())],
+        "PhaseBeforeExposeConditionParameter": [convert_string(excel_instance.PhaseBeforeExposeConditionParameter(j), password) for j in range(excel_instance.PhaseBeforeExposeConditionParameterLength())],
+        "ErosionBattleConditionParcelType": excel_instance.ErosionBattleConditionParcelType(),
         "ErosionBattleConditionParcelUniqueId": convert_int(excel_instance.ErosionBattleConditionParcelUniqueId(), password),
         "ErosionBattleConditionParcelAmount": convert_int(excel_instance.ErosionBattleConditionParcelAmount(), password),
         "ConquestRewardId": convert_int(excel_instance.ConquestRewardId(), password),
@@ -25343,7 +2668,7 @@ def dump_ConquestEventExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "MainStoryEventContentId": convert_int(excel_instance.MainStoryEventContentId(), password),
-        "ConquestEventType": ConquestEventType(convert_int(excel_instance.ConquestEventType(), password)).name,
+        "ConquestEventType": excel_instance.ConquestEventType(),
         "UseErosion": bool(excel_instance.UseErosion()),
         "UseUnexpectedEvent": bool(excel_instance.UseUnexpectedEvent()),
         "UseCalculate": bool(excel_instance.UseCalculate()),
@@ -25372,22 +2697,22 @@ def dump_ConquestEventExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_ConquestGroupBonusExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "ConquestBonusId": convert_int(excel_instance.ConquestBonusId(), password),
-        "SchoolLength": convert_int(excel_instance.SchoolLength(), password),
+        "School": [excel_instance.School(j) for j in range(excel_instance.SchoolLength())],
         "RecommandLocalizeEtcId": convert_uint(excel_instance.RecommandLocalizeEtcId(), password),
-        "BonusParcelTypeLength": convert_int(excel_instance.BonusParcelTypeLength(), password),
-        "BonusIdLength": convert_int(excel_instance.BonusIdLength(), password),
-        "BonusCharacterCount1Length": convert_int(excel_instance.BonusCharacterCount1Length(), password),
-        "BonusPercentage1Length": convert_int(excel_instance.BonusPercentage1Length(), password),
-        "BonusCharacterCount2Length": convert_int(excel_instance.BonusCharacterCount2Length(), password),
-        "BonusPercentage2Length": convert_int(excel_instance.BonusPercentage2Length(), password),
-        "BonusCharacterCount3Length": convert_int(excel_instance.BonusCharacterCount3Length(), password),
-        "BonusPercentage3Length": convert_int(excel_instance.BonusPercentage3Length(), password),
+        "BonusParcelType": [excel_instance.BonusParcelType(j) for j in range(excel_instance.BonusParcelTypeLength())],
+        "BonusId": [convert_int(excel_instance.BonusId(j), password) for j in range(excel_instance.BonusIdLength())],
+        "BonusCharacterCount1": [convert_int(excel_instance.BonusCharacterCount1(j), password) for j in range(excel_instance.BonusCharacterCount1Length())],
+        "BonusPercentage1": [convert_int(excel_instance.BonusPercentage1(j), password) for j in range(excel_instance.BonusPercentage1Length())],
+        "BonusCharacterCount2": [convert_int(excel_instance.BonusCharacterCount2(j), password) for j in range(excel_instance.BonusCharacterCount2Length())],
+        "BonusPercentage2": [convert_int(excel_instance.BonusPercentage2(j), password) for j in range(excel_instance.BonusPercentage2Length())],
+        "BonusCharacterCount3": [convert_int(excel_instance.BonusCharacterCount3(j), password) for j in range(excel_instance.BonusCharacterCount3Length())],
+        "BonusPercentage3": [convert_int(excel_instance.BonusPercentage3(j), password) for j in range(excel_instance.BonusPercentage3Length())],
     }
 
 def dump_ConquestGroupBuffExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "ConquestBuffId": convert_int(excel_instance.ConquestBuffId(), password),
-        "SchoolLength": convert_int(excel_instance.SchoolLength(), password),
+        "School": [excel_instance.School(j) for j in range(excel_instance.SchoolLength())],
         "RecommandLocalizeEtcId": convert_uint(excel_instance.RecommandLocalizeEtcId(), password),
         "SkillGroupId": convert_string(excel_instance.SkillGroupId(), password),
     }
@@ -25396,12 +2721,12 @@ def dump_ConquestMapExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "DevName": convert_string(excel_instance.DevName(), password),
-        "MapDifficulty": StageDifficulty(convert_int(excel_instance.MapDifficulty(), password)).name,
+        "MapDifficulty": excel_instance.MapDifficulty(),
         "StepIndex": convert_int(excel_instance.StepIndex(), password),
         "ConquestMap": convert_string(excel_instance.ConquestMap(), password),
         "StepEnterScenarioGroupId": convert_int(excel_instance.StepEnterScenarioGroupId(), password),
-        "StepOpenConditionTypeLength": convert_int(excel_instance.StepOpenConditionTypeLength(), password),
-        "StepOpenConditionParameterLength": convert_int(excel_instance.StepOpenConditionParameterLength(), password),
+        "StepOpenConditionType": [excel_instance.StepOpenConditionType(j) for j in range(excel_instance.StepOpenConditionTypeLength())],
+        "StepOpenConditionParameter": [convert_string(excel_instance.StepOpenConditionParameter(j), password) for j in range(excel_instance.StepOpenConditionParameterLength())],
         "MapGoalLocalize": convert_string(excel_instance.MapGoalLocalize(), password),
         "StepGoalLocalize": convert_string(excel_instance.StepGoalLocalize(), password),
         "StepNameLocalize": convert_string(excel_instance.StepNameLocalize(), password),
@@ -25413,11 +2738,11 @@ def dump_ConquestObjectExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "ConquestObjectType": ConquestObjectType(convert_int(excel_instance.ConquestObjectType(), password)).name,
+        "ConquestObjectType": excel_instance.ConquestObjectType(),
         "Key": convert_uint(excel_instance.Key(), password),
         "Name": convert_string(excel_instance.Name(), password),
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
-        "ConquestRewardParcelType": ParcelType(convert_int(excel_instance.ConquestRewardParcelType(), password)).name,
+        "ConquestRewardParcelType": excel_instance.ConquestRewardParcelType(),
         "ConquestRewardID": convert_int(excel_instance.ConquestRewardID(), password),
         "ConquestRewardAmount": convert_int(excel_instance.ConquestRewardAmount(), password),
         "Disposable": bool(excel_instance.Disposable()),
@@ -25439,9 +2764,9 @@ def dump_ConquestProgressResourceExcel(excel_instance, password: bytes = b"") ->
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "Group": ConquestProgressType(convert_int(excel_instance.Group(), password)).name,
+        "Group": excel_instance.Group(),
         "ProgressResource": convert_string(excel_instance.ProgressResource(), password),
-        "VoiceIdLength": convert_int(excel_instance.VoiceIdLength(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
         "ProgressLocalizeCode": convert_string(excel_instance.ProgressLocalizeCode(), password),
     }
 
@@ -25450,7 +2775,7 @@ def dump_ConquestRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "RewardTag": convert_float(excel_instance.RewardTag(), password),
         "RewardProb": convert_int(excel_instance.RewardProb(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardId": convert_int(excel_instance.RewardId(), password),
         "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
         "IsDisplayed": bool(excel_instance.IsDisplayed()),
@@ -25466,21 +2791,21 @@ def dump_ConquestTileExcel(excel_instance, password: bytes = b"") -> dict:
         "TileNameLocalize": convert_string(excel_instance.TileNameLocalize(), password),
         "TileImageName": convert_string(excel_instance.TileImageName(), password),
         "Playable": bool(excel_instance.Playable()),
-        "TileType": ConquestTileType(convert_int(excel_instance.TileType(), password)).name,
+        "TileType": excel_instance.TileType(),
         "NotMapFog": bool(excel_instance.NotMapFog()),
         "GroupBonusId": convert_int(excel_instance.GroupBonusId(), password),
-        "ConquestCostType": ParcelType(convert_int(excel_instance.ConquestCostType(), password)).name,
+        "ConquestCostType": excel_instance.ConquestCostType(),
         "ConquestCostId": convert_int(excel_instance.ConquestCostId(), password),
         "ConquestCostAmount": convert_int(excel_instance.ConquestCostAmount(), password),
-        "ManageCostType": ParcelType(convert_int(excel_instance.ManageCostType(), password)).name,
+        "ManageCostType": excel_instance.ManageCostType(),
         "ManageCostId": convert_int(excel_instance.ManageCostId(), password),
         "ManageCostAmount": convert_int(excel_instance.ManageCostAmount(), password),
         "ConquestRewardId": convert_int(excel_instance.ConquestRewardId(), password),
         "MassErosionId": convert_int(excel_instance.MassErosionId(), password),
-        "Upgrade2CostType": ParcelType(convert_int(excel_instance.Upgrade2CostType(), password)).name,
+        "Upgrade2CostType": excel_instance.Upgrade2CostType(),
         "Upgrade2CostId": convert_int(excel_instance.Upgrade2CostId(), password),
         "Upgrade2CostAmount": convert_int(excel_instance.Upgrade2CostAmount(), password),
-        "Upgrade3CostType": ParcelType(convert_int(excel_instance.Upgrade3CostType(), password)).name,
+        "Upgrade3CostType": excel_instance.Upgrade3CostType(),
         "Upgrade3CostId": convert_int(excel_instance.Upgrade3CostId(), password),
         "Upgrade3CostAmount": convert_int(excel_instance.Upgrade3CostAmount(), password),
     }
@@ -25488,13 +2813,13 @@ def dump_ConquestTileExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_ConquestUnexpectedEventExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "UnexpectedEventConditionType": ParcelType(convert_int(excel_instance.UnexpectedEventConditionType(), password)).name,
+        "UnexpectedEventConditionType": excel_instance.UnexpectedEventConditionType(),
         "UnexpectedEventConditionUniqueId": convert_int(excel_instance.UnexpectedEventConditionUniqueId(), password),
         "UnexpectedEventConditionAmount": convert_int(excel_instance.UnexpectedEventConditionAmount(), password),
         "UnexpectedEventOccurDailyLimitCount": convert_int(excel_instance.UnexpectedEventOccurDailyLimitCount(), password),
         "UnitCountPerStep": convert_int(excel_instance.UnitCountPerStep(), password),
-        "UnexpectedEventPrefabLength": convert_int(excel_instance.UnexpectedEventPrefabLength(), password),
-        "UnexpectedEventUnitIdLength": convert_int(excel_instance.UnexpectedEventUnitIdLength(), password),
+        "UnexpectedEventPrefab": [convert_string(excel_instance.UnexpectedEventPrefab(j), password) for j in range(excel_instance.UnexpectedEventPrefabLength())],
+        "UnexpectedEventUnitId": [convert_int(excel_instance.UnexpectedEventUnitId(j), password) for j in range(excel_instance.UnexpectedEventUnitIdLength())],
     }
 
 def dump_ConquestUnitExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25508,45 +2833,45 @@ def dump_ConquestUnitExcel(excel_instance, password: bytes = b"") -> dict:
         "ShieldEffectScale": convert_float(excel_instance.ShieldEffectScale(), password),
         "UnitFxPrefabName": convert_string(excel_instance.UnitFxPrefabName(), password),
         "PointAnimation": convert_string(excel_instance.PointAnimation(), password),
-        "EnemyType": ConquestEnemyType(convert_int(excel_instance.EnemyType(), password)).name,
-        "Team": ConquestTeamType(convert_int(excel_instance.Team(), password)).name,
+        "EnemyType": excel_instance.EnemyType(),
+        "Team": excel_instance.Team(),
         "UnitGroup": convert_int(excel_instance.UnitGroup(), password),
         "PrevUnitGroup": convert_int(excel_instance.PrevUnitGroup(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
         "GroundId": convert_int(excel_instance.GroundId(), password),
-        "StarGoalLength": convert_int(excel_instance.StarGoalLength(), password),
-        "StarGoalAmountLength": convert_int(excel_instance.StarGoalAmountLength(), password),
+        "StarGoal": [excel_instance.StarGoal(j) for j in range(excel_instance.StarGoalLength())],
+        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmount(j), password) for j in range(excel_instance.StarGoalAmountLength())],
         "GroupBuffId": convert_int(excel_instance.GroupBuffId(), password),
-        "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
+        "StageEnterCostType": excel_instance.StageEnterCostType(),
         "StageEnterCostId": convert_int(excel_instance.StageEnterCostId(), password),
         "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
-        "ManageEchelonStageEnterCostType": ParcelType(convert_int(excel_instance.ManageEchelonStageEnterCostType(), password)).name,
+        "ManageEchelonStageEnterCostType": excel_instance.ManageEchelonStageEnterCostType(),
         "ManageEchelonStageEnterCostId": convert_int(excel_instance.ManageEchelonStageEnterCostId(), password),
         "ManageEchelonStageEnterCostAmount": convert_int(excel_instance.ManageEchelonStageEnterCostAmount(), password),
         "EnterScenarioGroupId": convert_int(excel_instance.EnterScenarioGroupId(), password),
         "ClearScenarioGroupId": convert_int(excel_instance.ClearScenarioGroupId(), password),
         "ConquestRewardId": convert_int(excel_instance.ConquestRewardId(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "TacticRewardExp": convert_int(excel_instance.TacticRewardExp(), password),
         "FixedEchelonId": convert_int(excel_instance.FixedEchelonId(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_ContentEnterCostReduceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EnterCostReduceGroupId": convert_int(excel_instance.EnterCostReduceGroupId(), password),
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "ContentType": excel_instance.ContentType(),
         "StageId": convert_int(excel_instance.StageId(), password),
-        "ReduceEnterCostType": ParcelType(convert_int(excel_instance.ReduceEnterCostType(), password)).name,
+        "ReduceEnterCostType": excel_instance.ReduceEnterCostType(),
         "ReduceEnterCostId": convert_int(excel_instance.ReduceEnterCostId(), password),
         "ReduceAmount": convert_int(excel_instance.ReduceAmount(), password),
     }
 
 def dump_ContentsFeverExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "ConditionContent": FeverBattleType(convert_int(excel_instance.ConditionContent(), password)).name,
-        "SkillFeverCheckCondition": SkillPriorityCheckTarget(convert_int(excel_instance.SkillFeverCheckCondition(), password)).name,
+        "ConditionContent": excel_instance.ConditionContent(),
+        "SkillFeverCheckCondition": excel_instance.SkillFeverCheckCondition(),
         "SkillCostFever": convert_int(excel_instance.SkillCostFever(), password),
         "FeverStartTime": convert_int(excel_instance.FeverStartTime(), password),
         "FeverDurationTime": convert_int(excel_instance.FeverDurationTime(), password),
@@ -25554,10 +2879,10 @@ def dump_ContentsFeverExcel(excel_instance, password: bytes = b"") -> dict:
 
 def dump_ContentSpoilerPopupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "ContentType": excel_instance.ContentType(),
         "SpoilerPopupTitle": convert_uint(excel_instance.SpoilerPopupTitle(), password),
         "SpoilerPopupDescription": convert_uint(excel_instance.SpoilerPopupDescription(), password),
-        "PopupType": SpoilerPopupType(convert_int(excel_instance.PopupType(), password)).name,
+        "PopupType": excel_instance.PopupType(),
         "ConditionScenarioModeId": convert_int(excel_instance.ConditionScenarioModeId(), password),
     }
 
@@ -25566,32 +2891,32 @@ def dump_ContentsScenarioExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_uint(excel_instance.Id(), password),
         "LocalizeId": convert_uint(excel_instance.LocalizeId(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "ScenarioContentType": ScenarioContentType(convert_int(excel_instance.ScenarioContentType(), password)).name,
-        "ScenarioGroupIdLength": convert_int(excel_instance.ScenarioGroupIdLength(), password),
+        "ScenarioContentType": excel_instance.ScenarioContentType(),
+        "ScenarioGroupId": [convert_int(excel_instance.ScenarioGroupId(j), password) for j in range(excel_instance.ScenarioGroupIdLength())],
     }
 
 def dump_ContentsShortcutExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "ContentType": excel_instance.ContentType(),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "ScenarioModeType": ScenarioModeTypes(convert_int(excel_instance.ScenarioModeType(), password)).name,
+        "ScenarioModeType": excel_instance.ScenarioModeType(),
         "ScenarioModeVolume": convert_int(excel_instance.ScenarioModeVolume(), password),
         "ScenarioModeChapter": convert_int(excel_instance.ScenarioModeChapter(), password),
         "ShortcutOpenTime": convert_string(excel_instance.ShortcutOpenTime(), password),
         "ShortcutCloseTime": convert_string(excel_instance.ShortcutCloseTime(), password),
         "ConditionContentId": convert_int(excel_instance.ConditionContentId(), password),
-        "ConquestMapDifficulty": StageDifficulty(convert_int(excel_instance.ConquestMapDifficulty(), password)).name,
+        "ConquestMapDifficulty": excel_instance.ConquestMapDifficulty(),
         "ConquestStepIndex": convert_int(excel_instance.ConquestStepIndex(), password),
         "ShortcutContentId": convert_int(excel_instance.ShortcutContentId(), password),
-        "ShortcutUINameLength": convert_int(excel_instance.ShortcutUINameLength(), password),
+        "ShortcutUIName": [convert_string(excel_instance.ShortcutUIName(j), password) for j in range(excel_instance.ShortcutUINameLength())],
         "Localize": convert_string(excel_instance.Localize(), password),
     }
 
 def dump_ContentTargetGroupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "TargetGroup": TargetGroup(convert_int(excel_instance.TargetGroup(), password)).name,
-        "AccountTypeLength": convert_int(excel_instance.AccountTypeLength(), password),
+        "TargetGroup": excel_instance.TargetGroup(),
+        "AccountType": [excel_instance.AccountType(j) for j in range(excel_instance.AccountTypeLength())],
     }
 
 def dump_CostumeExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25599,18 +2924,18 @@ def dump_CostumeExcel(excel_instance, password: bytes = b"") -> dict:
         "CostumeGroupId": convert_int(excel_instance.CostumeGroupId(), password),
         "CostumeUniqueId": convert_int(excel_instance.CostumeUniqueId(), password),
         "DevName": convert_string(excel_instance.DevName(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
         "IsDefault": bool(excel_instance.IsDefault()),
         "CollectionVisible": bool(excel_instance.CollectionVisible()),
         "ReleaseDate": convert_string(excel_instance.ReleaseDate(), password),
         "CollectionVisibleStartDate": convert_string(excel_instance.CollectionVisibleStartDate(), password),
         "CollectionVisibleEndDate": convert_string(excel_instance.CollectionVisibleEndDate(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Rarity": excel_instance.Rarity(),
         "CharacterSkillListGroupId": convert_int(excel_instance.CharacterSkillListGroupId(), password),
         "SpineResourceName": convert_string(excel_instance.SpineResourceName(), password),
         "SpineResourceNameDiorama": convert_string(excel_instance.SpineResourceNameDiorama(), password),
-        "SpineResourceNameDioramaForFormConversionLength": convert_int(excel_instance.SpineResourceNameDioramaForFormConversionLength(), password),
-        "EntityMaterialType": EntityMaterialType(convert_int(excel_instance.EntityMaterialType(), password)).name,
+        "SpineResourceNameDioramaForFormConversion": [convert_string(excel_instance.SpineResourceNameDioramaForFormConversion(j), password) for j in range(excel_instance.SpineResourceNameDioramaForFormConversionLength())],
+        "EntityMaterialType": excel_instance.EntityMaterialType(),
         "ModelPrefabName": convert_string(excel_instance.ModelPrefabName(), password),
         "AnimatorName": convert_string(excel_instance.AnimatorName(), password),
         "CafeModelPrefabName": convert_string(excel_instance.CafeModelPrefabName(), password),
@@ -25622,7 +2947,7 @@ def dump_CostumeExcel(excel_instance, password: bytes = b"") -> dict:
         "CombatStyleTexturePath": convert_string(excel_instance.CombatStyleTexturePath(), password),
         "UseObjectHPBAR": bool(excel_instance.UseObjectHPBAR()),
         "TextureBoss": convert_string(excel_instance.TextureBoss(), password),
-        "TextureSkillCardLength": convert_int(excel_instance.TextureSkillCardLength(), password),
+        "TextureSkillCard": [convert_string(excel_instance.TextureSkillCard(j), password) for j in range(excel_instance.TextureSkillCardLength())],
         "InformationPacel": convert_string(excel_instance.InformationPacel(), password),
         "AnimationSSR": convert_string(excel_instance.AnimationSSR(), password),
         "EnterStrategyAnimationName": convert_string(excel_instance.EnterStrategyAnimationName(), password),
@@ -25634,48 +2959,48 @@ def dump_CostumeExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_CouponCompleteExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "GiftIdLength": convert_int(excel_instance.GiftIdLength(), password),
+        "GiftId": [convert_int(excel_instance.GiftId(j), password) for j in range(excel_instance.GiftIdLength())],
         "Comment": convert_string(excel_instance.Comment(), password),
         "ExpiredDay": convert_int(excel_instance.ExpiredDay(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_CurrencyExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "ID": convert_int(excel_instance.ID(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "CurrencyType": CurrencyTypes(convert_int(excel_instance.CurrencyType(), password)).name,
+        "CurrencyType": excel_instance.CurrencyType(),
         "CurrencyName": convert_string(excel_instance.CurrencyName(), password),
         "Icon": convert_string(excel_instance.Icon(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Rarity": excel_instance.Rarity(),
         "AutoChargeMsc": convert_int(excel_instance.AutoChargeMsc(), password),
         "AutoChargeAmount": convert_int(excel_instance.AutoChargeAmount(), password),
-        "CurrencyOverChargeType": CurrencyOverChargeType(convert_int(excel_instance.CurrencyOverChargeType(), password)).name,
-        "CurrencyAdditionalChargeType": CurrencyAdditionalChargeType(convert_int(excel_instance.CurrencyAdditionalChargeType(), password)).name,
+        "CurrencyOverChargeType": excel_instance.CurrencyOverChargeType(),
+        "CurrencyAdditionalChargeType": excel_instance.CurrencyAdditionalChargeType(),
         "ChargeLimit": convert_int(excel_instance.ChargeLimit(), password),
         "OverChargeLimit": convert_int(excel_instance.OverChargeLimit(), password),
         "SpriteName": convert_string(excel_instance.SpriteName(), password),
-        "DailyRefillType": DailyRefillType(convert_int(excel_instance.DailyRefillType(), password)).name,
+        "DailyRefillType": excel_instance.DailyRefillType(),
         "DailyRefillAmount": convert_int(excel_instance.DailyRefillAmount(), password),
-        "DailyRefillTimeLength": convert_int(excel_instance.DailyRefillTimeLength(), password),
+        "DailyRefillTime": [convert_int(excel_instance.DailyRefillTime(j), password) for j in range(excel_instance.DailyRefillTimeLength())],
         "ExpirationDateTime": convert_string(excel_instance.ExpirationDateTime(), password),
         "ExpirationNotifyDateIn": convert_int(excel_instance.ExpirationNotifyDateIn(), password),
-        "ExpiryChangeParcelType": ParcelType(convert_int(excel_instance.ExpiryChangeParcelType(), password)).name,
+        "ExpiryChangeParcelType": excel_instance.ExpiryChangeParcelType(),
         "ExpiryChangeId": convert_int(excel_instance.ExpiryChangeId(), password),
         "ExpiryChangeAmount": convert_int(excel_instance.ExpiryChangeAmount(), password),
-        "ResetType": PeriodType(convert_int(excel_instance.ResetType(), password)).name,
+        "ResetType": excel_instance.ResetType(),
         "ResetAmount": convert_int(excel_instance.ResetAmount(), password),
     }
 
 def dump_DuplicateBonusExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "ItemCategory": ItemCategory(convert_int(excel_instance.ItemCategory(), password)).name,
+        "ItemCategory": excel_instance.ItemCategory(),
         "ItemId": convert_int(excel_instance.ItemId(), password),
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -25684,11 +3009,11 @@ def dump_EchelonConstraintExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "IsWhiteList": bool(excel_instance.IsWhiteList()),
-        "CharacterIdLength": convert_int(excel_instance.CharacterIdLength(), password),
-        "PersonalityIdLength": convert_int(excel_instance.PersonalityIdLength(), password),
-        "WeaponType": WeaponType(convert_int(excel_instance.WeaponType(), password)).name,
-        "School": School(convert_int(excel_instance.School(), password)).name,
-        "Club": Club(convert_int(excel_instance.Club(), password)).name,
+        "CharacterId": [convert_int(excel_instance.CharacterId(j), password) for j in range(excel_instance.CharacterIdLength())],
+        "PersonalityId": [convert_int(excel_instance.PersonalityId(j), password) for j in range(excel_instance.PersonalityIdLength())],
+        "WeaponType": excel_instance.WeaponType(),
+        "School": excel_instance.School(),
+        "Club": excel_instance.Club(),
         "Role": convert_float(excel_instance.Role(), password),
     }
 
@@ -25701,9 +3026,9 @@ def dump_EliminateRaidRankingRewardExcel(excel_instance, password: bytes = b"") 
         "PercentRankStart": convert_int(excel_instance.PercentRankStart(), password),
         "PercentRankEnd": convert_int(excel_instance.PercentRankEnd(), password),
         "Tier": convert_int(excel_instance.Tier(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelUniqueIdLength": convert_int(excel_instance.RewardParcelUniqueIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelUniqueId": [convert_int(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EliminateRaidRankingRewardUOExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25715,9 +3040,9 @@ def dump_EliminateRaidRankingRewardUOExcel(excel_instance, password: bytes = b""
         "PercentRankStart": convert_int(excel_instance.PercentRankStart(), password),
         "PercentRankEnd": convert_int(excel_instance.PercentRankEnd(), password),
         "Tier": convert_int(excel_instance.Tier(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelUniqueIdLength": convert_int(excel_instance.RewardParcelUniqueIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelUniqueId": [convert_int(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EliminateRaidSeasonManageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25735,8 +3060,8 @@ def dump_EliminateRaidSeasonManageExcel(excel_instance, password: bytes = b"") -
         "OpenRaidBossGroup03": convert_string(excel_instance.OpenRaidBossGroup03(), password),
         "RankingRewardGroupId": convert_int(excel_instance.RankingRewardGroupId(), password),
         "MaxSeasonRewardGauage": convert_int(excel_instance.MaxSeasonRewardGauage(), password),
-        "StackedSeasonRewardGaugeLength": convert_int(excel_instance.StackedSeasonRewardGaugeLength(), password),
-        "SeasonRewardIdLength": convert_int(excel_instance.SeasonRewardIdLength(), password),
+        "StackedSeasonRewardGauge": [convert_int(excel_instance.StackedSeasonRewardGauge(j), password) for j in range(excel_instance.StackedSeasonRewardGaugeLength())],
+        "SeasonRewardId": [convert_int(excel_instance.SeasonRewardId(j), password) for j in range(excel_instance.SeasonRewardIdLength())],
         "LimitedRewardIdNormal": convert_int(excel_instance.LimitedRewardIdNormal(), password),
         "LimitedRewardIdHard": convert_int(excel_instance.LimitedRewardIdHard(), password),
         "LimitedRewardIdVeryhard": convert_int(excel_instance.LimitedRewardIdVeryhard(), password),
@@ -25752,23 +3077,23 @@ def dump_EliminateRaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "UseBossIndex": bool(excel_instance.UseBossIndex()),
         "UseBossAIPhaseSync": bool(excel_instance.UseBossAIPhaseSync()),
         "RaidBossGroup": convert_string(excel_instance.RaidBossGroup(), password),
-        "RaidEnterCostType": ParcelType(convert_int(excel_instance.RaidEnterCostType(), password)).name,
+        "RaidEnterCostType": excel_instance.RaidEnterCostType(),
         "RaidEnterCostId": convert_int(excel_instance.RaidEnterCostId(), password),
         "RaidEnterCostAmount": convert_int(excel_instance.RaidEnterCostAmount(), password),
         "BossSpinePath": convert_string(excel_instance.BossSpinePath(), password),
         "PortraitPath": convert_string(excel_instance.PortraitPath(), password),
         "BGPath": convert_string(excel_instance.BGPath(), password),
         "RaidCharacterId": convert_int(excel_instance.RaidCharacterId(), password),
-        "BossCharacterIdLength": convert_int(excel_instance.BossCharacterIdLength(), password),
-        "Difficulty": Difficulty(convert_int(excel_instance.Difficulty(), password)).name,
+        "BossCharacterId": [convert_int(excel_instance.BossCharacterId(j), password) for j in range(excel_instance.BossCharacterIdLength())],
+        "Difficulty": excel_instance.Difficulty(),
         "IsOpen": bool(excel_instance.IsOpen()),
         "MaxPlayerCount": convert_int(excel_instance.MaxPlayerCount(), password),
         "RaidRoomLifeTime": convert_int(excel_instance.RaidRoomLifeTime(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
         "GroundId": convert_int(excel_instance.GroundId(), password),
-        "RaidBossGroupType": RaidBossGroupType(convert_int(excel_instance.RaidBossGroupType(), password)).name,
+        "RaidBossGroupType": excel_instance.RaidBossGroupType(),
         "EnterTimeLine": convert_string(excel_instance.EnterTimeLine(), password),
-        "TacticEnvironment": TacticEnvironment(convert_int(excel_instance.TacticEnvironment(), password)).name,
+        "TacticEnvironment": excel_instance.TacticEnvironment(),
         "DefaultClearScore": convert_int(excel_instance.DefaultClearScore(), password),
         "MaximumScore": convert_int(excel_instance.MaximumScore(), password),
         "PerSecondMinusScore": convert_int(excel_instance.PerSecondMinusScore(), password),
@@ -25776,9 +3101,9 @@ def dump_EliminateRaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "MinimumAcquisitionScore": convert_int(excel_instance.MinimumAcquisitionScore(), password),
         "MaximumAcquisitionScore": convert_int(excel_instance.MaximumAcquisitionScore(), password),
         "RaidRewardGroupId": convert_int(excel_instance.RaidRewardGroupId(), password),
-        "BattleReadyTimelinePathLength": convert_int(excel_instance.BattleReadyTimelinePathLength(), password),
-        "BattleReadyTimelinePhaseStartLength": convert_int(excel_instance.BattleReadyTimelinePhaseStartLength(), password),
-        "BattleReadyTimelinePhaseEndLength": convert_int(excel_instance.BattleReadyTimelinePhaseEndLength(), password),
+        "BattleReadyTimelinePath": [convert_string(excel_instance.BattleReadyTimelinePath(j), password) for j in range(excel_instance.BattleReadyTimelinePathLength())],
+        "BattleReadyTimelinePhaseStart": [convert_int(excel_instance.BattleReadyTimelinePhaseStart(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseStartLength())],
+        "BattleReadyTimelinePhaseEnd": [convert_int(excel_instance.BattleReadyTimelinePhaseEnd(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseEndLength())],
         "VictoryTimelinePath": convert_string(excel_instance.VictoryTimelinePath(), password),
         "PhaseChangeTimelinePath": convert_string(excel_instance.PhaseChangeTimelinePath(), password),
         "TimeLinePhase": convert_int(excel_instance.TimeLinePhase(), password),
@@ -25786,15 +3111,15 @@ def dump_EliminateRaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "ClearScenarioKey": convert_uint(excel_instance.ClearScenarioKey(), password),
         "ShowSkillCard": bool(excel_instance.ShowSkillCard()),
         "BossBGInfoKey": convert_uint(excel_instance.BossBGInfoKey(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_EliminateRaidStageLimitedRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "LimitedRewardId": convert_int(excel_instance.LimitedRewardId(), password),
-        "LimitedRewardParcelTypeLength": convert_int(excel_instance.LimitedRewardParcelTypeLength(), password),
-        "LimitedRewardParcelUniqueIdLength": convert_int(excel_instance.LimitedRewardParcelUniqueIdLength(), password),
-        "LimitedRewardAmountLength": convert_int(excel_instance.LimitedRewardAmountLength(), password),
+        "LimitedRewardParcelType": [excel_instance.LimitedRewardParcelType(j) for j in range(excel_instance.LimitedRewardParcelTypeLength())],
+        "LimitedRewardParcelUniqueId": [convert_int(excel_instance.LimitedRewardParcelUniqueId(j), password) for j in range(excel_instance.LimitedRewardParcelUniqueIdLength())],
+        "LimitedRewardAmount": [convert_int(excel_instance.LimitedRewardAmount(j), password) for j in range(excel_instance.LimitedRewardAmountLength())],
     }
 
 def dump_EliminateRaidStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25802,7 +3127,7 @@ def dump_EliminateRaidStageRewardExcel(excel_instance, password: bytes = b"") ->
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "IsClearStageRewardHideInfo": bool(excel_instance.IsClearStageRewardHideInfo()),
         "ClearStageRewardProb": convert_int(excel_instance.ClearStageRewardProb(), password),
-        "ClearStageRewardParcelType": ParcelType(convert_int(excel_instance.ClearStageRewardParcelType(), password)).name,
+        "ClearStageRewardParcelType": excel_instance.ClearStageRewardParcelType(),
         "ClearStageRewardParcelUniqueID": convert_int(excel_instance.ClearStageRewardParcelUniqueID(), password),
         "ClearStageRewardAmount": convert_int(excel_instance.ClearStageRewardAmount(), password),
     }
@@ -25810,16 +3135,16 @@ def dump_EliminateRaidStageRewardExcel(excel_instance, password: bytes = b"") ->
 def dump_EliminateRaidStageSeasonRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "SeasonRewardId": convert_int(excel_instance.SeasonRewardId(), password),
-        "SeasonRewardParcelTypeLength": convert_int(excel_instance.SeasonRewardParcelTypeLength(), password),
-        "SeasonRewardParcelUniqueIdLength": convert_int(excel_instance.SeasonRewardParcelUniqueIdLength(), password),
-        "SeasonRewardAmountLength": convert_int(excel_instance.SeasonRewardAmountLength(), password),
+        "SeasonRewardParcelType": [excel_instance.SeasonRewardParcelType(j) for j in range(excel_instance.SeasonRewardParcelTypeLength())],
+        "SeasonRewardParcelUniqueId": [convert_int(excel_instance.SeasonRewardParcelUniqueId(j), password) for j in range(excel_instance.SeasonRewardParcelUniqueIdLength())],
+        "SeasonRewardAmount": [convert_int(excel_instance.SeasonRewardAmount(j), password) for j in range(excel_instance.SeasonRewardAmountLength())],
     }
 
 def dump_EmblemExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "Category": EmblemCategory(convert_int(excel_instance.Category(), password)).name,
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Category": excel_instance.Category(),
+        "Rarity": excel_instance.Rarity(),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "LocalizeCodeId": convert_uint(excel_instance.LocalizeCodeId(), password),
@@ -25832,11 +3157,11 @@ def dump_EmblemExcel(excel_instance, password: bytes = b"") -> dict:
         "EmblemBGPathJp": convert_string(excel_instance.EmblemBGPathJp(), password),
         "EmblemBGPathKr": convert_string(excel_instance.EmblemBGPathKr(), password),
         "EmblemEffectPath": convert_string(excel_instance.EmblemEffectPath(), password),
-        "DisplayType": EmblemDisplayType(convert_int(excel_instance.DisplayType(), password)).name,
+        "DisplayType": excel_instance.DisplayType(),
         "DisplayStartDate": convert_string(excel_instance.DisplayStartDate(), password),
         "DisplayEndDate": convert_string(excel_instance.DisplayEndDate(), password),
         "DislpayFavorLevel": convert_int(excel_instance.DislpayFavorLevel(), password),
-        "CheckPassType": EmblemCheckPassType(convert_int(excel_instance.CheckPassType(), password)).name,
+        "CheckPassType": excel_instance.CheckPassType(),
         "EmblemParameter": convert_int(excel_instance.EmblemParameter(), password),
         "CheckPassCount": convert_int(excel_instance.CheckPassCount(), password),
     }
@@ -25844,8 +3169,8 @@ def dump_EmblemExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_EquipmentExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "EquipmentCategory": EquipmentCategory(convert_int(excel_instance.EquipmentCategory(), password)).name,
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "EquipmentCategory": excel_instance.EquipmentCategory(),
+        "Rarity": excel_instance.Rarity(),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "Wear": bool(excel_instance.Wear()),
         "MaxLevel": convert_int(excel_instance.MaxLevel(), password),
@@ -25855,12 +3180,12 @@ def dump_EquipmentExcel(excel_instance, password: bytes = b"") -> dict:
         "StackableMax": convert_int(excel_instance.StackableMax(), password),
         "Icon": convert_string(excel_instance.Icon(), password),
         "ImageName": convert_string(excel_instance.ImageName(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
         "CraftQualityTier0": convert_int(excel_instance.CraftQualityTier0(), password),
         "CraftQualityTier1": convert_int(excel_instance.CraftQualityTier1(), password),
         "CraftQualityTier2": convert_int(excel_instance.CraftQualityTier2(), password),
         "ShiftingCraftQuality": convert_int(excel_instance.ShiftingCraftQuality(), password),
-        "ShopCategoryLength": convert_int(excel_instance.ShopCategoryLength(), password),
+        "ShopCategory": [convert_float(excel_instance.ShopCategory(j), password) for j in range(excel_instance.ShopCategoryLength())],
         "ShortcutTypeId": convert_int(excel_instance.ShortcutTypeId(), password),
         "RedirectItemId": convert_int(excel_instance.RedirectItemId(), password),
     }
@@ -25868,22 +3193,22 @@ def dump_EquipmentExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_EquipmentLevelExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Level": convert_int(excel_instance.Level(), password),
-        "TierLevelExpLength": convert_int(excel_instance.TierLevelExpLength(), password),
-        "TotalExpLength": convert_int(excel_instance.TotalExpLength(), password),
+        "TierLevelExp": [convert_int(excel_instance.TierLevelExp(j), password) for j in range(excel_instance.TierLevelExpLength())],
+        "TotalExp": [convert_int(excel_instance.TotalExp(j), password) for j in range(excel_instance.TotalExpLength())],
     }
 
 def dump_EquipmentStatExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EquipmentId": convert_int(excel_instance.EquipmentId(), password),
-        "StatLevelUpType": StatLevelUpType(convert_int(excel_instance.StatLevelUpType(), password)).name,
-        "StatTypeLength": convert_int(excel_instance.StatTypeLength(), password),
-        "MinStatLength": convert_int(excel_instance.MinStatLength(), password),
-        "MaxStatLength": convert_int(excel_instance.MaxStatLength(), password),
+        "StatLevelUpType": excel_instance.StatLevelUpType(),
+        "StatType": [excel_instance.StatType(j) for j in range(excel_instance.StatTypeLength())],
+        "MinStat": [convert_int(excel_instance.MinStat(j), password) for j in range(excel_instance.MinStatLength())],
+        "MaxStat": [convert_int(excel_instance.MaxStat(j), password) for j in range(excel_instance.MaxStatLength())],
         "LevelUpInsertLimit": convert_int(excel_instance.LevelUpInsertLimit(), password),
         "LevelUpFeedExp": convert_int(excel_instance.LevelUpFeedExp(), password),
-        "LevelUpFeedCostCurrency": CurrencyTypes(convert_int(excel_instance.LevelUpFeedCostCurrency(), password)).name,
+        "LevelUpFeedCostCurrency": excel_instance.LevelUpFeedCostCurrency(),
         "LevelUpFeedCostAmount": convert_int(excel_instance.LevelUpFeedCostAmount(), password),
-        "EquipmentCategory": EquipmentCategory(convert_int(excel_instance.EquipmentCategory(), password)).name,
+        "EquipmentCategory": excel_instance.EquipmentCategory(),
         "LevelUpFeedAddExp": convert_int(excel_instance.LevelUpFeedAddExp(), password),
         "DefaultMaxLevel": convert_int(excel_instance.DefaultMaxLevel(), password),
         "TranscendenceMax": convert_int(excel_instance.TranscendenceMax(), password),
@@ -25915,7 +3240,7 @@ def dump_EventContentBoxGachaShopExcel(excel_instance, password: bytes = b"") ->
         "Round": convert_int(excel_instance.Round(), password),
         "IsLegacy": bool(excel_instance.IsLegacy()),
         "IsPrize": bool(excel_instance.IsPrize()),
-        "GoodsIdLength": convert_int(excel_instance.GoodsIdLength(), password),
+        "GoodsId": [convert_int(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
     }
 
@@ -25923,9 +3248,9 @@ def dump_EventContentBuffExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentBuffId": convert_int(excel_instance.EventContentBuffId(), password),
         "IsBuff": bool(excel_instance.IsBuff()),
-        "CharacterTag": Tag(convert_int(excel_instance.CharacterTag(), password)).name,
-        "EnumType": EventContentBuffFindRule(convert_int(excel_instance.EnumType(), password)).name,
-        "EnumTypeValueLength": convert_int(excel_instance.EnumTypeValueLength(), password),
+        "CharacterTag": excel_instance.CharacterTag(),
+        "EnumType": excel_instance.EnumType(),
+        "EnumTypeValue": [convert_string(excel_instance.EnumTypeValue(j), password) for j in range(excel_instance.EnumTypeValueLength())],
         "SkillGroupId": convert_string(excel_instance.SkillGroupId(), password),
         "IconPath": convert_string(excel_instance.IconPath(), password),
         "SpriteName": convert_string(excel_instance.SpriteName(), password),
@@ -25957,24 +3282,24 @@ def dump_EventContentCardExcel(excel_instance, password: bytes = b"") -> dict:
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "IconPath": convert_string(excel_instance.IconPath(), password),
         "BackIconPath": convert_string(excel_instance.BackIconPath(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
     }
 
 def dump_EventContentCardShopExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "Id": convert_int(excel_instance.Id(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Rarity": excel_instance.Rarity(),
         "CostGoodsId": convert_int(excel_instance.CostGoodsId(), password),
         "CardGroupId": convert_int(excel_instance.CardGroupId(), password),
         "IsLegacy": bool(excel_instance.IsLegacy()),
         "RefreshGroup": convert_int(excel_instance.RefreshGroup(), password),
         "Prob": convert_int(excel_instance.Prob(), password),
         "ProbWeight1": convert_int(excel_instance.ProbWeight1(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EventContentCardShopModifyExcel(excel_instance, password: bytes = b"") -> dict:
@@ -25988,10 +3313,10 @@ def dump_EventContentChangeExcel(excel_instance, password: bytes = b"") -> dict:
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "ChangeCount": convert_int(excel_instance.ChangeCount(), password),
         "IsLast": bool(excel_instance.IsLast()),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardId": convert_int(excel_instance.RewardId(), password),
         "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
-        "ChangeCostType": ParcelType(convert_int(excel_instance.ChangeCostType(), password)).name,
+        "ChangeCostType": excel_instance.ChangeCostType(),
         "ChangeCostId": convert_int(excel_instance.ChangeCostId(), password),
         "ChangeCostAmount": convert_int(excel_instance.ChangeCostAmount(), password),
     }
@@ -25999,7 +3324,7 @@ def dump_EventContentChangeExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_EventContentChangeScenarioExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "ChangeType": EventChangeType(convert_int(excel_instance.ChangeType(), password)).name,
+        "ChangeType": excel_instance.ChangeType(),
         "ChangeCount": convert_int(excel_instance.ChangeCount(), password),
         "ScenarioGroupId": convert_int(excel_instance.ScenarioGroupId(), password),
     }
@@ -26008,8 +3333,8 @@ def dump_EventContentCharacterBonusExcel(excel_instance, password: bytes = b"") 
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
-        "EventContentItemTypeLength": convert_int(excel_instance.EventContentItemTypeLength(), password),
-        "BonusPercentageLength": convert_int(excel_instance.BonusPercentageLength(), password),
+        "EventContentItemType": [excel_instance.EventContentItemType(j) for j in range(excel_instance.EventContentItemTypeLength())],
+        "BonusPercentage": [convert_int(excel_instance.BonusPercentage(j), password) for j in range(excel_instance.BonusPercentageLength())],
     }
 
 def dump_EventContentClueExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26019,9 +3344,9 @@ def dump_EventContentClueExcel(excel_instance, password: bytes = b"") -> dict:
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "SlotClueImagePath": convert_string(excel_instance.SlotClueImagePath(), password),
         "ClueImagePath": convert_string(excel_instance.ClueImagePath(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
         "HintUse": bool(excel_instance.HintUse()),
         "Hintlocalizeid": convert_uint(excel_instance.Hintlocalizeid(), password),
     }
@@ -26037,9 +3362,9 @@ def dump_EventContentClueSearchExcel(excel_instance, password: bytes = b"") -> d
 def dump_EventContentClueSearchRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EventContentClueSearchRoundExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26050,9 +3375,9 @@ def dump_EventContentClueSearchRoundExcel(excel_instance, password: bytes = b"")
         "TargetImagePath": convert_string(excel_instance.TargetImagePath(), password),
         "Localizeld": convert_uint(excel_instance.Localizeld(), password),
         "RewardId": convert_int(excel_instance.RewardId(), password),
-        "ClueSlotNumberLength": convert_int(excel_instance.ClueSlotNumberLength(), password),
-        "ClueIdLength": convert_int(excel_instance.ClueIdLength(), password),
-        "ClueCostAmountLength": convert_int(excel_instance.ClueCostAmountLength(), password),
+        "ClueSlotNumber": [convert_int(excel_instance.ClueSlotNumber(j), password) for j in range(excel_instance.ClueSlotNumberLength())],
+        "ClueId": [convert_int(excel_instance.ClueId(j), password) for j in range(excel_instance.ClueIdLength())],
+        "ClueCostAmount": [convert_int(excel_instance.ClueCostAmount(j), password) for j in range(excel_instance.ClueCostAmountLength())],
         "HintlocalizeId": convert_uint(excel_instance.HintlocalizeId(), password),
         "ClearlocalizeId": convert_uint(excel_instance.ClearlocalizeId(), password),
         "ClearPageImagePath": convert_string(excel_instance.ClearPageImagePath(), password),
@@ -26063,9 +3388,9 @@ def dump_EventContentCollectionExcel(excel_instance, password: bytes = b"") -> d
         "Id": convert_int(excel_instance.Id(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "UnlockConditionType": CollectionUnlockType(convert_int(excel_instance.UnlockConditionType(), password)).name,
-        "UnlockConditionParameterLength": convert_int(excel_instance.UnlockConditionParameterLength(), password),
-        "MultipleConditionCheckType": MultipleConditionCheckType(convert_int(excel_instance.MultipleConditionCheckType(), password)).name,
+        "UnlockConditionType": excel_instance.UnlockConditionType(),
+        "UnlockConditionParameter": [convert_int(excel_instance.UnlockConditionParameter(j), password) for j in range(excel_instance.UnlockConditionParameterLength())],
+        "MultipleConditionCheckType": excel_instance.MultipleConditionCheckType(),
         "UnlockConditionCount": convert_int(excel_instance.UnlockConditionCount(), password),
         "IsObject": bool(excel_instance.IsObject()),
         "IsObjectOnFullResource": bool(excel_instance.IsObjectOnFullResource()),
@@ -26082,7 +3407,7 @@ def dump_EventContentConcentrationCardExcel(excel_instance, password: bytes = b"
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "CardId": convert_int(excel_instance.CardId(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Rarity": excel_instance.Rarity(),
         "ImagePath": convert_string(excel_instance.ImagePath(), password),
     }
 
@@ -26101,27 +3426,27 @@ def dump_EventContentConcentrationRewardExcel(excel_instance, password: bytes = 
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "ConcentrationRewardType": ConcentrationRewardType(convert_int(excel_instance.ConcentrationRewardType(), password)).name,
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "ConcentrationRewardType": excel_instance.ConcentrationRewardType(),
+        "Rarity": excel_instance.Rarity(),
         "Round": convert_int(excel_instance.Round(), password),
         "IsLoop": bool(excel_instance.IsLoop()),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EventContentConcentrationVoiceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "VoiceCondition": ConcentrationVoiceCondition(convert_int(excel_instance.VoiceCondition(), password)).name,
+        "VoiceCondition": excel_instance.VoiceCondition(),
         "VoiceClip": convert_uint(excel_instance.VoiceClip(), password),
     }
 
 def dump_EventContentCurrencyItemExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "EventContentItemType": EventContentItemType(convert_int(excel_instance.EventContentItemType(), password)).name,
+        "EventContentItemType": excel_instance.EventContentItemType(),
         "ItemUniqueId": convert_int(excel_instance.ItemUniqueId(), password),
         "UseShortCutContentType": convert_string(excel_instance.UseShortCutContentType(), password),
     }
@@ -26130,17 +3455,17 @@ def dump_EventContentDebuffRewardExcel(excel_instance, password: bytes = b"") ->
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "EventStageId": convert_int(excel_instance.EventStageId(), password),
-        "EventContentItemType": EventContentItemType(convert_int(excel_instance.EventContentItemType(), password)).name,
+        "EventContentItemType": excel_instance.EventContentItemType(),
         "RewardPercentage": convert_int(excel_instance.RewardPercentage(), password),
     }
 
 def dump_EventContentDiceRaceEffectExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "EventContentDiceRaceResultType": EventContentDiceRaceResultType(convert_int(excel_instance.EventContentDiceRaceResultType(), password)).name,
+        "EventContentDiceRaceResultType": excel_instance.EventContentDiceRaceResultType(),
         "IsDiceResult": bool(excel_instance.IsDiceResult()),
         "AniClip": convert_string(excel_instance.AniClip(), password),
-        "VoiceIdLength": convert_int(excel_instance.VoiceIdLength(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
     }
 
 def dump_EventContentDiceRaceExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26150,25 +3475,25 @@ def dump_EventContentDiceRaceExcel(excel_instance, password: bytes = b"") -> dic
         "SkipableLap": convert_int(excel_instance.SkipableLap(), password),
         "DiceRacePawnPrefab": convert_string(excel_instance.DiceRacePawnPrefab(), password),
         "IsUsingFixedDice": bool(excel_instance.IsUsingFixedDice()),
-        "FixedDiceIconLength": convert_int(excel_instance.FixedDiceIconLength(), password),
-        "DiceRaceEventTypeLength": convert_int(excel_instance.DiceRaceEventTypeLength(), password),
+        "FixedDiceIcon": [convert_string(excel_instance.FixedDiceIcon(j), password) for j in range(excel_instance.FixedDiceIconLength())],
+        "DiceRaceEventType": [convert_string(excel_instance.DiceRaceEventType(j), password) for j in range(excel_instance.DiceRaceEventTypeLength())],
     }
 
 def dump_EventContentDiceRaceNodeExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "NodeId": convert_int(excel_instance.NodeId(), password),
-        "EventContentDiceRaceNodeType": EventContentDiceRaceNodeType(convert_int(excel_instance.EventContentDiceRaceNodeType(), password)).name,
+        "EventContentDiceRaceNodeType": excel_instance.EventContentDiceRaceNodeType(),
         "MoveForwardTypeArg": convert_int(excel_instance.MoveForwardTypeArg(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
     }
 
 def dump_EventContentDiceRaceProbExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "EventContentDiceRaceResultType": EventContentDiceRaceResultType(convert_int(excel_instance.EventContentDiceRaceResultType(), password)).name,
+        "EventContentDiceRaceResultType": excel_instance.EventContentDiceRaceResultType(),
         "CostItemId": convert_int(excel_instance.CostItemId(), password),
         "CostItemAmount": convert_int(excel_instance.CostItemAmount(), password),
         "DiceResult": convert_int(excel_instance.DiceResult(), password),
@@ -26181,9 +3506,9 @@ def dump_EventContentDiceRaceTotalRewardExcel(excel_instance, password: bytes = 
         "RewardID": convert_int(excel_instance.RewardID(), password),
         "RequiredLapFinishCount": convert_int(excel_instance.RequiredLapFinishCount(), password),
         "DisplayLapFinishCount": convert_int(excel_instance.DisplayLapFinishCount(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EventContentFortuneGachaExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26216,15 +3541,15 @@ def dump_EventContentFortuneGachaShopExcel(excel_instance, password: bytes = b""
         "Prob": convert_int(excel_instance.Prob(), password),
         "ProbModifyValue": convert_int(excel_instance.ProbModifyValue(), password),
         "ProbModifyLimit": convert_int(excel_instance.ProbModifyLimit(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EventContentLobbyMenuExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
+        "EventContentType": excel_instance.EventContentType(),
         "IconSpriteName": convert_string(excel_instance.IconSpriteName(), password),
         "ButtonText": convert_string(excel_instance.ButtonText(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
@@ -26240,10 +3565,10 @@ def dump_EventContentLocationExcel(excel_instance, password: bytes = b"") -> dic
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "PrefabPath": convert_string(excel_instance.PrefabPath(), password),
         "LocationResetScheduleCount": convert_int(excel_instance.LocationResetScheduleCount(), password),
-        "ScheduleEventPointCostParcelType": ParcelType(convert_int(excel_instance.ScheduleEventPointCostParcelType(), password)).name,
+        "ScheduleEventPointCostParcelType": excel_instance.ScheduleEventPointCostParcelType(),
         "ScheduleEventPointCostParcelId": convert_int(excel_instance.ScheduleEventPointCostParcelId(), password),
         "ScheduleEventPointCostParcelAmount": convert_int(excel_instance.ScheduleEventPointCostParcelAmount(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "InformationGroupId": convert_int(excel_instance.InformationGroupId(), password),
     }
@@ -26255,7 +3580,7 @@ def dump_EventContentLocationRewardExcel(excel_instance, password: bytes = b"") 
         "OrderInGroup": convert_int(excel_instance.OrderInGroup(), password),
         "Id": convert_int(excel_instance.Id(), password),
         "ProgressTexture": convert_string(excel_instance.ProgressTexture(), password),
-        "VoiceIdLength": convert_int(excel_instance.VoiceIdLength(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "LocationRank": convert_int(excel_instance.LocationRank(), password),
         "FavorExp": convert_int(excel_instance.FavorExp(), password),
@@ -26263,14 +3588,14 @@ def dump_EventContentLocationRewardExcel(excel_instance, password: bytes = b"") 
         "SecretStoneProb": convert_int(excel_instance.SecretStoneProb(), password),
         "ExtraFavorExp": convert_int(excel_instance.ExtraFavorExp(), password),
         "ExtraFavorExpProb": convert_int(excel_instance.ExtraFavorExpProb(), password),
-        "ExtraRewardParcelTypeLength": convert_int(excel_instance.ExtraRewardParcelTypeLength(), password),
-        "ExtraRewardParcelIdLength": convert_int(excel_instance.ExtraRewardParcelIdLength(), password),
-        "ExtraRewardAmountLength": convert_int(excel_instance.ExtraRewardAmountLength(), password),
-        "ExtraRewardProbLength": convert_int(excel_instance.ExtraRewardProbLength(), password),
-        "IsExtraRewardDisplayedLength": convert_int(excel_instance.IsExtraRewardDisplayedLength(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "ExtraRewardParcelType": [excel_instance.ExtraRewardParcelType(j) for j in range(excel_instance.ExtraRewardParcelTypeLength())],
+        "ExtraRewardParcelId": [convert_int(excel_instance.ExtraRewardParcelId(j), password) for j in range(excel_instance.ExtraRewardParcelIdLength())],
+        "ExtraRewardAmount": [convert_int(excel_instance.ExtraRewardAmount(j), password) for j in range(excel_instance.ExtraRewardAmountLength())],
+        "ExtraRewardProb": [convert_int(excel_instance.ExtraRewardProb(j), password) for j in range(excel_instance.ExtraRewardProbLength())],
+        "IsExtraRewardDisplayed": [bool(excel_instance.IsExtraRewardDisplayed(j)) for j in range(excel_instance.IsExtraRewardDisplayedLength())],
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
     }
 
 def dump_EventContentMeetupExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26279,15 +3604,15 @@ def dump_EventContentMeetupExcel(excel_instance, password: bytes = b"") -> dict:
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
         "ConditionScenarioGroupId": convert_int(excel_instance.ConditionScenarioGroupId(), password),
-        "ConditionType": MeetupConditionType(convert_int(excel_instance.ConditionType(), password)).name,
-        "ConditionParameterLength": convert_int(excel_instance.ConditionParameterLength(), password),
-        "ConditionPrintType": MeetupConditionPrintType(convert_int(excel_instance.ConditionPrintType(), password)).name,
+        "ConditionType": excel_instance.ConditionType(),
+        "ConditionParameter": [convert_int(excel_instance.ConditionParameter(j), password) for j in range(excel_instance.ConditionParameterLength())],
+        "ConditionPrintType": excel_instance.ConditionPrintType(),
     }
 
 def dump_EventContentMeetupInfoExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "CostParcelType": ParcelType(convert_int(excel_instance.CostParcelType(), password)).name,
+        "CostParcelType": excel_instance.CostParcelType(),
         "CostId": convert_int(excel_instance.CostId(), password),
         "CostAmount": convert_int(excel_instance.CostAmount(), password),
     }
@@ -26296,7 +3621,7 @@ def dump_EventContentMiniEventShortCutExcel(excel_instance, password: bytes = b"
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "ShorcutContentType": EventTargetType(convert_int(excel_instance.ShorcutContentType(), password)).name,
+        "ShorcutContentType": excel_instance.ShorcutContentType(),
         "ShortcutUI": convert_string(excel_instance.ShortcutUI(), password),
     }
 
@@ -26313,32 +3638,32 @@ def dump_EventContentMissionExcel(excel_instance, password: bytes = b"") -> dict
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "GroupName": convert_string(excel_instance.GroupName(), password),
-        "Category": MissionCategory(convert_int(excel_instance.Category(), password)).name,
+        "Category": excel_instance.Category(),
         "Description": convert_uint(excel_instance.Description(), password),
-        "ResetType": MissionResetType(convert_int(excel_instance.ResetType(), password)).name,
-        "ToastDisplayType": MissionToastDisplayConditionType(convert_int(excel_instance.ToastDisplayType(), password)).name,
+        "ResetType": excel_instance.ResetType(),
+        "ToastDisplayType": excel_instance.ToastDisplayType(),
         "ToastImagePath": convert_string(excel_instance.ToastImagePath(), password),
         "ViewFlag": bool(excel_instance.ViewFlag()),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "PreMissionIdLength": convert_int(excel_instance.PreMissionIdLength(), password),
-        "TargetGroup": TargetGroup(convert_int(excel_instance.TargetGroup(), password)).name,
+        "PreMissionId": [convert_int(excel_instance.PreMissionId(j), password) for j in range(excel_instance.PreMissionIdLength())],
+        "TargetGroup": excel_instance.TargetGroup(),
         "AccountLevel": convert_int(excel_instance.AccountLevel(), password),
-        "ShortcutUILength": convert_int(excel_instance.ShortcutUILength(), password),
+        "ShortcutUI": [convert_string(excel_instance.ShortcutUI(j), password) for j in range(excel_instance.ShortcutUILength())],
         "ChallengeStageShortcut": convert_int(excel_instance.ChallengeStageShortcut(), password),
-        "CompleteConditionType": MissionCompleteConditionType(convert_int(excel_instance.CompleteConditionType(), password)).name,
+        "CompleteConditionType": excel_instance.CompleteConditionType(),
         "IsCompleteExtensionTime": bool(excel_instance.IsCompleteExtensionTime()),
         "CompleteConditionCount": convert_int(excel_instance.CompleteConditionCount(), password),
-        "CompleteConditionParameterLength": convert_int(excel_instance.CompleteConditionParameterLength(), password),
-        "CompleteConditionParameterTagLength": convert_int(excel_instance.CompleteConditionParameterTagLength(), password),
+        "CompleteConditionParameter": [convert_int(excel_instance.CompleteConditionParameter(j), password) for j in range(excel_instance.CompleteConditionParameterLength())],
+        "CompleteConditionParameterTag": [excel_instance.CompleteConditionParameterTag(j) for j in range(excel_instance.CompleteConditionParameterTagLength())],
         "RewardIcon": convert_string(excel_instance.RewardIcon(), password),
-        "CompleteConditionMissionIdLength": convert_int(excel_instance.CompleteConditionMissionIdLength(), password),
+        "CompleteConditionMissionId": [convert_int(excel_instance.CompleteConditionMissionId(j), password) for j in range(excel_instance.CompleteConditionMissionIdLength())],
         "CompleteConditionMissionCount": convert_int(excel_instance.CompleteConditionMissionCount(), password),
-        "MissionRewardParcelTypeLength": convert_int(excel_instance.MissionRewardParcelTypeLength(), password),
-        "MissionRewardParcelIdLength": convert_int(excel_instance.MissionRewardParcelIdLength(), password),
-        "MissionRewardAmountLength": convert_int(excel_instance.MissionRewardAmountLength(), password),
-        "ConditionRewardParcelTypeLength": convert_int(excel_instance.ConditionRewardParcelTypeLength(), password),
-        "ConditionRewardParcelIdLength": convert_int(excel_instance.ConditionRewardParcelIdLength(), password),
-        "ConditionRewardAmountLength": convert_int(excel_instance.ConditionRewardAmountLength(), password),
+        "MissionRewardParcelType": [excel_instance.MissionRewardParcelType(j) for j in range(excel_instance.MissionRewardParcelTypeLength())],
+        "MissionRewardParcelId": [convert_int(excel_instance.MissionRewardParcelId(j), password) for j in range(excel_instance.MissionRewardParcelIdLength())],
+        "MissionRewardAmount": [convert_int(excel_instance.MissionRewardAmount(j), password) for j in range(excel_instance.MissionRewardAmountLength())],
+        "ConditionRewardParcelType": [excel_instance.ConditionRewardParcelType(j) for j in range(excel_instance.ConditionRewardParcelTypeLength())],
+        "ConditionRewardParcelId": [convert_int(excel_instance.ConditionRewardParcelId(j), password) for j in range(excel_instance.ConditionRewardParcelIdLength())],
+        "ConditionRewardAmount": [convert_int(excel_instance.ConditionRewardAmount(j), password) for j in range(excel_instance.ConditionRewardAmountLength())],
     }
 
 def dump_EventContentNotifyExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26346,9 +3671,9 @@ def dump_EventContentNotifyExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "IconPath": convert_string(excel_instance.IconPath(), password),
-        "EventNotifyType": EventNotifyType(convert_int(excel_instance.EventNotifyType(), password)).name,
-        "EventTargetType": EventTargetType(convert_int(excel_instance.EventTargetType(), password)).name,
-        "ShortcutEventTargetType": EventTargetType(convert_int(excel_instance.ShortcutEventTargetType(), password)).name,
+        "EventNotifyType": excel_instance.EventNotifyType(),
+        "EventTargetType": excel_instance.EventTargetType(),
+        "ShortcutEventTargetType": excel_instance.ShortcutEventTargetType(),
         "IsShortcutEnable": bool(excel_instance.IsShortcutEnable()),
     }
 
@@ -26374,17 +3699,17 @@ def dump_EventContentScenarioExcel(excel_instance, password: bytes = b"") -> dic
         "IsRecollection": bool(excel_instance.IsRecollection()),
         "IsMeetup": bool(excel_instance.IsMeetup()),
         "IsOmnibus": bool(excel_instance.IsOmnibus()),
-        "ScenarioGroupIdLength": convert_int(excel_instance.ScenarioGroupIdLength(), password),
-        "ScenarioConditionType": EventContentScenarioConditionType(convert_int(excel_instance.ScenarioConditionType(), password)).name,
+        "ScenarioGroupId": [convert_int(excel_instance.ScenarioGroupId(j), password) for j in range(excel_instance.ScenarioGroupIdLength())],
+        "ScenarioConditionType": excel_instance.ScenarioConditionType(),
         "ConditionAmount": convert_int(excel_instance.ConditionAmount(), password),
         "ConditionEventContentId": convert_int(excel_instance.ConditionEventContentId(), password),
         "ClearedScenarioGroupId": convert_int(excel_instance.ClearedScenarioGroupId(), password),
         "RecollectionSummaryLocalizeScenarioId": convert_uint(excel_instance.RecollectionSummaryLocalizeScenarioId(), password),
         "RecollectionResource": convert_string(excel_instance.RecollectionResource(), password),
         "IsRecollectionHorizon": bool(excel_instance.IsRecollectionHorizon()),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardIdLength": convert_int(excel_instance.RewardIdLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardId": [convert_int(excel_instance.RewardId(j), password) for j in range(excel_instance.RewardIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
     }
 
 def dump_EventContentSeasonExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26393,11 +3718,11 @@ def dump_EventContentSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "OriginalEventContentId": convert_int(excel_instance.OriginalEventContentId(), password),
         "IsReturn": bool(excel_instance.IsReturn()),
         "Name": convert_string(excel_instance.Name(), password),
-        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
-        "OpenConditionContent": OpenConditionContent(convert_int(excel_instance.OpenConditionContent(), password)).name,
+        "EventContentType": excel_instance.EventContentType(),
+        "OpenConditionContent": excel_instance.OpenConditionContent(),
         "EventDisplay": bool(excel_instance.EventDisplay()),
         "IconOrder": convert_int(excel_instance.IconOrder(), password),
-        "SubEventType": SubEventType(convert_int(excel_instance.SubEventType(), password)).name,
+        "SubEventType": excel_instance.SubEventType(),
         "SubEvent": bool(excel_instance.SubEvent()),
         "EventItemId": convert_int(excel_instance.EventItemId(), password),
         "MainEventId": convert_int(excel_instance.MainEventId(), password),
@@ -26411,7 +3736,7 @@ def dump_EventContentSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "SubIconParcelPath": convert_string(excel_instance.SubIconParcelPath(), password),
         "BeforehandBgImagePath": convert_string(excel_instance.BeforehandBgImagePath(), password),
         "MinigamePrologScenarioGroupId": convert_int(excel_instance.MinigamePrologScenarioGroupId(), password),
-        "BeforehandScenarioGroupIdLength": convert_int(excel_instance.BeforehandScenarioGroupIdLength(), password),
+        "BeforehandScenarioGroupId": [convert_int(excel_instance.BeforehandScenarioGroupId(j), password) for j in range(excel_instance.BeforehandScenarioGroupIdLength())],
         "MainBannerImagePath": convert_string(excel_instance.MainBannerImagePath(), password),
         "MainBgImagePath": convert_string(excel_instance.MainBgImagePath(), password),
         "ShiftTriggerStageId": convert_int(excel_instance.ShiftTriggerStageId(), password),
@@ -26422,7 +3747,7 @@ def dump_EventContentSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "MinigameMissionBgImagePath": convert_string(excel_instance.MinigameMissionBgImagePath(), password),
         "CardBgImagePath": convert_string(excel_instance.CardBgImagePath(), password),
         "EventAssist": bool(excel_instance.EventAssist()),
-        "EventContentReleaseType": EventContentReleaseType(convert_int(excel_instance.EventContentReleaseType(), password)).name,
+        "EventContentReleaseType": excel_instance.EventContentReleaseType(),
         "EventContentStageRewardIdPermanent": convert_int(excel_instance.EventContentStageRewardIdPermanent(), password),
         "RewardTagPermanent": convert_float(excel_instance.RewardTagPermanent(), password),
         "MiniEventShortCutScenarioModeId": convert_int(excel_instance.MiniEventShortCutScenarioModeId(), password),
@@ -26436,13 +3761,13 @@ def dump_EventContentShopExcel(excel_instance, password: bytes = b"") -> dict:
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "CategoryType": convert_float(excel_instance.CategoryType(), password),
         "IsLegacy": bool(excel_instance.IsLegacy()),
-        "GoodsIdLength": convert_int(excel_instance.GoodsIdLength(), password),
+        "GoodsId": [convert_int(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "SalePeriodFrom": convert_string(excel_instance.SalePeriodFrom(), password),
         "SalePeriodTo": convert_string(excel_instance.SalePeriodTo(), password),
         "PurchaseCooltimeMin": convert_int(excel_instance.PurchaseCooltimeMin(), password),
         "PurchaseCountLimit": convert_int(excel_instance.PurchaseCountLimit(), password),
-        "PurchaseCountResetType": PurchaseCountResetType(convert_int(excel_instance.PurchaseCountResetType(), password)).name,
+        "PurchaseCountResetType": excel_instance.PurchaseCountResetType(),
         "BuyReportEventName": convert_string(excel_instance.BuyReportEventName(), password),
         "RestrictBuyWhenInventoryFull": bool(excel_instance.RestrictBuyWhenInventoryFull()),
     }
@@ -26452,13 +3777,13 @@ def dump_EventContentShopInfoExcel(excel_instance, password: bytes = b"") -> dic
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "CategoryType": convert_float(excel_instance.CategoryType(), password),
         "LocalizeCode": convert_uint(excel_instance.LocalizeCode(), password),
-        "CostParcelTypeLength": convert_int(excel_instance.CostParcelTypeLength(), password),
-        "CostParcelIdLength": convert_int(excel_instance.CostParcelIdLength(), password),
+        "CostParcelType": [excel_instance.CostParcelType(j) for j in range(excel_instance.CostParcelTypeLength())],
+        "CostParcelId": [convert_int(excel_instance.CostParcelId(j), password) for j in range(excel_instance.CostParcelIdLength())],
         "IsRefresh": bool(excel_instance.IsRefresh()),
         "IsSoldOutDimmed": bool(excel_instance.IsSoldOutDimmed()),
         "AutoRefreshCoolTime": convert_int(excel_instance.AutoRefreshCoolTime(), password),
         "RefreshAbleCount": convert_int(excel_instance.RefreshAbleCount(), password),
-        "GoodsIdLength": convert_int(excel_instance.GoodsIdLength(), password),
+        "GoodsId": [convert_int(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
         "OpenPeriodFrom": convert_string(excel_instance.OpenPeriodFrom(), password),
         "OpenPeriodTo": convert_string(excel_instance.OpenPeriodTo(), password),
         "ShopProductUpdateDate": convert_string(excel_instance.ShopProductUpdateDate(), password),
@@ -26488,7 +3813,7 @@ def dump_EventContentSpecialOperationsExcel(excel_instance, password: bytes = b"
 def dump_EventContentSpineDialogOffsetExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
+        "EventContentType": excel_instance.EventContentType(),
         "CostumeUniqueId": convert_int(excel_instance.CostumeUniqueId(), password),
         "SpineOffsetX": convert_float(excel_instance.SpineOffsetX(), password),
         "SpineOffsetY": convert_float(excel_instance.SpineOffsetY(), password),
@@ -26499,7 +3824,7 @@ def dump_EventContentSpineDialogOffsetExcel(excel_instance, password: bytes = b"
 def dump_EventContentSpineDisplayPeriodExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "DialogCategory": DialogCategory(convert_int(excel_instance.DialogCategory(), password)).name,
+        "DialogCategory": excel_instance.DialogCategory(),
         "CostumeUniqueId": convert_int(excel_instance.CostumeUniqueId(), password),
         "ShowPeriodFrom": convert_string(excel_instance.ShowPeriodFrom(), password),
         "ShowPeriodTo": convert_string(excel_instance.ShowPeriodTo(), password),
@@ -26512,7 +3837,7 @@ def dump_EventContentSpoilerPopupExcel(excel_instance, password: bytes = b"") ->
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "SpoilerPopupTitle": convert_uint(excel_instance.SpoilerPopupTitle(), password),
         "SpoilerPopupDescription": convert_uint(excel_instance.SpoilerPopupDescription(), password),
-        "PopupType": SpoilerPopupType(convert_int(excel_instance.PopupType(), password)).name,
+        "PopupType": excel_instance.PopupType(),
         "ConditionScenarioModeId": convert_int(excel_instance.ConditionScenarioModeId(), password),
     }
 
@@ -26521,7 +3846,7 @@ def dump_EventContentStageExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "Name": convert_string(excel_instance.Name(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "StageDifficulty": StageDifficulty(convert_int(excel_instance.StageDifficulty(), password)).name,
+        "StageDifficulty": excel_instance.StageDifficulty(),
         "StageNumber": convert_string(excel_instance.StageNumber(), password),
         "StageDisplay": convert_int(excel_instance.StageDisplay(), password),
         "PrevStageId": convert_int(excel_instance.PrevStageId(), password),
@@ -26530,37 +3855,37 @@ def dump_EventContentStageExcel(excel_instance, password: bytes = b"") -> dict:
         "OpenConditionScenarioPermanentSubEventId": convert_int(excel_instance.OpenConditionScenarioPermanentSubEventId(), password),
         "PrevStageSubEventId": convert_int(excel_instance.PrevStageSubEventId(), password),
         "OpenConditionScenarioId": convert_int(excel_instance.OpenConditionScenarioId(), password),
-        "OpenConditionContentType": EventContentType(convert_int(excel_instance.OpenConditionContentType(), password)).name,
+        "OpenConditionContentType": excel_instance.OpenConditionContentType(),
         "OpenConditionContentId": convert_int(excel_instance.OpenConditionContentId(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
-        "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
+        "StageEnterCostType": excel_instance.StageEnterCostType(),
         "StageEnterCostId": convert_int(excel_instance.StageEnterCostId(), password),
         "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
         "StageEnterEchelonCount": convert_int(excel_instance.StageEnterEchelonCount(), password),
         "StarConditionTacticRankSCount": convert_int(excel_instance.StarConditionTacticRankSCount(), password),
         "StarConditionTurnCount": convert_int(excel_instance.StarConditionTurnCount(), password),
-        "EnterScenarioGroupIdLength": convert_int(excel_instance.EnterScenarioGroupIdLength(), password),
-        "ClearScenarioGroupIdLength": convert_int(excel_instance.ClearScenarioGroupIdLength(), password),
+        "EnterScenarioGroupId": [convert_int(excel_instance.EnterScenarioGroupId(j), password) for j in range(excel_instance.EnterScenarioGroupIdLength())],
+        "ClearScenarioGroupId": [convert_int(excel_instance.ClearScenarioGroupId(j), password) for j in range(excel_instance.ClearScenarioGroupIdLength())],
         "StrategyMap": convert_string(excel_instance.StrategyMap(), password),
         "StrategyMapBG": convert_string(excel_instance.StrategyMapBG(), password),
         "EventContentStageRewardId": convert_int(excel_instance.EventContentStageRewardId(), password),
         "MaxTurn": convert_int(excel_instance.MaxTurn(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "BgmId": convert_int(excel_instance.BgmId(), password),
-        "StrategyEnvironment": StrategyEnvironment(convert_int(excel_instance.StrategyEnvironment(), password)).name,
+        "StrategyEnvironment": excel_instance.StrategyEnvironment(),
         "GroundID": convert_int(excel_instance.GroundID(), password),
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "ContentType": excel_instance.ContentType(),
         "BGMId": convert_int(excel_instance.BGMId(), password),
         "InstantClear": bool(excel_instance.InstantClear()),
         "BuffContentId": convert_int(excel_instance.BuffContentId(), password),
         "FixedEchelonId": convert_int(excel_instance.FixedEchelonId(), password),
         "ChallengeDisplay": bool(excel_instance.ChallengeDisplay()),
-        "StarGoalLength": convert_int(excel_instance.StarGoalLength(), password),
-        "StarGoalAmountLength": convert_int(excel_instance.StarGoalAmountLength(), password),
+        "StarGoal": [excel_instance.StarGoal(j) for j in range(excel_instance.StarGoalLength())],
+        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmount(j), password) for j in range(excel_instance.StarGoalAmountLength())],
         "IsDefeatBattle": bool(excel_instance.IsDefeatBattle()),
         "StageHint": convert_uint(excel_instance.StageHint(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_EventContentStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26568,7 +3893,7 @@ def dump_EventContentStageRewardExcel(excel_instance, password: bytes = b"") -> 
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "RewardTag": convert_float(excel_instance.RewardTag(), password),
         "RewardProb": convert_int(excel_instance.RewardProb(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardId": convert_int(excel_instance.RewardId(), password),
         "RewardAmount": convert_int(excel_instance.RewardAmount(), password),
         "IsDisplayed": bool(excel_instance.IsDisplayed()),
@@ -26579,18 +3904,18 @@ def dump_EventContentStageTotalRewardExcel(excel_instance, password: bytes = b""
         "Id": convert_int(excel_instance.Id(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "RequiredEventItemAmount": convert_int(excel_instance.RequiredEventItemAmount(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EventContentTreasureCellRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "LocalizeCodeID": convert_string(excel_instance.LocalizeCodeID(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_EventContentTreasureExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26609,9 +3934,9 @@ def dump_EventContentTreasureRewardExcel(excel_instance, password: bytes = b"") 
         "CellUnderImageWidth": convert_int(excel_instance.CellUnderImageWidth(), password),
         "CellUnderImageHeight": convert_int(excel_instance.CellUnderImageHeight(), password),
         "HiddenImage": bool(excel_instance.HiddenImage()),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
         "CellUnderImagePath": convert_string(excel_instance.CellUnderImagePath(), password),
         "TreasureSmallImagePath": convert_string(excel_instance.TreasureSmallImagePath(), password),
         "TreasureSizeIconPath": convert_string(excel_instance.TreasureSizeIconPath(), password),
@@ -26621,12 +3946,12 @@ def dump_EventContentTreasureRoundExcel(excel_instance, password: bytes = b"") -
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "TreasureRound": convert_int(excel_instance.TreasureRound(), password),
-        "TreasureRoundSizeLength": convert_int(excel_instance.TreasureRoundSizeLength(), password),
+        "TreasureRoundSize": [convert_int(excel_instance.TreasureRoundSize(j), password) for j in range(excel_instance.TreasureRoundSizeLength())],
         "CellVisualSortUnstructed": bool(excel_instance.CellVisualSortUnstructed()),
         "CellCheckGoodsId": convert_int(excel_instance.CellCheckGoodsId(), password),
         "CellRewardId": convert_int(excel_instance.CellRewardId(), password),
-        "RewardIDLength": convert_int(excel_instance.RewardIDLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "RewardID": [convert_int(excel_instance.RewardID(j), password) for j in range(excel_instance.RewardIDLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
         "TreasureCellImagePath": convert_string(excel_instance.TreasureCellImagePath(), password),
     }
 
@@ -26638,10 +3963,10 @@ def dump_EventContentZoneExcel(excel_instance, password: bytes = b"") -> dict:
         "LocationRank": convert_int(excel_instance.LocationRank(), password),
         "EventPointForLocationRank": convert_int(excel_instance.EventPointForLocationRank(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "StudentVisitProbLength": convert_int(excel_instance.StudentVisitProbLength(), password),
+        "StudentVisitProb": [convert_int(excel_instance.StudentVisitProb(j), password) for j in range(excel_instance.StudentVisitProbLength())],
         "RewardGroupId": convert_int(excel_instance.RewardGroupId(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
-        "WhiteListTagsLength": convert_int(excel_instance.WhiteListTagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
+        "WhiteListTags": [excel_instance.WhiteListTags(j) for j in range(excel_instance.WhiteListTagsLength())],
     }
 
 def dump_EventContentZoneVisitRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26651,18 +3976,18 @@ def dump_EventContentZoneVisitRewardExcel(excel_instance, password: bytes = b"")
         "DevName": convert_string(excel_instance.DevName(), password),
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
         "CharacterDevName": convert_string(excel_instance.CharacterDevName(), password),
-        "VisitRewardParcelTypeLength": convert_int(excel_instance.VisitRewardParcelTypeLength(), password),
-        "VisitRewardParcelIdLength": convert_int(excel_instance.VisitRewardParcelIdLength(), password),
-        "VisitRewardAmountLength": convert_int(excel_instance.VisitRewardAmountLength(), password),
-        "VisitRewardProbLength": convert_int(excel_instance.VisitRewardProbLength(), password),
+        "VisitRewardParcelType": [excel_instance.VisitRewardParcelType(j) for j in range(excel_instance.VisitRewardParcelTypeLength())],
+        "VisitRewardParcelId": [convert_int(excel_instance.VisitRewardParcelId(j), password) for j in range(excel_instance.VisitRewardParcelIdLength())],
+        "VisitRewardAmount": [convert_int(excel_instance.VisitRewardAmount(j), password) for j in range(excel_instance.VisitRewardAmountLength())],
+        "VisitRewardProb": [convert_int(excel_instance.VisitRewardProb(j), password) for j in range(excel_instance.VisitRewardProbLength())],
     }
 
 def dump_FarmingDungeonLocationManageExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "FarmingDungeonLocationId": convert_int(excel_instance.FarmingDungeonLocationId(), password),
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "ContentType": excel_instance.ContentType(),
         "WeekDungeonType": convert_float(excel_instance.WeekDungeonType(), password),
-        "SchoolDungeonType": SchoolDungeonType(convert_int(excel_instance.SchoolDungeonType(), password)).name,
+        "SchoolDungeonType": excel_instance.SchoolDungeonType(),
         "Order": convert_int(excel_instance.Order(), password),
         "OpenStartDateTime": convert_string(excel_instance.OpenStartDateTime(), password),
         "OpenEndDateTime": convert_string(excel_instance.OpenEndDateTime(), password),
@@ -26674,15 +3999,15 @@ def dump_FarmingDungeonLocationManageExcel(excel_instance, password: bytes = b""
 def dump_FavorLevelExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Level": convert_int(excel_instance.Level(), password),
-        "ExpTypeLength": convert_int(excel_instance.ExpTypeLength(), password),
+        "ExpType": [convert_int(excel_instance.ExpType(j), password) for j in range(excel_instance.ExpTypeLength())],
     }
 
 def dump_FavorLevelRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
         "FavorLevel": convert_int(excel_instance.FavorLevel(), password),
-        "StatTypeLength": convert_int(excel_instance.StatTypeLength(), password),
-        "StatValueLength": convert_int(excel_instance.StatValueLength(), password),
+        "StatType": [excel_instance.StatType(j) for j in range(excel_instance.StatTypeLength())],
+        "StatValue": [convert_int(excel_instance.StatValue(j), password) for j in range(excel_instance.StatValueLength())],
     }
 
 def dump_FixedEchelonSettingExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26690,36 +4015,36 @@ def dump_FixedEchelonSettingExcel(excel_instance, password: bytes = b"") -> dict
         "FixedEchelonID": convert_int(excel_instance.FixedEchelonID(), password),
         "EchelonSceneSkip": bool(excel_instance.EchelonSceneSkip()),
         "MainLeaderSlot": convert_int(excel_instance.MainLeaderSlot(), password),
-        "MainCharacterIDLength": convert_int(excel_instance.MainCharacterIDLength(), password),
-        "MainLevelLength": convert_int(excel_instance.MainLevelLength(), password),
-        "MainGradeLength": convert_int(excel_instance.MainGradeLength(), password),
-        "MainExSkillLevelLength": convert_int(excel_instance.MainExSkillLevelLength(), password),
-        "MainNoneExSkillLevelLength": convert_int(excel_instance.MainNoneExSkillLevelLength(), password),
-        "MainEquipment1TierLength": convert_int(excel_instance.MainEquipment1TierLength(), password),
-        "MainEquipment1LevelLength": convert_int(excel_instance.MainEquipment1LevelLength(), password),
-        "MainEquipment2TierLength": convert_int(excel_instance.MainEquipment2TierLength(), password),
-        "MainEquipment2LevelLength": convert_int(excel_instance.MainEquipment2LevelLength(), password),
-        "MainEquipment3TierLength": convert_int(excel_instance.MainEquipment3TierLength(), password),
-        "MainEquipment3LevelLength": convert_int(excel_instance.MainEquipment3LevelLength(), password),
-        "MainCharacterWeaponGradeLength": convert_int(excel_instance.MainCharacterWeaponGradeLength(), password),
-        "MainCharacterWeaponLevelLength": convert_int(excel_instance.MainCharacterWeaponLevelLength(), password),
-        "MainCharacterGearTierLength": convert_int(excel_instance.MainCharacterGearTierLength(), password),
-        "MainCharacterGearLevelLength": convert_int(excel_instance.MainCharacterGearLevelLength(), password),
-        "SupportCharacterIDLength": convert_int(excel_instance.SupportCharacterIDLength(), password),
-        "SupportLevelLength": convert_int(excel_instance.SupportLevelLength(), password),
-        "SupportGradeLength": convert_int(excel_instance.SupportGradeLength(), password),
-        "SupportExSkillLevelLength": convert_int(excel_instance.SupportExSkillLevelLength(), password),
-        "SupportNoneExSkillLevelLength": convert_int(excel_instance.SupportNoneExSkillLevelLength(), password),
-        "SupportEquipment1TierLength": convert_int(excel_instance.SupportEquipment1TierLength(), password),
-        "SupportEquipment1LevelLength": convert_int(excel_instance.SupportEquipment1LevelLength(), password),
-        "SupportEquipment2TierLength": convert_int(excel_instance.SupportEquipment2TierLength(), password),
-        "SupportEquipment2LevelLength": convert_int(excel_instance.SupportEquipment2LevelLength(), password),
-        "SupportEquipment3TierLength": convert_int(excel_instance.SupportEquipment3TierLength(), password),
-        "SupportEquipment3LevelLength": convert_int(excel_instance.SupportEquipment3LevelLength(), password),
-        "SupportCharacterWeaponGradeLength": convert_int(excel_instance.SupportCharacterWeaponGradeLength(), password),
-        "SupportCharacterWeaponLevelLength": convert_int(excel_instance.SupportCharacterWeaponLevelLength(), password),
-        "SupportCharacterGearTierLength": convert_int(excel_instance.SupportCharacterGearTierLength(), password),
-        "SupportCharacterGearLevelLength": convert_int(excel_instance.SupportCharacterGearLevelLength(), password),
+        "MainCharacterID": [convert_int(excel_instance.MainCharacterID(j), password) for j in range(excel_instance.MainCharacterIDLength())],
+        "MainLevel": [convert_int(excel_instance.MainLevel(j), password) for j in range(excel_instance.MainLevelLength())],
+        "MainGrade": [convert_int(excel_instance.MainGrade(j), password) for j in range(excel_instance.MainGradeLength())],
+        "MainExSkillLevel": [convert_int(excel_instance.MainExSkillLevel(j), password) for j in range(excel_instance.MainExSkillLevelLength())],
+        "MainNoneExSkillLevel": [convert_int(excel_instance.MainNoneExSkillLevel(j), password) for j in range(excel_instance.MainNoneExSkillLevelLength())],
+        "MainEquipment1Tier": [convert_int(excel_instance.MainEquipment1Tier(j), password) for j in range(excel_instance.MainEquipment1TierLength())],
+        "MainEquipment1Level": [convert_int(excel_instance.MainEquipment1Level(j), password) for j in range(excel_instance.MainEquipment1LevelLength())],
+        "MainEquipment2Tier": [convert_int(excel_instance.MainEquipment2Tier(j), password) for j in range(excel_instance.MainEquipment2TierLength())],
+        "MainEquipment2Level": [convert_int(excel_instance.MainEquipment2Level(j), password) for j in range(excel_instance.MainEquipment2LevelLength())],
+        "MainEquipment3Tier": [convert_int(excel_instance.MainEquipment3Tier(j), password) for j in range(excel_instance.MainEquipment3TierLength())],
+        "MainEquipment3Level": [convert_int(excel_instance.MainEquipment3Level(j), password) for j in range(excel_instance.MainEquipment3LevelLength())],
+        "MainCharacterWeaponGrade": [convert_int(excel_instance.MainCharacterWeaponGrade(j), password) for j in range(excel_instance.MainCharacterWeaponGradeLength())],
+        "MainCharacterWeaponLevel": [convert_int(excel_instance.MainCharacterWeaponLevel(j), password) for j in range(excel_instance.MainCharacterWeaponLevelLength())],
+        "MainCharacterGearTier": [convert_int(excel_instance.MainCharacterGearTier(j), password) for j in range(excel_instance.MainCharacterGearTierLength())],
+        "MainCharacterGearLevel": [convert_int(excel_instance.MainCharacterGearLevel(j), password) for j in range(excel_instance.MainCharacterGearLevelLength())],
+        "SupportCharacterID": [convert_int(excel_instance.SupportCharacterID(j), password) for j in range(excel_instance.SupportCharacterIDLength())],
+        "SupportLevel": [convert_int(excel_instance.SupportLevel(j), password) for j in range(excel_instance.SupportLevelLength())],
+        "SupportGrade": [convert_int(excel_instance.SupportGrade(j), password) for j in range(excel_instance.SupportGradeLength())],
+        "SupportExSkillLevel": [convert_int(excel_instance.SupportExSkillLevel(j), password) for j in range(excel_instance.SupportExSkillLevelLength())],
+        "SupportNoneExSkillLevel": [convert_int(excel_instance.SupportNoneExSkillLevel(j), password) for j in range(excel_instance.SupportNoneExSkillLevelLength())],
+        "SupportEquipment1Tier": [convert_int(excel_instance.SupportEquipment1Tier(j), password) for j in range(excel_instance.SupportEquipment1TierLength())],
+        "SupportEquipment1Level": [convert_int(excel_instance.SupportEquipment1Level(j), password) for j in range(excel_instance.SupportEquipment1LevelLength())],
+        "SupportEquipment2Tier": [convert_int(excel_instance.SupportEquipment2Tier(j), password) for j in range(excel_instance.SupportEquipment2TierLength())],
+        "SupportEquipment2Level": [convert_int(excel_instance.SupportEquipment2Level(j), password) for j in range(excel_instance.SupportEquipment2LevelLength())],
+        "SupportEquipment3Tier": [convert_int(excel_instance.SupportEquipment3Tier(j), password) for j in range(excel_instance.SupportEquipment3TierLength())],
+        "SupportEquipment3Level": [convert_int(excel_instance.SupportEquipment3Level(j), password) for j in range(excel_instance.SupportEquipment3LevelLength())],
+        "SupportCharacterWeaponGrade": [convert_int(excel_instance.SupportCharacterWeaponGrade(j), password) for j in range(excel_instance.SupportCharacterWeaponGradeLength())],
+        "SupportCharacterWeaponLevel": [convert_int(excel_instance.SupportCharacterWeaponLevel(j), password) for j in range(excel_instance.SupportCharacterWeaponLevelLength())],
+        "SupportCharacterGearTier": [convert_int(excel_instance.SupportCharacterGearTier(j), password) for j in range(excel_instance.SupportCharacterGearTierLength())],
+        "SupportCharacterGearLevel": [convert_int(excel_instance.SupportCharacterGearLevel(j), password) for j in range(excel_instance.SupportCharacterGearLevelLength())],
         "InteractionTSCharacterId": convert_int(excel_instance.InteractionTSCharacterId(), password),
     }
 
@@ -26739,7 +4064,7 @@ def dump_FixedStrategyExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_FloaterCommonExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "TacticEntityType": TacticEntityType(convert_int(excel_instance.TacticEntityType(), password)).name,
+        "TacticEntityType": excel_instance.TacticEntityType(),
         "FloaterOffsetPosX": convert_int(excel_instance.FloaterOffsetPosX(), password),
         "FloaterOffsetPosY": convert_int(excel_instance.FloaterOffsetPosY(), password),
         "FloaterRandomPosRangeX": convert_int(excel_instance.FloaterRandomPosRangeX(), password),
@@ -26750,17 +4075,17 @@ def dump_FormationLocationExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "GroupID": convert_int(excel_instance.GroupID(), password),
-        "SlotZLength": convert_int(excel_instance.SlotZLength(), password),
-        "SlotXLength": convert_int(excel_instance.SlotXLength(), password),
+        "SlotZ": [convert_float(excel_instance.SlotZ(j), password) for j in range(excel_instance.SlotZLength())],
+        "SlotX": [convert_float(excel_instance.SlotX(j), password) for j in range(excel_instance.SlotXLength())],
     }
 
 def dump_FurnitureExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
-        "Category": FurnitureCategory(convert_int(excel_instance.Category(), password)).name,
-        "SubCategory": FurnitureSubCategory(convert_int(excel_instance.SubCategory(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
+        "Rarity": excel_instance.Rarity(),
+        "Category": excel_instance.Category(),
+        "SubCategory": excel_instance.SubCategory(),
         "CheckFloorDecoration": bool(excel_instance.CheckFloorDecoration()),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "StarGradeInit": convert_int(excel_instance.StarGradeInit(), password),
@@ -26783,21 +4108,21 @@ def dump_FurnitureExcel(excel_instance, password: bytes = b"") -> dict:
         "ComfortBonus": convert_int(excel_instance.ComfortBonus(), password),
         "VisitOperationType": convert_int(excel_instance.VisitOperationType(), password),
         "VisitBonusOperationType": convert_int(excel_instance.VisitBonusOperationType(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
         "CraftQualityTier0": convert_int(excel_instance.CraftQualityTier0(), password),
         "CraftQualityTier1": convert_int(excel_instance.CraftQualityTier1(), password),
         "CraftQualityTier2": convert_int(excel_instance.CraftQualityTier2(), password),
         "ShiftingCraftQuality": convert_int(excel_instance.ShiftingCraftQuality(), password),
-        "FurnitureFunctionType": FurnitureFunctionType(convert_int(excel_instance.FurnitureFunctionType(), password)).name,
-        "FurnitureFunctionParameterLength": convert_int(excel_instance.FurnitureFunctionParameterLength(), password),
+        "FurnitureFunctionType": excel_instance.FurnitureFunctionType(),
+        "FurnitureFunctionParameter": [convert_int(excel_instance.FurnitureFunctionParameter(j), password) for j in range(excel_instance.FurnitureFunctionParameterLength())],
         "VideoId": convert_int(excel_instance.VideoId(), password),
         "EventCollectionId": convert_int(excel_instance.EventCollectionId(), password),
         "FurnitureBubbleOffsetX": convert_int(excel_instance.FurnitureBubbleOffsetX(), password),
         "FurnitureBubbleOffsetY": convert_int(excel_instance.FurnitureBubbleOffsetY(), password),
-        "CafeCharacterStateReqLength": convert_int(excel_instance.CafeCharacterStateReqLength(), password),
-        "CafeCharacterStateAddLength": convert_int(excel_instance.CafeCharacterStateAddLength(), password),
-        "CafeCharacterStateMakeLength": convert_int(excel_instance.CafeCharacterStateMakeLength(), password),
-        "CafeCharacterStateOnlyLength": convert_int(excel_instance.CafeCharacterStateOnlyLength(), password),
+        "CafeCharacterStateReq": [convert_string(excel_instance.CafeCharacterStateReq(j), password) for j in range(excel_instance.CafeCharacterStateReqLength())],
+        "CafeCharacterStateAdd": [convert_string(excel_instance.CafeCharacterStateAdd(j), password) for j in range(excel_instance.CafeCharacterStateAddLength())],
+        "CafeCharacterStateMake": [convert_string(excel_instance.CafeCharacterStateMake(j), password) for j in range(excel_instance.CafeCharacterStateMakeLength())],
+        "CafeCharacterStateOnly": [convert_string(excel_instance.CafeCharacterStateOnly(j), password) for j in range(excel_instance.CafeCharacterStateOnlyLength())],
         "HideCraftShortcut": bool(excel_instance.HideCraftShortcut()),
     }
 
@@ -26806,15 +4131,15 @@ def dump_FurnitureGroupExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "GroupNameLocalize": convert_uint(excel_instance.GroupNameLocalize(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "RequiredFurnitureCountLength": convert_int(excel_instance.RequiredFurnitureCountLength(), password),
-        "ComfortBonusLength": convert_int(excel_instance.ComfortBonusLength(), password),
+        "RequiredFurnitureCount": [convert_int(excel_instance.RequiredFurnitureCount(j), password) for j in range(excel_instance.RequiredFurnitureCountLength())],
+        "ComfortBonus": [convert_int(excel_instance.ComfortBonus(j), password) for j in range(excel_instance.ComfortBonusLength())],
     }
 
 def dump_FurnitureTemplateElementExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "FurnitureTemplateId": convert_int(excel_instance.FurnitureTemplateId(), password),
         "FurnitureId": convert_int(excel_instance.FurnitureId(), password),
-        "Location": FurnitureLocation(convert_int(excel_instance.Location(), password)).name,
+        "Location": excel_instance.Location(),
         "PositionX": convert_float(excel_instance.PositionX(), password),
         "PositionY": convert_float(excel_instance.PositionY(), password),
         "Rotation": convert_float(excel_instance.Rotation(), password),
@@ -26833,9 +4158,9 @@ def dump_GachaCombinedCostExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "Priority": convert_int(excel_instance.Priority(), password),
-        "ConsumeGachaTicketType": GachaTicketType(convert_int(excel_instance.ConsumeGachaTicketType(), password)).name,
+        "ConsumeGachaTicketType": excel_instance.ConsumeGachaTicketType(),
         "ConsumeGachaTicketTypeAmount": convert_int(excel_instance.ConsumeGachaTicketTypeAmount(), password),
-        "ConsumeParcelType": ParcelType(convert_int(excel_instance.ConsumeParcelType(), password)).name,
+        "ConsumeParcelType": excel_instance.ConsumeParcelType(),
         "ConsumeParcelId": convert_int(excel_instance.ConsumeParcelId(), password),
         "ConsumeParcelAmount": convert_int(excel_instance.ConsumeParcelAmount(), password),
     }
@@ -26861,16 +4186,16 @@ def dump_GachaCraftNodeGroupExcel(excel_instance, password: bytes = b"") -> dict
 def dump_GachaCraftOpenTagExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "NodeTier": convert_int(excel_instance.NodeTier(), password),
-        "TagLength": convert_int(excel_instance.TagLength(), password),
+        "Tag": [excel_instance.Tag(j) for j in range(excel_instance.TagLength())],
     }
 
 def dump_GachaElementExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "ID": convert_int(excel_instance.ID(), password),
         "GachaGroupID": convert_int(excel_instance.GachaGroupID(), password),
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "ParcelID": convert_int(excel_instance.ParcelID(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Rarity": excel_instance.Rarity(),
         "ParcelAmountMin": convert_int(excel_instance.ParcelAmountMin(), password),
         "ParcelAmountMax": convert_int(excel_instance.ParcelAmountMax(), password),
         "Prob": convert_int(excel_instance.Prob(), password),
@@ -26881,7 +4206,7 @@ def dump_GachaElementRecursiveExcel(excel_instance, password: bytes = b"") -> di
     return {
         "ID": convert_int(excel_instance.ID(), password),
         "GachaGroupID": convert_int(excel_instance.GachaGroupID(), password),
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "ParcelID": convert_int(excel_instance.ParcelID(), password),
         "ParcelAmountMin": convert_int(excel_instance.ParcelAmountMin(), password),
         "ParcelAmountMax": convert_int(excel_instance.ParcelAmountMax(), password),
@@ -26894,7 +4219,7 @@ def dump_GachaGroupExcel(excel_instance, password: bytes = b"") -> dict:
         "ID": convert_int(excel_instance.ID(), password),
         "NameKr": convert_string(excel_instance.NameKr(), password),
         "IsRecursive": bool(excel_instance.IsRecursive()),
-        "GroupType": GachaGroupType(convert_int(excel_instance.GroupType(), password)).name,
+        "GroupType": excel_instance.GroupType(),
     }
 
 def dump_GachaSelectPickupGroupExcel(excel_instance, password: bytes = b"") -> dict:
@@ -26908,35 +4233,35 @@ def dump_GoodsExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "Type": convert_int(excel_instance.Type(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Rarity": excel_instance.Rarity(),
         "IconPath": convert_string(excel_instance.IconPath(), password),
-        "ConsumeParcelTypeLength": convert_int(excel_instance.ConsumeParcelTypeLength(), password),
-        "ConsumeParcelIdLength": convert_int(excel_instance.ConsumeParcelIdLength(), password),
-        "ConsumeParcelAmountLength": convert_int(excel_instance.ConsumeParcelAmountLength(), password),
-        "ConsumeConditionLength": convert_int(excel_instance.ConsumeConditionLength(), password),
-        "ConsumeGachaTicketTypeLength": convert_int(excel_instance.ConsumeGachaTicketTypeLength(), password),
-        "ConsumeGachaTicketTypeAmountLength": convert_int(excel_instance.ConsumeGachaTicketTypeAmountLength(), password),
+        "ConsumeParcelType": [excel_instance.ConsumeParcelType(j) for j in range(excel_instance.ConsumeParcelTypeLength())],
+        "ConsumeParcelId": [convert_int(excel_instance.ConsumeParcelId(j), password) for j in range(excel_instance.ConsumeParcelIdLength())],
+        "ConsumeParcelAmount": [convert_int(excel_instance.ConsumeParcelAmount(j), password) for j in range(excel_instance.ConsumeParcelAmountLength())],
+        "ConsumeCondition": [excel_instance.ConsumeCondition(j) for j in range(excel_instance.ConsumeConditionLength())],
+        "ConsumeGachaTicketType": [excel_instance.ConsumeGachaTicketType(j) for j in range(excel_instance.ConsumeGachaTicketTypeLength())],
+        "ConsumeGachaTicketTypeAmount": [convert_int(excel_instance.ConsumeGachaTicketTypeAmount(j), password) for j in range(excel_instance.ConsumeGachaTicketTypeAmountLength())],
         "CombinedGachaCostId": convert_int(excel_instance.CombinedGachaCostId(), password),
         "ProductIdAOS": convert_int(excel_instance.ProductIdAOS(), password),
         "ProductIdiOS": convert_int(excel_instance.ProductIdiOS(), password),
         "ProductIdHarmony": convert_int(excel_instance.ProductIdHarmony(), password),
-        "ConsumeExtraStepLength": convert_int(excel_instance.ConsumeExtraStepLength(), password),
-        "ConsumeExtraAmountLength": convert_int(excel_instance.ConsumeExtraAmountLength(), password),
+        "ConsumeExtraStep": [convert_int(excel_instance.ConsumeExtraStep(j), password) for j in range(excel_instance.ConsumeExtraStepLength())],
+        "ConsumeExtraAmount": [convert_int(excel_instance.ConsumeExtraAmount(j), password) for j in range(excel_instance.ConsumeExtraAmountLength())],
         "State": convert_int(excel_instance.State(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ParcelAmountLength": convert_int(excel_instance.ParcelAmountLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ParcelAmount": [convert_int(excel_instance.ParcelAmount(j), password) for j in range(excel_instance.ParcelAmountLength())],
     }
 
 def dump_GroundExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "StageFileNameLength": convert_int(excel_instance.StageFileNameLength(), password),
+        "StageFileName": [convert_string(excel_instance.StageFileName(j), password) for j in range(excel_instance.StageFileNameLength())],
         "GroundSceneName": convert_string(excel_instance.GroundSceneName(), password),
         "FormationGroupId": convert_int(excel_instance.FormationGroupId(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
-        "EnemyBulletType": BulletType(convert_int(excel_instance.EnemyBulletType(), password)).name,
-        "EnemyArmorType": ArmorType(convert_int(excel_instance.EnemyArmorType(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
+        "EnemyBulletType": excel_instance.EnemyBulletType(),
+        "EnemyArmorType": excel_instance.EnemyArmorType(),
         "LevelNPC": convert_int(excel_instance.LevelNPC(), password),
         "LevelMinion": convert_int(excel_instance.LevelMinion(), password),
         "LevelElite": convert_int(excel_instance.LevelElite(), password),
@@ -26969,12 +4294,12 @@ def dump_GroundExcel(excel_instance, password: bytes = b"") -> dict:
         "BGMId": convert_int(excel_instance.BGMId(), password),
         "WarningUI": bool(excel_instance.WarningUI()),
         "TSSHatchOpen": bool(excel_instance.TSSHatchOpen()),
-        "ForcedTacticSpeed": TacticSpeed(convert_int(excel_instance.ForcedTacticSpeed(), password)).name,
-        "ForcedSkillUse": TacticSkillUse(convert_int(excel_instance.ForcedSkillUse(), password)).name,
-        "ShowNPCSkillCutIn": ShowSkillCutIn(convert_int(excel_instance.ShowNPCSkillCutIn(), password)).name,
+        "ForcedTacticSpeed": excel_instance.ForcedTacticSpeed(),
+        "ForcedSkillUse": excel_instance.ForcedSkillUse(),
+        "ShowNPCSkillCutIn": excel_instance.ShowNPCSkillCutIn(),
         "ImmuneHitBeforeTimeOutEnd": bool(excel_instance.ImmuneHitBeforeTimeOutEnd()),
         "UIBattleHideFromScratch": bool(excel_instance.UIBattleHideFromScratch()),
-        "UIEnemyCount": UIEnemyCountType(convert_int(excel_instance.UIEnemyCount(), password)).name,
+        "UIEnemyCount": excel_instance.UIEnemyCount(),
         "BattleReadyTimelinePath": convert_string(excel_instance.BattleReadyTimelinePath(), password),
         "BeforeVictoryTimelinePath": convert_string(excel_instance.BeforeVictoryTimelinePath(), password),
         "SkipBattleEnd": bool(excel_instance.SkipBattleEnd()),
@@ -26985,16 +4310,16 @@ def dump_GroundExcel(excel_instance, password: bytes = b"") -> dict:
         "UISkillMainLogScale": convert_float(excel_instance.UISkillMainLogScale(), password),
         "EffectCountLimit": convert_int(excel_instance.EffectCountLimit(), password),
         "CarrierSkillGroupId": convert_int(excel_instance.CarrierSkillGroupId(), password),
-        "AllyPassiveSkillIdLength": convert_int(excel_instance.AllyPassiveSkillIdLength(), password),
-        "AllyPassiveSkillLevelLength": convert_int(excel_instance.AllyPassiveSkillLevelLength(), password),
-        "EnemyPassiveSkillIdLength": convert_int(excel_instance.EnemyPassiveSkillIdLength(), password),
-        "EnemyPassiveSkillLevelLength": convert_int(excel_instance.EnemyPassiveSkillLevelLength(), password),
+        "AllyPassiveSkillId": [convert_string(excel_instance.AllyPassiveSkillId(j), password) for j in range(excel_instance.AllyPassiveSkillIdLength())],
+        "AllyPassiveSkillLevel": [convert_int(excel_instance.AllyPassiveSkillLevel(j), password) for j in range(excel_instance.AllyPassiveSkillLevelLength())],
+        "EnemyPassiveSkillId": [convert_string(excel_instance.EnemyPassiveSkillId(j), password) for j in range(excel_instance.EnemyPassiveSkillIdLength())],
+        "EnemyPassiveSkillLevel": [convert_int(excel_instance.EnemyPassiveSkillLevel(j), password) for j in range(excel_instance.EnemyPassiveSkillLevelLength())],
     }
 
 def dump_GroundModuleRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "GroupId": convert_uint(excel_instance.GroupId(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
         "RewardParcelProbability": convert_int(excel_instance.RewardParcelProbability(), password),
@@ -27005,7 +4330,7 @@ def dump_GroundModuleRewardExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_GrowthScoreCalculationExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "IncludeGrowthFactor": GrowthFactor(convert_int(excel_instance.IncludeGrowthFactor(), password)).name,
+        "IncludeGrowthFactor": excel_instance.IncludeGrowthFactor(),
         "ConversionCoefficient": convert_int(excel_instance.ConversionCoefficient(), password),
     }
 
@@ -27013,22 +4338,22 @@ def dump_GuideMissionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "SeasonId": convert_int(excel_instance.SeasonId(), password),
         "Id": convert_int(excel_instance.Id(), password),
-        "Category": MissionCategory(convert_int(excel_instance.Category(), password)).name,
+        "Category": excel_instance.Category(),
         "IsLegacy": bool(excel_instance.IsLegacy()),
         "TabNumber": convert_int(excel_instance.TabNumber(), password),
-        "PreMissionIdLength": convert_int(excel_instance.PreMissionIdLength(), password),
+        "PreMissionId": [convert_int(excel_instance.PreMissionId(j), password) for j in range(excel_instance.PreMissionIdLength())],
         "Description": convert_uint(excel_instance.Description(), password),
-        "ToastDisplayType": MissionToastDisplayConditionType(convert_int(excel_instance.ToastDisplayType(), password)).name,
+        "ToastDisplayType": excel_instance.ToastDisplayType(),
         "ToastImagePath": convert_string(excel_instance.ToastImagePath(), password),
-        "ShortcutUILength": convert_int(excel_instance.ShortcutUILength(), password),
-        "CompleteConditionType": MissionCompleteConditionType(convert_int(excel_instance.CompleteConditionType(), password)).name,
+        "ShortcutUI": [convert_string(excel_instance.ShortcutUI(j), password) for j in range(excel_instance.ShortcutUILength())],
+        "CompleteConditionType": excel_instance.CompleteConditionType(),
         "CompleteConditionCount": convert_int(excel_instance.CompleteConditionCount(), password),
-        "CompleteConditionParameterLength": convert_int(excel_instance.CompleteConditionParameterLength(), password),
-        "CompleteConditionParameterTagLength": convert_int(excel_instance.CompleteConditionParameterTagLength(), password),
+        "CompleteConditionParameter": [convert_int(excel_instance.CompleteConditionParameter(j), password) for j in range(excel_instance.CompleteConditionParameterLength())],
+        "CompleteConditionParameterTag": [excel_instance.CompleteConditionParameterTag(j) for j in range(excel_instance.CompleteConditionParameterTagLength())],
         "IsAutoClearForScenario": bool(excel_instance.IsAutoClearForScenario()),
-        "MissionRewardParcelTypeLength": convert_int(excel_instance.MissionRewardParcelTypeLength(), password),
-        "MissionRewardParcelIdLength": convert_int(excel_instance.MissionRewardParcelIdLength(), password),
-        "MissionRewardAmountLength": convert_int(excel_instance.MissionRewardAmountLength(), password),
+        "MissionRewardParcelType": [excel_instance.MissionRewardParcelType(j) for j in range(excel_instance.MissionRewardParcelTypeLength())],
+        "MissionRewardParcelId": [convert_int(excel_instance.MissionRewardParcelId(j), password) for j in range(excel_instance.MissionRewardParcelIdLength())],
+        "MissionRewardAmount": [convert_int(excel_instance.MissionRewardAmount(j), password) for j in range(excel_instance.MissionRewardAmountLength())],
     }
 
 def dump_GuideMissionOpenStageConditionExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27050,7 +4375,7 @@ def dump_GuideMissionSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "TitleLocalizeCode": convert_string(excel_instance.TitleLocalizeCode(), password),
         "PermanentInfomationLocalizeCode": convert_string(excel_instance.PermanentInfomationLocalizeCode(), password),
         "InfomationLocalizeCode": convert_string(excel_instance.InfomationLocalizeCode(), password),
-        "TargetGroup": TargetGroup(convert_int(excel_instance.TargetGroup(), password)).name,
+        "TargetGroup": excel_instance.TargetGroup(),
         "Enabled": bool(excel_instance.Enabled()),
         "BannerOpenDate": convert_string(excel_instance.BannerOpenDate(), password),
         "StartDate": convert_string(excel_instance.StartDate(), password),
@@ -27066,10 +4391,10 @@ def dump_GuideMissionSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "LobbyBannerImage": convert_string(excel_instance.LobbyBannerImage(), password),
         "BackgroundImage": convert_string(excel_instance.BackgroundImage(), password),
         "TitleImage": convert_string(excel_instance.TitleImage(), password),
-        "RequirementParcelType": ParcelType(convert_int(excel_instance.RequirementParcelType(), password)).name,
+        "RequirementParcelType": excel_instance.RequirementParcelType(),
         "RequirementParcelId": convert_int(excel_instance.RequirementParcelId(), password),
         "RequirementParcelAmount": convert_int(excel_instance.RequirementParcelAmount(), password),
-        "TabType": GuideMissionTabType(convert_int(excel_instance.TabType(), password)).name,
+        "TabType": excel_instance.TabType(),
         "IsPermanent": bool(excel_instance.IsPermanent()),
         "PreSeasonId": convert_int(excel_instance.PreSeasonId(), password),
     }
@@ -27086,7 +4411,7 @@ def dump_IAWorldRaidStageRewardExcel(excel_instance, password: bytes = b"") -> d
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "IsClearStageRewardHideInfo": bool(excel_instance.IsClearStageRewardHideInfo()),
         "ClearStageRewardProb": convert_int(excel_instance.ClearStageRewardProb(), password),
-        "ClearStageRewardParcelType": ParcelType(convert_int(excel_instance.ClearStageRewardParcelType(), password)).name,
+        "ClearStageRewardParcelType": excel_instance.ClearStageRewardParcelType(),
         "ClearStageRewardParcelUniqueID": convert_int(excel_instance.ClearStageRewardParcelUniqueID(), password),
         "ClearStageRewardParcelUniqueName": convert_string(excel_instance.ClearStageRewardParcelUniqueName(), password),
         "ClearStageRewardAmount": convert_int(excel_instance.ClearStageRewardAmount(), password),
@@ -27095,7 +4420,7 @@ def dump_IAWorldRaidStageRewardExcel(excel_instance, password: bytes = b"") -> d
 def dump_IdCardBackgroundExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
+        "Rarity": excel_instance.Rarity(),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "CollectionVisible": bool(excel_instance.CollectionVisible()),
         "IsDefault": bool(excel_instance.IsDefault()),
@@ -27110,8 +4435,8 @@ def dump_InformationExcel(excel_instance, password: bytes = b"") -> dict:
         "PageName": convert_string(excel_instance.PageName(), password),
         "IsPcBuild": bool(excel_instance.IsPcBuild()),
         "LocalizeCodeId": convert_string(excel_instance.LocalizeCodeId(), password),
-        "TutorialParentNameLength": convert_int(excel_instance.TutorialParentNameLength(), password),
-        "UINameLength": convert_int(excel_instance.UINameLength(), password),
+        "TutorialParentName": [convert_string(excel_instance.TutorialParentName(j), password) for j in range(excel_instance.TutorialParentNameLength())],
+        "UIName": [convert_string(excel_instance.UIName(j), password) for j in range(excel_instance.UINameLength())],
     }
 
 def dump_InformationStrategyObjectExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27125,14 +4450,14 @@ def dump_InformationStrategyObjectExcel(excel_instance, password: bytes = b"") -
 def dump_InteractiveWorldRaidArcadeMachineExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "MiniGameTypeLength": convert_int(excel_instance.MiniGameTypeLength(), password),
-        "MiniGameCostItemIdLength": convert_int(excel_instance.MiniGameCostItemIdLength(), password),
-        "MiniGameCostItemAmountLength": convert_int(excel_instance.MiniGameCostItemAmountLength(), password),
-        "MiniGameSoftLimitItemIdLength": convert_int(excel_instance.MiniGameSoftLimitItemIdLength(), password),
-        "MiniGameSoftLimitItemAmountLength": convert_int(excel_instance.MiniGameSoftLimitItemAmountLength(), password),
-        "MiniGameImageLength": convert_int(excel_instance.MiniGameImageLength(), password),
-        "LocalizeTitleLength": convert_int(excel_instance.LocalizeTitleLength(), password),
-        "LocalizeDescLength": convert_int(excel_instance.LocalizeDescLength(), password),
+        "MiniGameType": [excel_instance.MiniGameType(j) for j in range(excel_instance.MiniGameTypeLength())],
+        "MiniGameCostItemId": [convert_int(excel_instance.MiniGameCostItemId(j), password) for j in range(excel_instance.MiniGameCostItemIdLength())],
+        "MiniGameCostItemAmount": [convert_int(excel_instance.MiniGameCostItemAmount(j), password) for j in range(excel_instance.MiniGameCostItemAmountLength())],
+        "MiniGameSoftLimitItemId": [convert_string(excel_instance.MiniGameSoftLimitItemId(j), password) for j in range(excel_instance.MiniGameSoftLimitItemIdLength())],
+        "MiniGameSoftLimitItemAmount": [convert_string(excel_instance.MiniGameSoftLimitItemAmount(j), password) for j in range(excel_instance.MiniGameSoftLimitItemAmountLength())],
+        "MiniGameImage": [convert_string(excel_instance.MiniGameImage(j), password) for j in range(excel_instance.MiniGameImageLength())],
+        "LocalizeTitle": [convert_uint(excel_instance.LocalizeTitle(j), password) for j in range(excel_instance.LocalizeTitleLength())],
+        "LocalizeDesc": [convert_uint(excel_instance.LocalizeDesc(j), password) for j in range(excel_instance.LocalizeDescLength())],
     }
 
 def dump_InteractiveWorldRaidBossGroupExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27151,7 +4476,7 @@ def dump_InteractiveWorldRaidBossGroupExcel(excel_instance, password: bytes = b"
         "UIHideBeforeSpawn": bool(excel_instance.UIHideBeforeSpawn()),
         "HideAnotherBossKilled": bool(excel_instance.HideAnotherBossKilled()),
         "WorldBossClearRewardGroupId": convert_int(excel_instance.WorldBossClearRewardGroupId(), password),
-        "AnotherBossKilledLength": convert_int(excel_instance.AnotherBossKilledLength(), password),
+        "AnotherBossKilled": [convert_int(excel_instance.AnotherBossKilled(j), password) for j in range(excel_instance.AnotherBossKilledLength())],
         "EchelonConstraintGroupId": convert_int(excel_instance.EchelonConstraintGroupId(), password),
         "ExclusiveOperatorBossSpawn": convert_string(excel_instance.ExclusiveOperatorBossSpawn(), password),
         "ExclusiveOperatorBossKill": convert_string(excel_instance.ExclusiveOperatorBossKill(), password),
@@ -27169,18 +4494,18 @@ def dump_InteractiveWorldRaidCarrierExcel(excel_instance, password: bytes = b"")
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
         "CharacterLevel": convert_int(excel_instance.CharacterLevel(), password),
         "CharacterGrade": convert_int(excel_instance.CharacterGrade(), password),
-        "ExSkillGroupIdLength": convert_int(excel_instance.ExSkillGroupIdLength(), password),
-        "ExSkillCardTextureLength": convert_int(excel_instance.ExSkillCardTextureLength(), password),
-        "FixedExSkillLevelLength": convert_int(excel_instance.FixedExSkillLevelLength(), password),
-        "PassiveSkillGroupIdLength": convert_int(excel_instance.PassiveSkillGroupIdLength(), password),
-        "PassiveSkillCardTextureLength": convert_int(excel_instance.PassiveSkillCardTextureLength(), password),
-        "FixedPassiveSkillLevelLength": convert_int(excel_instance.FixedPassiveSkillLevelLength(), password),
-        "ExtraPassiveSkillGroupIdLength": convert_int(excel_instance.ExtraPassiveSkillGroupIdLength(), password),
-        "ExtraPassiveSkillCardTextureLength": convert_int(excel_instance.ExtraPassiveSkillCardTextureLength(), password),
-        "FixedExtraPassiveSkillLevelLength": convert_int(excel_instance.FixedExtraPassiveSkillLevelLength(), password),
-        "HiddenPassiveSkillGroupIdLength": convert_int(excel_instance.HiddenPassiveSkillGroupIdLength(), password),
-        "HiddenPassiveSkillCardTextureLength": convert_int(excel_instance.HiddenPassiveSkillCardTextureLength(), password),
-        "FixedHiddenPassiveSkillLevelLength": convert_int(excel_instance.FixedHiddenPassiveSkillLevelLength(), password),
+        "ExSkillGroupId": [convert_string(excel_instance.ExSkillGroupId(j), password) for j in range(excel_instance.ExSkillGroupIdLength())],
+        "ExSkillCardTexture": [convert_string(excel_instance.ExSkillCardTexture(j), password) for j in range(excel_instance.ExSkillCardTextureLength())],
+        "FixedExSkillLevel": [convert_int(excel_instance.FixedExSkillLevel(j), password) for j in range(excel_instance.FixedExSkillLevelLength())],
+        "PassiveSkillGroupId": [convert_string(excel_instance.PassiveSkillGroupId(j), password) for j in range(excel_instance.PassiveSkillGroupIdLength())],
+        "PassiveSkillCardTexture": [convert_string(excel_instance.PassiveSkillCardTexture(j), password) for j in range(excel_instance.PassiveSkillCardTextureLength())],
+        "FixedPassiveSkillLevel": [convert_int(excel_instance.FixedPassiveSkillLevel(j), password) for j in range(excel_instance.FixedPassiveSkillLevelLength())],
+        "ExtraPassiveSkillGroupId": [convert_string(excel_instance.ExtraPassiveSkillGroupId(j), password) for j in range(excel_instance.ExtraPassiveSkillGroupIdLength())],
+        "ExtraPassiveSkillCardTexture": [convert_string(excel_instance.ExtraPassiveSkillCardTexture(j), password) for j in range(excel_instance.ExtraPassiveSkillCardTextureLength())],
+        "FixedExtraPassiveSkillLevel": [convert_int(excel_instance.FixedExtraPassiveSkillLevel(j), password) for j in range(excel_instance.FixedExtraPassiveSkillLevelLength())],
+        "HiddenPassiveSkillGroupId": [convert_string(excel_instance.HiddenPassiveSkillGroupId(j), password) for j in range(excel_instance.HiddenPassiveSkillGroupIdLength())],
+        "HiddenPassiveSkillCardTexture": [convert_string(excel_instance.HiddenPassiveSkillCardTexture(j), password) for j in range(excel_instance.HiddenPassiveSkillCardTextureLength())],
+        "FixedHiddenPassiveSkillLevel": [convert_int(excel_instance.FixedHiddenPassiveSkillLevel(j), password) for j in range(excel_instance.FixedHiddenPassiveSkillLevelLength())],
     }
 
 def dump_InteractiveWorldRaidCarrierMapExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27193,7 +4518,7 @@ def dump_InteractiveWorldRaidCarrierMapExcel(excel_instance, password: bytes = b
         "ReplaySeasonOriginalPhaseId": convert_int(excel_instance.ReplaySeasonOriginalPhaseId(), password),
         "RecentClearBossGroupId": convert_int(excel_instance.RecentClearBossGroupId(), password),
         "RecentClearEventStageId": convert_int(excel_instance.RecentClearEventStageId(), password),
-        "ChangeTarget": WorldRaidMapType(convert_int(excel_instance.ChangeTarget(), password)).name,
+        "ChangeTarget": excel_instance.ChangeTarget(),
         "Priority": convert_int(excel_instance.Priority(), password),
         "ArtLevelPath": convert_string(excel_instance.ArtLevelPath(), password),
         "DesignLevelPath": convert_string(excel_instance.DesignLevelPath(), password),
@@ -27213,7 +4538,7 @@ def dump_InteractiveWorldRaidCarrierRecipeExcel(excel_instance, password: bytes 
         "SkillId": convert_int(excel_instance.SkillId(), password),
         "SkillSlot": convert_string(excel_instance.SkillSlot(), password),
         "Level": convert_int(excel_instance.Level(), password),
-        "RecipeIngredientIdLength": convert_int(excel_instance.RecipeIngredientIdLength(), password),
+        "RecipeIngredientId": [convert_int(excel_instance.RecipeIngredientId(j), password) for j in range(excel_instance.RecipeIngredientIdLength())],
     }
 
 def dump_InteractiveWorldRaidConditionExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27222,10 +4547,10 @@ def dump_InteractiveWorldRaidConditionExcel(excel_instance, password: bytes = b"
         "WorldRaidSeasonId": convert_int(excel_instance.WorldRaidSeasonId(), password),
         "WorldRaidPhaseId": convert_int(excel_instance.WorldRaidPhaseId(), password),
         "Priority": convert_int(excel_instance.Priority(), password),
-        "MultipleConditionCheckType": MultipleConditionCheckType(convert_int(excel_instance.MultipleConditionCheckType(), password)).name,
+        "MultipleConditionCheckType": excel_instance.MultipleConditionCheckType(),
         "MultipleConditionCheckParameter": convert_int(excel_instance.MultipleConditionCheckParameter(), password),
-        "ConditionTypeLength": convert_int(excel_instance.ConditionTypeLength(), password),
-        "ConditionValueLength": convert_int(excel_instance.ConditionValueLength(), password),
+        "ConditionType": [excel_instance.ConditionType(j) for j in range(excel_instance.ConditionTypeLength())],
+        "ConditionValue": [convert_int(excel_instance.ConditionValue(j), password) for j in range(excel_instance.ConditionValueLength())],
     }
 
 def dump_InteractiveWorldRaidSeasonManageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27234,7 +4559,7 @@ def dump_InteractiveWorldRaidSeasonManageExcel(excel_instance, password: bytes =
         "PhaseId": convert_int(excel_instance.PhaseId(), password),
         "PhaseStartCondition": convert_int(excel_instance.PhaseStartCondition(), password),
         "IsReplaySeason": bool(excel_instance.IsReplaySeason()),
-        "EnterTicket": CurrencyTypes(convert_int(excel_instance.EnterTicket(), password)).name,
+        "EnterTicket": excel_instance.EnterTicket(),
         "PhaseStartTime": convert_string(excel_instance.PhaseStartTime(), password),
         "PhaseEndTime": convert_string(excel_instance.PhaseEndTime(), password),
         "WorldRaidLobbyScene": convert_string(excel_instance.WorldRaidLobbyScene(), password),
@@ -27250,11 +4575,11 @@ def dump_InteractiveWorldRaidSeasonManageExcel(excel_instance, password: bytes =
         "HideWorldRaidTicketUI": bool(excel_instance.HideWorldRaidTicketUI()),
         "HideWorldRaidBossCompleteRewardUI": bool(excel_instance.HideWorldRaidBossCompleteRewardUI()),
         "UseWorldRaidCommonToast": bool(excel_instance.UseWorldRaidCommonToast()),
-        "OpenRaidBossGroupIdLength": convert_int(excel_instance.OpenRaidBossGroupIdLength(), password),
-        "BossSpawnTimeLength": convert_int(excel_instance.BossSpawnTimeLength(), password),
-        "EliminateTimeLength": convert_int(excel_instance.EliminateTimeLength(), password),
-        "ScenarioOutputConditionIdLength": convert_int(excel_instance.ScenarioOutputConditionIdLength(), password),
-        "ConditionScenarioGroupidLength": convert_int(excel_instance.ConditionScenarioGroupidLength(), password),
+        "OpenRaidBossGroupId": [convert_int(excel_instance.OpenRaidBossGroupId(j), password) for j in range(excel_instance.OpenRaidBossGroupIdLength())],
+        "BossSpawnTime": [convert_string(excel_instance.BossSpawnTime(j), password) for j in range(excel_instance.BossSpawnTimeLength())],
+        "EliminateTime": [convert_string(excel_instance.EliminateTime(j), password) for j in range(excel_instance.EliminateTimeLength())],
+        "ScenarioOutputConditionId": [convert_int(excel_instance.ScenarioOutputConditionId(j), password) for j in range(excel_instance.ScenarioOutputConditionIdLength())],
+        "ConditionScenarioGroupid": [convert_int(excel_instance.ConditionScenarioGroupid(j), password) for j in range(excel_instance.ConditionScenarioGroupidLength())],
         "CarrierSkillGroupId": convert_int(excel_instance.CarrierSkillGroupId(), password),
         "WorldRaidMapEnterOperator": convert_string(excel_instance.WorldRaidMapEnterOperator(), password),
         "UseFavorRankBuff": bool(excel_instance.UseFavorRankBuff()),
@@ -27263,14 +4588,14 @@ def dump_InteractiveWorldRaidSeasonManageExcel(excel_instance, password: bytes =
 def dump_InteractiveWorldRaidSkillDescriptionListExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "SkillParcelEchelonType": EchelonExtensionType(convert_int(excel_instance.SkillParcelEchelonType(), password)).name,
-        "GlobalSkillGroupIdLength": convert_int(excel_instance.GlobalSkillGroupIdLength(), password),
-        "GlobalSkillRemoveConditionLength": convert_int(excel_instance.GlobalSkillRemoveConditionLength(), password),
-        "GlobalSkillShowSkillSlotLength": convert_int(excel_instance.GlobalSkillShowSkillSlotLength(), password),
-        "GlobalSkillHighlightResourceLength": convert_int(excel_instance.GlobalSkillHighlightResourceLength(), password),
-        "SkillGroupIdLength": convert_int(excel_instance.SkillGroupIdLength(), password),
-        "ShowSkillSlotLength": convert_int(excel_instance.ShowSkillSlotLength(), password),
-        "HighlightResourceLength": convert_int(excel_instance.HighlightResourceLength(), password),
+        "SkillParcelEchelonType": excel_instance.SkillParcelEchelonType(),
+        "GlobalSkillGroupId": [convert_string(excel_instance.GlobalSkillGroupId(j), password) for j in range(excel_instance.GlobalSkillGroupIdLength())],
+        "GlobalSkillRemoveCondition": [convert_int(excel_instance.GlobalSkillRemoveCondition(j), password) for j in range(excel_instance.GlobalSkillRemoveConditionLength())],
+        "GlobalSkillShowSkillSlot": [excel_instance.GlobalSkillShowSkillSlot(j) for j in range(excel_instance.GlobalSkillShowSkillSlotLength())],
+        "GlobalSkillHighlightResource": [excel_instance.GlobalSkillHighlightResource(j) for j in range(excel_instance.GlobalSkillHighlightResourceLength())],
+        "SkillGroupId": [convert_string(excel_instance.SkillGroupId(j), password) for j in range(excel_instance.SkillGroupIdLength())],
+        "ShowSkillSlot": [excel_instance.ShowSkillSlot(j) for j in range(excel_instance.ShowSkillSlotLength())],
+        "HighlightResource": [excel_instance.HighlightResource(j) for j in range(excel_instance.HighlightResourceLength())],
     }
 
 def dump_InteractiveWorldRaidStageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27283,9 +4608,9 @@ def dump_InteractiveWorldRaidStageExcel(excel_instance, password: bytes = b"") -
         "BGPath": convert_string(excel_instance.BGPath(), password),
         "RaidSkillDescriptionListId": convert_int(excel_instance.RaidSkillDescriptionListId(), password),
         "RaidCharacterId": convert_int(excel_instance.RaidCharacterId(), password),
-        "BossCharacterIdLength": convert_int(excel_instance.BossCharacterIdLength(), password),
+        "BossCharacterId": [convert_int(excel_instance.BossCharacterId(j), password) for j in range(excel_instance.BossCharacterIdLength())],
         "AssistCharacterLimitCount": convert_int(excel_instance.AssistCharacterLimitCount(), password),
-        "WorldRaidDifficulty": WorldRaidDifficulty(convert_int(excel_instance.WorldRaidDifficulty(), password)).name,
+        "WorldRaidDifficulty": excel_instance.WorldRaidDifficulty(),
         "DifficultyOpenCondition": bool(excel_instance.DifficultyOpenCondition()),
         "RaidEnterAmount": convert_int(excel_instance.RaidEnterAmount(), password),
         "ReEnterAmount": convert_int(excel_instance.ReEnterAmount(), password),
@@ -27293,9 +4618,9 @@ def dump_InteractiveWorldRaidStageExcel(excel_instance, password: bytes = b"") -
         "GroundId": convert_int(excel_instance.GroundId(), password),
         "RaidBattleEndRewardGroupId": convert_int(excel_instance.RaidBattleEndRewardGroupId(), password),
         "RaidRewardGroupId": convert_int(excel_instance.RaidRewardGroupId(), password),
-        "BattleReadyTimelinePathLength": convert_int(excel_instance.BattleReadyTimelinePathLength(), password),
-        "BattleReadyTimelinePhaseStartLength": convert_int(excel_instance.BattleReadyTimelinePhaseStartLength(), password),
-        "BattleReadyTimelinePhaseEndLength": convert_int(excel_instance.BattleReadyTimelinePhaseEndLength(), password),
+        "BattleReadyTimelinePath": [convert_string(excel_instance.BattleReadyTimelinePath(j), password) for j in range(excel_instance.BattleReadyTimelinePathLength())],
+        "BattleReadyTimelinePhaseStart": [convert_int(excel_instance.BattleReadyTimelinePhaseStart(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseStartLength())],
+        "BattleReadyTimelinePhaseEnd": [convert_int(excel_instance.BattleReadyTimelinePhaseEnd(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseEndLength())],
         "VictoryTimelinePath": convert_string(excel_instance.VictoryTimelinePath(), password),
         "PhaseChangeTimelinePath": convert_string(excel_instance.PhaseChangeTimelinePath(), password),
         "TimeLinePhase": convert_int(excel_instance.TimeLinePhase(), password),
@@ -27307,14 +4632,14 @@ def dump_InteractiveWorldRaidStageExcel(excel_instance, password: bytes = b"") -
         "ShowSkillCard": bool(excel_instance.ShowSkillCard()),
         "BossBGInfoKey": convert_uint(excel_instance.BossBGInfoKey(), password),
         "DamageToWorldBoss": convert_int(excel_instance.DamageToWorldBoss(), password),
-        "AllyPassiveSkillLength": convert_int(excel_instance.AllyPassiveSkillLength(), password),
-        "AllyPassiveSkillLevelLength": convert_int(excel_instance.AllyPassiveSkillLevelLength(), password),
-        "AllyPassiveSkillRemoveConditionLength": convert_int(excel_instance.AllyPassiveSkillRemoveConditionLength(), password),
-        "EnemyPassiveSkillLength": convert_int(excel_instance.EnemyPassiveSkillLength(), password),
-        "EnemyPassiveSkillLevelLength": convert_int(excel_instance.EnemyPassiveSkillLevelLength(), password),
-        "EnemyPassiveSkillRemoveConditionLength": convert_int(excel_instance.EnemyPassiveSkillRemoveConditionLength(), password),
+        "AllyPassiveSkill": [convert_string(excel_instance.AllyPassiveSkill(j), password) for j in range(excel_instance.AllyPassiveSkillLength())],
+        "AllyPassiveSkillLevel": [convert_int(excel_instance.AllyPassiveSkillLevel(j), password) for j in range(excel_instance.AllyPassiveSkillLevelLength())],
+        "AllyPassiveSkillRemoveCondition": [convert_int(excel_instance.AllyPassiveSkillRemoveCondition(j), password) for j in range(excel_instance.AllyPassiveSkillRemoveConditionLength())],
+        "EnemyPassiveSkill": [convert_string(excel_instance.EnemyPassiveSkill(j), password) for j in range(excel_instance.EnemyPassiveSkillLength())],
+        "EnemyPassiveSkillLevel": [convert_int(excel_instance.EnemyPassiveSkillLevel(j), password) for j in range(excel_instance.EnemyPassiveSkillLevelLength())],
+        "EnemyPassiveSkillRemoveCondition": [convert_int(excel_instance.EnemyPassiveSkillRemoveCondition(j), password) for j in range(excel_instance.EnemyPassiveSkillRemoveConditionLength())],
         "SaveCurrentLocalBossHP": bool(excel_instance.SaveCurrentLocalBossHP()),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_InteractiveWorldRaidStatusPresetExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27323,45 +4648,45 @@ def dump_InteractiveWorldRaidStatusPresetExcel(excel_instance, password: bytes =
         "WorldRaidSeasonId": convert_int(excel_instance.WorldRaidSeasonId(), password),
         "WorldRaidPhaseId": convert_int(excel_instance.WorldRaidPhaseId(), password),
         "ScenarioModeId": convert_int(excel_instance.ScenarioModeId(), password),
-        "IAWorldRaidGroupIdLength": convert_int(excel_instance.IAWorldRaidGroupIdLength(), password),
-        "EventContentStageIdLength": convert_int(excel_instance.EventContentStageIdLength(), password),
-        "EventContentScenarioIdLength": convert_int(excel_instance.EventContentScenarioIdLength(), password),
+        "IAWorldRaidGroupId": [convert_int(excel_instance.IAWorldRaidGroupId(j), password) for j in range(excel_instance.IAWorldRaidGroupIdLength())],
+        "EventContentStageId": [convert_int(excel_instance.EventContentStageId(j), password) for j in range(excel_instance.EventContentStageIdLength())],
+        "EventContentScenarioId": [convert_int(excel_instance.EventContentScenarioId(j), password) for j in range(excel_instance.EventContentScenarioIdLength())],
     }
 
 def dump_ItemExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "Rarity": Rarity(convert_int(excel_instance.Rarity(), password)).name,
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
+        "Rarity": excel_instance.Rarity(),
+        "ProductionStep": excel_instance.ProductionStep(),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "ItemCategory": ItemCategory(convert_int(excel_instance.ItemCategory(), password)).name,
+        "ItemCategory": excel_instance.ItemCategory(),
         "Quality": convert_int(excel_instance.Quality(), password),
         "Icon": convert_string(excel_instance.Icon(), password),
         "SpriteName": convert_string(excel_instance.SpriteName(), password),
         "StackableMax": convert_int(excel_instance.StackableMax(), password),
         "StackableFunction": convert_int(excel_instance.StackableFunction(), password),
         "ImmediateUse": bool(excel_instance.ImmediateUse()),
-        "UsingResultParcelType": ParcelType(convert_int(excel_instance.UsingResultParcelType(), password)).name,
+        "UsingResultParcelType": excel_instance.UsingResultParcelType(),
         "UsingResultId": convert_int(excel_instance.UsingResultId(), password),
         "UsingResultAmount": convert_int(excel_instance.UsingResultAmount(), password),
-        "MailType": MailType(convert_int(excel_instance.MailType(), password)).name,
-        "ExpiryChangeParcelType": ParcelType(convert_int(excel_instance.ExpiryChangeParcelType(), password)).name,
+        "MailType": excel_instance.MailType(),
+        "ExpiryChangeParcelType": excel_instance.ExpiryChangeParcelType(),
         "ExpiryChangeId": convert_int(excel_instance.ExpiryChangeId(), password),
         "ExpiryChangeAmount": convert_int(excel_instance.ExpiryChangeAmount(), password),
         "CanTierUpgrade": bool(excel_instance.CanTierUpgrade()),
         "TierUpgradeRecipeCraftId": convert_int(excel_instance.TierUpgradeRecipeCraftId(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
         "CraftQualityTier0": convert_int(excel_instance.CraftQualityTier0(), password),
         "CraftQualityTier1": convert_int(excel_instance.CraftQualityTier1(), password),
         "CraftQualityTier2": convert_int(excel_instance.CraftQualityTier2(), password),
         "ShiftingCraftQuality": convert_int(excel_instance.ShiftingCraftQuality(), password),
         "MaxGiftTags": convert_int(excel_instance.MaxGiftTags(), password),
-        "ShopCategoryLength": convert_int(excel_instance.ShopCategoryLength(), password),
+        "ShopCategory": [convert_float(excel_instance.ShopCategory(j), password) for j in range(excel_instance.ShopCategoryLength())],
         "ExpirationDateTime": convert_string(excel_instance.ExpirationDateTime(), password),
         "ExpirationNotifyDateIn": convert_int(excel_instance.ExpirationNotifyDateIn(), password),
         "ShortcutTypeId": convert_int(excel_instance.ShortcutTypeId(), password),
-        "GachaTicket": GachaTicketType(convert_int(excel_instance.GachaTicket(), password)).name,
+        "GachaTicket": excel_instance.GachaTicket(),
         "AlertPopupId": convert_int(excel_instance.AlertPopupId(), password),
         "ShiftingCraftRecipe": convert_int(excel_instance.ShiftingCraftRecipe(), password),
     }
@@ -27383,8 +4708,8 @@ def dump_KeyMappingExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_KeyMappingPopupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
-        "ButtonNameLength": convert_int(excel_instance.ButtonNameLength(), password),
-        "KeyMappingIdLength": convert_int(excel_instance.KeyMappingIdLength(), password),
+        "ButtonName": [convert_string(excel_instance.ButtonName(j), password) for j in range(excel_instance.ButtonNameLength())],
+        "KeyMappingId": [convert_string(excel_instance.KeyMappingId(j), password) for j in range(excel_instance.KeyMappingIdLength())],
     }
 
 def dump_LevelExpMasterCoinExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27426,7 +4751,7 @@ def dump_LocalizeCharProfileExcel(excel_instance, password: bytes = b"") -> dict
         "FamilyNameRubyJp": convert_string(excel_instance.FamilyNameRubyJp(), password),
         "PersonalNameJp": convert_string(excel_instance.PersonalNameJp(), password),
         "PersonalNameRubyJp": convert_string(excel_instance.PersonalNameRubyJp(), password),
-        "Club": Club(convert_int(excel_instance.Club(), password)).name,
+        "Club": excel_instance.Club(),
         "SchoolYearKr": convert_string(excel_instance.SchoolYearKr(), password),
         "SchoolYearJp": convert_string(excel_instance.SchoolYearJp(), password),
         "CharacterAgeKr": convert_string(excel_instance.CharacterAgeKr(), password),
@@ -27464,7 +4789,7 @@ def dump_LocalizeCodeInBuildExcel(excel_instance, password: bytes = b"") -> dict
 def dump_LocalizeErrorExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Key": convert_uint(excel_instance.Key(), password),
-        "ErrorLevel": WebAPIErrorLevel(convert_int(excel_instance.ErrorLevel(), password)).name,
+        "ErrorLevel": excel_instance.ErrorLevel(),
         "Kr": convert_string(excel_instance.Kr(), password),
         "Jp": convert_string(excel_instance.Jp(), password),
     }
@@ -27514,27 +4839,27 @@ def dump_LogicEffectCommonVisualExcel(excel_instance, password: bytes = b"") -> 
     return {
         "StringID": convert_uint(excel_instance.StringID(), password),
         "IconSpriteName": convert_string(excel_instance.IconSpriteName(), password),
-        "IconDispelColorLength": convert_int(excel_instance.IconDispelColorLength(), password),
+        "IconDispelColor": [convert_float(excel_instance.IconDispelColor(j), password) for j in range(excel_instance.IconDispelColorLength())],
         "ParticleEnterPath": convert_string(excel_instance.ParticleEnterPath(), password),
-        "ParticleEnterSocket": EffectBone(convert_int(excel_instance.ParticleEnterSocket(), password)).name,
+        "ParticleEnterSocket": excel_instance.ParticleEnterSocket(),
         "ParticleLoopPath": convert_string(excel_instance.ParticleLoopPath(), password),
-        "ParticleLoopSocket": EffectBone(convert_int(excel_instance.ParticleLoopSocket(), password)).name,
+        "ParticleLoopSocket": excel_instance.ParticleLoopSocket(),
         "ParticleEndPath": convert_string(excel_instance.ParticleEndPath(), password),
-        "ParticleEndSocket": EffectBone(convert_int(excel_instance.ParticleEndSocket(), password)).name,
+        "ParticleEndSocket": excel_instance.ParticleEndSocket(),
         "ParticleApplyPath": convert_string(excel_instance.ParticleApplyPath(), password),
-        "ParticleApplySocket": EffectBone(convert_int(excel_instance.ParticleApplySocket(), password)).name,
+        "ParticleApplySocket": excel_instance.ParticleApplySocket(),
         "ParticleRemovedPath": convert_string(excel_instance.ParticleRemovedPath(), password),
-        "ParticleRemovedSocket": EffectBone(convert_int(excel_instance.ParticleRemovedSocket(), password)).name,
+        "ParticleRemovedSocket": excel_instance.ParticleRemovedSocket(),
     }
 
 def dump_MemoryLobbyExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
-        "MemoryLobbyCategory": MemoryLobbyCategory(convert_int(excel_instance.MemoryLobbyCategory(), password)).name,
+        "MemoryLobbyCategory": excel_instance.MemoryLobbyCategory(),
         "SlotTextureName": convert_string(excel_instance.SlotTextureName(), password),
         "RewardTextureName": convert_string(excel_instance.RewardTextureName(), password),
         "BGMId": convert_int(excel_instance.BGMId(), password),
@@ -27545,18 +4870,18 @@ def dump_MemoryLobbyExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_MessagePopupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "StringId": convert_uint(excel_instance.StringId(), password),
-        "MessagePopupLayout": MessagePopupLayout(convert_int(excel_instance.MessagePopupLayout(), password)).name,
-        "OrderType": MessagePopupImagePositionType(convert_int(excel_instance.OrderType(), password)).name,
+        "MessagePopupLayout": excel_instance.MessagePopupLayout(),
+        "OrderType": excel_instance.OrderType(),
         "Image": convert_string(excel_instance.Image(), password),
         "TitleText": convert_uint(excel_instance.TitleText(), password),
         "SubTitleText": convert_uint(excel_instance.SubTitleText(), password),
         "MessageText": convert_uint(excel_instance.MessageText(), password),
-        "ConditionTextLength": convert_int(excel_instance.ConditionTextLength(), password),
+        "ConditionText": [convert_uint(excel_instance.ConditionText(j), password) for j in range(excel_instance.ConditionTextLength())],
         "DisplayXButton": bool(excel_instance.DisplayXButton()),
-        "ButtonLength": convert_int(excel_instance.ButtonLength(), password),
-        "ButtonTextLength": convert_int(excel_instance.ButtonTextLength(), password),
-        "ButtonCommandLength": convert_int(excel_instance.ButtonCommandLength(), password),
-        "ButtonParameterLength": convert_int(excel_instance.ButtonParameterLength(), password),
+        "Button": [excel_instance.Button(j) for j in range(excel_instance.ButtonLength())],
+        "ButtonText": [convert_uint(excel_instance.ButtonText(j), password) for j in range(excel_instance.ButtonTextLength())],
+        "ButtonCommand": [convert_string(excel_instance.ButtonCommand(j), password) for j in range(excel_instance.ButtonCommandLength())],
+        "ButtonParameter": [convert_string(excel_instance.ButtonParameter(j), password) for j in range(excel_instance.ButtonParameterLength())],
     }
 
 def dump_MiniGameAudioAnimatorExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27570,49 +4895,49 @@ def dump_MiniGameAudioAnimatorExcel(excel_instance, password: bytes = b"") -> di
         "Volume": convert_float(excel_instance.Volume(), password),
         "Delay": convert_float(excel_instance.Delay(), password),
         "AudioPriority": convert_int(excel_instance.AudioPriority(), password),
-        "AudioClipPathLength": convert_int(excel_instance.AudioClipPathLength(), password),
-        "VoiceHashLength": convert_int(excel_instance.VoiceHashLength(), password),
+        "AudioClipPath": [convert_string(excel_instance.AudioClipPath(j), password) for j in range(excel_instance.AudioClipPathLength())],
+        "VoiceHash": [convert_uint(excel_instance.VoiceHash(j), password) for j in range(excel_instance.VoiceHashLength())],
     }
 
 def dump_MinigameCCGCardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "Type": CCGCardType(convert_int(excel_instance.Type(), password)).name,
+        "Type": excel_instance.Type(),
         "IsDisposal": bool(excel_instance.IsDisposal()),
         "ActiveSkillId": convert_int(excel_instance.ActiveSkillId(), password),
         "ActiveSkillCost": convert_int(excel_instance.ActiveSkillCost(), password),
         "ActiveSkilleCostVisible": bool(excel_instance.ActiveSkilleCostVisible()),
-        "PassiveSkillIdLength": convert_int(excel_instance.PassiveSkillIdLength(), password),
+        "PassiveSkillId": [convert_int(excel_instance.PassiveSkillId(j), password) for j in range(excel_instance.PassiveSkillIdLength())],
         "PassiveActivateCount": convert_int(excel_instance.PassiveActivateCount(), password),
         "Name": convert_uint(excel_instance.Name(), password),
         "Description": convert_string(excel_instance.Description(), password),
         "ImagePath": convert_string(excel_instance.ImagePath(), password),
         "UIImagePath": convert_string(excel_instance.UIImagePath(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
     }
 
 def dump_MinigameCCGCharacterExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "Type": CCGCharacterType(convert_int(excel_instance.Type(), password)).name,
+        "Type": excel_instance.Type(),
         "ActiveSkillId": convert_int(excel_instance.ActiveSkillId(), password),
         "ActiveSkillCost": convert_int(excel_instance.ActiveSkillCost(), password),
         "ActiveSkilleCostVisible": bool(excel_instance.ActiveSkilleCostVisible()),
         "ActiveSkillCooldown": convert_int(excel_instance.ActiveSkillCooldown(), password),
         "MaxHealth": convert_int(excel_instance.MaxHealth(), password),
-        "PassiveSkillIdLength": convert_int(excel_instance.PassiveSkillIdLength(), password),
+        "PassiveSkillId": [convert_int(excel_instance.PassiveSkillId(j), password) for j in range(excel_instance.PassiveSkillIdLength())],
         "Name": convert_uint(excel_instance.Name(), password),
         "Description": convert_string(excel_instance.Description(), password),
         "ImagePath": convert_string(excel_instance.ImagePath(), password),
         "UIImagePath": convert_string(excel_instance.UIImagePath(), password),
-        "TagsLength": convert_int(excel_instance.TagsLength(), password),
+        "Tags": [excel_instance.Tags(j) for j in range(excel_instance.TagsLength())],
     }
 
 def dump_MinigameCCGEnemyExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "CharacterType": CCGCharacterType(convert_int(excel_instance.CharacterType(), password)).name,
+        "CharacterType": excel_instance.CharacterType(),
         "Order": convert_int(excel_instance.Order(), password),
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
     }
@@ -27630,11 +4955,11 @@ def dump_MinigameCCGInfoExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "CCGId": convert_int(excel_instance.CCGId(), password),
-        "CostParcelType": ParcelType(convert_int(excel_instance.CostParcelType(), password)).name,
+        "CostParcelType": excel_instance.CostParcelType(),
         "CostParcelId": convert_int(excel_instance.CostParcelId(), password),
         "CostParcelAmount": convert_int(excel_instance.CostParcelAmount(), password),
         "CardBackPath": convert_string(excel_instance.CardBackPath(), password),
-        "PerkCostParcelType": ParcelType(convert_int(excel_instance.PerkCostParcelType(), password)).name,
+        "PerkCostParcelType": excel_instance.PerkCostParcelType(),
         "PerkCostParcelId": convert_int(excel_instance.PerkCostParcelId(), password),
     }
 
@@ -27651,21 +4976,21 @@ def dump_MinigameCCGLevelNodeExcel(excel_instance, password: bytes = b"") -> dic
     return {
         "LevelId": convert_int(excel_instance.LevelId(), password),
         "NodeId": convert_int(excel_instance.NodeId(), password),
-        "NodeIcon": CCGLevelNodeIcon(convert_int(excel_instance.NodeIcon(), password)).name,
+        "NodeIcon": excel_instance.NodeIcon(),
         "StageGroupId": convert_int(excel_instance.StageGroupId(), password),
-        "NextNodeIdLength": convert_int(excel_instance.NextNodeIdLength(), password),
+        "NextNodeId": [convert_int(excel_instance.NextNodeId(j), password) for j in range(excel_instance.NextNodeIdLength())],
     }
 
 def dump_MinigameCCGLevelStageExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "EnemyGroupIdLength": convert_int(excel_instance.EnemyGroupIdLength(), password),
-        "StageType": CCGStageType(convert_int(excel_instance.StageType(), password)).name,
+        "EnemyGroupId": [convert_int(excel_instance.EnemyGroupId(j), password) for j in range(excel_instance.EnemyGroupIdLength())],
+        "StageType": excel_instance.StageType(),
         "CampDiscardCardCount": convert_int(excel_instance.CampDiscardCardCount(), password),
         "CampSprPath": convert_string(excel_instance.CampSprPath(), password),
         "CampBackgroundPath": convert_string(excel_instance.CampBackgroundPath(), password),
-        "RewardType": CCGStageRewardType(convert_int(excel_instance.RewardType(), password)).name,
+        "RewardType": excel_instance.RewardType(),
         "RewardCount": convert_int(excel_instance.RewardCount(), password),
         "RewardCardGroupId": convert_int(excel_instance.RewardCardGroupId(), password),
         "CardRarityGroupId": convert_int(excel_instance.CardRarityGroupId(), password),
@@ -27699,8 +5024,8 @@ def dump_MinigameCCGPerkExcel(excel_instance, password: bytes = b"") -> dict:
         "CostParcelAmount": convert_int(excel_instance.CostParcelAmount(), password),
         "RerollPoint": convert_int(excel_instance.RerollPoint(), password),
         "DiscardPoint": convert_int(excel_instance.DiscardPoint(), password),
-        "EnvironmentLogicEffectIdLength": convert_int(excel_instance.EnvironmentLogicEffectIdLength(), password),
-        "RequiredPerkIdLength": convert_int(excel_instance.RequiredPerkIdLength(), password),
+        "EnvironmentLogicEffectId": [convert_int(excel_instance.EnvironmentLogicEffectId(j), password) for j in range(excel_instance.EnvironmentLogicEffectIdLength())],
+        "RequiredPerkId": [convert_int(excel_instance.RequiredPerkId(j), password) for j in range(excel_instance.RequiredPerkIdLength())],
         "ShopOrder": convert_int(excel_instance.ShopOrder(), password),
         "ShopIcon": convert_string(excel_instance.ShopIcon(), password),
         "ShopLocalizeTitle": convert_uint(excel_instance.ShopLocalizeTitle(), password),
@@ -27711,7 +5036,7 @@ def dump_MinigameCCGRewardCardExcel(excel_instance, password: bytes = b"") -> di
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "EntityType": CCGEntityType(convert_int(excel_instance.EntityType(), password)).name,
+        "EntityType": excel_instance.EntityType(),
         "CardId": convert_int(excel_instance.CardId(), password),
         "CardRarity": convert_int(excel_instance.CardRarity(), password),
     }
@@ -27728,7 +5053,7 @@ def dump_MinigameCCGRewardItemExcel(excel_instance, password: bytes = b"") -> di
         "Id": convert_int(excel_instance.Id(), password),
         "CCGId": convert_int(excel_instance.CCGId(), password),
         "MinPoint": convert_int(excel_instance.MinPoint(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
@@ -27784,7 +5109,7 @@ def dump_MiniGameDefenseFixedStatExcel(excel_instance, password: bytes = b"") ->
 def dump_MiniGameDefenseInfoExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "DefenseBattleParcelType": ParcelType(convert_int(excel_instance.DefenseBattleParcelType(), password)).name,
+        "DefenseBattleParcelType": excel_instance.DefenseBattleParcelType(),
         "DefenseBattleParcelId": convert_int(excel_instance.DefenseBattleParcelId(), password),
         "DefenseBattleMultiplierMax": convert_int(excel_instance.DefenseBattleMultiplierMax(), password),
         "DisableRootMotion": bool(excel_instance.DisableRootMotion()),
@@ -27795,25 +5120,25 @@ def dump_MiniGameDefenseStageExcel(excel_instance, password: bytes = b"") -> dic
         "Id": convert_int(excel_instance.Id(), password),
         "Name": convert_string(excel_instance.Name(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "StageDifficulty": StageDifficulty(convert_int(excel_instance.StageDifficulty(), password)).name,
+        "StageDifficulty": excel_instance.StageDifficulty(),
         "StageDifficultyLocalize": convert_uint(excel_instance.StageDifficultyLocalize(), password),
         "StageNumber": convert_int(excel_instance.StageNumber(), password),
         "StageDisplay": convert_int(excel_instance.StageDisplay(), password),
         "PrevStageId": convert_int(excel_instance.PrevStageId(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
-        "StageEnterCostType": ParcelType(convert_int(excel_instance.StageEnterCostType(), password)).name,
+        "StageEnterCostType": excel_instance.StageEnterCostType(),
         "StageEnterCostId": convert_int(excel_instance.StageEnterCostId(), password),
         "StageEnterCostAmount": convert_int(excel_instance.StageEnterCostAmount(), password),
         "EventContentStageRewardId": convert_int(excel_instance.EventContentStageRewardId(), password),
-        "EnterScenarioGroupIdLength": convert_int(excel_instance.EnterScenarioGroupIdLength(), password),
-        "ClearScenarioGroupIdLength": convert_int(excel_instance.ClearScenarioGroupIdLength(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "EnterScenarioGroupId": [convert_int(excel_instance.EnterScenarioGroupId(j), password) for j in range(excel_instance.EnterScenarioGroupIdLength())],
+        "ClearScenarioGroupId": [convert_int(excel_instance.ClearScenarioGroupId(j), password) for j in range(excel_instance.ClearScenarioGroupIdLength())],
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "GroundID": convert_int(excel_instance.GroundID(), password),
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
-        "StarGoalLength": convert_int(excel_instance.StarGoalLength(), password),
-        "StarGoalAmountLength": convert_int(excel_instance.StarGoalAmountLength(), password),
+        "ContentType": excel_instance.ContentType(),
+        "StarGoal": [excel_instance.StarGoal(j) for j in range(excel_instance.StarGoalLength())],
+        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmount(j), password) for j in range(excel_instance.StarGoalAmountLength())],
         "DefenseFormationBGPrefab": convert_string(excel_instance.DefenseFormationBGPrefab(), password),
         "DefenseFormationBGPrefabScale": convert_float(excel_instance.DefenseFormationBGPrefabScale(), password),
         "FixedEchelon": convert_int(excel_instance.FixedEchelon(), password),
@@ -27826,8 +5151,8 @@ def dump_MiniGameDreamCollectionScenarioExcel(excel_instance, password: bytes = 
         "Id": convert_int(excel_instance.Id(), password),
         "IsSkip": bool(excel_instance.IsSkip()),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "ParameterLength": convert_int(excel_instance.ParameterLength(), password),
-        "ParameterAmountLength": convert_int(excel_instance.ParameterAmountLength(), password),
+        "Parameter": [excel_instance.Parameter(j) for j in range(excel_instance.ParameterLength())],
+        "ParameterAmount": [convert_int(excel_instance.ParameterAmount(j), password) for j in range(excel_instance.ParameterAmountLength())],
         "ScenarioGroupId": convert_int(excel_instance.ScenarioGroupId(), password),
     }
 
@@ -27845,11 +5170,11 @@ def dump_MiniGameDreamEndingExcel(excel_instance, password: bytes = b"") -> dict
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "EndingId": convert_int(excel_instance.EndingId(), password),
-        "DreamMakerEndingType": DreamMakerEndingType(convert_int(excel_instance.DreamMakerEndingType(), password)).name,
+        "DreamMakerEndingType": excel_instance.DreamMakerEndingType(),
         "Order": convert_int(excel_instance.Order(), password),
         "ScenarioGroupId": convert_int(excel_instance.ScenarioGroupId(), password),
-        "EndingConditionLength": convert_int(excel_instance.EndingConditionLength(), password),
-        "EndingConditionValueLength": convert_int(excel_instance.EndingConditionValueLength(), password),
+        "EndingCondition": [excel_instance.EndingCondition(j) for j in range(excel_instance.EndingConditionLength())],
+        "EndingConditionValue": [convert_int(excel_instance.EndingConditionValue(j), password) for j in range(excel_instance.EndingConditionValueLength())],
     }
 
 def dump_MiniGameDreamEndingRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -27857,24 +5182,24 @@ def dump_MiniGameDreamEndingRewardExcel(excel_instance, password: bytes = b"") -
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "EndingId": convert_int(excel_instance.EndingId(), password),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
-        "DreamMakerEndingRewardType": DreamMakerEndingRewardType(convert_int(excel_instance.DreamMakerEndingRewardType(), password)).name,
-        "DreamMakerEndingType": DreamMakerEndingType(convert_int(excel_instance.DreamMakerEndingType(), password)).name,
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "DreamMakerEndingRewardType": excel_instance.DreamMakerEndingRewardType(),
+        "DreamMakerEndingType": excel_instance.DreamMakerEndingType(),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_MiniGameDreamInfoExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "DreamMakerMultiplierCondition": DreamMakerMultiplierCondition(convert_int(excel_instance.DreamMakerMultiplierCondition(), password)).name,
+        "DreamMakerMultiplierCondition": excel_instance.DreamMakerMultiplierCondition(),
         "DreamMakerMultiplierConditionValue": convert_int(excel_instance.DreamMakerMultiplierConditionValue(), password),
         "DreamMakerMultiplierMax": convert_int(excel_instance.DreamMakerMultiplierMax(), password),
         "DreamMakerDays": convert_int(excel_instance.DreamMakerDays(), password),
         "DreamMakerActionPoint": convert_int(excel_instance.DreamMakerActionPoint(), password),
-        "DreamMakerParcelType": ParcelType(convert_int(excel_instance.DreamMakerParcelType(), password)).name,
+        "DreamMakerParcelType": excel_instance.DreamMakerParcelType(),
         "DreamMakerParcelId": convert_int(excel_instance.DreamMakerParcelId(), password),
-        "DreamMakerDailyPointParcelType": ParcelType(convert_int(excel_instance.DreamMakerDailyPointParcelType(), password)).name,
+        "DreamMakerDailyPointParcelType": excel_instance.DreamMakerDailyPointParcelType(),
         "DreamMakerDailyPointId": convert_int(excel_instance.DreamMakerDailyPointId(), password),
         "DreamMakerParameterTransfer": convert_int(excel_instance.DreamMakerParameterTransfer(), password),
         "ScheduleCostGoodsId": convert_int(excel_instance.ScheduleCostGoodsId(), password),
@@ -27885,7 +5210,7 @@ def dump_MiniGameDreamParameterExcel(excel_instance, password: bytes = b"") -> d
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "ParameterType": DreamMakerParameterType(convert_int(excel_instance.ParameterType(), password)).name,
+        "ParameterType": excel_instance.ParameterType(),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "IconPath": convert_string(excel_instance.IconPath(), password),
         "ParameterBase": convert_int(excel_instance.ParameterBase(), password),
@@ -27921,13 +5246,13 @@ def dump_MiniGameDreamScheduleResultExcel(excel_instance, password: bytes = b"")
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "DreamMakerResult": DreamMakerResult(convert_int(excel_instance.DreamMakerResult(), password)).name,
+        "DreamMakerResult": excel_instance.DreamMakerResult(),
         "DreamMakerScheduleGroup": convert_int(excel_instance.DreamMakerScheduleGroup(), password),
         "Prob": convert_int(excel_instance.Prob(), password),
-        "RewardParameterLength": convert_int(excel_instance.RewardParameterLength(), password),
-        "RewardParameterOperationTypeLength": convert_int(excel_instance.RewardParameterOperationTypeLength(), password),
-        "RewardParameterAmountLength": convert_int(excel_instance.RewardParameterAmountLength(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParameter": [excel_instance.RewardParameter(j) for j in range(excel_instance.RewardParameterLength())],
+        "RewardParameterOperationType": [excel_instance.RewardParameterOperationType(j) for j in range(excel_instance.RewardParameterOperationTypeLength())],
+        "RewardParameterAmount": [convert_int(excel_instance.RewardParameterAmount(j), password) for j in range(excel_instance.RewardParameterAmountLength())],
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -27949,7 +5274,7 @@ def dump_MinigameDreamVoiceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "VoiceCondition": DreamMakerVoiceCondition(convert_int(excel_instance.VoiceCondition(), password)).name,
+        "VoiceCondition": excel_instance.VoiceCondition(),
         "VoiceClip": convert_uint(excel_instance.VoiceClip(), password),
     }
 
@@ -27959,38 +5284,38 @@ def dump_MiniGameMissionExcel(excel_instance, password: bytes = b"") -> dict:
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "GroupName": convert_string(excel_instance.GroupName(), password),
-        "Category": MissionCategory(convert_int(excel_instance.Category(), password)).name,
+        "Category": excel_instance.Category(),
         "Description": convert_uint(excel_instance.Description(), password),
-        "ResetType": MissionResetType(convert_int(excel_instance.ResetType(), password)).name,
-        "ToastDisplayType": MissionToastDisplayConditionType(convert_int(excel_instance.ToastDisplayType(), password)).name,
+        "ResetType": excel_instance.ResetType(),
+        "ToastDisplayType": excel_instance.ToastDisplayType(),
         "ToastImagePath": convert_string(excel_instance.ToastImagePath(), password),
         "ViewFlag": bool(excel_instance.ViewFlag()),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "PreMissionIdLength": convert_int(excel_instance.PreMissionIdLength(), password),
-        "TargetGroup": TargetGroup(convert_int(excel_instance.TargetGroup(), password)).name,
+        "PreMissionId": [convert_int(excel_instance.PreMissionId(j), password) for j in range(excel_instance.PreMissionIdLength())],
+        "TargetGroup": excel_instance.TargetGroup(),
         "AccountLevel": convert_int(excel_instance.AccountLevel(), password),
-        "ShortcutUILength": convert_int(excel_instance.ShortcutUILength(), password),
-        "CompleteConditionType": MissionCompleteConditionType(convert_int(excel_instance.CompleteConditionType(), password)).name,
+        "ShortcutUI": [convert_string(excel_instance.ShortcutUI(j), password) for j in range(excel_instance.ShortcutUILength())],
+        "CompleteConditionType": excel_instance.CompleteConditionType(),
         "IsCompleteExtensionTime": bool(excel_instance.IsCompleteExtensionTime()),
         "CompleteConditionCount": convert_int(excel_instance.CompleteConditionCount(), password),
-        "CompleteConditionParameterLength": convert_int(excel_instance.CompleteConditionParameterLength(), password),
-        "CompleteConditionParameterTagLength": convert_int(excel_instance.CompleteConditionParameterTagLength(), password),
+        "CompleteConditionParameter": [convert_int(excel_instance.CompleteConditionParameter(j), password) for j in range(excel_instance.CompleteConditionParameterLength())],
+        "CompleteConditionParameterTag": [excel_instance.CompleteConditionParameterTag(j) for j in range(excel_instance.CompleteConditionParameterTagLength())],
         "RewardIcon": convert_string(excel_instance.RewardIcon(), password),
-        "CompleteConditionMissionIdLength": convert_int(excel_instance.CompleteConditionMissionIdLength(), password),
+        "CompleteConditionMissionId": [convert_int(excel_instance.CompleteConditionMissionId(j), password) for j in range(excel_instance.CompleteConditionMissionIdLength())],
         "CompleteConditionMissionCount": convert_int(excel_instance.CompleteConditionMissionCount(), password),
-        "MissionRewardParcelTypeLength": convert_int(excel_instance.MissionRewardParcelTypeLength(), password),
-        "MissionRewardParcelIdLength": convert_int(excel_instance.MissionRewardParcelIdLength(), password),
-        "MissionRewardAmountLength": convert_int(excel_instance.MissionRewardAmountLength(), password),
-        "ConditionRewardParcelTypeLength": convert_int(excel_instance.ConditionRewardParcelTypeLength(), password),
-        "ConditionRewardParcelIdLength": convert_int(excel_instance.ConditionRewardParcelIdLength(), password),
-        "ConditionRewardAmountLength": convert_int(excel_instance.ConditionRewardAmountLength(), password),
+        "MissionRewardParcelType": [excel_instance.MissionRewardParcelType(j) for j in range(excel_instance.MissionRewardParcelTypeLength())],
+        "MissionRewardParcelId": [convert_int(excel_instance.MissionRewardParcelId(j), password) for j in range(excel_instance.MissionRewardParcelIdLength())],
+        "MissionRewardAmount": [convert_int(excel_instance.MissionRewardAmount(j), password) for j in range(excel_instance.MissionRewardAmountLength())],
+        "ConditionRewardParcelType": [excel_instance.ConditionRewardParcelType(j) for j in range(excel_instance.ConditionRewardParcelTypeLength())],
+        "ConditionRewardParcelId": [convert_int(excel_instance.ConditionRewardParcelId(j), password) for j in range(excel_instance.ConditionRewardParcelIdLength())],
+        "ConditionRewardAmount": [convert_int(excel_instance.ConditionRewardAmount(j), password) for j in range(excel_instance.ConditionRewardAmountLength())],
     }
 
 def dump_MiniGamePlayGuideExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "MiniGameType": EventContentType(convert_int(excel_instance.MiniGameType(), password)).name,
+        "MiniGameType": excel_instance.MiniGameType(),
         "IsPcBuild": bool(excel_instance.IsPcBuild()),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "GuideTitle": convert_string(excel_instance.GuideTitle(), password),
@@ -28017,7 +5342,7 @@ def dump_MiniGameRhythmExcel(excel_instance, password: bytes = b"") -> dict:
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "RhythmBgmId": convert_int(excel_instance.RhythmBgmId(), password),
         "PresetName": convert_string(excel_instance.PresetName(), password),
-        "StageDifficulty": Difficulty(convert_int(excel_instance.StageDifficulty(), password)).name,
+        "StageDifficulty": excel_instance.StageDifficulty(),
         "IsSpecial": bool(excel_instance.IsSpecial()),
         "OpenStageScoreAmount": convert_int(excel_instance.OpenStageScoreAmount(), password),
         "MaxHp": convert_int(excel_instance.MaxHp(), password),
@@ -28040,7 +5365,7 @@ def dump_MiniGameRoadPuzzleAdditionalRewardExcel(excel_instance, password: bytes
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -28048,7 +5373,7 @@ def dump_MiniGameRoadPuzzleAdditionalRewardExcel(excel_instance, password: bytes
 def dump_MiniGameRoadPuzzleInfoExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "EventUseCostType": ParcelType(convert_int(excel_instance.EventUseCostType(), password)).name,
+        "EventUseCostType": excel_instance.EventUseCostType(),
         "EventUseCostId": convert_int(excel_instance.EventUseCostId(), password),
         "CostGoodsId": convert_int(excel_instance.CostGoodsId(), password),
         "RailSetRewardId": convert_int(excel_instance.RailSetRewardId(), password),
@@ -28063,9 +5388,9 @@ def dump_MinigameRoadPuzzleMapExcel(excel_instance, password: bytes = b"") -> di
         "Map": convert_string(excel_instance.Map(), password),
         "MapBG": convert_string(excel_instance.MapBG(), password),
         "BGMId": convert_int(excel_instance.BGMId(), password),
-        "AvailableRailTileLength": convert_int(excel_instance.AvailableRailTileLength(), password),
-        "AvailableRailTileAmountLength": convert_int(excel_instance.AvailableRailTileAmountLength(), password),
-        "OriginalTileCountLength": convert_int(excel_instance.OriginalTileCountLength(), password),
+        "AvailableRailTile": [convert_int(excel_instance.AvailableRailTile(j), password) for j in range(excel_instance.AvailableRailTileLength())],
+        "AvailableRailTileAmount": [convert_int(excel_instance.AvailableRailTileAmount(j), password) for j in range(excel_instance.AvailableRailTileAmountLength())],
+        "OriginalTileCount": [convert_int(excel_instance.OriginalTileCount(j), password) for j in range(excel_instance.OriginalTileCountLength())],
         "TrainSpeed": convert_float(excel_instance.TrainSpeed(), password),
     }
 
@@ -28074,7 +5399,7 @@ def dump_MinigameRoadPuzzleMapTileExcel(excel_instance, password: bytes = b"") -
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
-        "MapTileType": RoadPuzzleMapTileType(convert_int(excel_instance.MapTileType(), password)).name,
+        "MapTileType": excel_instance.MapTileType(),
     }
 
 def dump_MiniGameRoadPuzzleRailSetRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28082,9 +5407,9 @@ def dump_MiniGameRoadPuzzleRailSetRewardExcel(excel_instance, password: bytes = 
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "LocalizePrefabID": convert_string(excel_instance.LocalizePrefabID(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_MinigameRoadPuzzleRailTileExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28094,16 +5419,16 @@ def dump_MinigameRoadPuzzleRailTileExcel(excel_instance, password: bytes = b"") 
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "OriginalTile": bool(excel_instance.OriginalTile()),
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
-        "RailTileType": RoadPuzzleRailTileType(convert_int(excel_instance.RailTileType(), password)).name,
+        "RailTileType": excel_instance.RailTileType(),
     }
 
 def dump_MiniGameRoadPuzzleRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_MinigameRoadPuzzleRoadRoundExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28116,15 +5441,15 @@ def dump_MinigameRoadPuzzleRoadRoundExcel(excel_instance, password: bytes = b"")
         "EndScenarioGroupId": convert_int(excel_instance.EndScenarioGroupId(), password),
         "MapGroupId": convert_int(excel_instance.MapGroupId(), password),
         "RoundReward": convert_int(excel_instance.RoundReward(), password),
-        "AdditionalRewardIDLength": convert_int(excel_instance.AdditionalRewardIDLength(), password),
-        "AdditionalRewardAmountLength": convert_int(excel_instance.AdditionalRewardAmountLength(), password),
+        "AdditionalRewardID": [convert_int(excel_instance.AdditionalRewardID(j), password) for j in range(excel_instance.AdditionalRewardIDLength())],
+        "AdditionalRewardAmount": [convert_int(excel_instance.AdditionalRewardAmount(j), password) for j in range(excel_instance.AdditionalRewardAmountLength())],
     }
 
 def dump_MiniGameRoadPuzzleVoiceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "VoiceCondition": RoadPuzzleVoiceCondition(convert_int(excel_instance.VoiceCondition(), password)).name,
+        "VoiceCondition": excel_instance.VoiceCondition(),
         "VoiceClip": convert_uint(excel_instance.VoiceClip(), password),
     }
 
@@ -28135,7 +5460,7 @@ def dump_MiniGameShootingCharacterExcel(excel_instance, password: bytes = b"") -
         "BodyRadius": convert_float(excel_instance.BodyRadius(), password),
         "ModelPrefabName": convert_string(excel_instance.ModelPrefabName(), password),
         "NormalAttackSkillData": convert_string(excel_instance.NormalAttackSkillData(), password),
-        "PublicSkillDataLength": convert_int(excel_instance.PublicSkillDataLength(), password),
+        "PublicSkillData": [convert_string(excel_instance.PublicSkillData(j), password) for j in range(excel_instance.PublicSkillDataLength())],
         "DeathSkillData": convert_string(excel_instance.DeathSkillData(), password),
         "MaxHP": convert_int(excel_instance.MaxHP(), password),
         "AttackPower": convert_int(excel_instance.AttackPower(), password),
@@ -28154,7 +5479,7 @@ def dump_MiniGameShootingCharacterExcel(excel_instance, password: bytes = b"") -
 def dump_MiniGameShootingGeasExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "GeasType": Geas(convert_int(excel_instance.GeasType(), password)).name,
+        "GeasType": excel_instance.GeasType(),
         "Icon": convert_string(excel_instance.Icon(), password),
         "Probability": convert_int(excel_instance.Probability(), password),
         "MaxOverlapCount": convert_int(excel_instance.MaxOverlapCount(), password),
@@ -28166,9 +5491,9 @@ def dump_MiniGameShootingGeasExcel(excel_instance, password: bytes = b"") -> dic
 def dump_MiniGameShootingStageExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "BgmIdLength": convert_int(excel_instance.BgmIdLength(), password),
+        "BgmId": [convert_int(excel_instance.BgmId(j), password) for j in range(excel_instance.BgmIdLength())],
         "CostGoodsId": convert_int(excel_instance.CostGoodsId(), password),
-        "Difficulty": Difficulty(convert_int(excel_instance.Difficulty(), password)).name,
+        "Difficulty": excel_instance.Difficulty(),
         "DesignLevel": convert_string(excel_instance.DesignLevel(), password),
         "ArtLevel": convert_string(excel_instance.ArtLevel(), password),
         "StartBattleDuration": convert_int(excel_instance.StartBattleDuration(), password),
@@ -28183,9 +5508,9 @@ def dump_MiniGameShootingStageRewardExcel(excel_instance, password: bytes = b"")
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "RewardId": convert_int(excel_instance.RewardId(), password),
         "ClearSection": convert_int(excel_instance.ClearSection(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_MinigameTBGDiceExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28195,9 +5520,9 @@ def dump_MinigameTBGDiceExcel(excel_instance, password: bytes = b"") -> dict:
         "DiceGroup": convert_int(excel_instance.DiceGroup(), password),
         "DiceResult": convert_int(excel_instance.DiceResult(), password),
         "Prob": convert_int(excel_instance.Prob(), password),
-        "ProbModifyConditionLength": convert_int(excel_instance.ProbModifyConditionLength(), password),
-        "ProbModifyValueLength": convert_int(excel_instance.ProbModifyValueLength(), password),
-        "ProbModifyLimitLength": convert_int(excel_instance.ProbModifyLimitLength(), password),
+        "ProbModifyCondition": [excel_instance.ProbModifyCondition(j) for j in range(excel_instance.ProbModifyConditionLength())],
+        "ProbModifyValue": [convert_int(excel_instance.ProbModifyValue(j), password) for j in range(excel_instance.ProbModifyValueLength())],
+        "ProbModifyLimit": [convert_int(excel_instance.ProbModifyLimit(j), password) for j in range(excel_instance.ProbModifyLimitLength())],
     }
 
 def dump_MinigameTBGEncounterExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28206,8 +5531,8 @@ def dump_MinigameTBGEncounterExcel(excel_instance, password: bytes = b"") -> dic
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "AllThema": bool(excel_instance.AllThema()),
         "ThemaIndex": convert_int(excel_instance.ThemaIndex(), password),
-        "ThemaType": TBGThemaType(convert_int(excel_instance.ThemaType(), password)).name,
-        "ObjectType": TBGObjectType(convert_int(excel_instance.ObjectType(), password)).name,
+        "ThemaType": excel_instance.ThemaType(),
+        "ObjectType": excel_instance.ObjectType(),
         "EnemyImagePath": convert_string(excel_instance.EnemyImagePath(), password),
         "EnemyPrefabName": convert_string(excel_instance.EnemyPrefabName(), password),
         "EnemyNameLocalize": convert_string(excel_instance.EnemyNameLocalize(), password),
@@ -28247,9 +5572,9 @@ def dump_MinigameTBGEncounterRewardExcel(excel_instance, password: bytes = b"") 
     return {
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "TBGOptionSuccessType": TBGOptionSuccessType(convert_int(excel_instance.TBGOptionSuccessType(), password)).name,
+        "TBGOptionSuccessType": excel_instance.TBGOptionSuccessType(),
         "Paremeter": convert_int(excel_instance.Paremeter(), password),
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "ParcelId": convert_int(excel_instance.ParcelId(), password),
         "Amount": convert_int(excel_instance.Amount(), password),
         "Prob": convert_int(excel_instance.Prob(), password),
@@ -28258,8 +5583,8 @@ def dump_MinigameTBGEncounterRewardExcel(excel_instance, password: bytes = b"") 
 def dump_MinigameTBGItemExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "ItemType": TBGItemType(convert_int(excel_instance.ItemType(), password)).name,
-        "TBGItemEffectType": TBGItemEffectType(convert_int(excel_instance.TBGItemEffectType(), password)).name,
+        "ItemType": excel_instance.ItemType(),
+        "TBGItemEffectType": excel_instance.TBGItemEffectType(),
         "ItemParameter": convert_int(excel_instance.ItemParameter(), password),
         "LocalizeETCId": convert_string(excel_instance.LocalizeETCId(), password),
         "Icon": convert_string(excel_instance.Icon(), password),
@@ -28274,8 +5599,8 @@ def dump_MinigameTBGObjectExcel(excel_instance, password: bytes = b"") -> dict:
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "Key": convert_string(excel_instance.Key(), password),
         "PrefabName": convert_string(excel_instance.PrefabName(), password),
-        "ObjectType": TBGObjectType(convert_int(excel_instance.ObjectType(), password)).name,
-        "ObjectCostType": ParcelType(convert_int(excel_instance.ObjectCostType(), password)).name,
+        "ObjectType": excel_instance.ObjectType(),
+        "ObjectCostType": excel_instance.ObjectCostType(),
         "ObjectCostId": convert_int(excel_instance.ObjectCostId(), password),
         "ObjectCostAmount": convert_int(excel_instance.ObjectCostAmount(), password),
         "Disposable": bool(excel_instance.Disposable()),
@@ -28296,9 +5621,9 @@ def dump_MinigameTBGSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "EchelonSlot2Portrait": convert_string(excel_instance.EchelonSlot2Portrait(), password),
         "EchelonSlot3Portrait": convert_string(excel_instance.EchelonSlot3Portrait(), password),
         "EchelonSlot4Portrait": convert_string(excel_instance.EchelonSlot4Portrait(), password),
-        "EventUseCostType": ParcelType(convert_int(excel_instance.EventUseCostType(), password)).name,
+        "EventUseCostType": excel_instance.EventUseCostType(),
         "EventUseCostId": convert_int(excel_instance.EventUseCostId(), password),
-        "EchelonRevivalCostType": ParcelType(convert_int(excel_instance.EchelonRevivalCostType(), password)).name,
+        "EchelonRevivalCostType": excel_instance.EchelonRevivalCostType(),
         "EchelonRevivalCostId": convert_int(excel_instance.EchelonRevivalCostId(), password),
         "EchelonRevivalCostAmount": convert_int(excel_instance.EchelonRevivalCostAmount(), password),
         "EnemyBossHP": convert_int(excel_instance.EnemyBossHP(), password),
@@ -28320,11 +5645,11 @@ def dump_MinigameTBGThemaExcel(excel_instance, password: bytes = b"") -> dict:
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "ThemaIndex": convert_int(excel_instance.ThemaIndex(), password),
-        "ThemaType": TBGThemaType(convert_int(excel_instance.ThemaType(), password)).name,
+        "ThemaType": excel_instance.ThemaType(),
         "ThemaMap": convert_string(excel_instance.ThemaMap(), password),
         "ThemaMapBG": convert_string(excel_instance.ThemaMapBG(), password),
-        "PortalConditionLength": convert_int(excel_instance.PortalConditionLength(), password),
-        "PortalConditionParameterLength": convert_int(excel_instance.PortalConditionParameterLength(), password),
+        "PortalCondition": [excel_instance.PortalCondition(j) for j in range(excel_instance.PortalConditionLength())],
+        "PortalConditionParameter": [convert_string(excel_instance.PortalConditionParameter(j), password) for j in range(excel_instance.PortalConditionParameterLength())],
         "ThemaNameLocalize": convert_string(excel_instance.ThemaNameLocalize(), password),
         "ThemaLoadingImage": convert_string(excel_instance.ThemaLoadingImage(), password),
         "ThemaPlayerPrefab": convert_string(excel_instance.ThemaPlayerPrefab(), password),
@@ -28340,17 +5665,17 @@ def dump_MiniGameTBGThemaRewardExcel(excel_instance, password: bytes = b"") -> d
         "ThemaRound": convert_int(excel_instance.ThemaRound(), password),
         "ThemaUniqueId": convert_int(excel_instance.ThemaUniqueId(), password),
         "IsLoop": bool(excel_instance.IsLoop()),
-        "MiniGameTBGThemaRewardType": MiniGameTBGThemaRewardType(convert_int(excel_instance.MiniGameTBGThemaRewardType(), password)).name,
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "MiniGameTBGThemaRewardType": excel_instance.MiniGameTBGThemaRewardType(),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_MinigameTBGVoiceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "VoiceCondition": TBGVoiceCondition(convert_int(excel_instance.VoiceCondition(), password)).name,
+        "VoiceCondition": excel_instance.VoiceCondition(),
         "VoiceId": convert_uint(excel_instance.VoiceId(), password),
     }
 
@@ -28363,10 +5688,10 @@ def dump_MissionEmergencyCompleteExcel(excel_instance, password: bytes = b"") ->
 def dump_MissionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "Category": MissionCategory(convert_int(excel_instance.Category(), password)).name,
+        "Category": excel_instance.Category(),
         "Description": convert_uint(excel_instance.Description(), password),
-        "ResetType": MissionResetType(convert_int(excel_instance.ResetType(), password)).name,
-        "ToastDisplayType": MissionToastDisplayConditionType(convert_int(excel_instance.ToastDisplayType(), password)).name,
+        "ResetType": excel_instance.ResetType(),
+        "ToastDisplayType": excel_instance.ToastDisplayType(),
         "ToastImagePath": convert_string(excel_instance.ToastImagePath(), password),
         "ViewFlag": bool(excel_instance.ViewFlag()),
         "Limit": bool(excel_instance.Limit()),
@@ -28374,22 +5699,22 @@ def dump_MissionExcel(excel_instance, password: bytes = b"") -> dict:
         "EndDate": convert_string(excel_instance.EndDate(), password),
         "EndDay": convert_int(excel_instance.EndDay(), password),
         "StartableEndDate": convert_string(excel_instance.StartableEndDate(), password),
-        "DateAutoRefer": ContentType(convert_int(excel_instance.DateAutoRefer(), password)).name,
+        "DateAutoRefer": excel_instance.DateAutoRefer(),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "PreMissionIdLength": convert_int(excel_instance.PreMissionIdLength(), password),
-        "TargetGroup": TargetGroup(convert_int(excel_instance.TargetGroup(), password)).name,
+        "PreMissionId": [convert_int(excel_instance.PreMissionId(j), password) for j in range(excel_instance.PreMissionIdLength())],
+        "TargetGroup": excel_instance.TargetGroup(),
         "AccountLevel": convert_int(excel_instance.AccountLevel(), password),
-        "ContentTagsLength": convert_int(excel_instance.ContentTagsLength(), password),
-        "ShortcutUILength": convert_int(excel_instance.ShortcutUILength(), password),
+        "ContentTags": [excel_instance.ContentTags(j) for j in range(excel_instance.ContentTagsLength())],
+        "ShortcutUI": [convert_string(excel_instance.ShortcutUI(j), password) for j in range(excel_instance.ShortcutUILength())],
         "ChallengeStageShortcut": convert_int(excel_instance.ChallengeStageShortcut(), password),
-        "CompleteConditionType": MissionCompleteConditionType(convert_int(excel_instance.CompleteConditionType(), password)).name,
+        "CompleteConditionType": excel_instance.CompleteConditionType(),
         "CompleteConditionCount": convert_int(excel_instance.CompleteConditionCount(), password),
-        "CompleteConditionParameterLength": convert_int(excel_instance.CompleteConditionParameterLength(), password),
-        "CompleteConditionParameterTagLength": convert_int(excel_instance.CompleteConditionParameterTagLength(), password),
+        "CompleteConditionParameter": [convert_int(excel_instance.CompleteConditionParameter(j), password) for j in range(excel_instance.CompleteConditionParameterLength())],
+        "CompleteConditionParameterTag": [excel_instance.CompleteConditionParameterTag(j) for j in range(excel_instance.CompleteConditionParameterTagLength())],
         "RewardIcon": convert_string(excel_instance.RewardIcon(), password),
-        "MissionRewardParcelTypeLength": convert_int(excel_instance.MissionRewardParcelTypeLength(), password),
-        "MissionRewardParcelIdLength": convert_int(excel_instance.MissionRewardParcelIdLength(), password),
-        "MissionRewardAmountLength": convert_int(excel_instance.MissionRewardAmountLength(), password),
+        "MissionRewardParcelType": [excel_instance.MissionRewardParcelType(j) for j in range(excel_instance.MissionRewardParcelTypeLength())],
+        "MissionRewardParcelId": [convert_int(excel_instance.MissionRewardParcelId(j), password) for j in range(excel_instance.MissionRewardParcelIdLength())],
+        "MissionRewardAmount": [convert_int(excel_instance.MissionRewardAmount(j), password) for j in range(excel_instance.MissionRewardAmountLength())],
     }
 
 def dump_MomotalkScheduleSpoilerPopupExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28397,7 +5722,7 @@ def dump_MomotalkScheduleSpoilerPopupExcel(excel_instance, password: bytes = b""
         "FavorScheduleId": convert_int(excel_instance.FavorScheduleId(), password),
         "SpoilerPopupTitle": convert_uint(excel_instance.SpoilerPopupTitle(), password),
         "SpoilerPopupDescription": convert_uint(excel_instance.SpoilerPopupDescription(), password),
-        "PopupType": SpoilerPopupType(convert_int(excel_instance.PopupType(), password)).name,
+        "PopupType": excel_instance.PopupType(),
         "ConditionScenarioModeId": convert_int(excel_instance.ConditionScenarioModeId(), password),
     }
 
@@ -28405,7 +5730,7 @@ def dump_MultiFloorRaidRewardExcel(excel_instance, password: bytes = b"") -> dic
     return {
         "RewardGroupId": convert_int(excel_instance.RewardGroupId(), password),
         "ClearStageRewardProb": convert_int(excel_instance.ClearStageRewardProb(), password),
-        "ClearStageRewardParcelType": ParcelType(convert_int(excel_instance.ClearStageRewardParcelType(), password)).name,
+        "ClearStageRewardParcelType": excel_instance.ClearStageRewardParcelType(),
         "ClearStageRewardParcelUniqueID": convert_int(excel_instance.ClearStageRewardParcelUniqueID(), password),
         "ClearStageRewardAmount": convert_int(excel_instance.ClearStageRewardAmount(), password),
     }
@@ -28429,7 +5754,7 @@ def dump_MultiFloorRaidSeasonManageExcel(excel_instance, password: bytes = b"") 
 def dump_MultiFloorRaidStageExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
         "BossGroupId": convert_string(excel_instance.BossGroupId(), password),
         "AssistSlot": convert_int(excel_instance.AssistSlot(), password),
         "StageOpenCondition": convert_int(excel_instance.StageOpenCondition(), password),
@@ -28442,15 +5767,15 @@ def dump_MultiFloorRaidStageExcel(excel_instance, password: bytes = b"") -> dict
         "FloorListImgPath": convert_string(excel_instance.FloorListImgPath(), password),
         "FloorImgPath": convert_string(excel_instance.FloorImgPath(), password),
         "RaidCharacterId": convert_int(excel_instance.RaidCharacterId(), password),
-        "BossCharacterIdLength": convert_int(excel_instance.BossCharacterIdLength(), password),
-        "StatChangeIdLength": convert_int(excel_instance.StatChangeIdLength(), password),
+        "BossCharacterId": [convert_int(excel_instance.BossCharacterId(j), password) for j in range(excel_instance.BossCharacterIdLength())],
+        "StatChangeId": [convert_int(excel_instance.StatChangeId(j), password) for j in range(excel_instance.StatChangeIdLength())],
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
         "GroundId": convert_int(excel_instance.GroundId(), password),
         "RecommendLevel": convert_int(excel_instance.RecommendLevel(), password),
         "RewardGroupId": convert_int(excel_instance.RewardGroupId(), password),
-        "BattleReadyTimelinePathLength": convert_int(excel_instance.BattleReadyTimelinePathLength(), password),
-        "BattleReadyTimelinePhaseStartLength": convert_int(excel_instance.BattleReadyTimelinePhaseStartLength(), password),
-        "BattleReadyTimelinePhaseEndLength": convert_int(excel_instance.BattleReadyTimelinePhaseEndLength(), password),
+        "BattleReadyTimelinePath": [convert_string(excel_instance.BattleReadyTimelinePath(j), password) for j in range(excel_instance.BattleReadyTimelinePathLength())],
+        "BattleReadyTimelinePhaseStart": [convert_int(excel_instance.BattleReadyTimelinePhaseStart(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseStartLength())],
+        "BattleReadyTimelinePhaseEnd": [convert_int(excel_instance.BattleReadyTimelinePhaseEnd(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseEndLength())],
         "VictoryTimelinePath": convert_string(excel_instance.VictoryTimelinePath(), password),
         "ShowSkillCard": bool(excel_instance.ShowSkillCard()),
     }
@@ -28458,10 +5783,10 @@ def dump_MultiFloorRaidStageExcel(excel_instance, password: bytes = b"") -> dict
 def dump_MultiFloorRaidStatChangeExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "StatChangeId": convert_int(excel_instance.StatChangeId(), password),
-        "StatTypeLength": convert_int(excel_instance.StatTypeLength(), password),
-        "StatAddLength": convert_int(excel_instance.StatAddLength(), password),
-        "StatMultiplyLength": convert_int(excel_instance.StatMultiplyLength(), password),
-        "ApplyCharacterIdLength": convert_int(excel_instance.ApplyCharacterIdLength(), password),
+        "StatType": [excel_instance.StatType(j) for j in range(excel_instance.StatTypeLength())],
+        "StatAdd": [convert_int(excel_instance.StatAdd(j), password) for j in range(excel_instance.StatAddLength())],
+        "StatMultiply": [convert_int(excel_instance.StatMultiply(j), password) for j in range(excel_instance.StatMultiplyLength())],
+        "ApplyCharacterId": [convert_int(excel_instance.ApplyCharacterId(j), password) for j in range(excel_instance.ApplyCharacterIdLength())],
     }
 
 def dump_ObstacleFireLineCheckExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28496,20 +5821,20 @@ def dump_ObstacleStatExcel(excel_instance, password: bytes = b"") -> dict:
 
 def dump_OpenConditionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "OpenConditionContentType": OpenConditionContent(convert_int(excel_instance.OpenConditionContentType(), password)).name,
-        "LockUILength": convert_int(excel_instance.LockUILength(), password),
+        "OpenConditionContentType": excel_instance.OpenConditionContentType(),
+        "LockUI": [convert_string(excel_instance.LockUI(j), password) for j in range(excel_instance.LockUILength())],
         "ShortcutPopupPriority": convert_int(excel_instance.ShortcutPopupPriority(), password),
-        "ShortcutUINameLength": convert_int(excel_instance.ShortcutUINameLength(), password),
+        "ShortcutUIName": [convert_string(excel_instance.ShortcutUIName(j), password) for j in range(excel_instance.ShortcutUINameLength())],
         "ShortcutParam": convert_int(excel_instance.ShortcutParam(), password),
         "Scene": convert_string(excel_instance.Scene(), password),
         "HideWhenLocked": bool(excel_instance.HideWhenLocked()),
         "AccountLevel": convert_int(excel_instance.AccountLevel(), password),
         "ScenarioModeId": convert_int(excel_instance.ScenarioModeId(), password),
         "CampaignStageId": convert_int(excel_instance.CampaignStageId(), password),
-        "MultipleConditionCheckType": MultipleConditionCheckType(convert_int(excel_instance.MultipleConditionCheckType(), password)).name,
-        "OpenDayOfWeek": WeekDay(convert_int(excel_instance.OpenDayOfWeek(), password)).name,
+        "MultipleConditionCheckType": excel_instance.MultipleConditionCheckType(),
+        "OpenDayOfWeek": excel_instance.OpenDayOfWeek(),
         "OpenHour": convert_int(excel_instance.OpenHour(), password),
-        "CloseDayOfWeek": WeekDay(convert_int(excel_instance.CloseDayOfWeek(), password)).name,
+        "CloseDayOfWeek": excel_instance.CloseDayOfWeek(),
         "CloseHour": convert_int(excel_instance.CloseHour(), password),
         "OpenedCafeId": convert_int(excel_instance.OpenedCafeId(), password),
         "CafeIdforCafeRank": convert_int(excel_instance.CafeIdforCafeRank(), password),
@@ -28522,7 +5847,7 @@ def dump_OperatorExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "GroupId": convert_string(excel_instance.GroupId(), password),
-        "OperatorCondition": OperatorCondition(convert_int(excel_instance.OperatorCondition(), password)).name,
+        "OperatorCondition": excel_instance.OperatorCondition(),
         "OutputSequence": convert_int(excel_instance.OutputSequence(), password),
         "RandomWeight": convert_int(excel_instance.RandomWeight(), password),
         "OutputDelay": convert_int(excel_instance.OutputDelay(), password),
@@ -28530,28 +5855,28 @@ def dump_OperatorExcel(excel_instance, password: bytes = b"") -> dict:
         "OperatorOutputPriority": convert_int(excel_instance.OperatorOutputPriority(), password),
         "PortraitPath": convert_string(excel_instance.PortraitPath(), password),
         "TextLocalizeKey": convert_string(excel_instance.TextLocalizeKey(), password),
-        "VoiceIdLength": convert_int(excel_instance.VoiceIdLength(), password),
+        "VoiceId": [convert_uint(excel_instance.VoiceId(j), password) for j in range(excel_instance.VoiceIdLength())],
         "OperatorWaitQueue": bool(excel_instance.OperatorWaitQueue()),
-        "CharacterVoiceOverridePriority": CharacterVoiceOverridePriority(convert_int(excel_instance.CharacterVoiceOverridePriority(), password)).name,
+        "CharacterVoiceOverridePriority": excel_instance.CharacterVoiceOverridePriority(),
     }
 
 def dump_ParcelAutoSynthExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "RequireParcelType": ParcelType(convert_int(excel_instance.RequireParcelType(), password)).name,
+        "RequireParcelType": excel_instance.RequireParcelType(),
         "RequireParcelId": convert_int(excel_instance.RequireParcelId(), password),
         "RequireParcelAmount": convert_int(excel_instance.RequireParcelAmount(), password),
         "SynthStartAmount": convert_int(excel_instance.SynthStartAmount(), password),
         "SynthEndAmount": convert_int(excel_instance.SynthEndAmount(), password),
         "SynthMaxItem": bool(excel_instance.SynthMaxItem()),
-        "ResultParcelType": ParcelType(convert_int(excel_instance.ResultParcelType(), password)).name,
+        "ResultParcelType": excel_instance.ResultParcelType(),
         "ResultParcelId": convert_int(excel_instance.ResultParcelId(), password),
         "ResultParcelAmount": convert_int(excel_instance.ResultParcelAmount(), password),
     }
 
 def dump_PermanentRaidManageExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "Type": RaidBossGroupType(convert_int(excel_instance.Type(), password)).name,
-        "OpenRaidBossGroupLength": convert_int(excel_instance.OpenRaidBossGroupLength(), password),
+        "Type": excel_instance.Type(),
+        "OpenRaidBossGroup": [convert_string(excel_instance.OpenRaidBossGroup(j), password) for j in range(excel_instance.OpenRaidBossGroupLength())],
         "OpenDate": convert_string(excel_instance.OpenDate(), password),
     }
 
@@ -28567,7 +5892,7 @@ def dump_PickupDuplicateBonusExcel(excel_instance, password: bytes = b"") -> dic
         "ShopCategoryType": convert_float(excel_instance.ShopCategoryType(), password),
         "ShopId": convert_int(excel_instance.ShopId(), password),
         "PickupCharacterId": convert_int(excel_instance.PickupCharacterId(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -28578,7 +5903,7 @@ def dump_PickupFirstGetBonus2Excel(excel_instance, password: bytes = b"") -> dic
         "ShopRecruitId": convert_int(excel_instance.ShopRecruitId(), password),
         "RecruitSellectionShopId": convert_int(excel_instance.RecruitSellectionShopId(), password),
         "PickupCharacterId": convert_int(excel_instance.PickupCharacterId(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -28588,7 +5913,7 @@ def dump_PickupFirstGetBonusExcel(excel_instance, password: bytes = b"") -> dict
         "ShopRecruitId": convert_int(excel_instance.ShopRecruitId(), password),
         "RecruitSellectionShopId": convert_int(excel_instance.RecruitSellectionShopId(), password),
         "PickupCharacterId": convert_int(excel_instance.PickupCharacterId(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
     }
@@ -28596,10 +5921,10 @@ def dump_PickupFirstGetBonusExcel(excel_instance, password: bytes = b"") -> dict
 def dump_PossessionCheckExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
-        "DefaultParcelType": ParcelType(convert_int(excel_instance.DefaultParcelType(), password)).name,
+        "DefaultParcelType": excel_instance.DefaultParcelType(),
         "DefaultParcelId": convert_int(excel_instance.DefaultParcelId(), password),
         "DefaultParcelAmount": convert_int(excel_instance.DefaultParcelAmount(), password),
-        "ReplaceParcelType": ParcelType(convert_int(excel_instance.ReplaceParcelType(), password)).name,
+        "ReplaceParcelType": excel_instance.ReplaceParcelType(),
         "ReplaceParcelId": convert_int(excel_instance.ReplaceParcelId(), password),
         "ReplaceParcelAmount": convert_int(excel_instance.ReplaceParcelAmount(), password),
     }
@@ -28633,11 +5958,11 @@ def dump_PresetCharacterGroupExcel(excel_instance, password: bytes = b"") -> dic
         "EquipCharacterGear": bool(excel_instance.EquipCharacterGear()),
         "EquipCharacterGearTier": convert_int(excel_instance.EquipCharacterGearTier(), password),
         "EquipCharacterGearLevel": convert_int(excel_instance.EquipCharacterGearLevel(), password),
-        "PotentialType01": PotentialStatBonusRateType(convert_int(excel_instance.PotentialType01(), password)).name,
+        "PotentialType01": excel_instance.PotentialType01(),
         "PotentialLevel01": convert_int(excel_instance.PotentialLevel01(), password),
-        "PotentialType02": PotentialStatBonusRateType(convert_int(excel_instance.PotentialType02(), password)).name,
+        "PotentialType02": excel_instance.PotentialType02(),
         "PotentialLevel02": convert_int(excel_instance.PotentialLevel02(), password),
-        "PotentialType03": PotentialStatBonusRateType(convert_int(excel_instance.PotentialType03(), password)).name,
+        "PotentialType03": excel_instance.PotentialType03(),
         "PotentialLevel03": convert_int(excel_instance.PotentialLevel03(), password),
     }
 
@@ -28645,12 +5970,12 @@ def dump_PresetCharacterGroupSettingExcel(excel_instance, password: bytes = b"")
     return {
         "CharacterId": convert_int(excel_instance.CharacterId(), password),
         "ArenaSimulatorFixed": bool(excel_instance.ArenaSimulatorFixed()),
-        "PresetTypeLength": convert_int(excel_instance.PresetTypeLength(), password),
+        "PresetType": [convert_string(excel_instance.PresetType(j), password) for j in range(excel_instance.PresetTypeLength())],
     }
 
 def dump_PresetParcelsExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "ParcelId": convert_int(excel_instance.ParcelId(), password),
         "PresetGroupId": convert_int(excel_instance.PresetGroupId(), password),
         "ParcelAmount": convert_int(excel_instance.ParcelAmount(), password),
@@ -28660,26 +5985,26 @@ def dump_ProductBattlePassExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "ProductId": convert_string(excel_instance.ProductId(), password),
-        "StoreType": StoreType(convert_int(excel_instance.StoreType(), password)).name,
+        "StoreType": excel_instance.StoreType(),
         "Price": convert_int(excel_instance.Price(), password),
         "PurchaseCountLimit": convert_int(excel_instance.PurchaseCountLimit(), password),
         "BattlePassProductGroupId": convert_int(excel_instance.BattlePassProductGroupId(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ParcelAmountLength": convert_int(excel_instance.ParcelAmountLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ParcelAmount": [convert_int(excel_instance.ParcelAmount(j), password) for j in range(excel_instance.ParcelAmountLength())],
     }
 
 def dump_ProductDailyRecordExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "ProductId": convert_string(excel_instance.ProductId(), password),
-        "StoreType": StoreType(convert_int(excel_instance.StoreType(), password)).name,
+        "StoreType": excel_instance.StoreType(),
         "Price": convert_int(excel_instance.Price(), password),
         "PurchaseCountLimit": convert_int(excel_instance.PurchaseCountLimit(), password),
         "RewardId": convert_int(excel_instance.RewardId(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ParcelAmountLength": convert_int(excel_instance.ParcelAmountLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ParcelAmount": [convert_int(excel_instance.ParcelAmount(j), password) for j in range(excel_instance.ParcelAmountLength())],
         "TitleImagePath": convert_string(excel_instance.TitleImagePath(), password),
     }
 
@@ -28694,58 +6019,58 @@ def dump_ProductDailyRecordRewardExcel(excel_instance, password: bytes = b"") ->
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "Day": convert_int(excel_instance.Day(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardIdLength": convert_int(excel_instance.RewardIdLength(), password),
-        "RewardAmountLength": convert_int(excel_instance.RewardAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardId": [convert_int(excel_instance.RewardId(j), password) for j in range(excel_instance.RewardIdLength())],
+        "RewardAmount": [convert_int(excel_instance.RewardAmount(j), password) for j in range(excel_instance.RewardAmountLength())],
     }
 
 def dump_ProductExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "ProductId": convert_string(excel_instance.ProductId(), password),
-        "StoreType": StoreType(convert_int(excel_instance.StoreType(), password)).name,
+        "StoreType": excel_instance.StoreType(),
         "Price": convert_int(excel_instance.Price(), password),
         "PriceReference": convert_string(excel_instance.PriceReference(), password),
-        "PurchasePeriodType": PurchasePeriodType(convert_int(excel_instance.PurchasePeriodType(), password)).name,
+        "PurchasePeriodType": excel_instance.PurchasePeriodType(),
         "PurchasePeriodLimit": convert_int(excel_instance.PurchasePeriodLimit(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ParcelAmountLength": convert_int(excel_instance.ParcelAmountLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ParcelAmount": [convert_int(excel_instance.ParcelAmount(j), password) for j in range(excel_instance.ParcelAmountLength())],
     }
 
 def dump_ProductMonthlyExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "ProductId": convert_string(excel_instance.ProductId(), password),
-        "StoreType": StoreType(convert_int(excel_instance.StoreType(), password)).name,
+        "StoreType": excel_instance.StoreType(),
         "Price": convert_int(excel_instance.Price(), password),
         "PriceReference": convert_string(excel_instance.PriceReference(), password),
-        "ProductTagType": ProductTagType(convert_int(excel_instance.ProductTagType(), password)).name,
+        "ProductTagType": excel_instance.ProductTagType(),
         "MonthlyDays": convert_int(excel_instance.MonthlyDays(), password),
         "UseMonthlyProductCheck": bool(excel_instance.UseMonthlyProductCheck()),
         "PurchaseCountLimit": convert_int(excel_instance.PurchaseCountLimit(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ParcelAmountLength": convert_int(excel_instance.ParcelAmountLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ParcelAmount": [convert_int(excel_instance.ParcelAmount(j), password) for j in range(excel_instance.ParcelAmountLength())],
         "EnterCostReduceGroupId": convert_int(excel_instance.EnterCostReduceGroupId(), password),
-        "DailyParcelTypeLength": convert_int(excel_instance.DailyParcelTypeLength(), password),
-        "DailyParcelIdLength": convert_int(excel_instance.DailyParcelIdLength(), password),
-        "DailyParcelAmountLength": convert_int(excel_instance.DailyParcelAmountLength(), password),
+        "DailyParcelType": [excel_instance.DailyParcelType(j) for j in range(excel_instance.DailyParcelTypeLength())],
+        "DailyParcelId": [convert_int(excel_instance.DailyParcelId(j), password) for j in range(excel_instance.DailyParcelIdLength())],
+        "DailyParcelAmount": [convert_int(excel_instance.DailyParcelAmount(j), password) for j in range(excel_instance.DailyParcelAmountLength())],
     }
 
 def dump_ProductSelectExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "ProductId": convert_string(excel_instance.ProductId(), password),
-        "StoreType": StoreType(convert_int(excel_instance.StoreType(), password)).name,
+        "StoreType": excel_instance.StoreType(),
         "Price": convert_int(excel_instance.Price(), password),
         "PriceReference": convert_string(excel_instance.PriceReference(), password),
-        "PurchasePeriodType": PurchasePeriodType(convert_int(excel_instance.PurchasePeriodType(), password)).name,
+        "PurchasePeriodType": excel_instance.PurchasePeriodType(),
         "PurchasePeriodLimit": convert_int(excel_instance.PurchasePeriodLimit(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ParcelAmountLength": convert_int(excel_instance.ParcelAmountLength(), password),
-        "ProductSelectionSlotLength": convert_int(excel_instance.ProductSelectionSlotLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ParcelAmount": [convert_int(excel_instance.ParcelAmount(j), password) for j in range(excel_instance.ParcelAmountLength())],
+        "ProductSelectionSlot": [convert_int(excel_instance.ProductSelectionSlot(j), password) for j in range(excel_instance.ProductSelectionSlotLength())],
     }
 
 def dump_ProductSelectionGroupExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28753,17 +6078,17 @@ def dump_ProductSelectionGroupExcel(excel_instance, password: bytes = b"") -> di
         "ProductSelectionGroupId": convert_int(excel_instance.ProductSelectionGroupId(), password),
         "ProductSelectionGroupComponentId": convert_int(excel_instance.ProductSelectionGroupComponentId(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "ParcelId": convert_int(excel_instance.ParcelId(), password),
         "ResultAmount": convert_int(excel_instance.ResultAmount(), password),
-        "ConditionParcelType": ParcelType(convert_int(excel_instance.ConditionParcelType(), password)).name,
+        "ConditionParcelType": excel_instance.ConditionParcelType(),
         "ConditionParcelId": convert_int(excel_instance.ConditionParcelId(), password),
     }
 
 def dump_RaidContentPlayGuideExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "RaidBossGroupType": RaidBossGroupType(convert_int(excel_instance.RaidBossGroupType(), password)).name,
+        "RaidBossGroupType": excel_instance.RaidBossGroupType(),
         "IsPCBuild": bool(excel_instance.IsPCBuild()),
         "IdExport": bool(excel_instance.IdExport()),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
@@ -28781,9 +6106,9 @@ def dump_RaidRankingRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "PercentRankStart": convert_int(excel_instance.PercentRankStart(), password),
         "PercentRankEnd": convert_int(excel_instance.PercentRankEnd(), password),
         "Tier": convert_int(excel_instance.Tier(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelUniqueIdLength": convert_int(excel_instance.RewardParcelUniqueIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelUniqueId": [convert_int(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_RaidRankingRewardUOExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28795,9 +6120,9 @@ def dump_RaidRankingRewardUOExcel(excel_instance, password: bytes = b"") -> dict
         "PercentRankStart": convert_int(excel_instance.PercentRankStart(), password),
         "PercentRankEnd": convert_int(excel_instance.PercentRankEnd(), password),
         "Tier": convert_int(excel_instance.Tier(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelUniqueIdLength": convert_int(excel_instance.RewardParcelUniqueIdLength(), password),
-        "RewardParcelAmountLength": convert_int(excel_instance.RewardParcelAmountLength(), password),
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelUniqueId": [convert_int(excel_instance.RewardParcelUniqueId(j), password) for j in range(excel_instance.RewardParcelUniqueIdLength())],
+        "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmount(j), password) for j in range(excel_instance.RewardParcelAmountLength())],
     }
 
 def dump_RaidSeasonManageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28808,11 +6133,11 @@ def dump_RaidSeasonManageExcel(excel_instance, password: bytes = b"") -> dict:
         "EndNoteLabelStartDate": convert_string(excel_instance.EndNoteLabelStartDate(), password),
         "SeasonEndData": convert_string(excel_instance.SeasonEndData(), password),
         "SettlementEndDate": convert_string(excel_instance.SettlementEndDate(), password),
-        "OpenRaidBossGroupLength": convert_int(excel_instance.OpenRaidBossGroupLength(), password),
+        "OpenRaidBossGroup": [convert_string(excel_instance.OpenRaidBossGroup(j), password) for j in range(excel_instance.OpenRaidBossGroupLength())],
         "RankingRewardGroupId": convert_int(excel_instance.RankingRewardGroupId(), password),
         "MaxSeasonRewardGauage": convert_int(excel_instance.MaxSeasonRewardGauage(), password),
-        "StackedSeasonRewardGaugeLength": convert_int(excel_instance.StackedSeasonRewardGaugeLength(), password),
-        "SeasonRewardIdLength": convert_int(excel_instance.SeasonRewardIdLength(), password),
+        "StackedSeasonRewardGauge": [convert_int(excel_instance.StackedSeasonRewardGauge(j), password) for j in range(excel_instance.StackedSeasonRewardGaugeLength())],
+        "SeasonRewardId": [convert_int(excel_instance.SeasonRewardId(j), password) for j in range(excel_instance.SeasonRewardIdLength())],
     }
 
 def dump_RaidStageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28824,16 +6149,16 @@ def dump_RaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "PortraitPath": convert_string(excel_instance.PortraitPath(), password),
         "BGPath": convert_string(excel_instance.BGPath(), password),
         "RaidCharacterId": convert_int(excel_instance.RaidCharacterId(), password),
-        "BossCharacterIdLength": convert_int(excel_instance.BossCharacterIdLength(), password),
-        "Difficulty": Difficulty(convert_int(excel_instance.Difficulty(), password)).name,
+        "BossCharacterId": [convert_int(excel_instance.BossCharacterId(j), password) for j in range(excel_instance.BossCharacterIdLength())],
+        "Difficulty": excel_instance.Difficulty(),
         "DifficultyOpenCondition": bool(excel_instance.DifficultyOpenCondition()),
         "MaxPlayerCount": convert_int(excel_instance.MaxPlayerCount(), password),
         "RaidRoomLifeTime": convert_int(excel_instance.RaidRoomLifeTime(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
         "GroundId": convert_int(excel_instance.GroundId(), password),
-        "RaidBossGroupType": RaidBossGroupType(convert_int(excel_instance.RaidBossGroupType(), password)).name,
+        "RaidBossGroupType": excel_instance.RaidBossGroupType(),
         "EnterTimeLine": convert_string(excel_instance.EnterTimeLine(), password),
-        "TacticEnvironment": TacticEnvironment(convert_int(excel_instance.TacticEnvironment(), password)).name,
+        "TacticEnvironment": excel_instance.TacticEnvironment(),
         "DefaultClearScore": convert_int(excel_instance.DefaultClearScore(), password),
         "MaximumScore": convert_int(excel_instance.MaximumScore(), password),
         "PerSecondMinusScore": convert_int(excel_instance.PerSecondMinusScore(), password),
@@ -28841,9 +6166,9 @@ def dump_RaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "MinimumAcquisitionScore": convert_int(excel_instance.MinimumAcquisitionScore(), password),
         "MaximumAcquisitionScore": convert_int(excel_instance.MaximumAcquisitionScore(), password),
         "RaidRewardGroupId": convert_int(excel_instance.RaidRewardGroupId(), password),
-        "BattleReadyTimelinePathLength": convert_int(excel_instance.BattleReadyTimelinePathLength(), password),
-        "BattleReadyTimelinePhaseStartLength": convert_int(excel_instance.BattleReadyTimelinePhaseStartLength(), password),
-        "BattleReadyTimelinePhaseEndLength": convert_int(excel_instance.BattleReadyTimelinePhaseEndLength(), password),
+        "BattleReadyTimelinePath": [convert_string(excel_instance.BattleReadyTimelinePath(j), password) for j in range(excel_instance.BattleReadyTimelinePathLength())],
+        "BattleReadyTimelinePhaseStart": [convert_int(excel_instance.BattleReadyTimelinePhaseStart(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseStartLength())],
+        "BattleReadyTimelinePhaseEnd": [convert_int(excel_instance.BattleReadyTimelinePhaseEnd(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseEndLength())],
         "VictoryTimelinePath": convert_string(excel_instance.VictoryTimelinePath(), password),
         "PhaseChangeTimelinePath": convert_string(excel_instance.PhaseChangeTimelinePath(), password),
         "TimeLinePhase": convert_int(excel_instance.TimeLinePhase(), password),
@@ -28851,7 +6176,7 @@ def dump_RaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "ClearScenarioKey": convert_uint(excel_instance.ClearScenarioKey(), password),
         "ShowSkillCard": bool(excel_instance.ShowSkillCard()),
         "BossBGInfoKey": convert_uint(excel_instance.BossBGInfoKey(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_RaidStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -28859,7 +6184,7 @@ def dump_RaidStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "IsClearStageRewardHideInfo": bool(excel_instance.IsClearStageRewardHideInfo()),
         "ClearStageRewardProb": convert_int(excel_instance.ClearStageRewardProb(), password),
-        "ClearStageRewardParcelType": ParcelType(convert_int(excel_instance.ClearStageRewardParcelType(), password)).name,
+        "ClearStageRewardParcelType": excel_instance.ClearStageRewardParcelType(),
         "ClearStageRewardParcelUniqueID": convert_int(excel_instance.ClearStageRewardParcelUniqueID(), password),
         "ClearStageRewardAmount": convert_int(excel_instance.ClearStageRewardAmount(), password),
     }
@@ -28867,49 +6192,49 @@ def dump_RaidStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_RaidStageSeasonRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "SeasonRewardId": convert_int(excel_instance.SeasonRewardId(), password),
-        "SeasonRewardParcelTypeLength": convert_int(excel_instance.SeasonRewardParcelTypeLength(), password),
-        "SeasonRewardParcelUniqueIdLength": convert_int(excel_instance.SeasonRewardParcelUniqueIdLength(), password),
-        "SeasonRewardAmountLength": convert_int(excel_instance.SeasonRewardAmountLength(), password),
+        "SeasonRewardParcelType": [excel_instance.SeasonRewardParcelType(j) for j in range(excel_instance.SeasonRewardParcelTypeLength())],
+        "SeasonRewardParcelUniqueId": [convert_int(excel_instance.SeasonRewardParcelUniqueId(j), password) for j in range(excel_instance.SeasonRewardParcelUniqueIdLength())],
+        "SeasonRewardAmount": [convert_int(excel_instance.SeasonRewardAmount(j), password) for j in range(excel_instance.SeasonRewardAmountLength())],
     }
 
 def dump_RecipeExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "RecipeType": RecipeType(convert_int(excel_instance.RecipeType(), password)).name,
+        "RecipeType": excel_instance.RecipeType(),
         "RecipeIngredientId": convert_int(excel_instance.RecipeIngredientId(), password),
         "RecipeSelectionGroupId": convert_int(excel_instance.RecipeSelectionGroupId(), password),
-        "ParcelTypeLength": convert_int(excel_instance.ParcelTypeLength(), password),
-        "ParcelIdLength": convert_int(excel_instance.ParcelIdLength(), password),
-        "ResultAmountMinLength": convert_int(excel_instance.ResultAmountMinLength(), password),
-        "ResultAmountMaxLength": convert_int(excel_instance.ResultAmountMaxLength(), password),
+        "ParcelType": [excel_instance.ParcelType(j) for j in range(excel_instance.ParcelTypeLength())],
+        "ParcelId": [convert_int(excel_instance.ParcelId(j), password) for j in range(excel_instance.ParcelIdLength())],
+        "ResultAmountMin": [convert_int(excel_instance.ResultAmountMin(j), password) for j in range(excel_instance.ResultAmountMinLength())],
+        "ResultAmountMax": [convert_int(excel_instance.ResultAmountMax(j), password) for j in range(excel_instance.ResultAmountMaxLength())],
     }
 
 def dump_RecipeIngredientExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "RecipeType": RecipeType(convert_int(excel_instance.RecipeType(), password)).name,
-        "CostParcelTypeLength": convert_int(excel_instance.CostParcelTypeLength(), password),
-        "CostIdLength": convert_int(excel_instance.CostIdLength(), password),
-        "CostAmountLength": convert_int(excel_instance.CostAmountLength(), password),
-        "IngredientParcelTypeLength": convert_int(excel_instance.IngredientParcelTypeLength(), password),
-        "IngredientIdLength": convert_int(excel_instance.IngredientIdLength(), password),
-        "IngredientAmountLength": convert_int(excel_instance.IngredientAmountLength(), password),
+        "RecipeType": excel_instance.RecipeType(),
+        "CostParcelType": [excel_instance.CostParcelType(j) for j in range(excel_instance.CostParcelTypeLength())],
+        "CostId": [convert_int(excel_instance.CostId(j), password) for j in range(excel_instance.CostIdLength())],
+        "CostAmount": [convert_int(excel_instance.CostAmount(j), password) for j in range(excel_instance.CostAmountLength())],
+        "IngredientParcelType": [excel_instance.IngredientParcelType(j) for j in range(excel_instance.IngredientParcelTypeLength())],
+        "IngredientId": [convert_int(excel_instance.IngredientId(j), password) for j in range(excel_instance.IngredientIdLength())],
+        "IngredientAmount": [convert_int(excel_instance.IngredientAmount(j), password) for j in range(excel_instance.IngredientAmountLength())],
         "CostTimeInSecond": convert_int(excel_instance.CostTimeInSecond(), password),
     }
 
 def dump_RecipeSelectionAutoUseExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "TargetItemId": convert_int(excel_instance.TargetItemId(), password),
-        "PriorityLength": convert_int(excel_instance.PriorityLength(), password),
+        "Priority": [convert_int(excel_instance.Priority(j), password) for j in range(excel_instance.PriorityLength())],
     }
 
 def dump_RecipeSelectionGroupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "RecipeSelectionGroupId": convert_int(excel_instance.RecipeSelectionGroupId(), password),
         "RecipeSelectionGroupComponentId": convert_int(excel_instance.RecipeSelectionGroupComponentId(), password),
-        "ParcelType": ParcelType(convert_int(excel_instance.ParcelType(), password)).name,
+        "ParcelType": excel_instance.ParcelType(),
         "ParcelId": convert_int(excel_instance.ParcelId(), password),
         "ResultAmountMin": convert_int(excel_instance.ResultAmountMin(), password),
         "ResultAmountMax": convert_int(excel_instance.ResultAmountMax(), password),
@@ -28920,7 +6245,7 @@ def dump_ScenarioBGEffectExcel(excel_instance, password: bytes = b"") -> dict:
         "Name": convert_uint(excel_instance.Name(), password),
         "Effect": convert_string(excel_instance.Effect(), password),
         "Effect2": convert_string(excel_instance.Effect2(), password),
-        "Scroll": ScenarioBGScroll(convert_int(excel_instance.Scroll(), password)).name,
+        "Scroll": excel_instance.Scroll(),
         "ScrollTime": convert_int(excel_instance.ScrollTime(), password),
         "ScrollFrom": convert_int(excel_instance.ScrollFrom(), password),
         "ScrollTo": convert_int(excel_instance.ScrollTo(), password),
@@ -28929,9 +6254,9 @@ def dump_ScenarioBGEffectExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_ScenarioBGNameExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Name": convert_uint(excel_instance.Name(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
         "BGFileName": convert_string(excel_instance.BGFileName(), password),
-        "BGType": ScenarioBGType(convert_int(excel_instance.BGType(), password)).name,
+        "BGType": excel_instance.BGType(),
         "AnimationRoot": convert_string(excel_instance.AnimationRoot(), password),
         "AnimationName": convert_string(excel_instance.AnimationName(), password),
         "SpineScale": convert_float(excel_instance.SpineScale(), password),
@@ -28948,12 +6273,12 @@ def dump_ScenarioCharacterEmotionExcel(excel_instance, password: bytes = b"") ->
 def dump_ScenarioCharacterNameExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "CharacterName": convert_uint(excel_instance.CharacterName(), password),
-        "ProductionStep": ProductionStep(convert_int(excel_instance.ProductionStep(), password)).name,
+        "ProductionStep": excel_instance.ProductionStep(),
         "NameKR": convert_string(excel_instance.NameKR(), password),
         "NicknameKR": convert_string(excel_instance.NicknameKR(), password),
         "NameJP": convert_string(excel_instance.NameJP(), password),
         "NicknameJP": convert_string(excel_instance.NicknameJP(), password),
-        "Shape": ScenarioCharacterShapes(convert_int(excel_instance.Shape(), password)).name,
+        "Shape": excel_instance.Shape(),
         "SpinePrefabName": convert_string(excel_instance.SpinePrefabName(), password),
         "SmallPortrait": convert_string(excel_instance.SmallPortrait(), password),
     }
@@ -28973,9 +6298,9 @@ def dump_ScenarioContentCollectionExcel(excel_instance, password: bytes = b"") -
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "UnlockConditionType": CollectionUnlockType(convert_int(excel_instance.UnlockConditionType(), password)).name,
-        "UnlockConditionParameterLength": convert_int(excel_instance.UnlockConditionParameterLength(), password),
-        "MultipleConditionCheckType": MultipleConditionCheckType(convert_int(excel_instance.MultipleConditionCheckType(), password)).name,
+        "UnlockConditionType": excel_instance.UnlockConditionType(),
+        "UnlockConditionParameter": [convert_int(excel_instance.UnlockConditionParameter(j), password) for j in range(excel_instance.UnlockConditionParameterLength())],
+        "MultipleConditionCheckType": excel_instance.MultipleConditionCheckType(),
         "UnlockConditionCount": convert_int(excel_instance.UnlockConditionCount(), password),
         "IsObject": bool(excel_instance.IsObject()),
         "IsHorizon": bool(excel_instance.IsHorizon()),
@@ -28995,8 +6320,8 @@ def dump_ScenarioEffectExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_ScenarioModeExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "ModeId": convert_int(excel_instance.ModeId(), password),
-        "ModeType": ScenarioModeTypes(convert_int(excel_instance.ModeType(), password)).name,
-        "SubType": ScenarioModeSubTypes(convert_int(excel_instance.SubType(), password)).name,
+        "ModeType": excel_instance.ModeType(),
+        "SubType": excel_instance.SubType(),
         "VolumeId": convert_int(excel_instance.VolumeId(), password),
         "ChapterId": convert_int(excel_instance.ChapterId(), password),
         "EpisodeId": convert_int(excel_instance.EpisodeId(), password),
@@ -29005,33 +6330,33 @@ def dump_ScenarioModeExcel(excel_instance, password: bytes = b"") -> dict:
         "Open": bool(excel_instance.Open()),
         "IsContinue": bool(excel_instance.IsContinue()),
         "EpisodeContinueModeId": convert_int(excel_instance.EpisodeContinueModeId(), password),
-        "FrontScenarioGroupIdLength": convert_int(excel_instance.FrontScenarioGroupIdLength(), password),
+        "FrontScenarioGroupId": [convert_int(excel_instance.FrontScenarioGroupId(j), password) for j in range(excel_instance.FrontScenarioGroupIdLength())],
         "StrategyId": convert_int(excel_instance.StrategyId(), password),
         "GroundId": convert_int(excel_instance.GroundId(), password),
         "IsDefeatBattle": bool(excel_instance.IsDefeatBattle()),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
-        "BackScenarioGroupIdLength": convert_int(excel_instance.BackScenarioGroupIdLength(), password),
-        "ClearedModeIdLength": convert_int(excel_instance.ClearedModeIdLength(), password),
+        "BackScenarioGroupId": [convert_int(excel_instance.BackScenarioGroupId(j), password) for j in range(excel_instance.BackScenarioGroupIdLength())],
+        "ClearedModeId": [convert_int(excel_instance.ClearedModeId(j), password) for j in range(excel_instance.ClearedModeIdLength())],
         "ScenarioModeRewardId": convert_int(excel_instance.ScenarioModeRewardId(), password),
         "IsScenarioSpecialReward": bool(excel_instance.IsScenarioSpecialReward()),
         "AccountLevelLimit": convert_int(excel_instance.AccountLevelLimit(), password),
         "ClearedStageId": convert_int(excel_instance.ClearedStageId(), password),
-        "NeedClub": Club(convert_int(excel_instance.NeedClub(), password)).name,
+        "NeedClub": excel_instance.NeedClub(),
         "NeedClubStudentCount": convert_int(excel_instance.NeedClubStudentCount(), password),
         "EventContentId": convert_int(excel_instance.EventContentId(), password),
-        "EventContentType": EventContentType(convert_int(excel_instance.EventContentType(), password)).name,
+        "EventContentType": excel_instance.EventContentType(),
         "EventContentCondition": convert_int(excel_instance.EventContentCondition(), password),
         "EventContentConditionGroup": convert_int(excel_instance.EventContentConditionGroup(), password),
-        "MapDifficulty": StageDifficulty(convert_int(excel_instance.MapDifficulty(), password)).name,
+        "MapDifficulty": excel_instance.MapDifficulty(),
         "StepIndex": convert_int(excel_instance.StepIndex(), password),
         "RecommendLevel": convert_int(excel_instance.RecommendLevel(), password),
         "EventIconParcelPath": convert_string(excel_instance.EventIconParcelPath(), password),
         "EventBannerTitle": convert_uint(excel_instance.EventBannerTitle(), password),
         "Lof": bool(excel_instance.Lof()),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
         "FixedEchelonId": convert_int(excel_instance.FixedEchelonId(), password),
         "CompleteReportEventName": convert_string(excel_instance.CompleteReportEventName(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
         "CollectionGroupId": convert_int(excel_instance.CollectionGroupId(), password),
     }
 
@@ -29040,7 +6365,7 @@ def dump_ScenarioModeRewardExcel(excel_instance, password: bytes = b"") -> dict:
         "ScenarioModeRewardId": convert_int(excel_instance.ScenarioModeRewardId(), password),
         "RewardTag": convert_float(excel_instance.RewardTag(), password),
         "RewardProb": convert_int(excel_instance.RewardProb(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
         "IsDisplayed": bool(excel_instance.IsDisplayed()),
@@ -29048,12 +6373,12 @@ def dump_ScenarioModeRewardExcel(excel_instance, password: bytes = b"") -> dict:
 
 def dump_ScenarioModeSpoilerPopupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "ModeType": ScenarioModeTypes(convert_int(excel_instance.ModeType(), password)).name,
+        "ModeType": excel_instance.ModeType(),
         "VolumeId": convert_int(excel_instance.VolumeId(), password),
         "ChapterId": convert_int(excel_instance.ChapterId(), password),
         "SpoilerPopupTitle": convert_uint(excel_instance.SpoilerPopupTitle(), password),
         "SpoilerPopupDescription": convert_uint(excel_instance.SpoilerPopupDescription(), password),
-        "PopupType": SpoilerPopupType(convert_int(excel_instance.PopupType(), password)).name,
+        "PopupType": excel_instance.PopupType(),
         "ConditionScenarioModeId": convert_int(excel_instance.ConditionScenarioModeId(), password),
     }
 
@@ -29102,9 +6427,9 @@ def dump_ScenarioTransitionExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_SchoolDungeonRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "GroupId": convert_int(excel_instance.GroupId(), password),
-        "DungeonType": SchoolDungeonType(convert_int(excel_instance.DungeonType(), password)).name,
+        "DungeonType": excel_instance.DungeonType(),
         "RewardTag": convert_float(excel_instance.RewardTag(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
         "RewardParcelProbability": convert_int(excel_instance.RewardParcelProbability(), password),
@@ -29114,27 +6439,27 @@ def dump_SchoolDungeonRewardExcel(excel_instance, password: bytes = b"") -> dict
 def dump_SchoolDungeonStageExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "StageId": convert_int(excel_instance.StageId(), password),
-        "DungeonType": SchoolDungeonType(convert_int(excel_instance.DungeonType(), password)).name,
+        "DungeonType": excel_instance.DungeonType(),
         "Difficulty": convert_int(excel_instance.Difficulty(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
         "PrevStageId": convert_int(excel_instance.PrevStageId(), password),
-        "StageEnterCostTypeLength": convert_int(excel_instance.StageEnterCostTypeLength(), password),
-        "StageEnterCostIdLength": convert_int(excel_instance.StageEnterCostIdLength(), password),
-        "StageEnterCostAmountLength": convert_int(excel_instance.StageEnterCostAmountLength(), password),
-        "StageEnterCostMinimumAmountLength": convert_int(excel_instance.StageEnterCostMinimumAmountLength(), password),
+        "StageEnterCostType": [excel_instance.StageEnterCostType(j) for j in range(excel_instance.StageEnterCostTypeLength())],
+        "StageEnterCostId": [convert_int(excel_instance.StageEnterCostId(j), password) for j in range(excel_instance.StageEnterCostIdLength())],
+        "StageEnterCostAmount": [convert_int(excel_instance.StageEnterCostAmount(j), password) for j in range(excel_instance.StageEnterCostAmountLength())],
+        "StageEnterCostMinimumAmount": [convert_int(excel_instance.StageEnterCostMinimumAmount(j), password) for j in range(excel_instance.StageEnterCostMinimumAmountLength())],
         "GroundId": convert_int(excel_instance.GroundId(), password),
-        "StarGoalLength": convert_int(excel_instance.StarGoalLength(), password),
-        "StarGoalAmountLength": convert_int(excel_instance.StarGoalAmountLength(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StarGoal": [excel_instance.StarGoal(j) for j in range(excel_instance.StarGoalLength())],
+        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmount(j), password) for j in range(excel_instance.StarGoalAmountLength())],
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "StageRewardId": convert_int(excel_instance.StageRewardId(), password),
         "PlayTimeLimitInSeconds": convert_int(excel_instance.PlayTimeLimitInSeconds(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_ServiceActionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "ServiceActionType": ServiceActionType(convert_int(excel_instance.ServiceActionType(), password)).name,
+        "ServiceActionType": excel_instance.ServiceActionType(),
         "IsLegacy": bool(excel_instance.IsLegacy()),
         "GoodsId": convert_int(excel_instance.GoodsId(), password),
     }
@@ -29144,35 +6469,35 @@ def dump_ShiftingCraftRecipeExcel(excel_instance, password: bytes = b"") -> dict
         "Id": convert_int(excel_instance.Id(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "NotificationId": convert_int(excel_instance.NotificationId(), password),
-        "ResultParcel": ParcelType(convert_int(excel_instance.ResultParcel(), password)).name,
+        "ResultParcel": excel_instance.ResultParcel(),
         "ResultId": convert_int(excel_instance.ResultId(), password),
         "ResultAmount": convert_int(excel_instance.ResultAmount(), password),
         "RequireItemId": convert_int(excel_instance.RequireItemId(), password),
         "RequireItemAmount": convert_int(excel_instance.RequireItemAmount(), password),
         "RequireGold": convert_int(excel_instance.RequireGold(), password),
-        "AdditionalCostParcelType": ParcelType(convert_int(excel_instance.AdditionalCostParcelType(), password)).name,
+        "AdditionalCostParcelType": excel_instance.AdditionalCostParcelType(),
         "AdditionalCostParcelId": convert_int(excel_instance.AdditionalCostParcelId(), password),
         "AdditionalCostParcelAmount": convert_int(excel_instance.AdditionalCostParcelAmount(), password),
-        "IngredientTagLength": convert_int(excel_instance.IngredientTagLength(), password),
+        "IngredientTag": [excel_instance.IngredientTag(j) for j in range(excel_instance.IngredientTagLength())],
         "IngredientExp": convert_int(excel_instance.IngredientExp(), password),
-        "RecipeDisplayOptions": RecipeDisplayOptions(convert_int(excel_instance.RecipeDisplayOptions(), password)).name,
+        "RecipeDisplayOptions": excel_instance.RecipeDisplayOptions(),
     }
 
 def dump_ShopCashExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "CashProductId": convert_int(excel_instance.CashProductId(), password),
-        "PackageType": PurchaseSourceType(convert_int(excel_instance.PackageType(), password)).name,
-        "TargetGroup": TargetGroup(convert_int(excel_instance.TargetGroup(), password)).name,
+        "PackageType": excel_instance.PackageType(),
+        "TargetGroup": excel_instance.TargetGroup(),
         "LocalizeEtcId": convert_uint(excel_instance.LocalizeEtcId(), password),
         "InMailPurchaseLock": bool(excel_instance.InMailPurchaseLock()),
         "UseMailParcel": bool(excel_instance.UseMailParcel()),
         "IconPath": convert_string(excel_instance.IconPath(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "RenewalDisplayOrder": convert_int(excel_instance.RenewalDisplayOrder(), password),
-        "CategoryType": ProductCategory(convert_int(excel_instance.CategoryType(), password)).name,
-        "DisplayTag": ProductDisplayTag(convert_int(excel_instance.DisplayTag(), password)).name,
-        "ProductSaleType": ProductSaleType(convert_int(excel_instance.ProductSaleType(), password)).name,
+        "CategoryType": excel_instance.CategoryType(),
+        "DisplayTag": excel_instance.DisplayTag(),
+        "ProductSaleType": excel_instance.ProductSaleType(),
         "SalePeriodFrom": convert_string(excel_instance.SalePeriodFrom(), password),
         "SalePeriodTo": convert_string(excel_instance.SalePeriodTo(), password),
         "ProductSaleDay": convert_int(excel_instance.ProductSaleDay(), password),
@@ -29198,16 +6523,16 @@ def dump_ShopExcel(excel_instance, password: bytes = b"") -> dict:
         "CategoryType": convert_float(excel_instance.CategoryType(), password),
         "IsLegacy": bool(excel_instance.IsLegacy()),
         "UseBigPopup": bool(excel_instance.UseBigPopup()),
-        "GoodsIdLength": convert_int(excel_instance.GoodsIdLength(), password),
+        "GoodsId": [convert_int(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "SalePeriodFrom": convert_string(excel_instance.SalePeriodFrom(), password),
         "SalePeriodTo": convert_string(excel_instance.SalePeriodTo(), password),
         "PurchaseCooltimeMin": convert_int(excel_instance.PurchaseCooltimeMin(), password),
         "PurchaseCountLimit": convert_int(excel_instance.PurchaseCountLimit(), password),
-        "PurchaseCountResetType": PurchaseCountResetType(convert_int(excel_instance.PurchaseCountResetType(), password)).name,
+        "PurchaseCountResetType": excel_instance.PurchaseCountResetType(),
         "BuyReportEventName": convert_string(excel_instance.BuyReportEventName(), password),
         "RestrictBuyWhenInventoryFull": bool(excel_instance.RestrictBuyWhenInventoryFull()),
-        "DisplayTag": ProductDisplayTag(convert_int(excel_instance.DisplayTag(), password)).name,
+        "DisplayTag": excel_instance.DisplayTag(),
         "ShopUpdateGroupId": convert_int(excel_instance.ShopUpdateGroupId(), password),
     }
 
@@ -29215,9 +6540,9 @@ def dump_ShopFilterClassifiedExcel(excel_instance, password: bytes = b"") -> dic
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "CategoryType": convert_float(excel_instance.CategoryType(), password),
-        "ConsumeParcelType": ParcelType(convert_int(excel_instance.ConsumeParcelType(), password)).name,
+        "ConsumeParcelType": excel_instance.ConsumeParcelType(),
         "ConsumeParcelId": convert_int(excel_instance.ConsumeParcelId(), password),
-        "ShopFilterType": ShopFilterType(convert_int(excel_instance.ShopFilterType(), password)).name,
+        "ShopFilterType": excel_instance.ShopFilterType(),
         "GoodsId": convert_int(excel_instance.GoodsId(), password),
     }
 
@@ -29226,10 +6551,10 @@ def dump_ShopFreeRecruitExcel(excel_instance, password: bytes = b"") -> dict:
         "Id": convert_int(excel_instance.Id(), password),
         "FreeRecruitPeriodFrom": convert_string(excel_instance.FreeRecruitPeriodFrom(), password),
         "FreeRecruitPeriodTo": convert_string(excel_instance.FreeRecruitPeriodTo(), password),
-        "FreeRecruitType": ShopFreeRecruitType(convert_int(excel_instance.FreeRecruitType(), password)).name,
+        "FreeRecruitType": excel_instance.FreeRecruitType(),
         "FreeRecruitDecorationImagePath": convert_string(excel_instance.FreeRecruitDecorationImagePath(), password),
         "TenRecruitCountOnly": bool(excel_instance.TenRecruitCountOnly()),
-        "ShopRecruitIdLength": convert_int(excel_instance.ShopRecruitIdLength(), password),
+        "ShopRecruitId": [convert_int(excel_instance.ShopRecruitId(j), password) for j in range(excel_instance.ShopRecruitIdLength())],
     }
 
 def dump_ShopFreeRecruitPeriodExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29245,18 +6570,18 @@ def dump_ShopInfoExcel(excel_instance, password: bytes = b"") -> dict:
         "CategoryType": convert_float(excel_instance.CategoryType(), password),
         "IsRefresh": bool(excel_instance.IsRefresh()),
         "IsSoldOutDimmed": bool(excel_instance.IsSoldOutDimmed()),
-        "CostParcelTypeLength": convert_int(excel_instance.CostParcelTypeLength(), password),
-        "CostParcelIdLength": convert_int(excel_instance.CostParcelIdLength(), password),
+        "CostParcelType": [excel_instance.CostParcelType(j) for j in range(excel_instance.CostParcelTypeLength())],
+        "CostParcelId": [convert_int(excel_instance.CostParcelId(j), password) for j in range(excel_instance.CostParcelIdLength())],
         "AutoRefreshCoolTime": convert_int(excel_instance.AutoRefreshCoolTime(), password),
-        "ShopRefresherType": ShopRefresherType(convert_int(excel_instance.ShopRefresherType(), password)).name,
-        "ShopRefreshPeriodType": ShopRefreshPeriodType(convert_int(excel_instance.ShopRefreshPeriodType(), password)).name,
+        "ShopRefresherType": excel_instance.ShopRefresherType(),
+        "ShopRefreshPeriodType": excel_instance.ShopRefreshPeriodType(),
         "RefreshAbleCount": convert_int(excel_instance.RefreshAbleCount(), password),
-        "GoodsIdLength": convert_int(excel_instance.GoodsIdLength(), password),
+        "GoodsId": [convert_int(excel_instance.GoodsId(j), password) for j in range(excel_instance.GoodsIdLength())],
         "OpenPeriodFrom": convert_string(excel_instance.OpenPeriodFrom(), password),
         "OpenPeriodTo": convert_string(excel_instance.OpenPeriodTo(), password),
         "RefreshPeriodBaseTime": convert_string(excel_instance.RefreshPeriodBaseTime(), password),
         "ShopProductUpdateTime": convert_string(excel_instance.ShopProductUpdateTime(), password),
-        "DisplayParcelType": ParcelType(convert_int(excel_instance.DisplayParcelType(), password)).name,
+        "DisplayParcelType": excel_instance.DisplayParcelType(),
         "DisplayParcelId": convert_int(excel_instance.DisplayParcelId(), password),
         "IsShopVisible": bool(excel_instance.IsShopVisible()),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
@@ -29283,12 +6608,12 @@ def dump_ShopRecruitExcel(excel_instance, password: bytes = b"") -> dict:
         "OneGachaGoodsId": convert_int(excel_instance.OneGachaGoodsId(), password),
         "TenGachaGoodsId": convert_int(excel_instance.TenGachaGoodsId(), password),
         "GoodsDevName": convert_string(excel_instance.GoodsDevName(), password),
-        "DisplayTag": GachaDisplayTag(convert_int(excel_instance.DisplayTag(), password)).name,
+        "DisplayTag": excel_instance.DisplayTag(),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
         "GachaBannerPath": convert_string(excel_instance.GachaBannerPath(), password),
-        "VideoIdLength": convert_int(excel_instance.VideoIdLength(), password),
+        "VideoId": [convert_int(excel_instance.VideoId(j), password) for j in range(excel_instance.VideoIdLength())],
         "LinkedRobbyBannerId": convert_int(excel_instance.LinkedRobbyBannerId(), password),
-        "InfoCharacterIdLength": convert_int(excel_instance.InfoCharacterIdLength(), password),
+        "InfoCharacterId": [convert_int(excel_instance.InfoCharacterId(j), password) for j in range(excel_instance.InfoCharacterIdLength())],
         "SalePeriodVisible": bool(excel_instance.SalePeriodVisible()),
         "SalePeriodFrom": convert_string(excel_instance.SalePeriodFrom(), password),
         "SalePeriodTo": convert_string(excel_instance.SalePeriodTo(), password),
@@ -29296,7 +6621,7 @@ def dump_ShopRecruitExcel(excel_instance, password: bytes = b"") -> dict:
         "RecruitSellectionShopId": convert_int(excel_instance.RecruitSellectionShopId(), password),
         "PurchaseCooltimeMin": convert_int(excel_instance.PurchaseCooltimeMin(), password),
         "PurchaseCountLimit": convert_int(excel_instance.PurchaseCountLimit(), password),
-        "PurchaseCountResetType": PurchaseCountResetType(convert_int(excel_instance.PurchaseCountResetType(), password)).name,
+        "PurchaseCountResetType": excel_instance.PurchaseCountResetType(),
         "IsNewbie": bool(excel_instance.IsNewbie()),
         "IsSelectRecruit": bool(excel_instance.IsSelectRecruit()),
         "DirectPayInvisibleTokenId": convert_int(excel_instance.DirectPayInvisibleTokenId(), password),
@@ -29314,7 +6639,7 @@ def dump_ShopRefreshExcel(excel_instance, password: bytes = b"") -> dict:
         "IsLegacy": bool(excel_instance.IsLegacy()),
         "GoodsId": convert_int(excel_instance.GoodsId(), password),
         "IsBundle": bool(excel_instance.IsBundle()),
-        "ShopPurchasePopupType": ShopPurchasePopupType(convert_int(excel_instance.ShopPurchasePopupType(), password)).name,
+        "ShopPurchasePopupType": excel_instance.ShopPurchasePopupType(),
         "VisibleAmount": convert_int(excel_instance.VisibleAmount(), password),
         "PurchaseCountLimit": convert_int(excel_instance.PurchaseCountLimit(), password),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
@@ -29323,22 +6648,22 @@ def dump_ShopRefreshExcel(excel_instance, password: bytes = b"") -> dict:
         "Prob": convert_int(excel_instance.Prob(), password),
         "BuyReportEventName": convert_string(excel_instance.BuyReportEventName(), password),
         "ProductUpdateTime": convert_string(excel_instance.ProductUpdateTime(), password),
-        "DisplayTag": ProductDisplayTag(convert_int(excel_instance.DisplayTag(), password)).name,
+        "DisplayTag": excel_instance.DisplayTag(),
     }
 
 def dump_ShopTabGroupExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "ShopGroupType": ShopGroupType(convert_int(excel_instance.ShopGroupType(), password)).name,
+        "ShopGroupType": excel_instance.ShopGroupType(),
         "DisplayOrder": convert_int(excel_instance.DisplayOrder(), password),
-        "ShopCategoryTypesLength": convert_int(excel_instance.ShopCategoryTypesLength(), password),
+        "ShopCategoryTypes": [convert_float(excel_instance.ShopCategoryTypes(j), password) for j in range(excel_instance.ShopCategoryTypesLength())],
     }
 
 def dump_ShortcutTypeExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "IsAscending": bool(excel_instance.IsAscending()),
-        "ContentTypeLength": convert_int(excel_instance.ContentTypeLength(), password),
+        "ContentType": [excel_instance.ContentType(j) for j in range(excel_instance.ContentTypeLength())],
     }
 
 def dump_SkillAdditionalTooltipExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29362,7 +6687,7 @@ def dump_SkillExcel(excel_instance, password: bytes = b"") -> dict:
         "ExtraEnemySkillCost": convert_int(excel_instance.ExtraEnemySkillCost(), password),
         "NPCSkillCost": convert_int(excel_instance.NPCSkillCost(), password),
         "ExtraNPCSkillCost": convert_int(excel_instance.ExtraNPCSkillCost(), password),
-        "BulletType": BulletType(convert_int(excel_instance.BulletType(), password)).name,
+        "BulletType": excel_instance.BulletType(),
         "StartCoolTime": convert_int(excel_instance.StartCoolTime(), password),
         "CoolTime": convert_int(excel_instance.CoolTime(), password),
         "EnemyStartCoolTime": convert_int(excel_instance.EnemyStartCoolTime(), password),
@@ -29406,7 +6731,7 @@ def dump_SpineLipsyncExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_StatLevelInterpolationExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Level": convert_int(excel_instance.Level(), password),
-        "StatTypeIndexLength": convert_int(excel_instance.StatTypeIndexLength(), password),
+        "StatTypeIndex": [convert_int(excel_instance.StatTypeIndex(j), password) for j in range(excel_instance.StatTypeIndexLength())],
     }
 
 def dump_StickerGroupExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29416,7 +6741,7 @@ def dump_StickerGroupExcel(excel_instance, password: bytes = b"") -> dict:
         "UniqueLayoutPath": convert_string(excel_instance.UniqueLayoutPath(), password),
         "StickerGroupIconpath": convert_string(excel_instance.StickerGroupIconpath(), password),
         "PageCompleteSlot": convert_int(excel_instance.PageCompleteSlot(), password),
-        "PageCompleteRewardParcelType": ParcelType(convert_int(excel_instance.PageCompleteRewardParcelType(), password)).name,
+        "PageCompleteRewardParcelType": excel_instance.PageCompleteRewardParcelType(),
         "PageCompleteRewardParcelId": convert_int(excel_instance.PageCompleteRewardParcelId(), password),
         "PageCompleteRewardAmount": convert_int(excel_instance.PageCompleteRewardAmount(), password),
         "LocalizeTitle": convert_uint(excel_instance.LocalizeTitle(), password),
@@ -29430,12 +6755,12 @@ def dump_StickerPageContentExcel(excel_instance, password: bytes = b"") -> dict:
         "StickerGroupId": convert_int(excel_instance.StickerGroupId(), password),
         "StickerPageId": convert_int(excel_instance.StickerPageId(), password),
         "StickerSlot": convert_int(excel_instance.StickerSlot(), password),
-        "StickerGetConditionType": StickerGetConditionType(convert_int(excel_instance.StickerGetConditionType(), password)).name,
-        "StickerCheckPassType": StickerCheckPassType(convert_int(excel_instance.StickerCheckPassType(), password)).name,
-        "GetStickerConditionType": GetStickerConditionType(convert_int(excel_instance.GetStickerConditionType(), password)).name,
+        "StickerGetConditionType": excel_instance.StickerGetConditionType(),
+        "StickerCheckPassType": excel_instance.StickerCheckPassType(),
+        "GetStickerConditionType": excel_instance.GetStickerConditionType(),
         "StickerGetConditionCount": convert_int(excel_instance.StickerGetConditionCount(), password),
-        "StickerGetConditionParameterLength": convert_int(excel_instance.StickerGetConditionParameterLength(), password),
-        "StickerGetConditionParameterTagLength": convert_int(excel_instance.StickerGetConditionParameterTagLength(), password),
+        "StickerGetConditionParameter": [convert_int(excel_instance.StickerGetConditionParameter(j), password) for j in range(excel_instance.StickerGetConditionParameterLength())],
+        "StickerGetConditionParameterTag": [excel_instance.StickerGetConditionParameterTag(j) for j in range(excel_instance.StickerGetConditionParameterTagLength())],
         "PackedStickerIconLocalizeEtcId": convert_uint(excel_instance.PackedStickerIconLocalizeEtcId(), password),
         "PackedStickerIconPath": convert_string(excel_instance.PackedStickerIconPath(), password),
         "IconPath": convert_string(excel_instance.IconPath(), password),
@@ -29453,9 +6778,9 @@ def dump_StoryStrategyExcel(excel_instance, password: bytes = b"") -> dict:
         "StrategyMap": convert_string(excel_instance.StrategyMap(), password),
         "StrategyMapBG": convert_string(excel_instance.StrategyMapBG(), password),
         "MaxTurn": convert_int(excel_instance.MaxTurn(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
-        "StrategyEnvironment": StrategyEnvironment(convert_int(excel_instance.StrategyEnvironment(), password)).name,
-        "ContentType": ContentType(convert_int(excel_instance.ContentType(), password)).name,
+        "StageTopography": excel_instance.StageTopography(),
+        "StrategyEnvironment": excel_instance.StrategyEnvironment(),
+        "ContentType": excel_instance.ContentType(),
         "BGMId": convert_int(excel_instance.BGMId(), password),
         "FirstClearReportEventName": convert_string(excel_instance.FirstClearReportEventName(), password),
     }
@@ -29515,8 +6840,8 @@ def dump_TacticSkipExcel(excel_instance, password: bytes = b"") -> dict:
 
 def dump_TerrainAdaptationFactorExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "TerrainAdaptation": StageTopography(convert_int(excel_instance.TerrainAdaptation(), password)).name,
-        "TerrainAdaptationStat": TerrainAdaptationStat(convert_int(excel_instance.TerrainAdaptationStat(), password)).name,
+        "TerrainAdaptation": excel_instance.TerrainAdaptation(),
+        "TerrainAdaptationStat": excel_instance.TerrainAdaptationStat(),
         "ShotFactor": convert_int(excel_instance.ShotFactor(), password),
         "BlockFactor": convert_int(excel_instance.BlockFactor(), password),
         "AccuracyFactor": convert_int(excel_instance.AccuracyFactor(), password),
@@ -29527,7 +6852,7 @@ def dump_TerrainAdaptationFactorExcel(excel_instance, password: bytes = b"") -> 
 def dump_TimeAttackDungeonExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "TimeAttackDungeonType": TimeAttackDungeonType(convert_int(excel_instance.TimeAttackDungeonType(), password)).name,
+        "TimeAttackDungeonType": excel_instance.TimeAttackDungeonType(),
         "LocalizeEtcKey": convert_uint(excel_instance.LocalizeEtcKey(), password),
         "IconPath": convert_string(excel_instance.IconPath(), password),
         "InformationGroupID": convert_int(excel_instance.InformationGroupID(), password),
@@ -29536,7 +6861,7 @@ def dump_TimeAttackDungeonExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_TimeAttackDungeonGeasExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "TimeAttackDungeonType": TimeAttackDungeonType(convert_int(excel_instance.TimeAttackDungeonType(), password)).name,
+        "TimeAttackDungeonType": excel_instance.TimeAttackDungeonType(),
         "LocalizeEtcKey": convert_uint(excel_instance.LocalizeEtcKey(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
         "ClearDefaultPoint": convert_int(excel_instance.ClearDefaultPoint(), password),
@@ -29545,24 +6870,24 @@ def dump_TimeAttackDungeonGeasExcel(excel_instance, password: bytes = b"") -> di
         "Difficulty": convert_int(excel_instance.Difficulty(), password),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "GroundId": convert_int(excel_instance.GroundId(), password),
-        "AllyPassiveSkillIdLength": convert_int(excel_instance.AllyPassiveSkillIdLength(), password),
-        "AllyPassiveSkillLevelLength": convert_int(excel_instance.AllyPassiveSkillLevelLength(), password),
-        "EnemyPassiveSkillIdLength": convert_int(excel_instance.EnemyPassiveSkillIdLength(), password),
-        "EnemyPassiveSkillLevelLength": convert_int(excel_instance.EnemyPassiveSkillLevelLength(), password),
-        "GeasIconPathLength": convert_int(excel_instance.GeasIconPathLength(), password),
-        "GeasLocalizeEtcKeyLength": convert_int(excel_instance.GeasLocalizeEtcKeyLength(), password),
+        "AllyPassiveSkillId": [convert_string(excel_instance.AllyPassiveSkillId(j), password) for j in range(excel_instance.AllyPassiveSkillIdLength())],
+        "AllyPassiveSkillLevel": [convert_int(excel_instance.AllyPassiveSkillLevel(j), password) for j in range(excel_instance.AllyPassiveSkillLevelLength())],
+        "EnemyPassiveSkillId": [convert_string(excel_instance.EnemyPassiveSkillId(j), password) for j in range(excel_instance.EnemyPassiveSkillIdLength())],
+        "EnemyPassiveSkillLevel": [convert_int(excel_instance.EnemyPassiveSkillLevel(j), password) for j in range(excel_instance.EnemyPassiveSkillLevelLength())],
+        "GeasIconPath": [convert_string(excel_instance.GeasIconPath(j), password) for j in range(excel_instance.GeasIconPathLength())],
+        "GeasLocalizeEtcKey": [convert_uint(excel_instance.GeasLocalizeEtcKey(j), password) for j in range(excel_instance.GeasLocalizeEtcKeyLength())],
     }
 
 def dump_TimeAttackDungeonRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
         "RewardMaxPoint": convert_int(excel_instance.RewardMaxPoint(), password),
-        "RewardTypeLength": convert_int(excel_instance.RewardTypeLength(), password),
-        "RewardMinPointLength": convert_int(excel_instance.RewardMinPointLength(), password),
-        "RewardParcelTypeLength": convert_int(excel_instance.RewardParcelTypeLength(), password),
-        "RewardParcelIdLength": convert_int(excel_instance.RewardParcelIdLength(), password),
-        "RewardParcelDefaultAmountLength": convert_int(excel_instance.RewardParcelDefaultAmountLength(), password),
-        "RewardParcelMaxAmountLength": convert_int(excel_instance.RewardParcelMaxAmountLength(), password),
+        "RewardType": [excel_instance.RewardType(j) for j in range(excel_instance.RewardTypeLength())],
+        "RewardMinPoint": [convert_int(excel_instance.RewardMinPoint(j), password) for j in range(excel_instance.RewardMinPointLength())],
+        "RewardParcelType": [excel_instance.RewardParcelType(j) for j in range(excel_instance.RewardParcelTypeLength())],
+        "RewardParcelId": [convert_int(excel_instance.RewardParcelId(j), password) for j in range(excel_instance.RewardParcelIdLength())],
+        "RewardParcelDefaultAmount": [convert_int(excel_instance.RewardParcelDefaultAmount(j), password) for j in range(excel_instance.RewardParcelDefaultAmountLength())],
+        "RewardParcelMaxAmount": [convert_int(excel_instance.RewardParcelMaxAmount(j), password) for j in range(excel_instance.RewardParcelMaxAmountLength())],
     }
 
 def dump_TimeAttackDungeonSeasonManageExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29573,7 +6898,7 @@ def dump_TimeAttackDungeonSeasonManageExcel(excel_instance, password: bytes = b"
         "EndDate": convert_string(excel_instance.EndDate(), password),
         "UISlot": convert_int(excel_instance.UISlot(), password),
         "DungeonId": convert_int(excel_instance.DungeonId(), password),
-        "DifficultyGeasLength": convert_int(excel_instance.DifficultyGeasLength(), password),
+        "DifficultyGeas": [convert_int(excel_instance.DifficultyGeas(j), password) for j in range(excel_instance.DifficultyGeasLength())],
         "TimeAttackDungeonRewardId": convert_int(excel_instance.TimeAttackDungeonRewardId(), password),
         "RoomLifeTimeInSeconds": convert_int(excel_instance.RoomLifeTimeInSeconds(), password),
     }
@@ -29581,7 +6906,7 @@ def dump_TimeAttackDungeonSeasonManageExcel(excel_instance, password: bytes = b"
 def dump_ToastExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_uint(excel_instance.Id(), password),
-        "ToastType": ToastType(convert_int(excel_instance.ToastType(), password)).name,
+        "ToastType": excel_instance.ToastType(),
         "MissionId": convert_uint(excel_instance.MissionId(), password),
         "TextId": convert_uint(excel_instance.TextId(), password),
         "LifeTime": convert_int(excel_instance.LifeTime(), password),
@@ -29591,7 +6916,7 @@ def dump_TrophyCollectionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "LocalizeCodeId": convert_uint(excel_instance.LocalizeCodeId(), password),
-        "FurnitureIdLength": convert_int(excel_instance.FurnitureIdLength(), password),
+        "FurnitureId": [convert_int(excel_instance.FurnitureId(j), password) for j in range(excel_instance.FurnitureIdLength())],
     }
 
 def dump_TutorialCharacterDialogExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29610,14 +6935,14 @@ def dump_TutorialExcel(excel_instance, password: bytes = b"") -> dict:
         "CompulsoryTutorial": bool(excel_instance.CompulsoryTutorial()),
         "DescriptionTutorial": bool(excel_instance.DescriptionTutorial()),
         "TutorialStageId": convert_int(excel_instance.TutorialStageId(), password),
-        "UINameLength": convert_int(excel_instance.UINameLength(), password),
-        "TutorialParentNameLength": convert_int(excel_instance.TutorialParentNameLength(), password),
+        "UIName": [convert_string(excel_instance.UIName(j), password) for j in range(excel_instance.UINameLength())],
+        "TutorialParentName": [convert_string(excel_instance.TutorialParentName(j), password) for j in range(excel_instance.TutorialParentNameLength())],
     }
 
 def dump_TutorialFailureImageExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "Contents": TutorialFailureContentType(convert_int(excel_instance.Contents(), password)).name,
+        "Contents": excel_instance.Contents(),
         "Type": convert_string(excel_instance.Type(), password),
         "ImagePathKr": convert_string(excel_instance.ImagePathKr(), password),
         "ImagePathJp": convert_string(excel_instance.ImagePathJp(), password),
@@ -29639,26 +6964,26 @@ def dump_UnderCoverStageExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_VideoExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "NationLength": convert_int(excel_instance.NationLength(), password),
-        "VideoPathLength": convert_int(excel_instance.VideoPathLength(), password),
-        "SoundPathLength": convert_int(excel_instance.SoundPathLength(), password),
-        "SoundVolumeLength": convert_int(excel_instance.SoundVolumeLength(), password),
+        "Nation": [excel_instance.Nation(j) for j in range(excel_instance.NationLength())],
+        "VideoPath": [convert_string(excel_instance.VideoPath(j), password) for j in range(excel_instance.VideoPathLength())],
+        "SoundPath": [convert_string(excel_instance.SoundPath(j), password) for j in range(excel_instance.SoundPathLength())],
+        "SoundVolume": [convert_float(excel_instance.SoundVolume(j), password) for j in range(excel_instance.SoundVolumeLength())],
     }
 
 def dump_VoiceCommonExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "VoiceEvent": VoiceEvent(convert_int(excel_instance.VoiceEvent(), password)).name,
+        "VoiceEvent": excel_instance.VoiceEvent(),
         "Rate": convert_int(excel_instance.Rate(), password),
-        "VoiceHashLength": convert_int(excel_instance.VoiceHashLength(), password),
+        "VoiceHash": [convert_uint(excel_instance.VoiceHash(j), password) for j in range(excel_instance.VoiceHashLength())],
     }
 
 def dump_VoiceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "Id": convert_uint(excel_instance.Id(), password),
-        "NationLength": convert_int(excel_instance.NationLength(), password),
-        "PathLength": convert_int(excel_instance.PathLength(), password),
-        "VolumeLength": convert_int(excel_instance.VolumeLength(), password),
+        "Nation": [excel_instance.Nation(j) for j in range(excel_instance.NationLength())],
+        "Path": [convert_string(excel_instance.Path(j), password) for j in range(excel_instance.PathLength())],
+        "Volume": [convert_float(excel_instance.Volume(j), password) for j in range(excel_instance.VolumeLength())],
     }
 
 def dump_VoiceLogicEffectExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29666,14 +6991,14 @@ def dump_VoiceLogicEffectExcel(excel_instance, password: bytes = b"") -> dict:
         "LogicEffectNameHash": convert_uint(excel_instance.LogicEffectNameHash(), password),
         "Self": bool(excel_instance.Self()),
         "Priority": convert_int(excel_instance.Priority(), password),
-        "VoiceHashLength": convert_int(excel_instance.VoiceHashLength(), password),
+        "VoiceHash": [convert_uint(excel_instance.VoiceHash(j), password) for j in range(excel_instance.VoiceHashLength())],
         "VoiceId": convert_uint(excel_instance.VoiceId(), password),
     }
 
 def dump_VoiceRoomExceptionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "CostumeUniqueId": convert_int(excel_instance.CostumeUniqueId(), password),
-        "LinkedCharacterVoicePrintType": CVPrintType(convert_int(excel_instance.LinkedCharacterVoicePrintType(), password)).name,
+        "LinkedCharacterVoicePrintType": excel_instance.LinkedCharacterVoicePrintType(),
         "LinkedCostumeUniqueId": convert_int(excel_instance.LinkedCostumeUniqueId(), password),
     }
 
@@ -29681,18 +7006,18 @@ def dump_VoiceSpineExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "Id": convert_uint(excel_instance.Id(), password),
-        "NationLength": convert_int(excel_instance.NationLength(), password),
-        "PathLength": convert_int(excel_instance.PathLength(), password),
-        "SoundVolumeLength": convert_int(excel_instance.SoundVolumeLength(), password),
+        "Nation": [excel_instance.Nation(j) for j in range(excel_instance.NationLength())],
+        "Path": [convert_string(excel_instance.Path(j), password) for j in range(excel_instance.PathLength())],
+        "SoundVolume": [convert_float(excel_instance.SoundVolume(j), password) for j in range(excel_instance.SoundVolumeLength())],
     }
 
 def dump_VoiceTimelineExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "UniqueId": convert_int(excel_instance.UniqueId(), password),
         "Id": convert_uint(excel_instance.Id(), password),
-        "NationLength": convert_int(excel_instance.NationLength(), password),
-        "PathLength": convert_int(excel_instance.PathLength(), password),
-        "SoundVolumeLength": convert_int(excel_instance.SoundVolumeLength(), password),
+        "Nation": [excel_instance.Nation(j) for j in range(excel_instance.NationLength())],
+        "Path": [convert_string(excel_instance.Path(j), password) for j in range(excel_instance.PathLength())],
+        "SoundVolume": [convert_float(excel_instance.SoundVolume(j), password) for j in range(excel_instance.SoundVolumeLength())],
     }
 
 def dump_WebSeasonExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29703,7 +7028,7 @@ def dump_WebSeasonExcel(excel_instance, password: bytes = b"") -> dict:
         "Type": convert_int(excel_instance.Type(), password),
         "MailExpiredDay": convert_int(excel_instance.MailExpiredDay(), password),
         "MainIconParcelPath": convert_string(excel_instance.MainIconParcelPath(), password),
-        "BannerType": EventContentType(convert_int(excel_instance.BannerType(), password)).name,
+        "BannerType": excel_instance.BannerType(),
         "IconOrder": convert_int(excel_instance.IconOrder(), password),
         "Url": convert_string(excel_instance.Url(), password),
     }
@@ -29715,26 +7040,26 @@ def dump_WeekDungeonExcel(excel_instance, password: bytes = b"") -> dict:
         "Difficulty": convert_int(excel_instance.Difficulty(), password),
         "BattleDuration": convert_int(excel_instance.BattleDuration(), password),
         "PrevStageId": convert_int(excel_instance.PrevStageId(), password),
-        "StageEnterCostTypeLength": convert_int(excel_instance.StageEnterCostTypeLength(), password),
-        "StageEnterCostIdLength": convert_int(excel_instance.StageEnterCostIdLength(), password),
-        "StageEnterCostAmountLength": convert_int(excel_instance.StageEnterCostAmountLength(), password),
+        "StageEnterCostType": [excel_instance.StageEnterCostType(j) for j in range(excel_instance.StageEnterCostTypeLength())],
+        "StageEnterCostId": [convert_int(excel_instance.StageEnterCostId(j), password) for j in range(excel_instance.StageEnterCostIdLength())],
+        "StageEnterCostAmount": [convert_int(excel_instance.StageEnterCostAmount(j), password) for j in range(excel_instance.StageEnterCostAmountLength())],
         "GroundId": convert_int(excel_instance.GroundId(), password),
-        "StarGoalLength": convert_int(excel_instance.StarGoalLength(), password),
-        "StarGoalAmountLength": convert_int(excel_instance.StarGoalAmountLength(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopography(), password)).name,
+        "StarGoal": [excel_instance.StarGoal(j) for j in range(excel_instance.StarGoalLength())],
+        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmount(j), password) for j in range(excel_instance.StarGoalAmountLength())],
+        "StageTopography": excel_instance.StageTopography(),
         "RecommandLevel": convert_int(excel_instance.RecommandLevel(), password),
         "StageRewardId": convert_int(excel_instance.StageRewardId(), password),
         "PlayTimeLimitInSeconds": convert_int(excel_instance.PlayTimeLimitInSeconds(), password),
         "BattleRewardExp": convert_int(excel_instance.BattleRewardExp(), password),
         "BattleRewardPlayerExp": convert_int(excel_instance.BattleRewardPlayerExp(), password),
-        "GroupBuffIDLength": convert_int(excel_instance.GroupBuffIDLength(), password),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "GroupBuffID": [convert_int(excel_instance.GroupBuffID(j), password) for j in range(excel_instance.GroupBuffIDLength())],
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_WeekDungeonGroupBuffExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "WeekDungeonBuffId": convert_int(excel_instance.WeekDungeonBuffId(), password),
-        "School": School(convert_int(excel_instance.School(), password)).name,
+        "School": excel_instance.School(),
         "RecommandLocalizeEtcId": convert_uint(excel_instance.RecommandLocalizeEtcId(), password),
         "FormationLocalizeEtcId": convert_uint(excel_instance.FormationLocalizeEtcId(), password),
         "SkillGroupId": convert_string(excel_instance.SkillGroupId(), password),
@@ -29742,15 +7067,15 @@ def dump_WeekDungeonGroupBuffExcel(excel_instance, password: bytes = b"") -> dic
 
 def dump_WeekDungeonOpenScheduleExcel(excel_instance, password: bytes = b"") -> dict:
     return {
-        "WeekDay": WeekDay(convert_int(excel_instance.WeekDay(), password)).name,
-        "OpenLength": convert_int(excel_instance.OpenLength(), password),
+        "WeekDay": excel_instance.WeekDay(),
+        "Open": [convert_float(excel_instance.Open(j), password) for j in range(excel_instance.OpenLength())],
     }
 
 def dump_WeekDungeonRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "DungeonType": convert_float(excel_instance.DungeonType(), password),
-        "RewardParcelType": ParcelType(convert_int(excel_instance.RewardParcelType(), password)).name,
+        "RewardParcelType": excel_instance.RewardParcelType(),
         "RewardParcelId": convert_int(excel_instance.RewardParcelId(), password),
         "RewardParcelAmount": convert_int(excel_instance.RewardParcelAmount(), password),
         "RewardParcelProbability": convert_int(excel_instance.RewardParcelProbability(), password),
@@ -29772,7 +7097,7 @@ def dump_WorldRaidBossGroupExcel(excel_instance, password: bytes = b"") -> dict:
         "UIHideBeforeSpawn": bool(excel_instance.UIHideBeforeSpawn()),
         "HideAnotherBossKilled": bool(excel_instance.HideAnotherBossKilled()),
         "WorldBossClearRewardGroupId": convert_int(excel_instance.WorldBossClearRewardGroupId(), password),
-        "AnotherBossKilledLength": convert_int(excel_instance.AnotherBossKilledLength(), password),
+        "AnotherBossKilled": [convert_int(excel_instance.AnotherBossKilled(j), password) for j in range(excel_instance.AnotherBossKilledLength())],
         "EchelonConstraintGroupId": convert_int(excel_instance.EchelonConstraintGroupId(), password),
         "ExclusiveOperatorBossSpawn": convert_string(excel_instance.ExclusiveOperatorBossSpawn(), password),
         "ExclusiveOperatorBossKill": convert_string(excel_instance.ExclusiveOperatorBossKill(), password),
@@ -29784,14 +7109,14 @@ def dump_WorldRaidBossGroupExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_WorldRaidConditionExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.Id(), password),
-        "LockUILength": convert_int(excel_instance.LockUILength(), password),
+        "LockUI": [convert_string(excel_instance.LockUI(j), password) for j in range(excel_instance.LockUILength())],
         "HideWhenLocked": bool(excel_instance.HideWhenLocked()),
         "AccountLevel": convert_int(excel_instance.AccountLevel(), password),
-        "ScenarioModeIdLength": convert_int(excel_instance.ScenarioModeIdLength(), password),
-        "CampaignStageIDLength": convert_int(excel_instance.CampaignStageIDLength(), password),
-        "MultipleConditionCheckType": MultipleConditionCheckType(convert_int(excel_instance.MultipleConditionCheckType(), password)).name,
+        "ScenarioModeId": [convert_int(excel_instance.ScenarioModeId(j), password) for j in range(excel_instance.ScenarioModeIdLength())],
+        "CampaignStageID": [convert_int(excel_instance.CampaignStageID(j), password) for j in range(excel_instance.CampaignStageIDLength())],
+        "MultipleConditionCheckType": excel_instance.MultipleConditionCheckType(),
         "AfterWhenDate": convert_string(excel_instance.AfterWhenDate(), password),
-        "WorldRaidBossKillLength": convert_int(excel_instance.WorldRaidBossKillLength(), password),
+        "WorldRaidBossKill": [convert_int(excel_instance.WorldRaidBossKill(j), password) for j in range(excel_instance.WorldRaidBossKillLength())],
     }
 
 def dump_WorldRaidFavorBuffExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29804,7 +7129,7 @@ def dump_WorldRaidSeasonManageExcel(excel_instance, password: bytes = b"") -> di
     return {
         "SeasonId": convert_int(excel_instance.SeasonId(), password),
         "PhaseId": convert_int(excel_instance.PhaseId(), password),
-        "EnterTicket": CurrencyTypes(convert_int(excel_instance.EnterTicket(), password)).name,
+        "EnterTicket": excel_instance.EnterTicket(),
         "WorldRaidLobbyScene": convert_string(excel_instance.WorldRaidLobbyScene(), password),
         "WorldRaidLobbyBanner": convert_string(excel_instance.WorldRaidLobbyBanner(), password),
         "WorldRaidLobbyBG": convert_string(excel_instance.WorldRaidLobbyBG(), password),
@@ -29818,11 +7143,11 @@ def dump_WorldRaidSeasonManageExcel(excel_instance, password: bytes = b"") -> di
         "HideWorldRaidTicketUI": bool(excel_instance.HideWorldRaidTicketUI()),
         "HideWorldRaidBossCompleteRewardUI": bool(excel_instance.HideWorldRaidBossCompleteRewardUI()),
         "UseWorldRaidCommonToast": bool(excel_instance.UseWorldRaidCommonToast()),
-        "OpenRaidBossGroupIdLength": convert_int(excel_instance.OpenRaidBossGroupIdLength(), password),
-        "BossSpawnTimeLength": convert_int(excel_instance.BossSpawnTimeLength(), password),
-        "EliminateTimeLength": convert_int(excel_instance.EliminateTimeLength(), password),
-        "ScenarioOutputConditionIdLength": convert_int(excel_instance.ScenarioOutputConditionIdLength(), password),
-        "ConditionScenarioGroupidLength": convert_int(excel_instance.ConditionScenarioGroupidLength(), password),
+        "OpenRaidBossGroupId": [convert_int(excel_instance.OpenRaidBossGroupId(j), password) for j in range(excel_instance.OpenRaidBossGroupIdLength())],
+        "BossSpawnTime": [convert_string(excel_instance.BossSpawnTime(j), password) for j in range(excel_instance.BossSpawnTimeLength())],
+        "EliminateTime": [convert_string(excel_instance.EliminateTime(j), password) for j in range(excel_instance.EliminateTimeLength())],
+        "ScenarioOutputConditionId": [convert_int(excel_instance.ScenarioOutputConditionId(j), password) for j in range(excel_instance.ScenarioOutputConditionIdLength())],
+        "ConditionScenarioGroupid": [convert_int(excel_instance.ConditionScenarioGroupid(j), password) for j in range(excel_instance.ConditionScenarioGroupidLength())],
         "WorldRaidMapEnterOperator": convert_string(excel_instance.WorldRaidMapEnterOperator(), password),
         "UseFavorRankBuff": bool(excel_instance.UseFavorRankBuff()),
     }
@@ -29836,9 +7161,9 @@ def dump_WorldRaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "PortraitPath": convert_string(excel_instance.PortraitPath(), password),
         "BGPath": convert_string(excel_instance.BGPath(), password),
         "RaidCharacterId": convert_int(excel_instance.RaidCharacterId(), password),
-        "BossCharacterIdLength": convert_int(excel_instance.BossCharacterIdLength(), password),
+        "BossCharacterId": [convert_int(excel_instance.BossCharacterId(j), password) for j in range(excel_instance.BossCharacterIdLength())],
         "AssistCharacterLimitCount": convert_int(excel_instance.AssistCharacterLimitCount(), password),
-        "WorldRaidDifficulty": WorldRaidDifficulty(convert_int(excel_instance.WorldRaidDifficulty(), password)).name,
+        "WorldRaidDifficulty": excel_instance.WorldRaidDifficulty(),
         "DifficultyOpenCondition": bool(excel_instance.DifficultyOpenCondition()),
         "RaidEnterAmount": convert_int(excel_instance.RaidEnterAmount(), password),
         "ReEnterAmount": convert_int(excel_instance.ReEnterAmount(), password),
@@ -29846,9 +7171,9 @@ def dump_WorldRaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "GroundId": convert_int(excel_instance.GroundId(), password),
         "RaidBattleEndRewardGroupId": convert_int(excel_instance.RaidBattleEndRewardGroupId(), password),
         "RaidRewardGroupId": convert_int(excel_instance.RaidRewardGroupId(), password),
-        "BattleReadyTimelinePathLength": convert_int(excel_instance.BattleReadyTimelinePathLength(), password),
-        "BattleReadyTimelinePhaseStartLength": convert_int(excel_instance.BattleReadyTimelinePhaseStartLength(), password),
-        "BattleReadyTimelinePhaseEndLength": convert_int(excel_instance.BattleReadyTimelinePhaseEndLength(), password),
+        "BattleReadyTimelinePath": [convert_string(excel_instance.BattleReadyTimelinePath(j), password) for j in range(excel_instance.BattleReadyTimelinePathLength())],
+        "BattleReadyTimelinePhaseStart": [convert_int(excel_instance.BattleReadyTimelinePhaseStart(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseStartLength())],
+        "BattleReadyTimelinePhaseEnd": [convert_int(excel_instance.BattleReadyTimelinePhaseEnd(j), password) for j in range(excel_instance.BattleReadyTimelinePhaseEndLength())],
         "VictoryTimelinePath": convert_string(excel_instance.VictoryTimelinePath(), password),
         "PhaseChangeTimelinePath": convert_string(excel_instance.PhaseChangeTimelinePath(), password),
         "TimeLinePhase": convert_int(excel_instance.TimeLinePhase(), password),
@@ -29860,10 +7185,10 @@ def dump_WorldRaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "ShowSkillCard": bool(excel_instance.ShowSkillCard()),
         "BossBGInfoKey": convert_uint(excel_instance.BossBGInfoKey(), password),
         "DamageToWorldBoss": convert_int(excel_instance.DamageToWorldBoss(), password),
-        "AllyPassiveSkillLength": convert_int(excel_instance.AllyPassiveSkillLength(), password),
-        "AllyPassiveSkillLevelLength": convert_int(excel_instance.AllyPassiveSkillLevelLength(), password),
+        "AllyPassiveSkill": [convert_string(excel_instance.AllyPassiveSkill(j), password) for j in range(excel_instance.AllyPassiveSkillLength())],
+        "AllyPassiveSkillLevel": [convert_int(excel_instance.AllyPassiveSkillLevel(j), password) for j in range(excel_instance.AllyPassiveSkillLevelLength())],
         "SaveCurrentLocalBossHP": bool(excel_instance.SaveCurrentLocalBossHP()),
-        "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionType(), password)).name,
+        "EchelonExtensionType": excel_instance.EchelonExtensionType(),
     }
 
 def dump_WorldRaidStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -29871,7 +7196,7 @@ def dump_WorldRaidStageRewardExcel(excel_instance, password: bytes = b"") -> dic
         "GroupId": convert_int(excel_instance.GroupId(), password),
         "IsClearStageRewardHideInfo": bool(excel_instance.IsClearStageRewardHideInfo()),
         "ClearStageRewardProb": convert_int(excel_instance.ClearStageRewardProb(), password),
-        "ClearStageRewardParcelType": ParcelType(convert_int(excel_instance.ClearStageRewardParcelType(), password)).name,
+        "ClearStageRewardParcelType": excel_instance.ClearStageRewardParcelType(),
         "ClearStageRewardParcelUniqueID": convert_int(excel_instance.ClearStageRewardParcelUniqueID(), password),
         "ClearStageRewardAmount": convert_int(excel_instance.ClearStageRewardAmount(), password),
     }
