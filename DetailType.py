@@ -1,5 +1,0 @@
-class DetailType:
-    GAME_SERVICE = 0
-    GAME_SERVER = 1
-    COUNTRY_BLOCK = 2
-    ARENA_COUNTRY_BLOCK = 3
