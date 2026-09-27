@@ -1,4 +1,0 @@
-class JankenResult:
-    Win = 0
-    Lose = 1
-    Draw = 2

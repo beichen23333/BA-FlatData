@@ -1,7 +1,0 @@
-class ApcSynergyTriggerType:
-    CharacterId = 0
-    WeaponType = 1
-    School = 2
-    Club = 3
-    PersonalityId = 4
-    Tags = 5

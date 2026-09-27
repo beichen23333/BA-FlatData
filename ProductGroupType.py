@@ -1,9 +1,0 @@
-class ProductGroupType:
-    None_ = 0
-    Recommend = 1
-    TimeLimit = 2
-    Package = 3
-    Monthly = 4
-    Gem = 5
-    Stepup = 6
-    SpecialSupport = 7

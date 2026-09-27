@@ -1,9 +1,0 @@
-class JankenVoiceCondition:
-    None_ = 0
-    WinTurn = 1
-    LoseTurn = 2
-    DrawTurn = 3
-    WinTurnSpecial = 4
-    LoseTurnSpecial = 5
-    WinBattle = 6
-    LoseBattle = 7
