@@ -1,0 +1,7 @@
+class GachaPhase:
+    GachaIntro = 0
+    CharacterAppearance = 1
+    SignatureIntro = 2
+    SignatureWait = 3
+    SignatureConfirm = 4
+    Result = 5
