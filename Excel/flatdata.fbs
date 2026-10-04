@@ -5,7 +5,7 @@ table BlendData {
 }
 
 table BlendInfo {
-    from:int;
+    from_value:int;
     to:int;
     blend:float;
 }
