@@ -25,63 +25,63 @@ class ScenarioBGNameExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ScenarioBGNameExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGNameExcel
-    def ProductionStep(self):
+    def ProductionStepField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGNameExcel
-    def BGFileName(self):
+    def BGFileNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioBGNameExcel
-    def BGType(self):
+    def BGTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGNameExcel
-    def AnimationRoot(self):
+    def AnimationRootField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioBGNameExcel
-    def AnimationName(self):
+    def AnimationNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioBGNameExcel
-    def SpineScale(self):
+    def SpineScaleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ScenarioBGNameExcel
-    def SpineLocalPosX(self):
+    def SpineLocalPosXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGNameExcel
-    def SpineLocalPosY(self):
+    def SpineLocalPosYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -90,33 +90,33 @@ class ScenarioBGNameExcel(object):
 def ScenarioBGNameExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return ScenarioBGNameExcelStart(builder)
-def ScenarioBGNameExcelAddName(builder, name): builder.PrependUint32Slot(0, name, 0)
-def AddName(builder, name):
-    return ScenarioBGNameExcelAddName(builder, name)
-def ScenarioBGNameExcelAddProductionStep(builder, productionStep): builder.PrependInt32Slot(1, productionStep, 0)
-def AddProductionStep(builder, productionStep):
-    return ScenarioBGNameExcelAddProductionStep(builder, productionStep)
-def ScenarioBGNameExcelAddBGFileName(builder, bGFileName): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(bGFileName), 0)
-def AddBGFileName(builder, bGFileName):
-    return ScenarioBGNameExcelAddBGFileName(builder, bGFileName)
-def ScenarioBGNameExcelAddBGType(builder, bGType): builder.PrependInt32Slot(3, bGType, 0)
-def AddBGType(builder, bGType):
-    return ScenarioBGNameExcelAddBGType(builder, bGType)
-def ScenarioBGNameExcelAddAnimationRoot(builder, animationRoot): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(animationRoot), 0)
-def AddAnimationRoot(builder, animationRoot):
-    return ScenarioBGNameExcelAddAnimationRoot(builder, animationRoot)
-def ScenarioBGNameExcelAddAnimationName(builder, animationName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(animationName), 0)
-def AddAnimationName(builder, animationName):
-    return ScenarioBGNameExcelAddAnimationName(builder, animationName)
-def ScenarioBGNameExcelAddSpineScale(builder, spineScale): builder.PrependFloat32Slot(6, spineScale, 0.0)
-def AddSpineScale(builder, spineScale):
-    return ScenarioBGNameExcelAddSpineScale(builder, spineScale)
-def ScenarioBGNameExcelAddSpineLocalPosX(builder, spineLocalPosX): builder.PrependInt32Slot(7, spineLocalPosX, 0)
-def AddSpineLocalPosX(builder, spineLocalPosX):
-    return ScenarioBGNameExcelAddSpineLocalPosX(builder, spineLocalPosX)
-def ScenarioBGNameExcelAddSpineLocalPosY(builder, spineLocalPosY): builder.PrependInt32Slot(8, spineLocalPosY, 0)
-def AddSpineLocalPosY(builder, spineLocalPosY):
-    return ScenarioBGNameExcelAddSpineLocalPosY(builder, spineLocalPosY)
+def ScenarioBGNameExcelAddNameField(builder, nameField): builder.PrependUint32Slot(0, nameField, 0)
+def AddNameField(builder, nameField):
+    return ScenarioBGNameExcelAddNameField(builder, nameField)
+def ScenarioBGNameExcelAddProductionStepField(builder, productionStepField): builder.PrependInt32Slot(1, productionStepField, 0)
+def AddProductionStepField(builder, productionStepField):
+    return ScenarioBGNameExcelAddProductionStepField(builder, productionStepField)
+def ScenarioBGNameExcelAddBGFileNameField(builder, bGFileNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(bGFileNameField), 0)
+def AddBGFileNameField(builder, bGFileNameField):
+    return ScenarioBGNameExcelAddBGFileNameField(builder, bGFileNameField)
+def ScenarioBGNameExcelAddBGTypeField(builder, bGTypeField): builder.PrependInt32Slot(3, bGTypeField, 0)
+def AddBGTypeField(builder, bGTypeField):
+    return ScenarioBGNameExcelAddBGTypeField(builder, bGTypeField)
+def ScenarioBGNameExcelAddAnimationRootField(builder, animationRootField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(animationRootField), 0)
+def AddAnimationRootField(builder, animationRootField):
+    return ScenarioBGNameExcelAddAnimationRootField(builder, animationRootField)
+def ScenarioBGNameExcelAddAnimationNameField(builder, animationNameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(animationNameField), 0)
+def AddAnimationNameField(builder, animationNameField):
+    return ScenarioBGNameExcelAddAnimationNameField(builder, animationNameField)
+def ScenarioBGNameExcelAddSpineScaleField(builder, spineScaleField): builder.PrependFloat32Slot(6, spineScaleField, 0.0)
+def AddSpineScaleField(builder, spineScaleField):
+    return ScenarioBGNameExcelAddSpineScaleField(builder, spineScaleField)
+def ScenarioBGNameExcelAddSpineLocalPosXField(builder, spineLocalPosXField): builder.PrependInt32Slot(7, spineLocalPosXField, 0)
+def AddSpineLocalPosXField(builder, spineLocalPosXField):
+    return ScenarioBGNameExcelAddSpineLocalPosXField(builder, spineLocalPosXField)
+def ScenarioBGNameExcelAddSpineLocalPosYField(builder, spineLocalPosYField): builder.PrependInt32Slot(8, spineLocalPosYField, 0)
+def AddSpineLocalPosYField(builder, spineLocalPosYField):
+    return ScenarioBGNameExcelAddSpineLocalPosYField(builder, spineLocalPosYField)
 def ScenarioBGNameExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ScenarioBGNameExcelEnd(builder)

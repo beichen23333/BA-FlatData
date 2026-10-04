@@ -25,49 +25,49 @@ class EventContentConcentrationRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentConcentrationRewardExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def ConcentrationRewardType(self):
+    def ConcentrationRewardTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def Rarity(self):
+    def RarityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def Round(self):
+    def RoundField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def IsLoop(self):
+    def IsLoopField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -75,26 +75,26 @@ class EventContentConcentrationRewardExcel(object):
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             a = self._tab.Vector(o)
@@ -102,26 +102,26 @@ class EventContentConcentrationRewardExcel(object):
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelAmount(self, j):
+    def RewardParcelAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             a = self._tab.Vector(o)
@@ -129,63 +129,63 @@ class EventContentConcentrationRewardExcel(object):
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelAmountAsNumpy(self):
+    def RewardParcelAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelAmountLength(self):
+    def RewardParcelAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentConcentrationRewardExcel
-    def RewardParcelAmountIsNone(self):
+    def RewardParcelAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         return o == 0
 
 def EventContentConcentrationRewardExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return EventContentConcentrationRewardExcelStart(builder)
-def EventContentConcentrationRewardExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentConcentrationRewardExcelAddEventContentId(builder, eventContentId)
-def EventContentConcentrationRewardExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(1, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return EventContentConcentrationRewardExcelAddUniqueId(builder, uniqueId)
-def EventContentConcentrationRewardExcelAddConcentrationRewardType(builder, concentrationRewardType): builder.PrependInt32Slot(2, concentrationRewardType, 0)
-def AddConcentrationRewardType(builder, concentrationRewardType):
-    return EventContentConcentrationRewardExcelAddConcentrationRewardType(builder, concentrationRewardType)
-def EventContentConcentrationRewardExcelAddRarity(builder, rarity): builder.PrependInt32Slot(3, rarity, 0)
-def AddRarity(builder, rarity):
-    return EventContentConcentrationRewardExcelAddRarity(builder, rarity)
-def EventContentConcentrationRewardExcelAddRound(builder, round): builder.PrependInt32Slot(4, round, 0)
-def AddRound(builder, round):
-    return EventContentConcentrationRewardExcelAddRound(builder, round)
-def EventContentConcentrationRewardExcelAddIsLoop(builder, isLoop): builder.PrependBoolSlot(5, isLoop, 0)
-def AddIsLoop(builder, isLoop):
-    return EventContentConcentrationRewardExcelAddIsLoop(builder, isLoop)
-def EventContentConcentrationRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return EventContentConcentrationRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def EventContentConcentrationRewardExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return EventContentConcentrationRewardExcelStartRewardParcelTypeVector(builder, numElems)
-def EventContentConcentrationRewardExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return EventContentConcentrationRewardExcelAddRewardParcelId(builder, rewardParcelId)
-def EventContentConcentrationRewardExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return EventContentConcentrationRewardExcelStartRewardParcelIdVector(builder, numElems)
-def EventContentConcentrationRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmount), 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return EventContentConcentrationRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def EventContentConcentrationRewardExcelStartRewardParcelAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountVector(builder, numElems):
-    return EventContentConcentrationRewardExcelStartRewardParcelAmountVector(builder, numElems)
+def EventContentConcentrationRewardExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentConcentrationRewardExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentConcentrationRewardExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return EventContentConcentrationRewardExcelAddUniqueIdField(builder, uniqueIdField)
+def EventContentConcentrationRewardExcelAddConcentrationRewardTypeField(builder, concentrationRewardTypeField): builder.PrependInt32Slot(2, concentrationRewardTypeField, 0)
+def AddConcentrationRewardTypeField(builder, concentrationRewardTypeField):
+    return EventContentConcentrationRewardExcelAddConcentrationRewardTypeField(builder, concentrationRewardTypeField)
+def EventContentConcentrationRewardExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(3, rarityField, 0)
+def AddRarityField(builder, rarityField):
+    return EventContentConcentrationRewardExcelAddRarityField(builder, rarityField)
+def EventContentConcentrationRewardExcelAddRoundField(builder, roundField): builder.PrependInt32Slot(4, roundField, 0)
+def AddRoundField(builder, roundField):
+    return EventContentConcentrationRewardExcelAddRoundField(builder, roundField)
+def EventContentConcentrationRewardExcelAddIsLoopField(builder, isLoopField): builder.PrependBoolSlot(5, isLoopField, 0)
+def AddIsLoopField(builder, isLoopField):
+    return EventContentConcentrationRewardExcelAddIsLoopField(builder, isLoopField)
+def EventContentConcentrationRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return EventContentConcentrationRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def EventContentConcentrationRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return EventContentConcentrationRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def EventContentConcentrationRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return EventContentConcentrationRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def EventContentConcentrationRewardExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return EventContentConcentrationRewardExcelStartRewardParcelIdFieldVector(builder, numElems)
+def EventContentConcentrationRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return EventContentConcentrationRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def EventContentConcentrationRewardExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelAmountFieldVector(builder, numElems):
+    return EventContentConcentrationRewardExcelStartRewardParcelAmountFieldVector(builder, numElems)
 def EventContentConcentrationRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentConcentrationRewardExcelEnd(builder)

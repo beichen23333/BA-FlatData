@@ -25,28 +25,28 @@ class MinigameJankenFixedEchelonSetExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenFixedEchelonSetExcel
-    def FixedEchelonID(self):
+    def FixedEchelonIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenFixedEchelonSetExcel
-    def EchelonSceneSkip(self):
+    def EchelonSceneSkipField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # MinigameJankenFixedEchelonSetExcel
-    def CharacterID(self):
+    def CharacterIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenFixedEchelonSetExcel
-    def EquipMentID(self):
+    def EquipMentIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class MinigameJankenFixedEchelonSetExcel(object):
 def MinigameJankenFixedEchelonSetExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return MinigameJankenFixedEchelonSetExcelStart(builder)
-def MinigameJankenFixedEchelonSetExcelAddFixedEchelonID(builder, fixedEchelonID): builder.PrependInt32Slot(0, fixedEchelonID, 0)
-def AddFixedEchelonID(builder, fixedEchelonID):
-    return MinigameJankenFixedEchelonSetExcelAddFixedEchelonID(builder, fixedEchelonID)
-def MinigameJankenFixedEchelonSetExcelAddEchelonSceneSkip(builder, echelonSceneSkip): builder.PrependBoolSlot(1, echelonSceneSkip, 0)
-def AddEchelonSceneSkip(builder, echelonSceneSkip):
-    return MinigameJankenFixedEchelonSetExcelAddEchelonSceneSkip(builder, echelonSceneSkip)
-def MinigameJankenFixedEchelonSetExcelAddCharacterID(builder, characterID): builder.PrependInt32Slot(2, characterID, 0)
-def AddCharacterID(builder, characterID):
-    return MinigameJankenFixedEchelonSetExcelAddCharacterID(builder, characterID)
-def MinigameJankenFixedEchelonSetExcelAddEquipMentID(builder, equipMentID): builder.PrependInt32Slot(3, equipMentID, 0)
-def AddEquipMentID(builder, equipMentID):
-    return MinigameJankenFixedEchelonSetExcelAddEquipMentID(builder, equipMentID)
+def MinigameJankenFixedEchelonSetExcelAddFixedEchelonIDField(builder, fixedEchelonIDField): builder.PrependInt32Slot(0, fixedEchelonIDField, 0)
+def AddFixedEchelonIDField(builder, fixedEchelonIDField):
+    return MinigameJankenFixedEchelonSetExcelAddFixedEchelonIDField(builder, fixedEchelonIDField)
+def MinigameJankenFixedEchelonSetExcelAddEchelonSceneSkipField(builder, echelonSceneSkipField): builder.PrependBoolSlot(1, echelonSceneSkipField, 0)
+def AddEchelonSceneSkipField(builder, echelonSceneSkipField):
+    return MinigameJankenFixedEchelonSetExcelAddEchelonSceneSkipField(builder, echelonSceneSkipField)
+def MinigameJankenFixedEchelonSetExcelAddCharacterIDField(builder, characterIDField): builder.PrependInt32Slot(2, characterIDField, 0)
+def AddCharacterIDField(builder, characterIDField):
+    return MinigameJankenFixedEchelonSetExcelAddCharacterIDField(builder, characterIDField)
+def MinigameJankenFixedEchelonSetExcelAddEquipMentIDField(builder, equipMentIDField): builder.PrependInt32Slot(3, equipMentIDField, 0)
+def AddEquipMentIDField(builder, equipMentIDField):
+    return MinigameJankenFixedEchelonSetExcelAddEquipMentIDField(builder, equipMentIDField)
 def MinigameJankenFixedEchelonSetExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenFixedEchelonSetExcelEnd(builder)

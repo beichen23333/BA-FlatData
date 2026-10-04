@@ -25,21 +25,21 @@ class BlendInfo(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BlendInfo
-    def FromValue(self):
+    def FromField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BlendInfo
-    def To(self):
+    def ToField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BlendInfo
-    def Blend(self):
+    def BlendField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -48,15 +48,15 @@ class BlendInfo(object):
 def BlendInfoStart(builder): builder.StartObject(3)
 def Start(builder):
     return BlendInfoStart(builder)
-def BlendInfoAddFromValue(builder, fromValue): builder.PrependInt32Slot(0, fromValue, 0)
-def AddFromValue(builder, fromValue):
-    return BlendInfoAddFromValue(builder, fromValue)
-def BlendInfoAddTo(builder, to): builder.PrependInt32Slot(1, to, 0)
-def AddTo(builder, to):
-    return BlendInfoAddTo(builder, to)
-def BlendInfoAddBlend(builder, blend): builder.PrependFloat32Slot(2, blend, 0.0)
-def AddBlend(builder, blend):
-    return BlendInfoAddBlend(builder, blend)
+def BlendInfoAddFromField(builder, fromField): builder.PrependInt32Slot(0, fromField, 0)
+def AddFromField(builder, fromField):
+    return BlendInfoAddFromField(builder, fromField)
+def BlendInfoAddToField(builder, toField): builder.PrependInt32Slot(1, toField, 0)
+def AddToField(builder, toField):
+    return BlendInfoAddToField(builder, toField)
+def BlendInfoAddBlendField(builder, blendField): builder.PrependFloat32Slot(2, blendField, 0.0)
+def AddBlendField(builder, blendField):
+    return BlendInfoAddBlendField(builder, blendField)
 def BlendInfoEnd(builder): return builder.EndObject()
 def End(builder):
     return BlendInfoEnd(builder)

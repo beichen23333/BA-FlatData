@@ -25,21 +25,21 @@ class MinigameJankenRewardScoreExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenRewardScoreExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenRewardScoreExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenRewardScoreExcel
-    def StackedScore(self, j):
+    def StackedScoreField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,26 +47,26 @@ class MinigameJankenRewardScoreExcel(object):
         return 0
 
     # MinigameJankenRewardScoreExcel
-    def StackedScoreAsNumpy(self):
+    def StackedScoreFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MinigameJankenRewardScoreExcel
-    def StackedScoreLength(self):
+    def StackedScoreFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MinigameJankenRewardScoreExcel
-    def StackedScoreIsNone(self):
+    def StackedScoreFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # MinigameJankenRewardScoreExcel
-    def ScoreRewardId(self, j):
+    def ScoreRewardIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,45 +74,45 @@ class MinigameJankenRewardScoreExcel(object):
         return 0
 
     # MinigameJankenRewardScoreExcel
-    def ScoreRewardIdAsNumpy(self):
+    def ScoreRewardIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MinigameJankenRewardScoreExcel
-    def ScoreRewardIdLength(self):
+    def ScoreRewardIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MinigameJankenRewardScoreExcel
-    def ScoreRewardIdIsNone(self):
+    def ScoreRewardIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
 def MinigameJankenRewardScoreExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return MinigameJankenRewardScoreExcelStart(builder)
-def MinigameJankenRewardScoreExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenRewardScoreExcelAddId(builder, id)
-def MinigameJankenRewardScoreExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(1, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MinigameJankenRewardScoreExcelAddEventContentId(builder, eventContentId)
-def MinigameJankenRewardScoreExcelAddStackedScore(builder, stackedScore): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(stackedScore), 0)
-def AddStackedScore(builder, stackedScore):
-    return MinigameJankenRewardScoreExcelAddStackedScore(builder, stackedScore)
-def MinigameJankenRewardScoreExcelStartStackedScoreVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStackedScoreVector(builder, numElems):
-    return MinigameJankenRewardScoreExcelStartStackedScoreVector(builder, numElems)
-def MinigameJankenRewardScoreExcelAddScoreRewardId(builder, scoreRewardId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(scoreRewardId), 0)
-def AddScoreRewardId(builder, scoreRewardId):
-    return MinigameJankenRewardScoreExcelAddScoreRewardId(builder, scoreRewardId)
-def MinigameJankenRewardScoreExcelStartScoreRewardIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartScoreRewardIdVector(builder, numElems):
-    return MinigameJankenRewardScoreExcelStartScoreRewardIdVector(builder, numElems)
+def MinigameJankenRewardScoreExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenRewardScoreExcelAddIdField(builder, idField)
+def MinigameJankenRewardScoreExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MinigameJankenRewardScoreExcelAddEventContentIdField(builder, eventContentIdField)
+def MinigameJankenRewardScoreExcelAddStackedScoreField(builder, stackedScoreField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(stackedScoreField), 0)
+def AddStackedScoreField(builder, stackedScoreField):
+    return MinigameJankenRewardScoreExcelAddStackedScoreField(builder, stackedScoreField)
+def MinigameJankenRewardScoreExcelStartStackedScoreFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStackedScoreFieldVector(builder, numElems):
+    return MinigameJankenRewardScoreExcelStartStackedScoreFieldVector(builder, numElems)
+def MinigameJankenRewardScoreExcelAddScoreRewardIdField(builder, scoreRewardIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(scoreRewardIdField), 0)
+def AddScoreRewardIdField(builder, scoreRewardIdField):
+    return MinigameJankenRewardScoreExcelAddScoreRewardIdField(builder, scoreRewardIdField)
+def MinigameJankenRewardScoreExcelStartScoreRewardIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartScoreRewardIdFieldVector(builder, numElems):
+    return MinigameJankenRewardScoreExcelStartScoreRewardIdFieldVector(builder, numElems)
 def MinigameJankenRewardScoreExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenRewardScoreExcelEnd(builder)

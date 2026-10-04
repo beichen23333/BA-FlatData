@@ -25,42 +25,42 @@ class MinigameJankenCharacterSkillExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenCharacterSkillExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterSkillExcel
-    def LocalizeId(self):
+    def LocalizeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterSkillExcel
-    def DataLoadPath(self):
+    def DataLoadPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenCharacterSkillExcel
-    def JankenLogicEffect(self):
+    def JankenLogicEffectField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterSkillExcel
-    def SkillCost(self):
+    def SkillCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterSkillExcel
-    def OncePerMatch(self):
+    def OncePerMatchField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -69,24 +69,24 @@ class MinigameJankenCharacterSkillExcel(object):
 def MinigameJankenCharacterSkillExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return MinigameJankenCharacterSkillExcelStart(builder)
-def MinigameJankenCharacterSkillExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenCharacterSkillExcelAddId(builder, id)
-def MinigameJankenCharacterSkillExcelAddLocalizeId(builder, localizeId): builder.PrependUint32Slot(1, localizeId, 0)
-def AddLocalizeId(builder, localizeId):
-    return MinigameJankenCharacterSkillExcelAddLocalizeId(builder, localizeId)
-def MinigameJankenCharacterSkillExcelAddDataLoadPath(builder, dataLoadPath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(dataLoadPath), 0)
-def AddDataLoadPath(builder, dataLoadPath):
-    return MinigameJankenCharacterSkillExcelAddDataLoadPath(builder, dataLoadPath)
-def MinigameJankenCharacterSkillExcelAddJankenLogicEffect(builder, jankenLogicEffect): builder.PrependInt32Slot(3, jankenLogicEffect, 0)
-def AddJankenLogicEffect(builder, jankenLogicEffect):
-    return MinigameJankenCharacterSkillExcelAddJankenLogicEffect(builder, jankenLogicEffect)
-def MinigameJankenCharacterSkillExcelAddSkillCost(builder, skillCost): builder.PrependInt32Slot(4, skillCost, 0)
-def AddSkillCost(builder, skillCost):
-    return MinigameJankenCharacterSkillExcelAddSkillCost(builder, skillCost)
-def MinigameJankenCharacterSkillExcelAddOncePerMatch(builder, oncePerMatch): builder.PrependBoolSlot(5, oncePerMatch, 0)
-def AddOncePerMatch(builder, oncePerMatch):
-    return MinigameJankenCharacterSkillExcelAddOncePerMatch(builder, oncePerMatch)
+def MinigameJankenCharacterSkillExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenCharacterSkillExcelAddIdField(builder, idField)
+def MinigameJankenCharacterSkillExcelAddLocalizeIdField(builder, localizeIdField): builder.PrependUint32Slot(1, localizeIdField, 0)
+def AddLocalizeIdField(builder, localizeIdField):
+    return MinigameJankenCharacterSkillExcelAddLocalizeIdField(builder, localizeIdField)
+def MinigameJankenCharacterSkillExcelAddDataLoadPathField(builder, dataLoadPathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(dataLoadPathField), 0)
+def AddDataLoadPathField(builder, dataLoadPathField):
+    return MinigameJankenCharacterSkillExcelAddDataLoadPathField(builder, dataLoadPathField)
+def MinigameJankenCharacterSkillExcelAddJankenLogicEffectField(builder, jankenLogicEffectField): builder.PrependInt32Slot(3, jankenLogicEffectField, 0)
+def AddJankenLogicEffectField(builder, jankenLogicEffectField):
+    return MinigameJankenCharacterSkillExcelAddJankenLogicEffectField(builder, jankenLogicEffectField)
+def MinigameJankenCharacterSkillExcelAddSkillCostField(builder, skillCostField): builder.PrependInt32Slot(4, skillCostField, 0)
+def AddSkillCostField(builder, skillCostField):
+    return MinigameJankenCharacterSkillExcelAddSkillCostField(builder, skillCostField)
+def MinigameJankenCharacterSkillExcelAddOncePerMatchField(builder, oncePerMatchField): builder.PrependBoolSlot(5, oncePerMatchField, 0)
+def AddOncePerMatchField(builder, oncePerMatchField):
+    return MinigameJankenCharacterSkillExcelAddOncePerMatchField(builder, oncePerMatchField)
 def MinigameJankenCharacterSkillExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenCharacterSkillExcelEnd(builder)

@@ -25,21 +25,21 @@ class MiniGameRoadPuzzleRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MiniGameRoadPuzzleRewardExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,26 +47,26 @@ class MiniGameRoadPuzzleRewardExcel(object):
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,26 +74,26 @@ class MiniGameRoadPuzzleRewardExcel(object):
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelAmount(self, j):
+    def RewardParcelAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -101,51 +101,51 @@ class MiniGameRoadPuzzleRewardExcel(object):
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelAmountAsNumpy(self):
+    def RewardParcelAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelAmountLength(self):
+    def RewardParcelAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameRoadPuzzleRewardExcel
-    def RewardParcelAmountIsNone(self):
+    def RewardParcelAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
 def MiniGameRoadPuzzleRewardExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return MiniGameRoadPuzzleRewardExcelStart(builder)
-def MiniGameRoadPuzzleRewardExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MiniGameRoadPuzzleRewardExcelAddEventContentId(builder, eventContentId)
-def MiniGameRoadPuzzleRewardExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(1, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return MiniGameRoadPuzzleRewardExcelAddUniqueId(builder, uniqueId)
-def MiniGameRoadPuzzleRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return MiniGameRoadPuzzleRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def MiniGameRoadPuzzleRewardExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return MiniGameRoadPuzzleRewardExcelStartRewardParcelTypeVector(builder, numElems)
-def MiniGameRoadPuzzleRewardExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return MiniGameRoadPuzzleRewardExcelAddRewardParcelId(builder, rewardParcelId)
-def MiniGameRoadPuzzleRewardExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return MiniGameRoadPuzzleRewardExcelStartRewardParcelIdVector(builder, numElems)
-def MiniGameRoadPuzzleRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmount), 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return MiniGameRoadPuzzleRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def MiniGameRoadPuzzleRewardExcelStartRewardParcelAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountVector(builder, numElems):
-    return MiniGameRoadPuzzleRewardExcelStartRewardParcelAmountVector(builder, numElems)
+def MiniGameRoadPuzzleRewardExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MiniGameRoadPuzzleRewardExcelAddEventContentIdField(builder, eventContentIdField)
+def MiniGameRoadPuzzleRewardExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return MiniGameRoadPuzzleRewardExcelAddUniqueIdField(builder, uniqueIdField)
+def MiniGameRoadPuzzleRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return MiniGameRoadPuzzleRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def MiniGameRoadPuzzleRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return MiniGameRoadPuzzleRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def MiniGameRoadPuzzleRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return MiniGameRoadPuzzleRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def MiniGameRoadPuzzleRewardExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return MiniGameRoadPuzzleRewardExcelStartRewardParcelIdFieldVector(builder, numElems)
+def MiniGameRoadPuzzleRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return MiniGameRoadPuzzleRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def MiniGameRoadPuzzleRewardExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelAmountFieldVector(builder, numElems):
+    return MiniGameRoadPuzzleRewardExcelStartRewardParcelAmountFieldVector(builder, numElems)
 def MiniGameRoadPuzzleRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MiniGameRoadPuzzleRewardExcelEnd(builder)

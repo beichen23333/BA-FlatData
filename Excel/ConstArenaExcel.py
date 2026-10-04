@@ -25,84 +25,84 @@ class ConstArenaExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstArenaExcel
-    def AttackCoolTime(self):
+    def AttackCoolTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def BattleDuration(self):
+    def BattleDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def DefenseCoolTime(self):
+    def DefenseCoolTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def TSSStartCoolTime(self):
+    def TSSStartCoolTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def EndAlarm(self):
+    def EndAlarmField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def TimeRewardMaxAmount(self):
+    def TimeRewardMaxAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def EnterCostType(self):
+    def EnterCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def EnterCostId(self):
+    def EnterCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def TicketCost(self):
+    def TicketCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def DailyRewardResetTime(self):
+    def DailyRewardResetTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstArenaExcel
-    def OpenScenarioId(self):
+    def OpenScenarioIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstArenaExcel
-    def CharacterSlotHideRank(self, j):
+    def CharacterSlotHideRankField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
@@ -110,33 +110,33 @@ class ConstArenaExcel(object):
         return 0
 
     # ConstArenaExcel
-    def CharacterSlotHideRankAsNumpy(self):
+    def CharacterSlotHideRankFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstArenaExcel
-    def CharacterSlotHideRankLength(self):
+    def CharacterSlotHideRankFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstArenaExcel
-    def CharacterSlotHideRankIsNone(self):
+    def CharacterSlotHideRankFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
     # ConstArenaExcel
-    def MapSlotHideRank(self):
+    def MapSlotHideRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def RelativeOpponentRankStart(self, j):
+    def RelativeOpponentRankStartField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             a = self._tab.Vector(o)
@@ -144,26 +144,26 @@ class ConstArenaExcel(object):
         return 0
 
     # ConstArenaExcel
-    def RelativeOpponentRankStartAsNumpy(self):
+    def RelativeOpponentRankStartFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstArenaExcel
-    def RelativeOpponentRankStartLength(self):
+    def RelativeOpponentRankStartFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstArenaExcel
-    def RelativeOpponentRankStartIsNone(self):
+    def RelativeOpponentRankStartFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         return o == 0
 
     # ConstArenaExcel
-    def RelativeOpponentRankEnd(self, j):
+    def RelativeOpponentRankEndField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             a = self._tab.Vector(o)
@@ -171,26 +171,26 @@ class ConstArenaExcel(object):
         return 0
 
     # ConstArenaExcel
-    def RelativeOpponentRankEndAsNumpy(self):
+    def RelativeOpponentRankEndFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstArenaExcel
-    def RelativeOpponentRankEndLength(self):
+    def RelativeOpponentRankEndFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstArenaExcel
-    def RelativeOpponentRankEndIsNone(self):
+    def RelativeOpponentRankEndFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         return o == 0
 
     # ConstArenaExcel
-    def ModifiedStatType(self, j):
+    def ModifiedStatTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             a = self._tab.Vector(o)
@@ -198,26 +198,26 @@ class ConstArenaExcel(object):
         return 0
 
     # ConstArenaExcel
-    def ModifiedStatTypeAsNumpy(self):
+    def ModifiedStatTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstArenaExcel
-    def ModifiedStatTypeLength(self):
+    def ModifiedStatTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstArenaExcel
-    def ModifiedStatTypeIsNone(self):
+    def ModifiedStatTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         return o == 0
 
     # ConstArenaExcel
-    def StatMulFactor(self, j):
+    def StatMulFactorField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             a = self._tab.Vector(o)
@@ -225,26 +225,26 @@ class ConstArenaExcel(object):
         return 0
 
     # ConstArenaExcel
-    def StatMulFactorAsNumpy(self):
+    def StatMulFactorFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstArenaExcel
-    def StatMulFactorLength(self):
+    def StatMulFactorFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstArenaExcel
-    def StatMulFactorIsNone(self):
+    def StatMulFactorFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         return o == 0
 
     # ConstArenaExcel
-    def StatSumFactor(self, j):
+    def StatSumFactorField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             a = self._tab.Vector(o)
@@ -252,26 +252,26 @@ class ConstArenaExcel(object):
         return 0
 
     # ConstArenaExcel
-    def StatSumFactorAsNumpy(self):
+    def StatSumFactorFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstArenaExcel
-    def StatSumFactorLength(self):
+    def StatSumFactorFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstArenaExcel
-    def StatSumFactorIsNone(self):
+    def StatSumFactorFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         return o == 0
 
     # ConstArenaExcel
-    def NPCName(self, j):
+    def NPCNameField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             a = self._tab.Vector(o)
@@ -279,110 +279,110 @@ class ConstArenaExcel(object):
         return ""
 
     # ConstArenaExcel
-    def NPCNameLength(self):
+    def NPCNameFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstArenaExcel
-    def NPCNameIsNone(self):
+    def NPCNameFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         return o == 0
 
     # ConstArenaExcel
-    def NPCMainCharacterCount(self):
+    def NPCMainCharacterCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def NPCSupportCharacterCount(self):
+    def NPCSupportCharacterCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def NPCCharacterSkillLevel(self):
+    def NPCCharacterSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def TimeSpanInDaysForBattleHistory(self):
+    def TimeSpanInDaysForBattleHistoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def HiddenCharacterImagePath(self):
+    def HiddenCharacterImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstArenaExcel
-    def DefenseVictoryRewardMaxCount(self):
+    def DefenseVictoryRewardMaxCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def TopRankerCountLimit(self):
+    def TopRankerCountLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def AutoRefreshIntervalMilliSeconds(self):
+    def AutoRefreshIntervalMilliSecondsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def EchelonSettingIntervalMilliSeconds(self):
+    def EchelonSettingIntervalMilliSecondsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def SkipAllowedTimeMilliSeconds(self):
+    def SkipAllowedTimeMilliSecondsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def ShowSeasonChangeInfoStartTime(self):
+    def ShowSeasonChangeInfoStartTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstArenaExcel
-    def ShowSeasonChangeInfoEndTime(self):
+    def ShowSeasonChangeInfoEndTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstArenaExcel
-    def ShowSeasonId(self):
+    def ShowSeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstArenaExcel
-    def ArenaHistoryQueryLimitDays(self):
+    def ArenaHistoryQueryLimitDaysField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -391,126 +391,126 @@ class ConstArenaExcel(object):
 def ConstArenaExcelStart(builder): builder.StartObject(33)
 def Start(builder):
     return ConstArenaExcelStart(builder)
-def ConstArenaExcelAddAttackCoolTime(builder, attackCoolTime): builder.PrependInt32Slot(0, attackCoolTime, 0)
-def AddAttackCoolTime(builder, attackCoolTime):
-    return ConstArenaExcelAddAttackCoolTime(builder, attackCoolTime)
-def ConstArenaExcelAddBattleDuration(builder, battleDuration): builder.PrependInt32Slot(1, battleDuration, 0)
-def AddBattleDuration(builder, battleDuration):
-    return ConstArenaExcelAddBattleDuration(builder, battleDuration)
-def ConstArenaExcelAddDefenseCoolTime(builder, defenseCoolTime): builder.PrependInt32Slot(2, defenseCoolTime, 0)
-def AddDefenseCoolTime(builder, defenseCoolTime):
-    return ConstArenaExcelAddDefenseCoolTime(builder, defenseCoolTime)
-def ConstArenaExcelAddTSSStartCoolTime(builder, tSSStartCoolTime): builder.PrependInt32Slot(3, tSSStartCoolTime, 0)
-def AddTSSStartCoolTime(builder, tSSStartCoolTime):
-    return ConstArenaExcelAddTSSStartCoolTime(builder, tSSStartCoolTime)
-def ConstArenaExcelAddEndAlarm(builder, endAlarm): builder.PrependInt32Slot(4, endAlarm, 0)
-def AddEndAlarm(builder, endAlarm):
-    return ConstArenaExcelAddEndAlarm(builder, endAlarm)
-def ConstArenaExcelAddTimeRewardMaxAmount(builder, timeRewardMaxAmount): builder.PrependInt32Slot(5, timeRewardMaxAmount, 0)
-def AddTimeRewardMaxAmount(builder, timeRewardMaxAmount):
-    return ConstArenaExcelAddTimeRewardMaxAmount(builder, timeRewardMaxAmount)
-def ConstArenaExcelAddEnterCostType(builder, enterCostType): builder.PrependInt32Slot(6, enterCostType, 0)
-def AddEnterCostType(builder, enterCostType):
-    return ConstArenaExcelAddEnterCostType(builder, enterCostType)
-def ConstArenaExcelAddEnterCostId(builder, enterCostId): builder.PrependInt32Slot(7, enterCostId, 0)
-def AddEnterCostId(builder, enterCostId):
-    return ConstArenaExcelAddEnterCostId(builder, enterCostId)
-def ConstArenaExcelAddTicketCost(builder, ticketCost): builder.PrependInt32Slot(8, ticketCost, 0)
-def AddTicketCost(builder, ticketCost):
-    return ConstArenaExcelAddTicketCost(builder, ticketCost)
-def ConstArenaExcelAddDailyRewardResetTime(builder, dailyRewardResetTime): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(dailyRewardResetTime), 0)
-def AddDailyRewardResetTime(builder, dailyRewardResetTime):
-    return ConstArenaExcelAddDailyRewardResetTime(builder, dailyRewardResetTime)
-def ConstArenaExcelAddOpenScenarioId(builder, openScenarioId): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(openScenarioId), 0)
-def AddOpenScenarioId(builder, openScenarioId):
-    return ConstArenaExcelAddOpenScenarioId(builder, openScenarioId)
-def ConstArenaExcelAddCharacterSlotHideRank(builder, characterSlotHideRank): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(characterSlotHideRank), 0)
-def AddCharacterSlotHideRank(builder, characterSlotHideRank):
-    return ConstArenaExcelAddCharacterSlotHideRank(builder, characterSlotHideRank)
-def ConstArenaExcelStartCharacterSlotHideRankVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCharacterSlotHideRankVector(builder, numElems):
-    return ConstArenaExcelStartCharacterSlotHideRankVector(builder, numElems)
-def ConstArenaExcelAddMapSlotHideRank(builder, mapSlotHideRank): builder.PrependInt32Slot(12, mapSlotHideRank, 0)
-def AddMapSlotHideRank(builder, mapSlotHideRank):
-    return ConstArenaExcelAddMapSlotHideRank(builder, mapSlotHideRank)
-def ConstArenaExcelAddRelativeOpponentRankStart(builder, relativeOpponentRankStart): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(relativeOpponentRankStart), 0)
-def AddRelativeOpponentRankStart(builder, relativeOpponentRankStart):
-    return ConstArenaExcelAddRelativeOpponentRankStart(builder, relativeOpponentRankStart)
-def ConstArenaExcelStartRelativeOpponentRankStartVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRelativeOpponentRankStartVector(builder, numElems):
-    return ConstArenaExcelStartRelativeOpponentRankStartVector(builder, numElems)
-def ConstArenaExcelAddRelativeOpponentRankEnd(builder, relativeOpponentRankEnd): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(relativeOpponentRankEnd), 0)
-def AddRelativeOpponentRankEnd(builder, relativeOpponentRankEnd):
-    return ConstArenaExcelAddRelativeOpponentRankEnd(builder, relativeOpponentRankEnd)
-def ConstArenaExcelStartRelativeOpponentRankEndVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRelativeOpponentRankEndVector(builder, numElems):
-    return ConstArenaExcelStartRelativeOpponentRankEndVector(builder, numElems)
-def ConstArenaExcelAddModifiedStatType(builder, modifiedStatType): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(modifiedStatType), 0)
-def AddModifiedStatType(builder, modifiedStatType):
-    return ConstArenaExcelAddModifiedStatType(builder, modifiedStatType)
-def ConstArenaExcelStartModifiedStatTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartModifiedStatTypeVector(builder, numElems):
-    return ConstArenaExcelStartModifiedStatTypeVector(builder, numElems)
-def ConstArenaExcelAddStatMulFactor(builder, statMulFactor): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(statMulFactor), 0)
-def AddStatMulFactor(builder, statMulFactor):
-    return ConstArenaExcelAddStatMulFactor(builder, statMulFactor)
-def ConstArenaExcelStartStatMulFactorVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatMulFactorVector(builder, numElems):
-    return ConstArenaExcelStartStatMulFactorVector(builder, numElems)
-def ConstArenaExcelAddStatSumFactor(builder, statSumFactor): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(statSumFactor), 0)
-def AddStatSumFactor(builder, statSumFactor):
-    return ConstArenaExcelAddStatSumFactor(builder, statSumFactor)
-def ConstArenaExcelStartStatSumFactorVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatSumFactorVector(builder, numElems):
-    return ConstArenaExcelStartStatSumFactorVector(builder, numElems)
-def ConstArenaExcelAddNPCName(builder, nPCName): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(nPCName), 0)
-def AddNPCName(builder, nPCName):
-    return ConstArenaExcelAddNPCName(builder, nPCName)
-def ConstArenaExcelStartNPCNameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNPCNameVector(builder, numElems):
-    return ConstArenaExcelStartNPCNameVector(builder, numElems)
-def ConstArenaExcelAddNPCMainCharacterCount(builder, nPCMainCharacterCount): builder.PrependInt32Slot(19, nPCMainCharacterCount, 0)
-def AddNPCMainCharacterCount(builder, nPCMainCharacterCount):
-    return ConstArenaExcelAddNPCMainCharacterCount(builder, nPCMainCharacterCount)
-def ConstArenaExcelAddNPCSupportCharacterCount(builder, nPCSupportCharacterCount): builder.PrependInt32Slot(20, nPCSupportCharacterCount, 0)
-def AddNPCSupportCharacterCount(builder, nPCSupportCharacterCount):
-    return ConstArenaExcelAddNPCSupportCharacterCount(builder, nPCSupportCharacterCount)
-def ConstArenaExcelAddNPCCharacterSkillLevel(builder, nPCCharacterSkillLevel): builder.PrependInt32Slot(21, nPCCharacterSkillLevel, 0)
-def AddNPCCharacterSkillLevel(builder, nPCCharacterSkillLevel):
-    return ConstArenaExcelAddNPCCharacterSkillLevel(builder, nPCCharacterSkillLevel)
-def ConstArenaExcelAddTimeSpanInDaysForBattleHistory(builder, timeSpanInDaysForBattleHistory): builder.PrependInt32Slot(22, timeSpanInDaysForBattleHistory, 0)
-def AddTimeSpanInDaysForBattleHistory(builder, timeSpanInDaysForBattleHistory):
-    return ConstArenaExcelAddTimeSpanInDaysForBattleHistory(builder, timeSpanInDaysForBattleHistory)
-def ConstArenaExcelAddHiddenCharacterImagePath(builder, hiddenCharacterImagePath): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(hiddenCharacterImagePath), 0)
-def AddHiddenCharacterImagePath(builder, hiddenCharacterImagePath):
-    return ConstArenaExcelAddHiddenCharacterImagePath(builder, hiddenCharacterImagePath)
-def ConstArenaExcelAddDefenseVictoryRewardMaxCount(builder, defenseVictoryRewardMaxCount): builder.PrependInt32Slot(24, defenseVictoryRewardMaxCount, 0)
-def AddDefenseVictoryRewardMaxCount(builder, defenseVictoryRewardMaxCount):
-    return ConstArenaExcelAddDefenseVictoryRewardMaxCount(builder, defenseVictoryRewardMaxCount)
-def ConstArenaExcelAddTopRankerCountLimit(builder, topRankerCountLimit): builder.PrependInt32Slot(25, topRankerCountLimit, 0)
-def AddTopRankerCountLimit(builder, topRankerCountLimit):
-    return ConstArenaExcelAddTopRankerCountLimit(builder, topRankerCountLimit)
-def ConstArenaExcelAddAutoRefreshIntervalMilliSeconds(builder, autoRefreshIntervalMilliSeconds): builder.PrependInt32Slot(26, autoRefreshIntervalMilliSeconds, 0)
-def AddAutoRefreshIntervalMilliSeconds(builder, autoRefreshIntervalMilliSeconds):
-    return ConstArenaExcelAddAutoRefreshIntervalMilliSeconds(builder, autoRefreshIntervalMilliSeconds)
-def ConstArenaExcelAddEchelonSettingIntervalMilliSeconds(builder, echelonSettingIntervalMilliSeconds): builder.PrependInt32Slot(27, echelonSettingIntervalMilliSeconds, 0)
-def AddEchelonSettingIntervalMilliSeconds(builder, echelonSettingIntervalMilliSeconds):
-    return ConstArenaExcelAddEchelonSettingIntervalMilliSeconds(builder, echelonSettingIntervalMilliSeconds)
-def ConstArenaExcelAddSkipAllowedTimeMilliSeconds(builder, skipAllowedTimeMilliSeconds): builder.PrependInt32Slot(28, skipAllowedTimeMilliSeconds, 0)
-def AddSkipAllowedTimeMilliSeconds(builder, skipAllowedTimeMilliSeconds):
-    return ConstArenaExcelAddSkipAllowedTimeMilliSeconds(builder, skipAllowedTimeMilliSeconds)
-def ConstArenaExcelAddShowSeasonChangeInfoStartTime(builder, showSeasonChangeInfoStartTime): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(showSeasonChangeInfoStartTime), 0)
-def AddShowSeasonChangeInfoStartTime(builder, showSeasonChangeInfoStartTime):
-    return ConstArenaExcelAddShowSeasonChangeInfoStartTime(builder, showSeasonChangeInfoStartTime)
-def ConstArenaExcelAddShowSeasonChangeInfoEndTime(builder, showSeasonChangeInfoEndTime): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(showSeasonChangeInfoEndTime), 0)
-def AddShowSeasonChangeInfoEndTime(builder, showSeasonChangeInfoEndTime):
-    return ConstArenaExcelAddShowSeasonChangeInfoEndTime(builder, showSeasonChangeInfoEndTime)
-def ConstArenaExcelAddShowSeasonId(builder, showSeasonId): builder.PrependInt32Slot(31, showSeasonId, 0)
-def AddShowSeasonId(builder, showSeasonId):
-    return ConstArenaExcelAddShowSeasonId(builder, showSeasonId)
-def ConstArenaExcelAddArenaHistoryQueryLimitDays(builder, arenaHistoryQueryLimitDays): builder.PrependInt32Slot(32, arenaHistoryQueryLimitDays, 0)
-def AddArenaHistoryQueryLimitDays(builder, arenaHistoryQueryLimitDays):
-    return ConstArenaExcelAddArenaHistoryQueryLimitDays(builder, arenaHistoryQueryLimitDays)
+def ConstArenaExcelAddAttackCoolTimeField(builder, attackCoolTimeField): builder.PrependInt32Slot(0, attackCoolTimeField, 0)
+def AddAttackCoolTimeField(builder, attackCoolTimeField):
+    return ConstArenaExcelAddAttackCoolTimeField(builder, attackCoolTimeField)
+def ConstArenaExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(1, battleDurationField, 0)
+def AddBattleDurationField(builder, battleDurationField):
+    return ConstArenaExcelAddBattleDurationField(builder, battleDurationField)
+def ConstArenaExcelAddDefenseCoolTimeField(builder, defenseCoolTimeField): builder.PrependInt32Slot(2, defenseCoolTimeField, 0)
+def AddDefenseCoolTimeField(builder, defenseCoolTimeField):
+    return ConstArenaExcelAddDefenseCoolTimeField(builder, defenseCoolTimeField)
+def ConstArenaExcelAddTSSStartCoolTimeField(builder, tSSStartCoolTimeField): builder.PrependInt32Slot(3, tSSStartCoolTimeField, 0)
+def AddTSSStartCoolTimeField(builder, tSSStartCoolTimeField):
+    return ConstArenaExcelAddTSSStartCoolTimeField(builder, tSSStartCoolTimeField)
+def ConstArenaExcelAddEndAlarmField(builder, endAlarmField): builder.PrependInt32Slot(4, endAlarmField, 0)
+def AddEndAlarmField(builder, endAlarmField):
+    return ConstArenaExcelAddEndAlarmField(builder, endAlarmField)
+def ConstArenaExcelAddTimeRewardMaxAmountField(builder, timeRewardMaxAmountField): builder.PrependInt32Slot(5, timeRewardMaxAmountField, 0)
+def AddTimeRewardMaxAmountField(builder, timeRewardMaxAmountField):
+    return ConstArenaExcelAddTimeRewardMaxAmountField(builder, timeRewardMaxAmountField)
+def ConstArenaExcelAddEnterCostTypeField(builder, enterCostTypeField): builder.PrependInt32Slot(6, enterCostTypeField, 0)
+def AddEnterCostTypeField(builder, enterCostTypeField):
+    return ConstArenaExcelAddEnterCostTypeField(builder, enterCostTypeField)
+def ConstArenaExcelAddEnterCostIdField(builder, enterCostIdField): builder.PrependInt32Slot(7, enterCostIdField, 0)
+def AddEnterCostIdField(builder, enterCostIdField):
+    return ConstArenaExcelAddEnterCostIdField(builder, enterCostIdField)
+def ConstArenaExcelAddTicketCostField(builder, ticketCostField): builder.PrependInt32Slot(8, ticketCostField, 0)
+def AddTicketCostField(builder, ticketCostField):
+    return ConstArenaExcelAddTicketCostField(builder, ticketCostField)
+def ConstArenaExcelAddDailyRewardResetTimeField(builder, dailyRewardResetTimeField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(dailyRewardResetTimeField), 0)
+def AddDailyRewardResetTimeField(builder, dailyRewardResetTimeField):
+    return ConstArenaExcelAddDailyRewardResetTimeField(builder, dailyRewardResetTimeField)
+def ConstArenaExcelAddOpenScenarioIdField(builder, openScenarioIdField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(openScenarioIdField), 0)
+def AddOpenScenarioIdField(builder, openScenarioIdField):
+    return ConstArenaExcelAddOpenScenarioIdField(builder, openScenarioIdField)
+def ConstArenaExcelAddCharacterSlotHideRankField(builder, characterSlotHideRankField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(characterSlotHideRankField), 0)
+def AddCharacterSlotHideRankField(builder, characterSlotHideRankField):
+    return ConstArenaExcelAddCharacterSlotHideRankField(builder, characterSlotHideRankField)
+def ConstArenaExcelStartCharacterSlotHideRankFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCharacterSlotHideRankFieldVector(builder, numElems):
+    return ConstArenaExcelStartCharacterSlotHideRankFieldVector(builder, numElems)
+def ConstArenaExcelAddMapSlotHideRankField(builder, mapSlotHideRankField): builder.PrependInt32Slot(12, mapSlotHideRankField, 0)
+def AddMapSlotHideRankField(builder, mapSlotHideRankField):
+    return ConstArenaExcelAddMapSlotHideRankField(builder, mapSlotHideRankField)
+def ConstArenaExcelAddRelativeOpponentRankStartField(builder, relativeOpponentRankStartField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(relativeOpponentRankStartField), 0)
+def AddRelativeOpponentRankStartField(builder, relativeOpponentRankStartField):
+    return ConstArenaExcelAddRelativeOpponentRankStartField(builder, relativeOpponentRankStartField)
+def ConstArenaExcelStartRelativeOpponentRankStartFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRelativeOpponentRankStartFieldVector(builder, numElems):
+    return ConstArenaExcelStartRelativeOpponentRankStartFieldVector(builder, numElems)
+def ConstArenaExcelAddRelativeOpponentRankEndField(builder, relativeOpponentRankEndField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(relativeOpponentRankEndField), 0)
+def AddRelativeOpponentRankEndField(builder, relativeOpponentRankEndField):
+    return ConstArenaExcelAddRelativeOpponentRankEndField(builder, relativeOpponentRankEndField)
+def ConstArenaExcelStartRelativeOpponentRankEndFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRelativeOpponentRankEndFieldVector(builder, numElems):
+    return ConstArenaExcelStartRelativeOpponentRankEndFieldVector(builder, numElems)
+def ConstArenaExcelAddModifiedStatTypeField(builder, modifiedStatTypeField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(modifiedStatTypeField), 0)
+def AddModifiedStatTypeField(builder, modifiedStatTypeField):
+    return ConstArenaExcelAddModifiedStatTypeField(builder, modifiedStatTypeField)
+def ConstArenaExcelStartModifiedStatTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartModifiedStatTypeFieldVector(builder, numElems):
+    return ConstArenaExcelStartModifiedStatTypeFieldVector(builder, numElems)
+def ConstArenaExcelAddStatMulFactorField(builder, statMulFactorField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(statMulFactorField), 0)
+def AddStatMulFactorField(builder, statMulFactorField):
+    return ConstArenaExcelAddStatMulFactorField(builder, statMulFactorField)
+def ConstArenaExcelStartStatMulFactorFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStatMulFactorFieldVector(builder, numElems):
+    return ConstArenaExcelStartStatMulFactorFieldVector(builder, numElems)
+def ConstArenaExcelAddStatSumFactorField(builder, statSumFactorField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(statSumFactorField), 0)
+def AddStatSumFactorField(builder, statSumFactorField):
+    return ConstArenaExcelAddStatSumFactorField(builder, statSumFactorField)
+def ConstArenaExcelStartStatSumFactorFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStatSumFactorFieldVector(builder, numElems):
+    return ConstArenaExcelStartStatSumFactorFieldVector(builder, numElems)
+def ConstArenaExcelAddNPCNameField(builder, nPCNameField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(nPCNameField), 0)
+def AddNPCNameField(builder, nPCNameField):
+    return ConstArenaExcelAddNPCNameField(builder, nPCNameField)
+def ConstArenaExcelStartNPCNameFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartNPCNameFieldVector(builder, numElems):
+    return ConstArenaExcelStartNPCNameFieldVector(builder, numElems)
+def ConstArenaExcelAddNPCMainCharacterCountField(builder, nPCMainCharacterCountField): builder.PrependInt32Slot(19, nPCMainCharacterCountField, 0)
+def AddNPCMainCharacterCountField(builder, nPCMainCharacterCountField):
+    return ConstArenaExcelAddNPCMainCharacterCountField(builder, nPCMainCharacterCountField)
+def ConstArenaExcelAddNPCSupportCharacterCountField(builder, nPCSupportCharacterCountField): builder.PrependInt32Slot(20, nPCSupportCharacterCountField, 0)
+def AddNPCSupportCharacterCountField(builder, nPCSupportCharacterCountField):
+    return ConstArenaExcelAddNPCSupportCharacterCountField(builder, nPCSupportCharacterCountField)
+def ConstArenaExcelAddNPCCharacterSkillLevelField(builder, nPCCharacterSkillLevelField): builder.PrependInt32Slot(21, nPCCharacterSkillLevelField, 0)
+def AddNPCCharacterSkillLevelField(builder, nPCCharacterSkillLevelField):
+    return ConstArenaExcelAddNPCCharacterSkillLevelField(builder, nPCCharacterSkillLevelField)
+def ConstArenaExcelAddTimeSpanInDaysForBattleHistoryField(builder, timeSpanInDaysForBattleHistoryField): builder.PrependInt32Slot(22, timeSpanInDaysForBattleHistoryField, 0)
+def AddTimeSpanInDaysForBattleHistoryField(builder, timeSpanInDaysForBattleHistoryField):
+    return ConstArenaExcelAddTimeSpanInDaysForBattleHistoryField(builder, timeSpanInDaysForBattleHistoryField)
+def ConstArenaExcelAddHiddenCharacterImagePathField(builder, hiddenCharacterImagePathField): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(hiddenCharacterImagePathField), 0)
+def AddHiddenCharacterImagePathField(builder, hiddenCharacterImagePathField):
+    return ConstArenaExcelAddHiddenCharacterImagePathField(builder, hiddenCharacterImagePathField)
+def ConstArenaExcelAddDefenseVictoryRewardMaxCountField(builder, defenseVictoryRewardMaxCountField): builder.PrependInt32Slot(24, defenseVictoryRewardMaxCountField, 0)
+def AddDefenseVictoryRewardMaxCountField(builder, defenseVictoryRewardMaxCountField):
+    return ConstArenaExcelAddDefenseVictoryRewardMaxCountField(builder, defenseVictoryRewardMaxCountField)
+def ConstArenaExcelAddTopRankerCountLimitField(builder, topRankerCountLimitField): builder.PrependInt32Slot(25, topRankerCountLimitField, 0)
+def AddTopRankerCountLimitField(builder, topRankerCountLimitField):
+    return ConstArenaExcelAddTopRankerCountLimitField(builder, topRankerCountLimitField)
+def ConstArenaExcelAddAutoRefreshIntervalMilliSecondsField(builder, autoRefreshIntervalMilliSecondsField): builder.PrependInt32Slot(26, autoRefreshIntervalMilliSecondsField, 0)
+def AddAutoRefreshIntervalMilliSecondsField(builder, autoRefreshIntervalMilliSecondsField):
+    return ConstArenaExcelAddAutoRefreshIntervalMilliSecondsField(builder, autoRefreshIntervalMilliSecondsField)
+def ConstArenaExcelAddEchelonSettingIntervalMilliSecondsField(builder, echelonSettingIntervalMilliSecondsField): builder.PrependInt32Slot(27, echelonSettingIntervalMilliSecondsField, 0)
+def AddEchelonSettingIntervalMilliSecondsField(builder, echelonSettingIntervalMilliSecondsField):
+    return ConstArenaExcelAddEchelonSettingIntervalMilliSecondsField(builder, echelonSettingIntervalMilliSecondsField)
+def ConstArenaExcelAddSkipAllowedTimeMilliSecondsField(builder, skipAllowedTimeMilliSecondsField): builder.PrependInt32Slot(28, skipAllowedTimeMilliSecondsField, 0)
+def AddSkipAllowedTimeMilliSecondsField(builder, skipAllowedTimeMilliSecondsField):
+    return ConstArenaExcelAddSkipAllowedTimeMilliSecondsField(builder, skipAllowedTimeMilliSecondsField)
+def ConstArenaExcelAddShowSeasonChangeInfoStartTimeField(builder, showSeasonChangeInfoStartTimeField): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(showSeasonChangeInfoStartTimeField), 0)
+def AddShowSeasonChangeInfoStartTimeField(builder, showSeasonChangeInfoStartTimeField):
+    return ConstArenaExcelAddShowSeasonChangeInfoStartTimeField(builder, showSeasonChangeInfoStartTimeField)
+def ConstArenaExcelAddShowSeasonChangeInfoEndTimeField(builder, showSeasonChangeInfoEndTimeField): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(showSeasonChangeInfoEndTimeField), 0)
+def AddShowSeasonChangeInfoEndTimeField(builder, showSeasonChangeInfoEndTimeField):
+    return ConstArenaExcelAddShowSeasonChangeInfoEndTimeField(builder, showSeasonChangeInfoEndTimeField)
+def ConstArenaExcelAddShowSeasonIdField(builder, showSeasonIdField): builder.PrependInt32Slot(31, showSeasonIdField, 0)
+def AddShowSeasonIdField(builder, showSeasonIdField):
+    return ConstArenaExcelAddShowSeasonIdField(builder, showSeasonIdField)
+def ConstArenaExcelAddArenaHistoryQueryLimitDaysField(builder, arenaHistoryQueryLimitDaysField): builder.PrependInt32Slot(32, arenaHistoryQueryLimitDaysField, 0)
+def AddArenaHistoryQueryLimitDaysField(builder, arenaHistoryQueryLimitDaysField):
+    return ConstArenaExcelAddArenaHistoryQueryLimitDaysField(builder, arenaHistoryQueryLimitDaysField)
 def ConstArenaExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstArenaExcelEnd(builder)

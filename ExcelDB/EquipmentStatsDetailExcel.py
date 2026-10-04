@@ -25,14 +25,14 @@ class EquipmentStatsDetailExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EquipmentStatsDetailExcel
-    def DetailShowStats(self):
+    def DetailShowStatsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentStatsDetailExcel
-    def IsStatsPercent(self):
+    def IsStatsPercentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -41,12 +41,12 @@ class EquipmentStatsDetailExcel(object):
 def EquipmentStatsDetailExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return EquipmentStatsDetailExcelStart(builder)
-def EquipmentStatsDetailExcelAddDetailShowStats(builder, detailShowStats): builder.PrependInt32Slot(0, detailShowStats, 0)
-def AddDetailShowStats(builder, detailShowStats):
-    return EquipmentStatsDetailExcelAddDetailShowStats(builder, detailShowStats)
-def EquipmentStatsDetailExcelAddIsStatsPercent(builder, isStatsPercent): builder.PrependBoolSlot(1, isStatsPercent, 0)
-def AddIsStatsPercent(builder, isStatsPercent):
-    return EquipmentStatsDetailExcelAddIsStatsPercent(builder, isStatsPercent)
+def EquipmentStatsDetailExcelAddDetailShowStatsField(builder, detailShowStatsField): builder.PrependInt32Slot(0, detailShowStatsField, 0)
+def AddDetailShowStatsField(builder, detailShowStatsField):
+    return EquipmentStatsDetailExcelAddDetailShowStatsField(builder, detailShowStatsField)
+def EquipmentStatsDetailExcelAddIsStatsPercentField(builder, isStatsPercentField): builder.PrependBoolSlot(1, isStatsPercentField, 0)
+def AddIsStatsPercentField(builder, isStatsPercentField):
+    return EquipmentStatsDetailExcelAddIsStatsPercentField(builder, isStatsPercentField)
 def EquipmentStatsDetailExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EquipmentStatsDetailExcelEnd(builder)

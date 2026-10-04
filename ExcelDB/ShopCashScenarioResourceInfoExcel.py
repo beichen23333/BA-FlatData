@@ -25,35 +25,35 @@ class ShopCashScenarioResourceInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopCashScenarioResourceInfoExcel
-    def ScenarioResrouceInfoId(self):
+    def ScenarioResrouceInfoIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashScenarioResourceInfoExcel
-    def ShopCashId(self):
+    def ShopCashIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashScenarioResourceInfoExcel
-    def IconPath(self):
+    def IconPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopCashScenarioResourceInfoExcel
-    def RecommendIconPath(self):
+    def RecommendIconPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopCashScenarioResourceInfoExcel
-    def RecommendPrefabPath(self):
+    def RecommendPrefabPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -62,21 +62,21 @@ class ShopCashScenarioResourceInfoExcel(object):
 def ShopCashScenarioResourceInfoExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return ShopCashScenarioResourceInfoExcelStart(builder)
-def ShopCashScenarioResourceInfoExcelAddScenarioResrouceInfoId(builder, scenarioResrouceInfoId): builder.PrependInt32Slot(0, scenarioResrouceInfoId, 0)
-def AddScenarioResrouceInfoId(builder, scenarioResrouceInfoId):
-    return ShopCashScenarioResourceInfoExcelAddScenarioResrouceInfoId(builder, scenarioResrouceInfoId)
-def ShopCashScenarioResourceInfoExcelAddShopCashId(builder, shopCashId): builder.PrependInt32Slot(1, shopCashId, 0)
-def AddShopCashId(builder, shopCashId):
-    return ShopCashScenarioResourceInfoExcelAddShopCashId(builder, shopCashId)
-def ShopCashScenarioResourceInfoExcelAddIconPath(builder, iconPath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconPath), 0)
-def AddIconPath(builder, iconPath):
-    return ShopCashScenarioResourceInfoExcelAddIconPath(builder, iconPath)
-def ShopCashScenarioResourceInfoExcelAddRecommendIconPath(builder, recommendIconPath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(recommendIconPath), 0)
-def AddRecommendIconPath(builder, recommendIconPath):
-    return ShopCashScenarioResourceInfoExcelAddRecommendIconPath(builder, recommendIconPath)
-def ShopCashScenarioResourceInfoExcelAddRecommendPrefabPath(builder, recommendPrefabPath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(recommendPrefabPath), 0)
-def AddRecommendPrefabPath(builder, recommendPrefabPath):
-    return ShopCashScenarioResourceInfoExcelAddRecommendPrefabPath(builder, recommendPrefabPath)
+def ShopCashScenarioResourceInfoExcelAddScenarioResrouceInfoIdField(builder, scenarioResrouceInfoIdField): builder.PrependInt32Slot(0, scenarioResrouceInfoIdField, 0)
+def AddScenarioResrouceInfoIdField(builder, scenarioResrouceInfoIdField):
+    return ShopCashScenarioResourceInfoExcelAddScenarioResrouceInfoIdField(builder, scenarioResrouceInfoIdField)
+def ShopCashScenarioResourceInfoExcelAddShopCashIdField(builder, shopCashIdField): builder.PrependInt32Slot(1, shopCashIdField, 0)
+def AddShopCashIdField(builder, shopCashIdField):
+    return ShopCashScenarioResourceInfoExcelAddShopCashIdField(builder, shopCashIdField)
+def ShopCashScenarioResourceInfoExcelAddIconPathField(builder, iconPathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+def AddIconPathField(builder, iconPathField):
+    return ShopCashScenarioResourceInfoExcelAddIconPathField(builder, iconPathField)
+def ShopCashScenarioResourceInfoExcelAddRecommendIconPathField(builder, recommendIconPathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(recommendIconPathField), 0)
+def AddRecommendIconPathField(builder, recommendIconPathField):
+    return ShopCashScenarioResourceInfoExcelAddRecommendIconPathField(builder, recommendIconPathField)
+def ShopCashScenarioResourceInfoExcelAddRecommendPrefabPathField(builder, recommendPrefabPathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(recommendPrefabPathField), 0)
+def AddRecommendPrefabPathField(builder, recommendPrefabPathField):
+    return ShopCashScenarioResourceInfoExcelAddRecommendPrefabPathField(builder, recommendPrefabPathField)
 def ShopCashScenarioResourceInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopCashScenarioResourceInfoExcelEnd(builder)

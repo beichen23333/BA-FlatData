@@ -25,49 +25,49 @@ class TacticalRelaySeasonManageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TacticalRelaySeasonManageExcel
-    def SeasonId(self):
+    def SeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelaySeasonManageExcel
-    def SeasonName(self):
+    def SeasonNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TacticalRelaySeasonManageExcel
-    def SeasonStartDate(self):
+    def SeasonStartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TacticalRelaySeasonManageExcel
-    def EndNoteLabelStartDate(self):
+    def EndNoteLabelStartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TacticalRelaySeasonManageExcel
-    def SeasonEndDate(self):
+    def SeasonEndDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TacticalRelaySeasonManageExcel
-    def PrevSeasonId(self):
+    def PrevSeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelaySeasonManageExcel
-    def SeasonRankStillCounting(self):
+    def SeasonRankStillCountingField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class TacticalRelaySeasonManageExcel(object):
 def TacticalRelaySeasonManageExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return TacticalRelaySeasonManageExcelStart(builder)
-def TacticalRelaySeasonManageExcelAddSeasonId(builder, seasonId): builder.PrependInt32Slot(0, seasonId, 0)
-def AddSeasonId(builder, seasonId):
-    return TacticalRelaySeasonManageExcelAddSeasonId(builder, seasonId)
-def TacticalRelaySeasonManageExcelAddSeasonName(builder, seasonName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(seasonName), 0)
-def AddSeasonName(builder, seasonName):
-    return TacticalRelaySeasonManageExcelAddSeasonName(builder, seasonName)
-def TacticalRelaySeasonManageExcelAddSeasonStartDate(builder, seasonStartDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(seasonStartDate), 0)
-def AddSeasonStartDate(builder, seasonStartDate):
-    return TacticalRelaySeasonManageExcelAddSeasonStartDate(builder, seasonStartDate)
-def TacticalRelaySeasonManageExcelAddEndNoteLabelStartDate(builder, endNoteLabelStartDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endNoteLabelStartDate), 0)
-def AddEndNoteLabelStartDate(builder, endNoteLabelStartDate):
-    return TacticalRelaySeasonManageExcelAddEndNoteLabelStartDate(builder, endNoteLabelStartDate)
-def TacticalRelaySeasonManageExcelAddSeasonEndDate(builder, seasonEndDate): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(seasonEndDate), 0)
-def AddSeasonEndDate(builder, seasonEndDate):
-    return TacticalRelaySeasonManageExcelAddSeasonEndDate(builder, seasonEndDate)
-def TacticalRelaySeasonManageExcelAddPrevSeasonId(builder, prevSeasonId): builder.PrependInt32Slot(5, prevSeasonId, 0)
-def AddPrevSeasonId(builder, prevSeasonId):
-    return TacticalRelaySeasonManageExcelAddPrevSeasonId(builder, prevSeasonId)
-def TacticalRelaySeasonManageExcelAddSeasonRankStillCounting(builder, seasonRankStillCounting): builder.PrependInt32Slot(6, seasonRankStillCounting, 0)
-def AddSeasonRankStillCounting(builder, seasonRankStillCounting):
-    return TacticalRelaySeasonManageExcelAddSeasonRankStillCounting(builder, seasonRankStillCounting)
+def TacticalRelaySeasonManageExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(0, seasonIdField, 0)
+def AddSeasonIdField(builder, seasonIdField):
+    return TacticalRelaySeasonManageExcelAddSeasonIdField(builder, seasonIdField)
+def TacticalRelaySeasonManageExcelAddSeasonNameField(builder, seasonNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(seasonNameField), 0)
+def AddSeasonNameField(builder, seasonNameField):
+    return TacticalRelaySeasonManageExcelAddSeasonNameField(builder, seasonNameField)
+def TacticalRelaySeasonManageExcelAddSeasonStartDateField(builder, seasonStartDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(seasonStartDateField), 0)
+def AddSeasonStartDateField(builder, seasonStartDateField):
+    return TacticalRelaySeasonManageExcelAddSeasonStartDateField(builder, seasonStartDateField)
+def TacticalRelaySeasonManageExcelAddEndNoteLabelStartDateField(builder, endNoteLabelStartDateField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endNoteLabelStartDateField), 0)
+def AddEndNoteLabelStartDateField(builder, endNoteLabelStartDateField):
+    return TacticalRelaySeasonManageExcelAddEndNoteLabelStartDateField(builder, endNoteLabelStartDateField)
+def TacticalRelaySeasonManageExcelAddSeasonEndDateField(builder, seasonEndDateField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(seasonEndDateField), 0)
+def AddSeasonEndDateField(builder, seasonEndDateField):
+    return TacticalRelaySeasonManageExcelAddSeasonEndDateField(builder, seasonEndDateField)
+def TacticalRelaySeasonManageExcelAddPrevSeasonIdField(builder, prevSeasonIdField): builder.PrependInt32Slot(5, prevSeasonIdField, 0)
+def AddPrevSeasonIdField(builder, prevSeasonIdField):
+    return TacticalRelaySeasonManageExcelAddPrevSeasonIdField(builder, prevSeasonIdField)
+def TacticalRelaySeasonManageExcelAddSeasonRankStillCountingField(builder, seasonRankStillCountingField): builder.PrependInt32Slot(6, seasonRankStillCountingField, 0)
+def AddSeasonRankStillCountingField(builder, seasonRankStillCountingField):
+    return TacticalRelaySeasonManageExcelAddSeasonRankStillCountingField(builder, seasonRankStillCountingField)
 def TacticalRelaySeasonManageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TacticalRelaySeasonManageExcelEnd(builder)

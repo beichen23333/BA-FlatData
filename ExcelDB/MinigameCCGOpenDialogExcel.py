@@ -25,42 +25,42 @@ class MinigameCCGOpenDialogExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameCCGOpenDialogExcel
-    def DialogId(self):
+    def DialogIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGOpenDialogExcel
-    def PlayOrder(self):
+    def PlayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGOpenDialogExcel
-    def ConditionCard(self):
+    def ConditionCardField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGOpenDialogExcel
-    def Dialog(self):
+    def DialogField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGOpenDialogExcel
-    def Duration(self):
+    def DurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGOpenDialogExcel
-    def Voice(self):
+    def VoiceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -69,24 +69,24 @@ class MinigameCCGOpenDialogExcel(object):
 def MinigameCCGOpenDialogExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return MinigameCCGOpenDialogExcelStart(builder)
-def MinigameCCGOpenDialogExcelAddDialogId(builder, dialogId): builder.PrependInt32Slot(0, dialogId, 0)
-def AddDialogId(builder, dialogId):
-    return MinigameCCGOpenDialogExcelAddDialogId(builder, dialogId)
-def MinigameCCGOpenDialogExcelAddPlayOrder(builder, playOrder): builder.PrependInt32Slot(1, playOrder, 0)
-def AddPlayOrder(builder, playOrder):
-    return MinigameCCGOpenDialogExcelAddPlayOrder(builder, playOrder)
-def MinigameCCGOpenDialogExcelAddConditionCard(builder, conditionCard): builder.PrependInt32Slot(2, conditionCard, 0)
-def AddConditionCard(builder, conditionCard):
-    return MinigameCCGOpenDialogExcelAddConditionCard(builder, conditionCard)
-def MinigameCCGOpenDialogExcelAddDialog(builder, dialog): builder.PrependUint32Slot(3, dialog, 0)
-def AddDialog(builder, dialog):
-    return MinigameCCGOpenDialogExcelAddDialog(builder, dialog)
-def MinigameCCGOpenDialogExcelAddDuration(builder, duration): builder.PrependInt32Slot(4, duration, 0)
-def AddDuration(builder, duration):
-    return MinigameCCGOpenDialogExcelAddDuration(builder, duration)
-def MinigameCCGOpenDialogExcelAddVoice(builder, voice): builder.PrependUint32Slot(5, voice, 0)
-def AddVoice(builder, voice):
-    return MinigameCCGOpenDialogExcelAddVoice(builder, voice)
+def MinigameCCGOpenDialogExcelAddDialogIdField(builder, dialogIdField): builder.PrependInt32Slot(0, dialogIdField, 0)
+def AddDialogIdField(builder, dialogIdField):
+    return MinigameCCGOpenDialogExcelAddDialogIdField(builder, dialogIdField)
+def MinigameCCGOpenDialogExcelAddPlayOrderField(builder, playOrderField): builder.PrependInt32Slot(1, playOrderField, 0)
+def AddPlayOrderField(builder, playOrderField):
+    return MinigameCCGOpenDialogExcelAddPlayOrderField(builder, playOrderField)
+def MinigameCCGOpenDialogExcelAddConditionCardField(builder, conditionCardField): builder.PrependInt32Slot(2, conditionCardField, 0)
+def AddConditionCardField(builder, conditionCardField):
+    return MinigameCCGOpenDialogExcelAddConditionCardField(builder, conditionCardField)
+def MinigameCCGOpenDialogExcelAddDialogField(builder, dialogField): builder.PrependUint32Slot(3, dialogField, 0)
+def AddDialogField(builder, dialogField):
+    return MinigameCCGOpenDialogExcelAddDialogField(builder, dialogField)
+def MinigameCCGOpenDialogExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(4, durationField, 0)
+def AddDurationField(builder, durationField):
+    return MinigameCCGOpenDialogExcelAddDurationField(builder, durationField)
+def MinigameCCGOpenDialogExcelAddVoiceField(builder, voiceField): builder.PrependUint32Slot(5, voiceField, 0)
+def AddVoiceField(builder, voiceField):
+    return MinigameCCGOpenDialogExcelAddVoiceField(builder, voiceField)
 def MinigameCCGOpenDialogExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameCCGOpenDialogExcelEnd(builder)

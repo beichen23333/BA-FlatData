@@ -25,35 +25,35 @@ class BattlePassFlavorTextExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BattlePassFlavorTextExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BattlePassFlavorTextExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BattlePassFlavorTextExcel
-    def TextGroup(self):
+    def TextGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BattlePassFlavorTextExcel
-    def LocalizeCodeId(self):
+    def LocalizeCodeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # BattlePassFlavorTextExcel
-    def Sort(self):
+    def SortField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class BattlePassFlavorTextExcel(object):
 def BattlePassFlavorTextExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return BattlePassFlavorTextExcelStart(builder)
-def BattlePassFlavorTextExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return BattlePassFlavorTextExcelAddGroupId(builder, groupId)
-def BattlePassFlavorTextExcelAddId(builder, id): builder.PrependInt32Slot(1, id, 0)
-def AddId(builder, id):
-    return BattlePassFlavorTextExcelAddId(builder, id)
-def BattlePassFlavorTextExcelAddTextGroup(builder, textGroup): builder.PrependInt32Slot(2, textGroup, 0)
-def AddTextGroup(builder, textGroup):
-    return BattlePassFlavorTextExcelAddTextGroup(builder, textGroup)
-def BattlePassFlavorTextExcelAddLocalizeCodeId(builder, localizeCodeId): builder.PrependUint32Slot(3, localizeCodeId, 0)
-def AddLocalizeCodeId(builder, localizeCodeId):
-    return BattlePassFlavorTextExcelAddLocalizeCodeId(builder, localizeCodeId)
-def BattlePassFlavorTextExcelAddSort(builder, sort): builder.PrependInt32Slot(4, sort, 0)
-def AddSort(builder, sort):
-    return BattlePassFlavorTextExcelAddSort(builder, sort)
+def BattlePassFlavorTextExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return BattlePassFlavorTextExcelAddGroupIdField(builder, groupIdField)
+def BattlePassFlavorTextExcelAddIdField(builder, idField): builder.PrependInt32Slot(1, idField, 0)
+def AddIdField(builder, idField):
+    return BattlePassFlavorTextExcelAddIdField(builder, idField)
+def BattlePassFlavorTextExcelAddTextGroupField(builder, textGroupField): builder.PrependInt32Slot(2, textGroupField, 0)
+def AddTextGroupField(builder, textGroupField):
+    return BattlePassFlavorTextExcelAddTextGroupField(builder, textGroupField)
+def BattlePassFlavorTextExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUint32Slot(3, localizeCodeIdField, 0)
+def AddLocalizeCodeIdField(builder, localizeCodeIdField):
+    return BattlePassFlavorTextExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+def BattlePassFlavorTextExcelAddSortField(builder, sortField): builder.PrependInt32Slot(4, sortField, 0)
+def AddSortField(builder, sortField):
+    return BattlePassFlavorTextExcelAddSortField(builder, sortField)
 def BattlePassFlavorTextExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return BattlePassFlavorTextExcelEnd(builder)

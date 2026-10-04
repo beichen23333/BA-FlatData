@@ -25,77 +25,77 @@ class AniStateData(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AniStateData
-    def StateName(self):
+    def StateNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AniStateData
-    def StatePrefix(self):
+    def StatePrefixField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AniStateData
-    def StateNameWithPrefix(self):
+    def StateNameWithPrefixField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AniStateData
-    def Tag(self):
+    def TagField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AniStateData
-    def SpeedParameterName(self):
+    def SpeedParameterNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AniStateData
-    def SpeedParamter(self):
+    def SpeedParamterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # AniStateData
-    def StateSpeed(self):
+    def StateSpeedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # AniStateData
-    def ClipName(self):
+    def ClipNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AniStateData
-    def Length(self):
+    def LengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # AniStateData
-    def FrameRate(self):
+    def FrameRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # AniStateData
-    def IsLooping(self):
+    def IsLoopingField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -104,39 +104,39 @@ class AniStateData(object):
 def AniStateDataStart(builder): builder.StartObject(11)
 def Start(builder):
     return AniStateDataStart(builder)
-def AniStateDataAddStateName(builder, stateName): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(stateName), 0)
-def AddStateName(builder, stateName):
-    return AniStateDataAddStateName(builder, stateName)
-def AniStateDataAddStatePrefix(builder, statePrefix): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(statePrefix), 0)
-def AddStatePrefix(builder, statePrefix):
-    return AniStateDataAddStatePrefix(builder, statePrefix)
-def AniStateDataAddStateNameWithPrefix(builder, stateNameWithPrefix): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(stateNameWithPrefix), 0)
-def AddStateNameWithPrefix(builder, stateNameWithPrefix):
-    return AniStateDataAddStateNameWithPrefix(builder, stateNameWithPrefix)
-def AniStateDataAddTag(builder, tag): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(tag), 0)
-def AddTag(builder, tag):
-    return AniStateDataAddTag(builder, tag)
-def AniStateDataAddSpeedParameterName(builder, speedParameterName): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(speedParameterName), 0)
-def AddSpeedParameterName(builder, speedParameterName):
-    return AniStateDataAddSpeedParameterName(builder, speedParameterName)
-def AniStateDataAddSpeedParamter(builder, speedParamter): builder.PrependFloat32Slot(5, speedParamter, 0.0)
-def AddSpeedParamter(builder, speedParamter):
-    return AniStateDataAddSpeedParamter(builder, speedParamter)
-def AniStateDataAddStateSpeed(builder, stateSpeed): builder.PrependFloat32Slot(6, stateSpeed, 0.0)
-def AddStateSpeed(builder, stateSpeed):
-    return AniStateDataAddStateSpeed(builder, stateSpeed)
-def AniStateDataAddClipName(builder, clipName): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(clipName), 0)
-def AddClipName(builder, clipName):
-    return AniStateDataAddClipName(builder, clipName)
-def AniStateDataAddLength(builder, length): builder.PrependFloat32Slot(8, length, 0.0)
-def AddLength(builder, length):
-    return AniStateDataAddLength(builder, length)
-def AniStateDataAddFrameRate(builder, frameRate): builder.PrependFloat32Slot(9, frameRate, 0.0)
-def AddFrameRate(builder, frameRate):
-    return AniStateDataAddFrameRate(builder, frameRate)
-def AniStateDataAddIsLooping(builder, isLooping): builder.PrependBoolSlot(10, isLooping, 0)
-def AddIsLooping(builder, isLooping):
-    return AniStateDataAddIsLooping(builder, isLooping)
+def AniStateDataAddStateNameField(builder, stateNameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(stateNameField), 0)
+def AddStateNameField(builder, stateNameField):
+    return AniStateDataAddStateNameField(builder, stateNameField)
+def AniStateDataAddStatePrefixField(builder, statePrefixField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(statePrefixField), 0)
+def AddStatePrefixField(builder, statePrefixField):
+    return AniStateDataAddStatePrefixField(builder, statePrefixField)
+def AniStateDataAddStateNameWithPrefixField(builder, stateNameWithPrefixField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(stateNameWithPrefixField), 0)
+def AddStateNameWithPrefixField(builder, stateNameWithPrefixField):
+    return AniStateDataAddStateNameWithPrefixField(builder, stateNameWithPrefixField)
+def AniStateDataAddTagField(builder, tagField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(tagField), 0)
+def AddTagField(builder, tagField):
+    return AniStateDataAddTagField(builder, tagField)
+def AniStateDataAddSpeedParameterNameField(builder, speedParameterNameField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(speedParameterNameField), 0)
+def AddSpeedParameterNameField(builder, speedParameterNameField):
+    return AniStateDataAddSpeedParameterNameField(builder, speedParameterNameField)
+def AniStateDataAddSpeedParamterField(builder, speedParamterField): builder.PrependFloat32Slot(5, speedParamterField, 0.0)
+def AddSpeedParamterField(builder, speedParamterField):
+    return AniStateDataAddSpeedParamterField(builder, speedParamterField)
+def AniStateDataAddStateSpeedField(builder, stateSpeedField): builder.PrependFloat32Slot(6, stateSpeedField, 0.0)
+def AddStateSpeedField(builder, stateSpeedField):
+    return AniStateDataAddStateSpeedField(builder, stateSpeedField)
+def AniStateDataAddClipNameField(builder, clipNameField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(clipNameField), 0)
+def AddClipNameField(builder, clipNameField):
+    return AniStateDataAddClipNameField(builder, clipNameField)
+def AniStateDataAddLengthField(builder, lengthField): builder.PrependFloat32Slot(8, lengthField, 0.0)
+def AddLengthField(builder, lengthField):
+    return AniStateDataAddLengthField(builder, lengthField)
+def AniStateDataAddFrameRateField(builder, frameRateField): builder.PrependFloat32Slot(9, frameRateField, 0.0)
+def AddFrameRateField(builder, frameRateField):
+    return AniStateDataAddFrameRateField(builder, frameRateField)
+def AniStateDataAddIsLoopingField(builder, isLoopingField): builder.PrependBoolSlot(10, isLoopingField, 0)
+def AddIsLoopingField(builder, isLoopingField):
+    return AniStateDataAddIsLoopingField(builder, isLoopingField)
 def AniStateDataEnd(builder): return builder.EndObject()
 def End(builder):
     return AniStateDataEnd(builder)

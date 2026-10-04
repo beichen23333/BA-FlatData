@@ -25,21 +25,21 @@ class ProductDailyRecordInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ProductDailyRecordInfoExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ProductDailyRecordInfoExcel
-    def DaySize(self):
+    def DaySizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ProductDailyRecordInfoExcel
-    def ExpirationDate(self):
+    def ExpirationDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -48,15 +48,15 @@ class ProductDailyRecordInfoExcel(object):
 def ProductDailyRecordInfoExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return ProductDailyRecordInfoExcelStart(builder)
-def ProductDailyRecordInfoExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ProductDailyRecordInfoExcelAddId(builder, id)
-def ProductDailyRecordInfoExcelAddDaySize(builder, daySize): builder.PrependInt32Slot(1, daySize, 0)
-def AddDaySize(builder, daySize):
-    return ProductDailyRecordInfoExcelAddDaySize(builder, daySize)
-def ProductDailyRecordInfoExcelAddExpirationDate(builder, expirationDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(expirationDate), 0)
-def AddExpirationDate(builder, expirationDate):
-    return ProductDailyRecordInfoExcelAddExpirationDate(builder, expirationDate)
+def ProductDailyRecordInfoExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ProductDailyRecordInfoExcelAddIdField(builder, idField)
+def ProductDailyRecordInfoExcelAddDaySizeField(builder, daySizeField): builder.PrependInt32Slot(1, daySizeField, 0)
+def AddDaySizeField(builder, daySizeField):
+    return ProductDailyRecordInfoExcelAddDaySizeField(builder, daySizeField)
+def ProductDailyRecordInfoExcelAddExpirationDateField(builder, expirationDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(expirationDateField), 0)
+def AddExpirationDateField(builder, expirationDateField):
+    return ProductDailyRecordInfoExcelAddExpirationDateField(builder, expirationDateField)
 def ProductDailyRecordInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ProductDailyRecordInfoExcelEnd(builder)

@@ -25,42 +25,42 @@ class ScenarioModeDigestExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ScenarioModeDigestExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeDigestExcel
-    def Series(self):
+    def SeriesField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeDigestExcel
-    def Order(self):
+    def OrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeDigestExcel
-    def ImagePath(self):
+    def ImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioModeDigestExcel
-    def VideoId(self):
+    def VideoIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeDigestExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -69,24 +69,24 @@ class ScenarioModeDigestExcel(object):
 def ScenarioModeDigestExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return ScenarioModeDigestExcelStart(builder)
-def ScenarioModeDigestExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ScenarioModeDigestExcelAddId(builder, id)
-def ScenarioModeDigestExcelAddSeries(builder, series): builder.PrependInt32Slot(1, series, 0)
-def AddSeries(builder, series):
-    return ScenarioModeDigestExcelAddSeries(builder, series)
-def ScenarioModeDigestExcelAddOrder(builder, order): builder.PrependInt32Slot(2, order, 0)
-def AddOrder(builder, order):
-    return ScenarioModeDigestExcelAddOrder(builder, order)
-def ScenarioModeDigestExcelAddImagePath(builder, imagePath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imagePath), 0)
-def AddImagePath(builder, imagePath):
-    return ScenarioModeDigestExcelAddImagePath(builder, imagePath)
-def ScenarioModeDigestExcelAddVideoId(builder, videoId): builder.PrependInt32Slot(4, videoId, 0)
-def AddVideoId(builder, videoId):
-    return ScenarioModeDigestExcelAddVideoId(builder, videoId)
-def ScenarioModeDigestExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(5, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return ScenarioModeDigestExcelAddLocalizeEtcId(builder, localizeEtcId)
+def ScenarioModeDigestExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ScenarioModeDigestExcelAddIdField(builder, idField)
+def ScenarioModeDigestExcelAddSeriesField(builder, seriesField): builder.PrependInt32Slot(1, seriesField, 0)
+def AddSeriesField(builder, seriesField):
+    return ScenarioModeDigestExcelAddSeriesField(builder, seriesField)
+def ScenarioModeDigestExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(2, orderField, 0)
+def AddOrderField(builder, orderField):
+    return ScenarioModeDigestExcelAddOrderField(builder, orderField)
+def ScenarioModeDigestExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+def AddImagePathField(builder, imagePathField):
+    return ScenarioModeDigestExcelAddImagePathField(builder, imagePathField)
+def ScenarioModeDigestExcelAddVideoIdField(builder, videoIdField): builder.PrependInt32Slot(4, videoIdField, 0)
+def AddVideoIdField(builder, videoIdField):
+    return ScenarioModeDigestExcelAddVideoIdField(builder, videoIdField)
+def ScenarioModeDigestExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(5, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return ScenarioModeDigestExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
 def ScenarioModeDigestExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ScenarioModeDigestExcelEnd(builder)

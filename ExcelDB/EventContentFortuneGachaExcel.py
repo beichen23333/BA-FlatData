@@ -25,28 +25,28 @@ class EventContentFortuneGachaExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentFortuneGachaExcel
-    def FortuneGachaGroupId(self):
+    def FortuneGachaGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentFortuneGachaExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentFortuneGachaExcel
-    def NameImagePath(self):
+    def NameImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EventContentFortuneGachaExcel
-    def IconPath(self):
+    def IconPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -55,18 +55,18 @@ class EventContentFortuneGachaExcel(object):
 def EventContentFortuneGachaExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentFortuneGachaExcelStart(builder)
-def EventContentFortuneGachaExcelAddFortuneGachaGroupId(builder, fortuneGachaGroupId): builder.PrependInt32Slot(0, fortuneGachaGroupId, 0)
-def AddFortuneGachaGroupId(builder, fortuneGachaGroupId):
-    return EventContentFortuneGachaExcelAddFortuneGachaGroupId(builder, fortuneGachaGroupId)
-def EventContentFortuneGachaExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(1, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return EventContentFortuneGachaExcelAddLocalizeEtcId(builder, localizeEtcId)
-def EventContentFortuneGachaExcelAddNameImagePath(builder, nameImagePath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nameImagePath), 0)
-def AddNameImagePath(builder, nameImagePath):
-    return EventContentFortuneGachaExcelAddNameImagePath(builder, nameImagePath)
-def EventContentFortuneGachaExcelAddIconPath(builder, iconPath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconPath), 0)
-def AddIconPath(builder, iconPath):
-    return EventContentFortuneGachaExcelAddIconPath(builder, iconPath)
+def EventContentFortuneGachaExcelAddFortuneGachaGroupIdField(builder, fortuneGachaGroupIdField): builder.PrependInt32Slot(0, fortuneGachaGroupIdField, 0)
+def AddFortuneGachaGroupIdField(builder, fortuneGachaGroupIdField):
+    return EventContentFortuneGachaExcelAddFortuneGachaGroupIdField(builder, fortuneGachaGroupIdField)
+def EventContentFortuneGachaExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(1, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return EventContentFortuneGachaExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def EventContentFortuneGachaExcelAddNameImagePathField(builder, nameImagePathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nameImagePathField), 0)
+def AddNameImagePathField(builder, nameImagePathField):
+    return EventContentFortuneGachaExcelAddNameImagePathField(builder, nameImagePathField)
+def EventContentFortuneGachaExcelAddIconPathField(builder, iconPathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+def AddIconPathField(builder, iconPathField):
+    return EventContentFortuneGachaExcelAddIconPathField(builder, iconPathField)
 def EventContentFortuneGachaExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentFortuneGachaExcelEnd(builder)

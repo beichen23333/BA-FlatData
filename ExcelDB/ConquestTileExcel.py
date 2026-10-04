@@ -25,175 +25,175 @@ class ConquestTileExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConquestTileExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestTileExcel
-    def EventId(self):
+    def EventIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def Step(self):
+    def StepField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def PrefabName(self):
+    def PrefabNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestTileExcel
-    def TileNameLocalize(self):
+    def TileNameLocalizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestTileExcel
-    def TileImageName(self):
+    def TileImageNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestTileExcel
-    def Playable(self):
+    def PlayableField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ConquestTileExcel
-    def TileType(self):
+    def TileTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def NotMapFog(self):
+    def NotMapFogField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ConquestTileExcel
-    def GroupBonusId(self):
+    def GroupBonusIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def ConquestCostType(self):
+    def ConquestCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def ConquestCostId(self):
+    def ConquestCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def ConquestCostAmount(self):
+    def ConquestCostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def ManageCostType(self):
+    def ManageCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def ManageCostId(self):
+    def ManageCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def ManageCostAmount(self):
+    def ManageCostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def ConquestRewardId(self):
+    def ConquestRewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def MassErosionId(self):
+    def MassErosionIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def Upgrade2CostType(self):
+    def Upgrade2CostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def Upgrade2CostId(self):
+    def Upgrade2CostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def Upgrade2CostAmount(self):
+    def Upgrade2CostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def Upgrade3CostType(self):
+    def Upgrade3CostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def Upgrade3CostId(self):
+    def Upgrade3CostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestTileExcel
-    def Upgrade3CostAmount(self):
+    def Upgrade3CostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -202,81 +202,81 @@ class ConquestTileExcel(object):
 def ConquestTileExcelStart(builder): builder.StartObject(25)
 def Start(builder):
     return ConquestTileExcelStart(builder)
-def ConquestTileExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ConquestTileExcelAddId(builder, id)
-def ConquestTileExcelAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return ConquestTileExcelAddName(builder, name)
-def ConquestTileExcelAddEventId(builder, eventId): builder.PrependInt32Slot(2, eventId, 0)
-def AddEventId(builder, eventId):
-    return ConquestTileExcelAddEventId(builder, eventId)
-def ConquestTileExcelAddStep(builder, step): builder.PrependInt32Slot(3, step, 0)
-def AddStep(builder, step):
-    return ConquestTileExcelAddStep(builder, step)
-def ConquestTileExcelAddPrefabName(builder, prefabName): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(prefabName), 0)
-def AddPrefabName(builder, prefabName):
-    return ConquestTileExcelAddPrefabName(builder, prefabName)
-def ConquestTileExcelAddTileNameLocalize(builder, tileNameLocalize): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(tileNameLocalize), 0)
-def AddTileNameLocalize(builder, tileNameLocalize):
-    return ConquestTileExcelAddTileNameLocalize(builder, tileNameLocalize)
-def ConquestTileExcelAddTileImageName(builder, tileImageName): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(tileImageName), 0)
-def AddTileImageName(builder, tileImageName):
-    return ConquestTileExcelAddTileImageName(builder, tileImageName)
-def ConquestTileExcelAddPlayable(builder, playable): builder.PrependBoolSlot(7, playable, 0)
-def AddPlayable(builder, playable):
-    return ConquestTileExcelAddPlayable(builder, playable)
-def ConquestTileExcelAddTileType(builder, tileType): builder.PrependInt32Slot(8, tileType, 0)
-def AddTileType(builder, tileType):
-    return ConquestTileExcelAddTileType(builder, tileType)
-def ConquestTileExcelAddNotMapFog(builder, notMapFog): builder.PrependBoolSlot(9, notMapFog, 0)
-def AddNotMapFog(builder, notMapFog):
-    return ConquestTileExcelAddNotMapFog(builder, notMapFog)
-def ConquestTileExcelAddGroupBonusId(builder, groupBonusId): builder.PrependInt32Slot(10, groupBonusId, 0)
-def AddGroupBonusId(builder, groupBonusId):
-    return ConquestTileExcelAddGroupBonusId(builder, groupBonusId)
-def ConquestTileExcelAddConquestCostType(builder, conquestCostType): builder.PrependInt32Slot(11, conquestCostType, 0)
-def AddConquestCostType(builder, conquestCostType):
-    return ConquestTileExcelAddConquestCostType(builder, conquestCostType)
-def ConquestTileExcelAddConquestCostId(builder, conquestCostId): builder.PrependInt32Slot(12, conquestCostId, 0)
-def AddConquestCostId(builder, conquestCostId):
-    return ConquestTileExcelAddConquestCostId(builder, conquestCostId)
-def ConquestTileExcelAddConquestCostAmount(builder, conquestCostAmount): builder.PrependInt32Slot(13, conquestCostAmount, 0)
-def AddConquestCostAmount(builder, conquestCostAmount):
-    return ConquestTileExcelAddConquestCostAmount(builder, conquestCostAmount)
-def ConquestTileExcelAddManageCostType(builder, manageCostType): builder.PrependInt32Slot(14, manageCostType, 0)
-def AddManageCostType(builder, manageCostType):
-    return ConquestTileExcelAddManageCostType(builder, manageCostType)
-def ConquestTileExcelAddManageCostId(builder, manageCostId): builder.PrependInt32Slot(15, manageCostId, 0)
-def AddManageCostId(builder, manageCostId):
-    return ConquestTileExcelAddManageCostId(builder, manageCostId)
-def ConquestTileExcelAddManageCostAmount(builder, manageCostAmount): builder.PrependInt32Slot(16, manageCostAmount, 0)
-def AddManageCostAmount(builder, manageCostAmount):
-    return ConquestTileExcelAddManageCostAmount(builder, manageCostAmount)
-def ConquestTileExcelAddConquestRewardId(builder, conquestRewardId): builder.PrependInt32Slot(17, conquestRewardId, 0)
-def AddConquestRewardId(builder, conquestRewardId):
-    return ConquestTileExcelAddConquestRewardId(builder, conquestRewardId)
-def ConquestTileExcelAddMassErosionId(builder, massErosionId): builder.PrependInt32Slot(18, massErosionId, 0)
-def AddMassErosionId(builder, massErosionId):
-    return ConquestTileExcelAddMassErosionId(builder, massErosionId)
-def ConquestTileExcelAddUpgrade2CostType(builder, upgrade2CostType): builder.PrependInt32Slot(19, upgrade2CostType, 0)
-def AddUpgrade2CostType(builder, upgrade2CostType):
-    return ConquestTileExcelAddUpgrade2CostType(builder, upgrade2CostType)
-def ConquestTileExcelAddUpgrade2CostId(builder, upgrade2CostId): builder.PrependInt32Slot(20, upgrade2CostId, 0)
-def AddUpgrade2CostId(builder, upgrade2CostId):
-    return ConquestTileExcelAddUpgrade2CostId(builder, upgrade2CostId)
-def ConquestTileExcelAddUpgrade2CostAmount(builder, upgrade2CostAmount): builder.PrependInt32Slot(21, upgrade2CostAmount, 0)
-def AddUpgrade2CostAmount(builder, upgrade2CostAmount):
-    return ConquestTileExcelAddUpgrade2CostAmount(builder, upgrade2CostAmount)
-def ConquestTileExcelAddUpgrade3CostType(builder, upgrade3CostType): builder.PrependInt32Slot(22, upgrade3CostType, 0)
-def AddUpgrade3CostType(builder, upgrade3CostType):
-    return ConquestTileExcelAddUpgrade3CostType(builder, upgrade3CostType)
-def ConquestTileExcelAddUpgrade3CostId(builder, upgrade3CostId): builder.PrependInt32Slot(23, upgrade3CostId, 0)
-def AddUpgrade3CostId(builder, upgrade3CostId):
-    return ConquestTileExcelAddUpgrade3CostId(builder, upgrade3CostId)
-def ConquestTileExcelAddUpgrade3CostAmount(builder, upgrade3CostAmount): builder.PrependInt32Slot(24, upgrade3CostAmount, 0)
-def AddUpgrade3CostAmount(builder, upgrade3CostAmount):
-    return ConquestTileExcelAddUpgrade3CostAmount(builder, upgrade3CostAmount)
+def ConquestTileExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ConquestTileExcelAddIdField(builder, idField)
+def ConquestTileExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return ConquestTileExcelAddNameField(builder, nameField)
+def ConquestTileExcelAddEventIdField(builder, eventIdField): builder.PrependInt32Slot(2, eventIdField, 0)
+def AddEventIdField(builder, eventIdField):
+    return ConquestTileExcelAddEventIdField(builder, eventIdField)
+def ConquestTileExcelAddStepField(builder, stepField): builder.PrependInt32Slot(3, stepField, 0)
+def AddStepField(builder, stepField):
+    return ConquestTileExcelAddStepField(builder, stepField)
+def ConquestTileExcelAddPrefabNameField(builder, prefabNameField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+def AddPrefabNameField(builder, prefabNameField):
+    return ConquestTileExcelAddPrefabNameField(builder, prefabNameField)
+def ConquestTileExcelAddTileNameLocalizeField(builder, tileNameLocalizeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(tileNameLocalizeField), 0)
+def AddTileNameLocalizeField(builder, tileNameLocalizeField):
+    return ConquestTileExcelAddTileNameLocalizeField(builder, tileNameLocalizeField)
+def ConquestTileExcelAddTileImageNameField(builder, tileImageNameField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(tileImageNameField), 0)
+def AddTileImageNameField(builder, tileImageNameField):
+    return ConquestTileExcelAddTileImageNameField(builder, tileImageNameField)
+def ConquestTileExcelAddPlayableField(builder, playableField): builder.PrependBoolSlot(7, playableField, 0)
+def AddPlayableField(builder, playableField):
+    return ConquestTileExcelAddPlayableField(builder, playableField)
+def ConquestTileExcelAddTileTypeField(builder, tileTypeField): builder.PrependInt32Slot(8, tileTypeField, 0)
+def AddTileTypeField(builder, tileTypeField):
+    return ConquestTileExcelAddTileTypeField(builder, tileTypeField)
+def ConquestTileExcelAddNotMapFogField(builder, notMapFogField): builder.PrependBoolSlot(9, notMapFogField, 0)
+def AddNotMapFogField(builder, notMapFogField):
+    return ConquestTileExcelAddNotMapFogField(builder, notMapFogField)
+def ConquestTileExcelAddGroupBonusIdField(builder, groupBonusIdField): builder.PrependInt32Slot(10, groupBonusIdField, 0)
+def AddGroupBonusIdField(builder, groupBonusIdField):
+    return ConquestTileExcelAddGroupBonusIdField(builder, groupBonusIdField)
+def ConquestTileExcelAddConquestCostTypeField(builder, conquestCostTypeField): builder.PrependInt32Slot(11, conquestCostTypeField, 0)
+def AddConquestCostTypeField(builder, conquestCostTypeField):
+    return ConquestTileExcelAddConquestCostTypeField(builder, conquestCostTypeField)
+def ConquestTileExcelAddConquestCostIdField(builder, conquestCostIdField): builder.PrependInt32Slot(12, conquestCostIdField, 0)
+def AddConquestCostIdField(builder, conquestCostIdField):
+    return ConquestTileExcelAddConquestCostIdField(builder, conquestCostIdField)
+def ConquestTileExcelAddConquestCostAmountField(builder, conquestCostAmountField): builder.PrependInt32Slot(13, conquestCostAmountField, 0)
+def AddConquestCostAmountField(builder, conquestCostAmountField):
+    return ConquestTileExcelAddConquestCostAmountField(builder, conquestCostAmountField)
+def ConquestTileExcelAddManageCostTypeField(builder, manageCostTypeField): builder.PrependInt32Slot(14, manageCostTypeField, 0)
+def AddManageCostTypeField(builder, manageCostTypeField):
+    return ConquestTileExcelAddManageCostTypeField(builder, manageCostTypeField)
+def ConquestTileExcelAddManageCostIdField(builder, manageCostIdField): builder.PrependInt32Slot(15, manageCostIdField, 0)
+def AddManageCostIdField(builder, manageCostIdField):
+    return ConquestTileExcelAddManageCostIdField(builder, manageCostIdField)
+def ConquestTileExcelAddManageCostAmountField(builder, manageCostAmountField): builder.PrependInt32Slot(16, manageCostAmountField, 0)
+def AddManageCostAmountField(builder, manageCostAmountField):
+    return ConquestTileExcelAddManageCostAmountField(builder, manageCostAmountField)
+def ConquestTileExcelAddConquestRewardIdField(builder, conquestRewardIdField): builder.PrependInt32Slot(17, conquestRewardIdField, 0)
+def AddConquestRewardIdField(builder, conquestRewardIdField):
+    return ConquestTileExcelAddConquestRewardIdField(builder, conquestRewardIdField)
+def ConquestTileExcelAddMassErosionIdField(builder, massErosionIdField): builder.PrependInt32Slot(18, massErosionIdField, 0)
+def AddMassErosionIdField(builder, massErosionIdField):
+    return ConquestTileExcelAddMassErosionIdField(builder, massErosionIdField)
+def ConquestTileExcelAddUpgrade2CostTypeField(builder, upgrade2CostTypeField): builder.PrependInt32Slot(19, upgrade2CostTypeField, 0)
+def AddUpgrade2CostTypeField(builder, upgrade2CostTypeField):
+    return ConquestTileExcelAddUpgrade2CostTypeField(builder, upgrade2CostTypeField)
+def ConquestTileExcelAddUpgrade2CostIdField(builder, upgrade2CostIdField): builder.PrependInt32Slot(20, upgrade2CostIdField, 0)
+def AddUpgrade2CostIdField(builder, upgrade2CostIdField):
+    return ConquestTileExcelAddUpgrade2CostIdField(builder, upgrade2CostIdField)
+def ConquestTileExcelAddUpgrade2CostAmountField(builder, upgrade2CostAmountField): builder.PrependInt32Slot(21, upgrade2CostAmountField, 0)
+def AddUpgrade2CostAmountField(builder, upgrade2CostAmountField):
+    return ConquestTileExcelAddUpgrade2CostAmountField(builder, upgrade2CostAmountField)
+def ConquestTileExcelAddUpgrade3CostTypeField(builder, upgrade3CostTypeField): builder.PrependInt32Slot(22, upgrade3CostTypeField, 0)
+def AddUpgrade3CostTypeField(builder, upgrade3CostTypeField):
+    return ConquestTileExcelAddUpgrade3CostTypeField(builder, upgrade3CostTypeField)
+def ConquestTileExcelAddUpgrade3CostIdField(builder, upgrade3CostIdField): builder.PrependInt32Slot(23, upgrade3CostIdField, 0)
+def AddUpgrade3CostIdField(builder, upgrade3CostIdField):
+    return ConquestTileExcelAddUpgrade3CostIdField(builder, upgrade3CostIdField)
+def ConquestTileExcelAddUpgrade3CostAmountField(builder, upgrade3CostAmountField): builder.PrependInt32Slot(24, upgrade3CostAmountField, 0)
+def AddUpgrade3CostAmountField(builder, upgrade3CostAmountField):
+    return ConquestTileExcelAddUpgrade3CostAmountField(builder, upgrade3CostAmountField)
 def ConquestTileExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConquestTileExcelEnd(builder)

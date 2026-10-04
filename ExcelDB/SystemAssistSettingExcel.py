@@ -25,28 +25,28 @@ class SystemAssistSettingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # SystemAssistSettingExcel
-    def BattleType(self):
+    def BattleTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SystemAssistSettingExcel
-    def StageId(self):
+    def StageIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SystemAssistSettingExcel
-    def CharacterSettingId(self):
+    def CharacterSettingIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SystemAssistSettingExcel
-    def CharacterId(self, j):
+    def CharacterIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -54,42 +54,42 @@ class SystemAssistSettingExcel(object):
         return 0
 
     # SystemAssistSettingExcel
-    def CharacterIdAsNumpy(self):
+    def CharacterIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # SystemAssistSettingExcel
-    def CharacterIdLength(self):
+    def CharacterIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # SystemAssistSettingExcel
-    def CharacterIdIsNone(self):
+    def CharacterIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
 def SystemAssistSettingExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return SystemAssistSettingExcelStart(builder)
-def SystemAssistSettingExcelAddBattleType(builder, battleType): builder.PrependInt32Slot(0, battleType, 0)
-def AddBattleType(builder, battleType):
-    return SystemAssistSettingExcelAddBattleType(builder, battleType)
-def SystemAssistSettingExcelAddStageId(builder, stageId): builder.PrependInt32Slot(1, stageId, 0)
-def AddStageId(builder, stageId):
-    return SystemAssistSettingExcelAddStageId(builder, stageId)
-def SystemAssistSettingExcelAddCharacterSettingId(builder, characterSettingId): builder.PrependInt32Slot(2, characterSettingId, 0)
-def AddCharacterSettingId(builder, characterSettingId):
-    return SystemAssistSettingExcelAddCharacterSettingId(builder, characterSettingId)
-def SystemAssistSettingExcelAddCharacterId(builder, characterId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(characterId), 0)
-def AddCharacterId(builder, characterId):
-    return SystemAssistSettingExcelAddCharacterId(builder, characterId)
-def SystemAssistSettingExcelStartCharacterIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCharacterIdVector(builder, numElems):
-    return SystemAssistSettingExcelStartCharacterIdVector(builder, numElems)
+def SystemAssistSettingExcelAddBattleTypeField(builder, battleTypeField): builder.PrependInt32Slot(0, battleTypeField, 0)
+def AddBattleTypeField(builder, battleTypeField):
+    return SystemAssistSettingExcelAddBattleTypeField(builder, battleTypeField)
+def SystemAssistSettingExcelAddStageIdField(builder, stageIdField): builder.PrependInt32Slot(1, stageIdField, 0)
+def AddStageIdField(builder, stageIdField):
+    return SystemAssistSettingExcelAddStageIdField(builder, stageIdField)
+def SystemAssistSettingExcelAddCharacterSettingIdField(builder, characterSettingIdField): builder.PrependInt32Slot(2, characterSettingIdField, 0)
+def AddCharacterSettingIdField(builder, characterSettingIdField):
+    return SystemAssistSettingExcelAddCharacterSettingIdField(builder, characterSettingIdField)
+def SystemAssistSettingExcelAddCharacterIdField(builder, characterIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(characterIdField), 0)
+def AddCharacterIdField(builder, characterIdField):
+    return SystemAssistSettingExcelAddCharacterIdField(builder, characterIdField)
+def SystemAssistSettingExcelStartCharacterIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCharacterIdFieldVector(builder, numElems):
+    return SystemAssistSettingExcelStartCharacterIdFieldVector(builder, numElems)
 def SystemAssistSettingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SystemAssistSettingExcelEnd(builder)

@@ -25,14 +25,14 @@ class OpenConditionExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # OpenConditionExcel
-    def OpenConditionContentType(self):
+    def OpenConditionContentTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def LockUI(self, j):
+    def LockUIField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,26 +40,26 @@ class OpenConditionExcel(object):
         return ""
 
     # OpenConditionExcel
-    def LockUILength(self):
+    def LockUIFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # OpenConditionExcel
-    def LockUIIsNone(self):
+    def LockUIFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # OpenConditionExcel
-    def ShortcutPopupPriority(self):
+    def ShortcutPopupPriorityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def ShortcutUIName(self, j):
+    def ShortcutUINameField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -67,124 +67,124 @@ class OpenConditionExcel(object):
         return ""
 
     # OpenConditionExcel
-    def ShortcutUINameLength(self):
+    def ShortcutUINameFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # OpenConditionExcel
-    def ShortcutUINameIsNone(self):
+    def ShortcutUINameFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # OpenConditionExcel
-    def ShortcutParam(self):
+    def ShortcutParamField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def Scene(self):
+    def SceneField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # OpenConditionExcel
-    def HideWhenLocked(self):
+    def HideWhenLockedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # OpenConditionExcel
-    def AccountLevel(self):
+    def AccountLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def ScenarioModeId(self):
+    def ScenarioModeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def CampaignStageId(self):
+    def CampaignStageIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def MultipleConditionCheckType(self):
+    def MultipleConditionCheckTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def OpenDayOfWeek(self):
+    def OpenDayOfWeekField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def OpenHour(self):
+    def OpenHourField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def CloseDayOfWeek(self):
+    def CloseDayOfWeekField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def CloseHour(self):
+    def CloseHourField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def OpenedCafeId(self):
+    def OpenedCafeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def CafeIdforCafeRank(self):
+    def CafeIdforCafeRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def CafeRank(self):
+    def CafeRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OpenConditionExcel
-    def ContentsOpenShow(self):
+    def ContentsOpenShowField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # OpenConditionExcel
-    def ContentsOpenShortcutUI(self):
+    def ContentsOpenShortcutUIField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -193,72 +193,72 @@ class OpenConditionExcel(object):
 def OpenConditionExcelStart(builder): builder.StartObject(20)
 def Start(builder):
     return OpenConditionExcelStart(builder)
-def OpenConditionExcelAddOpenConditionContentType(builder, openConditionContentType): builder.PrependInt32Slot(0, openConditionContentType, 0)
-def AddOpenConditionContentType(builder, openConditionContentType):
-    return OpenConditionExcelAddOpenConditionContentType(builder, openConditionContentType)
-def OpenConditionExcelAddLockUI(builder, lockUI): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(lockUI), 0)
-def AddLockUI(builder, lockUI):
-    return OpenConditionExcelAddLockUI(builder, lockUI)
-def OpenConditionExcelStartLockUIVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLockUIVector(builder, numElems):
-    return OpenConditionExcelStartLockUIVector(builder, numElems)
-def OpenConditionExcelAddShortcutPopupPriority(builder, shortcutPopupPriority): builder.PrependInt32Slot(2, shortcutPopupPriority, 0)
-def AddShortcutPopupPriority(builder, shortcutPopupPriority):
-    return OpenConditionExcelAddShortcutPopupPriority(builder, shortcutPopupPriority)
-def OpenConditionExcelAddShortcutUIName(builder, shortcutUIName): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(shortcutUIName), 0)
-def AddShortcutUIName(builder, shortcutUIName):
-    return OpenConditionExcelAddShortcutUIName(builder, shortcutUIName)
-def OpenConditionExcelStartShortcutUINameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShortcutUINameVector(builder, numElems):
-    return OpenConditionExcelStartShortcutUINameVector(builder, numElems)
-def OpenConditionExcelAddShortcutParam(builder, shortcutParam): builder.PrependInt32Slot(4, shortcutParam, 0)
-def AddShortcutParam(builder, shortcutParam):
-    return OpenConditionExcelAddShortcutParam(builder, shortcutParam)
-def OpenConditionExcelAddScene(builder, scene): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(scene), 0)
-def AddScene(builder, scene):
-    return OpenConditionExcelAddScene(builder, scene)
-def OpenConditionExcelAddHideWhenLocked(builder, hideWhenLocked): builder.PrependBoolSlot(6, hideWhenLocked, 0)
-def AddHideWhenLocked(builder, hideWhenLocked):
-    return OpenConditionExcelAddHideWhenLocked(builder, hideWhenLocked)
-def OpenConditionExcelAddAccountLevel(builder, accountLevel): builder.PrependInt32Slot(7, accountLevel, 0)
-def AddAccountLevel(builder, accountLevel):
-    return OpenConditionExcelAddAccountLevel(builder, accountLevel)
-def OpenConditionExcelAddScenarioModeId(builder, scenarioModeId): builder.PrependInt32Slot(8, scenarioModeId, 0)
-def AddScenarioModeId(builder, scenarioModeId):
-    return OpenConditionExcelAddScenarioModeId(builder, scenarioModeId)
-def OpenConditionExcelAddCampaignStageId(builder, campaignStageId): builder.PrependInt32Slot(9, campaignStageId, 0)
-def AddCampaignStageId(builder, campaignStageId):
-    return OpenConditionExcelAddCampaignStageId(builder, campaignStageId)
-def OpenConditionExcelAddMultipleConditionCheckType(builder, multipleConditionCheckType): builder.PrependInt32Slot(10, multipleConditionCheckType, 0)
-def AddMultipleConditionCheckType(builder, multipleConditionCheckType):
-    return OpenConditionExcelAddMultipleConditionCheckType(builder, multipleConditionCheckType)
-def OpenConditionExcelAddOpenDayOfWeek(builder, openDayOfWeek): builder.PrependInt32Slot(11, openDayOfWeek, 0)
-def AddOpenDayOfWeek(builder, openDayOfWeek):
-    return OpenConditionExcelAddOpenDayOfWeek(builder, openDayOfWeek)
-def OpenConditionExcelAddOpenHour(builder, openHour): builder.PrependInt32Slot(12, openHour, 0)
-def AddOpenHour(builder, openHour):
-    return OpenConditionExcelAddOpenHour(builder, openHour)
-def OpenConditionExcelAddCloseDayOfWeek(builder, closeDayOfWeek): builder.PrependInt32Slot(13, closeDayOfWeek, 0)
-def AddCloseDayOfWeek(builder, closeDayOfWeek):
-    return OpenConditionExcelAddCloseDayOfWeek(builder, closeDayOfWeek)
-def OpenConditionExcelAddCloseHour(builder, closeHour): builder.PrependInt32Slot(14, closeHour, 0)
-def AddCloseHour(builder, closeHour):
-    return OpenConditionExcelAddCloseHour(builder, closeHour)
-def OpenConditionExcelAddOpenedCafeId(builder, openedCafeId): builder.PrependInt32Slot(15, openedCafeId, 0)
-def AddOpenedCafeId(builder, openedCafeId):
-    return OpenConditionExcelAddOpenedCafeId(builder, openedCafeId)
-def OpenConditionExcelAddCafeIdforCafeRank(builder, cafeIdforCafeRank): builder.PrependInt32Slot(16, cafeIdforCafeRank, 0)
-def AddCafeIdforCafeRank(builder, cafeIdforCafeRank):
-    return OpenConditionExcelAddCafeIdforCafeRank(builder, cafeIdforCafeRank)
-def OpenConditionExcelAddCafeRank(builder, cafeRank): builder.PrependInt32Slot(17, cafeRank, 0)
-def AddCafeRank(builder, cafeRank):
-    return OpenConditionExcelAddCafeRank(builder, cafeRank)
-def OpenConditionExcelAddContentsOpenShow(builder, contentsOpenShow): builder.PrependBoolSlot(18, contentsOpenShow, 0)
-def AddContentsOpenShow(builder, contentsOpenShow):
-    return OpenConditionExcelAddContentsOpenShow(builder, contentsOpenShow)
-def OpenConditionExcelAddContentsOpenShortcutUI(builder, contentsOpenShortcutUI): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(contentsOpenShortcutUI), 0)
-def AddContentsOpenShortcutUI(builder, contentsOpenShortcutUI):
-    return OpenConditionExcelAddContentsOpenShortcutUI(builder, contentsOpenShortcutUI)
+def OpenConditionExcelAddOpenConditionContentTypeField(builder, openConditionContentTypeField): builder.PrependInt32Slot(0, openConditionContentTypeField, 0)
+def AddOpenConditionContentTypeField(builder, openConditionContentTypeField):
+    return OpenConditionExcelAddOpenConditionContentTypeField(builder, openConditionContentTypeField)
+def OpenConditionExcelAddLockUIField(builder, lockUIField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(lockUIField), 0)
+def AddLockUIField(builder, lockUIField):
+    return OpenConditionExcelAddLockUIField(builder, lockUIField)
+def OpenConditionExcelStartLockUIFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartLockUIFieldVector(builder, numElems):
+    return OpenConditionExcelStartLockUIFieldVector(builder, numElems)
+def OpenConditionExcelAddShortcutPopupPriorityField(builder, shortcutPopupPriorityField): builder.PrependInt32Slot(2, shortcutPopupPriorityField, 0)
+def AddShortcutPopupPriorityField(builder, shortcutPopupPriorityField):
+    return OpenConditionExcelAddShortcutPopupPriorityField(builder, shortcutPopupPriorityField)
+def OpenConditionExcelAddShortcutUINameField(builder, shortcutUINameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(shortcutUINameField), 0)
+def AddShortcutUINameField(builder, shortcutUINameField):
+    return OpenConditionExcelAddShortcutUINameField(builder, shortcutUINameField)
+def OpenConditionExcelStartShortcutUINameFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShortcutUINameFieldVector(builder, numElems):
+    return OpenConditionExcelStartShortcutUINameFieldVector(builder, numElems)
+def OpenConditionExcelAddShortcutParamField(builder, shortcutParamField): builder.PrependInt32Slot(4, shortcutParamField, 0)
+def AddShortcutParamField(builder, shortcutParamField):
+    return OpenConditionExcelAddShortcutParamField(builder, shortcutParamField)
+def OpenConditionExcelAddSceneField(builder, sceneField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(sceneField), 0)
+def AddSceneField(builder, sceneField):
+    return OpenConditionExcelAddSceneField(builder, sceneField)
+def OpenConditionExcelAddHideWhenLockedField(builder, hideWhenLockedField): builder.PrependBoolSlot(6, hideWhenLockedField, 0)
+def AddHideWhenLockedField(builder, hideWhenLockedField):
+    return OpenConditionExcelAddHideWhenLockedField(builder, hideWhenLockedField)
+def OpenConditionExcelAddAccountLevelField(builder, accountLevelField): builder.PrependInt32Slot(7, accountLevelField, 0)
+def AddAccountLevelField(builder, accountLevelField):
+    return OpenConditionExcelAddAccountLevelField(builder, accountLevelField)
+def OpenConditionExcelAddScenarioModeIdField(builder, scenarioModeIdField): builder.PrependInt32Slot(8, scenarioModeIdField, 0)
+def AddScenarioModeIdField(builder, scenarioModeIdField):
+    return OpenConditionExcelAddScenarioModeIdField(builder, scenarioModeIdField)
+def OpenConditionExcelAddCampaignStageIdField(builder, campaignStageIdField): builder.PrependInt32Slot(9, campaignStageIdField, 0)
+def AddCampaignStageIdField(builder, campaignStageIdField):
+    return OpenConditionExcelAddCampaignStageIdField(builder, campaignStageIdField)
+def OpenConditionExcelAddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField): builder.PrependInt32Slot(10, multipleConditionCheckTypeField, 0)
+def AddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField):
+    return OpenConditionExcelAddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField)
+def OpenConditionExcelAddOpenDayOfWeekField(builder, openDayOfWeekField): builder.PrependInt32Slot(11, openDayOfWeekField, 0)
+def AddOpenDayOfWeekField(builder, openDayOfWeekField):
+    return OpenConditionExcelAddOpenDayOfWeekField(builder, openDayOfWeekField)
+def OpenConditionExcelAddOpenHourField(builder, openHourField): builder.PrependInt32Slot(12, openHourField, 0)
+def AddOpenHourField(builder, openHourField):
+    return OpenConditionExcelAddOpenHourField(builder, openHourField)
+def OpenConditionExcelAddCloseDayOfWeekField(builder, closeDayOfWeekField): builder.PrependInt32Slot(13, closeDayOfWeekField, 0)
+def AddCloseDayOfWeekField(builder, closeDayOfWeekField):
+    return OpenConditionExcelAddCloseDayOfWeekField(builder, closeDayOfWeekField)
+def OpenConditionExcelAddCloseHourField(builder, closeHourField): builder.PrependInt32Slot(14, closeHourField, 0)
+def AddCloseHourField(builder, closeHourField):
+    return OpenConditionExcelAddCloseHourField(builder, closeHourField)
+def OpenConditionExcelAddOpenedCafeIdField(builder, openedCafeIdField): builder.PrependInt32Slot(15, openedCafeIdField, 0)
+def AddOpenedCafeIdField(builder, openedCafeIdField):
+    return OpenConditionExcelAddOpenedCafeIdField(builder, openedCafeIdField)
+def OpenConditionExcelAddCafeIdforCafeRankField(builder, cafeIdforCafeRankField): builder.PrependInt32Slot(16, cafeIdforCafeRankField, 0)
+def AddCafeIdforCafeRankField(builder, cafeIdforCafeRankField):
+    return OpenConditionExcelAddCafeIdforCafeRankField(builder, cafeIdforCafeRankField)
+def OpenConditionExcelAddCafeRankField(builder, cafeRankField): builder.PrependInt32Slot(17, cafeRankField, 0)
+def AddCafeRankField(builder, cafeRankField):
+    return OpenConditionExcelAddCafeRankField(builder, cafeRankField)
+def OpenConditionExcelAddContentsOpenShowField(builder, contentsOpenShowField): builder.PrependBoolSlot(18, contentsOpenShowField, 0)
+def AddContentsOpenShowField(builder, contentsOpenShowField):
+    return OpenConditionExcelAddContentsOpenShowField(builder, contentsOpenShowField)
+def OpenConditionExcelAddContentsOpenShortcutUIField(builder, contentsOpenShortcutUIField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(contentsOpenShortcutUIField), 0)
+def AddContentsOpenShortcutUIField(builder, contentsOpenShortcutUIField):
+    return OpenConditionExcelAddContentsOpenShortcutUIField(builder, contentsOpenShortcutUIField)
 def OpenConditionExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return OpenConditionExcelEnd(builder)

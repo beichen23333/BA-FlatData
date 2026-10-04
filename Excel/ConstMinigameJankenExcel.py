@@ -25,105 +25,105 @@ class ConstMinigameJankenExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstMinigameJankenExcel
-    def TimeLimitPerTurn(self):
+    def TimeLimitPerTurnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def MaxDamageRate(self):
+    def MaxDamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def DamageCurveCoefficient(self):
+    def DamageCurveCoefficientField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameJankenExcel
-    def DrawConstantAttack(self):
+    def DrawConstantAttackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def DrawConstantBlock(self):
+    def DrawConstantBlockField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def WinSceneRate(self):
+    def WinSceneRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def LoseSceneRate(self):
+    def LoseSceneRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def EnemyAppearRate(self):
+    def EnemyAppearRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def PlayerSpAtkConditionRate(self):
+    def PlayerSpAtkConditionRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def EnemySpAtkConditionRate(self):
+    def EnemySpAtkConditionRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def ATGGroggyFixedDamage(self):
+    def ATGGroggyFixedDamageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def MaxSkillCost(self):
+    def MaxSkillCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def TimeLimitQTE(self):
+    def TimeLimitQTEField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def StageOutroTimeOffset(self):
+    def StageOutroTimeOffsetField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameJankenExcel
-    def UIBossHpBarCount(self):
+    def UIBossHpBarCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -132,51 +132,51 @@ class ConstMinigameJankenExcel(object):
 def ConstMinigameJankenExcelStart(builder): builder.StartObject(15)
 def Start(builder):
     return ConstMinigameJankenExcelStart(builder)
-def ConstMinigameJankenExcelAddTimeLimitPerTurn(builder, timeLimitPerTurn): builder.PrependInt32Slot(0, timeLimitPerTurn, 0)
-def AddTimeLimitPerTurn(builder, timeLimitPerTurn):
-    return ConstMinigameJankenExcelAddTimeLimitPerTurn(builder, timeLimitPerTurn)
-def ConstMinigameJankenExcelAddMaxDamageRate(builder, maxDamageRate): builder.PrependInt32Slot(1, maxDamageRate, 0)
-def AddMaxDamageRate(builder, maxDamageRate):
-    return ConstMinigameJankenExcelAddMaxDamageRate(builder, maxDamageRate)
-def ConstMinigameJankenExcelAddDamageCurveCoefficient(builder, damageCurveCoefficient): builder.PrependFloat32Slot(2, damageCurveCoefficient, 0.0)
-def AddDamageCurveCoefficient(builder, damageCurveCoefficient):
-    return ConstMinigameJankenExcelAddDamageCurveCoefficient(builder, damageCurveCoefficient)
-def ConstMinigameJankenExcelAddDrawConstantAttack(builder, drawConstantAttack): builder.PrependInt32Slot(3, drawConstantAttack, 0)
-def AddDrawConstantAttack(builder, drawConstantAttack):
-    return ConstMinigameJankenExcelAddDrawConstantAttack(builder, drawConstantAttack)
-def ConstMinigameJankenExcelAddDrawConstantBlock(builder, drawConstantBlock): builder.PrependInt32Slot(4, drawConstantBlock, 0)
-def AddDrawConstantBlock(builder, drawConstantBlock):
-    return ConstMinigameJankenExcelAddDrawConstantBlock(builder, drawConstantBlock)
-def ConstMinigameJankenExcelAddWinSceneRate(builder, winSceneRate): builder.PrependInt32Slot(5, winSceneRate, 0)
-def AddWinSceneRate(builder, winSceneRate):
-    return ConstMinigameJankenExcelAddWinSceneRate(builder, winSceneRate)
-def ConstMinigameJankenExcelAddLoseSceneRate(builder, loseSceneRate): builder.PrependInt32Slot(6, loseSceneRate, 0)
-def AddLoseSceneRate(builder, loseSceneRate):
-    return ConstMinigameJankenExcelAddLoseSceneRate(builder, loseSceneRate)
-def ConstMinigameJankenExcelAddEnemyAppearRate(builder, enemyAppearRate): builder.PrependInt32Slot(7, enemyAppearRate, 0)
-def AddEnemyAppearRate(builder, enemyAppearRate):
-    return ConstMinigameJankenExcelAddEnemyAppearRate(builder, enemyAppearRate)
-def ConstMinigameJankenExcelAddPlayerSpAtkConditionRate(builder, playerSpAtkConditionRate): builder.PrependInt32Slot(8, playerSpAtkConditionRate, 0)
-def AddPlayerSpAtkConditionRate(builder, playerSpAtkConditionRate):
-    return ConstMinigameJankenExcelAddPlayerSpAtkConditionRate(builder, playerSpAtkConditionRate)
-def ConstMinigameJankenExcelAddEnemySpAtkConditionRate(builder, enemySpAtkConditionRate): builder.PrependInt32Slot(9, enemySpAtkConditionRate, 0)
-def AddEnemySpAtkConditionRate(builder, enemySpAtkConditionRate):
-    return ConstMinigameJankenExcelAddEnemySpAtkConditionRate(builder, enemySpAtkConditionRate)
-def ConstMinigameJankenExcelAddATGGroggyFixedDamage(builder, aTGGroggyFixedDamage): builder.PrependInt32Slot(10, aTGGroggyFixedDamage, 0)
-def AddATGGroggyFixedDamage(builder, aTGGroggyFixedDamage):
-    return ConstMinigameJankenExcelAddATGGroggyFixedDamage(builder, aTGGroggyFixedDamage)
-def ConstMinigameJankenExcelAddMaxSkillCost(builder, maxSkillCost): builder.PrependInt32Slot(11, maxSkillCost, 0)
-def AddMaxSkillCost(builder, maxSkillCost):
-    return ConstMinigameJankenExcelAddMaxSkillCost(builder, maxSkillCost)
-def ConstMinigameJankenExcelAddTimeLimitQTE(builder, timeLimitQTE): builder.PrependInt32Slot(12, timeLimitQTE, 0)
-def AddTimeLimitQTE(builder, timeLimitQTE):
-    return ConstMinigameJankenExcelAddTimeLimitQTE(builder, timeLimitQTE)
-def ConstMinigameJankenExcelAddStageOutroTimeOffset(builder, stageOutroTimeOffset): builder.PrependInt32Slot(13, stageOutroTimeOffset, 0)
-def AddStageOutroTimeOffset(builder, stageOutroTimeOffset):
-    return ConstMinigameJankenExcelAddStageOutroTimeOffset(builder, stageOutroTimeOffset)
-def ConstMinigameJankenExcelAddUIBossHpBarCount(builder, uIBossHpBarCount): builder.PrependInt32Slot(14, uIBossHpBarCount, 0)
-def AddUIBossHpBarCount(builder, uIBossHpBarCount):
-    return ConstMinigameJankenExcelAddUIBossHpBarCount(builder, uIBossHpBarCount)
+def ConstMinigameJankenExcelAddTimeLimitPerTurnField(builder, timeLimitPerTurnField): builder.PrependInt32Slot(0, timeLimitPerTurnField, 0)
+def AddTimeLimitPerTurnField(builder, timeLimitPerTurnField):
+    return ConstMinigameJankenExcelAddTimeLimitPerTurnField(builder, timeLimitPerTurnField)
+def ConstMinigameJankenExcelAddMaxDamageRateField(builder, maxDamageRateField): builder.PrependInt32Slot(1, maxDamageRateField, 0)
+def AddMaxDamageRateField(builder, maxDamageRateField):
+    return ConstMinigameJankenExcelAddMaxDamageRateField(builder, maxDamageRateField)
+def ConstMinigameJankenExcelAddDamageCurveCoefficientField(builder, damageCurveCoefficientField): builder.PrependFloat32Slot(2, damageCurveCoefficientField, 0.0)
+def AddDamageCurveCoefficientField(builder, damageCurveCoefficientField):
+    return ConstMinigameJankenExcelAddDamageCurveCoefficientField(builder, damageCurveCoefficientField)
+def ConstMinigameJankenExcelAddDrawConstantAttackField(builder, drawConstantAttackField): builder.PrependInt32Slot(3, drawConstantAttackField, 0)
+def AddDrawConstantAttackField(builder, drawConstantAttackField):
+    return ConstMinigameJankenExcelAddDrawConstantAttackField(builder, drawConstantAttackField)
+def ConstMinigameJankenExcelAddDrawConstantBlockField(builder, drawConstantBlockField): builder.PrependInt32Slot(4, drawConstantBlockField, 0)
+def AddDrawConstantBlockField(builder, drawConstantBlockField):
+    return ConstMinigameJankenExcelAddDrawConstantBlockField(builder, drawConstantBlockField)
+def ConstMinigameJankenExcelAddWinSceneRateField(builder, winSceneRateField): builder.PrependInt32Slot(5, winSceneRateField, 0)
+def AddWinSceneRateField(builder, winSceneRateField):
+    return ConstMinigameJankenExcelAddWinSceneRateField(builder, winSceneRateField)
+def ConstMinigameJankenExcelAddLoseSceneRateField(builder, loseSceneRateField): builder.PrependInt32Slot(6, loseSceneRateField, 0)
+def AddLoseSceneRateField(builder, loseSceneRateField):
+    return ConstMinigameJankenExcelAddLoseSceneRateField(builder, loseSceneRateField)
+def ConstMinigameJankenExcelAddEnemyAppearRateField(builder, enemyAppearRateField): builder.PrependInt32Slot(7, enemyAppearRateField, 0)
+def AddEnemyAppearRateField(builder, enemyAppearRateField):
+    return ConstMinigameJankenExcelAddEnemyAppearRateField(builder, enemyAppearRateField)
+def ConstMinigameJankenExcelAddPlayerSpAtkConditionRateField(builder, playerSpAtkConditionRateField): builder.PrependInt32Slot(8, playerSpAtkConditionRateField, 0)
+def AddPlayerSpAtkConditionRateField(builder, playerSpAtkConditionRateField):
+    return ConstMinigameJankenExcelAddPlayerSpAtkConditionRateField(builder, playerSpAtkConditionRateField)
+def ConstMinigameJankenExcelAddEnemySpAtkConditionRateField(builder, enemySpAtkConditionRateField): builder.PrependInt32Slot(9, enemySpAtkConditionRateField, 0)
+def AddEnemySpAtkConditionRateField(builder, enemySpAtkConditionRateField):
+    return ConstMinigameJankenExcelAddEnemySpAtkConditionRateField(builder, enemySpAtkConditionRateField)
+def ConstMinigameJankenExcelAddATGGroggyFixedDamageField(builder, aTGGroggyFixedDamageField): builder.PrependInt32Slot(10, aTGGroggyFixedDamageField, 0)
+def AddATGGroggyFixedDamageField(builder, aTGGroggyFixedDamageField):
+    return ConstMinigameJankenExcelAddATGGroggyFixedDamageField(builder, aTGGroggyFixedDamageField)
+def ConstMinigameJankenExcelAddMaxSkillCostField(builder, maxSkillCostField): builder.PrependInt32Slot(11, maxSkillCostField, 0)
+def AddMaxSkillCostField(builder, maxSkillCostField):
+    return ConstMinigameJankenExcelAddMaxSkillCostField(builder, maxSkillCostField)
+def ConstMinigameJankenExcelAddTimeLimitQTEField(builder, timeLimitQTEField): builder.PrependInt32Slot(12, timeLimitQTEField, 0)
+def AddTimeLimitQTEField(builder, timeLimitQTEField):
+    return ConstMinigameJankenExcelAddTimeLimitQTEField(builder, timeLimitQTEField)
+def ConstMinigameJankenExcelAddStageOutroTimeOffsetField(builder, stageOutroTimeOffsetField): builder.PrependInt32Slot(13, stageOutroTimeOffsetField, 0)
+def AddStageOutroTimeOffsetField(builder, stageOutroTimeOffsetField):
+    return ConstMinigameJankenExcelAddStageOutroTimeOffsetField(builder, stageOutroTimeOffsetField)
+def ConstMinigameJankenExcelAddUIBossHpBarCountField(builder, uIBossHpBarCountField): builder.PrependInt32Slot(14, uIBossHpBarCountField, 0)
+def AddUIBossHpBarCountField(builder, uIBossHpBarCountField):
+    return ConstMinigameJankenExcelAddUIBossHpBarCountField(builder, uIBossHpBarCountField)
 def ConstMinigameJankenExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstMinigameJankenExcelEnd(builder)

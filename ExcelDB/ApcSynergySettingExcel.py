@@ -25,28 +25,28 @@ class ApcSynergySettingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ApcSynergySettingExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSynergySettingExcel
-    def ApcSynergyGroupId(self):
+    def ApcSynergyGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSynergySettingExcel
-    def TriggerType(self):
+    def TriggerTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSynergySettingExcel
-    def TriggerValue(self, j):
+    def TriggerValueField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -54,19 +54,19 @@ class ApcSynergySettingExcel(object):
         return ""
 
     # ApcSynergySettingExcel
-    def TriggerValueLength(self):
+    def TriggerValueFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ApcSynergySettingExcel
-    def TriggerValueIsNone(self):
+    def TriggerValueFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # ApcSynergySettingExcel
-    def TriggerValueCount(self, j):
+    def TriggerValueCountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,26 +74,26 @@ class ApcSynergySettingExcel(object):
         return 0
 
     # ApcSynergySettingExcel
-    def TriggerValueCountAsNumpy(self):
+    def TriggerValueCountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ApcSynergySettingExcel
-    def TriggerValueCountLength(self):
+    def TriggerValueCountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ApcSynergySettingExcel
-    def TriggerValueCountIsNone(self):
+    def TriggerValueCountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # ApcSynergySettingExcel
-    def PassiveSkillGroupId(self, j):
+    def PassiveSkillGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -101,19 +101,19 @@ class ApcSynergySettingExcel(object):
         return ""
 
     # ApcSynergySettingExcel
-    def PassiveSkillGroupIdLength(self):
+    def PassiveSkillGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ApcSynergySettingExcel
-    def PassiveSkillGroupIdIsNone(self):
+    def PassiveSkillGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # ApcSynergySettingExcel
-    def PassiveSkillLevel(self, j):
+    def PassiveSkillLevelField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -121,60 +121,60 @@ class ApcSynergySettingExcel(object):
         return 0
 
     # ApcSynergySettingExcel
-    def PassiveSkillLevelAsNumpy(self):
+    def PassiveSkillLevelFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ApcSynergySettingExcel
-    def PassiveSkillLevelLength(self):
+    def PassiveSkillLevelFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ApcSynergySettingExcel
-    def PassiveSkillLevelIsNone(self):
+    def PassiveSkillLevelFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def ApcSynergySettingExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return ApcSynergySettingExcelStart(builder)
-def ApcSynergySettingExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ApcSynergySettingExcelAddId(builder, id)
-def ApcSynergySettingExcelAddApcSynergyGroupId(builder, apcSynergyGroupId): builder.PrependInt32Slot(1, apcSynergyGroupId, 0)
-def AddApcSynergyGroupId(builder, apcSynergyGroupId):
-    return ApcSynergySettingExcelAddApcSynergyGroupId(builder, apcSynergyGroupId)
-def ApcSynergySettingExcelAddTriggerType(builder, triggerType): builder.PrependInt32Slot(2, triggerType, 0)
-def AddTriggerType(builder, triggerType):
-    return ApcSynergySettingExcelAddTriggerType(builder, triggerType)
-def ApcSynergySettingExcelAddTriggerValue(builder, triggerValue): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(triggerValue), 0)
-def AddTriggerValue(builder, triggerValue):
-    return ApcSynergySettingExcelAddTriggerValue(builder, triggerValue)
-def ApcSynergySettingExcelStartTriggerValueVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTriggerValueVector(builder, numElems):
-    return ApcSynergySettingExcelStartTriggerValueVector(builder, numElems)
-def ApcSynergySettingExcelAddTriggerValueCount(builder, triggerValueCount): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(triggerValueCount), 0)
-def AddTriggerValueCount(builder, triggerValueCount):
-    return ApcSynergySettingExcelAddTriggerValueCount(builder, triggerValueCount)
-def ApcSynergySettingExcelStartTriggerValueCountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTriggerValueCountVector(builder, numElems):
-    return ApcSynergySettingExcelStartTriggerValueCountVector(builder, numElems)
-def ApcSynergySettingExcelAddPassiveSkillGroupId(builder, passiveSkillGroupId): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillGroupId), 0)
-def AddPassiveSkillGroupId(builder, passiveSkillGroupId):
-    return ApcSynergySettingExcelAddPassiveSkillGroupId(builder, passiveSkillGroupId)
-def ApcSynergySettingExcelStartPassiveSkillGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPassiveSkillGroupIdVector(builder, numElems):
-    return ApcSynergySettingExcelStartPassiveSkillGroupIdVector(builder, numElems)
-def ApcSynergySettingExcelAddPassiveSkillLevel(builder, passiveSkillLevel): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillLevel), 0)
-def AddPassiveSkillLevel(builder, passiveSkillLevel):
-    return ApcSynergySettingExcelAddPassiveSkillLevel(builder, passiveSkillLevel)
-def ApcSynergySettingExcelStartPassiveSkillLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPassiveSkillLevelVector(builder, numElems):
-    return ApcSynergySettingExcelStartPassiveSkillLevelVector(builder, numElems)
+def ApcSynergySettingExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ApcSynergySettingExcelAddIdField(builder, idField)
+def ApcSynergySettingExcelAddApcSynergyGroupIdField(builder, apcSynergyGroupIdField): builder.PrependInt32Slot(1, apcSynergyGroupIdField, 0)
+def AddApcSynergyGroupIdField(builder, apcSynergyGroupIdField):
+    return ApcSynergySettingExcelAddApcSynergyGroupIdField(builder, apcSynergyGroupIdField)
+def ApcSynergySettingExcelAddTriggerTypeField(builder, triggerTypeField): builder.PrependInt32Slot(2, triggerTypeField, 0)
+def AddTriggerTypeField(builder, triggerTypeField):
+    return ApcSynergySettingExcelAddTriggerTypeField(builder, triggerTypeField)
+def ApcSynergySettingExcelAddTriggerValueField(builder, triggerValueField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(triggerValueField), 0)
+def AddTriggerValueField(builder, triggerValueField):
+    return ApcSynergySettingExcelAddTriggerValueField(builder, triggerValueField)
+def ApcSynergySettingExcelStartTriggerValueFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTriggerValueFieldVector(builder, numElems):
+    return ApcSynergySettingExcelStartTriggerValueFieldVector(builder, numElems)
+def ApcSynergySettingExcelAddTriggerValueCountField(builder, triggerValueCountField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(triggerValueCountField), 0)
+def AddTriggerValueCountField(builder, triggerValueCountField):
+    return ApcSynergySettingExcelAddTriggerValueCountField(builder, triggerValueCountField)
+def ApcSynergySettingExcelStartTriggerValueCountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTriggerValueCountFieldVector(builder, numElems):
+    return ApcSynergySettingExcelStartTriggerValueCountFieldVector(builder, numElems)
+def ApcSynergySettingExcelAddPassiveSkillGroupIdField(builder, passiveSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillGroupIdField), 0)
+def AddPassiveSkillGroupIdField(builder, passiveSkillGroupIdField):
+    return ApcSynergySettingExcelAddPassiveSkillGroupIdField(builder, passiveSkillGroupIdField)
+def ApcSynergySettingExcelStartPassiveSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartPassiveSkillGroupIdFieldVector(builder, numElems):
+    return ApcSynergySettingExcelStartPassiveSkillGroupIdFieldVector(builder, numElems)
+def ApcSynergySettingExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillLevelField), 0)
+def AddPassiveSkillLevelField(builder, passiveSkillLevelField):
+    return ApcSynergySettingExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField)
+def ApcSynergySettingExcelStartPassiveSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartPassiveSkillLevelFieldVector(builder, numElems):
+    return ApcSynergySettingExcelStartPassiveSkillLevelFieldVector(builder, numElems)
 def ApcSynergySettingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ApcSynergySettingExcelEnd(builder)

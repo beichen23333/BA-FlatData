@@ -25,42 +25,42 @@ class ConstNewbieContentExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstNewbieContentExcel
-    def NewbieGachaReleaseDate(self):
+    def NewbieGachaReleaseDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstNewbieContentExcel
-    def NewbieGachaCheckDays(self):
+    def NewbieGachaCheckDaysField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstNewbieContentExcel
-    def NewbieGachaTokenGraceTime(self):
+    def NewbieGachaTokenGraceTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstNewbieContentExcel
-    def NewbieAttendanceReleaseDate(self):
+    def NewbieAttendanceReleaseDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstNewbieContentExcel
-    def NewbieAttendanceStartableEndDay(self):
+    def NewbieAttendanceStartableEndDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstNewbieContentExcel
-    def NewbieAttendanceEndDay(self):
+    def NewbieAttendanceEndDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -69,24 +69,24 @@ class ConstNewbieContentExcel(object):
 def ConstNewbieContentExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return ConstNewbieContentExcelStart(builder)
-def ConstNewbieContentExcelAddNewbieGachaReleaseDate(builder, newbieGachaReleaseDate): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(newbieGachaReleaseDate), 0)
-def AddNewbieGachaReleaseDate(builder, newbieGachaReleaseDate):
-    return ConstNewbieContentExcelAddNewbieGachaReleaseDate(builder, newbieGachaReleaseDate)
-def ConstNewbieContentExcelAddNewbieGachaCheckDays(builder, newbieGachaCheckDays): builder.PrependInt32Slot(1, newbieGachaCheckDays, 0)
-def AddNewbieGachaCheckDays(builder, newbieGachaCheckDays):
-    return ConstNewbieContentExcelAddNewbieGachaCheckDays(builder, newbieGachaCheckDays)
-def ConstNewbieContentExcelAddNewbieGachaTokenGraceTime(builder, newbieGachaTokenGraceTime): builder.PrependInt32Slot(2, newbieGachaTokenGraceTime, 0)
-def AddNewbieGachaTokenGraceTime(builder, newbieGachaTokenGraceTime):
-    return ConstNewbieContentExcelAddNewbieGachaTokenGraceTime(builder, newbieGachaTokenGraceTime)
-def ConstNewbieContentExcelAddNewbieAttendanceReleaseDate(builder, newbieAttendanceReleaseDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(newbieAttendanceReleaseDate), 0)
-def AddNewbieAttendanceReleaseDate(builder, newbieAttendanceReleaseDate):
-    return ConstNewbieContentExcelAddNewbieAttendanceReleaseDate(builder, newbieAttendanceReleaseDate)
-def ConstNewbieContentExcelAddNewbieAttendanceStartableEndDay(builder, newbieAttendanceStartableEndDay): builder.PrependInt32Slot(4, newbieAttendanceStartableEndDay, 0)
-def AddNewbieAttendanceStartableEndDay(builder, newbieAttendanceStartableEndDay):
-    return ConstNewbieContentExcelAddNewbieAttendanceStartableEndDay(builder, newbieAttendanceStartableEndDay)
-def ConstNewbieContentExcelAddNewbieAttendanceEndDay(builder, newbieAttendanceEndDay): builder.PrependInt32Slot(5, newbieAttendanceEndDay, 0)
-def AddNewbieAttendanceEndDay(builder, newbieAttendanceEndDay):
-    return ConstNewbieContentExcelAddNewbieAttendanceEndDay(builder, newbieAttendanceEndDay)
+def ConstNewbieContentExcelAddNewbieGachaReleaseDateField(builder, newbieGachaReleaseDateField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(newbieGachaReleaseDateField), 0)
+def AddNewbieGachaReleaseDateField(builder, newbieGachaReleaseDateField):
+    return ConstNewbieContentExcelAddNewbieGachaReleaseDateField(builder, newbieGachaReleaseDateField)
+def ConstNewbieContentExcelAddNewbieGachaCheckDaysField(builder, newbieGachaCheckDaysField): builder.PrependInt32Slot(1, newbieGachaCheckDaysField, 0)
+def AddNewbieGachaCheckDaysField(builder, newbieGachaCheckDaysField):
+    return ConstNewbieContentExcelAddNewbieGachaCheckDaysField(builder, newbieGachaCheckDaysField)
+def ConstNewbieContentExcelAddNewbieGachaTokenGraceTimeField(builder, newbieGachaTokenGraceTimeField): builder.PrependInt32Slot(2, newbieGachaTokenGraceTimeField, 0)
+def AddNewbieGachaTokenGraceTimeField(builder, newbieGachaTokenGraceTimeField):
+    return ConstNewbieContentExcelAddNewbieGachaTokenGraceTimeField(builder, newbieGachaTokenGraceTimeField)
+def ConstNewbieContentExcelAddNewbieAttendanceReleaseDateField(builder, newbieAttendanceReleaseDateField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(newbieAttendanceReleaseDateField), 0)
+def AddNewbieAttendanceReleaseDateField(builder, newbieAttendanceReleaseDateField):
+    return ConstNewbieContentExcelAddNewbieAttendanceReleaseDateField(builder, newbieAttendanceReleaseDateField)
+def ConstNewbieContentExcelAddNewbieAttendanceStartableEndDayField(builder, newbieAttendanceStartableEndDayField): builder.PrependInt32Slot(4, newbieAttendanceStartableEndDayField, 0)
+def AddNewbieAttendanceStartableEndDayField(builder, newbieAttendanceStartableEndDayField):
+    return ConstNewbieContentExcelAddNewbieAttendanceStartableEndDayField(builder, newbieAttendanceStartableEndDayField)
+def ConstNewbieContentExcelAddNewbieAttendanceEndDayField(builder, newbieAttendanceEndDayField): builder.PrependInt32Slot(5, newbieAttendanceEndDayField, 0)
+def AddNewbieAttendanceEndDayField(builder, newbieAttendanceEndDayField):
+    return ConstNewbieContentExcelAddNewbieAttendanceEndDayField(builder, newbieAttendanceEndDayField)
 def ConstNewbieContentExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstNewbieContentExcelEnd(builder)

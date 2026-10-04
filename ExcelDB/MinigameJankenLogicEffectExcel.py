@@ -25,21 +25,21 @@ class MinigameJankenLogicEffectExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenLogicEffectExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenLogicEffectExcel
-    def Target(self):
+    def TargetField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenLogicEffectExcel
-    def Path(self):
+    def PathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -48,15 +48,15 @@ class MinigameJankenLogicEffectExcel(object):
 def MinigameJankenLogicEffectExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return MinigameJankenLogicEffectExcelStart(builder)
-def MinigameJankenLogicEffectExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenLogicEffectExcelAddId(builder, id)
-def MinigameJankenLogicEffectExcelAddTarget(builder, target): builder.PrependUint32Slot(1, target, 0)
-def AddTarget(builder, target):
-    return MinigameJankenLogicEffectExcelAddTarget(builder, target)
-def MinigameJankenLogicEffectExcelAddPath(builder, path): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(path), 0)
-def AddPath(builder, path):
-    return MinigameJankenLogicEffectExcelAddPath(builder, path)
+def MinigameJankenLogicEffectExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenLogicEffectExcelAddIdField(builder, idField)
+def MinigameJankenLogicEffectExcelAddTargetField(builder, targetField): builder.PrependUint32Slot(1, targetField, 0)
+def AddTargetField(builder, targetField):
+    return MinigameJankenLogicEffectExcelAddTargetField(builder, targetField)
+def MinigameJankenLogicEffectExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+def AddPathField(builder, pathField):
+    return MinigameJankenLogicEffectExcelAddPathField(builder, pathField)
 def MinigameJankenLogicEffectExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenLogicEffectExcelEnd(builder)

@@ -25,35 +25,35 @@ class ShopCashTabGroupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopCashTabGroupExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashTabGroupExcel
-    def ProductGroupType(self):
+    def ProductGroupTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashTabGroupExcel
-    def DisplayOrder(self):
+    def DisplayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashTabGroupExcel
-    def DisplayTag(self):
+    def DisplayTagField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashTabGroupExcel
-    def ProductCategoryType(self, j):
+    def ProductCategoryTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -61,26 +61,26 @@ class ShopCashTabGroupExcel(object):
         return 0
 
     # ShopCashTabGroupExcel
-    def ProductCategoryTypeAsNumpy(self):
+    def ProductCategoryTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ShopCashTabGroupExcel
-    def ProductCategoryTypeLength(self):
+    def ProductCategoryTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopCashTabGroupExcel
-    def ProductCategoryTypeIsNone(self):
+    def ProductCategoryTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # ShopCashTabGroupExcel
-    def CategoryOrder(self, j):
+    def CategoryOrderField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -88,26 +88,26 @@ class ShopCashTabGroupExcel(object):
         return 0
 
     # ShopCashTabGroupExcel
-    def CategoryOrderAsNumpy(self):
+    def CategoryOrderFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ShopCashTabGroupExcel
-    def CategoryOrderLength(self):
+    def CategoryOrderFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopCashTabGroupExcel
-    def CategoryOrderIsNone(self):
+    def CategoryOrderFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # ShopCashTabGroupExcel
-    def CategoryLocalizeCodeId(self, j):
+    def CategoryLocalizeCodeIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -115,57 +115,57 @@ class ShopCashTabGroupExcel(object):
         return 0
 
     # ShopCashTabGroupExcel
-    def CategoryLocalizeCodeIdAsNumpy(self):
+    def CategoryLocalizeCodeIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
         return 0
 
     # ShopCashTabGroupExcel
-    def CategoryLocalizeCodeIdLength(self):
+    def CategoryLocalizeCodeIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopCashTabGroupExcel
-    def CategoryLocalizeCodeIdIsNone(self):
+    def CategoryLocalizeCodeIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def ShopCashTabGroupExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return ShopCashTabGroupExcelStart(builder)
-def ShopCashTabGroupExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ShopCashTabGroupExcelAddId(builder, id)
-def ShopCashTabGroupExcelAddProductGroupType(builder, productGroupType): builder.PrependInt32Slot(1, productGroupType, 0)
-def AddProductGroupType(builder, productGroupType):
-    return ShopCashTabGroupExcelAddProductGroupType(builder, productGroupType)
-def ShopCashTabGroupExcelAddDisplayOrder(builder, displayOrder): builder.PrependInt32Slot(2, displayOrder, 0)
-def AddDisplayOrder(builder, displayOrder):
-    return ShopCashTabGroupExcelAddDisplayOrder(builder, displayOrder)
-def ShopCashTabGroupExcelAddDisplayTag(builder, displayTag): builder.PrependInt32Slot(3, displayTag, 0)
-def AddDisplayTag(builder, displayTag):
-    return ShopCashTabGroupExcelAddDisplayTag(builder, displayTag)
-def ShopCashTabGroupExcelAddProductCategoryType(builder, productCategoryType): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(productCategoryType), 0)
-def AddProductCategoryType(builder, productCategoryType):
-    return ShopCashTabGroupExcelAddProductCategoryType(builder, productCategoryType)
-def ShopCashTabGroupExcelStartProductCategoryTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartProductCategoryTypeVector(builder, numElems):
-    return ShopCashTabGroupExcelStartProductCategoryTypeVector(builder, numElems)
-def ShopCashTabGroupExcelAddCategoryOrder(builder, categoryOrder): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(categoryOrder), 0)
-def AddCategoryOrder(builder, categoryOrder):
-    return ShopCashTabGroupExcelAddCategoryOrder(builder, categoryOrder)
-def ShopCashTabGroupExcelStartCategoryOrderVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCategoryOrderVector(builder, numElems):
-    return ShopCashTabGroupExcelStartCategoryOrderVector(builder, numElems)
-def ShopCashTabGroupExcelAddCategoryLocalizeCodeId(builder, categoryLocalizeCodeId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(categoryLocalizeCodeId), 0)
-def AddCategoryLocalizeCodeId(builder, categoryLocalizeCodeId):
-    return ShopCashTabGroupExcelAddCategoryLocalizeCodeId(builder, categoryLocalizeCodeId)
-def ShopCashTabGroupExcelStartCategoryLocalizeCodeIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCategoryLocalizeCodeIdVector(builder, numElems):
-    return ShopCashTabGroupExcelStartCategoryLocalizeCodeIdVector(builder, numElems)
+def ShopCashTabGroupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ShopCashTabGroupExcelAddIdField(builder, idField)
+def ShopCashTabGroupExcelAddProductGroupTypeField(builder, productGroupTypeField): builder.PrependInt32Slot(1, productGroupTypeField, 0)
+def AddProductGroupTypeField(builder, productGroupTypeField):
+    return ShopCashTabGroupExcelAddProductGroupTypeField(builder, productGroupTypeField)
+def ShopCashTabGroupExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(2, displayOrderField, 0)
+def AddDisplayOrderField(builder, displayOrderField):
+    return ShopCashTabGroupExcelAddDisplayOrderField(builder, displayOrderField)
+def ShopCashTabGroupExcelAddDisplayTagField(builder, displayTagField): builder.PrependInt32Slot(3, displayTagField, 0)
+def AddDisplayTagField(builder, displayTagField):
+    return ShopCashTabGroupExcelAddDisplayTagField(builder, displayTagField)
+def ShopCashTabGroupExcelAddProductCategoryTypeField(builder, productCategoryTypeField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(productCategoryTypeField), 0)
+def AddProductCategoryTypeField(builder, productCategoryTypeField):
+    return ShopCashTabGroupExcelAddProductCategoryTypeField(builder, productCategoryTypeField)
+def ShopCashTabGroupExcelStartProductCategoryTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartProductCategoryTypeFieldVector(builder, numElems):
+    return ShopCashTabGroupExcelStartProductCategoryTypeFieldVector(builder, numElems)
+def ShopCashTabGroupExcelAddCategoryOrderField(builder, categoryOrderField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(categoryOrderField), 0)
+def AddCategoryOrderField(builder, categoryOrderField):
+    return ShopCashTabGroupExcelAddCategoryOrderField(builder, categoryOrderField)
+def ShopCashTabGroupExcelStartCategoryOrderFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCategoryOrderFieldVector(builder, numElems):
+    return ShopCashTabGroupExcelStartCategoryOrderFieldVector(builder, numElems)
+def ShopCashTabGroupExcelAddCategoryLocalizeCodeIdField(builder, categoryLocalizeCodeIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(categoryLocalizeCodeIdField), 0)
+def AddCategoryLocalizeCodeIdField(builder, categoryLocalizeCodeIdField):
+    return ShopCashTabGroupExcelAddCategoryLocalizeCodeIdField(builder, categoryLocalizeCodeIdField)
+def ShopCashTabGroupExcelStartCategoryLocalizeCodeIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCategoryLocalizeCodeIdFieldVector(builder, numElems):
+    return ShopCashTabGroupExcelStartCategoryLocalizeCodeIdFieldVector(builder, numElems)
 def ShopCashTabGroupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopCashTabGroupExcelEnd(builder)

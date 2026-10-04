@@ -25,63 +25,63 @@ class InteractiveWorldRaidStageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # InteractiveWorldRaidStageExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def UseBossIndex(self):
+    def UseBossIndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # InteractiveWorldRaidStageExcel
-    def UseBossAIPhaseSync(self):
+    def UseBossAIPhaseSyncField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # InteractiveWorldRaidStageExcel
-    def WorldRaidBossGroupId(self):
+    def WorldRaidBossGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def PortraitPath(self):
+    def PortraitPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # InteractiveWorldRaidStageExcel
-    def BGPath(self):
+    def BGPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # InteractiveWorldRaidStageExcel
-    def RaidSkillDescriptionListId(self):
+    def RaidSkillDescriptionListIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def RaidCharacterId(self):
+    def RaidCharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BossCharacterId(self, j):
+    def BossCharacterIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             a = self._tab.Vector(o)
@@ -89,89 +89,89 @@ class InteractiveWorldRaidStageExcel(object):
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BossCharacterIdAsNumpy(self):
+    def BossCharacterIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BossCharacterIdLength(self):
+    def BossCharacterIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BossCharacterIdIsNone(self):
+    def BossCharacterIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def AssistCharacterLimitCount(self):
+    def AssistCharacterLimitCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def WorldRaidDifficulty(self):
+    def WorldRaidDifficultyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def DifficultyOpenCondition(self):
+    def DifficultyOpenConditionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # InteractiveWorldRaidStageExcel
-    def RaidEnterAmount(self):
+    def RaidEnterAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def ReEnterAmount(self):
+    def ReEnterAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleDuration(self):
+    def BattleDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def GroundId(self):
+    def GroundIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def RaidBattleEndRewardGroupId(self):
+    def RaidBattleEndRewardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def RaidRewardGroupId(self):
+    def RaidRewardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePath(self, j):
+    def BattleReadyTimelinePathField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             a = self._tab.Vector(o)
@@ -179,19 +179,19 @@ class InteractiveWorldRaidStageExcel(object):
         return ""
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePathLength(self):
+    def BattleReadyTimelinePathFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePathIsNone(self):
+    def BattleReadyTimelinePathFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePhaseStart(self, j):
+    def BattleReadyTimelinePhaseStartField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             a = self._tab.Vector(o)
@@ -199,26 +199,26 @@ class InteractiveWorldRaidStageExcel(object):
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePhaseStartAsNumpy(self):
+    def BattleReadyTimelinePhaseStartFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePhaseStartLength(self):
+    def BattleReadyTimelinePhaseStartFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePhaseStartIsNone(self):
+    def BattleReadyTimelinePhaseStartFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePhaseEnd(self, j):
+    def BattleReadyTimelinePhaseEndField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             a = self._tab.Vector(o)
@@ -226,103 +226,103 @@ class InteractiveWorldRaidStageExcel(object):
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePhaseEndAsNumpy(self):
+    def BattleReadyTimelinePhaseEndFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePhaseEndLength(self):
+    def BattleReadyTimelinePhaseEndFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def BattleReadyTimelinePhaseEndIsNone(self):
+    def BattleReadyTimelinePhaseEndFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def VictoryTimelinePath(self):
+    def VictoryTimelinePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # InteractiveWorldRaidStageExcel
-    def PhaseChangeTimelinePath(self):
+    def PhaseChangeTimelinePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # InteractiveWorldRaidStageExcel
-    def TimeLinePhase(self):
+    def TimeLinePhaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def EnterScenarioKey(self):
+    def EnterScenarioKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def ClearScenarioKey(self):
+    def ClearScenarioKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def UseFixedEchelon(self):
+    def UseFixedEchelonField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # InteractiveWorldRaidStageExcel
-    def FixedEchelonId(self):
+    def FixedEchelonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def IsRaidScenarioBattle(self):
+    def IsRaidScenarioBattleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # InteractiveWorldRaidStageExcel
-    def ShowSkillCard(self):
+    def ShowSkillCardField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # InteractiveWorldRaidStageExcel
-    def BossBGInfoKey(self):
+    def BossBGInfoKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def DamageToWorldBoss(self):
+    def DamageToWorldBossField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkill(self, j):
+    def AllyPassiveSkillField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             a = self._tab.Vector(o)
@@ -330,19 +330,19 @@ class InteractiveWorldRaidStageExcel(object):
         return ""
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillLength(self):
+    def AllyPassiveSkillFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillIsNone(self):
+    def AllyPassiveSkillFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillLevel(self, j):
+    def AllyPassiveSkillLevelField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             a = self._tab.Vector(o)
@@ -350,26 +350,26 @@ class InteractiveWorldRaidStageExcel(object):
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillLevelAsNumpy(self):
+    def AllyPassiveSkillLevelFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillLevelLength(self):
+    def AllyPassiveSkillLevelFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillLevelIsNone(self):
+    def AllyPassiveSkillLevelFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillRemoveCondition(self, j):
+    def AllyPassiveSkillRemoveConditionField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             a = self._tab.Vector(o)
@@ -377,26 +377,26 @@ class InteractiveWorldRaidStageExcel(object):
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillRemoveConditionAsNumpy(self):
+    def AllyPassiveSkillRemoveConditionFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillRemoveConditionLength(self):
+    def AllyPassiveSkillRemoveConditionFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def AllyPassiveSkillRemoveConditionIsNone(self):
+    def AllyPassiveSkillRemoveConditionFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkill(self, j):
+    def EnemyPassiveSkillField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             a = self._tab.Vector(o)
@@ -404,19 +404,19 @@ class InteractiveWorldRaidStageExcel(object):
         return ""
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillLength(self):
+    def EnemyPassiveSkillFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillIsNone(self):
+    def EnemyPassiveSkillFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillLevel(self, j):
+    def EnemyPassiveSkillLevelField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             a = self._tab.Vector(o)
@@ -424,26 +424,26 @@ class InteractiveWorldRaidStageExcel(object):
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillLevelAsNumpy(self):
+    def EnemyPassiveSkillLevelFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillLevelLength(self):
+    def EnemyPassiveSkillLevelFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillLevelIsNone(self):
+    def EnemyPassiveSkillLevelFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillRemoveCondition(self, j):
+    def EnemyPassiveSkillRemoveConditionField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             a = self._tab.Vector(o)
@@ -451,33 +451,33 @@ class InteractiveWorldRaidStageExcel(object):
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillRemoveConditionAsNumpy(self):
+    def EnemyPassiveSkillRemoveConditionFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillRemoveConditionLength(self):
+    def EnemyPassiveSkillRemoveConditionFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStageExcel
-    def EnemyPassiveSkillRemoveConditionIsNone(self):
+    def EnemyPassiveSkillRemoveConditionFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         return o == 0
 
     # InteractiveWorldRaidStageExcel
-    def SaveCurrentLocalBossHP(self):
+    def SaveCurrentLocalBossHPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # InteractiveWorldRaidStageExcel
-    def EchelonExtensionType(self):
+    def EchelonExtensionTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -486,156 +486,156 @@ class InteractiveWorldRaidStageExcel(object):
 def InteractiveWorldRaidStageExcelStart(builder): builder.StartObject(40)
 def Start(builder):
     return InteractiveWorldRaidStageExcelStart(builder)
-def InteractiveWorldRaidStageExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return InteractiveWorldRaidStageExcelAddId(builder, id)
-def InteractiveWorldRaidStageExcelAddUseBossIndex(builder, useBossIndex): builder.PrependBoolSlot(1, useBossIndex, 0)
-def AddUseBossIndex(builder, useBossIndex):
-    return InteractiveWorldRaidStageExcelAddUseBossIndex(builder, useBossIndex)
-def InteractiveWorldRaidStageExcelAddUseBossAIPhaseSync(builder, useBossAIPhaseSync): builder.PrependBoolSlot(2, useBossAIPhaseSync, 0)
-def AddUseBossAIPhaseSync(builder, useBossAIPhaseSync):
-    return InteractiveWorldRaidStageExcelAddUseBossAIPhaseSync(builder, useBossAIPhaseSync)
-def InteractiveWorldRaidStageExcelAddWorldRaidBossGroupId(builder, worldRaidBossGroupId): builder.PrependInt32Slot(3, worldRaidBossGroupId, 0)
-def AddWorldRaidBossGroupId(builder, worldRaidBossGroupId):
-    return InteractiveWorldRaidStageExcelAddWorldRaidBossGroupId(builder, worldRaidBossGroupId)
-def InteractiveWorldRaidStageExcelAddPortraitPath(builder, portraitPath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(portraitPath), 0)
-def AddPortraitPath(builder, portraitPath):
-    return InteractiveWorldRaidStageExcelAddPortraitPath(builder, portraitPath)
-def InteractiveWorldRaidStageExcelAddBGPath(builder, bGPath): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(bGPath), 0)
-def AddBGPath(builder, bGPath):
-    return InteractiveWorldRaidStageExcelAddBGPath(builder, bGPath)
-def InteractiveWorldRaidStageExcelAddRaidSkillDescriptionListId(builder, raidSkillDescriptionListId): builder.PrependInt32Slot(6, raidSkillDescriptionListId, 0)
-def AddRaidSkillDescriptionListId(builder, raidSkillDescriptionListId):
-    return InteractiveWorldRaidStageExcelAddRaidSkillDescriptionListId(builder, raidSkillDescriptionListId)
-def InteractiveWorldRaidStageExcelAddRaidCharacterId(builder, raidCharacterId): builder.PrependInt32Slot(7, raidCharacterId, 0)
-def AddRaidCharacterId(builder, raidCharacterId):
-    return InteractiveWorldRaidStageExcelAddRaidCharacterId(builder, raidCharacterId)
-def InteractiveWorldRaidStageExcelAddBossCharacterId(builder, bossCharacterId): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(bossCharacterId), 0)
-def AddBossCharacterId(builder, bossCharacterId):
-    return InteractiveWorldRaidStageExcelAddBossCharacterId(builder, bossCharacterId)
-def InteractiveWorldRaidStageExcelStartBossCharacterIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBossCharacterIdVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartBossCharacterIdVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddAssistCharacterLimitCount(builder, assistCharacterLimitCount): builder.PrependInt32Slot(9, assistCharacterLimitCount, 0)
-def AddAssistCharacterLimitCount(builder, assistCharacterLimitCount):
-    return InteractiveWorldRaidStageExcelAddAssistCharacterLimitCount(builder, assistCharacterLimitCount)
-def InteractiveWorldRaidStageExcelAddWorldRaidDifficulty(builder, worldRaidDifficulty): builder.PrependInt32Slot(10, worldRaidDifficulty, 0)
-def AddWorldRaidDifficulty(builder, worldRaidDifficulty):
-    return InteractiveWorldRaidStageExcelAddWorldRaidDifficulty(builder, worldRaidDifficulty)
-def InteractiveWorldRaidStageExcelAddDifficultyOpenCondition(builder, difficultyOpenCondition): builder.PrependBoolSlot(11, difficultyOpenCondition, 0)
-def AddDifficultyOpenCondition(builder, difficultyOpenCondition):
-    return InteractiveWorldRaidStageExcelAddDifficultyOpenCondition(builder, difficultyOpenCondition)
-def InteractiveWorldRaidStageExcelAddRaidEnterAmount(builder, raidEnterAmount): builder.PrependInt32Slot(12, raidEnterAmount, 0)
-def AddRaidEnterAmount(builder, raidEnterAmount):
-    return InteractiveWorldRaidStageExcelAddRaidEnterAmount(builder, raidEnterAmount)
-def InteractiveWorldRaidStageExcelAddReEnterAmount(builder, reEnterAmount): builder.PrependInt32Slot(13, reEnterAmount, 0)
-def AddReEnterAmount(builder, reEnterAmount):
-    return InteractiveWorldRaidStageExcelAddReEnterAmount(builder, reEnterAmount)
-def InteractiveWorldRaidStageExcelAddBattleDuration(builder, battleDuration): builder.PrependInt32Slot(14, battleDuration, 0)
-def AddBattleDuration(builder, battleDuration):
-    return InteractiveWorldRaidStageExcelAddBattleDuration(builder, battleDuration)
-def InteractiveWorldRaidStageExcelAddGroundId(builder, groundId): builder.PrependInt32Slot(15, groundId, 0)
-def AddGroundId(builder, groundId):
-    return InteractiveWorldRaidStageExcelAddGroundId(builder, groundId)
-def InteractiveWorldRaidStageExcelAddRaidBattleEndRewardGroupId(builder, raidBattleEndRewardGroupId): builder.PrependInt32Slot(16, raidBattleEndRewardGroupId, 0)
-def AddRaidBattleEndRewardGroupId(builder, raidBattleEndRewardGroupId):
-    return InteractiveWorldRaidStageExcelAddRaidBattleEndRewardGroupId(builder, raidBattleEndRewardGroupId)
-def InteractiveWorldRaidStageExcelAddRaidRewardGroupId(builder, raidRewardGroupId): builder.PrependInt32Slot(17, raidRewardGroupId, 0)
-def AddRaidRewardGroupId(builder, raidRewardGroupId):
-    return InteractiveWorldRaidStageExcelAddRaidRewardGroupId(builder, raidRewardGroupId)
-def InteractiveWorldRaidStageExcelAddBattleReadyTimelinePath(builder, battleReadyTimelinePath): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(battleReadyTimelinePath), 0)
-def AddBattleReadyTimelinePath(builder, battleReadyTimelinePath):
-    return InteractiveWorldRaidStageExcelAddBattleReadyTimelinePath(builder, battleReadyTimelinePath)
-def InteractiveWorldRaidStageExcelStartBattleReadyTimelinePathVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBattleReadyTimelinePathVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartBattleReadyTimelinePathVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddBattleReadyTimelinePhaseStart(builder, battleReadyTimelinePhaseStart): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(battleReadyTimelinePhaseStart), 0)
-def AddBattleReadyTimelinePhaseStart(builder, battleReadyTimelinePhaseStart):
-    return InteractiveWorldRaidStageExcelAddBattleReadyTimelinePhaseStart(builder, battleReadyTimelinePhaseStart)
-def InteractiveWorldRaidStageExcelStartBattleReadyTimelinePhaseStartVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBattleReadyTimelinePhaseStartVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartBattleReadyTimelinePhaseStartVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddBattleReadyTimelinePhaseEnd(builder, battleReadyTimelinePhaseEnd): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(battleReadyTimelinePhaseEnd), 0)
-def AddBattleReadyTimelinePhaseEnd(builder, battleReadyTimelinePhaseEnd):
-    return InteractiveWorldRaidStageExcelAddBattleReadyTimelinePhaseEnd(builder, battleReadyTimelinePhaseEnd)
-def InteractiveWorldRaidStageExcelStartBattleReadyTimelinePhaseEndVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBattleReadyTimelinePhaseEndVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartBattleReadyTimelinePhaseEndVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddVictoryTimelinePath(builder, victoryTimelinePath): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(victoryTimelinePath), 0)
-def AddVictoryTimelinePath(builder, victoryTimelinePath):
-    return InteractiveWorldRaidStageExcelAddVictoryTimelinePath(builder, victoryTimelinePath)
-def InteractiveWorldRaidStageExcelAddPhaseChangeTimelinePath(builder, phaseChangeTimelinePath): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(phaseChangeTimelinePath), 0)
-def AddPhaseChangeTimelinePath(builder, phaseChangeTimelinePath):
-    return InteractiveWorldRaidStageExcelAddPhaseChangeTimelinePath(builder, phaseChangeTimelinePath)
-def InteractiveWorldRaidStageExcelAddTimeLinePhase(builder, timeLinePhase): builder.PrependInt32Slot(23, timeLinePhase, 0)
-def AddTimeLinePhase(builder, timeLinePhase):
-    return InteractiveWorldRaidStageExcelAddTimeLinePhase(builder, timeLinePhase)
-def InteractiveWorldRaidStageExcelAddEnterScenarioKey(builder, enterScenarioKey): builder.PrependInt32Slot(24, enterScenarioKey, 0)
-def AddEnterScenarioKey(builder, enterScenarioKey):
-    return InteractiveWorldRaidStageExcelAddEnterScenarioKey(builder, enterScenarioKey)
-def InteractiveWorldRaidStageExcelAddClearScenarioKey(builder, clearScenarioKey): builder.PrependInt32Slot(25, clearScenarioKey, 0)
-def AddClearScenarioKey(builder, clearScenarioKey):
-    return InteractiveWorldRaidStageExcelAddClearScenarioKey(builder, clearScenarioKey)
-def InteractiveWorldRaidStageExcelAddUseFixedEchelon(builder, useFixedEchelon): builder.PrependBoolSlot(26, useFixedEchelon, 0)
-def AddUseFixedEchelon(builder, useFixedEchelon):
-    return InteractiveWorldRaidStageExcelAddUseFixedEchelon(builder, useFixedEchelon)
-def InteractiveWorldRaidStageExcelAddFixedEchelonId(builder, fixedEchelonId): builder.PrependInt32Slot(27, fixedEchelonId, 0)
-def AddFixedEchelonId(builder, fixedEchelonId):
-    return InteractiveWorldRaidStageExcelAddFixedEchelonId(builder, fixedEchelonId)
-def InteractiveWorldRaidStageExcelAddIsRaidScenarioBattle(builder, isRaidScenarioBattle): builder.PrependBoolSlot(28, isRaidScenarioBattle, 0)
-def AddIsRaidScenarioBattle(builder, isRaidScenarioBattle):
-    return InteractiveWorldRaidStageExcelAddIsRaidScenarioBattle(builder, isRaidScenarioBattle)
-def InteractiveWorldRaidStageExcelAddShowSkillCard(builder, showSkillCard): builder.PrependBoolSlot(29, showSkillCard, 0)
-def AddShowSkillCard(builder, showSkillCard):
-    return InteractiveWorldRaidStageExcelAddShowSkillCard(builder, showSkillCard)
-def InteractiveWorldRaidStageExcelAddBossBGInfoKey(builder, bossBGInfoKey): builder.PrependUint32Slot(30, bossBGInfoKey, 0)
-def AddBossBGInfoKey(builder, bossBGInfoKey):
-    return InteractiveWorldRaidStageExcelAddBossBGInfoKey(builder, bossBGInfoKey)
-def InteractiveWorldRaidStageExcelAddDamageToWorldBoss(builder, damageToWorldBoss): builder.PrependInt32Slot(31, damageToWorldBoss, 0)
-def AddDamageToWorldBoss(builder, damageToWorldBoss):
-    return InteractiveWorldRaidStageExcelAddDamageToWorldBoss(builder, damageToWorldBoss)
-def InteractiveWorldRaidStageExcelAddAllyPassiveSkill(builder, allyPassiveSkill): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(allyPassiveSkill), 0)
-def AddAllyPassiveSkill(builder, allyPassiveSkill):
-    return InteractiveWorldRaidStageExcelAddAllyPassiveSkill(builder, allyPassiveSkill)
-def InteractiveWorldRaidStageExcelStartAllyPassiveSkillVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAllyPassiveSkillVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartAllyPassiveSkillVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddAllyPassiveSkillLevel(builder, allyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(allyPassiveSkillLevel), 0)
-def AddAllyPassiveSkillLevel(builder, allyPassiveSkillLevel):
-    return InteractiveWorldRaidStageExcelAddAllyPassiveSkillLevel(builder, allyPassiveSkillLevel)
-def InteractiveWorldRaidStageExcelStartAllyPassiveSkillLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAllyPassiveSkillLevelVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartAllyPassiveSkillLevelVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddAllyPassiveSkillRemoveCondition(builder, allyPassiveSkillRemoveCondition): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(allyPassiveSkillRemoveCondition), 0)
-def AddAllyPassiveSkillRemoveCondition(builder, allyPassiveSkillRemoveCondition):
-    return InteractiveWorldRaidStageExcelAddAllyPassiveSkillRemoveCondition(builder, allyPassiveSkillRemoveCondition)
-def InteractiveWorldRaidStageExcelStartAllyPassiveSkillRemoveConditionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAllyPassiveSkillRemoveConditionVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartAllyPassiveSkillRemoveConditionVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddEnemyPassiveSkill(builder, enemyPassiveSkill): builder.PrependUOffsetTRelativeSlot(35, flatbuffers.number_types.UOffsetTFlags.py_type(enemyPassiveSkill), 0)
-def AddEnemyPassiveSkill(builder, enemyPassiveSkill):
-    return InteractiveWorldRaidStageExcelAddEnemyPassiveSkill(builder, enemyPassiveSkill)
-def InteractiveWorldRaidStageExcelStartEnemyPassiveSkillVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEnemyPassiveSkillVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartEnemyPassiveSkillVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddEnemyPassiveSkillLevel(builder, enemyPassiveSkillLevel): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(enemyPassiveSkillLevel), 0)
-def AddEnemyPassiveSkillLevel(builder, enemyPassiveSkillLevel):
-    return InteractiveWorldRaidStageExcelAddEnemyPassiveSkillLevel(builder, enemyPassiveSkillLevel)
-def InteractiveWorldRaidStageExcelStartEnemyPassiveSkillLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEnemyPassiveSkillLevelVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartEnemyPassiveSkillLevelVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddEnemyPassiveSkillRemoveCondition(builder, enemyPassiveSkillRemoveCondition): builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(enemyPassiveSkillRemoveCondition), 0)
-def AddEnemyPassiveSkillRemoveCondition(builder, enemyPassiveSkillRemoveCondition):
-    return InteractiveWorldRaidStageExcelAddEnemyPassiveSkillRemoveCondition(builder, enemyPassiveSkillRemoveCondition)
-def InteractiveWorldRaidStageExcelStartEnemyPassiveSkillRemoveConditionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEnemyPassiveSkillRemoveConditionVector(builder, numElems):
-    return InteractiveWorldRaidStageExcelStartEnemyPassiveSkillRemoveConditionVector(builder, numElems)
-def InteractiveWorldRaidStageExcelAddSaveCurrentLocalBossHP(builder, saveCurrentLocalBossHP): builder.PrependBoolSlot(38, saveCurrentLocalBossHP, 0)
-def AddSaveCurrentLocalBossHP(builder, saveCurrentLocalBossHP):
-    return InteractiveWorldRaidStageExcelAddSaveCurrentLocalBossHP(builder, saveCurrentLocalBossHP)
-def InteractiveWorldRaidStageExcelAddEchelonExtensionType(builder, echelonExtensionType): builder.PrependInt32Slot(39, echelonExtensionType, 0)
-def AddEchelonExtensionType(builder, echelonExtensionType):
-    return InteractiveWorldRaidStageExcelAddEchelonExtensionType(builder, echelonExtensionType)
+def InteractiveWorldRaidStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return InteractiveWorldRaidStageExcelAddIdField(builder, idField)
+def InteractiveWorldRaidStageExcelAddUseBossIndexField(builder, useBossIndexField): builder.PrependBoolSlot(1, useBossIndexField, 0)
+def AddUseBossIndexField(builder, useBossIndexField):
+    return InteractiveWorldRaidStageExcelAddUseBossIndexField(builder, useBossIndexField)
+def InteractiveWorldRaidStageExcelAddUseBossAIPhaseSyncField(builder, useBossAIPhaseSyncField): builder.PrependBoolSlot(2, useBossAIPhaseSyncField, 0)
+def AddUseBossAIPhaseSyncField(builder, useBossAIPhaseSyncField):
+    return InteractiveWorldRaidStageExcelAddUseBossAIPhaseSyncField(builder, useBossAIPhaseSyncField)
+def InteractiveWorldRaidStageExcelAddWorldRaidBossGroupIdField(builder, worldRaidBossGroupIdField): builder.PrependInt32Slot(3, worldRaidBossGroupIdField, 0)
+def AddWorldRaidBossGroupIdField(builder, worldRaidBossGroupIdField):
+    return InteractiveWorldRaidStageExcelAddWorldRaidBossGroupIdField(builder, worldRaidBossGroupIdField)
+def InteractiveWorldRaidStageExcelAddPortraitPathField(builder, portraitPathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(portraitPathField), 0)
+def AddPortraitPathField(builder, portraitPathField):
+    return InteractiveWorldRaidStageExcelAddPortraitPathField(builder, portraitPathField)
+def InteractiveWorldRaidStageExcelAddBGPathField(builder, bGPathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(bGPathField), 0)
+def AddBGPathField(builder, bGPathField):
+    return InteractiveWorldRaidStageExcelAddBGPathField(builder, bGPathField)
+def InteractiveWorldRaidStageExcelAddRaidSkillDescriptionListIdField(builder, raidSkillDescriptionListIdField): builder.PrependInt32Slot(6, raidSkillDescriptionListIdField, 0)
+def AddRaidSkillDescriptionListIdField(builder, raidSkillDescriptionListIdField):
+    return InteractiveWorldRaidStageExcelAddRaidSkillDescriptionListIdField(builder, raidSkillDescriptionListIdField)
+def InteractiveWorldRaidStageExcelAddRaidCharacterIdField(builder, raidCharacterIdField): builder.PrependInt32Slot(7, raidCharacterIdField, 0)
+def AddRaidCharacterIdField(builder, raidCharacterIdField):
+    return InteractiveWorldRaidStageExcelAddRaidCharacterIdField(builder, raidCharacterIdField)
+def InteractiveWorldRaidStageExcelAddBossCharacterIdField(builder, bossCharacterIdField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(bossCharacterIdField), 0)
+def AddBossCharacterIdField(builder, bossCharacterIdField):
+    return InteractiveWorldRaidStageExcelAddBossCharacterIdField(builder, bossCharacterIdField)
+def InteractiveWorldRaidStageExcelStartBossCharacterIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBossCharacterIdFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartBossCharacterIdFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddAssistCharacterLimitCountField(builder, assistCharacterLimitCountField): builder.PrependInt32Slot(9, assistCharacterLimitCountField, 0)
+def AddAssistCharacterLimitCountField(builder, assistCharacterLimitCountField):
+    return InteractiveWorldRaidStageExcelAddAssistCharacterLimitCountField(builder, assistCharacterLimitCountField)
+def InteractiveWorldRaidStageExcelAddWorldRaidDifficultyField(builder, worldRaidDifficultyField): builder.PrependInt32Slot(10, worldRaidDifficultyField, 0)
+def AddWorldRaidDifficultyField(builder, worldRaidDifficultyField):
+    return InteractiveWorldRaidStageExcelAddWorldRaidDifficultyField(builder, worldRaidDifficultyField)
+def InteractiveWorldRaidStageExcelAddDifficultyOpenConditionField(builder, difficultyOpenConditionField): builder.PrependBoolSlot(11, difficultyOpenConditionField, 0)
+def AddDifficultyOpenConditionField(builder, difficultyOpenConditionField):
+    return InteractiveWorldRaidStageExcelAddDifficultyOpenConditionField(builder, difficultyOpenConditionField)
+def InteractiveWorldRaidStageExcelAddRaidEnterAmountField(builder, raidEnterAmountField): builder.PrependInt32Slot(12, raidEnterAmountField, 0)
+def AddRaidEnterAmountField(builder, raidEnterAmountField):
+    return InteractiveWorldRaidStageExcelAddRaidEnterAmountField(builder, raidEnterAmountField)
+def InteractiveWorldRaidStageExcelAddReEnterAmountField(builder, reEnterAmountField): builder.PrependInt32Slot(13, reEnterAmountField, 0)
+def AddReEnterAmountField(builder, reEnterAmountField):
+    return InteractiveWorldRaidStageExcelAddReEnterAmountField(builder, reEnterAmountField)
+def InteractiveWorldRaidStageExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(14, battleDurationField, 0)
+def AddBattleDurationField(builder, battleDurationField):
+    return InteractiveWorldRaidStageExcelAddBattleDurationField(builder, battleDurationField)
+def InteractiveWorldRaidStageExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(15, groundIdField, 0)
+def AddGroundIdField(builder, groundIdField):
+    return InteractiveWorldRaidStageExcelAddGroundIdField(builder, groundIdField)
+def InteractiveWorldRaidStageExcelAddRaidBattleEndRewardGroupIdField(builder, raidBattleEndRewardGroupIdField): builder.PrependInt32Slot(16, raidBattleEndRewardGroupIdField, 0)
+def AddRaidBattleEndRewardGroupIdField(builder, raidBattleEndRewardGroupIdField):
+    return InteractiveWorldRaidStageExcelAddRaidBattleEndRewardGroupIdField(builder, raidBattleEndRewardGroupIdField)
+def InteractiveWorldRaidStageExcelAddRaidRewardGroupIdField(builder, raidRewardGroupIdField): builder.PrependInt32Slot(17, raidRewardGroupIdField, 0)
+def AddRaidRewardGroupIdField(builder, raidRewardGroupIdField):
+    return InteractiveWorldRaidStageExcelAddRaidRewardGroupIdField(builder, raidRewardGroupIdField)
+def InteractiveWorldRaidStageExcelAddBattleReadyTimelinePathField(builder, battleReadyTimelinePathField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(battleReadyTimelinePathField), 0)
+def AddBattleReadyTimelinePathField(builder, battleReadyTimelinePathField):
+    return InteractiveWorldRaidStageExcelAddBattleReadyTimelinePathField(builder, battleReadyTimelinePathField)
+def InteractiveWorldRaidStageExcelStartBattleReadyTimelinePathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBattleReadyTimelinePathFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartBattleReadyTimelinePathFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddBattleReadyTimelinePhaseStartField(builder, battleReadyTimelinePhaseStartField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(battleReadyTimelinePhaseStartField), 0)
+def AddBattleReadyTimelinePhaseStartField(builder, battleReadyTimelinePhaseStartField):
+    return InteractiveWorldRaidStageExcelAddBattleReadyTimelinePhaseStartField(builder, battleReadyTimelinePhaseStartField)
+def InteractiveWorldRaidStageExcelStartBattleReadyTimelinePhaseStartFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBattleReadyTimelinePhaseStartFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartBattleReadyTimelinePhaseStartFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddBattleReadyTimelinePhaseEndField(builder, battleReadyTimelinePhaseEndField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(battleReadyTimelinePhaseEndField), 0)
+def AddBattleReadyTimelinePhaseEndField(builder, battleReadyTimelinePhaseEndField):
+    return InteractiveWorldRaidStageExcelAddBattleReadyTimelinePhaseEndField(builder, battleReadyTimelinePhaseEndField)
+def InteractiveWorldRaidStageExcelStartBattleReadyTimelinePhaseEndFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBattleReadyTimelinePhaseEndFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartBattleReadyTimelinePhaseEndFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddVictoryTimelinePathField(builder, victoryTimelinePathField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(victoryTimelinePathField), 0)
+def AddVictoryTimelinePathField(builder, victoryTimelinePathField):
+    return InteractiveWorldRaidStageExcelAddVictoryTimelinePathField(builder, victoryTimelinePathField)
+def InteractiveWorldRaidStageExcelAddPhaseChangeTimelinePathField(builder, phaseChangeTimelinePathField): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(phaseChangeTimelinePathField), 0)
+def AddPhaseChangeTimelinePathField(builder, phaseChangeTimelinePathField):
+    return InteractiveWorldRaidStageExcelAddPhaseChangeTimelinePathField(builder, phaseChangeTimelinePathField)
+def InteractiveWorldRaidStageExcelAddTimeLinePhaseField(builder, timeLinePhaseField): builder.PrependInt32Slot(23, timeLinePhaseField, 0)
+def AddTimeLinePhaseField(builder, timeLinePhaseField):
+    return InteractiveWorldRaidStageExcelAddTimeLinePhaseField(builder, timeLinePhaseField)
+def InteractiveWorldRaidStageExcelAddEnterScenarioKeyField(builder, enterScenarioKeyField): builder.PrependInt32Slot(24, enterScenarioKeyField, 0)
+def AddEnterScenarioKeyField(builder, enterScenarioKeyField):
+    return InteractiveWorldRaidStageExcelAddEnterScenarioKeyField(builder, enterScenarioKeyField)
+def InteractiveWorldRaidStageExcelAddClearScenarioKeyField(builder, clearScenarioKeyField): builder.PrependInt32Slot(25, clearScenarioKeyField, 0)
+def AddClearScenarioKeyField(builder, clearScenarioKeyField):
+    return InteractiveWorldRaidStageExcelAddClearScenarioKeyField(builder, clearScenarioKeyField)
+def InteractiveWorldRaidStageExcelAddUseFixedEchelonField(builder, useFixedEchelonField): builder.PrependBoolSlot(26, useFixedEchelonField, 0)
+def AddUseFixedEchelonField(builder, useFixedEchelonField):
+    return InteractiveWorldRaidStageExcelAddUseFixedEchelonField(builder, useFixedEchelonField)
+def InteractiveWorldRaidStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField): builder.PrependInt32Slot(27, fixedEchelonIdField, 0)
+def AddFixedEchelonIdField(builder, fixedEchelonIdField):
+    return InteractiveWorldRaidStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
+def InteractiveWorldRaidStageExcelAddIsRaidScenarioBattleField(builder, isRaidScenarioBattleField): builder.PrependBoolSlot(28, isRaidScenarioBattleField, 0)
+def AddIsRaidScenarioBattleField(builder, isRaidScenarioBattleField):
+    return InteractiveWorldRaidStageExcelAddIsRaidScenarioBattleField(builder, isRaidScenarioBattleField)
+def InteractiveWorldRaidStageExcelAddShowSkillCardField(builder, showSkillCardField): builder.PrependBoolSlot(29, showSkillCardField, 0)
+def AddShowSkillCardField(builder, showSkillCardField):
+    return InteractiveWorldRaidStageExcelAddShowSkillCardField(builder, showSkillCardField)
+def InteractiveWorldRaidStageExcelAddBossBGInfoKeyField(builder, bossBGInfoKeyField): builder.PrependUint32Slot(30, bossBGInfoKeyField, 0)
+def AddBossBGInfoKeyField(builder, bossBGInfoKeyField):
+    return InteractiveWorldRaidStageExcelAddBossBGInfoKeyField(builder, bossBGInfoKeyField)
+def InteractiveWorldRaidStageExcelAddDamageToWorldBossField(builder, damageToWorldBossField): builder.PrependInt32Slot(31, damageToWorldBossField, 0)
+def AddDamageToWorldBossField(builder, damageToWorldBossField):
+    return InteractiveWorldRaidStageExcelAddDamageToWorldBossField(builder, damageToWorldBossField)
+def InteractiveWorldRaidStageExcelAddAllyPassiveSkillField(builder, allyPassiveSkillField): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(allyPassiveSkillField), 0)
+def AddAllyPassiveSkillField(builder, allyPassiveSkillField):
+    return InteractiveWorldRaidStageExcelAddAllyPassiveSkillField(builder, allyPassiveSkillField)
+def InteractiveWorldRaidStageExcelStartAllyPassiveSkillFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartAllyPassiveSkillFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartAllyPassiveSkillFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddAllyPassiveSkillLevelField(builder, allyPassiveSkillLevelField): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(allyPassiveSkillLevelField), 0)
+def AddAllyPassiveSkillLevelField(builder, allyPassiveSkillLevelField):
+    return InteractiveWorldRaidStageExcelAddAllyPassiveSkillLevelField(builder, allyPassiveSkillLevelField)
+def InteractiveWorldRaidStageExcelStartAllyPassiveSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartAllyPassiveSkillLevelFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartAllyPassiveSkillLevelFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddAllyPassiveSkillRemoveConditionField(builder, allyPassiveSkillRemoveConditionField): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(allyPassiveSkillRemoveConditionField), 0)
+def AddAllyPassiveSkillRemoveConditionField(builder, allyPassiveSkillRemoveConditionField):
+    return InteractiveWorldRaidStageExcelAddAllyPassiveSkillRemoveConditionField(builder, allyPassiveSkillRemoveConditionField)
+def InteractiveWorldRaidStageExcelStartAllyPassiveSkillRemoveConditionFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartAllyPassiveSkillRemoveConditionFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartAllyPassiveSkillRemoveConditionFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddEnemyPassiveSkillField(builder, enemyPassiveSkillField): builder.PrependUOffsetTRelativeSlot(35, flatbuffers.number_types.UOffsetTFlags.py_type(enemyPassiveSkillField), 0)
+def AddEnemyPassiveSkillField(builder, enemyPassiveSkillField):
+    return InteractiveWorldRaidStageExcelAddEnemyPassiveSkillField(builder, enemyPassiveSkillField)
+def InteractiveWorldRaidStageExcelStartEnemyPassiveSkillFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEnemyPassiveSkillFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartEnemyPassiveSkillFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddEnemyPassiveSkillLevelField(builder, enemyPassiveSkillLevelField): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(enemyPassiveSkillLevelField), 0)
+def AddEnemyPassiveSkillLevelField(builder, enemyPassiveSkillLevelField):
+    return InteractiveWorldRaidStageExcelAddEnemyPassiveSkillLevelField(builder, enemyPassiveSkillLevelField)
+def InteractiveWorldRaidStageExcelStartEnemyPassiveSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEnemyPassiveSkillLevelFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartEnemyPassiveSkillLevelFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddEnemyPassiveSkillRemoveConditionField(builder, enemyPassiveSkillRemoveConditionField): builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(enemyPassiveSkillRemoveConditionField), 0)
+def AddEnemyPassiveSkillRemoveConditionField(builder, enemyPassiveSkillRemoveConditionField):
+    return InteractiveWorldRaidStageExcelAddEnemyPassiveSkillRemoveConditionField(builder, enemyPassiveSkillRemoveConditionField)
+def InteractiveWorldRaidStageExcelStartEnemyPassiveSkillRemoveConditionFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEnemyPassiveSkillRemoveConditionFieldVector(builder, numElems):
+    return InteractiveWorldRaidStageExcelStartEnemyPassiveSkillRemoveConditionFieldVector(builder, numElems)
+def InteractiveWorldRaidStageExcelAddSaveCurrentLocalBossHPField(builder, saveCurrentLocalBossHPField): builder.PrependBoolSlot(38, saveCurrentLocalBossHPField, 0)
+def AddSaveCurrentLocalBossHPField(builder, saveCurrentLocalBossHPField):
+    return InteractiveWorldRaidStageExcelAddSaveCurrentLocalBossHPField(builder, saveCurrentLocalBossHPField)
+def InteractiveWorldRaidStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(39, echelonExtensionTypeField, 0)
+def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
+    return InteractiveWorldRaidStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
 def InteractiveWorldRaidStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return InteractiveWorldRaidStageExcelEnd(builder)

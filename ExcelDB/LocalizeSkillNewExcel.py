@@ -25,49 +25,49 @@ class LocalizeSkillNewExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # LocalizeSkillNewExcel
-    def Key(self):
+    def KeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeSkillNewExcel
-    def NameKr(self):
+    def NameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillNewExcel
-    def DescriptionKr(self):
+    def DescriptionKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillNewExcel
-    def SkillInvokeLocalizeKr(self):
+    def SkillInvokeLocalizeKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillNewExcel
-    def NameJp(self):
+    def NameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillNewExcel
-    def DescriptionJp(self):
+    def DescriptionJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillNewExcel
-    def SkillInvokeLocalizeJp(self):
+    def SkillInvokeLocalizeJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -76,27 +76,27 @@ class LocalizeSkillNewExcel(object):
 def LocalizeSkillNewExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return LocalizeSkillNewExcelStart(builder)
-def LocalizeSkillNewExcelAddKey(builder, key): builder.PrependUint32Slot(0, key, 0)
-def AddKey(builder, key):
-    return LocalizeSkillNewExcelAddKey(builder, key)
-def LocalizeSkillNewExcelAddNameKr(builder, nameKr): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameKr), 0)
-def AddNameKr(builder, nameKr):
-    return LocalizeSkillNewExcelAddNameKr(builder, nameKr)
-def LocalizeSkillNewExcelAddDescriptionKr(builder, descriptionKr): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionKr), 0)
-def AddDescriptionKr(builder, descriptionKr):
-    return LocalizeSkillNewExcelAddDescriptionKr(builder, descriptionKr)
-def LocalizeSkillNewExcelAddSkillInvokeLocalizeKr(builder, skillInvokeLocalizeKr): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillInvokeLocalizeKr), 0)
-def AddSkillInvokeLocalizeKr(builder, skillInvokeLocalizeKr):
-    return LocalizeSkillNewExcelAddSkillInvokeLocalizeKr(builder, skillInvokeLocalizeKr)
-def LocalizeSkillNewExcelAddNameJp(builder, nameJp): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(nameJp), 0)
-def AddNameJp(builder, nameJp):
-    return LocalizeSkillNewExcelAddNameJp(builder, nameJp)
-def LocalizeSkillNewExcelAddDescriptionJp(builder, descriptionJp): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionJp), 0)
-def AddDescriptionJp(builder, descriptionJp):
-    return LocalizeSkillNewExcelAddDescriptionJp(builder, descriptionJp)
-def LocalizeSkillNewExcelAddSkillInvokeLocalizeJp(builder, skillInvokeLocalizeJp): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(skillInvokeLocalizeJp), 0)
-def AddSkillInvokeLocalizeJp(builder, skillInvokeLocalizeJp):
-    return LocalizeSkillNewExcelAddSkillInvokeLocalizeJp(builder, skillInvokeLocalizeJp)
+def LocalizeSkillNewExcelAddKeyField(builder, keyField): builder.PrependUint32Slot(0, keyField, 0)
+def AddKeyField(builder, keyField):
+    return LocalizeSkillNewExcelAddKeyField(builder, keyField)
+def LocalizeSkillNewExcelAddNameKrField(builder, nameKrField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameKrField), 0)
+def AddNameKrField(builder, nameKrField):
+    return LocalizeSkillNewExcelAddNameKrField(builder, nameKrField)
+def LocalizeSkillNewExcelAddDescriptionKrField(builder, descriptionKrField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionKrField), 0)
+def AddDescriptionKrField(builder, descriptionKrField):
+    return LocalizeSkillNewExcelAddDescriptionKrField(builder, descriptionKrField)
+def LocalizeSkillNewExcelAddSkillInvokeLocalizeKrField(builder, skillInvokeLocalizeKrField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillInvokeLocalizeKrField), 0)
+def AddSkillInvokeLocalizeKrField(builder, skillInvokeLocalizeKrField):
+    return LocalizeSkillNewExcelAddSkillInvokeLocalizeKrField(builder, skillInvokeLocalizeKrField)
+def LocalizeSkillNewExcelAddNameJpField(builder, nameJpField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(nameJpField), 0)
+def AddNameJpField(builder, nameJpField):
+    return LocalizeSkillNewExcelAddNameJpField(builder, nameJpField)
+def LocalizeSkillNewExcelAddDescriptionJpField(builder, descriptionJpField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionJpField), 0)
+def AddDescriptionJpField(builder, descriptionJpField):
+    return LocalizeSkillNewExcelAddDescriptionJpField(builder, descriptionJpField)
+def LocalizeSkillNewExcelAddSkillInvokeLocalizeJpField(builder, skillInvokeLocalizeJpField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(skillInvokeLocalizeJpField), 0)
+def AddSkillInvokeLocalizeJpField(builder, skillInvokeLocalizeJpField):
+    return LocalizeSkillNewExcelAddSkillInvokeLocalizeJpField(builder, skillInvokeLocalizeJpField)
 def LocalizeSkillNewExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return LocalizeSkillNewExcelEnd(builder)

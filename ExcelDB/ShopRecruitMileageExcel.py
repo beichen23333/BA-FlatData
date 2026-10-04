@@ -25,42 +25,42 @@ class ShopRecruitMileageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopRecruitMileageExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitMileageExcel
-    def MileageGroupId(self):
+    def MileageGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitMileageExcel
-    def MileageRewardGroupId(self):
+    def MileageRewardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitMileageExcel
-    def IsLoop(self):
+    def IsLoopField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ShopRecruitMileageExcel
-    def RequiredRecruitAmount(self):
+    def RequiredRecruitAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -68,26 +68,26 @@ class ShopRecruitMileageExcel(object):
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -95,26 +95,26 @@ class ShopRecruitMileageExcel(object):
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelAmount(self, j):
+    def RewardParcelAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             a = self._tab.Vector(o)
@@ -122,60 +122,60 @@ class ShopRecruitMileageExcel(object):
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelAmountAsNumpy(self):
+    def RewardParcelAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelAmountLength(self):
+    def RewardParcelAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopRecruitMileageExcel
-    def RewardParcelAmountIsNone(self):
+    def RewardParcelAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
 def ShopRecruitMileageExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return ShopRecruitMileageExcelStart(builder)
-def ShopRecruitMileageExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ShopRecruitMileageExcelAddId(builder, id)
-def ShopRecruitMileageExcelAddMileageGroupId(builder, mileageGroupId): builder.PrependInt32Slot(1, mileageGroupId, 0)
-def AddMileageGroupId(builder, mileageGroupId):
-    return ShopRecruitMileageExcelAddMileageGroupId(builder, mileageGroupId)
-def ShopRecruitMileageExcelAddMileageRewardGroupId(builder, mileageRewardGroupId): builder.PrependInt32Slot(2, mileageRewardGroupId, 0)
-def AddMileageRewardGroupId(builder, mileageRewardGroupId):
-    return ShopRecruitMileageExcelAddMileageRewardGroupId(builder, mileageRewardGroupId)
-def ShopRecruitMileageExcelAddIsLoop(builder, isLoop): builder.PrependBoolSlot(3, isLoop, 0)
-def AddIsLoop(builder, isLoop):
-    return ShopRecruitMileageExcelAddIsLoop(builder, isLoop)
-def ShopRecruitMileageExcelAddRequiredRecruitAmount(builder, requiredRecruitAmount): builder.PrependInt32Slot(4, requiredRecruitAmount, 0)
-def AddRequiredRecruitAmount(builder, requiredRecruitAmount):
-    return ShopRecruitMileageExcelAddRequiredRecruitAmount(builder, requiredRecruitAmount)
-def ShopRecruitMileageExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return ShopRecruitMileageExcelAddRewardParcelType(builder, rewardParcelType)
-def ShopRecruitMileageExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return ShopRecruitMileageExcelStartRewardParcelTypeVector(builder, numElems)
-def ShopRecruitMileageExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return ShopRecruitMileageExcelAddRewardParcelId(builder, rewardParcelId)
-def ShopRecruitMileageExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return ShopRecruitMileageExcelStartRewardParcelIdVector(builder, numElems)
-def ShopRecruitMileageExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmount), 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return ShopRecruitMileageExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def ShopRecruitMileageExcelStartRewardParcelAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountVector(builder, numElems):
-    return ShopRecruitMileageExcelStartRewardParcelAmountVector(builder, numElems)
+def ShopRecruitMileageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ShopRecruitMileageExcelAddIdField(builder, idField)
+def ShopRecruitMileageExcelAddMileageGroupIdField(builder, mileageGroupIdField): builder.PrependInt32Slot(1, mileageGroupIdField, 0)
+def AddMileageGroupIdField(builder, mileageGroupIdField):
+    return ShopRecruitMileageExcelAddMileageGroupIdField(builder, mileageGroupIdField)
+def ShopRecruitMileageExcelAddMileageRewardGroupIdField(builder, mileageRewardGroupIdField): builder.PrependInt32Slot(2, mileageRewardGroupIdField, 0)
+def AddMileageRewardGroupIdField(builder, mileageRewardGroupIdField):
+    return ShopRecruitMileageExcelAddMileageRewardGroupIdField(builder, mileageRewardGroupIdField)
+def ShopRecruitMileageExcelAddIsLoopField(builder, isLoopField): builder.PrependBoolSlot(3, isLoopField, 0)
+def AddIsLoopField(builder, isLoopField):
+    return ShopRecruitMileageExcelAddIsLoopField(builder, isLoopField)
+def ShopRecruitMileageExcelAddRequiredRecruitAmountField(builder, requiredRecruitAmountField): builder.PrependInt32Slot(4, requiredRecruitAmountField, 0)
+def AddRequiredRecruitAmountField(builder, requiredRecruitAmountField):
+    return ShopRecruitMileageExcelAddRequiredRecruitAmountField(builder, requiredRecruitAmountField)
+def ShopRecruitMileageExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return ShopRecruitMileageExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def ShopRecruitMileageExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return ShopRecruitMileageExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def ShopRecruitMileageExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return ShopRecruitMileageExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def ShopRecruitMileageExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return ShopRecruitMileageExcelStartRewardParcelIdFieldVector(builder, numElems)
+def ShopRecruitMileageExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return ShopRecruitMileageExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def ShopRecruitMileageExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelAmountFieldVector(builder, numElems):
+    return ShopRecruitMileageExcelStartRewardParcelAmountFieldVector(builder, numElems)
 def ShopRecruitMileageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopRecruitMileageExcelEnd(builder)

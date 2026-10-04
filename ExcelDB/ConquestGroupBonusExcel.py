@@ -25,14 +25,14 @@ class ConquestGroupBonusExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConquestGroupBonusExcel
-    def ConquestBonusId(self):
+    def ConquestBonusIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestGroupBonusExcel
-    def School(self, j):
+    def SchoolField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,33 +40,33 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def SchoolAsNumpy(self):
+    def SchoolFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def SchoolLength(self):
+    def SchoolFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def SchoolIsNone(self):
+    def SchoolFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # ConquestGroupBonusExcel
-    def RecommandLocalizeEtcId(self):
+    def RecommandLocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusParcelType(self, j):
+    def BonusParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,26 +74,26 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusParcelTypeAsNumpy(self):
+    def BonusParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusParcelTypeLength(self):
+    def BonusParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusParcelTypeIsNone(self):
+    def BonusParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # ConquestGroupBonusExcel
-    def BonusId(self, j):
+    def BonusIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -101,26 +101,26 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusIdAsNumpy(self):
+    def BonusIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusIdLength(self):
+    def BonusIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusIdIsNone(self):
+    def BonusIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount1(self, j):
+    def BonusCharacterCount1Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -128,26 +128,26 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount1AsNumpy(self):
+    def BonusCharacterCount1FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount1Length(self):
+    def BonusCharacterCount1FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount1IsNone(self):
+    def BonusCharacterCount1FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage1(self, j):
+    def BonusPercentage1Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -155,26 +155,26 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage1AsNumpy(self):
+    def BonusPercentage1FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage1Length(self):
+    def BonusPercentage1FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage1IsNone(self):
+    def BonusPercentage1FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount2(self, j):
+    def BonusCharacterCount2Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             a = self._tab.Vector(o)
@@ -182,26 +182,26 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount2AsNumpy(self):
+    def BonusCharacterCount2FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount2Length(self):
+    def BonusCharacterCount2FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount2IsNone(self):
+    def BonusCharacterCount2FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage2(self, j):
+    def BonusPercentage2Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             a = self._tab.Vector(o)
@@ -209,26 +209,26 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage2AsNumpy(self):
+    def BonusPercentage2FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage2Length(self):
+    def BonusPercentage2FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage2IsNone(self):
+    def BonusPercentage2FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         return o == 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount3(self, j):
+    def BonusCharacterCount3Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             a = self._tab.Vector(o)
@@ -236,26 +236,26 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount3AsNumpy(self):
+    def BonusCharacterCount3FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount3Length(self):
+    def BonusCharacterCount3FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusCharacterCount3IsNone(self):
+    def BonusCharacterCount3FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage3(self, j):
+    def BonusPercentage3Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             a = self._tab.Vector(o)
@@ -263,87 +263,87 @@ class ConquestGroupBonusExcel(object):
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage3AsNumpy(self):
+    def BonusPercentage3FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage3Length(self):
+    def BonusPercentage3FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestGroupBonusExcel
-    def BonusPercentage3IsNone(self):
+    def BonusPercentage3FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         return o == 0
 
 def ConquestGroupBonusExcelStart(builder): builder.StartObject(11)
 def Start(builder):
     return ConquestGroupBonusExcelStart(builder)
-def ConquestGroupBonusExcelAddConquestBonusId(builder, conquestBonusId): builder.PrependInt32Slot(0, conquestBonusId, 0)
-def AddConquestBonusId(builder, conquestBonusId):
-    return ConquestGroupBonusExcelAddConquestBonusId(builder, conquestBonusId)
-def ConquestGroupBonusExcelAddSchool(builder, school): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(school), 0)
-def AddSchool(builder, school):
-    return ConquestGroupBonusExcelAddSchool(builder, school)
-def ConquestGroupBonusExcelStartSchoolVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSchoolVector(builder, numElems):
-    return ConquestGroupBonusExcelStartSchoolVector(builder, numElems)
-def ConquestGroupBonusExcelAddRecommandLocalizeEtcId(builder, recommandLocalizeEtcId): builder.PrependUint32Slot(2, recommandLocalizeEtcId, 0)
-def AddRecommandLocalizeEtcId(builder, recommandLocalizeEtcId):
-    return ConquestGroupBonusExcelAddRecommandLocalizeEtcId(builder, recommandLocalizeEtcId)
-def ConquestGroupBonusExcelAddBonusParcelType(builder, bonusParcelType): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(bonusParcelType), 0)
-def AddBonusParcelType(builder, bonusParcelType):
-    return ConquestGroupBonusExcelAddBonusParcelType(builder, bonusParcelType)
-def ConquestGroupBonusExcelStartBonusParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusParcelTypeVector(builder, numElems):
-    return ConquestGroupBonusExcelStartBonusParcelTypeVector(builder, numElems)
-def ConquestGroupBonusExcelAddBonusId(builder, bonusId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(bonusId), 0)
-def AddBonusId(builder, bonusId):
-    return ConquestGroupBonusExcelAddBonusId(builder, bonusId)
-def ConquestGroupBonusExcelStartBonusIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusIdVector(builder, numElems):
-    return ConquestGroupBonusExcelStartBonusIdVector(builder, numElems)
-def ConquestGroupBonusExcelAddBonusCharacterCount1(builder, bonusCharacterCount1): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(bonusCharacterCount1), 0)
-def AddBonusCharacterCount1(builder, bonusCharacterCount1):
-    return ConquestGroupBonusExcelAddBonusCharacterCount1(builder, bonusCharacterCount1)
-def ConquestGroupBonusExcelStartBonusCharacterCount1Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusCharacterCount1Vector(builder, numElems):
-    return ConquestGroupBonusExcelStartBonusCharacterCount1Vector(builder, numElems)
-def ConquestGroupBonusExcelAddBonusPercentage1(builder, bonusPercentage1): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(bonusPercentage1), 0)
-def AddBonusPercentage1(builder, bonusPercentage1):
-    return ConquestGroupBonusExcelAddBonusPercentage1(builder, bonusPercentage1)
-def ConquestGroupBonusExcelStartBonusPercentage1Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusPercentage1Vector(builder, numElems):
-    return ConquestGroupBonusExcelStartBonusPercentage1Vector(builder, numElems)
-def ConquestGroupBonusExcelAddBonusCharacterCount2(builder, bonusCharacterCount2): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(bonusCharacterCount2), 0)
-def AddBonusCharacterCount2(builder, bonusCharacterCount2):
-    return ConquestGroupBonusExcelAddBonusCharacterCount2(builder, bonusCharacterCount2)
-def ConquestGroupBonusExcelStartBonusCharacterCount2Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusCharacterCount2Vector(builder, numElems):
-    return ConquestGroupBonusExcelStartBonusCharacterCount2Vector(builder, numElems)
-def ConquestGroupBonusExcelAddBonusPercentage2(builder, bonusPercentage2): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(bonusPercentage2), 0)
-def AddBonusPercentage2(builder, bonusPercentage2):
-    return ConquestGroupBonusExcelAddBonusPercentage2(builder, bonusPercentage2)
-def ConquestGroupBonusExcelStartBonusPercentage2Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusPercentage2Vector(builder, numElems):
-    return ConquestGroupBonusExcelStartBonusPercentage2Vector(builder, numElems)
-def ConquestGroupBonusExcelAddBonusCharacterCount3(builder, bonusCharacterCount3): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(bonusCharacterCount3), 0)
-def AddBonusCharacterCount3(builder, bonusCharacterCount3):
-    return ConquestGroupBonusExcelAddBonusCharacterCount3(builder, bonusCharacterCount3)
-def ConquestGroupBonusExcelStartBonusCharacterCount3Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusCharacterCount3Vector(builder, numElems):
-    return ConquestGroupBonusExcelStartBonusCharacterCount3Vector(builder, numElems)
-def ConquestGroupBonusExcelAddBonusPercentage3(builder, bonusPercentage3): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(bonusPercentage3), 0)
-def AddBonusPercentage3(builder, bonusPercentage3):
-    return ConquestGroupBonusExcelAddBonusPercentage3(builder, bonusPercentage3)
-def ConquestGroupBonusExcelStartBonusPercentage3Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusPercentage3Vector(builder, numElems):
-    return ConquestGroupBonusExcelStartBonusPercentage3Vector(builder, numElems)
+def ConquestGroupBonusExcelAddConquestBonusIdField(builder, conquestBonusIdField): builder.PrependInt32Slot(0, conquestBonusIdField, 0)
+def AddConquestBonusIdField(builder, conquestBonusIdField):
+    return ConquestGroupBonusExcelAddConquestBonusIdField(builder, conquestBonusIdField)
+def ConquestGroupBonusExcelAddSchoolField(builder, schoolField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(schoolField), 0)
+def AddSchoolField(builder, schoolField):
+    return ConquestGroupBonusExcelAddSchoolField(builder, schoolField)
+def ConquestGroupBonusExcelStartSchoolFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartSchoolFieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartSchoolFieldVector(builder, numElems)
+def ConquestGroupBonusExcelAddRecommandLocalizeEtcIdField(builder, recommandLocalizeEtcIdField): builder.PrependUint32Slot(2, recommandLocalizeEtcIdField, 0)
+def AddRecommandLocalizeEtcIdField(builder, recommandLocalizeEtcIdField):
+    return ConquestGroupBonusExcelAddRecommandLocalizeEtcIdField(builder, recommandLocalizeEtcIdField)
+def ConquestGroupBonusExcelAddBonusParcelTypeField(builder, bonusParcelTypeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(bonusParcelTypeField), 0)
+def AddBonusParcelTypeField(builder, bonusParcelTypeField):
+    return ConquestGroupBonusExcelAddBonusParcelTypeField(builder, bonusParcelTypeField)
+def ConquestGroupBonusExcelStartBonusParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBonusParcelTypeFieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartBonusParcelTypeFieldVector(builder, numElems)
+def ConquestGroupBonusExcelAddBonusIdField(builder, bonusIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(bonusIdField), 0)
+def AddBonusIdField(builder, bonusIdField):
+    return ConquestGroupBonusExcelAddBonusIdField(builder, bonusIdField)
+def ConquestGroupBonusExcelStartBonusIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBonusIdFieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartBonusIdFieldVector(builder, numElems)
+def ConquestGroupBonusExcelAddBonusCharacterCount1Field(builder, bonusCharacterCount1Field): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(bonusCharacterCount1Field), 0)
+def AddBonusCharacterCount1Field(builder, bonusCharacterCount1Field):
+    return ConquestGroupBonusExcelAddBonusCharacterCount1Field(builder, bonusCharacterCount1Field)
+def ConquestGroupBonusExcelStartBonusCharacterCount1FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBonusCharacterCount1FieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartBonusCharacterCount1FieldVector(builder, numElems)
+def ConquestGroupBonusExcelAddBonusPercentage1Field(builder, bonusPercentage1Field): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(bonusPercentage1Field), 0)
+def AddBonusPercentage1Field(builder, bonusPercentage1Field):
+    return ConquestGroupBonusExcelAddBonusPercentage1Field(builder, bonusPercentage1Field)
+def ConquestGroupBonusExcelStartBonusPercentage1FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBonusPercentage1FieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartBonusPercentage1FieldVector(builder, numElems)
+def ConquestGroupBonusExcelAddBonusCharacterCount2Field(builder, bonusCharacterCount2Field): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(bonusCharacterCount2Field), 0)
+def AddBonusCharacterCount2Field(builder, bonusCharacterCount2Field):
+    return ConquestGroupBonusExcelAddBonusCharacterCount2Field(builder, bonusCharacterCount2Field)
+def ConquestGroupBonusExcelStartBonusCharacterCount2FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBonusCharacterCount2FieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartBonusCharacterCount2FieldVector(builder, numElems)
+def ConquestGroupBonusExcelAddBonusPercentage2Field(builder, bonusPercentage2Field): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(bonusPercentage2Field), 0)
+def AddBonusPercentage2Field(builder, bonusPercentage2Field):
+    return ConquestGroupBonusExcelAddBonusPercentage2Field(builder, bonusPercentage2Field)
+def ConquestGroupBonusExcelStartBonusPercentage2FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBonusPercentage2FieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartBonusPercentage2FieldVector(builder, numElems)
+def ConquestGroupBonusExcelAddBonusCharacterCount3Field(builder, bonusCharacterCount3Field): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(bonusCharacterCount3Field), 0)
+def AddBonusCharacterCount3Field(builder, bonusCharacterCount3Field):
+    return ConquestGroupBonusExcelAddBonusCharacterCount3Field(builder, bonusCharacterCount3Field)
+def ConquestGroupBonusExcelStartBonusCharacterCount3FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBonusCharacterCount3FieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartBonusCharacterCount3FieldVector(builder, numElems)
+def ConquestGroupBonusExcelAddBonusPercentage3Field(builder, bonusPercentage3Field): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(bonusPercentage3Field), 0)
+def AddBonusPercentage3Field(builder, bonusPercentage3Field):
+    return ConquestGroupBonusExcelAddBonusPercentage3Field(builder, bonusPercentage3Field)
+def ConquestGroupBonusExcelStartBonusPercentage3FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBonusPercentage3FieldVector(builder, numElems):
+    return ConquestGroupBonusExcelStartBonusPercentage3FieldVector(builder, numElems)
 def ConquestGroupBonusExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConquestGroupBonusExcelEnd(builder)

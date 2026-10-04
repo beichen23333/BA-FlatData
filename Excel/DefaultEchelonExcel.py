@@ -25,21 +25,21 @@ class DefaultEchelonExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # DefaultEchelonExcel
-    def EchlonId(self):
+    def EchlonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # DefaultEchelonExcel
-    def LeaderId(self):
+    def LeaderIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # DefaultEchelonExcel
-    def MainId(self, j):
+    def MainIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,26 +47,26 @@ class DefaultEchelonExcel(object):
         return 0
 
     # DefaultEchelonExcel
-    def MainIdAsNumpy(self):
+    def MainIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # DefaultEchelonExcel
-    def MainIdLength(self):
+    def MainIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # DefaultEchelonExcel
-    def MainIdIsNone(self):
+    def MainIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # DefaultEchelonExcel
-    def SupportId(self, j):
+    def SupportIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,26 +74,26 @@ class DefaultEchelonExcel(object):
         return 0
 
     # DefaultEchelonExcel
-    def SupportIdAsNumpy(self):
+    def SupportIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # DefaultEchelonExcel
-    def SupportIdLength(self):
+    def SupportIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # DefaultEchelonExcel
-    def SupportIdIsNone(self):
+    def SupportIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # DefaultEchelonExcel
-    def TssId(self):
+    def TssIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -102,27 +102,27 @@ class DefaultEchelonExcel(object):
 def DefaultEchelonExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return DefaultEchelonExcelStart(builder)
-def DefaultEchelonExcelAddEchlonId(builder, echlonId): builder.PrependInt32Slot(0, echlonId, 0)
-def AddEchlonId(builder, echlonId):
-    return DefaultEchelonExcelAddEchlonId(builder, echlonId)
-def DefaultEchelonExcelAddLeaderId(builder, leaderId): builder.PrependInt32Slot(1, leaderId, 0)
-def AddLeaderId(builder, leaderId):
-    return DefaultEchelonExcelAddLeaderId(builder, leaderId)
-def DefaultEchelonExcelAddMainId(builder, mainId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(mainId), 0)
-def AddMainId(builder, mainId):
-    return DefaultEchelonExcelAddMainId(builder, mainId)
-def DefaultEchelonExcelStartMainIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainIdVector(builder, numElems):
-    return DefaultEchelonExcelStartMainIdVector(builder, numElems)
-def DefaultEchelonExcelAddSupportId(builder, supportId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(supportId), 0)
-def AddSupportId(builder, supportId):
-    return DefaultEchelonExcelAddSupportId(builder, supportId)
-def DefaultEchelonExcelStartSupportIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportIdVector(builder, numElems):
-    return DefaultEchelonExcelStartSupportIdVector(builder, numElems)
-def DefaultEchelonExcelAddTssId(builder, tssId): builder.PrependInt32Slot(4, tssId, 0)
-def AddTssId(builder, tssId):
-    return DefaultEchelonExcelAddTssId(builder, tssId)
+def DefaultEchelonExcelAddEchlonIdField(builder, echlonIdField): builder.PrependInt32Slot(0, echlonIdField, 0)
+def AddEchlonIdField(builder, echlonIdField):
+    return DefaultEchelonExcelAddEchlonIdField(builder, echlonIdField)
+def DefaultEchelonExcelAddLeaderIdField(builder, leaderIdField): builder.PrependInt32Slot(1, leaderIdField, 0)
+def AddLeaderIdField(builder, leaderIdField):
+    return DefaultEchelonExcelAddLeaderIdField(builder, leaderIdField)
+def DefaultEchelonExcelAddMainIdField(builder, mainIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(mainIdField), 0)
+def AddMainIdField(builder, mainIdField):
+    return DefaultEchelonExcelAddMainIdField(builder, mainIdField)
+def DefaultEchelonExcelStartMainIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMainIdFieldVector(builder, numElems):
+    return DefaultEchelonExcelStartMainIdFieldVector(builder, numElems)
+def DefaultEchelonExcelAddSupportIdField(builder, supportIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(supportIdField), 0)
+def AddSupportIdField(builder, supportIdField):
+    return DefaultEchelonExcelAddSupportIdField(builder, supportIdField)
+def DefaultEchelonExcelStartSupportIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartSupportIdFieldVector(builder, numElems):
+    return DefaultEchelonExcelStartSupportIdFieldVector(builder, numElems)
+def DefaultEchelonExcelAddTssIdField(builder, tssIdField): builder.PrependInt32Slot(4, tssIdField, 0)
+def AddTssIdField(builder, tssIdField):
+    return DefaultEchelonExcelAddTssIdField(builder, tssIdField)
 def DefaultEchelonExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return DefaultEchelonExcelEnd(builder)

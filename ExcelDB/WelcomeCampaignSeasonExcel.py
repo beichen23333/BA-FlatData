@@ -25,105 +25,105 @@ class WelcomeCampaignSeasonExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # WelcomeCampaignSeasonExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def TitleLocalizeCode(self):
+    def TitleLocalizeCodeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def TargetGroup(self):
+    def TargetGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def ActiveOrder(self):
+    def ActiveOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def StartDate(self):
+    def StartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WelcomeCampaignSeasonExcel
-    def EndDate(self):
+    def EndDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WelcomeCampaignSeasonExcel
-    def ExpiryDate(self):
+    def ExpiryDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def EnterIconImage(self):
+    def EnterIconImageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WelcomeCampaignSeasonExcel
-    def BackgroundImage(self):
+    def BackgroundImageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WelcomeCampaignSeasonExcel
-    def TitleImage(self):
+    def TitleImageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WelcomeCampaignSeasonExcel
-    def EnterRewardGroupId(self):
+    def EnterRewardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def RewardIncreaseId(self):
+    def RewardIncreaseIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def MaximumLoginCount(self):
+    def MaximumLoginCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def AttendanceBookSize(self):
+    def AttendanceBookSizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignSeasonExcel
-    def ContinuousAttendance(self):
+    def ContinuousAttendanceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -132,51 +132,51 @@ class WelcomeCampaignSeasonExcel(object):
 def WelcomeCampaignSeasonExcelStart(builder): builder.StartObject(15)
 def Start(builder):
     return WelcomeCampaignSeasonExcelStart(builder)
-def WelcomeCampaignSeasonExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return WelcomeCampaignSeasonExcelAddId(builder, id)
-def WelcomeCampaignSeasonExcelAddTitleLocalizeCode(builder, titleLocalizeCode): builder.PrependUint32Slot(1, titleLocalizeCode, 0)
-def AddTitleLocalizeCode(builder, titleLocalizeCode):
-    return WelcomeCampaignSeasonExcelAddTitleLocalizeCode(builder, titleLocalizeCode)
-def WelcomeCampaignSeasonExcelAddTargetGroup(builder, targetGroup): builder.PrependInt32Slot(2, targetGroup, 0)
-def AddTargetGroup(builder, targetGroup):
-    return WelcomeCampaignSeasonExcelAddTargetGroup(builder, targetGroup)
-def WelcomeCampaignSeasonExcelAddActiveOrder(builder, activeOrder): builder.PrependInt32Slot(3, activeOrder, 0)
-def AddActiveOrder(builder, activeOrder):
-    return WelcomeCampaignSeasonExcelAddActiveOrder(builder, activeOrder)
-def WelcomeCampaignSeasonExcelAddStartDate(builder, startDate): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(startDate), 0)
-def AddStartDate(builder, startDate):
-    return WelcomeCampaignSeasonExcelAddStartDate(builder, startDate)
-def WelcomeCampaignSeasonExcelAddEndDate(builder, endDate): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(endDate), 0)
-def AddEndDate(builder, endDate):
-    return WelcomeCampaignSeasonExcelAddEndDate(builder, endDate)
-def WelcomeCampaignSeasonExcelAddExpiryDate(builder, expiryDate): builder.PrependInt32Slot(6, expiryDate, 0)
-def AddExpiryDate(builder, expiryDate):
-    return WelcomeCampaignSeasonExcelAddExpiryDate(builder, expiryDate)
-def WelcomeCampaignSeasonExcelAddEnterIconImage(builder, enterIconImage): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(enterIconImage), 0)
-def AddEnterIconImage(builder, enterIconImage):
-    return WelcomeCampaignSeasonExcelAddEnterIconImage(builder, enterIconImage)
-def WelcomeCampaignSeasonExcelAddBackgroundImage(builder, backgroundImage): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(backgroundImage), 0)
-def AddBackgroundImage(builder, backgroundImage):
-    return WelcomeCampaignSeasonExcelAddBackgroundImage(builder, backgroundImage)
-def WelcomeCampaignSeasonExcelAddTitleImage(builder, titleImage): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(titleImage), 0)
-def AddTitleImage(builder, titleImage):
-    return WelcomeCampaignSeasonExcelAddTitleImage(builder, titleImage)
-def WelcomeCampaignSeasonExcelAddEnterRewardGroupId(builder, enterRewardGroupId): builder.PrependInt32Slot(10, enterRewardGroupId, 0)
-def AddEnterRewardGroupId(builder, enterRewardGroupId):
-    return WelcomeCampaignSeasonExcelAddEnterRewardGroupId(builder, enterRewardGroupId)
-def WelcomeCampaignSeasonExcelAddRewardIncreaseId(builder, rewardIncreaseId): builder.PrependInt32Slot(11, rewardIncreaseId, 0)
-def AddRewardIncreaseId(builder, rewardIncreaseId):
-    return WelcomeCampaignSeasonExcelAddRewardIncreaseId(builder, rewardIncreaseId)
-def WelcomeCampaignSeasonExcelAddMaximumLoginCount(builder, maximumLoginCount): builder.PrependInt32Slot(12, maximumLoginCount, 0)
-def AddMaximumLoginCount(builder, maximumLoginCount):
-    return WelcomeCampaignSeasonExcelAddMaximumLoginCount(builder, maximumLoginCount)
-def WelcomeCampaignSeasonExcelAddAttendanceBookSize(builder, attendanceBookSize): builder.PrependInt32Slot(13, attendanceBookSize, 0)
-def AddAttendanceBookSize(builder, attendanceBookSize):
-    return WelcomeCampaignSeasonExcelAddAttendanceBookSize(builder, attendanceBookSize)
-def WelcomeCampaignSeasonExcelAddContinuousAttendance(builder, continuousAttendance): builder.PrependBoolSlot(14, continuousAttendance, 0)
-def AddContinuousAttendance(builder, continuousAttendance):
-    return WelcomeCampaignSeasonExcelAddContinuousAttendance(builder, continuousAttendance)
+def WelcomeCampaignSeasonExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return WelcomeCampaignSeasonExcelAddIdField(builder, idField)
+def WelcomeCampaignSeasonExcelAddTitleLocalizeCodeField(builder, titleLocalizeCodeField): builder.PrependUint32Slot(1, titleLocalizeCodeField, 0)
+def AddTitleLocalizeCodeField(builder, titleLocalizeCodeField):
+    return WelcomeCampaignSeasonExcelAddTitleLocalizeCodeField(builder, titleLocalizeCodeField)
+def WelcomeCampaignSeasonExcelAddTargetGroupField(builder, targetGroupField): builder.PrependInt32Slot(2, targetGroupField, 0)
+def AddTargetGroupField(builder, targetGroupField):
+    return WelcomeCampaignSeasonExcelAddTargetGroupField(builder, targetGroupField)
+def WelcomeCampaignSeasonExcelAddActiveOrderField(builder, activeOrderField): builder.PrependInt32Slot(3, activeOrderField, 0)
+def AddActiveOrderField(builder, activeOrderField):
+    return WelcomeCampaignSeasonExcelAddActiveOrderField(builder, activeOrderField)
+def WelcomeCampaignSeasonExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+def AddStartDateField(builder, startDateField):
+    return WelcomeCampaignSeasonExcelAddStartDateField(builder, startDateField)
+def WelcomeCampaignSeasonExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+def AddEndDateField(builder, endDateField):
+    return WelcomeCampaignSeasonExcelAddEndDateField(builder, endDateField)
+def WelcomeCampaignSeasonExcelAddExpiryDateField(builder, expiryDateField): builder.PrependInt32Slot(6, expiryDateField, 0)
+def AddExpiryDateField(builder, expiryDateField):
+    return WelcomeCampaignSeasonExcelAddExpiryDateField(builder, expiryDateField)
+def WelcomeCampaignSeasonExcelAddEnterIconImageField(builder, enterIconImageField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(enterIconImageField), 0)
+def AddEnterIconImageField(builder, enterIconImageField):
+    return WelcomeCampaignSeasonExcelAddEnterIconImageField(builder, enterIconImageField)
+def WelcomeCampaignSeasonExcelAddBackgroundImageField(builder, backgroundImageField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(backgroundImageField), 0)
+def AddBackgroundImageField(builder, backgroundImageField):
+    return WelcomeCampaignSeasonExcelAddBackgroundImageField(builder, backgroundImageField)
+def WelcomeCampaignSeasonExcelAddTitleImageField(builder, titleImageField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(titleImageField), 0)
+def AddTitleImageField(builder, titleImageField):
+    return WelcomeCampaignSeasonExcelAddTitleImageField(builder, titleImageField)
+def WelcomeCampaignSeasonExcelAddEnterRewardGroupIdField(builder, enterRewardGroupIdField): builder.PrependInt32Slot(10, enterRewardGroupIdField, 0)
+def AddEnterRewardGroupIdField(builder, enterRewardGroupIdField):
+    return WelcomeCampaignSeasonExcelAddEnterRewardGroupIdField(builder, enterRewardGroupIdField)
+def WelcomeCampaignSeasonExcelAddRewardIncreaseIdField(builder, rewardIncreaseIdField): builder.PrependInt32Slot(11, rewardIncreaseIdField, 0)
+def AddRewardIncreaseIdField(builder, rewardIncreaseIdField):
+    return WelcomeCampaignSeasonExcelAddRewardIncreaseIdField(builder, rewardIncreaseIdField)
+def WelcomeCampaignSeasonExcelAddMaximumLoginCountField(builder, maximumLoginCountField): builder.PrependInt32Slot(12, maximumLoginCountField, 0)
+def AddMaximumLoginCountField(builder, maximumLoginCountField):
+    return WelcomeCampaignSeasonExcelAddMaximumLoginCountField(builder, maximumLoginCountField)
+def WelcomeCampaignSeasonExcelAddAttendanceBookSizeField(builder, attendanceBookSizeField): builder.PrependInt32Slot(13, attendanceBookSizeField, 0)
+def AddAttendanceBookSizeField(builder, attendanceBookSizeField):
+    return WelcomeCampaignSeasonExcelAddAttendanceBookSizeField(builder, attendanceBookSizeField)
+def WelcomeCampaignSeasonExcelAddContinuousAttendanceField(builder, continuousAttendanceField): builder.PrependBoolSlot(14, continuousAttendanceField, 0)
+def AddContinuousAttendanceField(builder, continuousAttendanceField):
+    return WelcomeCampaignSeasonExcelAddContinuousAttendanceField(builder, continuousAttendanceField)
 def WelcomeCampaignSeasonExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WelcomeCampaignSeasonExcelEnd(builder)

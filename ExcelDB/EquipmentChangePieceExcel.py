@@ -25,21 +25,21 @@ class EquipmentChangePieceExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EquipmentChangePieceExcel
-    def EquipmentId(self):
+    def EquipmentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentChangePieceExcel
-    def ChangeEquipmentId(self):
+    def ChangeEquipmentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentChangePieceExcel
-    def ChangeAmount(self):
+    def ChangeAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -48,15 +48,15 @@ class EquipmentChangePieceExcel(object):
 def EquipmentChangePieceExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return EquipmentChangePieceExcelStart(builder)
-def EquipmentChangePieceExcelAddEquipmentId(builder, equipmentId): builder.PrependInt32Slot(0, equipmentId, 0)
-def AddEquipmentId(builder, equipmentId):
-    return EquipmentChangePieceExcelAddEquipmentId(builder, equipmentId)
-def EquipmentChangePieceExcelAddChangeEquipmentId(builder, changeEquipmentId): builder.PrependInt32Slot(1, changeEquipmentId, 0)
-def AddChangeEquipmentId(builder, changeEquipmentId):
-    return EquipmentChangePieceExcelAddChangeEquipmentId(builder, changeEquipmentId)
-def EquipmentChangePieceExcelAddChangeAmount(builder, changeAmount): builder.PrependInt32Slot(2, changeAmount, 0)
-def AddChangeAmount(builder, changeAmount):
-    return EquipmentChangePieceExcelAddChangeAmount(builder, changeAmount)
+def EquipmentChangePieceExcelAddEquipmentIdField(builder, equipmentIdField): builder.PrependInt32Slot(0, equipmentIdField, 0)
+def AddEquipmentIdField(builder, equipmentIdField):
+    return EquipmentChangePieceExcelAddEquipmentIdField(builder, equipmentIdField)
+def EquipmentChangePieceExcelAddChangeEquipmentIdField(builder, changeEquipmentIdField): builder.PrependInt32Slot(1, changeEquipmentIdField, 0)
+def AddChangeEquipmentIdField(builder, changeEquipmentIdField):
+    return EquipmentChangePieceExcelAddChangeEquipmentIdField(builder, changeEquipmentIdField)
+def EquipmentChangePieceExcelAddChangeAmountField(builder, changeAmountField): builder.PrependInt32Slot(2, changeAmountField, 0)
+def AddChangeAmountField(builder, changeAmountField):
+    return EquipmentChangePieceExcelAddChangeAmountField(builder, changeAmountField)
 def EquipmentChangePieceExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EquipmentChangePieceExcelEnd(builder)

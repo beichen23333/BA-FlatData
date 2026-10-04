@@ -25,105 +25,105 @@ class StudentFrameExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # StudentFrameExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StudentFrameExcel
-    def Category(self):
+    def CategoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StudentFrameExcel
-    def DisplayOrder(self):
+    def DisplayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StudentFrameExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # StudentFrameExcel
-    def IconPath(self):
+    def IconPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StudentFrameExcel
-    def FrameImagePath(self):
+    def FrameImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StudentFrameExcel
-    def BigFrameImagePath(self):
+    def BigFrameImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StudentFrameExcel
-    def EmblemEffectPath(self):
+    def EmblemEffectPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StudentFrameExcel
-    def DisplayType(self):
+    def DisplayTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StudentFrameExcel
-    def DisplayStartDate(self):
+    def DisplayStartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StudentFrameExcel
-    def DisplayEndDate(self):
+    def DisplayEndDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StudentFrameExcel
-    def DislpayLevel(self):
+    def DislpayLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StudentFrameExcel
-    def CheckPassType(self):
+    def CheckPassTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StudentFrameExcel
-    def FrameParameter(self):
+    def FrameParameterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StudentFrameExcel
-    def CheckPassCount(self):
+    def CheckPassCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -132,51 +132,51 @@ class StudentFrameExcel(object):
 def StudentFrameExcelStart(builder): builder.StartObject(15)
 def Start(builder):
     return StudentFrameExcelStart(builder)
-def StudentFrameExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return StudentFrameExcelAddId(builder, id)
-def StudentFrameExcelAddCategory(builder, category): builder.PrependInt32Slot(1, category, 0)
-def AddCategory(builder, category):
-    return StudentFrameExcelAddCategory(builder, category)
-def StudentFrameExcelAddDisplayOrder(builder, displayOrder): builder.PrependInt32Slot(2, displayOrder, 0)
-def AddDisplayOrder(builder, displayOrder):
-    return StudentFrameExcelAddDisplayOrder(builder, displayOrder)
-def StudentFrameExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(3, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return StudentFrameExcelAddLocalizeEtcId(builder, localizeEtcId)
-def StudentFrameExcelAddIconPath(builder, iconPath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconPath), 0)
-def AddIconPath(builder, iconPath):
-    return StudentFrameExcelAddIconPath(builder, iconPath)
-def StudentFrameExcelAddFrameImagePath(builder, frameImagePath): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(frameImagePath), 0)
-def AddFrameImagePath(builder, frameImagePath):
-    return StudentFrameExcelAddFrameImagePath(builder, frameImagePath)
-def StudentFrameExcelAddBigFrameImagePath(builder, bigFrameImagePath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(bigFrameImagePath), 0)
-def AddBigFrameImagePath(builder, bigFrameImagePath):
-    return StudentFrameExcelAddBigFrameImagePath(builder, bigFrameImagePath)
-def StudentFrameExcelAddEmblemEffectPath(builder, emblemEffectPath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(emblemEffectPath), 0)
-def AddEmblemEffectPath(builder, emblemEffectPath):
-    return StudentFrameExcelAddEmblemEffectPath(builder, emblemEffectPath)
-def StudentFrameExcelAddDisplayType(builder, displayType): builder.PrependInt32Slot(8, displayType, 0)
-def AddDisplayType(builder, displayType):
-    return StudentFrameExcelAddDisplayType(builder, displayType)
-def StudentFrameExcelAddDisplayStartDate(builder, displayStartDate): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(displayStartDate), 0)
-def AddDisplayStartDate(builder, displayStartDate):
-    return StudentFrameExcelAddDisplayStartDate(builder, displayStartDate)
-def StudentFrameExcelAddDisplayEndDate(builder, displayEndDate): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(displayEndDate), 0)
-def AddDisplayEndDate(builder, displayEndDate):
-    return StudentFrameExcelAddDisplayEndDate(builder, displayEndDate)
-def StudentFrameExcelAddDislpayLevel(builder, dislpayLevel): builder.PrependInt32Slot(11, dislpayLevel, 0)
-def AddDislpayLevel(builder, dislpayLevel):
-    return StudentFrameExcelAddDislpayLevel(builder, dislpayLevel)
-def StudentFrameExcelAddCheckPassType(builder, checkPassType): builder.PrependInt32Slot(12, checkPassType, 0)
-def AddCheckPassType(builder, checkPassType):
-    return StudentFrameExcelAddCheckPassType(builder, checkPassType)
-def StudentFrameExcelAddFrameParameter(builder, frameParameter): builder.PrependInt32Slot(13, frameParameter, 0)
-def AddFrameParameter(builder, frameParameter):
-    return StudentFrameExcelAddFrameParameter(builder, frameParameter)
-def StudentFrameExcelAddCheckPassCount(builder, checkPassCount): builder.PrependInt32Slot(14, checkPassCount, 0)
-def AddCheckPassCount(builder, checkPassCount):
-    return StudentFrameExcelAddCheckPassCount(builder, checkPassCount)
+def StudentFrameExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return StudentFrameExcelAddIdField(builder, idField)
+def StudentFrameExcelAddCategoryField(builder, categoryField): builder.PrependInt32Slot(1, categoryField, 0)
+def AddCategoryField(builder, categoryField):
+    return StudentFrameExcelAddCategoryField(builder, categoryField)
+def StudentFrameExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(2, displayOrderField, 0)
+def AddDisplayOrderField(builder, displayOrderField):
+    return StudentFrameExcelAddDisplayOrderField(builder, displayOrderField)
+def StudentFrameExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(3, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return StudentFrameExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def StudentFrameExcelAddIconPathField(builder, iconPathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+def AddIconPathField(builder, iconPathField):
+    return StudentFrameExcelAddIconPathField(builder, iconPathField)
+def StudentFrameExcelAddFrameImagePathField(builder, frameImagePathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(frameImagePathField), 0)
+def AddFrameImagePathField(builder, frameImagePathField):
+    return StudentFrameExcelAddFrameImagePathField(builder, frameImagePathField)
+def StudentFrameExcelAddBigFrameImagePathField(builder, bigFrameImagePathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(bigFrameImagePathField), 0)
+def AddBigFrameImagePathField(builder, bigFrameImagePathField):
+    return StudentFrameExcelAddBigFrameImagePathField(builder, bigFrameImagePathField)
+def StudentFrameExcelAddEmblemEffectPathField(builder, emblemEffectPathField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(emblemEffectPathField), 0)
+def AddEmblemEffectPathField(builder, emblemEffectPathField):
+    return StudentFrameExcelAddEmblemEffectPathField(builder, emblemEffectPathField)
+def StudentFrameExcelAddDisplayTypeField(builder, displayTypeField): builder.PrependInt32Slot(8, displayTypeField, 0)
+def AddDisplayTypeField(builder, displayTypeField):
+    return StudentFrameExcelAddDisplayTypeField(builder, displayTypeField)
+def StudentFrameExcelAddDisplayStartDateField(builder, displayStartDateField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(displayStartDateField), 0)
+def AddDisplayStartDateField(builder, displayStartDateField):
+    return StudentFrameExcelAddDisplayStartDateField(builder, displayStartDateField)
+def StudentFrameExcelAddDisplayEndDateField(builder, displayEndDateField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(displayEndDateField), 0)
+def AddDisplayEndDateField(builder, displayEndDateField):
+    return StudentFrameExcelAddDisplayEndDateField(builder, displayEndDateField)
+def StudentFrameExcelAddDislpayLevelField(builder, dislpayLevelField): builder.PrependInt32Slot(11, dislpayLevelField, 0)
+def AddDislpayLevelField(builder, dislpayLevelField):
+    return StudentFrameExcelAddDislpayLevelField(builder, dislpayLevelField)
+def StudentFrameExcelAddCheckPassTypeField(builder, checkPassTypeField): builder.PrependInt32Slot(12, checkPassTypeField, 0)
+def AddCheckPassTypeField(builder, checkPassTypeField):
+    return StudentFrameExcelAddCheckPassTypeField(builder, checkPassTypeField)
+def StudentFrameExcelAddFrameParameterField(builder, frameParameterField): builder.PrependInt32Slot(13, frameParameterField, 0)
+def AddFrameParameterField(builder, frameParameterField):
+    return StudentFrameExcelAddFrameParameterField(builder, frameParameterField)
+def StudentFrameExcelAddCheckPassCountField(builder, checkPassCountField): builder.PrependInt32Slot(14, checkPassCountField, 0)
+def AddCheckPassCountField(builder, checkPassCountField):
+    return StudentFrameExcelAddCheckPassCountField(builder, checkPassCountField)
 def StudentFrameExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return StudentFrameExcelEnd(builder)

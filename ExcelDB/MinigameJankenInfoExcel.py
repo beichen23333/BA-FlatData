@@ -25,98 +25,98 @@ class MinigameJankenInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenInfoExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def CostParcelType(self):
+    def CostParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def CostParcelId(self):
+    def CostParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def MultipleMax(self):
+    def MultipleMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def CostParcelEquipUpgradeType(self):
+    def CostParcelEquipUpgradeTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def CostParcelEquipUpgradeId(self):
+    def CostParcelEquipUpgradeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def ChallengeMultipleUnlockScore(self):
+    def ChallengeMultipleUnlockScoreField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def NeedItemAmountT2(self):
+    def NeedItemAmountT2Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def NeedItemAmountT3(self):
+    def NeedItemAmountT3Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def NeedItemAmountT4(self):
+    def NeedItemAmountT4Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def NeedItemAmountT5(self):
+    def NeedItemAmountT5Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def EquipmentMaxTier(self):
+    def EquipmentMaxTierField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def BGMId(self):
+    def BGMIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenInfoExcel
-    def ScoreMaxStack(self):
+    def ScoreMaxStackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -125,48 +125,48 @@ class MinigameJankenInfoExcel(object):
 def MinigameJankenInfoExcelStart(builder): builder.StartObject(14)
 def Start(builder):
     return MinigameJankenInfoExcelStart(builder)
-def MinigameJankenInfoExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MinigameJankenInfoExcelAddEventContentId(builder, eventContentId)
-def MinigameJankenInfoExcelAddCostParcelType(builder, costParcelType): builder.PrependInt32Slot(1, costParcelType, 0)
-def AddCostParcelType(builder, costParcelType):
-    return MinigameJankenInfoExcelAddCostParcelType(builder, costParcelType)
-def MinigameJankenInfoExcelAddCostParcelId(builder, costParcelId): builder.PrependInt32Slot(2, costParcelId, 0)
-def AddCostParcelId(builder, costParcelId):
-    return MinigameJankenInfoExcelAddCostParcelId(builder, costParcelId)
-def MinigameJankenInfoExcelAddMultipleMax(builder, multipleMax): builder.PrependInt32Slot(3, multipleMax, 0)
-def AddMultipleMax(builder, multipleMax):
-    return MinigameJankenInfoExcelAddMultipleMax(builder, multipleMax)
-def MinigameJankenInfoExcelAddCostParcelEquipUpgradeType(builder, costParcelEquipUpgradeType): builder.PrependInt32Slot(4, costParcelEquipUpgradeType, 0)
-def AddCostParcelEquipUpgradeType(builder, costParcelEquipUpgradeType):
-    return MinigameJankenInfoExcelAddCostParcelEquipUpgradeType(builder, costParcelEquipUpgradeType)
-def MinigameJankenInfoExcelAddCostParcelEquipUpgradeId(builder, costParcelEquipUpgradeId): builder.PrependInt32Slot(5, costParcelEquipUpgradeId, 0)
-def AddCostParcelEquipUpgradeId(builder, costParcelEquipUpgradeId):
-    return MinigameJankenInfoExcelAddCostParcelEquipUpgradeId(builder, costParcelEquipUpgradeId)
-def MinigameJankenInfoExcelAddChallengeMultipleUnlockScore(builder, challengeMultipleUnlockScore): builder.PrependInt32Slot(6, challengeMultipleUnlockScore, 0)
-def AddChallengeMultipleUnlockScore(builder, challengeMultipleUnlockScore):
-    return MinigameJankenInfoExcelAddChallengeMultipleUnlockScore(builder, challengeMultipleUnlockScore)
-def MinigameJankenInfoExcelAddNeedItemAmountT2(builder, needItemAmountT2): builder.PrependInt32Slot(7, needItemAmountT2, 0)
-def AddNeedItemAmountT2(builder, needItemAmountT2):
-    return MinigameJankenInfoExcelAddNeedItemAmountT2(builder, needItemAmountT2)
-def MinigameJankenInfoExcelAddNeedItemAmountT3(builder, needItemAmountT3): builder.PrependInt32Slot(8, needItemAmountT3, 0)
-def AddNeedItemAmountT3(builder, needItemAmountT3):
-    return MinigameJankenInfoExcelAddNeedItemAmountT3(builder, needItemAmountT3)
-def MinigameJankenInfoExcelAddNeedItemAmountT4(builder, needItemAmountT4): builder.PrependInt32Slot(9, needItemAmountT4, 0)
-def AddNeedItemAmountT4(builder, needItemAmountT4):
-    return MinigameJankenInfoExcelAddNeedItemAmountT4(builder, needItemAmountT4)
-def MinigameJankenInfoExcelAddNeedItemAmountT5(builder, needItemAmountT5): builder.PrependInt32Slot(10, needItemAmountT5, 0)
-def AddNeedItemAmountT5(builder, needItemAmountT5):
-    return MinigameJankenInfoExcelAddNeedItemAmountT5(builder, needItemAmountT5)
-def MinigameJankenInfoExcelAddEquipmentMaxTier(builder, equipmentMaxTier): builder.PrependInt32Slot(11, equipmentMaxTier, 0)
-def AddEquipmentMaxTier(builder, equipmentMaxTier):
-    return MinigameJankenInfoExcelAddEquipmentMaxTier(builder, equipmentMaxTier)
-def MinigameJankenInfoExcelAddBGMId(builder, bGMId): builder.PrependInt32Slot(12, bGMId, 0)
-def AddBGMId(builder, bGMId):
-    return MinigameJankenInfoExcelAddBGMId(builder, bGMId)
-def MinigameJankenInfoExcelAddScoreMaxStack(builder, scoreMaxStack): builder.PrependInt32Slot(13, scoreMaxStack, 0)
-def AddScoreMaxStack(builder, scoreMaxStack):
-    return MinigameJankenInfoExcelAddScoreMaxStack(builder, scoreMaxStack)
+def MinigameJankenInfoExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MinigameJankenInfoExcelAddEventContentIdField(builder, eventContentIdField)
+def MinigameJankenInfoExcelAddCostParcelTypeField(builder, costParcelTypeField): builder.PrependInt32Slot(1, costParcelTypeField, 0)
+def AddCostParcelTypeField(builder, costParcelTypeField):
+    return MinigameJankenInfoExcelAddCostParcelTypeField(builder, costParcelTypeField)
+def MinigameJankenInfoExcelAddCostParcelIdField(builder, costParcelIdField): builder.PrependInt32Slot(2, costParcelIdField, 0)
+def AddCostParcelIdField(builder, costParcelIdField):
+    return MinigameJankenInfoExcelAddCostParcelIdField(builder, costParcelIdField)
+def MinigameJankenInfoExcelAddMultipleMaxField(builder, multipleMaxField): builder.PrependInt32Slot(3, multipleMaxField, 0)
+def AddMultipleMaxField(builder, multipleMaxField):
+    return MinigameJankenInfoExcelAddMultipleMaxField(builder, multipleMaxField)
+def MinigameJankenInfoExcelAddCostParcelEquipUpgradeTypeField(builder, costParcelEquipUpgradeTypeField): builder.PrependInt32Slot(4, costParcelEquipUpgradeTypeField, 0)
+def AddCostParcelEquipUpgradeTypeField(builder, costParcelEquipUpgradeTypeField):
+    return MinigameJankenInfoExcelAddCostParcelEquipUpgradeTypeField(builder, costParcelEquipUpgradeTypeField)
+def MinigameJankenInfoExcelAddCostParcelEquipUpgradeIdField(builder, costParcelEquipUpgradeIdField): builder.PrependInt32Slot(5, costParcelEquipUpgradeIdField, 0)
+def AddCostParcelEquipUpgradeIdField(builder, costParcelEquipUpgradeIdField):
+    return MinigameJankenInfoExcelAddCostParcelEquipUpgradeIdField(builder, costParcelEquipUpgradeIdField)
+def MinigameJankenInfoExcelAddChallengeMultipleUnlockScoreField(builder, challengeMultipleUnlockScoreField): builder.PrependInt32Slot(6, challengeMultipleUnlockScoreField, 0)
+def AddChallengeMultipleUnlockScoreField(builder, challengeMultipleUnlockScoreField):
+    return MinigameJankenInfoExcelAddChallengeMultipleUnlockScoreField(builder, challengeMultipleUnlockScoreField)
+def MinigameJankenInfoExcelAddNeedItemAmountT2Field(builder, needItemAmountT2Field): builder.PrependInt32Slot(7, needItemAmountT2Field, 0)
+def AddNeedItemAmountT2Field(builder, needItemAmountT2Field):
+    return MinigameJankenInfoExcelAddNeedItemAmountT2Field(builder, needItemAmountT2Field)
+def MinigameJankenInfoExcelAddNeedItemAmountT3Field(builder, needItemAmountT3Field): builder.PrependInt32Slot(8, needItemAmountT3Field, 0)
+def AddNeedItemAmountT3Field(builder, needItemAmountT3Field):
+    return MinigameJankenInfoExcelAddNeedItemAmountT3Field(builder, needItemAmountT3Field)
+def MinigameJankenInfoExcelAddNeedItemAmountT4Field(builder, needItemAmountT4Field): builder.PrependInt32Slot(9, needItemAmountT4Field, 0)
+def AddNeedItemAmountT4Field(builder, needItemAmountT4Field):
+    return MinigameJankenInfoExcelAddNeedItemAmountT4Field(builder, needItemAmountT4Field)
+def MinigameJankenInfoExcelAddNeedItemAmountT5Field(builder, needItemAmountT5Field): builder.PrependInt32Slot(10, needItemAmountT5Field, 0)
+def AddNeedItemAmountT5Field(builder, needItemAmountT5Field):
+    return MinigameJankenInfoExcelAddNeedItemAmountT5Field(builder, needItemAmountT5Field)
+def MinigameJankenInfoExcelAddEquipmentMaxTierField(builder, equipmentMaxTierField): builder.PrependInt32Slot(11, equipmentMaxTierField, 0)
+def AddEquipmentMaxTierField(builder, equipmentMaxTierField):
+    return MinigameJankenInfoExcelAddEquipmentMaxTierField(builder, equipmentMaxTierField)
+def MinigameJankenInfoExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(12, bGMIdField, 0)
+def AddBGMIdField(builder, bGMIdField):
+    return MinigameJankenInfoExcelAddBGMIdField(builder, bGMIdField)
+def MinigameJankenInfoExcelAddScoreMaxStackField(builder, scoreMaxStackField): builder.PrependInt32Slot(13, scoreMaxStackField, 0)
+def AddScoreMaxStackField(builder, scoreMaxStackField):
+    return MinigameJankenInfoExcelAddScoreMaxStackField(builder, scoreMaxStackField)
 def MinigameJankenInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenInfoExcelEnd(builder)

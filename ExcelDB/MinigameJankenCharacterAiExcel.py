@@ -25,42 +25,42 @@ class MinigameJankenCharacterAiExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenCharacterAiExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterAiExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterAiExcel
-    def Rock(self):
+    def RockField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterAiExcel
-    def Scissor(self):
+    def ScissorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterAiExcel
-    def Paper(self):
+    def PaperField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterAiExcel
-    def GroupChance(self):
+    def GroupChanceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -69,24 +69,24 @@ class MinigameJankenCharacterAiExcel(object):
 def MinigameJankenCharacterAiExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return MinigameJankenCharacterAiExcelStart(builder)
-def MinigameJankenCharacterAiExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenCharacterAiExcelAddId(builder, id)
-def MinigameJankenCharacterAiExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(1, groupId, 0)
-def AddGroupId(builder, groupId):
-    return MinigameJankenCharacterAiExcelAddGroupId(builder, groupId)
-def MinigameJankenCharacterAiExcelAddRock(builder, rock): builder.PrependInt32Slot(2, rock, 0)
-def AddRock(builder, rock):
-    return MinigameJankenCharacterAiExcelAddRock(builder, rock)
-def MinigameJankenCharacterAiExcelAddScissor(builder, scissor): builder.PrependInt32Slot(3, scissor, 0)
-def AddScissor(builder, scissor):
-    return MinigameJankenCharacterAiExcelAddScissor(builder, scissor)
-def MinigameJankenCharacterAiExcelAddPaper(builder, paper): builder.PrependInt32Slot(4, paper, 0)
-def AddPaper(builder, paper):
-    return MinigameJankenCharacterAiExcelAddPaper(builder, paper)
-def MinigameJankenCharacterAiExcelAddGroupChance(builder, groupChance): builder.PrependInt32Slot(5, groupChance, 0)
-def AddGroupChance(builder, groupChance):
-    return MinigameJankenCharacterAiExcelAddGroupChance(builder, groupChance)
+def MinigameJankenCharacterAiExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenCharacterAiExcelAddIdField(builder, idField)
+def MinigameJankenCharacterAiExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(1, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return MinigameJankenCharacterAiExcelAddGroupIdField(builder, groupIdField)
+def MinigameJankenCharacterAiExcelAddRockField(builder, rockField): builder.PrependInt32Slot(2, rockField, 0)
+def AddRockField(builder, rockField):
+    return MinigameJankenCharacterAiExcelAddRockField(builder, rockField)
+def MinigameJankenCharacterAiExcelAddScissorField(builder, scissorField): builder.PrependInt32Slot(3, scissorField, 0)
+def AddScissorField(builder, scissorField):
+    return MinigameJankenCharacterAiExcelAddScissorField(builder, scissorField)
+def MinigameJankenCharacterAiExcelAddPaperField(builder, paperField): builder.PrependInt32Slot(4, paperField, 0)
+def AddPaperField(builder, paperField):
+    return MinigameJankenCharacterAiExcelAddPaperField(builder, paperField)
+def MinigameJankenCharacterAiExcelAddGroupChanceField(builder, groupChanceField): builder.PrependInt32Slot(5, groupChanceField, 0)
+def AddGroupChanceField(builder, groupChanceField):
+    return MinigameJankenCharacterAiExcelAddGroupChanceField(builder, groupChanceField)
 def MinigameJankenCharacterAiExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenCharacterAiExcelEnd(builder)

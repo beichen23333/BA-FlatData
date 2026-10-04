@@ -25,21 +25,21 @@ class SeasonRecordRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # SeasonRecordRewardExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SeasonRecordRewardExcel
-    def Day(self):
+    def DayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,26 +47,26 @@ class SeasonRecordRewardExcel(object):
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # SeasonRecordRewardExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,26 +74,26 @@ class SeasonRecordRewardExcel(object):
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # SeasonRecordRewardExcel
-    def RewardAmount(self, j):
+    def RewardAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -101,51 +101,51 @@ class SeasonRecordRewardExcel(object):
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardAmountAsNumpy(self):
+    def RewardAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardAmountLength(self):
+    def RewardAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # SeasonRecordRewardExcel
-    def RewardAmountIsNone(self):
+    def RewardAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
 def SeasonRecordRewardExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return SeasonRecordRewardExcelStart(builder)
-def SeasonRecordRewardExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return SeasonRecordRewardExcelAddGroupId(builder, groupId)
-def SeasonRecordRewardExcelAddDay(builder, day): builder.PrependInt32Slot(1, day, 0)
-def AddDay(builder, day):
-    return SeasonRecordRewardExcelAddDay(builder, day)
-def SeasonRecordRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return SeasonRecordRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def SeasonRecordRewardExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return SeasonRecordRewardExcelStartRewardParcelTypeVector(builder, numElems)
-def SeasonRecordRewardExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return SeasonRecordRewardExcelAddRewardParcelId(builder, rewardParcelId)
-def SeasonRecordRewardExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return SeasonRecordRewardExcelStartRewardParcelIdVector(builder, numElems)
-def SeasonRecordRewardExcelAddRewardAmount(builder, rewardAmount): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmount), 0)
-def AddRewardAmount(builder, rewardAmount):
-    return SeasonRecordRewardExcelAddRewardAmount(builder, rewardAmount)
-def SeasonRecordRewardExcelStartRewardAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardAmountVector(builder, numElems):
-    return SeasonRecordRewardExcelStartRewardAmountVector(builder, numElems)
+def SeasonRecordRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return SeasonRecordRewardExcelAddGroupIdField(builder, groupIdField)
+def SeasonRecordRewardExcelAddDayField(builder, dayField): builder.PrependInt32Slot(1, dayField, 0)
+def AddDayField(builder, dayField):
+    return SeasonRecordRewardExcelAddDayField(builder, dayField)
+def SeasonRecordRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return SeasonRecordRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def SeasonRecordRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return SeasonRecordRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def SeasonRecordRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return SeasonRecordRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def SeasonRecordRewardExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return SeasonRecordRewardExcelStartRewardParcelIdFieldVector(builder, numElems)
+def SeasonRecordRewardExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmountField), 0)
+def AddRewardAmountField(builder, rewardAmountField):
+    return SeasonRecordRewardExcelAddRewardAmountField(builder, rewardAmountField)
+def SeasonRecordRewardExcelStartRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardAmountFieldVector(builder, numElems):
+    return SeasonRecordRewardExcelStartRewardAmountFieldVector(builder, numElems)
 def SeasonRecordRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SeasonRecordRewardExcelEnd(builder)

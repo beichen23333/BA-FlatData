@@ -25,63 +25,63 @@ class EventContentChangeExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentChangeExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeExcel
-    def ChangeCount(self):
+    def ChangeCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeExcel
-    def IsLast(self):
+    def IsLastField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EventContentChangeExcel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeExcel
-    def RewardId(self):
+    def RewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeExcel
-    def RewardAmount(self):
+    def RewardAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeExcel
-    def ChangeCostType(self):
+    def ChangeCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeExcel
-    def ChangeCostId(self):
+    def ChangeCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeExcel
-    def ChangeCostAmount(self):
+    def ChangeCostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -90,33 +90,33 @@ class EventContentChangeExcel(object):
 def EventContentChangeExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return EventContentChangeExcelStart(builder)
-def EventContentChangeExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentChangeExcelAddEventContentId(builder, eventContentId)
-def EventContentChangeExcelAddChangeCount(builder, changeCount): builder.PrependInt32Slot(1, changeCount, 0)
-def AddChangeCount(builder, changeCount):
-    return EventContentChangeExcelAddChangeCount(builder, changeCount)
-def EventContentChangeExcelAddIsLast(builder, isLast): builder.PrependBoolSlot(2, isLast, 0)
-def AddIsLast(builder, isLast):
-    return EventContentChangeExcelAddIsLast(builder, isLast)
-def EventContentChangeExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(3, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return EventContentChangeExcelAddRewardParcelType(builder, rewardParcelType)
-def EventContentChangeExcelAddRewardId(builder, rewardId): builder.PrependInt32Slot(4, rewardId, 0)
-def AddRewardId(builder, rewardId):
-    return EventContentChangeExcelAddRewardId(builder, rewardId)
-def EventContentChangeExcelAddRewardAmount(builder, rewardAmount): builder.PrependInt32Slot(5, rewardAmount, 0)
-def AddRewardAmount(builder, rewardAmount):
-    return EventContentChangeExcelAddRewardAmount(builder, rewardAmount)
-def EventContentChangeExcelAddChangeCostType(builder, changeCostType): builder.PrependInt32Slot(6, changeCostType, 0)
-def AddChangeCostType(builder, changeCostType):
-    return EventContentChangeExcelAddChangeCostType(builder, changeCostType)
-def EventContentChangeExcelAddChangeCostId(builder, changeCostId): builder.PrependInt32Slot(7, changeCostId, 0)
-def AddChangeCostId(builder, changeCostId):
-    return EventContentChangeExcelAddChangeCostId(builder, changeCostId)
-def EventContentChangeExcelAddChangeCostAmount(builder, changeCostAmount): builder.PrependInt32Slot(8, changeCostAmount, 0)
-def AddChangeCostAmount(builder, changeCostAmount):
-    return EventContentChangeExcelAddChangeCostAmount(builder, changeCostAmount)
+def EventContentChangeExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentChangeExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentChangeExcelAddChangeCountField(builder, changeCountField): builder.PrependInt32Slot(1, changeCountField, 0)
+def AddChangeCountField(builder, changeCountField):
+    return EventContentChangeExcelAddChangeCountField(builder, changeCountField)
+def EventContentChangeExcelAddIsLastField(builder, isLastField): builder.PrependBoolSlot(2, isLastField, 0)
+def AddIsLastField(builder, isLastField):
+    return EventContentChangeExcelAddIsLastField(builder, isLastField)
+def EventContentChangeExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return EventContentChangeExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def EventContentChangeExcelAddRewardIdField(builder, rewardIdField): builder.PrependInt32Slot(4, rewardIdField, 0)
+def AddRewardIdField(builder, rewardIdField):
+    return EventContentChangeExcelAddRewardIdField(builder, rewardIdField)
+def EventContentChangeExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependInt32Slot(5, rewardAmountField, 0)
+def AddRewardAmountField(builder, rewardAmountField):
+    return EventContentChangeExcelAddRewardAmountField(builder, rewardAmountField)
+def EventContentChangeExcelAddChangeCostTypeField(builder, changeCostTypeField): builder.PrependInt32Slot(6, changeCostTypeField, 0)
+def AddChangeCostTypeField(builder, changeCostTypeField):
+    return EventContentChangeExcelAddChangeCostTypeField(builder, changeCostTypeField)
+def EventContentChangeExcelAddChangeCostIdField(builder, changeCostIdField): builder.PrependInt32Slot(7, changeCostIdField, 0)
+def AddChangeCostIdField(builder, changeCostIdField):
+    return EventContentChangeExcelAddChangeCostIdField(builder, changeCostIdField)
+def EventContentChangeExcelAddChangeCostAmountField(builder, changeCostAmountField): builder.PrependInt32Slot(8, changeCostAmountField, 0)
+def AddChangeCostAmountField(builder, changeCostAmountField):
+    return EventContentChangeExcelAddChangeCostAmountField(builder, changeCostAmountField)
 def EventContentChangeExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentChangeExcelEnd(builder)

@@ -25,28 +25,28 @@ class RaidSkillDescriptionListExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # RaidSkillDescriptionListExcel
-    def BossGroup(self):
+    def BossGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # RaidSkillDescriptionListExcel
-    def Difficulty(self):
+    def DifficultyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # RaidSkillDescriptionListExcel
-    def PhaseNameOverrideKey(self):
+    def PhaseNameOverrideKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # RaidSkillDescriptionListExcel
-    def SkillGroupId(self, j):
+    def SkillGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -54,19 +54,19 @@ class RaidSkillDescriptionListExcel(object):
         return ""
 
     # RaidSkillDescriptionListExcel
-    def SkillGroupIdLength(self):
+    def SkillGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # RaidSkillDescriptionListExcel
-    def SkillGroupIdIsNone(self):
+    def SkillGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # RaidSkillDescriptionListExcel
-    def SkillUsePhase(self, j):
+    def SkillUsePhaseField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,26 +74,26 @@ class RaidSkillDescriptionListExcel(object):
         return 0
 
     # RaidSkillDescriptionListExcel
-    def SkillUsePhaseAsNumpy(self):
+    def SkillUsePhaseFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # RaidSkillDescriptionListExcel
-    def SkillUsePhaseLength(self):
+    def SkillUsePhaseFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # RaidSkillDescriptionListExcel
-    def SkillUsePhaseIsNone(self):
+    def SkillUsePhaseFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # RaidSkillDescriptionListExcel
-    def ShowSkillSlot(self, j):
+    def ShowSkillSlotField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -101,26 +101,26 @@ class RaidSkillDescriptionListExcel(object):
         return 0
 
     # RaidSkillDescriptionListExcel
-    def ShowSkillSlotAsNumpy(self):
+    def ShowSkillSlotFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # RaidSkillDescriptionListExcel
-    def ShowSkillSlotLength(self):
+    def ShowSkillSlotFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # RaidSkillDescriptionListExcel
-    def ShowSkillSlotIsNone(self):
+    def ShowSkillSlotFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # RaidSkillDescriptionListExcel
-    def HighlightResource(self, j):
+    def HighlightResourceField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -128,60 +128,60 @@ class RaidSkillDescriptionListExcel(object):
         return 0
 
     # RaidSkillDescriptionListExcel
-    def HighlightResourceAsNumpy(self):
+    def HighlightResourceFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # RaidSkillDescriptionListExcel
-    def HighlightResourceLength(self):
+    def HighlightResourceFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # RaidSkillDescriptionListExcel
-    def HighlightResourceIsNone(self):
+    def HighlightResourceFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def RaidSkillDescriptionListExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return RaidSkillDescriptionListExcelStart(builder)
-def RaidSkillDescriptionListExcelAddBossGroup(builder, bossGroup): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(bossGroup), 0)
-def AddBossGroup(builder, bossGroup):
-    return RaidSkillDescriptionListExcelAddBossGroup(builder, bossGroup)
-def RaidSkillDescriptionListExcelAddDifficulty(builder, difficulty): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(difficulty), 0)
-def AddDifficulty(builder, difficulty):
-    return RaidSkillDescriptionListExcelAddDifficulty(builder, difficulty)
-def RaidSkillDescriptionListExcelAddPhaseNameOverrideKey(builder, phaseNameOverrideKey): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(phaseNameOverrideKey), 0)
-def AddPhaseNameOverrideKey(builder, phaseNameOverrideKey):
-    return RaidSkillDescriptionListExcelAddPhaseNameOverrideKey(builder, phaseNameOverrideKey)
-def RaidSkillDescriptionListExcelAddSkillGroupId(builder, skillGroupId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupId), 0)
-def AddSkillGroupId(builder, skillGroupId):
-    return RaidSkillDescriptionListExcelAddSkillGroupId(builder, skillGroupId)
-def RaidSkillDescriptionListExcelStartSkillGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillGroupIdVector(builder, numElems):
-    return RaidSkillDescriptionListExcelStartSkillGroupIdVector(builder, numElems)
-def RaidSkillDescriptionListExcelAddSkillUsePhase(builder, skillUsePhase): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(skillUsePhase), 0)
-def AddSkillUsePhase(builder, skillUsePhase):
-    return RaidSkillDescriptionListExcelAddSkillUsePhase(builder, skillUsePhase)
-def RaidSkillDescriptionListExcelStartSkillUsePhaseVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillUsePhaseVector(builder, numElems):
-    return RaidSkillDescriptionListExcelStartSkillUsePhaseVector(builder, numElems)
-def RaidSkillDescriptionListExcelAddShowSkillSlot(builder, showSkillSlot): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(showSkillSlot), 0)
-def AddShowSkillSlot(builder, showSkillSlot):
-    return RaidSkillDescriptionListExcelAddShowSkillSlot(builder, showSkillSlot)
-def RaidSkillDescriptionListExcelStartShowSkillSlotVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShowSkillSlotVector(builder, numElems):
-    return RaidSkillDescriptionListExcelStartShowSkillSlotVector(builder, numElems)
-def RaidSkillDescriptionListExcelAddHighlightResource(builder, highlightResource): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(highlightResource), 0)
-def AddHighlightResource(builder, highlightResource):
-    return RaidSkillDescriptionListExcelAddHighlightResource(builder, highlightResource)
-def RaidSkillDescriptionListExcelStartHighlightResourceVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartHighlightResourceVector(builder, numElems):
-    return RaidSkillDescriptionListExcelStartHighlightResourceVector(builder, numElems)
+def RaidSkillDescriptionListExcelAddBossGroupField(builder, bossGroupField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(bossGroupField), 0)
+def AddBossGroupField(builder, bossGroupField):
+    return RaidSkillDescriptionListExcelAddBossGroupField(builder, bossGroupField)
+def RaidSkillDescriptionListExcelAddDifficultyField(builder, difficultyField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(difficultyField), 0)
+def AddDifficultyField(builder, difficultyField):
+    return RaidSkillDescriptionListExcelAddDifficultyField(builder, difficultyField)
+def RaidSkillDescriptionListExcelAddPhaseNameOverrideKeyField(builder, phaseNameOverrideKeyField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(phaseNameOverrideKeyField), 0)
+def AddPhaseNameOverrideKeyField(builder, phaseNameOverrideKeyField):
+    return RaidSkillDescriptionListExcelAddPhaseNameOverrideKeyField(builder, phaseNameOverrideKeyField)
+def RaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+def AddSkillGroupIdField(builder, skillGroupIdField):
+    return RaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField)
+def RaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartSkillGroupIdFieldVector(builder, numElems):
+    return RaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems)
+def RaidSkillDescriptionListExcelAddSkillUsePhaseField(builder, skillUsePhaseField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(skillUsePhaseField), 0)
+def AddSkillUsePhaseField(builder, skillUsePhaseField):
+    return RaidSkillDescriptionListExcelAddSkillUsePhaseField(builder, skillUsePhaseField)
+def RaidSkillDescriptionListExcelStartSkillUsePhaseFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartSkillUsePhaseFieldVector(builder, numElems):
+    return RaidSkillDescriptionListExcelStartSkillUsePhaseFieldVector(builder, numElems)
+def RaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(showSkillSlotField), 0)
+def AddShowSkillSlotField(builder, showSkillSlotField):
+    return RaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField)
+def RaidSkillDescriptionListExcelStartShowSkillSlotFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShowSkillSlotFieldVector(builder, numElems):
+    return RaidSkillDescriptionListExcelStartShowSkillSlotFieldVector(builder, numElems)
+def RaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(highlightResourceField), 0)
+def AddHighlightResourceField(builder, highlightResourceField):
+    return RaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField)
+def RaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartHighlightResourceFieldVector(builder, numElems):
+    return RaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems)
 def RaidSkillDescriptionListExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return RaidSkillDescriptionListExcelEnd(builder)

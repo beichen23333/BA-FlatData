@@ -25,21 +25,21 @@ class ApcSlotDefineExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ApcSlotDefineExcel
-    def ApcSlotDefineId(self):
+    def ApcSlotDefineIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotAmount(self):
+    def ApcSlotAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType01(self, j):
+    def ApcSlotSquadType01Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,40 +47,40 @@ class ApcSlotDefineExcel(object):
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType01AsNumpy(self):
+    def ApcSlotSquadType01FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType01Length(self):
+    def ApcSlotSquadType01FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType01IsNone(self):
+    def ApcSlotSquadType01FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # ApcSlotDefineExcel
-    def ApcSlotStartCooltime01(self):
+    def ApcSlotStartCooltime01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotCooltime01(self):
+    def ApcSlotCooltime01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType02(self, j):
+    def ApcSlotSquadType02Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -88,40 +88,40 @@ class ApcSlotDefineExcel(object):
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType02AsNumpy(self):
+    def ApcSlotSquadType02FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType02Length(self):
+    def ApcSlotSquadType02FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType02IsNone(self):
+    def ApcSlotSquadType02FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # ApcSlotDefineExcel
-    def ApcSlotStartCooltime02(self):
+    def ApcSlotStartCooltime02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotCooltime02(self):
+    def ApcSlotCooltime02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType03(self, j):
+    def ApcSlotSquadType03Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             a = self._tab.Vector(o)
@@ -129,40 +129,40 @@ class ApcSlotDefineExcel(object):
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType03AsNumpy(self):
+    def ApcSlotSquadType03FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType03Length(self):
+    def ApcSlotSquadType03FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType03IsNone(self):
+    def ApcSlotSquadType03FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         return o == 0
 
     # ApcSlotDefineExcel
-    def ApcSlotStartCooltime03(self):
+    def ApcSlotStartCooltime03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotCooltime03(self):
+    def ApcSlotCooltime03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType04(self, j):
+    def ApcSlotSquadType04Field(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
@@ -170,110 +170,110 @@ class ApcSlotDefineExcel(object):
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType04AsNumpy(self):
+    def ApcSlotSquadType04FieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType04Length(self):
+    def ApcSlotSquadType04FieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotSquadType04IsNone(self):
+    def ApcSlotSquadType04FieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
     # ApcSlotDefineExcel
-    def ApcSlotStartCooltime04(self):
+    def ApcSlotStartCooltime04Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSlotCooltime04(self):
+    def ApcSlotCooltime04Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def ApcSynergyId(self):
+    def ApcSynergyIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def AddCostRule(self):
+    def AddCostRuleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ApcSlotDefineExcel
-    def StatType01(self):
+    def StatType01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def StatAdd01(self):
+    def StatAdd01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def StatMultiply01(self):
+    def StatMultiply01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def StatType02(self):
+    def StatType02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def StatAdd02(self):
+    def StatAdd02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def StatMultiply02(self):
+    def StatMultiply02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def StatType03(self):
+    def StatType03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def StatAdd03(self):
+    def StatAdd03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ApcSlotDefineExcel
-    def StatMultiply03(self):
+    def StatMultiply03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -282,93 +282,93 @@ class ApcSlotDefineExcel(object):
 def ApcSlotDefineExcelStart(builder): builder.StartObject(25)
 def Start(builder):
     return ApcSlotDefineExcelStart(builder)
-def ApcSlotDefineExcelAddApcSlotDefineId(builder, apcSlotDefineId): builder.PrependInt32Slot(0, apcSlotDefineId, 0)
-def AddApcSlotDefineId(builder, apcSlotDefineId):
-    return ApcSlotDefineExcelAddApcSlotDefineId(builder, apcSlotDefineId)
-def ApcSlotDefineExcelAddApcSlotAmount(builder, apcSlotAmount): builder.PrependInt32Slot(1, apcSlotAmount, 0)
-def AddApcSlotAmount(builder, apcSlotAmount):
-    return ApcSlotDefineExcelAddApcSlotAmount(builder, apcSlotAmount)
-def ApcSlotDefineExcelAddApcSlotSquadType01(builder, apcSlotSquadType01): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(apcSlotSquadType01), 0)
-def AddApcSlotSquadType01(builder, apcSlotSquadType01):
-    return ApcSlotDefineExcelAddApcSlotSquadType01(builder, apcSlotSquadType01)
-def ApcSlotDefineExcelStartApcSlotSquadType01Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartApcSlotSquadType01Vector(builder, numElems):
-    return ApcSlotDefineExcelStartApcSlotSquadType01Vector(builder, numElems)
-def ApcSlotDefineExcelAddApcSlotStartCooltime01(builder, apcSlotStartCooltime01): builder.PrependInt32Slot(3, apcSlotStartCooltime01, 0)
-def AddApcSlotStartCooltime01(builder, apcSlotStartCooltime01):
-    return ApcSlotDefineExcelAddApcSlotStartCooltime01(builder, apcSlotStartCooltime01)
-def ApcSlotDefineExcelAddApcSlotCooltime01(builder, apcSlotCooltime01): builder.PrependInt32Slot(4, apcSlotCooltime01, 0)
-def AddApcSlotCooltime01(builder, apcSlotCooltime01):
-    return ApcSlotDefineExcelAddApcSlotCooltime01(builder, apcSlotCooltime01)
-def ApcSlotDefineExcelAddApcSlotSquadType02(builder, apcSlotSquadType02): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(apcSlotSquadType02), 0)
-def AddApcSlotSquadType02(builder, apcSlotSquadType02):
-    return ApcSlotDefineExcelAddApcSlotSquadType02(builder, apcSlotSquadType02)
-def ApcSlotDefineExcelStartApcSlotSquadType02Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartApcSlotSquadType02Vector(builder, numElems):
-    return ApcSlotDefineExcelStartApcSlotSquadType02Vector(builder, numElems)
-def ApcSlotDefineExcelAddApcSlotStartCooltime02(builder, apcSlotStartCooltime02): builder.PrependInt32Slot(6, apcSlotStartCooltime02, 0)
-def AddApcSlotStartCooltime02(builder, apcSlotStartCooltime02):
-    return ApcSlotDefineExcelAddApcSlotStartCooltime02(builder, apcSlotStartCooltime02)
-def ApcSlotDefineExcelAddApcSlotCooltime02(builder, apcSlotCooltime02): builder.PrependInt32Slot(7, apcSlotCooltime02, 0)
-def AddApcSlotCooltime02(builder, apcSlotCooltime02):
-    return ApcSlotDefineExcelAddApcSlotCooltime02(builder, apcSlotCooltime02)
-def ApcSlotDefineExcelAddApcSlotSquadType03(builder, apcSlotSquadType03): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(apcSlotSquadType03), 0)
-def AddApcSlotSquadType03(builder, apcSlotSquadType03):
-    return ApcSlotDefineExcelAddApcSlotSquadType03(builder, apcSlotSquadType03)
-def ApcSlotDefineExcelStartApcSlotSquadType03Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartApcSlotSquadType03Vector(builder, numElems):
-    return ApcSlotDefineExcelStartApcSlotSquadType03Vector(builder, numElems)
-def ApcSlotDefineExcelAddApcSlotStartCooltime03(builder, apcSlotStartCooltime03): builder.PrependInt32Slot(9, apcSlotStartCooltime03, 0)
-def AddApcSlotStartCooltime03(builder, apcSlotStartCooltime03):
-    return ApcSlotDefineExcelAddApcSlotStartCooltime03(builder, apcSlotStartCooltime03)
-def ApcSlotDefineExcelAddApcSlotCooltime03(builder, apcSlotCooltime03): builder.PrependInt32Slot(10, apcSlotCooltime03, 0)
-def AddApcSlotCooltime03(builder, apcSlotCooltime03):
-    return ApcSlotDefineExcelAddApcSlotCooltime03(builder, apcSlotCooltime03)
-def ApcSlotDefineExcelAddApcSlotSquadType04(builder, apcSlotSquadType04): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(apcSlotSquadType04), 0)
-def AddApcSlotSquadType04(builder, apcSlotSquadType04):
-    return ApcSlotDefineExcelAddApcSlotSquadType04(builder, apcSlotSquadType04)
-def ApcSlotDefineExcelStartApcSlotSquadType04Vector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartApcSlotSquadType04Vector(builder, numElems):
-    return ApcSlotDefineExcelStartApcSlotSquadType04Vector(builder, numElems)
-def ApcSlotDefineExcelAddApcSlotStartCooltime04(builder, apcSlotStartCooltime04): builder.PrependInt32Slot(12, apcSlotStartCooltime04, 0)
-def AddApcSlotStartCooltime04(builder, apcSlotStartCooltime04):
-    return ApcSlotDefineExcelAddApcSlotStartCooltime04(builder, apcSlotStartCooltime04)
-def ApcSlotDefineExcelAddApcSlotCooltime04(builder, apcSlotCooltime04): builder.PrependInt32Slot(13, apcSlotCooltime04, 0)
-def AddApcSlotCooltime04(builder, apcSlotCooltime04):
-    return ApcSlotDefineExcelAddApcSlotCooltime04(builder, apcSlotCooltime04)
-def ApcSlotDefineExcelAddApcSynergyId(builder, apcSynergyId): builder.PrependInt32Slot(14, apcSynergyId, 0)
-def AddApcSynergyId(builder, apcSynergyId):
-    return ApcSlotDefineExcelAddApcSynergyId(builder, apcSynergyId)
-def ApcSlotDefineExcelAddAddCostRule(builder, addCostRule): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(addCostRule), 0)
-def AddAddCostRule(builder, addCostRule):
-    return ApcSlotDefineExcelAddAddCostRule(builder, addCostRule)
-def ApcSlotDefineExcelAddStatType01(builder, statType01): builder.PrependInt32Slot(16, statType01, 0)
-def AddStatType01(builder, statType01):
-    return ApcSlotDefineExcelAddStatType01(builder, statType01)
-def ApcSlotDefineExcelAddStatAdd01(builder, statAdd01): builder.PrependInt32Slot(17, statAdd01, 0)
-def AddStatAdd01(builder, statAdd01):
-    return ApcSlotDefineExcelAddStatAdd01(builder, statAdd01)
-def ApcSlotDefineExcelAddStatMultiply01(builder, statMultiply01): builder.PrependInt32Slot(18, statMultiply01, 0)
-def AddStatMultiply01(builder, statMultiply01):
-    return ApcSlotDefineExcelAddStatMultiply01(builder, statMultiply01)
-def ApcSlotDefineExcelAddStatType02(builder, statType02): builder.PrependInt32Slot(19, statType02, 0)
-def AddStatType02(builder, statType02):
-    return ApcSlotDefineExcelAddStatType02(builder, statType02)
-def ApcSlotDefineExcelAddStatAdd02(builder, statAdd02): builder.PrependInt32Slot(20, statAdd02, 0)
-def AddStatAdd02(builder, statAdd02):
-    return ApcSlotDefineExcelAddStatAdd02(builder, statAdd02)
-def ApcSlotDefineExcelAddStatMultiply02(builder, statMultiply02): builder.PrependInt32Slot(21, statMultiply02, 0)
-def AddStatMultiply02(builder, statMultiply02):
-    return ApcSlotDefineExcelAddStatMultiply02(builder, statMultiply02)
-def ApcSlotDefineExcelAddStatType03(builder, statType03): builder.PrependInt32Slot(22, statType03, 0)
-def AddStatType03(builder, statType03):
-    return ApcSlotDefineExcelAddStatType03(builder, statType03)
-def ApcSlotDefineExcelAddStatAdd03(builder, statAdd03): builder.PrependInt32Slot(23, statAdd03, 0)
-def AddStatAdd03(builder, statAdd03):
-    return ApcSlotDefineExcelAddStatAdd03(builder, statAdd03)
-def ApcSlotDefineExcelAddStatMultiply03(builder, statMultiply03): builder.PrependInt32Slot(24, statMultiply03, 0)
-def AddStatMultiply03(builder, statMultiply03):
-    return ApcSlotDefineExcelAddStatMultiply03(builder, statMultiply03)
+def ApcSlotDefineExcelAddApcSlotDefineIdField(builder, apcSlotDefineIdField): builder.PrependInt32Slot(0, apcSlotDefineIdField, 0)
+def AddApcSlotDefineIdField(builder, apcSlotDefineIdField):
+    return ApcSlotDefineExcelAddApcSlotDefineIdField(builder, apcSlotDefineIdField)
+def ApcSlotDefineExcelAddApcSlotAmountField(builder, apcSlotAmountField): builder.PrependInt32Slot(1, apcSlotAmountField, 0)
+def AddApcSlotAmountField(builder, apcSlotAmountField):
+    return ApcSlotDefineExcelAddApcSlotAmountField(builder, apcSlotAmountField)
+def ApcSlotDefineExcelAddApcSlotSquadType01Field(builder, apcSlotSquadType01Field): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(apcSlotSquadType01Field), 0)
+def AddApcSlotSquadType01Field(builder, apcSlotSquadType01Field):
+    return ApcSlotDefineExcelAddApcSlotSquadType01Field(builder, apcSlotSquadType01Field)
+def ApcSlotDefineExcelStartApcSlotSquadType01FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartApcSlotSquadType01FieldVector(builder, numElems):
+    return ApcSlotDefineExcelStartApcSlotSquadType01FieldVector(builder, numElems)
+def ApcSlotDefineExcelAddApcSlotStartCooltime01Field(builder, apcSlotStartCooltime01Field): builder.PrependInt32Slot(3, apcSlotStartCooltime01Field, 0)
+def AddApcSlotStartCooltime01Field(builder, apcSlotStartCooltime01Field):
+    return ApcSlotDefineExcelAddApcSlotStartCooltime01Field(builder, apcSlotStartCooltime01Field)
+def ApcSlotDefineExcelAddApcSlotCooltime01Field(builder, apcSlotCooltime01Field): builder.PrependInt32Slot(4, apcSlotCooltime01Field, 0)
+def AddApcSlotCooltime01Field(builder, apcSlotCooltime01Field):
+    return ApcSlotDefineExcelAddApcSlotCooltime01Field(builder, apcSlotCooltime01Field)
+def ApcSlotDefineExcelAddApcSlotSquadType02Field(builder, apcSlotSquadType02Field): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(apcSlotSquadType02Field), 0)
+def AddApcSlotSquadType02Field(builder, apcSlotSquadType02Field):
+    return ApcSlotDefineExcelAddApcSlotSquadType02Field(builder, apcSlotSquadType02Field)
+def ApcSlotDefineExcelStartApcSlotSquadType02FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartApcSlotSquadType02FieldVector(builder, numElems):
+    return ApcSlotDefineExcelStartApcSlotSquadType02FieldVector(builder, numElems)
+def ApcSlotDefineExcelAddApcSlotStartCooltime02Field(builder, apcSlotStartCooltime02Field): builder.PrependInt32Slot(6, apcSlotStartCooltime02Field, 0)
+def AddApcSlotStartCooltime02Field(builder, apcSlotStartCooltime02Field):
+    return ApcSlotDefineExcelAddApcSlotStartCooltime02Field(builder, apcSlotStartCooltime02Field)
+def ApcSlotDefineExcelAddApcSlotCooltime02Field(builder, apcSlotCooltime02Field): builder.PrependInt32Slot(7, apcSlotCooltime02Field, 0)
+def AddApcSlotCooltime02Field(builder, apcSlotCooltime02Field):
+    return ApcSlotDefineExcelAddApcSlotCooltime02Field(builder, apcSlotCooltime02Field)
+def ApcSlotDefineExcelAddApcSlotSquadType03Field(builder, apcSlotSquadType03Field): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(apcSlotSquadType03Field), 0)
+def AddApcSlotSquadType03Field(builder, apcSlotSquadType03Field):
+    return ApcSlotDefineExcelAddApcSlotSquadType03Field(builder, apcSlotSquadType03Field)
+def ApcSlotDefineExcelStartApcSlotSquadType03FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartApcSlotSquadType03FieldVector(builder, numElems):
+    return ApcSlotDefineExcelStartApcSlotSquadType03FieldVector(builder, numElems)
+def ApcSlotDefineExcelAddApcSlotStartCooltime03Field(builder, apcSlotStartCooltime03Field): builder.PrependInt32Slot(9, apcSlotStartCooltime03Field, 0)
+def AddApcSlotStartCooltime03Field(builder, apcSlotStartCooltime03Field):
+    return ApcSlotDefineExcelAddApcSlotStartCooltime03Field(builder, apcSlotStartCooltime03Field)
+def ApcSlotDefineExcelAddApcSlotCooltime03Field(builder, apcSlotCooltime03Field): builder.PrependInt32Slot(10, apcSlotCooltime03Field, 0)
+def AddApcSlotCooltime03Field(builder, apcSlotCooltime03Field):
+    return ApcSlotDefineExcelAddApcSlotCooltime03Field(builder, apcSlotCooltime03Field)
+def ApcSlotDefineExcelAddApcSlotSquadType04Field(builder, apcSlotSquadType04Field): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(apcSlotSquadType04Field), 0)
+def AddApcSlotSquadType04Field(builder, apcSlotSquadType04Field):
+    return ApcSlotDefineExcelAddApcSlotSquadType04Field(builder, apcSlotSquadType04Field)
+def ApcSlotDefineExcelStartApcSlotSquadType04FieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartApcSlotSquadType04FieldVector(builder, numElems):
+    return ApcSlotDefineExcelStartApcSlotSquadType04FieldVector(builder, numElems)
+def ApcSlotDefineExcelAddApcSlotStartCooltime04Field(builder, apcSlotStartCooltime04Field): builder.PrependInt32Slot(12, apcSlotStartCooltime04Field, 0)
+def AddApcSlotStartCooltime04Field(builder, apcSlotStartCooltime04Field):
+    return ApcSlotDefineExcelAddApcSlotStartCooltime04Field(builder, apcSlotStartCooltime04Field)
+def ApcSlotDefineExcelAddApcSlotCooltime04Field(builder, apcSlotCooltime04Field): builder.PrependInt32Slot(13, apcSlotCooltime04Field, 0)
+def AddApcSlotCooltime04Field(builder, apcSlotCooltime04Field):
+    return ApcSlotDefineExcelAddApcSlotCooltime04Field(builder, apcSlotCooltime04Field)
+def ApcSlotDefineExcelAddApcSynergyIdField(builder, apcSynergyIdField): builder.PrependInt32Slot(14, apcSynergyIdField, 0)
+def AddApcSynergyIdField(builder, apcSynergyIdField):
+    return ApcSlotDefineExcelAddApcSynergyIdField(builder, apcSynergyIdField)
+def ApcSlotDefineExcelAddAddCostRuleField(builder, addCostRuleField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(addCostRuleField), 0)
+def AddAddCostRuleField(builder, addCostRuleField):
+    return ApcSlotDefineExcelAddAddCostRuleField(builder, addCostRuleField)
+def ApcSlotDefineExcelAddStatType01Field(builder, statType01Field): builder.PrependInt32Slot(16, statType01Field, 0)
+def AddStatType01Field(builder, statType01Field):
+    return ApcSlotDefineExcelAddStatType01Field(builder, statType01Field)
+def ApcSlotDefineExcelAddStatAdd01Field(builder, statAdd01Field): builder.PrependInt32Slot(17, statAdd01Field, 0)
+def AddStatAdd01Field(builder, statAdd01Field):
+    return ApcSlotDefineExcelAddStatAdd01Field(builder, statAdd01Field)
+def ApcSlotDefineExcelAddStatMultiply01Field(builder, statMultiply01Field): builder.PrependInt32Slot(18, statMultiply01Field, 0)
+def AddStatMultiply01Field(builder, statMultiply01Field):
+    return ApcSlotDefineExcelAddStatMultiply01Field(builder, statMultiply01Field)
+def ApcSlotDefineExcelAddStatType02Field(builder, statType02Field): builder.PrependInt32Slot(19, statType02Field, 0)
+def AddStatType02Field(builder, statType02Field):
+    return ApcSlotDefineExcelAddStatType02Field(builder, statType02Field)
+def ApcSlotDefineExcelAddStatAdd02Field(builder, statAdd02Field): builder.PrependInt32Slot(20, statAdd02Field, 0)
+def AddStatAdd02Field(builder, statAdd02Field):
+    return ApcSlotDefineExcelAddStatAdd02Field(builder, statAdd02Field)
+def ApcSlotDefineExcelAddStatMultiply02Field(builder, statMultiply02Field): builder.PrependInt32Slot(21, statMultiply02Field, 0)
+def AddStatMultiply02Field(builder, statMultiply02Field):
+    return ApcSlotDefineExcelAddStatMultiply02Field(builder, statMultiply02Field)
+def ApcSlotDefineExcelAddStatType03Field(builder, statType03Field): builder.PrependInt32Slot(22, statType03Field, 0)
+def AddStatType03Field(builder, statType03Field):
+    return ApcSlotDefineExcelAddStatType03Field(builder, statType03Field)
+def ApcSlotDefineExcelAddStatAdd03Field(builder, statAdd03Field): builder.PrependInt32Slot(23, statAdd03Field, 0)
+def AddStatAdd03Field(builder, statAdd03Field):
+    return ApcSlotDefineExcelAddStatAdd03Field(builder, statAdd03Field)
+def ApcSlotDefineExcelAddStatMultiply03Field(builder, statMultiply03Field): builder.PrependInt32Slot(24, statMultiply03Field, 0)
+def AddStatMultiply03Field(builder, statMultiply03Field):
+    return ApcSlotDefineExcelAddStatMultiply03Field(builder, statMultiply03Field)
 def ApcSlotDefineExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ApcSlotDefineExcelEnd(builder)

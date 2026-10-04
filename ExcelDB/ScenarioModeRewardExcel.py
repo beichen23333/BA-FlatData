@@ -25,49 +25,49 @@ class ScenarioModeRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ScenarioModeRewardExcel
-    def ScenarioModeRewardId(self):
+    def ScenarioModeRewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeRewardExcel
-    def RewardTag(self):
+    def RewardTagField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ScenarioModeRewardExcel
-    def RewardProb(self):
+    def RewardProbField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeRewardExcel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeRewardExcel
-    def RewardParcelId(self):
+    def RewardParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeRewardExcel
-    def RewardParcelAmount(self):
+    def RewardParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioModeRewardExcel
-    def IsDisplayed(self):
+    def IsDisplayedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -76,27 +76,27 @@ class ScenarioModeRewardExcel(object):
 def ScenarioModeRewardExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return ScenarioModeRewardExcelStart(builder)
-def ScenarioModeRewardExcelAddScenarioModeRewardId(builder, scenarioModeRewardId): builder.PrependInt32Slot(0, scenarioModeRewardId, 0)
-def AddScenarioModeRewardId(builder, scenarioModeRewardId):
-    return ScenarioModeRewardExcelAddScenarioModeRewardId(builder, scenarioModeRewardId)
-def ScenarioModeRewardExcelAddRewardTag(builder, rewardTag): builder.PrependFloat32Slot(1, rewardTag, 0.0)
-def AddRewardTag(builder, rewardTag):
-    return ScenarioModeRewardExcelAddRewardTag(builder, rewardTag)
-def ScenarioModeRewardExcelAddRewardProb(builder, rewardProb): builder.PrependInt32Slot(2, rewardProb, 0)
-def AddRewardProb(builder, rewardProb):
-    return ScenarioModeRewardExcelAddRewardProb(builder, rewardProb)
-def ScenarioModeRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(3, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return ScenarioModeRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def ScenarioModeRewardExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependInt32Slot(4, rewardParcelId, 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return ScenarioModeRewardExcelAddRewardParcelId(builder, rewardParcelId)
-def ScenarioModeRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependInt32Slot(5, rewardParcelAmount, 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return ScenarioModeRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def ScenarioModeRewardExcelAddIsDisplayed(builder, isDisplayed): builder.PrependBoolSlot(6, isDisplayed, 0)
-def AddIsDisplayed(builder, isDisplayed):
-    return ScenarioModeRewardExcelAddIsDisplayed(builder, isDisplayed)
+def ScenarioModeRewardExcelAddScenarioModeRewardIdField(builder, scenarioModeRewardIdField): builder.PrependInt32Slot(0, scenarioModeRewardIdField, 0)
+def AddScenarioModeRewardIdField(builder, scenarioModeRewardIdField):
+    return ScenarioModeRewardExcelAddScenarioModeRewardIdField(builder, scenarioModeRewardIdField)
+def ScenarioModeRewardExcelAddRewardTagField(builder, rewardTagField): builder.PrependFloat32Slot(1, rewardTagField, 0.0)
+def AddRewardTagField(builder, rewardTagField):
+    return ScenarioModeRewardExcelAddRewardTagField(builder, rewardTagField)
+def ScenarioModeRewardExcelAddRewardProbField(builder, rewardProbField): builder.PrependInt32Slot(2, rewardProbField, 0)
+def AddRewardProbField(builder, rewardProbField):
+    return ScenarioModeRewardExcelAddRewardProbField(builder, rewardProbField)
+def ScenarioModeRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return ScenarioModeRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def ScenarioModeRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(4, rewardParcelIdField, 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return ScenarioModeRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def ScenarioModeRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(5, rewardParcelAmountField, 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return ScenarioModeRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def ScenarioModeRewardExcelAddIsDisplayedField(builder, isDisplayedField): builder.PrependBoolSlot(6, isDisplayedField, 0)
+def AddIsDisplayedField(builder, isDisplayedField):
+    return ScenarioModeRewardExcelAddIsDisplayedField(builder, isDisplayedField)
 def ScenarioModeRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ScenarioModeRewardExcelEnd(builder)

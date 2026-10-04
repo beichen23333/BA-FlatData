@@ -25,329 +25,329 @@ class FavorCollectionScoreBonusExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FavorCollectionScoreBonusExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def ScorePerOwnedStudent(self):
+    def ScorePerOwnedStudentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def ScorePerFavorRank(self):
+    def ScorePerFavorRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def ScoreForRank20(self):
+    def ScoreForRank20Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def ScoreForRank50(self):
+    def ScoreForRank50Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def ScoreForRank75(self):
+    def ScoreForRank75Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def ScoreForRank100(self):
+    def ScoreForRank100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore01(self):
+    def RequiredScore01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId01(self):
+    def AppliedSkillGroupId01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore02(self):
+    def RequiredScore02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId02(self):
+    def AppliedSkillGroupId02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore03(self):
+    def RequiredScore03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId03(self):
+    def AppliedSkillGroupId03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore04(self):
+    def RequiredScore04Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId04(self):
+    def AppliedSkillGroupId04Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore05(self):
+    def RequiredScore05Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId05(self):
+    def AppliedSkillGroupId05Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore06(self):
+    def RequiredScore06Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId06(self):
+    def AppliedSkillGroupId06Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore07(self):
+    def RequiredScore07Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId07(self):
+    def AppliedSkillGroupId07Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore08(self):
+    def RequiredScore08Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId08(self):
+    def AppliedSkillGroupId08Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore09(self):
+    def RequiredScore09Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId09(self):
+    def AppliedSkillGroupId09Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore10(self):
+    def RequiredScore10Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId10(self):
+    def AppliedSkillGroupId10Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore11(self):
+    def RequiredScore11Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId11(self):
+    def AppliedSkillGroupId11Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore12(self):
+    def RequiredScore12Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId12(self):
+    def AppliedSkillGroupId12Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore13(self):
+    def RequiredScore13Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId13(self):
+    def AppliedSkillGroupId13Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore14(self):
+    def RequiredScore14Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId14(self):
+    def AppliedSkillGroupId14Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore15(self):
+    def RequiredScore15Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId15(self):
+    def AppliedSkillGroupId15Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore16(self):
+    def RequiredScore16Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId16(self):
+    def AppliedSkillGroupId16Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore17(self):
+    def RequiredScore17Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId17(self):
+    def AppliedSkillGroupId17Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore18(self):
+    def RequiredScore18Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId18(self):
+    def AppliedSkillGroupId18Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore19(self):
+    def RequiredScore19Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId19(self):
+    def AppliedSkillGroupId19Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FavorCollectionScoreBonusExcel
-    def RequiredScore20(self):
+    def RequiredScore20Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FavorCollectionScoreBonusExcel
-    def AppliedSkillGroupId20(self):
+    def AppliedSkillGroupId20Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(96))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -356,147 +356,147 @@ class FavorCollectionScoreBonusExcel(object):
 def FavorCollectionScoreBonusExcelStart(builder): builder.StartObject(47)
 def Start(builder):
     return FavorCollectionScoreBonusExcelStart(builder)
-def FavorCollectionScoreBonusExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return FavorCollectionScoreBonusExcelAddId(builder, id)
-def FavorCollectionScoreBonusExcelAddScorePerOwnedStudent(builder, scorePerOwnedStudent): builder.PrependInt32Slot(1, scorePerOwnedStudent, 0)
-def AddScorePerOwnedStudent(builder, scorePerOwnedStudent):
-    return FavorCollectionScoreBonusExcelAddScorePerOwnedStudent(builder, scorePerOwnedStudent)
-def FavorCollectionScoreBonusExcelAddScorePerFavorRank(builder, scorePerFavorRank): builder.PrependInt32Slot(2, scorePerFavorRank, 0)
-def AddScorePerFavorRank(builder, scorePerFavorRank):
-    return FavorCollectionScoreBonusExcelAddScorePerFavorRank(builder, scorePerFavorRank)
-def FavorCollectionScoreBonusExcelAddScoreForRank20(builder, scoreForRank20): builder.PrependInt32Slot(3, scoreForRank20, 0)
-def AddScoreForRank20(builder, scoreForRank20):
-    return FavorCollectionScoreBonusExcelAddScoreForRank20(builder, scoreForRank20)
-def FavorCollectionScoreBonusExcelAddScoreForRank50(builder, scoreForRank50): builder.PrependInt32Slot(4, scoreForRank50, 0)
-def AddScoreForRank50(builder, scoreForRank50):
-    return FavorCollectionScoreBonusExcelAddScoreForRank50(builder, scoreForRank50)
-def FavorCollectionScoreBonusExcelAddScoreForRank75(builder, scoreForRank75): builder.PrependInt32Slot(5, scoreForRank75, 0)
-def AddScoreForRank75(builder, scoreForRank75):
-    return FavorCollectionScoreBonusExcelAddScoreForRank75(builder, scoreForRank75)
-def FavorCollectionScoreBonusExcelAddScoreForRank100(builder, scoreForRank100): builder.PrependInt32Slot(6, scoreForRank100, 0)
-def AddScoreForRank100(builder, scoreForRank100):
-    return FavorCollectionScoreBonusExcelAddScoreForRank100(builder, scoreForRank100)
-def FavorCollectionScoreBonusExcelAddRequiredScore01(builder, requiredScore01): builder.PrependInt32Slot(7, requiredScore01, 0)
-def AddRequiredScore01(builder, requiredScore01):
-    return FavorCollectionScoreBonusExcelAddRequiredScore01(builder, requiredScore01)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId01(builder, appliedSkillGroupId01): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId01), 0)
-def AddAppliedSkillGroupId01(builder, appliedSkillGroupId01):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId01(builder, appliedSkillGroupId01)
-def FavorCollectionScoreBonusExcelAddRequiredScore02(builder, requiredScore02): builder.PrependInt32Slot(9, requiredScore02, 0)
-def AddRequiredScore02(builder, requiredScore02):
-    return FavorCollectionScoreBonusExcelAddRequiredScore02(builder, requiredScore02)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId02(builder, appliedSkillGroupId02): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId02), 0)
-def AddAppliedSkillGroupId02(builder, appliedSkillGroupId02):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId02(builder, appliedSkillGroupId02)
-def FavorCollectionScoreBonusExcelAddRequiredScore03(builder, requiredScore03): builder.PrependInt32Slot(11, requiredScore03, 0)
-def AddRequiredScore03(builder, requiredScore03):
-    return FavorCollectionScoreBonusExcelAddRequiredScore03(builder, requiredScore03)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId03(builder, appliedSkillGroupId03): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId03), 0)
-def AddAppliedSkillGroupId03(builder, appliedSkillGroupId03):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId03(builder, appliedSkillGroupId03)
-def FavorCollectionScoreBonusExcelAddRequiredScore04(builder, requiredScore04): builder.PrependInt32Slot(13, requiredScore04, 0)
-def AddRequiredScore04(builder, requiredScore04):
-    return FavorCollectionScoreBonusExcelAddRequiredScore04(builder, requiredScore04)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId04(builder, appliedSkillGroupId04): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId04), 0)
-def AddAppliedSkillGroupId04(builder, appliedSkillGroupId04):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId04(builder, appliedSkillGroupId04)
-def FavorCollectionScoreBonusExcelAddRequiredScore05(builder, requiredScore05): builder.PrependInt32Slot(15, requiredScore05, 0)
-def AddRequiredScore05(builder, requiredScore05):
-    return FavorCollectionScoreBonusExcelAddRequiredScore05(builder, requiredScore05)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId05(builder, appliedSkillGroupId05): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId05), 0)
-def AddAppliedSkillGroupId05(builder, appliedSkillGroupId05):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId05(builder, appliedSkillGroupId05)
-def FavorCollectionScoreBonusExcelAddRequiredScore06(builder, requiredScore06): builder.PrependInt32Slot(17, requiredScore06, 0)
-def AddRequiredScore06(builder, requiredScore06):
-    return FavorCollectionScoreBonusExcelAddRequiredScore06(builder, requiredScore06)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId06(builder, appliedSkillGroupId06): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId06), 0)
-def AddAppliedSkillGroupId06(builder, appliedSkillGroupId06):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId06(builder, appliedSkillGroupId06)
-def FavorCollectionScoreBonusExcelAddRequiredScore07(builder, requiredScore07): builder.PrependInt32Slot(19, requiredScore07, 0)
-def AddRequiredScore07(builder, requiredScore07):
-    return FavorCollectionScoreBonusExcelAddRequiredScore07(builder, requiredScore07)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId07(builder, appliedSkillGroupId07): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId07), 0)
-def AddAppliedSkillGroupId07(builder, appliedSkillGroupId07):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId07(builder, appliedSkillGroupId07)
-def FavorCollectionScoreBonusExcelAddRequiredScore08(builder, requiredScore08): builder.PrependInt32Slot(21, requiredScore08, 0)
-def AddRequiredScore08(builder, requiredScore08):
-    return FavorCollectionScoreBonusExcelAddRequiredScore08(builder, requiredScore08)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId08(builder, appliedSkillGroupId08): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId08), 0)
-def AddAppliedSkillGroupId08(builder, appliedSkillGroupId08):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId08(builder, appliedSkillGroupId08)
-def FavorCollectionScoreBonusExcelAddRequiredScore09(builder, requiredScore09): builder.PrependInt32Slot(23, requiredScore09, 0)
-def AddRequiredScore09(builder, requiredScore09):
-    return FavorCollectionScoreBonusExcelAddRequiredScore09(builder, requiredScore09)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId09(builder, appliedSkillGroupId09): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId09), 0)
-def AddAppliedSkillGroupId09(builder, appliedSkillGroupId09):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId09(builder, appliedSkillGroupId09)
-def FavorCollectionScoreBonusExcelAddRequiredScore10(builder, requiredScore10): builder.PrependInt32Slot(25, requiredScore10, 0)
-def AddRequiredScore10(builder, requiredScore10):
-    return FavorCollectionScoreBonusExcelAddRequiredScore10(builder, requiredScore10)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId10(builder, appliedSkillGroupId10): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId10), 0)
-def AddAppliedSkillGroupId10(builder, appliedSkillGroupId10):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId10(builder, appliedSkillGroupId10)
-def FavorCollectionScoreBonusExcelAddRequiredScore11(builder, requiredScore11): builder.PrependInt32Slot(27, requiredScore11, 0)
-def AddRequiredScore11(builder, requiredScore11):
-    return FavorCollectionScoreBonusExcelAddRequiredScore11(builder, requiredScore11)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId11(builder, appliedSkillGroupId11): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId11), 0)
-def AddAppliedSkillGroupId11(builder, appliedSkillGroupId11):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId11(builder, appliedSkillGroupId11)
-def FavorCollectionScoreBonusExcelAddRequiredScore12(builder, requiredScore12): builder.PrependInt32Slot(29, requiredScore12, 0)
-def AddRequiredScore12(builder, requiredScore12):
-    return FavorCollectionScoreBonusExcelAddRequiredScore12(builder, requiredScore12)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId12(builder, appliedSkillGroupId12): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId12), 0)
-def AddAppliedSkillGroupId12(builder, appliedSkillGroupId12):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId12(builder, appliedSkillGroupId12)
-def FavorCollectionScoreBonusExcelAddRequiredScore13(builder, requiredScore13): builder.PrependInt32Slot(31, requiredScore13, 0)
-def AddRequiredScore13(builder, requiredScore13):
-    return FavorCollectionScoreBonusExcelAddRequiredScore13(builder, requiredScore13)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId13(builder, appliedSkillGroupId13): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId13), 0)
-def AddAppliedSkillGroupId13(builder, appliedSkillGroupId13):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId13(builder, appliedSkillGroupId13)
-def FavorCollectionScoreBonusExcelAddRequiredScore14(builder, requiredScore14): builder.PrependInt32Slot(33, requiredScore14, 0)
-def AddRequiredScore14(builder, requiredScore14):
-    return FavorCollectionScoreBonusExcelAddRequiredScore14(builder, requiredScore14)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId14(builder, appliedSkillGroupId14): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId14), 0)
-def AddAppliedSkillGroupId14(builder, appliedSkillGroupId14):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId14(builder, appliedSkillGroupId14)
-def FavorCollectionScoreBonusExcelAddRequiredScore15(builder, requiredScore15): builder.PrependInt32Slot(35, requiredScore15, 0)
-def AddRequiredScore15(builder, requiredScore15):
-    return FavorCollectionScoreBonusExcelAddRequiredScore15(builder, requiredScore15)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId15(builder, appliedSkillGroupId15): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId15), 0)
-def AddAppliedSkillGroupId15(builder, appliedSkillGroupId15):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId15(builder, appliedSkillGroupId15)
-def FavorCollectionScoreBonusExcelAddRequiredScore16(builder, requiredScore16): builder.PrependInt32Slot(37, requiredScore16, 0)
-def AddRequiredScore16(builder, requiredScore16):
-    return FavorCollectionScoreBonusExcelAddRequiredScore16(builder, requiredScore16)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId16(builder, appliedSkillGroupId16): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId16), 0)
-def AddAppliedSkillGroupId16(builder, appliedSkillGroupId16):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId16(builder, appliedSkillGroupId16)
-def FavorCollectionScoreBonusExcelAddRequiredScore17(builder, requiredScore17): builder.PrependInt32Slot(39, requiredScore17, 0)
-def AddRequiredScore17(builder, requiredScore17):
-    return FavorCollectionScoreBonusExcelAddRequiredScore17(builder, requiredScore17)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId17(builder, appliedSkillGroupId17): builder.PrependUOffsetTRelativeSlot(40, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId17), 0)
-def AddAppliedSkillGroupId17(builder, appliedSkillGroupId17):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId17(builder, appliedSkillGroupId17)
-def FavorCollectionScoreBonusExcelAddRequiredScore18(builder, requiredScore18): builder.PrependInt32Slot(41, requiredScore18, 0)
-def AddRequiredScore18(builder, requiredScore18):
-    return FavorCollectionScoreBonusExcelAddRequiredScore18(builder, requiredScore18)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId18(builder, appliedSkillGroupId18): builder.PrependUOffsetTRelativeSlot(42, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId18), 0)
-def AddAppliedSkillGroupId18(builder, appliedSkillGroupId18):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId18(builder, appliedSkillGroupId18)
-def FavorCollectionScoreBonusExcelAddRequiredScore19(builder, requiredScore19): builder.PrependInt32Slot(43, requiredScore19, 0)
-def AddRequiredScore19(builder, requiredScore19):
-    return FavorCollectionScoreBonusExcelAddRequiredScore19(builder, requiredScore19)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId19(builder, appliedSkillGroupId19): builder.PrependUOffsetTRelativeSlot(44, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId19), 0)
-def AddAppliedSkillGroupId19(builder, appliedSkillGroupId19):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId19(builder, appliedSkillGroupId19)
-def FavorCollectionScoreBonusExcelAddRequiredScore20(builder, requiredScore20): builder.PrependInt32Slot(45, requiredScore20, 0)
-def AddRequiredScore20(builder, requiredScore20):
-    return FavorCollectionScoreBonusExcelAddRequiredScore20(builder, requiredScore20)
-def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId20(builder, appliedSkillGroupId20): builder.PrependUOffsetTRelativeSlot(46, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId20), 0)
-def AddAppliedSkillGroupId20(builder, appliedSkillGroupId20):
-    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId20(builder, appliedSkillGroupId20)
+def FavorCollectionScoreBonusExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return FavorCollectionScoreBonusExcelAddIdField(builder, idField)
+def FavorCollectionScoreBonusExcelAddScorePerOwnedStudentField(builder, scorePerOwnedStudentField): builder.PrependInt32Slot(1, scorePerOwnedStudentField, 0)
+def AddScorePerOwnedStudentField(builder, scorePerOwnedStudentField):
+    return FavorCollectionScoreBonusExcelAddScorePerOwnedStudentField(builder, scorePerOwnedStudentField)
+def FavorCollectionScoreBonusExcelAddScorePerFavorRankField(builder, scorePerFavorRankField): builder.PrependInt32Slot(2, scorePerFavorRankField, 0)
+def AddScorePerFavorRankField(builder, scorePerFavorRankField):
+    return FavorCollectionScoreBonusExcelAddScorePerFavorRankField(builder, scorePerFavorRankField)
+def FavorCollectionScoreBonusExcelAddScoreForRank20Field(builder, scoreForRank20Field): builder.PrependInt32Slot(3, scoreForRank20Field, 0)
+def AddScoreForRank20Field(builder, scoreForRank20Field):
+    return FavorCollectionScoreBonusExcelAddScoreForRank20Field(builder, scoreForRank20Field)
+def FavorCollectionScoreBonusExcelAddScoreForRank50Field(builder, scoreForRank50Field): builder.PrependInt32Slot(4, scoreForRank50Field, 0)
+def AddScoreForRank50Field(builder, scoreForRank50Field):
+    return FavorCollectionScoreBonusExcelAddScoreForRank50Field(builder, scoreForRank50Field)
+def FavorCollectionScoreBonusExcelAddScoreForRank75Field(builder, scoreForRank75Field): builder.PrependInt32Slot(5, scoreForRank75Field, 0)
+def AddScoreForRank75Field(builder, scoreForRank75Field):
+    return FavorCollectionScoreBonusExcelAddScoreForRank75Field(builder, scoreForRank75Field)
+def FavorCollectionScoreBonusExcelAddScoreForRank100Field(builder, scoreForRank100Field): builder.PrependInt32Slot(6, scoreForRank100Field, 0)
+def AddScoreForRank100Field(builder, scoreForRank100Field):
+    return FavorCollectionScoreBonusExcelAddScoreForRank100Field(builder, scoreForRank100Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore01Field(builder, requiredScore01Field): builder.PrependInt32Slot(7, requiredScore01Field, 0)
+def AddRequiredScore01Field(builder, requiredScore01Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore01Field(builder, requiredScore01Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId01Field(builder, appliedSkillGroupId01Field): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId01Field), 0)
+def AddAppliedSkillGroupId01Field(builder, appliedSkillGroupId01Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId01Field(builder, appliedSkillGroupId01Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore02Field(builder, requiredScore02Field): builder.PrependInt32Slot(9, requiredScore02Field, 0)
+def AddRequiredScore02Field(builder, requiredScore02Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore02Field(builder, requiredScore02Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId02Field(builder, appliedSkillGroupId02Field): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId02Field), 0)
+def AddAppliedSkillGroupId02Field(builder, appliedSkillGroupId02Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId02Field(builder, appliedSkillGroupId02Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore03Field(builder, requiredScore03Field): builder.PrependInt32Slot(11, requiredScore03Field, 0)
+def AddRequiredScore03Field(builder, requiredScore03Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore03Field(builder, requiredScore03Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId03Field(builder, appliedSkillGroupId03Field): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId03Field), 0)
+def AddAppliedSkillGroupId03Field(builder, appliedSkillGroupId03Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId03Field(builder, appliedSkillGroupId03Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore04Field(builder, requiredScore04Field): builder.PrependInt32Slot(13, requiredScore04Field, 0)
+def AddRequiredScore04Field(builder, requiredScore04Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore04Field(builder, requiredScore04Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId04Field(builder, appliedSkillGroupId04Field): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId04Field), 0)
+def AddAppliedSkillGroupId04Field(builder, appliedSkillGroupId04Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId04Field(builder, appliedSkillGroupId04Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore05Field(builder, requiredScore05Field): builder.PrependInt32Slot(15, requiredScore05Field, 0)
+def AddRequiredScore05Field(builder, requiredScore05Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore05Field(builder, requiredScore05Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId05Field(builder, appliedSkillGroupId05Field): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId05Field), 0)
+def AddAppliedSkillGroupId05Field(builder, appliedSkillGroupId05Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId05Field(builder, appliedSkillGroupId05Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore06Field(builder, requiredScore06Field): builder.PrependInt32Slot(17, requiredScore06Field, 0)
+def AddRequiredScore06Field(builder, requiredScore06Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore06Field(builder, requiredScore06Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId06Field(builder, appliedSkillGroupId06Field): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId06Field), 0)
+def AddAppliedSkillGroupId06Field(builder, appliedSkillGroupId06Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId06Field(builder, appliedSkillGroupId06Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore07Field(builder, requiredScore07Field): builder.PrependInt32Slot(19, requiredScore07Field, 0)
+def AddRequiredScore07Field(builder, requiredScore07Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore07Field(builder, requiredScore07Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId07Field(builder, appliedSkillGroupId07Field): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId07Field), 0)
+def AddAppliedSkillGroupId07Field(builder, appliedSkillGroupId07Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId07Field(builder, appliedSkillGroupId07Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore08Field(builder, requiredScore08Field): builder.PrependInt32Slot(21, requiredScore08Field, 0)
+def AddRequiredScore08Field(builder, requiredScore08Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore08Field(builder, requiredScore08Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId08Field(builder, appliedSkillGroupId08Field): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId08Field), 0)
+def AddAppliedSkillGroupId08Field(builder, appliedSkillGroupId08Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId08Field(builder, appliedSkillGroupId08Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore09Field(builder, requiredScore09Field): builder.PrependInt32Slot(23, requiredScore09Field, 0)
+def AddRequiredScore09Field(builder, requiredScore09Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore09Field(builder, requiredScore09Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId09Field(builder, appliedSkillGroupId09Field): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId09Field), 0)
+def AddAppliedSkillGroupId09Field(builder, appliedSkillGroupId09Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId09Field(builder, appliedSkillGroupId09Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore10Field(builder, requiredScore10Field): builder.PrependInt32Slot(25, requiredScore10Field, 0)
+def AddRequiredScore10Field(builder, requiredScore10Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore10Field(builder, requiredScore10Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId10Field(builder, appliedSkillGroupId10Field): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId10Field), 0)
+def AddAppliedSkillGroupId10Field(builder, appliedSkillGroupId10Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId10Field(builder, appliedSkillGroupId10Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore11Field(builder, requiredScore11Field): builder.PrependInt32Slot(27, requiredScore11Field, 0)
+def AddRequiredScore11Field(builder, requiredScore11Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore11Field(builder, requiredScore11Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId11Field(builder, appliedSkillGroupId11Field): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId11Field), 0)
+def AddAppliedSkillGroupId11Field(builder, appliedSkillGroupId11Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId11Field(builder, appliedSkillGroupId11Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore12Field(builder, requiredScore12Field): builder.PrependInt32Slot(29, requiredScore12Field, 0)
+def AddRequiredScore12Field(builder, requiredScore12Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore12Field(builder, requiredScore12Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId12Field(builder, appliedSkillGroupId12Field): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId12Field), 0)
+def AddAppliedSkillGroupId12Field(builder, appliedSkillGroupId12Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId12Field(builder, appliedSkillGroupId12Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore13Field(builder, requiredScore13Field): builder.PrependInt32Slot(31, requiredScore13Field, 0)
+def AddRequiredScore13Field(builder, requiredScore13Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore13Field(builder, requiredScore13Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId13Field(builder, appliedSkillGroupId13Field): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId13Field), 0)
+def AddAppliedSkillGroupId13Field(builder, appliedSkillGroupId13Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId13Field(builder, appliedSkillGroupId13Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore14Field(builder, requiredScore14Field): builder.PrependInt32Slot(33, requiredScore14Field, 0)
+def AddRequiredScore14Field(builder, requiredScore14Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore14Field(builder, requiredScore14Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId14Field(builder, appliedSkillGroupId14Field): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId14Field), 0)
+def AddAppliedSkillGroupId14Field(builder, appliedSkillGroupId14Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId14Field(builder, appliedSkillGroupId14Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore15Field(builder, requiredScore15Field): builder.PrependInt32Slot(35, requiredScore15Field, 0)
+def AddRequiredScore15Field(builder, requiredScore15Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore15Field(builder, requiredScore15Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId15Field(builder, appliedSkillGroupId15Field): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId15Field), 0)
+def AddAppliedSkillGroupId15Field(builder, appliedSkillGroupId15Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId15Field(builder, appliedSkillGroupId15Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore16Field(builder, requiredScore16Field): builder.PrependInt32Slot(37, requiredScore16Field, 0)
+def AddRequiredScore16Field(builder, requiredScore16Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore16Field(builder, requiredScore16Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId16Field(builder, appliedSkillGroupId16Field): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId16Field), 0)
+def AddAppliedSkillGroupId16Field(builder, appliedSkillGroupId16Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId16Field(builder, appliedSkillGroupId16Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore17Field(builder, requiredScore17Field): builder.PrependInt32Slot(39, requiredScore17Field, 0)
+def AddRequiredScore17Field(builder, requiredScore17Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore17Field(builder, requiredScore17Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId17Field(builder, appliedSkillGroupId17Field): builder.PrependUOffsetTRelativeSlot(40, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId17Field), 0)
+def AddAppliedSkillGroupId17Field(builder, appliedSkillGroupId17Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId17Field(builder, appliedSkillGroupId17Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore18Field(builder, requiredScore18Field): builder.PrependInt32Slot(41, requiredScore18Field, 0)
+def AddRequiredScore18Field(builder, requiredScore18Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore18Field(builder, requiredScore18Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId18Field(builder, appliedSkillGroupId18Field): builder.PrependUOffsetTRelativeSlot(42, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId18Field), 0)
+def AddAppliedSkillGroupId18Field(builder, appliedSkillGroupId18Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId18Field(builder, appliedSkillGroupId18Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore19Field(builder, requiredScore19Field): builder.PrependInt32Slot(43, requiredScore19Field, 0)
+def AddRequiredScore19Field(builder, requiredScore19Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore19Field(builder, requiredScore19Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId19Field(builder, appliedSkillGroupId19Field): builder.PrependUOffsetTRelativeSlot(44, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId19Field), 0)
+def AddAppliedSkillGroupId19Field(builder, appliedSkillGroupId19Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId19Field(builder, appliedSkillGroupId19Field)
+def FavorCollectionScoreBonusExcelAddRequiredScore20Field(builder, requiredScore20Field): builder.PrependInt32Slot(45, requiredScore20Field, 0)
+def AddRequiredScore20Field(builder, requiredScore20Field):
+    return FavorCollectionScoreBonusExcelAddRequiredScore20Field(builder, requiredScore20Field)
+def FavorCollectionScoreBonusExcelAddAppliedSkillGroupId20Field(builder, appliedSkillGroupId20Field): builder.PrependUOffsetTRelativeSlot(46, flatbuffers.number_types.UOffsetTFlags.py_type(appliedSkillGroupId20Field), 0)
+def AddAppliedSkillGroupId20Field(builder, appliedSkillGroupId20Field):
+    return FavorCollectionScoreBonusExcelAddAppliedSkillGroupId20Field(builder, appliedSkillGroupId20Field)
 def FavorCollectionScoreBonusExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FavorCollectionScoreBonusExcelEnd(builder)

@@ -25,42 +25,42 @@ class GroundGridFlat(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # GroundGridFlat
-    def X(self):
+    def XField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GroundGridFlat
-    def Y(self):
+    def YField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GroundGridFlat
-    def StartX(self):
+    def StartXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # GroundGridFlat
-    def StartY(self):
+    def StartYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # GroundGridFlat
-    def Gap(self):
+    def GapField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # GroundGridFlat
-    def Version(self):
+    def VersionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -69,24 +69,24 @@ class GroundGridFlat(object):
 def GroundGridFlatStart(builder): builder.StartObject(6)
 def Start(builder):
     return GroundGridFlatStart(builder)
-def GroundGridFlatAddX(builder, x): builder.PrependInt32Slot(0, x, 0)
-def AddX(builder, x):
-    return GroundGridFlatAddX(builder, x)
-def GroundGridFlatAddY(builder, y): builder.PrependInt32Slot(1, y, 0)
-def AddY(builder, y):
-    return GroundGridFlatAddY(builder, y)
-def GroundGridFlatAddStartX(builder, startX): builder.PrependFloat32Slot(2, startX, 0.0)
-def AddStartX(builder, startX):
-    return GroundGridFlatAddStartX(builder, startX)
-def GroundGridFlatAddStartY(builder, startY): builder.PrependFloat32Slot(3, startY, 0.0)
-def AddStartY(builder, startY):
-    return GroundGridFlatAddStartY(builder, startY)
-def GroundGridFlatAddGap(builder, gap): builder.PrependFloat32Slot(4, gap, 0.0)
-def AddGap(builder, gap):
-    return GroundGridFlatAddGap(builder, gap)
-def GroundGridFlatAddVersion(builder, version): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(version), 0)
-def AddVersion(builder, version):
-    return GroundGridFlatAddVersion(builder, version)
+def GroundGridFlatAddXField(builder, xField): builder.PrependInt32Slot(0, xField, 0)
+def AddXField(builder, xField):
+    return GroundGridFlatAddXField(builder, xField)
+def GroundGridFlatAddYField(builder, yField): builder.PrependInt32Slot(1, yField, 0)
+def AddYField(builder, yField):
+    return GroundGridFlatAddYField(builder, yField)
+def GroundGridFlatAddStartXField(builder, startXField): builder.PrependFloat32Slot(2, startXField, 0.0)
+def AddStartXField(builder, startXField):
+    return GroundGridFlatAddStartXField(builder, startXField)
+def GroundGridFlatAddStartYField(builder, startYField): builder.PrependFloat32Slot(3, startYField, 0.0)
+def AddStartYField(builder, startYField):
+    return GroundGridFlatAddStartYField(builder, startYField)
+def GroundGridFlatAddGapField(builder, gapField): builder.PrependFloat32Slot(4, gapField, 0.0)
+def AddGapField(builder, gapField):
+    return GroundGridFlatAddGapField(builder, gapField)
+def GroundGridFlatAddVersionField(builder, versionField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(versionField), 0)
+def AddVersionField(builder, versionField):
+    return GroundGridFlatAddVersionField(builder, versionField)
 def GroundGridFlatEnd(builder): return builder.EndObject()
 def End(builder):
     return GroundGridFlatEnd(builder)

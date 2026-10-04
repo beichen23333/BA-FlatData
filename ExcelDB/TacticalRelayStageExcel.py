@@ -25,49 +25,49 @@ class TacticalRelayStageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TacticalRelayStageExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TacticalRelayStageExcel
-    def SeasonId(self):
+    def SeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageType(self):
+    def StageTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageNumber(self):
+    def StageNumberField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TacticalRelayStageExcel
-    def StageDifficulty(self):
+    def StageDifficultyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def WavesPerSections(self, j):
+    def WavesPerSectionsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -75,47 +75,47 @@ class TacticalRelayStageExcel(object):
         return 0
 
     # TacticalRelayStageExcel
-    def WavesPerSectionsAsNumpy(self):
+    def WavesPerSectionsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # TacticalRelayStageExcel
-    def WavesPerSectionsLength(self):
+    def WavesPerSectionsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # TacticalRelayStageExcel
-    def WavesPerSectionsIsNone(self):
+    def WavesPerSectionsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # TacticalRelayStageExcel
-    def BattleDuration(self):
+    def BattleDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def RecommandLevel(self):
+    def RecommandLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def RecommandLevelGapForGuide(self):
+    def RecommandLevelGapForGuideField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def MinEquipmentTierForGuide(self, j):
+    def MinEquipmentTierForGuideField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             a = self._tab.Vector(o)
@@ -123,26 +123,26 @@ class TacticalRelayStageExcel(object):
         return 0
 
     # TacticalRelayStageExcel
-    def MinEquipmentTierForGuideAsNumpy(self):
+    def MinEquipmentTierForGuideFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # TacticalRelayStageExcel
-    def MinEquipmentTierForGuideLength(self):
+    def MinEquipmentTierForGuideFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # TacticalRelayStageExcel
-    def MinEquipmentTierForGuideIsNone(self):
+    def MinEquipmentTierForGuideFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         return o == 0
 
     # TacticalRelayStageExcel
-    def MinSkillLevelForGuide(self, j):
+    def MinSkillLevelForGuideField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
@@ -150,173 +150,173 @@ class TacticalRelayStageExcel(object):
         return 0
 
     # TacticalRelayStageExcel
-    def MinSkillLevelForGuideAsNumpy(self):
+    def MinSkillLevelForGuideFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # TacticalRelayStageExcel
-    def MinSkillLevelForGuideLength(self):
+    def MinSkillLevelForGuideFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # TacticalRelayStageExcel
-    def MinSkillLevelForGuideIsNone(self):
+    def MinSkillLevelForGuideFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
     # TacticalRelayStageExcel
-    def PrevStageId(self):
+    def PrevStageIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def GroundID(self):
+    def GroundIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageTopography(self):
+    def StageTopographyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def EnemyArmorType(self):
+    def EnemyArmorTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def EnemySubArmorType(self):
+    def EnemySubArmorTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageEnterCostType(self):
+    def StageEnterCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageEnterCostId(self):
+    def StageEnterCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageEnterCostAmount(self):
+    def StageEnterCostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def TacticRewardExp(self):
+    def TacticRewardExpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageRewardIdEgo(self):
+    def StageRewardIdEgoField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageRewardIdConscious(self):
+    def StageRewardIdConsciousField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageRewardIdUnconscious(self):
+    def StageRewardIdUnconsciousField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageRewardLocalizePrefabId01(self):
+    def StageRewardLocalizePrefabId01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageRewardLocalizePrefabId02(self):
+    def StageRewardLocalizePrefabId02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageRewardLocalizePrefabId03(self):
+    def StageRewardLocalizePrefabId03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def EchelonCount(self):
+    def EchelonCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def ApcSlotDefineId(self):
+    def ApcSlotDefineIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def FavorCollectionScoreBonusId(self):
+    def FavorCollectionScoreBonusIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def EchelonExtensionType(self):
+    def EchelonExtensionTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def AssistSlot(self):
+    def AssistSlotField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def StageHint(self):
+    def StageHintField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayStageExcel
-    def WaveInfoTipIconPath(self, j):
+    def WaveInfoTipIconPathField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             a = self._tab.Vector(o)
@@ -324,19 +324,19 @@ class TacticalRelayStageExcel(object):
         return ""
 
     # TacticalRelayStageExcel
-    def WaveInfoTipIconPathLength(self):
+    def WaveInfoTipIconPathFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # TacticalRelayStageExcel
-    def WaveInfoTipIconPathIsNone(self):
+    def WaveInfoTipIconPathFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         return o == 0
 
     # TacticalRelayStageExcel
-    def WaveInfoTipLocalizeEtcId(self, j):
+    def WaveInfoTipLocalizeEtcIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             a = self._tab.Vector(o)
@@ -344,147 +344,147 @@ class TacticalRelayStageExcel(object):
         return 0
 
     # TacticalRelayStageExcel
-    def WaveInfoTipLocalizeEtcIdAsNumpy(self):
+    def WaveInfoTipLocalizeEtcIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
         return 0
 
     # TacticalRelayStageExcel
-    def WaveInfoTipLocalizeEtcIdLength(self):
+    def WaveInfoTipLocalizeEtcIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # TacticalRelayStageExcel
-    def WaveInfoTipLocalizeEtcIdIsNone(self):
+    def WaveInfoTipLocalizeEtcIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         return o == 0
 
 def TacticalRelayStageExcelStart(builder): builder.StartObject(35)
 def Start(builder):
     return TacticalRelayStageExcelStart(builder)
-def TacticalRelayStageExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return TacticalRelayStageExcelAddId(builder, id)
-def TacticalRelayStageExcelAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return TacticalRelayStageExcelAddName(builder, name)
-def TacticalRelayStageExcelAddSeasonId(builder, seasonId): builder.PrependInt32Slot(2, seasonId, 0)
-def AddSeasonId(builder, seasonId):
-    return TacticalRelayStageExcelAddSeasonId(builder, seasonId)
-def TacticalRelayStageExcelAddStageType(builder, stageType): builder.PrependInt32Slot(3, stageType, 0)
-def AddStageType(builder, stageType):
-    return TacticalRelayStageExcelAddStageType(builder, stageType)
-def TacticalRelayStageExcelAddStageNumber(builder, stageNumber): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stageNumber), 0)
-def AddStageNumber(builder, stageNumber):
-    return TacticalRelayStageExcelAddStageNumber(builder, stageNumber)
-def TacticalRelayStageExcelAddStageDifficulty(builder, stageDifficulty): builder.PrependInt32Slot(5, stageDifficulty, 0)
-def AddStageDifficulty(builder, stageDifficulty):
-    return TacticalRelayStageExcelAddStageDifficulty(builder, stageDifficulty)
-def TacticalRelayStageExcelAddWavesPerSections(builder, wavesPerSections): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(wavesPerSections), 0)
-def AddWavesPerSections(builder, wavesPerSections):
-    return TacticalRelayStageExcelAddWavesPerSections(builder, wavesPerSections)
-def TacticalRelayStageExcelStartWavesPerSectionsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartWavesPerSectionsVector(builder, numElems):
-    return TacticalRelayStageExcelStartWavesPerSectionsVector(builder, numElems)
-def TacticalRelayStageExcelAddBattleDuration(builder, battleDuration): builder.PrependInt32Slot(7, battleDuration, 0)
-def AddBattleDuration(builder, battleDuration):
-    return TacticalRelayStageExcelAddBattleDuration(builder, battleDuration)
-def TacticalRelayStageExcelAddRecommandLevel(builder, recommandLevel): builder.PrependInt32Slot(8, recommandLevel, 0)
-def AddRecommandLevel(builder, recommandLevel):
-    return TacticalRelayStageExcelAddRecommandLevel(builder, recommandLevel)
-def TacticalRelayStageExcelAddRecommandLevelGapForGuide(builder, recommandLevelGapForGuide): builder.PrependInt32Slot(9, recommandLevelGapForGuide, 0)
-def AddRecommandLevelGapForGuide(builder, recommandLevelGapForGuide):
-    return TacticalRelayStageExcelAddRecommandLevelGapForGuide(builder, recommandLevelGapForGuide)
-def TacticalRelayStageExcelAddMinEquipmentTierForGuide(builder, minEquipmentTierForGuide): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(minEquipmentTierForGuide), 0)
-def AddMinEquipmentTierForGuide(builder, minEquipmentTierForGuide):
-    return TacticalRelayStageExcelAddMinEquipmentTierForGuide(builder, minEquipmentTierForGuide)
-def TacticalRelayStageExcelStartMinEquipmentTierForGuideVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMinEquipmentTierForGuideVector(builder, numElems):
-    return TacticalRelayStageExcelStartMinEquipmentTierForGuideVector(builder, numElems)
-def TacticalRelayStageExcelAddMinSkillLevelForGuide(builder, minSkillLevelForGuide): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(minSkillLevelForGuide), 0)
-def AddMinSkillLevelForGuide(builder, minSkillLevelForGuide):
-    return TacticalRelayStageExcelAddMinSkillLevelForGuide(builder, minSkillLevelForGuide)
-def TacticalRelayStageExcelStartMinSkillLevelForGuideVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMinSkillLevelForGuideVector(builder, numElems):
-    return TacticalRelayStageExcelStartMinSkillLevelForGuideVector(builder, numElems)
-def TacticalRelayStageExcelAddPrevStageId(builder, prevStageId): builder.PrependInt32Slot(12, prevStageId, 0)
-def AddPrevStageId(builder, prevStageId):
-    return TacticalRelayStageExcelAddPrevStageId(builder, prevStageId)
-def TacticalRelayStageExcelAddGroundID(builder, groundID): builder.PrependInt32Slot(13, groundID, 0)
-def AddGroundID(builder, groundID):
-    return TacticalRelayStageExcelAddGroundID(builder, groundID)
-def TacticalRelayStageExcelAddStageTopography(builder, stageTopography): builder.PrependInt32Slot(14, stageTopography, 0)
-def AddStageTopography(builder, stageTopography):
-    return TacticalRelayStageExcelAddStageTopography(builder, stageTopography)
-def TacticalRelayStageExcelAddEnemyArmorType(builder, enemyArmorType): builder.PrependInt32Slot(15, enemyArmorType, 0)
-def AddEnemyArmorType(builder, enemyArmorType):
-    return TacticalRelayStageExcelAddEnemyArmorType(builder, enemyArmorType)
-def TacticalRelayStageExcelAddEnemySubArmorType(builder, enemySubArmorType): builder.PrependInt32Slot(16, enemySubArmorType, 0)
-def AddEnemySubArmorType(builder, enemySubArmorType):
-    return TacticalRelayStageExcelAddEnemySubArmorType(builder, enemySubArmorType)
-def TacticalRelayStageExcelAddStageEnterCostType(builder, stageEnterCostType): builder.PrependInt32Slot(17, stageEnterCostType, 0)
-def AddStageEnterCostType(builder, stageEnterCostType):
-    return TacticalRelayStageExcelAddStageEnterCostType(builder, stageEnterCostType)
-def TacticalRelayStageExcelAddStageEnterCostId(builder, stageEnterCostId): builder.PrependInt32Slot(18, stageEnterCostId, 0)
-def AddStageEnterCostId(builder, stageEnterCostId):
-    return TacticalRelayStageExcelAddStageEnterCostId(builder, stageEnterCostId)
-def TacticalRelayStageExcelAddStageEnterCostAmount(builder, stageEnterCostAmount): builder.PrependInt32Slot(19, stageEnterCostAmount, 0)
-def AddStageEnterCostAmount(builder, stageEnterCostAmount):
-    return TacticalRelayStageExcelAddStageEnterCostAmount(builder, stageEnterCostAmount)
-def TacticalRelayStageExcelAddTacticRewardExp(builder, tacticRewardExp): builder.PrependInt32Slot(20, tacticRewardExp, 0)
-def AddTacticRewardExp(builder, tacticRewardExp):
-    return TacticalRelayStageExcelAddTacticRewardExp(builder, tacticRewardExp)
-def TacticalRelayStageExcelAddStageRewardIdEgo(builder, stageRewardIdEgo): builder.PrependInt32Slot(21, stageRewardIdEgo, 0)
-def AddStageRewardIdEgo(builder, stageRewardIdEgo):
-    return TacticalRelayStageExcelAddStageRewardIdEgo(builder, stageRewardIdEgo)
-def TacticalRelayStageExcelAddStageRewardIdConscious(builder, stageRewardIdConscious): builder.PrependInt32Slot(22, stageRewardIdConscious, 0)
-def AddStageRewardIdConscious(builder, stageRewardIdConscious):
-    return TacticalRelayStageExcelAddStageRewardIdConscious(builder, stageRewardIdConscious)
-def TacticalRelayStageExcelAddStageRewardIdUnconscious(builder, stageRewardIdUnconscious): builder.PrependInt32Slot(23, stageRewardIdUnconscious, 0)
-def AddStageRewardIdUnconscious(builder, stageRewardIdUnconscious):
-    return TacticalRelayStageExcelAddStageRewardIdUnconscious(builder, stageRewardIdUnconscious)
-def TacticalRelayStageExcelAddStageRewardLocalizePrefabId01(builder, stageRewardLocalizePrefabId01): builder.PrependUint32Slot(24, stageRewardLocalizePrefabId01, 0)
-def AddStageRewardLocalizePrefabId01(builder, stageRewardLocalizePrefabId01):
-    return TacticalRelayStageExcelAddStageRewardLocalizePrefabId01(builder, stageRewardLocalizePrefabId01)
-def TacticalRelayStageExcelAddStageRewardLocalizePrefabId02(builder, stageRewardLocalizePrefabId02): builder.PrependUint32Slot(25, stageRewardLocalizePrefabId02, 0)
-def AddStageRewardLocalizePrefabId02(builder, stageRewardLocalizePrefabId02):
-    return TacticalRelayStageExcelAddStageRewardLocalizePrefabId02(builder, stageRewardLocalizePrefabId02)
-def TacticalRelayStageExcelAddStageRewardLocalizePrefabId03(builder, stageRewardLocalizePrefabId03): builder.PrependUint32Slot(26, stageRewardLocalizePrefabId03, 0)
-def AddStageRewardLocalizePrefabId03(builder, stageRewardLocalizePrefabId03):
-    return TacticalRelayStageExcelAddStageRewardLocalizePrefabId03(builder, stageRewardLocalizePrefabId03)
-def TacticalRelayStageExcelAddEchelonCount(builder, echelonCount): builder.PrependInt32Slot(27, echelonCount, 0)
-def AddEchelonCount(builder, echelonCount):
-    return TacticalRelayStageExcelAddEchelonCount(builder, echelonCount)
-def TacticalRelayStageExcelAddApcSlotDefineId(builder, apcSlotDefineId): builder.PrependInt32Slot(28, apcSlotDefineId, 0)
-def AddApcSlotDefineId(builder, apcSlotDefineId):
-    return TacticalRelayStageExcelAddApcSlotDefineId(builder, apcSlotDefineId)
-def TacticalRelayStageExcelAddFavorCollectionScoreBonusId(builder, favorCollectionScoreBonusId): builder.PrependInt32Slot(29, favorCollectionScoreBonusId, 0)
-def AddFavorCollectionScoreBonusId(builder, favorCollectionScoreBonusId):
-    return TacticalRelayStageExcelAddFavorCollectionScoreBonusId(builder, favorCollectionScoreBonusId)
-def TacticalRelayStageExcelAddEchelonExtensionType(builder, echelonExtensionType): builder.PrependInt32Slot(30, echelonExtensionType, 0)
-def AddEchelonExtensionType(builder, echelonExtensionType):
-    return TacticalRelayStageExcelAddEchelonExtensionType(builder, echelonExtensionType)
-def TacticalRelayStageExcelAddAssistSlot(builder, assistSlot): builder.PrependInt32Slot(31, assistSlot, 0)
-def AddAssistSlot(builder, assistSlot):
-    return TacticalRelayStageExcelAddAssistSlot(builder, assistSlot)
-def TacticalRelayStageExcelAddStageHint(builder, stageHint): builder.PrependUint32Slot(32, stageHint, 0)
-def AddStageHint(builder, stageHint):
-    return TacticalRelayStageExcelAddStageHint(builder, stageHint)
-def TacticalRelayStageExcelAddWaveInfoTipIconPath(builder, waveInfoTipIconPath): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(waveInfoTipIconPath), 0)
-def AddWaveInfoTipIconPath(builder, waveInfoTipIconPath):
-    return TacticalRelayStageExcelAddWaveInfoTipIconPath(builder, waveInfoTipIconPath)
-def TacticalRelayStageExcelStartWaveInfoTipIconPathVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartWaveInfoTipIconPathVector(builder, numElems):
-    return TacticalRelayStageExcelStartWaveInfoTipIconPathVector(builder, numElems)
-def TacticalRelayStageExcelAddWaveInfoTipLocalizeEtcId(builder, waveInfoTipLocalizeEtcId): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(waveInfoTipLocalizeEtcId), 0)
-def AddWaveInfoTipLocalizeEtcId(builder, waveInfoTipLocalizeEtcId):
-    return TacticalRelayStageExcelAddWaveInfoTipLocalizeEtcId(builder, waveInfoTipLocalizeEtcId)
-def TacticalRelayStageExcelStartWaveInfoTipLocalizeEtcIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartWaveInfoTipLocalizeEtcIdVector(builder, numElems):
-    return TacticalRelayStageExcelStartWaveInfoTipLocalizeEtcIdVector(builder, numElems)
+def TacticalRelayStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return TacticalRelayStageExcelAddIdField(builder, idField)
+def TacticalRelayStageExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return TacticalRelayStageExcelAddNameField(builder, nameField)
+def TacticalRelayStageExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(2, seasonIdField, 0)
+def AddSeasonIdField(builder, seasonIdField):
+    return TacticalRelayStageExcelAddSeasonIdField(builder, seasonIdField)
+def TacticalRelayStageExcelAddStageTypeField(builder, stageTypeField): builder.PrependInt32Slot(3, stageTypeField, 0)
+def AddStageTypeField(builder, stageTypeField):
+    return TacticalRelayStageExcelAddStageTypeField(builder, stageTypeField)
+def TacticalRelayStageExcelAddStageNumberField(builder, stageNumberField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stageNumberField), 0)
+def AddStageNumberField(builder, stageNumberField):
+    return TacticalRelayStageExcelAddStageNumberField(builder, stageNumberField)
+def TacticalRelayStageExcelAddStageDifficultyField(builder, stageDifficultyField): builder.PrependInt32Slot(5, stageDifficultyField, 0)
+def AddStageDifficultyField(builder, stageDifficultyField):
+    return TacticalRelayStageExcelAddStageDifficultyField(builder, stageDifficultyField)
+def TacticalRelayStageExcelAddWavesPerSectionsField(builder, wavesPerSectionsField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(wavesPerSectionsField), 0)
+def AddWavesPerSectionsField(builder, wavesPerSectionsField):
+    return TacticalRelayStageExcelAddWavesPerSectionsField(builder, wavesPerSectionsField)
+def TacticalRelayStageExcelStartWavesPerSectionsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartWavesPerSectionsFieldVector(builder, numElems):
+    return TacticalRelayStageExcelStartWavesPerSectionsFieldVector(builder, numElems)
+def TacticalRelayStageExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(7, battleDurationField, 0)
+def AddBattleDurationField(builder, battleDurationField):
+    return TacticalRelayStageExcelAddBattleDurationField(builder, battleDurationField)
+def TacticalRelayStageExcelAddRecommandLevelField(builder, recommandLevelField): builder.PrependInt32Slot(8, recommandLevelField, 0)
+def AddRecommandLevelField(builder, recommandLevelField):
+    return TacticalRelayStageExcelAddRecommandLevelField(builder, recommandLevelField)
+def TacticalRelayStageExcelAddRecommandLevelGapForGuideField(builder, recommandLevelGapForGuideField): builder.PrependInt32Slot(9, recommandLevelGapForGuideField, 0)
+def AddRecommandLevelGapForGuideField(builder, recommandLevelGapForGuideField):
+    return TacticalRelayStageExcelAddRecommandLevelGapForGuideField(builder, recommandLevelGapForGuideField)
+def TacticalRelayStageExcelAddMinEquipmentTierForGuideField(builder, minEquipmentTierForGuideField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(minEquipmentTierForGuideField), 0)
+def AddMinEquipmentTierForGuideField(builder, minEquipmentTierForGuideField):
+    return TacticalRelayStageExcelAddMinEquipmentTierForGuideField(builder, minEquipmentTierForGuideField)
+def TacticalRelayStageExcelStartMinEquipmentTierForGuideFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMinEquipmentTierForGuideFieldVector(builder, numElems):
+    return TacticalRelayStageExcelStartMinEquipmentTierForGuideFieldVector(builder, numElems)
+def TacticalRelayStageExcelAddMinSkillLevelForGuideField(builder, minSkillLevelForGuideField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(minSkillLevelForGuideField), 0)
+def AddMinSkillLevelForGuideField(builder, minSkillLevelForGuideField):
+    return TacticalRelayStageExcelAddMinSkillLevelForGuideField(builder, minSkillLevelForGuideField)
+def TacticalRelayStageExcelStartMinSkillLevelForGuideFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMinSkillLevelForGuideFieldVector(builder, numElems):
+    return TacticalRelayStageExcelStartMinSkillLevelForGuideFieldVector(builder, numElems)
+def TacticalRelayStageExcelAddPrevStageIdField(builder, prevStageIdField): builder.PrependInt32Slot(12, prevStageIdField, 0)
+def AddPrevStageIdField(builder, prevStageIdField):
+    return TacticalRelayStageExcelAddPrevStageIdField(builder, prevStageIdField)
+def TacticalRelayStageExcelAddGroundIDField(builder, groundIDField): builder.PrependInt32Slot(13, groundIDField, 0)
+def AddGroundIDField(builder, groundIDField):
+    return TacticalRelayStageExcelAddGroundIDField(builder, groundIDField)
+def TacticalRelayStageExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(14, stageTopographyField, 0)
+def AddStageTopographyField(builder, stageTopographyField):
+    return TacticalRelayStageExcelAddStageTopographyField(builder, stageTopographyField)
+def TacticalRelayStageExcelAddEnemyArmorTypeField(builder, enemyArmorTypeField): builder.PrependInt32Slot(15, enemyArmorTypeField, 0)
+def AddEnemyArmorTypeField(builder, enemyArmorTypeField):
+    return TacticalRelayStageExcelAddEnemyArmorTypeField(builder, enemyArmorTypeField)
+def TacticalRelayStageExcelAddEnemySubArmorTypeField(builder, enemySubArmorTypeField): builder.PrependInt32Slot(16, enemySubArmorTypeField, 0)
+def AddEnemySubArmorTypeField(builder, enemySubArmorTypeField):
+    return TacticalRelayStageExcelAddEnemySubArmorTypeField(builder, enemySubArmorTypeField)
+def TacticalRelayStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField): builder.PrependInt32Slot(17, stageEnterCostTypeField, 0)
+def AddStageEnterCostTypeField(builder, stageEnterCostTypeField):
+    return TacticalRelayStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
+def TacticalRelayStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField): builder.PrependInt32Slot(18, stageEnterCostIdField, 0)
+def AddStageEnterCostIdField(builder, stageEnterCostIdField):
+    return TacticalRelayStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
+def TacticalRelayStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField): builder.PrependInt32Slot(19, stageEnterCostAmountField, 0)
+def AddStageEnterCostAmountField(builder, stageEnterCostAmountField):
+    return TacticalRelayStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
+def TacticalRelayStageExcelAddTacticRewardExpField(builder, tacticRewardExpField): builder.PrependInt32Slot(20, tacticRewardExpField, 0)
+def AddTacticRewardExpField(builder, tacticRewardExpField):
+    return TacticalRelayStageExcelAddTacticRewardExpField(builder, tacticRewardExpField)
+def TacticalRelayStageExcelAddStageRewardIdEgoField(builder, stageRewardIdEgoField): builder.PrependInt32Slot(21, stageRewardIdEgoField, 0)
+def AddStageRewardIdEgoField(builder, stageRewardIdEgoField):
+    return TacticalRelayStageExcelAddStageRewardIdEgoField(builder, stageRewardIdEgoField)
+def TacticalRelayStageExcelAddStageRewardIdConsciousField(builder, stageRewardIdConsciousField): builder.PrependInt32Slot(22, stageRewardIdConsciousField, 0)
+def AddStageRewardIdConsciousField(builder, stageRewardIdConsciousField):
+    return TacticalRelayStageExcelAddStageRewardIdConsciousField(builder, stageRewardIdConsciousField)
+def TacticalRelayStageExcelAddStageRewardIdUnconsciousField(builder, stageRewardIdUnconsciousField): builder.PrependInt32Slot(23, stageRewardIdUnconsciousField, 0)
+def AddStageRewardIdUnconsciousField(builder, stageRewardIdUnconsciousField):
+    return TacticalRelayStageExcelAddStageRewardIdUnconsciousField(builder, stageRewardIdUnconsciousField)
+def TacticalRelayStageExcelAddStageRewardLocalizePrefabId01Field(builder, stageRewardLocalizePrefabId01Field): builder.PrependUint32Slot(24, stageRewardLocalizePrefabId01Field, 0)
+def AddStageRewardLocalizePrefabId01Field(builder, stageRewardLocalizePrefabId01Field):
+    return TacticalRelayStageExcelAddStageRewardLocalizePrefabId01Field(builder, stageRewardLocalizePrefabId01Field)
+def TacticalRelayStageExcelAddStageRewardLocalizePrefabId02Field(builder, stageRewardLocalizePrefabId02Field): builder.PrependUint32Slot(25, stageRewardLocalizePrefabId02Field, 0)
+def AddStageRewardLocalizePrefabId02Field(builder, stageRewardLocalizePrefabId02Field):
+    return TacticalRelayStageExcelAddStageRewardLocalizePrefabId02Field(builder, stageRewardLocalizePrefabId02Field)
+def TacticalRelayStageExcelAddStageRewardLocalizePrefabId03Field(builder, stageRewardLocalizePrefabId03Field): builder.PrependUint32Slot(26, stageRewardLocalizePrefabId03Field, 0)
+def AddStageRewardLocalizePrefabId03Field(builder, stageRewardLocalizePrefabId03Field):
+    return TacticalRelayStageExcelAddStageRewardLocalizePrefabId03Field(builder, stageRewardLocalizePrefabId03Field)
+def TacticalRelayStageExcelAddEchelonCountField(builder, echelonCountField): builder.PrependInt32Slot(27, echelonCountField, 0)
+def AddEchelonCountField(builder, echelonCountField):
+    return TacticalRelayStageExcelAddEchelonCountField(builder, echelonCountField)
+def TacticalRelayStageExcelAddApcSlotDefineIdField(builder, apcSlotDefineIdField): builder.PrependInt32Slot(28, apcSlotDefineIdField, 0)
+def AddApcSlotDefineIdField(builder, apcSlotDefineIdField):
+    return TacticalRelayStageExcelAddApcSlotDefineIdField(builder, apcSlotDefineIdField)
+def TacticalRelayStageExcelAddFavorCollectionScoreBonusIdField(builder, favorCollectionScoreBonusIdField): builder.PrependInt32Slot(29, favorCollectionScoreBonusIdField, 0)
+def AddFavorCollectionScoreBonusIdField(builder, favorCollectionScoreBonusIdField):
+    return TacticalRelayStageExcelAddFavorCollectionScoreBonusIdField(builder, favorCollectionScoreBonusIdField)
+def TacticalRelayStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(30, echelonExtensionTypeField, 0)
+def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
+    return TacticalRelayStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+def TacticalRelayStageExcelAddAssistSlotField(builder, assistSlotField): builder.PrependInt32Slot(31, assistSlotField, 0)
+def AddAssistSlotField(builder, assistSlotField):
+    return TacticalRelayStageExcelAddAssistSlotField(builder, assistSlotField)
+def TacticalRelayStageExcelAddStageHintField(builder, stageHintField): builder.PrependUint32Slot(32, stageHintField, 0)
+def AddStageHintField(builder, stageHintField):
+    return TacticalRelayStageExcelAddStageHintField(builder, stageHintField)
+def TacticalRelayStageExcelAddWaveInfoTipIconPathField(builder, waveInfoTipIconPathField): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(waveInfoTipIconPathField), 0)
+def AddWaveInfoTipIconPathField(builder, waveInfoTipIconPathField):
+    return TacticalRelayStageExcelAddWaveInfoTipIconPathField(builder, waveInfoTipIconPathField)
+def TacticalRelayStageExcelStartWaveInfoTipIconPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartWaveInfoTipIconPathFieldVector(builder, numElems):
+    return TacticalRelayStageExcelStartWaveInfoTipIconPathFieldVector(builder, numElems)
+def TacticalRelayStageExcelAddWaveInfoTipLocalizeEtcIdField(builder, waveInfoTipLocalizeEtcIdField): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(waveInfoTipLocalizeEtcIdField), 0)
+def AddWaveInfoTipLocalizeEtcIdField(builder, waveInfoTipLocalizeEtcIdField):
+    return TacticalRelayStageExcelAddWaveInfoTipLocalizeEtcIdField(builder, waveInfoTipLocalizeEtcIdField)
+def TacticalRelayStageExcelStartWaveInfoTipLocalizeEtcIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartWaveInfoTipLocalizeEtcIdFieldVector(builder, numElems):
+    return TacticalRelayStageExcelStartWaveInfoTipLocalizeEtcIdFieldVector(builder, numElems)
 def TacticalRelayStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TacticalRelayStageExcelEnd(builder)

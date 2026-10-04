@@ -25,42 +25,42 @@ class CharacterVoiceSubtitleExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterVoiceSubtitleExcel
-    def LocalizeCVGroup(self):
+    def LocalizeCVGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterVoiceSubtitleExcel
-    def CharacterVoiceGroupId(self):
+    def CharacterVoiceGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterVoiceSubtitleExcel
-    def Duration(self):
+    def DurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterVoiceSubtitleExcel
-    def Separate(self):
+    def SeparateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterVoiceSubtitleExcel
-    def LocalizeKR(self):
+    def LocalizeKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterVoiceSubtitleExcel
-    def LocalizeJP(self):
+    def LocalizeJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -69,24 +69,24 @@ class CharacterVoiceSubtitleExcel(object):
 def CharacterVoiceSubtitleExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return CharacterVoiceSubtitleExcelStart(builder)
-def CharacterVoiceSubtitleExcelAddLocalizeCVGroup(builder, localizeCVGroup): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroup), 0)
-def AddLocalizeCVGroup(builder, localizeCVGroup):
-    return CharacterVoiceSubtitleExcelAddLocalizeCVGroup(builder, localizeCVGroup)
-def CharacterVoiceSubtitleExcelAddCharacterVoiceGroupId(builder, characterVoiceGroupId): builder.PrependInt32Slot(1, characterVoiceGroupId, 0)
-def AddCharacterVoiceGroupId(builder, characterVoiceGroupId):
-    return CharacterVoiceSubtitleExcelAddCharacterVoiceGroupId(builder, characterVoiceGroupId)
-def CharacterVoiceSubtitleExcelAddDuration(builder, duration): builder.PrependInt32Slot(2, duration, 0)
-def AddDuration(builder, duration):
-    return CharacterVoiceSubtitleExcelAddDuration(builder, duration)
-def CharacterVoiceSubtitleExcelAddSeparate(builder, separate): builder.PrependBoolSlot(3, separate, 0)
-def AddSeparate(builder, separate):
-    return CharacterVoiceSubtitleExcelAddSeparate(builder, separate)
-def CharacterVoiceSubtitleExcelAddLocalizeKR(builder, localizeKR): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKR), 0)
-def AddLocalizeKR(builder, localizeKR):
-    return CharacterVoiceSubtitleExcelAddLocalizeKR(builder, localizeKR)
-def CharacterVoiceSubtitleExcelAddLocalizeJP(builder, localizeJP): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJP), 0)
-def AddLocalizeJP(builder, localizeJP):
-    return CharacterVoiceSubtitleExcelAddLocalizeJP(builder, localizeJP)
+def CharacterVoiceSubtitleExcelAddLocalizeCVGroupField(builder, localizeCVGroupField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+def AddLocalizeCVGroupField(builder, localizeCVGroupField):
+    return CharacterVoiceSubtitleExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
+def CharacterVoiceSubtitleExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField): builder.PrependInt32Slot(1, characterVoiceGroupIdField, 0)
+def AddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField):
+    return CharacterVoiceSubtitleExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField)
+def CharacterVoiceSubtitleExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(2, durationField, 0)
+def AddDurationField(builder, durationField):
+    return CharacterVoiceSubtitleExcelAddDurationField(builder, durationField)
+def CharacterVoiceSubtitleExcelAddSeparateField(builder, separateField): builder.PrependBoolSlot(3, separateField, 0)
+def AddSeparateField(builder, separateField):
+    return CharacterVoiceSubtitleExcelAddSeparateField(builder, separateField)
+def CharacterVoiceSubtitleExcelAddLocalizeKRField(builder, localizeKRField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+def AddLocalizeKRField(builder, localizeKRField):
+    return CharacterVoiceSubtitleExcelAddLocalizeKRField(builder, localizeKRField)
+def CharacterVoiceSubtitleExcelAddLocalizeJPField(builder, localizeJPField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+def AddLocalizeJPField(builder, localizeJPField):
+    return CharacterVoiceSubtitleExcelAddLocalizeJPField(builder, localizeJPField)
 def CharacterVoiceSubtitleExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterVoiceSubtitleExcelEnd(builder)

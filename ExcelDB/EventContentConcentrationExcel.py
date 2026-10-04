@@ -25,49 +25,49 @@ class EventContentConcentrationExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentConcentrationExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationExcel
-    def CostGoodsId(self):
+    def CostGoodsIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationExcel
-    def MaxCardPairCount(self):
+    def MaxCardPairCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationExcel
-    def MaxCardOpenCount(self):
+    def MaxCardOpenCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationExcel
-    def InstantClearRound(self):
+    def InstantClearRoundField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationExcel
-    def CardBoardPrefabs(self):
+    def CardBoardPrefabsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EventContentConcentrationExcel
-    def BackImagePath(self):
+    def BackImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -76,27 +76,27 @@ class EventContentConcentrationExcel(object):
 def EventContentConcentrationExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return EventContentConcentrationExcelStart(builder)
-def EventContentConcentrationExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentConcentrationExcelAddEventContentId(builder, eventContentId)
-def EventContentConcentrationExcelAddCostGoodsId(builder, costGoodsId): builder.PrependInt32Slot(1, costGoodsId, 0)
-def AddCostGoodsId(builder, costGoodsId):
-    return EventContentConcentrationExcelAddCostGoodsId(builder, costGoodsId)
-def EventContentConcentrationExcelAddMaxCardPairCount(builder, maxCardPairCount): builder.PrependInt32Slot(2, maxCardPairCount, 0)
-def AddMaxCardPairCount(builder, maxCardPairCount):
-    return EventContentConcentrationExcelAddMaxCardPairCount(builder, maxCardPairCount)
-def EventContentConcentrationExcelAddMaxCardOpenCount(builder, maxCardOpenCount): builder.PrependInt32Slot(3, maxCardOpenCount, 0)
-def AddMaxCardOpenCount(builder, maxCardOpenCount):
-    return EventContentConcentrationExcelAddMaxCardOpenCount(builder, maxCardOpenCount)
-def EventContentConcentrationExcelAddInstantClearRound(builder, instantClearRound): builder.PrependInt32Slot(4, instantClearRound, 0)
-def AddInstantClearRound(builder, instantClearRound):
-    return EventContentConcentrationExcelAddInstantClearRound(builder, instantClearRound)
-def EventContentConcentrationExcelAddCardBoardPrefabs(builder, cardBoardPrefabs): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(cardBoardPrefabs), 0)
-def AddCardBoardPrefabs(builder, cardBoardPrefabs):
-    return EventContentConcentrationExcelAddCardBoardPrefabs(builder, cardBoardPrefabs)
-def EventContentConcentrationExcelAddBackImagePath(builder, backImagePath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(backImagePath), 0)
-def AddBackImagePath(builder, backImagePath):
-    return EventContentConcentrationExcelAddBackImagePath(builder, backImagePath)
+def EventContentConcentrationExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentConcentrationExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentConcentrationExcelAddCostGoodsIdField(builder, costGoodsIdField): builder.PrependInt32Slot(1, costGoodsIdField, 0)
+def AddCostGoodsIdField(builder, costGoodsIdField):
+    return EventContentConcentrationExcelAddCostGoodsIdField(builder, costGoodsIdField)
+def EventContentConcentrationExcelAddMaxCardPairCountField(builder, maxCardPairCountField): builder.PrependInt32Slot(2, maxCardPairCountField, 0)
+def AddMaxCardPairCountField(builder, maxCardPairCountField):
+    return EventContentConcentrationExcelAddMaxCardPairCountField(builder, maxCardPairCountField)
+def EventContentConcentrationExcelAddMaxCardOpenCountField(builder, maxCardOpenCountField): builder.PrependInt32Slot(3, maxCardOpenCountField, 0)
+def AddMaxCardOpenCountField(builder, maxCardOpenCountField):
+    return EventContentConcentrationExcelAddMaxCardOpenCountField(builder, maxCardOpenCountField)
+def EventContentConcentrationExcelAddInstantClearRoundField(builder, instantClearRoundField): builder.PrependInt32Slot(4, instantClearRoundField, 0)
+def AddInstantClearRoundField(builder, instantClearRoundField):
+    return EventContentConcentrationExcelAddInstantClearRoundField(builder, instantClearRoundField)
+def EventContentConcentrationExcelAddCardBoardPrefabsField(builder, cardBoardPrefabsField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(cardBoardPrefabsField), 0)
+def AddCardBoardPrefabsField(builder, cardBoardPrefabsField):
+    return EventContentConcentrationExcelAddCardBoardPrefabsField(builder, cardBoardPrefabsField)
+def EventContentConcentrationExcelAddBackImagePathField(builder, backImagePathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(backImagePathField), 0)
+def AddBackImagePathField(builder, backImagePathField):
+    return EventContentConcentrationExcelAddBackImagePathField(builder, backImagePathField)
 def EventContentConcentrationExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentConcentrationExcelEnd(builder)

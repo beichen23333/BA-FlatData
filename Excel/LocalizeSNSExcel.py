@@ -25,21 +25,21 @@ class LocalizeSNSExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # LocalizeSNSExcel
-    def Key(self):
+    def KeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeSNSExcel
-    def Kr(self):
+    def KrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSNSExcel
-    def Jp(self):
+    def JpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -48,15 +48,15 @@ class LocalizeSNSExcel(object):
 def LocalizeSNSExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return LocalizeSNSExcelStart(builder)
-def LocalizeSNSExcelAddKey(builder, key): builder.PrependUint32Slot(0, key, 0)
-def AddKey(builder, key):
-    return LocalizeSNSExcelAddKey(builder, key)
-def LocalizeSNSExcelAddKr(builder, kr): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(kr), 0)
-def AddKr(builder, kr):
-    return LocalizeSNSExcelAddKr(builder, kr)
-def LocalizeSNSExcelAddJp(builder, jp): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(jp), 0)
-def AddJp(builder, jp):
-    return LocalizeSNSExcelAddJp(builder, jp)
+def LocalizeSNSExcelAddKeyField(builder, keyField): builder.PrependUint32Slot(0, keyField, 0)
+def AddKeyField(builder, keyField):
+    return LocalizeSNSExcelAddKeyField(builder, keyField)
+def LocalizeSNSExcelAddKrField(builder, krField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(krField), 0)
+def AddKrField(builder, krField):
+    return LocalizeSNSExcelAddKrField(builder, krField)
+def LocalizeSNSExcelAddJpField(builder, jpField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(jpField), 0)
+def AddJpField(builder, jpField):
+    return LocalizeSNSExcelAddJpField(builder, jpField)
 def LocalizeSNSExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return LocalizeSNSExcelEnd(builder)

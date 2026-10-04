@@ -25,14 +25,14 @@ class MiniGameDefenseCharacterBanExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MiniGameDefenseCharacterBanExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseCharacterBanExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class MiniGameDefenseCharacterBanExcel(object):
 def MiniGameDefenseCharacterBanExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return MiniGameDefenseCharacterBanExcelStart(builder)
-def MiniGameDefenseCharacterBanExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MiniGameDefenseCharacterBanExcelAddEventContentId(builder, eventContentId)
-def MiniGameDefenseCharacterBanExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(1, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return MiniGameDefenseCharacterBanExcelAddCharacterId(builder, characterId)
+def MiniGameDefenseCharacterBanExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MiniGameDefenseCharacterBanExcelAddEventContentIdField(builder, eventContentIdField)
+def MiniGameDefenseCharacterBanExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return MiniGameDefenseCharacterBanExcelAddCharacterIdField(builder, characterIdField)
 def MiniGameDefenseCharacterBanExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MiniGameDefenseCharacterBanExcelEnd(builder)

@@ -25,21 +25,21 @@ class MinigameJankenRewardScoreItemExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenRewardScoreItemExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def ParcelType(self, j):
+    def ParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,26 +47,26 @@ class MinigameJankenRewardScoreItemExcel(object):
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def ParcelTypeAsNumpy(self):
+    def ParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def ParcelTypeLength(self):
+    def ParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def ParcelTypeIsNone(self):
+    def ParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # MinigameJankenRewardScoreItemExcel
-    def ParcelUniqueId(self, j):
+    def ParcelUniqueIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,26 +74,26 @@ class MinigameJankenRewardScoreItemExcel(object):
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def ParcelUniqueIdAsNumpy(self):
+    def ParcelUniqueIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def ParcelUniqueIdLength(self):
+    def ParcelUniqueIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def ParcelUniqueIdIsNone(self):
+    def ParcelUniqueIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # MinigameJankenRewardScoreItemExcel
-    def Amount(self, j):
+    def AmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -101,51 +101,51 @@ class MinigameJankenRewardScoreItemExcel(object):
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def AmountAsNumpy(self):
+    def AmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def AmountLength(self):
+    def AmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MinigameJankenRewardScoreItemExcel
-    def AmountIsNone(self):
+    def AmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
 def MinigameJankenRewardScoreItemExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return MinigameJankenRewardScoreItemExcelStart(builder)
-def MinigameJankenRewardScoreItemExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenRewardScoreItemExcelAddId(builder, id)
-def MinigameJankenRewardScoreItemExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(1, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MinigameJankenRewardScoreItemExcelAddEventContentId(builder, eventContentId)
-def MinigameJankenRewardScoreItemExcelAddParcelType(builder, parcelType): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(parcelType), 0)
-def AddParcelType(builder, parcelType):
-    return MinigameJankenRewardScoreItemExcelAddParcelType(builder, parcelType)
-def MinigameJankenRewardScoreItemExcelStartParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelTypeVector(builder, numElems):
-    return MinigameJankenRewardScoreItemExcelStartParcelTypeVector(builder, numElems)
-def MinigameJankenRewardScoreItemExcelAddParcelUniqueId(builder, parcelUniqueId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(parcelUniqueId), 0)
-def AddParcelUniqueId(builder, parcelUniqueId):
-    return MinigameJankenRewardScoreItemExcelAddParcelUniqueId(builder, parcelUniqueId)
-def MinigameJankenRewardScoreItemExcelStartParcelUniqueIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelUniqueIdVector(builder, numElems):
-    return MinigameJankenRewardScoreItemExcelStartParcelUniqueIdVector(builder, numElems)
-def MinigameJankenRewardScoreItemExcelAddAmount(builder, amount): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(amount), 0)
-def AddAmount(builder, amount):
-    return MinigameJankenRewardScoreItemExcelAddAmount(builder, amount)
-def MinigameJankenRewardScoreItemExcelStartAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAmountVector(builder, numElems):
-    return MinigameJankenRewardScoreItemExcelStartAmountVector(builder, numElems)
+def MinigameJankenRewardScoreItemExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenRewardScoreItemExcelAddIdField(builder, idField)
+def MinigameJankenRewardScoreItemExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MinigameJankenRewardScoreItemExcelAddEventContentIdField(builder, eventContentIdField)
+def MinigameJankenRewardScoreItemExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+def AddParcelTypeField(builder, parcelTypeField):
+    return MinigameJankenRewardScoreItemExcelAddParcelTypeField(builder, parcelTypeField)
+def MinigameJankenRewardScoreItemExcelStartParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartParcelTypeFieldVector(builder, numElems):
+    return MinigameJankenRewardScoreItemExcelStartParcelTypeFieldVector(builder, numElems)
+def MinigameJankenRewardScoreItemExcelAddParcelUniqueIdField(builder, parcelUniqueIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(parcelUniqueIdField), 0)
+def AddParcelUniqueIdField(builder, parcelUniqueIdField):
+    return MinigameJankenRewardScoreItemExcelAddParcelUniqueIdField(builder, parcelUniqueIdField)
+def MinigameJankenRewardScoreItemExcelStartParcelUniqueIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartParcelUniqueIdFieldVector(builder, numElems):
+    return MinigameJankenRewardScoreItemExcelStartParcelUniqueIdFieldVector(builder, numElems)
+def MinigameJankenRewardScoreItemExcelAddAmountField(builder, amountField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(amountField), 0)
+def AddAmountField(builder, amountField):
+    return MinigameJankenRewardScoreItemExcelAddAmountField(builder, amountField)
+def MinigameJankenRewardScoreItemExcelStartAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartAmountFieldVector(builder, numElems):
+    return MinigameJankenRewardScoreItemExcelStartAmountFieldVector(builder, numElems)
 def MinigameJankenRewardScoreItemExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenRewardScoreItemExcelEnd(builder)

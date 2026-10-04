@@ -25,49 +25,49 @@ class GroundModuleRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # GroundModuleRewardExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # GroundModuleRewardExcel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GroundModuleRewardExcel
-    def RewardParcelId(self):
+    def RewardParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GroundModuleRewardExcel
-    def RewardParcelAmount(self):
+    def RewardParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GroundModuleRewardExcel
-    def RewardParcelProbability(self):
+    def RewardParcelProbabilityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GroundModuleRewardExcel
-    def IsDisplayed(self):
+    def IsDisplayedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # GroundModuleRewardExcel
-    def DropItemModelPrefabPath(self):
+    def DropItemModelPrefabPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -76,27 +76,27 @@ class GroundModuleRewardExcel(object):
 def GroundModuleRewardExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return GroundModuleRewardExcelStart(builder)
-def GroundModuleRewardExcelAddGroupId(builder, groupId): builder.PrependUint32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return GroundModuleRewardExcelAddGroupId(builder, groupId)
-def GroundModuleRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(1, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return GroundModuleRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def GroundModuleRewardExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependInt32Slot(2, rewardParcelId, 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return GroundModuleRewardExcelAddRewardParcelId(builder, rewardParcelId)
-def GroundModuleRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependInt32Slot(3, rewardParcelAmount, 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return GroundModuleRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def GroundModuleRewardExcelAddRewardParcelProbability(builder, rewardParcelProbability): builder.PrependInt32Slot(4, rewardParcelProbability, 0)
-def AddRewardParcelProbability(builder, rewardParcelProbability):
-    return GroundModuleRewardExcelAddRewardParcelProbability(builder, rewardParcelProbability)
-def GroundModuleRewardExcelAddIsDisplayed(builder, isDisplayed): builder.PrependBoolSlot(5, isDisplayed, 0)
-def AddIsDisplayed(builder, isDisplayed):
-    return GroundModuleRewardExcelAddIsDisplayed(builder, isDisplayed)
-def GroundModuleRewardExcelAddDropItemModelPrefabPath(builder, dropItemModelPrefabPath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(dropItemModelPrefabPath), 0)
-def AddDropItemModelPrefabPath(builder, dropItemModelPrefabPath):
-    return GroundModuleRewardExcelAddDropItemModelPrefabPath(builder, dropItemModelPrefabPath)
+def GroundModuleRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependUint32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return GroundModuleRewardExcelAddGroupIdField(builder, groupIdField)
+def GroundModuleRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(1, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return GroundModuleRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def GroundModuleRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(2, rewardParcelIdField, 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return GroundModuleRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def GroundModuleRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(3, rewardParcelAmountField, 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return GroundModuleRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def GroundModuleRewardExcelAddRewardParcelProbabilityField(builder, rewardParcelProbabilityField): builder.PrependInt32Slot(4, rewardParcelProbabilityField, 0)
+def AddRewardParcelProbabilityField(builder, rewardParcelProbabilityField):
+    return GroundModuleRewardExcelAddRewardParcelProbabilityField(builder, rewardParcelProbabilityField)
+def GroundModuleRewardExcelAddIsDisplayedField(builder, isDisplayedField): builder.PrependBoolSlot(5, isDisplayedField, 0)
+def AddIsDisplayedField(builder, isDisplayedField):
+    return GroundModuleRewardExcelAddIsDisplayedField(builder, isDisplayedField)
+def GroundModuleRewardExcelAddDropItemModelPrefabPathField(builder, dropItemModelPrefabPathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(dropItemModelPrefabPathField), 0)
+def AddDropItemModelPrefabPathField(builder, dropItemModelPrefabPathField):
+    return GroundModuleRewardExcelAddDropItemModelPrefabPathField(builder, dropItemModelPrefabPathField)
 def GroundModuleRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return GroundModuleRewardExcelEnd(builder)

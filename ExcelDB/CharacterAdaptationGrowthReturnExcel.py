@@ -25,49 +25,49 @@ class CharacterAdaptationGrowthReturnExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterAdaptationGrowthReturnExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationGrowthReturnExcel
-    def GrowthReturnType(self):
+    def GrowthReturnTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationGrowthReturnExcel
-    def ReturnStep(self):
+    def ReturnStepField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationGrowthReturnExcel
-    def ReturnDivideUnit(self):
+    def ReturnDivideUnitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationGrowthReturnExcel
-    def ReturnParcelType(self):
+    def ReturnParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationGrowthReturnExcel
-    def ReturnParcelId(self):
+    def ReturnParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationGrowthReturnExcel
-    def ReturnParcelAmount(self):
+    def ReturnParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class CharacterAdaptationGrowthReturnExcel(object):
 def CharacterAdaptationGrowthReturnExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return CharacterAdaptationGrowthReturnExcelStart(builder)
-def CharacterAdaptationGrowthReturnExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CharacterAdaptationGrowthReturnExcelAddId(builder, id)
-def CharacterAdaptationGrowthReturnExcelAddGrowthReturnType(builder, growthReturnType): builder.PrependInt32Slot(1, growthReturnType, 0)
-def AddGrowthReturnType(builder, growthReturnType):
-    return CharacterAdaptationGrowthReturnExcelAddGrowthReturnType(builder, growthReturnType)
-def CharacterAdaptationGrowthReturnExcelAddReturnStep(builder, returnStep): builder.PrependInt32Slot(2, returnStep, 0)
-def AddReturnStep(builder, returnStep):
-    return CharacterAdaptationGrowthReturnExcelAddReturnStep(builder, returnStep)
-def CharacterAdaptationGrowthReturnExcelAddReturnDivideUnit(builder, returnDivideUnit): builder.PrependInt32Slot(3, returnDivideUnit, 0)
-def AddReturnDivideUnit(builder, returnDivideUnit):
-    return CharacterAdaptationGrowthReturnExcelAddReturnDivideUnit(builder, returnDivideUnit)
-def CharacterAdaptationGrowthReturnExcelAddReturnParcelType(builder, returnParcelType): builder.PrependInt32Slot(4, returnParcelType, 0)
-def AddReturnParcelType(builder, returnParcelType):
-    return CharacterAdaptationGrowthReturnExcelAddReturnParcelType(builder, returnParcelType)
-def CharacterAdaptationGrowthReturnExcelAddReturnParcelId(builder, returnParcelId): builder.PrependInt32Slot(5, returnParcelId, 0)
-def AddReturnParcelId(builder, returnParcelId):
-    return CharacterAdaptationGrowthReturnExcelAddReturnParcelId(builder, returnParcelId)
-def CharacterAdaptationGrowthReturnExcelAddReturnParcelAmount(builder, returnParcelAmount): builder.PrependInt32Slot(6, returnParcelAmount, 0)
-def AddReturnParcelAmount(builder, returnParcelAmount):
-    return CharacterAdaptationGrowthReturnExcelAddReturnParcelAmount(builder, returnParcelAmount)
+def CharacterAdaptationGrowthReturnExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CharacterAdaptationGrowthReturnExcelAddIdField(builder, idField)
+def CharacterAdaptationGrowthReturnExcelAddGrowthReturnTypeField(builder, growthReturnTypeField): builder.PrependInt32Slot(1, growthReturnTypeField, 0)
+def AddGrowthReturnTypeField(builder, growthReturnTypeField):
+    return CharacterAdaptationGrowthReturnExcelAddGrowthReturnTypeField(builder, growthReturnTypeField)
+def CharacterAdaptationGrowthReturnExcelAddReturnStepField(builder, returnStepField): builder.PrependInt32Slot(2, returnStepField, 0)
+def AddReturnStepField(builder, returnStepField):
+    return CharacterAdaptationGrowthReturnExcelAddReturnStepField(builder, returnStepField)
+def CharacterAdaptationGrowthReturnExcelAddReturnDivideUnitField(builder, returnDivideUnitField): builder.PrependInt32Slot(3, returnDivideUnitField, 0)
+def AddReturnDivideUnitField(builder, returnDivideUnitField):
+    return CharacterAdaptationGrowthReturnExcelAddReturnDivideUnitField(builder, returnDivideUnitField)
+def CharacterAdaptationGrowthReturnExcelAddReturnParcelTypeField(builder, returnParcelTypeField): builder.PrependInt32Slot(4, returnParcelTypeField, 0)
+def AddReturnParcelTypeField(builder, returnParcelTypeField):
+    return CharacterAdaptationGrowthReturnExcelAddReturnParcelTypeField(builder, returnParcelTypeField)
+def CharacterAdaptationGrowthReturnExcelAddReturnParcelIdField(builder, returnParcelIdField): builder.PrependInt32Slot(5, returnParcelIdField, 0)
+def AddReturnParcelIdField(builder, returnParcelIdField):
+    return CharacterAdaptationGrowthReturnExcelAddReturnParcelIdField(builder, returnParcelIdField)
+def CharacterAdaptationGrowthReturnExcelAddReturnParcelAmountField(builder, returnParcelAmountField): builder.PrependInt32Slot(6, returnParcelAmountField, 0)
+def AddReturnParcelAmountField(builder, returnParcelAmountField):
+    return CharacterAdaptationGrowthReturnExcelAddReturnParcelAmountField(builder, returnParcelAmountField)
 def CharacterAdaptationGrowthReturnExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterAdaptationGrowthReturnExcelEnd(builder)

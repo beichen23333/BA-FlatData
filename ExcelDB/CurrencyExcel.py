@@ -25,112 +25,112 @@ class CurrencyExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CurrencyExcel
-    def ID(self):
+    def IDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def CurrencyType(self):
+    def CurrencyTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def CurrencyName(self):
+    def CurrencyNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CurrencyExcel
-    def Icon(self):
+    def IconField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CurrencyExcel
-    def Rarity(self):
+    def RarityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def AutoChargeMsc(self):
+    def AutoChargeMscField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def AutoChargeAmount(self):
+    def AutoChargeAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def CurrencyOverChargeType(self):
+    def CurrencyOverChargeTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def CurrencyAdditionalChargeType(self):
+    def CurrencyAdditionalChargeTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def ChargeLimit(self):
+    def ChargeLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def OverChargeLimit(self):
+    def OverChargeLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def SpriteName(self):
+    def SpriteNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CurrencyExcel
-    def DailyRefillType(self):
+    def DailyRefillTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def DailyRefillAmount(self):
+    def DailyRefillAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def DailyRefillTime(self, j):
+    def DailyRefillTimeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             a = self._tab.Vector(o)
@@ -138,68 +138,68 @@ class CurrencyExcel(object):
         return 0
 
     # CurrencyExcel
-    def DailyRefillTimeAsNumpy(self):
+    def DailyRefillTimeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CurrencyExcel
-    def DailyRefillTimeLength(self):
+    def DailyRefillTimeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CurrencyExcel
-    def DailyRefillTimeIsNone(self):
+    def DailyRefillTimeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         return o == 0
 
     # CurrencyExcel
-    def ExpirationDateTime(self):
+    def ExpirationDateTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CurrencyExcel
-    def ExpirationNotifyDateIn(self):
+    def ExpirationNotifyDateInField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def ExpiryChangeParcelType(self):
+    def ExpiryChangeParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def ExpiryChangeId(self):
+    def ExpiryChangeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def ExpiryChangeAmount(self):
+    def ExpiryChangeAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def ResetType(self):
+    def ResetTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CurrencyExcel
-    def ResetAmount(self):
+    def ResetAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -208,78 +208,78 @@ class CurrencyExcel(object):
 def CurrencyExcelStart(builder): builder.StartObject(23)
 def Start(builder):
     return CurrencyExcelStart(builder)
-def CurrencyExcelAddID(builder, iD): builder.PrependInt32Slot(0, iD, 0)
-def AddID(builder, iD):
-    return CurrencyExcelAddID(builder, iD)
-def CurrencyExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(1, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return CurrencyExcelAddLocalizeEtcId(builder, localizeEtcId)
-def CurrencyExcelAddCurrencyType(builder, currencyType): builder.PrependInt32Slot(2, currencyType, 0)
-def AddCurrencyType(builder, currencyType):
-    return CurrencyExcelAddCurrencyType(builder, currencyType)
-def CurrencyExcelAddCurrencyName(builder, currencyName): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(currencyName), 0)
-def AddCurrencyName(builder, currencyName):
-    return CurrencyExcelAddCurrencyName(builder, currencyName)
-def CurrencyExcelAddIcon(builder, icon): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(icon), 0)
-def AddIcon(builder, icon):
-    return CurrencyExcelAddIcon(builder, icon)
-def CurrencyExcelAddRarity(builder, rarity): builder.PrependInt32Slot(5, rarity, 0)
-def AddRarity(builder, rarity):
-    return CurrencyExcelAddRarity(builder, rarity)
-def CurrencyExcelAddAutoChargeMsc(builder, autoChargeMsc): builder.PrependInt32Slot(6, autoChargeMsc, 0)
-def AddAutoChargeMsc(builder, autoChargeMsc):
-    return CurrencyExcelAddAutoChargeMsc(builder, autoChargeMsc)
-def CurrencyExcelAddAutoChargeAmount(builder, autoChargeAmount): builder.PrependInt32Slot(7, autoChargeAmount, 0)
-def AddAutoChargeAmount(builder, autoChargeAmount):
-    return CurrencyExcelAddAutoChargeAmount(builder, autoChargeAmount)
-def CurrencyExcelAddCurrencyOverChargeType(builder, currencyOverChargeType): builder.PrependInt32Slot(8, currencyOverChargeType, 0)
-def AddCurrencyOverChargeType(builder, currencyOverChargeType):
-    return CurrencyExcelAddCurrencyOverChargeType(builder, currencyOverChargeType)
-def CurrencyExcelAddCurrencyAdditionalChargeType(builder, currencyAdditionalChargeType): builder.PrependInt32Slot(9, currencyAdditionalChargeType, 0)
-def AddCurrencyAdditionalChargeType(builder, currencyAdditionalChargeType):
-    return CurrencyExcelAddCurrencyAdditionalChargeType(builder, currencyAdditionalChargeType)
-def CurrencyExcelAddChargeLimit(builder, chargeLimit): builder.PrependInt32Slot(10, chargeLimit, 0)
-def AddChargeLimit(builder, chargeLimit):
-    return CurrencyExcelAddChargeLimit(builder, chargeLimit)
-def CurrencyExcelAddOverChargeLimit(builder, overChargeLimit): builder.PrependInt32Slot(11, overChargeLimit, 0)
-def AddOverChargeLimit(builder, overChargeLimit):
-    return CurrencyExcelAddOverChargeLimit(builder, overChargeLimit)
-def CurrencyExcelAddSpriteName(builder, spriteName): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(spriteName), 0)
-def AddSpriteName(builder, spriteName):
-    return CurrencyExcelAddSpriteName(builder, spriteName)
-def CurrencyExcelAddDailyRefillType(builder, dailyRefillType): builder.PrependInt32Slot(13, dailyRefillType, 0)
-def AddDailyRefillType(builder, dailyRefillType):
-    return CurrencyExcelAddDailyRefillType(builder, dailyRefillType)
-def CurrencyExcelAddDailyRefillAmount(builder, dailyRefillAmount): builder.PrependInt32Slot(14, dailyRefillAmount, 0)
-def AddDailyRefillAmount(builder, dailyRefillAmount):
-    return CurrencyExcelAddDailyRefillAmount(builder, dailyRefillAmount)
-def CurrencyExcelAddDailyRefillTime(builder, dailyRefillTime): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(dailyRefillTime), 0)
-def AddDailyRefillTime(builder, dailyRefillTime):
-    return CurrencyExcelAddDailyRefillTime(builder, dailyRefillTime)
-def CurrencyExcelStartDailyRefillTimeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDailyRefillTimeVector(builder, numElems):
-    return CurrencyExcelStartDailyRefillTimeVector(builder, numElems)
-def CurrencyExcelAddExpirationDateTime(builder, expirationDateTime): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(expirationDateTime), 0)
-def AddExpirationDateTime(builder, expirationDateTime):
-    return CurrencyExcelAddExpirationDateTime(builder, expirationDateTime)
-def CurrencyExcelAddExpirationNotifyDateIn(builder, expirationNotifyDateIn): builder.PrependInt32Slot(17, expirationNotifyDateIn, 0)
-def AddExpirationNotifyDateIn(builder, expirationNotifyDateIn):
-    return CurrencyExcelAddExpirationNotifyDateIn(builder, expirationNotifyDateIn)
-def CurrencyExcelAddExpiryChangeParcelType(builder, expiryChangeParcelType): builder.PrependInt32Slot(18, expiryChangeParcelType, 0)
-def AddExpiryChangeParcelType(builder, expiryChangeParcelType):
-    return CurrencyExcelAddExpiryChangeParcelType(builder, expiryChangeParcelType)
-def CurrencyExcelAddExpiryChangeId(builder, expiryChangeId): builder.PrependInt32Slot(19, expiryChangeId, 0)
-def AddExpiryChangeId(builder, expiryChangeId):
-    return CurrencyExcelAddExpiryChangeId(builder, expiryChangeId)
-def CurrencyExcelAddExpiryChangeAmount(builder, expiryChangeAmount): builder.PrependInt32Slot(20, expiryChangeAmount, 0)
-def AddExpiryChangeAmount(builder, expiryChangeAmount):
-    return CurrencyExcelAddExpiryChangeAmount(builder, expiryChangeAmount)
-def CurrencyExcelAddResetType(builder, resetType): builder.PrependInt32Slot(21, resetType, 0)
-def AddResetType(builder, resetType):
-    return CurrencyExcelAddResetType(builder, resetType)
-def CurrencyExcelAddResetAmount(builder, resetAmount): builder.PrependInt32Slot(22, resetAmount, 0)
-def AddResetAmount(builder, resetAmount):
-    return CurrencyExcelAddResetAmount(builder, resetAmount)
+def CurrencyExcelAddIDField(builder, iDField): builder.PrependInt32Slot(0, iDField, 0)
+def AddIDField(builder, iDField):
+    return CurrencyExcelAddIDField(builder, iDField)
+def CurrencyExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(1, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return CurrencyExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def CurrencyExcelAddCurrencyTypeField(builder, currencyTypeField): builder.PrependInt32Slot(2, currencyTypeField, 0)
+def AddCurrencyTypeField(builder, currencyTypeField):
+    return CurrencyExcelAddCurrencyTypeField(builder, currencyTypeField)
+def CurrencyExcelAddCurrencyNameField(builder, currencyNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(currencyNameField), 0)
+def AddCurrencyNameField(builder, currencyNameField):
+    return CurrencyExcelAddCurrencyNameField(builder, currencyNameField)
+def CurrencyExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+def AddIconField(builder, iconField):
+    return CurrencyExcelAddIconField(builder, iconField)
+def CurrencyExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(5, rarityField, 0)
+def AddRarityField(builder, rarityField):
+    return CurrencyExcelAddRarityField(builder, rarityField)
+def CurrencyExcelAddAutoChargeMscField(builder, autoChargeMscField): builder.PrependInt32Slot(6, autoChargeMscField, 0)
+def AddAutoChargeMscField(builder, autoChargeMscField):
+    return CurrencyExcelAddAutoChargeMscField(builder, autoChargeMscField)
+def CurrencyExcelAddAutoChargeAmountField(builder, autoChargeAmountField): builder.PrependInt32Slot(7, autoChargeAmountField, 0)
+def AddAutoChargeAmountField(builder, autoChargeAmountField):
+    return CurrencyExcelAddAutoChargeAmountField(builder, autoChargeAmountField)
+def CurrencyExcelAddCurrencyOverChargeTypeField(builder, currencyOverChargeTypeField): builder.PrependInt32Slot(8, currencyOverChargeTypeField, 0)
+def AddCurrencyOverChargeTypeField(builder, currencyOverChargeTypeField):
+    return CurrencyExcelAddCurrencyOverChargeTypeField(builder, currencyOverChargeTypeField)
+def CurrencyExcelAddCurrencyAdditionalChargeTypeField(builder, currencyAdditionalChargeTypeField): builder.PrependInt32Slot(9, currencyAdditionalChargeTypeField, 0)
+def AddCurrencyAdditionalChargeTypeField(builder, currencyAdditionalChargeTypeField):
+    return CurrencyExcelAddCurrencyAdditionalChargeTypeField(builder, currencyAdditionalChargeTypeField)
+def CurrencyExcelAddChargeLimitField(builder, chargeLimitField): builder.PrependInt32Slot(10, chargeLimitField, 0)
+def AddChargeLimitField(builder, chargeLimitField):
+    return CurrencyExcelAddChargeLimitField(builder, chargeLimitField)
+def CurrencyExcelAddOverChargeLimitField(builder, overChargeLimitField): builder.PrependInt32Slot(11, overChargeLimitField, 0)
+def AddOverChargeLimitField(builder, overChargeLimitField):
+    return CurrencyExcelAddOverChargeLimitField(builder, overChargeLimitField)
+def CurrencyExcelAddSpriteNameField(builder, spriteNameField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(spriteNameField), 0)
+def AddSpriteNameField(builder, spriteNameField):
+    return CurrencyExcelAddSpriteNameField(builder, spriteNameField)
+def CurrencyExcelAddDailyRefillTypeField(builder, dailyRefillTypeField): builder.PrependInt32Slot(13, dailyRefillTypeField, 0)
+def AddDailyRefillTypeField(builder, dailyRefillTypeField):
+    return CurrencyExcelAddDailyRefillTypeField(builder, dailyRefillTypeField)
+def CurrencyExcelAddDailyRefillAmountField(builder, dailyRefillAmountField): builder.PrependInt32Slot(14, dailyRefillAmountField, 0)
+def AddDailyRefillAmountField(builder, dailyRefillAmountField):
+    return CurrencyExcelAddDailyRefillAmountField(builder, dailyRefillAmountField)
+def CurrencyExcelAddDailyRefillTimeField(builder, dailyRefillTimeField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(dailyRefillTimeField), 0)
+def AddDailyRefillTimeField(builder, dailyRefillTimeField):
+    return CurrencyExcelAddDailyRefillTimeField(builder, dailyRefillTimeField)
+def CurrencyExcelStartDailyRefillTimeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartDailyRefillTimeFieldVector(builder, numElems):
+    return CurrencyExcelStartDailyRefillTimeFieldVector(builder, numElems)
+def CurrencyExcelAddExpirationDateTimeField(builder, expirationDateTimeField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(expirationDateTimeField), 0)
+def AddExpirationDateTimeField(builder, expirationDateTimeField):
+    return CurrencyExcelAddExpirationDateTimeField(builder, expirationDateTimeField)
+def CurrencyExcelAddExpirationNotifyDateInField(builder, expirationNotifyDateInField): builder.PrependInt32Slot(17, expirationNotifyDateInField, 0)
+def AddExpirationNotifyDateInField(builder, expirationNotifyDateInField):
+    return CurrencyExcelAddExpirationNotifyDateInField(builder, expirationNotifyDateInField)
+def CurrencyExcelAddExpiryChangeParcelTypeField(builder, expiryChangeParcelTypeField): builder.PrependInt32Slot(18, expiryChangeParcelTypeField, 0)
+def AddExpiryChangeParcelTypeField(builder, expiryChangeParcelTypeField):
+    return CurrencyExcelAddExpiryChangeParcelTypeField(builder, expiryChangeParcelTypeField)
+def CurrencyExcelAddExpiryChangeIdField(builder, expiryChangeIdField): builder.PrependInt32Slot(19, expiryChangeIdField, 0)
+def AddExpiryChangeIdField(builder, expiryChangeIdField):
+    return CurrencyExcelAddExpiryChangeIdField(builder, expiryChangeIdField)
+def CurrencyExcelAddExpiryChangeAmountField(builder, expiryChangeAmountField): builder.PrependInt32Slot(20, expiryChangeAmountField, 0)
+def AddExpiryChangeAmountField(builder, expiryChangeAmountField):
+    return CurrencyExcelAddExpiryChangeAmountField(builder, expiryChangeAmountField)
+def CurrencyExcelAddResetTypeField(builder, resetTypeField): builder.PrependInt32Slot(21, resetTypeField, 0)
+def AddResetTypeField(builder, resetTypeField):
+    return CurrencyExcelAddResetTypeField(builder, resetTypeField)
+def CurrencyExcelAddResetAmountField(builder, resetAmountField): builder.PrependInt32Slot(22, resetAmountField, 0)
+def AddResetAmountField(builder, resetAmountField):
+    return CurrencyExcelAddResetAmountField(builder, resetAmountField)
 def CurrencyExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CurrencyExcelEnd(builder)

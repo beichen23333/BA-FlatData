@@ -25,14 +25,14 @@ class StatLevelInterpolationExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # StatLevelInterpolationExcel
-    def Level(self):
+    def LevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StatLevelInterpolationExcel
-    def StatTypeIndex(self, j):
+    def StatTypeIndexField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,36 +40,36 @@ class StatLevelInterpolationExcel(object):
         return 0
 
     # StatLevelInterpolationExcel
-    def StatTypeIndexAsNumpy(self):
+    def StatTypeIndexFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # StatLevelInterpolationExcel
-    def StatTypeIndexLength(self):
+    def StatTypeIndexFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # StatLevelInterpolationExcel
-    def StatTypeIndexIsNone(self):
+    def StatTypeIndexFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
 def StatLevelInterpolationExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return StatLevelInterpolationExcelStart(builder)
-def StatLevelInterpolationExcelAddLevel(builder, level): builder.PrependInt32Slot(0, level, 0)
-def AddLevel(builder, level):
-    return StatLevelInterpolationExcelAddLevel(builder, level)
-def StatLevelInterpolationExcelAddStatTypeIndex(builder, statTypeIndex): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(statTypeIndex), 0)
-def AddStatTypeIndex(builder, statTypeIndex):
-    return StatLevelInterpolationExcelAddStatTypeIndex(builder, statTypeIndex)
-def StatLevelInterpolationExcelStartStatTypeIndexVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatTypeIndexVector(builder, numElems):
-    return StatLevelInterpolationExcelStartStatTypeIndexVector(builder, numElems)
+def StatLevelInterpolationExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(0, levelField, 0)
+def AddLevelField(builder, levelField):
+    return StatLevelInterpolationExcelAddLevelField(builder, levelField)
+def StatLevelInterpolationExcelAddStatTypeIndexField(builder, statTypeIndexField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(statTypeIndexField), 0)
+def AddStatTypeIndexField(builder, statTypeIndexField):
+    return StatLevelInterpolationExcelAddStatTypeIndexField(builder, statTypeIndexField)
+def StatLevelInterpolationExcelStartStatTypeIndexFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStatTypeIndexFieldVector(builder, numElems):
+    return StatLevelInterpolationExcelStartStatTypeIndexFieldVector(builder, numElems)
 def StatLevelInterpolationExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return StatLevelInterpolationExcelEnd(builder)

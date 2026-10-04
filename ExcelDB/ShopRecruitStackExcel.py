@@ -25,35 +25,35 @@ class ShopRecruitStackExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopRecruitStackExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitStackExcel
-    def RecruitStackItemId(self):
+    def RecruitStackItemIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitStackExcel
-    def HalfStack(self):
+    def HalfStackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitStackExcel
-    def FullStack(self):
+    def FullStackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitStackExcel
-    def StackColor(self, j):
+    def StackColorField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -61,38 +61,38 @@ class ShopRecruitStackExcel(object):
         return ""
 
     # ShopRecruitStackExcel
-    def StackColorLength(self):
+    def StackColorFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopRecruitStackExcel
-    def StackColorIsNone(self):
+    def StackColorFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
 def ShopRecruitStackExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return ShopRecruitStackExcelStart(builder)
-def ShopRecruitStackExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ShopRecruitStackExcelAddId(builder, id)
-def ShopRecruitStackExcelAddRecruitStackItemId(builder, recruitStackItemId): builder.PrependInt32Slot(1, recruitStackItemId, 0)
-def AddRecruitStackItemId(builder, recruitStackItemId):
-    return ShopRecruitStackExcelAddRecruitStackItemId(builder, recruitStackItemId)
-def ShopRecruitStackExcelAddHalfStack(builder, halfStack): builder.PrependInt32Slot(2, halfStack, 0)
-def AddHalfStack(builder, halfStack):
-    return ShopRecruitStackExcelAddHalfStack(builder, halfStack)
-def ShopRecruitStackExcelAddFullStack(builder, fullStack): builder.PrependInt32Slot(3, fullStack, 0)
-def AddFullStack(builder, fullStack):
-    return ShopRecruitStackExcelAddFullStack(builder, fullStack)
-def ShopRecruitStackExcelAddStackColor(builder, stackColor): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stackColor), 0)
-def AddStackColor(builder, stackColor):
-    return ShopRecruitStackExcelAddStackColor(builder, stackColor)
-def ShopRecruitStackExcelStartStackColorVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStackColorVector(builder, numElems):
-    return ShopRecruitStackExcelStartStackColorVector(builder, numElems)
+def ShopRecruitStackExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ShopRecruitStackExcelAddIdField(builder, idField)
+def ShopRecruitStackExcelAddRecruitStackItemIdField(builder, recruitStackItemIdField): builder.PrependInt32Slot(1, recruitStackItemIdField, 0)
+def AddRecruitStackItemIdField(builder, recruitStackItemIdField):
+    return ShopRecruitStackExcelAddRecruitStackItemIdField(builder, recruitStackItemIdField)
+def ShopRecruitStackExcelAddHalfStackField(builder, halfStackField): builder.PrependInt32Slot(2, halfStackField, 0)
+def AddHalfStackField(builder, halfStackField):
+    return ShopRecruitStackExcelAddHalfStackField(builder, halfStackField)
+def ShopRecruitStackExcelAddFullStackField(builder, fullStackField): builder.PrependInt32Slot(3, fullStackField, 0)
+def AddFullStackField(builder, fullStackField):
+    return ShopRecruitStackExcelAddFullStackField(builder, fullStackField)
+def ShopRecruitStackExcelAddStackColorField(builder, stackColorField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stackColorField), 0)
+def AddStackColorField(builder, stackColorField):
+    return ShopRecruitStackExcelAddStackColorField(builder, stackColorField)
+def ShopRecruitStackExcelStartStackColorFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStackColorFieldVector(builder, numElems):
+    return ShopRecruitStackExcelStartStackColorFieldVector(builder, numElems)
 def ShopRecruitStackExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopRecruitStackExcelEnd(builder)

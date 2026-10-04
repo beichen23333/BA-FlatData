@@ -25,126 +25,126 @@ class MinigameJankenStageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenStageExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenStageExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def JankenStageType(self):
+    def JankenStageTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StageTypeLocalize(self):
+    def StageTypeLocalizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StageNumber(self):
+    def StageNumberField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StageDisplay(self):
+    def StageDisplayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def PrevStageId(self):
+    def PrevStageIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def EnemyId(self):
+    def EnemyIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StageDiscription(self):
+    def StageDiscriptionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def SKillCostEventChance(self):
+    def SKillCostEventChanceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StageEnterCostType(self):
+    def StageEnterCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StageEnterCostId(self):
+    def StageEnterCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StageEnterCostAmount(self):
+    def StageEnterCostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def EventContentStageRewardId(self):
+    def EventContentStageRewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def EnterScenarioGroupId(self):
+    def EnterScenarioGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def ClearScenarioGroupId(self):
+    def ClearScenarioGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StarGoal(self, j):
+    def StarGoalField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             a = self._tab.Vector(o)
@@ -152,26 +152,26 @@ class MinigameJankenStageExcel(object):
         return 0
 
     # MinigameJankenStageExcel
-    def StarGoalAsNumpy(self):
+    def StarGoalFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MinigameJankenStageExcel
-    def StarGoalLength(self):
+    def StarGoalFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MinigameJankenStageExcel
-    def StarGoalIsNone(self):
+    def StarGoalFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         return o == 0
 
     # MinigameJankenStageExcel
-    def StarGoalAmount(self, j):
+    def StarGoalAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             a = self._tab.Vector(o)
@@ -179,61 +179,61 @@ class MinigameJankenStageExcel(object):
         return 0
 
     # MinigameJankenStageExcel
-    def StarGoalAmountAsNumpy(self):
+    def StarGoalAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MinigameJankenStageExcel
-    def StarGoalAmountLength(self):
+    def StarGoalAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MinigameJankenStageExcel
-    def StarGoalAmountIsNone(self):
+    def StarGoalAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         return o == 0
 
     # MinigameJankenStageExcel
-    def EnemyInfoImage(self):
+    def EnemyInfoImageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenStageExcel
-    def EnemyInfoDifficulty(self):
+    def EnemyInfoDifficultyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def StageIconName(self):
+    def StageIconNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenStageExcel
-    def FixedEchelon(self):
+    def FixedEchelonField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def Bgm(self):
+    def BgmField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenStageExcel
-    def BgmClimax(self):
+    def BgmClimaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -242,87 +242,87 @@ class MinigameJankenStageExcel(object):
 def MinigameJankenStageExcelStart(builder): builder.StartObject(25)
 def Start(builder):
     return MinigameJankenStageExcelStart(builder)
-def MinigameJankenStageExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenStageExcelAddId(builder, id)
-def MinigameJankenStageExcelAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return MinigameJankenStageExcelAddName(builder, name)
-def MinigameJankenStageExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(2, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MinigameJankenStageExcelAddEventContentId(builder, eventContentId)
-def MinigameJankenStageExcelAddJankenStageType(builder, jankenStageType): builder.PrependInt32Slot(3, jankenStageType, 0)
-def AddJankenStageType(builder, jankenStageType):
-    return MinigameJankenStageExcelAddJankenStageType(builder, jankenStageType)
-def MinigameJankenStageExcelAddStageTypeLocalize(builder, stageTypeLocalize): builder.PrependUint32Slot(4, stageTypeLocalize, 0)
-def AddStageTypeLocalize(builder, stageTypeLocalize):
-    return MinigameJankenStageExcelAddStageTypeLocalize(builder, stageTypeLocalize)
-def MinigameJankenStageExcelAddStageNumber(builder, stageNumber): builder.PrependInt32Slot(5, stageNumber, 0)
-def AddStageNumber(builder, stageNumber):
-    return MinigameJankenStageExcelAddStageNumber(builder, stageNumber)
-def MinigameJankenStageExcelAddStageDisplay(builder, stageDisplay): builder.PrependInt32Slot(6, stageDisplay, 0)
-def AddStageDisplay(builder, stageDisplay):
-    return MinigameJankenStageExcelAddStageDisplay(builder, stageDisplay)
-def MinigameJankenStageExcelAddPrevStageId(builder, prevStageId): builder.PrependInt32Slot(7, prevStageId, 0)
-def AddPrevStageId(builder, prevStageId):
-    return MinigameJankenStageExcelAddPrevStageId(builder, prevStageId)
-def MinigameJankenStageExcelAddEnemyId(builder, enemyId): builder.PrependInt32Slot(8, enemyId, 0)
-def AddEnemyId(builder, enemyId):
-    return MinigameJankenStageExcelAddEnemyId(builder, enemyId)
-def MinigameJankenStageExcelAddStageDiscription(builder, stageDiscription): builder.PrependUint32Slot(9, stageDiscription, 0)
-def AddStageDiscription(builder, stageDiscription):
-    return MinigameJankenStageExcelAddStageDiscription(builder, stageDiscription)
-def MinigameJankenStageExcelAddSKillCostEventChance(builder, sKillCostEventChance): builder.PrependInt32Slot(10, sKillCostEventChance, 0)
-def AddSKillCostEventChance(builder, sKillCostEventChance):
-    return MinigameJankenStageExcelAddSKillCostEventChance(builder, sKillCostEventChance)
-def MinigameJankenStageExcelAddStageEnterCostType(builder, stageEnterCostType): builder.PrependInt32Slot(11, stageEnterCostType, 0)
-def AddStageEnterCostType(builder, stageEnterCostType):
-    return MinigameJankenStageExcelAddStageEnterCostType(builder, stageEnterCostType)
-def MinigameJankenStageExcelAddStageEnterCostId(builder, stageEnterCostId): builder.PrependInt32Slot(12, stageEnterCostId, 0)
-def AddStageEnterCostId(builder, stageEnterCostId):
-    return MinigameJankenStageExcelAddStageEnterCostId(builder, stageEnterCostId)
-def MinigameJankenStageExcelAddStageEnterCostAmount(builder, stageEnterCostAmount): builder.PrependInt32Slot(13, stageEnterCostAmount, 0)
-def AddStageEnterCostAmount(builder, stageEnterCostAmount):
-    return MinigameJankenStageExcelAddStageEnterCostAmount(builder, stageEnterCostAmount)
-def MinigameJankenStageExcelAddEventContentStageRewardId(builder, eventContentStageRewardId): builder.PrependInt32Slot(14, eventContentStageRewardId, 0)
-def AddEventContentStageRewardId(builder, eventContentStageRewardId):
-    return MinigameJankenStageExcelAddEventContentStageRewardId(builder, eventContentStageRewardId)
-def MinigameJankenStageExcelAddEnterScenarioGroupId(builder, enterScenarioGroupId): builder.PrependInt32Slot(15, enterScenarioGroupId, 0)
-def AddEnterScenarioGroupId(builder, enterScenarioGroupId):
-    return MinigameJankenStageExcelAddEnterScenarioGroupId(builder, enterScenarioGroupId)
-def MinigameJankenStageExcelAddClearScenarioGroupId(builder, clearScenarioGroupId): builder.PrependInt32Slot(16, clearScenarioGroupId, 0)
-def AddClearScenarioGroupId(builder, clearScenarioGroupId):
-    return MinigameJankenStageExcelAddClearScenarioGroupId(builder, clearScenarioGroupId)
-def MinigameJankenStageExcelAddStarGoal(builder, starGoal): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(starGoal), 0)
-def AddStarGoal(builder, starGoal):
-    return MinigameJankenStageExcelAddStarGoal(builder, starGoal)
-def MinigameJankenStageExcelStartStarGoalVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStarGoalVector(builder, numElems):
-    return MinigameJankenStageExcelStartStarGoalVector(builder, numElems)
-def MinigameJankenStageExcelAddStarGoalAmount(builder, starGoalAmount): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalAmount), 0)
-def AddStarGoalAmount(builder, starGoalAmount):
-    return MinigameJankenStageExcelAddStarGoalAmount(builder, starGoalAmount)
-def MinigameJankenStageExcelStartStarGoalAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStarGoalAmountVector(builder, numElems):
-    return MinigameJankenStageExcelStartStarGoalAmountVector(builder, numElems)
-def MinigameJankenStageExcelAddEnemyInfoImage(builder, enemyInfoImage): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(enemyInfoImage), 0)
-def AddEnemyInfoImage(builder, enemyInfoImage):
-    return MinigameJankenStageExcelAddEnemyInfoImage(builder, enemyInfoImage)
-def MinigameJankenStageExcelAddEnemyInfoDifficulty(builder, enemyInfoDifficulty): builder.PrependUint32Slot(20, enemyInfoDifficulty, 0)
-def AddEnemyInfoDifficulty(builder, enemyInfoDifficulty):
-    return MinigameJankenStageExcelAddEnemyInfoDifficulty(builder, enemyInfoDifficulty)
-def MinigameJankenStageExcelAddStageIconName(builder, stageIconName): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(stageIconName), 0)
-def AddStageIconName(builder, stageIconName):
-    return MinigameJankenStageExcelAddStageIconName(builder, stageIconName)
-def MinigameJankenStageExcelAddFixedEchelon(builder, fixedEchelon): builder.PrependInt32Slot(22, fixedEchelon, 0)
-def AddFixedEchelon(builder, fixedEchelon):
-    return MinigameJankenStageExcelAddFixedEchelon(builder, fixedEchelon)
-def MinigameJankenStageExcelAddBgm(builder, bgm): builder.PrependInt32Slot(23, bgm, 0)
-def AddBgm(builder, bgm):
-    return MinigameJankenStageExcelAddBgm(builder, bgm)
-def MinigameJankenStageExcelAddBgmClimax(builder, bgmClimax): builder.PrependInt32Slot(24, bgmClimax, 0)
-def AddBgmClimax(builder, bgmClimax):
-    return MinigameJankenStageExcelAddBgmClimax(builder, bgmClimax)
+def MinigameJankenStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenStageExcelAddIdField(builder, idField)
+def MinigameJankenStageExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return MinigameJankenStageExcelAddNameField(builder, nameField)
+def MinigameJankenStageExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(2, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MinigameJankenStageExcelAddEventContentIdField(builder, eventContentIdField)
+def MinigameJankenStageExcelAddJankenStageTypeField(builder, jankenStageTypeField): builder.PrependInt32Slot(3, jankenStageTypeField, 0)
+def AddJankenStageTypeField(builder, jankenStageTypeField):
+    return MinigameJankenStageExcelAddJankenStageTypeField(builder, jankenStageTypeField)
+def MinigameJankenStageExcelAddStageTypeLocalizeField(builder, stageTypeLocalizeField): builder.PrependUint32Slot(4, stageTypeLocalizeField, 0)
+def AddStageTypeLocalizeField(builder, stageTypeLocalizeField):
+    return MinigameJankenStageExcelAddStageTypeLocalizeField(builder, stageTypeLocalizeField)
+def MinigameJankenStageExcelAddStageNumberField(builder, stageNumberField): builder.PrependInt32Slot(5, stageNumberField, 0)
+def AddStageNumberField(builder, stageNumberField):
+    return MinigameJankenStageExcelAddStageNumberField(builder, stageNumberField)
+def MinigameJankenStageExcelAddStageDisplayField(builder, stageDisplayField): builder.PrependInt32Slot(6, stageDisplayField, 0)
+def AddStageDisplayField(builder, stageDisplayField):
+    return MinigameJankenStageExcelAddStageDisplayField(builder, stageDisplayField)
+def MinigameJankenStageExcelAddPrevStageIdField(builder, prevStageIdField): builder.PrependInt32Slot(7, prevStageIdField, 0)
+def AddPrevStageIdField(builder, prevStageIdField):
+    return MinigameJankenStageExcelAddPrevStageIdField(builder, prevStageIdField)
+def MinigameJankenStageExcelAddEnemyIdField(builder, enemyIdField): builder.PrependInt32Slot(8, enemyIdField, 0)
+def AddEnemyIdField(builder, enemyIdField):
+    return MinigameJankenStageExcelAddEnemyIdField(builder, enemyIdField)
+def MinigameJankenStageExcelAddStageDiscriptionField(builder, stageDiscriptionField): builder.PrependUint32Slot(9, stageDiscriptionField, 0)
+def AddStageDiscriptionField(builder, stageDiscriptionField):
+    return MinigameJankenStageExcelAddStageDiscriptionField(builder, stageDiscriptionField)
+def MinigameJankenStageExcelAddSKillCostEventChanceField(builder, sKillCostEventChanceField): builder.PrependInt32Slot(10, sKillCostEventChanceField, 0)
+def AddSKillCostEventChanceField(builder, sKillCostEventChanceField):
+    return MinigameJankenStageExcelAddSKillCostEventChanceField(builder, sKillCostEventChanceField)
+def MinigameJankenStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField): builder.PrependInt32Slot(11, stageEnterCostTypeField, 0)
+def AddStageEnterCostTypeField(builder, stageEnterCostTypeField):
+    return MinigameJankenStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
+def MinigameJankenStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField): builder.PrependInt32Slot(12, stageEnterCostIdField, 0)
+def AddStageEnterCostIdField(builder, stageEnterCostIdField):
+    return MinigameJankenStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
+def MinigameJankenStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField): builder.PrependInt32Slot(13, stageEnterCostAmountField, 0)
+def AddStageEnterCostAmountField(builder, stageEnterCostAmountField):
+    return MinigameJankenStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
+def MinigameJankenStageExcelAddEventContentStageRewardIdField(builder, eventContentStageRewardIdField): builder.PrependInt32Slot(14, eventContentStageRewardIdField, 0)
+def AddEventContentStageRewardIdField(builder, eventContentStageRewardIdField):
+    return MinigameJankenStageExcelAddEventContentStageRewardIdField(builder, eventContentStageRewardIdField)
+def MinigameJankenStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField): builder.PrependInt32Slot(15, enterScenarioGroupIdField, 0)
+def AddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField):
+    return MinigameJankenStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField)
+def MinigameJankenStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField): builder.PrependInt32Slot(16, clearScenarioGroupIdField, 0)
+def AddClearScenarioGroupIdField(builder, clearScenarioGroupIdField):
+    return MinigameJankenStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField)
+def MinigameJankenStageExcelAddStarGoalField(builder, starGoalField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalField), 0)
+def AddStarGoalField(builder, starGoalField):
+    return MinigameJankenStageExcelAddStarGoalField(builder, starGoalField)
+def MinigameJankenStageExcelStartStarGoalFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStarGoalFieldVector(builder, numElems):
+    return MinigameJankenStageExcelStartStarGoalFieldVector(builder, numElems)
+def MinigameJankenStageExcelAddStarGoalAmountField(builder, starGoalAmountField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalAmountField), 0)
+def AddStarGoalAmountField(builder, starGoalAmountField):
+    return MinigameJankenStageExcelAddStarGoalAmountField(builder, starGoalAmountField)
+def MinigameJankenStageExcelStartStarGoalAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStarGoalAmountFieldVector(builder, numElems):
+    return MinigameJankenStageExcelStartStarGoalAmountFieldVector(builder, numElems)
+def MinigameJankenStageExcelAddEnemyInfoImageField(builder, enemyInfoImageField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(enemyInfoImageField), 0)
+def AddEnemyInfoImageField(builder, enemyInfoImageField):
+    return MinigameJankenStageExcelAddEnemyInfoImageField(builder, enemyInfoImageField)
+def MinigameJankenStageExcelAddEnemyInfoDifficultyField(builder, enemyInfoDifficultyField): builder.PrependUint32Slot(20, enemyInfoDifficultyField, 0)
+def AddEnemyInfoDifficultyField(builder, enemyInfoDifficultyField):
+    return MinigameJankenStageExcelAddEnemyInfoDifficultyField(builder, enemyInfoDifficultyField)
+def MinigameJankenStageExcelAddStageIconNameField(builder, stageIconNameField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(stageIconNameField), 0)
+def AddStageIconNameField(builder, stageIconNameField):
+    return MinigameJankenStageExcelAddStageIconNameField(builder, stageIconNameField)
+def MinigameJankenStageExcelAddFixedEchelonField(builder, fixedEchelonField): builder.PrependInt32Slot(22, fixedEchelonField, 0)
+def AddFixedEchelonField(builder, fixedEchelonField):
+    return MinigameJankenStageExcelAddFixedEchelonField(builder, fixedEchelonField)
+def MinigameJankenStageExcelAddBgmField(builder, bgmField): builder.PrependInt32Slot(23, bgmField, 0)
+def AddBgmField(builder, bgmField):
+    return MinigameJankenStageExcelAddBgmField(builder, bgmField)
+def MinigameJankenStageExcelAddBgmClimaxField(builder, bgmClimaxField): builder.PrependInt32Slot(24, bgmClimaxField, 0)
+def AddBgmClimaxField(builder, bgmClimaxField):
+    return MinigameJankenStageExcelAddBgmClimaxField(builder, bgmClimaxField)
 def MinigameJankenStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenStageExcelEnd(builder)

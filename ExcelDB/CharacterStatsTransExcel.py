@@ -25,28 +25,28 @@ class CharacterStatsTransExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterStatsTransExcel
-    def TransSupportStats(self):
+    def TransSupportStatsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatsTransExcel
-    def EchelonExtensionType(self):
+    def EchelonExtensionTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatsTransExcel
-    def TransSupportStatsFactor(self):
+    def TransSupportStatsFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatsTransExcel
-    def StatTransType(self):
+    def StatTransTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class CharacterStatsTransExcel(object):
 def CharacterStatsTransExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return CharacterStatsTransExcelStart(builder)
-def CharacterStatsTransExcelAddTransSupportStats(builder, transSupportStats): builder.PrependInt32Slot(0, transSupportStats, 0)
-def AddTransSupportStats(builder, transSupportStats):
-    return CharacterStatsTransExcelAddTransSupportStats(builder, transSupportStats)
-def CharacterStatsTransExcelAddEchelonExtensionType(builder, echelonExtensionType): builder.PrependInt32Slot(1, echelonExtensionType, 0)
-def AddEchelonExtensionType(builder, echelonExtensionType):
-    return CharacterStatsTransExcelAddEchelonExtensionType(builder, echelonExtensionType)
-def CharacterStatsTransExcelAddTransSupportStatsFactor(builder, transSupportStatsFactor): builder.PrependInt32Slot(2, transSupportStatsFactor, 0)
-def AddTransSupportStatsFactor(builder, transSupportStatsFactor):
-    return CharacterStatsTransExcelAddTransSupportStatsFactor(builder, transSupportStatsFactor)
-def CharacterStatsTransExcelAddStatTransType(builder, statTransType): builder.PrependInt32Slot(3, statTransType, 0)
-def AddStatTransType(builder, statTransType):
-    return CharacterStatsTransExcelAddStatTransType(builder, statTransType)
+def CharacterStatsTransExcelAddTransSupportStatsField(builder, transSupportStatsField): builder.PrependInt32Slot(0, transSupportStatsField, 0)
+def AddTransSupportStatsField(builder, transSupportStatsField):
+    return CharacterStatsTransExcelAddTransSupportStatsField(builder, transSupportStatsField)
+def CharacterStatsTransExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(1, echelonExtensionTypeField, 0)
+def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
+    return CharacterStatsTransExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+def CharacterStatsTransExcelAddTransSupportStatsFactorField(builder, transSupportStatsFactorField): builder.PrependInt32Slot(2, transSupportStatsFactorField, 0)
+def AddTransSupportStatsFactorField(builder, transSupportStatsFactorField):
+    return CharacterStatsTransExcelAddTransSupportStatsFactorField(builder, transSupportStatsFactorField)
+def CharacterStatsTransExcelAddStatTransTypeField(builder, statTransTypeField): builder.PrependInt32Slot(3, statTransTypeField, 0)
+def AddStatTransTypeField(builder, statTransTypeField):
+    return CharacterStatsTransExcelAddStatTransTypeField(builder, statTransTypeField)
 def CharacterStatsTransExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterStatsTransExcelEnd(builder)

@@ -25,182 +25,182 @@ class CharacterSettingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterSettingExcel
-    def CharacterSettingId(self):
+    def CharacterSettingIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def Level(self):
+    def LevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def FavorRank(self):
+    def FavorRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def StarGrade(self):
+    def StarGradeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def ExSkillLevel(self):
+    def ExSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def PublicSkillLevel(self):
+    def PublicSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def PassiveSkillLevel(self):
+    def PassiveSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def ExtraPassiveSkillLevel(self):
+    def ExtraPassiveSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipSlotTier01(self):
+    def EquipSlotTier01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipSlotLevel01(self):
+    def EquipSlotLevel01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipSlotTier02(self):
+    def EquipSlotTier02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipSlotLevel02(self):
+    def EquipSlotLevel02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipSlotTier03(self):
+    def EquipSlotTier03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipSlotLevel03(self):
+    def EquipSlotLevel03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipCharacterWeapon(self):
+    def EquipCharacterWeaponField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterSettingExcel
-    def EquipCharacterWeaponTier(self):
+    def EquipCharacterWeaponTierField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipCharacterWeaponLevel(self):
+    def EquipCharacterWeaponLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipCharacterGear(self):
+    def EquipCharacterGearField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterSettingExcel
-    def EquipCharacterGearTier(self):
+    def EquipCharacterGearTierField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def EquipCharacterGearLevel(self):
+    def EquipCharacterGearLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def PotentialType01(self):
+    def PotentialType01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def PotentialLevel01(self):
+    def PotentialLevel01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def PotentialType02(self):
+    def PotentialType02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def PotentialLevel02(self):
+    def PotentialLevel02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def PotentialType03(self):
+    def PotentialType03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterSettingExcel
-    def PotentialLevel03(self):
+    def PotentialLevel03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -209,84 +209,84 @@ class CharacterSettingExcel(object):
 def CharacterSettingExcelStart(builder): builder.StartObject(26)
 def Start(builder):
     return CharacterSettingExcelStart(builder)
-def CharacterSettingExcelAddCharacterSettingId(builder, characterSettingId): builder.PrependInt32Slot(0, characterSettingId, 0)
-def AddCharacterSettingId(builder, characterSettingId):
-    return CharacterSettingExcelAddCharacterSettingId(builder, characterSettingId)
-def CharacterSettingExcelAddLevel(builder, level): builder.PrependInt32Slot(1, level, 0)
-def AddLevel(builder, level):
-    return CharacterSettingExcelAddLevel(builder, level)
-def CharacterSettingExcelAddFavorRank(builder, favorRank): builder.PrependInt32Slot(2, favorRank, 0)
-def AddFavorRank(builder, favorRank):
-    return CharacterSettingExcelAddFavorRank(builder, favorRank)
-def CharacterSettingExcelAddStarGrade(builder, starGrade): builder.PrependInt32Slot(3, starGrade, 0)
-def AddStarGrade(builder, starGrade):
-    return CharacterSettingExcelAddStarGrade(builder, starGrade)
-def CharacterSettingExcelAddExSkillLevel(builder, exSkillLevel): builder.PrependInt32Slot(4, exSkillLevel, 0)
-def AddExSkillLevel(builder, exSkillLevel):
-    return CharacterSettingExcelAddExSkillLevel(builder, exSkillLevel)
-def CharacterSettingExcelAddPublicSkillLevel(builder, publicSkillLevel): builder.PrependInt32Slot(5, publicSkillLevel, 0)
-def AddPublicSkillLevel(builder, publicSkillLevel):
-    return CharacterSettingExcelAddPublicSkillLevel(builder, publicSkillLevel)
-def CharacterSettingExcelAddPassiveSkillLevel(builder, passiveSkillLevel): builder.PrependInt32Slot(6, passiveSkillLevel, 0)
-def AddPassiveSkillLevel(builder, passiveSkillLevel):
-    return CharacterSettingExcelAddPassiveSkillLevel(builder, passiveSkillLevel)
-def CharacterSettingExcelAddExtraPassiveSkillLevel(builder, extraPassiveSkillLevel): builder.PrependInt32Slot(7, extraPassiveSkillLevel, 0)
-def AddExtraPassiveSkillLevel(builder, extraPassiveSkillLevel):
-    return CharacterSettingExcelAddExtraPassiveSkillLevel(builder, extraPassiveSkillLevel)
-def CharacterSettingExcelAddEquipSlotTier01(builder, equipSlotTier01): builder.PrependInt32Slot(8, equipSlotTier01, 0)
-def AddEquipSlotTier01(builder, equipSlotTier01):
-    return CharacterSettingExcelAddEquipSlotTier01(builder, equipSlotTier01)
-def CharacterSettingExcelAddEquipSlotLevel01(builder, equipSlotLevel01): builder.PrependInt32Slot(9, equipSlotLevel01, 0)
-def AddEquipSlotLevel01(builder, equipSlotLevel01):
-    return CharacterSettingExcelAddEquipSlotLevel01(builder, equipSlotLevel01)
-def CharacterSettingExcelAddEquipSlotTier02(builder, equipSlotTier02): builder.PrependInt32Slot(10, equipSlotTier02, 0)
-def AddEquipSlotTier02(builder, equipSlotTier02):
-    return CharacterSettingExcelAddEquipSlotTier02(builder, equipSlotTier02)
-def CharacterSettingExcelAddEquipSlotLevel02(builder, equipSlotLevel02): builder.PrependInt32Slot(11, equipSlotLevel02, 0)
-def AddEquipSlotLevel02(builder, equipSlotLevel02):
-    return CharacterSettingExcelAddEquipSlotLevel02(builder, equipSlotLevel02)
-def CharacterSettingExcelAddEquipSlotTier03(builder, equipSlotTier03): builder.PrependInt32Slot(12, equipSlotTier03, 0)
-def AddEquipSlotTier03(builder, equipSlotTier03):
-    return CharacterSettingExcelAddEquipSlotTier03(builder, equipSlotTier03)
-def CharacterSettingExcelAddEquipSlotLevel03(builder, equipSlotLevel03): builder.PrependInt32Slot(13, equipSlotLevel03, 0)
-def AddEquipSlotLevel03(builder, equipSlotLevel03):
-    return CharacterSettingExcelAddEquipSlotLevel03(builder, equipSlotLevel03)
-def CharacterSettingExcelAddEquipCharacterWeapon(builder, equipCharacterWeapon): builder.PrependBoolSlot(14, equipCharacterWeapon, 0)
-def AddEquipCharacterWeapon(builder, equipCharacterWeapon):
-    return CharacterSettingExcelAddEquipCharacterWeapon(builder, equipCharacterWeapon)
-def CharacterSettingExcelAddEquipCharacterWeaponTier(builder, equipCharacterWeaponTier): builder.PrependInt32Slot(15, equipCharacterWeaponTier, 0)
-def AddEquipCharacterWeaponTier(builder, equipCharacterWeaponTier):
-    return CharacterSettingExcelAddEquipCharacterWeaponTier(builder, equipCharacterWeaponTier)
-def CharacterSettingExcelAddEquipCharacterWeaponLevel(builder, equipCharacterWeaponLevel): builder.PrependInt32Slot(16, equipCharacterWeaponLevel, 0)
-def AddEquipCharacterWeaponLevel(builder, equipCharacterWeaponLevel):
-    return CharacterSettingExcelAddEquipCharacterWeaponLevel(builder, equipCharacterWeaponLevel)
-def CharacterSettingExcelAddEquipCharacterGear(builder, equipCharacterGear): builder.PrependBoolSlot(17, equipCharacterGear, 0)
-def AddEquipCharacterGear(builder, equipCharacterGear):
-    return CharacterSettingExcelAddEquipCharacterGear(builder, equipCharacterGear)
-def CharacterSettingExcelAddEquipCharacterGearTier(builder, equipCharacterGearTier): builder.PrependInt32Slot(18, equipCharacterGearTier, 0)
-def AddEquipCharacterGearTier(builder, equipCharacterGearTier):
-    return CharacterSettingExcelAddEquipCharacterGearTier(builder, equipCharacterGearTier)
-def CharacterSettingExcelAddEquipCharacterGearLevel(builder, equipCharacterGearLevel): builder.PrependInt32Slot(19, equipCharacterGearLevel, 0)
-def AddEquipCharacterGearLevel(builder, equipCharacterGearLevel):
-    return CharacterSettingExcelAddEquipCharacterGearLevel(builder, equipCharacterGearLevel)
-def CharacterSettingExcelAddPotentialType01(builder, potentialType01): builder.PrependInt32Slot(20, potentialType01, 0)
-def AddPotentialType01(builder, potentialType01):
-    return CharacterSettingExcelAddPotentialType01(builder, potentialType01)
-def CharacterSettingExcelAddPotentialLevel01(builder, potentialLevel01): builder.PrependInt32Slot(21, potentialLevel01, 0)
-def AddPotentialLevel01(builder, potentialLevel01):
-    return CharacterSettingExcelAddPotentialLevel01(builder, potentialLevel01)
-def CharacterSettingExcelAddPotentialType02(builder, potentialType02): builder.PrependInt32Slot(22, potentialType02, 0)
-def AddPotentialType02(builder, potentialType02):
-    return CharacterSettingExcelAddPotentialType02(builder, potentialType02)
-def CharacterSettingExcelAddPotentialLevel02(builder, potentialLevel02): builder.PrependInt32Slot(23, potentialLevel02, 0)
-def AddPotentialLevel02(builder, potentialLevel02):
-    return CharacterSettingExcelAddPotentialLevel02(builder, potentialLevel02)
-def CharacterSettingExcelAddPotentialType03(builder, potentialType03): builder.PrependInt32Slot(24, potentialType03, 0)
-def AddPotentialType03(builder, potentialType03):
-    return CharacterSettingExcelAddPotentialType03(builder, potentialType03)
-def CharacterSettingExcelAddPotentialLevel03(builder, potentialLevel03): builder.PrependInt32Slot(25, potentialLevel03, 0)
-def AddPotentialLevel03(builder, potentialLevel03):
-    return CharacterSettingExcelAddPotentialLevel03(builder, potentialLevel03)
+def CharacterSettingExcelAddCharacterSettingIdField(builder, characterSettingIdField): builder.PrependInt32Slot(0, characterSettingIdField, 0)
+def AddCharacterSettingIdField(builder, characterSettingIdField):
+    return CharacterSettingExcelAddCharacterSettingIdField(builder, characterSettingIdField)
+def CharacterSettingExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(1, levelField, 0)
+def AddLevelField(builder, levelField):
+    return CharacterSettingExcelAddLevelField(builder, levelField)
+def CharacterSettingExcelAddFavorRankField(builder, favorRankField): builder.PrependInt32Slot(2, favorRankField, 0)
+def AddFavorRankField(builder, favorRankField):
+    return CharacterSettingExcelAddFavorRankField(builder, favorRankField)
+def CharacterSettingExcelAddStarGradeField(builder, starGradeField): builder.PrependInt32Slot(3, starGradeField, 0)
+def AddStarGradeField(builder, starGradeField):
+    return CharacterSettingExcelAddStarGradeField(builder, starGradeField)
+def CharacterSettingExcelAddExSkillLevelField(builder, exSkillLevelField): builder.PrependInt32Slot(4, exSkillLevelField, 0)
+def AddExSkillLevelField(builder, exSkillLevelField):
+    return CharacterSettingExcelAddExSkillLevelField(builder, exSkillLevelField)
+def CharacterSettingExcelAddPublicSkillLevelField(builder, publicSkillLevelField): builder.PrependInt32Slot(5, publicSkillLevelField, 0)
+def AddPublicSkillLevelField(builder, publicSkillLevelField):
+    return CharacterSettingExcelAddPublicSkillLevelField(builder, publicSkillLevelField)
+def CharacterSettingExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField): builder.PrependInt32Slot(6, passiveSkillLevelField, 0)
+def AddPassiveSkillLevelField(builder, passiveSkillLevelField):
+    return CharacterSettingExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField)
+def CharacterSettingExcelAddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField): builder.PrependInt32Slot(7, extraPassiveSkillLevelField, 0)
+def AddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField):
+    return CharacterSettingExcelAddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField)
+def CharacterSettingExcelAddEquipSlotTier01Field(builder, equipSlotTier01Field): builder.PrependInt32Slot(8, equipSlotTier01Field, 0)
+def AddEquipSlotTier01Field(builder, equipSlotTier01Field):
+    return CharacterSettingExcelAddEquipSlotTier01Field(builder, equipSlotTier01Field)
+def CharacterSettingExcelAddEquipSlotLevel01Field(builder, equipSlotLevel01Field): builder.PrependInt32Slot(9, equipSlotLevel01Field, 0)
+def AddEquipSlotLevel01Field(builder, equipSlotLevel01Field):
+    return CharacterSettingExcelAddEquipSlotLevel01Field(builder, equipSlotLevel01Field)
+def CharacterSettingExcelAddEquipSlotTier02Field(builder, equipSlotTier02Field): builder.PrependInt32Slot(10, equipSlotTier02Field, 0)
+def AddEquipSlotTier02Field(builder, equipSlotTier02Field):
+    return CharacterSettingExcelAddEquipSlotTier02Field(builder, equipSlotTier02Field)
+def CharacterSettingExcelAddEquipSlotLevel02Field(builder, equipSlotLevel02Field): builder.PrependInt32Slot(11, equipSlotLevel02Field, 0)
+def AddEquipSlotLevel02Field(builder, equipSlotLevel02Field):
+    return CharacterSettingExcelAddEquipSlotLevel02Field(builder, equipSlotLevel02Field)
+def CharacterSettingExcelAddEquipSlotTier03Field(builder, equipSlotTier03Field): builder.PrependInt32Slot(12, equipSlotTier03Field, 0)
+def AddEquipSlotTier03Field(builder, equipSlotTier03Field):
+    return CharacterSettingExcelAddEquipSlotTier03Field(builder, equipSlotTier03Field)
+def CharacterSettingExcelAddEquipSlotLevel03Field(builder, equipSlotLevel03Field): builder.PrependInt32Slot(13, equipSlotLevel03Field, 0)
+def AddEquipSlotLevel03Field(builder, equipSlotLevel03Field):
+    return CharacterSettingExcelAddEquipSlotLevel03Field(builder, equipSlotLevel03Field)
+def CharacterSettingExcelAddEquipCharacterWeaponField(builder, equipCharacterWeaponField): builder.PrependBoolSlot(14, equipCharacterWeaponField, 0)
+def AddEquipCharacterWeaponField(builder, equipCharacterWeaponField):
+    return CharacterSettingExcelAddEquipCharacterWeaponField(builder, equipCharacterWeaponField)
+def CharacterSettingExcelAddEquipCharacterWeaponTierField(builder, equipCharacterWeaponTierField): builder.PrependInt32Slot(15, equipCharacterWeaponTierField, 0)
+def AddEquipCharacterWeaponTierField(builder, equipCharacterWeaponTierField):
+    return CharacterSettingExcelAddEquipCharacterWeaponTierField(builder, equipCharacterWeaponTierField)
+def CharacterSettingExcelAddEquipCharacterWeaponLevelField(builder, equipCharacterWeaponLevelField): builder.PrependInt32Slot(16, equipCharacterWeaponLevelField, 0)
+def AddEquipCharacterWeaponLevelField(builder, equipCharacterWeaponLevelField):
+    return CharacterSettingExcelAddEquipCharacterWeaponLevelField(builder, equipCharacterWeaponLevelField)
+def CharacterSettingExcelAddEquipCharacterGearField(builder, equipCharacterGearField): builder.PrependBoolSlot(17, equipCharacterGearField, 0)
+def AddEquipCharacterGearField(builder, equipCharacterGearField):
+    return CharacterSettingExcelAddEquipCharacterGearField(builder, equipCharacterGearField)
+def CharacterSettingExcelAddEquipCharacterGearTierField(builder, equipCharacterGearTierField): builder.PrependInt32Slot(18, equipCharacterGearTierField, 0)
+def AddEquipCharacterGearTierField(builder, equipCharacterGearTierField):
+    return CharacterSettingExcelAddEquipCharacterGearTierField(builder, equipCharacterGearTierField)
+def CharacterSettingExcelAddEquipCharacterGearLevelField(builder, equipCharacterGearLevelField): builder.PrependInt32Slot(19, equipCharacterGearLevelField, 0)
+def AddEquipCharacterGearLevelField(builder, equipCharacterGearLevelField):
+    return CharacterSettingExcelAddEquipCharacterGearLevelField(builder, equipCharacterGearLevelField)
+def CharacterSettingExcelAddPotentialType01Field(builder, potentialType01Field): builder.PrependInt32Slot(20, potentialType01Field, 0)
+def AddPotentialType01Field(builder, potentialType01Field):
+    return CharacterSettingExcelAddPotentialType01Field(builder, potentialType01Field)
+def CharacterSettingExcelAddPotentialLevel01Field(builder, potentialLevel01Field): builder.PrependInt32Slot(21, potentialLevel01Field, 0)
+def AddPotentialLevel01Field(builder, potentialLevel01Field):
+    return CharacterSettingExcelAddPotentialLevel01Field(builder, potentialLevel01Field)
+def CharacterSettingExcelAddPotentialType02Field(builder, potentialType02Field): builder.PrependInt32Slot(22, potentialType02Field, 0)
+def AddPotentialType02Field(builder, potentialType02Field):
+    return CharacterSettingExcelAddPotentialType02Field(builder, potentialType02Field)
+def CharacterSettingExcelAddPotentialLevel02Field(builder, potentialLevel02Field): builder.PrependInt32Slot(23, potentialLevel02Field, 0)
+def AddPotentialLevel02Field(builder, potentialLevel02Field):
+    return CharacterSettingExcelAddPotentialLevel02Field(builder, potentialLevel02Field)
+def CharacterSettingExcelAddPotentialType03Field(builder, potentialType03Field): builder.PrependInt32Slot(24, potentialType03Field, 0)
+def AddPotentialType03Field(builder, potentialType03Field):
+    return CharacterSettingExcelAddPotentialType03Field(builder, potentialType03Field)
+def CharacterSettingExcelAddPotentialLevel03Field(builder, potentialLevel03Field): builder.PrependInt32Slot(25, potentialLevel03Field, 0)
+def AddPotentialLevel03Field(builder, potentialLevel03Field):
+    return CharacterSettingExcelAddPotentialLevel03Field(builder, potentialLevel03Field)
 def CharacterSettingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterSettingExcelEnd(builder)

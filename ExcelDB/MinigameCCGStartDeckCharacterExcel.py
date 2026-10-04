@@ -25,14 +25,14 @@ class MinigameCCGStartDeckCharacterExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameCCGStartDeckCharacterExcel
-    def CCGId(self):
+    def CCGIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGStartDeckCharacterExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class MinigameCCGStartDeckCharacterExcel(object):
 def MinigameCCGStartDeckCharacterExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return MinigameCCGStartDeckCharacterExcelStart(builder)
-def MinigameCCGStartDeckCharacterExcelAddCCGId(builder, cCGId): builder.PrependInt32Slot(0, cCGId, 0)
-def AddCCGId(builder, cCGId):
-    return MinigameCCGStartDeckCharacterExcelAddCCGId(builder, cCGId)
-def MinigameCCGStartDeckCharacterExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(1, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return MinigameCCGStartDeckCharacterExcelAddCharacterId(builder, characterId)
+def MinigameCCGStartDeckCharacterExcelAddCCGIdField(builder, cCGIdField): builder.PrependInt32Slot(0, cCGIdField, 0)
+def AddCCGIdField(builder, cCGIdField):
+    return MinigameCCGStartDeckCharacterExcelAddCCGIdField(builder, cCGIdField)
+def MinigameCCGStartDeckCharacterExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return MinigameCCGStartDeckCharacterExcelAddCharacterIdField(builder, characterIdField)
 def MinigameCCGStartDeckCharacterExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameCCGStartDeckCharacterExcelEnd(builder)

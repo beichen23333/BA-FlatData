@@ -25,63 +25,63 @@ class ShopCashPromotionPopupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopCashPromotionPopupExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashPromotionPopupExcel
-    def DevName(self):
+    def DevNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopCashPromotionPopupExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashPromotionPopupExcel
-    def IllustOffsetX(self):
+    def IllustOffsetXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ShopCashPromotionPopupExcel
-    def IllustOffsetY(self):
+    def IllustOffsetYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ShopCashPromotionPopupExcel
-    def IllustScale(self):
+    def IllustScaleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ShopCashPromotionPopupExcel
-    def TitleImagePath(self):
+    def TitleImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopCashPromotionPopupExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashPromotionPopupExcel
-    def ShopCashIds(self, j):
+    def ShopCashIdsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             a = self._tab.Vector(o)
@@ -89,57 +89,57 @@ class ShopCashPromotionPopupExcel(object):
         return 0
 
     # ShopCashPromotionPopupExcel
-    def ShopCashIdsAsNumpy(self):
+    def ShopCashIdsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ShopCashPromotionPopupExcel
-    def ShopCashIdsLength(self):
+    def ShopCashIdsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopCashPromotionPopupExcel
-    def ShopCashIdsIsNone(self):
+    def ShopCashIdsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         return o == 0
 
 def ShopCashPromotionPopupExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return ShopCashPromotionPopupExcelStart(builder)
-def ShopCashPromotionPopupExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ShopCashPromotionPopupExcelAddId(builder, id)
-def ShopCashPromotionPopupExcelAddDevName(builder, devName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devName), 0)
-def AddDevName(builder, devName):
-    return ShopCashPromotionPopupExcelAddDevName(builder, devName)
-def ShopCashPromotionPopupExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(2, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return ShopCashPromotionPopupExcelAddCharacterId(builder, characterId)
-def ShopCashPromotionPopupExcelAddIllustOffsetX(builder, illustOffsetX): builder.PrependFloat32Slot(3, illustOffsetX, 0.0)
-def AddIllustOffsetX(builder, illustOffsetX):
-    return ShopCashPromotionPopupExcelAddIllustOffsetX(builder, illustOffsetX)
-def ShopCashPromotionPopupExcelAddIllustOffsetY(builder, illustOffsetY): builder.PrependFloat32Slot(4, illustOffsetY, 0.0)
-def AddIllustOffsetY(builder, illustOffsetY):
-    return ShopCashPromotionPopupExcelAddIllustOffsetY(builder, illustOffsetY)
-def ShopCashPromotionPopupExcelAddIllustScale(builder, illustScale): builder.PrependFloat32Slot(5, illustScale, 0.0)
-def AddIllustScale(builder, illustScale):
-    return ShopCashPromotionPopupExcelAddIllustScale(builder, illustScale)
-def ShopCashPromotionPopupExcelAddTitleImagePath(builder, titleImagePath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePath), 0)
-def AddTitleImagePath(builder, titleImagePath):
-    return ShopCashPromotionPopupExcelAddTitleImagePath(builder, titleImagePath)
-def ShopCashPromotionPopupExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(7, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return ShopCashPromotionPopupExcelAddLocalizeEtcId(builder, localizeEtcId)
-def ShopCashPromotionPopupExcelAddShopCashIds(builder, shopCashIds): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(shopCashIds), 0)
-def AddShopCashIds(builder, shopCashIds):
-    return ShopCashPromotionPopupExcelAddShopCashIds(builder, shopCashIds)
-def ShopCashPromotionPopupExcelStartShopCashIdsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShopCashIdsVector(builder, numElems):
-    return ShopCashPromotionPopupExcelStartShopCashIdsVector(builder, numElems)
+def ShopCashPromotionPopupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ShopCashPromotionPopupExcelAddIdField(builder, idField)
+def ShopCashPromotionPopupExcelAddDevNameField(builder, devNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+def AddDevNameField(builder, devNameField):
+    return ShopCashPromotionPopupExcelAddDevNameField(builder, devNameField)
+def ShopCashPromotionPopupExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(2, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return ShopCashPromotionPopupExcelAddCharacterIdField(builder, characterIdField)
+def ShopCashPromotionPopupExcelAddIllustOffsetXField(builder, illustOffsetXField): builder.PrependFloat32Slot(3, illustOffsetXField, 0.0)
+def AddIllustOffsetXField(builder, illustOffsetXField):
+    return ShopCashPromotionPopupExcelAddIllustOffsetXField(builder, illustOffsetXField)
+def ShopCashPromotionPopupExcelAddIllustOffsetYField(builder, illustOffsetYField): builder.PrependFloat32Slot(4, illustOffsetYField, 0.0)
+def AddIllustOffsetYField(builder, illustOffsetYField):
+    return ShopCashPromotionPopupExcelAddIllustOffsetYField(builder, illustOffsetYField)
+def ShopCashPromotionPopupExcelAddIllustScaleField(builder, illustScaleField): builder.PrependFloat32Slot(5, illustScaleField, 0.0)
+def AddIllustScaleField(builder, illustScaleField):
+    return ShopCashPromotionPopupExcelAddIllustScaleField(builder, illustScaleField)
+def ShopCashPromotionPopupExcelAddTitleImagePathField(builder, titleImagePathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePathField), 0)
+def AddTitleImagePathField(builder, titleImagePathField):
+    return ShopCashPromotionPopupExcelAddTitleImagePathField(builder, titleImagePathField)
+def ShopCashPromotionPopupExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(7, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return ShopCashPromotionPopupExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def ShopCashPromotionPopupExcelAddShopCashIdsField(builder, shopCashIdsField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(shopCashIdsField), 0)
+def AddShopCashIdsField(builder, shopCashIdsField):
+    return ShopCashPromotionPopupExcelAddShopCashIdsField(builder, shopCashIdsField)
+def ShopCashPromotionPopupExcelStartShopCashIdsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShopCashIdsFieldVector(builder, numElems):
+    return ShopCashPromotionPopupExcelStartShopCashIdsFieldVector(builder, numElems)
 def ShopCashPromotionPopupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopCashPromotionPopupExcelEnd(builder)

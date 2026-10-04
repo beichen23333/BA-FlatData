@@ -25,42 +25,42 @@ class CharacterAdaptationExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterAdaptationExcel
-    def SeasonId(self):
+    def SeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationExcel
-    def AdaptationCharacterId(self):
+    def AdaptationCharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationExcel
-    def ChooseBtnPath(self):
+    def ChooseBtnPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterAdaptationExcel
-    def ProgressOrder(self):
+    def ProgressOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationExcel
-    def AdaptationMissionStepCount(self):
+    def AdaptationMissionStepCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationExcel
-    def CharacterStepGrowthGroupId(self):
+    def CharacterStepGrowthGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -69,24 +69,24 @@ class CharacterAdaptationExcel(object):
 def CharacterAdaptationExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return CharacterAdaptationExcelStart(builder)
-def CharacterAdaptationExcelAddSeasonId(builder, seasonId): builder.PrependInt32Slot(0, seasonId, 0)
-def AddSeasonId(builder, seasonId):
-    return CharacterAdaptationExcelAddSeasonId(builder, seasonId)
-def CharacterAdaptationExcelAddAdaptationCharacterId(builder, adaptationCharacterId): builder.PrependInt32Slot(1, adaptationCharacterId, 0)
-def AddAdaptationCharacterId(builder, adaptationCharacterId):
-    return CharacterAdaptationExcelAddAdaptationCharacterId(builder, adaptationCharacterId)
-def CharacterAdaptationExcelAddChooseBtnPath(builder, chooseBtnPath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(chooseBtnPath), 0)
-def AddChooseBtnPath(builder, chooseBtnPath):
-    return CharacterAdaptationExcelAddChooseBtnPath(builder, chooseBtnPath)
-def CharacterAdaptationExcelAddProgressOrder(builder, progressOrder): builder.PrependInt32Slot(3, progressOrder, 0)
-def AddProgressOrder(builder, progressOrder):
-    return CharacterAdaptationExcelAddProgressOrder(builder, progressOrder)
-def CharacterAdaptationExcelAddAdaptationMissionStepCount(builder, adaptationMissionStepCount): builder.PrependInt32Slot(4, adaptationMissionStepCount, 0)
-def AddAdaptationMissionStepCount(builder, adaptationMissionStepCount):
-    return CharacterAdaptationExcelAddAdaptationMissionStepCount(builder, adaptationMissionStepCount)
-def CharacterAdaptationExcelAddCharacterStepGrowthGroupId(builder, characterStepGrowthGroupId): builder.PrependInt32Slot(5, characterStepGrowthGroupId, 0)
-def AddCharacterStepGrowthGroupId(builder, characterStepGrowthGroupId):
-    return CharacterAdaptationExcelAddCharacterStepGrowthGroupId(builder, characterStepGrowthGroupId)
+def CharacterAdaptationExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(0, seasonIdField, 0)
+def AddSeasonIdField(builder, seasonIdField):
+    return CharacterAdaptationExcelAddSeasonIdField(builder, seasonIdField)
+def CharacterAdaptationExcelAddAdaptationCharacterIdField(builder, adaptationCharacterIdField): builder.PrependInt32Slot(1, adaptationCharacterIdField, 0)
+def AddAdaptationCharacterIdField(builder, adaptationCharacterIdField):
+    return CharacterAdaptationExcelAddAdaptationCharacterIdField(builder, adaptationCharacterIdField)
+def CharacterAdaptationExcelAddChooseBtnPathField(builder, chooseBtnPathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(chooseBtnPathField), 0)
+def AddChooseBtnPathField(builder, chooseBtnPathField):
+    return CharacterAdaptationExcelAddChooseBtnPathField(builder, chooseBtnPathField)
+def CharacterAdaptationExcelAddProgressOrderField(builder, progressOrderField): builder.PrependInt32Slot(3, progressOrderField, 0)
+def AddProgressOrderField(builder, progressOrderField):
+    return CharacterAdaptationExcelAddProgressOrderField(builder, progressOrderField)
+def CharacterAdaptationExcelAddAdaptationMissionStepCountField(builder, adaptationMissionStepCountField): builder.PrependInt32Slot(4, adaptationMissionStepCountField, 0)
+def AddAdaptationMissionStepCountField(builder, adaptationMissionStepCountField):
+    return CharacterAdaptationExcelAddAdaptationMissionStepCountField(builder, adaptationMissionStepCountField)
+def CharacterAdaptationExcelAddCharacterStepGrowthGroupIdField(builder, characterStepGrowthGroupIdField): builder.PrependInt32Slot(5, characterStepGrowthGroupIdField, 0)
+def AddCharacterStepGrowthGroupIdField(builder, characterStepGrowthGroupIdField):
+    return CharacterAdaptationExcelAddCharacterStepGrowthGroupIdField(builder, characterStepGrowthGroupIdField)
 def CharacterAdaptationExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterAdaptationExcelEnd(builder)

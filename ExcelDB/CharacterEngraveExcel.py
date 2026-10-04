@@ -25,35 +25,35 @@ class CharacterEngraveExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterEngraveExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterEngraveExcel
-    def UnlockAllNode(self):
+    def UnlockAllNodeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterEngraveExcel
-    def NodeTreeEgo(self):
+    def NodeTreeEgoField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterEngraveExcel
-    def NodeTreeConsciousness(self):
+    def NodeTreeConsciousnessField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterEngraveExcel
-    def NodeTreeUnconscious(self):
+    def NodeTreeUnconsciousField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class CharacterEngraveExcel(object):
 def CharacterEngraveExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return CharacterEngraveExcelStart(builder)
-def CharacterEngraveExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CharacterEngraveExcelAddId(builder, id)
-def CharacterEngraveExcelAddUnlockAllNode(builder, unlockAllNode): builder.PrependBoolSlot(1, unlockAllNode, 0)
-def AddUnlockAllNode(builder, unlockAllNode):
-    return CharacterEngraveExcelAddUnlockAllNode(builder, unlockAllNode)
-def CharacterEngraveExcelAddNodeTreeEgo(builder, nodeTreeEgo): builder.PrependInt32Slot(2, nodeTreeEgo, 0)
-def AddNodeTreeEgo(builder, nodeTreeEgo):
-    return CharacterEngraveExcelAddNodeTreeEgo(builder, nodeTreeEgo)
-def CharacterEngraveExcelAddNodeTreeConsciousness(builder, nodeTreeConsciousness): builder.PrependInt32Slot(3, nodeTreeConsciousness, 0)
-def AddNodeTreeConsciousness(builder, nodeTreeConsciousness):
-    return CharacterEngraveExcelAddNodeTreeConsciousness(builder, nodeTreeConsciousness)
-def CharacterEngraveExcelAddNodeTreeUnconscious(builder, nodeTreeUnconscious): builder.PrependInt32Slot(4, nodeTreeUnconscious, 0)
-def AddNodeTreeUnconscious(builder, nodeTreeUnconscious):
-    return CharacterEngraveExcelAddNodeTreeUnconscious(builder, nodeTreeUnconscious)
+def CharacterEngraveExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CharacterEngraveExcelAddIdField(builder, idField)
+def CharacterEngraveExcelAddUnlockAllNodeField(builder, unlockAllNodeField): builder.PrependBoolSlot(1, unlockAllNodeField, 0)
+def AddUnlockAllNodeField(builder, unlockAllNodeField):
+    return CharacterEngraveExcelAddUnlockAllNodeField(builder, unlockAllNodeField)
+def CharacterEngraveExcelAddNodeTreeEgoField(builder, nodeTreeEgoField): builder.PrependInt32Slot(2, nodeTreeEgoField, 0)
+def AddNodeTreeEgoField(builder, nodeTreeEgoField):
+    return CharacterEngraveExcelAddNodeTreeEgoField(builder, nodeTreeEgoField)
+def CharacterEngraveExcelAddNodeTreeConsciousnessField(builder, nodeTreeConsciousnessField): builder.PrependInt32Slot(3, nodeTreeConsciousnessField, 0)
+def AddNodeTreeConsciousnessField(builder, nodeTreeConsciousnessField):
+    return CharacterEngraveExcelAddNodeTreeConsciousnessField(builder, nodeTreeConsciousnessField)
+def CharacterEngraveExcelAddNodeTreeUnconsciousField(builder, nodeTreeUnconsciousField): builder.PrependInt32Slot(4, nodeTreeUnconsciousField, 0)
+def AddNodeTreeUnconsciousField(builder, nodeTreeUnconsciousField):
+    return CharacterEngraveExcelAddNodeTreeUnconsciousField(builder, nodeTreeUnconsciousField)
 def CharacterEngraveExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterEngraveExcelEnd(builder)

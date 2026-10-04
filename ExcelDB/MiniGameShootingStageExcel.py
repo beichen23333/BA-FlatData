@@ -25,14 +25,14 @@ class MiniGameShootingStageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MiniGameShootingStageExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameShootingStageExcel
-    def BgmId(self, j):
+    def BgmIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,82 +40,82 @@ class MiniGameShootingStageExcel(object):
         return 0
 
     # MiniGameShootingStageExcel
-    def BgmIdAsNumpy(self):
+    def BgmIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MiniGameShootingStageExcel
-    def BgmIdLength(self):
+    def BgmIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameShootingStageExcel
-    def BgmIdIsNone(self):
+    def BgmIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # MiniGameShootingStageExcel
-    def CostGoodsId(self):
+    def CostGoodsIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameShootingStageExcel
-    def Difficulty(self):
+    def DifficultyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameShootingStageExcel
-    def DesignLevel(self):
+    def DesignLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameShootingStageExcel
-    def ArtLevel(self):
+    def ArtLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameShootingStageExcel
-    def StartBattleDuration(self):
+    def StartBattleDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameShootingStageExcel
-    def DefaultBattleDuration(self):
+    def DefaultBattleDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameShootingStageExcel
-    def DefaultLogicEffect(self):
+    def DefaultLogicEffectField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameShootingStageExcel
-    def CameraSizeRate(self):
+    def CameraSizeRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # MiniGameShootingStageExcel
-    def EventContentStageRewardId(self):
+    def EventContentStageRewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -124,42 +124,42 @@ class MiniGameShootingStageExcel(object):
 def MiniGameShootingStageExcelStart(builder): builder.StartObject(11)
 def Start(builder):
     return MiniGameShootingStageExcelStart(builder)
-def MiniGameShootingStageExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(0, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return MiniGameShootingStageExcelAddUniqueId(builder, uniqueId)
-def MiniGameShootingStageExcelAddBgmId(builder, bgmId): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(bgmId), 0)
-def AddBgmId(builder, bgmId):
-    return MiniGameShootingStageExcelAddBgmId(builder, bgmId)
-def MiniGameShootingStageExcelStartBgmIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBgmIdVector(builder, numElems):
-    return MiniGameShootingStageExcelStartBgmIdVector(builder, numElems)
-def MiniGameShootingStageExcelAddCostGoodsId(builder, costGoodsId): builder.PrependInt32Slot(2, costGoodsId, 0)
-def AddCostGoodsId(builder, costGoodsId):
-    return MiniGameShootingStageExcelAddCostGoodsId(builder, costGoodsId)
-def MiniGameShootingStageExcelAddDifficulty(builder, difficulty): builder.PrependInt32Slot(3, difficulty, 0)
-def AddDifficulty(builder, difficulty):
-    return MiniGameShootingStageExcelAddDifficulty(builder, difficulty)
-def MiniGameShootingStageExcelAddDesignLevel(builder, designLevel): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(designLevel), 0)
-def AddDesignLevel(builder, designLevel):
-    return MiniGameShootingStageExcelAddDesignLevel(builder, designLevel)
-def MiniGameShootingStageExcelAddArtLevel(builder, artLevel): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(artLevel), 0)
-def AddArtLevel(builder, artLevel):
-    return MiniGameShootingStageExcelAddArtLevel(builder, artLevel)
-def MiniGameShootingStageExcelAddStartBattleDuration(builder, startBattleDuration): builder.PrependInt32Slot(6, startBattleDuration, 0)
-def AddStartBattleDuration(builder, startBattleDuration):
-    return MiniGameShootingStageExcelAddStartBattleDuration(builder, startBattleDuration)
-def MiniGameShootingStageExcelAddDefaultBattleDuration(builder, defaultBattleDuration): builder.PrependInt32Slot(7, defaultBattleDuration, 0)
-def AddDefaultBattleDuration(builder, defaultBattleDuration):
-    return MiniGameShootingStageExcelAddDefaultBattleDuration(builder, defaultBattleDuration)
-def MiniGameShootingStageExcelAddDefaultLogicEffect(builder, defaultLogicEffect): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(defaultLogicEffect), 0)
-def AddDefaultLogicEffect(builder, defaultLogicEffect):
-    return MiniGameShootingStageExcelAddDefaultLogicEffect(builder, defaultLogicEffect)
-def MiniGameShootingStageExcelAddCameraSizeRate(builder, cameraSizeRate): builder.PrependFloat32Slot(9, cameraSizeRate, 0.0)
-def AddCameraSizeRate(builder, cameraSizeRate):
-    return MiniGameShootingStageExcelAddCameraSizeRate(builder, cameraSizeRate)
-def MiniGameShootingStageExcelAddEventContentStageRewardId(builder, eventContentStageRewardId): builder.PrependInt32Slot(10, eventContentStageRewardId, 0)
-def AddEventContentStageRewardId(builder, eventContentStageRewardId):
-    return MiniGameShootingStageExcelAddEventContentStageRewardId(builder, eventContentStageRewardId)
+def MiniGameShootingStageExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return MiniGameShootingStageExcelAddUniqueIdField(builder, uniqueIdField)
+def MiniGameShootingStageExcelAddBgmIdField(builder, bgmIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(bgmIdField), 0)
+def AddBgmIdField(builder, bgmIdField):
+    return MiniGameShootingStageExcelAddBgmIdField(builder, bgmIdField)
+def MiniGameShootingStageExcelStartBgmIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBgmIdFieldVector(builder, numElems):
+    return MiniGameShootingStageExcelStartBgmIdFieldVector(builder, numElems)
+def MiniGameShootingStageExcelAddCostGoodsIdField(builder, costGoodsIdField): builder.PrependInt32Slot(2, costGoodsIdField, 0)
+def AddCostGoodsIdField(builder, costGoodsIdField):
+    return MiniGameShootingStageExcelAddCostGoodsIdField(builder, costGoodsIdField)
+def MiniGameShootingStageExcelAddDifficultyField(builder, difficultyField): builder.PrependInt32Slot(3, difficultyField, 0)
+def AddDifficultyField(builder, difficultyField):
+    return MiniGameShootingStageExcelAddDifficultyField(builder, difficultyField)
+def MiniGameShootingStageExcelAddDesignLevelField(builder, designLevelField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(designLevelField), 0)
+def AddDesignLevelField(builder, designLevelField):
+    return MiniGameShootingStageExcelAddDesignLevelField(builder, designLevelField)
+def MiniGameShootingStageExcelAddArtLevelField(builder, artLevelField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(artLevelField), 0)
+def AddArtLevelField(builder, artLevelField):
+    return MiniGameShootingStageExcelAddArtLevelField(builder, artLevelField)
+def MiniGameShootingStageExcelAddStartBattleDurationField(builder, startBattleDurationField): builder.PrependInt32Slot(6, startBattleDurationField, 0)
+def AddStartBattleDurationField(builder, startBattleDurationField):
+    return MiniGameShootingStageExcelAddStartBattleDurationField(builder, startBattleDurationField)
+def MiniGameShootingStageExcelAddDefaultBattleDurationField(builder, defaultBattleDurationField): builder.PrependInt32Slot(7, defaultBattleDurationField, 0)
+def AddDefaultBattleDurationField(builder, defaultBattleDurationField):
+    return MiniGameShootingStageExcelAddDefaultBattleDurationField(builder, defaultBattleDurationField)
+def MiniGameShootingStageExcelAddDefaultLogicEffectField(builder, defaultLogicEffectField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(defaultLogicEffectField), 0)
+def AddDefaultLogicEffectField(builder, defaultLogicEffectField):
+    return MiniGameShootingStageExcelAddDefaultLogicEffectField(builder, defaultLogicEffectField)
+def MiniGameShootingStageExcelAddCameraSizeRateField(builder, cameraSizeRateField): builder.PrependFloat32Slot(9, cameraSizeRateField, 0.0)
+def AddCameraSizeRateField(builder, cameraSizeRateField):
+    return MiniGameShootingStageExcelAddCameraSizeRateField(builder, cameraSizeRateField)
+def MiniGameShootingStageExcelAddEventContentStageRewardIdField(builder, eventContentStageRewardIdField): builder.PrependInt32Slot(10, eventContentStageRewardIdField, 0)
+def AddEventContentStageRewardIdField(builder, eventContentStageRewardIdField):
+    return MiniGameShootingStageExcelAddEventContentStageRewardIdField(builder, eventContentStageRewardIdField)
 def MiniGameShootingStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MiniGameShootingStageExcelEnd(builder)

@@ -25,21 +25,21 @@ class AcademyLocationRankExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AcademyLocationRankExcel
-    def Rank(self):
+    def RankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyLocationRankExcel
-    def RankExp(self):
+    def RankExpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyLocationRankExcel
-    def TotalExp(self):
+    def TotalExpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -48,15 +48,15 @@ class AcademyLocationRankExcel(object):
 def AcademyLocationRankExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return AcademyLocationRankExcelStart(builder)
-def AcademyLocationRankExcelAddRank(builder, rank): builder.PrependInt32Slot(0, rank, 0)
-def AddRank(builder, rank):
-    return AcademyLocationRankExcelAddRank(builder, rank)
-def AcademyLocationRankExcelAddRankExp(builder, rankExp): builder.PrependInt32Slot(1, rankExp, 0)
-def AddRankExp(builder, rankExp):
-    return AcademyLocationRankExcelAddRankExp(builder, rankExp)
-def AcademyLocationRankExcelAddTotalExp(builder, totalExp): builder.PrependInt32Slot(2, totalExp, 0)
-def AddTotalExp(builder, totalExp):
-    return AcademyLocationRankExcelAddTotalExp(builder, totalExp)
+def AcademyLocationRankExcelAddRankField(builder, rankField): builder.PrependInt32Slot(0, rankField, 0)
+def AddRankField(builder, rankField):
+    return AcademyLocationRankExcelAddRankField(builder, rankField)
+def AcademyLocationRankExcelAddRankExpField(builder, rankExpField): builder.PrependInt32Slot(1, rankExpField, 0)
+def AddRankExpField(builder, rankExpField):
+    return AcademyLocationRankExcelAddRankExpField(builder, rankExpField)
+def AcademyLocationRankExcelAddTotalExpField(builder, totalExpField): builder.PrependInt32Slot(2, totalExpField, 0)
+def AddTotalExpField(builder, totalExpField):
+    return AcademyLocationRankExcelAddTotalExpField(builder, totalExpField)
 def AcademyLocationRankExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return AcademyLocationRankExcelEnd(builder)

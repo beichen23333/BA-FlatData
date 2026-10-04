@@ -25,35 +25,35 @@ class MinigameCCGRewardCardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameCCGRewardCardExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGRewardCardExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGRewardCardExcel
-    def EntityType(self):
+    def EntityTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGRewardCardExcel
-    def CardId(self):
+    def CardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGRewardCardExcel
-    def CardRarity(self):
+    def CardRarityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class MinigameCCGRewardCardExcel(object):
 def MinigameCCGRewardCardExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return MinigameCCGRewardCardExcelStart(builder)
-def MinigameCCGRewardCardExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameCCGRewardCardExcelAddId(builder, id)
-def MinigameCCGRewardCardExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(1, groupId, 0)
-def AddGroupId(builder, groupId):
-    return MinigameCCGRewardCardExcelAddGroupId(builder, groupId)
-def MinigameCCGRewardCardExcelAddEntityType(builder, entityType): builder.PrependInt32Slot(2, entityType, 0)
-def AddEntityType(builder, entityType):
-    return MinigameCCGRewardCardExcelAddEntityType(builder, entityType)
-def MinigameCCGRewardCardExcelAddCardId(builder, cardId): builder.PrependInt32Slot(3, cardId, 0)
-def AddCardId(builder, cardId):
-    return MinigameCCGRewardCardExcelAddCardId(builder, cardId)
-def MinigameCCGRewardCardExcelAddCardRarity(builder, cardRarity): builder.PrependInt32Slot(4, cardRarity, 0)
-def AddCardRarity(builder, cardRarity):
-    return MinigameCCGRewardCardExcelAddCardRarity(builder, cardRarity)
+def MinigameCCGRewardCardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameCCGRewardCardExcelAddIdField(builder, idField)
+def MinigameCCGRewardCardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(1, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return MinigameCCGRewardCardExcelAddGroupIdField(builder, groupIdField)
+def MinigameCCGRewardCardExcelAddEntityTypeField(builder, entityTypeField): builder.PrependInt32Slot(2, entityTypeField, 0)
+def AddEntityTypeField(builder, entityTypeField):
+    return MinigameCCGRewardCardExcelAddEntityTypeField(builder, entityTypeField)
+def MinigameCCGRewardCardExcelAddCardIdField(builder, cardIdField): builder.PrependInt32Slot(3, cardIdField, 0)
+def AddCardIdField(builder, cardIdField):
+    return MinigameCCGRewardCardExcelAddCardIdField(builder, cardIdField)
+def MinigameCCGRewardCardExcelAddCardRarityField(builder, cardRarityField): builder.PrependInt32Slot(4, cardRarityField, 0)
+def AddCardRarityField(builder, cardRarityField):
+    return MinigameCCGRewardCardExcelAddCardRarityField(builder, cardRarityField)
 def MinigameCCGRewardCardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameCCGRewardCardExcelEnd(builder)

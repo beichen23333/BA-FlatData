@@ -25,14 +25,14 @@ class IAWorldRaidSkillDescriptionListExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # IAWorldRaidSkillDescriptionListExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillGroupId(self, j):
+    def GlobalSkillGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,19 +40,19 @@ class IAWorldRaidSkillDescriptionListExcel(object):
         return ""
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillGroupIdLength(self):
+    def GlobalSkillGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillGroupIdIsNone(self):
+    def GlobalSkillGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillRemoveCondition(self, j):
+    def GlobalSkillRemoveConditionField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -60,26 +60,26 @@ class IAWorldRaidSkillDescriptionListExcel(object):
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillRemoveConditionAsNumpy(self):
+    def GlobalSkillRemoveConditionFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillRemoveConditionLength(self):
+    def GlobalSkillRemoveConditionFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillRemoveConditionIsNone(self):
+    def GlobalSkillRemoveConditionFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillHighlightResource(self, j):
+    def GlobalSkillHighlightResourceField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -87,26 +87,26 @@ class IAWorldRaidSkillDescriptionListExcel(object):
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillHighlightResourceAsNumpy(self):
+    def GlobalSkillHighlightResourceFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillHighlightResourceLength(self):
+    def GlobalSkillHighlightResourceFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def GlobalSkillHighlightResourceIsNone(self):
+    def GlobalSkillHighlightResourceFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def SkillGroupId(self, j):
+    def SkillGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -114,19 +114,19 @@ class IAWorldRaidSkillDescriptionListExcel(object):
         return ""
 
     # IAWorldRaidSkillDescriptionListExcel
-    def SkillGroupIdLength(self):
+    def SkillGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def SkillGroupIdIsNone(self):
+    def SkillGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def HighlightResource(self, j):
+    def HighlightResourceField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -134,60 +134,60 @@ class IAWorldRaidSkillDescriptionListExcel(object):
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def HighlightResourceAsNumpy(self):
+    def HighlightResourceFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def HighlightResourceLength(self):
+    def HighlightResourceFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # IAWorldRaidSkillDescriptionListExcel
-    def HighlightResourceIsNone(self):
+    def HighlightResourceFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
 def IAWorldRaidSkillDescriptionListExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return IAWorldRaidSkillDescriptionListExcelStart(builder)
-def IAWorldRaidSkillDescriptionListExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return IAWorldRaidSkillDescriptionListExcelAddId(builder, id)
-def IAWorldRaidSkillDescriptionListExcelAddGlobalSkillGroupId(builder, globalSkillGroupId): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillGroupId), 0)
-def AddGlobalSkillGroupId(builder, globalSkillGroupId):
-    return IAWorldRaidSkillDescriptionListExcelAddGlobalSkillGroupId(builder, globalSkillGroupId)
-def IAWorldRaidSkillDescriptionListExcelStartGlobalSkillGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGlobalSkillGroupIdVector(builder, numElems):
-    return IAWorldRaidSkillDescriptionListExcelStartGlobalSkillGroupIdVector(builder, numElems)
-def IAWorldRaidSkillDescriptionListExcelAddGlobalSkillRemoveCondition(builder, globalSkillRemoveCondition): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillRemoveCondition), 0)
-def AddGlobalSkillRemoveCondition(builder, globalSkillRemoveCondition):
-    return IAWorldRaidSkillDescriptionListExcelAddGlobalSkillRemoveCondition(builder, globalSkillRemoveCondition)
-def IAWorldRaidSkillDescriptionListExcelStartGlobalSkillRemoveConditionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGlobalSkillRemoveConditionVector(builder, numElems):
-    return IAWorldRaidSkillDescriptionListExcelStartGlobalSkillRemoveConditionVector(builder, numElems)
-def IAWorldRaidSkillDescriptionListExcelAddGlobalSkillHighlightResource(builder, globalSkillHighlightResource): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillHighlightResource), 0)
-def AddGlobalSkillHighlightResource(builder, globalSkillHighlightResource):
-    return IAWorldRaidSkillDescriptionListExcelAddGlobalSkillHighlightResource(builder, globalSkillHighlightResource)
-def IAWorldRaidSkillDescriptionListExcelStartGlobalSkillHighlightResourceVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGlobalSkillHighlightResourceVector(builder, numElems):
-    return IAWorldRaidSkillDescriptionListExcelStartGlobalSkillHighlightResourceVector(builder, numElems)
-def IAWorldRaidSkillDescriptionListExcelAddSkillGroupId(builder, skillGroupId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupId), 0)
-def AddSkillGroupId(builder, skillGroupId):
-    return IAWorldRaidSkillDescriptionListExcelAddSkillGroupId(builder, skillGroupId)
-def IAWorldRaidSkillDescriptionListExcelStartSkillGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillGroupIdVector(builder, numElems):
-    return IAWorldRaidSkillDescriptionListExcelStartSkillGroupIdVector(builder, numElems)
-def IAWorldRaidSkillDescriptionListExcelAddHighlightResource(builder, highlightResource): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(highlightResource), 0)
-def AddHighlightResource(builder, highlightResource):
-    return IAWorldRaidSkillDescriptionListExcelAddHighlightResource(builder, highlightResource)
-def IAWorldRaidSkillDescriptionListExcelStartHighlightResourceVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartHighlightResourceVector(builder, numElems):
-    return IAWorldRaidSkillDescriptionListExcelStartHighlightResourceVector(builder, numElems)
+def IAWorldRaidSkillDescriptionListExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return IAWorldRaidSkillDescriptionListExcelAddIdField(builder, idField)
+def IAWorldRaidSkillDescriptionListExcelAddGlobalSkillGroupIdField(builder, globalSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillGroupIdField), 0)
+def AddGlobalSkillGroupIdField(builder, globalSkillGroupIdField):
+    return IAWorldRaidSkillDescriptionListExcelAddGlobalSkillGroupIdField(builder, globalSkillGroupIdField)
+def IAWorldRaidSkillDescriptionListExcelStartGlobalSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartGlobalSkillGroupIdFieldVector(builder, numElems):
+    return IAWorldRaidSkillDescriptionListExcelStartGlobalSkillGroupIdFieldVector(builder, numElems)
+def IAWorldRaidSkillDescriptionListExcelAddGlobalSkillRemoveConditionField(builder, globalSkillRemoveConditionField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillRemoveConditionField), 0)
+def AddGlobalSkillRemoveConditionField(builder, globalSkillRemoveConditionField):
+    return IAWorldRaidSkillDescriptionListExcelAddGlobalSkillRemoveConditionField(builder, globalSkillRemoveConditionField)
+def IAWorldRaidSkillDescriptionListExcelStartGlobalSkillRemoveConditionFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartGlobalSkillRemoveConditionFieldVector(builder, numElems):
+    return IAWorldRaidSkillDescriptionListExcelStartGlobalSkillRemoveConditionFieldVector(builder, numElems)
+def IAWorldRaidSkillDescriptionListExcelAddGlobalSkillHighlightResourceField(builder, globalSkillHighlightResourceField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillHighlightResourceField), 0)
+def AddGlobalSkillHighlightResourceField(builder, globalSkillHighlightResourceField):
+    return IAWorldRaidSkillDescriptionListExcelAddGlobalSkillHighlightResourceField(builder, globalSkillHighlightResourceField)
+def IAWorldRaidSkillDescriptionListExcelStartGlobalSkillHighlightResourceFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartGlobalSkillHighlightResourceFieldVector(builder, numElems):
+    return IAWorldRaidSkillDescriptionListExcelStartGlobalSkillHighlightResourceFieldVector(builder, numElems)
+def IAWorldRaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+def AddSkillGroupIdField(builder, skillGroupIdField):
+    return IAWorldRaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField)
+def IAWorldRaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartSkillGroupIdFieldVector(builder, numElems):
+    return IAWorldRaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems)
+def IAWorldRaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(highlightResourceField), 0)
+def AddHighlightResourceField(builder, highlightResourceField):
+    return IAWorldRaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField)
+def IAWorldRaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartHighlightResourceFieldVector(builder, numElems):
+    return IAWorldRaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems)
 def IAWorldRaidSkillDescriptionListExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return IAWorldRaidSkillDescriptionListExcelEnd(builder)

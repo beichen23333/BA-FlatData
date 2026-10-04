@@ -25,91 +25,91 @@ class CharacterLeveladjustmentExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterLeveladjustmentExcel
-    def ContentType(self):
+    def ContentTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def Difficulty(self):
+    def DifficultyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def Level(self):
+    def LevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def ExSkillLevel(self):
+    def ExSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def PublicSkillLevel(self):
+    def PublicSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def PassiveSkillLevel(self):
+    def PassiveSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def ExtraPassiveSkillLevel(self):
+    def ExtraPassiveSkillLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def EquipSlotTier01(self):
+    def EquipSlotTier01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def EquipSlotLevel01(self):
+    def EquipSlotLevel01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def EquipSlotTier02(self):
+    def EquipSlotTier02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def EquipSlotLevel02(self):
+    def EquipSlotLevel02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def EquipSlotTier03(self):
+    def EquipSlotTier03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterLeveladjustmentExcel
-    def EquipSlotLevel03(self):
+    def EquipSlotLevel03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -118,45 +118,45 @@ class CharacterLeveladjustmentExcel(object):
 def CharacterLeveladjustmentExcelStart(builder): builder.StartObject(13)
 def Start(builder):
     return CharacterLeveladjustmentExcelStart(builder)
-def CharacterLeveladjustmentExcelAddContentType(builder, contentType): builder.PrependInt32Slot(0, contentType, 0)
-def AddContentType(builder, contentType):
-    return CharacterLeveladjustmentExcelAddContentType(builder, contentType)
-def CharacterLeveladjustmentExcelAddDifficulty(builder, difficulty): builder.PrependInt32Slot(1, difficulty, 0)
-def AddDifficulty(builder, difficulty):
-    return CharacterLeveladjustmentExcelAddDifficulty(builder, difficulty)
-def CharacterLeveladjustmentExcelAddLevel(builder, level): builder.PrependInt32Slot(2, level, 0)
-def AddLevel(builder, level):
-    return CharacterLeveladjustmentExcelAddLevel(builder, level)
-def CharacterLeveladjustmentExcelAddExSkillLevel(builder, exSkillLevel): builder.PrependInt32Slot(3, exSkillLevel, 0)
-def AddExSkillLevel(builder, exSkillLevel):
-    return CharacterLeveladjustmentExcelAddExSkillLevel(builder, exSkillLevel)
-def CharacterLeveladjustmentExcelAddPublicSkillLevel(builder, publicSkillLevel): builder.PrependInt32Slot(4, publicSkillLevel, 0)
-def AddPublicSkillLevel(builder, publicSkillLevel):
-    return CharacterLeveladjustmentExcelAddPublicSkillLevel(builder, publicSkillLevel)
-def CharacterLeveladjustmentExcelAddPassiveSkillLevel(builder, passiveSkillLevel): builder.PrependInt32Slot(5, passiveSkillLevel, 0)
-def AddPassiveSkillLevel(builder, passiveSkillLevel):
-    return CharacterLeveladjustmentExcelAddPassiveSkillLevel(builder, passiveSkillLevel)
-def CharacterLeveladjustmentExcelAddExtraPassiveSkillLevel(builder, extraPassiveSkillLevel): builder.PrependInt32Slot(6, extraPassiveSkillLevel, 0)
-def AddExtraPassiveSkillLevel(builder, extraPassiveSkillLevel):
-    return CharacterLeveladjustmentExcelAddExtraPassiveSkillLevel(builder, extraPassiveSkillLevel)
-def CharacterLeveladjustmentExcelAddEquipSlotTier01(builder, equipSlotTier01): builder.PrependInt32Slot(7, equipSlotTier01, 0)
-def AddEquipSlotTier01(builder, equipSlotTier01):
-    return CharacterLeveladjustmentExcelAddEquipSlotTier01(builder, equipSlotTier01)
-def CharacterLeveladjustmentExcelAddEquipSlotLevel01(builder, equipSlotLevel01): builder.PrependInt32Slot(8, equipSlotLevel01, 0)
-def AddEquipSlotLevel01(builder, equipSlotLevel01):
-    return CharacterLeveladjustmentExcelAddEquipSlotLevel01(builder, equipSlotLevel01)
-def CharacterLeveladjustmentExcelAddEquipSlotTier02(builder, equipSlotTier02): builder.PrependInt32Slot(9, equipSlotTier02, 0)
-def AddEquipSlotTier02(builder, equipSlotTier02):
-    return CharacterLeveladjustmentExcelAddEquipSlotTier02(builder, equipSlotTier02)
-def CharacterLeveladjustmentExcelAddEquipSlotLevel02(builder, equipSlotLevel02): builder.PrependInt32Slot(10, equipSlotLevel02, 0)
-def AddEquipSlotLevel02(builder, equipSlotLevel02):
-    return CharacterLeveladjustmentExcelAddEquipSlotLevel02(builder, equipSlotLevel02)
-def CharacterLeveladjustmentExcelAddEquipSlotTier03(builder, equipSlotTier03): builder.PrependInt32Slot(11, equipSlotTier03, 0)
-def AddEquipSlotTier03(builder, equipSlotTier03):
-    return CharacterLeveladjustmentExcelAddEquipSlotTier03(builder, equipSlotTier03)
-def CharacterLeveladjustmentExcelAddEquipSlotLevel03(builder, equipSlotLevel03): builder.PrependInt32Slot(12, equipSlotLevel03, 0)
-def AddEquipSlotLevel03(builder, equipSlotLevel03):
-    return CharacterLeveladjustmentExcelAddEquipSlotLevel03(builder, equipSlotLevel03)
+def CharacterLeveladjustmentExcelAddContentTypeField(builder, contentTypeField): builder.PrependInt32Slot(0, contentTypeField, 0)
+def AddContentTypeField(builder, contentTypeField):
+    return CharacterLeveladjustmentExcelAddContentTypeField(builder, contentTypeField)
+def CharacterLeveladjustmentExcelAddDifficultyField(builder, difficultyField): builder.PrependInt32Slot(1, difficultyField, 0)
+def AddDifficultyField(builder, difficultyField):
+    return CharacterLeveladjustmentExcelAddDifficultyField(builder, difficultyField)
+def CharacterLeveladjustmentExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(2, levelField, 0)
+def AddLevelField(builder, levelField):
+    return CharacterLeveladjustmentExcelAddLevelField(builder, levelField)
+def CharacterLeveladjustmentExcelAddExSkillLevelField(builder, exSkillLevelField): builder.PrependInt32Slot(3, exSkillLevelField, 0)
+def AddExSkillLevelField(builder, exSkillLevelField):
+    return CharacterLeveladjustmentExcelAddExSkillLevelField(builder, exSkillLevelField)
+def CharacterLeveladjustmentExcelAddPublicSkillLevelField(builder, publicSkillLevelField): builder.PrependInt32Slot(4, publicSkillLevelField, 0)
+def AddPublicSkillLevelField(builder, publicSkillLevelField):
+    return CharacterLeveladjustmentExcelAddPublicSkillLevelField(builder, publicSkillLevelField)
+def CharacterLeveladjustmentExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField): builder.PrependInt32Slot(5, passiveSkillLevelField, 0)
+def AddPassiveSkillLevelField(builder, passiveSkillLevelField):
+    return CharacterLeveladjustmentExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField)
+def CharacterLeveladjustmentExcelAddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField): builder.PrependInt32Slot(6, extraPassiveSkillLevelField, 0)
+def AddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField):
+    return CharacterLeveladjustmentExcelAddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField)
+def CharacterLeveladjustmentExcelAddEquipSlotTier01Field(builder, equipSlotTier01Field): builder.PrependInt32Slot(7, equipSlotTier01Field, 0)
+def AddEquipSlotTier01Field(builder, equipSlotTier01Field):
+    return CharacterLeveladjustmentExcelAddEquipSlotTier01Field(builder, equipSlotTier01Field)
+def CharacterLeveladjustmentExcelAddEquipSlotLevel01Field(builder, equipSlotLevel01Field): builder.PrependInt32Slot(8, equipSlotLevel01Field, 0)
+def AddEquipSlotLevel01Field(builder, equipSlotLevel01Field):
+    return CharacterLeveladjustmentExcelAddEquipSlotLevel01Field(builder, equipSlotLevel01Field)
+def CharacterLeveladjustmentExcelAddEquipSlotTier02Field(builder, equipSlotTier02Field): builder.PrependInt32Slot(9, equipSlotTier02Field, 0)
+def AddEquipSlotTier02Field(builder, equipSlotTier02Field):
+    return CharacterLeveladjustmentExcelAddEquipSlotTier02Field(builder, equipSlotTier02Field)
+def CharacterLeveladjustmentExcelAddEquipSlotLevel02Field(builder, equipSlotLevel02Field): builder.PrependInt32Slot(10, equipSlotLevel02Field, 0)
+def AddEquipSlotLevel02Field(builder, equipSlotLevel02Field):
+    return CharacterLeveladjustmentExcelAddEquipSlotLevel02Field(builder, equipSlotLevel02Field)
+def CharacterLeveladjustmentExcelAddEquipSlotTier03Field(builder, equipSlotTier03Field): builder.PrependInt32Slot(11, equipSlotTier03Field, 0)
+def AddEquipSlotTier03Field(builder, equipSlotTier03Field):
+    return CharacterLeveladjustmentExcelAddEquipSlotTier03Field(builder, equipSlotTier03Field)
+def CharacterLeveladjustmentExcelAddEquipSlotLevel03Field(builder, equipSlotLevel03Field): builder.PrependInt32Slot(12, equipSlotLevel03Field, 0)
+def AddEquipSlotLevel03Field(builder, equipSlotLevel03Field):
+    return CharacterLeveladjustmentExcelAddEquipSlotLevel03Field(builder, equipSlotLevel03Field)
 def CharacterLeveladjustmentExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterLeveladjustmentExcelEnd(builder)

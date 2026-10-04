@@ -25,70 +25,70 @@ class MinigameJankenEquipmentExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenEquipmentExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenEquipmentExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenEquipmentExcel
-    def EquipmentGroup(self):
+    def EquipmentGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenEquipmentExcel
-    def Tier(self):
+    def TierField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenEquipmentExcel
-    def LocalizeId(self):
+    def LocalizeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenEquipmentExcel
-    def UnlockConditionStage(self):
+    def UnlockConditionStageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenEquipmentExcel
-    def AttackPower(self):
+    def AttackPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenEquipmentExcel
-    def HitPoint(self):
+    def HitPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenEquipmentExcel
-    def ModelPrefabName(self):
+    def ModelPrefabNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenEquipmentExcel
-    def IconResourceName(self):
+    def IconResourceNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -97,36 +97,36 @@ class MinigameJankenEquipmentExcel(object):
 def MinigameJankenEquipmentExcelStart(builder): builder.StartObject(10)
 def Start(builder):
     return MinigameJankenEquipmentExcelStart(builder)
-def MinigameJankenEquipmentExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenEquipmentExcelAddId(builder, id)
-def MinigameJankenEquipmentExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(1, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MinigameJankenEquipmentExcelAddEventContentId(builder, eventContentId)
-def MinigameJankenEquipmentExcelAddEquipmentGroup(builder, equipmentGroup): builder.PrependInt32Slot(2, equipmentGroup, 0)
-def AddEquipmentGroup(builder, equipmentGroup):
-    return MinigameJankenEquipmentExcelAddEquipmentGroup(builder, equipmentGroup)
-def MinigameJankenEquipmentExcelAddTier(builder, tier): builder.PrependInt32Slot(3, tier, 0)
-def AddTier(builder, tier):
-    return MinigameJankenEquipmentExcelAddTier(builder, tier)
-def MinigameJankenEquipmentExcelAddLocalizeId(builder, localizeId): builder.PrependUint32Slot(4, localizeId, 0)
-def AddLocalizeId(builder, localizeId):
-    return MinigameJankenEquipmentExcelAddLocalizeId(builder, localizeId)
-def MinigameJankenEquipmentExcelAddUnlockConditionStage(builder, unlockConditionStage): builder.PrependInt32Slot(5, unlockConditionStage, 0)
-def AddUnlockConditionStage(builder, unlockConditionStage):
-    return MinigameJankenEquipmentExcelAddUnlockConditionStage(builder, unlockConditionStage)
-def MinigameJankenEquipmentExcelAddAttackPower(builder, attackPower): builder.PrependInt32Slot(6, attackPower, 0)
-def AddAttackPower(builder, attackPower):
-    return MinigameJankenEquipmentExcelAddAttackPower(builder, attackPower)
-def MinigameJankenEquipmentExcelAddHitPoint(builder, hitPoint): builder.PrependInt32Slot(7, hitPoint, 0)
-def AddHitPoint(builder, hitPoint):
-    return MinigameJankenEquipmentExcelAddHitPoint(builder, hitPoint)
-def MinigameJankenEquipmentExcelAddModelPrefabName(builder, modelPrefabName): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(modelPrefabName), 0)
-def AddModelPrefabName(builder, modelPrefabName):
-    return MinigameJankenEquipmentExcelAddModelPrefabName(builder, modelPrefabName)
-def MinigameJankenEquipmentExcelAddIconResourceName(builder, iconResourceName): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(iconResourceName), 0)
-def AddIconResourceName(builder, iconResourceName):
-    return MinigameJankenEquipmentExcelAddIconResourceName(builder, iconResourceName)
+def MinigameJankenEquipmentExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenEquipmentExcelAddIdField(builder, idField)
+def MinigameJankenEquipmentExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MinigameJankenEquipmentExcelAddEventContentIdField(builder, eventContentIdField)
+def MinigameJankenEquipmentExcelAddEquipmentGroupField(builder, equipmentGroupField): builder.PrependInt32Slot(2, equipmentGroupField, 0)
+def AddEquipmentGroupField(builder, equipmentGroupField):
+    return MinigameJankenEquipmentExcelAddEquipmentGroupField(builder, equipmentGroupField)
+def MinigameJankenEquipmentExcelAddTierField(builder, tierField): builder.PrependInt32Slot(3, tierField, 0)
+def AddTierField(builder, tierField):
+    return MinigameJankenEquipmentExcelAddTierField(builder, tierField)
+def MinigameJankenEquipmentExcelAddLocalizeIdField(builder, localizeIdField): builder.PrependUint32Slot(4, localizeIdField, 0)
+def AddLocalizeIdField(builder, localizeIdField):
+    return MinigameJankenEquipmentExcelAddLocalizeIdField(builder, localizeIdField)
+def MinigameJankenEquipmentExcelAddUnlockConditionStageField(builder, unlockConditionStageField): builder.PrependInt32Slot(5, unlockConditionStageField, 0)
+def AddUnlockConditionStageField(builder, unlockConditionStageField):
+    return MinigameJankenEquipmentExcelAddUnlockConditionStageField(builder, unlockConditionStageField)
+def MinigameJankenEquipmentExcelAddAttackPowerField(builder, attackPowerField): builder.PrependInt32Slot(6, attackPowerField, 0)
+def AddAttackPowerField(builder, attackPowerField):
+    return MinigameJankenEquipmentExcelAddAttackPowerField(builder, attackPowerField)
+def MinigameJankenEquipmentExcelAddHitPointField(builder, hitPointField): builder.PrependInt32Slot(7, hitPointField, 0)
+def AddHitPointField(builder, hitPointField):
+    return MinigameJankenEquipmentExcelAddHitPointField(builder, hitPointField)
+def MinigameJankenEquipmentExcelAddModelPrefabNameField(builder, modelPrefabNameField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(modelPrefabNameField), 0)
+def AddModelPrefabNameField(builder, modelPrefabNameField):
+    return MinigameJankenEquipmentExcelAddModelPrefabNameField(builder, modelPrefabNameField)
+def MinigameJankenEquipmentExcelAddIconResourceNameField(builder, iconResourceNameField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(iconResourceNameField), 0)
+def AddIconResourceNameField(builder, iconResourceNameField):
+    return MinigameJankenEquipmentExcelAddIconResourceNameField(builder, iconResourceNameField)
 def MinigameJankenEquipmentExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenEquipmentExcelEnd(builder)

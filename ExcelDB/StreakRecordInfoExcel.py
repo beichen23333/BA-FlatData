@@ -25,84 +25,84 @@ class StreakRecordInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # StreakRecordInfoExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordInfoExcel
-    def DaySize(self):
+    def DaySizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordInfoExcel
-    def StartDate(self):
+    def StartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StreakRecordInfoExcel
-    def EndDate(self):
+    def EndDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StreakRecordInfoExcel
-    def FreeRewardGroupId(self):
+    def FreeRewardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordInfoExcel
-    def PurchaseRewardGroupId(self):
+    def PurchaseRewardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordInfoExcel
-    def TitleImagePath(self):
+    def TitleImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StreakRecordInfoExcel
-    def DecorationImagePath(self):
+    def DecorationImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # StreakRecordInfoExcel
-    def RestoreCostParcelType(self):
+    def RestoreCostParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordInfoExcel
-    def RestoreCostParcelId(self):
+    def RestoreCostParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordInfoExcel
-    def RestoreCostParcelAmount(self):
+    def RestoreCostParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordInfoExcel
-    def CostIncreaseDayMax(self):
+    def CostIncreaseDayMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -111,42 +111,42 @@ class StreakRecordInfoExcel(object):
 def StreakRecordInfoExcelStart(builder): builder.StartObject(12)
 def Start(builder):
     return StreakRecordInfoExcelStart(builder)
-def StreakRecordInfoExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return StreakRecordInfoExcelAddId(builder, id)
-def StreakRecordInfoExcelAddDaySize(builder, daySize): builder.PrependInt32Slot(1, daySize, 0)
-def AddDaySize(builder, daySize):
-    return StreakRecordInfoExcelAddDaySize(builder, daySize)
-def StreakRecordInfoExcelAddStartDate(builder, startDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(startDate), 0)
-def AddStartDate(builder, startDate):
-    return StreakRecordInfoExcelAddStartDate(builder, startDate)
-def StreakRecordInfoExcelAddEndDate(builder, endDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endDate), 0)
-def AddEndDate(builder, endDate):
-    return StreakRecordInfoExcelAddEndDate(builder, endDate)
-def StreakRecordInfoExcelAddFreeRewardGroupId(builder, freeRewardGroupId): builder.PrependInt32Slot(4, freeRewardGroupId, 0)
-def AddFreeRewardGroupId(builder, freeRewardGroupId):
-    return StreakRecordInfoExcelAddFreeRewardGroupId(builder, freeRewardGroupId)
-def StreakRecordInfoExcelAddPurchaseRewardGroupId(builder, purchaseRewardGroupId): builder.PrependInt32Slot(5, purchaseRewardGroupId, 0)
-def AddPurchaseRewardGroupId(builder, purchaseRewardGroupId):
-    return StreakRecordInfoExcelAddPurchaseRewardGroupId(builder, purchaseRewardGroupId)
-def StreakRecordInfoExcelAddTitleImagePath(builder, titleImagePath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePath), 0)
-def AddTitleImagePath(builder, titleImagePath):
-    return StreakRecordInfoExcelAddTitleImagePath(builder, titleImagePath)
-def StreakRecordInfoExcelAddDecorationImagePath(builder, decorationImagePath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(decorationImagePath), 0)
-def AddDecorationImagePath(builder, decorationImagePath):
-    return StreakRecordInfoExcelAddDecorationImagePath(builder, decorationImagePath)
-def StreakRecordInfoExcelAddRestoreCostParcelType(builder, restoreCostParcelType): builder.PrependInt32Slot(8, restoreCostParcelType, 0)
-def AddRestoreCostParcelType(builder, restoreCostParcelType):
-    return StreakRecordInfoExcelAddRestoreCostParcelType(builder, restoreCostParcelType)
-def StreakRecordInfoExcelAddRestoreCostParcelId(builder, restoreCostParcelId): builder.PrependInt32Slot(9, restoreCostParcelId, 0)
-def AddRestoreCostParcelId(builder, restoreCostParcelId):
-    return StreakRecordInfoExcelAddRestoreCostParcelId(builder, restoreCostParcelId)
-def StreakRecordInfoExcelAddRestoreCostParcelAmount(builder, restoreCostParcelAmount): builder.PrependInt32Slot(10, restoreCostParcelAmount, 0)
-def AddRestoreCostParcelAmount(builder, restoreCostParcelAmount):
-    return StreakRecordInfoExcelAddRestoreCostParcelAmount(builder, restoreCostParcelAmount)
-def StreakRecordInfoExcelAddCostIncreaseDayMax(builder, costIncreaseDayMax): builder.PrependInt32Slot(11, costIncreaseDayMax, 0)
-def AddCostIncreaseDayMax(builder, costIncreaseDayMax):
-    return StreakRecordInfoExcelAddCostIncreaseDayMax(builder, costIncreaseDayMax)
+def StreakRecordInfoExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return StreakRecordInfoExcelAddIdField(builder, idField)
+def StreakRecordInfoExcelAddDaySizeField(builder, daySizeField): builder.PrependInt32Slot(1, daySizeField, 0)
+def AddDaySizeField(builder, daySizeField):
+    return StreakRecordInfoExcelAddDaySizeField(builder, daySizeField)
+def StreakRecordInfoExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+def AddStartDateField(builder, startDateField):
+    return StreakRecordInfoExcelAddStartDateField(builder, startDateField)
+def StreakRecordInfoExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+def AddEndDateField(builder, endDateField):
+    return StreakRecordInfoExcelAddEndDateField(builder, endDateField)
+def StreakRecordInfoExcelAddFreeRewardGroupIdField(builder, freeRewardGroupIdField): builder.PrependInt32Slot(4, freeRewardGroupIdField, 0)
+def AddFreeRewardGroupIdField(builder, freeRewardGroupIdField):
+    return StreakRecordInfoExcelAddFreeRewardGroupIdField(builder, freeRewardGroupIdField)
+def StreakRecordInfoExcelAddPurchaseRewardGroupIdField(builder, purchaseRewardGroupIdField): builder.PrependInt32Slot(5, purchaseRewardGroupIdField, 0)
+def AddPurchaseRewardGroupIdField(builder, purchaseRewardGroupIdField):
+    return StreakRecordInfoExcelAddPurchaseRewardGroupIdField(builder, purchaseRewardGroupIdField)
+def StreakRecordInfoExcelAddTitleImagePathField(builder, titleImagePathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePathField), 0)
+def AddTitleImagePathField(builder, titleImagePathField):
+    return StreakRecordInfoExcelAddTitleImagePathField(builder, titleImagePathField)
+def StreakRecordInfoExcelAddDecorationImagePathField(builder, decorationImagePathField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(decorationImagePathField), 0)
+def AddDecorationImagePathField(builder, decorationImagePathField):
+    return StreakRecordInfoExcelAddDecorationImagePathField(builder, decorationImagePathField)
+def StreakRecordInfoExcelAddRestoreCostParcelTypeField(builder, restoreCostParcelTypeField): builder.PrependInt32Slot(8, restoreCostParcelTypeField, 0)
+def AddRestoreCostParcelTypeField(builder, restoreCostParcelTypeField):
+    return StreakRecordInfoExcelAddRestoreCostParcelTypeField(builder, restoreCostParcelTypeField)
+def StreakRecordInfoExcelAddRestoreCostParcelIdField(builder, restoreCostParcelIdField): builder.PrependInt32Slot(9, restoreCostParcelIdField, 0)
+def AddRestoreCostParcelIdField(builder, restoreCostParcelIdField):
+    return StreakRecordInfoExcelAddRestoreCostParcelIdField(builder, restoreCostParcelIdField)
+def StreakRecordInfoExcelAddRestoreCostParcelAmountField(builder, restoreCostParcelAmountField): builder.PrependInt32Slot(10, restoreCostParcelAmountField, 0)
+def AddRestoreCostParcelAmountField(builder, restoreCostParcelAmountField):
+    return StreakRecordInfoExcelAddRestoreCostParcelAmountField(builder, restoreCostParcelAmountField)
+def StreakRecordInfoExcelAddCostIncreaseDayMaxField(builder, costIncreaseDayMaxField): builder.PrependInt32Slot(11, costIncreaseDayMaxField, 0)
+def AddCostIncreaseDayMaxField(builder, costIncreaseDayMaxField):
+    return StreakRecordInfoExcelAddCostIncreaseDayMaxField(builder, costIncreaseDayMaxField)
 def StreakRecordInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return StreakRecordInfoExcelEnd(builder)

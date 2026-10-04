@@ -25,42 +25,42 @@ class WelcomeCampaignMissionExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # WelcomeCampaignMissionExcel
-    def SeasonId(self):
+    def SeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def Category(self):
+    def CategoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def IsLegacy(self):
+    def IsLegacyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WelcomeCampaignMissionExcel
-    def Day(self):
+    def DayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def PreMissionId(self, j):
+    def PreMissionIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -68,47 +68,47 @@ class WelcomeCampaignMissionExcel(object):
         return 0
 
     # WelcomeCampaignMissionExcel
-    def PreMissionIdAsNumpy(self):
+    def PreMissionIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def PreMissionIdLength(self):
+    def PreMissionIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def PreMissionIdIsNone(self):
+    def PreMissionIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # WelcomeCampaignMissionExcel
-    def Description(self):
+    def DescriptionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def ToastDisplayType(self):
+    def ToastDisplayTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def ToastImagePath(self):
+    def ToastImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WelcomeCampaignMissionExcel
-    def ShortcutUI(self, j):
+    def ShortcutUIField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             a = self._tab.Vector(o)
@@ -116,40 +116,40 @@ class WelcomeCampaignMissionExcel(object):
         return ""
 
     # WelcomeCampaignMissionExcel
-    def ShortcutUILength(self):
+    def ShortcutUIFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def ShortcutUIIsNone(self):
+    def ShortcutUIFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionDayBlock(self):
+    def CompleteConditionDayBlockField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionType(self):
+    def CompleteConditionTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionCount(self):
+    def CompleteConditionCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameter(self, j):
+    def CompleteConditionParameterField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             a = self._tab.Vector(o)
@@ -157,26 +157,26 @@ class WelcomeCampaignMissionExcel(object):
         return 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameterAsNumpy(self):
+    def CompleteConditionParameterFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameterLength(self):
+    def CompleteConditionParameterFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameterIsNone(self):
+    def CompleteConditionParameterFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         return o == 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameterTag(self, j):
+    def CompleteConditionParameterTagField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             a = self._tab.Vector(o)
@@ -184,33 +184,33 @@ class WelcomeCampaignMissionExcel(object):
         return 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameterTagAsNumpy(self):
+    def CompleteConditionParameterTagFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameterTagLength(self):
+    def CompleteConditionParameterTagFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameterTagIsNone(self):
+    def CompleteConditionParameterTagFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         return o == 0
 
     # WelcomeCampaignMissionExcel
-    def CompleteConditionParameterUIPrefabType(self):
+    def CompleteConditionParameterUIPrefabTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardParcelType(self, j):
+    def MissionRewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             a = self._tab.Vector(o)
@@ -218,26 +218,26 @@ class WelcomeCampaignMissionExcel(object):
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardParcelTypeAsNumpy(self):
+    def MissionRewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardParcelTypeLength(self):
+    def MissionRewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardParcelTypeIsNone(self):
+    def MissionRewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         return o == 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardParcelId(self, j):
+    def MissionRewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             a = self._tab.Vector(o)
@@ -245,26 +245,26 @@ class WelcomeCampaignMissionExcel(object):
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardParcelIdAsNumpy(self):
+    def MissionRewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardParcelIdLength(self):
+    def MissionRewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardParcelIdIsNone(self):
+    def MissionRewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         return o == 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardAmount(self, j):
+    def MissionRewardAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             a = self._tab.Vector(o)
@@ -272,105 +272,105 @@ class WelcomeCampaignMissionExcel(object):
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardAmountAsNumpy(self):
+    def MissionRewardAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardAmountLength(self):
+    def MissionRewardAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WelcomeCampaignMissionExcel
-    def MissionRewardAmountIsNone(self):
+    def MissionRewardAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         return o == 0
 
 def WelcomeCampaignMissionExcelStart(builder): builder.StartObject(19)
 def Start(builder):
     return WelcomeCampaignMissionExcelStart(builder)
-def WelcomeCampaignMissionExcelAddSeasonId(builder, seasonId): builder.PrependInt32Slot(0, seasonId, 0)
-def AddSeasonId(builder, seasonId):
-    return WelcomeCampaignMissionExcelAddSeasonId(builder, seasonId)
-def WelcomeCampaignMissionExcelAddId(builder, id): builder.PrependInt32Slot(1, id, 0)
-def AddId(builder, id):
-    return WelcomeCampaignMissionExcelAddId(builder, id)
-def WelcomeCampaignMissionExcelAddCategory(builder, category): builder.PrependInt32Slot(2, category, 0)
-def AddCategory(builder, category):
-    return WelcomeCampaignMissionExcelAddCategory(builder, category)
-def WelcomeCampaignMissionExcelAddIsLegacy(builder, isLegacy): builder.PrependBoolSlot(3, isLegacy, 0)
-def AddIsLegacy(builder, isLegacy):
-    return WelcomeCampaignMissionExcelAddIsLegacy(builder, isLegacy)
-def WelcomeCampaignMissionExcelAddDay(builder, day): builder.PrependInt32Slot(4, day, 0)
-def AddDay(builder, day):
-    return WelcomeCampaignMissionExcelAddDay(builder, day)
-def WelcomeCampaignMissionExcelAddPreMissionId(builder, preMissionId): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(preMissionId), 0)
-def AddPreMissionId(builder, preMissionId):
-    return WelcomeCampaignMissionExcelAddPreMissionId(builder, preMissionId)
-def WelcomeCampaignMissionExcelStartPreMissionIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPreMissionIdVector(builder, numElems):
-    return WelcomeCampaignMissionExcelStartPreMissionIdVector(builder, numElems)
-def WelcomeCampaignMissionExcelAddDescription(builder, description): builder.PrependUint32Slot(6, description, 0)
-def AddDescription(builder, description):
-    return WelcomeCampaignMissionExcelAddDescription(builder, description)
-def WelcomeCampaignMissionExcelAddToastDisplayType(builder, toastDisplayType): builder.PrependInt32Slot(7, toastDisplayType, 0)
-def AddToastDisplayType(builder, toastDisplayType):
-    return WelcomeCampaignMissionExcelAddToastDisplayType(builder, toastDisplayType)
-def WelcomeCampaignMissionExcelAddToastImagePath(builder, toastImagePath): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(toastImagePath), 0)
-def AddToastImagePath(builder, toastImagePath):
-    return WelcomeCampaignMissionExcelAddToastImagePath(builder, toastImagePath)
-def WelcomeCampaignMissionExcelAddShortcutUI(builder, shortcutUI): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(shortcutUI), 0)
-def AddShortcutUI(builder, shortcutUI):
-    return WelcomeCampaignMissionExcelAddShortcutUI(builder, shortcutUI)
-def WelcomeCampaignMissionExcelStartShortcutUIVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShortcutUIVector(builder, numElems):
-    return WelcomeCampaignMissionExcelStartShortcutUIVector(builder, numElems)
-def WelcomeCampaignMissionExcelAddCompleteConditionDayBlock(builder, completeConditionDayBlock): builder.PrependBoolSlot(10, completeConditionDayBlock, 0)
-def AddCompleteConditionDayBlock(builder, completeConditionDayBlock):
-    return WelcomeCampaignMissionExcelAddCompleteConditionDayBlock(builder, completeConditionDayBlock)
-def WelcomeCampaignMissionExcelAddCompleteConditionType(builder, completeConditionType): builder.PrependInt32Slot(11, completeConditionType, 0)
-def AddCompleteConditionType(builder, completeConditionType):
-    return WelcomeCampaignMissionExcelAddCompleteConditionType(builder, completeConditionType)
-def WelcomeCampaignMissionExcelAddCompleteConditionCount(builder, completeConditionCount): builder.PrependInt32Slot(12, completeConditionCount, 0)
-def AddCompleteConditionCount(builder, completeConditionCount):
-    return WelcomeCampaignMissionExcelAddCompleteConditionCount(builder, completeConditionCount)
-def WelcomeCampaignMissionExcelAddCompleteConditionParameter(builder, completeConditionParameter): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionParameter), 0)
-def AddCompleteConditionParameter(builder, completeConditionParameter):
-    return WelcomeCampaignMissionExcelAddCompleteConditionParameter(builder, completeConditionParameter)
-def WelcomeCampaignMissionExcelStartCompleteConditionParameterVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCompleteConditionParameterVector(builder, numElems):
-    return WelcomeCampaignMissionExcelStartCompleteConditionParameterVector(builder, numElems)
-def WelcomeCampaignMissionExcelAddCompleteConditionParameterTag(builder, completeConditionParameterTag): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionParameterTag), 0)
-def AddCompleteConditionParameterTag(builder, completeConditionParameterTag):
-    return WelcomeCampaignMissionExcelAddCompleteConditionParameterTag(builder, completeConditionParameterTag)
-def WelcomeCampaignMissionExcelStartCompleteConditionParameterTagVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCompleteConditionParameterTagVector(builder, numElems):
-    return WelcomeCampaignMissionExcelStartCompleteConditionParameterTagVector(builder, numElems)
-def WelcomeCampaignMissionExcelAddCompleteConditionParameterUIPrefabType(builder, completeConditionParameterUIPrefabType): builder.PrependInt32Slot(15, completeConditionParameterUIPrefabType, 0)
-def AddCompleteConditionParameterUIPrefabType(builder, completeConditionParameterUIPrefabType):
-    return WelcomeCampaignMissionExcelAddCompleteConditionParameterUIPrefabType(builder, completeConditionParameterUIPrefabType)
-def WelcomeCampaignMissionExcelAddMissionRewardParcelType(builder, missionRewardParcelType): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardParcelType), 0)
-def AddMissionRewardParcelType(builder, missionRewardParcelType):
-    return WelcomeCampaignMissionExcelAddMissionRewardParcelType(builder, missionRewardParcelType)
-def WelcomeCampaignMissionExcelStartMissionRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMissionRewardParcelTypeVector(builder, numElems):
-    return WelcomeCampaignMissionExcelStartMissionRewardParcelTypeVector(builder, numElems)
-def WelcomeCampaignMissionExcelAddMissionRewardParcelId(builder, missionRewardParcelId): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardParcelId), 0)
-def AddMissionRewardParcelId(builder, missionRewardParcelId):
-    return WelcomeCampaignMissionExcelAddMissionRewardParcelId(builder, missionRewardParcelId)
-def WelcomeCampaignMissionExcelStartMissionRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMissionRewardParcelIdVector(builder, numElems):
-    return WelcomeCampaignMissionExcelStartMissionRewardParcelIdVector(builder, numElems)
-def WelcomeCampaignMissionExcelAddMissionRewardAmount(builder, missionRewardAmount): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardAmount), 0)
-def AddMissionRewardAmount(builder, missionRewardAmount):
-    return WelcomeCampaignMissionExcelAddMissionRewardAmount(builder, missionRewardAmount)
-def WelcomeCampaignMissionExcelStartMissionRewardAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMissionRewardAmountVector(builder, numElems):
-    return WelcomeCampaignMissionExcelStartMissionRewardAmountVector(builder, numElems)
+def WelcomeCampaignMissionExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(0, seasonIdField, 0)
+def AddSeasonIdField(builder, seasonIdField):
+    return WelcomeCampaignMissionExcelAddSeasonIdField(builder, seasonIdField)
+def WelcomeCampaignMissionExcelAddIdField(builder, idField): builder.PrependInt32Slot(1, idField, 0)
+def AddIdField(builder, idField):
+    return WelcomeCampaignMissionExcelAddIdField(builder, idField)
+def WelcomeCampaignMissionExcelAddCategoryField(builder, categoryField): builder.PrependInt32Slot(2, categoryField, 0)
+def AddCategoryField(builder, categoryField):
+    return WelcomeCampaignMissionExcelAddCategoryField(builder, categoryField)
+def WelcomeCampaignMissionExcelAddIsLegacyField(builder, isLegacyField): builder.PrependBoolSlot(3, isLegacyField, 0)
+def AddIsLegacyField(builder, isLegacyField):
+    return WelcomeCampaignMissionExcelAddIsLegacyField(builder, isLegacyField)
+def WelcomeCampaignMissionExcelAddDayField(builder, dayField): builder.PrependInt32Slot(4, dayField, 0)
+def AddDayField(builder, dayField):
+    return WelcomeCampaignMissionExcelAddDayField(builder, dayField)
+def WelcomeCampaignMissionExcelAddPreMissionIdField(builder, preMissionIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(preMissionIdField), 0)
+def AddPreMissionIdField(builder, preMissionIdField):
+    return WelcomeCampaignMissionExcelAddPreMissionIdField(builder, preMissionIdField)
+def WelcomeCampaignMissionExcelStartPreMissionIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartPreMissionIdFieldVector(builder, numElems):
+    return WelcomeCampaignMissionExcelStartPreMissionIdFieldVector(builder, numElems)
+def WelcomeCampaignMissionExcelAddDescriptionField(builder, descriptionField): builder.PrependUint32Slot(6, descriptionField, 0)
+def AddDescriptionField(builder, descriptionField):
+    return WelcomeCampaignMissionExcelAddDescriptionField(builder, descriptionField)
+def WelcomeCampaignMissionExcelAddToastDisplayTypeField(builder, toastDisplayTypeField): builder.PrependInt32Slot(7, toastDisplayTypeField, 0)
+def AddToastDisplayTypeField(builder, toastDisplayTypeField):
+    return WelcomeCampaignMissionExcelAddToastDisplayTypeField(builder, toastDisplayTypeField)
+def WelcomeCampaignMissionExcelAddToastImagePathField(builder, toastImagePathField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(toastImagePathField), 0)
+def AddToastImagePathField(builder, toastImagePathField):
+    return WelcomeCampaignMissionExcelAddToastImagePathField(builder, toastImagePathField)
+def WelcomeCampaignMissionExcelAddShortcutUIField(builder, shortcutUIField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(shortcutUIField), 0)
+def AddShortcutUIField(builder, shortcutUIField):
+    return WelcomeCampaignMissionExcelAddShortcutUIField(builder, shortcutUIField)
+def WelcomeCampaignMissionExcelStartShortcutUIFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShortcutUIFieldVector(builder, numElems):
+    return WelcomeCampaignMissionExcelStartShortcutUIFieldVector(builder, numElems)
+def WelcomeCampaignMissionExcelAddCompleteConditionDayBlockField(builder, completeConditionDayBlockField): builder.PrependBoolSlot(10, completeConditionDayBlockField, 0)
+def AddCompleteConditionDayBlockField(builder, completeConditionDayBlockField):
+    return WelcomeCampaignMissionExcelAddCompleteConditionDayBlockField(builder, completeConditionDayBlockField)
+def WelcomeCampaignMissionExcelAddCompleteConditionTypeField(builder, completeConditionTypeField): builder.PrependInt32Slot(11, completeConditionTypeField, 0)
+def AddCompleteConditionTypeField(builder, completeConditionTypeField):
+    return WelcomeCampaignMissionExcelAddCompleteConditionTypeField(builder, completeConditionTypeField)
+def WelcomeCampaignMissionExcelAddCompleteConditionCountField(builder, completeConditionCountField): builder.PrependInt32Slot(12, completeConditionCountField, 0)
+def AddCompleteConditionCountField(builder, completeConditionCountField):
+    return WelcomeCampaignMissionExcelAddCompleteConditionCountField(builder, completeConditionCountField)
+def WelcomeCampaignMissionExcelAddCompleteConditionParameterField(builder, completeConditionParameterField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionParameterField), 0)
+def AddCompleteConditionParameterField(builder, completeConditionParameterField):
+    return WelcomeCampaignMissionExcelAddCompleteConditionParameterField(builder, completeConditionParameterField)
+def WelcomeCampaignMissionExcelStartCompleteConditionParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCompleteConditionParameterFieldVector(builder, numElems):
+    return WelcomeCampaignMissionExcelStartCompleteConditionParameterFieldVector(builder, numElems)
+def WelcomeCampaignMissionExcelAddCompleteConditionParameterTagField(builder, completeConditionParameterTagField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionParameterTagField), 0)
+def AddCompleteConditionParameterTagField(builder, completeConditionParameterTagField):
+    return WelcomeCampaignMissionExcelAddCompleteConditionParameterTagField(builder, completeConditionParameterTagField)
+def WelcomeCampaignMissionExcelStartCompleteConditionParameterTagFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCompleteConditionParameterTagFieldVector(builder, numElems):
+    return WelcomeCampaignMissionExcelStartCompleteConditionParameterTagFieldVector(builder, numElems)
+def WelcomeCampaignMissionExcelAddCompleteConditionParameterUIPrefabTypeField(builder, completeConditionParameterUIPrefabTypeField): builder.PrependInt32Slot(15, completeConditionParameterUIPrefabTypeField, 0)
+def AddCompleteConditionParameterUIPrefabTypeField(builder, completeConditionParameterUIPrefabTypeField):
+    return WelcomeCampaignMissionExcelAddCompleteConditionParameterUIPrefabTypeField(builder, completeConditionParameterUIPrefabTypeField)
+def WelcomeCampaignMissionExcelAddMissionRewardParcelTypeField(builder, missionRewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardParcelTypeField), 0)
+def AddMissionRewardParcelTypeField(builder, missionRewardParcelTypeField):
+    return WelcomeCampaignMissionExcelAddMissionRewardParcelTypeField(builder, missionRewardParcelTypeField)
+def WelcomeCampaignMissionExcelStartMissionRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMissionRewardParcelTypeFieldVector(builder, numElems):
+    return WelcomeCampaignMissionExcelStartMissionRewardParcelTypeFieldVector(builder, numElems)
+def WelcomeCampaignMissionExcelAddMissionRewardParcelIdField(builder, missionRewardParcelIdField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardParcelIdField), 0)
+def AddMissionRewardParcelIdField(builder, missionRewardParcelIdField):
+    return WelcomeCampaignMissionExcelAddMissionRewardParcelIdField(builder, missionRewardParcelIdField)
+def WelcomeCampaignMissionExcelStartMissionRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMissionRewardParcelIdFieldVector(builder, numElems):
+    return WelcomeCampaignMissionExcelStartMissionRewardParcelIdFieldVector(builder, numElems)
+def WelcomeCampaignMissionExcelAddMissionRewardAmountField(builder, missionRewardAmountField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardAmountField), 0)
+def AddMissionRewardAmountField(builder, missionRewardAmountField):
+    return WelcomeCampaignMissionExcelAddMissionRewardAmountField(builder, missionRewardAmountField)
+def WelcomeCampaignMissionExcelStartMissionRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMissionRewardAmountFieldVector(builder, numElems):
+    return WelcomeCampaignMissionExcelStartMissionRewardAmountFieldVector(builder, numElems)
 def WelcomeCampaignMissionExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WelcomeCampaignMissionExcelEnd(builder)

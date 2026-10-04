@@ -25,21 +25,21 @@ class GrowthScoreCalculationExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # GrowthScoreCalculationExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GrowthScoreCalculationExcel
-    def IncludeGrowthFactor(self):
+    def IncludeGrowthFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GrowthScoreCalculationExcel
-    def ConversionCoefficient(self):
+    def ConversionCoefficientField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -48,15 +48,15 @@ class GrowthScoreCalculationExcel(object):
 def GrowthScoreCalculationExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return GrowthScoreCalculationExcelStart(builder)
-def GrowthScoreCalculationExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return GrowthScoreCalculationExcelAddId(builder, id)
-def GrowthScoreCalculationExcelAddIncludeGrowthFactor(builder, includeGrowthFactor): builder.PrependInt32Slot(1, includeGrowthFactor, 0)
-def AddIncludeGrowthFactor(builder, includeGrowthFactor):
-    return GrowthScoreCalculationExcelAddIncludeGrowthFactor(builder, includeGrowthFactor)
-def GrowthScoreCalculationExcelAddConversionCoefficient(builder, conversionCoefficient): builder.PrependInt32Slot(2, conversionCoefficient, 0)
-def AddConversionCoefficient(builder, conversionCoefficient):
-    return GrowthScoreCalculationExcelAddConversionCoefficient(builder, conversionCoefficient)
+def GrowthScoreCalculationExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return GrowthScoreCalculationExcelAddIdField(builder, idField)
+def GrowthScoreCalculationExcelAddIncludeGrowthFactorField(builder, includeGrowthFactorField): builder.PrependInt32Slot(1, includeGrowthFactorField, 0)
+def AddIncludeGrowthFactorField(builder, includeGrowthFactorField):
+    return GrowthScoreCalculationExcelAddIncludeGrowthFactorField(builder, includeGrowthFactorField)
+def GrowthScoreCalculationExcelAddConversionCoefficientField(builder, conversionCoefficientField): builder.PrependInt32Slot(2, conversionCoefficientField, 0)
+def AddConversionCoefficientField(builder, conversionCoefficientField):
+    return GrowthScoreCalculationExcelAddConversionCoefficientField(builder, conversionCoefficientField)
 def GrowthScoreCalculationExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return GrowthScoreCalculationExcelEnd(builder)

@@ -25,14 +25,14 @@ class CharacterAcademyTagsExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterAcademyTagsExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorTags(self, j):
+    def FavorTagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,26 +40,26 @@ class CharacterAcademyTagsExcel(object):
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorTagsAsNumpy(self):
+    def FavorTagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorTagsLength(self):
+    def FavorTagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorTagsIsNone(self):
+    def FavorTagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # CharacterAcademyTagsExcel
-    def FavorItemTags(self, j):
+    def FavorItemTagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -67,26 +67,26 @@ class CharacterAcademyTagsExcel(object):
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorItemTagsAsNumpy(self):
+    def FavorItemTagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorItemTagsLength(self):
+    def FavorItemTagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorItemTagsIsNone(self):
+    def FavorItemTagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # CharacterAcademyTagsExcel
-    def FavorItemUniqueTags(self, j):
+    def FavorItemUniqueTagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -94,26 +94,26 @@ class CharacterAcademyTagsExcel(object):
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorItemUniqueTagsAsNumpy(self):
+    def FavorItemUniqueTagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorItemUniqueTagsLength(self):
+    def FavorItemUniqueTagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def FavorItemUniqueTagsIsNone(self):
+    def FavorItemUniqueTagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # CharacterAcademyTagsExcel
-    def ForbiddenTags(self, j):
+    def ForbiddenTagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -121,26 +121,26 @@ class CharacterAcademyTagsExcel(object):
         return 0
 
     # CharacterAcademyTagsExcel
-    def ForbiddenTagsAsNumpy(self):
+    def ForbiddenTagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def ForbiddenTagsLength(self):
+    def ForbiddenTagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def ForbiddenTagsIsNone(self):
+    def ForbiddenTagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # CharacterAcademyTagsExcel
-    def ZoneWhiteListTags(self, j):
+    def ZoneWhiteListTagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -148,60 +148,60 @@ class CharacterAcademyTagsExcel(object):
         return 0
 
     # CharacterAcademyTagsExcel
-    def ZoneWhiteListTagsAsNumpy(self):
+    def ZoneWhiteListTagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def ZoneWhiteListTagsLength(self):
+    def ZoneWhiteListTagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterAcademyTagsExcel
-    def ZoneWhiteListTagsIsNone(self):
+    def ZoneWhiteListTagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
 def CharacterAcademyTagsExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return CharacterAcademyTagsExcelStart(builder)
-def CharacterAcademyTagsExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CharacterAcademyTagsExcelAddId(builder, id)
-def CharacterAcademyTagsExcelAddFavorTags(builder, favorTags): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(favorTags), 0)
-def AddFavorTags(builder, favorTags):
-    return CharacterAcademyTagsExcelAddFavorTags(builder, favorTags)
-def CharacterAcademyTagsExcelStartFavorTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFavorTagsVector(builder, numElems):
-    return CharacterAcademyTagsExcelStartFavorTagsVector(builder, numElems)
-def CharacterAcademyTagsExcelAddFavorItemTags(builder, favorItemTags): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(favorItemTags), 0)
-def AddFavorItemTags(builder, favorItemTags):
-    return CharacterAcademyTagsExcelAddFavorItemTags(builder, favorItemTags)
-def CharacterAcademyTagsExcelStartFavorItemTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFavorItemTagsVector(builder, numElems):
-    return CharacterAcademyTagsExcelStartFavorItemTagsVector(builder, numElems)
-def CharacterAcademyTagsExcelAddFavorItemUniqueTags(builder, favorItemUniqueTags): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(favorItemUniqueTags), 0)
-def AddFavorItemUniqueTags(builder, favorItemUniqueTags):
-    return CharacterAcademyTagsExcelAddFavorItemUniqueTags(builder, favorItemUniqueTags)
-def CharacterAcademyTagsExcelStartFavorItemUniqueTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFavorItemUniqueTagsVector(builder, numElems):
-    return CharacterAcademyTagsExcelStartFavorItemUniqueTagsVector(builder, numElems)
-def CharacterAcademyTagsExcelAddForbiddenTags(builder, forbiddenTags): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(forbiddenTags), 0)
-def AddForbiddenTags(builder, forbiddenTags):
-    return CharacterAcademyTagsExcelAddForbiddenTags(builder, forbiddenTags)
-def CharacterAcademyTagsExcelStartForbiddenTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartForbiddenTagsVector(builder, numElems):
-    return CharacterAcademyTagsExcelStartForbiddenTagsVector(builder, numElems)
-def CharacterAcademyTagsExcelAddZoneWhiteListTags(builder, zoneWhiteListTags): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(zoneWhiteListTags), 0)
-def AddZoneWhiteListTags(builder, zoneWhiteListTags):
-    return CharacterAcademyTagsExcelAddZoneWhiteListTags(builder, zoneWhiteListTags)
-def CharacterAcademyTagsExcelStartZoneWhiteListTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartZoneWhiteListTagsVector(builder, numElems):
-    return CharacterAcademyTagsExcelStartZoneWhiteListTagsVector(builder, numElems)
+def CharacterAcademyTagsExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CharacterAcademyTagsExcelAddIdField(builder, idField)
+def CharacterAcademyTagsExcelAddFavorTagsField(builder, favorTagsField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(favorTagsField), 0)
+def AddFavorTagsField(builder, favorTagsField):
+    return CharacterAcademyTagsExcelAddFavorTagsField(builder, favorTagsField)
+def CharacterAcademyTagsExcelStartFavorTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartFavorTagsFieldVector(builder, numElems):
+    return CharacterAcademyTagsExcelStartFavorTagsFieldVector(builder, numElems)
+def CharacterAcademyTagsExcelAddFavorItemTagsField(builder, favorItemTagsField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(favorItemTagsField), 0)
+def AddFavorItemTagsField(builder, favorItemTagsField):
+    return CharacterAcademyTagsExcelAddFavorItemTagsField(builder, favorItemTagsField)
+def CharacterAcademyTagsExcelStartFavorItemTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartFavorItemTagsFieldVector(builder, numElems):
+    return CharacterAcademyTagsExcelStartFavorItemTagsFieldVector(builder, numElems)
+def CharacterAcademyTagsExcelAddFavorItemUniqueTagsField(builder, favorItemUniqueTagsField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(favorItemUniqueTagsField), 0)
+def AddFavorItemUniqueTagsField(builder, favorItemUniqueTagsField):
+    return CharacterAcademyTagsExcelAddFavorItemUniqueTagsField(builder, favorItemUniqueTagsField)
+def CharacterAcademyTagsExcelStartFavorItemUniqueTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartFavorItemUniqueTagsFieldVector(builder, numElems):
+    return CharacterAcademyTagsExcelStartFavorItemUniqueTagsFieldVector(builder, numElems)
+def CharacterAcademyTagsExcelAddForbiddenTagsField(builder, forbiddenTagsField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(forbiddenTagsField), 0)
+def AddForbiddenTagsField(builder, forbiddenTagsField):
+    return CharacterAcademyTagsExcelAddForbiddenTagsField(builder, forbiddenTagsField)
+def CharacterAcademyTagsExcelStartForbiddenTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartForbiddenTagsFieldVector(builder, numElems):
+    return CharacterAcademyTagsExcelStartForbiddenTagsFieldVector(builder, numElems)
+def CharacterAcademyTagsExcelAddZoneWhiteListTagsField(builder, zoneWhiteListTagsField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(zoneWhiteListTagsField), 0)
+def AddZoneWhiteListTagsField(builder, zoneWhiteListTagsField):
+    return CharacterAcademyTagsExcelAddZoneWhiteListTagsField(builder, zoneWhiteListTagsField)
+def CharacterAcademyTagsExcelStartZoneWhiteListTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartZoneWhiteListTagsFieldVector(builder, numElems):
+    return CharacterAcademyTagsExcelStartZoneWhiteListTagsFieldVector(builder, numElems)
 def CharacterAcademyTagsExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterAcademyTagsExcelEnd(builder)

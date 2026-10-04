@@ -25,35 +25,35 @@ class FieldQuestGroupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FieldQuestGroupExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldQuestGroupExcel
-    def SkipFromInteractionId(self):
+    def SkipFromInteractionIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldQuestGroupExcel
-    def SkipToInteractionId(self):
+    def SkipToInteractionIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldQuestGroupExcel
-    def NextSceneId(self):
+    def NextSceneIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldQuestGroupExcel
-    def SkipResultUI(self):
+    def SkipResultUIField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -62,21 +62,21 @@ class FieldQuestGroupExcel(object):
 def FieldQuestGroupExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return FieldQuestGroupExcelStart(builder)
-def FieldQuestGroupExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return FieldQuestGroupExcelAddId(builder, id)
-def FieldQuestGroupExcelAddSkipFromInteractionId(builder, skipFromInteractionId): builder.PrependInt32Slot(1, skipFromInteractionId, 0)
-def AddSkipFromInteractionId(builder, skipFromInteractionId):
-    return FieldQuestGroupExcelAddSkipFromInteractionId(builder, skipFromInteractionId)
-def FieldQuestGroupExcelAddSkipToInteractionId(builder, skipToInteractionId): builder.PrependInt32Slot(2, skipToInteractionId, 0)
-def AddSkipToInteractionId(builder, skipToInteractionId):
-    return FieldQuestGroupExcelAddSkipToInteractionId(builder, skipToInteractionId)
-def FieldQuestGroupExcelAddNextSceneId(builder, nextSceneId): builder.PrependInt32Slot(3, nextSceneId, 0)
-def AddNextSceneId(builder, nextSceneId):
-    return FieldQuestGroupExcelAddNextSceneId(builder, nextSceneId)
-def FieldQuestGroupExcelAddSkipResultUI(builder, skipResultUI): builder.PrependBoolSlot(4, skipResultUI, 0)
-def AddSkipResultUI(builder, skipResultUI):
-    return FieldQuestGroupExcelAddSkipResultUI(builder, skipResultUI)
+def FieldQuestGroupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return FieldQuestGroupExcelAddIdField(builder, idField)
+def FieldQuestGroupExcelAddSkipFromInteractionIdField(builder, skipFromInteractionIdField): builder.PrependInt32Slot(1, skipFromInteractionIdField, 0)
+def AddSkipFromInteractionIdField(builder, skipFromInteractionIdField):
+    return FieldQuestGroupExcelAddSkipFromInteractionIdField(builder, skipFromInteractionIdField)
+def FieldQuestGroupExcelAddSkipToInteractionIdField(builder, skipToInteractionIdField): builder.PrependInt32Slot(2, skipToInteractionIdField, 0)
+def AddSkipToInteractionIdField(builder, skipToInteractionIdField):
+    return FieldQuestGroupExcelAddSkipToInteractionIdField(builder, skipToInteractionIdField)
+def FieldQuestGroupExcelAddNextSceneIdField(builder, nextSceneIdField): builder.PrependInt32Slot(3, nextSceneIdField, 0)
+def AddNextSceneIdField(builder, nextSceneIdField):
+    return FieldQuestGroupExcelAddNextSceneIdField(builder, nextSceneIdField)
+def FieldQuestGroupExcelAddSkipResultUIField(builder, skipResultUIField): builder.PrependBoolSlot(4, skipResultUIField, 0)
+def AddSkipResultUIField(builder, skipResultUIField):
+    return FieldQuestGroupExcelAddSkipResultUIField(builder, skipResultUIField)
 def FieldQuestGroupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FieldQuestGroupExcelEnd(builder)

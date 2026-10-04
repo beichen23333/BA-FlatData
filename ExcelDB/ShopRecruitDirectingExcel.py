@@ -25,35 +25,35 @@ class ShopRecruitDirectingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopRecruitDirectingExcel
-    def Path(self):
+    def PathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopRecruitDirectingExcel
-    def Phase(self):
+    def PhaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitDirectingExcel
-    def GachaAmount(self):
+    def GachaAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitDirectingExcel
-    def IsSSR(self):
+    def IsSSRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ShopRecruitDirectingExcel
-    def Character(self):
+    def CharacterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class ShopRecruitDirectingExcel(object):
 def ShopRecruitDirectingExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return ShopRecruitDirectingExcelStart(builder)
-def ShopRecruitDirectingExcelAddPath(builder, path): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(path), 0)
-def AddPath(builder, path):
-    return ShopRecruitDirectingExcelAddPath(builder, path)
-def ShopRecruitDirectingExcelAddPhase(builder, phase): builder.PrependInt32Slot(1, phase, 0)
-def AddPhase(builder, phase):
-    return ShopRecruitDirectingExcelAddPhase(builder, phase)
-def ShopRecruitDirectingExcelAddGachaAmount(builder, gachaAmount): builder.PrependInt32Slot(2, gachaAmount, 0)
-def AddGachaAmount(builder, gachaAmount):
-    return ShopRecruitDirectingExcelAddGachaAmount(builder, gachaAmount)
-def ShopRecruitDirectingExcelAddIsSSR(builder, isSSR): builder.PrependBoolSlot(3, isSSR, 0)
-def AddIsSSR(builder, isSSR):
-    return ShopRecruitDirectingExcelAddIsSSR(builder, isSSR)
-def ShopRecruitDirectingExcelAddCharacter(builder, character): builder.PrependInt32Slot(4, character, 0)
-def AddCharacter(builder, character):
-    return ShopRecruitDirectingExcelAddCharacter(builder, character)
+def ShopRecruitDirectingExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+def AddPathField(builder, pathField):
+    return ShopRecruitDirectingExcelAddPathField(builder, pathField)
+def ShopRecruitDirectingExcelAddPhaseField(builder, phaseField): builder.PrependInt32Slot(1, phaseField, 0)
+def AddPhaseField(builder, phaseField):
+    return ShopRecruitDirectingExcelAddPhaseField(builder, phaseField)
+def ShopRecruitDirectingExcelAddGachaAmountField(builder, gachaAmountField): builder.PrependInt32Slot(2, gachaAmountField, 0)
+def AddGachaAmountField(builder, gachaAmountField):
+    return ShopRecruitDirectingExcelAddGachaAmountField(builder, gachaAmountField)
+def ShopRecruitDirectingExcelAddIsSSRField(builder, isSSRField): builder.PrependBoolSlot(3, isSSRField, 0)
+def AddIsSSRField(builder, isSSRField):
+    return ShopRecruitDirectingExcelAddIsSSRField(builder, isSSRField)
+def ShopRecruitDirectingExcelAddCharacterField(builder, characterField): builder.PrependInt32Slot(4, characterField, 0)
+def AddCharacterField(builder, characterField):
+    return ShopRecruitDirectingExcelAddCharacterField(builder, characterField)
 def ShopRecruitDirectingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopRecruitDirectingExcelEnd(builder)

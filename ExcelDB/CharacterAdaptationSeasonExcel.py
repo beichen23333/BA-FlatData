@@ -25,42 +25,42 @@ class CharacterAdaptationSeasonExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterAdaptationSeasonExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationSeasonExcel
-    def Enabled(self):
+    def EnabledField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterAdaptationSeasonExcel
-    def StartDate(self):
+    def StartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterAdaptationSeasonExcel
-    def EndDate(self):
+    def EndDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterAdaptationSeasonExcel
-    def IconOrder(self):
+    def IconOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterAdaptationSeasonExcel
-    def LobbyBannerImage(self):
+    def LobbyBannerImageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -69,24 +69,24 @@ class CharacterAdaptationSeasonExcel(object):
 def CharacterAdaptationSeasonExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return CharacterAdaptationSeasonExcelStart(builder)
-def CharacterAdaptationSeasonExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CharacterAdaptationSeasonExcelAddId(builder, id)
-def CharacterAdaptationSeasonExcelAddEnabled(builder, enabled): builder.PrependBoolSlot(1, enabled, 0)
-def AddEnabled(builder, enabled):
-    return CharacterAdaptationSeasonExcelAddEnabled(builder, enabled)
-def CharacterAdaptationSeasonExcelAddStartDate(builder, startDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(startDate), 0)
-def AddStartDate(builder, startDate):
-    return CharacterAdaptationSeasonExcelAddStartDate(builder, startDate)
-def CharacterAdaptationSeasonExcelAddEndDate(builder, endDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endDate), 0)
-def AddEndDate(builder, endDate):
-    return CharacterAdaptationSeasonExcelAddEndDate(builder, endDate)
-def CharacterAdaptationSeasonExcelAddIconOrder(builder, iconOrder): builder.PrependInt32Slot(4, iconOrder, 0)
-def AddIconOrder(builder, iconOrder):
-    return CharacterAdaptationSeasonExcelAddIconOrder(builder, iconOrder)
-def CharacterAdaptationSeasonExcelAddLobbyBannerImage(builder, lobbyBannerImage): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(lobbyBannerImage), 0)
-def AddLobbyBannerImage(builder, lobbyBannerImage):
-    return CharacterAdaptationSeasonExcelAddLobbyBannerImage(builder, lobbyBannerImage)
+def CharacterAdaptationSeasonExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CharacterAdaptationSeasonExcelAddIdField(builder, idField)
+def CharacterAdaptationSeasonExcelAddEnabledField(builder, enabledField): builder.PrependBoolSlot(1, enabledField, 0)
+def AddEnabledField(builder, enabledField):
+    return CharacterAdaptationSeasonExcelAddEnabledField(builder, enabledField)
+def CharacterAdaptationSeasonExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+def AddStartDateField(builder, startDateField):
+    return CharacterAdaptationSeasonExcelAddStartDateField(builder, startDateField)
+def CharacterAdaptationSeasonExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+def AddEndDateField(builder, endDateField):
+    return CharacterAdaptationSeasonExcelAddEndDateField(builder, endDateField)
+def CharacterAdaptationSeasonExcelAddIconOrderField(builder, iconOrderField): builder.PrependInt32Slot(4, iconOrderField, 0)
+def AddIconOrderField(builder, iconOrderField):
+    return CharacterAdaptationSeasonExcelAddIconOrderField(builder, iconOrderField)
+def CharacterAdaptationSeasonExcelAddLobbyBannerImageField(builder, lobbyBannerImageField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(lobbyBannerImageField), 0)
+def AddLobbyBannerImageField(builder, lobbyBannerImageField):
+    return CharacterAdaptationSeasonExcelAddLobbyBannerImageField(builder, lobbyBannerImageField)
 def CharacterAdaptationSeasonExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterAdaptationSeasonExcelEnd(builder)

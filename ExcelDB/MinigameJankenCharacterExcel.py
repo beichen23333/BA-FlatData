@@ -25,161 +25,161 @@ class MinigameJankenCharacterExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenCharacterExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def IsPlayable(self):
+    def IsPlayableField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # MinigameJankenCharacterExcel
-    def DisplayOrder(self):
+    def DisplayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def IconResourceName(self):
+    def IconResourceNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenCharacterExcel
-    def IconDecoResourceName(self):
+    def IconDecoResourceNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenCharacterExcel
-    def NameTagResourceName(self):
+    def NameTagResourceNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenCharacterExcel
-    def BattlePortraitResource(self):
+    def BattlePortraitResourceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenCharacterExcel
-    def SkillIconResourceName(self):
+    def SkillIconResourceNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenCharacterExcel
-    def SkillCardResourceName(self):
+    def SkillCardResourceNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenCharacterExcel
-    def LocalizeId(self):
+    def LocalizeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def CharacterNameLocalizeId(self):
+    def CharacterNameLocalizeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def AttackPower(self):
+    def AttackPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def HitPoint(self):
+    def HitPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def BlockPower(self):
+    def BlockPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def JankenSkill(self):
+    def JankenSkillField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def IsBoss(self):
+    def IsBossField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # MinigameJankenCharacterExcel
-    def IsBossUnit(self):
+    def IsBossUnitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # MinigameJankenCharacterExcel
-    def ATGGauge(self):
+    def ATGGaugeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def ATGDmgBlock(self):
+    def ATGDmgBlockField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # MinigameJankenCharacterExcel
-    def ATGDmgHit(self):
+    def ATGDmgHitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # MinigameJankenCharacterExcel
-    def ATGLogicEffect(self):
+    def ATGLogicEffectField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenCharacterExcel
-    def ModelPrefabName(self):
+    def ModelPrefabNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenCharacterExcel
-    def AiProfile(self):
+    def AiProfileField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -188,75 +188,75 @@ class MinigameJankenCharacterExcel(object):
 def MinigameJankenCharacterExcelStart(builder): builder.StartObject(23)
 def Start(builder):
     return MinigameJankenCharacterExcelStart(builder)
-def MinigameJankenCharacterExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenCharacterExcelAddId(builder, id)
-def MinigameJankenCharacterExcelAddIsPlayable(builder, isPlayable): builder.PrependBoolSlot(1, isPlayable, 0)
-def AddIsPlayable(builder, isPlayable):
-    return MinigameJankenCharacterExcelAddIsPlayable(builder, isPlayable)
-def MinigameJankenCharacterExcelAddDisplayOrder(builder, displayOrder): builder.PrependInt32Slot(2, displayOrder, 0)
-def AddDisplayOrder(builder, displayOrder):
-    return MinigameJankenCharacterExcelAddDisplayOrder(builder, displayOrder)
-def MinigameJankenCharacterExcelAddIconResourceName(builder, iconResourceName): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconResourceName), 0)
-def AddIconResourceName(builder, iconResourceName):
-    return MinigameJankenCharacterExcelAddIconResourceName(builder, iconResourceName)
-def MinigameJankenCharacterExcelAddIconDecoResourceName(builder, iconDecoResourceName): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconDecoResourceName), 0)
-def AddIconDecoResourceName(builder, iconDecoResourceName):
-    return MinigameJankenCharacterExcelAddIconDecoResourceName(builder, iconDecoResourceName)
-def MinigameJankenCharacterExcelAddNameTagResourceName(builder, nameTagResourceName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(nameTagResourceName), 0)
-def AddNameTagResourceName(builder, nameTagResourceName):
-    return MinigameJankenCharacterExcelAddNameTagResourceName(builder, nameTagResourceName)
-def MinigameJankenCharacterExcelAddBattlePortraitResource(builder, battlePortraitResource): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(battlePortraitResource), 0)
-def AddBattlePortraitResource(builder, battlePortraitResource):
-    return MinigameJankenCharacterExcelAddBattlePortraitResource(builder, battlePortraitResource)
-def MinigameJankenCharacterExcelAddSkillIconResourceName(builder, skillIconResourceName): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(skillIconResourceName), 0)
-def AddSkillIconResourceName(builder, skillIconResourceName):
-    return MinigameJankenCharacterExcelAddSkillIconResourceName(builder, skillIconResourceName)
-def MinigameJankenCharacterExcelAddSkillCardResourceName(builder, skillCardResourceName): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(skillCardResourceName), 0)
-def AddSkillCardResourceName(builder, skillCardResourceName):
-    return MinigameJankenCharacterExcelAddSkillCardResourceName(builder, skillCardResourceName)
-def MinigameJankenCharacterExcelAddLocalizeId(builder, localizeId): builder.PrependUint32Slot(9, localizeId, 0)
-def AddLocalizeId(builder, localizeId):
-    return MinigameJankenCharacterExcelAddLocalizeId(builder, localizeId)
-def MinigameJankenCharacterExcelAddCharacterNameLocalizeId(builder, characterNameLocalizeId): builder.PrependUint32Slot(10, characterNameLocalizeId, 0)
-def AddCharacterNameLocalizeId(builder, characterNameLocalizeId):
-    return MinigameJankenCharacterExcelAddCharacterNameLocalizeId(builder, characterNameLocalizeId)
-def MinigameJankenCharacterExcelAddAttackPower(builder, attackPower): builder.PrependInt32Slot(11, attackPower, 0)
-def AddAttackPower(builder, attackPower):
-    return MinigameJankenCharacterExcelAddAttackPower(builder, attackPower)
-def MinigameJankenCharacterExcelAddHitPoint(builder, hitPoint): builder.PrependInt32Slot(12, hitPoint, 0)
-def AddHitPoint(builder, hitPoint):
-    return MinigameJankenCharacterExcelAddHitPoint(builder, hitPoint)
-def MinigameJankenCharacterExcelAddBlockPower(builder, blockPower): builder.PrependInt32Slot(13, blockPower, 0)
-def AddBlockPower(builder, blockPower):
-    return MinigameJankenCharacterExcelAddBlockPower(builder, blockPower)
-def MinigameJankenCharacterExcelAddJankenSkill(builder, jankenSkill): builder.PrependInt32Slot(14, jankenSkill, 0)
-def AddJankenSkill(builder, jankenSkill):
-    return MinigameJankenCharacterExcelAddJankenSkill(builder, jankenSkill)
-def MinigameJankenCharacterExcelAddIsBoss(builder, isBoss): builder.PrependBoolSlot(15, isBoss, 0)
-def AddIsBoss(builder, isBoss):
-    return MinigameJankenCharacterExcelAddIsBoss(builder, isBoss)
-def MinigameJankenCharacterExcelAddIsBossUnit(builder, isBossUnit): builder.PrependBoolSlot(16, isBossUnit, 0)
-def AddIsBossUnit(builder, isBossUnit):
-    return MinigameJankenCharacterExcelAddIsBossUnit(builder, isBossUnit)
-def MinigameJankenCharacterExcelAddATGGauge(builder, aTGGauge): builder.PrependInt32Slot(17, aTGGauge, 0)
-def AddATGGauge(builder, aTGGauge):
-    return MinigameJankenCharacterExcelAddATGGauge(builder, aTGGauge)
-def MinigameJankenCharacterExcelAddATGDmgBlock(builder, aTGDmgBlock): builder.PrependFloat32Slot(18, aTGDmgBlock, 0.0)
-def AddATGDmgBlock(builder, aTGDmgBlock):
-    return MinigameJankenCharacterExcelAddATGDmgBlock(builder, aTGDmgBlock)
-def MinigameJankenCharacterExcelAddATGDmgHit(builder, aTGDmgHit): builder.PrependFloat32Slot(19, aTGDmgHit, 0.0)
-def AddATGDmgHit(builder, aTGDmgHit):
-    return MinigameJankenCharacterExcelAddATGDmgHit(builder, aTGDmgHit)
-def MinigameJankenCharacterExcelAddATGLogicEffect(builder, aTGLogicEffect): builder.PrependInt32Slot(20, aTGLogicEffect, 0)
-def AddATGLogicEffect(builder, aTGLogicEffect):
-    return MinigameJankenCharacterExcelAddATGLogicEffect(builder, aTGLogicEffect)
-def MinigameJankenCharacterExcelAddModelPrefabName(builder, modelPrefabName): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(modelPrefabName), 0)
-def AddModelPrefabName(builder, modelPrefabName):
-    return MinigameJankenCharacterExcelAddModelPrefabName(builder, modelPrefabName)
-def MinigameJankenCharacterExcelAddAiProfile(builder, aiProfile): builder.PrependInt32Slot(22, aiProfile, 0)
-def AddAiProfile(builder, aiProfile):
-    return MinigameJankenCharacterExcelAddAiProfile(builder, aiProfile)
+def MinigameJankenCharacterExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenCharacterExcelAddIdField(builder, idField)
+def MinigameJankenCharacterExcelAddIsPlayableField(builder, isPlayableField): builder.PrependBoolSlot(1, isPlayableField, 0)
+def AddIsPlayableField(builder, isPlayableField):
+    return MinigameJankenCharacterExcelAddIsPlayableField(builder, isPlayableField)
+def MinigameJankenCharacterExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(2, displayOrderField, 0)
+def AddDisplayOrderField(builder, displayOrderField):
+    return MinigameJankenCharacterExcelAddDisplayOrderField(builder, displayOrderField)
+def MinigameJankenCharacterExcelAddIconResourceNameField(builder, iconResourceNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconResourceNameField), 0)
+def AddIconResourceNameField(builder, iconResourceNameField):
+    return MinigameJankenCharacterExcelAddIconResourceNameField(builder, iconResourceNameField)
+def MinigameJankenCharacterExcelAddIconDecoResourceNameField(builder, iconDecoResourceNameField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconDecoResourceNameField), 0)
+def AddIconDecoResourceNameField(builder, iconDecoResourceNameField):
+    return MinigameJankenCharacterExcelAddIconDecoResourceNameField(builder, iconDecoResourceNameField)
+def MinigameJankenCharacterExcelAddNameTagResourceNameField(builder, nameTagResourceNameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(nameTagResourceNameField), 0)
+def AddNameTagResourceNameField(builder, nameTagResourceNameField):
+    return MinigameJankenCharacterExcelAddNameTagResourceNameField(builder, nameTagResourceNameField)
+def MinigameJankenCharacterExcelAddBattlePortraitResourceField(builder, battlePortraitResourceField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(battlePortraitResourceField), 0)
+def AddBattlePortraitResourceField(builder, battlePortraitResourceField):
+    return MinigameJankenCharacterExcelAddBattlePortraitResourceField(builder, battlePortraitResourceField)
+def MinigameJankenCharacterExcelAddSkillIconResourceNameField(builder, skillIconResourceNameField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(skillIconResourceNameField), 0)
+def AddSkillIconResourceNameField(builder, skillIconResourceNameField):
+    return MinigameJankenCharacterExcelAddSkillIconResourceNameField(builder, skillIconResourceNameField)
+def MinigameJankenCharacterExcelAddSkillCardResourceNameField(builder, skillCardResourceNameField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(skillCardResourceNameField), 0)
+def AddSkillCardResourceNameField(builder, skillCardResourceNameField):
+    return MinigameJankenCharacterExcelAddSkillCardResourceNameField(builder, skillCardResourceNameField)
+def MinigameJankenCharacterExcelAddLocalizeIdField(builder, localizeIdField): builder.PrependUint32Slot(9, localizeIdField, 0)
+def AddLocalizeIdField(builder, localizeIdField):
+    return MinigameJankenCharacterExcelAddLocalizeIdField(builder, localizeIdField)
+def MinigameJankenCharacterExcelAddCharacterNameLocalizeIdField(builder, characterNameLocalizeIdField): builder.PrependUint32Slot(10, characterNameLocalizeIdField, 0)
+def AddCharacterNameLocalizeIdField(builder, characterNameLocalizeIdField):
+    return MinigameJankenCharacterExcelAddCharacterNameLocalizeIdField(builder, characterNameLocalizeIdField)
+def MinigameJankenCharacterExcelAddAttackPowerField(builder, attackPowerField): builder.PrependInt32Slot(11, attackPowerField, 0)
+def AddAttackPowerField(builder, attackPowerField):
+    return MinigameJankenCharacterExcelAddAttackPowerField(builder, attackPowerField)
+def MinigameJankenCharacterExcelAddHitPointField(builder, hitPointField): builder.PrependInt32Slot(12, hitPointField, 0)
+def AddHitPointField(builder, hitPointField):
+    return MinigameJankenCharacterExcelAddHitPointField(builder, hitPointField)
+def MinigameJankenCharacterExcelAddBlockPowerField(builder, blockPowerField): builder.PrependInt32Slot(13, blockPowerField, 0)
+def AddBlockPowerField(builder, blockPowerField):
+    return MinigameJankenCharacterExcelAddBlockPowerField(builder, blockPowerField)
+def MinigameJankenCharacterExcelAddJankenSkillField(builder, jankenSkillField): builder.PrependInt32Slot(14, jankenSkillField, 0)
+def AddJankenSkillField(builder, jankenSkillField):
+    return MinigameJankenCharacterExcelAddJankenSkillField(builder, jankenSkillField)
+def MinigameJankenCharacterExcelAddIsBossField(builder, isBossField): builder.PrependBoolSlot(15, isBossField, 0)
+def AddIsBossField(builder, isBossField):
+    return MinigameJankenCharacterExcelAddIsBossField(builder, isBossField)
+def MinigameJankenCharacterExcelAddIsBossUnitField(builder, isBossUnitField): builder.PrependBoolSlot(16, isBossUnitField, 0)
+def AddIsBossUnitField(builder, isBossUnitField):
+    return MinigameJankenCharacterExcelAddIsBossUnitField(builder, isBossUnitField)
+def MinigameJankenCharacterExcelAddATGGaugeField(builder, aTGGaugeField): builder.PrependInt32Slot(17, aTGGaugeField, 0)
+def AddATGGaugeField(builder, aTGGaugeField):
+    return MinigameJankenCharacterExcelAddATGGaugeField(builder, aTGGaugeField)
+def MinigameJankenCharacterExcelAddATGDmgBlockField(builder, aTGDmgBlockField): builder.PrependFloat32Slot(18, aTGDmgBlockField, 0.0)
+def AddATGDmgBlockField(builder, aTGDmgBlockField):
+    return MinigameJankenCharacterExcelAddATGDmgBlockField(builder, aTGDmgBlockField)
+def MinigameJankenCharacterExcelAddATGDmgHitField(builder, aTGDmgHitField): builder.PrependFloat32Slot(19, aTGDmgHitField, 0.0)
+def AddATGDmgHitField(builder, aTGDmgHitField):
+    return MinigameJankenCharacterExcelAddATGDmgHitField(builder, aTGDmgHitField)
+def MinigameJankenCharacterExcelAddATGLogicEffectField(builder, aTGLogicEffectField): builder.PrependInt32Slot(20, aTGLogicEffectField, 0)
+def AddATGLogicEffectField(builder, aTGLogicEffectField):
+    return MinigameJankenCharacterExcelAddATGLogicEffectField(builder, aTGLogicEffectField)
+def MinigameJankenCharacterExcelAddModelPrefabNameField(builder, modelPrefabNameField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(modelPrefabNameField), 0)
+def AddModelPrefabNameField(builder, modelPrefabNameField):
+    return MinigameJankenCharacterExcelAddModelPrefabNameField(builder, modelPrefabNameField)
+def MinigameJankenCharacterExcelAddAiProfileField(builder, aiProfileField): builder.PrependInt32Slot(22, aiProfileField, 0)
+def AddAiProfileField(builder, aiProfileField):
+    return MinigameJankenCharacterExcelAddAiProfileField(builder, aiProfileField)
 def MinigameJankenCharacterExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenCharacterExcelEnd(builder)

@@ -25,49 +25,49 @@ class PickupFirstGetBonusExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # PickupFirstGetBonusExcel
-    def ShopRecruitId(self):
+    def ShopRecruitIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonusExcel
-    def RecruitSellectionShopId(self):
+    def RecruitSellectionShopIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonusExcel
-    def PickupCharacterId(self):
+    def PickupCharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonusExcel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonusExcel
-    def RewardParcelId(self):
+    def RewardParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonusExcel
-    def RewardParcelAmount(self):
+    def RewardParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonusExcel
-    def ShopCashIds(self, j):
+    def ShopCashIdsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -75,51 +75,51 @@ class PickupFirstGetBonusExcel(object):
         return 0
 
     # PickupFirstGetBonusExcel
-    def ShopCashIdsAsNumpy(self):
+    def ShopCashIdsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # PickupFirstGetBonusExcel
-    def ShopCashIdsLength(self):
+    def ShopCashIdsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # PickupFirstGetBonusExcel
-    def ShopCashIdsIsNone(self):
+    def ShopCashIdsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def PickupFirstGetBonusExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return PickupFirstGetBonusExcelStart(builder)
-def PickupFirstGetBonusExcelAddShopRecruitId(builder, shopRecruitId): builder.PrependInt32Slot(0, shopRecruitId, 0)
-def AddShopRecruitId(builder, shopRecruitId):
-    return PickupFirstGetBonusExcelAddShopRecruitId(builder, shopRecruitId)
-def PickupFirstGetBonusExcelAddRecruitSellectionShopId(builder, recruitSellectionShopId): builder.PrependInt32Slot(1, recruitSellectionShopId, 0)
-def AddRecruitSellectionShopId(builder, recruitSellectionShopId):
-    return PickupFirstGetBonusExcelAddRecruitSellectionShopId(builder, recruitSellectionShopId)
-def PickupFirstGetBonusExcelAddPickupCharacterId(builder, pickupCharacterId): builder.PrependInt32Slot(2, pickupCharacterId, 0)
-def AddPickupCharacterId(builder, pickupCharacterId):
-    return PickupFirstGetBonusExcelAddPickupCharacterId(builder, pickupCharacterId)
-def PickupFirstGetBonusExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(3, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return PickupFirstGetBonusExcelAddRewardParcelType(builder, rewardParcelType)
-def PickupFirstGetBonusExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependInt32Slot(4, rewardParcelId, 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return PickupFirstGetBonusExcelAddRewardParcelId(builder, rewardParcelId)
-def PickupFirstGetBonusExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependInt32Slot(5, rewardParcelAmount, 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return PickupFirstGetBonusExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def PickupFirstGetBonusExcelAddShopCashIds(builder, shopCashIds): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(shopCashIds), 0)
-def AddShopCashIds(builder, shopCashIds):
-    return PickupFirstGetBonusExcelAddShopCashIds(builder, shopCashIds)
-def PickupFirstGetBonusExcelStartShopCashIdsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShopCashIdsVector(builder, numElems):
-    return PickupFirstGetBonusExcelStartShopCashIdsVector(builder, numElems)
+def PickupFirstGetBonusExcelAddShopRecruitIdField(builder, shopRecruitIdField): builder.PrependInt32Slot(0, shopRecruitIdField, 0)
+def AddShopRecruitIdField(builder, shopRecruitIdField):
+    return PickupFirstGetBonusExcelAddShopRecruitIdField(builder, shopRecruitIdField)
+def PickupFirstGetBonusExcelAddRecruitSellectionShopIdField(builder, recruitSellectionShopIdField): builder.PrependInt32Slot(1, recruitSellectionShopIdField, 0)
+def AddRecruitSellectionShopIdField(builder, recruitSellectionShopIdField):
+    return PickupFirstGetBonusExcelAddRecruitSellectionShopIdField(builder, recruitSellectionShopIdField)
+def PickupFirstGetBonusExcelAddPickupCharacterIdField(builder, pickupCharacterIdField): builder.PrependInt32Slot(2, pickupCharacterIdField, 0)
+def AddPickupCharacterIdField(builder, pickupCharacterIdField):
+    return PickupFirstGetBonusExcelAddPickupCharacterIdField(builder, pickupCharacterIdField)
+def PickupFirstGetBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return PickupFirstGetBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def PickupFirstGetBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(4, rewardParcelIdField, 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return PickupFirstGetBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def PickupFirstGetBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(5, rewardParcelAmountField, 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return PickupFirstGetBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def PickupFirstGetBonusExcelAddShopCashIdsField(builder, shopCashIdsField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(shopCashIdsField), 0)
+def AddShopCashIdsField(builder, shopCashIdsField):
+    return PickupFirstGetBonusExcelAddShopCashIdsField(builder, shopCashIdsField)
+def PickupFirstGetBonusExcelStartShopCashIdsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShopCashIdsFieldVector(builder, numElems):
+    return PickupFirstGetBonusExcelStartShopCashIdsFieldVector(builder, numElems)
 def PickupFirstGetBonusExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return PickupFirstGetBonusExcelEnd(builder)

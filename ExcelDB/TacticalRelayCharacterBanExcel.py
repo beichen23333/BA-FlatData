@@ -25,14 +25,14 @@ class TacticalRelayCharacterBanExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TacticalRelayCharacterBanExcel
-    def SeasonGroupId(self):
+    def SeasonGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticalRelayCharacterBanExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class TacticalRelayCharacterBanExcel(object):
 def TacticalRelayCharacterBanExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return TacticalRelayCharacterBanExcelStart(builder)
-def TacticalRelayCharacterBanExcelAddSeasonGroupId(builder, seasonGroupId): builder.PrependInt32Slot(0, seasonGroupId, 0)
-def AddSeasonGroupId(builder, seasonGroupId):
-    return TacticalRelayCharacterBanExcelAddSeasonGroupId(builder, seasonGroupId)
-def TacticalRelayCharacterBanExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(1, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return TacticalRelayCharacterBanExcelAddCharacterId(builder, characterId)
+def TacticalRelayCharacterBanExcelAddSeasonGroupIdField(builder, seasonGroupIdField): builder.PrependInt32Slot(0, seasonGroupIdField, 0)
+def AddSeasonGroupIdField(builder, seasonGroupIdField):
+    return TacticalRelayCharacterBanExcelAddSeasonGroupIdField(builder, seasonGroupIdField)
+def TacticalRelayCharacterBanExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return TacticalRelayCharacterBanExcelAddCharacterIdField(builder, characterIdField)
 def TacticalRelayCharacterBanExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TacticalRelayCharacterBanExcelEnd(builder)

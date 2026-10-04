@@ -25,42 +25,42 @@ class SpecialLobbyIllustExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # SpecialLobbyIllustExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SpecialLobbyIllustExcel
-    def DevName(self):
+    def DevNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # SpecialLobbyIllustExcel
-    def CharacterCostumeUniqueId(self):
+    def CharacterCostumeUniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SpecialLobbyIllustExcel
-    def PrefabName(self):
+    def PrefabNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # SpecialLobbyIllustExcel
-    def SlotTextureName(self):
+    def SlotTextureNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # SpecialLobbyIllustExcel
-    def RewardTextureName(self):
+    def RewardTextureNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -69,24 +69,24 @@ class SpecialLobbyIllustExcel(object):
 def SpecialLobbyIllustExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return SpecialLobbyIllustExcelStart(builder)
-def SpecialLobbyIllustExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(0, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return SpecialLobbyIllustExcelAddUniqueId(builder, uniqueId)
-def SpecialLobbyIllustExcelAddDevName(builder, devName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devName), 0)
-def AddDevName(builder, devName):
-    return SpecialLobbyIllustExcelAddDevName(builder, devName)
-def SpecialLobbyIllustExcelAddCharacterCostumeUniqueId(builder, characterCostumeUniqueId): builder.PrependInt32Slot(2, characterCostumeUniqueId, 0)
-def AddCharacterCostumeUniqueId(builder, characterCostumeUniqueId):
-    return SpecialLobbyIllustExcelAddCharacterCostumeUniqueId(builder, characterCostumeUniqueId)
-def SpecialLobbyIllustExcelAddPrefabName(builder, prefabName): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(prefabName), 0)
-def AddPrefabName(builder, prefabName):
-    return SpecialLobbyIllustExcelAddPrefabName(builder, prefabName)
-def SpecialLobbyIllustExcelAddSlotTextureName(builder, slotTextureName): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(slotTextureName), 0)
-def AddSlotTextureName(builder, slotTextureName):
-    return SpecialLobbyIllustExcelAddSlotTextureName(builder, slotTextureName)
-def SpecialLobbyIllustExcelAddRewardTextureName(builder, rewardTextureName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardTextureName), 0)
-def AddRewardTextureName(builder, rewardTextureName):
-    return SpecialLobbyIllustExcelAddRewardTextureName(builder, rewardTextureName)
+def SpecialLobbyIllustExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return SpecialLobbyIllustExcelAddUniqueIdField(builder, uniqueIdField)
+def SpecialLobbyIllustExcelAddDevNameField(builder, devNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+def AddDevNameField(builder, devNameField):
+    return SpecialLobbyIllustExcelAddDevNameField(builder, devNameField)
+def SpecialLobbyIllustExcelAddCharacterCostumeUniqueIdField(builder, characterCostumeUniqueIdField): builder.PrependInt32Slot(2, characterCostumeUniqueIdField, 0)
+def AddCharacterCostumeUniqueIdField(builder, characterCostumeUniqueIdField):
+    return SpecialLobbyIllustExcelAddCharacterCostumeUniqueIdField(builder, characterCostumeUniqueIdField)
+def SpecialLobbyIllustExcelAddPrefabNameField(builder, prefabNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+def AddPrefabNameField(builder, prefabNameField):
+    return SpecialLobbyIllustExcelAddPrefabNameField(builder, prefabNameField)
+def SpecialLobbyIllustExcelAddSlotTextureNameField(builder, slotTextureNameField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(slotTextureNameField), 0)
+def AddSlotTextureNameField(builder, slotTextureNameField):
+    return SpecialLobbyIllustExcelAddSlotTextureNameField(builder, slotTextureNameField)
+def SpecialLobbyIllustExcelAddRewardTextureNameField(builder, rewardTextureNameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardTextureNameField), 0)
+def AddRewardTextureNameField(builder, rewardTextureNameField):
+    return SpecialLobbyIllustExcelAddRewardTextureNameField(builder, rewardTextureNameField)
 def SpecialLobbyIllustExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SpecialLobbyIllustExcelEnd(builder)

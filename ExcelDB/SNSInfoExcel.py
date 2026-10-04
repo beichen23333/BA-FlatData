@@ -25,49 +25,49 @@ class SNSInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # SNSInfoExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSInfoExcel
-    def OpenScenarioModeId(self):
+    def OpenScenarioModeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSInfoExcel
-    def CloseScenarioModeId(self):
+    def CloseScenarioModeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSInfoExcel
-    def OpenTitleLocalizeKey(self):
+    def OpenTitleLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # SNSInfoExcel
-    def CloseTitleLocalizeKey(self):
+    def CloseTitleLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # SNSInfoExcel
-    def OpenDescLocalizeKey(self):
+    def OpenDescLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # SNSInfoExcel
-    def CloseDescLocalizeKey(self):
+    def CloseDescLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class SNSInfoExcel(object):
 def SNSInfoExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return SNSInfoExcelStart(builder)
-def SNSInfoExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return SNSInfoExcelAddId(builder, id)
-def SNSInfoExcelAddOpenScenarioModeId(builder, openScenarioModeId): builder.PrependInt32Slot(1, openScenarioModeId, 0)
-def AddOpenScenarioModeId(builder, openScenarioModeId):
-    return SNSInfoExcelAddOpenScenarioModeId(builder, openScenarioModeId)
-def SNSInfoExcelAddCloseScenarioModeId(builder, closeScenarioModeId): builder.PrependInt32Slot(2, closeScenarioModeId, 0)
-def AddCloseScenarioModeId(builder, closeScenarioModeId):
-    return SNSInfoExcelAddCloseScenarioModeId(builder, closeScenarioModeId)
-def SNSInfoExcelAddOpenTitleLocalizeKey(builder, openTitleLocalizeKey): builder.PrependUint32Slot(3, openTitleLocalizeKey, 0)
-def AddOpenTitleLocalizeKey(builder, openTitleLocalizeKey):
-    return SNSInfoExcelAddOpenTitleLocalizeKey(builder, openTitleLocalizeKey)
-def SNSInfoExcelAddCloseTitleLocalizeKey(builder, closeTitleLocalizeKey): builder.PrependUint32Slot(4, closeTitleLocalizeKey, 0)
-def AddCloseTitleLocalizeKey(builder, closeTitleLocalizeKey):
-    return SNSInfoExcelAddCloseTitleLocalizeKey(builder, closeTitleLocalizeKey)
-def SNSInfoExcelAddOpenDescLocalizeKey(builder, openDescLocalizeKey): builder.PrependUint32Slot(5, openDescLocalizeKey, 0)
-def AddOpenDescLocalizeKey(builder, openDescLocalizeKey):
-    return SNSInfoExcelAddOpenDescLocalizeKey(builder, openDescLocalizeKey)
-def SNSInfoExcelAddCloseDescLocalizeKey(builder, closeDescLocalizeKey): builder.PrependUint32Slot(6, closeDescLocalizeKey, 0)
-def AddCloseDescLocalizeKey(builder, closeDescLocalizeKey):
-    return SNSInfoExcelAddCloseDescLocalizeKey(builder, closeDescLocalizeKey)
+def SNSInfoExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return SNSInfoExcelAddIdField(builder, idField)
+def SNSInfoExcelAddOpenScenarioModeIdField(builder, openScenarioModeIdField): builder.PrependInt32Slot(1, openScenarioModeIdField, 0)
+def AddOpenScenarioModeIdField(builder, openScenarioModeIdField):
+    return SNSInfoExcelAddOpenScenarioModeIdField(builder, openScenarioModeIdField)
+def SNSInfoExcelAddCloseScenarioModeIdField(builder, closeScenarioModeIdField): builder.PrependInt32Slot(2, closeScenarioModeIdField, 0)
+def AddCloseScenarioModeIdField(builder, closeScenarioModeIdField):
+    return SNSInfoExcelAddCloseScenarioModeIdField(builder, closeScenarioModeIdField)
+def SNSInfoExcelAddOpenTitleLocalizeKeyField(builder, openTitleLocalizeKeyField): builder.PrependUint32Slot(3, openTitleLocalizeKeyField, 0)
+def AddOpenTitleLocalizeKeyField(builder, openTitleLocalizeKeyField):
+    return SNSInfoExcelAddOpenTitleLocalizeKeyField(builder, openTitleLocalizeKeyField)
+def SNSInfoExcelAddCloseTitleLocalizeKeyField(builder, closeTitleLocalizeKeyField): builder.PrependUint32Slot(4, closeTitleLocalizeKeyField, 0)
+def AddCloseTitleLocalizeKeyField(builder, closeTitleLocalizeKeyField):
+    return SNSInfoExcelAddCloseTitleLocalizeKeyField(builder, closeTitleLocalizeKeyField)
+def SNSInfoExcelAddOpenDescLocalizeKeyField(builder, openDescLocalizeKeyField): builder.PrependUint32Slot(5, openDescLocalizeKeyField, 0)
+def AddOpenDescLocalizeKeyField(builder, openDescLocalizeKeyField):
+    return SNSInfoExcelAddOpenDescLocalizeKeyField(builder, openDescLocalizeKeyField)
+def SNSInfoExcelAddCloseDescLocalizeKeyField(builder, closeDescLocalizeKeyField): builder.PrependUint32Slot(6, closeDescLocalizeKeyField, 0)
+def AddCloseDescLocalizeKeyField(builder, closeDescLocalizeKeyField):
+    return SNSInfoExcelAddCloseDescLocalizeKeyField(builder, closeDescLocalizeKeyField)
 def SNSInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SNSInfoExcelEnd(builder)

@@ -25,28 +25,28 @@ class StreakRecordRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # StreakRecordRewardExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordRewardExcel
-    def Step(self):
+    def StepField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordRewardExcel
-    def StreakDay(self):
+    def StreakDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -54,26 +54,26 @@ class StreakRecordRewardExcel(object):
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # StreakRecordRewardExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -81,26 +81,26 @@ class StreakRecordRewardExcel(object):
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # StreakRecordRewardExcel
-    def RewardParcelAmount(self, j):
+    def RewardParcelAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -108,54 +108,54 @@ class StreakRecordRewardExcel(object):
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelAmountAsNumpy(self):
+    def RewardParcelAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelAmountLength(self):
+    def RewardParcelAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # StreakRecordRewardExcel
-    def RewardParcelAmountIsNone(self):
+    def RewardParcelAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
 def StreakRecordRewardExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return StreakRecordRewardExcelStart(builder)
-def StreakRecordRewardExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return StreakRecordRewardExcelAddGroupId(builder, groupId)
-def StreakRecordRewardExcelAddStep(builder, step): builder.PrependInt32Slot(1, step, 0)
-def AddStep(builder, step):
-    return StreakRecordRewardExcelAddStep(builder, step)
-def StreakRecordRewardExcelAddStreakDay(builder, streakDay): builder.PrependInt32Slot(2, streakDay, 0)
-def AddStreakDay(builder, streakDay):
-    return StreakRecordRewardExcelAddStreakDay(builder, streakDay)
-def StreakRecordRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return StreakRecordRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def StreakRecordRewardExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return StreakRecordRewardExcelStartRewardParcelTypeVector(builder, numElems)
-def StreakRecordRewardExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return StreakRecordRewardExcelAddRewardParcelId(builder, rewardParcelId)
-def StreakRecordRewardExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return StreakRecordRewardExcelStartRewardParcelIdVector(builder, numElems)
-def StreakRecordRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmount), 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return StreakRecordRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def StreakRecordRewardExcelStartRewardParcelAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountVector(builder, numElems):
-    return StreakRecordRewardExcelStartRewardParcelAmountVector(builder, numElems)
+def StreakRecordRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return StreakRecordRewardExcelAddGroupIdField(builder, groupIdField)
+def StreakRecordRewardExcelAddStepField(builder, stepField): builder.PrependInt32Slot(1, stepField, 0)
+def AddStepField(builder, stepField):
+    return StreakRecordRewardExcelAddStepField(builder, stepField)
+def StreakRecordRewardExcelAddStreakDayField(builder, streakDayField): builder.PrependInt32Slot(2, streakDayField, 0)
+def AddStreakDayField(builder, streakDayField):
+    return StreakRecordRewardExcelAddStreakDayField(builder, streakDayField)
+def StreakRecordRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return StreakRecordRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def StreakRecordRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return StreakRecordRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def StreakRecordRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return StreakRecordRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def StreakRecordRewardExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return StreakRecordRewardExcelStartRewardParcelIdFieldVector(builder, numElems)
+def StreakRecordRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return StreakRecordRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def StreakRecordRewardExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelAmountFieldVector(builder, numElems):
+    return StreakRecordRewardExcelStartRewardParcelAmountFieldVector(builder, numElems)
 def StreakRecordRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return StreakRecordRewardExcelEnd(builder)

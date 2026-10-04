@@ -25,35 +25,35 @@ class AcademyLocationExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AcademyLocationExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyLocationExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyLocationExcel
-    def PrefabPath(self):
+    def PrefabPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AcademyLocationExcel
-    def IconImagePath(self):
+    def IconImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AcademyLocationExcel
-    def OpenCondition(self, j):
+    def OpenConditionField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -61,26 +61,26 @@ class AcademyLocationExcel(object):
         return 0
 
     # AcademyLocationExcel
-    def OpenConditionAsNumpy(self):
+    def OpenConditionFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # AcademyLocationExcel
-    def OpenConditionLength(self):
+    def OpenConditionFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # AcademyLocationExcel
-    def OpenConditionIsNone(self):
+    def OpenConditionFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # AcademyLocationExcel
-    def OpenConditionCount(self, j):
+    def OpenConditionCountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -88,40 +88,40 @@ class AcademyLocationExcel(object):
         return 0
 
     # AcademyLocationExcel
-    def OpenConditionCountAsNumpy(self):
+    def OpenConditionCountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # AcademyLocationExcel
-    def OpenConditionCountLength(self):
+    def OpenConditionCountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # AcademyLocationExcel
-    def OpenConditionCountIsNone(self):
+    def OpenConditionCountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # AcademyLocationExcel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyLocationExcel
-    def RewardParcelId(self):
+    def RewardParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyLocationExcel
-    def OpenTeacherRank(self):
+    def OpenTeacherRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -130,39 +130,39 @@ class AcademyLocationExcel(object):
 def AcademyLocationExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return AcademyLocationExcelStart(builder)
-def AcademyLocationExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return AcademyLocationExcelAddId(builder, id)
-def AcademyLocationExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(1, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return AcademyLocationExcelAddLocalizeEtcId(builder, localizeEtcId)
-def AcademyLocationExcelAddPrefabPath(builder, prefabPath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(prefabPath), 0)
-def AddPrefabPath(builder, prefabPath):
-    return AcademyLocationExcelAddPrefabPath(builder, prefabPath)
-def AcademyLocationExcelAddIconImagePath(builder, iconImagePath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconImagePath), 0)
-def AddIconImagePath(builder, iconImagePath):
-    return AcademyLocationExcelAddIconImagePath(builder, iconImagePath)
-def AcademyLocationExcelAddOpenCondition(builder, openCondition): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(openCondition), 0)
-def AddOpenCondition(builder, openCondition):
-    return AcademyLocationExcelAddOpenCondition(builder, openCondition)
-def AcademyLocationExcelStartOpenConditionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartOpenConditionVector(builder, numElems):
-    return AcademyLocationExcelStartOpenConditionVector(builder, numElems)
-def AcademyLocationExcelAddOpenConditionCount(builder, openConditionCount): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(openConditionCount), 0)
-def AddOpenConditionCount(builder, openConditionCount):
-    return AcademyLocationExcelAddOpenConditionCount(builder, openConditionCount)
-def AcademyLocationExcelStartOpenConditionCountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartOpenConditionCountVector(builder, numElems):
-    return AcademyLocationExcelStartOpenConditionCountVector(builder, numElems)
-def AcademyLocationExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(6, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return AcademyLocationExcelAddRewardParcelType(builder, rewardParcelType)
-def AcademyLocationExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependInt32Slot(7, rewardParcelId, 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return AcademyLocationExcelAddRewardParcelId(builder, rewardParcelId)
-def AcademyLocationExcelAddOpenTeacherRank(builder, openTeacherRank): builder.PrependInt32Slot(8, openTeacherRank, 0)
-def AddOpenTeacherRank(builder, openTeacherRank):
-    return AcademyLocationExcelAddOpenTeacherRank(builder, openTeacherRank)
+def AcademyLocationExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return AcademyLocationExcelAddIdField(builder, idField)
+def AcademyLocationExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(1, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return AcademyLocationExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def AcademyLocationExcelAddPrefabPathField(builder, prefabPathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(prefabPathField), 0)
+def AddPrefabPathField(builder, prefabPathField):
+    return AcademyLocationExcelAddPrefabPathField(builder, prefabPathField)
+def AcademyLocationExcelAddIconImagePathField(builder, iconImagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconImagePathField), 0)
+def AddIconImagePathField(builder, iconImagePathField):
+    return AcademyLocationExcelAddIconImagePathField(builder, iconImagePathField)
+def AcademyLocationExcelAddOpenConditionField(builder, openConditionField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(openConditionField), 0)
+def AddOpenConditionField(builder, openConditionField):
+    return AcademyLocationExcelAddOpenConditionField(builder, openConditionField)
+def AcademyLocationExcelStartOpenConditionFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartOpenConditionFieldVector(builder, numElems):
+    return AcademyLocationExcelStartOpenConditionFieldVector(builder, numElems)
+def AcademyLocationExcelAddOpenConditionCountField(builder, openConditionCountField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(openConditionCountField), 0)
+def AddOpenConditionCountField(builder, openConditionCountField):
+    return AcademyLocationExcelAddOpenConditionCountField(builder, openConditionCountField)
+def AcademyLocationExcelStartOpenConditionCountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartOpenConditionCountFieldVector(builder, numElems):
+    return AcademyLocationExcelStartOpenConditionCountFieldVector(builder, numElems)
+def AcademyLocationExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(6, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return AcademyLocationExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def AcademyLocationExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(7, rewardParcelIdField, 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return AcademyLocationExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def AcademyLocationExcelAddOpenTeacherRankField(builder, openTeacherRankField): builder.PrependInt32Slot(8, openTeacherRankField, 0)
+def AddOpenTeacherRankField(builder, openTeacherRankField):
+    return AcademyLocationExcelAddOpenTeacherRankField(builder, openTeacherRankField)
 def AcademyLocationExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return AcademyLocationExcelEnd(builder)

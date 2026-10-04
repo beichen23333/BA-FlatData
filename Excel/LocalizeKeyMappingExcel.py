@@ -25,21 +25,21 @@ class LocalizeKeyMappingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # LocalizeKeyMappingExcel
-    def Key(self):
+    def KeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeKeyMappingExcel
-    def Kr(self):
+    def KrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeKeyMappingExcel
-    def Jp(self):
+    def JpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -48,15 +48,15 @@ class LocalizeKeyMappingExcel(object):
 def LocalizeKeyMappingExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return LocalizeKeyMappingExcelStart(builder)
-def LocalizeKeyMappingExcelAddKey(builder, key): builder.PrependUint32Slot(0, key, 0)
-def AddKey(builder, key):
-    return LocalizeKeyMappingExcelAddKey(builder, key)
-def LocalizeKeyMappingExcelAddKr(builder, kr): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(kr), 0)
-def AddKr(builder, kr):
-    return LocalizeKeyMappingExcelAddKr(builder, kr)
-def LocalizeKeyMappingExcelAddJp(builder, jp): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(jp), 0)
-def AddJp(builder, jp):
-    return LocalizeKeyMappingExcelAddJp(builder, jp)
+def LocalizeKeyMappingExcelAddKeyField(builder, keyField): builder.PrependUint32Slot(0, keyField, 0)
+def AddKeyField(builder, keyField):
+    return LocalizeKeyMappingExcelAddKeyField(builder, keyField)
+def LocalizeKeyMappingExcelAddKrField(builder, krField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(krField), 0)
+def AddKrField(builder, krField):
+    return LocalizeKeyMappingExcelAddKrField(builder, krField)
+def LocalizeKeyMappingExcelAddJpField(builder, jpField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(jpField), 0)
+def AddJpField(builder, jpField):
+    return LocalizeKeyMappingExcelAddJpField(builder, jpField)
 def LocalizeKeyMappingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return LocalizeKeyMappingExcelEnd(builder)

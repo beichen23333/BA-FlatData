@@ -25,147 +25,147 @@ class ConstMinigameTBGExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstMinigameTBGExcel
-    def ConquestMapBoundaryOffsetLeft(self):
+    def ConquestMapBoundaryOffsetLeftField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def ConquestMapBoundaryOffsetRight(self):
+    def ConquestMapBoundaryOffsetRightField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def ConquestMapBoundaryOffsetTop(self):
+    def ConquestMapBoundaryOffsetTopField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def ConquestMapBoundaryOffsetBottom(self):
+    def ConquestMapBoundaryOffsetBottomField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def ConquestMapCenterOffsetX(self):
+    def ConquestMapCenterOffsetXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def ConquestMapCenterOffsetY(self):
+    def ConquestMapCenterOffsetYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def CameraAngle(self):
+    def CameraAngleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def CameraZoomMax(self):
+    def CameraZoomMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def CameraZoomMin(self):
+    def CameraZoomMinField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def CameraZoomDefault(self):
+    def CameraZoomDefaultField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def ThemaLoadingProgressTime(self):
+    def ThemaLoadingProgressTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def MapAllyRotation(self):
+    def MapAllyRotationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def AniAllyBattleAttack(self):
+    def AniAllyBattleAttackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstMinigameTBGExcel
-    def EffectAllyBattleAttack(self):
+    def EffectAllyBattleAttackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstMinigameTBGExcel
-    def EffectAllyBattleDamage(self):
+    def EffectAllyBattleDamageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstMinigameTBGExcel
-    def AniEnemyBattleAttack(self):
+    def AniEnemyBattleAttackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstMinigameTBGExcel
-    def EffectEnemyBattleAttack(self):
+    def EffectEnemyBattleAttackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstMinigameTBGExcel
-    def EffectEnemyBattleDamage(self):
+    def EffectEnemyBattleDamageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstMinigameTBGExcel
-    def EncounterAllyRotation(self):
+    def EncounterAllyRotationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def EncounterEnemyRotation(self):
+    def EncounterEnemyRotationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameTBGExcel
-    def EncounterRewardReceiveIndex(self):
+    def EncounterRewardReceiveIndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -174,69 +174,69 @@ class ConstMinigameTBGExcel(object):
 def ConstMinigameTBGExcelStart(builder): builder.StartObject(21)
 def Start(builder):
     return ConstMinigameTBGExcelStart(builder)
-def ConstMinigameTBGExcelAddConquestMapBoundaryOffsetLeft(builder, conquestMapBoundaryOffsetLeft): builder.PrependFloat32Slot(0, conquestMapBoundaryOffsetLeft, 0.0)
-def AddConquestMapBoundaryOffsetLeft(builder, conquestMapBoundaryOffsetLeft):
-    return ConstMinigameTBGExcelAddConquestMapBoundaryOffsetLeft(builder, conquestMapBoundaryOffsetLeft)
-def ConstMinigameTBGExcelAddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight): builder.PrependFloat32Slot(1, conquestMapBoundaryOffsetRight, 0.0)
-def AddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight):
-    return ConstMinigameTBGExcelAddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight)
-def ConstMinigameTBGExcelAddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop): builder.PrependFloat32Slot(2, conquestMapBoundaryOffsetTop, 0.0)
-def AddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop):
-    return ConstMinigameTBGExcelAddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop)
-def ConstMinigameTBGExcelAddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom): builder.PrependFloat32Slot(3, conquestMapBoundaryOffsetBottom, 0.0)
-def AddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom):
-    return ConstMinigameTBGExcelAddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom)
-def ConstMinigameTBGExcelAddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX): builder.PrependFloat32Slot(4, conquestMapCenterOffsetX, 0.0)
-def AddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX):
-    return ConstMinigameTBGExcelAddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX)
-def ConstMinigameTBGExcelAddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY): builder.PrependFloat32Slot(5, conquestMapCenterOffsetY, 0.0)
-def AddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY):
-    return ConstMinigameTBGExcelAddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY)
-def ConstMinigameTBGExcelAddCameraAngle(builder, cameraAngle): builder.PrependFloat32Slot(6, cameraAngle, 0.0)
-def AddCameraAngle(builder, cameraAngle):
-    return ConstMinigameTBGExcelAddCameraAngle(builder, cameraAngle)
-def ConstMinigameTBGExcelAddCameraZoomMax(builder, cameraZoomMax): builder.PrependFloat32Slot(7, cameraZoomMax, 0.0)
-def AddCameraZoomMax(builder, cameraZoomMax):
-    return ConstMinigameTBGExcelAddCameraZoomMax(builder, cameraZoomMax)
-def ConstMinigameTBGExcelAddCameraZoomMin(builder, cameraZoomMin): builder.PrependFloat32Slot(8, cameraZoomMin, 0.0)
-def AddCameraZoomMin(builder, cameraZoomMin):
-    return ConstMinigameTBGExcelAddCameraZoomMin(builder, cameraZoomMin)
-def ConstMinigameTBGExcelAddCameraZoomDefault(builder, cameraZoomDefault): builder.PrependFloat32Slot(9, cameraZoomDefault, 0.0)
-def AddCameraZoomDefault(builder, cameraZoomDefault):
-    return ConstMinigameTBGExcelAddCameraZoomDefault(builder, cameraZoomDefault)
-def ConstMinigameTBGExcelAddThemaLoadingProgressTime(builder, themaLoadingProgressTime): builder.PrependFloat32Slot(10, themaLoadingProgressTime, 0.0)
-def AddThemaLoadingProgressTime(builder, themaLoadingProgressTime):
-    return ConstMinigameTBGExcelAddThemaLoadingProgressTime(builder, themaLoadingProgressTime)
-def ConstMinigameTBGExcelAddMapAllyRotation(builder, mapAllyRotation): builder.PrependFloat32Slot(11, mapAllyRotation, 0.0)
-def AddMapAllyRotation(builder, mapAllyRotation):
-    return ConstMinigameTBGExcelAddMapAllyRotation(builder, mapAllyRotation)
-def ConstMinigameTBGExcelAddAniAllyBattleAttack(builder, aniAllyBattleAttack): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(aniAllyBattleAttack), 0)
-def AddAniAllyBattleAttack(builder, aniAllyBattleAttack):
-    return ConstMinigameTBGExcelAddAniAllyBattleAttack(builder, aniAllyBattleAttack)
-def ConstMinigameTBGExcelAddEffectAllyBattleAttack(builder, effectAllyBattleAttack): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(effectAllyBattleAttack), 0)
-def AddEffectAllyBattleAttack(builder, effectAllyBattleAttack):
-    return ConstMinigameTBGExcelAddEffectAllyBattleAttack(builder, effectAllyBattleAttack)
-def ConstMinigameTBGExcelAddEffectAllyBattleDamage(builder, effectAllyBattleDamage): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(effectAllyBattleDamage), 0)
-def AddEffectAllyBattleDamage(builder, effectAllyBattleDamage):
-    return ConstMinigameTBGExcelAddEffectAllyBattleDamage(builder, effectAllyBattleDamage)
-def ConstMinigameTBGExcelAddAniEnemyBattleAttack(builder, aniEnemyBattleAttack): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(aniEnemyBattleAttack), 0)
-def AddAniEnemyBattleAttack(builder, aniEnemyBattleAttack):
-    return ConstMinigameTBGExcelAddAniEnemyBattleAttack(builder, aniEnemyBattleAttack)
-def ConstMinigameTBGExcelAddEffectEnemyBattleAttack(builder, effectEnemyBattleAttack): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(effectEnemyBattleAttack), 0)
-def AddEffectEnemyBattleAttack(builder, effectEnemyBattleAttack):
-    return ConstMinigameTBGExcelAddEffectEnemyBattleAttack(builder, effectEnemyBattleAttack)
-def ConstMinigameTBGExcelAddEffectEnemyBattleDamage(builder, effectEnemyBattleDamage): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(effectEnemyBattleDamage), 0)
-def AddEffectEnemyBattleDamage(builder, effectEnemyBattleDamage):
-    return ConstMinigameTBGExcelAddEffectEnemyBattleDamage(builder, effectEnemyBattleDamage)
-def ConstMinigameTBGExcelAddEncounterAllyRotation(builder, encounterAllyRotation): builder.PrependFloat32Slot(18, encounterAllyRotation, 0.0)
-def AddEncounterAllyRotation(builder, encounterAllyRotation):
-    return ConstMinigameTBGExcelAddEncounterAllyRotation(builder, encounterAllyRotation)
-def ConstMinigameTBGExcelAddEncounterEnemyRotation(builder, encounterEnemyRotation): builder.PrependFloat32Slot(19, encounterEnemyRotation, 0.0)
-def AddEncounterEnemyRotation(builder, encounterEnemyRotation):
-    return ConstMinigameTBGExcelAddEncounterEnemyRotation(builder, encounterEnemyRotation)
-def ConstMinigameTBGExcelAddEncounterRewardReceiveIndex(builder, encounterRewardReceiveIndex): builder.PrependInt32Slot(20, encounterRewardReceiveIndex, 0)
-def AddEncounterRewardReceiveIndex(builder, encounterRewardReceiveIndex):
-    return ConstMinigameTBGExcelAddEncounterRewardReceiveIndex(builder, encounterRewardReceiveIndex)
+def ConstMinigameTBGExcelAddConquestMapBoundaryOffsetLeftField(builder, conquestMapBoundaryOffsetLeftField): builder.PrependFloat32Slot(0, conquestMapBoundaryOffsetLeftField, 0.0)
+def AddConquestMapBoundaryOffsetLeftField(builder, conquestMapBoundaryOffsetLeftField):
+    return ConstMinigameTBGExcelAddConquestMapBoundaryOffsetLeftField(builder, conquestMapBoundaryOffsetLeftField)
+def ConstMinigameTBGExcelAddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField): builder.PrependFloat32Slot(1, conquestMapBoundaryOffsetRightField, 0.0)
+def AddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField):
+    return ConstMinigameTBGExcelAddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField)
+def ConstMinigameTBGExcelAddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField): builder.PrependFloat32Slot(2, conquestMapBoundaryOffsetTopField, 0.0)
+def AddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField):
+    return ConstMinigameTBGExcelAddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField)
+def ConstMinigameTBGExcelAddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField): builder.PrependFloat32Slot(3, conquestMapBoundaryOffsetBottomField, 0.0)
+def AddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField):
+    return ConstMinigameTBGExcelAddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField)
+def ConstMinigameTBGExcelAddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField): builder.PrependFloat32Slot(4, conquestMapCenterOffsetXField, 0.0)
+def AddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField):
+    return ConstMinigameTBGExcelAddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField)
+def ConstMinigameTBGExcelAddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField): builder.PrependFloat32Slot(5, conquestMapCenterOffsetYField, 0.0)
+def AddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField):
+    return ConstMinigameTBGExcelAddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField)
+def ConstMinigameTBGExcelAddCameraAngleField(builder, cameraAngleField): builder.PrependFloat32Slot(6, cameraAngleField, 0.0)
+def AddCameraAngleField(builder, cameraAngleField):
+    return ConstMinigameTBGExcelAddCameraAngleField(builder, cameraAngleField)
+def ConstMinigameTBGExcelAddCameraZoomMaxField(builder, cameraZoomMaxField): builder.PrependFloat32Slot(7, cameraZoomMaxField, 0.0)
+def AddCameraZoomMaxField(builder, cameraZoomMaxField):
+    return ConstMinigameTBGExcelAddCameraZoomMaxField(builder, cameraZoomMaxField)
+def ConstMinigameTBGExcelAddCameraZoomMinField(builder, cameraZoomMinField): builder.PrependFloat32Slot(8, cameraZoomMinField, 0.0)
+def AddCameraZoomMinField(builder, cameraZoomMinField):
+    return ConstMinigameTBGExcelAddCameraZoomMinField(builder, cameraZoomMinField)
+def ConstMinigameTBGExcelAddCameraZoomDefaultField(builder, cameraZoomDefaultField): builder.PrependFloat32Slot(9, cameraZoomDefaultField, 0.0)
+def AddCameraZoomDefaultField(builder, cameraZoomDefaultField):
+    return ConstMinigameTBGExcelAddCameraZoomDefaultField(builder, cameraZoomDefaultField)
+def ConstMinigameTBGExcelAddThemaLoadingProgressTimeField(builder, themaLoadingProgressTimeField): builder.PrependFloat32Slot(10, themaLoadingProgressTimeField, 0.0)
+def AddThemaLoadingProgressTimeField(builder, themaLoadingProgressTimeField):
+    return ConstMinigameTBGExcelAddThemaLoadingProgressTimeField(builder, themaLoadingProgressTimeField)
+def ConstMinigameTBGExcelAddMapAllyRotationField(builder, mapAllyRotationField): builder.PrependFloat32Slot(11, mapAllyRotationField, 0.0)
+def AddMapAllyRotationField(builder, mapAllyRotationField):
+    return ConstMinigameTBGExcelAddMapAllyRotationField(builder, mapAllyRotationField)
+def ConstMinigameTBGExcelAddAniAllyBattleAttackField(builder, aniAllyBattleAttackField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(aniAllyBattleAttackField), 0)
+def AddAniAllyBattleAttackField(builder, aniAllyBattleAttackField):
+    return ConstMinigameTBGExcelAddAniAllyBattleAttackField(builder, aniAllyBattleAttackField)
+def ConstMinigameTBGExcelAddEffectAllyBattleAttackField(builder, effectAllyBattleAttackField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(effectAllyBattleAttackField), 0)
+def AddEffectAllyBattleAttackField(builder, effectAllyBattleAttackField):
+    return ConstMinigameTBGExcelAddEffectAllyBattleAttackField(builder, effectAllyBattleAttackField)
+def ConstMinigameTBGExcelAddEffectAllyBattleDamageField(builder, effectAllyBattleDamageField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(effectAllyBattleDamageField), 0)
+def AddEffectAllyBattleDamageField(builder, effectAllyBattleDamageField):
+    return ConstMinigameTBGExcelAddEffectAllyBattleDamageField(builder, effectAllyBattleDamageField)
+def ConstMinigameTBGExcelAddAniEnemyBattleAttackField(builder, aniEnemyBattleAttackField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(aniEnemyBattleAttackField), 0)
+def AddAniEnemyBattleAttackField(builder, aniEnemyBattleAttackField):
+    return ConstMinigameTBGExcelAddAniEnemyBattleAttackField(builder, aniEnemyBattleAttackField)
+def ConstMinigameTBGExcelAddEffectEnemyBattleAttackField(builder, effectEnemyBattleAttackField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(effectEnemyBattleAttackField), 0)
+def AddEffectEnemyBattleAttackField(builder, effectEnemyBattleAttackField):
+    return ConstMinigameTBGExcelAddEffectEnemyBattleAttackField(builder, effectEnemyBattleAttackField)
+def ConstMinigameTBGExcelAddEffectEnemyBattleDamageField(builder, effectEnemyBattleDamageField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(effectEnemyBattleDamageField), 0)
+def AddEffectEnemyBattleDamageField(builder, effectEnemyBattleDamageField):
+    return ConstMinigameTBGExcelAddEffectEnemyBattleDamageField(builder, effectEnemyBattleDamageField)
+def ConstMinigameTBGExcelAddEncounterAllyRotationField(builder, encounterAllyRotationField): builder.PrependFloat32Slot(18, encounterAllyRotationField, 0.0)
+def AddEncounterAllyRotationField(builder, encounterAllyRotationField):
+    return ConstMinigameTBGExcelAddEncounterAllyRotationField(builder, encounterAllyRotationField)
+def ConstMinigameTBGExcelAddEncounterEnemyRotationField(builder, encounterEnemyRotationField): builder.PrependFloat32Slot(19, encounterEnemyRotationField, 0.0)
+def AddEncounterEnemyRotationField(builder, encounterEnemyRotationField):
+    return ConstMinigameTBGExcelAddEncounterEnemyRotationField(builder, encounterEnemyRotationField)
+def ConstMinigameTBGExcelAddEncounterRewardReceiveIndexField(builder, encounterRewardReceiveIndexField): builder.PrependInt32Slot(20, encounterRewardReceiveIndexField, 0)
+def AddEncounterRewardReceiveIndexField(builder, encounterRewardReceiveIndexField):
+    return ConstMinigameTBGExcelAddEncounterRewardReceiveIndexField(builder, encounterRewardReceiveIndexField)
 def ConstMinigameTBGExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstMinigameTBGExcelEnd(builder)

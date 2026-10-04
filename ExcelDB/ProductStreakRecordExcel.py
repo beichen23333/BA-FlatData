@@ -25,42 +25,42 @@ class ProductStreakRecordExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ProductStreakRecordExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ProductStreakRecordExcel
-    def ProductId(self):
+    def ProductIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ProductStreakRecordExcel
-    def StoreType(self):
+    def StoreTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ProductStreakRecordExcel
-    def Price(self):
+    def PriceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ProductStreakRecordExcel
-    def PurchaseCountLimit(self):
+    def PurchaseCountLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ProductStreakRecordExcel
-    def StreakRecordId(self):
+    def StreakRecordIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -69,24 +69,24 @@ class ProductStreakRecordExcel(object):
 def ProductStreakRecordExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return ProductStreakRecordExcelStart(builder)
-def ProductStreakRecordExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ProductStreakRecordExcelAddId(builder, id)
-def ProductStreakRecordExcelAddProductId(builder, productId): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(productId), 0)
-def AddProductId(builder, productId):
-    return ProductStreakRecordExcelAddProductId(builder, productId)
-def ProductStreakRecordExcelAddStoreType(builder, storeType): builder.PrependInt32Slot(2, storeType, 0)
-def AddStoreType(builder, storeType):
-    return ProductStreakRecordExcelAddStoreType(builder, storeType)
-def ProductStreakRecordExcelAddPrice(builder, price): builder.PrependInt32Slot(3, price, 0)
-def AddPrice(builder, price):
-    return ProductStreakRecordExcelAddPrice(builder, price)
-def ProductStreakRecordExcelAddPurchaseCountLimit(builder, purchaseCountLimit): builder.PrependInt32Slot(4, purchaseCountLimit, 0)
-def AddPurchaseCountLimit(builder, purchaseCountLimit):
-    return ProductStreakRecordExcelAddPurchaseCountLimit(builder, purchaseCountLimit)
-def ProductStreakRecordExcelAddStreakRecordId(builder, streakRecordId): builder.PrependInt32Slot(5, streakRecordId, 0)
-def AddStreakRecordId(builder, streakRecordId):
-    return ProductStreakRecordExcelAddStreakRecordId(builder, streakRecordId)
+def ProductStreakRecordExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ProductStreakRecordExcelAddIdField(builder, idField)
+def ProductStreakRecordExcelAddProductIdField(builder, productIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+def AddProductIdField(builder, productIdField):
+    return ProductStreakRecordExcelAddProductIdField(builder, productIdField)
+def ProductStreakRecordExcelAddStoreTypeField(builder, storeTypeField): builder.PrependInt32Slot(2, storeTypeField, 0)
+def AddStoreTypeField(builder, storeTypeField):
+    return ProductStreakRecordExcelAddStoreTypeField(builder, storeTypeField)
+def ProductStreakRecordExcelAddPriceField(builder, priceField): builder.PrependInt32Slot(3, priceField, 0)
+def AddPriceField(builder, priceField):
+    return ProductStreakRecordExcelAddPriceField(builder, priceField)
+def ProductStreakRecordExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField): builder.PrependInt32Slot(4, purchaseCountLimitField, 0)
+def AddPurchaseCountLimitField(builder, purchaseCountLimitField):
+    return ProductStreakRecordExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
+def ProductStreakRecordExcelAddStreakRecordIdField(builder, streakRecordIdField): builder.PrependInt32Slot(5, streakRecordIdField, 0)
+def AddStreakRecordIdField(builder, streakRecordIdField):
+    return ProductStreakRecordExcelAddStreakRecordIdField(builder, streakRecordIdField)
 def ProductStreakRecordExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ProductStreakRecordExcelEnd(builder)

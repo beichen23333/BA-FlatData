@@ -25,70 +25,70 @@ class SeasonRecordInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # SeasonRecordInfoExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SeasonRecordInfoExcel
-    def TargetGroup(self):
+    def TargetGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SeasonRecordInfoExcel
-    def AccountLevelLimit(self):
+    def AccountLevelLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SeasonRecordInfoExcel
-    def Title(self):
+    def TitleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # SeasonRecordInfoExcel
-    def StartDate(self):
+    def StartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # SeasonRecordInfoExcel
-    def EndDate(self):
+    def EndDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # SeasonRecordInfoExcel
-    def BasicRewardId(self):
+    def BasicRewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SeasonRecordInfoExcel
-    def AccumulatedRewardId(self):
+    def AccumulatedRewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SeasonRecordInfoExcel
-    def SupplementCost(self):
+    def SupplementCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SeasonRecordInfoExcel
-    def TitleImagePath(self):
+    def TitleImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -97,36 +97,36 @@ class SeasonRecordInfoExcel(object):
 def SeasonRecordInfoExcelStart(builder): builder.StartObject(10)
 def Start(builder):
     return SeasonRecordInfoExcelStart(builder)
-def SeasonRecordInfoExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return SeasonRecordInfoExcelAddId(builder, id)
-def SeasonRecordInfoExcelAddTargetGroup(builder, targetGroup): builder.PrependInt32Slot(1, targetGroup, 0)
-def AddTargetGroup(builder, targetGroup):
-    return SeasonRecordInfoExcelAddTargetGroup(builder, targetGroup)
-def SeasonRecordInfoExcelAddAccountLevelLimit(builder, accountLevelLimit): builder.PrependInt32Slot(2, accountLevelLimit, 0)
-def AddAccountLevelLimit(builder, accountLevelLimit):
-    return SeasonRecordInfoExcelAddAccountLevelLimit(builder, accountLevelLimit)
-def SeasonRecordInfoExcelAddTitle(builder, title): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(title), 0)
-def AddTitle(builder, title):
-    return SeasonRecordInfoExcelAddTitle(builder, title)
-def SeasonRecordInfoExcelAddStartDate(builder, startDate): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(startDate), 0)
-def AddStartDate(builder, startDate):
-    return SeasonRecordInfoExcelAddStartDate(builder, startDate)
-def SeasonRecordInfoExcelAddEndDate(builder, endDate): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(endDate), 0)
-def AddEndDate(builder, endDate):
-    return SeasonRecordInfoExcelAddEndDate(builder, endDate)
-def SeasonRecordInfoExcelAddBasicRewardId(builder, basicRewardId): builder.PrependInt32Slot(6, basicRewardId, 0)
-def AddBasicRewardId(builder, basicRewardId):
-    return SeasonRecordInfoExcelAddBasicRewardId(builder, basicRewardId)
-def SeasonRecordInfoExcelAddAccumulatedRewardId(builder, accumulatedRewardId): builder.PrependInt32Slot(7, accumulatedRewardId, 0)
-def AddAccumulatedRewardId(builder, accumulatedRewardId):
-    return SeasonRecordInfoExcelAddAccumulatedRewardId(builder, accumulatedRewardId)
-def SeasonRecordInfoExcelAddSupplementCost(builder, supplementCost): builder.PrependInt32Slot(8, supplementCost, 0)
-def AddSupplementCost(builder, supplementCost):
-    return SeasonRecordInfoExcelAddSupplementCost(builder, supplementCost)
-def SeasonRecordInfoExcelAddTitleImagePath(builder, titleImagePath): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePath), 0)
-def AddTitleImagePath(builder, titleImagePath):
-    return SeasonRecordInfoExcelAddTitleImagePath(builder, titleImagePath)
+def SeasonRecordInfoExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return SeasonRecordInfoExcelAddIdField(builder, idField)
+def SeasonRecordInfoExcelAddTargetGroupField(builder, targetGroupField): builder.PrependInt32Slot(1, targetGroupField, 0)
+def AddTargetGroupField(builder, targetGroupField):
+    return SeasonRecordInfoExcelAddTargetGroupField(builder, targetGroupField)
+def SeasonRecordInfoExcelAddAccountLevelLimitField(builder, accountLevelLimitField): builder.PrependInt32Slot(2, accountLevelLimitField, 0)
+def AddAccountLevelLimitField(builder, accountLevelLimitField):
+    return SeasonRecordInfoExcelAddAccountLevelLimitField(builder, accountLevelLimitField)
+def SeasonRecordInfoExcelAddTitleField(builder, titleField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(titleField), 0)
+def AddTitleField(builder, titleField):
+    return SeasonRecordInfoExcelAddTitleField(builder, titleField)
+def SeasonRecordInfoExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+def AddStartDateField(builder, startDateField):
+    return SeasonRecordInfoExcelAddStartDateField(builder, startDateField)
+def SeasonRecordInfoExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+def AddEndDateField(builder, endDateField):
+    return SeasonRecordInfoExcelAddEndDateField(builder, endDateField)
+def SeasonRecordInfoExcelAddBasicRewardIdField(builder, basicRewardIdField): builder.PrependInt32Slot(6, basicRewardIdField, 0)
+def AddBasicRewardIdField(builder, basicRewardIdField):
+    return SeasonRecordInfoExcelAddBasicRewardIdField(builder, basicRewardIdField)
+def SeasonRecordInfoExcelAddAccumulatedRewardIdField(builder, accumulatedRewardIdField): builder.PrependInt32Slot(7, accumulatedRewardIdField, 0)
+def AddAccumulatedRewardIdField(builder, accumulatedRewardIdField):
+    return SeasonRecordInfoExcelAddAccumulatedRewardIdField(builder, accumulatedRewardIdField)
+def SeasonRecordInfoExcelAddSupplementCostField(builder, supplementCostField): builder.PrependInt32Slot(8, supplementCostField, 0)
+def AddSupplementCostField(builder, supplementCostField):
+    return SeasonRecordInfoExcelAddSupplementCostField(builder, supplementCostField)
+def SeasonRecordInfoExcelAddTitleImagePathField(builder, titleImagePathField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePathField), 0)
+def AddTitleImagePathField(builder, titleImagePathField):
+    return SeasonRecordInfoExcelAddTitleImagePathField(builder, titleImagePathField)
 def SeasonRecordInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SeasonRecordInfoExcelEnd(builder)

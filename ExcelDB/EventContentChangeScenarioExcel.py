@@ -25,28 +25,28 @@ class EventContentChangeScenarioExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentChangeScenarioExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeScenarioExcel
-    def ChangeType(self):
+    def ChangeTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeScenarioExcel
-    def ChangeCount(self):
+    def ChangeCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentChangeScenarioExcel
-    def ScenarioGroupId(self):
+    def ScenarioGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class EventContentChangeScenarioExcel(object):
 def EventContentChangeScenarioExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentChangeScenarioExcelStart(builder)
-def EventContentChangeScenarioExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentChangeScenarioExcelAddEventContentId(builder, eventContentId)
-def EventContentChangeScenarioExcelAddChangeType(builder, changeType): builder.PrependInt32Slot(1, changeType, 0)
-def AddChangeType(builder, changeType):
-    return EventContentChangeScenarioExcelAddChangeType(builder, changeType)
-def EventContentChangeScenarioExcelAddChangeCount(builder, changeCount): builder.PrependInt32Slot(2, changeCount, 0)
-def AddChangeCount(builder, changeCount):
-    return EventContentChangeScenarioExcelAddChangeCount(builder, changeCount)
-def EventContentChangeScenarioExcelAddScenarioGroupId(builder, scenarioGroupId): builder.PrependInt32Slot(3, scenarioGroupId, 0)
-def AddScenarioGroupId(builder, scenarioGroupId):
-    return EventContentChangeScenarioExcelAddScenarioGroupId(builder, scenarioGroupId)
+def EventContentChangeScenarioExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentChangeScenarioExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentChangeScenarioExcelAddChangeTypeField(builder, changeTypeField): builder.PrependInt32Slot(1, changeTypeField, 0)
+def AddChangeTypeField(builder, changeTypeField):
+    return EventContentChangeScenarioExcelAddChangeTypeField(builder, changeTypeField)
+def EventContentChangeScenarioExcelAddChangeCountField(builder, changeCountField): builder.PrependInt32Slot(2, changeCountField, 0)
+def AddChangeCountField(builder, changeCountField):
+    return EventContentChangeScenarioExcelAddChangeCountField(builder, changeCountField)
+def EventContentChangeScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField): builder.PrependInt32Slot(3, scenarioGroupIdField, 0)
+def AddScenarioGroupIdField(builder, scenarioGroupIdField):
+    return EventContentChangeScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField)
 def EventContentChangeScenarioExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentChangeScenarioExcelEnd(builder)

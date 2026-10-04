@@ -25,35 +25,35 @@ class MinigameCCGEnemyGroupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameCCGEnemyGroupExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGEnemyGroupExcel
-    def EnemyAI(self):
+    def EnemyAIField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameCCGEnemyGroupExcel
-    def EnemyBGM(self):
+    def EnemyBGMField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGEnemyGroupExcel
-    def LocalizeEnemyGroupName(self):
+    def LocalizeEnemyGroupNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameCCGEnemyGroupExcel
-    def LocalizeEnemyGroupDesc(self):
+    def LocalizeEnemyGroupDescField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class MinigameCCGEnemyGroupExcel(object):
 def MinigameCCGEnemyGroupExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return MinigameCCGEnemyGroupExcelStart(builder)
-def MinigameCCGEnemyGroupExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return MinigameCCGEnemyGroupExcelAddGroupId(builder, groupId)
-def MinigameCCGEnemyGroupExcelAddEnemyAI(builder, enemyAI): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(enemyAI), 0)
-def AddEnemyAI(builder, enemyAI):
-    return MinigameCCGEnemyGroupExcelAddEnemyAI(builder, enemyAI)
-def MinigameCCGEnemyGroupExcelAddEnemyBGM(builder, enemyBGM): builder.PrependInt32Slot(2, enemyBGM, 0)
-def AddEnemyBGM(builder, enemyBGM):
-    return MinigameCCGEnemyGroupExcelAddEnemyBGM(builder, enemyBGM)
-def MinigameCCGEnemyGroupExcelAddLocalizeEnemyGroupName(builder, localizeEnemyGroupName): builder.PrependUint32Slot(3, localizeEnemyGroupName, 0)
-def AddLocalizeEnemyGroupName(builder, localizeEnemyGroupName):
-    return MinigameCCGEnemyGroupExcelAddLocalizeEnemyGroupName(builder, localizeEnemyGroupName)
-def MinigameCCGEnemyGroupExcelAddLocalizeEnemyGroupDesc(builder, localizeEnemyGroupDesc): builder.PrependUint32Slot(4, localizeEnemyGroupDesc, 0)
-def AddLocalizeEnemyGroupDesc(builder, localizeEnemyGroupDesc):
-    return MinigameCCGEnemyGroupExcelAddLocalizeEnemyGroupDesc(builder, localizeEnemyGroupDesc)
+def MinigameCCGEnemyGroupExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return MinigameCCGEnemyGroupExcelAddGroupIdField(builder, groupIdField)
+def MinigameCCGEnemyGroupExcelAddEnemyAIField(builder, enemyAIField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(enemyAIField), 0)
+def AddEnemyAIField(builder, enemyAIField):
+    return MinigameCCGEnemyGroupExcelAddEnemyAIField(builder, enemyAIField)
+def MinigameCCGEnemyGroupExcelAddEnemyBGMField(builder, enemyBGMField): builder.PrependInt32Slot(2, enemyBGMField, 0)
+def AddEnemyBGMField(builder, enemyBGMField):
+    return MinigameCCGEnemyGroupExcelAddEnemyBGMField(builder, enemyBGMField)
+def MinigameCCGEnemyGroupExcelAddLocalizeEnemyGroupNameField(builder, localizeEnemyGroupNameField): builder.PrependUint32Slot(3, localizeEnemyGroupNameField, 0)
+def AddLocalizeEnemyGroupNameField(builder, localizeEnemyGroupNameField):
+    return MinigameCCGEnemyGroupExcelAddLocalizeEnemyGroupNameField(builder, localizeEnemyGroupNameField)
+def MinigameCCGEnemyGroupExcelAddLocalizeEnemyGroupDescField(builder, localizeEnemyGroupDescField): builder.PrependUint32Slot(4, localizeEnemyGroupDescField, 0)
+def AddLocalizeEnemyGroupDescField(builder, localizeEnemyGroupDescField):
+    return MinigameCCGEnemyGroupExcelAddLocalizeEnemyGroupDescField(builder, localizeEnemyGroupDescField)
 def MinigameCCGEnemyGroupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameCCGEnemyGroupExcelEnd(builder)

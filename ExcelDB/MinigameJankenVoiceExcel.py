@@ -25,70 +25,70 @@ class MinigameJankenVoiceExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameJankenVoiceExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenVoiceExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenVoiceExcel
-    def CostumeUniqueId(self):
+    def CostumeUniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenVoiceExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenVoiceExcel
-    def VoiceCondition(self):
+    def VoiceConditionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenVoiceExcel
-    def AnimationName(self):
+    def AnimationNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenVoiceExcel
-    def Duration(self):
+    def DurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameJankenVoiceExcel
-    def LocalizeKR(self):
+    def LocalizeKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenVoiceExcel
-    def LocalizeJP(self):
+    def LocalizeJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MinigameJankenVoiceExcel
-    def VoiceId(self):
+    def VoiceIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -97,36 +97,36 @@ class MinigameJankenVoiceExcel(object):
 def MinigameJankenVoiceExcelStart(builder): builder.StartObject(10)
 def Start(builder):
     return MinigameJankenVoiceExcelStart(builder)
-def MinigameJankenVoiceExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MinigameJankenVoiceExcelAddId(builder, id)
-def MinigameJankenVoiceExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(1, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return MinigameJankenVoiceExcelAddCharacterId(builder, characterId)
-def MinigameJankenVoiceExcelAddCostumeUniqueId(builder, costumeUniqueId): builder.PrependInt32Slot(2, costumeUniqueId, 0)
-def AddCostumeUniqueId(builder, costumeUniqueId):
-    return MinigameJankenVoiceExcelAddCostumeUniqueId(builder, costumeUniqueId)
-def MinigameJankenVoiceExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(3, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MinigameJankenVoiceExcelAddEventContentId(builder, eventContentId)
-def MinigameJankenVoiceExcelAddVoiceCondition(builder, voiceCondition): builder.PrependInt32Slot(4, voiceCondition, 0)
-def AddVoiceCondition(builder, voiceCondition):
-    return MinigameJankenVoiceExcelAddVoiceCondition(builder, voiceCondition)
-def MinigameJankenVoiceExcelAddAnimationName(builder, animationName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(animationName), 0)
-def AddAnimationName(builder, animationName):
-    return MinigameJankenVoiceExcelAddAnimationName(builder, animationName)
-def MinigameJankenVoiceExcelAddDuration(builder, duration): builder.PrependInt32Slot(6, duration, 0)
-def AddDuration(builder, duration):
-    return MinigameJankenVoiceExcelAddDuration(builder, duration)
-def MinigameJankenVoiceExcelAddLocalizeKR(builder, localizeKR): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKR), 0)
-def AddLocalizeKR(builder, localizeKR):
-    return MinigameJankenVoiceExcelAddLocalizeKR(builder, localizeKR)
-def MinigameJankenVoiceExcelAddLocalizeJP(builder, localizeJP): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJP), 0)
-def AddLocalizeJP(builder, localizeJP):
-    return MinigameJankenVoiceExcelAddLocalizeJP(builder, localizeJP)
-def MinigameJankenVoiceExcelAddVoiceId(builder, voiceId): builder.PrependUint32Slot(9, voiceId, 0)
-def AddVoiceId(builder, voiceId):
-    return MinigameJankenVoiceExcelAddVoiceId(builder, voiceId)
+def MinigameJankenVoiceExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MinigameJankenVoiceExcelAddIdField(builder, idField)
+def MinigameJankenVoiceExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return MinigameJankenVoiceExcelAddCharacterIdField(builder, characterIdField)
+def MinigameJankenVoiceExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField): builder.PrependInt32Slot(2, costumeUniqueIdField, 0)
+def AddCostumeUniqueIdField(builder, costumeUniqueIdField):
+    return MinigameJankenVoiceExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
+def MinigameJankenVoiceExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(3, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MinigameJankenVoiceExcelAddEventContentIdField(builder, eventContentIdField)
+def MinigameJankenVoiceExcelAddVoiceConditionField(builder, voiceConditionField): builder.PrependInt32Slot(4, voiceConditionField, 0)
+def AddVoiceConditionField(builder, voiceConditionField):
+    return MinigameJankenVoiceExcelAddVoiceConditionField(builder, voiceConditionField)
+def MinigameJankenVoiceExcelAddAnimationNameField(builder, animationNameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(animationNameField), 0)
+def AddAnimationNameField(builder, animationNameField):
+    return MinigameJankenVoiceExcelAddAnimationNameField(builder, animationNameField)
+def MinigameJankenVoiceExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(6, durationField, 0)
+def AddDurationField(builder, durationField):
+    return MinigameJankenVoiceExcelAddDurationField(builder, durationField)
+def MinigameJankenVoiceExcelAddLocalizeKRField(builder, localizeKRField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+def AddLocalizeKRField(builder, localizeKRField):
+    return MinigameJankenVoiceExcelAddLocalizeKRField(builder, localizeKRField)
+def MinigameJankenVoiceExcelAddLocalizeJPField(builder, localizeJPField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+def AddLocalizeJPField(builder, localizeJPField):
+    return MinigameJankenVoiceExcelAddLocalizeJPField(builder, localizeJPField)
+def MinigameJankenVoiceExcelAddVoiceIdField(builder, voiceIdField): builder.PrependUint32Slot(9, voiceIdField, 0)
+def AddVoiceIdField(builder, voiceIdField):
+    return MinigameJankenVoiceExcelAddVoiceIdField(builder, voiceIdField)
 def MinigameJankenVoiceExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameJankenVoiceExcelEnd(builder)

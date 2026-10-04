@@ -25,14 +25,14 @@ class PersonalityExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # PersonalityExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PersonalityExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -41,12 +41,12 @@ class PersonalityExcel(object):
 def PersonalityExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return PersonalityExcelStart(builder)
-def PersonalityExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return PersonalityExcelAddId(builder, id)
-def PersonalityExcelAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return PersonalityExcelAddName(builder, name)
+def PersonalityExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return PersonalityExcelAddIdField(builder, idField)
+def PersonalityExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return PersonalityExcelAddNameField(builder, nameField)
 def PersonalityExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return PersonalityExcelEnd(builder)

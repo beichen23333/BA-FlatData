@@ -25,70 +25,70 @@ class TerrainAdaptationFactorExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TerrainAdaptationFactorExcel
-    def TerrainAdaptation(self):
+    def TerrainAdaptationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TerrainAdaptationFactorExcel
-    def TerrainAdaptationStat(self):
+    def TerrainAdaptationStatField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TerrainAdaptationFactorExcel
-    def ShotFactor(self):
+    def ShotFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TerrainAdaptationFactorExcel
-    def BlockFactor(self):
+    def BlockFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TerrainAdaptationFactorExcel
-    def AccuracyFactor(self):
+    def AccuracyFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TerrainAdaptationFactorExcel
-    def DodgeFactor(self):
+    def DodgeFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TerrainAdaptationFactorExcel
-    def AttackPowerFactor(self):
+    def AttackPowerFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TerrainAdaptationFactorExcel
-    def TerrainFactorDescription01(self):
+    def TerrainFactorDescription01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TerrainAdaptationFactorExcel
-    def TerrainFactorDescription02(self):
+    def TerrainFactorDescription02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TerrainAdaptationFactorExcel
-    def TerrainFactorDescription03(self):
+    def TerrainFactorDescription03Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -97,36 +97,36 @@ class TerrainAdaptationFactorExcel(object):
 def TerrainAdaptationFactorExcelStart(builder): builder.StartObject(10)
 def Start(builder):
     return TerrainAdaptationFactorExcelStart(builder)
-def TerrainAdaptationFactorExcelAddTerrainAdaptation(builder, terrainAdaptation): builder.PrependInt32Slot(0, terrainAdaptation, 0)
-def AddTerrainAdaptation(builder, terrainAdaptation):
-    return TerrainAdaptationFactorExcelAddTerrainAdaptation(builder, terrainAdaptation)
-def TerrainAdaptationFactorExcelAddTerrainAdaptationStat(builder, terrainAdaptationStat): builder.PrependInt32Slot(1, terrainAdaptationStat, 0)
-def AddTerrainAdaptationStat(builder, terrainAdaptationStat):
-    return TerrainAdaptationFactorExcelAddTerrainAdaptationStat(builder, terrainAdaptationStat)
-def TerrainAdaptationFactorExcelAddShotFactor(builder, shotFactor): builder.PrependInt32Slot(2, shotFactor, 0)
-def AddShotFactor(builder, shotFactor):
-    return TerrainAdaptationFactorExcelAddShotFactor(builder, shotFactor)
-def TerrainAdaptationFactorExcelAddBlockFactor(builder, blockFactor): builder.PrependInt32Slot(3, blockFactor, 0)
-def AddBlockFactor(builder, blockFactor):
-    return TerrainAdaptationFactorExcelAddBlockFactor(builder, blockFactor)
-def TerrainAdaptationFactorExcelAddAccuracyFactor(builder, accuracyFactor): builder.PrependInt32Slot(4, accuracyFactor, 0)
-def AddAccuracyFactor(builder, accuracyFactor):
-    return TerrainAdaptationFactorExcelAddAccuracyFactor(builder, accuracyFactor)
-def TerrainAdaptationFactorExcelAddDodgeFactor(builder, dodgeFactor): builder.PrependInt32Slot(5, dodgeFactor, 0)
-def AddDodgeFactor(builder, dodgeFactor):
-    return TerrainAdaptationFactorExcelAddDodgeFactor(builder, dodgeFactor)
-def TerrainAdaptationFactorExcelAddAttackPowerFactor(builder, attackPowerFactor): builder.PrependInt32Slot(6, attackPowerFactor, 0)
-def AddAttackPowerFactor(builder, attackPowerFactor):
-    return TerrainAdaptationFactorExcelAddAttackPowerFactor(builder, attackPowerFactor)
-def TerrainAdaptationFactorExcelAddTerrainFactorDescription01(builder, terrainFactorDescription01): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(terrainFactorDescription01), 0)
-def AddTerrainFactorDescription01(builder, terrainFactorDescription01):
-    return TerrainAdaptationFactorExcelAddTerrainFactorDescription01(builder, terrainFactorDescription01)
-def TerrainAdaptationFactorExcelAddTerrainFactorDescription02(builder, terrainFactorDescription02): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(terrainFactorDescription02), 0)
-def AddTerrainFactorDescription02(builder, terrainFactorDescription02):
-    return TerrainAdaptationFactorExcelAddTerrainFactorDescription02(builder, terrainFactorDescription02)
-def TerrainAdaptationFactorExcelAddTerrainFactorDescription03(builder, terrainFactorDescription03): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(terrainFactorDescription03), 0)
-def AddTerrainFactorDescription03(builder, terrainFactorDescription03):
-    return TerrainAdaptationFactorExcelAddTerrainFactorDescription03(builder, terrainFactorDescription03)
+def TerrainAdaptationFactorExcelAddTerrainAdaptationField(builder, terrainAdaptationField): builder.PrependInt32Slot(0, terrainAdaptationField, 0)
+def AddTerrainAdaptationField(builder, terrainAdaptationField):
+    return TerrainAdaptationFactorExcelAddTerrainAdaptationField(builder, terrainAdaptationField)
+def TerrainAdaptationFactorExcelAddTerrainAdaptationStatField(builder, terrainAdaptationStatField): builder.PrependInt32Slot(1, terrainAdaptationStatField, 0)
+def AddTerrainAdaptationStatField(builder, terrainAdaptationStatField):
+    return TerrainAdaptationFactorExcelAddTerrainAdaptationStatField(builder, terrainAdaptationStatField)
+def TerrainAdaptationFactorExcelAddShotFactorField(builder, shotFactorField): builder.PrependInt32Slot(2, shotFactorField, 0)
+def AddShotFactorField(builder, shotFactorField):
+    return TerrainAdaptationFactorExcelAddShotFactorField(builder, shotFactorField)
+def TerrainAdaptationFactorExcelAddBlockFactorField(builder, blockFactorField): builder.PrependInt32Slot(3, blockFactorField, 0)
+def AddBlockFactorField(builder, blockFactorField):
+    return TerrainAdaptationFactorExcelAddBlockFactorField(builder, blockFactorField)
+def TerrainAdaptationFactorExcelAddAccuracyFactorField(builder, accuracyFactorField): builder.PrependInt32Slot(4, accuracyFactorField, 0)
+def AddAccuracyFactorField(builder, accuracyFactorField):
+    return TerrainAdaptationFactorExcelAddAccuracyFactorField(builder, accuracyFactorField)
+def TerrainAdaptationFactorExcelAddDodgeFactorField(builder, dodgeFactorField): builder.PrependInt32Slot(5, dodgeFactorField, 0)
+def AddDodgeFactorField(builder, dodgeFactorField):
+    return TerrainAdaptationFactorExcelAddDodgeFactorField(builder, dodgeFactorField)
+def TerrainAdaptationFactorExcelAddAttackPowerFactorField(builder, attackPowerFactorField): builder.PrependInt32Slot(6, attackPowerFactorField, 0)
+def AddAttackPowerFactorField(builder, attackPowerFactorField):
+    return TerrainAdaptationFactorExcelAddAttackPowerFactorField(builder, attackPowerFactorField)
+def TerrainAdaptationFactorExcelAddTerrainFactorDescription01Field(builder, terrainFactorDescription01Field): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(terrainFactorDescription01Field), 0)
+def AddTerrainFactorDescription01Field(builder, terrainFactorDescription01Field):
+    return TerrainAdaptationFactorExcelAddTerrainFactorDescription01Field(builder, terrainFactorDescription01Field)
+def TerrainAdaptationFactorExcelAddTerrainFactorDescription02Field(builder, terrainFactorDescription02Field): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(terrainFactorDescription02Field), 0)
+def AddTerrainFactorDescription02Field(builder, terrainFactorDescription02Field):
+    return TerrainAdaptationFactorExcelAddTerrainFactorDescription02Field(builder, terrainFactorDescription02Field)
+def TerrainAdaptationFactorExcelAddTerrainFactorDescription03Field(builder, terrainFactorDescription03Field): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(terrainFactorDescription03Field), 0)
+def AddTerrainFactorDescription03Field(builder, terrainFactorDescription03Field):
+    return TerrainAdaptationFactorExcelAddTerrainFactorDescription03Field(builder, terrainFactorDescription03Field)
 def TerrainAdaptationFactorExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TerrainAdaptationFactorExcelEnd(builder)

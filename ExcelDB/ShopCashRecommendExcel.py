@@ -25,49 +25,49 @@ class ShopCashRecommendExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopCashRecommendExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashRecommendExcel
-    def RecommendPageType(self):
+    def RecommendPageTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashRecommendExcel
-    def ShopCashId(self):
+    def ShopCashIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashRecommendExcel
-    def DisplayOrder(self):
+    def DisplayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopCashRecommendExcel
-    def VisiblePeriodFrom(self):
+    def VisiblePeriodFromField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopCashRecommendExcel
-    def VisiblePeriodTo(self):
+    def VisiblePeriodToField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopCashRecommendExcel
-    def VideoId(self, j):
+    def VideoIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -75,33 +75,33 @@ class ShopCashRecommendExcel(object):
         return 0
 
     # ShopCashRecommendExcel
-    def VideoIdAsNumpy(self):
+    def VideoIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ShopCashRecommendExcel
-    def VideoIdLength(self):
+    def VideoIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopCashRecommendExcel
-    def VideoIdIsNone(self):
+    def VideoIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # ShopCashRecommendExcel
-    def ImagePath(self):
+    def ImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopCashRecommendExcel
-    def InfoLocalizeCodeId(self):
+    def InfoLocalizeCodeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -110,36 +110,36 @@ class ShopCashRecommendExcel(object):
 def ShopCashRecommendExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return ShopCashRecommendExcelStart(builder)
-def ShopCashRecommendExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ShopCashRecommendExcelAddId(builder, id)
-def ShopCashRecommendExcelAddRecommendPageType(builder, recommendPageType): builder.PrependInt32Slot(1, recommendPageType, 0)
-def AddRecommendPageType(builder, recommendPageType):
-    return ShopCashRecommendExcelAddRecommendPageType(builder, recommendPageType)
-def ShopCashRecommendExcelAddShopCashId(builder, shopCashId): builder.PrependInt32Slot(2, shopCashId, 0)
-def AddShopCashId(builder, shopCashId):
-    return ShopCashRecommendExcelAddShopCashId(builder, shopCashId)
-def ShopCashRecommendExcelAddDisplayOrder(builder, displayOrder): builder.PrependInt32Slot(3, displayOrder, 0)
-def AddDisplayOrder(builder, displayOrder):
-    return ShopCashRecommendExcelAddDisplayOrder(builder, displayOrder)
-def ShopCashRecommendExcelAddVisiblePeriodFrom(builder, visiblePeriodFrom): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(visiblePeriodFrom), 0)
-def AddVisiblePeriodFrom(builder, visiblePeriodFrom):
-    return ShopCashRecommendExcelAddVisiblePeriodFrom(builder, visiblePeriodFrom)
-def ShopCashRecommendExcelAddVisiblePeriodTo(builder, visiblePeriodTo): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(visiblePeriodTo), 0)
-def AddVisiblePeriodTo(builder, visiblePeriodTo):
-    return ShopCashRecommendExcelAddVisiblePeriodTo(builder, visiblePeriodTo)
-def ShopCashRecommendExcelAddVideoId(builder, videoId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(videoId), 0)
-def AddVideoId(builder, videoId):
-    return ShopCashRecommendExcelAddVideoId(builder, videoId)
-def ShopCashRecommendExcelStartVideoIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVideoIdVector(builder, numElems):
-    return ShopCashRecommendExcelStartVideoIdVector(builder, numElems)
-def ShopCashRecommendExcelAddImagePath(builder, imagePath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(imagePath), 0)
-def AddImagePath(builder, imagePath):
-    return ShopCashRecommendExcelAddImagePath(builder, imagePath)
-def ShopCashRecommendExcelAddInfoLocalizeCodeId(builder, infoLocalizeCodeId): builder.PrependUint32Slot(8, infoLocalizeCodeId, 0)
-def AddInfoLocalizeCodeId(builder, infoLocalizeCodeId):
-    return ShopCashRecommendExcelAddInfoLocalizeCodeId(builder, infoLocalizeCodeId)
+def ShopCashRecommendExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ShopCashRecommendExcelAddIdField(builder, idField)
+def ShopCashRecommendExcelAddRecommendPageTypeField(builder, recommendPageTypeField): builder.PrependInt32Slot(1, recommendPageTypeField, 0)
+def AddRecommendPageTypeField(builder, recommendPageTypeField):
+    return ShopCashRecommendExcelAddRecommendPageTypeField(builder, recommendPageTypeField)
+def ShopCashRecommendExcelAddShopCashIdField(builder, shopCashIdField): builder.PrependInt32Slot(2, shopCashIdField, 0)
+def AddShopCashIdField(builder, shopCashIdField):
+    return ShopCashRecommendExcelAddShopCashIdField(builder, shopCashIdField)
+def ShopCashRecommendExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(3, displayOrderField, 0)
+def AddDisplayOrderField(builder, displayOrderField):
+    return ShopCashRecommendExcelAddDisplayOrderField(builder, displayOrderField)
+def ShopCashRecommendExcelAddVisiblePeriodFromField(builder, visiblePeriodFromField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(visiblePeriodFromField), 0)
+def AddVisiblePeriodFromField(builder, visiblePeriodFromField):
+    return ShopCashRecommendExcelAddVisiblePeriodFromField(builder, visiblePeriodFromField)
+def ShopCashRecommendExcelAddVisiblePeriodToField(builder, visiblePeriodToField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(visiblePeriodToField), 0)
+def AddVisiblePeriodToField(builder, visiblePeriodToField):
+    return ShopCashRecommendExcelAddVisiblePeriodToField(builder, visiblePeriodToField)
+def ShopCashRecommendExcelAddVideoIdField(builder, videoIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(videoIdField), 0)
+def AddVideoIdField(builder, videoIdField):
+    return ShopCashRecommendExcelAddVideoIdField(builder, videoIdField)
+def ShopCashRecommendExcelStartVideoIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartVideoIdFieldVector(builder, numElems):
+    return ShopCashRecommendExcelStartVideoIdFieldVector(builder, numElems)
+def ShopCashRecommendExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+def AddImagePathField(builder, imagePathField):
+    return ShopCashRecommendExcelAddImagePathField(builder, imagePathField)
+def ShopCashRecommendExcelAddInfoLocalizeCodeIdField(builder, infoLocalizeCodeIdField): builder.PrependUint32Slot(8, infoLocalizeCodeIdField, 0)
+def AddInfoLocalizeCodeIdField(builder, infoLocalizeCodeIdField):
+    return ShopCashRecommendExcelAddInfoLocalizeCodeIdField(builder, infoLocalizeCodeIdField)
 def ShopCashRecommendExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopCashRecommendExcelEnd(builder)
