@@ -25,7 +25,7 @@ class BlendInfo(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BlendInfo
-    def From_(self):
+    def FromValue(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -48,9 +48,9 @@ class BlendInfo(object):
 def BlendInfoStart(builder): builder.StartObject(3)
 def Start(builder):
     return BlendInfoStart(builder)
-def BlendInfoAddFrom_(builder, from_): builder.PrependInt32Slot(0, from_, 0)
-def AddFrom_(builder, from_):
-    return BlendInfoAddFrom_(builder, from_)
+def BlendInfoAddFromValue(builder, fromValue): builder.PrependInt32Slot(0, fromValue, 0)
+def AddFromValue(builder, fromValue):
+    return BlendInfoAddFromValue(builder, fromValue)
 def BlendInfoAddTo(builder, to): builder.PrependInt32Slot(1, to, 0)
 def AddTo(builder, to):
     return BlendInfoAddTo(builder, to)
