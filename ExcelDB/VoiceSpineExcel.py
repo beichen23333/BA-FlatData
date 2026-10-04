@@ -25,21 +25,21 @@ class VoiceSpineExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # VoiceSpineExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # VoiceSpineExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # VoiceSpineExcel
-    def Nation(self, j):
+    def NationField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,26 +47,26 @@ class VoiceSpineExcel(object):
         return 0
 
     # VoiceSpineExcel
-    def NationAsNumpy(self):
+    def NationFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # VoiceSpineExcel
-    def NationLength(self):
+    def NationFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # VoiceSpineExcel
-    def NationIsNone(self):
+    def NationFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # VoiceSpineExcel
-    def Path(self, j):
+    def PathField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,19 +74,19 @@ class VoiceSpineExcel(object):
         return ""
 
     # VoiceSpineExcel
-    def PathLength(self):
+    def PathFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # VoiceSpineExcel
-    def PathIsNone(self):
+    def PathFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # VoiceSpineExcel
-    def SoundVolume(self, j):
+    def SoundVolumeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -94,51 +94,51 @@ class VoiceSpineExcel(object):
         return 0
 
     # VoiceSpineExcel
-    def SoundVolumeAsNumpy(self):
+    def SoundVolumeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
         return 0
 
     # VoiceSpineExcel
-    def SoundVolumeLength(self):
+    def SoundVolumeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # VoiceSpineExcel
-    def SoundVolumeIsNone(self):
+    def SoundVolumeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
 def VoiceSpineExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return VoiceSpineExcelStart(builder)
-def VoiceSpineExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(0, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return VoiceSpineExcelAddUniqueId(builder, uniqueId)
-def VoiceSpineExcelAddId(builder, id): builder.PrependUint32Slot(1, id, 0)
-def AddId(builder, id):
-    return VoiceSpineExcelAddId(builder, id)
-def VoiceSpineExcelAddNation(builder, nation): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nation), 0)
-def AddNation(builder, nation):
-    return VoiceSpineExcelAddNation(builder, nation)
-def VoiceSpineExcelStartNationVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNationVector(builder, numElems):
-    return VoiceSpineExcelStartNationVector(builder, numElems)
-def VoiceSpineExcelAddPath(builder, path): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(path), 0)
-def AddPath(builder, path):
-    return VoiceSpineExcelAddPath(builder, path)
-def VoiceSpineExcelStartPathVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPathVector(builder, numElems):
-    return VoiceSpineExcelStartPathVector(builder, numElems)
-def VoiceSpineExcelAddSoundVolume(builder, soundVolume): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(soundVolume), 0)
-def AddSoundVolume(builder, soundVolume):
-    return VoiceSpineExcelAddSoundVolume(builder, soundVolume)
-def VoiceSpineExcelStartSoundVolumeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSoundVolumeVector(builder, numElems):
-    return VoiceSpineExcelStartSoundVolumeVector(builder, numElems)
+def VoiceSpineExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return VoiceSpineExcelAddUniqueIdField(builder, uniqueIdField)
+def VoiceSpineExcelAddIdField(builder, idField): builder.PrependUint32Slot(1, idField, 0)
+def AddIdField(builder, idField):
+    return VoiceSpineExcelAddIdField(builder, idField)
+def VoiceSpineExcelAddNationField(builder, nationField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+def AddNationField(builder, nationField):
+    return VoiceSpineExcelAddNationField(builder, nationField)
+def VoiceSpineExcelStartNationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartNationFieldVector(builder, numElems):
+    return VoiceSpineExcelStartNationFieldVector(builder, numElems)
+def VoiceSpineExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+def AddPathField(builder, pathField):
+    return VoiceSpineExcelAddPathField(builder, pathField)
+def VoiceSpineExcelStartPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartPathFieldVector(builder, numElems):
+    return VoiceSpineExcelStartPathFieldVector(builder, numElems)
+def VoiceSpineExcelAddSoundVolumeField(builder, soundVolumeField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(soundVolumeField), 0)
+def AddSoundVolumeField(builder, soundVolumeField):
+    return VoiceSpineExcelAddSoundVolumeField(builder, soundVolumeField)
+def VoiceSpineExcelStartSoundVolumeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartSoundVolumeFieldVector(builder, numElems):
+    return VoiceSpineExcelStartSoundVolumeFieldVector(builder, numElems)
 def VoiceSpineExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return VoiceSpineExcelEnd(builder)

@@ -25,49 +25,49 @@ class GachaCombinedCostExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # GachaCombinedCostExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaCombinedCostExcel
-    def Priority(self):
+    def PriorityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaCombinedCostExcel
-    def ConsumeGachaTicketType(self):
+    def ConsumeGachaTicketTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaCombinedCostExcel
-    def ConsumeGachaTicketTypeAmount(self):
+    def ConsumeGachaTicketTypeAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaCombinedCostExcel
-    def ConsumeParcelType(self):
+    def ConsumeParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaCombinedCostExcel
-    def ConsumeParcelId(self):
+    def ConsumeParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaCombinedCostExcel
-    def ConsumeParcelAmount(self):
+    def ConsumeParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class GachaCombinedCostExcel(object):
 def GachaCombinedCostExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return GachaCombinedCostExcelStart(builder)
-def GachaCombinedCostExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return GachaCombinedCostExcelAddGroupId(builder, groupId)
-def GachaCombinedCostExcelAddPriority(builder, priority): builder.PrependInt32Slot(1, priority, 0)
-def AddPriority(builder, priority):
-    return GachaCombinedCostExcelAddPriority(builder, priority)
-def GachaCombinedCostExcelAddConsumeGachaTicketType(builder, consumeGachaTicketType): builder.PrependInt32Slot(2, consumeGachaTicketType, 0)
-def AddConsumeGachaTicketType(builder, consumeGachaTicketType):
-    return GachaCombinedCostExcelAddConsumeGachaTicketType(builder, consumeGachaTicketType)
-def GachaCombinedCostExcelAddConsumeGachaTicketTypeAmount(builder, consumeGachaTicketTypeAmount): builder.PrependInt32Slot(3, consumeGachaTicketTypeAmount, 0)
-def AddConsumeGachaTicketTypeAmount(builder, consumeGachaTicketTypeAmount):
-    return GachaCombinedCostExcelAddConsumeGachaTicketTypeAmount(builder, consumeGachaTicketTypeAmount)
-def GachaCombinedCostExcelAddConsumeParcelType(builder, consumeParcelType): builder.PrependInt32Slot(4, consumeParcelType, 0)
-def AddConsumeParcelType(builder, consumeParcelType):
-    return GachaCombinedCostExcelAddConsumeParcelType(builder, consumeParcelType)
-def GachaCombinedCostExcelAddConsumeParcelId(builder, consumeParcelId): builder.PrependInt32Slot(5, consumeParcelId, 0)
-def AddConsumeParcelId(builder, consumeParcelId):
-    return GachaCombinedCostExcelAddConsumeParcelId(builder, consumeParcelId)
-def GachaCombinedCostExcelAddConsumeParcelAmount(builder, consumeParcelAmount): builder.PrependInt32Slot(6, consumeParcelAmount, 0)
-def AddConsumeParcelAmount(builder, consumeParcelAmount):
-    return GachaCombinedCostExcelAddConsumeParcelAmount(builder, consumeParcelAmount)
+def GachaCombinedCostExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return GachaCombinedCostExcelAddGroupIdField(builder, groupIdField)
+def GachaCombinedCostExcelAddPriorityField(builder, priorityField): builder.PrependInt32Slot(1, priorityField, 0)
+def AddPriorityField(builder, priorityField):
+    return GachaCombinedCostExcelAddPriorityField(builder, priorityField)
+def GachaCombinedCostExcelAddConsumeGachaTicketTypeField(builder, consumeGachaTicketTypeField): builder.PrependInt32Slot(2, consumeGachaTicketTypeField, 0)
+def AddConsumeGachaTicketTypeField(builder, consumeGachaTicketTypeField):
+    return GachaCombinedCostExcelAddConsumeGachaTicketTypeField(builder, consumeGachaTicketTypeField)
+def GachaCombinedCostExcelAddConsumeGachaTicketTypeAmountField(builder, consumeGachaTicketTypeAmountField): builder.PrependInt32Slot(3, consumeGachaTicketTypeAmountField, 0)
+def AddConsumeGachaTicketTypeAmountField(builder, consumeGachaTicketTypeAmountField):
+    return GachaCombinedCostExcelAddConsumeGachaTicketTypeAmountField(builder, consumeGachaTicketTypeAmountField)
+def GachaCombinedCostExcelAddConsumeParcelTypeField(builder, consumeParcelTypeField): builder.PrependInt32Slot(4, consumeParcelTypeField, 0)
+def AddConsumeParcelTypeField(builder, consumeParcelTypeField):
+    return GachaCombinedCostExcelAddConsumeParcelTypeField(builder, consumeParcelTypeField)
+def GachaCombinedCostExcelAddConsumeParcelIdField(builder, consumeParcelIdField): builder.PrependInt32Slot(5, consumeParcelIdField, 0)
+def AddConsumeParcelIdField(builder, consumeParcelIdField):
+    return GachaCombinedCostExcelAddConsumeParcelIdField(builder, consumeParcelIdField)
+def GachaCombinedCostExcelAddConsumeParcelAmountField(builder, consumeParcelAmountField): builder.PrependInt32Slot(6, consumeParcelAmountField, 0)
+def AddConsumeParcelAmountField(builder, consumeParcelAmountField):
+    return GachaCombinedCostExcelAddConsumeParcelAmountField(builder, consumeParcelAmountField)
 def GachaCombinedCostExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return GachaCombinedCostExcelEnd(builder)

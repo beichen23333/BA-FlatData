@@ -25,42 +25,42 @@ class TutorialExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TutorialExcel
-    def ID(self):
+    def IDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TutorialExcel
-    def CompletionReportEventName(self):
+    def CompletionReportEventNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TutorialExcel
-    def CompulsoryTutorial(self):
+    def CompulsoryTutorialField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # TutorialExcel
-    def DescriptionTutorial(self):
+    def DescriptionTutorialField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # TutorialExcel
-    def TutorialStageId(self):
+    def TutorialStageIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TutorialExcel
-    def UIName(self, j):
+    def UINameField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -68,19 +68,19 @@ class TutorialExcel(object):
         return ""
 
     # TutorialExcel
-    def UINameLength(self):
+    def UINameFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # TutorialExcel
-    def UINameIsNone(self):
+    def UINameFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # TutorialExcel
-    def TutorialParentName(self, j):
+    def TutorialParentNameField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -88,47 +88,47 @@ class TutorialExcel(object):
         return ""
 
     # TutorialExcel
-    def TutorialParentNameLength(self):
+    def TutorialParentNameFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # TutorialExcel
-    def TutorialParentNameIsNone(self):
+    def TutorialParentNameFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def TutorialExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return TutorialExcelStart(builder)
-def TutorialExcelAddID(builder, iD): builder.PrependInt32Slot(0, iD, 0)
-def AddID(builder, iD):
-    return TutorialExcelAddID(builder, iD)
-def TutorialExcelAddCompletionReportEventName(builder, completionReportEventName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(completionReportEventName), 0)
-def AddCompletionReportEventName(builder, completionReportEventName):
-    return TutorialExcelAddCompletionReportEventName(builder, completionReportEventName)
-def TutorialExcelAddCompulsoryTutorial(builder, compulsoryTutorial): builder.PrependBoolSlot(2, compulsoryTutorial, 0)
-def AddCompulsoryTutorial(builder, compulsoryTutorial):
-    return TutorialExcelAddCompulsoryTutorial(builder, compulsoryTutorial)
-def TutorialExcelAddDescriptionTutorial(builder, descriptionTutorial): builder.PrependBoolSlot(3, descriptionTutorial, 0)
-def AddDescriptionTutorial(builder, descriptionTutorial):
-    return TutorialExcelAddDescriptionTutorial(builder, descriptionTutorial)
-def TutorialExcelAddTutorialStageId(builder, tutorialStageId): builder.PrependInt32Slot(4, tutorialStageId, 0)
-def AddTutorialStageId(builder, tutorialStageId):
-    return TutorialExcelAddTutorialStageId(builder, tutorialStageId)
-def TutorialExcelAddUIName(builder, uIName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(uIName), 0)
-def AddUIName(builder, uIName):
-    return TutorialExcelAddUIName(builder, uIName)
-def TutorialExcelStartUINameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartUINameVector(builder, numElems):
-    return TutorialExcelStartUINameVector(builder, numElems)
-def TutorialExcelAddTutorialParentName(builder, tutorialParentName): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(tutorialParentName), 0)
-def AddTutorialParentName(builder, tutorialParentName):
-    return TutorialExcelAddTutorialParentName(builder, tutorialParentName)
-def TutorialExcelStartTutorialParentNameVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTutorialParentNameVector(builder, numElems):
-    return TutorialExcelStartTutorialParentNameVector(builder, numElems)
+def TutorialExcelAddIDField(builder, iDField): builder.PrependInt32Slot(0, iDField, 0)
+def AddIDField(builder, iDField):
+    return TutorialExcelAddIDField(builder, iDField)
+def TutorialExcelAddCompletionReportEventNameField(builder, completionReportEventNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(completionReportEventNameField), 0)
+def AddCompletionReportEventNameField(builder, completionReportEventNameField):
+    return TutorialExcelAddCompletionReportEventNameField(builder, completionReportEventNameField)
+def TutorialExcelAddCompulsoryTutorialField(builder, compulsoryTutorialField): builder.PrependBoolSlot(2, compulsoryTutorialField, 0)
+def AddCompulsoryTutorialField(builder, compulsoryTutorialField):
+    return TutorialExcelAddCompulsoryTutorialField(builder, compulsoryTutorialField)
+def TutorialExcelAddDescriptionTutorialField(builder, descriptionTutorialField): builder.PrependBoolSlot(3, descriptionTutorialField, 0)
+def AddDescriptionTutorialField(builder, descriptionTutorialField):
+    return TutorialExcelAddDescriptionTutorialField(builder, descriptionTutorialField)
+def TutorialExcelAddTutorialStageIdField(builder, tutorialStageIdField): builder.PrependInt32Slot(4, tutorialStageIdField, 0)
+def AddTutorialStageIdField(builder, tutorialStageIdField):
+    return TutorialExcelAddTutorialStageIdField(builder, tutorialStageIdField)
+def TutorialExcelAddUINameField(builder, uINameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(uINameField), 0)
+def AddUINameField(builder, uINameField):
+    return TutorialExcelAddUINameField(builder, uINameField)
+def TutorialExcelStartUINameFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartUINameFieldVector(builder, numElems):
+    return TutorialExcelStartUINameFieldVector(builder, numElems)
+def TutorialExcelAddTutorialParentNameField(builder, tutorialParentNameField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(tutorialParentNameField), 0)
+def AddTutorialParentNameField(builder, tutorialParentNameField):
+    return TutorialExcelAddTutorialParentNameField(builder, tutorialParentNameField)
+def TutorialExcelStartTutorialParentNameFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTutorialParentNameFieldVector(builder, numElems):
+    return TutorialExcelStartTutorialParentNameFieldVector(builder, numElems)
 def TutorialExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TutorialExcelEnd(builder)

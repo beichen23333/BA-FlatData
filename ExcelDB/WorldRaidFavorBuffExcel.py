@@ -25,14 +25,14 @@ class WorldRaidFavorBuffExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # WorldRaidFavorBuffExcel
-    def WorldRaidFavorRank(self):
+    def WorldRaidFavorRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidFavorBuffExcel
-    def WorldRaidFavorRankBonus(self):
+    def WorldRaidFavorRankBonusField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class WorldRaidFavorBuffExcel(object):
 def WorldRaidFavorBuffExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return WorldRaidFavorBuffExcelStart(builder)
-def WorldRaidFavorBuffExcelAddWorldRaidFavorRank(builder, worldRaidFavorRank): builder.PrependInt32Slot(0, worldRaidFavorRank, 0)
-def AddWorldRaidFavorRank(builder, worldRaidFavorRank):
-    return WorldRaidFavorBuffExcelAddWorldRaidFavorRank(builder, worldRaidFavorRank)
-def WorldRaidFavorBuffExcelAddWorldRaidFavorRankBonus(builder, worldRaidFavorRankBonus): builder.PrependInt32Slot(1, worldRaidFavorRankBonus, 0)
-def AddWorldRaidFavorRankBonus(builder, worldRaidFavorRankBonus):
-    return WorldRaidFavorBuffExcelAddWorldRaidFavorRankBonus(builder, worldRaidFavorRankBonus)
+def WorldRaidFavorBuffExcelAddWorldRaidFavorRankField(builder, worldRaidFavorRankField): builder.PrependInt32Slot(0, worldRaidFavorRankField, 0)
+def AddWorldRaidFavorRankField(builder, worldRaidFavorRankField):
+    return WorldRaidFavorBuffExcelAddWorldRaidFavorRankField(builder, worldRaidFavorRankField)
+def WorldRaidFavorBuffExcelAddWorldRaidFavorRankBonusField(builder, worldRaidFavorRankBonusField): builder.PrependInt32Slot(1, worldRaidFavorRankBonusField, 0)
+def AddWorldRaidFavorRankBonusField(builder, worldRaidFavorRankBonusField):
+    return WorldRaidFavorBuffExcelAddWorldRaidFavorRankBonusField(builder, worldRaidFavorRankBonusField)
 def WorldRaidFavorBuffExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WorldRaidFavorBuffExcelEnd(builder)

@@ -25,42 +25,42 @@ class BGM_GlobalExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BGM_GlobalExcel
-    def GroupBGMId(self):
+    def GroupBGMIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BGM_GlobalExcel
-    def BGMIdKr(self):
+    def BGMIdKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BGM_GlobalExcel
-    def BGMIdJp(self):
+    def BGMIdJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BGM_GlobalExcel
-    def BGMIdTh(self):
+    def BGMIdThField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BGM_GlobalExcel
-    def BGMIdTw(self):
+    def BGMIdTwField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BGM_GlobalExcel
-    def BGMIdEn(self):
+    def BGMIdEnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -69,24 +69,24 @@ class BGM_GlobalExcel(object):
 def BGM_GlobalExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return BGM_GlobalExcelStart(builder)
-def BGM_GlobalExcelAddGroupBGMId(builder, groupBGMId): builder.PrependInt32Slot(0, groupBGMId, 0)
-def AddGroupBGMId(builder, groupBGMId):
-    return BGM_GlobalExcelAddGroupBGMId(builder, groupBGMId)
-def BGM_GlobalExcelAddBGMIdKr(builder, bGMIdKr): builder.PrependInt32Slot(1, bGMIdKr, 0)
-def AddBGMIdKr(builder, bGMIdKr):
-    return BGM_GlobalExcelAddBGMIdKr(builder, bGMIdKr)
-def BGM_GlobalExcelAddBGMIdJp(builder, bGMIdJp): builder.PrependInt32Slot(2, bGMIdJp, 0)
-def AddBGMIdJp(builder, bGMIdJp):
-    return BGM_GlobalExcelAddBGMIdJp(builder, bGMIdJp)
-def BGM_GlobalExcelAddBGMIdTh(builder, bGMIdTh): builder.PrependInt32Slot(3, bGMIdTh, 0)
-def AddBGMIdTh(builder, bGMIdTh):
-    return BGM_GlobalExcelAddBGMIdTh(builder, bGMIdTh)
-def BGM_GlobalExcelAddBGMIdTw(builder, bGMIdTw): builder.PrependInt32Slot(4, bGMIdTw, 0)
-def AddBGMIdTw(builder, bGMIdTw):
-    return BGM_GlobalExcelAddBGMIdTw(builder, bGMIdTw)
-def BGM_GlobalExcelAddBGMIdEn(builder, bGMIdEn): builder.PrependInt32Slot(5, bGMIdEn, 0)
-def AddBGMIdEn(builder, bGMIdEn):
-    return BGM_GlobalExcelAddBGMIdEn(builder, bGMIdEn)
+def BGM_GlobalExcelAddGroupBGMIdField(builder, groupBGMIdField): builder.PrependInt32Slot(0, groupBGMIdField, 0)
+def AddGroupBGMIdField(builder, groupBGMIdField):
+    return BGM_GlobalExcelAddGroupBGMIdField(builder, groupBGMIdField)
+def BGM_GlobalExcelAddBGMIdKrField(builder, bGMIdKrField): builder.PrependInt32Slot(1, bGMIdKrField, 0)
+def AddBGMIdKrField(builder, bGMIdKrField):
+    return BGM_GlobalExcelAddBGMIdKrField(builder, bGMIdKrField)
+def BGM_GlobalExcelAddBGMIdJpField(builder, bGMIdJpField): builder.PrependInt32Slot(2, bGMIdJpField, 0)
+def AddBGMIdJpField(builder, bGMIdJpField):
+    return BGM_GlobalExcelAddBGMIdJpField(builder, bGMIdJpField)
+def BGM_GlobalExcelAddBGMIdThField(builder, bGMIdThField): builder.PrependInt32Slot(3, bGMIdThField, 0)
+def AddBGMIdThField(builder, bGMIdThField):
+    return BGM_GlobalExcelAddBGMIdThField(builder, bGMIdThField)
+def BGM_GlobalExcelAddBGMIdTwField(builder, bGMIdTwField): builder.PrependInt32Slot(4, bGMIdTwField, 0)
+def AddBGMIdTwField(builder, bGMIdTwField):
+    return BGM_GlobalExcelAddBGMIdTwField(builder, bGMIdTwField)
+def BGM_GlobalExcelAddBGMIdEnField(builder, bGMIdEnField): builder.PrependInt32Slot(5, bGMIdEnField, 0)
+def AddBGMIdEnField(builder, bGMIdEnField):
+    return BGM_GlobalExcelAddBGMIdEnField(builder, bGMIdEnField)
 def BGM_GlobalExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return BGM_GlobalExcelEnd(builder)

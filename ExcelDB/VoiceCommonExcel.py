@@ -25,21 +25,21 @@ class VoiceCommonExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # VoiceCommonExcel
-    def VoiceEvent(self):
+    def VoiceEventField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # VoiceCommonExcel
-    def Rate(self):
+    def RateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # VoiceCommonExcel
-    def VoiceHash(self, j):
+    def VoiceHashField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,39 +47,39 @@ class VoiceCommonExcel(object):
         return 0
 
     # VoiceCommonExcel
-    def VoiceHashAsNumpy(self):
+    def VoiceHashFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
         return 0
 
     # VoiceCommonExcel
-    def VoiceHashLength(self):
+    def VoiceHashFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # VoiceCommonExcel
-    def VoiceHashIsNone(self):
+    def VoiceHashFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
 def VoiceCommonExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return VoiceCommonExcelStart(builder)
-def VoiceCommonExcelAddVoiceEvent(builder, voiceEvent): builder.PrependInt32Slot(0, voiceEvent, 0)
-def AddVoiceEvent(builder, voiceEvent):
-    return VoiceCommonExcelAddVoiceEvent(builder, voiceEvent)
-def VoiceCommonExcelAddRate(builder, rate): builder.PrependInt32Slot(1, rate, 0)
-def AddRate(builder, rate):
-    return VoiceCommonExcelAddRate(builder, rate)
-def VoiceCommonExcelAddVoiceHash(builder, voiceHash): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(voiceHash), 0)
-def AddVoiceHash(builder, voiceHash):
-    return VoiceCommonExcelAddVoiceHash(builder, voiceHash)
-def VoiceCommonExcelStartVoiceHashVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVoiceHashVector(builder, numElems):
-    return VoiceCommonExcelStartVoiceHashVector(builder, numElems)
+def VoiceCommonExcelAddVoiceEventField(builder, voiceEventField): builder.PrependInt32Slot(0, voiceEventField, 0)
+def AddVoiceEventField(builder, voiceEventField):
+    return VoiceCommonExcelAddVoiceEventField(builder, voiceEventField)
+def VoiceCommonExcelAddRateField(builder, rateField): builder.PrependInt32Slot(1, rateField, 0)
+def AddRateField(builder, rateField):
+    return VoiceCommonExcelAddRateField(builder, rateField)
+def VoiceCommonExcelAddVoiceHashField(builder, voiceHashField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(voiceHashField), 0)
+def AddVoiceHashField(builder, voiceHashField):
+    return VoiceCommonExcelAddVoiceHashField(builder, voiceHashField)
+def VoiceCommonExcelStartVoiceHashFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartVoiceHashFieldVector(builder, numElems):
+    return VoiceCommonExcelStartVoiceHashFieldVector(builder, numElems)
 def VoiceCommonExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return VoiceCommonExcelEnd(builder)

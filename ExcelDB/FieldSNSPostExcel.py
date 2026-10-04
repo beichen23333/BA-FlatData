@@ -25,77 +25,77 @@ class FieldSNSPostExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FieldSNSPostExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def GroupInteractionId(self):
+    def GroupInteractionIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def PostType(self):
+    def PostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def SNSPostId(self):
+    def SNSPostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def IsSequence(self):
+    def IsSequenceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # FieldSNSPostExcel
-    def Order(self):
+    def OrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def DelayTime(self):
+    def DelayTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def RepostMinNum(self):
+    def RepostMinNumField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def RepostMaxNum(self):
+    def RepostMaxNumField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def FavorMinNum(self):
+    def FavorMinNumField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldSNSPostExcel
-    def FavorMaxNum(self):
+    def FavorMaxNumField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -104,39 +104,39 @@ class FieldSNSPostExcel(object):
 def FieldSNSPostExcelStart(builder): builder.StartObject(11)
 def Start(builder):
     return FieldSNSPostExcelStart(builder)
-def FieldSNSPostExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return FieldSNSPostExcelAddId(builder, id)
-def FieldSNSPostExcelAddGroupInteractionId(builder, groupInteractionId): builder.PrependInt32Slot(1, groupInteractionId, 0)
-def AddGroupInteractionId(builder, groupInteractionId):
-    return FieldSNSPostExcelAddGroupInteractionId(builder, groupInteractionId)
-def FieldSNSPostExcelAddPostType(builder, postType): builder.PrependInt32Slot(2, postType, 0)
-def AddPostType(builder, postType):
-    return FieldSNSPostExcelAddPostType(builder, postType)
-def FieldSNSPostExcelAddSNSPostId(builder, sNSPostId): builder.PrependInt32Slot(3, sNSPostId, 0)
-def AddSNSPostId(builder, sNSPostId):
-    return FieldSNSPostExcelAddSNSPostId(builder, sNSPostId)
-def FieldSNSPostExcelAddIsSequence(builder, isSequence): builder.PrependBoolSlot(4, isSequence, 0)
-def AddIsSequence(builder, isSequence):
-    return FieldSNSPostExcelAddIsSequence(builder, isSequence)
-def FieldSNSPostExcelAddOrder(builder, order): builder.PrependInt32Slot(5, order, 0)
-def AddOrder(builder, order):
-    return FieldSNSPostExcelAddOrder(builder, order)
-def FieldSNSPostExcelAddDelayTime(builder, delayTime): builder.PrependInt32Slot(6, delayTime, 0)
-def AddDelayTime(builder, delayTime):
-    return FieldSNSPostExcelAddDelayTime(builder, delayTime)
-def FieldSNSPostExcelAddRepostMinNum(builder, repostMinNum): builder.PrependInt32Slot(7, repostMinNum, 0)
-def AddRepostMinNum(builder, repostMinNum):
-    return FieldSNSPostExcelAddRepostMinNum(builder, repostMinNum)
-def FieldSNSPostExcelAddRepostMaxNum(builder, repostMaxNum): builder.PrependInt32Slot(8, repostMaxNum, 0)
-def AddRepostMaxNum(builder, repostMaxNum):
-    return FieldSNSPostExcelAddRepostMaxNum(builder, repostMaxNum)
-def FieldSNSPostExcelAddFavorMinNum(builder, favorMinNum): builder.PrependInt32Slot(9, favorMinNum, 0)
-def AddFavorMinNum(builder, favorMinNum):
-    return FieldSNSPostExcelAddFavorMinNum(builder, favorMinNum)
-def FieldSNSPostExcelAddFavorMaxNum(builder, favorMaxNum): builder.PrependInt32Slot(10, favorMaxNum, 0)
-def AddFavorMaxNum(builder, favorMaxNum):
-    return FieldSNSPostExcelAddFavorMaxNum(builder, favorMaxNum)
+def FieldSNSPostExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return FieldSNSPostExcelAddIdField(builder, idField)
+def FieldSNSPostExcelAddGroupInteractionIdField(builder, groupInteractionIdField): builder.PrependInt32Slot(1, groupInteractionIdField, 0)
+def AddGroupInteractionIdField(builder, groupInteractionIdField):
+    return FieldSNSPostExcelAddGroupInteractionIdField(builder, groupInteractionIdField)
+def FieldSNSPostExcelAddPostTypeField(builder, postTypeField): builder.PrependInt32Slot(2, postTypeField, 0)
+def AddPostTypeField(builder, postTypeField):
+    return FieldSNSPostExcelAddPostTypeField(builder, postTypeField)
+def FieldSNSPostExcelAddSNSPostIdField(builder, sNSPostIdField): builder.PrependInt32Slot(3, sNSPostIdField, 0)
+def AddSNSPostIdField(builder, sNSPostIdField):
+    return FieldSNSPostExcelAddSNSPostIdField(builder, sNSPostIdField)
+def FieldSNSPostExcelAddIsSequenceField(builder, isSequenceField): builder.PrependBoolSlot(4, isSequenceField, 0)
+def AddIsSequenceField(builder, isSequenceField):
+    return FieldSNSPostExcelAddIsSequenceField(builder, isSequenceField)
+def FieldSNSPostExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(5, orderField, 0)
+def AddOrderField(builder, orderField):
+    return FieldSNSPostExcelAddOrderField(builder, orderField)
+def FieldSNSPostExcelAddDelayTimeField(builder, delayTimeField): builder.PrependInt32Slot(6, delayTimeField, 0)
+def AddDelayTimeField(builder, delayTimeField):
+    return FieldSNSPostExcelAddDelayTimeField(builder, delayTimeField)
+def FieldSNSPostExcelAddRepostMinNumField(builder, repostMinNumField): builder.PrependInt32Slot(7, repostMinNumField, 0)
+def AddRepostMinNumField(builder, repostMinNumField):
+    return FieldSNSPostExcelAddRepostMinNumField(builder, repostMinNumField)
+def FieldSNSPostExcelAddRepostMaxNumField(builder, repostMaxNumField): builder.PrependInt32Slot(8, repostMaxNumField, 0)
+def AddRepostMaxNumField(builder, repostMaxNumField):
+    return FieldSNSPostExcelAddRepostMaxNumField(builder, repostMaxNumField)
+def FieldSNSPostExcelAddFavorMinNumField(builder, favorMinNumField): builder.PrependInt32Slot(9, favorMinNumField, 0)
+def AddFavorMinNumField(builder, favorMinNumField):
+    return FieldSNSPostExcelAddFavorMinNumField(builder, favorMinNumField)
+def FieldSNSPostExcelAddFavorMaxNumField(builder, favorMaxNumField): builder.PrependInt32Slot(10, favorMaxNumField, 0)
+def AddFavorMaxNumField(builder, favorMaxNumField):
+    return FieldSNSPostExcelAddFavorMaxNumField(builder, favorMaxNumField)
 def FieldSNSPostExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FieldSNSPostExcelEnd(builder)

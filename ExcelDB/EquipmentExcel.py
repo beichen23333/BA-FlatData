@@ -25,91 +25,91 @@ class EquipmentExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EquipmentExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def EquipmentCategory(self):
+    def EquipmentCategoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def Rarity(self):
+    def RarityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def Wear(self):
+    def WearField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EquipmentExcel
-    def MaxLevel(self):
+    def MaxLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def RecipeId(self):
+    def RecipeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def TierInit(self):
+    def TierInitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def NextTierEquipment(self):
+    def NextTierEquipmentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def StackableMax(self):
+    def StackableMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def Icon(self):
+    def IconField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EquipmentExcel
-    def ImageName(self):
+    def ImageNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EquipmentExcel
-    def Tags(self, j):
+    def TagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             a = self._tab.Vector(o)
@@ -117,54 +117,54 @@ class EquipmentExcel(object):
         return 0
 
     # EquipmentExcel
-    def TagsAsNumpy(self):
+    def TagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EquipmentExcel
-    def TagsLength(self):
+    def TagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EquipmentExcel
-    def TagsIsNone(self):
+    def TagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         return o == 0
 
     # EquipmentExcel
-    def CraftQualityTier0(self):
+    def CraftQualityTier0Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def CraftQualityTier1(self):
+    def CraftQualityTier1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def CraftQualityTier2(self):
+    def CraftQualityTier2Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def ShiftingCraftQuality(self):
+    def ShiftingCraftQualityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def ShopCategory(self, j):
+    def ShopCategoryField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             a = self._tab.Vector(o)
@@ -172,33 +172,33 @@ class EquipmentExcel(object):
         return 0
 
     # EquipmentExcel
-    def ShopCategoryAsNumpy(self):
+    def ShopCategoryFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
         return 0
 
     # EquipmentExcel
-    def ShopCategoryLength(self):
+    def ShopCategoryFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EquipmentExcel
-    def ShopCategoryIsNone(self):
+    def ShopCategoryFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         return o == 0
 
     # EquipmentExcel
-    def ShortcutTypeId(self):
+    def ShortcutTypeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EquipmentExcel
-    def RedirectItemId(self):
+    def RedirectItemIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -207,72 +207,72 @@ class EquipmentExcel(object):
 def EquipmentExcelStart(builder): builder.StartObject(20)
 def Start(builder):
     return EquipmentExcelStart(builder)
-def EquipmentExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return EquipmentExcelAddId(builder, id)
-def EquipmentExcelAddEquipmentCategory(builder, equipmentCategory): builder.PrependInt32Slot(1, equipmentCategory, 0)
-def AddEquipmentCategory(builder, equipmentCategory):
-    return EquipmentExcelAddEquipmentCategory(builder, equipmentCategory)
-def EquipmentExcelAddRarity(builder, rarity): builder.PrependInt32Slot(2, rarity, 0)
-def AddRarity(builder, rarity):
-    return EquipmentExcelAddRarity(builder, rarity)
-def EquipmentExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(3, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return EquipmentExcelAddLocalizeEtcId(builder, localizeEtcId)
-def EquipmentExcelAddWear(builder, wear): builder.PrependBoolSlot(4, wear, 0)
-def AddWear(builder, wear):
-    return EquipmentExcelAddWear(builder, wear)
-def EquipmentExcelAddMaxLevel(builder, maxLevel): builder.PrependInt32Slot(5, maxLevel, 0)
-def AddMaxLevel(builder, maxLevel):
-    return EquipmentExcelAddMaxLevel(builder, maxLevel)
-def EquipmentExcelAddRecipeId(builder, recipeId): builder.PrependInt32Slot(6, recipeId, 0)
-def AddRecipeId(builder, recipeId):
-    return EquipmentExcelAddRecipeId(builder, recipeId)
-def EquipmentExcelAddTierInit(builder, tierInit): builder.PrependInt32Slot(7, tierInit, 0)
-def AddTierInit(builder, tierInit):
-    return EquipmentExcelAddTierInit(builder, tierInit)
-def EquipmentExcelAddNextTierEquipment(builder, nextTierEquipment): builder.PrependInt32Slot(8, nextTierEquipment, 0)
-def AddNextTierEquipment(builder, nextTierEquipment):
-    return EquipmentExcelAddNextTierEquipment(builder, nextTierEquipment)
-def EquipmentExcelAddStackableMax(builder, stackableMax): builder.PrependInt32Slot(9, stackableMax, 0)
-def AddStackableMax(builder, stackableMax):
-    return EquipmentExcelAddStackableMax(builder, stackableMax)
-def EquipmentExcelAddIcon(builder, icon): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(icon), 0)
-def AddIcon(builder, icon):
-    return EquipmentExcelAddIcon(builder, icon)
-def EquipmentExcelAddImageName(builder, imageName): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(imageName), 0)
-def AddImageName(builder, imageName):
-    return EquipmentExcelAddImageName(builder, imageName)
-def EquipmentExcelAddTags(builder, tags): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(tags), 0)
-def AddTags(builder, tags):
-    return EquipmentExcelAddTags(builder, tags)
-def EquipmentExcelStartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTagsVector(builder, numElems):
-    return EquipmentExcelStartTagsVector(builder, numElems)
-def EquipmentExcelAddCraftQualityTier0(builder, craftQualityTier0): builder.PrependInt32Slot(13, craftQualityTier0, 0)
-def AddCraftQualityTier0(builder, craftQualityTier0):
-    return EquipmentExcelAddCraftQualityTier0(builder, craftQualityTier0)
-def EquipmentExcelAddCraftQualityTier1(builder, craftQualityTier1): builder.PrependInt32Slot(14, craftQualityTier1, 0)
-def AddCraftQualityTier1(builder, craftQualityTier1):
-    return EquipmentExcelAddCraftQualityTier1(builder, craftQualityTier1)
-def EquipmentExcelAddCraftQualityTier2(builder, craftQualityTier2): builder.PrependInt32Slot(15, craftQualityTier2, 0)
-def AddCraftQualityTier2(builder, craftQualityTier2):
-    return EquipmentExcelAddCraftQualityTier2(builder, craftQualityTier2)
-def EquipmentExcelAddShiftingCraftQuality(builder, shiftingCraftQuality): builder.PrependInt32Slot(16, shiftingCraftQuality, 0)
-def AddShiftingCraftQuality(builder, shiftingCraftQuality):
-    return EquipmentExcelAddShiftingCraftQuality(builder, shiftingCraftQuality)
-def EquipmentExcelAddShopCategory(builder, shopCategory): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(shopCategory), 0)
-def AddShopCategory(builder, shopCategory):
-    return EquipmentExcelAddShopCategory(builder, shopCategory)
-def EquipmentExcelStartShopCategoryVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShopCategoryVector(builder, numElems):
-    return EquipmentExcelStartShopCategoryVector(builder, numElems)
-def EquipmentExcelAddShortcutTypeId(builder, shortcutTypeId): builder.PrependInt32Slot(18, shortcutTypeId, 0)
-def AddShortcutTypeId(builder, shortcutTypeId):
-    return EquipmentExcelAddShortcutTypeId(builder, shortcutTypeId)
-def EquipmentExcelAddRedirectItemId(builder, redirectItemId): builder.PrependInt32Slot(19, redirectItemId, 0)
-def AddRedirectItemId(builder, redirectItemId):
-    return EquipmentExcelAddRedirectItemId(builder, redirectItemId)
+def EquipmentExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return EquipmentExcelAddIdField(builder, idField)
+def EquipmentExcelAddEquipmentCategoryField(builder, equipmentCategoryField): builder.PrependInt32Slot(1, equipmentCategoryField, 0)
+def AddEquipmentCategoryField(builder, equipmentCategoryField):
+    return EquipmentExcelAddEquipmentCategoryField(builder, equipmentCategoryField)
+def EquipmentExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(2, rarityField, 0)
+def AddRarityField(builder, rarityField):
+    return EquipmentExcelAddRarityField(builder, rarityField)
+def EquipmentExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(3, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return EquipmentExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def EquipmentExcelAddWearField(builder, wearField): builder.PrependBoolSlot(4, wearField, 0)
+def AddWearField(builder, wearField):
+    return EquipmentExcelAddWearField(builder, wearField)
+def EquipmentExcelAddMaxLevelField(builder, maxLevelField): builder.PrependInt32Slot(5, maxLevelField, 0)
+def AddMaxLevelField(builder, maxLevelField):
+    return EquipmentExcelAddMaxLevelField(builder, maxLevelField)
+def EquipmentExcelAddRecipeIdField(builder, recipeIdField): builder.PrependInt32Slot(6, recipeIdField, 0)
+def AddRecipeIdField(builder, recipeIdField):
+    return EquipmentExcelAddRecipeIdField(builder, recipeIdField)
+def EquipmentExcelAddTierInitField(builder, tierInitField): builder.PrependInt32Slot(7, tierInitField, 0)
+def AddTierInitField(builder, tierInitField):
+    return EquipmentExcelAddTierInitField(builder, tierInitField)
+def EquipmentExcelAddNextTierEquipmentField(builder, nextTierEquipmentField): builder.PrependInt32Slot(8, nextTierEquipmentField, 0)
+def AddNextTierEquipmentField(builder, nextTierEquipmentField):
+    return EquipmentExcelAddNextTierEquipmentField(builder, nextTierEquipmentField)
+def EquipmentExcelAddStackableMaxField(builder, stackableMaxField): builder.PrependInt32Slot(9, stackableMaxField, 0)
+def AddStackableMaxField(builder, stackableMaxField):
+    return EquipmentExcelAddStackableMaxField(builder, stackableMaxField)
+def EquipmentExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+def AddIconField(builder, iconField):
+    return EquipmentExcelAddIconField(builder, iconField)
+def EquipmentExcelAddImageNameField(builder, imageNameField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(imageNameField), 0)
+def AddImageNameField(builder, imageNameField):
+    return EquipmentExcelAddImageNameField(builder, imageNameField)
+def EquipmentExcelAddTagsField(builder, tagsField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+def AddTagsField(builder, tagsField):
+    return EquipmentExcelAddTagsField(builder, tagsField)
+def EquipmentExcelStartTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTagsFieldVector(builder, numElems):
+    return EquipmentExcelStartTagsFieldVector(builder, numElems)
+def EquipmentExcelAddCraftQualityTier0Field(builder, craftQualityTier0Field): builder.PrependInt32Slot(13, craftQualityTier0Field, 0)
+def AddCraftQualityTier0Field(builder, craftQualityTier0Field):
+    return EquipmentExcelAddCraftQualityTier0Field(builder, craftQualityTier0Field)
+def EquipmentExcelAddCraftQualityTier1Field(builder, craftQualityTier1Field): builder.PrependInt32Slot(14, craftQualityTier1Field, 0)
+def AddCraftQualityTier1Field(builder, craftQualityTier1Field):
+    return EquipmentExcelAddCraftQualityTier1Field(builder, craftQualityTier1Field)
+def EquipmentExcelAddCraftQualityTier2Field(builder, craftQualityTier2Field): builder.PrependInt32Slot(15, craftQualityTier2Field, 0)
+def AddCraftQualityTier2Field(builder, craftQualityTier2Field):
+    return EquipmentExcelAddCraftQualityTier2Field(builder, craftQualityTier2Field)
+def EquipmentExcelAddShiftingCraftQualityField(builder, shiftingCraftQualityField): builder.PrependInt32Slot(16, shiftingCraftQualityField, 0)
+def AddShiftingCraftQualityField(builder, shiftingCraftQualityField):
+    return EquipmentExcelAddShiftingCraftQualityField(builder, shiftingCraftQualityField)
+def EquipmentExcelAddShopCategoryField(builder, shopCategoryField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(shopCategoryField), 0)
+def AddShopCategoryField(builder, shopCategoryField):
+    return EquipmentExcelAddShopCategoryField(builder, shopCategoryField)
+def EquipmentExcelStartShopCategoryFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShopCategoryFieldVector(builder, numElems):
+    return EquipmentExcelStartShopCategoryFieldVector(builder, numElems)
+def EquipmentExcelAddShortcutTypeIdField(builder, shortcutTypeIdField): builder.PrependInt32Slot(18, shortcutTypeIdField, 0)
+def AddShortcutTypeIdField(builder, shortcutTypeIdField):
+    return EquipmentExcelAddShortcutTypeIdField(builder, shortcutTypeIdField)
+def EquipmentExcelAddRedirectItemIdField(builder, redirectItemIdField): builder.PrependInt32Slot(19, redirectItemIdField, 0)
+def AddRedirectItemIdField(builder, redirectItemIdField):
+    return EquipmentExcelAddRedirectItemIdField(builder, redirectItemIdField)
 def EquipmentExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EquipmentExcelEnd(builder)

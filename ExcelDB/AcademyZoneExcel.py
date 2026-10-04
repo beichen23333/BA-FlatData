@@ -25,35 +25,35 @@ class AcademyZoneExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AcademyZoneExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyZoneExcel
-    def LocationId(self):
+    def LocationIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyZoneExcel
-    def LocationRankForUnlock(self):
+    def LocationRankForUnlockField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyZoneExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyZoneExcel
-    def StudentVisitProb(self, j):
+    def StudentVisitProbField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -61,33 +61,33 @@ class AcademyZoneExcel(object):
         return 0
 
     # AcademyZoneExcel
-    def StudentVisitProbAsNumpy(self):
+    def StudentVisitProbFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # AcademyZoneExcel
-    def StudentVisitProbLength(self):
+    def StudentVisitProbFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # AcademyZoneExcel
-    def StudentVisitProbIsNone(self):
+    def StudentVisitProbFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # AcademyZoneExcel
-    def RewardGroupId(self):
+    def RewardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyZoneExcel
-    def Tags(self, j):
+    def TagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -95,54 +95,54 @@ class AcademyZoneExcel(object):
         return 0
 
     # AcademyZoneExcel
-    def TagsAsNumpy(self):
+    def TagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # AcademyZoneExcel
-    def TagsLength(self):
+    def TagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # AcademyZoneExcel
-    def TagsIsNone(self):
+    def TagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def AcademyZoneExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return AcademyZoneExcelStart(builder)
-def AcademyZoneExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return AcademyZoneExcelAddId(builder, id)
-def AcademyZoneExcelAddLocationId(builder, locationId): builder.PrependInt32Slot(1, locationId, 0)
-def AddLocationId(builder, locationId):
-    return AcademyZoneExcelAddLocationId(builder, locationId)
-def AcademyZoneExcelAddLocationRankForUnlock(builder, locationRankForUnlock): builder.PrependInt32Slot(2, locationRankForUnlock, 0)
-def AddLocationRankForUnlock(builder, locationRankForUnlock):
-    return AcademyZoneExcelAddLocationRankForUnlock(builder, locationRankForUnlock)
-def AcademyZoneExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(3, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return AcademyZoneExcelAddLocalizeEtcId(builder, localizeEtcId)
-def AcademyZoneExcelAddStudentVisitProb(builder, studentVisitProb): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(studentVisitProb), 0)
-def AddStudentVisitProb(builder, studentVisitProb):
-    return AcademyZoneExcelAddStudentVisitProb(builder, studentVisitProb)
-def AcademyZoneExcelStartStudentVisitProbVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStudentVisitProbVector(builder, numElems):
-    return AcademyZoneExcelStartStudentVisitProbVector(builder, numElems)
-def AcademyZoneExcelAddRewardGroupId(builder, rewardGroupId): builder.PrependInt32Slot(5, rewardGroupId, 0)
-def AddRewardGroupId(builder, rewardGroupId):
-    return AcademyZoneExcelAddRewardGroupId(builder, rewardGroupId)
-def AcademyZoneExcelAddTags(builder, tags): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(tags), 0)
-def AddTags(builder, tags):
-    return AcademyZoneExcelAddTags(builder, tags)
-def AcademyZoneExcelStartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTagsVector(builder, numElems):
-    return AcademyZoneExcelStartTagsVector(builder, numElems)
+def AcademyZoneExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return AcademyZoneExcelAddIdField(builder, idField)
+def AcademyZoneExcelAddLocationIdField(builder, locationIdField): builder.PrependInt32Slot(1, locationIdField, 0)
+def AddLocationIdField(builder, locationIdField):
+    return AcademyZoneExcelAddLocationIdField(builder, locationIdField)
+def AcademyZoneExcelAddLocationRankForUnlockField(builder, locationRankForUnlockField): builder.PrependInt32Slot(2, locationRankForUnlockField, 0)
+def AddLocationRankForUnlockField(builder, locationRankForUnlockField):
+    return AcademyZoneExcelAddLocationRankForUnlockField(builder, locationRankForUnlockField)
+def AcademyZoneExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(3, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return AcademyZoneExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def AcademyZoneExcelAddStudentVisitProbField(builder, studentVisitProbField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(studentVisitProbField), 0)
+def AddStudentVisitProbField(builder, studentVisitProbField):
+    return AcademyZoneExcelAddStudentVisitProbField(builder, studentVisitProbField)
+def AcademyZoneExcelStartStudentVisitProbFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStudentVisitProbFieldVector(builder, numElems):
+    return AcademyZoneExcelStartStudentVisitProbFieldVector(builder, numElems)
+def AcademyZoneExcelAddRewardGroupIdField(builder, rewardGroupIdField): builder.PrependInt32Slot(5, rewardGroupIdField, 0)
+def AddRewardGroupIdField(builder, rewardGroupIdField):
+    return AcademyZoneExcelAddRewardGroupIdField(builder, rewardGroupIdField)
+def AcademyZoneExcelAddTagsField(builder, tagsField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+def AddTagsField(builder, tagsField):
+    return AcademyZoneExcelAddTagsField(builder, tagsField)
+def AcademyZoneExcelStartTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTagsFieldVector(builder, numElems):
+    return AcademyZoneExcelStartTagsFieldVector(builder, numElems)
 def AcademyZoneExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return AcademyZoneExcelEnd(builder)

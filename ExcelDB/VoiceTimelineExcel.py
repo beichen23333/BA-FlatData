@@ -25,21 +25,21 @@ class VoiceTimelineExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # VoiceTimelineExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # VoiceTimelineExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # VoiceTimelineExcel
-    def Nation(self, j):
+    def NationField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,26 +47,26 @@ class VoiceTimelineExcel(object):
         return 0
 
     # VoiceTimelineExcel
-    def NationAsNumpy(self):
+    def NationFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # VoiceTimelineExcel
-    def NationLength(self):
+    def NationFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # VoiceTimelineExcel
-    def NationIsNone(self):
+    def NationFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # VoiceTimelineExcel
-    def Path(self, j):
+    def PathField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,19 +74,19 @@ class VoiceTimelineExcel(object):
         return ""
 
     # VoiceTimelineExcel
-    def PathLength(self):
+    def PathFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # VoiceTimelineExcel
-    def PathIsNone(self):
+    def PathFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # VoiceTimelineExcel
-    def SoundVolume(self, j):
+    def SoundVolumeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -94,51 +94,51 @@ class VoiceTimelineExcel(object):
         return 0
 
     # VoiceTimelineExcel
-    def SoundVolumeAsNumpy(self):
+    def SoundVolumeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
         return 0
 
     # VoiceTimelineExcel
-    def SoundVolumeLength(self):
+    def SoundVolumeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # VoiceTimelineExcel
-    def SoundVolumeIsNone(self):
+    def SoundVolumeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
 def VoiceTimelineExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return VoiceTimelineExcelStart(builder)
-def VoiceTimelineExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(0, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return VoiceTimelineExcelAddUniqueId(builder, uniqueId)
-def VoiceTimelineExcelAddId(builder, id): builder.PrependUint32Slot(1, id, 0)
-def AddId(builder, id):
-    return VoiceTimelineExcelAddId(builder, id)
-def VoiceTimelineExcelAddNation(builder, nation): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nation), 0)
-def AddNation(builder, nation):
-    return VoiceTimelineExcelAddNation(builder, nation)
-def VoiceTimelineExcelStartNationVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNationVector(builder, numElems):
-    return VoiceTimelineExcelStartNationVector(builder, numElems)
-def VoiceTimelineExcelAddPath(builder, path): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(path), 0)
-def AddPath(builder, path):
-    return VoiceTimelineExcelAddPath(builder, path)
-def VoiceTimelineExcelStartPathVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPathVector(builder, numElems):
-    return VoiceTimelineExcelStartPathVector(builder, numElems)
-def VoiceTimelineExcelAddSoundVolume(builder, soundVolume): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(soundVolume), 0)
-def AddSoundVolume(builder, soundVolume):
-    return VoiceTimelineExcelAddSoundVolume(builder, soundVolume)
-def VoiceTimelineExcelStartSoundVolumeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSoundVolumeVector(builder, numElems):
-    return VoiceTimelineExcelStartSoundVolumeVector(builder, numElems)
+def VoiceTimelineExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return VoiceTimelineExcelAddUniqueIdField(builder, uniqueIdField)
+def VoiceTimelineExcelAddIdField(builder, idField): builder.PrependUint32Slot(1, idField, 0)
+def AddIdField(builder, idField):
+    return VoiceTimelineExcelAddIdField(builder, idField)
+def VoiceTimelineExcelAddNationField(builder, nationField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+def AddNationField(builder, nationField):
+    return VoiceTimelineExcelAddNationField(builder, nationField)
+def VoiceTimelineExcelStartNationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartNationFieldVector(builder, numElems):
+    return VoiceTimelineExcelStartNationFieldVector(builder, numElems)
+def VoiceTimelineExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+def AddPathField(builder, pathField):
+    return VoiceTimelineExcelAddPathField(builder, pathField)
+def VoiceTimelineExcelStartPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartPathFieldVector(builder, numElems):
+    return VoiceTimelineExcelStartPathFieldVector(builder, numElems)
+def VoiceTimelineExcelAddSoundVolumeField(builder, soundVolumeField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(soundVolumeField), 0)
+def AddSoundVolumeField(builder, soundVolumeField):
+    return VoiceTimelineExcelAddSoundVolumeField(builder, soundVolumeField)
+def VoiceTimelineExcelStartSoundVolumeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartSoundVolumeFieldVector(builder, numElems):
+    return VoiceTimelineExcelStartSoundVolumeFieldVector(builder, numElems)
 def VoiceTimelineExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return VoiceTimelineExcelEnd(builder)

@@ -25,28 +25,28 @@ class RecipeSelectionAutoUseExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # RecipeSelectionAutoUseExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # RecipeSelectionAutoUseExcel
-    def ParcelType(self):
+    def ParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # RecipeSelectionAutoUseExcel
-    def TargetItemId(self):
+    def TargetItemIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # RecipeSelectionAutoUseExcel
-    def Priority(self, j):
+    def PriorityField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -54,42 +54,42 @@ class RecipeSelectionAutoUseExcel(object):
         return 0
 
     # RecipeSelectionAutoUseExcel
-    def PriorityAsNumpy(self):
+    def PriorityFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # RecipeSelectionAutoUseExcel
-    def PriorityLength(self):
+    def PriorityFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # RecipeSelectionAutoUseExcel
-    def PriorityIsNone(self):
+    def PriorityFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
 def RecipeSelectionAutoUseExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return RecipeSelectionAutoUseExcelStart(builder)
-def RecipeSelectionAutoUseExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return RecipeSelectionAutoUseExcelAddId(builder, id)
-def RecipeSelectionAutoUseExcelAddParcelType(builder, parcelType): builder.PrependInt32Slot(1, parcelType, 0)
-def AddParcelType(builder, parcelType):
-    return RecipeSelectionAutoUseExcelAddParcelType(builder, parcelType)
-def RecipeSelectionAutoUseExcelAddTargetItemId(builder, targetItemId): builder.PrependInt32Slot(2, targetItemId, 0)
-def AddTargetItemId(builder, targetItemId):
-    return RecipeSelectionAutoUseExcelAddTargetItemId(builder, targetItemId)
-def RecipeSelectionAutoUseExcelAddPriority(builder, priority): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(priority), 0)
-def AddPriority(builder, priority):
-    return RecipeSelectionAutoUseExcelAddPriority(builder, priority)
-def RecipeSelectionAutoUseExcelStartPriorityVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPriorityVector(builder, numElems):
-    return RecipeSelectionAutoUseExcelStartPriorityVector(builder, numElems)
+def RecipeSelectionAutoUseExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return RecipeSelectionAutoUseExcelAddIdField(builder, idField)
+def RecipeSelectionAutoUseExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependInt32Slot(1, parcelTypeField, 0)
+def AddParcelTypeField(builder, parcelTypeField):
+    return RecipeSelectionAutoUseExcelAddParcelTypeField(builder, parcelTypeField)
+def RecipeSelectionAutoUseExcelAddTargetItemIdField(builder, targetItemIdField): builder.PrependInt32Slot(2, targetItemIdField, 0)
+def AddTargetItemIdField(builder, targetItemIdField):
+    return RecipeSelectionAutoUseExcelAddTargetItemIdField(builder, targetItemIdField)
+def RecipeSelectionAutoUseExcelAddPriorityField(builder, priorityField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(priorityField), 0)
+def AddPriorityField(builder, priorityField):
+    return RecipeSelectionAutoUseExcelAddPriorityField(builder, priorityField)
+def RecipeSelectionAutoUseExcelStartPriorityFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartPriorityFieldVector(builder, numElems):
+    return RecipeSelectionAutoUseExcelStartPriorityFieldVector(builder, numElems)
 def RecipeSelectionAutoUseExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return RecipeSelectionAutoUseExcelEnd(builder)

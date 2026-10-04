@@ -25,14 +25,14 @@ class KeyMappingGroupInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # KeyMappingGroupInfoExcel
-    def DisplayGroupType(self):
+    def DisplayGroupTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # KeyMappingGroupInfoExcel
-    def LocalizeKeyMappingDisplayGroupId(self):
+    def LocalizeKeyMappingDisplayGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class KeyMappingGroupInfoExcel(object):
 def KeyMappingGroupInfoExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return KeyMappingGroupInfoExcelStart(builder)
-def KeyMappingGroupInfoExcelAddDisplayGroupType(builder, displayGroupType): builder.PrependInt32Slot(0, displayGroupType, 0)
-def AddDisplayGroupType(builder, displayGroupType):
-    return KeyMappingGroupInfoExcelAddDisplayGroupType(builder, displayGroupType)
-def KeyMappingGroupInfoExcelAddLocalizeKeyMappingDisplayGroupId(builder, localizeKeyMappingDisplayGroupId): builder.PrependUint32Slot(1, localizeKeyMappingDisplayGroupId, 0)
-def AddLocalizeKeyMappingDisplayGroupId(builder, localizeKeyMappingDisplayGroupId):
-    return KeyMappingGroupInfoExcelAddLocalizeKeyMappingDisplayGroupId(builder, localizeKeyMappingDisplayGroupId)
+def KeyMappingGroupInfoExcelAddDisplayGroupTypeField(builder, displayGroupTypeField): builder.PrependInt32Slot(0, displayGroupTypeField, 0)
+def AddDisplayGroupTypeField(builder, displayGroupTypeField):
+    return KeyMappingGroupInfoExcelAddDisplayGroupTypeField(builder, displayGroupTypeField)
+def KeyMappingGroupInfoExcelAddLocalizeKeyMappingDisplayGroupIdField(builder, localizeKeyMappingDisplayGroupIdField): builder.PrependUint32Slot(1, localizeKeyMappingDisplayGroupIdField, 0)
+def AddLocalizeKeyMappingDisplayGroupIdField(builder, localizeKeyMappingDisplayGroupIdField):
+    return KeyMappingGroupInfoExcelAddLocalizeKeyMappingDisplayGroupIdField(builder, localizeKeyMappingDisplayGroupIdField)
 def KeyMappingGroupInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return KeyMappingGroupInfoExcelEnd(builder)

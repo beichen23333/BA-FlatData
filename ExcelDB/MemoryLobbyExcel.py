@@ -25,98 +25,98 @@ class MemoryLobbyExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MemoryLobbyExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MemoryLobbyExcel
-    def ProductionStep(self):
+    def ProductionStepField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MemoryLobbyExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MemoryLobbyExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MemoryLobbyExcel
-    def PrefabName(self):
+    def PrefabNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MemoryLobbyExcel
-    def MemoryLobbyCategory(self):
+    def MemoryLobbyCategoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MemoryLobbyExcel
-    def SlotTextureName(self):
+    def SlotTextureNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MemoryLobbyExcel
-    def RewardTextureName(self):
+    def RewardTextureNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MemoryLobbyExcel
-    def BGMId(self):
+    def BGMIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MemoryLobbyExcel
-    def AudioClipJp(self):
+    def AudioClipJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MemoryLobbyExcel
-    def AudioClipKr(self):
+    def AudioClipKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MemoryLobbyExcel
-    def AudioClipTh(self):
+    def AudioClipThField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MemoryLobbyExcel
-    def AudioClipTw(self):
+    def AudioClipTwField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MemoryLobbyExcel
-    def AudioClipEn(self):
+    def AudioClipEnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -125,48 +125,48 @@ class MemoryLobbyExcel(object):
 def MemoryLobbyExcelStart(builder): builder.StartObject(14)
 def Start(builder):
     return MemoryLobbyExcelStart(builder)
-def MemoryLobbyExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MemoryLobbyExcelAddId(builder, id)
-def MemoryLobbyExcelAddProductionStep(builder, productionStep): builder.PrependInt32Slot(1, productionStep, 0)
-def AddProductionStep(builder, productionStep):
-    return MemoryLobbyExcelAddProductionStep(builder, productionStep)
-def MemoryLobbyExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(2, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return MemoryLobbyExcelAddLocalizeEtcId(builder, localizeEtcId)
-def MemoryLobbyExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(3, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return MemoryLobbyExcelAddCharacterId(builder, characterId)
-def MemoryLobbyExcelAddPrefabName(builder, prefabName): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(prefabName), 0)
-def AddPrefabName(builder, prefabName):
-    return MemoryLobbyExcelAddPrefabName(builder, prefabName)
-def MemoryLobbyExcelAddMemoryLobbyCategory(builder, memoryLobbyCategory): builder.PrependInt32Slot(5, memoryLobbyCategory, 0)
-def AddMemoryLobbyCategory(builder, memoryLobbyCategory):
-    return MemoryLobbyExcelAddMemoryLobbyCategory(builder, memoryLobbyCategory)
-def MemoryLobbyExcelAddSlotTextureName(builder, slotTextureName): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(slotTextureName), 0)
-def AddSlotTextureName(builder, slotTextureName):
-    return MemoryLobbyExcelAddSlotTextureName(builder, slotTextureName)
-def MemoryLobbyExcelAddRewardTextureName(builder, rewardTextureName): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardTextureName), 0)
-def AddRewardTextureName(builder, rewardTextureName):
-    return MemoryLobbyExcelAddRewardTextureName(builder, rewardTextureName)
-def MemoryLobbyExcelAddBGMId(builder, bGMId): builder.PrependInt32Slot(8, bGMId, 0)
-def AddBGMId(builder, bGMId):
-    return MemoryLobbyExcelAddBGMId(builder, bGMId)
-def MemoryLobbyExcelAddAudioClipJp(builder, audioClipJp): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipJp), 0)
-def AddAudioClipJp(builder, audioClipJp):
-    return MemoryLobbyExcelAddAudioClipJp(builder, audioClipJp)
-def MemoryLobbyExcelAddAudioClipKr(builder, audioClipKr): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipKr), 0)
-def AddAudioClipKr(builder, audioClipKr):
-    return MemoryLobbyExcelAddAudioClipKr(builder, audioClipKr)
-def MemoryLobbyExcelAddAudioClipTh(builder, audioClipTh): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipTh), 0)
-def AddAudioClipTh(builder, audioClipTh):
-    return MemoryLobbyExcelAddAudioClipTh(builder, audioClipTh)
-def MemoryLobbyExcelAddAudioClipTw(builder, audioClipTw): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipTw), 0)
-def AddAudioClipTw(builder, audioClipTw):
-    return MemoryLobbyExcelAddAudioClipTw(builder, audioClipTw)
-def MemoryLobbyExcelAddAudioClipEn(builder, audioClipEn): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipEn), 0)
-def AddAudioClipEn(builder, audioClipEn):
-    return MemoryLobbyExcelAddAudioClipEn(builder, audioClipEn)
+def MemoryLobbyExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MemoryLobbyExcelAddIdField(builder, idField)
+def MemoryLobbyExcelAddProductionStepField(builder, productionStepField): builder.PrependInt32Slot(1, productionStepField, 0)
+def AddProductionStepField(builder, productionStepField):
+    return MemoryLobbyExcelAddProductionStepField(builder, productionStepField)
+def MemoryLobbyExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return MemoryLobbyExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def MemoryLobbyExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(3, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return MemoryLobbyExcelAddCharacterIdField(builder, characterIdField)
+def MemoryLobbyExcelAddPrefabNameField(builder, prefabNameField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+def AddPrefabNameField(builder, prefabNameField):
+    return MemoryLobbyExcelAddPrefabNameField(builder, prefabNameField)
+def MemoryLobbyExcelAddMemoryLobbyCategoryField(builder, memoryLobbyCategoryField): builder.PrependInt32Slot(5, memoryLobbyCategoryField, 0)
+def AddMemoryLobbyCategoryField(builder, memoryLobbyCategoryField):
+    return MemoryLobbyExcelAddMemoryLobbyCategoryField(builder, memoryLobbyCategoryField)
+def MemoryLobbyExcelAddSlotTextureNameField(builder, slotTextureNameField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(slotTextureNameField), 0)
+def AddSlotTextureNameField(builder, slotTextureNameField):
+    return MemoryLobbyExcelAddSlotTextureNameField(builder, slotTextureNameField)
+def MemoryLobbyExcelAddRewardTextureNameField(builder, rewardTextureNameField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardTextureNameField), 0)
+def AddRewardTextureNameField(builder, rewardTextureNameField):
+    return MemoryLobbyExcelAddRewardTextureNameField(builder, rewardTextureNameField)
+def MemoryLobbyExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(8, bGMIdField, 0)
+def AddBGMIdField(builder, bGMIdField):
+    return MemoryLobbyExcelAddBGMIdField(builder, bGMIdField)
+def MemoryLobbyExcelAddAudioClipJpField(builder, audioClipJpField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipJpField), 0)
+def AddAudioClipJpField(builder, audioClipJpField):
+    return MemoryLobbyExcelAddAudioClipJpField(builder, audioClipJpField)
+def MemoryLobbyExcelAddAudioClipKrField(builder, audioClipKrField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipKrField), 0)
+def AddAudioClipKrField(builder, audioClipKrField):
+    return MemoryLobbyExcelAddAudioClipKrField(builder, audioClipKrField)
+def MemoryLobbyExcelAddAudioClipThField(builder, audioClipThField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipThField), 0)
+def AddAudioClipThField(builder, audioClipThField):
+    return MemoryLobbyExcelAddAudioClipThField(builder, audioClipThField)
+def MemoryLobbyExcelAddAudioClipTwField(builder, audioClipTwField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipTwField), 0)
+def AddAudioClipTwField(builder, audioClipTwField):
+    return MemoryLobbyExcelAddAudioClipTwField(builder, audioClipTwField)
+def MemoryLobbyExcelAddAudioClipEnField(builder, audioClipEnField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipEnField), 0)
+def AddAudioClipEnField(builder, audioClipEnField):
+    return MemoryLobbyExcelAddAudioClipEnField(builder, audioClipEnField)
 def MemoryLobbyExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MemoryLobbyExcelEnd(builder)

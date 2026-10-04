@@ -25,56 +25,56 @@ class AssistSlotExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AssistSlotExcel
-    def SlotId(self):
+    def SlotIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AssistSlotExcel
-    def EchelonType(self):
+    def EchelonTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AssistSlotExcel
-    def SlotNumber(self):
+    def SlotNumberField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AssistSlotExcel
-    def AssistTermRewardPeriodFromSec(self):
+    def AssistTermRewardPeriodFromSecField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AssistSlotExcel
-    def AssistRewardLimit(self):
+    def AssistRewardLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AssistSlotExcel
-    def AssistRentRewardDailyMaxCount(self):
+    def AssistRentRewardDailyMaxCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AssistSlotExcel
-    def AssistRentalFeeAmount(self):
+    def AssistRentalFeeAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AssistSlotExcel
-    def AssistRentalFeeAmountStranger(self):
+    def AssistRentalFeeAmountStrangerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -83,30 +83,30 @@ class AssistSlotExcel(object):
 def AssistSlotExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return AssistSlotExcelStart(builder)
-def AssistSlotExcelAddSlotId(builder, slotId): builder.PrependInt32Slot(0, slotId, 0)
-def AddSlotId(builder, slotId):
-    return AssistSlotExcelAddSlotId(builder, slotId)
-def AssistSlotExcelAddEchelonType(builder, echelonType): builder.PrependInt32Slot(1, echelonType, 0)
-def AddEchelonType(builder, echelonType):
-    return AssistSlotExcelAddEchelonType(builder, echelonType)
-def AssistSlotExcelAddSlotNumber(builder, slotNumber): builder.PrependInt32Slot(2, slotNumber, 0)
-def AddSlotNumber(builder, slotNumber):
-    return AssistSlotExcelAddSlotNumber(builder, slotNumber)
-def AssistSlotExcelAddAssistTermRewardPeriodFromSec(builder, assistTermRewardPeriodFromSec): builder.PrependInt32Slot(3, assistTermRewardPeriodFromSec, 0)
-def AddAssistTermRewardPeriodFromSec(builder, assistTermRewardPeriodFromSec):
-    return AssistSlotExcelAddAssistTermRewardPeriodFromSec(builder, assistTermRewardPeriodFromSec)
-def AssistSlotExcelAddAssistRewardLimit(builder, assistRewardLimit): builder.PrependInt32Slot(4, assistRewardLimit, 0)
-def AddAssistRewardLimit(builder, assistRewardLimit):
-    return AssistSlotExcelAddAssistRewardLimit(builder, assistRewardLimit)
-def AssistSlotExcelAddAssistRentRewardDailyMaxCount(builder, assistRentRewardDailyMaxCount): builder.PrependInt32Slot(5, assistRentRewardDailyMaxCount, 0)
-def AddAssistRentRewardDailyMaxCount(builder, assistRentRewardDailyMaxCount):
-    return AssistSlotExcelAddAssistRentRewardDailyMaxCount(builder, assistRentRewardDailyMaxCount)
-def AssistSlotExcelAddAssistRentalFeeAmount(builder, assistRentalFeeAmount): builder.PrependInt32Slot(6, assistRentalFeeAmount, 0)
-def AddAssistRentalFeeAmount(builder, assistRentalFeeAmount):
-    return AssistSlotExcelAddAssistRentalFeeAmount(builder, assistRentalFeeAmount)
-def AssistSlotExcelAddAssistRentalFeeAmountStranger(builder, assistRentalFeeAmountStranger): builder.PrependInt32Slot(7, assistRentalFeeAmountStranger, 0)
-def AddAssistRentalFeeAmountStranger(builder, assistRentalFeeAmountStranger):
-    return AssistSlotExcelAddAssistRentalFeeAmountStranger(builder, assistRentalFeeAmountStranger)
+def AssistSlotExcelAddSlotIdField(builder, slotIdField): builder.PrependInt32Slot(0, slotIdField, 0)
+def AddSlotIdField(builder, slotIdField):
+    return AssistSlotExcelAddSlotIdField(builder, slotIdField)
+def AssistSlotExcelAddEchelonTypeField(builder, echelonTypeField): builder.PrependInt32Slot(1, echelonTypeField, 0)
+def AddEchelonTypeField(builder, echelonTypeField):
+    return AssistSlotExcelAddEchelonTypeField(builder, echelonTypeField)
+def AssistSlotExcelAddSlotNumberField(builder, slotNumberField): builder.PrependInt32Slot(2, slotNumberField, 0)
+def AddSlotNumberField(builder, slotNumberField):
+    return AssistSlotExcelAddSlotNumberField(builder, slotNumberField)
+def AssistSlotExcelAddAssistTermRewardPeriodFromSecField(builder, assistTermRewardPeriodFromSecField): builder.PrependInt32Slot(3, assistTermRewardPeriodFromSecField, 0)
+def AddAssistTermRewardPeriodFromSecField(builder, assistTermRewardPeriodFromSecField):
+    return AssistSlotExcelAddAssistTermRewardPeriodFromSecField(builder, assistTermRewardPeriodFromSecField)
+def AssistSlotExcelAddAssistRewardLimitField(builder, assistRewardLimitField): builder.PrependInt32Slot(4, assistRewardLimitField, 0)
+def AddAssistRewardLimitField(builder, assistRewardLimitField):
+    return AssistSlotExcelAddAssistRewardLimitField(builder, assistRewardLimitField)
+def AssistSlotExcelAddAssistRentRewardDailyMaxCountField(builder, assistRentRewardDailyMaxCountField): builder.PrependInt32Slot(5, assistRentRewardDailyMaxCountField, 0)
+def AddAssistRentRewardDailyMaxCountField(builder, assistRentRewardDailyMaxCountField):
+    return AssistSlotExcelAddAssistRentRewardDailyMaxCountField(builder, assistRentRewardDailyMaxCountField)
+def AssistSlotExcelAddAssistRentalFeeAmountField(builder, assistRentalFeeAmountField): builder.PrependInt32Slot(6, assistRentalFeeAmountField, 0)
+def AddAssistRentalFeeAmountField(builder, assistRentalFeeAmountField):
+    return AssistSlotExcelAddAssistRentalFeeAmountField(builder, assistRentalFeeAmountField)
+def AssistSlotExcelAddAssistRentalFeeAmountStrangerField(builder, assistRentalFeeAmountStrangerField): builder.PrependInt32Slot(7, assistRentalFeeAmountStrangerField, 0)
+def AddAssistRentalFeeAmountStrangerField(builder, assistRentalFeeAmountStrangerField):
+    return AssistSlotExcelAddAssistRentalFeeAmountStrangerField(builder, assistRentalFeeAmountStrangerField)
 def AssistSlotExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return AssistSlotExcelEnd(builder)

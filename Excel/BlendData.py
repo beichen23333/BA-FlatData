@@ -25,7 +25,7 @@ class BlendData(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BlendData
-    def Type(self):
+    def TypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -34,9 +34,9 @@ class BlendData(object):
 def BlendDataStart(builder): builder.StartObject(1)
 def Start(builder):
     return BlendDataStart(builder)
-def BlendDataAddType(builder, type): builder.PrependInt32Slot(0, type, 0)
-def AddType(builder, type):
-    return BlendDataAddType(builder, type)
+def BlendDataAddTypeField(builder, typeField): builder.PrependInt32Slot(0, typeField, 0)
+def AddTypeField(builder, typeField):
+    return BlendDataAddTypeField(builder, typeField)
 def BlendDataEnd(builder): return builder.EndObject()
 def End(builder):
     return BlendDataEnd(builder)

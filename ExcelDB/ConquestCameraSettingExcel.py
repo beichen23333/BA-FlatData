@@ -25,77 +25,77 @@ class ConquestCameraSettingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConquestCameraSettingExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestCameraSettingExcel
-    def ConquestMapBoundaryOffsetLeft(self):
+    def ConquestMapBoundaryOffsetLeftField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def ConquestMapBoundaryOffsetRight(self):
+    def ConquestMapBoundaryOffsetRightField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def ConquestMapBoundaryOffsetTop(self):
+    def ConquestMapBoundaryOffsetTopField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def ConquestMapBoundaryOffsetBottom(self):
+    def ConquestMapBoundaryOffsetBottomField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def ConquestMapCenterOffsetX(self):
+    def ConquestMapCenterOffsetXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def ConquestMapCenterOffsetY(self):
+    def ConquestMapCenterOffsetYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def CameraAngle(self):
+    def CameraAngleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def CameraZoomMax(self):
+    def CameraZoomMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def CameraZoomMin(self):
+    def CameraZoomMinField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestCameraSettingExcel
-    def CameraZoomDefault(self):
+    def CameraZoomDefaultField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -104,39 +104,39 @@ class ConquestCameraSettingExcel(object):
 def ConquestCameraSettingExcelStart(builder): builder.StartObject(11)
 def Start(builder):
     return ConquestCameraSettingExcelStart(builder)
-def ConquestCameraSettingExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ConquestCameraSettingExcelAddId(builder, id)
-def ConquestCameraSettingExcelAddConquestMapBoundaryOffsetLeft(builder, conquestMapBoundaryOffsetLeft): builder.PrependFloat32Slot(1, conquestMapBoundaryOffsetLeft, 0.0)
-def AddConquestMapBoundaryOffsetLeft(builder, conquestMapBoundaryOffsetLeft):
-    return ConquestCameraSettingExcelAddConquestMapBoundaryOffsetLeft(builder, conquestMapBoundaryOffsetLeft)
-def ConquestCameraSettingExcelAddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight): builder.PrependFloat32Slot(2, conquestMapBoundaryOffsetRight, 0.0)
-def AddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight):
-    return ConquestCameraSettingExcelAddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight)
-def ConquestCameraSettingExcelAddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop): builder.PrependFloat32Slot(3, conquestMapBoundaryOffsetTop, 0.0)
-def AddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop):
-    return ConquestCameraSettingExcelAddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop)
-def ConquestCameraSettingExcelAddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom): builder.PrependFloat32Slot(4, conquestMapBoundaryOffsetBottom, 0.0)
-def AddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom):
-    return ConquestCameraSettingExcelAddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom)
-def ConquestCameraSettingExcelAddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX): builder.PrependFloat32Slot(5, conquestMapCenterOffsetX, 0.0)
-def AddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX):
-    return ConquestCameraSettingExcelAddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX)
-def ConquestCameraSettingExcelAddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY): builder.PrependFloat32Slot(6, conquestMapCenterOffsetY, 0.0)
-def AddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY):
-    return ConquestCameraSettingExcelAddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY)
-def ConquestCameraSettingExcelAddCameraAngle(builder, cameraAngle): builder.PrependFloat32Slot(7, cameraAngle, 0.0)
-def AddCameraAngle(builder, cameraAngle):
-    return ConquestCameraSettingExcelAddCameraAngle(builder, cameraAngle)
-def ConquestCameraSettingExcelAddCameraZoomMax(builder, cameraZoomMax): builder.PrependFloat32Slot(8, cameraZoomMax, 0.0)
-def AddCameraZoomMax(builder, cameraZoomMax):
-    return ConquestCameraSettingExcelAddCameraZoomMax(builder, cameraZoomMax)
-def ConquestCameraSettingExcelAddCameraZoomMin(builder, cameraZoomMin): builder.PrependFloat32Slot(9, cameraZoomMin, 0.0)
-def AddCameraZoomMin(builder, cameraZoomMin):
-    return ConquestCameraSettingExcelAddCameraZoomMin(builder, cameraZoomMin)
-def ConquestCameraSettingExcelAddCameraZoomDefault(builder, cameraZoomDefault): builder.PrependFloat32Slot(10, cameraZoomDefault, 0.0)
-def AddCameraZoomDefault(builder, cameraZoomDefault):
-    return ConquestCameraSettingExcelAddCameraZoomDefault(builder, cameraZoomDefault)
+def ConquestCameraSettingExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ConquestCameraSettingExcelAddIdField(builder, idField)
+def ConquestCameraSettingExcelAddConquestMapBoundaryOffsetLeftField(builder, conquestMapBoundaryOffsetLeftField): builder.PrependFloat32Slot(1, conquestMapBoundaryOffsetLeftField, 0.0)
+def AddConquestMapBoundaryOffsetLeftField(builder, conquestMapBoundaryOffsetLeftField):
+    return ConquestCameraSettingExcelAddConquestMapBoundaryOffsetLeftField(builder, conquestMapBoundaryOffsetLeftField)
+def ConquestCameraSettingExcelAddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField): builder.PrependFloat32Slot(2, conquestMapBoundaryOffsetRightField, 0.0)
+def AddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField):
+    return ConquestCameraSettingExcelAddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField)
+def ConquestCameraSettingExcelAddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField): builder.PrependFloat32Slot(3, conquestMapBoundaryOffsetTopField, 0.0)
+def AddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField):
+    return ConquestCameraSettingExcelAddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField)
+def ConquestCameraSettingExcelAddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField): builder.PrependFloat32Slot(4, conquestMapBoundaryOffsetBottomField, 0.0)
+def AddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField):
+    return ConquestCameraSettingExcelAddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField)
+def ConquestCameraSettingExcelAddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField): builder.PrependFloat32Slot(5, conquestMapCenterOffsetXField, 0.0)
+def AddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField):
+    return ConquestCameraSettingExcelAddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField)
+def ConquestCameraSettingExcelAddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField): builder.PrependFloat32Slot(6, conquestMapCenterOffsetYField, 0.0)
+def AddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField):
+    return ConquestCameraSettingExcelAddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField)
+def ConquestCameraSettingExcelAddCameraAngleField(builder, cameraAngleField): builder.PrependFloat32Slot(7, cameraAngleField, 0.0)
+def AddCameraAngleField(builder, cameraAngleField):
+    return ConquestCameraSettingExcelAddCameraAngleField(builder, cameraAngleField)
+def ConquestCameraSettingExcelAddCameraZoomMaxField(builder, cameraZoomMaxField): builder.PrependFloat32Slot(8, cameraZoomMaxField, 0.0)
+def AddCameraZoomMaxField(builder, cameraZoomMaxField):
+    return ConquestCameraSettingExcelAddCameraZoomMaxField(builder, cameraZoomMaxField)
+def ConquestCameraSettingExcelAddCameraZoomMinField(builder, cameraZoomMinField): builder.PrependFloat32Slot(9, cameraZoomMinField, 0.0)
+def AddCameraZoomMinField(builder, cameraZoomMinField):
+    return ConquestCameraSettingExcelAddCameraZoomMinField(builder, cameraZoomMinField)
+def ConquestCameraSettingExcelAddCameraZoomDefaultField(builder, cameraZoomDefaultField): builder.PrependFloat32Slot(10, cameraZoomDefaultField, 0.0)
+def AddCameraZoomDefaultField(builder, cameraZoomDefaultField):
+    return ConquestCameraSettingExcelAddCameraZoomDefaultField(builder, cameraZoomDefaultField)
 def ConquestCameraSettingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConquestCameraSettingExcelEnd(builder)

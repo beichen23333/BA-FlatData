@@ -25,56 +25,56 @@ class MinigameTBGEncounterRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameTBGEncounterRewardExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameTBGEncounterRewardExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameTBGEncounterRewardExcel
-    def TBGOptionSuccessType(self):
+    def TBGOptionSuccessTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameTBGEncounterRewardExcel
-    def Paremeter(self):
+    def ParemeterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameTBGEncounterRewardExcel
-    def ParcelType(self):
+    def ParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameTBGEncounterRewardExcel
-    def ParcelId(self):
+    def ParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameTBGEncounterRewardExcel
-    def Amount(self):
+    def AmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MinigameTBGEncounterRewardExcel
-    def Prob(self):
+    def ProbField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -83,30 +83,30 @@ class MinigameTBGEncounterRewardExcel(object):
 def MinigameTBGEncounterRewardExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return MinigameTBGEncounterRewardExcelStart(builder)
-def MinigameTBGEncounterRewardExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return MinigameTBGEncounterRewardExcelAddGroupId(builder, groupId)
-def MinigameTBGEncounterRewardExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(1, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return MinigameTBGEncounterRewardExcelAddUniqueId(builder, uniqueId)
-def MinigameTBGEncounterRewardExcelAddTBGOptionSuccessType(builder, tBGOptionSuccessType): builder.PrependInt32Slot(2, tBGOptionSuccessType, 0)
-def AddTBGOptionSuccessType(builder, tBGOptionSuccessType):
-    return MinigameTBGEncounterRewardExcelAddTBGOptionSuccessType(builder, tBGOptionSuccessType)
-def MinigameTBGEncounterRewardExcelAddParemeter(builder, paremeter): builder.PrependInt32Slot(3, paremeter, 0)
-def AddParemeter(builder, paremeter):
-    return MinigameTBGEncounterRewardExcelAddParemeter(builder, paremeter)
-def MinigameTBGEncounterRewardExcelAddParcelType(builder, parcelType): builder.PrependInt32Slot(4, parcelType, 0)
-def AddParcelType(builder, parcelType):
-    return MinigameTBGEncounterRewardExcelAddParcelType(builder, parcelType)
-def MinigameTBGEncounterRewardExcelAddParcelId(builder, parcelId): builder.PrependInt32Slot(5, parcelId, 0)
-def AddParcelId(builder, parcelId):
-    return MinigameTBGEncounterRewardExcelAddParcelId(builder, parcelId)
-def MinigameTBGEncounterRewardExcelAddAmount(builder, amount): builder.PrependInt32Slot(6, amount, 0)
-def AddAmount(builder, amount):
-    return MinigameTBGEncounterRewardExcelAddAmount(builder, amount)
-def MinigameTBGEncounterRewardExcelAddProb(builder, prob): builder.PrependInt32Slot(7, prob, 0)
-def AddProb(builder, prob):
-    return MinigameTBGEncounterRewardExcelAddProb(builder, prob)
+def MinigameTBGEncounterRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return MinigameTBGEncounterRewardExcelAddGroupIdField(builder, groupIdField)
+def MinigameTBGEncounterRewardExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return MinigameTBGEncounterRewardExcelAddUniqueIdField(builder, uniqueIdField)
+def MinigameTBGEncounterRewardExcelAddTBGOptionSuccessTypeField(builder, tBGOptionSuccessTypeField): builder.PrependInt32Slot(2, tBGOptionSuccessTypeField, 0)
+def AddTBGOptionSuccessTypeField(builder, tBGOptionSuccessTypeField):
+    return MinigameTBGEncounterRewardExcelAddTBGOptionSuccessTypeField(builder, tBGOptionSuccessTypeField)
+def MinigameTBGEncounterRewardExcelAddParemeterField(builder, paremeterField): builder.PrependInt32Slot(3, paremeterField, 0)
+def AddParemeterField(builder, paremeterField):
+    return MinigameTBGEncounterRewardExcelAddParemeterField(builder, paremeterField)
+def MinigameTBGEncounterRewardExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependInt32Slot(4, parcelTypeField, 0)
+def AddParcelTypeField(builder, parcelTypeField):
+    return MinigameTBGEncounterRewardExcelAddParcelTypeField(builder, parcelTypeField)
+def MinigameTBGEncounterRewardExcelAddParcelIdField(builder, parcelIdField): builder.PrependInt32Slot(5, parcelIdField, 0)
+def AddParcelIdField(builder, parcelIdField):
+    return MinigameTBGEncounterRewardExcelAddParcelIdField(builder, parcelIdField)
+def MinigameTBGEncounterRewardExcelAddAmountField(builder, amountField): builder.PrependInt32Slot(6, amountField, 0)
+def AddAmountField(builder, amountField):
+    return MinigameTBGEncounterRewardExcelAddAmountField(builder, amountField)
+def MinigameTBGEncounterRewardExcelAddProbField(builder, probField): builder.PrependInt32Slot(7, probField, 0)
+def AddProbField(builder, probField):
+    return MinigameTBGEncounterRewardExcelAddProbField(builder, probField)
 def MinigameTBGEncounterRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameTBGEncounterRewardExcelEnd(builder)

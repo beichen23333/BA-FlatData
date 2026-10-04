@@ -25,42 +25,42 @@ class CharacterCalculationLimitExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterCalculationLimitExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterCalculationLimitExcel
-    def TacticEntityType(self):
+    def TacticEntityTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterCalculationLimitExcel
-    def CalculationValue(self):
+    def CalculationValueField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterCalculationLimitExcel
-    def MinValue(self):
+    def MinValueField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterCalculationLimitExcel
-    def MaxValue(self):
+    def MaxValueField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterCalculationLimitExcel
-    def LimitStartValue(self, j):
+    def LimitStartValueField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -68,26 +68,26 @@ class CharacterCalculationLimitExcel(object):
         return 0
 
     # CharacterCalculationLimitExcel
-    def LimitStartValueAsNumpy(self):
+    def LimitStartValueFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterCalculationLimitExcel
-    def LimitStartValueLength(self):
+    def LimitStartValueFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterCalculationLimitExcel
-    def LimitStartValueIsNone(self):
+    def LimitStartValueFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # CharacterCalculationLimitExcel
-    def DecreaseRate(self, j):
+    def DecreaseRateField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -95,54 +95,54 @@ class CharacterCalculationLimitExcel(object):
         return 0
 
     # CharacterCalculationLimitExcel
-    def DecreaseRateAsNumpy(self):
+    def DecreaseRateFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterCalculationLimitExcel
-    def DecreaseRateLength(self):
+    def DecreaseRateFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterCalculationLimitExcel
-    def DecreaseRateIsNone(self):
+    def DecreaseRateFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def CharacterCalculationLimitExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return CharacterCalculationLimitExcelStart(builder)
-def CharacterCalculationLimitExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CharacterCalculationLimitExcelAddId(builder, id)
-def CharacterCalculationLimitExcelAddTacticEntityType(builder, tacticEntityType): builder.PrependInt32Slot(1, tacticEntityType, 0)
-def AddTacticEntityType(builder, tacticEntityType):
-    return CharacterCalculationLimitExcelAddTacticEntityType(builder, tacticEntityType)
-def CharacterCalculationLimitExcelAddCalculationValue(builder, calculationValue): builder.PrependInt32Slot(2, calculationValue, 0)
-def AddCalculationValue(builder, calculationValue):
-    return CharacterCalculationLimitExcelAddCalculationValue(builder, calculationValue)
-def CharacterCalculationLimitExcelAddMinValue(builder, minValue): builder.PrependInt32Slot(3, minValue, 0)
-def AddMinValue(builder, minValue):
-    return CharacterCalculationLimitExcelAddMinValue(builder, minValue)
-def CharacterCalculationLimitExcelAddMaxValue(builder, maxValue): builder.PrependInt32Slot(4, maxValue, 0)
-def AddMaxValue(builder, maxValue):
-    return CharacterCalculationLimitExcelAddMaxValue(builder, maxValue)
-def CharacterCalculationLimitExcelAddLimitStartValue(builder, limitStartValue): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(limitStartValue), 0)
-def AddLimitStartValue(builder, limitStartValue):
-    return CharacterCalculationLimitExcelAddLimitStartValue(builder, limitStartValue)
-def CharacterCalculationLimitExcelStartLimitStartValueVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLimitStartValueVector(builder, numElems):
-    return CharacterCalculationLimitExcelStartLimitStartValueVector(builder, numElems)
-def CharacterCalculationLimitExcelAddDecreaseRate(builder, decreaseRate): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(decreaseRate), 0)
-def AddDecreaseRate(builder, decreaseRate):
-    return CharacterCalculationLimitExcelAddDecreaseRate(builder, decreaseRate)
-def CharacterCalculationLimitExcelStartDecreaseRateVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDecreaseRateVector(builder, numElems):
-    return CharacterCalculationLimitExcelStartDecreaseRateVector(builder, numElems)
+def CharacterCalculationLimitExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CharacterCalculationLimitExcelAddIdField(builder, idField)
+def CharacterCalculationLimitExcelAddTacticEntityTypeField(builder, tacticEntityTypeField): builder.PrependInt32Slot(1, tacticEntityTypeField, 0)
+def AddTacticEntityTypeField(builder, tacticEntityTypeField):
+    return CharacterCalculationLimitExcelAddTacticEntityTypeField(builder, tacticEntityTypeField)
+def CharacterCalculationLimitExcelAddCalculationValueField(builder, calculationValueField): builder.PrependInt32Slot(2, calculationValueField, 0)
+def AddCalculationValueField(builder, calculationValueField):
+    return CharacterCalculationLimitExcelAddCalculationValueField(builder, calculationValueField)
+def CharacterCalculationLimitExcelAddMinValueField(builder, minValueField): builder.PrependInt32Slot(3, minValueField, 0)
+def AddMinValueField(builder, minValueField):
+    return CharacterCalculationLimitExcelAddMinValueField(builder, minValueField)
+def CharacterCalculationLimitExcelAddMaxValueField(builder, maxValueField): builder.PrependInt32Slot(4, maxValueField, 0)
+def AddMaxValueField(builder, maxValueField):
+    return CharacterCalculationLimitExcelAddMaxValueField(builder, maxValueField)
+def CharacterCalculationLimitExcelAddLimitStartValueField(builder, limitStartValueField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(limitStartValueField), 0)
+def AddLimitStartValueField(builder, limitStartValueField):
+    return CharacterCalculationLimitExcelAddLimitStartValueField(builder, limitStartValueField)
+def CharacterCalculationLimitExcelStartLimitStartValueFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartLimitStartValueFieldVector(builder, numElems):
+    return CharacterCalculationLimitExcelStartLimitStartValueFieldVector(builder, numElems)
+def CharacterCalculationLimitExcelAddDecreaseRateField(builder, decreaseRateField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(decreaseRateField), 0)
+def AddDecreaseRateField(builder, decreaseRateField):
+    return CharacterCalculationLimitExcelAddDecreaseRateField(builder, decreaseRateField)
+def CharacterCalculationLimitExcelStartDecreaseRateFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartDecreaseRateFieldVector(builder, numElems):
+    return CharacterCalculationLimitExcelStartDecreaseRateFieldVector(builder, numElems)
 def CharacterCalculationLimitExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterCalculationLimitExcelEnd(builder)

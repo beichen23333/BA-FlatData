@@ -25,49 +25,49 @@ class ScenarioBGName_GlobalExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ScenarioBGName_GlobalExcel
-    def GroupName(self):
+    def GroupNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGName_GlobalExcel
-    def NameKr(self):
+    def NameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGName_GlobalExcel
-    def NameTw(self):
+    def NameTwField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGName_GlobalExcel
-    def NameAsia(self):
+    def NameAsiaField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGName_GlobalExcel
-    def NameNa(self):
+    def NameNaField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGName_GlobalExcel
-    def NameGlobal(self):
+    def NameGlobalField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioBGName_GlobalExcel
-    def NameTeen(self):
+    def NameTeenField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class ScenarioBGName_GlobalExcel(object):
 def ScenarioBGName_GlobalExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return ScenarioBGName_GlobalExcelStart(builder)
-def ScenarioBGName_GlobalExcelAddGroupName(builder, groupName): builder.PrependUint32Slot(0, groupName, 0)
-def AddGroupName(builder, groupName):
-    return ScenarioBGName_GlobalExcelAddGroupName(builder, groupName)
-def ScenarioBGName_GlobalExcelAddNameKr(builder, nameKr): builder.PrependUint32Slot(1, nameKr, 0)
-def AddNameKr(builder, nameKr):
-    return ScenarioBGName_GlobalExcelAddNameKr(builder, nameKr)
-def ScenarioBGName_GlobalExcelAddNameTw(builder, nameTw): builder.PrependUint32Slot(2, nameTw, 0)
-def AddNameTw(builder, nameTw):
-    return ScenarioBGName_GlobalExcelAddNameTw(builder, nameTw)
-def ScenarioBGName_GlobalExcelAddNameAsia(builder, nameAsia): builder.PrependUint32Slot(3, nameAsia, 0)
-def AddNameAsia(builder, nameAsia):
-    return ScenarioBGName_GlobalExcelAddNameAsia(builder, nameAsia)
-def ScenarioBGName_GlobalExcelAddNameNa(builder, nameNa): builder.PrependUint32Slot(4, nameNa, 0)
-def AddNameNa(builder, nameNa):
-    return ScenarioBGName_GlobalExcelAddNameNa(builder, nameNa)
-def ScenarioBGName_GlobalExcelAddNameGlobal(builder, nameGlobal): builder.PrependUint32Slot(5, nameGlobal, 0)
-def AddNameGlobal(builder, nameGlobal):
-    return ScenarioBGName_GlobalExcelAddNameGlobal(builder, nameGlobal)
-def ScenarioBGName_GlobalExcelAddNameTeen(builder, nameTeen): builder.PrependUint32Slot(6, nameTeen, 0)
-def AddNameTeen(builder, nameTeen):
-    return ScenarioBGName_GlobalExcelAddNameTeen(builder, nameTeen)
+def ScenarioBGName_GlobalExcelAddGroupNameField(builder, groupNameField): builder.PrependUint32Slot(0, groupNameField, 0)
+def AddGroupNameField(builder, groupNameField):
+    return ScenarioBGName_GlobalExcelAddGroupNameField(builder, groupNameField)
+def ScenarioBGName_GlobalExcelAddNameKrField(builder, nameKrField): builder.PrependUint32Slot(1, nameKrField, 0)
+def AddNameKrField(builder, nameKrField):
+    return ScenarioBGName_GlobalExcelAddNameKrField(builder, nameKrField)
+def ScenarioBGName_GlobalExcelAddNameTwField(builder, nameTwField): builder.PrependUint32Slot(2, nameTwField, 0)
+def AddNameTwField(builder, nameTwField):
+    return ScenarioBGName_GlobalExcelAddNameTwField(builder, nameTwField)
+def ScenarioBGName_GlobalExcelAddNameAsiaField(builder, nameAsiaField): builder.PrependUint32Slot(3, nameAsiaField, 0)
+def AddNameAsiaField(builder, nameAsiaField):
+    return ScenarioBGName_GlobalExcelAddNameAsiaField(builder, nameAsiaField)
+def ScenarioBGName_GlobalExcelAddNameNaField(builder, nameNaField): builder.PrependUint32Slot(4, nameNaField, 0)
+def AddNameNaField(builder, nameNaField):
+    return ScenarioBGName_GlobalExcelAddNameNaField(builder, nameNaField)
+def ScenarioBGName_GlobalExcelAddNameGlobalField(builder, nameGlobalField): builder.PrependUint32Slot(5, nameGlobalField, 0)
+def AddNameGlobalField(builder, nameGlobalField):
+    return ScenarioBGName_GlobalExcelAddNameGlobalField(builder, nameGlobalField)
+def ScenarioBGName_GlobalExcelAddNameTeenField(builder, nameTeenField): builder.PrependUint32Slot(6, nameTeenField, 0)
+def AddNameTeenField(builder, nameTeenField):
+    return ScenarioBGName_GlobalExcelAddNameTeenField(builder, nameTeenField)
 def ScenarioBGName_GlobalExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ScenarioBGName_GlobalExcelEnd(builder)

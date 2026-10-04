@@ -25,154 +25,154 @@ class ItemExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ItemExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def Rarity(self):
+    def RarityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ProductionStep(self):
+    def ProductionStepField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ItemCategory(self):
+    def ItemCategoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def Quality(self):
+    def QualityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def Icon(self):
+    def IconField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ItemExcel
-    def SpriteName(self):
+    def SpriteNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ItemExcel
-    def StackableMax(self):
+    def StackableMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def StackableFunction(self):
+    def StackableFunctionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ImmediateUse(self):
+    def ImmediateUseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ItemExcel
-    def UsingResultParcelType(self):
+    def UsingResultParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def UsingResultId(self):
+    def UsingResultIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def UsingResultAmount(self):
+    def UsingResultAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def MailType(self):
+    def MailTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ExpiryChangeParcelType(self):
+    def ExpiryChangeParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ExpiryChangeId(self):
+    def ExpiryChangeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ExpiryChangeAmount(self):
+    def ExpiryChangeAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def CanTierUpgrade(self):
+    def CanTierUpgradeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ItemExcel
-    def TierUpgradeRecipeCraftId(self):
+    def TierUpgradeRecipeCraftIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def Tags(self, j):
+    def TagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             a = self._tab.Vector(o)
@@ -180,68 +180,68 @@ class ItemExcel(object):
         return 0
 
     # ItemExcel
-    def TagsAsNumpy(self):
+    def TagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ItemExcel
-    def TagsLength(self):
+    def TagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ItemExcel
-    def TagsIsNone(self):
+    def TagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         return o == 0
 
     # ItemExcel
-    def IsCollaboration(self):
+    def IsCollaborationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ItemExcel
-    def CraftQualityTier0(self):
+    def CraftQualityTier0Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def CraftQualityTier1(self):
+    def CraftQualityTier1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def CraftQualityTier2(self):
+    def CraftQualityTier2Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ShiftingCraftQuality(self):
+    def ShiftingCraftQualityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def MaxGiftTags(self):
+    def MaxGiftTagsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ShopCategory(self, j):
+    def ShopCategoryField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             a = self._tab.Vector(o)
@@ -249,68 +249,68 @@ class ItemExcel(object):
         return 0
 
     # ItemExcel
-    def ShopCategoryAsNumpy(self):
+    def ShopCategoryFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
         return 0
 
     # ItemExcel
-    def ShopCategoryLength(self):
+    def ShopCategoryFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ItemExcel
-    def ShopCategoryIsNone(self):
+    def ShopCategoryFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         return o == 0
 
     # ItemExcel
-    def ExpirationDateTime(self):
+    def ExpirationDateTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ItemExcel
-    def ExpirationNotifyDateIn(self):
+    def ExpirationNotifyDateInField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def IsOverrideExpiration(self):
+    def IsOverrideExpirationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ItemExcel
-    def ShortcutTypeId(self):
+    def ShortcutTypeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def GachaTicket(self):
+    def GachaTicketField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def AlertPopupId(self):
+    def AlertPopupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ItemExcel
-    def ShiftingCraftRecipe(self):
+    def ShiftingCraftRecipeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -319,120 +319,120 @@ class ItemExcel(object):
 def ItemExcelStart(builder): builder.StartObject(36)
 def Start(builder):
     return ItemExcelStart(builder)
-def ItemExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ItemExcelAddId(builder, id)
-def ItemExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(1, groupId, 0)
-def AddGroupId(builder, groupId):
-    return ItemExcelAddGroupId(builder, groupId)
-def ItemExcelAddRarity(builder, rarity): builder.PrependInt32Slot(2, rarity, 0)
-def AddRarity(builder, rarity):
-    return ItemExcelAddRarity(builder, rarity)
-def ItemExcelAddProductionStep(builder, productionStep): builder.PrependInt32Slot(3, productionStep, 0)
-def AddProductionStep(builder, productionStep):
-    return ItemExcelAddProductionStep(builder, productionStep)
-def ItemExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(4, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return ItemExcelAddLocalizeEtcId(builder, localizeEtcId)
-def ItemExcelAddItemCategory(builder, itemCategory): builder.PrependInt32Slot(5, itemCategory, 0)
-def AddItemCategory(builder, itemCategory):
-    return ItemExcelAddItemCategory(builder, itemCategory)
-def ItemExcelAddQuality(builder, quality): builder.PrependInt32Slot(6, quality, 0)
-def AddQuality(builder, quality):
-    return ItemExcelAddQuality(builder, quality)
-def ItemExcelAddIcon(builder, icon): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(icon), 0)
-def AddIcon(builder, icon):
-    return ItemExcelAddIcon(builder, icon)
-def ItemExcelAddSpriteName(builder, spriteName): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(spriteName), 0)
-def AddSpriteName(builder, spriteName):
-    return ItemExcelAddSpriteName(builder, spriteName)
-def ItemExcelAddStackableMax(builder, stackableMax): builder.PrependInt32Slot(9, stackableMax, 0)
-def AddStackableMax(builder, stackableMax):
-    return ItemExcelAddStackableMax(builder, stackableMax)
-def ItemExcelAddStackableFunction(builder, stackableFunction): builder.PrependInt32Slot(10, stackableFunction, 0)
-def AddStackableFunction(builder, stackableFunction):
-    return ItemExcelAddStackableFunction(builder, stackableFunction)
-def ItemExcelAddImmediateUse(builder, immediateUse): builder.PrependBoolSlot(11, immediateUse, 0)
-def AddImmediateUse(builder, immediateUse):
-    return ItemExcelAddImmediateUse(builder, immediateUse)
-def ItemExcelAddUsingResultParcelType(builder, usingResultParcelType): builder.PrependInt32Slot(12, usingResultParcelType, 0)
-def AddUsingResultParcelType(builder, usingResultParcelType):
-    return ItemExcelAddUsingResultParcelType(builder, usingResultParcelType)
-def ItemExcelAddUsingResultId(builder, usingResultId): builder.PrependInt32Slot(13, usingResultId, 0)
-def AddUsingResultId(builder, usingResultId):
-    return ItemExcelAddUsingResultId(builder, usingResultId)
-def ItemExcelAddUsingResultAmount(builder, usingResultAmount): builder.PrependInt32Slot(14, usingResultAmount, 0)
-def AddUsingResultAmount(builder, usingResultAmount):
-    return ItemExcelAddUsingResultAmount(builder, usingResultAmount)
-def ItemExcelAddMailType(builder, mailType): builder.PrependInt32Slot(15, mailType, 0)
-def AddMailType(builder, mailType):
-    return ItemExcelAddMailType(builder, mailType)
-def ItemExcelAddExpiryChangeParcelType(builder, expiryChangeParcelType): builder.PrependInt32Slot(16, expiryChangeParcelType, 0)
-def AddExpiryChangeParcelType(builder, expiryChangeParcelType):
-    return ItemExcelAddExpiryChangeParcelType(builder, expiryChangeParcelType)
-def ItemExcelAddExpiryChangeId(builder, expiryChangeId): builder.PrependInt32Slot(17, expiryChangeId, 0)
-def AddExpiryChangeId(builder, expiryChangeId):
-    return ItemExcelAddExpiryChangeId(builder, expiryChangeId)
-def ItemExcelAddExpiryChangeAmount(builder, expiryChangeAmount): builder.PrependInt32Slot(18, expiryChangeAmount, 0)
-def AddExpiryChangeAmount(builder, expiryChangeAmount):
-    return ItemExcelAddExpiryChangeAmount(builder, expiryChangeAmount)
-def ItemExcelAddCanTierUpgrade(builder, canTierUpgrade): builder.PrependBoolSlot(19, canTierUpgrade, 0)
-def AddCanTierUpgrade(builder, canTierUpgrade):
-    return ItemExcelAddCanTierUpgrade(builder, canTierUpgrade)
-def ItemExcelAddTierUpgradeRecipeCraftId(builder, tierUpgradeRecipeCraftId): builder.PrependInt32Slot(20, tierUpgradeRecipeCraftId, 0)
-def AddTierUpgradeRecipeCraftId(builder, tierUpgradeRecipeCraftId):
-    return ItemExcelAddTierUpgradeRecipeCraftId(builder, tierUpgradeRecipeCraftId)
-def ItemExcelAddTags(builder, tags): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(tags), 0)
-def AddTags(builder, tags):
-    return ItemExcelAddTags(builder, tags)
-def ItemExcelStartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTagsVector(builder, numElems):
-    return ItemExcelStartTagsVector(builder, numElems)
-def ItemExcelAddIsCollaboration(builder, isCollaboration): builder.PrependBoolSlot(22, isCollaboration, 0)
-def AddIsCollaboration(builder, isCollaboration):
-    return ItemExcelAddIsCollaboration(builder, isCollaboration)
-def ItemExcelAddCraftQualityTier0(builder, craftQualityTier0): builder.PrependInt32Slot(23, craftQualityTier0, 0)
-def AddCraftQualityTier0(builder, craftQualityTier0):
-    return ItemExcelAddCraftQualityTier0(builder, craftQualityTier0)
-def ItemExcelAddCraftQualityTier1(builder, craftQualityTier1): builder.PrependInt32Slot(24, craftQualityTier1, 0)
-def AddCraftQualityTier1(builder, craftQualityTier1):
-    return ItemExcelAddCraftQualityTier1(builder, craftQualityTier1)
-def ItemExcelAddCraftQualityTier2(builder, craftQualityTier2): builder.PrependInt32Slot(25, craftQualityTier2, 0)
-def AddCraftQualityTier2(builder, craftQualityTier2):
-    return ItemExcelAddCraftQualityTier2(builder, craftQualityTier2)
-def ItemExcelAddShiftingCraftQuality(builder, shiftingCraftQuality): builder.PrependInt32Slot(26, shiftingCraftQuality, 0)
-def AddShiftingCraftQuality(builder, shiftingCraftQuality):
-    return ItemExcelAddShiftingCraftQuality(builder, shiftingCraftQuality)
-def ItemExcelAddMaxGiftTags(builder, maxGiftTags): builder.PrependInt32Slot(27, maxGiftTags, 0)
-def AddMaxGiftTags(builder, maxGiftTags):
-    return ItemExcelAddMaxGiftTags(builder, maxGiftTags)
-def ItemExcelAddShopCategory(builder, shopCategory): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(shopCategory), 0)
-def AddShopCategory(builder, shopCategory):
-    return ItemExcelAddShopCategory(builder, shopCategory)
-def ItemExcelStartShopCategoryVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShopCategoryVector(builder, numElems):
-    return ItemExcelStartShopCategoryVector(builder, numElems)
-def ItemExcelAddExpirationDateTime(builder, expirationDateTime): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(expirationDateTime), 0)
-def AddExpirationDateTime(builder, expirationDateTime):
-    return ItemExcelAddExpirationDateTime(builder, expirationDateTime)
-def ItemExcelAddExpirationNotifyDateIn(builder, expirationNotifyDateIn): builder.PrependInt32Slot(30, expirationNotifyDateIn, 0)
-def AddExpirationNotifyDateIn(builder, expirationNotifyDateIn):
-    return ItemExcelAddExpirationNotifyDateIn(builder, expirationNotifyDateIn)
-def ItemExcelAddIsOverrideExpiration(builder, isOverrideExpiration): builder.PrependBoolSlot(31, isOverrideExpiration, 0)
-def AddIsOverrideExpiration(builder, isOverrideExpiration):
-    return ItemExcelAddIsOverrideExpiration(builder, isOverrideExpiration)
-def ItemExcelAddShortcutTypeId(builder, shortcutTypeId): builder.PrependInt32Slot(32, shortcutTypeId, 0)
-def AddShortcutTypeId(builder, shortcutTypeId):
-    return ItemExcelAddShortcutTypeId(builder, shortcutTypeId)
-def ItemExcelAddGachaTicket(builder, gachaTicket): builder.PrependInt32Slot(33, gachaTicket, 0)
-def AddGachaTicket(builder, gachaTicket):
-    return ItemExcelAddGachaTicket(builder, gachaTicket)
-def ItemExcelAddAlertPopupId(builder, alertPopupId): builder.PrependInt32Slot(34, alertPopupId, 0)
-def AddAlertPopupId(builder, alertPopupId):
-    return ItemExcelAddAlertPopupId(builder, alertPopupId)
-def ItemExcelAddShiftingCraftRecipe(builder, shiftingCraftRecipe): builder.PrependInt32Slot(35, shiftingCraftRecipe, 0)
-def AddShiftingCraftRecipe(builder, shiftingCraftRecipe):
-    return ItemExcelAddShiftingCraftRecipe(builder, shiftingCraftRecipe)
+def ItemExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ItemExcelAddIdField(builder, idField)
+def ItemExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(1, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return ItemExcelAddGroupIdField(builder, groupIdField)
+def ItemExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(2, rarityField, 0)
+def AddRarityField(builder, rarityField):
+    return ItemExcelAddRarityField(builder, rarityField)
+def ItemExcelAddProductionStepField(builder, productionStepField): builder.PrependInt32Slot(3, productionStepField, 0)
+def AddProductionStepField(builder, productionStepField):
+    return ItemExcelAddProductionStepField(builder, productionStepField)
+def ItemExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(4, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return ItemExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def ItemExcelAddItemCategoryField(builder, itemCategoryField): builder.PrependInt32Slot(5, itemCategoryField, 0)
+def AddItemCategoryField(builder, itemCategoryField):
+    return ItemExcelAddItemCategoryField(builder, itemCategoryField)
+def ItemExcelAddQualityField(builder, qualityField): builder.PrependInt32Slot(6, qualityField, 0)
+def AddQualityField(builder, qualityField):
+    return ItemExcelAddQualityField(builder, qualityField)
+def ItemExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+def AddIconField(builder, iconField):
+    return ItemExcelAddIconField(builder, iconField)
+def ItemExcelAddSpriteNameField(builder, spriteNameField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(spriteNameField), 0)
+def AddSpriteNameField(builder, spriteNameField):
+    return ItemExcelAddSpriteNameField(builder, spriteNameField)
+def ItemExcelAddStackableMaxField(builder, stackableMaxField): builder.PrependInt32Slot(9, stackableMaxField, 0)
+def AddStackableMaxField(builder, stackableMaxField):
+    return ItemExcelAddStackableMaxField(builder, stackableMaxField)
+def ItemExcelAddStackableFunctionField(builder, stackableFunctionField): builder.PrependInt32Slot(10, stackableFunctionField, 0)
+def AddStackableFunctionField(builder, stackableFunctionField):
+    return ItemExcelAddStackableFunctionField(builder, stackableFunctionField)
+def ItemExcelAddImmediateUseField(builder, immediateUseField): builder.PrependBoolSlot(11, immediateUseField, 0)
+def AddImmediateUseField(builder, immediateUseField):
+    return ItemExcelAddImmediateUseField(builder, immediateUseField)
+def ItemExcelAddUsingResultParcelTypeField(builder, usingResultParcelTypeField): builder.PrependInt32Slot(12, usingResultParcelTypeField, 0)
+def AddUsingResultParcelTypeField(builder, usingResultParcelTypeField):
+    return ItemExcelAddUsingResultParcelTypeField(builder, usingResultParcelTypeField)
+def ItemExcelAddUsingResultIdField(builder, usingResultIdField): builder.PrependInt32Slot(13, usingResultIdField, 0)
+def AddUsingResultIdField(builder, usingResultIdField):
+    return ItemExcelAddUsingResultIdField(builder, usingResultIdField)
+def ItemExcelAddUsingResultAmountField(builder, usingResultAmountField): builder.PrependInt32Slot(14, usingResultAmountField, 0)
+def AddUsingResultAmountField(builder, usingResultAmountField):
+    return ItemExcelAddUsingResultAmountField(builder, usingResultAmountField)
+def ItemExcelAddMailTypeField(builder, mailTypeField): builder.PrependInt32Slot(15, mailTypeField, 0)
+def AddMailTypeField(builder, mailTypeField):
+    return ItemExcelAddMailTypeField(builder, mailTypeField)
+def ItemExcelAddExpiryChangeParcelTypeField(builder, expiryChangeParcelTypeField): builder.PrependInt32Slot(16, expiryChangeParcelTypeField, 0)
+def AddExpiryChangeParcelTypeField(builder, expiryChangeParcelTypeField):
+    return ItemExcelAddExpiryChangeParcelTypeField(builder, expiryChangeParcelTypeField)
+def ItemExcelAddExpiryChangeIdField(builder, expiryChangeIdField): builder.PrependInt32Slot(17, expiryChangeIdField, 0)
+def AddExpiryChangeIdField(builder, expiryChangeIdField):
+    return ItemExcelAddExpiryChangeIdField(builder, expiryChangeIdField)
+def ItemExcelAddExpiryChangeAmountField(builder, expiryChangeAmountField): builder.PrependInt32Slot(18, expiryChangeAmountField, 0)
+def AddExpiryChangeAmountField(builder, expiryChangeAmountField):
+    return ItemExcelAddExpiryChangeAmountField(builder, expiryChangeAmountField)
+def ItemExcelAddCanTierUpgradeField(builder, canTierUpgradeField): builder.PrependBoolSlot(19, canTierUpgradeField, 0)
+def AddCanTierUpgradeField(builder, canTierUpgradeField):
+    return ItemExcelAddCanTierUpgradeField(builder, canTierUpgradeField)
+def ItemExcelAddTierUpgradeRecipeCraftIdField(builder, tierUpgradeRecipeCraftIdField): builder.PrependInt32Slot(20, tierUpgradeRecipeCraftIdField, 0)
+def AddTierUpgradeRecipeCraftIdField(builder, tierUpgradeRecipeCraftIdField):
+    return ItemExcelAddTierUpgradeRecipeCraftIdField(builder, tierUpgradeRecipeCraftIdField)
+def ItemExcelAddTagsField(builder, tagsField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+def AddTagsField(builder, tagsField):
+    return ItemExcelAddTagsField(builder, tagsField)
+def ItemExcelStartTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTagsFieldVector(builder, numElems):
+    return ItemExcelStartTagsFieldVector(builder, numElems)
+def ItemExcelAddIsCollaborationField(builder, isCollaborationField): builder.PrependBoolSlot(22, isCollaborationField, 0)
+def AddIsCollaborationField(builder, isCollaborationField):
+    return ItemExcelAddIsCollaborationField(builder, isCollaborationField)
+def ItemExcelAddCraftQualityTier0Field(builder, craftQualityTier0Field): builder.PrependInt32Slot(23, craftQualityTier0Field, 0)
+def AddCraftQualityTier0Field(builder, craftQualityTier0Field):
+    return ItemExcelAddCraftQualityTier0Field(builder, craftQualityTier0Field)
+def ItemExcelAddCraftQualityTier1Field(builder, craftQualityTier1Field): builder.PrependInt32Slot(24, craftQualityTier1Field, 0)
+def AddCraftQualityTier1Field(builder, craftQualityTier1Field):
+    return ItemExcelAddCraftQualityTier1Field(builder, craftQualityTier1Field)
+def ItemExcelAddCraftQualityTier2Field(builder, craftQualityTier2Field): builder.PrependInt32Slot(25, craftQualityTier2Field, 0)
+def AddCraftQualityTier2Field(builder, craftQualityTier2Field):
+    return ItemExcelAddCraftQualityTier2Field(builder, craftQualityTier2Field)
+def ItemExcelAddShiftingCraftQualityField(builder, shiftingCraftQualityField): builder.PrependInt32Slot(26, shiftingCraftQualityField, 0)
+def AddShiftingCraftQualityField(builder, shiftingCraftQualityField):
+    return ItemExcelAddShiftingCraftQualityField(builder, shiftingCraftQualityField)
+def ItemExcelAddMaxGiftTagsField(builder, maxGiftTagsField): builder.PrependInt32Slot(27, maxGiftTagsField, 0)
+def AddMaxGiftTagsField(builder, maxGiftTagsField):
+    return ItemExcelAddMaxGiftTagsField(builder, maxGiftTagsField)
+def ItemExcelAddShopCategoryField(builder, shopCategoryField): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(shopCategoryField), 0)
+def AddShopCategoryField(builder, shopCategoryField):
+    return ItemExcelAddShopCategoryField(builder, shopCategoryField)
+def ItemExcelStartShopCategoryFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShopCategoryFieldVector(builder, numElems):
+    return ItemExcelStartShopCategoryFieldVector(builder, numElems)
+def ItemExcelAddExpirationDateTimeField(builder, expirationDateTimeField): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(expirationDateTimeField), 0)
+def AddExpirationDateTimeField(builder, expirationDateTimeField):
+    return ItemExcelAddExpirationDateTimeField(builder, expirationDateTimeField)
+def ItemExcelAddExpirationNotifyDateInField(builder, expirationNotifyDateInField): builder.PrependInt32Slot(30, expirationNotifyDateInField, 0)
+def AddExpirationNotifyDateInField(builder, expirationNotifyDateInField):
+    return ItemExcelAddExpirationNotifyDateInField(builder, expirationNotifyDateInField)
+def ItemExcelAddIsOverrideExpirationField(builder, isOverrideExpirationField): builder.PrependBoolSlot(31, isOverrideExpirationField, 0)
+def AddIsOverrideExpirationField(builder, isOverrideExpirationField):
+    return ItemExcelAddIsOverrideExpirationField(builder, isOverrideExpirationField)
+def ItemExcelAddShortcutTypeIdField(builder, shortcutTypeIdField): builder.PrependInt32Slot(32, shortcutTypeIdField, 0)
+def AddShortcutTypeIdField(builder, shortcutTypeIdField):
+    return ItemExcelAddShortcutTypeIdField(builder, shortcutTypeIdField)
+def ItemExcelAddGachaTicketField(builder, gachaTicketField): builder.PrependInt32Slot(33, gachaTicketField, 0)
+def AddGachaTicketField(builder, gachaTicketField):
+    return ItemExcelAddGachaTicketField(builder, gachaTicketField)
+def ItemExcelAddAlertPopupIdField(builder, alertPopupIdField): builder.PrependInt32Slot(34, alertPopupIdField, 0)
+def AddAlertPopupIdField(builder, alertPopupIdField):
+    return ItemExcelAddAlertPopupIdField(builder, alertPopupIdField)
+def ItemExcelAddShiftingCraftRecipeField(builder, shiftingCraftRecipeField): builder.PrependInt32Slot(35, shiftingCraftRecipeField, 0)
+def AddShiftingCraftRecipeField(builder, shiftingCraftRecipeField):
+    return ItemExcelAddShiftingCraftRecipeField(builder, shiftingCraftRecipeField)
 def ItemExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ItemExcelEnd(builder)

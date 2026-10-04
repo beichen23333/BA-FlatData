@@ -25,14 +25,14 @@ class KeyMappingDisplayInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # KeyMappingDisplayInfoExcel
-    def KeyMappingKeyCode(self):
+    def KeyMappingKeyCodeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingDisplayInfoExcel
-    def KeyMappingDisplayName(self):
+    def KeyMappingDisplayNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -41,12 +41,12 @@ class KeyMappingDisplayInfoExcel(object):
 def KeyMappingDisplayInfoExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return KeyMappingDisplayInfoExcelStart(builder)
-def KeyMappingDisplayInfoExcelAddKeyMappingKeyCode(builder, keyMappingKeyCode): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(keyMappingKeyCode), 0)
-def AddKeyMappingKeyCode(builder, keyMappingKeyCode):
-    return KeyMappingDisplayInfoExcelAddKeyMappingKeyCode(builder, keyMappingKeyCode)
-def KeyMappingDisplayInfoExcelAddKeyMappingDisplayName(builder, keyMappingDisplayName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(keyMappingDisplayName), 0)
-def AddKeyMappingDisplayName(builder, keyMappingDisplayName):
-    return KeyMappingDisplayInfoExcelAddKeyMappingDisplayName(builder, keyMappingDisplayName)
+def KeyMappingDisplayInfoExcelAddKeyMappingKeyCodeField(builder, keyMappingKeyCodeField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(keyMappingKeyCodeField), 0)
+def AddKeyMappingKeyCodeField(builder, keyMappingKeyCodeField):
+    return KeyMappingDisplayInfoExcelAddKeyMappingKeyCodeField(builder, keyMappingKeyCodeField)
+def KeyMappingDisplayInfoExcelAddKeyMappingDisplayNameField(builder, keyMappingDisplayNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(keyMappingDisplayNameField), 0)
+def AddKeyMappingDisplayNameField(builder, keyMappingDisplayNameField):
+    return KeyMappingDisplayInfoExcelAddKeyMappingDisplayNameField(builder, keyMappingDisplayNameField)
 def KeyMappingDisplayInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return KeyMappingDisplayInfoExcelEnd(builder)

@@ -25,35 +25,35 @@ class FieldWarpExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FieldWarpExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldWarpExcel
-    def CurrentSceneId(self):
+    def CurrentSceneIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldWarpExcel
-    def ResultSceneId(self):
+    def ResultSceneIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldWarpExcel
-    def ResultSceneNameKey(self):
+    def ResultSceneNameKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # FieldWarpExcel
-    def ResultSceneImagePath(self):
+    def ResultSceneImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -62,21 +62,21 @@ class FieldWarpExcel(object):
 def FieldWarpExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return FieldWarpExcelStart(builder)
-def FieldWarpExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(0, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return FieldWarpExcelAddUniqueId(builder, uniqueId)
-def FieldWarpExcelAddCurrentSceneId(builder, currentSceneId): builder.PrependInt32Slot(1, currentSceneId, 0)
-def AddCurrentSceneId(builder, currentSceneId):
-    return FieldWarpExcelAddCurrentSceneId(builder, currentSceneId)
-def FieldWarpExcelAddResultSceneId(builder, resultSceneId): builder.PrependInt32Slot(2, resultSceneId, 0)
-def AddResultSceneId(builder, resultSceneId):
-    return FieldWarpExcelAddResultSceneId(builder, resultSceneId)
-def FieldWarpExcelAddResultSceneNameKey(builder, resultSceneNameKey): builder.PrependUint32Slot(3, resultSceneNameKey, 0)
-def AddResultSceneNameKey(builder, resultSceneNameKey):
-    return FieldWarpExcelAddResultSceneNameKey(builder, resultSceneNameKey)
-def FieldWarpExcelAddResultSceneImagePath(builder, resultSceneImagePath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(resultSceneImagePath), 0)
-def AddResultSceneImagePath(builder, resultSceneImagePath):
-    return FieldWarpExcelAddResultSceneImagePath(builder, resultSceneImagePath)
+def FieldWarpExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return FieldWarpExcelAddUniqueIdField(builder, uniqueIdField)
+def FieldWarpExcelAddCurrentSceneIdField(builder, currentSceneIdField): builder.PrependInt32Slot(1, currentSceneIdField, 0)
+def AddCurrentSceneIdField(builder, currentSceneIdField):
+    return FieldWarpExcelAddCurrentSceneIdField(builder, currentSceneIdField)
+def FieldWarpExcelAddResultSceneIdField(builder, resultSceneIdField): builder.PrependInt32Slot(2, resultSceneIdField, 0)
+def AddResultSceneIdField(builder, resultSceneIdField):
+    return FieldWarpExcelAddResultSceneIdField(builder, resultSceneIdField)
+def FieldWarpExcelAddResultSceneNameKeyField(builder, resultSceneNameKeyField): builder.PrependUint32Slot(3, resultSceneNameKeyField, 0)
+def AddResultSceneNameKeyField(builder, resultSceneNameKeyField):
+    return FieldWarpExcelAddResultSceneNameKeyField(builder, resultSceneNameKeyField)
+def FieldWarpExcelAddResultSceneImagePathField(builder, resultSceneImagePathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(resultSceneImagePathField), 0)
+def AddResultSceneImagePathField(builder, resultSceneImagePathField):
+    return FieldWarpExcelAddResultSceneImagePathField(builder, resultSceneImagePathField)
 def FieldWarpExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FieldWarpExcelEnd(builder)

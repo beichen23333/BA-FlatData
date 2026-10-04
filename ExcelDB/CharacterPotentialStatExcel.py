@@ -25,28 +25,28 @@ class CharacterPotentialStatExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterPotentialStatExcel
-    def PotentialStatGroupId(self):
+    def PotentialStatGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterPotentialStatExcel
-    def PotentialLevel(self):
+    def PotentialLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterPotentialStatExcel
-    def RecipeId(self):
+    def RecipeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterPotentialStatExcel
-    def StatBonusRate(self):
+    def StatBonusRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class CharacterPotentialStatExcel(object):
 def CharacterPotentialStatExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return CharacterPotentialStatExcelStart(builder)
-def CharacterPotentialStatExcelAddPotentialStatGroupId(builder, potentialStatGroupId): builder.PrependInt32Slot(0, potentialStatGroupId, 0)
-def AddPotentialStatGroupId(builder, potentialStatGroupId):
-    return CharacterPotentialStatExcelAddPotentialStatGroupId(builder, potentialStatGroupId)
-def CharacterPotentialStatExcelAddPotentialLevel(builder, potentialLevel): builder.PrependInt32Slot(1, potentialLevel, 0)
-def AddPotentialLevel(builder, potentialLevel):
-    return CharacterPotentialStatExcelAddPotentialLevel(builder, potentialLevel)
-def CharacterPotentialStatExcelAddRecipeId(builder, recipeId): builder.PrependInt32Slot(2, recipeId, 0)
-def AddRecipeId(builder, recipeId):
-    return CharacterPotentialStatExcelAddRecipeId(builder, recipeId)
-def CharacterPotentialStatExcelAddStatBonusRate(builder, statBonusRate): builder.PrependInt32Slot(3, statBonusRate, 0)
-def AddStatBonusRate(builder, statBonusRate):
-    return CharacterPotentialStatExcelAddStatBonusRate(builder, statBonusRate)
+def CharacterPotentialStatExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField): builder.PrependInt32Slot(0, potentialStatGroupIdField, 0)
+def AddPotentialStatGroupIdField(builder, potentialStatGroupIdField):
+    return CharacterPotentialStatExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField)
+def CharacterPotentialStatExcelAddPotentialLevelField(builder, potentialLevelField): builder.PrependInt32Slot(1, potentialLevelField, 0)
+def AddPotentialLevelField(builder, potentialLevelField):
+    return CharacterPotentialStatExcelAddPotentialLevelField(builder, potentialLevelField)
+def CharacterPotentialStatExcelAddRecipeIdField(builder, recipeIdField): builder.PrependInt32Slot(2, recipeIdField, 0)
+def AddRecipeIdField(builder, recipeIdField):
+    return CharacterPotentialStatExcelAddRecipeIdField(builder, recipeIdField)
+def CharacterPotentialStatExcelAddStatBonusRateField(builder, statBonusRateField): builder.PrependInt32Slot(3, statBonusRateField, 0)
+def AddStatBonusRateField(builder, statBonusRateField):
+    return CharacterPotentialStatExcelAddStatBonusRateField(builder, statBonusRateField)
 def CharacterPotentialStatExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterPotentialStatExcelEnd(builder)

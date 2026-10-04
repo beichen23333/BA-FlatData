@@ -25,14 +25,14 @@ class EventContentClueSearchRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentClueSearchRewardExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,26 +40,26 @@ class EventContentClueSearchRewardExcel(object):
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -67,26 +67,26 @@ class EventContentClueSearchRewardExcel(object):
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelAmount(self, j):
+    def RewardParcelAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -94,48 +94,48 @@ class EventContentClueSearchRewardExcel(object):
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelAmountAsNumpy(self):
+    def RewardParcelAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelAmountLength(self):
+    def RewardParcelAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentClueSearchRewardExcel
-    def RewardParcelAmountIsNone(self):
+    def RewardParcelAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
 def EventContentClueSearchRewardExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentClueSearchRewardExcelStart(builder)
-def EventContentClueSearchRewardExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return EventContentClueSearchRewardExcelAddId(builder, id)
-def EventContentClueSearchRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return EventContentClueSearchRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def EventContentClueSearchRewardExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return EventContentClueSearchRewardExcelStartRewardParcelTypeVector(builder, numElems)
-def EventContentClueSearchRewardExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return EventContentClueSearchRewardExcelAddRewardParcelId(builder, rewardParcelId)
-def EventContentClueSearchRewardExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return EventContentClueSearchRewardExcelStartRewardParcelIdVector(builder, numElems)
-def EventContentClueSearchRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmount), 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return EventContentClueSearchRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def EventContentClueSearchRewardExcelStartRewardParcelAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountVector(builder, numElems):
-    return EventContentClueSearchRewardExcelStartRewardParcelAmountVector(builder, numElems)
+def EventContentClueSearchRewardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return EventContentClueSearchRewardExcelAddIdField(builder, idField)
+def EventContentClueSearchRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return EventContentClueSearchRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def EventContentClueSearchRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return EventContentClueSearchRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def EventContentClueSearchRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return EventContentClueSearchRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def EventContentClueSearchRewardExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return EventContentClueSearchRewardExcelStartRewardParcelIdFieldVector(builder, numElems)
+def EventContentClueSearchRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return EventContentClueSearchRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def EventContentClueSearchRewardExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelAmountFieldVector(builder, numElems):
+    return EventContentClueSearchRewardExcelStartRewardParcelAmountFieldVector(builder, numElems)
 def EventContentClueSearchRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentClueSearchRewardExcelEnd(builder)

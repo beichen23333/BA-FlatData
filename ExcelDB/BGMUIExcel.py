@@ -25,35 +25,35 @@ class BGMUIExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BGMUIExcel
-    def UIPrefab(self):
+    def UIPrefabField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # BGMUIExcel
-    def BGMId(self):
+    def BGMIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BGMUIExcel
-    def BGMId2nd(self):
+    def BGMId2ndField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BGMUIExcel
-    def BGMId3rd(self):
+    def BGMId3rdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BGMUIExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class BGMUIExcel(object):
 def BGMUIExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return BGMUIExcelStart(builder)
-def BGMUIExcelAddUIPrefab(builder, uIPrefab): builder.PrependUint32Slot(0, uIPrefab, 0)
-def AddUIPrefab(builder, uIPrefab):
-    return BGMUIExcelAddUIPrefab(builder, uIPrefab)
-def BGMUIExcelAddBGMId(builder, bGMId): builder.PrependInt32Slot(1, bGMId, 0)
-def AddBGMId(builder, bGMId):
-    return BGMUIExcelAddBGMId(builder, bGMId)
-def BGMUIExcelAddBGMId2nd(builder, bGMId2nd): builder.PrependInt32Slot(2, bGMId2nd, 0)
-def AddBGMId2nd(builder, bGMId2nd):
-    return BGMUIExcelAddBGMId2nd(builder, bGMId2nd)
-def BGMUIExcelAddBGMId3rd(builder, bGMId3rd): builder.PrependInt32Slot(3, bGMId3rd, 0)
-def AddBGMId3rd(builder, bGMId3rd):
-    return BGMUIExcelAddBGMId3rd(builder, bGMId3rd)
-def BGMUIExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(4, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return BGMUIExcelAddEventContentId(builder, eventContentId)
+def BGMUIExcelAddUIPrefabField(builder, uIPrefabField): builder.PrependUint32Slot(0, uIPrefabField, 0)
+def AddUIPrefabField(builder, uIPrefabField):
+    return BGMUIExcelAddUIPrefabField(builder, uIPrefabField)
+def BGMUIExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(1, bGMIdField, 0)
+def AddBGMIdField(builder, bGMIdField):
+    return BGMUIExcelAddBGMIdField(builder, bGMIdField)
+def BGMUIExcelAddBGMId2ndField(builder, bGMId2ndField): builder.PrependInt32Slot(2, bGMId2ndField, 0)
+def AddBGMId2ndField(builder, bGMId2ndField):
+    return BGMUIExcelAddBGMId2ndField(builder, bGMId2ndField)
+def BGMUIExcelAddBGMId3rdField(builder, bGMId3rdField): builder.PrependInt32Slot(3, bGMId3rdField, 0)
+def AddBGMId3rdField(builder, bGMId3rdField):
+    return BGMUIExcelAddBGMId3rdField(builder, bGMId3rdField)
+def BGMUIExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(4, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return BGMUIExcelAddEventContentIdField(builder, eventContentIdField)
 def BGMUIExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return BGMUIExcelEnd(builder)

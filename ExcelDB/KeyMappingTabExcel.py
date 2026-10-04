@@ -25,77 +25,77 @@ class KeyMappingTabExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # KeyMappingTabExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingTabExcel
-    def LeftArrowKey(self):
+    def LeftArrowKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingTabExcel
-    def RightArrowKey(self):
+    def RightArrowKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingTabExcel
-    def LeftIconPositionX(self):
+    def LeftIconPositionXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingTabExcel
-    def LeftIconPositionY(self):
+    def LeftIconPositionYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingTabExcel
-    def LeftIconScaleX(self):
+    def LeftIconScaleXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingTabExcel
-    def LeftIconScaleY(self):
+    def LeftIconScaleYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingTabExcel
-    def RightIconPositionX(self):
+    def RightIconPositionXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingTabExcel
-    def RightIconPositionY(self):
+    def RightIconPositionYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingTabExcel
-    def RightIconScaleX(self):
+    def RightIconScaleXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingTabExcel
-    def RightIconScaleY(self):
+    def RightIconScaleYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -104,39 +104,39 @@ class KeyMappingTabExcel(object):
 def KeyMappingTabExcelStart(builder): builder.StartObject(11)
 def Start(builder):
     return KeyMappingTabExcelStart(builder)
-def KeyMappingTabExcelAddId(builder, id): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(id), 0)
-def AddId(builder, id):
-    return KeyMappingTabExcelAddId(builder, id)
-def KeyMappingTabExcelAddLeftArrowKey(builder, leftArrowKey): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(leftArrowKey), 0)
-def AddLeftArrowKey(builder, leftArrowKey):
-    return KeyMappingTabExcelAddLeftArrowKey(builder, leftArrowKey)
-def KeyMappingTabExcelAddRightArrowKey(builder, rightArrowKey): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rightArrowKey), 0)
-def AddRightArrowKey(builder, rightArrowKey):
-    return KeyMappingTabExcelAddRightArrowKey(builder, rightArrowKey)
-def KeyMappingTabExcelAddLeftIconPositionX(builder, leftIconPositionX): builder.PrependFloat32Slot(3, leftIconPositionX, 0.0)
-def AddLeftIconPositionX(builder, leftIconPositionX):
-    return KeyMappingTabExcelAddLeftIconPositionX(builder, leftIconPositionX)
-def KeyMappingTabExcelAddLeftIconPositionY(builder, leftIconPositionY): builder.PrependFloat32Slot(4, leftIconPositionY, 0.0)
-def AddLeftIconPositionY(builder, leftIconPositionY):
-    return KeyMappingTabExcelAddLeftIconPositionY(builder, leftIconPositionY)
-def KeyMappingTabExcelAddLeftIconScaleX(builder, leftIconScaleX): builder.PrependFloat32Slot(5, leftIconScaleX, 0.0)
-def AddLeftIconScaleX(builder, leftIconScaleX):
-    return KeyMappingTabExcelAddLeftIconScaleX(builder, leftIconScaleX)
-def KeyMappingTabExcelAddLeftIconScaleY(builder, leftIconScaleY): builder.PrependFloat32Slot(6, leftIconScaleY, 0.0)
-def AddLeftIconScaleY(builder, leftIconScaleY):
-    return KeyMappingTabExcelAddLeftIconScaleY(builder, leftIconScaleY)
-def KeyMappingTabExcelAddRightIconPositionX(builder, rightIconPositionX): builder.PrependFloat32Slot(7, rightIconPositionX, 0.0)
-def AddRightIconPositionX(builder, rightIconPositionX):
-    return KeyMappingTabExcelAddRightIconPositionX(builder, rightIconPositionX)
-def KeyMappingTabExcelAddRightIconPositionY(builder, rightIconPositionY): builder.PrependFloat32Slot(8, rightIconPositionY, 0.0)
-def AddRightIconPositionY(builder, rightIconPositionY):
-    return KeyMappingTabExcelAddRightIconPositionY(builder, rightIconPositionY)
-def KeyMappingTabExcelAddRightIconScaleX(builder, rightIconScaleX): builder.PrependFloat32Slot(9, rightIconScaleX, 0.0)
-def AddRightIconScaleX(builder, rightIconScaleX):
-    return KeyMappingTabExcelAddRightIconScaleX(builder, rightIconScaleX)
-def KeyMappingTabExcelAddRightIconScaleY(builder, rightIconScaleY): builder.PrependFloat32Slot(10, rightIconScaleY, 0.0)
-def AddRightIconScaleY(builder, rightIconScaleY):
-    return KeyMappingTabExcelAddRightIconScaleY(builder, rightIconScaleY)
+def KeyMappingTabExcelAddIdField(builder, idField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(idField), 0)
+def AddIdField(builder, idField):
+    return KeyMappingTabExcelAddIdField(builder, idField)
+def KeyMappingTabExcelAddLeftArrowKeyField(builder, leftArrowKeyField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(leftArrowKeyField), 0)
+def AddLeftArrowKeyField(builder, leftArrowKeyField):
+    return KeyMappingTabExcelAddLeftArrowKeyField(builder, leftArrowKeyField)
+def KeyMappingTabExcelAddRightArrowKeyField(builder, rightArrowKeyField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rightArrowKeyField), 0)
+def AddRightArrowKeyField(builder, rightArrowKeyField):
+    return KeyMappingTabExcelAddRightArrowKeyField(builder, rightArrowKeyField)
+def KeyMappingTabExcelAddLeftIconPositionXField(builder, leftIconPositionXField): builder.PrependFloat32Slot(3, leftIconPositionXField, 0.0)
+def AddLeftIconPositionXField(builder, leftIconPositionXField):
+    return KeyMappingTabExcelAddLeftIconPositionXField(builder, leftIconPositionXField)
+def KeyMappingTabExcelAddLeftIconPositionYField(builder, leftIconPositionYField): builder.PrependFloat32Slot(4, leftIconPositionYField, 0.0)
+def AddLeftIconPositionYField(builder, leftIconPositionYField):
+    return KeyMappingTabExcelAddLeftIconPositionYField(builder, leftIconPositionYField)
+def KeyMappingTabExcelAddLeftIconScaleXField(builder, leftIconScaleXField): builder.PrependFloat32Slot(5, leftIconScaleXField, 0.0)
+def AddLeftIconScaleXField(builder, leftIconScaleXField):
+    return KeyMappingTabExcelAddLeftIconScaleXField(builder, leftIconScaleXField)
+def KeyMappingTabExcelAddLeftIconScaleYField(builder, leftIconScaleYField): builder.PrependFloat32Slot(6, leftIconScaleYField, 0.0)
+def AddLeftIconScaleYField(builder, leftIconScaleYField):
+    return KeyMappingTabExcelAddLeftIconScaleYField(builder, leftIconScaleYField)
+def KeyMappingTabExcelAddRightIconPositionXField(builder, rightIconPositionXField): builder.PrependFloat32Slot(7, rightIconPositionXField, 0.0)
+def AddRightIconPositionXField(builder, rightIconPositionXField):
+    return KeyMappingTabExcelAddRightIconPositionXField(builder, rightIconPositionXField)
+def KeyMappingTabExcelAddRightIconPositionYField(builder, rightIconPositionYField): builder.PrependFloat32Slot(8, rightIconPositionYField, 0.0)
+def AddRightIconPositionYField(builder, rightIconPositionYField):
+    return KeyMappingTabExcelAddRightIconPositionYField(builder, rightIconPositionYField)
+def KeyMappingTabExcelAddRightIconScaleXField(builder, rightIconScaleXField): builder.PrependFloat32Slot(9, rightIconScaleXField, 0.0)
+def AddRightIconScaleXField(builder, rightIconScaleXField):
+    return KeyMappingTabExcelAddRightIconScaleXField(builder, rightIconScaleXField)
+def KeyMappingTabExcelAddRightIconScaleYField(builder, rightIconScaleYField): builder.PrependFloat32Slot(10, rightIconScaleYField, 0.0)
+def AddRightIconScaleYField(builder, rightIconScaleYField):
+    return KeyMappingTabExcelAddRightIconScaleYField(builder, rightIconScaleYField)
 def KeyMappingTabExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return KeyMappingTabExcelEnd(builder)

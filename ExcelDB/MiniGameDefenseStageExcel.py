@@ -25,105 +25,105 @@ class MiniGameDefenseStageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MiniGameDefenseStageExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameDefenseStageExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StageDifficulty(self):
+    def StageDifficultyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StageDifficultyLocalize(self):
+    def StageDifficultyLocalizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StageNumber(self):
+    def StageNumberField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StageDisplay(self):
+    def StageDisplayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def PrevStageId(self):
+    def PrevStageIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def EchelonExtensionType(self):
+    def EchelonExtensionTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def BattleDuration(self):
+    def BattleDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StageEnterCostType(self):
+    def StageEnterCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StageEnterCostId(self):
+    def StageEnterCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StageEnterCostAmount(self):
+    def StageEnterCostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def EventContentStageRewardId(self):
+    def EventContentStageRewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def EnterScenarioGroupId(self, j):
+    def EnterScenarioGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             a = self._tab.Vector(o)
@@ -131,26 +131,26 @@ class MiniGameDefenseStageExcel(object):
         return 0
 
     # MiniGameDefenseStageExcel
-    def EnterScenarioGroupIdAsNumpy(self):
+    def EnterScenarioGroupIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MiniGameDefenseStageExcel
-    def EnterScenarioGroupIdLength(self):
+    def EnterScenarioGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameDefenseStageExcel
-    def EnterScenarioGroupIdIsNone(self):
+    def EnterScenarioGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         return o == 0
 
     # MiniGameDefenseStageExcel
-    def ClearScenarioGroupId(self, j):
+    def ClearScenarioGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             a = self._tab.Vector(o)
@@ -158,54 +158,54 @@ class MiniGameDefenseStageExcel(object):
         return 0
 
     # MiniGameDefenseStageExcel
-    def ClearScenarioGroupIdAsNumpy(self):
+    def ClearScenarioGroupIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MiniGameDefenseStageExcel
-    def ClearScenarioGroupIdLength(self):
+    def ClearScenarioGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameDefenseStageExcel
-    def ClearScenarioGroupIdIsNone(self):
+    def ClearScenarioGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         return o == 0
 
     # MiniGameDefenseStageExcel
-    def StageTopography(self):
+    def StageTopographyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def RecommandLevel(self):
+    def RecommandLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def GroundID(self):
+    def GroundIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def ContentType(self):
+    def ContentTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StarGoal(self, j):
+    def StarGoalField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             a = self._tab.Vector(o)
@@ -213,26 +213,26 @@ class MiniGameDefenseStageExcel(object):
         return 0
 
     # MiniGameDefenseStageExcel
-    def StarGoalAsNumpy(self):
+    def StarGoalFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StarGoalLength(self):
+    def StarGoalFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StarGoalIsNone(self):
+    def StarGoalFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         return o == 0
 
     # MiniGameDefenseStageExcel
-    def StarGoalAmount(self, j):
+    def StarGoalAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             a = self._tab.Vector(o)
@@ -240,54 +240,54 @@ class MiniGameDefenseStageExcel(object):
         return 0
 
     # MiniGameDefenseStageExcel
-    def StarGoalAmountAsNumpy(self):
+    def StarGoalAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StarGoalAmountLength(self):
+    def StarGoalAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StarGoalAmountIsNone(self):
+    def StarGoalAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         return o == 0
 
     # MiniGameDefenseStageExcel
-    def DefenseFormationBGPrefab(self):
+    def DefenseFormationBGPrefabField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameDefenseStageExcel
-    def DefenseFormationBGPrefabScale(self):
+    def DefenseFormationBGPrefabScaleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # MiniGameDefenseStageExcel
-    def FixedEchelon(self):
+    def FixedEchelonField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def MininageDefenseFixedStatId(self):
+    def MininageDefenseFixedStatIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDefenseStageExcel
-    def StageHint(self):
+    def StageHintField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -296,99 +296,99 @@ class MiniGameDefenseStageExcel(object):
 def MiniGameDefenseStageExcelStart(builder): builder.StartObject(27)
 def Start(builder):
     return MiniGameDefenseStageExcelStart(builder)
-def MiniGameDefenseStageExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MiniGameDefenseStageExcelAddId(builder, id)
-def MiniGameDefenseStageExcelAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return MiniGameDefenseStageExcelAddName(builder, name)
-def MiniGameDefenseStageExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(2, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MiniGameDefenseStageExcelAddEventContentId(builder, eventContentId)
-def MiniGameDefenseStageExcelAddStageDifficulty(builder, stageDifficulty): builder.PrependInt32Slot(3, stageDifficulty, 0)
-def AddStageDifficulty(builder, stageDifficulty):
-    return MiniGameDefenseStageExcelAddStageDifficulty(builder, stageDifficulty)
-def MiniGameDefenseStageExcelAddStageDifficultyLocalize(builder, stageDifficultyLocalize): builder.PrependUint32Slot(4, stageDifficultyLocalize, 0)
-def AddStageDifficultyLocalize(builder, stageDifficultyLocalize):
-    return MiniGameDefenseStageExcelAddStageDifficultyLocalize(builder, stageDifficultyLocalize)
-def MiniGameDefenseStageExcelAddStageNumber(builder, stageNumber): builder.PrependInt32Slot(5, stageNumber, 0)
-def AddStageNumber(builder, stageNumber):
-    return MiniGameDefenseStageExcelAddStageNumber(builder, stageNumber)
-def MiniGameDefenseStageExcelAddStageDisplay(builder, stageDisplay): builder.PrependInt32Slot(6, stageDisplay, 0)
-def AddStageDisplay(builder, stageDisplay):
-    return MiniGameDefenseStageExcelAddStageDisplay(builder, stageDisplay)
-def MiniGameDefenseStageExcelAddPrevStageId(builder, prevStageId): builder.PrependInt32Slot(7, prevStageId, 0)
-def AddPrevStageId(builder, prevStageId):
-    return MiniGameDefenseStageExcelAddPrevStageId(builder, prevStageId)
-def MiniGameDefenseStageExcelAddEchelonExtensionType(builder, echelonExtensionType): builder.PrependInt32Slot(8, echelonExtensionType, 0)
-def AddEchelonExtensionType(builder, echelonExtensionType):
-    return MiniGameDefenseStageExcelAddEchelonExtensionType(builder, echelonExtensionType)
-def MiniGameDefenseStageExcelAddBattleDuration(builder, battleDuration): builder.PrependInt32Slot(9, battleDuration, 0)
-def AddBattleDuration(builder, battleDuration):
-    return MiniGameDefenseStageExcelAddBattleDuration(builder, battleDuration)
-def MiniGameDefenseStageExcelAddStageEnterCostType(builder, stageEnterCostType): builder.PrependInt32Slot(10, stageEnterCostType, 0)
-def AddStageEnterCostType(builder, stageEnterCostType):
-    return MiniGameDefenseStageExcelAddStageEnterCostType(builder, stageEnterCostType)
-def MiniGameDefenseStageExcelAddStageEnterCostId(builder, stageEnterCostId): builder.PrependInt32Slot(11, stageEnterCostId, 0)
-def AddStageEnterCostId(builder, stageEnterCostId):
-    return MiniGameDefenseStageExcelAddStageEnterCostId(builder, stageEnterCostId)
-def MiniGameDefenseStageExcelAddStageEnterCostAmount(builder, stageEnterCostAmount): builder.PrependInt32Slot(12, stageEnterCostAmount, 0)
-def AddStageEnterCostAmount(builder, stageEnterCostAmount):
-    return MiniGameDefenseStageExcelAddStageEnterCostAmount(builder, stageEnterCostAmount)
-def MiniGameDefenseStageExcelAddEventContentStageRewardId(builder, eventContentStageRewardId): builder.PrependInt32Slot(13, eventContentStageRewardId, 0)
-def AddEventContentStageRewardId(builder, eventContentStageRewardId):
-    return MiniGameDefenseStageExcelAddEventContentStageRewardId(builder, eventContentStageRewardId)
-def MiniGameDefenseStageExcelAddEnterScenarioGroupId(builder, enterScenarioGroupId): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(enterScenarioGroupId), 0)
-def AddEnterScenarioGroupId(builder, enterScenarioGroupId):
-    return MiniGameDefenseStageExcelAddEnterScenarioGroupId(builder, enterScenarioGroupId)
-def MiniGameDefenseStageExcelStartEnterScenarioGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEnterScenarioGroupIdVector(builder, numElems):
-    return MiniGameDefenseStageExcelStartEnterScenarioGroupIdVector(builder, numElems)
-def MiniGameDefenseStageExcelAddClearScenarioGroupId(builder, clearScenarioGroupId): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(clearScenarioGroupId), 0)
-def AddClearScenarioGroupId(builder, clearScenarioGroupId):
-    return MiniGameDefenseStageExcelAddClearScenarioGroupId(builder, clearScenarioGroupId)
-def MiniGameDefenseStageExcelStartClearScenarioGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartClearScenarioGroupIdVector(builder, numElems):
-    return MiniGameDefenseStageExcelStartClearScenarioGroupIdVector(builder, numElems)
-def MiniGameDefenseStageExcelAddStageTopography(builder, stageTopography): builder.PrependInt32Slot(16, stageTopography, 0)
-def AddStageTopography(builder, stageTopography):
-    return MiniGameDefenseStageExcelAddStageTopography(builder, stageTopography)
-def MiniGameDefenseStageExcelAddRecommandLevel(builder, recommandLevel): builder.PrependInt32Slot(17, recommandLevel, 0)
-def AddRecommandLevel(builder, recommandLevel):
-    return MiniGameDefenseStageExcelAddRecommandLevel(builder, recommandLevel)
-def MiniGameDefenseStageExcelAddGroundID(builder, groundID): builder.PrependInt32Slot(18, groundID, 0)
-def AddGroundID(builder, groundID):
-    return MiniGameDefenseStageExcelAddGroundID(builder, groundID)
-def MiniGameDefenseStageExcelAddContentType(builder, contentType): builder.PrependInt32Slot(19, contentType, 0)
-def AddContentType(builder, contentType):
-    return MiniGameDefenseStageExcelAddContentType(builder, contentType)
-def MiniGameDefenseStageExcelAddStarGoal(builder, starGoal): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(starGoal), 0)
-def AddStarGoal(builder, starGoal):
-    return MiniGameDefenseStageExcelAddStarGoal(builder, starGoal)
-def MiniGameDefenseStageExcelStartStarGoalVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStarGoalVector(builder, numElems):
-    return MiniGameDefenseStageExcelStartStarGoalVector(builder, numElems)
-def MiniGameDefenseStageExcelAddStarGoalAmount(builder, starGoalAmount): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalAmount), 0)
-def AddStarGoalAmount(builder, starGoalAmount):
-    return MiniGameDefenseStageExcelAddStarGoalAmount(builder, starGoalAmount)
-def MiniGameDefenseStageExcelStartStarGoalAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStarGoalAmountVector(builder, numElems):
-    return MiniGameDefenseStageExcelStartStarGoalAmountVector(builder, numElems)
-def MiniGameDefenseStageExcelAddDefenseFormationBGPrefab(builder, defenseFormationBGPrefab): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(defenseFormationBGPrefab), 0)
-def AddDefenseFormationBGPrefab(builder, defenseFormationBGPrefab):
-    return MiniGameDefenseStageExcelAddDefenseFormationBGPrefab(builder, defenseFormationBGPrefab)
-def MiniGameDefenseStageExcelAddDefenseFormationBGPrefabScale(builder, defenseFormationBGPrefabScale): builder.PrependFloat32Slot(23, defenseFormationBGPrefabScale, 0.0)
-def AddDefenseFormationBGPrefabScale(builder, defenseFormationBGPrefabScale):
-    return MiniGameDefenseStageExcelAddDefenseFormationBGPrefabScale(builder, defenseFormationBGPrefabScale)
-def MiniGameDefenseStageExcelAddFixedEchelon(builder, fixedEchelon): builder.PrependInt32Slot(24, fixedEchelon, 0)
-def AddFixedEchelon(builder, fixedEchelon):
-    return MiniGameDefenseStageExcelAddFixedEchelon(builder, fixedEchelon)
-def MiniGameDefenseStageExcelAddMininageDefenseFixedStatId(builder, mininageDefenseFixedStatId): builder.PrependInt32Slot(25, mininageDefenseFixedStatId, 0)
-def AddMininageDefenseFixedStatId(builder, mininageDefenseFixedStatId):
-    return MiniGameDefenseStageExcelAddMininageDefenseFixedStatId(builder, mininageDefenseFixedStatId)
-def MiniGameDefenseStageExcelAddStageHint(builder, stageHint): builder.PrependUint32Slot(26, stageHint, 0)
-def AddStageHint(builder, stageHint):
-    return MiniGameDefenseStageExcelAddStageHint(builder, stageHint)
+def MiniGameDefenseStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MiniGameDefenseStageExcelAddIdField(builder, idField)
+def MiniGameDefenseStageExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return MiniGameDefenseStageExcelAddNameField(builder, nameField)
+def MiniGameDefenseStageExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(2, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MiniGameDefenseStageExcelAddEventContentIdField(builder, eventContentIdField)
+def MiniGameDefenseStageExcelAddStageDifficultyField(builder, stageDifficultyField): builder.PrependInt32Slot(3, stageDifficultyField, 0)
+def AddStageDifficultyField(builder, stageDifficultyField):
+    return MiniGameDefenseStageExcelAddStageDifficultyField(builder, stageDifficultyField)
+def MiniGameDefenseStageExcelAddStageDifficultyLocalizeField(builder, stageDifficultyLocalizeField): builder.PrependUint32Slot(4, stageDifficultyLocalizeField, 0)
+def AddStageDifficultyLocalizeField(builder, stageDifficultyLocalizeField):
+    return MiniGameDefenseStageExcelAddStageDifficultyLocalizeField(builder, stageDifficultyLocalizeField)
+def MiniGameDefenseStageExcelAddStageNumberField(builder, stageNumberField): builder.PrependInt32Slot(5, stageNumberField, 0)
+def AddStageNumberField(builder, stageNumberField):
+    return MiniGameDefenseStageExcelAddStageNumberField(builder, stageNumberField)
+def MiniGameDefenseStageExcelAddStageDisplayField(builder, stageDisplayField): builder.PrependInt32Slot(6, stageDisplayField, 0)
+def AddStageDisplayField(builder, stageDisplayField):
+    return MiniGameDefenseStageExcelAddStageDisplayField(builder, stageDisplayField)
+def MiniGameDefenseStageExcelAddPrevStageIdField(builder, prevStageIdField): builder.PrependInt32Slot(7, prevStageIdField, 0)
+def AddPrevStageIdField(builder, prevStageIdField):
+    return MiniGameDefenseStageExcelAddPrevStageIdField(builder, prevStageIdField)
+def MiniGameDefenseStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(8, echelonExtensionTypeField, 0)
+def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
+    return MiniGameDefenseStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+def MiniGameDefenseStageExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(9, battleDurationField, 0)
+def AddBattleDurationField(builder, battleDurationField):
+    return MiniGameDefenseStageExcelAddBattleDurationField(builder, battleDurationField)
+def MiniGameDefenseStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField): builder.PrependInt32Slot(10, stageEnterCostTypeField, 0)
+def AddStageEnterCostTypeField(builder, stageEnterCostTypeField):
+    return MiniGameDefenseStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
+def MiniGameDefenseStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField): builder.PrependInt32Slot(11, stageEnterCostIdField, 0)
+def AddStageEnterCostIdField(builder, stageEnterCostIdField):
+    return MiniGameDefenseStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
+def MiniGameDefenseStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField): builder.PrependInt32Slot(12, stageEnterCostAmountField, 0)
+def AddStageEnterCostAmountField(builder, stageEnterCostAmountField):
+    return MiniGameDefenseStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
+def MiniGameDefenseStageExcelAddEventContentStageRewardIdField(builder, eventContentStageRewardIdField): builder.PrependInt32Slot(13, eventContentStageRewardIdField, 0)
+def AddEventContentStageRewardIdField(builder, eventContentStageRewardIdField):
+    return MiniGameDefenseStageExcelAddEventContentStageRewardIdField(builder, eventContentStageRewardIdField)
+def MiniGameDefenseStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(enterScenarioGroupIdField), 0)
+def AddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField):
+    return MiniGameDefenseStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField)
+def MiniGameDefenseStageExcelStartEnterScenarioGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEnterScenarioGroupIdFieldVector(builder, numElems):
+    return MiniGameDefenseStageExcelStartEnterScenarioGroupIdFieldVector(builder, numElems)
+def MiniGameDefenseStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(clearScenarioGroupIdField), 0)
+def AddClearScenarioGroupIdField(builder, clearScenarioGroupIdField):
+    return MiniGameDefenseStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField)
+def MiniGameDefenseStageExcelStartClearScenarioGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartClearScenarioGroupIdFieldVector(builder, numElems):
+    return MiniGameDefenseStageExcelStartClearScenarioGroupIdFieldVector(builder, numElems)
+def MiniGameDefenseStageExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(16, stageTopographyField, 0)
+def AddStageTopographyField(builder, stageTopographyField):
+    return MiniGameDefenseStageExcelAddStageTopographyField(builder, stageTopographyField)
+def MiniGameDefenseStageExcelAddRecommandLevelField(builder, recommandLevelField): builder.PrependInt32Slot(17, recommandLevelField, 0)
+def AddRecommandLevelField(builder, recommandLevelField):
+    return MiniGameDefenseStageExcelAddRecommandLevelField(builder, recommandLevelField)
+def MiniGameDefenseStageExcelAddGroundIDField(builder, groundIDField): builder.PrependInt32Slot(18, groundIDField, 0)
+def AddGroundIDField(builder, groundIDField):
+    return MiniGameDefenseStageExcelAddGroundIDField(builder, groundIDField)
+def MiniGameDefenseStageExcelAddContentTypeField(builder, contentTypeField): builder.PrependInt32Slot(19, contentTypeField, 0)
+def AddContentTypeField(builder, contentTypeField):
+    return MiniGameDefenseStageExcelAddContentTypeField(builder, contentTypeField)
+def MiniGameDefenseStageExcelAddStarGoalField(builder, starGoalField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalField), 0)
+def AddStarGoalField(builder, starGoalField):
+    return MiniGameDefenseStageExcelAddStarGoalField(builder, starGoalField)
+def MiniGameDefenseStageExcelStartStarGoalFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStarGoalFieldVector(builder, numElems):
+    return MiniGameDefenseStageExcelStartStarGoalFieldVector(builder, numElems)
+def MiniGameDefenseStageExcelAddStarGoalAmountField(builder, starGoalAmountField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalAmountField), 0)
+def AddStarGoalAmountField(builder, starGoalAmountField):
+    return MiniGameDefenseStageExcelAddStarGoalAmountField(builder, starGoalAmountField)
+def MiniGameDefenseStageExcelStartStarGoalAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStarGoalAmountFieldVector(builder, numElems):
+    return MiniGameDefenseStageExcelStartStarGoalAmountFieldVector(builder, numElems)
+def MiniGameDefenseStageExcelAddDefenseFormationBGPrefabField(builder, defenseFormationBGPrefabField): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(defenseFormationBGPrefabField), 0)
+def AddDefenseFormationBGPrefabField(builder, defenseFormationBGPrefabField):
+    return MiniGameDefenseStageExcelAddDefenseFormationBGPrefabField(builder, defenseFormationBGPrefabField)
+def MiniGameDefenseStageExcelAddDefenseFormationBGPrefabScaleField(builder, defenseFormationBGPrefabScaleField): builder.PrependFloat32Slot(23, defenseFormationBGPrefabScaleField, 0.0)
+def AddDefenseFormationBGPrefabScaleField(builder, defenseFormationBGPrefabScaleField):
+    return MiniGameDefenseStageExcelAddDefenseFormationBGPrefabScaleField(builder, defenseFormationBGPrefabScaleField)
+def MiniGameDefenseStageExcelAddFixedEchelonField(builder, fixedEchelonField): builder.PrependInt32Slot(24, fixedEchelonField, 0)
+def AddFixedEchelonField(builder, fixedEchelonField):
+    return MiniGameDefenseStageExcelAddFixedEchelonField(builder, fixedEchelonField)
+def MiniGameDefenseStageExcelAddMininageDefenseFixedStatIdField(builder, mininageDefenseFixedStatIdField): builder.PrependInt32Slot(25, mininageDefenseFixedStatIdField, 0)
+def AddMininageDefenseFixedStatIdField(builder, mininageDefenseFixedStatIdField):
+    return MiniGameDefenseStageExcelAddMininageDefenseFixedStatIdField(builder, mininageDefenseFixedStatIdField)
+def MiniGameDefenseStageExcelAddStageHintField(builder, stageHintField): builder.PrependUint32Slot(26, stageHintField, 0)
+def AddStageHintField(builder, stageHintField):
+    return MiniGameDefenseStageExcelAddStageHintField(builder, stageHintField)
 def MiniGameDefenseStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MiniGameDefenseStageExcelEnd(builder)

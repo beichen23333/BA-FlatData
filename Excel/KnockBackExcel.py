@@ -25,21 +25,21 @@ class KnockBackExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # KnockBackExcel
-    def Index(self):
+    def IndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # KnockBackExcel
-    def Dist(self):
+    def DistField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KnockBackExcel
-    def Speed(self):
+    def SpeedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -48,15 +48,15 @@ class KnockBackExcel(object):
 def KnockBackExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return KnockBackExcelStart(builder)
-def KnockBackExcelAddIndex(builder, index): builder.PrependInt32Slot(0, index, 0)
-def AddIndex(builder, index):
-    return KnockBackExcelAddIndex(builder, index)
-def KnockBackExcelAddDist(builder, dist): builder.PrependFloat32Slot(1, dist, 0.0)
-def AddDist(builder, dist):
-    return KnockBackExcelAddDist(builder, dist)
-def KnockBackExcelAddSpeed(builder, speed): builder.PrependFloat32Slot(2, speed, 0.0)
-def AddSpeed(builder, speed):
-    return KnockBackExcelAddSpeed(builder, speed)
+def KnockBackExcelAddIndexField(builder, indexField): builder.PrependInt32Slot(0, indexField, 0)
+def AddIndexField(builder, indexField):
+    return KnockBackExcelAddIndexField(builder, indexField)
+def KnockBackExcelAddDistField(builder, distField): builder.PrependFloat32Slot(1, distField, 0.0)
+def AddDistField(builder, distField):
+    return KnockBackExcelAddDistField(builder, distField)
+def KnockBackExcelAddSpeedField(builder, speedField): builder.PrependFloat32Slot(2, speedField, 0.0)
+def AddSpeedField(builder, speedField):
+    return KnockBackExcelAddSpeedField(builder, speedField)
 def KnockBackExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return KnockBackExcelEnd(builder)

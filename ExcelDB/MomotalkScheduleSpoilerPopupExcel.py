@@ -25,35 +25,35 @@ class MomotalkScheduleSpoilerPopupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MomotalkScheduleSpoilerPopupExcel
-    def FavorScheduleId(self):
+    def FavorScheduleIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MomotalkScheduleSpoilerPopupExcel
-    def SpoilerPopupTitle(self):
+    def SpoilerPopupTitleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MomotalkScheduleSpoilerPopupExcel
-    def SpoilerPopupDescription(self):
+    def SpoilerPopupDescriptionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MomotalkScheduleSpoilerPopupExcel
-    def PopupType(self):
+    def PopupTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MomotalkScheduleSpoilerPopupExcel
-    def ConditionScenarioModeId(self):
+    def ConditionScenarioModeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class MomotalkScheduleSpoilerPopupExcel(object):
 def MomotalkScheduleSpoilerPopupExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return MomotalkScheduleSpoilerPopupExcelStart(builder)
-def MomotalkScheduleSpoilerPopupExcelAddFavorScheduleId(builder, favorScheduleId): builder.PrependInt32Slot(0, favorScheduleId, 0)
-def AddFavorScheduleId(builder, favorScheduleId):
-    return MomotalkScheduleSpoilerPopupExcelAddFavorScheduleId(builder, favorScheduleId)
-def MomotalkScheduleSpoilerPopupExcelAddSpoilerPopupTitle(builder, spoilerPopupTitle): builder.PrependUint32Slot(1, spoilerPopupTitle, 0)
-def AddSpoilerPopupTitle(builder, spoilerPopupTitle):
-    return MomotalkScheduleSpoilerPopupExcelAddSpoilerPopupTitle(builder, spoilerPopupTitle)
-def MomotalkScheduleSpoilerPopupExcelAddSpoilerPopupDescription(builder, spoilerPopupDescription): builder.PrependUint32Slot(2, spoilerPopupDescription, 0)
-def AddSpoilerPopupDescription(builder, spoilerPopupDescription):
-    return MomotalkScheduleSpoilerPopupExcelAddSpoilerPopupDescription(builder, spoilerPopupDescription)
-def MomotalkScheduleSpoilerPopupExcelAddPopupType(builder, popupType): builder.PrependInt32Slot(3, popupType, 0)
-def AddPopupType(builder, popupType):
-    return MomotalkScheduleSpoilerPopupExcelAddPopupType(builder, popupType)
-def MomotalkScheduleSpoilerPopupExcelAddConditionScenarioModeId(builder, conditionScenarioModeId): builder.PrependInt32Slot(4, conditionScenarioModeId, 0)
-def AddConditionScenarioModeId(builder, conditionScenarioModeId):
-    return MomotalkScheduleSpoilerPopupExcelAddConditionScenarioModeId(builder, conditionScenarioModeId)
+def MomotalkScheduleSpoilerPopupExcelAddFavorScheduleIdField(builder, favorScheduleIdField): builder.PrependInt32Slot(0, favorScheduleIdField, 0)
+def AddFavorScheduleIdField(builder, favorScheduleIdField):
+    return MomotalkScheduleSpoilerPopupExcelAddFavorScheduleIdField(builder, favorScheduleIdField)
+def MomotalkScheduleSpoilerPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField): builder.PrependUint32Slot(1, spoilerPopupTitleField, 0)
+def AddSpoilerPopupTitleField(builder, spoilerPopupTitleField):
+    return MomotalkScheduleSpoilerPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField)
+def MomotalkScheduleSpoilerPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField): builder.PrependUint32Slot(2, spoilerPopupDescriptionField, 0)
+def AddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField):
+    return MomotalkScheduleSpoilerPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField)
+def MomotalkScheduleSpoilerPopupExcelAddPopupTypeField(builder, popupTypeField): builder.PrependInt32Slot(3, popupTypeField, 0)
+def AddPopupTypeField(builder, popupTypeField):
+    return MomotalkScheduleSpoilerPopupExcelAddPopupTypeField(builder, popupTypeField)
+def MomotalkScheduleSpoilerPopupExcelAddConditionScenarioModeIdField(builder, conditionScenarioModeIdField): builder.PrependInt32Slot(4, conditionScenarioModeIdField, 0)
+def AddConditionScenarioModeIdField(builder, conditionScenarioModeIdField):
+    return MomotalkScheduleSpoilerPopupExcelAddConditionScenarioModeIdField(builder, conditionScenarioModeIdField)
 def MomotalkScheduleSpoilerPopupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MomotalkScheduleSpoilerPopupExcelEnd(builder)

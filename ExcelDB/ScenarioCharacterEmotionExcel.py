@@ -25,14 +25,14 @@ class ScenarioCharacterEmotionExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ScenarioCharacterEmotionExcel
-    def EmoticonName(self):
+    def EmoticonNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioCharacterEmotionExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class ScenarioCharacterEmotionExcel(object):
 def ScenarioCharacterEmotionExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return ScenarioCharacterEmotionExcelStart(builder)
-def ScenarioCharacterEmotionExcelAddEmoticonName(builder, emoticonName): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(emoticonName), 0)
-def AddEmoticonName(builder, emoticonName):
-    return ScenarioCharacterEmotionExcelAddEmoticonName(builder, emoticonName)
-def ScenarioCharacterEmotionExcelAddName(builder, name): builder.PrependUint32Slot(1, name, 0)
-def AddName(builder, name):
-    return ScenarioCharacterEmotionExcelAddName(builder, name)
+def ScenarioCharacterEmotionExcelAddEmoticonNameField(builder, emoticonNameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(emoticonNameField), 0)
+def AddEmoticonNameField(builder, emoticonNameField):
+    return ScenarioCharacterEmotionExcelAddEmoticonNameField(builder, emoticonNameField)
+def ScenarioCharacterEmotionExcelAddNameField(builder, nameField): builder.PrependUint32Slot(1, nameField, 0)
+def AddNameField(builder, nameField):
+    return ScenarioCharacterEmotionExcelAddNameField(builder, nameField)
 def ScenarioCharacterEmotionExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ScenarioCharacterEmotionExcelEnd(builder)

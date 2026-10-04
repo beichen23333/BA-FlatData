@@ -25,35 +25,35 @@ class ConquestErosionUnitExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConquestErosionUnitExcel
-    def TilePrefabId(self):
+    def TilePrefabIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestErosionUnitExcel
-    def MassErosionUnitId(self):
+    def MassErosionUnitIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestErosionUnitExcel
-    def MassErosionUnitRotationY(self):
+    def MassErosionUnitRotationYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConquestErosionUnitExcel
-    def IndividualErosionUnitId(self):
+    def IndividualErosionUnitIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestErosionUnitExcel
-    def IndividualErosionUnitRotationY(self):
+    def IndividualErosionUnitRotationYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class ConquestErosionUnitExcel(object):
 def ConquestErosionUnitExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return ConquestErosionUnitExcelStart(builder)
-def ConquestErosionUnitExcelAddTilePrefabId(builder, tilePrefabId): builder.PrependInt32Slot(0, tilePrefabId, 0)
-def AddTilePrefabId(builder, tilePrefabId):
-    return ConquestErosionUnitExcelAddTilePrefabId(builder, tilePrefabId)
-def ConquestErosionUnitExcelAddMassErosionUnitId(builder, massErosionUnitId): builder.PrependInt32Slot(1, massErosionUnitId, 0)
-def AddMassErosionUnitId(builder, massErosionUnitId):
-    return ConquestErosionUnitExcelAddMassErosionUnitId(builder, massErosionUnitId)
-def ConquestErosionUnitExcelAddMassErosionUnitRotationY(builder, massErosionUnitRotationY): builder.PrependFloat32Slot(2, massErosionUnitRotationY, 0.0)
-def AddMassErosionUnitRotationY(builder, massErosionUnitRotationY):
-    return ConquestErosionUnitExcelAddMassErosionUnitRotationY(builder, massErosionUnitRotationY)
-def ConquestErosionUnitExcelAddIndividualErosionUnitId(builder, individualErosionUnitId): builder.PrependInt32Slot(3, individualErosionUnitId, 0)
-def AddIndividualErosionUnitId(builder, individualErosionUnitId):
-    return ConquestErosionUnitExcelAddIndividualErosionUnitId(builder, individualErosionUnitId)
-def ConquestErosionUnitExcelAddIndividualErosionUnitRotationY(builder, individualErosionUnitRotationY): builder.PrependFloat32Slot(4, individualErosionUnitRotationY, 0.0)
-def AddIndividualErosionUnitRotationY(builder, individualErosionUnitRotationY):
-    return ConquestErosionUnitExcelAddIndividualErosionUnitRotationY(builder, individualErosionUnitRotationY)
+def ConquestErosionUnitExcelAddTilePrefabIdField(builder, tilePrefabIdField): builder.PrependInt32Slot(0, tilePrefabIdField, 0)
+def AddTilePrefabIdField(builder, tilePrefabIdField):
+    return ConquestErosionUnitExcelAddTilePrefabIdField(builder, tilePrefabIdField)
+def ConquestErosionUnitExcelAddMassErosionUnitIdField(builder, massErosionUnitIdField): builder.PrependInt32Slot(1, massErosionUnitIdField, 0)
+def AddMassErosionUnitIdField(builder, massErosionUnitIdField):
+    return ConquestErosionUnitExcelAddMassErosionUnitIdField(builder, massErosionUnitIdField)
+def ConquestErosionUnitExcelAddMassErosionUnitRotationYField(builder, massErosionUnitRotationYField): builder.PrependFloat32Slot(2, massErosionUnitRotationYField, 0.0)
+def AddMassErosionUnitRotationYField(builder, massErosionUnitRotationYField):
+    return ConquestErosionUnitExcelAddMassErosionUnitRotationYField(builder, massErosionUnitRotationYField)
+def ConquestErosionUnitExcelAddIndividualErosionUnitIdField(builder, individualErosionUnitIdField): builder.PrependInt32Slot(3, individualErosionUnitIdField, 0)
+def AddIndividualErosionUnitIdField(builder, individualErosionUnitIdField):
+    return ConquestErosionUnitExcelAddIndividualErosionUnitIdField(builder, individualErosionUnitIdField)
+def ConquestErosionUnitExcelAddIndividualErosionUnitRotationYField(builder, individualErosionUnitRotationYField): builder.PrependFloat32Slot(4, individualErosionUnitRotationYField, 0.0)
+def AddIndividualErosionUnitRotationYField(builder, individualErosionUnitRotationYField):
+    return ConquestErosionUnitExcelAddIndividualErosionUnitRotationYField(builder, individualErosionUnitRotationYField)
 def ConquestErosionUnitExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConquestErosionUnitExcelEnd(builder)

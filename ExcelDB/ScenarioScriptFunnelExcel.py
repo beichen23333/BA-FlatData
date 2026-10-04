@@ -25,21 +25,21 @@ class ScenarioScriptFunnelExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ScenarioScriptFunnelExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptFunnelExcel
-    def Index(self):
+    def IndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptFunnelExcel
-    def FunnelId(self):
+    def FunnelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -48,15 +48,15 @@ class ScenarioScriptFunnelExcel(object):
 def ScenarioScriptFunnelExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return ScenarioScriptFunnelExcelStart(builder)
-def ScenarioScriptFunnelExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return ScenarioScriptFunnelExcelAddGroupId(builder, groupId)
-def ScenarioScriptFunnelExcelAddIndex(builder, index): builder.PrependInt32Slot(1, index, 0)
-def AddIndex(builder, index):
-    return ScenarioScriptFunnelExcelAddIndex(builder, index)
-def ScenarioScriptFunnelExcelAddFunnelId(builder, funnelId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(funnelId), 0)
-def AddFunnelId(builder, funnelId):
-    return ScenarioScriptFunnelExcelAddFunnelId(builder, funnelId)
+def ScenarioScriptFunnelExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return ScenarioScriptFunnelExcelAddGroupIdField(builder, groupIdField)
+def ScenarioScriptFunnelExcelAddIndexField(builder, indexField): builder.PrependInt32Slot(1, indexField, 0)
+def AddIndexField(builder, indexField):
+    return ScenarioScriptFunnelExcelAddIndexField(builder, indexField)
+def ScenarioScriptFunnelExcelAddFunnelIdField(builder, funnelIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(funnelIdField), 0)
+def AddFunnelIdField(builder, funnelIdField):
+    return ScenarioScriptFunnelExcelAddFunnelIdField(builder, funnelIdField)
 def ScenarioScriptFunnelExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ScenarioScriptFunnelExcelEnd(builder)

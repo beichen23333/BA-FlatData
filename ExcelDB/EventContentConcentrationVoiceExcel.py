@@ -25,28 +25,28 @@ class EventContentConcentrationVoiceExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentConcentrationVoiceExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationVoiceExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationVoiceExcel
-    def VoiceCondition(self):
+    def VoiceConditionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentConcentrationVoiceExcel
-    def VoiceClip(self):
+    def VoiceClipField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class EventContentConcentrationVoiceExcel(object):
 def EventContentConcentrationVoiceExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentConcentrationVoiceExcelStart(builder)
-def EventContentConcentrationVoiceExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentConcentrationVoiceExcelAddEventContentId(builder, eventContentId)
-def EventContentConcentrationVoiceExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(1, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return EventContentConcentrationVoiceExcelAddUniqueId(builder, uniqueId)
-def EventContentConcentrationVoiceExcelAddVoiceCondition(builder, voiceCondition): builder.PrependInt32Slot(2, voiceCondition, 0)
-def AddVoiceCondition(builder, voiceCondition):
-    return EventContentConcentrationVoiceExcelAddVoiceCondition(builder, voiceCondition)
-def EventContentConcentrationVoiceExcelAddVoiceClip(builder, voiceClip): builder.PrependUint32Slot(3, voiceClip, 0)
-def AddVoiceClip(builder, voiceClip):
-    return EventContentConcentrationVoiceExcelAddVoiceClip(builder, voiceClip)
+def EventContentConcentrationVoiceExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentConcentrationVoiceExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentConcentrationVoiceExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return EventContentConcentrationVoiceExcelAddUniqueIdField(builder, uniqueIdField)
+def EventContentConcentrationVoiceExcelAddVoiceConditionField(builder, voiceConditionField): builder.PrependInt32Slot(2, voiceConditionField, 0)
+def AddVoiceConditionField(builder, voiceConditionField):
+    return EventContentConcentrationVoiceExcelAddVoiceConditionField(builder, voiceConditionField)
+def EventContentConcentrationVoiceExcelAddVoiceClipField(builder, voiceClipField): builder.PrependUint32Slot(3, voiceClipField, 0)
+def AddVoiceClipField(builder, voiceClipField):
+    return EventContentConcentrationVoiceExcelAddVoiceClipField(builder, voiceClipField)
 def EventContentConcentrationVoiceExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentConcentrationVoiceExcelEnd(builder)

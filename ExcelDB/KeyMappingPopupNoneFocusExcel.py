@@ -25,14 +25,14 @@ class KeyMappingPopupNoneFocusExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # KeyMappingPopupNoneFocusExcel
-    def PrefabName(self):
+    def PrefabNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingPopupNoneFocusExcel
-    def ButtonName(self):
+    def ButtonNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -41,12 +41,12 @@ class KeyMappingPopupNoneFocusExcel(object):
 def KeyMappingPopupNoneFocusExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return KeyMappingPopupNoneFocusExcelStart(builder)
-def KeyMappingPopupNoneFocusExcelAddPrefabName(builder, prefabName): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(prefabName), 0)
-def AddPrefabName(builder, prefabName):
-    return KeyMappingPopupNoneFocusExcelAddPrefabName(builder, prefabName)
-def KeyMappingPopupNoneFocusExcelAddButtonName(builder, buttonName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(buttonName), 0)
-def AddButtonName(builder, buttonName):
-    return KeyMappingPopupNoneFocusExcelAddButtonName(builder, buttonName)
+def KeyMappingPopupNoneFocusExcelAddPrefabNameField(builder, prefabNameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+def AddPrefabNameField(builder, prefabNameField):
+    return KeyMappingPopupNoneFocusExcelAddPrefabNameField(builder, prefabNameField)
+def KeyMappingPopupNoneFocusExcelAddButtonNameField(builder, buttonNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(buttonNameField), 0)
+def AddButtonNameField(builder, buttonNameField):
+    return KeyMappingPopupNoneFocusExcelAddButtonNameField(builder, buttonNameField)
 def KeyMappingPopupNoneFocusExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return KeyMappingPopupNoneFocusExcelEnd(builder)

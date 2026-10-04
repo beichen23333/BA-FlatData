@@ -25,49 +25,49 @@ class InteractiveWorldRaidConditionExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # InteractiveWorldRaidConditionExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def WorldRaidSeasonId(self):
+    def WorldRaidSeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def WorldRaidPhaseId(self):
+    def WorldRaidPhaseIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def Priority(self):
+    def PriorityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def MultipleConditionCheckType(self):
+    def MultipleConditionCheckTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def MultipleConditionCheckParameter(self):
+    def MultipleConditionCheckParameterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def ConditionType(self, j):
+    def ConditionTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -75,26 +75,26 @@ class InteractiveWorldRaidConditionExcel(object):
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def ConditionTypeAsNumpy(self):
+    def ConditionTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def ConditionTypeLength(self):
+    def ConditionTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def ConditionTypeIsNone(self):
+    def ConditionTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # InteractiveWorldRaidConditionExcel
-    def ConditionValue(self, j):
+    def ConditionValueField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             a = self._tab.Vector(o)
@@ -102,57 +102,57 @@ class InteractiveWorldRaidConditionExcel(object):
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def ConditionValueAsNumpy(self):
+    def ConditionValueFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def ConditionValueLength(self):
+    def ConditionValueFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidConditionExcel
-    def ConditionValueIsNone(self):
+    def ConditionValueFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
 def InteractiveWorldRaidConditionExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return InteractiveWorldRaidConditionExcelStart(builder)
-def InteractiveWorldRaidConditionExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return InteractiveWorldRaidConditionExcelAddId(builder, id)
-def InteractiveWorldRaidConditionExcelAddWorldRaidSeasonId(builder, worldRaidSeasonId): builder.PrependInt32Slot(1, worldRaidSeasonId, 0)
-def AddWorldRaidSeasonId(builder, worldRaidSeasonId):
-    return InteractiveWorldRaidConditionExcelAddWorldRaidSeasonId(builder, worldRaidSeasonId)
-def InteractiveWorldRaidConditionExcelAddWorldRaidPhaseId(builder, worldRaidPhaseId): builder.PrependInt32Slot(2, worldRaidPhaseId, 0)
-def AddWorldRaidPhaseId(builder, worldRaidPhaseId):
-    return InteractiveWorldRaidConditionExcelAddWorldRaidPhaseId(builder, worldRaidPhaseId)
-def InteractiveWorldRaidConditionExcelAddPriority(builder, priority): builder.PrependInt32Slot(3, priority, 0)
-def AddPriority(builder, priority):
-    return InteractiveWorldRaidConditionExcelAddPriority(builder, priority)
-def InteractiveWorldRaidConditionExcelAddMultipleConditionCheckType(builder, multipleConditionCheckType): builder.PrependInt32Slot(4, multipleConditionCheckType, 0)
-def AddMultipleConditionCheckType(builder, multipleConditionCheckType):
-    return InteractiveWorldRaidConditionExcelAddMultipleConditionCheckType(builder, multipleConditionCheckType)
-def InteractiveWorldRaidConditionExcelAddMultipleConditionCheckParameter(builder, multipleConditionCheckParameter): builder.PrependInt32Slot(5, multipleConditionCheckParameter, 0)
-def AddMultipleConditionCheckParameter(builder, multipleConditionCheckParameter):
-    return InteractiveWorldRaidConditionExcelAddMultipleConditionCheckParameter(builder, multipleConditionCheckParameter)
-def InteractiveWorldRaidConditionExcelAddConditionType(builder, conditionType): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(conditionType), 0)
-def AddConditionType(builder, conditionType):
-    return InteractiveWorldRaidConditionExcelAddConditionType(builder, conditionType)
-def InteractiveWorldRaidConditionExcelStartConditionTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartConditionTypeVector(builder, numElems):
-    return InteractiveWorldRaidConditionExcelStartConditionTypeVector(builder, numElems)
-def InteractiveWorldRaidConditionExcelAddConditionValue(builder, conditionValue): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(conditionValue), 0)
-def AddConditionValue(builder, conditionValue):
-    return InteractiveWorldRaidConditionExcelAddConditionValue(builder, conditionValue)
-def InteractiveWorldRaidConditionExcelStartConditionValueVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartConditionValueVector(builder, numElems):
-    return InteractiveWorldRaidConditionExcelStartConditionValueVector(builder, numElems)
+def InteractiveWorldRaidConditionExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return InteractiveWorldRaidConditionExcelAddIdField(builder, idField)
+def InteractiveWorldRaidConditionExcelAddWorldRaidSeasonIdField(builder, worldRaidSeasonIdField): builder.PrependInt32Slot(1, worldRaidSeasonIdField, 0)
+def AddWorldRaidSeasonIdField(builder, worldRaidSeasonIdField):
+    return InteractiveWorldRaidConditionExcelAddWorldRaidSeasonIdField(builder, worldRaidSeasonIdField)
+def InteractiveWorldRaidConditionExcelAddWorldRaidPhaseIdField(builder, worldRaidPhaseIdField): builder.PrependInt32Slot(2, worldRaidPhaseIdField, 0)
+def AddWorldRaidPhaseIdField(builder, worldRaidPhaseIdField):
+    return InteractiveWorldRaidConditionExcelAddWorldRaidPhaseIdField(builder, worldRaidPhaseIdField)
+def InteractiveWorldRaidConditionExcelAddPriorityField(builder, priorityField): builder.PrependInt32Slot(3, priorityField, 0)
+def AddPriorityField(builder, priorityField):
+    return InteractiveWorldRaidConditionExcelAddPriorityField(builder, priorityField)
+def InteractiveWorldRaidConditionExcelAddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField): builder.PrependInt32Slot(4, multipleConditionCheckTypeField, 0)
+def AddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField):
+    return InteractiveWorldRaidConditionExcelAddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField)
+def InteractiveWorldRaidConditionExcelAddMultipleConditionCheckParameterField(builder, multipleConditionCheckParameterField): builder.PrependInt32Slot(5, multipleConditionCheckParameterField, 0)
+def AddMultipleConditionCheckParameterField(builder, multipleConditionCheckParameterField):
+    return InteractiveWorldRaidConditionExcelAddMultipleConditionCheckParameterField(builder, multipleConditionCheckParameterField)
+def InteractiveWorldRaidConditionExcelAddConditionTypeField(builder, conditionTypeField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(conditionTypeField), 0)
+def AddConditionTypeField(builder, conditionTypeField):
+    return InteractiveWorldRaidConditionExcelAddConditionTypeField(builder, conditionTypeField)
+def InteractiveWorldRaidConditionExcelStartConditionTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartConditionTypeFieldVector(builder, numElems):
+    return InteractiveWorldRaidConditionExcelStartConditionTypeFieldVector(builder, numElems)
+def InteractiveWorldRaidConditionExcelAddConditionValueField(builder, conditionValueField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(conditionValueField), 0)
+def AddConditionValueField(builder, conditionValueField):
+    return InteractiveWorldRaidConditionExcelAddConditionValueField(builder, conditionValueField)
+def InteractiveWorldRaidConditionExcelStartConditionValueFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartConditionValueFieldVector(builder, numElems):
+    return InteractiveWorldRaidConditionExcelStartConditionValueFieldVector(builder, numElems)
 def InteractiveWorldRaidConditionExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return InteractiveWorldRaidConditionExcelEnd(builder)

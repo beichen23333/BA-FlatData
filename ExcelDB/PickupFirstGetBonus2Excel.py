@@ -25,49 +25,49 @@ class PickupFirstGetBonus2Excel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # PickupFirstGetBonus2Excel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonus2Excel
-    def ShopRecruitId(self):
+    def ShopRecruitIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonus2Excel
-    def RecruitSellectionShopId(self):
+    def RecruitSellectionShopIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonus2Excel
-    def PickupCharacterId(self):
+    def PickupCharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonus2Excel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonus2Excel
-    def RewardParcelId(self):
+    def RewardParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PickupFirstGetBonus2Excel
-    def RewardParcelAmount(self):
+    def RewardParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class PickupFirstGetBonus2Excel(object):
 def PickupFirstGetBonus2ExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return PickupFirstGetBonus2ExcelStart(builder)
-def PickupFirstGetBonus2ExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return PickupFirstGetBonus2ExcelAddId(builder, id)
-def PickupFirstGetBonus2ExcelAddShopRecruitId(builder, shopRecruitId): builder.PrependInt32Slot(1, shopRecruitId, 0)
-def AddShopRecruitId(builder, shopRecruitId):
-    return PickupFirstGetBonus2ExcelAddShopRecruitId(builder, shopRecruitId)
-def PickupFirstGetBonus2ExcelAddRecruitSellectionShopId(builder, recruitSellectionShopId): builder.PrependInt32Slot(2, recruitSellectionShopId, 0)
-def AddRecruitSellectionShopId(builder, recruitSellectionShopId):
-    return PickupFirstGetBonus2ExcelAddRecruitSellectionShopId(builder, recruitSellectionShopId)
-def PickupFirstGetBonus2ExcelAddPickupCharacterId(builder, pickupCharacterId): builder.PrependInt32Slot(3, pickupCharacterId, 0)
-def AddPickupCharacterId(builder, pickupCharacterId):
-    return PickupFirstGetBonus2ExcelAddPickupCharacterId(builder, pickupCharacterId)
-def PickupFirstGetBonus2ExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(4, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return PickupFirstGetBonus2ExcelAddRewardParcelType(builder, rewardParcelType)
-def PickupFirstGetBonus2ExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependInt32Slot(5, rewardParcelId, 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return PickupFirstGetBonus2ExcelAddRewardParcelId(builder, rewardParcelId)
-def PickupFirstGetBonus2ExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependInt32Slot(6, rewardParcelAmount, 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return PickupFirstGetBonus2ExcelAddRewardParcelAmount(builder, rewardParcelAmount)
+def PickupFirstGetBonus2ExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return PickupFirstGetBonus2ExcelAddIdField(builder, idField)
+def PickupFirstGetBonus2ExcelAddShopRecruitIdField(builder, shopRecruitIdField): builder.PrependInt32Slot(1, shopRecruitIdField, 0)
+def AddShopRecruitIdField(builder, shopRecruitIdField):
+    return PickupFirstGetBonus2ExcelAddShopRecruitIdField(builder, shopRecruitIdField)
+def PickupFirstGetBonus2ExcelAddRecruitSellectionShopIdField(builder, recruitSellectionShopIdField): builder.PrependInt32Slot(2, recruitSellectionShopIdField, 0)
+def AddRecruitSellectionShopIdField(builder, recruitSellectionShopIdField):
+    return PickupFirstGetBonus2ExcelAddRecruitSellectionShopIdField(builder, recruitSellectionShopIdField)
+def PickupFirstGetBonus2ExcelAddPickupCharacterIdField(builder, pickupCharacterIdField): builder.PrependInt32Slot(3, pickupCharacterIdField, 0)
+def AddPickupCharacterIdField(builder, pickupCharacterIdField):
+    return PickupFirstGetBonus2ExcelAddPickupCharacterIdField(builder, pickupCharacterIdField)
+def PickupFirstGetBonus2ExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(4, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return PickupFirstGetBonus2ExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def PickupFirstGetBonus2ExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(5, rewardParcelIdField, 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return PickupFirstGetBonus2ExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def PickupFirstGetBonus2ExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(6, rewardParcelAmountField, 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return PickupFirstGetBonus2ExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
 def PickupFirstGetBonus2ExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return PickupFirstGetBonus2ExcelEnd(builder)

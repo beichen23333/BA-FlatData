@@ -25,70 +25,70 @@ class MiniGameAudioAnimatorExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MiniGameAudioAnimatorExcel
-    def ControllerNameHash(self):
+    def ControllerNameHashField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameAudioAnimatorExcel
-    def VoiceNamePrefix(self):
+    def VoiceNamePrefixField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameAudioAnimatorExcel
-    def StateNameHash(self):
+    def StateNameHashField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameAudioAnimatorExcel
-    def StateName(self):
+    def StateNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameAudioAnimatorExcel
-    def IgnoreInterruptDelay(self):
+    def IgnoreInterruptDelayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # MiniGameAudioAnimatorExcel
-    def IgnoreInterruptPlay(self):
+    def IgnoreInterruptPlayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # MiniGameAudioAnimatorExcel
-    def Volume(self):
+    def VolumeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # MiniGameAudioAnimatorExcel
-    def Delay(self):
+    def DelayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # MiniGameAudioAnimatorExcel
-    def AudioPriority(self):
+    def AudioPriorityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameAudioAnimatorExcel
-    def AudioClipPath(self, j):
+    def AudioClipPathField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             a = self._tab.Vector(o)
@@ -96,19 +96,19 @@ class MiniGameAudioAnimatorExcel(object):
         return ""
 
     # MiniGameAudioAnimatorExcel
-    def AudioClipPathLength(self):
+    def AudioClipPathFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameAudioAnimatorExcel
-    def AudioClipPathIsNone(self):
+    def AudioClipPathFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
     # MiniGameAudioAnimatorExcel
-    def VoiceHash(self, j):
+    def VoiceHashField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             a = self._tab.Vector(o)
@@ -116,66 +116,66 @@ class MiniGameAudioAnimatorExcel(object):
         return 0
 
     # MiniGameAudioAnimatorExcel
-    def VoiceHashAsNumpy(self):
+    def VoiceHashFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
         return 0
 
     # MiniGameAudioAnimatorExcel
-    def VoiceHashLength(self):
+    def VoiceHashFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MiniGameAudioAnimatorExcel
-    def VoiceHashIsNone(self):
+    def VoiceHashFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         return o == 0
 
 def MiniGameAudioAnimatorExcelStart(builder): builder.StartObject(11)
 def Start(builder):
     return MiniGameAudioAnimatorExcelStart(builder)
-def MiniGameAudioAnimatorExcelAddControllerNameHash(builder, controllerNameHash): builder.PrependUint32Slot(0, controllerNameHash, 0)
-def AddControllerNameHash(builder, controllerNameHash):
-    return MiniGameAudioAnimatorExcelAddControllerNameHash(builder, controllerNameHash)
-def MiniGameAudioAnimatorExcelAddVoiceNamePrefix(builder, voiceNamePrefix): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(voiceNamePrefix), 0)
-def AddVoiceNamePrefix(builder, voiceNamePrefix):
-    return MiniGameAudioAnimatorExcelAddVoiceNamePrefix(builder, voiceNamePrefix)
-def MiniGameAudioAnimatorExcelAddStateNameHash(builder, stateNameHash): builder.PrependUint32Slot(2, stateNameHash, 0)
-def AddStateNameHash(builder, stateNameHash):
-    return MiniGameAudioAnimatorExcelAddStateNameHash(builder, stateNameHash)
-def MiniGameAudioAnimatorExcelAddStateName(builder, stateName): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(stateName), 0)
-def AddStateName(builder, stateName):
-    return MiniGameAudioAnimatorExcelAddStateName(builder, stateName)
-def MiniGameAudioAnimatorExcelAddIgnoreInterruptDelay(builder, ignoreInterruptDelay): builder.PrependBoolSlot(4, ignoreInterruptDelay, 0)
-def AddIgnoreInterruptDelay(builder, ignoreInterruptDelay):
-    return MiniGameAudioAnimatorExcelAddIgnoreInterruptDelay(builder, ignoreInterruptDelay)
-def MiniGameAudioAnimatorExcelAddIgnoreInterruptPlay(builder, ignoreInterruptPlay): builder.PrependBoolSlot(5, ignoreInterruptPlay, 0)
-def AddIgnoreInterruptPlay(builder, ignoreInterruptPlay):
-    return MiniGameAudioAnimatorExcelAddIgnoreInterruptPlay(builder, ignoreInterruptPlay)
-def MiniGameAudioAnimatorExcelAddVolume(builder, volume): builder.PrependFloat32Slot(6, volume, 0.0)
-def AddVolume(builder, volume):
-    return MiniGameAudioAnimatorExcelAddVolume(builder, volume)
-def MiniGameAudioAnimatorExcelAddDelay(builder, delay): builder.PrependFloat32Slot(7, delay, 0.0)
-def AddDelay(builder, delay):
-    return MiniGameAudioAnimatorExcelAddDelay(builder, delay)
-def MiniGameAudioAnimatorExcelAddAudioPriority(builder, audioPriority): builder.PrependInt32Slot(8, audioPriority, 0)
-def AddAudioPriority(builder, audioPriority):
-    return MiniGameAudioAnimatorExcelAddAudioPriority(builder, audioPriority)
-def MiniGameAudioAnimatorExcelAddAudioClipPath(builder, audioClipPath): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipPath), 0)
-def AddAudioClipPath(builder, audioClipPath):
-    return MiniGameAudioAnimatorExcelAddAudioClipPath(builder, audioClipPath)
-def MiniGameAudioAnimatorExcelStartAudioClipPathVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAudioClipPathVector(builder, numElems):
-    return MiniGameAudioAnimatorExcelStartAudioClipPathVector(builder, numElems)
-def MiniGameAudioAnimatorExcelAddVoiceHash(builder, voiceHash): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(voiceHash), 0)
-def AddVoiceHash(builder, voiceHash):
-    return MiniGameAudioAnimatorExcelAddVoiceHash(builder, voiceHash)
-def MiniGameAudioAnimatorExcelStartVoiceHashVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVoiceHashVector(builder, numElems):
-    return MiniGameAudioAnimatorExcelStartVoiceHashVector(builder, numElems)
+def MiniGameAudioAnimatorExcelAddControllerNameHashField(builder, controllerNameHashField): builder.PrependUint32Slot(0, controllerNameHashField, 0)
+def AddControllerNameHashField(builder, controllerNameHashField):
+    return MiniGameAudioAnimatorExcelAddControllerNameHashField(builder, controllerNameHashField)
+def MiniGameAudioAnimatorExcelAddVoiceNamePrefixField(builder, voiceNamePrefixField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(voiceNamePrefixField), 0)
+def AddVoiceNamePrefixField(builder, voiceNamePrefixField):
+    return MiniGameAudioAnimatorExcelAddVoiceNamePrefixField(builder, voiceNamePrefixField)
+def MiniGameAudioAnimatorExcelAddStateNameHashField(builder, stateNameHashField): builder.PrependUint32Slot(2, stateNameHashField, 0)
+def AddStateNameHashField(builder, stateNameHashField):
+    return MiniGameAudioAnimatorExcelAddStateNameHashField(builder, stateNameHashField)
+def MiniGameAudioAnimatorExcelAddStateNameField(builder, stateNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(stateNameField), 0)
+def AddStateNameField(builder, stateNameField):
+    return MiniGameAudioAnimatorExcelAddStateNameField(builder, stateNameField)
+def MiniGameAudioAnimatorExcelAddIgnoreInterruptDelayField(builder, ignoreInterruptDelayField): builder.PrependBoolSlot(4, ignoreInterruptDelayField, 0)
+def AddIgnoreInterruptDelayField(builder, ignoreInterruptDelayField):
+    return MiniGameAudioAnimatorExcelAddIgnoreInterruptDelayField(builder, ignoreInterruptDelayField)
+def MiniGameAudioAnimatorExcelAddIgnoreInterruptPlayField(builder, ignoreInterruptPlayField): builder.PrependBoolSlot(5, ignoreInterruptPlayField, 0)
+def AddIgnoreInterruptPlayField(builder, ignoreInterruptPlayField):
+    return MiniGameAudioAnimatorExcelAddIgnoreInterruptPlayField(builder, ignoreInterruptPlayField)
+def MiniGameAudioAnimatorExcelAddVolumeField(builder, volumeField): builder.PrependFloat32Slot(6, volumeField, 0.0)
+def AddVolumeField(builder, volumeField):
+    return MiniGameAudioAnimatorExcelAddVolumeField(builder, volumeField)
+def MiniGameAudioAnimatorExcelAddDelayField(builder, delayField): builder.PrependFloat32Slot(7, delayField, 0.0)
+def AddDelayField(builder, delayField):
+    return MiniGameAudioAnimatorExcelAddDelayField(builder, delayField)
+def MiniGameAudioAnimatorExcelAddAudioPriorityField(builder, audioPriorityField): builder.PrependInt32Slot(8, audioPriorityField, 0)
+def AddAudioPriorityField(builder, audioPriorityField):
+    return MiniGameAudioAnimatorExcelAddAudioPriorityField(builder, audioPriorityField)
+def MiniGameAudioAnimatorExcelAddAudioClipPathField(builder, audioClipPathField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipPathField), 0)
+def AddAudioClipPathField(builder, audioClipPathField):
+    return MiniGameAudioAnimatorExcelAddAudioClipPathField(builder, audioClipPathField)
+def MiniGameAudioAnimatorExcelStartAudioClipPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartAudioClipPathFieldVector(builder, numElems):
+    return MiniGameAudioAnimatorExcelStartAudioClipPathFieldVector(builder, numElems)
+def MiniGameAudioAnimatorExcelAddVoiceHashField(builder, voiceHashField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(voiceHashField), 0)
+def AddVoiceHashField(builder, voiceHashField):
+    return MiniGameAudioAnimatorExcelAddVoiceHashField(builder, voiceHashField)
+def MiniGameAudioAnimatorExcelStartVoiceHashFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartVoiceHashFieldVector(builder, numElems):
+    return MiniGameAudioAnimatorExcelStartVoiceHashFieldVector(builder, numElems)
 def MiniGameAudioAnimatorExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MiniGameAudioAnimatorExcelEnd(builder)

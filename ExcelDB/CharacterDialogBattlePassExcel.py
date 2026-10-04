@@ -25,140 +25,140 @@ class CharacterDialogBattlePassExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterDialogBattlePassExcel
-    def CostumeUniqueId(self):
+    def CostumeUniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def OriginalCharacterId(self):
+    def OriginalCharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def DisplayOrder(self):
+    def DisplayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def BattlePassID(self):
+    def BattlePassIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def ProductionStep(self):
+    def ProductionStepField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def DialogCategory(self):
+    def DialogCategoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def DialogCondition(self):
+    def DialogConditionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def DialogConditionDetail(self):
+    def DialogConditionDetailField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def DialogConditionDetailValue(self):
+    def DialogConditionDetailValueField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def DialogType(self):
+    def DialogTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def Duration(self):
+    def DurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def DurationKr(self):
+    def DurationKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def AnimationName(self):
+    def AnimationNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogBattlePassExcel
-    def LocalizeKR(self):
+    def LocalizeKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogBattlePassExcel
-    def LocalizeJP(self):
+    def LocalizeJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogBattlePassExcel
-    def LocalizeTH(self):
+    def LocalizeTHField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogBattlePassExcel
-    def LocalizeTW(self):
+    def LocalizeTWField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogBattlePassExcel
-    def LocalizeEN(self):
+    def LocalizeENField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogBattlePassExcel
-    def VoiceId(self, j):
+    def VoiceIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             a = self._tab.Vector(o)
@@ -166,54 +166,54 @@ class CharacterDialogBattlePassExcel(object):
         return 0
 
     # CharacterDialogBattlePassExcel
-    def VoiceIdAsNumpy(self):
+    def VoiceIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def VoiceIdLength(self):
+    def VoiceIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def VoiceIdIsNone(self):
+    def VoiceIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         return o == 0
 
     # CharacterDialogBattlePassExcel
-    def CollectionVisible(self):
+    def CollectionVisibleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterDialogBattlePassExcel
-    def CVCollectionType(self):
+    def CVCollectionTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def UnlockBattlePassId(self):
+    def UnlockBattlePassIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogBattlePassExcel
-    def LocalizeCVGroup(self):
+    def LocalizeCVGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogBattlePassExcel
-    def TeenMode(self):
+    def TeenModeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -222,84 +222,84 @@ class CharacterDialogBattlePassExcel(object):
 def CharacterDialogBattlePassExcelStart(builder): builder.StartObject(25)
 def Start(builder):
     return CharacterDialogBattlePassExcelStart(builder)
-def CharacterDialogBattlePassExcelAddCostumeUniqueId(builder, costumeUniqueId): builder.PrependInt32Slot(0, costumeUniqueId, 0)
-def AddCostumeUniqueId(builder, costumeUniqueId):
-    return CharacterDialogBattlePassExcelAddCostumeUniqueId(builder, costumeUniqueId)
-def CharacterDialogBattlePassExcelAddOriginalCharacterId(builder, originalCharacterId): builder.PrependInt32Slot(1, originalCharacterId, 0)
-def AddOriginalCharacterId(builder, originalCharacterId):
-    return CharacterDialogBattlePassExcelAddOriginalCharacterId(builder, originalCharacterId)
-def CharacterDialogBattlePassExcelAddDisplayOrder(builder, displayOrder): builder.PrependInt32Slot(2, displayOrder, 0)
-def AddDisplayOrder(builder, displayOrder):
-    return CharacterDialogBattlePassExcelAddDisplayOrder(builder, displayOrder)
-def CharacterDialogBattlePassExcelAddBattlePassID(builder, battlePassID): builder.PrependInt32Slot(3, battlePassID, 0)
-def AddBattlePassID(builder, battlePassID):
-    return CharacterDialogBattlePassExcelAddBattlePassID(builder, battlePassID)
-def CharacterDialogBattlePassExcelAddProductionStep(builder, productionStep): builder.PrependInt32Slot(4, productionStep, 0)
-def AddProductionStep(builder, productionStep):
-    return CharacterDialogBattlePassExcelAddProductionStep(builder, productionStep)
-def CharacterDialogBattlePassExcelAddDialogCategory(builder, dialogCategory): builder.PrependInt32Slot(5, dialogCategory, 0)
-def AddDialogCategory(builder, dialogCategory):
-    return CharacterDialogBattlePassExcelAddDialogCategory(builder, dialogCategory)
-def CharacterDialogBattlePassExcelAddDialogCondition(builder, dialogCondition): builder.PrependInt32Slot(6, dialogCondition, 0)
-def AddDialogCondition(builder, dialogCondition):
-    return CharacterDialogBattlePassExcelAddDialogCondition(builder, dialogCondition)
-def CharacterDialogBattlePassExcelAddDialogConditionDetail(builder, dialogConditionDetail): builder.PrependInt32Slot(7, dialogConditionDetail, 0)
-def AddDialogConditionDetail(builder, dialogConditionDetail):
-    return CharacterDialogBattlePassExcelAddDialogConditionDetail(builder, dialogConditionDetail)
-def CharacterDialogBattlePassExcelAddDialogConditionDetailValue(builder, dialogConditionDetailValue): builder.PrependInt32Slot(8, dialogConditionDetailValue, 0)
-def AddDialogConditionDetailValue(builder, dialogConditionDetailValue):
-    return CharacterDialogBattlePassExcelAddDialogConditionDetailValue(builder, dialogConditionDetailValue)
-def CharacterDialogBattlePassExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(9, groupId, 0)
-def AddGroupId(builder, groupId):
-    return CharacterDialogBattlePassExcelAddGroupId(builder, groupId)
-def CharacterDialogBattlePassExcelAddDialogType(builder, dialogType): builder.PrependInt32Slot(10, dialogType, 0)
-def AddDialogType(builder, dialogType):
-    return CharacterDialogBattlePassExcelAddDialogType(builder, dialogType)
-def CharacterDialogBattlePassExcelAddDuration(builder, duration): builder.PrependInt32Slot(11, duration, 0)
-def AddDuration(builder, duration):
-    return CharacterDialogBattlePassExcelAddDuration(builder, duration)
-def CharacterDialogBattlePassExcelAddDurationKr(builder, durationKr): builder.PrependInt32Slot(12, durationKr, 0)
-def AddDurationKr(builder, durationKr):
-    return CharacterDialogBattlePassExcelAddDurationKr(builder, durationKr)
-def CharacterDialogBattlePassExcelAddAnimationName(builder, animationName): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(animationName), 0)
-def AddAnimationName(builder, animationName):
-    return CharacterDialogBattlePassExcelAddAnimationName(builder, animationName)
-def CharacterDialogBattlePassExcelAddLocalizeKR(builder, localizeKR): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKR), 0)
-def AddLocalizeKR(builder, localizeKR):
-    return CharacterDialogBattlePassExcelAddLocalizeKR(builder, localizeKR)
-def CharacterDialogBattlePassExcelAddLocalizeJP(builder, localizeJP): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJP), 0)
-def AddLocalizeJP(builder, localizeJP):
-    return CharacterDialogBattlePassExcelAddLocalizeJP(builder, localizeJP)
-def CharacterDialogBattlePassExcelAddLocalizeTH(builder, localizeTH): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTH), 0)
-def AddLocalizeTH(builder, localizeTH):
-    return CharacterDialogBattlePassExcelAddLocalizeTH(builder, localizeTH)
-def CharacterDialogBattlePassExcelAddLocalizeTW(builder, localizeTW): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTW), 0)
-def AddLocalizeTW(builder, localizeTW):
-    return CharacterDialogBattlePassExcelAddLocalizeTW(builder, localizeTW)
-def CharacterDialogBattlePassExcelAddLocalizeEN(builder, localizeEN): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(localizeEN), 0)
-def AddLocalizeEN(builder, localizeEN):
-    return CharacterDialogBattlePassExcelAddLocalizeEN(builder, localizeEN)
-def CharacterDialogBattlePassExcelAddVoiceId(builder, voiceId): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(voiceId), 0)
-def AddVoiceId(builder, voiceId):
-    return CharacterDialogBattlePassExcelAddVoiceId(builder, voiceId)
-def CharacterDialogBattlePassExcelStartVoiceIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVoiceIdVector(builder, numElems):
-    return CharacterDialogBattlePassExcelStartVoiceIdVector(builder, numElems)
-def CharacterDialogBattlePassExcelAddCollectionVisible(builder, collectionVisible): builder.PrependBoolSlot(20, collectionVisible, 0)
-def AddCollectionVisible(builder, collectionVisible):
-    return CharacterDialogBattlePassExcelAddCollectionVisible(builder, collectionVisible)
-def CharacterDialogBattlePassExcelAddCVCollectionType(builder, cVCollectionType): builder.PrependInt32Slot(21, cVCollectionType, 0)
-def AddCVCollectionType(builder, cVCollectionType):
-    return CharacterDialogBattlePassExcelAddCVCollectionType(builder, cVCollectionType)
-def CharacterDialogBattlePassExcelAddUnlockBattlePassId(builder, unlockBattlePassId): builder.PrependInt32Slot(22, unlockBattlePassId, 0)
-def AddUnlockBattlePassId(builder, unlockBattlePassId):
-    return CharacterDialogBattlePassExcelAddUnlockBattlePassId(builder, unlockBattlePassId)
-def CharacterDialogBattlePassExcelAddLocalizeCVGroup(builder, localizeCVGroup): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroup), 0)
-def AddLocalizeCVGroup(builder, localizeCVGroup):
-    return CharacterDialogBattlePassExcelAddLocalizeCVGroup(builder, localizeCVGroup)
-def CharacterDialogBattlePassExcelAddTeenMode(builder, teenMode): builder.PrependBoolSlot(24, teenMode, 0)
-def AddTeenMode(builder, teenMode):
-    return CharacterDialogBattlePassExcelAddTeenMode(builder, teenMode)
+def CharacterDialogBattlePassExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField): builder.PrependInt32Slot(0, costumeUniqueIdField, 0)
+def AddCostumeUniqueIdField(builder, costumeUniqueIdField):
+    return CharacterDialogBattlePassExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
+def CharacterDialogBattlePassExcelAddOriginalCharacterIdField(builder, originalCharacterIdField): builder.PrependInt32Slot(1, originalCharacterIdField, 0)
+def AddOriginalCharacterIdField(builder, originalCharacterIdField):
+    return CharacterDialogBattlePassExcelAddOriginalCharacterIdField(builder, originalCharacterIdField)
+def CharacterDialogBattlePassExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(2, displayOrderField, 0)
+def AddDisplayOrderField(builder, displayOrderField):
+    return CharacterDialogBattlePassExcelAddDisplayOrderField(builder, displayOrderField)
+def CharacterDialogBattlePassExcelAddBattlePassIDField(builder, battlePassIDField): builder.PrependInt32Slot(3, battlePassIDField, 0)
+def AddBattlePassIDField(builder, battlePassIDField):
+    return CharacterDialogBattlePassExcelAddBattlePassIDField(builder, battlePassIDField)
+def CharacterDialogBattlePassExcelAddProductionStepField(builder, productionStepField): builder.PrependInt32Slot(4, productionStepField, 0)
+def AddProductionStepField(builder, productionStepField):
+    return CharacterDialogBattlePassExcelAddProductionStepField(builder, productionStepField)
+def CharacterDialogBattlePassExcelAddDialogCategoryField(builder, dialogCategoryField): builder.PrependInt32Slot(5, dialogCategoryField, 0)
+def AddDialogCategoryField(builder, dialogCategoryField):
+    return CharacterDialogBattlePassExcelAddDialogCategoryField(builder, dialogCategoryField)
+def CharacterDialogBattlePassExcelAddDialogConditionField(builder, dialogConditionField): builder.PrependInt32Slot(6, dialogConditionField, 0)
+def AddDialogConditionField(builder, dialogConditionField):
+    return CharacterDialogBattlePassExcelAddDialogConditionField(builder, dialogConditionField)
+def CharacterDialogBattlePassExcelAddDialogConditionDetailField(builder, dialogConditionDetailField): builder.PrependInt32Slot(7, dialogConditionDetailField, 0)
+def AddDialogConditionDetailField(builder, dialogConditionDetailField):
+    return CharacterDialogBattlePassExcelAddDialogConditionDetailField(builder, dialogConditionDetailField)
+def CharacterDialogBattlePassExcelAddDialogConditionDetailValueField(builder, dialogConditionDetailValueField): builder.PrependInt32Slot(8, dialogConditionDetailValueField, 0)
+def AddDialogConditionDetailValueField(builder, dialogConditionDetailValueField):
+    return CharacterDialogBattlePassExcelAddDialogConditionDetailValueField(builder, dialogConditionDetailValueField)
+def CharacterDialogBattlePassExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(9, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return CharacterDialogBattlePassExcelAddGroupIdField(builder, groupIdField)
+def CharacterDialogBattlePassExcelAddDialogTypeField(builder, dialogTypeField): builder.PrependInt32Slot(10, dialogTypeField, 0)
+def AddDialogTypeField(builder, dialogTypeField):
+    return CharacterDialogBattlePassExcelAddDialogTypeField(builder, dialogTypeField)
+def CharacterDialogBattlePassExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(11, durationField, 0)
+def AddDurationField(builder, durationField):
+    return CharacterDialogBattlePassExcelAddDurationField(builder, durationField)
+def CharacterDialogBattlePassExcelAddDurationKrField(builder, durationKrField): builder.PrependInt32Slot(12, durationKrField, 0)
+def AddDurationKrField(builder, durationKrField):
+    return CharacterDialogBattlePassExcelAddDurationKrField(builder, durationKrField)
+def CharacterDialogBattlePassExcelAddAnimationNameField(builder, animationNameField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(animationNameField), 0)
+def AddAnimationNameField(builder, animationNameField):
+    return CharacterDialogBattlePassExcelAddAnimationNameField(builder, animationNameField)
+def CharacterDialogBattlePassExcelAddLocalizeKRField(builder, localizeKRField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+def AddLocalizeKRField(builder, localizeKRField):
+    return CharacterDialogBattlePassExcelAddLocalizeKRField(builder, localizeKRField)
+def CharacterDialogBattlePassExcelAddLocalizeJPField(builder, localizeJPField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+def AddLocalizeJPField(builder, localizeJPField):
+    return CharacterDialogBattlePassExcelAddLocalizeJPField(builder, localizeJPField)
+def CharacterDialogBattlePassExcelAddLocalizeTHField(builder, localizeTHField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTHField), 0)
+def AddLocalizeTHField(builder, localizeTHField):
+    return CharacterDialogBattlePassExcelAddLocalizeTHField(builder, localizeTHField)
+def CharacterDialogBattlePassExcelAddLocalizeTWField(builder, localizeTWField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTWField), 0)
+def AddLocalizeTWField(builder, localizeTWField):
+    return CharacterDialogBattlePassExcelAddLocalizeTWField(builder, localizeTWField)
+def CharacterDialogBattlePassExcelAddLocalizeENField(builder, localizeENField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(localizeENField), 0)
+def AddLocalizeENField(builder, localizeENField):
+    return CharacterDialogBattlePassExcelAddLocalizeENField(builder, localizeENField)
+def CharacterDialogBattlePassExcelAddVoiceIdField(builder, voiceIdField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(voiceIdField), 0)
+def AddVoiceIdField(builder, voiceIdField):
+    return CharacterDialogBattlePassExcelAddVoiceIdField(builder, voiceIdField)
+def CharacterDialogBattlePassExcelStartVoiceIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartVoiceIdFieldVector(builder, numElems):
+    return CharacterDialogBattlePassExcelStartVoiceIdFieldVector(builder, numElems)
+def CharacterDialogBattlePassExcelAddCollectionVisibleField(builder, collectionVisibleField): builder.PrependBoolSlot(20, collectionVisibleField, 0)
+def AddCollectionVisibleField(builder, collectionVisibleField):
+    return CharacterDialogBattlePassExcelAddCollectionVisibleField(builder, collectionVisibleField)
+def CharacterDialogBattlePassExcelAddCVCollectionTypeField(builder, cVCollectionTypeField): builder.PrependInt32Slot(21, cVCollectionTypeField, 0)
+def AddCVCollectionTypeField(builder, cVCollectionTypeField):
+    return CharacterDialogBattlePassExcelAddCVCollectionTypeField(builder, cVCollectionTypeField)
+def CharacterDialogBattlePassExcelAddUnlockBattlePassIdField(builder, unlockBattlePassIdField): builder.PrependInt32Slot(22, unlockBattlePassIdField, 0)
+def AddUnlockBattlePassIdField(builder, unlockBattlePassIdField):
+    return CharacterDialogBattlePassExcelAddUnlockBattlePassIdField(builder, unlockBattlePassIdField)
+def CharacterDialogBattlePassExcelAddLocalizeCVGroupField(builder, localizeCVGroupField): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+def AddLocalizeCVGroupField(builder, localizeCVGroupField):
+    return CharacterDialogBattlePassExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
+def CharacterDialogBattlePassExcelAddTeenModeField(builder, teenModeField): builder.PrependBoolSlot(24, teenModeField, 0)
+def AddTeenModeField(builder, teenModeField):
+    return CharacterDialogBattlePassExcelAddTeenModeField(builder, teenModeField)
 def CharacterDialogBattlePassExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterDialogBattlePassExcelEnd(builder)

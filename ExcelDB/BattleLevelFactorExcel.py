@@ -25,14 +25,14 @@ class BattleLevelFactorExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BattleLevelFactorExcel
-    def LevelDiff(self):
+    def LevelDiffField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BattleLevelFactorExcel
-    def DamageRate(self):
+    def DamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class BattleLevelFactorExcel(object):
 def BattleLevelFactorExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return BattleLevelFactorExcelStart(builder)
-def BattleLevelFactorExcelAddLevelDiff(builder, levelDiff): builder.PrependInt32Slot(0, levelDiff, 0)
-def AddLevelDiff(builder, levelDiff):
-    return BattleLevelFactorExcelAddLevelDiff(builder, levelDiff)
-def BattleLevelFactorExcelAddDamageRate(builder, damageRate): builder.PrependInt32Slot(1, damageRate, 0)
-def AddDamageRate(builder, damageRate):
-    return BattleLevelFactorExcelAddDamageRate(builder, damageRate)
+def BattleLevelFactorExcelAddLevelDiffField(builder, levelDiffField): builder.PrependInt32Slot(0, levelDiffField, 0)
+def AddLevelDiffField(builder, levelDiffField):
+    return BattleLevelFactorExcelAddLevelDiffField(builder, levelDiffField)
+def BattleLevelFactorExcelAddDamageRateField(builder, damageRateField): builder.PrependInt32Slot(1, damageRateField, 0)
+def AddDamageRateField(builder, damageRateField):
+    return BattleLevelFactorExcelAddDamageRateField(builder, damageRateField)
 def BattleLevelFactorExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return BattleLevelFactorExcelEnd(builder)

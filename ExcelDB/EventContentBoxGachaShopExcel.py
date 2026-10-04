@@ -25,49 +25,49 @@ class EventContentBoxGachaShopExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentBoxGachaShopExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaShopExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaShopExcel
-    def GroupElementAmount(self):
+    def GroupElementAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaShopExcel
-    def Round(self):
+    def RoundField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaShopExcel
-    def IsLegacy(self):
+    def IsLegacyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EventContentBoxGachaShopExcel
-    def IsPrize(self):
+    def IsPrizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EventContentBoxGachaShopExcel
-    def GoodsId(self, j):
+    def GoodsIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -75,26 +75,26 @@ class EventContentBoxGachaShopExcel(object):
         return 0
 
     # EventContentBoxGachaShopExcel
-    def GoodsIdAsNumpy(self):
+    def GoodsIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentBoxGachaShopExcel
-    def GoodsIdLength(self):
+    def GoodsIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentBoxGachaShopExcel
-    def GoodsIdIsNone(self):
+    def GoodsIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # EventContentBoxGachaShopExcel
-    def DisplayOrder(self):
+    def DisplayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -103,33 +103,33 @@ class EventContentBoxGachaShopExcel(object):
 def EventContentBoxGachaShopExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return EventContentBoxGachaShopExcelStart(builder)
-def EventContentBoxGachaShopExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentBoxGachaShopExcelAddEventContentId(builder, eventContentId)
-def EventContentBoxGachaShopExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(1, groupId, 0)
-def AddGroupId(builder, groupId):
-    return EventContentBoxGachaShopExcelAddGroupId(builder, groupId)
-def EventContentBoxGachaShopExcelAddGroupElementAmount(builder, groupElementAmount): builder.PrependInt32Slot(2, groupElementAmount, 0)
-def AddGroupElementAmount(builder, groupElementAmount):
-    return EventContentBoxGachaShopExcelAddGroupElementAmount(builder, groupElementAmount)
-def EventContentBoxGachaShopExcelAddRound(builder, round): builder.PrependInt32Slot(3, round, 0)
-def AddRound(builder, round):
-    return EventContentBoxGachaShopExcelAddRound(builder, round)
-def EventContentBoxGachaShopExcelAddIsLegacy(builder, isLegacy): builder.PrependBoolSlot(4, isLegacy, 0)
-def AddIsLegacy(builder, isLegacy):
-    return EventContentBoxGachaShopExcelAddIsLegacy(builder, isLegacy)
-def EventContentBoxGachaShopExcelAddIsPrize(builder, isPrize): builder.PrependBoolSlot(5, isPrize, 0)
-def AddIsPrize(builder, isPrize):
-    return EventContentBoxGachaShopExcelAddIsPrize(builder, isPrize)
-def EventContentBoxGachaShopExcelAddGoodsId(builder, goodsId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(goodsId), 0)
-def AddGoodsId(builder, goodsId):
-    return EventContentBoxGachaShopExcelAddGoodsId(builder, goodsId)
-def EventContentBoxGachaShopExcelStartGoodsIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGoodsIdVector(builder, numElems):
-    return EventContentBoxGachaShopExcelStartGoodsIdVector(builder, numElems)
-def EventContentBoxGachaShopExcelAddDisplayOrder(builder, displayOrder): builder.PrependInt32Slot(7, displayOrder, 0)
-def AddDisplayOrder(builder, displayOrder):
-    return EventContentBoxGachaShopExcelAddDisplayOrder(builder, displayOrder)
+def EventContentBoxGachaShopExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentBoxGachaShopExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentBoxGachaShopExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(1, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return EventContentBoxGachaShopExcelAddGroupIdField(builder, groupIdField)
+def EventContentBoxGachaShopExcelAddGroupElementAmountField(builder, groupElementAmountField): builder.PrependInt32Slot(2, groupElementAmountField, 0)
+def AddGroupElementAmountField(builder, groupElementAmountField):
+    return EventContentBoxGachaShopExcelAddGroupElementAmountField(builder, groupElementAmountField)
+def EventContentBoxGachaShopExcelAddRoundField(builder, roundField): builder.PrependInt32Slot(3, roundField, 0)
+def AddRoundField(builder, roundField):
+    return EventContentBoxGachaShopExcelAddRoundField(builder, roundField)
+def EventContentBoxGachaShopExcelAddIsLegacyField(builder, isLegacyField): builder.PrependBoolSlot(4, isLegacyField, 0)
+def AddIsLegacyField(builder, isLegacyField):
+    return EventContentBoxGachaShopExcelAddIsLegacyField(builder, isLegacyField)
+def EventContentBoxGachaShopExcelAddIsPrizeField(builder, isPrizeField): builder.PrependBoolSlot(5, isPrizeField, 0)
+def AddIsPrizeField(builder, isPrizeField):
+    return EventContentBoxGachaShopExcelAddIsPrizeField(builder, isPrizeField)
+def EventContentBoxGachaShopExcelAddGoodsIdField(builder, goodsIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(goodsIdField), 0)
+def AddGoodsIdField(builder, goodsIdField):
+    return EventContentBoxGachaShopExcelAddGoodsIdField(builder, goodsIdField)
+def EventContentBoxGachaShopExcelStartGoodsIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartGoodsIdFieldVector(builder, numElems):
+    return EventContentBoxGachaShopExcelStartGoodsIdFieldVector(builder, numElems)
+def EventContentBoxGachaShopExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(7, displayOrderField, 0)
+def AddDisplayOrderField(builder, displayOrderField):
+    return EventContentBoxGachaShopExcelAddDisplayOrderField(builder, displayOrderField)
 def EventContentBoxGachaShopExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentBoxGachaShopExcelEnd(builder)

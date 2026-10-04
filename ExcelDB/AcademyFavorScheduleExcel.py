@@ -25,70 +25,70 @@ class AcademyFavorScheduleExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AcademyFavorScheduleExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyFavorScheduleExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyFavorScheduleExcel
-    def ScheduleGroupId(self):
+    def ScheduleGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyFavorScheduleExcel
-    def OrderInGroup(self):
+    def OrderInGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyFavorScheduleExcel
-    def Location(self):
+    def LocationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AcademyFavorScheduleExcel
-    def LocalizeScenarioId(self):
+    def LocalizeScenarioIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyFavorScheduleExcel
-    def FavorRank(self):
+    def FavorRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyFavorScheduleExcel
-    def SecretStoneAmount(self):
+    def SecretStoneAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyFavorScheduleExcel
-    def ScenarioSriptGroupId(self):
+    def ScenarioSriptGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             a = self._tab.Vector(o)
@@ -96,26 +96,26 @@ class AcademyFavorScheduleExcel(object):
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
     # AcademyFavorScheduleExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             a = self._tab.Vector(o)
@@ -123,26 +123,26 @@ class AcademyFavorScheduleExcel(object):
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         return o == 0
 
     # AcademyFavorScheduleExcel
-    def RewardAmount(self, j):
+    def RewardAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
@@ -150,72 +150,72 @@ class AcademyFavorScheduleExcel(object):
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardAmountAsNumpy(self):
+    def RewardAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardAmountLength(self):
+    def RewardAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # AcademyFavorScheduleExcel
-    def RewardAmountIsNone(self):
+    def RewardAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
 def AcademyFavorScheduleExcelStart(builder): builder.StartObject(12)
 def Start(builder):
     return AcademyFavorScheduleExcelStart(builder)
-def AcademyFavorScheduleExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return AcademyFavorScheduleExcelAddId(builder, id)
-def AcademyFavorScheduleExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(1, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return AcademyFavorScheduleExcelAddCharacterId(builder, characterId)
-def AcademyFavorScheduleExcelAddScheduleGroupId(builder, scheduleGroupId): builder.PrependInt32Slot(2, scheduleGroupId, 0)
-def AddScheduleGroupId(builder, scheduleGroupId):
-    return AcademyFavorScheduleExcelAddScheduleGroupId(builder, scheduleGroupId)
-def AcademyFavorScheduleExcelAddOrderInGroup(builder, orderInGroup): builder.PrependInt32Slot(3, orderInGroup, 0)
-def AddOrderInGroup(builder, orderInGroup):
-    return AcademyFavorScheduleExcelAddOrderInGroup(builder, orderInGroup)
-def AcademyFavorScheduleExcelAddLocation(builder, location): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(location), 0)
-def AddLocation(builder, location):
-    return AcademyFavorScheduleExcelAddLocation(builder, location)
-def AcademyFavorScheduleExcelAddLocalizeScenarioId(builder, localizeScenarioId): builder.PrependUint32Slot(5, localizeScenarioId, 0)
-def AddLocalizeScenarioId(builder, localizeScenarioId):
-    return AcademyFavorScheduleExcelAddLocalizeScenarioId(builder, localizeScenarioId)
-def AcademyFavorScheduleExcelAddFavorRank(builder, favorRank): builder.PrependInt32Slot(6, favorRank, 0)
-def AddFavorRank(builder, favorRank):
-    return AcademyFavorScheduleExcelAddFavorRank(builder, favorRank)
-def AcademyFavorScheduleExcelAddSecretStoneAmount(builder, secretStoneAmount): builder.PrependInt32Slot(7, secretStoneAmount, 0)
-def AddSecretStoneAmount(builder, secretStoneAmount):
-    return AcademyFavorScheduleExcelAddSecretStoneAmount(builder, secretStoneAmount)
-def AcademyFavorScheduleExcelAddScenarioSriptGroupId(builder, scenarioSriptGroupId): builder.PrependInt32Slot(8, scenarioSriptGroupId, 0)
-def AddScenarioSriptGroupId(builder, scenarioSriptGroupId):
-    return AcademyFavorScheduleExcelAddScenarioSriptGroupId(builder, scenarioSriptGroupId)
-def AcademyFavorScheduleExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return AcademyFavorScheduleExcelAddRewardParcelType(builder, rewardParcelType)
-def AcademyFavorScheduleExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return AcademyFavorScheduleExcelStartRewardParcelTypeVector(builder, numElems)
-def AcademyFavorScheduleExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return AcademyFavorScheduleExcelAddRewardParcelId(builder, rewardParcelId)
-def AcademyFavorScheduleExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return AcademyFavorScheduleExcelStartRewardParcelIdVector(builder, numElems)
-def AcademyFavorScheduleExcelAddRewardAmount(builder, rewardAmount): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmount), 0)
-def AddRewardAmount(builder, rewardAmount):
-    return AcademyFavorScheduleExcelAddRewardAmount(builder, rewardAmount)
-def AcademyFavorScheduleExcelStartRewardAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardAmountVector(builder, numElems):
-    return AcademyFavorScheduleExcelStartRewardAmountVector(builder, numElems)
+def AcademyFavorScheduleExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return AcademyFavorScheduleExcelAddIdField(builder, idField)
+def AcademyFavorScheduleExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return AcademyFavorScheduleExcelAddCharacterIdField(builder, characterIdField)
+def AcademyFavorScheduleExcelAddScheduleGroupIdField(builder, scheduleGroupIdField): builder.PrependInt32Slot(2, scheduleGroupIdField, 0)
+def AddScheduleGroupIdField(builder, scheduleGroupIdField):
+    return AcademyFavorScheduleExcelAddScheduleGroupIdField(builder, scheduleGroupIdField)
+def AcademyFavorScheduleExcelAddOrderInGroupField(builder, orderInGroupField): builder.PrependInt32Slot(3, orderInGroupField, 0)
+def AddOrderInGroupField(builder, orderInGroupField):
+    return AcademyFavorScheduleExcelAddOrderInGroupField(builder, orderInGroupField)
+def AcademyFavorScheduleExcelAddLocationField(builder, locationField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(locationField), 0)
+def AddLocationField(builder, locationField):
+    return AcademyFavorScheduleExcelAddLocationField(builder, locationField)
+def AcademyFavorScheduleExcelAddLocalizeScenarioIdField(builder, localizeScenarioIdField): builder.PrependUint32Slot(5, localizeScenarioIdField, 0)
+def AddLocalizeScenarioIdField(builder, localizeScenarioIdField):
+    return AcademyFavorScheduleExcelAddLocalizeScenarioIdField(builder, localizeScenarioIdField)
+def AcademyFavorScheduleExcelAddFavorRankField(builder, favorRankField): builder.PrependInt32Slot(6, favorRankField, 0)
+def AddFavorRankField(builder, favorRankField):
+    return AcademyFavorScheduleExcelAddFavorRankField(builder, favorRankField)
+def AcademyFavorScheduleExcelAddSecretStoneAmountField(builder, secretStoneAmountField): builder.PrependInt32Slot(7, secretStoneAmountField, 0)
+def AddSecretStoneAmountField(builder, secretStoneAmountField):
+    return AcademyFavorScheduleExcelAddSecretStoneAmountField(builder, secretStoneAmountField)
+def AcademyFavorScheduleExcelAddScenarioSriptGroupIdField(builder, scenarioSriptGroupIdField): builder.PrependInt32Slot(8, scenarioSriptGroupIdField, 0)
+def AddScenarioSriptGroupIdField(builder, scenarioSriptGroupIdField):
+    return AcademyFavorScheduleExcelAddScenarioSriptGroupIdField(builder, scenarioSriptGroupIdField)
+def AcademyFavorScheduleExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return AcademyFavorScheduleExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def AcademyFavorScheduleExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return AcademyFavorScheduleExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def AcademyFavorScheduleExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return AcademyFavorScheduleExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def AcademyFavorScheduleExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return AcademyFavorScheduleExcelStartRewardParcelIdFieldVector(builder, numElems)
+def AcademyFavorScheduleExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmountField), 0)
+def AddRewardAmountField(builder, rewardAmountField):
+    return AcademyFavorScheduleExcelAddRewardAmountField(builder, rewardAmountField)
+def AcademyFavorScheduleExcelStartRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardAmountFieldVector(builder, numElems):
+    return AcademyFavorScheduleExcelStartRewardAmountFieldVector(builder, numElems)
 def AcademyFavorScheduleExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return AcademyFavorScheduleExcelEnd(builder)

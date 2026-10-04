@@ -25,119 +25,119 @@ class ConstKeyMappingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstKeyMappingExcel
-    def DragSensitivity(self):
+    def DragSensitivityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def PcInformationGroupID(self):
+    def PcInformationGroupIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstKeyMappingExcel
-    def PcControllerInformationGroupID(self):
+    def PcControllerInformationGroupIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstKeyMappingExcel
-    def ScrollWheelFactor(self):
+    def ScrollWheelFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def RemoveKeycodeWord(self):
+    def RemoveKeycodeWordField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstKeyMappingExcel
-    def TutorialDialogTouchKey(self):
+    def TutorialDialogTouchKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstKeyMappingExcel
-    def ControllerCursorFactorSlow(self):
+    def ControllerCursorFactorSlowField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstKeyMappingExcel
-    def ControllerCursorFactor(self):
+    def ControllerCursorFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstKeyMappingExcel
-    def ControllerCursorFactorFast(self):
+    def ControllerCursorFactorFastField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstKeyMappingExcel
-    def VibrationSec(self):
+    def VibrationSecField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def VibrationPower(self):
+    def VibrationPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def ControllerScrollWheelFactor(self):
+    def ControllerScrollWheelFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def ControllerZoomSensitivity(self):
+    def ControllerZoomSensitivityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def ControllerDpadMoveCheckRangeX(self):
+    def ControllerDpadMoveCheckRangeXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def ControllerDpadMoveCheckRangeY(self):
+    def ControllerDpadMoveCheckRangeYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def ControllerCursorClickScale(self):
+    def ControllerCursorClickScaleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def ControllerScrollSensitivity(self):
+    def ControllerScrollSensitivityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -146,57 +146,57 @@ class ConstKeyMappingExcel(object):
 def ConstKeyMappingExcelStart(builder): builder.StartObject(17)
 def Start(builder):
     return ConstKeyMappingExcelStart(builder)
-def ConstKeyMappingExcelAddDragSensitivity(builder, dragSensitivity): builder.PrependFloat32Slot(0, dragSensitivity, 0.0)
-def AddDragSensitivity(builder, dragSensitivity):
-    return ConstKeyMappingExcelAddDragSensitivity(builder, dragSensitivity)
-def ConstKeyMappingExcelAddPcInformationGroupID(builder, pcInformationGroupID): builder.PrependInt32Slot(1, pcInformationGroupID, 0)
-def AddPcInformationGroupID(builder, pcInformationGroupID):
-    return ConstKeyMappingExcelAddPcInformationGroupID(builder, pcInformationGroupID)
-def ConstKeyMappingExcelAddPcControllerInformationGroupID(builder, pcControllerInformationGroupID): builder.PrependInt32Slot(2, pcControllerInformationGroupID, 0)
-def AddPcControllerInformationGroupID(builder, pcControllerInformationGroupID):
-    return ConstKeyMappingExcelAddPcControllerInformationGroupID(builder, pcControllerInformationGroupID)
-def ConstKeyMappingExcelAddScrollWheelFactor(builder, scrollWheelFactor): builder.PrependFloat32Slot(3, scrollWheelFactor, 0.0)
-def AddScrollWheelFactor(builder, scrollWheelFactor):
-    return ConstKeyMappingExcelAddScrollWheelFactor(builder, scrollWheelFactor)
-def ConstKeyMappingExcelAddRemoveKeycodeWord(builder, removeKeycodeWord): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(removeKeycodeWord), 0)
-def AddRemoveKeycodeWord(builder, removeKeycodeWord):
-    return ConstKeyMappingExcelAddRemoveKeycodeWord(builder, removeKeycodeWord)
-def ConstKeyMappingExcelAddTutorialDialogTouchKey(builder, tutorialDialogTouchKey): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(tutorialDialogTouchKey), 0)
-def AddTutorialDialogTouchKey(builder, tutorialDialogTouchKey):
-    return ConstKeyMappingExcelAddTutorialDialogTouchKey(builder, tutorialDialogTouchKey)
-def ConstKeyMappingExcelAddControllerCursorFactorSlow(builder, controllerCursorFactorSlow): builder.PrependInt32Slot(6, controllerCursorFactorSlow, 0)
-def AddControllerCursorFactorSlow(builder, controllerCursorFactorSlow):
-    return ConstKeyMappingExcelAddControllerCursorFactorSlow(builder, controllerCursorFactorSlow)
-def ConstKeyMappingExcelAddControllerCursorFactor(builder, controllerCursorFactor): builder.PrependInt32Slot(7, controllerCursorFactor, 0)
-def AddControllerCursorFactor(builder, controllerCursorFactor):
-    return ConstKeyMappingExcelAddControllerCursorFactor(builder, controllerCursorFactor)
-def ConstKeyMappingExcelAddControllerCursorFactorFast(builder, controllerCursorFactorFast): builder.PrependInt32Slot(8, controllerCursorFactorFast, 0)
-def AddControllerCursorFactorFast(builder, controllerCursorFactorFast):
-    return ConstKeyMappingExcelAddControllerCursorFactorFast(builder, controllerCursorFactorFast)
-def ConstKeyMappingExcelAddVibrationSec(builder, vibrationSec): builder.PrependFloat32Slot(9, vibrationSec, 0.0)
-def AddVibrationSec(builder, vibrationSec):
-    return ConstKeyMappingExcelAddVibrationSec(builder, vibrationSec)
-def ConstKeyMappingExcelAddVibrationPower(builder, vibrationPower): builder.PrependFloat32Slot(10, vibrationPower, 0.0)
-def AddVibrationPower(builder, vibrationPower):
-    return ConstKeyMappingExcelAddVibrationPower(builder, vibrationPower)
-def ConstKeyMappingExcelAddControllerScrollWheelFactor(builder, controllerScrollWheelFactor): builder.PrependFloat32Slot(11, controllerScrollWheelFactor, 0.0)
-def AddControllerScrollWheelFactor(builder, controllerScrollWheelFactor):
-    return ConstKeyMappingExcelAddControllerScrollWheelFactor(builder, controllerScrollWheelFactor)
-def ConstKeyMappingExcelAddControllerZoomSensitivity(builder, controllerZoomSensitivity): builder.PrependFloat32Slot(12, controllerZoomSensitivity, 0.0)
-def AddControllerZoomSensitivity(builder, controllerZoomSensitivity):
-    return ConstKeyMappingExcelAddControllerZoomSensitivity(builder, controllerZoomSensitivity)
-def ConstKeyMappingExcelAddControllerDpadMoveCheckRangeX(builder, controllerDpadMoveCheckRangeX): builder.PrependFloat32Slot(13, controllerDpadMoveCheckRangeX, 0.0)
-def AddControllerDpadMoveCheckRangeX(builder, controllerDpadMoveCheckRangeX):
-    return ConstKeyMappingExcelAddControllerDpadMoveCheckRangeX(builder, controllerDpadMoveCheckRangeX)
-def ConstKeyMappingExcelAddControllerDpadMoveCheckRangeY(builder, controllerDpadMoveCheckRangeY): builder.PrependFloat32Slot(14, controllerDpadMoveCheckRangeY, 0.0)
-def AddControllerDpadMoveCheckRangeY(builder, controllerDpadMoveCheckRangeY):
-    return ConstKeyMappingExcelAddControllerDpadMoveCheckRangeY(builder, controllerDpadMoveCheckRangeY)
-def ConstKeyMappingExcelAddControllerCursorClickScale(builder, controllerCursorClickScale): builder.PrependFloat32Slot(15, controllerCursorClickScale, 0.0)
-def AddControllerCursorClickScale(builder, controllerCursorClickScale):
-    return ConstKeyMappingExcelAddControllerCursorClickScale(builder, controllerCursorClickScale)
-def ConstKeyMappingExcelAddControllerScrollSensitivity(builder, controllerScrollSensitivity): builder.PrependFloat32Slot(16, controllerScrollSensitivity, 0.0)
-def AddControllerScrollSensitivity(builder, controllerScrollSensitivity):
-    return ConstKeyMappingExcelAddControllerScrollSensitivity(builder, controllerScrollSensitivity)
+def ConstKeyMappingExcelAddDragSensitivityField(builder, dragSensitivityField): builder.PrependFloat32Slot(0, dragSensitivityField, 0.0)
+def AddDragSensitivityField(builder, dragSensitivityField):
+    return ConstKeyMappingExcelAddDragSensitivityField(builder, dragSensitivityField)
+def ConstKeyMappingExcelAddPcInformationGroupIDField(builder, pcInformationGroupIDField): builder.PrependInt32Slot(1, pcInformationGroupIDField, 0)
+def AddPcInformationGroupIDField(builder, pcInformationGroupIDField):
+    return ConstKeyMappingExcelAddPcInformationGroupIDField(builder, pcInformationGroupIDField)
+def ConstKeyMappingExcelAddPcControllerInformationGroupIDField(builder, pcControllerInformationGroupIDField): builder.PrependInt32Slot(2, pcControllerInformationGroupIDField, 0)
+def AddPcControllerInformationGroupIDField(builder, pcControllerInformationGroupIDField):
+    return ConstKeyMappingExcelAddPcControllerInformationGroupIDField(builder, pcControllerInformationGroupIDField)
+def ConstKeyMappingExcelAddScrollWheelFactorField(builder, scrollWheelFactorField): builder.PrependFloat32Slot(3, scrollWheelFactorField, 0.0)
+def AddScrollWheelFactorField(builder, scrollWheelFactorField):
+    return ConstKeyMappingExcelAddScrollWheelFactorField(builder, scrollWheelFactorField)
+def ConstKeyMappingExcelAddRemoveKeycodeWordField(builder, removeKeycodeWordField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(removeKeycodeWordField), 0)
+def AddRemoveKeycodeWordField(builder, removeKeycodeWordField):
+    return ConstKeyMappingExcelAddRemoveKeycodeWordField(builder, removeKeycodeWordField)
+def ConstKeyMappingExcelAddTutorialDialogTouchKeyField(builder, tutorialDialogTouchKeyField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(tutorialDialogTouchKeyField), 0)
+def AddTutorialDialogTouchKeyField(builder, tutorialDialogTouchKeyField):
+    return ConstKeyMappingExcelAddTutorialDialogTouchKeyField(builder, tutorialDialogTouchKeyField)
+def ConstKeyMappingExcelAddControllerCursorFactorSlowField(builder, controllerCursorFactorSlowField): builder.PrependInt32Slot(6, controllerCursorFactorSlowField, 0)
+def AddControllerCursorFactorSlowField(builder, controllerCursorFactorSlowField):
+    return ConstKeyMappingExcelAddControllerCursorFactorSlowField(builder, controllerCursorFactorSlowField)
+def ConstKeyMappingExcelAddControllerCursorFactorField(builder, controllerCursorFactorField): builder.PrependInt32Slot(7, controllerCursorFactorField, 0)
+def AddControllerCursorFactorField(builder, controllerCursorFactorField):
+    return ConstKeyMappingExcelAddControllerCursorFactorField(builder, controllerCursorFactorField)
+def ConstKeyMappingExcelAddControllerCursorFactorFastField(builder, controllerCursorFactorFastField): builder.PrependInt32Slot(8, controllerCursorFactorFastField, 0)
+def AddControllerCursorFactorFastField(builder, controllerCursorFactorFastField):
+    return ConstKeyMappingExcelAddControllerCursorFactorFastField(builder, controllerCursorFactorFastField)
+def ConstKeyMappingExcelAddVibrationSecField(builder, vibrationSecField): builder.PrependFloat32Slot(9, vibrationSecField, 0.0)
+def AddVibrationSecField(builder, vibrationSecField):
+    return ConstKeyMappingExcelAddVibrationSecField(builder, vibrationSecField)
+def ConstKeyMappingExcelAddVibrationPowerField(builder, vibrationPowerField): builder.PrependFloat32Slot(10, vibrationPowerField, 0.0)
+def AddVibrationPowerField(builder, vibrationPowerField):
+    return ConstKeyMappingExcelAddVibrationPowerField(builder, vibrationPowerField)
+def ConstKeyMappingExcelAddControllerScrollWheelFactorField(builder, controllerScrollWheelFactorField): builder.PrependFloat32Slot(11, controllerScrollWheelFactorField, 0.0)
+def AddControllerScrollWheelFactorField(builder, controllerScrollWheelFactorField):
+    return ConstKeyMappingExcelAddControllerScrollWheelFactorField(builder, controllerScrollWheelFactorField)
+def ConstKeyMappingExcelAddControllerZoomSensitivityField(builder, controllerZoomSensitivityField): builder.PrependFloat32Slot(12, controllerZoomSensitivityField, 0.0)
+def AddControllerZoomSensitivityField(builder, controllerZoomSensitivityField):
+    return ConstKeyMappingExcelAddControllerZoomSensitivityField(builder, controllerZoomSensitivityField)
+def ConstKeyMappingExcelAddControllerDpadMoveCheckRangeXField(builder, controllerDpadMoveCheckRangeXField): builder.PrependFloat32Slot(13, controllerDpadMoveCheckRangeXField, 0.0)
+def AddControllerDpadMoveCheckRangeXField(builder, controllerDpadMoveCheckRangeXField):
+    return ConstKeyMappingExcelAddControllerDpadMoveCheckRangeXField(builder, controllerDpadMoveCheckRangeXField)
+def ConstKeyMappingExcelAddControllerDpadMoveCheckRangeYField(builder, controllerDpadMoveCheckRangeYField): builder.PrependFloat32Slot(14, controllerDpadMoveCheckRangeYField, 0.0)
+def AddControllerDpadMoveCheckRangeYField(builder, controllerDpadMoveCheckRangeYField):
+    return ConstKeyMappingExcelAddControllerDpadMoveCheckRangeYField(builder, controllerDpadMoveCheckRangeYField)
+def ConstKeyMappingExcelAddControllerCursorClickScaleField(builder, controllerCursorClickScaleField): builder.PrependFloat32Slot(15, controllerCursorClickScaleField, 0.0)
+def AddControllerCursorClickScaleField(builder, controllerCursorClickScaleField):
+    return ConstKeyMappingExcelAddControllerCursorClickScaleField(builder, controllerCursorClickScaleField)
+def ConstKeyMappingExcelAddControllerScrollSensitivityField(builder, controllerScrollSensitivityField): builder.PrependFloat32Slot(16, controllerScrollSensitivityField, 0.0)
+def AddControllerScrollSensitivityField(builder, controllerScrollSensitivityField):
+    return ConstKeyMappingExcelAddControllerScrollSensitivityField(builder, controllerScrollSensitivityField)
 def ConstKeyMappingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstKeyMappingExcelEnd(builder)

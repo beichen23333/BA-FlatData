@@ -25,35 +25,35 @@ class ToastExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ToastExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ToastExcel
-    def ToastType(self):
+    def ToastTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ToastExcel
-    def MissionId(self):
+    def MissionIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ToastExcel
-    def TextId(self):
+    def TextIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ToastExcel
-    def LifeTime(self):
+    def LifeTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class ToastExcel(object):
 def ToastExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return ToastExcelStart(builder)
-def ToastExcelAddId(builder, id): builder.PrependUint32Slot(0, id, 0)
-def AddId(builder, id):
-    return ToastExcelAddId(builder, id)
-def ToastExcelAddToastType(builder, toastType): builder.PrependInt32Slot(1, toastType, 0)
-def AddToastType(builder, toastType):
-    return ToastExcelAddToastType(builder, toastType)
-def ToastExcelAddMissionId(builder, missionId): builder.PrependUint32Slot(2, missionId, 0)
-def AddMissionId(builder, missionId):
-    return ToastExcelAddMissionId(builder, missionId)
-def ToastExcelAddTextId(builder, textId): builder.PrependUint32Slot(3, textId, 0)
-def AddTextId(builder, textId):
-    return ToastExcelAddTextId(builder, textId)
-def ToastExcelAddLifeTime(builder, lifeTime): builder.PrependInt32Slot(4, lifeTime, 0)
-def AddLifeTime(builder, lifeTime):
-    return ToastExcelAddLifeTime(builder, lifeTime)
+def ToastExcelAddIdField(builder, idField): builder.PrependUint32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ToastExcelAddIdField(builder, idField)
+def ToastExcelAddToastTypeField(builder, toastTypeField): builder.PrependInt32Slot(1, toastTypeField, 0)
+def AddToastTypeField(builder, toastTypeField):
+    return ToastExcelAddToastTypeField(builder, toastTypeField)
+def ToastExcelAddMissionIdField(builder, missionIdField): builder.PrependUint32Slot(2, missionIdField, 0)
+def AddMissionIdField(builder, missionIdField):
+    return ToastExcelAddMissionIdField(builder, missionIdField)
+def ToastExcelAddTextIdField(builder, textIdField): builder.PrependUint32Slot(3, textIdField, 0)
+def AddTextIdField(builder, textIdField):
+    return ToastExcelAddTextIdField(builder, textIdField)
+def ToastExcelAddLifeTimeField(builder, lifeTimeField): builder.PrependInt32Slot(4, lifeTimeField, 0)
+def AddLifeTimeField(builder, lifeTimeField):
+    return ToastExcelAddLifeTimeField(builder, lifeTimeField)
 def ToastExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ToastExcelEnd(builder)

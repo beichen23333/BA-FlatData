@@ -25,49 +25,49 @@ class SNSPostExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # SNSPostExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def SNSInfoId(self):
+    def SNSInfoIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def MasterPostId(self):
+    def MasterPostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def RepostSNSProfileId(self):
+    def RepostSNSProfileIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def SNSProfileId(self):
+    def SNSProfileIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def PostTextLocalizeKey(self):
+    def PostTextLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def PostImagePath(self, j):
+    def PostImagePathField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -75,40 +75,40 @@ class SNSPostExcel(object):
         return ""
 
     # SNSPostExcel
-    def PostImagePathLength(self):
+    def PostImagePathFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # SNSPostExcel
-    def PostImagePathIsNone(self):
+    def PostImagePathFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # SNSPostExcel
-    def RepostMinNum(self):
+    def RepostMinNumField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def RepostMaxNum(self):
+    def RepostMaxNumField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def FavorMinNum(self):
+    def FavorMinNumField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SNSPostExcel
-    def FavorMaxNum(self):
+    def FavorMaxNumField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -117,42 +117,42 @@ class SNSPostExcel(object):
 def SNSPostExcelStart(builder): builder.StartObject(11)
 def Start(builder):
     return SNSPostExcelStart(builder)
-def SNSPostExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return SNSPostExcelAddId(builder, id)
-def SNSPostExcelAddSNSInfoId(builder, sNSInfoId): builder.PrependInt32Slot(1, sNSInfoId, 0)
-def AddSNSInfoId(builder, sNSInfoId):
-    return SNSPostExcelAddSNSInfoId(builder, sNSInfoId)
-def SNSPostExcelAddMasterPostId(builder, masterPostId): builder.PrependInt32Slot(2, masterPostId, 0)
-def AddMasterPostId(builder, masterPostId):
-    return SNSPostExcelAddMasterPostId(builder, masterPostId)
-def SNSPostExcelAddRepostSNSProfileId(builder, repostSNSProfileId): builder.PrependInt32Slot(3, repostSNSProfileId, 0)
-def AddRepostSNSProfileId(builder, repostSNSProfileId):
-    return SNSPostExcelAddRepostSNSProfileId(builder, repostSNSProfileId)
-def SNSPostExcelAddSNSProfileId(builder, sNSProfileId): builder.PrependInt32Slot(4, sNSProfileId, 0)
-def AddSNSProfileId(builder, sNSProfileId):
-    return SNSPostExcelAddSNSProfileId(builder, sNSProfileId)
-def SNSPostExcelAddPostTextLocalizeKey(builder, postTextLocalizeKey): builder.PrependUint32Slot(5, postTextLocalizeKey, 0)
-def AddPostTextLocalizeKey(builder, postTextLocalizeKey):
-    return SNSPostExcelAddPostTextLocalizeKey(builder, postTextLocalizeKey)
-def SNSPostExcelAddPostImagePath(builder, postImagePath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(postImagePath), 0)
-def AddPostImagePath(builder, postImagePath):
-    return SNSPostExcelAddPostImagePath(builder, postImagePath)
-def SNSPostExcelStartPostImagePathVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPostImagePathVector(builder, numElems):
-    return SNSPostExcelStartPostImagePathVector(builder, numElems)
-def SNSPostExcelAddRepostMinNum(builder, repostMinNum): builder.PrependInt32Slot(7, repostMinNum, 0)
-def AddRepostMinNum(builder, repostMinNum):
-    return SNSPostExcelAddRepostMinNum(builder, repostMinNum)
-def SNSPostExcelAddRepostMaxNum(builder, repostMaxNum): builder.PrependInt32Slot(8, repostMaxNum, 0)
-def AddRepostMaxNum(builder, repostMaxNum):
-    return SNSPostExcelAddRepostMaxNum(builder, repostMaxNum)
-def SNSPostExcelAddFavorMinNum(builder, favorMinNum): builder.PrependInt32Slot(9, favorMinNum, 0)
-def AddFavorMinNum(builder, favorMinNum):
-    return SNSPostExcelAddFavorMinNum(builder, favorMinNum)
-def SNSPostExcelAddFavorMaxNum(builder, favorMaxNum): builder.PrependInt32Slot(10, favorMaxNum, 0)
-def AddFavorMaxNum(builder, favorMaxNum):
-    return SNSPostExcelAddFavorMaxNum(builder, favorMaxNum)
+def SNSPostExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return SNSPostExcelAddIdField(builder, idField)
+def SNSPostExcelAddSNSInfoIdField(builder, sNSInfoIdField): builder.PrependInt32Slot(1, sNSInfoIdField, 0)
+def AddSNSInfoIdField(builder, sNSInfoIdField):
+    return SNSPostExcelAddSNSInfoIdField(builder, sNSInfoIdField)
+def SNSPostExcelAddMasterPostIdField(builder, masterPostIdField): builder.PrependInt32Slot(2, masterPostIdField, 0)
+def AddMasterPostIdField(builder, masterPostIdField):
+    return SNSPostExcelAddMasterPostIdField(builder, masterPostIdField)
+def SNSPostExcelAddRepostSNSProfileIdField(builder, repostSNSProfileIdField): builder.PrependInt32Slot(3, repostSNSProfileIdField, 0)
+def AddRepostSNSProfileIdField(builder, repostSNSProfileIdField):
+    return SNSPostExcelAddRepostSNSProfileIdField(builder, repostSNSProfileIdField)
+def SNSPostExcelAddSNSProfileIdField(builder, sNSProfileIdField): builder.PrependInt32Slot(4, sNSProfileIdField, 0)
+def AddSNSProfileIdField(builder, sNSProfileIdField):
+    return SNSPostExcelAddSNSProfileIdField(builder, sNSProfileIdField)
+def SNSPostExcelAddPostTextLocalizeKeyField(builder, postTextLocalizeKeyField): builder.PrependUint32Slot(5, postTextLocalizeKeyField, 0)
+def AddPostTextLocalizeKeyField(builder, postTextLocalizeKeyField):
+    return SNSPostExcelAddPostTextLocalizeKeyField(builder, postTextLocalizeKeyField)
+def SNSPostExcelAddPostImagePathField(builder, postImagePathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(postImagePathField), 0)
+def AddPostImagePathField(builder, postImagePathField):
+    return SNSPostExcelAddPostImagePathField(builder, postImagePathField)
+def SNSPostExcelStartPostImagePathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartPostImagePathFieldVector(builder, numElems):
+    return SNSPostExcelStartPostImagePathFieldVector(builder, numElems)
+def SNSPostExcelAddRepostMinNumField(builder, repostMinNumField): builder.PrependInt32Slot(7, repostMinNumField, 0)
+def AddRepostMinNumField(builder, repostMinNumField):
+    return SNSPostExcelAddRepostMinNumField(builder, repostMinNumField)
+def SNSPostExcelAddRepostMaxNumField(builder, repostMaxNumField): builder.PrependInt32Slot(8, repostMaxNumField, 0)
+def AddRepostMaxNumField(builder, repostMaxNumField):
+    return SNSPostExcelAddRepostMaxNumField(builder, repostMaxNumField)
+def SNSPostExcelAddFavorMinNumField(builder, favorMinNumField): builder.PrependInt32Slot(9, favorMinNumField, 0)
+def AddFavorMinNumField(builder, favorMinNumField):
+    return SNSPostExcelAddFavorMinNumField(builder, favorMinNumField)
+def SNSPostExcelAddFavorMaxNumField(builder, favorMaxNumField): builder.PrependInt32Slot(10, favorMaxNumField, 0)
+def AddFavorMaxNumField(builder, favorMaxNumField):
+    return SNSPostExcelAddFavorMaxNumField(builder, favorMaxNumField)
 def SNSPostExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SNSPostExcelEnd(builder)

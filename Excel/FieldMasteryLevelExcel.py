@@ -25,14 +25,14 @@ class FieldMasteryLevelExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FieldMasteryLevelExcel
-    def Level(self):
+    def LevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldMasteryLevelExcel
-    def Id(self, j):
+    def IdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,26 +40,26 @@ class FieldMasteryLevelExcel(object):
         return 0
 
     # FieldMasteryLevelExcel
-    def IdAsNumpy(self):
+    def IdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # FieldMasteryLevelExcel
-    def IdLength(self):
+    def IdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # FieldMasteryLevelExcel
-    def IdIsNone(self):
+    def IdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # FieldMasteryLevelExcel
-    def Exp(self, j):
+    def ExpField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -67,26 +67,26 @@ class FieldMasteryLevelExcel(object):
         return 0
 
     # FieldMasteryLevelExcel
-    def ExpAsNumpy(self):
+    def ExpFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # FieldMasteryLevelExcel
-    def ExpLength(self):
+    def ExpFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # FieldMasteryLevelExcel
-    def ExpIsNone(self):
+    def ExpFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # FieldMasteryLevelExcel
-    def TotalExp(self, j):
+    def TotalExpField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -94,26 +94,26 @@ class FieldMasteryLevelExcel(object):
         return 0
 
     # FieldMasteryLevelExcel
-    def TotalExpAsNumpy(self):
+    def TotalExpFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # FieldMasteryLevelExcel
-    def TotalExpLength(self):
+    def TotalExpFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # FieldMasteryLevelExcel
-    def TotalExpIsNone(self):
+    def TotalExpFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # FieldMasteryLevelExcel
-    def RewardId(self, j):
+    def RewardIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -121,54 +121,54 @@ class FieldMasteryLevelExcel(object):
         return 0
 
     # FieldMasteryLevelExcel
-    def RewardIdAsNumpy(self):
+    def RewardIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # FieldMasteryLevelExcel
-    def RewardIdLength(self):
+    def RewardIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # FieldMasteryLevelExcel
-    def RewardIdIsNone(self):
+    def RewardIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
 def FieldMasteryLevelExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return FieldMasteryLevelExcelStart(builder)
-def FieldMasteryLevelExcelAddLevel(builder, level): builder.PrependInt32Slot(0, level, 0)
-def AddLevel(builder, level):
-    return FieldMasteryLevelExcelAddLevel(builder, level)
-def FieldMasteryLevelExcelAddId(builder, id): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(id), 0)
-def AddId(builder, id):
-    return FieldMasteryLevelExcelAddId(builder, id)
-def FieldMasteryLevelExcelStartIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartIdVector(builder, numElems):
-    return FieldMasteryLevelExcelStartIdVector(builder, numElems)
-def FieldMasteryLevelExcelAddExp(builder, exp): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(exp), 0)
-def AddExp(builder, exp):
-    return FieldMasteryLevelExcelAddExp(builder, exp)
-def FieldMasteryLevelExcelStartExpVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExpVector(builder, numElems):
-    return FieldMasteryLevelExcelStartExpVector(builder, numElems)
-def FieldMasteryLevelExcelAddTotalExp(builder, totalExp): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(totalExp), 0)
-def AddTotalExp(builder, totalExp):
-    return FieldMasteryLevelExcelAddTotalExp(builder, totalExp)
-def FieldMasteryLevelExcelStartTotalExpVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTotalExpVector(builder, numElems):
-    return FieldMasteryLevelExcelStartTotalExpVector(builder, numElems)
-def FieldMasteryLevelExcelAddRewardId(builder, rewardId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardId), 0)
-def AddRewardId(builder, rewardId):
-    return FieldMasteryLevelExcelAddRewardId(builder, rewardId)
-def FieldMasteryLevelExcelStartRewardIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardIdVector(builder, numElems):
-    return FieldMasteryLevelExcelStartRewardIdVector(builder, numElems)
+def FieldMasteryLevelExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(0, levelField, 0)
+def AddLevelField(builder, levelField):
+    return FieldMasteryLevelExcelAddLevelField(builder, levelField)
+def FieldMasteryLevelExcelAddIdField(builder, idField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(idField), 0)
+def AddIdField(builder, idField):
+    return FieldMasteryLevelExcelAddIdField(builder, idField)
+def FieldMasteryLevelExcelStartIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartIdFieldVector(builder, numElems):
+    return FieldMasteryLevelExcelStartIdFieldVector(builder, numElems)
+def FieldMasteryLevelExcelAddExpField(builder, expField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(expField), 0)
+def AddExpField(builder, expField):
+    return FieldMasteryLevelExcelAddExpField(builder, expField)
+def FieldMasteryLevelExcelStartExpFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartExpFieldVector(builder, numElems):
+    return FieldMasteryLevelExcelStartExpFieldVector(builder, numElems)
+def FieldMasteryLevelExcelAddTotalExpField(builder, totalExpField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(totalExpField), 0)
+def AddTotalExpField(builder, totalExpField):
+    return FieldMasteryLevelExcelAddTotalExpField(builder, totalExpField)
+def FieldMasteryLevelExcelStartTotalExpFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTotalExpFieldVector(builder, numElems):
+    return FieldMasteryLevelExcelStartTotalExpFieldVector(builder, numElems)
+def FieldMasteryLevelExcelAddRewardIdField(builder, rewardIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardIdField), 0)
+def AddRewardIdField(builder, rewardIdField):
+    return FieldMasteryLevelExcelAddRewardIdField(builder, rewardIdField)
+def FieldMasteryLevelExcelStartRewardIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardIdFieldVector(builder, numElems):
+    return FieldMasteryLevelExcelStartRewardIdFieldVector(builder, numElems)
 def FieldMasteryLevelExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FieldMasteryLevelExcelEnd(builder)

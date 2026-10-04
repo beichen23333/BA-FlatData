@@ -25,49 +25,49 @@ class MiniGameDreamReplayScenarioExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MiniGameDreamReplayScenarioExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamReplayScenarioExcel
-    def ScenarioGroupId(self):
+    def ScenarioGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamReplayScenarioExcel
-    def Order(self):
+    def OrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamReplayScenarioExcel
-    def ReplaySummaryTitleLocalize(self):
+    def ReplaySummaryTitleLocalizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamReplayScenarioExcel
-    def ReplaySummaryLocalizeScenarioId(self):
+    def ReplaySummaryLocalizeScenarioIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamReplayScenarioExcel
-    def ReplayScenarioResource(self):
+    def ReplayScenarioResourceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameDreamReplayScenarioExcel
-    def IsReplayScenarioHorizon(self):
+    def IsReplayScenarioHorizonField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -76,27 +76,27 @@ class MiniGameDreamReplayScenarioExcel(object):
 def MiniGameDreamReplayScenarioExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return MiniGameDreamReplayScenarioExcelStart(builder)
-def MiniGameDreamReplayScenarioExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MiniGameDreamReplayScenarioExcelAddEventContentId(builder, eventContentId)
-def MiniGameDreamReplayScenarioExcelAddScenarioGroupId(builder, scenarioGroupId): builder.PrependInt32Slot(1, scenarioGroupId, 0)
-def AddScenarioGroupId(builder, scenarioGroupId):
-    return MiniGameDreamReplayScenarioExcelAddScenarioGroupId(builder, scenarioGroupId)
-def MiniGameDreamReplayScenarioExcelAddOrder(builder, order): builder.PrependInt32Slot(2, order, 0)
-def AddOrder(builder, order):
-    return MiniGameDreamReplayScenarioExcelAddOrder(builder, order)
-def MiniGameDreamReplayScenarioExcelAddReplaySummaryTitleLocalize(builder, replaySummaryTitleLocalize): builder.PrependUint32Slot(3, replaySummaryTitleLocalize, 0)
-def AddReplaySummaryTitleLocalize(builder, replaySummaryTitleLocalize):
-    return MiniGameDreamReplayScenarioExcelAddReplaySummaryTitleLocalize(builder, replaySummaryTitleLocalize)
-def MiniGameDreamReplayScenarioExcelAddReplaySummaryLocalizeScenarioId(builder, replaySummaryLocalizeScenarioId): builder.PrependUint32Slot(4, replaySummaryLocalizeScenarioId, 0)
-def AddReplaySummaryLocalizeScenarioId(builder, replaySummaryLocalizeScenarioId):
-    return MiniGameDreamReplayScenarioExcelAddReplaySummaryLocalizeScenarioId(builder, replaySummaryLocalizeScenarioId)
-def MiniGameDreamReplayScenarioExcelAddReplayScenarioResource(builder, replayScenarioResource): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(replayScenarioResource), 0)
-def AddReplayScenarioResource(builder, replayScenarioResource):
-    return MiniGameDreamReplayScenarioExcelAddReplayScenarioResource(builder, replayScenarioResource)
-def MiniGameDreamReplayScenarioExcelAddIsReplayScenarioHorizon(builder, isReplayScenarioHorizon): builder.PrependBoolSlot(6, isReplayScenarioHorizon, 0)
-def AddIsReplayScenarioHorizon(builder, isReplayScenarioHorizon):
-    return MiniGameDreamReplayScenarioExcelAddIsReplayScenarioHorizon(builder, isReplayScenarioHorizon)
+def MiniGameDreamReplayScenarioExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MiniGameDreamReplayScenarioExcelAddEventContentIdField(builder, eventContentIdField)
+def MiniGameDreamReplayScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField): builder.PrependInt32Slot(1, scenarioGroupIdField, 0)
+def AddScenarioGroupIdField(builder, scenarioGroupIdField):
+    return MiniGameDreamReplayScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField)
+def MiniGameDreamReplayScenarioExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(2, orderField, 0)
+def AddOrderField(builder, orderField):
+    return MiniGameDreamReplayScenarioExcelAddOrderField(builder, orderField)
+def MiniGameDreamReplayScenarioExcelAddReplaySummaryTitleLocalizeField(builder, replaySummaryTitleLocalizeField): builder.PrependUint32Slot(3, replaySummaryTitleLocalizeField, 0)
+def AddReplaySummaryTitleLocalizeField(builder, replaySummaryTitleLocalizeField):
+    return MiniGameDreamReplayScenarioExcelAddReplaySummaryTitleLocalizeField(builder, replaySummaryTitleLocalizeField)
+def MiniGameDreamReplayScenarioExcelAddReplaySummaryLocalizeScenarioIdField(builder, replaySummaryLocalizeScenarioIdField): builder.PrependUint32Slot(4, replaySummaryLocalizeScenarioIdField, 0)
+def AddReplaySummaryLocalizeScenarioIdField(builder, replaySummaryLocalizeScenarioIdField):
+    return MiniGameDreamReplayScenarioExcelAddReplaySummaryLocalizeScenarioIdField(builder, replaySummaryLocalizeScenarioIdField)
+def MiniGameDreamReplayScenarioExcelAddReplayScenarioResourceField(builder, replayScenarioResourceField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(replayScenarioResourceField), 0)
+def AddReplayScenarioResourceField(builder, replayScenarioResourceField):
+    return MiniGameDreamReplayScenarioExcelAddReplayScenarioResourceField(builder, replayScenarioResourceField)
+def MiniGameDreamReplayScenarioExcelAddIsReplayScenarioHorizonField(builder, isReplayScenarioHorizonField): builder.PrependBoolSlot(6, isReplayScenarioHorizonField, 0)
+def AddIsReplayScenarioHorizonField(builder, isReplayScenarioHorizonField):
+    return MiniGameDreamReplayScenarioExcelAddIsReplayScenarioHorizonField(builder, isReplayScenarioHorizonField)
 def MiniGameDreamReplayScenarioExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MiniGameDreamReplayScenarioExcelEnd(builder)

@@ -25,28 +25,28 @@ class WelcomeCampaignEnterRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # WelcomeCampaignEnterRewardExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignEnterRewardExcel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignEnterRewardExcel
-    def RewardParcelUniqueID(self):
+    def RewardParcelUniqueIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignEnterRewardExcel
-    def RewardAmount(self):
+    def RewardAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class WelcomeCampaignEnterRewardExcel(object):
 def WelcomeCampaignEnterRewardExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return WelcomeCampaignEnterRewardExcelStart(builder)
-def WelcomeCampaignEnterRewardExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return WelcomeCampaignEnterRewardExcelAddGroupId(builder, groupId)
-def WelcomeCampaignEnterRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(1, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return WelcomeCampaignEnterRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def WelcomeCampaignEnterRewardExcelAddRewardParcelUniqueID(builder, rewardParcelUniqueID): builder.PrependInt32Slot(2, rewardParcelUniqueID, 0)
-def AddRewardParcelUniqueID(builder, rewardParcelUniqueID):
-    return WelcomeCampaignEnterRewardExcelAddRewardParcelUniqueID(builder, rewardParcelUniqueID)
-def WelcomeCampaignEnterRewardExcelAddRewardAmount(builder, rewardAmount): builder.PrependInt32Slot(3, rewardAmount, 0)
-def AddRewardAmount(builder, rewardAmount):
-    return WelcomeCampaignEnterRewardExcelAddRewardAmount(builder, rewardAmount)
+def WelcomeCampaignEnterRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return WelcomeCampaignEnterRewardExcelAddGroupIdField(builder, groupIdField)
+def WelcomeCampaignEnterRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(1, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return WelcomeCampaignEnterRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def WelcomeCampaignEnterRewardExcelAddRewardParcelUniqueIDField(builder, rewardParcelUniqueIDField): builder.PrependInt32Slot(2, rewardParcelUniqueIDField, 0)
+def AddRewardParcelUniqueIDField(builder, rewardParcelUniqueIDField):
+    return WelcomeCampaignEnterRewardExcelAddRewardParcelUniqueIDField(builder, rewardParcelUniqueIDField)
+def WelcomeCampaignEnterRewardExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependInt32Slot(3, rewardAmountField, 0)
+def AddRewardAmountField(builder, rewardAmountField):
+    return WelcomeCampaignEnterRewardExcelAddRewardAmountField(builder, rewardAmountField)
 def WelcomeCampaignEnterRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WelcomeCampaignEnterRewardExcelEnd(builder)

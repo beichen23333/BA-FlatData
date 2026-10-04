@@ -25,28 +25,28 @@ class PresetParcelsExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # PresetParcelsExcel
-    def ParcelType(self):
+    def ParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PresetParcelsExcel
-    def ParcelId(self):
+    def ParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PresetParcelsExcel
-    def PresetGroupId(self):
+    def PresetGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PresetParcelsExcel
-    def ParcelAmount(self):
+    def ParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class PresetParcelsExcel(object):
 def PresetParcelsExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return PresetParcelsExcelStart(builder)
-def PresetParcelsExcelAddParcelType(builder, parcelType): builder.PrependInt32Slot(0, parcelType, 0)
-def AddParcelType(builder, parcelType):
-    return PresetParcelsExcelAddParcelType(builder, parcelType)
-def PresetParcelsExcelAddParcelId(builder, parcelId): builder.PrependInt32Slot(1, parcelId, 0)
-def AddParcelId(builder, parcelId):
-    return PresetParcelsExcelAddParcelId(builder, parcelId)
-def PresetParcelsExcelAddPresetGroupId(builder, presetGroupId): builder.PrependInt32Slot(2, presetGroupId, 0)
-def AddPresetGroupId(builder, presetGroupId):
-    return PresetParcelsExcelAddPresetGroupId(builder, presetGroupId)
-def PresetParcelsExcelAddParcelAmount(builder, parcelAmount): builder.PrependInt32Slot(3, parcelAmount, 0)
-def AddParcelAmount(builder, parcelAmount):
-    return PresetParcelsExcelAddParcelAmount(builder, parcelAmount)
+def PresetParcelsExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependInt32Slot(0, parcelTypeField, 0)
+def AddParcelTypeField(builder, parcelTypeField):
+    return PresetParcelsExcelAddParcelTypeField(builder, parcelTypeField)
+def PresetParcelsExcelAddParcelIdField(builder, parcelIdField): builder.PrependInt32Slot(1, parcelIdField, 0)
+def AddParcelIdField(builder, parcelIdField):
+    return PresetParcelsExcelAddParcelIdField(builder, parcelIdField)
+def PresetParcelsExcelAddPresetGroupIdField(builder, presetGroupIdField): builder.PrependInt32Slot(2, presetGroupIdField, 0)
+def AddPresetGroupIdField(builder, presetGroupIdField):
+    return PresetParcelsExcelAddPresetGroupIdField(builder, presetGroupIdField)
+def PresetParcelsExcelAddParcelAmountField(builder, parcelAmountField): builder.PrependInt32Slot(3, parcelAmountField, 0)
+def AddParcelAmountField(builder, parcelAmountField):
+    return PresetParcelsExcelAddParcelAmountField(builder, parcelAmountField)
 def PresetParcelsExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return PresetParcelsExcelEnd(builder)

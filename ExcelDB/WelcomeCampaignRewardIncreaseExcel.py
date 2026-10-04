@@ -25,49 +25,49 @@ class WelcomeCampaignRewardIncreaseExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # WelcomeCampaignRewardIncreaseExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignRewardIncreaseExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignRewardIncreaseExcel
-    def LocalizeCodeId(self):
+    def LocalizeCodeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignRewardIncreaseExcel
-    def IconPath(self):
+    def IconPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WelcomeCampaignRewardIncreaseExcel
-    def EventTargetType(self):
+    def EventTargetTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignRewardIncreaseExcel
-    def IncreaseRatio(self):
+    def IncreaseRatioField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WelcomeCampaignRewardIncreaseExcel
-    def ShortcutEventTargetType(self):
+    def ShortcutEventTargetTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class WelcomeCampaignRewardIncreaseExcel(object):
 def WelcomeCampaignRewardIncreaseExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return WelcomeCampaignRewardIncreaseExcelStart(builder)
-def WelcomeCampaignRewardIncreaseExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return WelcomeCampaignRewardIncreaseExcelAddId(builder, id)
-def WelcomeCampaignRewardIncreaseExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(1, groupId, 0)
-def AddGroupId(builder, groupId):
-    return WelcomeCampaignRewardIncreaseExcelAddGroupId(builder, groupId)
-def WelcomeCampaignRewardIncreaseExcelAddLocalizeCodeId(builder, localizeCodeId): builder.PrependUint32Slot(2, localizeCodeId, 0)
-def AddLocalizeCodeId(builder, localizeCodeId):
-    return WelcomeCampaignRewardIncreaseExcelAddLocalizeCodeId(builder, localizeCodeId)
-def WelcomeCampaignRewardIncreaseExcelAddIconPath(builder, iconPath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconPath), 0)
-def AddIconPath(builder, iconPath):
-    return WelcomeCampaignRewardIncreaseExcelAddIconPath(builder, iconPath)
-def WelcomeCampaignRewardIncreaseExcelAddEventTargetType(builder, eventTargetType): builder.PrependInt32Slot(4, eventTargetType, 0)
-def AddEventTargetType(builder, eventTargetType):
-    return WelcomeCampaignRewardIncreaseExcelAddEventTargetType(builder, eventTargetType)
-def WelcomeCampaignRewardIncreaseExcelAddIncreaseRatio(builder, increaseRatio): builder.PrependInt32Slot(5, increaseRatio, 0)
-def AddIncreaseRatio(builder, increaseRatio):
-    return WelcomeCampaignRewardIncreaseExcelAddIncreaseRatio(builder, increaseRatio)
-def WelcomeCampaignRewardIncreaseExcelAddShortcutEventTargetType(builder, shortcutEventTargetType): builder.PrependInt32Slot(6, shortcutEventTargetType, 0)
-def AddShortcutEventTargetType(builder, shortcutEventTargetType):
-    return WelcomeCampaignRewardIncreaseExcelAddShortcutEventTargetType(builder, shortcutEventTargetType)
+def WelcomeCampaignRewardIncreaseExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return WelcomeCampaignRewardIncreaseExcelAddIdField(builder, idField)
+def WelcomeCampaignRewardIncreaseExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(1, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return WelcomeCampaignRewardIncreaseExcelAddGroupIdField(builder, groupIdField)
+def WelcomeCampaignRewardIncreaseExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUint32Slot(2, localizeCodeIdField, 0)
+def AddLocalizeCodeIdField(builder, localizeCodeIdField):
+    return WelcomeCampaignRewardIncreaseExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+def WelcomeCampaignRewardIncreaseExcelAddIconPathField(builder, iconPathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+def AddIconPathField(builder, iconPathField):
+    return WelcomeCampaignRewardIncreaseExcelAddIconPathField(builder, iconPathField)
+def WelcomeCampaignRewardIncreaseExcelAddEventTargetTypeField(builder, eventTargetTypeField): builder.PrependInt32Slot(4, eventTargetTypeField, 0)
+def AddEventTargetTypeField(builder, eventTargetTypeField):
+    return WelcomeCampaignRewardIncreaseExcelAddEventTargetTypeField(builder, eventTargetTypeField)
+def WelcomeCampaignRewardIncreaseExcelAddIncreaseRatioField(builder, increaseRatioField): builder.PrependInt32Slot(5, increaseRatioField, 0)
+def AddIncreaseRatioField(builder, increaseRatioField):
+    return WelcomeCampaignRewardIncreaseExcelAddIncreaseRatioField(builder, increaseRatioField)
+def WelcomeCampaignRewardIncreaseExcelAddShortcutEventTargetTypeField(builder, shortcutEventTargetTypeField): builder.PrependInt32Slot(6, shortcutEventTargetTypeField, 0)
+def AddShortcutEventTargetTypeField(builder, shortcutEventTargetTypeField):
+    return WelcomeCampaignRewardIncreaseExcelAddShortcutEventTargetTypeField(builder, shortcutEventTargetTypeField)
 def WelcomeCampaignRewardIncreaseExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WelcomeCampaignRewardIncreaseExcelEnd(builder)

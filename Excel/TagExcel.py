@@ -25,14 +25,14 @@ class TagExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TagExcel
-    def Furniture(self):
+    def FurnitureField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TagExcel
-    def None(self):
+    def NoneField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class TagExcel(object):
 def TagExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return TagExcelStart(builder)
-def TagExcelAddFurniture(builder, furniture): builder.PrependInt32Slot(0, furniture, 0)
-def AddFurniture(builder, furniture):
-    return TagExcelAddFurniture(builder, furniture)
-def TagExcelAddNone(builder, none): builder.PrependInt32Slot(1, none, 0)
-def AddNone(builder, none):
-    return TagExcelAddNone(builder, none)
+def TagExcelAddFurnitureField(builder, furnitureField): builder.PrependInt32Slot(0, furnitureField, 0)
+def AddFurnitureField(builder, furnitureField):
+    return TagExcelAddFurnitureField(builder, furnitureField)
+def TagExcelAddNoneField(builder, noneField): builder.PrependInt32Slot(1, noneField, 0)
+def AddNoneField(builder, noneField):
+    return TagExcelAddNoneField(builder, noneField)
 def TagExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TagExcelEnd(builder)

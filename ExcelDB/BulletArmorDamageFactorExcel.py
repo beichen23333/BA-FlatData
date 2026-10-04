@@ -25,56 +25,56 @@ class BulletArmorDamageFactorExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BulletArmorDamageFactorExcel
-    def DamageFactorGroupId(self):
+    def DamageFactorGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # BulletArmorDamageFactorExcel
-    def BulletType(self):
+    def BulletTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BulletArmorDamageFactorExcel
-    def ArmorType(self):
+    def ArmorTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BulletArmorDamageFactorExcel
-    def DamageRate(self):
+    def DamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BulletArmorDamageFactorExcel
-    def DamageAttribute(self):
+    def DamageAttributeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BulletArmorDamageFactorExcel
-    def MinDamageRate(self):
+    def MinDamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BulletArmorDamageFactorExcel
-    def MaxDamageRate(self):
+    def MaxDamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BulletArmorDamageFactorExcel
-    def ShowHighlightFloater(self):
+    def ShowHighlightFloaterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -83,30 +83,30 @@ class BulletArmorDamageFactorExcel(object):
 def BulletArmorDamageFactorExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return BulletArmorDamageFactorExcelStart(builder)
-def BulletArmorDamageFactorExcelAddDamageFactorGroupId(builder, damageFactorGroupId): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(damageFactorGroupId), 0)
-def AddDamageFactorGroupId(builder, damageFactorGroupId):
-    return BulletArmorDamageFactorExcelAddDamageFactorGroupId(builder, damageFactorGroupId)
-def BulletArmorDamageFactorExcelAddBulletType(builder, bulletType): builder.PrependInt32Slot(1, bulletType, 0)
-def AddBulletType(builder, bulletType):
-    return BulletArmorDamageFactorExcelAddBulletType(builder, bulletType)
-def BulletArmorDamageFactorExcelAddArmorType(builder, armorType): builder.PrependInt32Slot(2, armorType, 0)
-def AddArmorType(builder, armorType):
-    return BulletArmorDamageFactorExcelAddArmorType(builder, armorType)
-def BulletArmorDamageFactorExcelAddDamageRate(builder, damageRate): builder.PrependInt32Slot(3, damageRate, 0)
-def AddDamageRate(builder, damageRate):
-    return BulletArmorDamageFactorExcelAddDamageRate(builder, damageRate)
-def BulletArmorDamageFactorExcelAddDamageAttribute(builder, damageAttribute): builder.PrependInt32Slot(4, damageAttribute, 0)
-def AddDamageAttribute(builder, damageAttribute):
-    return BulletArmorDamageFactorExcelAddDamageAttribute(builder, damageAttribute)
-def BulletArmorDamageFactorExcelAddMinDamageRate(builder, minDamageRate): builder.PrependInt32Slot(5, minDamageRate, 0)
-def AddMinDamageRate(builder, minDamageRate):
-    return BulletArmorDamageFactorExcelAddMinDamageRate(builder, minDamageRate)
-def BulletArmorDamageFactorExcelAddMaxDamageRate(builder, maxDamageRate): builder.PrependInt32Slot(6, maxDamageRate, 0)
-def AddMaxDamageRate(builder, maxDamageRate):
-    return BulletArmorDamageFactorExcelAddMaxDamageRate(builder, maxDamageRate)
-def BulletArmorDamageFactorExcelAddShowHighlightFloater(builder, showHighlightFloater): builder.PrependBoolSlot(7, showHighlightFloater, 0)
-def AddShowHighlightFloater(builder, showHighlightFloater):
-    return BulletArmorDamageFactorExcelAddShowHighlightFloater(builder, showHighlightFloater)
+def BulletArmorDamageFactorExcelAddDamageFactorGroupIdField(builder, damageFactorGroupIdField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(damageFactorGroupIdField), 0)
+def AddDamageFactorGroupIdField(builder, damageFactorGroupIdField):
+    return BulletArmorDamageFactorExcelAddDamageFactorGroupIdField(builder, damageFactorGroupIdField)
+def BulletArmorDamageFactorExcelAddBulletTypeField(builder, bulletTypeField): builder.PrependInt32Slot(1, bulletTypeField, 0)
+def AddBulletTypeField(builder, bulletTypeField):
+    return BulletArmorDamageFactorExcelAddBulletTypeField(builder, bulletTypeField)
+def BulletArmorDamageFactorExcelAddArmorTypeField(builder, armorTypeField): builder.PrependInt32Slot(2, armorTypeField, 0)
+def AddArmorTypeField(builder, armorTypeField):
+    return BulletArmorDamageFactorExcelAddArmorTypeField(builder, armorTypeField)
+def BulletArmorDamageFactorExcelAddDamageRateField(builder, damageRateField): builder.PrependInt32Slot(3, damageRateField, 0)
+def AddDamageRateField(builder, damageRateField):
+    return BulletArmorDamageFactorExcelAddDamageRateField(builder, damageRateField)
+def BulletArmorDamageFactorExcelAddDamageAttributeField(builder, damageAttributeField): builder.PrependInt32Slot(4, damageAttributeField, 0)
+def AddDamageAttributeField(builder, damageAttributeField):
+    return BulletArmorDamageFactorExcelAddDamageAttributeField(builder, damageAttributeField)
+def BulletArmorDamageFactorExcelAddMinDamageRateField(builder, minDamageRateField): builder.PrependInt32Slot(5, minDamageRateField, 0)
+def AddMinDamageRateField(builder, minDamageRateField):
+    return BulletArmorDamageFactorExcelAddMinDamageRateField(builder, minDamageRateField)
+def BulletArmorDamageFactorExcelAddMaxDamageRateField(builder, maxDamageRateField): builder.PrependInt32Slot(6, maxDamageRateField, 0)
+def AddMaxDamageRateField(builder, maxDamageRateField):
+    return BulletArmorDamageFactorExcelAddMaxDamageRateField(builder, maxDamageRateField)
+def BulletArmorDamageFactorExcelAddShowHighlightFloaterField(builder, showHighlightFloaterField): builder.PrependBoolSlot(7, showHighlightFloaterField, 0)
+def AddShowHighlightFloaterField(builder, showHighlightFloaterField):
+    return BulletArmorDamageFactorExcelAddShowHighlightFloaterField(builder, showHighlightFloaterField)
 def BulletArmorDamageFactorExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return BulletArmorDamageFactorExcelEnd(builder)

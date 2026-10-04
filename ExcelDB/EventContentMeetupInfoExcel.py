@@ -25,28 +25,28 @@ class EventContentMeetupInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentMeetupInfoExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentMeetupInfoExcel
-    def CostParcelType(self):
+    def CostParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentMeetupInfoExcel
-    def CostId(self):
+    def CostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentMeetupInfoExcel
-    def CostAmount(self):
+    def CostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class EventContentMeetupInfoExcel(object):
 def EventContentMeetupInfoExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentMeetupInfoExcelStart(builder)
-def EventContentMeetupInfoExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentMeetupInfoExcelAddEventContentId(builder, eventContentId)
-def EventContentMeetupInfoExcelAddCostParcelType(builder, costParcelType): builder.PrependInt32Slot(1, costParcelType, 0)
-def AddCostParcelType(builder, costParcelType):
-    return EventContentMeetupInfoExcelAddCostParcelType(builder, costParcelType)
-def EventContentMeetupInfoExcelAddCostId(builder, costId): builder.PrependInt32Slot(2, costId, 0)
-def AddCostId(builder, costId):
-    return EventContentMeetupInfoExcelAddCostId(builder, costId)
-def EventContentMeetupInfoExcelAddCostAmount(builder, costAmount): builder.PrependInt32Slot(3, costAmount, 0)
-def AddCostAmount(builder, costAmount):
-    return EventContentMeetupInfoExcelAddCostAmount(builder, costAmount)
+def EventContentMeetupInfoExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentMeetupInfoExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentMeetupInfoExcelAddCostParcelTypeField(builder, costParcelTypeField): builder.PrependInt32Slot(1, costParcelTypeField, 0)
+def AddCostParcelTypeField(builder, costParcelTypeField):
+    return EventContentMeetupInfoExcelAddCostParcelTypeField(builder, costParcelTypeField)
+def EventContentMeetupInfoExcelAddCostIdField(builder, costIdField): builder.PrependInt32Slot(2, costIdField, 0)
+def AddCostIdField(builder, costIdField):
+    return EventContentMeetupInfoExcelAddCostIdField(builder, costIdField)
+def EventContentMeetupInfoExcelAddCostAmountField(builder, costAmountField): builder.PrependInt32Slot(3, costAmountField, 0)
+def AddCostAmountField(builder, costAmountField):
+    return EventContentMeetupInfoExcelAddCostAmountField(builder, costAmountField)
 def EventContentMeetupInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentMeetupInfoExcelEnd(builder)

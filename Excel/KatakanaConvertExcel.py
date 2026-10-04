@@ -25,14 +25,14 @@ class KatakanaConvertExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # KatakanaConvertExcel
-    def Kr(self):
+    def KrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KatakanaConvertExcel
-    def Jp(self):
+    def JpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -41,12 +41,12 @@ class KatakanaConvertExcel(object):
 def KatakanaConvertExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return KatakanaConvertExcelStart(builder)
-def KatakanaConvertExcelAddKr(builder, kr): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(kr), 0)
-def AddKr(builder, kr):
-    return KatakanaConvertExcelAddKr(builder, kr)
-def KatakanaConvertExcelAddJp(builder, jp): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(jp), 0)
-def AddJp(builder, jp):
-    return KatakanaConvertExcelAddJp(builder, jp)
+def KatakanaConvertExcelAddKrField(builder, krField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(krField), 0)
+def AddKrField(builder, krField):
+    return KatakanaConvertExcelAddKrField(builder, krField)
+def KatakanaConvertExcelAddJpField(builder, jpField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(jpField), 0)
+def AddJpField(builder, jpField):
+    return KatakanaConvertExcelAddJpField(builder, jpField)
 def KatakanaConvertExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return KatakanaConvertExcelEnd(builder)

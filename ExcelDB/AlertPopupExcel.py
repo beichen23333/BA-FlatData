@@ -25,49 +25,49 @@ class AlertPopupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AlertPopupExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AlertPopupExcel
-    def CheckConfirmAble(self):
+    def CheckConfirmAbleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # AlertPopupExcel
-    def SystemPopupTitle(self):
+    def SystemPopupTitleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # AlertPopupExcel
-    def SystemPopupDescription(self):
+    def SystemPopupDescriptionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # AlertPopupExcel
-    def SpoilerPopupTitle(self):
+    def SpoilerPopupTitleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # AlertPopupExcel
-    def SpoilerPopupDescription(self):
+    def SpoilerPopupDescriptionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # AlertPopupExcel
-    def PopupType(self):
+    def PopupTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class AlertPopupExcel(object):
 def AlertPopupExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return AlertPopupExcelStart(builder)
-def AlertPopupExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return AlertPopupExcelAddId(builder, id)
-def AlertPopupExcelAddCheckConfirmAble(builder, checkConfirmAble): builder.PrependBoolSlot(1, checkConfirmAble, 0)
-def AddCheckConfirmAble(builder, checkConfirmAble):
-    return AlertPopupExcelAddCheckConfirmAble(builder, checkConfirmAble)
-def AlertPopupExcelAddSystemPopupTitle(builder, systemPopupTitle): builder.PrependUint32Slot(2, systemPopupTitle, 0)
-def AddSystemPopupTitle(builder, systemPopupTitle):
-    return AlertPopupExcelAddSystemPopupTitle(builder, systemPopupTitle)
-def AlertPopupExcelAddSystemPopupDescription(builder, systemPopupDescription): builder.PrependUint32Slot(3, systemPopupDescription, 0)
-def AddSystemPopupDescription(builder, systemPopupDescription):
-    return AlertPopupExcelAddSystemPopupDescription(builder, systemPopupDescription)
-def AlertPopupExcelAddSpoilerPopupTitle(builder, spoilerPopupTitle): builder.PrependUint32Slot(4, spoilerPopupTitle, 0)
-def AddSpoilerPopupTitle(builder, spoilerPopupTitle):
-    return AlertPopupExcelAddSpoilerPopupTitle(builder, spoilerPopupTitle)
-def AlertPopupExcelAddSpoilerPopupDescription(builder, spoilerPopupDescription): builder.PrependUint32Slot(5, spoilerPopupDescription, 0)
-def AddSpoilerPopupDescription(builder, spoilerPopupDescription):
-    return AlertPopupExcelAddSpoilerPopupDescription(builder, spoilerPopupDescription)
-def AlertPopupExcelAddPopupType(builder, popupType): builder.PrependInt32Slot(6, popupType, 0)
-def AddPopupType(builder, popupType):
-    return AlertPopupExcelAddPopupType(builder, popupType)
+def AlertPopupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return AlertPopupExcelAddIdField(builder, idField)
+def AlertPopupExcelAddCheckConfirmAbleField(builder, checkConfirmAbleField): builder.PrependBoolSlot(1, checkConfirmAbleField, 0)
+def AddCheckConfirmAbleField(builder, checkConfirmAbleField):
+    return AlertPopupExcelAddCheckConfirmAbleField(builder, checkConfirmAbleField)
+def AlertPopupExcelAddSystemPopupTitleField(builder, systemPopupTitleField): builder.PrependUint32Slot(2, systemPopupTitleField, 0)
+def AddSystemPopupTitleField(builder, systemPopupTitleField):
+    return AlertPopupExcelAddSystemPopupTitleField(builder, systemPopupTitleField)
+def AlertPopupExcelAddSystemPopupDescriptionField(builder, systemPopupDescriptionField): builder.PrependUint32Slot(3, systemPopupDescriptionField, 0)
+def AddSystemPopupDescriptionField(builder, systemPopupDescriptionField):
+    return AlertPopupExcelAddSystemPopupDescriptionField(builder, systemPopupDescriptionField)
+def AlertPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField): builder.PrependUint32Slot(4, spoilerPopupTitleField, 0)
+def AddSpoilerPopupTitleField(builder, spoilerPopupTitleField):
+    return AlertPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField)
+def AlertPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField): builder.PrependUint32Slot(5, spoilerPopupDescriptionField, 0)
+def AddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField):
+    return AlertPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField)
+def AlertPopupExcelAddPopupTypeField(builder, popupTypeField): builder.PrependInt32Slot(6, popupTypeField, 0)
+def AddPopupTypeField(builder, popupTypeField):
+    return AlertPopupExcelAddPopupTypeField(builder, popupTypeField)
 def AlertPopupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return AlertPopupExcelEnd(builder)

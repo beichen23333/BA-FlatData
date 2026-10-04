@@ -25,14 +25,14 @@ class TacticSkipExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TacticSkipExcel
-    def LevelDiff(self):
+    def LevelDiffField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TacticSkipExcel
-    def HPResult(self):
+    def HPResultField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class TacticSkipExcel(object):
 def TacticSkipExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return TacticSkipExcelStart(builder)
-def TacticSkipExcelAddLevelDiff(builder, levelDiff): builder.PrependInt32Slot(0, levelDiff, 0)
-def AddLevelDiff(builder, levelDiff):
-    return TacticSkipExcelAddLevelDiff(builder, levelDiff)
-def TacticSkipExcelAddHPResult(builder, hPResult): builder.PrependInt32Slot(1, hPResult, 0)
-def AddHPResult(builder, hPResult):
-    return TacticSkipExcelAddHPResult(builder, hPResult)
+def TacticSkipExcelAddLevelDiffField(builder, levelDiffField): builder.PrependInt32Slot(0, levelDiffField, 0)
+def AddLevelDiffField(builder, levelDiffField):
+    return TacticSkipExcelAddLevelDiffField(builder, levelDiffField)
+def TacticSkipExcelAddHPResultField(builder, hPResultField): builder.PrependInt32Slot(1, hPResultField, 0)
+def AddHPResultField(builder, hPResultField):
+    return TacticSkipExcelAddHPResultField(builder, hPResultField)
 def TacticSkipExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TacticSkipExcelEnd(builder)

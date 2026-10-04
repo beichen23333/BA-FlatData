@@ -25,28 +25,28 @@ class KeyControllerImageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # KeyControllerImageExcel
-    def ControllerKeyCode(self):
+    def ControllerKeyCodeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyControllerImageExcel
-    def PSIconName(self):
+    def PSIconNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyControllerImageExcel
-    def XBoxIconName(self):
+    def XBoxIconNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyControllerImageExcel
-    def SteamDeckIconName(self):
+    def SteamDeckIconNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -55,18 +55,18 @@ class KeyControllerImageExcel(object):
 def KeyControllerImageExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return KeyControllerImageExcelStart(builder)
-def KeyControllerImageExcelAddControllerKeyCode(builder, controllerKeyCode): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(controllerKeyCode), 0)
-def AddControllerKeyCode(builder, controllerKeyCode):
-    return KeyControllerImageExcelAddControllerKeyCode(builder, controllerKeyCode)
-def KeyControllerImageExcelAddPSIconName(builder, pSIconName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(pSIconName), 0)
-def AddPSIconName(builder, pSIconName):
-    return KeyControllerImageExcelAddPSIconName(builder, pSIconName)
-def KeyControllerImageExcelAddXBoxIconName(builder, xBoxIconName): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(xBoxIconName), 0)
-def AddXBoxIconName(builder, xBoxIconName):
-    return KeyControllerImageExcelAddXBoxIconName(builder, xBoxIconName)
-def KeyControllerImageExcelAddSteamDeckIconName(builder, steamDeckIconName): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(steamDeckIconName), 0)
-def AddSteamDeckIconName(builder, steamDeckIconName):
-    return KeyControllerImageExcelAddSteamDeckIconName(builder, steamDeckIconName)
+def KeyControllerImageExcelAddControllerKeyCodeField(builder, controllerKeyCodeField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(controllerKeyCodeField), 0)
+def AddControllerKeyCodeField(builder, controllerKeyCodeField):
+    return KeyControllerImageExcelAddControllerKeyCodeField(builder, controllerKeyCodeField)
+def KeyControllerImageExcelAddPSIconNameField(builder, pSIconNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(pSIconNameField), 0)
+def AddPSIconNameField(builder, pSIconNameField):
+    return KeyControllerImageExcelAddPSIconNameField(builder, pSIconNameField)
+def KeyControllerImageExcelAddXBoxIconNameField(builder, xBoxIconNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(xBoxIconNameField), 0)
+def AddXBoxIconNameField(builder, xBoxIconNameField):
+    return KeyControllerImageExcelAddXBoxIconNameField(builder, xBoxIconNameField)
+def KeyControllerImageExcelAddSteamDeckIconNameField(builder, steamDeckIconNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(steamDeckIconNameField), 0)
+def AddSteamDeckIconNameField(builder, steamDeckIconNameField):
+    return KeyControllerImageExcelAddSteamDeckIconNameField(builder, steamDeckIconNameField)
 def KeyControllerImageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return KeyControllerImageExcelEnd(builder)

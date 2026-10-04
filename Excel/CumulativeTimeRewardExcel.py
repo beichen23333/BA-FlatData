@@ -25,35 +25,35 @@ class CumulativeTimeRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CumulativeTimeRewardExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CumulativeTimeRewardExcel
-    def Description(self):
+    def DescriptionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CumulativeTimeRewardExcel
-    def StartDate(self):
+    def StartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CumulativeTimeRewardExcel
-    def EndDate(self):
+    def EndDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CumulativeTimeRewardExcel
-    def TimeCondition(self, j):
+    def TimeConditionField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -61,26 +61,26 @@ class CumulativeTimeRewardExcel(object):
         return 0
 
     # CumulativeTimeRewardExcel
-    def TimeConditionAsNumpy(self):
+    def TimeConditionFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CumulativeTimeRewardExcel
-    def TimeConditionLength(self):
+    def TimeConditionFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CumulativeTimeRewardExcel
-    def TimeConditionIsNone(self):
+    def TimeConditionFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # CumulativeTimeRewardExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -88,26 +88,26 @@ class CumulativeTimeRewardExcel(object):
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # CumulativeTimeRewardExcel
-    def RewardId(self, j):
+    def RewardIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -115,26 +115,26 @@ class CumulativeTimeRewardExcel(object):
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardIdAsNumpy(self):
+    def RewardIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardIdLength(self):
+    def RewardIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardIdIsNone(self):
+    def RewardIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # CumulativeTimeRewardExcel
-    def RewardAmount(self, j):
+    def RewardAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             a = self._tab.Vector(o)
@@ -142,63 +142,63 @@ class CumulativeTimeRewardExcel(object):
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardAmountAsNumpy(self):
+    def RewardAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardAmountLength(self):
+    def RewardAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CumulativeTimeRewardExcel
-    def RewardAmountIsNone(self):
+    def RewardAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
 def CumulativeTimeRewardExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return CumulativeTimeRewardExcelStart(builder)
-def CumulativeTimeRewardExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CumulativeTimeRewardExcelAddId(builder, id)
-def CumulativeTimeRewardExcelAddDescription(builder, description): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(description), 0)
-def AddDescription(builder, description):
-    return CumulativeTimeRewardExcelAddDescription(builder, description)
-def CumulativeTimeRewardExcelAddStartDate(builder, startDate): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(startDate), 0)
-def AddStartDate(builder, startDate):
-    return CumulativeTimeRewardExcelAddStartDate(builder, startDate)
-def CumulativeTimeRewardExcelAddEndDate(builder, endDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endDate), 0)
-def AddEndDate(builder, endDate):
-    return CumulativeTimeRewardExcelAddEndDate(builder, endDate)
-def CumulativeTimeRewardExcelAddTimeCondition(builder, timeCondition): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(timeCondition), 0)
-def AddTimeCondition(builder, timeCondition):
-    return CumulativeTimeRewardExcelAddTimeCondition(builder, timeCondition)
-def CumulativeTimeRewardExcelStartTimeConditionVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTimeConditionVector(builder, numElems):
-    return CumulativeTimeRewardExcelStartTimeConditionVector(builder, numElems)
-def CumulativeTimeRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return CumulativeTimeRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def CumulativeTimeRewardExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return CumulativeTimeRewardExcelStartRewardParcelTypeVector(builder, numElems)
-def CumulativeTimeRewardExcelAddRewardId(builder, rewardId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardId), 0)
-def AddRewardId(builder, rewardId):
-    return CumulativeTimeRewardExcelAddRewardId(builder, rewardId)
-def CumulativeTimeRewardExcelStartRewardIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardIdVector(builder, numElems):
-    return CumulativeTimeRewardExcelStartRewardIdVector(builder, numElems)
-def CumulativeTimeRewardExcelAddRewardAmount(builder, rewardAmount): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmount), 0)
-def AddRewardAmount(builder, rewardAmount):
-    return CumulativeTimeRewardExcelAddRewardAmount(builder, rewardAmount)
-def CumulativeTimeRewardExcelStartRewardAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardAmountVector(builder, numElems):
-    return CumulativeTimeRewardExcelStartRewardAmountVector(builder, numElems)
+def CumulativeTimeRewardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CumulativeTimeRewardExcelAddIdField(builder, idField)
+def CumulativeTimeRewardExcelAddDescriptionField(builder, descriptionField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionField), 0)
+def AddDescriptionField(builder, descriptionField):
+    return CumulativeTimeRewardExcelAddDescriptionField(builder, descriptionField)
+def CumulativeTimeRewardExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+def AddStartDateField(builder, startDateField):
+    return CumulativeTimeRewardExcelAddStartDateField(builder, startDateField)
+def CumulativeTimeRewardExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+def AddEndDateField(builder, endDateField):
+    return CumulativeTimeRewardExcelAddEndDateField(builder, endDateField)
+def CumulativeTimeRewardExcelAddTimeConditionField(builder, timeConditionField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(timeConditionField), 0)
+def AddTimeConditionField(builder, timeConditionField):
+    return CumulativeTimeRewardExcelAddTimeConditionField(builder, timeConditionField)
+def CumulativeTimeRewardExcelStartTimeConditionFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTimeConditionFieldVector(builder, numElems):
+    return CumulativeTimeRewardExcelStartTimeConditionFieldVector(builder, numElems)
+def CumulativeTimeRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return CumulativeTimeRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def CumulativeTimeRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return CumulativeTimeRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def CumulativeTimeRewardExcelAddRewardIdField(builder, rewardIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardIdField), 0)
+def AddRewardIdField(builder, rewardIdField):
+    return CumulativeTimeRewardExcelAddRewardIdField(builder, rewardIdField)
+def CumulativeTimeRewardExcelStartRewardIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardIdFieldVector(builder, numElems):
+    return CumulativeTimeRewardExcelStartRewardIdFieldVector(builder, numElems)
+def CumulativeTimeRewardExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmountField), 0)
+def AddRewardAmountField(builder, rewardAmountField):
+    return CumulativeTimeRewardExcelAddRewardAmountField(builder, rewardAmountField)
+def CumulativeTimeRewardExcelStartRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardAmountFieldVector(builder, numElems):
+    return CumulativeTimeRewardExcelStartRewardAmountFieldVector(builder, numElems)
 def CumulativeTimeRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CumulativeTimeRewardExcelEnd(builder)

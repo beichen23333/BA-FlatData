@@ -25,35 +25,35 @@ class AccountLevelRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AccountLevelRewardExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AccountLevelRewardExcel
-    def Level(self):
+    def LevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AccountLevelRewardExcel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AccountLevelRewardExcel
-    def RewardParcelId(self):
+    def RewardParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AccountLevelRewardExcel
-    def RewardParcelAmount(self):
+    def RewardParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class AccountLevelRewardExcel(object):
 def AccountLevelRewardExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return AccountLevelRewardExcelStart(builder)
-def AccountLevelRewardExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return AccountLevelRewardExcelAddId(builder, id)
-def AccountLevelRewardExcelAddLevel(builder, level): builder.PrependInt32Slot(1, level, 0)
-def AddLevel(builder, level):
-    return AccountLevelRewardExcelAddLevel(builder, level)
-def AccountLevelRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(2, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return AccountLevelRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def AccountLevelRewardExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependInt32Slot(3, rewardParcelId, 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return AccountLevelRewardExcelAddRewardParcelId(builder, rewardParcelId)
-def AccountLevelRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependInt32Slot(4, rewardParcelAmount, 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return AccountLevelRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount)
+def AccountLevelRewardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return AccountLevelRewardExcelAddIdField(builder, idField)
+def AccountLevelRewardExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(1, levelField, 0)
+def AddLevelField(builder, levelField):
+    return AccountLevelRewardExcelAddLevelField(builder, levelField)
+def AccountLevelRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(2, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return AccountLevelRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def AccountLevelRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(3, rewardParcelIdField, 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return AccountLevelRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def AccountLevelRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(4, rewardParcelAmountField, 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return AccountLevelRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
 def AccountLevelRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return AccountLevelRewardExcelEnd(builder)

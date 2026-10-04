@@ -1,1149 +1,1149 @@
 include "../enums.fbs";
 
 table AddressableBlackListExcel {
-    id:int;
-    folder_path:[string];
-    resource_path:[string];
+    id_field:int;
+    folder_path_field:[string];
+    resource_path_field:[string];
 }
 
 table AddressableWhiteListExcel {
-    id:int;
-    folder_path:[string];
-    resource_path:[string];
+    id_field:int;
+    folder_path_field:[string];
+    resource_path_field:[string];
 }
 
 table BlendData {
-    type:int;
+    type_field:int;
 }
 
 table BlendInfo {
-    from_value:int;
-    to:int;
-    blend:float;
+    from_field:int;
+    to_field:int;
+    blend_field:float;
 }
 
 table AnimatorData {
-    default_state_name:string;
-    name:string;
+    default_state_name_field:string;
+    name_field:string;
 }
 
 table AniStateData {
-    state_name:string;
-    state_prefix:string;
-    state_name_with_prefix:string;
-    tag:string;
-    speed_parameter_name:string;
-    speed_paramter:float;
-    state_speed:float;
-    clip_name:string;
-    length:float;
-    frame_rate:float;
-    is_looping:bool;
+    state_name_field:string;
+    state_prefix_field:string;
+    state_name_with_prefix_field:string;
+    tag_field:string;
+    speed_parameter_name_field:string;
+    speed_paramter_field:float;
+    state_speed_field:float;
+    clip_name_field:string;
+    length_field:float;
+    frame_rate_field:float;
+    is_looping_field:bool;
 }
 
 table AniEventData {
-    name:string;
-    time:float;
-    int_param:int;
-    float_param:float;
-    string_param:string;
+    name_field:string;
+    time_field:float;
+    int_param_field:int;
+    float_param_field:float;
+    string_param_field:string;
 }
 
 table BattleExcel {
-    none:[UnitType];
-    single:AttackType;
-    guided:ProjectileType;
-    blue:DamageFontColor;
-    cover_enter:EmoticonEvent;
-    normal:[BulletType];
-    crush:ActionType;
-    able:BuffOverlap;
-    ally_self:ReArrangeTargetType;
-    light_armor:ArmorType;
-    wood:EntityMaterialType;
-    all:[CoverMotionType];
-    d_i_s_t_a_n_c_e:TargetSortBy;
-    close_to_obstacle:PositioningType;
-    students:[TacticEntityType];
-    sequence:ExternalBTNodeType;
-    use_next_ex_skill:ExternalBehavior;
-    student:TacticEntityType;
-    search_and_move:EngageType;
-    position:HitEffectPosition;
-    street:StageTopography;
-    d:TerrainAdaptationStat;
-    m_a_i_n:StageType;
-    remain:ObstacleDestroyType;
-    low:ObstacleHeightType;
-    resist:DamageAttribute;
-    ally:SkillPriorityCheckTarget;
-    main:StageType;
-    target_to_caster:KnockbackDirection;
-    duration:EndCondition;
-    preset:ArenaSimulatorServer;
-    final_damage:BattleCalculationStat;
-    special_trans_stat:StatTransType;
-    talk:BattleDialogType;
+    none_field:[UnitType];
+    single_field:AttackType;
+    guided_field:ProjectileType;
+    blue_field:DamageFontColor;
+    cover_enter_field:EmoticonEvent;
+    normal_field:[BulletType];
+    crush_field:ActionType;
+    able_field:BuffOverlap;
+    ally_self_field:ReArrangeTargetType;
+    light_armor_field:ArmorType;
+    wood_field:EntityMaterialType;
+    all_field:[CoverMotionType];
+    d_i_s_t_a_n_c_e_field:TargetSortBy;
+    close_to_obstacle_field:PositioningType;
+    students_field:[TacticEntityType];
+    sequence_field:ExternalBTNodeType;
+    use_next_ex_skill_field:ExternalBehavior;
+    student_field:TacticEntityType;
+    search_and_move_field:EngageType;
+    position_field:HitEffectPosition;
+    street_field:StageTopography;
+    d_field:TerrainAdaptationStat;
+    m_a_i_n_field:StageType;
+    remain_field:ObstacleDestroyType;
+    low_field:ObstacleHeightType;
+    resist_field:DamageAttribute;
+    ally_field:SkillPriorityCheckTarget;
+    main_field:StageType;
+    target_to_caster_field:KnockbackDirection;
+    duration_field:EndCondition;
+    preset_field:ArenaSimulatorServer;
+    final_damage_field:BattleCalculationStat;
+    special_trans_stat_field:StatTransType;
+    talk_field:BattleDialogType;
 }
 
 table BossPhaseExcel {
-    id:int;
-    a_i_phase:int;
-    normal_attack_skill_unique_name:string;
-    use_ex_skill:[bool];
+    id_field:int;
+    a_i_phase_field:int;
+    normal_attack_skill_unique_name_field:string;
+    use_ex_skill_field:[bool];
 }
 
 table BuffParticleExcel {
-    unique_id:int;
-    unique_name:string;
-    buff_type:string;
-    buff_name:string;
-    resource_path:string;
+    unique_id_field:int;
+    unique_name_field:string;
+    buff_type_field:string;
+    buff_name_field:string;
+    resource_path_field:string;
 }
 
 table CharacterDialogFieldExcel {
-    group_id:int;
-    phase:int;
-    target_index:int;
-    dialog_type:FieldDialogType;
-    duration:int;
-    motion_name:string;
-    is_interaction_dialog:bool;
-    hide_u_i:bool;
-    localize_k_r:string;
-    localize_j_p:string;
-    localize_t_h:string;
-    localize_t_w:string;
-    localize_e_n:string;
+    group_id_field:int;
+    phase_field:int;
+    target_index_field:int;
+    dialog_type_field:FieldDialogType;
+    duration_field:int;
+    motion_name_field:string;
+    is_interaction_dialog_field:bool;
+    hide_u_i_field:bool;
+    localize_k_r_field:string;
+    localize_j_p_field:string;
+    localize_t_h_field:string;
+    localize_t_w_field:string;
+    localize_e_n_field:string;
 }
 
 table CheatCodeListExcel {
-    id:int;
-    cheat_code:[string];
-    input_title:[string];
-    desc:string;
+    id_field:int;
+    cheat_code_field:[string];
+    input_title_field:[string];
+    desc_field:string;
 }
 
 table ClearDeckRuleExcel {
-    content_type:ContentType;
-    size_limit:int;
+    content_type_field:ContentType;
+    size_limit_field:int;
 }
 
 table ConquestStepExcel {
-    event_content_id:int;
-    map_difficulty:StageDifficulty;
-    step:int;
-    step_goal_localize:string;
-    step_enter_scenario_group_id:int;
-    step_enter_item_type:ParcelType;
-    step_enter_item_unique_id:int;
-    step_enter_item_amount:int;
-    unexpected_event_unit_id:[int];
-    unexpected_event_prefab:string;
-    treasure_box_object_id:int;
-    treasure_box_count_per_step_open:int;
+    event_content_id_field:int;
+    map_difficulty_field:StageDifficulty;
+    step_field:int;
+    step_goal_localize_field:string;
+    step_enter_scenario_group_id_field:int;
+    step_enter_item_type_field:ParcelType;
+    step_enter_item_unique_id_field:int;
+    step_enter_item_amount_field:int;
+    unexpected_event_unit_id_field:[int];
+    unexpected_event_prefab_field:string;
+    treasure_box_object_id_field:int;
+    treasure_box_count_per_step_open_field:int;
 }
 
 table ConstArenaExcel {
-    attack_cool_time:int;
-    battle_duration:int;
-    defense_cool_time:int;
-    t_s_s_start_cool_time:int;
-    end_alarm:int;
-    time_reward_max_amount:int;
-    enter_cost_type:ParcelType;
-    enter_cost_id:int;
-    ticket_cost:int;
-    daily_reward_reset_time:string;
-    open_scenario_id:string;
-    character_slot_hide_rank:[int];
-    map_slot_hide_rank:int;
-    relative_opponent_rank_start:[int];
-    relative_opponent_rank_end:[int];
-    modified_stat_type:[StatType];
-    stat_mul_factor:[int];
-    stat_sum_factor:[int];
-    n_p_c_name:[string];
-    n_p_c_main_character_count:int;
-    n_p_c_support_character_count:int;
-    n_p_c_character_skill_level:int;
-    time_span_in_days_for_battle_history:int;
-    hidden_character_image_path:string;
-    defense_victory_reward_max_count:int;
-    top_ranker_count_limit:int;
-    auto_refresh_interval_milli_seconds:int;
-    echelon_setting_interval_milli_seconds:int;
-    skip_allowed_time_milli_seconds:int;
-    show_season_change_info_start_time:string;
-    show_season_change_info_end_time:string;
-    show_season_id:int;
-    arena_history_query_limit_days:int;
+    attack_cool_time_field:int;
+    battle_duration_field:int;
+    defense_cool_time_field:int;
+    t_s_s_start_cool_time_field:int;
+    end_alarm_field:int;
+    time_reward_max_amount_field:int;
+    enter_cost_type_field:ParcelType;
+    enter_cost_id_field:int;
+    ticket_cost_field:int;
+    daily_reward_reset_time_field:string;
+    open_scenario_id_field:string;
+    character_slot_hide_rank_field:[int];
+    map_slot_hide_rank_field:int;
+    relative_opponent_rank_start_field:[int];
+    relative_opponent_rank_end_field:[int];
+    modified_stat_type_field:[StatType];
+    stat_mul_factor_field:[int];
+    stat_sum_factor_field:[int];
+    n_p_c_name_field:[string];
+    n_p_c_main_character_count_field:int;
+    n_p_c_support_character_count_field:int;
+    n_p_c_character_skill_level_field:int;
+    time_span_in_days_for_battle_history_field:int;
+    hidden_character_image_path_field:string;
+    defense_victory_reward_max_count_field:int;
+    top_ranker_count_limit_field:int;
+    auto_refresh_interval_milli_seconds_field:int;
+    echelon_setting_interval_milli_seconds_field:int;
+    skip_allowed_time_milli_seconds_field:int;
+    show_season_change_info_start_time_field:string;
+    show_season_change_info_end_time_field:string;
+    show_season_id_field:int;
+    arena_history_query_limit_days_field:int;
 }
 
 table ConstAudioExcel {
-    default_snap_shot_name:string;
-    battle_snap_shot_name:string;
-    raid_snap_shot_name:string;
-    ex_skill_cut_in_snap_shot_name:string;
+    default_snap_shot_name_field:string;
+    battle_snap_shot_name_field:string;
+    raid_snap_shot_name_field:string;
+    ex_skill_cut_in_snap_shot_name_field:string;
 }
 
 table ConstCombatExcel {
-    skill_hand_count:int;
-    dying_time:int;
-    buff_icon_blink_time:int;
-    show_bufficon_e_x_skill:bool;
-    show_bufficon_passive_skill:bool;
-    show_bufficon_extra_passive_skill:bool;
-    show_bufficon_leader_skill:bool;
-    show_bufficon_ground_passive_skill:bool;
-    supplies_condition_string_id:string;
-    public_speech_bubble_offset_x:float;
-    public_speech_bubble_offset_y:float;
-    public_speech_bubble_offset_z:float;
-    show_raid_list_count:int;
-    max_raid_ticket_count:int;
-    max_raid_boss_skill_slot:int;
-    engage_timeline_path:string;
-    engage_with_supporter_timeline_path:string;
-    victory_timeline_path:string;
-    time_limit_alarm:int;
-    echelon_max_common_cost:int;
-    echelon_init_common_cost:int;
-    skill_slot_cool_time:int;
-    enemy_regen_cost:int;
-    champion_regen_cost:int;
-    player_regen_cost_delay:int;
-    crowd_control_factor:int;
-    raid_open_scenario_id:string;
-    eliminate_raid_open_scenario_id:string;
-    defence_const_a:int;
-    defence_const_b:int;
-    defence_const_c:int;
-    defence_const_d:int;
-    accuracy_const_a:int;
-    accuracy_const_b:int;
-    accuracy_const_c:int;
-    accuracy_const_d:int;
-    critical_const_a:int;
-    critical_const_b:int;
-    critical_const_c:int;
-    critical_const_d:int;
-    max_group_buff_level:int;
-    emoji_default_time:int;
-    time_line_action_rotate_speed:int;
-    body_rotate_speed:int;
-    normal_time_scale:int;
-    fast_time_scale:int;
-    bullet_time_scale:int;
-    u_i_display_delay_after_skill_cut_in:int;
-    use_initial_range_for_cover_move:bool;
-    slow_time_scale:int;
-    aim_i_k_min_degree:float;
-    aim_i_k_max_degree:float;
-    minimum_clear_time:int;
-    minimum_clear_level_gap:int;
-    check_cheater_max_use_cost_non_arena:int;
-    check_cheater_max_use_cost_arena:int;
-    allowed_max_time_scale:int;
-    random_animation_output:int;
-    summoned_teleport_distance:int;
-    arena_minimum_clear_time:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_tw:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_asia:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_na:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_global:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_tw:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_asia:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_na:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_global:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_tw:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_asia:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_na:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_global:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_tw:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_asia:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_na:int;
-    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_global:int;
-    world_raid_auto_sync_term_second:int;
-    world_raid_boss_hp_decrease_term:int;
-    world_raid_boss_parcel_reaction_delay:int;
-    raid_ranking_jump_minimum_waiting_time:int;
-    effect_teleport_distance:float;
-    aura_exit_threshold_margin:int;
-    t_s_a_interaction_damage_factor:int;
-    victory_interaction_rate:int;
-    echelon_extension_engage_timeline_path:string;
-    echelon_extension_engage_with_supporter_timeline_path:string;
-    echelon_extension_victory_timeline_path:string;
-    echelon_extension_echelon_max_common_cost:int;
-    echelon_max_overload_cost:int;
-    echelon_extension_max_overload_cost:int;
-    echelon_extension_echelon_init_common_cost:int;
-    echelon_extension_cost_regen_ratio:int;
-    echelon_overload_cost_regen_ratio:int;
-    echelon_extension_overload_cost_regen_ratio:int;
-    check_cheater_max_use_cost_multi_floor_raid:int;
-    excessive_touch_check_time:float;
-    excessive_touch_check_count:int;
-    campaign_alert_popup_level_gap:int;
-    move_correction_skip_ratio:int;
-    obstacle_collider_height_jumpable:float;
-    obstacle_collider_height_not_jumpable:float;
+    skill_hand_count_field:int;
+    dying_time_field:int;
+    buff_icon_blink_time_field:int;
+    show_bufficon_e_x_skill_field:bool;
+    show_bufficon_passive_skill_field:bool;
+    show_bufficon_extra_passive_skill_field:bool;
+    show_bufficon_leader_skill_field:bool;
+    show_bufficon_ground_passive_skill_field:bool;
+    supplies_condition_string_id_field:string;
+    public_speech_bubble_offset_x_field:float;
+    public_speech_bubble_offset_y_field:float;
+    public_speech_bubble_offset_z_field:float;
+    show_raid_list_count_field:int;
+    max_raid_ticket_count_field:int;
+    max_raid_boss_skill_slot_field:int;
+    engage_timeline_path_field:string;
+    engage_with_supporter_timeline_path_field:string;
+    victory_timeline_path_field:string;
+    time_limit_alarm_field:int;
+    echelon_max_common_cost_field:int;
+    echelon_init_common_cost_field:int;
+    skill_slot_cool_time_field:int;
+    enemy_regen_cost_field:int;
+    champion_regen_cost_field:int;
+    player_regen_cost_delay_field:int;
+    crowd_control_factor_field:int;
+    raid_open_scenario_id_field:string;
+    eliminate_raid_open_scenario_id_field:string;
+    defence_const_a_field:int;
+    defence_const_b_field:int;
+    defence_const_c_field:int;
+    defence_const_d_field:int;
+    accuracy_const_a_field:int;
+    accuracy_const_b_field:int;
+    accuracy_const_c_field:int;
+    accuracy_const_d_field:int;
+    critical_const_a_field:int;
+    critical_const_b_field:int;
+    critical_const_c_field:int;
+    critical_const_d_field:int;
+    max_group_buff_level_field:int;
+    emoji_default_time_field:int;
+    time_line_action_rotate_speed_field:int;
+    body_rotate_speed_field:int;
+    normal_time_scale_field:int;
+    fast_time_scale_field:int;
+    bullet_time_scale_field:int;
+    u_i_display_delay_after_skill_cut_in_field:int;
+    use_initial_range_for_cover_move_field:bool;
+    slow_time_scale_field:int;
+    aim_i_k_min_degree_field:float;
+    aim_i_k_max_degree_field:float;
+    minimum_clear_time_field:int;
+    minimum_clear_level_gap_field:int;
+    check_cheater_max_use_cost_non_arena_field:int;
+    check_cheater_max_use_cost_arena_field:int;
+    allowed_max_time_scale_field:int;
+    random_animation_output_field:int;
+    summoned_teleport_distance_field:int;
+    arena_minimum_clear_time_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_tw_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_asia_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_na_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_l_i_t_t_l_e_global_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_tw_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_asia_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_na_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_m_i_d_d_l_e_global_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_tw_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_asia_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_na_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_h_i_g_h_global_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_tw_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_asia_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_na_field:int;
+    w_o_r_l_d_b_o_s_s_b_a_t_t_l_e_v_e_r_y_h_i_g_h_global_field:int;
+    world_raid_auto_sync_term_second_field:int;
+    world_raid_boss_hp_decrease_term_field:int;
+    world_raid_boss_parcel_reaction_delay_field:int;
+    raid_ranking_jump_minimum_waiting_time_field:int;
+    effect_teleport_distance_field:float;
+    aura_exit_threshold_margin_field:int;
+    t_s_a_interaction_damage_factor_field:int;
+    victory_interaction_rate_field:int;
+    echelon_extension_engage_timeline_path_field:string;
+    echelon_extension_engage_with_supporter_timeline_path_field:string;
+    echelon_extension_victory_timeline_path_field:string;
+    echelon_extension_echelon_max_common_cost_field:int;
+    echelon_max_overload_cost_field:int;
+    echelon_extension_max_overload_cost_field:int;
+    echelon_extension_echelon_init_common_cost_field:int;
+    echelon_extension_cost_regen_ratio_field:int;
+    echelon_overload_cost_regen_ratio_field:int;
+    echelon_extension_overload_cost_regen_ratio_field:int;
+    check_cheater_max_use_cost_multi_floor_raid_field:int;
+    excessive_touch_check_time_field:float;
+    excessive_touch_check_count_field:int;
+    campaign_alert_popup_level_gap_field:int;
+    move_correction_skip_ratio_field:int;
+    obstacle_collider_height_jumpable_field:float;
+    obstacle_collider_height_not_jumpable_field:float;
 }
 
 table ConstCommonExcel {
-    campaign_main_stage_max_rank:int;
-    campaign_main_stage_best_record:int;
-    hard_adventure_play_count_recover_daily_number:int;
-    hard_stage_count:int;
-    tactic_rank_clear_time:int;
-    base_time_scale:int;
-    gacha_percentage:int;
-    academy_favor_zone_id:int;
-    cafe_preset_slot_count:int;
-    cafe_monologue_interval_millisec:int;
-    cafe_monologue_default_duration:int;
-    cafe_bubble_idle_duration_milli_sec:int;
-    find_gift_time_limit:int;
-    cafe_auto_charge_period_in_msc:int;
-    cafe_production_decimal_position:int;
-    cafe_set_group_apply_count:int;
-    week_dungeon_find_gift_reward_limit_count:int;
-    stage_failed_currency_refund_rate:int;
-    enter_deposit:int;
-    account_max_level:int;
-    main_squad_exp_bonus:int;
-    support_squad_exp_bonus:int;
-    account_exp_ratio:int;
-    mission_toast_life_time:int;
-    exp_item_insert_limit:int;
-    exp_item_insert_accel_time:int;
-    character_lv_up_coefficient:int;
-    equipment_lv_up_coefficient:int;
-    exp_equip_insert_limit:int;
-    equip_lv_up_coefficient:int;
-    nickname_length:int;
-    craft_duration:[int];
-    craft_limit_time:int;
-    shifting_craft_duration:[int];
-    shifting_craft_ticket_consume_amount:int;
-    shifting_craft_slot_max_capacity:int;
-    craft_ticket_item_unique_id:int;
-    craft_ticket_consume_amount:int;
-    academy_enter_cost_type:ParcelType;
-    academy_enter_cost_id:int;
-    academy_ticket_cost:int;
-    massanger_message_expire_day:int;
-    craft_leaf_node_generate_lv1_count:int;
-    craft_leaf_node_generate_lv2_count:int;
-    tutorial_gacha_shop_id:int;
-    beforehand_gacha_shop_id:int;
-    tutorial_gacha_goods_id:int;
-    equipment_slot_open_level:[int];
-    join_or_create_clan_cool_time_from_hour:int;
-    clan_max_member:int;
-    clan_search_result_count:int;
-    clan_max_applicant:int;
-    clan_rejoin_cool_time_from_second:int;
-    clan_word_balloon_max_character:int;
-    call_name_rename_cool_time_from_hour:int;
-    call_name_minimum_length:int;
-    call_name_maximum_length:int;
-    lobby_to_screen_mode_wait_time:int;
-    screenshot_to_lobby_button_hide_delay:int;
-    prologue_scenario_i_d01:int;
-    prologue_scenario_i_d02:int;
-    tutorial_hard_stage11:int;
-    tutorial_speed_button_stage:int;
-    tutorial_character_default_count:int;
-    tutorial_shop_category_type:float;
-    adventure_strategy_play_time_limit_in_seconds:int;
-    week_dungoen_tactic_play_time_limit_in_seconds:int;
-    raid_tactic_play_time_limit_in_seconds:int;
-    raid_opponent_list_amount:int;
-    craft_base_gold_required:[int];
-    post_expired_day_attendance:int;
-    post_expired_day_inventory_overflow:int;
-    post_expired_day_game_manager:int;
-    u_i_label_character_wrap:string;
-    request_time_out:float;
-    mail_storage_soft_cap:int;
-    mail_storage_hard_cap:int;
-    clear_deck_storage_size:int;
-    clear_deck_no_star_view_count:int;
-    clear_deck1_star_view_count:int;
-    clear_deck2_star_view_count:int;
-    clear_deck3_star_view_count:int;
-    ex_skill_level_max:int;
-    public_skill_level_max:int;
-    passive_skill_level_max:int;
-    extra_passive_skill_level_max:int;
-    account_comment_max_length:int;
-    cafe_summon_cool_time_from_hour:int;
-    limited_stage_daily_clear_count:int;
-    limited_stage_entry_time_limit:int;
-    limited_stage_entry_time_buffer:int;
-    limited_stage_point_amount:int;
-    limited_stage_point_per_ap_min:int;
-    limited_stage_point_per_ap_max:int;
-    account_link_reward:int;
-    monthly_product_check_days:int;
-    weapon_lv_up_coefficient:int;
-    show_raid_my_list_count:int;
-    raid_enter_cost_type:ParcelType;
-    raid_enter_cost_id:int;
-    raid_ticket_cost:int;
-    time_attack_dungeon_scenario_id:string;
-    time_attack_dungoen_play_count_per_ticket:int;
-    time_attack_dungeon_enter_cost_type:ParcelType;
-    time_attack_dungeon_enter_cost_id:int;
-    time_attack_dungeon_enter_cost:int;
-    clan_leader_transfer_last_login_limit:int;
-    monthly_product_repurchase_popup_limit:int;
-    common_favor_item_tags:[Tag];
-    max_ap_master_coin_per_week:int;
-    craft_open_exp_tier1:int;
-    craft_open_exp_tier2:int;
-    craft_open_exp_tier3:int;
-    character_equipment_gear_slot:int;
-    birth_day_d_day:int;
-    recommended_friends_lv_difference_limit:int;
-    d_dos_detect_count:int;
-    d_dos_check_interval_in_seconds:int;
-    max_friends_count:int;
-    max_friends_request:int;
-    friends_search_request_count:int;
-    friends_max_applicant:int;
-    id_card_default_character_id:int;
-    id_card_default_bg_id:int;
-    world_raid_gem_enter_cost:int;
-    world_raid_gem_enter_amout:int;
-    friend_id_card_comment_max_length:int;
-    formation_preset_number_of_echelon_tab:int;
-    formation_preset_number_of_echelon:int;
-    formation_preset_recent_number_of_echelon:int;
-    formation_preset_echelon_tab_text_length:int;
-    formation_preset_echelon_slot_text_length:int;
-    char_profile_row_interval_kr:int;
-    callname_length_en:int;
-    callname_length_kr:int;
-    nickname_length_kr:int;
-    clan_name_length:int;
-    cafe_preset_edit_name_length:int;
-    formation_preset_echelon_tab_text_length_kr:int;
-    formation_preset_echelon_slot_text_length_kr:int;
-    char_profile_row_interval_jp:int;
-    char_profile_popup_row_interval_kr:int;
-    char_profile_popup_row_interval_jp:int;
-    beforehand_gacha_count:int;
-    low_memory_size_g_l:int;
-    beforehand_gacha_group_id:int;
-    renewal_display_order_day:int;
-    emblem_default_id:int;
-    birthday_mail_start_date:string;
-    birthday_mail_remain_date:int;
-    birthday_mail_parcel_type:ParcelType;
-    birthday_mail_parcel_id:int;
-    birthday_mail_parcel_amount:int;
-    clear_deck_average_deck_count:int;
-    clear_deck_world_raid_save_condition_coefficient:int;
-    clear_deck_show_count:int;
-    character_max_level:int;
-    potential_bonus_stat_max_level_max_h_p:int;
-    potential_bonus_stat_max_level_attack_power:int;
-    potential_bonus_stat_max_level_heal_power:int;
-    potential_open_condition_character_level:int;
-    assist_stranger_min_level:int;
-    clan_chatting_notice_caution_delay:float;
-    call_name_wait_time_g_l:float;
-    assist_stranger_max_level:int;
-    max_blocked_user_count:int;
-    cafe_random_visit_min_comfort_bonus:int;
-    cafe_random_visit_min_last_login:int;
-    cafe_travel_sync_interval_by_millisec:int;
-    rank_bracket_percentage1:int;
-    rank_bracket_percentage2:int;
-    rank_bracket_percentage3:int;
-    rank_bracket_percentage4:int;
-    rank_bracket_percentage5:int;
-    rank_bracket_percentage6:int;
-    rank_bracket_percentage7:int;
-    expiry_battle_pass_item_receive_day:int;
-    battle_pass_flavor_text_idle_duration_milli_sec:int;
-    battle_pass_end_imminent_day:int;
-    battle_pass_exp_icon_path:string;
-    cafe_camera_drag_threshold:float;
-    cafe_summon_ticket_buy_limit_for_validate:int;
-    battle_pass_notify_date_g_l:int;
-    purchase_mail_expired_day_g_l:int;
-    review_event_date_g_l:string;
-    review_event_stage_i_d_g_l:int;
-    review_event_char_i_d_g_l:int;
-    auto_craft_preset_count_limit:int;
-    auto_craft_node_select_count:int;
-    craft_preset_name_max_length:int;
-    selection_wait_time:int;
-    reward_wait_time:int;
-    episode_continue_wait_time:int;
-    scenario_auto_delay_millisec_long:float;
-    scenario_auto_delay_millisec:float;
-    scenario_auto_delay_millisec_short:float;
-    scenario_auto_delay_millisec_very_short:float;
-    pc_build_enter_information:int;
-    comeback_user_standard_day:int;
-    comeback_user_log_save_day:int;
-    come_back_activate_cooldown:int;
-    cafe_copy_preset_slot_count:int;
-    expiry_product_daily_record_item_receive_day:int;
-    newbie_user_standard_day:int;
-    newbie_state_hold_day:int;
-    q_r_icon_url_dev:string;
-    q_r_icon_url_live:string;
-    probablity_info_btn_link_k_r:string;
-    clear_deck_echelon_show_max_count:int;
+    campaign_main_stage_max_rank_field:int;
+    campaign_main_stage_best_record_field:int;
+    hard_adventure_play_count_recover_daily_number_field:int;
+    hard_stage_count_field:int;
+    tactic_rank_clear_time_field:int;
+    base_time_scale_field:int;
+    gacha_percentage_field:int;
+    academy_favor_zone_id_field:int;
+    cafe_preset_slot_count_field:int;
+    cafe_monologue_interval_millisec_field:int;
+    cafe_monologue_default_duration_field:int;
+    cafe_bubble_idle_duration_milli_sec_field:int;
+    find_gift_time_limit_field:int;
+    cafe_auto_charge_period_in_msc_field:int;
+    cafe_production_decimal_position_field:int;
+    cafe_set_group_apply_count_field:int;
+    week_dungeon_find_gift_reward_limit_count_field:int;
+    stage_failed_currency_refund_rate_field:int;
+    enter_deposit_field:int;
+    account_max_level_field:int;
+    main_squad_exp_bonus_field:int;
+    support_squad_exp_bonus_field:int;
+    account_exp_ratio_field:int;
+    mission_toast_life_time_field:int;
+    exp_item_insert_limit_field:int;
+    exp_item_insert_accel_time_field:int;
+    character_lv_up_coefficient_field:int;
+    equipment_lv_up_coefficient_field:int;
+    exp_equip_insert_limit_field:int;
+    equip_lv_up_coefficient_field:int;
+    nickname_length_field:int;
+    craft_duration_field:[int];
+    craft_limit_time_field:int;
+    shifting_craft_duration_field:[int];
+    shifting_craft_ticket_consume_amount_field:int;
+    shifting_craft_slot_max_capacity_field:int;
+    craft_ticket_item_unique_id_field:int;
+    craft_ticket_consume_amount_field:int;
+    academy_enter_cost_type_field:ParcelType;
+    academy_enter_cost_id_field:int;
+    academy_ticket_cost_field:int;
+    massanger_message_expire_day_field:int;
+    craft_leaf_node_generate_lv1_count_field:int;
+    craft_leaf_node_generate_lv2_count_field:int;
+    tutorial_gacha_shop_id_field:int;
+    beforehand_gacha_shop_id_field:int;
+    tutorial_gacha_goods_id_field:int;
+    equipment_slot_open_level_field:[int];
+    join_or_create_clan_cool_time_from_hour_field:int;
+    clan_max_member_field:int;
+    clan_search_result_count_field:int;
+    clan_max_applicant_field:int;
+    clan_rejoin_cool_time_from_second_field:int;
+    clan_word_balloon_max_character_field:int;
+    call_name_rename_cool_time_from_hour_field:int;
+    call_name_minimum_length_field:int;
+    call_name_maximum_length_field:int;
+    lobby_to_screen_mode_wait_time_field:int;
+    screenshot_to_lobby_button_hide_delay_field:int;
+    prologue_scenario_i_d01_field:int;
+    prologue_scenario_i_d02_field:int;
+    tutorial_hard_stage11_field:int;
+    tutorial_speed_button_stage_field:int;
+    tutorial_character_default_count_field:int;
+    tutorial_shop_category_type_field:float;
+    adventure_strategy_play_time_limit_in_seconds_field:int;
+    week_dungoen_tactic_play_time_limit_in_seconds_field:int;
+    raid_tactic_play_time_limit_in_seconds_field:int;
+    raid_opponent_list_amount_field:int;
+    craft_base_gold_required_field:[int];
+    post_expired_day_attendance_field:int;
+    post_expired_day_inventory_overflow_field:int;
+    post_expired_day_game_manager_field:int;
+    u_i_label_character_wrap_field:string;
+    request_time_out_field:float;
+    mail_storage_soft_cap_field:int;
+    mail_storage_hard_cap_field:int;
+    clear_deck_storage_size_field:int;
+    clear_deck_no_star_view_count_field:int;
+    clear_deck1_star_view_count_field:int;
+    clear_deck2_star_view_count_field:int;
+    clear_deck3_star_view_count_field:int;
+    ex_skill_level_max_field:int;
+    public_skill_level_max_field:int;
+    passive_skill_level_max_field:int;
+    extra_passive_skill_level_max_field:int;
+    account_comment_max_length_field:int;
+    cafe_summon_cool_time_from_hour_field:int;
+    limited_stage_daily_clear_count_field:int;
+    limited_stage_entry_time_limit_field:int;
+    limited_stage_entry_time_buffer_field:int;
+    limited_stage_point_amount_field:int;
+    limited_stage_point_per_ap_min_field:int;
+    limited_stage_point_per_ap_max_field:int;
+    account_link_reward_field:int;
+    monthly_product_check_days_field:int;
+    weapon_lv_up_coefficient_field:int;
+    show_raid_my_list_count_field:int;
+    raid_enter_cost_type_field:ParcelType;
+    raid_enter_cost_id_field:int;
+    raid_ticket_cost_field:int;
+    time_attack_dungeon_scenario_id_field:string;
+    time_attack_dungoen_play_count_per_ticket_field:int;
+    time_attack_dungeon_enter_cost_type_field:ParcelType;
+    time_attack_dungeon_enter_cost_id_field:int;
+    time_attack_dungeon_enter_cost_field:int;
+    clan_leader_transfer_last_login_limit_field:int;
+    monthly_product_repurchase_popup_limit_field:int;
+    common_favor_item_tags_field:[Tag];
+    max_ap_master_coin_per_week_field:int;
+    craft_open_exp_tier1_field:int;
+    craft_open_exp_tier2_field:int;
+    craft_open_exp_tier3_field:int;
+    character_equipment_gear_slot_field:int;
+    birth_day_d_day_field:int;
+    recommended_friends_lv_difference_limit_field:int;
+    d_dos_detect_count_field:int;
+    d_dos_check_interval_in_seconds_field:int;
+    max_friends_count_field:int;
+    max_friends_request_field:int;
+    friends_search_request_count_field:int;
+    friends_max_applicant_field:int;
+    id_card_default_character_id_field:int;
+    id_card_default_bg_id_field:int;
+    world_raid_gem_enter_cost_field:int;
+    world_raid_gem_enter_amout_field:int;
+    friend_id_card_comment_max_length_field:int;
+    formation_preset_number_of_echelon_tab_field:int;
+    formation_preset_number_of_echelon_field:int;
+    formation_preset_recent_number_of_echelon_field:int;
+    formation_preset_echelon_tab_text_length_field:int;
+    formation_preset_echelon_slot_text_length_field:int;
+    char_profile_row_interval_kr_field:int;
+    callname_length_en_field:int;
+    callname_length_kr_field:int;
+    nickname_length_kr_field:int;
+    clan_name_length_field:int;
+    cafe_preset_edit_name_length_field:int;
+    formation_preset_echelon_tab_text_length_kr_field:int;
+    formation_preset_echelon_slot_text_length_kr_field:int;
+    char_profile_row_interval_jp_field:int;
+    char_profile_popup_row_interval_kr_field:int;
+    char_profile_popup_row_interval_jp_field:int;
+    beforehand_gacha_count_field:int;
+    low_memory_size_g_l_field:int;
+    beforehand_gacha_group_id_field:int;
+    renewal_display_order_day_field:int;
+    emblem_default_id_field:int;
+    birthday_mail_start_date_field:string;
+    birthday_mail_remain_date_field:int;
+    birthday_mail_parcel_type_field:ParcelType;
+    birthday_mail_parcel_id_field:int;
+    birthday_mail_parcel_amount_field:int;
+    clear_deck_average_deck_count_field:int;
+    clear_deck_world_raid_save_condition_coefficient_field:int;
+    clear_deck_show_count_field:int;
+    character_max_level_field:int;
+    potential_bonus_stat_max_level_max_h_p_field:int;
+    potential_bonus_stat_max_level_attack_power_field:int;
+    potential_bonus_stat_max_level_heal_power_field:int;
+    potential_open_condition_character_level_field:int;
+    assist_stranger_min_level_field:int;
+    clan_chatting_notice_caution_delay_field:float;
+    call_name_wait_time_g_l_field:float;
+    assist_stranger_max_level_field:int;
+    max_blocked_user_count_field:int;
+    cafe_random_visit_min_comfort_bonus_field:int;
+    cafe_random_visit_min_last_login_field:int;
+    cafe_travel_sync_interval_by_millisec_field:int;
+    rank_bracket_percentage1_field:int;
+    rank_bracket_percentage2_field:int;
+    rank_bracket_percentage3_field:int;
+    rank_bracket_percentage4_field:int;
+    rank_bracket_percentage5_field:int;
+    rank_bracket_percentage6_field:int;
+    rank_bracket_percentage7_field:int;
+    expiry_battle_pass_item_receive_day_field:int;
+    battle_pass_flavor_text_idle_duration_milli_sec_field:int;
+    battle_pass_end_imminent_day_field:int;
+    battle_pass_exp_icon_path_field:string;
+    cafe_camera_drag_threshold_field:float;
+    cafe_summon_ticket_buy_limit_for_validate_field:int;
+    battle_pass_notify_date_g_l_field:int;
+    purchase_mail_expired_day_g_l_field:int;
+    review_event_date_g_l_field:string;
+    review_event_stage_i_d_g_l_field:int;
+    review_event_char_i_d_g_l_field:int;
+    auto_craft_preset_count_limit_field:int;
+    auto_craft_node_select_count_field:int;
+    craft_preset_name_max_length_field:int;
+    selection_wait_time_field:int;
+    reward_wait_time_field:int;
+    episode_continue_wait_time_field:int;
+    scenario_auto_delay_millisec_long_field:float;
+    scenario_auto_delay_millisec_field:float;
+    scenario_auto_delay_millisec_short_field:float;
+    scenario_auto_delay_millisec_very_short_field:float;
+    pc_build_enter_information_field:int;
+    comeback_user_standard_day_field:int;
+    comeback_user_log_save_day_field:int;
+    come_back_activate_cooldown_field:int;
+    cafe_copy_preset_slot_count_field:int;
+    expiry_product_daily_record_item_receive_day_field:int;
+    newbie_user_standard_day_field:int;
+    newbie_state_hold_day_field:int;
+    q_r_icon_url_dev_field:string;
+    q_r_icon_url_live_field:string;
+    probablity_info_btn_link_k_r_field:string;
+    clear_deck_echelon_show_max_count_field:int;
 }
 
 table ConstConquestExcel {
-    manage_unit_change:int;
-    assist_count:int;
-    play_time_limit_in_seconds:int;
-    animation_unit_amount_min:int;
-    animation_unit_amount_max:int;
-    animation_unit_delay:float;
+    manage_unit_change_field:int;
+    assist_count_field:int;
+    play_time_limit_in_seconds_field:int;
+    animation_unit_amount_min_field:int;
+    animation_unit_amount_max_field:int;
+    animation_unit_delay_field:float;
 }
 
 table ConstContentsExcel {
-    use_search_field_optimize:bool;
-    search_update_time:float;
-    lobby_day_time_from:int;
-    lobby_night_time_from:int;
+    use_search_field_optimize_field:bool;
+    search_update_time_field:float;
+    lobby_day_time_from_field:int;
+    lobby_night_time_from_field:int;
 }
 
 table ConstEventCommonExcel {
-    event_content_hard_stage_count:int;
-    event_strategy_play_time_limit_in_seconds:int;
-    sub_event_change_limit_seconds:int;
-    sub_event_instant_clear:bool;
-    card_shop_prob_weight_count:int;
-    card_shop_prob_weight_rarity:Rarity;
-    meetup_scenario_replay_resource:string;
-    meetup_scenario_replay_title_localize:string;
-    special_operaction_collection_group_id:int;
-    treasure_normal_variation_amount:int;
-    treasure_loop_variation_amount:int;
-    treasure_limit_variation_loop_count:int;
-    treasure_limit_variation_clear_loop_count:int;
-    event_story_replay_hide_event_content_id:int;
+    event_content_hard_stage_count_field:int;
+    event_strategy_play_time_limit_in_seconds_field:int;
+    sub_event_change_limit_seconds_field:int;
+    sub_event_instant_clear_field:bool;
+    card_shop_prob_weight_count_field:int;
+    card_shop_prob_weight_rarity_field:Rarity;
+    meetup_scenario_replay_resource_field:string;
+    meetup_scenario_replay_title_localize_field:string;
+    special_operaction_collection_group_id_field:int;
+    treasure_normal_variation_amount_field:int;
+    treasure_loop_variation_amount_field:int;
+    treasure_limit_variation_loop_count_field:int;
+    treasure_limit_variation_clear_loop_count_field:int;
+    event_story_replay_hide_event_content_id_field:int;
 }
 
 table ConstFieldExcel {
-    dialog_smooth_time:int;
-    talk_dialog_duration_default:int;
-    think_dialog_duration_default:int;
-    idle_think_delay_min:int;
-    idle_think_delay_max:int;
+    dialog_smooth_time_field:int;
+    talk_dialog_duration_default_field:int;
+    think_dialog_duration_default_field:int;
+    idle_think_delay_min_field:int;
+    idle_think_delay_max_field:int;
 }
 
 table ConstKeyMappingExcel {
-    drag_sensitivity:float;
-    pc_information_group_i_d:int;
-    pc_controller_information_group_i_d:int;
-    scroll_wheel_factor:float;
-    remove_keycode_word:string;
-    tutorial_dialog_touch_key:string;
-    controller_cursor_factor_slow:int;
-    controller_cursor_factor:int;
-    controller_cursor_factor_fast:int;
-    vibration_sec:float;
-    vibration_power:float;
-    controller_scroll_wheel_factor:float;
-    controller_zoom_sensitivity:float;
-    controller_dpad_move_check_range_x:float;
-    controller_dpad_move_check_range_y:float;
-    controller_cursor_click_scale:float;
-    controller_scroll_sensitivity:float;
+    drag_sensitivity_field:float;
+    pc_information_group_i_d_field:int;
+    pc_controller_information_group_i_d_field:int;
+    scroll_wheel_factor_field:float;
+    remove_keycode_word_field:string;
+    tutorial_dialog_touch_key_field:string;
+    controller_cursor_factor_slow_field:int;
+    controller_cursor_factor_field:int;
+    controller_cursor_factor_fast_field:int;
+    vibration_sec_field:float;
+    vibration_power_field:float;
+    controller_scroll_wheel_factor_field:float;
+    controller_zoom_sensitivity_field:float;
+    controller_dpad_move_check_range_x_field:float;
+    controller_dpad_move_check_range_y_field:float;
+    controller_cursor_click_scale_field:float;
+    controller_scroll_sensitivity_field:float;
 }
 
 table ConstMinigameCCGExcel {
-    turn_draw_count:int;
-    conquest_map_boundary_offset_right:float;
-    conquest_map_boundary_offset_top:float;
-    conquest_map_boundary_offset_bottom:float;
-    conquest_map_center_offset_x:float;
-    conquest_map_center_offset_y:float;
-    camera_angle:float;
-    camera_zoom_max:float;
-    camera_zoom_min:float;
-    camera_zoom_default:float;
-    thema_loading_progress_time:float;
-    map_ally_rotation:float;
-    ani_ally_battle_attack:string;
-    max_hand_count:int;
-    max_cost:int;
-    start_cost:int;
-    turn_cost:int;
-    striker_swap_front_cost:int;
-    striker_max_equip_count:int;
-    start_draw_count:int;
-    camp_revive_health_rate:int;
-    base_reward_reroll_point:int;
-    select_reward_option_count:int;
-    alternative_card_image_path:string;
+    turn_draw_count_field:int;
+    conquest_map_boundary_offset_right_field:float;
+    conquest_map_boundary_offset_top_field:float;
+    conquest_map_boundary_offset_bottom_field:float;
+    conquest_map_center_offset_x_field:float;
+    conquest_map_center_offset_y_field:float;
+    camera_angle_field:float;
+    camera_zoom_max_field:float;
+    camera_zoom_min_field:float;
+    camera_zoom_default_field:float;
+    thema_loading_progress_time_field:float;
+    map_ally_rotation_field:float;
+    ani_ally_battle_attack_field:string;
+    max_hand_count_field:int;
+    max_cost_field:int;
+    start_cost_field:int;
+    turn_cost_field:int;
+    striker_swap_front_cost_field:int;
+    striker_max_equip_count_field:int;
+    start_draw_count_field:int;
+    camp_revive_health_rate_field:int;
+    base_reward_reroll_point_field:int;
+    select_reward_option_count_field:int;
+    alternative_card_image_path_field:string;
 }
 
 table ConstMinigameRoadPuzzleExcel {
-    road_puzzle_map_boundary_offset_left:float;
-    road_puzzle_map_boundary_offset_right:float;
-    road_puzzle_map_boundary_offset_top:float;
-    road_puzzle_map_boundary_offset_bottom:float;
-    road_puzzle_map_center_offset_x:float;
-    road_puzzle_map_center_offset_y:float;
-    camera_angle:float;
-    camera_zoom_max:float;
-    camera_zoom_min:float;
-    camera_zoom_default:float;
-    stage_loading_progress_time:float;
-    tile_rotation_degree:int;
-    start_stage_index:int;
-    loop_stage_index:int;
+    road_puzzle_map_boundary_offset_left_field:float;
+    road_puzzle_map_boundary_offset_right_field:float;
+    road_puzzle_map_boundary_offset_top_field:float;
+    road_puzzle_map_boundary_offset_bottom_field:float;
+    road_puzzle_map_center_offset_x_field:float;
+    road_puzzle_map_center_offset_y_field:float;
+    camera_angle_field:float;
+    camera_zoom_max_field:float;
+    camera_zoom_min_field:float;
+    camera_zoom_default_field:float;
+    stage_loading_progress_time_field:float;
+    tile_rotation_degree_field:int;
+    start_stage_index_field:int;
+    loop_stage_index_field:int;
 }
 
 table ConstMiniGameShootingExcel {
-    normal_stage_id:int;
-    normal_section_count:int;
-    hard_stage_id:int;
-    hard_section_count:int;
-    free_stage_id:int;
-    free_section_count:int;
-    player_character_id:[int];
-    hidden_player_character_id:int;
-    camera_smooth_time:float;
-    spawn_effect_path:string;
-    wait_time_after_spawn:float;
-    free_gear_interval:int;
+    normal_stage_id_field:int;
+    normal_section_count_field:int;
+    hard_stage_id_field:int;
+    hard_section_count_field:int;
+    free_stage_id_field:int;
+    free_section_count_field:int;
+    player_character_id_field:[int];
+    hidden_player_character_id_field:int;
+    camera_smooth_time_field:float;
+    spawn_effect_path_field:string;
+    wait_time_after_spawn_field:float;
+    free_gear_interval_field:int;
 }
 
 table ConstMinigameTBGExcel {
-    conquest_map_boundary_offset_left:float;
-    conquest_map_boundary_offset_right:float;
-    conquest_map_boundary_offset_top:float;
-    conquest_map_boundary_offset_bottom:float;
-    conquest_map_center_offset_x:float;
-    conquest_map_center_offset_y:float;
-    camera_angle:float;
-    camera_zoom_max:float;
-    camera_zoom_min:float;
-    camera_zoom_default:float;
-    thema_loading_progress_time:float;
-    map_ally_rotation:float;
-    ani_ally_battle_attack:string;
-    effect_ally_battle_attack:string;
-    effect_ally_battle_damage:string;
-    ani_enemy_battle_attack:string;
-    effect_enemy_battle_attack:string;
-    effect_enemy_battle_damage:string;
-    encounter_ally_rotation:float;
-    encounter_enemy_rotation:float;
-    encounter_reward_receive_index:int;
+    conquest_map_boundary_offset_left_field:float;
+    conquest_map_boundary_offset_right_field:float;
+    conquest_map_boundary_offset_top_field:float;
+    conquest_map_boundary_offset_bottom_field:float;
+    conquest_map_center_offset_x_field:float;
+    conquest_map_center_offset_y_field:float;
+    camera_angle_field:float;
+    camera_zoom_max_field:float;
+    camera_zoom_min_field:float;
+    camera_zoom_default_field:float;
+    thema_loading_progress_time_field:float;
+    map_ally_rotation_field:float;
+    ani_ally_battle_attack_field:string;
+    effect_ally_battle_attack_field:string;
+    effect_ally_battle_damage_field:string;
+    ani_enemy_battle_attack_field:string;
+    effect_enemy_battle_attack_field:string;
+    effect_enemy_battle_damage_field:string;
+    encounter_ally_rotation_field:float;
+    encounter_enemy_rotation_field:float;
+    encounter_reward_receive_index_field:int;
 }
 
 table ConstNewbieContentExcel {
-    newbie_gacha_release_date:string;
-    newbie_gacha_check_days:int;
-    newbie_gacha_token_grace_time:int;
-    newbie_attendance_release_date:string;
-    newbie_attendance_startable_end_day:int;
-    newbie_attendance_end_day:int;
+    newbie_gacha_release_date_field:string;
+    newbie_gacha_check_days_field:int;
+    newbie_gacha_token_grace_time_field:int;
+    newbie_attendance_release_date_field:string;
+    newbie_attendance_startable_end_day_field:int;
+    newbie_attendance_end_day_field:int;
 }
 
 table ConstStrategyExcel {
-    hexa_map_boundary_offset:float;
-    hexa_map_start_camera_offset:float;
-    camera_zoom_max:float;
-    camera_zoom_min:float;
-    camera_zoom_default:float;
-    heal_cost_type:CurrencyTypes;
-    heal_cost_amount:[int];
-    can_heal_hp_rate:int;
-    play_time_limit_in_seconds:int;
-    adventure_echelon_count:int;
-    raid_echelon_count:int;
-    default_echelon_count:int;
-    event_content_echelon_count:int;
-    time_attack_dungeon_echelon_count:int;
-    world_raid_echelon_count:int;
-    tactic_skip_clear_time_seconds:int;
-    tactic_skip_frame_per_second:int;
-    conquest_echelon_count:int;
-    story_echelon_count:int;
-    multi_sweep_preset_count:int;
-    multi_sweep_preset_name_max_length:int;
-    multi_sweep_preset_name_max_length_kr:int;
-    multi_sweep_preset_select_stage_max_count:int;
-    multi_sweep_preset_max_sweep_count:int;
-    multi_sweep_preset_select_parcel_max_count:int;
+    hexa_map_boundary_offset_field:float;
+    hexa_map_start_camera_offset_field:float;
+    camera_zoom_max_field:float;
+    camera_zoom_min_field:float;
+    camera_zoom_default_field:float;
+    heal_cost_type_field:CurrencyTypes;
+    heal_cost_amount_field:[int];
+    can_heal_hp_rate_field:int;
+    play_time_limit_in_seconds_field:int;
+    adventure_echelon_count_field:int;
+    raid_echelon_count_field:int;
+    default_echelon_count_field:int;
+    event_content_echelon_count_field:int;
+    time_attack_dungeon_echelon_count_field:int;
+    world_raid_echelon_count_field:int;
+    tactic_skip_clear_time_seconds_field:int;
+    tactic_skip_frame_per_second_field:int;
+    conquest_echelon_count_field:int;
+    story_echelon_count_field:int;
+    multi_sweep_preset_count_field:int;
+    multi_sweep_preset_name_max_length_field:int;
+    multi_sweep_preset_name_max_length_kr_field:int;
+    multi_sweep_preset_select_stage_max_count_field:int;
+    multi_sweep_preset_max_sweep_count_field:int;
+    multi_sweep_preset_select_parcel_max_count_field:int;
 }
 
 table CouponStuffExcel {
-    stuff_id:int;
-    parcel_type:ParcelType;
-    parcel_id:int;
-    limit_amount:int;
-    coupon_stuff_name_localize_key:string;
+    stuff_id_field:int;
+    parcel_type_field:ParcelType;
+    parcel_id_field:int;
+    limit_amount_field:int;
+    coupon_stuff_name_localize_key_field:string;
 }
 
 table CumulativeTimeRewardExcel {
-    id:int;
-    description:string;
-    start_date:string;
-    end_date:string;
-    time_condition:[int];
-    reward_parcel_type:[ParcelType];
-    reward_id:[int];
-    reward_amount:[int];
+    id_field:int;
+    description_field:string;
+    start_date_field:string;
+    end_date_field:string;
+    time_condition_field:[int];
+    reward_parcel_type_field:[ParcelType];
+    reward_id_field:[int];
+    reward_amount_field:[int];
 }
 
 table DefaultCharacterExcel {
-    character_id:int;
-    favorite_character:bool;
-    level:int;
-    exp:int;
-    favor_exp:int;
-    favor_rank:int;
-    star_grade:int;
-    ex_skill_level:int;
-    passive_skill_level:int;
-    extra_passive_skill_level:int;
-    common_skill_level:int;
-    leader_skill_level:int;
+    character_id_field:int;
+    favorite_character_field:bool;
+    level_field:int;
+    exp_field:int;
+    favor_exp_field:int;
+    favor_rank_field:int;
+    star_grade_field:int;
+    ex_skill_level_field:int;
+    passive_skill_level_field:int;
+    extra_passive_skill_level_field:int;
+    common_skill_level_field:int;
+    leader_skill_level_field:int;
 }
 
 table DefaultEchelonExcel {
-    echlon_id:int;
-    leader_id:int;
-    main_id:[int];
-    support_id:[int];
-    tss_id:int;
+    echlon_id_field:int;
+    leader_id_field:int;
+    main_id_field:[int];
+    support_id_field:[int];
+    tss_id_field:int;
 }
 
 table DefaultFurnitureExcel {
-    id:int;
-    location:FurnitureLocation;
-    position_x:float;
-    position_y:float;
-    rotation:float;
+    id_field:int;
+    location_field:FurnitureLocation;
+    position_x_field:float;
+    position_y_field:float;
+    rotation_field:float;
 }
 
 table DefaultMailExcel {
-    id:int;
-    localize_code_id:uint;
-    mail_type:MailType;
-    mail_send_period_from:string;
-    mail_send_period_to:string;
-    reward_parcel_type:[ParcelType];
-    reward_parcel_id:[int];
-    reward_parcel_amount:[int];
+    id_field:int;
+    localize_code_id_field:uint;
+    mail_type_field:MailType;
+    mail_send_period_from_field:string;
+    mail_send_period_to_field:string;
+    reward_parcel_type_field:[ParcelType];
+    reward_parcel_id_field:[int];
+    reward_parcel_amount_field:[int];
 }
 
 table DefaultParcelExcel {
-    parcel_type:ParcelType;
-    parcel_id:int;
-    parcel_amount:int;
+    parcel_type_field:ParcelType;
+    parcel_id_field:int;
+    parcel_amount_field:int;
 }
 
 table EmoticonSpecialExcel {
-    unique_id:int;
-    character_unique_id:int;
-    random:string;
+    unique_id_field:int;
+    character_unique_id_field:int;
+    random_field:string;
 }
 
 table EventContentBoxGachaElementExcel {
-    event_content_id:int;
-    id:int;
-    round:int;
-    group_id:int;
+    event_content_id_field:int;
+    id_field:int;
+    round_field:int;
+    group_id_field:int;
 }
 
 table EventContentExcel {
-    id:int;
-    dev_name:string;
-    event_content_id:int;
-    bg_image_path:string;
+    id_field:int;
+    dev_name_field:string;
+    event_content_id_field:int;
+    bg_image_path_field:string;
 }
 
 table FieldContentStageExcel {
-    id:int;
-    season_id:int;
-    area_id:int;
-    group_id:int;
-    stage_difficulty:StageDifficulty;
-    prev_stage_id:int;
-    name:string;
-    battle_duration:int;
-    stage_enter_cost_type:ParcelType;
-    stage_enter_cost_id:int;
-    stage_enter_cost_amount:int;
-    stage_topography:StageTopography;
-    recommand_level:int;
-    ground_i_d:int;
-    b_g_m_id:int;
-    instant_clear:bool;
-    fixed_echelon_id:int;
-    skip_formation_settings:bool;
-    daily_last_play:bool;
-    star_goal:[StarGoalType];
-    star_goal_amount:[int];
+    id_field:int;
+    season_id_field:int;
+    area_id_field:int;
+    group_id_field:int;
+    stage_difficulty_field:StageDifficulty;
+    prev_stage_id_field:int;
+    name_field:string;
+    battle_duration_field:int;
+    stage_enter_cost_type_field:ParcelType;
+    stage_enter_cost_id_field:int;
+    stage_enter_cost_amount_field:int;
+    stage_topography_field:StageTopography;
+    recommand_level_field:int;
+    ground_i_d_field:int;
+    b_g_m_id_field:int;
+    instant_clear_field:bool;
+    fixed_echelon_id_field:int;
+    skip_formation_settings_field:bool;
+    daily_last_play_field:bool;
+    star_goal_field:[StarGoalType];
+    star_goal_amount_field:[int];
 }
 
 table FieldContentStageRewardExcel {
-    group_id:int;
-    reward_tag:float;
-    reward_prob:int;
-    reward_parcel_type:ParcelType;
-    reward_id:int;
-    reward_amount:int;
-    is_displayed:bool;
+    group_id_field:int;
+    reward_tag_field:float;
+    reward_prob_field:int;
+    reward_parcel_type_field:ParcelType;
+    reward_id_field:int;
+    reward_amount_field:int;
+    is_displayed_field:bool;
 }
 
 table FieldCurtainCallFreeModeExcel {
-    unique_id:int;
-    open_date:int;
-    set_field_date_i_d:int;
-    set_field_quest_open_date:int;
+    unique_id_field:int;
+    open_date_field:int;
+    set_field_date_i_d_field:int;
+    set_field_quest_open_date_field:int;
 }
 
 table FieldDateExcel {
-    season_id:int;
-    unique_id:int;
-    open_date:int;
-    date_localize_key:string;
-    entry_scene_id:int;
-    start_condition_type:FieldConditionType;
-    start_condition_id:int;
-    end_condition_type:FieldConditionType;
-    end_condition_id:int;
-    end_ready_condition_type:FieldConditionType;
-    end_ready_condition_id:int;
-    open_condition_stage:int;
-    character_icon_path:string;
-    date_result_b_g_path:string;
-    date_result_spine_path:string;
-    date_result_spine_offset_x:float;
+    season_id_field:int;
+    unique_id_field:int;
+    open_date_field:int;
+    date_localize_key_field:string;
+    entry_scene_id_field:int;
+    start_condition_type_field:FieldConditionType;
+    start_condition_id_field:int;
+    end_condition_type_field:FieldConditionType;
+    end_condition_id_field:int;
+    end_ready_condition_type_field:FieldConditionType;
+    end_ready_condition_id_field:int;
+    open_condition_stage_field:int;
+    character_icon_path_field:string;
+    date_result_b_g_path_field:string;
+    date_result_spine_path_field:string;
+    date_result_spine_offset_x_field:float;
 }
 
 table FieldEvidenceExcel {
-    unique_id:int;
-    season_id:int;
-    name_localize_key:string;
-    description_localize_key:string;
-    detail_localize_key:string;
-    image_path:string;
+    unique_id_field:int;
+    season_id_field:int;
+    name_localize_key_field:string;
+    description_localize_key_field:string;
+    detail_localize_key_field:string;
+    image_path_field:string;
 }
 
 table FieldInteractionExcel {
-    field_season_id:long;
-    unique_id:long;
-    field_date_id:long;
-    show_emoji:bool;
-    keyword_localize:string;
-    interaction_type:[FieldInteractionType];
-    interaction_id:[long];
-    condition_class:FieldConditionClass;
-    condition_class_parameters:[long];
-    once_only:bool;
-    condition_index:[long];
-    condition_type:[FieldConditionType];
-    condition_id:[long];
-    negate_condition:[bool];
+    field_season_id_field:long;
+    unique_id_field:long;
+    field_date_id_field:long;
+    show_emoji_field:bool;
+    keyword_localize_field:string;
+    interaction_type_field:[FieldInteractionType];
+    interaction_id_field:[long];
+    condition_class_field:FieldConditionClass;
+    condition_class_parameters_field:[long];
+    once_only_field:bool;
+    condition_index_field:[long];
+    condition_type_field:[FieldConditionType];
+    condition_id_field:[long];
+    negate_condition_field:[bool];
 }
 
 table FieldKeywordExcel {
-    unique_id:int;
-    season_id:int;
-    name_localize_key:string;
-    description_localize_key:string;
-    image_path:string;
+    unique_id_field:int;
+    season_id_field:int;
+    name_localize_key_field:string;
+    description_localize_key_field:string;
+    image_path_field:string;
 }
 
 table FieldMasteryExcel {
-    unique_id:int;
-    season_id:int;
-    order:int;
-    exp_amount:int;
-    token_type:ParcelType;
-    token_id:int;
-    token_requirement:int;
-    accomplishment_condition_type:FieldConditionType;
-    accomplishment_condition_id:int;
+    unique_id_field:int;
+    season_id_field:int;
+    order_field:int;
+    exp_amount_field:int;
+    token_type_field:ParcelType;
+    token_id_field:int;
+    token_requirement_field:int;
+    accomplishment_condition_type_field:FieldConditionType;
+    accomplishment_condition_id_field:int;
 }
 
 table FieldMasteryLevelExcel {
-    level:int;
-    id:[int];
-    exp:[int];
-    total_exp:[int];
-    reward_id:[int];
+    level_field:int;
+    id_field:[int];
+    exp_field:[int];
+    total_exp_field:[int];
+    reward_id_field:[int];
 }
 
 table FieldMasteryManageExcel {
-    field_season:int;
-    localize_etc:uint;
-    image_path:string;
-    level_id:int;
+    field_season_field:int;
+    localize_etc_field:uint;
+    image_path_field:string;
+    level_id_field:int;
 }
 
 table FieldQuestExcel {
-    field_season_id:int;
-    unique_id:int;
-    is_daily:bool;
-    field_date_id:int;
-    opendate:int;
-    quest_group_id:int;
-    asset_path:string;
-    reward_id:int;
-    prob:int;
-    quest_nam_key:uint;
-    quest_desc_key:uint;
+    field_season_id_field:int;
+    unique_id_field:int;
+    is_daily_field:bool;
+    field_date_id_field:int;
+    opendate_field:int;
+    quest_group_id_field:int;
+    asset_path_field:string;
+    reward_id_field:int;
+    prob_field:int;
+    quest_nam_key_field:uint;
+    quest_desc_key_field:uint;
 }
 
 table FieldRewardExcel {
-    group_id:long;
-    reward_prob:int;
-    reward_parcel_type:ParcelType;
-    reward_id:long;
-    reward_amount:int;
+    group_id_field:long;
+    reward_prob_field:int;
+    reward_parcel_type_field:ParcelType;
+    reward_id_field:long;
+    reward_amount_field:int;
 }
 
 table FieldSceneExcel {
-    unique_id:long;
-    date_id:long;
-    group_id:long;
-    art_level_path:string;
-    design_level_path:string;
-    b_g_m_id:long;
-    conditional_b_g_m_quest_id:[long];
-    begin_conditional_b_g_m_scenario_group_id:[long];
-    begin_conditional_b_g_m_interaction_id:[long];
-    end_conditional_b_g_m_scenario_group_id:[long];
-    end_conditional_b_g_m_interaction_id:[long];
-    conditional_b_g_m_id:[long];
+    unique_id_field:long;
+    date_id_field:long;
+    group_id_field:long;
+    art_level_path_field:string;
+    design_level_path_field:string;
+    b_g_m_id_field:long;
+    conditional_b_g_m_quest_id_field:[long];
+    begin_conditional_b_g_m_scenario_group_id_field:[long];
+    begin_conditional_b_g_m_interaction_id_field:[long];
+    end_conditional_b_g_m_scenario_group_id_field:[long];
+    end_conditional_b_g_m_interaction_id_field:[long];
+    conditional_b_g_m_id_field:[long];
 }
 
 table FieldSeasonExcel {
-    unique_id:int;
-    field_content_type:FieldContentType;
-    event_content_id:int;
-    entry_date_id:int;
-    instant_entry_date_id:int;
-    start_date:string;
-    end_date:string;
-    lobby_b_g_m_change_stage_id:int;
-    field_prefab_control_i_d:int;
-    field_get_keyword_call_dialog_enum:FieldDialogType;
-    mastery_image_path:string;
-    field_lobby_title_image_path:string;
-    keyword_logo_image_path:string;
+    unique_id_field:int;
+    field_content_type_field:FieldContentType;
+    event_content_id_field:int;
+    entry_date_id_field:int;
+    instant_entry_date_id_field:int;
+    start_date_field:string;
+    end_date_field:string;
+    lobby_b_g_m_change_stage_id_field:int;
+    field_prefab_control_i_d_field:int;
+    field_get_keyword_call_dialog_enum_field:FieldDialogType;
+    mastery_image_path_field:string;
+    field_lobby_title_image_path_field:string;
+    keyword_logo_image_path_field:string;
 }
 
 table FieldStoryStageExcel {
-    id:int;
-    season_id:int;
-    name:string;
-    battle_duration:int;
-    stage_topography:StageTopography;
-    recommand_level:int;
-    ground_i_d:int;
-    b_g_m_id:int;
-    fixed_echelon_id:int;
-    skip_formation_settings:bool;
+    id_field:int;
+    season_id_field:int;
+    name_field:string;
+    battle_duration_field:int;
+    stage_topography_field:StageTopography;
+    recommand_level_field:int;
+    ground_i_d_field:int;
+    b_g_m_id_field:int;
+    fixed_echelon_id_field:int;
+    skip_formation_settings_field:bool;
 }
 
 table FieldTutorialExcel {
-    season_id:int;
-    tutorial_type:[FieldTutorialType];
-    condition_type:[FieldConditionType];
-    condition_id:[int];
+    season_id_field:int;
+    tutorial_type_field:[FieldTutorialType];
+    condition_type_field:[FieldConditionType];
+    condition_id_field:[int];
 }
 
 table FieldWorldMapZoneExcel {
-    id:int;
-    group_id:int;
-    date:int;
-    open_condition_type:FieldConditionType;
-    open_condition_id:int;
-    close_condition_type:FieldConditionType;
-    close_condition_id:int;
-    result_field_scene:int;
-    field_stage_interaction_id:int;
-    world_map_button_type:FieldWorldMapButtonType;
-    localize_code:uint;
-    new_tag_display:bool;
+    id_field:int;
+    group_id_field:int;
+    date_field:int;
+    open_condition_type_field:FieldConditionType;
+    open_condition_id_field:int;
+    close_condition_type_field:FieldConditionType;
+    close_condition_id_field:int;
+    result_field_scene_field:int;
+    field_stage_interaction_id_field:int;
+    world_map_button_type_field:FieldWorldMapButtonType;
+    localize_code_field:uint;
+    new_tag_display_field:bool;
 }
 
 table GroundGridFlat {
-    x:int;
-    y:int;
-    start_x:float;
-    start_y:float;
-    gap:float;
-    version:string;
+    x_field:int;
+    y_field:int;
+    start_x_field:float;
+    start_y_field:float;
+    gap_field:float;
+    version_field:string;
 }
 
 table GroundNodeFlat {
-    x:int;
-    y:int;
-    is_can_not_use_skill:bool;
-    node_type:GroundNodeType;
-    original_node_type:GroundNodeType;
+    x_field:int;
+    y_field:int;
+    is_can_not_use_skill_field:bool;
+    node_type_field:GroundNodeType;
+    original_node_type_field:GroundNodeType;
 }
 
 table GroundNodeLayerFlat {
 }
 
 table KatakanaConvertExcel {
-    kr:string;
-    jp:string;
+    kr_field:string;
+    jp_field:string;
 }
 
 table KnockBackExcel {
-    index:int;
-    dist:float;
-    speed:float;
+    index_field:int;
+    dist_field:float;
+    speed_field:float;
 }
 
 table LimitedStageExcel {
-    id:int;
-    name:string;
-    season_id:int;
-    stage_difficulty:StageDifficulty;
-    stage_number:string;
-    stage_display:int;
-    prev_stage_id:int;
-    open_date:int;
-    open_event_point:int;
-    battle_duration:int;
-    stage_enter_cost_type:ParcelType;
-    stage_enter_cost_id:int;
-    stage_enter_cost_amount:int;
-    stage_enter_echelon_count:int;
-    star_condition_tactic_rank_s_count:int;
-    star_condition_turn_count:int;
-    enter_scenario_group_id:[int];
-    clear_scenario_group_id:[int];
-    strategy_map:string;
-    strategy_map_b_g:string;
-    stage_reward_id:int;
-    max_turn:int;
-    stage_topography:StageTopography;
-    recommand_level:int;
-    bgm_id:int;
-    strategy_environment:StrategyEnvironment;
-    ground_i_d:int;
-    content_type:ContentType;
-    b_g_m_id:int;
-    instant_clear:bool;
-    buff_content_id:int;
-    challenge_display:bool;
+    id_field:int;
+    name_field:string;
+    season_id_field:int;
+    stage_difficulty_field:StageDifficulty;
+    stage_number_field:string;
+    stage_display_field:int;
+    prev_stage_id_field:int;
+    open_date_field:int;
+    open_event_point_field:int;
+    battle_duration_field:int;
+    stage_enter_cost_type_field:ParcelType;
+    stage_enter_cost_id_field:int;
+    stage_enter_cost_amount_field:int;
+    stage_enter_echelon_count_field:int;
+    star_condition_tactic_rank_s_count_field:int;
+    star_condition_turn_count_field:int;
+    enter_scenario_group_id_field:[int];
+    clear_scenario_group_id_field:[int];
+    strategy_map_field:string;
+    strategy_map_b_g_field:string;
+    stage_reward_id_field:int;
+    max_turn_field:int;
+    stage_topography_field:StageTopography;
+    recommand_level_field:int;
+    bgm_id_field:int;
+    strategy_environment_field:StrategyEnvironment;
+    ground_i_d_field:int;
+    content_type_field:ContentType;
+    b_g_m_id_field:int;
+    instant_clear_field:bool;
+    buff_content_id_field:int;
+    challenge_display_field:bool;
 }
 
 table LimitedStageRewardExcel {
-    group_id:int;
-    reward_tag:float;
-    reward_prob:int;
-    reward_parcel_type:ParcelType;
-    reward_id:int;
-    reward_amount:int;
-    is_displayed:bool;
+    group_id_field:int;
+    reward_tag_field:float;
+    reward_prob_field:int;
+    reward_parcel_type_field:ParcelType;
+    reward_id_field:int;
+    reward_amount_field:int;
+    is_displayed_field:bool;
 }
 
 table LimitedStageSeasonExcel {
-    id:int;
-    start_date:string;
-    end_date:string;
-    type_a_count:int;
-    type_b_count:int;
-    type_c_count:int;
+    id_field:int;
+    start_date_field:string;
+    end_date_field:string;
+    type_a_count_field:int;
+    type_b_count_field:int;
+    type_c_count_field:int;
 }
 
 table MinigameCardExcel {
-    none:[CCGCharacterType];
+    none_field:[CCGCharacterType];
 }
 
 table MinigameRoadExcel {
-    none:[RoadPuzzleMapTileType];
+    none_field:[RoadPuzzleMapTileType];
 }
 
 table NormalSkillTemplateExcel {
-    index:int;
-    first_cool_time:float;
-    cool_time:float;
-    multi_ani:bool;
+    index_field:int;
+    first_cool_time_field:float;
+    cool_time_field:float;
+    multi_ani_field:bool;
 }
 
 table ObstacleExcel {
-    index:int;
-    prefab_name:string;
-    jump_able:bool;
-    sub_offset:[float];
-    x:float;
-    z:float;
-    hp:int;
-    max_hp:int;
-    block_rate:int;
-    evasion_rate:int;
-    destroy_type:ObstacleDestroyType;
-    point1_offeset:[float];
-    enemy_point1_osset:[float];
-    point2_offeset:[float];
-    enemy_point2_osset:[float];
-    sub_obstacle_i_d:[int];
+    index_field:int;
+    prefab_name_field:string;
+    jump_able_field:bool;
+    sub_offset_field:[float];
+    x_field:float;
+    z_field:float;
+    hp_field:int;
+    max_hp_field:int;
+    block_rate_field:int;
+    evasion_rate_field:int;
+    destroy_type_field:ObstacleDestroyType;
+    point1_offeset_field:[float];
+    enemy_point1_osset_field:[float];
+    point2_offeset_field:[float];
+    enemy_point2_osset_field:[float];
+    sub_obstacle_i_d_field:[int];
 }
 
 table PropVector3 {
-    x:float;
-    y:float;
-    z:float;
+    x_field:float;
+    y_field:float;
+    z_field:float;
 }
 
 table PropMotion {
-    name:string;
+    name_field:string;
 }
 
 table PropRootMotionFlat {
 }
 
 table ProtocolSettingExcel {
-    protocol:string;
-    open_condition_content:OpenConditionContent;
-    currency:bool;
-    inventory:bool;
-    mail:bool;
+    protocol_field:string;
+    open_condition_content_field:OpenConditionContent;
+    currency_field:bool;
+    inventory_field:bool;
+    mail_field:bool;
 }
 
 table RecipeCraftExcel {
-    id:int;
-    dev_name:string;
-    recipe_type:RecipeType;
-    recipe_ingredient_id:int;
-    recipe_ingredient_dev_name:string;
-    parcel_type:[ParcelType];
-    parcel_id:[int];
-    parcel_dev_name:[string];
-    result_amount_min:[int];
-    result_amount_max:[int];
+    id_field:int;
+    dev_name_field:string;
+    recipe_type_field:RecipeType;
+    recipe_ingredient_id_field:int;
+    recipe_ingredient_dev_name_field:string;
+    parcel_type_field:[ParcelType];
+    parcel_id_field:[int];
+    parcel_dev_name_field:[string];
+    result_amount_min_field:[int];
+    result_amount_max_field:[int];
 }
 
 table Position {
-    x:float;
-    z:float;
+    x_field:float;
+    z_field:float;
 }
 
 table Motion {
-    name:string;
+    name_field:string;
 }
 
 table MoveEnd {
@@ -1156,133 +1156,133 @@ table RootMotionFlat {
 }
 
 table ScenarioExcel {
-    none:[ScenarioBGType];
-    idle:[ScenarioCharacterAction];
-    cafe:DialogCategory;
-    talk:DialogType;
-    open:StoryCondition;
-    enter_conver:EmojiEvent;
-    center:ScenarioZoomAnchors;
-    instant:ScenarioZoomType;
-    prologue:ScenarioContentType;
+    none_field:[ScenarioBGType];
+    idle_field:[ScenarioCharacterAction];
+    cafe_field:DialogCategory;
+    talk_field:DialogType;
+    open_field:StoryCondition;
+    enter_conver_field:EmojiEvent;
+    center_field:ScenarioZoomAnchors;
+    instant_field:ScenarioZoomType;
+    prologue_field:ScenarioContentType;
 }
 
 table ScenarioReplayExcel {
-    mode_id:int;
-    volume_id:int;
-    replay_type:ScenarioModeReplayTypes;
-    chapter_id:int;
-    episode_id:int;
-    front_scenario_group_id:[int];
-    ground_id:int;
-    battle_duration:int;
-    back_scenario_group_id:[int];
+    mode_id_field:int;
+    volume_id_field:int;
+    replay_type_field:ScenarioModeReplayTypes;
+    chapter_id_field:int;
+    episode_id_field:int;
+    front_scenario_group_id_field:[int];
+    ground_id_field:int;
+    battle_duration_field:int;
+    back_scenario_group_id_field:[int];
 }
 
 table SpecialLobbyIllustExcel {
-    unique_id:int;
-    dev_name:string;
-    character_costume_unique_id:int;
-    prefab_name:string;
-    slot_texture_name:string;
-    reward_texture_name:string;
+    unique_id_field:int;
+    dev_name_field:string;
+    character_costume_unique_id_field:int;
+    prefab_name_field:string;
+    slot_texture_name_field:string;
+    reward_texture_name_field:string;
 }
 
 table StringTestExcel {
-    string:[string];
-    sentence1:string;
-    script:string;
+    string_field:[string];
+    sentence1_field:string;
+    script_field:string;
 }
 
 table SystemMailExcel {
-    mail_type:MailType;
-    is_product_mail:bool;
-    is_variable_expired_day:bool;
-    expired_day:int;
-    sender:string;
-    comment:string;
+    mail_type_field:MailType;
+    is_product_mail_field:bool;
+    is_variable_expired_day_field:bool;
+    expired_day_field:int;
+    sender_field:string;
+    comment_field:string;
 }
 
 table TacticArenaSimulatorSettingExcel {
-    order:int;
-    repeat:int;
-    attacker_from:ArenaSimulatorServer;
-    attacker_user_arena_group:int;
-    attacker_user_arena_rank:int;
-    attacker_preset_group_id:int;
-    attacker_striker_num:int;
-    attacker_special_num:int;
-    defender_from:ArenaSimulatorServer;
-    defender_user_arena_group:int;
-    defender_user_arena_rank:int;
-    defender_preset_group_id:int;
-    defender_striker_num:int;
-    defender_special_num:int;
-    ground_id:int;
+    order_field:int;
+    repeat_field:int;
+    attacker_from_field:ArenaSimulatorServer;
+    attacker_user_arena_group_field:int;
+    attacker_user_arena_rank_field:int;
+    attacker_preset_group_id_field:int;
+    attacker_striker_num_field:int;
+    attacker_special_num_field:int;
+    defender_from_field:ArenaSimulatorServer;
+    defender_user_arena_group_field:int;
+    defender_user_arena_rank_field:int;
+    defender_preset_group_id_field:int;
+    defender_striker_num_field:int;
+    defender_special_num_field:int;
+    ground_id_field:int;
 }
 
 table TacticDamageSimulatorSettingExcel {
-    order:int;
-    repeat:int;
-    test_preset:int;
-    test_battle_time:int;
-    striker_squard:int;
-    special_squard:int;
-    replace_character_cost_regen:bool;
-    replace_cost_regen_value:int;
-    use_auto_skill:bool;
-    override_street_adaptation:TerrainAdaptationStat;
-    override_outdoor_adaptation:TerrainAdaptationStat;
-    override_indoor_adaptation:TerrainAdaptationStat;
-    apply_override_adaptation:bool;
-    override_favor_level:int;
-    apply_override_favor_level:bool;
-    ground_id:int;
-    fixed_character:[int];
+    order_field:int;
+    repeat_field:int;
+    test_preset_field:int;
+    test_battle_time_field:int;
+    striker_squard_field:int;
+    special_squard_field:int;
+    replace_character_cost_regen_field:bool;
+    replace_cost_regen_value_field:int;
+    use_auto_skill_field:bool;
+    override_street_adaptation_field:TerrainAdaptationStat;
+    override_outdoor_adaptation_field:TerrainAdaptationStat;
+    override_indoor_adaptation_field:TerrainAdaptationStat;
+    apply_override_adaptation_field:bool;
+    override_favor_level_field:int;
+    apply_override_favor_level_field:bool;
+    ground_id_field:int;
+    fixed_character_field:[int];
 }
 
 table TacticSimulatorSettingExcel {
-    ground_id:int;
-    fixed_echelon_id:int;
+    ground_id_field:int;
+    fixed_echelon_id_field:int;
 }
 
 table TacticTimeAttackSimulatorConfigExcel {
-    order:int;
-    repeat:int;
-    preset_group_id:int;
-    attack_striker_num:int;
-    attack_special_num:int;
-    geas_id:int;
+    order_field:int;
+    repeat_field:int;
+    preset_group_id_field:int;
+    attack_striker_num_field:int;
+    attack_special_num_field:int;
+    geas_id_field:int;
 }
 
 table TagExcel {
-    furniture:Tag;
-    none:Club;
+    furniture_field:Tag;
+    none_field:Club;
 }
 
 table TranscendenceRecipeExcel {
-    id:int;
-    dev_name:string;
-    cost_currency_type:CurrencyTypes;
-    cost_currency_amount:int;
-    parcel_type:[ParcelType];
-    parcel_id:[int];
-    parcel_amount:[int];
+    id_field:int;
+    dev_name_field:string;
+    cost_currency_type_field:CurrencyTypes;
+    cost_currency_amount_field:int;
+    parcel_type_field:[ParcelType];
+    parcel_id_field:[int];
+    parcel_amount_field:[int];
 }
 
 table VoiceSkillUseExcel {
-    name:string;
-    voice_hash:[uint];
+    name_field:string;
+    voice_hash_field:[uint];
 }
 
 table WeekDungeonFindGiftRewardExcel {
-    stage_reward_id:int;
-    dev_name:string;
-    reward_parcel_type:[ParcelType];
-    reward_parcel_id:[int];
-    reward_parcel_amount:[int];
-    reward_parcel_probability:[int];
-    drop_item_model_prefab_path:[string];
+    stage_reward_id_field:int;
+    dev_name_field:string;
+    reward_parcel_type_field:[ParcelType];
+    reward_parcel_id_field:[int];
+    reward_parcel_amount_field:[int];
+    reward_parcel_probability_field:[int];
+    drop_item_model_prefab_path_field:[string];
 }
 
 table AnimationBlendTable {

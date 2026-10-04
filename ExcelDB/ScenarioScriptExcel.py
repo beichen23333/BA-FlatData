@@ -25,105 +25,105 @@ class ScenarioScriptExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ScenarioScriptExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptExcel
-    def SelectionGroup(self):
+    def SelectionGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptExcel
-    def BGMId(self):
+    def BGMIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptExcel
-    def Sound(self):
+    def SoundField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioScriptExcel
-    def Transition(self):
+    def TransitionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptExcel
-    def BGName(self):
+    def BGNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptExcel
-    def BGEffect(self):
+    def BGEffectField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptExcel
-    def PopupFileName(self):
+    def PopupFileNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioScriptExcel
-    def ScriptKr(self):
+    def ScriptKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioScriptExcel
-    def TextJp(self):
+    def TextJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioScriptExcel
-    def TextTh(self):
+    def TextThField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioScriptExcel
-    def TextTw(self):
+    def TextTwField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioScriptExcel
-    def TextEn(self):
+    def TextEnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ScenarioScriptExcel
-    def VoiceId(self):
+    def VoiceIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioScriptExcel
-    def TeenMode(self):
+    def TeenModeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -132,51 +132,51 @@ class ScenarioScriptExcel(object):
 def ScenarioScriptExcelStart(builder): builder.StartObject(15)
 def Start(builder):
     return ScenarioScriptExcelStart(builder)
-def ScenarioScriptExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return ScenarioScriptExcelAddGroupId(builder, groupId)
-def ScenarioScriptExcelAddSelectionGroup(builder, selectionGroup): builder.PrependInt32Slot(1, selectionGroup, 0)
-def AddSelectionGroup(builder, selectionGroup):
-    return ScenarioScriptExcelAddSelectionGroup(builder, selectionGroup)
-def ScenarioScriptExcelAddBGMId(builder, bGMId): builder.PrependInt32Slot(2, bGMId, 0)
-def AddBGMId(builder, bGMId):
-    return ScenarioScriptExcelAddBGMId(builder, bGMId)
-def ScenarioScriptExcelAddSound(builder, sound): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(sound), 0)
-def AddSound(builder, sound):
-    return ScenarioScriptExcelAddSound(builder, sound)
-def ScenarioScriptExcelAddTransition(builder, transition): builder.PrependUint32Slot(4, transition, 0)
-def AddTransition(builder, transition):
-    return ScenarioScriptExcelAddTransition(builder, transition)
-def ScenarioScriptExcelAddBGName(builder, bGName): builder.PrependUint32Slot(5, bGName, 0)
-def AddBGName(builder, bGName):
-    return ScenarioScriptExcelAddBGName(builder, bGName)
-def ScenarioScriptExcelAddBGEffect(builder, bGEffect): builder.PrependUint32Slot(6, bGEffect, 0)
-def AddBGEffect(builder, bGEffect):
-    return ScenarioScriptExcelAddBGEffect(builder, bGEffect)
-def ScenarioScriptExcelAddPopupFileName(builder, popupFileName): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(popupFileName), 0)
-def AddPopupFileName(builder, popupFileName):
-    return ScenarioScriptExcelAddPopupFileName(builder, popupFileName)
-def ScenarioScriptExcelAddScriptKr(builder, scriptKr): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(scriptKr), 0)
-def AddScriptKr(builder, scriptKr):
-    return ScenarioScriptExcelAddScriptKr(builder, scriptKr)
-def ScenarioScriptExcelAddTextJp(builder, textJp): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(textJp), 0)
-def AddTextJp(builder, textJp):
-    return ScenarioScriptExcelAddTextJp(builder, textJp)
-def ScenarioScriptExcelAddTextTh(builder, textTh): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(textTh), 0)
-def AddTextTh(builder, textTh):
-    return ScenarioScriptExcelAddTextTh(builder, textTh)
-def ScenarioScriptExcelAddTextTw(builder, textTw): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(textTw), 0)
-def AddTextTw(builder, textTw):
-    return ScenarioScriptExcelAddTextTw(builder, textTw)
-def ScenarioScriptExcelAddTextEn(builder, textEn): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(textEn), 0)
-def AddTextEn(builder, textEn):
-    return ScenarioScriptExcelAddTextEn(builder, textEn)
-def ScenarioScriptExcelAddVoiceId(builder, voiceId): builder.PrependUint32Slot(13, voiceId, 0)
-def AddVoiceId(builder, voiceId):
-    return ScenarioScriptExcelAddVoiceId(builder, voiceId)
-def ScenarioScriptExcelAddTeenMode(builder, teenMode): builder.PrependBoolSlot(14, teenMode, 0)
-def AddTeenMode(builder, teenMode):
-    return ScenarioScriptExcelAddTeenMode(builder, teenMode)
+def ScenarioScriptExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return ScenarioScriptExcelAddGroupIdField(builder, groupIdField)
+def ScenarioScriptExcelAddSelectionGroupField(builder, selectionGroupField): builder.PrependInt32Slot(1, selectionGroupField, 0)
+def AddSelectionGroupField(builder, selectionGroupField):
+    return ScenarioScriptExcelAddSelectionGroupField(builder, selectionGroupField)
+def ScenarioScriptExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(2, bGMIdField, 0)
+def AddBGMIdField(builder, bGMIdField):
+    return ScenarioScriptExcelAddBGMIdField(builder, bGMIdField)
+def ScenarioScriptExcelAddSoundField(builder, soundField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(soundField), 0)
+def AddSoundField(builder, soundField):
+    return ScenarioScriptExcelAddSoundField(builder, soundField)
+def ScenarioScriptExcelAddTransitionField(builder, transitionField): builder.PrependUint32Slot(4, transitionField, 0)
+def AddTransitionField(builder, transitionField):
+    return ScenarioScriptExcelAddTransitionField(builder, transitionField)
+def ScenarioScriptExcelAddBGNameField(builder, bGNameField): builder.PrependUint32Slot(5, bGNameField, 0)
+def AddBGNameField(builder, bGNameField):
+    return ScenarioScriptExcelAddBGNameField(builder, bGNameField)
+def ScenarioScriptExcelAddBGEffectField(builder, bGEffectField): builder.PrependUint32Slot(6, bGEffectField, 0)
+def AddBGEffectField(builder, bGEffectField):
+    return ScenarioScriptExcelAddBGEffectField(builder, bGEffectField)
+def ScenarioScriptExcelAddPopupFileNameField(builder, popupFileNameField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(popupFileNameField), 0)
+def AddPopupFileNameField(builder, popupFileNameField):
+    return ScenarioScriptExcelAddPopupFileNameField(builder, popupFileNameField)
+def ScenarioScriptExcelAddScriptKrField(builder, scriptKrField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(scriptKrField), 0)
+def AddScriptKrField(builder, scriptKrField):
+    return ScenarioScriptExcelAddScriptKrField(builder, scriptKrField)
+def ScenarioScriptExcelAddTextJpField(builder, textJpField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(textJpField), 0)
+def AddTextJpField(builder, textJpField):
+    return ScenarioScriptExcelAddTextJpField(builder, textJpField)
+def ScenarioScriptExcelAddTextThField(builder, textThField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(textThField), 0)
+def AddTextThField(builder, textThField):
+    return ScenarioScriptExcelAddTextThField(builder, textThField)
+def ScenarioScriptExcelAddTextTwField(builder, textTwField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(textTwField), 0)
+def AddTextTwField(builder, textTwField):
+    return ScenarioScriptExcelAddTextTwField(builder, textTwField)
+def ScenarioScriptExcelAddTextEnField(builder, textEnField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(textEnField), 0)
+def AddTextEnField(builder, textEnField):
+    return ScenarioScriptExcelAddTextEnField(builder, textEnField)
+def ScenarioScriptExcelAddVoiceIdField(builder, voiceIdField): builder.PrependUint32Slot(13, voiceIdField, 0)
+def AddVoiceIdField(builder, voiceIdField):
+    return ScenarioScriptExcelAddVoiceIdField(builder, voiceIdField)
+def ScenarioScriptExcelAddTeenModeField(builder, teenModeField): builder.PrependBoolSlot(14, teenModeField, 0)
+def AddTeenModeField(builder, teenModeField):
+    return ScenarioScriptExcelAddTeenModeField(builder, teenModeField)
 def ScenarioScriptExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ScenarioScriptExcelEnd(builder)

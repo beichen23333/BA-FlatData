@@ -25,14 +25,14 @@ class StageFileRefreshSettingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # StageFileRefreshSettingExcel
-    def GroundId(self):
+    def GroundIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # StageFileRefreshSettingExcel
-    def ForceSave(self):
+    def ForceSaveField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -41,12 +41,12 @@ class StageFileRefreshSettingExcel(object):
 def StageFileRefreshSettingExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return StageFileRefreshSettingExcelStart(builder)
-def StageFileRefreshSettingExcelAddGroundId(builder, groundId): builder.PrependInt32Slot(0, groundId, 0)
-def AddGroundId(builder, groundId):
-    return StageFileRefreshSettingExcelAddGroundId(builder, groundId)
-def StageFileRefreshSettingExcelAddForceSave(builder, forceSave): builder.PrependBoolSlot(1, forceSave, 0)
-def AddForceSave(builder, forceSave):
-    return StageFileRefreshSettingExcelAddForceSave(builder, forceSave)
+def StageFileRefreshSettingExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(0, groundIdField, 0)
+def AddGroundIdField(builder, groundIdField):
+    return StageFileRefreshSettingExcelAddGroundIdField(builder, groundIdField)
+def StageFileRefreshSettingExcelAddForceSaveField(builder, forceSaveField): builder.PrependBoolSlot(1, forceSaveField, 0)
+def AddForceSaveField(builder, forceSaveField):
+    return StageFileRefreshSettingExcelAddForceSaveField(builder, forceSaveField)
 def StageFileRefreshSettingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return StageFileRefreshSettingExcelEnd(builder)

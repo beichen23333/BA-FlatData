@@ -25,168 +25,168 @@ class KeyMappingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # KeyMappingExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingExcel
-    def DisplayGroupType(self):
+    def DisplayGroupTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # KeyMappingExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingExcel
-    def EnableCustomMapping(self):
+    def EnableCustomMappingField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def DisplayCustomMapping(self):
+    def DisplayCustomMappingField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def LocalizeKeyMappingId(self):
+    def LocalizeKeyMappingIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # KeyMappingExcel
-    def TargetKeyCode(self):
+    def TargetKeyCodeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingExcel
-    def ControllerCursorFocus(self):
+    def ControllerCursorFocusField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def ControllerKeyCode(self):
+    def ControllerKeyCodeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # KeyMappingExcel
-    def IsDisplay(self):
+    def IsDisplayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def IsDisplayController(self):
+    def IsDisplayControllerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def IsUsed(self):
+    def IsUsedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def IsUsedController(self):
+    def IsUsedControllerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def IsLongPress(self):
+    def IsLongPressField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def IgnorePosCheck(self):
+    def IgnorePosCheckField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # KeyMappingExcel
-    def IconPositionX(self):
+    def IconPositionXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingExcel
-    def IconPositionY(self):
+    def IconPositionYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingExcel
-    def IconScaleX(self):
+    def IconScaleXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingExcel
-    def IconScaleY(self):
+    def IconScaleYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingExcel
-    def ControllerIconPositionX(self):
+    def ControllerIconPositionXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingExcel
-    def ControllerIconPositionY(self):
+    def ControllerIconPositionYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingExcel
-    def ControllerIconScaleX(self):
+    def ControllerIconScaleXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingExcel
-    def ControllerIconScaleY(self):
+    def ControllerIconScaleYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # KeyMappingExcel
-    def KeymappingIconBGName(self):
+    def KeymappingIconBGNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -195,78 +195,78 @@ class KeyMappingExcel(object):
 def KeyMappingExcelStart(builder): builder.StartObject(24)
 def Start(builder):
     return KeyMappingExcelStart(builder)
-def KeyMappingExcelAddId(builder, id): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(id), 0)
-def AddId(builder, id):
-    return KeyMappingExcelAddId(builder, id)
-def KeyMappingExcelAddDisplayGroupType(builder, displayGroupType): builder.PrependInt32Slot(1, displayGroupType, 0)
-def AddDisplayGroupType(builder, displayGroupType):
-    return KeyMappingExcelAddDisplayGroupType(builder, displayGroupType)
-def KeyMappingExcelAddGroupId(builder, groupId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(groupId), 0)
-def AddGroupId(builder, groupId):
-    return KeyMappingExcelAddGroupId(builder, groupId)
-def KeyMappingExcelAddEnableCustomMapping(builder, enableCustomMapping): builder.PrependBoolSlot(3, enableCustomMapping, 0)
-def AddEnableCustomMapping(builder, enableCustomMapping):
-    return KeyMappingExcelAddEnableCustomMapping(builder, enableCustomMapping)
-def KeyMappingExcelAddDisplayCustomMapping(builder, displayCustomMapping): builder.PrependBoolSlot(4, displayCustomMapping, 0)
-def AddDisplayCustomMapping(builder, displayCustomMapping):
-    return KeyMappingExcelAddDisplayCustomMapping(builder, displayCustomMapping)
-def KeyMappingExcelAddLocalizeKeyMappingId(builder, localizeKeyMappingId): builder.PrependUint32Slot(5, localizeKeyMappingId, 0)
-def AddLocalizeKeyMappingId(builder, localizeKeyMappingId):
-    return KeyMappingExcelAddLocalizeKeyMappingId(builder, localizeKeyMappingId)
-def KeyMappingExcelAddTargetKeyCode(builder, targetKeyCode): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(targetKeyCode), 0)
-def AddTargetKeyCode(builder, targetKeyCode):
-    return KeyMappingExcelAddTargetKeyCode(builder, targetKeyCode)
-def KeyMappingExcelAddControllerCursorFocus(builder, controllerCursorFocus): builder.PrependBoolSlot(7, controllerCursorFocus, 0)
-def AddControllerCursorFocus(builder, controllerCursorFocus):
-    return KeyMappingExcelAddControllerCursorFocus(builder, controllerCursorFocus)
-def KeyMappingExcelAddControllerKeyCode(builder, controllerKeyCode): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(controllerKeyCode), 0)
-def AddControllerKeyCode(builder, controllerKeyCode):
-    return KeyMappingExcelAddControllerKeyCode(builder, controllerKeyCode)
-def KeyMappingExcelAddIsDisplay(builder, isDisplay): builder.PrependBoolSlot(9, isDisplay, 0)
-def AddIsDisplay(builder, isDisplay):
-    return KeyMappingExcelAddIsDisplay(builder, isDisplay)
-def KeyMappingExcelAddIsDisplayController(builder, isDisplayController): builder.PrependBoolSlot(10, isDisplayController, 0)
-def AddIsDisplayController(builder, isDisplayController):
-    return KeyMappingExcelAddIsDisplayController(builder, isDisplayController)
-def KeyMappingExcelAddIsUsed(builder, isUsed): builder.PrependBoolSlot(11, isUsed, 0)
-def AddIsUsed(builder, isUsed):
-    return KeyMappingExcelAddIsUsed(builder, isUsed)
-def KeyMappingExcelAddIsUsedController(builder, isUsedController): builder.PrependBoolSlot(12, isUsedController, 0)
-def AddIsUsedController(builder, isUsedController):
-    return KeyMappingExcelAddIsUsedController(builder, isUsedController)
-def KeyMappingExcelAddIsLongPress(builder, isLongPress): builder.PrependBoolSlot(13, isLongPress, 0)
-def AddIsLongPress(builder, isLongPress):
-    return KeyMappingExcelAddIsLongPress(builder, isLongPress)
-def KeyMappingExcelAddIgnorePosCheck(builder, ignorePosCheck): builder.PrependBoolSlot(14, ignorePosCheck, 0)
-def AddIgnorePosCheck(builder, ignorePosCheck):
-    return KeyMappingExcelAddIgnorePosCheck(builder, ignorePosCheck)
-def KeyMappingExcelAddIconPositionX(builder, iconPositionX): builder.PrependFloat32Slot(15, iconPositionX, 0.0)
-def AddIconPositionX(builder, iconPositionX):
-    return KeyMappingExcelAddIconPositionX(builder, iconPositionX)
-def KeyMappingExcelAddIconPositionY(builder, iconPositionY): builder.PrependFloat32Slot(16, iconPositionY, 0.0)
-def AddIconPositionY(builder, iconPositionY):
-    return KeyMappingExcelAddIconPositionY(builder, iconPositionY)
-def KeyMappingExcelAddIconScaleX(builder, iconScaleX): builder.PrependFloat32Slot(17, iconScaleX, 0.0)
-def AddIconScaleX(builder, iconScaleX):
-    return KeyMappingExcelAddIconScaleX(builder, iconScaleX)
-def KeyMappingExcelAddIconScaleY(builder, iconScaleY): builder.PrependFloat32Slot(18, iconScaleY, 0.0)
-def AddIconScaleY(builder, iconScaleY):
-    return KeyMappingExcelAddIconScaleY(builder, iconScaleY)
-def KeyMappingExcelAddControllerIconPositionX(builder, controllerIconPositionX): builder.PrependFloat32Slot(19, controllerIconPositionX, 0.0)
-def AddControllerIconPositionX(builder, controllerIconPositionX):
-    return KeyMappingExcelAddControllerIconPositionX(builder, controllerIconPositionX)
-def KeyMappingExcelAddControllerIconPositionY(builder, controllerIconPositionY): builder.PrependFloat32Slot(20, controllerIconPositionY, 0.0)
-def AddControllerIconPositionY(builder, controllerIconPositionY):
-    return KeyMappingExcelAddControllerIconPositionY(builder, controllerIconPositionY)
-def KeyMappingExcelAddControllerIconScaleX(builder, controllerIconScaleX): builder.PrependFloat32Slot(21, controllerIconScaleX, 0.0)
-def AddControllerIconScaleX(builder, controllerIconScaleX):
-    return KeyMappingExcelAddControllerIconScaleX(builder, controllerIconScaleX)
-def KeyMappingExcelAddControllerIconScaleY(builder, controllerIconScaleY): builder.PrependFloat32Slot(22, controllerIconScaleY, 0.0)
-def AddControllerIconScaleY(builder, controllerIconScaleY):
-    return KeyMappingExcelAddControllerIconScaleY(builder, controllerIconScaleY)
-def KeyMappingExcelAddKeymappingIconBGName(builder, keymappingIconBGName): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(keymappingIconBGName), 0)
-def AddKeymappingIconBGName(builder, keymappingIconBGName):
-    return KeyMappingExcelAddKeymappingIconBGName(builder, keymappingIconBGName)
+def KeyMappingExcelAddIdField(builder, idField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(idField), 0)
+def AddIdField(builder, idField):
+    return KeyMappingExcelAddIdField(builder, idField)
+def KeyMappingExcelAddDisplayGroupTypeField(builder, displayGroupTypeField): builder.PrependInt32Slot(1, displayGroupTypeField, 0)
+def AddDisplayGroupTypeField(builder, displayGroupTypeField):
+    return KeyMappingExcelAddDisplayGroupTypeField(builder, displayGroupTypeField)
+def KeyMappingExcelAddGroupIdField(builder, groupIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(groupIdField), 0)
+def AddGroupIdField(builder, groupIdField):
+    return KeyMappingExcelAddGroupIdField(builder, groupIdField)
+def KeyMappingExcelAddEnableCustomMappingField(builder, enableCustomMappingField): builder.PrependBoolSlot(3, enableCustomMappingField, 0)
+def AddEnableCustomMappingField(builder, enableCustomMappingField):
+    return KeyMappingExcelAddEnableCustomMappingField(builder, enableCustomMappingField)
+def KeyMappingExcelAddDisplayCustomMappingField(builder, displayCustomMappingField): builder.PrependBoolSlot(4, displayCustomMappingField, 0)
+def AddDisplayCustomMappingField(builder, displayCustomMappingField):
+    return KeyMappingExcelAddDisplayCustomMappingField(builder, displayCustomMappingField)
+def KeyMappingExcelAddLocalizeKeyMappingIdField(builder, localizeKeyMappingIdField): builder.PrependUint32Slot(5, localizeKeyMappingIdField, 0)
+def AddLocalizeKeyMappingIdField(builder, localizeKeyMappingIdField):
+    return KeyMappingExcelAddLocalizeKeyMappingIdField(builder, localizeKeyMappingIdField)
+def KeyMappingExcelAddTargetKeyCodeField(builder, targetKeyCodeField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(targetKeyCodeField), 0)
+def AddTargetKeyCodeField(builder, targetKeyCodeField):
+    return KeyMappingExcelAddTargetKeyCodeField(builder, targetKeyCodeField)
+def KeyMappingExcelAddControllerCursorFocusField(builder, controllerCursorFocusField): builder.PrependBoolSlot(7, controllerCursorFocusField, 0)
+def AddControllerCursorFocusField(builder, controllerCursorFocusField):
+    return KeyMappingExcelAddControllerCursorFocusField(builder, controllerCursorFocusField)
+def KeyMappingExcelAddControllerKeyCodeField(builder, controllerKeyCodeField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(controllerKeyCodeField), 0)
+def AddControllerKeyCodeField(builder, controllerKeyCodeField):
+    return KeyMappingExcelAddControllerKeyCodeField(builder, controllerKeyCodeField)
+def KeyMappingExcelAddIsDisplayField(builder, isDisplayField): builder.PrependBoolSlot(9, isDisplayField, 0)
+def AddIsDisplayField(builder, isDisplayField):
+    return KeyMappingExcelAddIsDisplayField(builder, isDisplayField)
+def KeyMappingExcelAddIsDisplayControllerField(builder, isDisplayControllerField): builder.PrependBoolSlot(10, isDisplayControllerField, 0)
+def AddIsDisplayControllerField(builder, isDisplayControllerField):
+    return KeyMappingExcelAddIsDisplayControllerField(builder, isDisplayControllerField)
+def KeyMappingExcelAddIsUsedField(builder, isUsedField): builder.PrependBoolSlot(11, isUsedField, 0)
+def AddIsUsedField(builder, isUsedField):
+    return KeyMappingExcelAddIsUsedField(builder, isUsedField)
+def KeyMappingExcelAddIsUsedControllerField(builder, isUsedControllerField): builder.PrependBoolSlot(12, isUsedControllerField, 0)
+def AddIsUsedControllerField(builder, isUsedControllerField):
+    return KeyMappingExcelAddIsUsedControllerField(builder, isUsedControllerField)
+def KeyMappingExcelAddIsLongPressField(builder, isLongPressField): builder.PrependBoolSlot(13, isLongPressField, 0)
+def AddIsLongPressField(builder, isLongPressField):
+    return KeyMappingExcelAddIsLongPressField(builder, isLongPressField)
+def KeyMappingExcelAddIgnorePosCheckField(builder, ignorePosCheckField): builder.PrependBoolSlot(14, ignorePosCheckField, 0)
+def AddIgnorePosCheckField(builder, ignorePosCheckField):
+    return KeyMappingExcelAddIgnorePosCheckField(builder, ignorePosCheckField)
+def KeyMappingExcelAddIconPositionXField(builder, iconPositionXField): builder.PrependFloat32Slot(15, iconPositionXField, 0.0)
+def AddIconPositionXField(builder, iconPositionXField):
+    return KeyMappingExcelAddIconPositionXField(builder, iconPositionXField)
+def KeyMappingExcelAddIconPositionYField(builder, iconPositionYField): builder.PrependFloat32Slot(16, iconPositionYField, 0.0)
+def AddIconPositionYField(builder, iconPositionYField):
+    return KeyMappingExcelAddIconPositionYField(builder, iconPositionYField)
+def KeyMappingExcelAddIconScaleXField(builder, iconScaleXField): builder.PrependFloat32Slot(17, iconScaleXField, 0.0)
+def AddIconScaleXField(builder, iconScaleXField):
+    return KeyMappingExcelAddIconScaleXField(builder, iconScaleXField)
+def KeyMappingExcelAddIconScaleYField(builder, iconScaleYField): builder.PrependFloat32Slot(18, iconScaleYField, 0.0)
+def AddIconScaleYField(builder, iconScaleYField):
+    return KeyMappingExcelAddIconScaleYField(builder, iconScaleYField)
+def KeyMappingExcelAddControllerIconPositionXField(builder, controllerIconPositionXField): builder.PrependFloat32Slot(19, controllerIconPositionXField, 0.0)
+def AddControllerIconPositionXField(builder, controllerIconPositionXField):
+    return KeyMappingExcelAddControllerIconPositionXField(builder, controllerIconPositionXField)
+def KeyMappingExcelAddControllerIconPositionYField(builder, controllerIconPositionYField): builder.PrependFloat32Slot(20, controllerIconPositionYField, 0.0)
+def AddControllerIconPositionYField(builder, controllerIconPositionYField):
+    return KeyMappingExcelAddControllerIconPositionYField(builder, controllerIconPositionYField)
+def KeyMappingExcelAddControllerIconScaleXField(builder, controllerIconScaleXField): builder.PrependFloat32Slot(21, controllerIconScaleXField, 0.0)
+def AddControllerIconScaleXField(builder, controllerIconScaleXField):
+    return KeyMappingExcelAddControllerIconScaleXField(builder, controllerIconScaleXField)
+def KeyMappingExcelAddControllerIconScaleYField(builder, controllerIconScaleYField): builder.PrependFloat32Slot(22, controllerIconScaleYField, 0.0)
+def AddControllerIconScaleYField(builder, controllerIconScaleYField):
+    return KeyMappingExcelAddControllerIconScaleYField(builder, controllerIconScaleYField)
+def KeyMappingExcelAddKeymappingIconBGNameField(builder, keymappingIconBGNameField): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(keymappingIconBGNameField), 0)
+def AddKeymappingIconBGNameField(builder, keymappingIconBGNameField):
+    return KeyMappingExcelAddKeymappingIconBGNameField(builder, keymappingIconBGNameField)
 def KeyMappingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return KeyMappingExcelEnd(builder)

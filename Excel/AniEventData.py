@@ -25,35 +25,35 @@ class AniEventData(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # AniEventData
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # AniEventData
-    def Time(self):
+    def TimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # AniEventData
-    def IntParam(self):
+    def IntParamField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # AniEventData
-    def FloatParam(self):
+    def FloatParamField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # AniEventData
-    def StringParam(self):
+    def StringParamField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -62,21 +62,21 @@ class AniEventData(object):
 def AniEventDataStart(builder): builder.StartObject(5)
 def Start(builder):
     return AniEventDataStart(builder)
-def AniEventDataAddName(builder, name): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return AniEventDataAddName(builder, name)
-def AniEventDataAddTime(builder, time): builder.PrependFloat32Slot(1, time, 0.0)
-def AddTime(builder, time):
-    return AniEventDataAddTime(builder, time)
-def AniEventDataAddIntParam(builder, intParam): builder.PrependInt32Slot(2, intParam, 0)
-def AddIntParam(builder, intParam):
-    return AniEventDataAddIntParam(builder, intParam)
-def AniEventDataAddFloatParam(builder, floatParam): builder.PrependFloat32Slot(3, floatParam, 0.0)
-def AddFloatParam(builder, floatParam):
-    return AniEventDataAddFloatParam(builder, floatParam)
-def AniEventDataAddStringParam(builder, stringParam): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stringParam), 0)
-def AddStringParam(builder, stringParam):
-    return AniEventDataAddStringParam(builder, stringParam)
+def AniEventDataAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return AniEventDataAddNameField(builder, nameField)
+def AniEventDataAddTimeField(builder, timeField): builder.PrependFloat32Slot(1, timeField, 0.0)
+def AddTimeField(builder, timeField):
+    return AniEventDataAddTimeField(builder, timeField)
+def AniEventDataAddIntParamField(builder, intParamField): builder.PrependInt32Slot(2, intParamField, 0)
+def AddIntParamField(builder, intParamField):
+    return AniEventDataAddIntParamField(builder, intParamField)
+def AniEventDataAddFloatParamField(builder, floatParamField): builder.PrependFloat32Slot(3, floatParamField, 0.0)
+def AddFloatParamField(builder, floatParamField):
+    return AniEventDataAddFloatParamField(builder, floatParamField)
+def AniEventDataAddStringParamField(builder, stringParamField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stringParamField), 0)
+def AddStringParamField(builder, stringParamField):
+    return AniEventDataAddStringParamField(builder, stringParamField)
 def AniEventDataEnd(builder): return builder.EndObject()
 def End(builder):
     return AniEventDataEnd(builder)

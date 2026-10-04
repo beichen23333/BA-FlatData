@@ -25,63 +25,63 @@ class MiniGameDreamTimelineExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MiniGameDreamTimelineExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamTimelineExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamTimelineExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamTimelineExcel
-    def DreamMakerDays(self):
+    def DreamMakerDaysField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamTimelineExcel
-    def DreamMakerActionPoint(self):
+    def DreamMakerActionPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamTimelineExcel
-    def EnterScenarioGroupId(self):
+    def EnterScenarioGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamTimelineExcel
-    def Bgm(self):
+    def BgmField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamTimelineExcel
-    def ArtLevelPath(self):
+    def ArtLevelPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameDreamTimelineExcel
-    def DesignLevelPath(self):
+    def DesignLevelPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -90,33 +90,33 @@ class MiniGameDreamTimelineExcel(object):
 def MiniGameDreamTimelineExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return MiniGameDreamTimelineExcelStart(builder)
-def MiniGameDreamTimelineExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MiniGameDreamTimelineExcelAddId(builder, id)
-def MiniGameDreamTimelineExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(1, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MiniGameDreamTimelineExcelAddEventContentId(builder, eventContentId)
-def MiniGameDreamTimelineExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(2, groupId, 0)
-def AddGroupId(builder, groupId):
-    return MiniGameDreamTimelineExcelAddGroupId(builder, groupId)
-def MiniGameDreamTimelineExcelAddDreamMakerDays(builder, dreamMakerDays): builder.PrependInt32Slot(3, dreamMakerDays, 0)
-def AddDreamMakerDays(builder, dreamMakerDays):
-    return MiniGameDreamTimelineExcelAddDreamMakerDays(builder, dreamMakerDays)
-def MiniGameDreamTimelineExcelAddDreamMakerActionPoint(builder, dreamMakerActionPoint): builder.PrependInt32Slot(4, dreamMakerActionPoint, 0)
-def AddDreamMakerActionPoint(builder, dreamMakerActionPoint):
-    return MiniGameDreamTimelineExcelAddDreamMakerActionPoint(builder, dreamMakerActionPoint)
-def MiniGameDreamTimelineExcelAddEnterScenarioGroupId(builder, enterScenarioGroupId): builder.PrependInt32Slot(5, enterScenarioGroupId, 0)
-def AddEnterScenarioGroupId(builder, enterScenarioGroupId):
-    return MiniGameDreamTimelineExcelAddEnterScenarioGroupId(builder, enterScenarioGroupId)
-def MiniGameDreamTimelineExcelAddBgm(builder, bgm): builder.PrependInt32Slot(6, bgm, 0)
-def AddBgm(builder, bgm):
-    return MiniGameDreamTimelineExcelAddBgm(builder, bgm)
-def MiniGameDreamTimelineExcelAddArtLevelPath(builder, artLevelPath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(artLevelPath), 0)
-def AddArtLevelPath(builder, artLevelPath):
-    return MiniGameDreamTimelineExcelAddArtLevelPath(builder, artLevelPath)
-def MiniGameDreamTimelineExcelAddDesignLevelPath(builder, designLevelPath): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(designLevelPath), 0)
-def AddDesignLevelPath(builder, designLevelPath):
-    return MiniGameDreamTimelineExcelAddDesignLevelPath(builder, designLevelPath)
+def MiniGameDreamTimelineExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MiniGameDreamTimelineExcelAddIdField(builder, idField)
+def MiniGameDreamTimelineExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MiniGameDreamTimelineExcelAddEventContentIdField(builder, eventContentIdField)
+def MiniGameDreamTimelineExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(2, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return MiniGameDreamTimelineExcelAddGroupIdField(builder, groupIdField)
+def MiniGameDreamTimelineExcelAddDreamMakerDaysField(builder, dreamMakerDaysField): builder.PrependInt32Slot(3, dreamMakerDaysField, 0)
+def AddDreamMakerDaysField(builder, dreamMakerDaysField):
+    return MiniGameDreamTimelineExcelAddDreamMakerDaysField(builder, dreamMakerDaysField)
+def MiniGameDreamTimelineExcelAddDreamMakerActionPointField(builder, dreamMakerActionPointField): builder.PrependInt32Slot(4, dreamMakerActionPointField, 0)
+def AddDreamMakerActionPointField(builder, dreamMakerActionPointField):
+    return MiniGameDreamTimelineExcelAddDreamMakerActionPointField(builder, dreamMakerActionPointField)
+def MiniGameDreamTimelineExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField): builder.PrependInt32Slot(5, enterScenarioGroupIdField, 0)
+def AddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField):
+    return MiniGameDreamTimelineExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField)
+def MiniGameDreamTimelineExcelAddBgmField(builder, bgmField): builder.PrependInt32Slot(6, bgmField, 0)
+def AddBgmField(builder, bgmField):
+    return MiniGameDreamTimelineExcelAddBgmField(builder, bgmField)
+def MiniGameDreamTimelineExcelAddArtLevelPathField(builder, artLevelPathField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(artLevelPathField), 0)
+def AddArtLevelPathField(builder, artLevelPathField):
+    return MiniGameDreamTimelineExcelAddArtLevelPathField(builder, artLevelPathField)
+def MiniGameDreamTimelineExcelAddDesignLevelPathField(builder, designLevelPathField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(designLevelPathField), 0)
+def AddDesignLevelPathField(builder, designLevelPathField):
+    return MiniGameDreamTimelineExcelAddDesignLevelPathField(builder, designLevelPathField)
 def MiniGameDreamTimelineExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MiniGameDreamTimelineExcelEnd(builder)

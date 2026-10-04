@@ -25,56 +25,56 @@ class ShopRecruitSettingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopRecruitSettingExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitSettingExcel
-    def RecruitChangeScenarioModeID(self):
+    def RecruitChangeScenarioModeIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitSettingExcel
-    def PriorityOrder(self):
+    def PriorityOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitSettingExcel
-    def TogetherPercentage(self):
+    def TogetherPercentageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitSettingExcel
-    def AnotherPercentage(self):
+    def AnotherPercentageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitSettingExcel
-    def TwistPercentage(self):
+    def TwistPercentageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopRecruitSettingExcel
-    def RecruitChangeIcon(self):
+    def RecruitChangeIconField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ShopRecruitSettingExcel
-    def SeriesForceEnter(self):
+    def SeriesForceEnterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -83,30 +83,30 @@ class ShopRecruitSettingExcel(object):
 def ShopRecruitSettingExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return ShopRecruitSettingExcelStart(builder)
-def ShopRecruitSettingExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ShopRecruitSettingExcelAddId(builder, id)
-def ShopRecruitSettingExcelAddRecruitChangeScenarioModeID(builder, recruitChangeScenarioModeID): builder.PrependInt32Slot(1, recruitChangeScenarioModeID, 0)
-def AddRecruitChangeScenarioModeID(builder, recruitChangeScenarioModeID):
-    return ShopRecruitSettingExcelAddRecruitChangeScenarioModeID(builder, recruitChangeScenarioModeID)
-def ShopRecruitSettingExcelAddPriorityOrder(builder, priorityOrder): builder.PrependInt32Slot(2, priorityOrder, 0)
-def AddPriorityOrder(builder, priorityOrder):
-    return ShopRecruitSettingExcelAddPriorityOrder(builder, priorityOrder)
-def ShopRecruitSettingExcelAddTogetherPercentage(builder, togetherPercentage): builder.PrependInt32Slot(3, togetherPercentage, 0)
-def AddTogetherPercentage(builder, togetherPercentage):
-    return ShopRecruitSettingExcelAddTogetherPercentage(builder, togetherPercentage)
-def ShopRecruitSettingExcelAddAnotherPercentage(builder, anotherPercentage): builder.PrependInt32Slot(4, anotherPercentage, 0)
-def AddAnotherPercentage(builder, anotherPercentage):
-    return ShopRecruitSettingExcelAddAnotherPercentage(builder, anotherPercentage)
-def ShopRecruitSettingExcelAddTwistPercentage(builder, twistPercentage): builder.PrependInt32Slot(5, twistPercentage, 0)
-def AddTwistPercentage(builder, twistPercentage):
-    return ShopRecruitSettingExcelAddTwistPercentage(builder, twistPercentage)
-def ShopRecruitSettingExcelAddRecruitChangeIcon(builder, recruitChangeIcon): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(recruitChangeIcon), 0)
-def AddRecruitChangeIcon(builder, recruitChangeIcon):
-    return ShopRecruitSettingExcelAddRecruitChangeIcon(builder, recruitChangeIcon)
-def ShopRecruitSettingExcelAddSeriesForceEnter(builder, seriesForceEnter): builder.PrependInt32Slot(7, seriesForceEnter, 0)
-def AddSeriesForceEnter(builder, seriesForceEnter):
-    return ShopRecruitSettingExcelAddSeriesForceEnter(builder, seriesForceEnter)
+def ShopRecruitSettingExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ShopRecruitSettingExcelAddIdField(builder, idField)
+def ShopRecruitSettingExcelAddRecruitChangeScenarioModeIDField(builder, recruitChangeScenarioModeIDField): builder.PrependInt32Slot(1, recruitChangeScenarioModeIDField, 0)
+def AddRecruitChangeScenarioModeIDField(builder, recruitChangeScenarioModeIDField):
+    return ShopRecruitSettingExcelAddRecruitChangeScenarioModeIDField(builder, recruitChangeScenarioModeIDField)
+def ShopRecruitSettingExcelAddPriorityOrderField(builder, priorityOrderField): builder.PrependInt32Slot(2, priorityOrderField, 0)
+def AddPriorityOrderField(builder, priorityOrderField):
+    return ShopRecruitSettingExcelAddPriorityOrderField(builder, priorityOrderField)
+def ShopRecruitSettingExcelAddTogetherPercentageField(builder, togetherPercentageField): builder.PrependInt32Slot(3, togetherPercentageField, 0)
+def AddTogetherPercentageField(builder, togetherPercentageField):
+    return ShopRecruitSettingExcelAddTogetherPercentageField(builder, togetherPercentageField)
+def ShopRecruitSettingExcelAddAnotherPercentageField(builder, anotherPercentageField): builder.PrependInt32Slot(4, anotherPercentageField, 0)
+def AddAnotherPercentageField(builder, anotherPercentageField):
+    return ShopRecruitSettingExcelAddAnotherPercentageField(builder, anotherPercentageField)
+def ShopRecruitSettingExcelAddTwistPercentageField(builder, twistPercentageField): builder.PrependInt32Slot(5, twistPercentageField, 0)
+def AddTwistPercentageField(builder, twistPercentageField):
+    return ShopRecruitSettingExcelAddTwistPercentageField(builder, twistPercentageField)
+def ShopRecruitSettingExcelAddRecruitChangeIconField(builder, recruitChangeIconField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(recruitChangeIconField), 0)
+def AddRecruitChangeIconField(builder, recruitChangeIconField):
+    return ShopRecruitSettingExcelAddRecruitChangeIconField(builder, recruitChangeIconField)
+def ShopRecruitSettingExcelAddSeriesForceEnterField(builder, seriesForceEnterField): builder.PrependInt32Slot(7, seriesForceEnterField, 0)
+def AddSeriesForceEnterField(builder, seriesForceEnterField):
+    return ShopRecruitSettingExcelAddSeriesForceEnterField(builder, seriesForceEnterField)
 def ShopRecruitSettingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopRecruitSettingExcelEnd(builder)

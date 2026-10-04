@@ -25,7 +25,7 @@ class MinigameCardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MinigameCardExcel
-    def None(self, j):
+    def NoneField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             a = self._tab.Vector(o)
@@ -33,33 +33,33 @@ class MinigameCardExcel(object):
         return 0
 
     # MinigameCardExcel
-    def NoneAsNumpy(self):
+    def NoneFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # MinigameCardExcel
-    def NoneLength(self):
+    def NoneFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # MinigameCardExcel
-    def NoneIsNone(self):
+    def NoneFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
 def MinigameCardExcelStart(builder): builder.StartObject(1)
 def Start(builder):
     return MinigameCardExcelStart(builder)
-def MinigameCardExcelAddNone(builder, none): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(none), 0)
-def AddNone(builder, none):
-    return MinigameCardExcelAddNone(builder, none)
-def MinigameCardExcelStartNoneVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNoneVector(builder, numElems):
-    return MinigameCardExcelStartNoneVector(builder, numElems)
+def MinigameCardExcelAddNoneField(builder, noneField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(noneField), 0)
+def AddNoneField(builder, noneField):
+    return MinigameCardExcelAddNoneField(builder, noneField)
+def MinigameCardExcelStartNoneFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartNoneFieldVector(builder, numElems):
+    return MinigameCardExcelStartNoneFieldVector(builder, numElems)
 def MinigameCardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MinigameCardExcelEnd(builder)

@@ -25,147 +25,147 @@ class LocalizeGachaShopExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # LocalizeGachaShopExcel
-    def GachaShopId(self):
+    def GachaShopIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeGachaShopExcel
-    def TabNameKr(self):
+    def TabNameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TabNameJp(self):
+    def TabNameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TabNameTh(self):
+    def TabNameThField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TabNameTw(self):
+    def TabNameTwField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TabNameEn(self):
+    def TabNameEnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TitleNameKr(self):
+    def TitleNameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TitleNameJp(self):
+    def TitleNameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TitleNameTh(self):
+    def TitleNameThField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TitleNameTw(self):
+    def TitleNameTwField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def TitleNameEn(self):
+    def TitleNameEnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def SubTitleKr(self):
+    def SubTitleKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def SubTitleJp(self):
+    def SubTitleJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def SubTitleTh(self):
+    def SubTitleThField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def SubTitleTw(self):
+    def SubTitleTwField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def SubTitleEn(self):
+    def SubTitleEnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def GachaDescriptionKr(self):
+    def GachaDescriptionKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def GachaDescriptionJp(self):
+    def GachaDescriptionJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def GachaDescriptionTh(self):
+    def GachaDescriptionThField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def GachaDescriptionTw(self):
+    def GachaDescriptionTwField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeGachaShopExcel
-    def GachaDescriptionEn(self):
+    def GachaDescriptionEnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -174,69 +174,69 @@ class LocalizeGachaShopExcel(object):
 def LocalizeGachaShopExcelStart(builder): builder.StartObject(21)
 def Start(builder):
     return LocalizeGachaShopExcelStart(builder)
-def LocalizeGachaShopExcelAddGachaShopId(builder, gachaShopId): builder.PrependInt32Slot(0, gachaShopId, 0)
-def AddGachaShopId(builder, gachaShopId):
-    return LocalizeGachaShopExcelAddGachaShopId(builder, gachaShopId)
-def LocalizeGachaShopExcelAddTabNameKr(builder, tabNameKr): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameKr), 0)
-def AddTabNameKr(builder, tabNameKr):
-    return LocalizeGachaShopExcelAddTabNameKr(builder, tabNameKr)
-def LocalizeGachaShopExcelAddTabNameJp(builder, tabNameJp): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameJp), 0)
-def AddTabNameJp(builder, tabNameJp):
-    return LocalizeGachaShopExcelAddTabNameJp(builder, tabNameJp)
-def LocalizeGachaShopExcelAddTabNameTh(builder, tabNameTh): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameTh), 0)
-def AddTabNameTh(builder, tabNameTh):
-    return LocalizeGachaShopExcelAddTabNameTh(builder, tabNameTh)
-def LocalizeGachaShopExcelAddTabNameTw(builder, tabNameTw): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameTw), 0)
-def AddTabNameTw(builder, tabNameTw):
-    return LocalizeGachaShopExcelAddTabNameTw(builder, tabNameTw)
-def LocalizeGachaShopExcelAddTabNameEn(builder, tabNameEn): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameEn), 0)
-def AddTabNameEn(builder, tabNameEn):
-    return LocalizeGachaShopExcelAddTabNameEn(builder, tabNameEn)
-def LocalizeGachaShopExcelAddTitleNameKr(builder, titleNameKr): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameKr), 0)
-def AddTitleNameKr(builder, titleNameKr):
-    return LocalizeGachaShopExcelAddTitleNameKr(builder, titleNameKr)
-def LocalizeGachaShopExcelAddTitleNameJp(builder, titleNameJp): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameJp), 0)
-def AddTitleNameJp(builder, titleNameJp):
-    return LocalizeGachaShopExcelAddTitleNameJp(builder, titleNameJp)
-def LocalizeGachaShopExcelAddTitleNameTh(builder, titleNameTh): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameTh), 0)
-def AddTitleNameTh(builder, titleNameTh):
-    return LocalizeGachaShopExcelAddTitleNameTh(builder, titleNameTh)
-def LocalizeGachaShopExcelAddTitleNameTw(builder, titleNameTw): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameTw), 0)
-def AddTitleNameTw(builder, titleNameTw):
-    return LocalizeGachaShopExcelAddTitleNameTw(builder, titleNameTw)
-def LocalizeGachaShopExcelAddTitleNameEn(builder, titleNameEn): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameEn), 0)
-def AddTitleNameEn(builder, titleNameEn):
-    return LocalizeGachaShopExcelAddTitleNameEn(builder, titleNameEn)
-def LocalizeGachaShopExcelAddSubTitleKr(builder, subTitleKr): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleKr), 0)
-def AddSubTitleKr(builder, subTitleKr):
-    return LocalizeGachaShopExcelAddSubTitleKr(builder, subTitleKr)
-def LocalizeGachaShopExcelAddSubTitleJp(builder, subTitleJp): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleJp), 0)
-def AddSubTitleJp(builder, subTitleJp):
-    return LocalizeGachaShopExcelAddSubTitleJp(builder, subTitleJp)
-def LocalizeGachaShopExcelAddSubTitleTh(builder, subTitleTh): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleTh), 0)
-def AddSubTitleTh(builder, subTitleTh):
-    return LocalizeGachaShopExcelAddSubTitleTh(builder, subTitleTh)
-def LocalizeGachaShopExcelAddSubTitleTw(builder, subTitleTw): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleTw), 0)
-def AddSubTitleTw(builder, subTitleTw):
-    return LocalizeGachaShopExcelAddSubTitleTw(builder, subTitleTw)
-def LocalizeGachaShopExcelAddSubTitleEn(builder, subTitleEn): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleEn), 0)
-def AddSubTitleEn(builder, subTitleEn):
-    return LocalizeGachaShopExcelAddSubTitleEn(builder, subTitleEn)
-def LocalizeGachaShopExcelAddGachaDescriptionKr(builder, gachaDescriptionKr): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionKr), 0)
-def AddGachaDescriptionKr(builder, gachaDescriptionKr):
-    return LocalizeGachaShopExcelAddGachaDescriptionKr(builder, gachaDescriptionKr)
-def LocalizeGachaShopExcelAddGachaDescriptionJp(builder, gachaDescriptionJp): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionJp), 0)
-def AddGachaDescriptionJp(builder, gachaDescriptionJp):
-    return LocalizeGachaShopExcelAddGachaDescriptionJp(builder, gachaDescriptionJp)
-def LocalizeGachaShopExcelAddGachaDescriptionTh(builder, gachaDescriptionTh): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionTh), 0)
-def AddGachaDescriptionTh(builder, gachaDescriptionTh):
-    return LocalizeGachaShopExcelAddGachaDescriptionTh(builder, gachaDescriptionTh)
-def LocalizeGachaShopExcelAddGachaDescriptionTw(builder, gachaDescriptionTw): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionTw), 0)
-def AddGachaDescriptionTw(builder, gachaDescriptionTw):
-    return LocalizeGachaShopExcelAddGachaDescriptionTw(builder, gachaDescriptionTw)
-def LocalizeGachaShopExcelAddGachaDescriptionEn(builder, gachaDescriptionEn): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionEn), 0)
-def AddGachaDescriptionEn(builder, gachaDescriptionEn):
-    return LocalizeGachaShopExcelAddGachaDescriptionEn(builder, gachaDescriptionEn)
+def LocalizeGachaShopExcelAddGachaShopIdField(builder, gachaShopIdField): builder.PrependInt32Slot(0, gachaShopIdField, 0)
+def AddGachaShopIdField(builder, gachaShopIdField):
+    return LocalizeGachaShopExcelAddGachaShopIdField(builder, gachaShopIdField)
+def LocalizeGachaShopExcelAddTabNameKrField(builder, tabNameKrField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameKrField), 0)
+def AddTabNameKrField(builder, tabNameKrField):
+    return LocalizeGachaShopExcelAddTabNameKrField(builder, tabNameKrField)
+def LocalizeGachaShopExcelAddTabNameJpField(builder, tabNameJpField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameJpField), 0)
+def AddTabNameJpField(builder, tabNameJpField):
+    return LocalizeGachaShopExcelAddTabNameJpField(builder, tabNameJpField)
+def LocalizeGachaShopExcelAddTabNameThField(builder, tabNameThField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameThField), 0)
+def AddTabNameThField(builder, tabNameThField):
+    return LocalizeGachaShopExcelAddTabNameThField(builder, tabNameThField)
+def LocalizeGachaShopExcelAddTabNameTwField(builder, tabNameTwField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameTwField), 0)
+def AddTabNameTwField(builder, tabNameTwField):
+    return LocalizeGachaShopExcelAddTabNameTwField(builder, tabNameTwField)
+def LocalizeGachaShopExcelAddTabNameEnField(builder, tabNameEnField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(tabNameEnField), 0)
+def AddTabNameEnField(builder, tabNameEnField):
+    return LocalizeGachaShopExcelAddTabNameEnField(builder, tabNameEnField)
+def LocalizeGachaShopExcelAddTitleNameKrField(builder, titleNameKrField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameKrField), 0)
+def AddTitleNameKrField(builder, titleNameKrField):
+    return LocalizeGachaShopExcelAddTitleNameKrField(builder, titleNameKrField)
+def LocalizeGachaShopExcelAddTitleNameJpField(builder, titleNameJpField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameJpField), 0)
+def AddTitleNameJpField(builder, titleNameJpField):
+    return LocalizeGachaShopExcelAddTitleNameJpField(builder, titleNameJpField)
+def LocalizeGachaShopExcelAddTitleNameThField(builder, titleNameThField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameThField), 0)
+def AddTitleNameThField(builder, titleNameThField):
+    return LocalizeGachaShopExcelAddTitleNameThField(builder, titleNameThField)
+def LocalizeGachaShopExcelAddTitleNameTwField(builder, titleNameTwField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameTwField), 0)
+def AddTitleNameTwField(builder, titleNameTwField):
+    return LocalizeGachaShopExcelAddTitleNameTwField(builder, titleNameTwField)
+def LocalizeGachaShopExcelAddTitleNameEnField(builder, titleNameEnField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(titleNameEnField), 0)
+def AddTitleNameEnField(builder, titleNameEnField):
+    return LocalizeGachaShopExcelAddTitleNameEnField(builder, titleNameEnField)
+def LocalizeGachaShopExcelAddSubTitleKrField(builder, subTitleKrField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleKrField), 0)
+def AddSubTitleKrField(builder, subTitleKrField):
+    return LocalizeGachaShopExcelAddSubTitleKrField(builder, subTitleKrField)
+def LocalizeGachaShopExcelAddSubTitleJpField(builder, subTitleJpField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleJpField), 0)
+def AddSubTitleJpField(builder, subTitleJpField):
+    return LocalizeGachaShopExcelAddSubTitleJpField(builder, subTitleJpField)
+def LocalizeGachaShopExcelAddSubTitleThField(builder, subTitleThField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleThField), 0)
+def AddSubTitleThField(builder, subTitleThField):
+    return LocalizeGachaShopExcelAddSubTitleThField(builder, subTitleThField)
+def LocalizeGachaShopExcelAddSubTitleTwField(builder, subTitleTwField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleTwField), 0)
+def AddSubTitleTwField(builder, subTitleTwField):
+    return LocalizeGachaShopExcelAddSubTitleTwField(builder, subTitleTwField)
+def LocalizeGachaShopExcelAddSubTitleEnField(builder, subTitleEnField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(subTitleEnField), 0)
+def AddSubTitleEnField(builder, subTitleEnField):
+    return LocalizeGachaShopExcelAddSubTitleEnField(builder, subTitleEnField)
+def LocalizeGachaShopExcelAddGachaDescriptionKrField(builder, gachaDescriptionKrField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionKrField), 0)
+def AddGachaDescriptionKrField(builder, gachaDescriptionKrField):
+    return LocalizeGachaShopExcelAddGachaDescriptionKrField(builder, gachaDescriptionKrField)
+def LocalizeGachaShopExcelAddGachaDescriptionJpField(builder, gachaDescriptionJpField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionJpField), 0)
+def AddGachaDescriptionJpField(builder, gachaDescriptionJpField):
+    return LocalizeGachaShopExcelAddGachaDescriptionJpField(builder, gachaDescriptionJpField)
+def LocalizeGachaShopExcelAddGachaDescriptionThField(builder, gachaDescriptionThField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionThField), 0)
+def AddGachaDescriptionThField(builder, gachaDescriptionThField):
+    return LocalizeGachaShopExcelAddGachaDescriptionThField(builder, gachaDescriptionThField)
+def LocalizeGachaShopExcelAddGachaDescriptionTwField(builder, gachaDescriptionTwField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionTwField), 0)
+def AddGachaDescriptionTwField(builder, gachaDescriptionTwField):
+    return LocalizeGachaShopExcelAddGachaDescriptionTwField(builder, gachaDescriptionTwField)
+def LocalizeGachaShopExcelAddGachaDescriptionEnField(builder, gachaDescriptionEnField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(gachaDescriptionEnField), 0)
+def AddGachaDescriptionEnField(builder, gachaDescriptionEnField):
+    return LocalizeGachaShopExcelAddGachaDescriptionEnField(builder, gachaDescriptionEnField)
 def LocalizeGachaShopExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return LocalizeGachaShopExcelEnd(builder)

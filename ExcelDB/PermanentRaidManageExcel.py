@@ -25,14 +25,14 @@ class PermanentRaidManageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # PermanentRaidManageExcel
-    def Type(self):
+    def TypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PermanentRaidManageExcel
-    def OpenRaidBossGroup(self, j):
+    def OpenRaidBossGroupField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,19 +40,19 @@ class PermanentRaidManageExcel(object):
         return ""
 
     # PermanentRaidManageExcel
-    def OpenRaidBossGroupLength(self):
+    def OpenRaidBossGroupFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # PermanentRaidManageExcel
-    def OpenRaidBossGroupIsNone(self):
+    def OpenRaidBossGroupFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # PermanentRaidManageExcel
-    def HideDifficulty(self, j):
+    def HideDifficultyField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -60,19 +60,19 @@ class PermanentRaidManageExcel(object):
         return ""
 
     # PermanentRaidManageExcel
-    def HideDifficultyLength(self):
+    def HideDifficultyFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # PermanentRaidManageExcel
-    def HideDifficultyIsNone(self):
+    def HideDifficultyFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # PermanentRaidManageExcel
-    def OpenDate(self):
+    def OpenDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -81,24 +81,24 @@ class PermanentRaidManageExcel(object):
 def PermanentRaidManageExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return PermanentRaidManageExcelStart(builder)
-def PermanentRaidManageExcelAddType(builder, type): builder.PrependInt32Slot(0, type, 0)
-def AddType(builder, type):
-    return PermanentRaidManageExcelAddType(builder, type)
-def PermanentRaidManageExcelAddOpenRaidBossGroup(builder, openRaidBossGroup): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(openRaidBossGroup), 0)
-def AddOpenRaidBossGroup(builder, openRaidBossGroup):
-    return PermanentRaidManageExcelAddOpenRaidBossGroup(builder, openRaidBossGroup)
-def PermanentRaidManageExcelStartOpenRaidBossGroupVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartOpenRaidBossGroupVector(builder, numElems):
-    return PermanentRaidManageExcelStartOpenRaidBossGroupVector(builder, numElems)
-def PermanentRaidManageExcelAddHideDifficulty(builder, hideDifficulty): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(hideDifficulty), 0)
-def AddHideDifficulty(builder, hideDifficulty):
-    return PermanentRaidManageExcelAddHideDifficulty(builder, hideDifficulty)
-def PermanentRaidManageExcelStartHideDifficultyVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartHideDifficultyVector(builder, numElems):
-    return PermanentRaidManageExcelStartHideDifficultyVector(builder, numElems)
-def PermanentRaidManageExcelAddOpenDate(builder, openDate): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(openDate), 0)
-def AddOpenDate(builder, openDate):
-    return PermanentRaidManageExcelAddOpenDate(builder, openDate)
+def PermanentRaidManageExcelAddTypeField(builder, typeField): builder.PrependInt32Slot(0, typeField, 0)
+def AddTypeField(builder, typeField):
+    return PermanentRaidManageExcelAddTypeField(builder, typeField)
+def PermanentRaidManageExcelAddOpenRaidBossGroupField(builder, openRaidBossGroupField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(openRaidBossGroupField), 0)
+def AddOpenRaidBossGroupField(builder, openRaidBossGroupField):
+    return PermanentRaidManageExcelAddOpenRaidBossGroupField(builder, openRaidBossGroupField)
+def PermanentRaidManageExcelStartOpenRaidBossGroupFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartOpenRaidBossGroupFieldVector(builder, numElems):
+    return PermanentRaidManageExcelStartOpenRaidBossGroupFieldVector(builder, numElems)
+def PermanentRaidManageExcelAddHideDifficultyField(builder, hideDifficultyField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(hideDifficultyField), 0)
+def AddHideDifficultyField(builder, hideDifficultyField):
+    return PermanentRaidManageExcelAddHideDifficultyField(builder, hideDifficultyField)
+def PermanentRaidManageExcelStartHideDifficultyFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartHideDifficultyFieldVector(builder, numElems):
+    return PermanentRaidManageExcelStartHideDifficultyFieldVector(builder, numElems)
+def PermanentRaidManageExcelAddOpenDateField(builder, openDateField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(openDateField), 0)
+def AddOpenDateField(builder, openDateField):
+    return PermanentRaidManageExcelAddOpenDateField(builder, openDateField)
 def PermanentRaidManageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return PermanentRaidManageExcelEnd(builder)
