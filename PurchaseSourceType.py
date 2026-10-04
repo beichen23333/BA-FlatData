@@ -1,0 +1,9 @@
+class PurchaseSourceType:
+    None_ = 0
+    Product = 1
+    ProductMonthly = 2
+    ProductBattlePass = 3
+    ProductSelect = 4
+    ProductGooglePoint = 5
+    ProductDailyRecord = 6
+    ProductStreakRecord = 7
