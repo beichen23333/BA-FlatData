@@ -25,56 +25,56 @@ class UnderCoverStageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # UnderCoverStageExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # UnderCoverStageExcel
-    def StageNameFile(self):
+    def StageNameFileField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # UnderCoverStageExcel
-    def StageTryCount(self):
+    def StageTryCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # UnderCoverStageExcel
-    def ApplySkip(self):
+    def ApplySkipField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # UnderCoverStageExcel
-    def SkipCount(self):
+    def SkipCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # UnderCoverStageExcel
-    def ShowClearScene(self):
+    def ShowClearSceneField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # UnderCoverStageExcel
-    def StageTips(self):
+    def StageTipsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # UnderCoverStageExcel
-    def StageName(self):
+    def StageNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -83,30 +83,30 @@ class UnderCoverStageExcel(object):
 def UnderCoverStageExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return UnderCoverStageExcelStart(builder)
-def UnderCoverStageExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return UnderCoverStageExcelAddGroupId(builder, groupId)
-def UnderCoverStageExcelAddStageNameFile(builder, stageNameFile): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(stageNameFile), 0)
-def AddStageNameFile(builder, stageNameFile):
-    return UnderCoverStageExcelAddStageNameFile(builder, stageNameFile)
-def UnderCoverStageExcelAddStageTryCount(builder, stageTryCount): builder.PrependInt32Slot(2, stageTryCount, 0)
-def AddStageTryCount(builder, stageTryCount):
-    return UnderCoverStageExcelAddStageTryCount(builder, stageTryCount)
-def UnderCoverStageExcelAddApplySkip(builder, applySkip): builder.PrependBoolSlot(3, applySkip, 0)
-def AddApplySkip(builder, applySkip):
-    return UnderCoverStageExcelAddApplySkip(builder, applySkip)
-def UnderCoverStageExcelAddSkipCount(builder, skipCount): builder.PrependInt32Slot(4, skipCount, 0)
-def AddSkipCount(builder, skipCount):
-    return UnderCoverStageExcelAddSkipCount(builder, skipCount)
-def UnderCoverStageExcelAddShowClearScene(builder, showClearScene): builder.PrependBoolSlot(5, showClearScene, 0)
-def AddShowClearScene(builder, showClearScene):
-    return UnderCoverStageExcelAddShowClearScene(builder, showClearScene)
-def UnderCoverStageExcelAddStageTips(builder, stageTips): builder.PrependUint32Slot(6, stageTips, 0)
-def AddStageTips(builder, stageTips):
-    return UnderCoverStageExcelAddStageTips(builder, stageTips)
-def UnderCoverStageExcelAddStageName(builder, stageName): builder.PrependUint32Slot(7, stageName, 0)
-def AddStageName(builder, stageName):
-    return UnderCoverStageExcelAddStageName(builder, stageName)
+def UnderCoverStageExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return UnderCoverStageExcelAddGroupIdField(builder, groupIdField)
+def UnderCoverStageExcelAddStageNameFileField(builder, stageNameFileField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(stageNameFileField), 0)
+def AddStageNameFileField(builder, stageNameFileField):
+    return UnderCoverStageExcelAddStageNameFileField(builder, stageNameFileField)
+def UnderCoverStageExcelAddStageTryCountField(builder, stageTryCountField): builder.PrependInt32Slot(2, stageTryCountField, 0)
+def AddStageTryCountField(builder, stageTryCountField):
+    return UnderCoverStageExcelAddStageTryCountField(builder, stageTryCountField)
+def UnderCoverStageExcelAddApplySkipField(builder, applySkipField): builder.PrependBoolSlot(3, applySkipField, 0)
+def AddApplySkipField(builder, applySkipField):
+    return UnderCoverStageExcelAddApplySkipField(builder, applySkipField)
+def UnderCoverStageExcelAddSkipCountField(builder, skipCountField): builder.PrependInt32Slot(4, skipCountField, 0)
+def AddSkipCountField(builder, skipCountField):
+    return UnderCoverStageExcelAddSkipCountField(builder, skipCountField)
+def UnderCoverStageExcelAddShowClearSceneField(builder, showClearSceneField): builder.PrependBoolSlot(5, showClearSceneField, 0)
+def AddShowClearSceneField(builder, showClearSceneField):
+    return UnderCoverStageExcelAddShowClearSceneField(builder, showClearSceneField)
+def UnderCoverStageExcelAddStageTipsField(builder, stageTipsField): builder.PrependUint32Slot(6, stageTipsField, 0)
+def AddStageTipsField(builder, stageTipsField):
+    return UnderCoverStageExcelAddStageTipsField(builder, stageTipsField)
+def UnderCoverStageExcelAddStageNameField(builder, stageNameField): builder.PrependUint32Slot(7, stageNameField, 0)
+def AddStageNameField(builder, stageNameField):
+    return UnderCoverStageExcelAddStageNameField(builder, stageNameField)
 def UnderCoverStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return UnderCoverStageExcelEnd(builder)

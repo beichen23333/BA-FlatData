@@ -25,63 +25,63 @@ class MiniGameDreamParameterExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # MiniGameDreamParameterExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamParameterExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamParameterExcel
-    def ParameterType(self):
+    def ParameterTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamParameterExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamParameterExcel
-    def IconPath(self):
+    def IconPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # MiniGameDreamParameterExcel
-    def ParameterBase(self):
+    def ParameterBaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamParameterExcel
-    def ParameterBaseMax(self):
+    def ParameterBaseMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamParameterExcel
-    def ParameterMin(self):
+    def ParameterMinField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # MiniGameDreamParameterExcel
-    def ParameterMax(self):
+    def ParameterMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -90,33 +90,33 @@ class MiniGameDreamParameterExcel(object):
 def MiniGameDreamParameterExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return MiniGameDreamParameterExcelStart(builder)
-def MiniGameDreamParameterExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return MiniGameDreamParameterExcelAddId(builder, id)
-def MiniGameDreamParameterExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(1, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return MiniGameDreamParameterExcelAddEventContentId(builder, eventContentId)
-def MiniGameDreamParameterExcelAddParameterType(builder, parameterType): builder.PrependInt32Slot(2, parameterType, 0)
-def AddParameterType(builder, parameterType):
-    return MiniGameDreamParameterExcelAddParameterType(builder, parameterType)
-def MiniGameDreamParameterExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(3, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return MiniGameDreamParameterExcelAddLocalizeEtcId(builder, localizeEtcId)
-def MiniGameDreamParameterExcelAddIconPath(builder, iconPath): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconPath), 0)
-def AddIconPath(builder, iconPath):
-    return MiniGameDreamParameterExcelAddIconPath(builder, iconPath)
-def MiniGameDreamParameterExcelAddParameterBase(builder, parameterBase): builder.PrependInt32Slot(5, parameterBase, 0)
-def AddParameterBase(builder, parameterBase):
-    return MiniGameDreamParameterExcelAddParameterBase(builder, parameterBase)
-def MiniGameDreamParameterExcelAddParameterBaseMax(builder, parameterBaseMax): builder.PrependInt32Slot(6, parameterBaseMax, 0)
-def AddParameterBaseMax(builder, parameterBaseMax):
-    return MiniGameDreamParameterExcelAddParameterBaseMax(builder, parameterBaseMax)
-def MiniGameDreamParameterExcelAddParameterMin(builder, parameterMin): builder.PrependInt32Slot(7, parameterMin, 0)
-def AddParameterMin(builder, parameterMin):
-    return MiniGameDreamParameterExcelAddParameterMin(builder, parameterMin)
-def MiniGameDreamParameterExcelAddParameterMax(builder, parameterMax): builder.PrependInt32Slot(8, parameterMax, 0)
-def AddParameterMax(builder, parameterMax):
-    return MiniGameDreamParameterExcelAddParameterMax(builder, parameterMax)
+def MiniGameDreamParameterExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return MiniGameDreamParameterExcelAddIdField(builder, idField)
+def MiniGameDreamParameterExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return MiniGameDreamParameterExcelAddEventContentIdField(builder, eventContentIdField)
+def MiniGameDreamParameterExcelAddParameterTypeField(builder, parameterTypeField): builder.PrependInt32Slot(2, parameterTypeField, 0)
+def AddParameterTypeField(builder, parameterTypeField):
+    return MiniGameDreamParameterExcelAddParameterTypeField(builder, parameterTypeField)
+def MiniGameDreamParameterExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(3, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return MiniGameDreamParameterExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def MiniGameDreamParameterExcelAddIconPathField(builder, iconPathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+def AddIconPathField(builder, iconPathField):
+    return MiniGameDreamParameterExcelAddIconPathField(builder, iconPathField)
+def MiniGameDreamParameterExcelAddParameterBaseField(builder, parameterBaseField): builder.PrependInt32Slot(5, parameterBaseField, 0)
+def AddParameterBaseField(builder, parameterBaseField):
+    return MiniGameDreamParameterExcelAddParameterBaseField(builder, parameterBaseField)
+def MiniGameDreamParameterExcelAddParameterBaseMaxField(builder, parameterBaseMaxField): builder.PrependInt32Slot(6, parameterBaseMaxField, 0)
+def AddParameterBaseMaxField(builder, parameterBaseMaxField):
+    return MiniGameDreamParameterExcelAddParameterBaseMaxField(builder, parameterBaseMaxField)
+def MiniGameDreamParameterExcelAddParameterMinField(builder, parameterMinField): builder.PrependInt32Slot(7, parameterMinField, 0)
+def AddParameterMinField(builder, parameterMinField):
+    return MiniGameDreamParameterExcelAddParameterMinField(builder, parameterMinField)
+def MiniGameDreamParameterExcelAddParameterMaxField(builder, parameterMaxField): builder.PrependInt32Slot(8, parameterMaxField, 0)
+def AddParameterMaxField(builder, parameterMaxField):
+    return MiniGameDreamParameterExcelAddParameterMaxField(builder, parameterMaxField)
 def MiniGameDreamParameterExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return MiniGameDreamParameterExcelEnd(builder)

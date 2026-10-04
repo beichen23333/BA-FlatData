@@ -25,21 +25,21 @@ class TacticEntityEffectFilterExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TacticEntityEffectFilterExcel
-    def TargetEffectName(self):
+    def TargetEffectNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TacticEntityEffectFilterExcel
-    def ShowEffectToVehicle(self):
+    def ShowEffectToVehicleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # TacticEntityEffectFilterExcel
-    def ShowEffectToBoss(self):
+    def ShowEffectToBossField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -48,15 +48,15 @@ class TacticEntityEffectFilterExcel(object):
 def TacticEntityEffectFilterExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return TacticEntityEffectFilterExcelStart(builder)
-def TacticEntityEffectFilterExcelAddTargetEffectName(builder, targetEffectName): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(targetEffectName), 0)
-def AddTargetEffectName(builder, targetEffectName):
-    return TacticEntityEffectFilterExcelAddTargetEffectName(builder, targetEffectName)
-def TacticEntityEffectFilterExcelAddShowEffectToVehicle(builder, showEffectToVehicle): builder.PrependBoolSlot(1, showEffectToVehicle, 0)
-def AddShowEffectToVehicle(builder, showEffectToVehicle):
-    return TacticEntityEffectFilterExcelAddShowEffectToVehicle(builder, showEffectToVehicle)
-def TacticEntityEffectFilterExcelAddShowEffectToBoss(builder, showEffectToBoss): builder.PrependBoolSlot(2, showEffectToBoss, 0)
-def AddShowEffectToBoss(builder, showEffectToBoss):
-    return TacticEntityEffectFilterExcelAddShowEffectToBoss(builder, showEffectToBoss)
+def TacticEntityEffectFilterExcelAddTargetEffectNameField(builder, targetEffectNameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(targetEffectNameField), 0)
+def AddTargetEffectNameField(builder, targetEffectNameField):
+    return TacticEntityEffectFilterExcelAddTargetEffectNameField(builder, targetEffectNameField)
+def TacticEntityEffectFilterExcelAddShowEffectToVehicleField(builder, showEffectToVehicleField): builder.PrependBoolSlot(1, showEffectToVehicleField, 0)
+def AddShowEffectToVehicleField(builder, showEffectToVehicleField):
+    return TacticEntityEffectFilterExcelAddShowEffectToVehicleField(builder, showEffectToVehicleField)
+def TacticEntityEffectFilterExcelAddShowEffectToBossField(builder, showEffectToBossField): builder.PrependBoolSlot(2, showEffectToBossField, 0)
+def AddShowEffectToBossField(builder, showEffectToBossField):
+    return TacticEntityEffectFilterExcelAddShowEffectToBossField(builder, showEffectToBossField)
 def TacticEntityEffectFilterExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TacticEntityEffectFilterExcelEnd(builder)

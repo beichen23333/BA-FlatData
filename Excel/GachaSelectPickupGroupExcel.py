@@ -25,28 +25,28 @@ class GachaSelectPickupGroupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # GachaSelectPickupGroupExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaSelectPickupGroupExcel
-    def NameKr(self):
+    def NameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # GachaSelectPickupGroupExcel
-    def GachaGroupID(self):
+    def GachaGroupIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaSelectPickupGroupExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class GachaSelectPickupGroupExcel(object):
 def GachaSelectPickupGroupExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return GachaSelectPickupGroupExcelStart(builder)
-def GachaSelectPickupGroupExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return GachaSelectPickupGroupExcelAddId(builder, id)
-def GachaSelectPickupGroupExcelAddNameKr(builder, nameKr): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameKr), 0)
-def AddNameKr(builder, nameKr):
-    return GachaSelectPickupGroupExcelAddNameKr(builder, nameKr)
-def GachaSelectPickupGroupExcelAddGachaGroupID(builder, gachaGroupID): builder.PrependInt32Slot(2, gachaGroupID, 0)
-def AddGachaGroupID(builder, gachaGroupID):
-    return GachaSelectPickupGroupExcelAddGachaGroupID(builder, gachaGroupID)
-def GachaSelectPickupGroupExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(3, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return GachaSelectPickupGroupExcelAddCharacterId(builder, characterId)
+def GachaSelectPickupGroupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return GachaSelectPickupGroupExcelAddIdField(builder, idField)
+def GachaSelectPickupGroupExcelAddNameKrField(builder, nameKrField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameKrField), 0)
+def AddNameKrField(builder, nameKrField):
+    return GachaSelectPickupGroupExcelAddNameKrField(builder, nameKrField)
+def GachaSelectPickupGroupExcelAddGachaGroupIDField(builder, gachaGroupIDField): builder.PrependInt32Slot(2, gachaGroupIDField, 0)
+def AddGachaGroupIDField(builder, gachaGroupIDField):
+    return GachaSelectPickupGroupExcelAddGachaGroupIDField(builder, gachaGroupIDField)
+def GachaSelectPickupGroupExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(3, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return GachaSelectPickupGroupExcelAddCharacterIdField(builder, characterIdField)
 def GachaSelectPickupGroupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return GachaSelectPickupGroupExcelEnd(builder)

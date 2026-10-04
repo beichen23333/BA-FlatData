@@ -25,28 +25,28 @@ class EventContentBoxGachaManageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentBoxGachaManageExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaManageExcel
-    def Round(self):
+    def RoundField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaManageExcel
-    def GoodsId(self):
+    def GoodsIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaManageExcel
-    def IsLoop(self):
+    def IsLoopField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -55,18 +55,18 @@ class EventContentBoxGachaManageExcel(object):
 def EventContentBoxGachaManageExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentBoxGachaManageExcelStart(builder)
-def EventContentBoxGachaManageExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentBoxGachaManageExcelAddEventContentId(builder, eventContentId)
-def EventContentBoxGachaManageExcelAddRound(builder, round): builder.PrependInt32Slot(1, round, 0)
-def AddRound(builder, round):
-    return EventContentBoxGachaManageExcelAddRound(builder, round)
-def EventContentBoxGachaManageExcelAddGoodsId(builder, goodsId): builder.PrependInt32Slot(2, goodsId, 0)
-def AddGoodsId(builder, goodsId):
-    return EventContentBoxGachaManageExcelAddGoodsId(builder, goodsId)
-def EventContentBoxGachaManageExcelAddIsLoop(builder, isLoop): builder.PrependBoolSlot(3, isLoop, 0)
-def AddIsLoop(builder, isLoop):
-    return EventContentBoxGachaManageExcelAddIsLoop(builder, isLoop)
+def EventContentBoxGachaManageExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentBoxGachaManageExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentBoxGachaManageExcelAddRoundField(builder, roundField): builder.PrependInt32Slot(1, roundField, 0)
+def AddRoundField(builder, roundField):
+    return EventContentBoxGachaManageExcelAddRoundField(builder, roundField)
+def EventContentBoxGachaManageExcelAddGoodsIdField(builder, goodsIdField): builder.PrependInt32Slot(2, goodsIdField, 0)
+def AddGoodsIdField(builder, goodsIdField):
+    return EventContentBoxGachaManageExcelAddGoodsIdField(builder, goodsIdField)
+def EventContentBoxGachaManageExcelAddIsLoopField(builder, isLoopField): builder.PrependBoolSlot(3, isLoopField, 0)
+def AddIsLoopField(builder, isLoopField):
+    return EventContentBoxGachaManageExcelAddIsLoopField(builder, isLoopField)
 def EventContentBoxGachaManageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentBoxGachaManageExcelEnd(builder)

@@ -25,35 +25,35 @@ class TutorialCharacterDialogExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TutorialCharacterDialogExcel
-    def TalkId(self):
+    def TalkIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TutorialCharacterDialogExcel
-    def AnimationName(self):
+    def AnimationNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TutorialCharacterDialogExcel
-    def LocalizeKR(self):
+    def LocalizeKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TutorialCharacterDialogExcel
-    def LocalizeJP(self):
+    def LocalizeJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # TutorialCharacterDialogExcel
-    def VoiceId(self):
+    def VoiceIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class TutorialCharacterDialogExcel(object):
 def TutorialCharacterDialogExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return TutorialCharacterDialogExcelStart(builder)
-def TutorialCharacterDialogExcelAddTalkId(builder, talkId): builder.PrependInt32Slot(0, talkId, 0)
-def AddTalkId(builder, talkId):
-    return TutorialCharacterDialogExcelAddTalkId(builder, talkId)
-def TutorialCharacterDialogExcelAddAnimationName(builder, animationName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(animationName), 0)
-def AddAnimationName(builder, animationName):
-    return TutorialCharacterDialogExcelAddAnimationName(builder, animationName)
-def TutorialCharacterDialogExcelAddLocalizeKR(builder, localizeKR): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKR), 0)
-def AddLocalizeKR(builder, localizeKR):
-    return TutorialCharacterDialogExcelAddLocalizeKR(builder, localizeKR)
-def TutorialCharacterDialogExcelAddLocalizeJP(builder, localizeJP): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJP), 0)
-def AddLocalizeJP(builder, localizeJP):
-    return TutorialCharacterDialogExcelAddLocalizeJP(builder, localizeJP)
-def TutorialCharacterDialogExcelAddVoiceId(builder, voiceId): builder.PrependUint32Slot(4, voiceId, 0)
-def AddVoiceId(builder, voiceId):
-    return TutorialCharacterDialogExcelAddVoiceId(builder, voiceId)
+def TutorialCharacterDialogExcelAddTalkIdField(builder, talkIdField): builder.PrependInt32Slot(0, talkIdField, 0)
+def AddTalkIdField(builder, talkIdField):
+    return TutorialCharacterDialogExcelAddTalkIdField(builder, talkIdField)
+def TutorialCharacterDialogExcelAddAnimationNameField(builder, animationNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(animationNameField), 0)
+def AddAnimationNameField(builder, animationNameField):
+    return TutorialCharacterDialogExcelAddAnimationNameField(builder, animationNameField)
+def TutorialCharacterDialogExcelAddLocalizeKRField(builder, localizeKRField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+def AddLocalizeKRField(builder, localizeKRField):
+    return TutorialCharacterDialogExcelAddLocalizeKRField(builder, localizeKRField)
+def TutorialCharacterDialogExcelAddLocalizeJPField(builder, localizeJPField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+def AddLocalizeJPField(builder, localizeJPField):
+    return TutorialCharacterDialogExcelAddLocalizeJPField(builder, localizeJPField)
+def TutorialCharacterDialogExcelAddVoiceIdField(builder, voiceIdField): builder.PrependUint32Slot(4, voiceIdField, 0)
+def AddVoiceIdField(builder, voiceIdField):
+    return TutorialCharacterDialogExcelAddVoiceIdField(builder, voiceIdField)
 def TutorialCharacterDialogExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TutorialCharacterDialogExcelEnd(builder)

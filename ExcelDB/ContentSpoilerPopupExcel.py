@@ -25,35 +25,35 @@ class ContentSpoilerPopupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ContentSpoilerPopupExcel
-    def ContentType(self):
+    def ContentTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ContentSpoilerPopupExcel
-    def SpoilerPopupTitle(self):
+    def SpoilerPopupTitleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ContentSpoilerPopupExcel
-    def SpoilerPopupDescription(self):
+    def SpoilerPopupDescriptionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ContentSpoilerPopupExcel
-    def PopupType(self):
+    def PopupTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ContentSpoilerPopupExcel
-    def ConditionScenarioModeId(self):
+    def ConditionScenarioModeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class ContentSpoilerPopupExcel(object):
 def ContentSpoilerPopupExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return ContentSpoilerPopupExcelStart(builder)
-def ContentSpoilerPopupExcelAddContentType(builder, contentType): builder.PrependInt32Slot(0, contentType, 0)
-def AddContentType(builder, contentType):
-    return ContentSpoilerPopupExcelAddContentType(builder, contentType)
-def ContentSpoilerPopupExcelAddSpoilerPopupTitle(builder, spoilerPopupTitle): builder.PrependUint32Slot(1, spoilerPopupTitle, 0)
-def AddSpoilerPopupTitle(builder, spoilerPopupTitle):
-    return ContentSpoilerPopupExcelAddSpoilerPopupTitle(builder, spoilerPopupTitle)
-def ContentSpoilerPopupExcelAddSpoilerPopupDescription(builder, spoilerPopupDescription): builder.PrependUint32Slot(2, spoilerPopupDescription, 0)
-def AddSpoilerPopupDescription(builder, spoilerPopupDescription):
-    return ContentSpoilerPopupExcelAddSpoilerPopupDescription(builder, spoilerPopupDescription)
-def ContentSpoilerPopupExcelAddPopupType(builder, popupType): builder.PrependInt32Slot(3, popupType, 0)
-def AddPopupType(builder, popupType):
-    return ContentSpoilerPopupExcelAddPopupType(builder, popupType)
-def ContentSpoilerPopupExcelAddConditionScenarioModeId(builder, conditionScenarioModeId): builder.PrependInt32Slot(4, conditionScenarioModeId, 0)
-def AddConditionScenarioModeId(builder, conditionScenarioModeId):
-    return ContentSpoilerPopupExcelAddConditionScenarioModeId(builder, conditionScenarioModeId)
+def ContentSpoilerPopupExcelAddContentTypeField(builder, contentTypeField): builder.PrependInt32Slot(0, contentTypeField, 0)
+def AddContentTypeField(builder, contentTypeField):
+    return ContentSpoilerPopupExcelAddContentTypeField(builder, contentTypeField)
+def ContentSpoilerPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField): builder.PrependUint32Slot(1, spoilerPopupTitleField, 0)
+def AddSpoilerPopupTitleField(builder, spoilerPopupTitleField):
+    return ContentSpoilerPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField)
+def ContentSpoilerPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField): builder.PrependUint32Slot(2, spoilerPopupDescriptionField, 0)
+def AddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField):
+    return ContentSpoilerPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField)
+def ContentSpoilerPopupExcelAddPopupTypeField(builder, popupTypeField): builder.PrependInt32Slot(3, popupTypeField, 0)
+def AddPopupTypeField(builder, popupTypeField):
+    return ContentSpoilerPopupExcelAddPopupTypeField(builder, popupTypeField)
+def ContentSpoilerPopupExcelAddConditionScenarioModeIdField(builder, conditionScenarioModeIdField): builder.PrependInt32Slot(4, conditionScenarioModeIdField, 0)
+def AddConditionScenarioModeIdField(builder, conditionScenarioModeIdField):
+    return ContentSpoilerPopupExcelAddConditionScenarioModeIdField(builder, conditionScenarioModeIdField)
 def ContentSpoilerPopupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ContentSpoilerPopupExcelEnd(builder)

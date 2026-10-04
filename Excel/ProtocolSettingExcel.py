@@ -25,35 +25,35 @@ class ProtocolSettingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ProtocolSettingExcel
-    def Protocol(self):
+    def ProtocolField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ProtocolSettingExcel
-    def OpenConditionContent(self):
+    def OpenConditionContentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ProtocolSettingExcel
-    def Currency(self):
+    def CurrencyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ProtocolSettingExcel
-    def Inventory(self):
+    def InventoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ProtocolSettingExcel
-    def Mail(self):
+    def MailField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -62,21 +62,21 @@ class ProtocolSettingExcel(object):
 def ProtocolSettingExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return ProtocolSettingExcelStart(builder)
-def ProtocolSettingExcelAddProtocol(builder, protocol): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(protocol), 0)
-def AddProtocol(builder, protocol):
-    return ProtocolSettingExcelAddProtocol(builder, protocol)
-def ProtocolSettingExcelAddOpenConditionContent(builder, openConditionContent): builder.PrependInt32Slot(1, openConditionContent, 0)
-def AddOpenConditionContent(builder, openConditionContent):
-    return ProtocolSettingExcelAddOpenConditionContent(builder, openConditionContent)
-def ProtocolSettingExcelAddCurrency(builder, currency): builder.PrependBoolSlot(2, currency, 0)
-def AddCurrency(builder, currency):
-    return ProtocolSettingExcelAddCurrency(builder, currency)
-def ProtocolSettingExcelAddInventory(builder, inventory): builder.PrependBoolSlot(3, inventory, 0)
-def AddInventory(builder, inventory):
-    return ProtocolSettingExcelAddInventory(builder, inventory)
-def ProtocolSettingExcelAddMail(builder, mail): builder.PrependBoolSlot(4, mail, 0)
-def AddMail(builder, mail):
-    return ProtocolSettingExcelAddMail(builder, mail)
+def ProtocolSettingExcelAddProtocolField(builder, protocolField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(protocolField), 0)
+def AddProtocolField(builder, protocolField):
+    return ProtocolSettingExcelAddProtocolField(builder, protocolField)
+def ProtocolSettingExcelAddOpenConditionContentField(builder, openConditionContentField): builder.PrependInt32Slot(1, openConditionContentField, 0)
+def AddOpenConditionContentField(builder, openConditionContentField):
+    return ProtocolSettingExcelAddOpenConditionContentField(builder, openConditionContentField)
+def ProtocolSettingExcelAddCurrencyField(builder, currencyField): builder.PrependBoolSlot(2, currencyField, 0)
+def AddCurrencyField(builder, currencyField):
+    return ProtocolSettingExcelAddCurrencyField(builder, currencyField)
+def ProtocolSettingExcelAddInventoryField(builder, inventoryField): builder.PrependBoolSlot(3, inventoryField, 0)
+def AddInventoryField(builder, inventoryField):
+    return ProtocolSettingExcelAddInventoryField(builder, inventoryField)
+def ProtocolSettingExcelAddMailField(builder, mailField): builder.PrependBoolSlot(4, mailField, 0)
+def AddMailField(builder, mailField):
+    return ProtocolSettingExcelAddMailField(builder, mailField)
 def ProtocolSettingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ProtocolSettingExcelEnd(builder)

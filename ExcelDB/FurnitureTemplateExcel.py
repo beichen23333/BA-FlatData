@@ -25,28 +25,28 @@ class FurnitureTemplateExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FurnitureTemplateExcel
-    def FurnitureTemplateId(self):
+    def FurnitureTemplateIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FurnitureTemplateExcel
-    def FunitureTemplateTitle(self):
+    def FunitureTemplateTitleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # FurnitureTemplateExcel
-    def ThumbnailImagePath(self):
+    def ThumbnailImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FurnitureTemplateExcel
-    def ImagePath(self):
+    def ImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -55,18 +55,18 @@ class FurnitureTemplateExcel(object):
 def FurnitureTemplateExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return FurnitureTemplateExcelStart(builder)
-def FurnitureTemplateExcelAddFurnitureTemplateId(builder, furnitureTemplateId): builder.PrependInt32Slot(0, furnitureTemplateId, 0)
-def AddFurnitureTemplateId(builder, furnitureTemplateId):
-    return FurnitureTemplateExcelAddFurnitureTemplateId(builder, furnitureTemplateId)
-def FurnitureTemplateExcelAddFunitureTemplateTitle(builder, funitureTemplateTitle): builder.PrependUint32Slot(1, funitureTemplateTitle, 0)
-def AddFunitureTemplateTitle(builder, funitureTemplateTitle):
-    return FurnitureTemplateExcelAddFunitureTemplateTitle(builder, funitureTemplateTitle)
-def FurnitureTemplateExcelAddThumbnailImagePath(builder, thumbnailImagePath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(thumbnailImagePath), 0)
-def AddThumbnailImagePath(builder, thumbnailImagePath):
-    return FurnitureTemplateExcelAddThumbnailImagePath(builder, thumbnailImagePath)
-def FurnitureTemplateExcelAddImagePath(builder, imagePath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imagePath), 0)
-def AddImagePath(builder, imagePath):
-    return FurnitureTemplateExcelAddImagePath(builder, imagePath)
+def FurnitureTemplateExcelAddFurnitureTemplateIdField(builder, furnitureTemplateIdField): builder.PrependInt32Slot(0, furnitureTemplateIdField, 0)
+def AddFurnitureTemplateIdField(builder, furnitureTemplateIdField):
+    return FurnitureTemplateExcelAddFurnitureTemplateIdField(builder, furnitureTemplateIdField)
+def FurnitureTemplateExcelAddFunitureTemplateTitleField(builder, funitureTemplateTitleField): builder.PrependUint32Slot(1, funitureTemplateTitleField, 0)
+def AddFunitureTemplateTitleField(builder, funitureTemplateTitleField):
+    return FurnitureTemplateExcelAddFunitureTemplateTitleField(builder, funitureTemplateTitleField)
+def FurnitureTemplateExcelAddThumbnailImagePathField(builder, thumbnailImagePathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(thumbnailImagePathField), 0)
+def AddThumbnailImagePathField(builder, thumbnailImagePathField):
+    return FurnitureTemplateExcelAddThumbnailImagePathField(builder, thumbnailImagePathField)
+def FurnitureTemplateExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+def AddImagePathField(builder, imagePathField):
+    return FurnitureTemplateExcelAddImagePathField(builder, imagePathField)
 def FurnitureTemplateExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FurnitureTemplateExcelEnd(builder)

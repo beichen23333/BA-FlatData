@@ -25,21 +25,21 @@ class LogicEffectCommonVisualExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # LogicEffectCommonVisualExcel
-    def StringID(self):
+    def StringIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # LogicEffectCommonVisualExcel
-    def IconSpriteName(self):
+    def IconSpriteNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LogicEffectCommonVisualExcel
-    def IconDispelColor(self, j):
+    def IconDispelColorField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,89 +47,89 @@ class LogicEffectCommonVisualExcel(object):
         return 0
 
     # LogicEffectCommonVisualExcel
-    def IconDispelColorAsNumpy(self):
+    def IconDispelColorFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
         return 0
 
     # LogicEffectCommonVisualExcel
-    def IconDispelColorLength(self):
+    def IconDispelColorFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # LogicEffectCommonVisualExcel
-    def IconDispelColorIsNone(self):
+    def IconDispelColorFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # LogicEffectCommonVisualExcel
-    def ParticleEnterPath(self):
+    def ParticleEnterPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LogicEffectCommonVisualExcel
-    def ParticleEnterSocket(self):
+    def ParticleEnterSocketField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LogicEffectCommonVisualExcel
-    def ParticleLoopPath(self):
+    def ParticleLoopPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LogicEffectCommonVisualExcel
-    def ParticleLoopSocket(self):
+    def ParticleLoopSocketField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LogicEffectCommonVisualExcel
-    def ParticleEndPath(self):
+    def ParticleEndPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LogicEffectCommonVisualExcel
-    def ParticleEndSocket(self):
+    def ParticleEndSocketField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LogicEffectCommonVisualExcel
-    def ParticleApplyPath(self):
+    def ParticleApplyPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LogicEffectCommonVisualExcel
-    def ParticleApplySocket(self):
+    def ParticleApplySocketField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LogicEffectCommonVisualExcel
-    def ParticleRemovedPath(self):
+    def ParticleRemovedPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LogicEffectCommonVisualExcel
-    def ParticleRemovedSocket(self):
+    def ParticleRemovedSocketField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -138,48 +138,48 @@ class LogicEffectCommonVisualExcel(object):
 def LogicEffectCommonVisualExcelStart(builder): builder.StartObject(13)
 def Start(builder):
     return LogicEffectCommonVisualExcelStart(builder)
-def LogicEffectCommonVisualExcelAddStringID(builder, stringID): builder.PrependUint32Slot(0, stringID, 0)
-def AddStringID(builder, stringID):
-    return LogicEffectCommonVisualExcelAddStringID(builder, stringID)
-def LogicEffectCommonVisualExcelAddIconSpriteName(builder, iconSpriteName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(iconSpriteName), 0)
-def AddIconSpriteName(builder, iconSpriteName):
-    return LogicEffectCommonVisualExcelAddIconSpriteName(builder, iconSpriteName)
-def LogicEffectCommonVisualExcelAddIconDispelColor(builder, iconDispelColor): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconDispelColor), 0)
-def AddIconDispelColor(builder, iconDispelColor):
-    return LogicEffectCommonVisualExcelAddIconDispelColor(builder, iconDispelColor)
-def LogicEffectCommonVisualExcelStartIconDispelColorVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartIconDispelColorVector(builder, numElems):
-    return LogicEffectCommonVisualExcelStartIconDispelColorVector(builder, numElems)
-def LogicEffectCommonVisualExcelAddParticleEnterPath(builder, particleEnterPath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(particleEnterPath), 0)
-def AddParticleEnterPath(builder, particleEnterPath):
-    return LogicEffectCommonVisualExcelAddParticleEnterPath(builder, particleEnterPath)
-def LogicEffectCommonVisualExcelAddParticleEnterSocket(builder, particleEnterSocket): builder.PrependInt32Slot(4, particleEnterSocket, 0)
-def AddParticleEnterSocket(builder, particleEnterSocket):
-    return LogicEffectCommonVisualExcelAddParticleEnterSocket(builder, particleEnterSocket)
-def LogicEffectCommonVisualExcelAddParticleLoopPath(builder, particleLoopPath): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(particleLoopPath), 0)
-def AddParticleLoopPath(builder, particleLoopPath):
-    return LogicEffectCommonVisualExcelAddParticleLoopPath(builder, particleLoopPath)
-def LogicEffectCommonVisualExcelAddParticleLoopSocket(builder, particleLoopSocket): builder.PrependInt32Slot(6, particleLoopSocket, 0)
-def AddParticleLoopSocket(builder, particleLoopSocket):
-    return LogicEffectCommonVisualExcelAddParticleLoopSocket(builder, particleLoopSocket)
-def LogicEffectCommonVisualExcelAddParticleEndPath(builder, particleEndPath): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(particleEndPath), 0)
-def AddParticleEndPath(builder, particleEndPath):
-    return LogicEffectCommonVisualExcelAddParticleEndPath(builder, particleEndPath)
-def LogicEffectCommonVisualExcelAddParticleEndSocket(builder, particleEndSocket): builder.PrependInt32Slot(8, particleEndSocket, 0)
-def AddParticleEndSocket(builder, particleEndSocket):
-    return LogicEffectCommonVisualExcelAddParticleEndSocket(builder, particleEndSocket)
-def LogicEffectCommonVisualExcelAddParticleApplyPath(builder, particleApplyPath): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(particleApplyPath), 0)
-def AddParticleApplyPath(builder, particleApplyPath):
-    return LogicEffectCommonVisualExcelAddParticleApplyPath(builder, particleApplyPath)
-def LogicEffectCommonVisualExcelAddParticleApplySocket(builder, particleApplySocket): builder.PrependInt32Slot(10, particleApplySocket, 0)
-def AddParticleApplySocket(builder, particleApplySocket):
-    return LogicEffectCommonVisualExcelAddParticleApplySocket(builder, particleApplySocket)
-def LogicEffectCommonVisualExcelAddParticleRemovedPath(builder, particleRemovedPath): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(particleRemovedPath), 0)
-def AddParticleRemovedPath(builder, particleRemovedPath):
-    return LogicEffectCommonVisualExcelAddParticleRemovedPath(builder, particleRemovedPath)
-def LogicEffectCommonVisualExcelAddParticleRemovedSocket(builder, particleRemovedSocket): builder.PrependInt32Slot(12, particleRemovedSocket, 0)
-def AddParticleRemovedSocket(builder, particleRemovedSocket):
-    return LogicEffectCommonVisualExcelAddParticleRemovedSocket(builder, particleRemovedSocket)
+def LogicEffectCommonVisualExcelAddStringIDField(builder, stringIDField): builder.PrependUint32Slot(0, stringIDField, 0)
+def AddStringIDField(builder, stringIDField):
+    return LogicEffectCommonVisualExcelAddStringIDField(builder, stringIDField)
+def LogicEffectCommonVisualExcelAddIconSpriteNameField(builder, iconSpriteNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(iconSpriteNameField), 0)
+def AddIconSpriteNameField(builder, iconSpriteNameField):
+    return LogicEffectCommonVisualExcelAddIconSpriteNameField(builder, iconSpriteNameField)
+def LogicEffectCommonVisualExcelAddIconDispelColorField(builder, iconDispelColorField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconDispelColorField), 0)
+def AddIconDispelColorField(builder, iconDispelColorField):
+    return LogicEffectCommonVisualExcelAddIconDispelColorField(builder, iconDispelColorField)
+def LogicEffectCommonVisualExcelStartIconDispelColorFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartIconDispelColorFieldVector(builder, numElems):
+    return LogicEffectCommonVisualExcelStartIconDispelColorFieldVector(builder, numElems)
+def LogicEffectCommonVisualExcelAddParticleEnterPathField(builder, particleEnterPathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(particleEnterPathField), 0)
+def AddParticleEnterPathField(builder, particleEnterPathField):
+    return LogicEffectCommonVisualExcelAddParticleEnterPathField(builder, particleEnterPathField)
+def LogicEffectCommonVisualExcelAddParticleEnterSocketField(builder, particleEnterSocketField): builder.PrependInt32Slot(4, particleEnterSocketField, 0)
+def AddParticleEnterSocketField(builder, particleEnterSocketField):
+    return LogicEffectCommonVisualExcelAddParticleEnterSocketField(builder, particleEnterSocketField)
+def LogicEffectCommonVisualExcelAddParticleLoopPathField(builder, particleLoopPathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(particleLoopPathField), 0)
+def AddParticleLoopPathField(builder, particleLoopPathField):
+    return LogicEffectCommonVisualExcelAddParticleLoopPathField(builder, particleLoopPathField)
+def LogicEffectCommonVisualExcelAddParticleLoopSocketField(builder, particleLoopSocketField): builder.PrependInt32Slot(6, particleLoopSocketField, 0)
+def AddParticleLoopSocketField(builder, particleLoopSocketField):
+    return LogicEffectCommonVisualExcelAddParticleLoopSocketField(builder, particleLoopSocketField)
+def LogicEffectCommonVisualExcelAddParticleEndPathField(builder, particleEndPathField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(particleEndPathField), 0)
+def AddParticleEndPathField(builder, particleEndPathField):
+    return LogicEffectCommonVisualExcelAddParticleEndPathField(builder, particleEndPathField)
+def LogicEffectCommonVisualExcelAddParticleEndSocketField(builder, particleEndSocketField): builder.PrependInt32Slot(8, particleEndSocketField, 0)
+def AddParticleEndSocketField(builder, particleEndSocketField):
+    return LogicEffectCommonVisualExcelAddParticleEndSocketField(builder, particleEndSocketField)
+def LogicEffectCommonVisualExcelAddParticleApplyPathField(builder, particleApplyPathField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(particleApplyPathField), 0)
+def AddParticleApplyPathField(builder, particleApplyPathField):
+    return LogicEffectCommonVisualExcelAddParticleApplyPathField(builder, particleApplyPathField)
+def LogicEffectCommonVisualExcelAddParticleApplySocketField(builder, particleApplySocketField): builder.PrependInt32Slot(10, particleApplySocketField, 0)
+def AddParticleApplySocketField(builder, particleApplySocketField):
+    return LogicEffectCommonVisualExcelAddParticleApplySocketField(builder, particleApplySocketField)
+def LogicEffectCommonVisualExcelAddParticleRemovedPathField(builder, particleRemovedPathField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(particleRemovedPathField), 0)
+def AddParticleRemovedPathField(builder, particleRemovedPathField):
+    return LogicEffectCommonVisualExcelAddParticleRemovedPathField(builder, particleRemovedPathField)
+def LogicEffectCommonVisualExcelAddParticleRemovedSocketField(builder, particleRemovedSocketField): builder.PrependInt32Slot(12, particleRemovedSocketField, 0)
+def AddParticleRemovedSocketField(builder, particleRemovedSocketField):
+    return LogicEffectCommonVisualExcelAddParticleRemovedSocketField(builder, particleRemovedSocketField)
 def LogicEffectCommonVisualExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return LogicEffectCommonVisualExcelEnd(builder)

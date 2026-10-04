@@ -25,28 +25,28 @@ class ArenaSeasonCloseRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ArenaSeasonCloseRewardExcel
-    def SeasonId(self):
+    def SeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RankStart(self):
+    def RankStartField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RankEnd(self):
+    def RankEndField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -54,26 +54,26 @@ class ArenaSeasonCloseRewardExcel(object):
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelUniqueId(self, j):
+    def RewardParcelUniqueIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -81,26 +81,26 @@ class ArenaSeasonCloseRewardExcel(object):
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelUniqueIdAsNumpy(self):
+    def RewardParcelUniqueIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelUniqueIdLength(self):
+    def RewardParcelUniqueIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelUniqueIdIsNone(self):
+    def RewardParcelUniqueIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelAmount(self, j):
+    def RewardParcelAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -108,54 +108,54 @@ class ArenaSeasonCloseRewardExcel(object):
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelAmountAsNumpy(self):
+    def RewardParcelAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelAmountLength(self):
+    def RewardParcelAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ArenaSeasonCloseRewardExcel
-    def RewardParcelAmountIsNone(self):
+    def RewardParcelAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
 def ArenaSeasonCloseRewardExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return ArenaSeasonCloseRewardExcelStart(builder)
-def ArenaSeasonCloseRewardExcelAddSeasonId(builder, seasonId): builder.PrependInt32Slot(0, seasonId, 0)
-def AddSeasonId(builder, seasonId):
-    return ArenaSeasonCloseRewardExcelAddSeasonId(builder, seasonId)
-def ArenaSeasonCloseRewardExcelAddRankStart(builder, rankStart): builder.PrependInt32Slot(1, rankStart, 0)
-def AddRankStart(builder, rankStart):
-    return ArenaSeasonCloseRewardExcelAddRankStart(builder, rankStart)
-def ArenaSeasonCloseRewardExcelAddRankEnd(builder, rankEnd): builder.PrependInt32Slot(2, rankEnd, 0)
-def AddRankEnd(builder, rankEnd):
-    return ArenaSeasonCloseRewardExcelAddRankEnd(builder, rankEnd)
-def ArenaSeasonCloseRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return ArenaSeasonCloseRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def ArenaSeasonCloseRewardExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return ArenaSeasonCloseRewardExcelStartRewardParcelTypeVector(builder, numElems)
-def ArenaSeasonCloseRewardExcelAddRewardParcelUniqueId(builder, rewardParcelUniqueId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelUniqueId), 0)
-def AddRewardParcelUniqueId(builder, rewardParcelUniqueId):
-    return ArenaSeasonCloseRewardExcelAddRewardParcelUniqueId(builder, rewardParcelUniqueId)
-def ArenaSeasonCloseRewardExcelStartRewardParcelUniqueIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelUniqueIdVector(builder, numElems):
-    return ArenaSeasonCloseRewardExcelStartRewardParcelUniqueIdVector(builder, numElems)
-def ArenaSeasonCloseRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmount), 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return ArenaSeasonCloseRewardExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def ArenaSeasonCloseRewardExcelStartRewardParcelAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountVector(builder, numElems):
-    return ArenaSeasonCloseRewardExcelStartRewardParcelAmountVector(builder, numElems)
+def ArenaSeasonCloseRewardExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(0, seasonIdField, 0)
+def AddSeasonIdField(builder, seasonIdField):
+    return ArenaSeasonCloseRewardExcelAddSeasonIdField(builder, seasonIdField)
+def ArenaSeasonCloseRewardExcelAddRankStartField(builder, rankStartField): builder.PrependInt32Slot(1, rankStartField, 0)
+def AddRankStartField(builder, rankStartField):
+    return ArenaSeasonCloseRewardExcelAddRankStartField(builder, rankStartField)
+def ArenaSeasonCloseRewardExcelAddRankEndField(builder, rankEndField): builder.PrependInt32Slot(2, rankEndField, 0)
+def AddRankEndField(builder, rankEndField):
+    return ArenaSeasonCloseRewardExcelAddRankEndField(builder, rankEndField)
+def ArenaSeasonCloseRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return ArenaSeasonCloseRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def ArenaSeasonCloseRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return ArenaSeasonCloseRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def ArenaSeasonCloseRewardExcelAddRewardParcelUniqueIdField(builder, rewardParcelUniqueIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelUniqueIdField), 0)
+def AddRewardParcelUniqueIdField(builder, rewardParcelUniqueIdField):
+    return ArenaSeasonCloseRewardExcelAddRewardParcelUniqueIdField(builder, rewardParcelUniqueIdField)
+def ArenaSeasonCloseRewardExcelStartRewardParcelUniqueIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelUniqueIdFieldVector(builder, numElems):
+    return ArenaSeasonCloseRewardExcelStartRewardParcelUniqueIdFieldVector(builder, numElems)
+def ArenaSeasonCloseRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return ArenaSeasonCloseRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def ArenaSeasonCloseRewardExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelAmountFieldVector(builder, numElems):
+    return ArenaSeasonCloseRewardExcelStartRewardParcelAmountFieldVector(builder, numElems)
 def ArenaSeasonCloseRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ArenaSeasonCloseRewardExcelEnd(builder)

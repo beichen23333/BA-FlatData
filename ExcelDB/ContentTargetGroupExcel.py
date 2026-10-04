@@ -25,14 +25,14 @@ class ContentTargetGroupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ContentTargetGroupExcel
-    def TargetGroup(self):
+    def TargetGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ContentTargetGroupExcel
-    def AccountType(self, j):
+    def AccountTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,36 +40,36 @@ class ContentTargetGroupExcel(object):
         return 0
 
     # ContentTargetGroupExcel
-    def AccountTypeAsNumpy(self):
+    def AccountTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ContentTargetGroupExcel
-    def AccountTypeLength(self):
+    def AccountTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ContentTargetGroupExcel
-    def AccountTypeIsNone(self):
+    def AccountTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
 def ContentTargetGroupExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return ContentTargetGroupExcelStart(builder)
-def ContentTargetGroupExcelAddTargetGroup(builder, targetGroup): builder.PrependInt32Slot(0, targetGroup, 0)
-def AddTargetGroup(builder, targetGroup):
-    return ContentTargetGroupExcelAddTargetGroup(builder, targetGroup)
-def ContentTargetGroupExcelAddAccountType(builder, accountType): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(accountType), 0)
-def AddAccountType(builder, accountType):
-    return ContentTargetGroupExcelAddAccountType(builder, accountType)
-def ContentTargetGroupExcelStartAccountTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAccountTypeVector(builder, numElems):
-    return ContentTargetGroupExcelStartAccountTypeVector(builder, numElems)
+def ContentTargetGroupExcelAddTargetGroupField(builder, targetGroupField): builder.PrependInt32Slot(0, targetGroupField, 0)
+def AddTargetGroupField(builder, targetGroupField):
+    return ContentTargetGroupExcelAddTargetGroupField(builder, targetGroupField)
+def ContentTargetGroupExcelAddAccountTypeField(builder, accountTypeField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(accountTypeField), 0)
+def AddAccountTypeField(builder, accountTypeField):
+    return ContentTargetGroupExcelAddAccountTypeField(builder, accountTypeField)
+def ContentTargetGroupExcelStartAccountTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartAccountTypeFieldVector(builder, numElems):
+    return ContentTargetGroupExcelStartAccountTypeFieldVector(builder, numElems)
 def ContentTargetGroupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ContentTargetGroupExcelEnd(builder)

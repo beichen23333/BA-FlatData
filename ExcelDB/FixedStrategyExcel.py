@@ -25,63 +25,63 @@ class FixedStrategyExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FixedStrategyExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FixedStrategyExcel
-    def StageEnterEchelon01FixedEchelonId(self):
+    def StageEnterEchelon01FixedEchelonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FixedStrategyExcel
-    def StageEnterEchelon01Starttile(self):
+    def StageEnterEchelon01StarttileField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FixedStrategyExcel
-    def StageEnterEchelon02FixedEchelonId(self):
+    def StageEnterEchelon02FixedEchelonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FixedStrategyExcel
-    def StageEnterEchelon02Starttile(self):
+    def StageEnterEchelon02StarttileField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FixedStrategyExcel
-    def StageEnterEchelon03FixedEchelonId(self):
+    def StageEnterEchelon03FixedEchelonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FixedStrategyExcel
-    def StageEnterEchelon03Starttile(self):
+    def StageEnterEchelon03StarttileField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FixedStrategyExcel
-    def StageEnterEchelon04FixedEchelonId(self):
+    def StageEnterEchelon04FixedEchelonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FixedStrategyExcel
-    def StageEnterEchelon04Starttile(self):
+    def StageEnterEchelon04StarttileField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -90,33 +90,33 @@ class FixedStrategyExcel(object):
 def FixedStrategyExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return FixedStrategyExcelStart(builder)
-def FixedStrategyExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return FixedStrategyExcelAddId(builder, id)
-def FixedStrategyExcelAddStageEnterEchelon01FixedEchelonId(builder, stageEnterEchelon01FixedEchelonId): builder.PrependInt32Slot(1, stageEnterEchelon01FixedEchelonId, 0)
-def AddStageEnterEchelon01FixedEchelonId(builder, stageEnterEchelon01FixedEchelonId):
-    return FixedStrategyExcelAddStageEnterEchelon01FixedEchelonId(builder, stageEnterEchelon01FixedEchelonId)
-def FixedStrategyExcelAddStageEnterEchelon01Starttile(builder, stageEnterEchelon01Starttile): builder.PrependInt32Slot(2, stageEnterEchelon01Starttile, 0)
-def AddStageEnterEchelon01Starttile(builder, stageEnterEchelon01Starttile):
-    return FixedStrategyExcelAddStageEnterEchelon01Starttile(builder, stageEnterEchelon01Starttile)
-def FixedStrategyExcelAddStageEnterEchelon02FixedEchelonId(builder, stageEnterEchelon02FixedEchelonId): builder.PrependInt32Slot(3, stageEnterEchelon02FixedEchelonId, 0)
-def AddStageEnterEchelon02FixedEchelonId(builder, stageEnterEchelon02FixedEchelonId):
-    return FixedStrategyExcelAddStageEnterEchelon02FixedEchelonId(builder, stageEnterEchelon02FixedEchelonId)
-def FixedStrategyExcelAddStageEnterEchelon02Starttile(builder, stageEnterEchelon02Starttile): builder.PrependInt32Slot(4, stageEnterEchelon02Starttile, 0)
-def AddStageEnterEchelon02Starttile(builder, stageEnterEchelon02Starttile):
-    return FixedStrategyExcelAddStageEnterEchelon02Starttile(builder, stageEnterEchelon02Starttile)
-def FixedStrategyExcelAddStageEnterEchelon03FixedEchelonId(builder, stageEnterEchelon03FixedEchelonId): builder.PrependInt32Slot(5, stageEnterEchelon03FixedEchelonId, 0)
-def AddStageEnterEchelon03FixedEchelonId(builder, stageEnterEchelon03FixedEchelonId):
-    return FixedStrategyExcelAddStageEnterEchelon03FixedEchelonId(builder, stageEnterEchelon03FixedEchelonId)
-def FixedStrategyExcelAddStageEnterEchelon03Starttile(builder, stageEnterEchelon03Starttile): builder.PrependInt32Slot(6, stageEnterEchelon03Starttile, 0)
-def AddStageEnterEchelon03Starttile(builder, stageEnterEchelon03Starttile):
-    return FixedStrategyExcelAddStageEnterEchelon03Starttile(builder, stageEnterEchelon03Starttile)
-def FixedStrategyExcelAddStageEnterEchelon04FixedEchelonId(builder, stageEnterEchelon04FixedEchelonId): builder.PrependInt32Slot(7, stageEnterEchelon04FixedEchelonId, 0)
-def AddStageEnterEchelon04FixedEchelonId(builder, stageEnterEchelon04FixedEchelonId):
-    return FixedStrategyExcelAddStageEnterEchelon04FixedEchelonId(builder, stageEnterEchelon04FixedEchelonId)
-def FixedStrategyExcelAddStageEnterEchelon04Starttile(builder, stageEnterEchelon04Starttile): builder.PrependInt32Slot(8, stageEnterEchelon04Starttile, 0)
-def AddStageEnterEchelon04Starttile(builder, stageEnterEchelon04Starttile):
-    return FixedStrategyExcelAddStageEnterEchelon04Starttile(builder, stageEnterEchelon04Starttile)
+def FixedStrategyExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return FixedStrategyExcelAddIdField(builder, idField)
+def FixedStrategyExcelAddStageEnterEchelon01FixedEchelonIdField(builder, stageEnterEchelon01FixedEchelonIdField): builder.PrependInt32Slot(1, stageEnterEchelon01FixedEchelonIdField, 0)
+def AddStageEnterEchelon01FixedEchelonIdField(builder, stageEnterEchelon01FixedEchelonIdField):
+    return FixedStrategyExcelAddStageEnterEchelon01FixedEchelonIdField(builder, stageEnterEchelon01FixedEchelonIdField)
+def FixedStrategyExcelAddStageEnterEchelon01StarttileField(builder, stageEnterEchelon01StarttileField): builder.PrependInt32Slot(2, stageEnterEchelon01StarttileField, 0)
+def AddStageEnterEchelon01StarttileField(builder, stageEnterEchelon01StarttileField):
+    return FixedStrategyExcelAddStageEnterEchelon01StarttileField(builder, stageEnterEchelon01StarttileField)
+def FixedStrategyExcelAddStageEnterEchelon02FixedEchelonIdField(builder, stageEnterEchelon02FixedEchelonIdField): builder.PrependInt32Slot(3, stageEnterEchelon02FixedEchelonIdField, 0)
+def AddStageEnterEchelon02FixedEchelonIdField(builder, stageEnterEchelon02FixedEchelonIdField):
+    return FixedStrategyExcelAddStageEnterEchelon02FixedEchelonIdField(builder, stageEnterEchelon02FixedEchelonIdField)
+def FixedStrategyExcelAddStageEnterEchelon02StarttileField(builder, stageEnterEchelon02StarttileField): builder.PrependInt32Slot(4, stageEnterEchelon02StarttileField, 0)
+def AddStageEnterEchelon02StarttileField(builder, stageEnterEchelon02StarttileField):
+    return FixedStrategyExcelAddStageEnterEchelon02StarttileField(builder, stageEnterEchelon02StarttileField)
+def FixedStrategyExcelAddStageEnterEchelon03FixedEchelonIdField(builder, stageEnterEchelon03FixedEchelonIdField): builder.PrependInt32Slot(5, stageEnterEchelon03FixedEchelonIdField, 0)
+def AddStageEnterEchelon03FixedEchelonIdField(builder, stageEnterEchelon03FixedEchelonIdField):
+    return FixedStrategyExcelAddStageEnterEchelon03FixedEchelonIdField(builder, stageEnterEchelon03FixedEchelonIdField)
+def FixedStrategyExcelAddStageEnterEchelon03StarttileField(builder, stageEnterEchelon03StarttileField): builder.PrependInt32Slot(6, stageEnterEchelon03StarttileField, 0)
+def AddStageEnterEchelon03StarttileField(builder, stageEnterEchelon03StarttileField):
+    return FixedStrategyExcelAddStageEnterEchelon03StarttileField(builder, stageEnterEchelon03StarttileField)
+def FixedStrategyExcelAddStageEnterEchelon04FixedEchelonIdField(builder, stageEnterEchelon04FixedEchelonIdField): builder.PrependInt32Slot(7, stageEnterEchelon04FixedEchelonIdField, 0)
+def AddStageEnterEchelon04FixedEchelonIdField(builder, stageEnterEchelon04FixedEchelonIdField):
+    return FixedStrategyExcelAddStageEnterEchelon04FixedEchelonIdField(builder, stageEnterEchelon04FixedEchelonIdField)
+def FixedStrategyExcelAddStageEnterEchelon04StarttileField(builder, stageEnterEchelon04StarttileField): builder.PrependInt32Slot(8, stageEnterEchelon04StarttileField, 0)
+def AddStageEnterEchelon04StarttileField(builder, stageEnterEchelon04StarttileField):
+    return FixedStrategyExcelAddStageEnterEchelon04StarttileField(builder, stageEnterEchelon04StarttileField)
 def FixedStrategyExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FixedStrategyExcelEnd(builder)

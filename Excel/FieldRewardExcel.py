@@ -25,35 +25,35 @@ class FieldRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FieldRewardExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
     # FieldRewardExcel
-    def RewardProb(self):
+    def RewardProbField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldRewardExcel
-    def RewardParcelType(self):
+    def RewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldRewardExcel
-    def RewardId(self):
+    def RewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int64Flags, o + self._tab.Pos)
         return 0
 
     # FieldRewardExcel
-    def RewardAmount(self):
+    def RewardAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class FieldRewardExcel(object):
 def FieldRewardExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return FieldRewardExcelStart(builder)
-def FieldRewardExcelAddGroupId(builder, groupId): builder.PrependInt64Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return FieldRewardExcelAddGroupId(builder, groupId)
-def FieldRewardExcelAddRewardProb(builder, rewardProb): builder.PrependInt32Slot(1, rewardProb, 0)
-def AddRewardProb(builder, rewardProb):
-    return FieldRewardExcelAddRewardProb(builder, rewardProb)
-def FieldRewardExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependInt32Slot(2, rewardParcelType, 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return FieldRewardExcelAddRewardParcelType(builder, rewardParcelType)
-def FieldRewardExcelAddRewardId(builder, rewardId): builder.PrependInt64Slot(3, rewardId, 0)
-def AddRewardId(builder, rewardId):
-    return FieldRewardExcelAddRewardId(builder, rewardId)
-def FieldRewardExcelAddRewardAmount(builder, rewardAmount): builder.PrependInt32Slot(4, rewardAmount, 0)
-def AddRewardAmount(builder, rewardAmount):
-    return FieldRewardExcelAddRewardAmount(builder, rewardAmount)
+def FieldRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt64Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return FieldRewardExcelAddGroupIdField(builder, groupIdField)
+def FieldRewardExcelAddRewardProbField(builder, rewardProbField): builder.PrependInt32Slot(1, rewardProbField, 0)
+def AddRewardProbField(builder, rewardProbField):
+    return FieldRewardExcelAddRewardProbField(builder, rewardProbField)
+def FieldRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(2, rewardParcelTypeField, 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return FieldRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def FieldRewardExcelAddRewardIdField(builder, rewardIdField): builder.PrependInt64Slot(3, rewardIdField, 0)
+def AddRewardIdField(builder, rewardIdField):
+    return FieldRewardExcelAddRewardIdField(builder, rewardIdField)
+def FieldRewardExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependInt32Slot(4, rewardAmountField, 0)
+def AddRewardAmountField(builder, rewardAmountField):
+    return FieldRewardExcelAddRewardAmountField(builder, rewardAmountField)
 def FieldRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FieldRewardExcelEnd(builder)

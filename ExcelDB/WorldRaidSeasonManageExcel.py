@@ -25,119 +25,119 @@ class WorldRaidSeasonManageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # WorldRaidSeasonManageExcel
-    def SeasonId(self):
+    def SeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def PhaseId(self):
+    def PhaseIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def EnterTicket(self):
+    def EnterTicketField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def WorldRaidLobbyScene(self):
+    def WorldRaidLobbySceneField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidSeasonManageExcel
-    def WorldRaidLobbyBanner(self):
+    def WorldRaidLobbyBannerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidSeasonManageExcel
-    def WorldRaidLobbyBG(self):
+    def WorldRaidLobbyBGField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidSeasonManageExcel
-    def WorldRaidLobbyBannerShow(self):
+    def WorldRaidLobbyBannerShowField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidSeasonManageExcel
-    def SeasonOpenCondition(self):
+    def SeasonOpenConditionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def WorldRaidLobbyEnterScenario(self):
+    def WorldRaidLobbyEnterScenarioField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def CanPlayNotSeasonTime(self):
+    def CanPlayNotSeasonTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidSeasonManageExcel
-    def WorldRaidUniqueThemeLobbyUI(self):
+    def WorldRaidUniqueThemeLobbyUIField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidSeasonManageExcel
-    def WorldRaidUniqueThemeName(self):
+    def WorldRaidUniqueThemeNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidSeasonManageExcel
-    def CanWorldRaidGemEnter(self):
+    def CanWorldRaidGemEnterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidSeasonManageExcel
-    def HideWorldRaidTicketUI(self):
+    def HideWorldRaidTicketUIField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidSeasonManageExcel
-    def HideWorldRaidBossCompleteRewardUI(self):
+    def HideWorldRaidBossCompleteRewardUIField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidSeasonManageExcel
-    def UseWorldRaidCommonToast(self):
+    def UseWorldRaidCommonToastField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidSeasonManageExcel
-    def OpenRaidBossGroupId(self, j):
+    def OpenRaidBossGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             a = self._tab.Vector(o)
@@ -145,26 +145,26 @@ class WorldRaidSeasonManageExcel(object):
         return 0
 
     # WorldRaidSeasonManageExcel
-    def OpenRaidBossGroupIdAsNumpy(self):
+    def OpenRaidBossGroupIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def OpenRaidBossGroupIdLength(self):
+    def OpenRaidBossGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def OpenRaidBossGroupIdIsNone(self):
+    def OpenRaidBossGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         return o == 0
 
     # WorldRaidSeasonManageExcel
-    def BossSpawnTime(self, j):
+    def BossSpawnTimeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             a = self._tab.Vector(o)
@@ -172,19 +172,19 @@ class WorldRaidSeasonManageExcel(object):
         return ""
 
     # WorldRaidSeasonManageExcel
-    def BossSpawnTimeLength(self):
+    def BossSpawnTimeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def BossSpawnTimeIsNone(self):
+    def BossSpawnTimeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         return o == 0
 
     # WorldRaidSeasonManageExcel
-    def EliminateTime(self, j):
+    def EliminateTimeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             a = self._tab.Vector(o)
@@ -192,19 +192,19 @@ class WorldRaidSeasonManageExcel(object):
         return ""
 
     # WorldRaidSeasonManageExcel
-    def EliminateTimeLength(self):
+    def EliminateTimeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def EliminateTimeIsNone(self):
+    def EliminateTimeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         return o == 0
 
     # WorldRaidSeasonManageExcel
-    def ScenarioOutputConditionId(self, j):
+    def ScenarioOutputConditionIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             a = self._tab.Vector(o)
@@ -212,26 +212,26 @@ class WorldRaidSeasonManageExcel(object):
         return 0
 
     # WorldRaidSeasonManageExcel
-    def ScenarioOutputConditionIdAsNumpy(self):
+    def ScenarioOutputConditionIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def ScenarioOutputConditionIdLength(self):
+    def ScenarioOutputConditionIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def ScenarioOutputConditionIdIsNone(self):
+    def ScenarioOutputConditionIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         return o == 0
 
     # WorldRaidSeasonManageExcel
-    def ConditionScenarioGroupid(self, j):
+    def ConditionScenarioGroupidField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             a = self._tab.Vector(o)
@@ -239,33 +239,33 @@ class WorldRaidSeasonManageExcel(object):
         return 0
 
     # WorldRaidSeasonManageExcel
-    def ConditionScenarioGroupidAsNumpy(self):
+    def ConditionScenarioGroupidFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def ConditionScenarioGroupidLength(self):
+    def ConditionScenarioGroupidFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WorldRaidSeasonManageExcel
-    def ConditionScenarioGroupidIsNone(self):
+    def ConditionScenarioGroupidFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         return o == 0
 
     # WorldRaidSeasonManageExcel
-    def WorldRaidMapEnterOperator(self):
+    def WorldRaidMapEnterOperatorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidSeasonManageExcel
-    def UseFavorRankBuff(self):
+    def UseFavorRankBuffField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -274,90 +274,90 @@ class WorldRaidSeasonManageExcel(object):
 def WorldRaidSeasonManageExcelStart(builder): builder.StartObject(23)
 def Start(builder):
     return WorldRaidSeasonManageExcelStart(builder)
-def WorldRaidSeasonManageExcelAddSeasonId(builder, seasonId): builder.PrependInt32Slot(0, seasonId, 0)
-def AddSeasonId(builder, seasonId):
-    return WorldRaidSeasonManageExcelAddSeasonId(builder, seasonId)
-def WorldRaidSeasonManageExcelAddPhaseId(builder, phaseId): builder.PrependInt32Slot(1, phaseId, 0)
-def AddPhaseId(builder, phaseId):
-    return WorldRaidSeasonManageExcelAddPhaseId(builder, phaseId)
-def WorldRaidSeasonManageExcelAddEnterTicket(builder, enterTicket): builder.PrependInt32Slot(2, enterTicket, 0)
-def AddEnterTicket(builder, enterTicket):
-    return WorldRaidSeasonManageExcelAddEnterTicket(builder, enterTicket)
-def WorldRaidSeasonManageExcelAddWorldRaidLobbyScene(builder, worldRaidLobbyScene): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidLobbyScene), 0)
-def AddWorldRaidLobbyScene(builder, worldRaidLobbyScene):
-    return WorldRaidSeasonManageExcelAddWorldRaidLobbyScene(builder, worldRaidLobbyScene)
-def WorldRaidSeasonManageExcelAddWorldRaidLobbyBanner(builder, worldRaidLobbyBanner): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidLobbyBanner), 0)
-def AddWorldRaidLobbyBanner(builder, worldRaidLobbyBanner):
-    return WorldRaidSeasonManageExcelAddWorldRaidLobbyBanner(builder, worldRaidLobbyBanner)
-def WorldRaidSeasonManageExcelAddWorldRaidLobbyBG(builder, worldRaidLobbyBG): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidLobbyBG), 0)
-def AddWorldRaidLobbyBG(builder, worldRaidLobbyBG):
-    return WorldRaidSeasonManageExcelAddWorldRaidLobbyBG(builder, worldRaidLobbyBG)
-def WorldRaidSeasonManageExcelAddWorldRaidLobbyBannerShow(builder, worldRaidLobbyBannerShow): builder.PrependBoolSlot(6, worldRaidLobbyBannerShow, 0)
-def AddWorldRaidLobbyBannerShow(builder, worldRaidLobbyBannerShow):
-    return WorldRaidSeasonManageExcelAddWorldRaidLobbyBannerShow(builder, worldRaidLobbyBannerShow)
-def WorldRaidSeasonManageExcelAddSeasonOpenCondition(builder, seasonOpenCondition): builder.PrependInt32Slot(7, seasonOpenCondition, 0)
-def AddSeasonOpenCondition(builder, seasonOpenCondition):
-    return WorldRaidSeasonManageExcelAddSeasonOpenCondition(builder, seasonOpenCondition)
-def WorldRaidSeasonManageExcelAddWorldRaidLobbyEnterScenario(builder, worldRaidLobbyEnterScenario): builder.PrependInt32Slot(8, worldRaidLobbyEnterScenario, 0)
-def AddWorldRaidLobbyEnterScenario(builder, worldRaidLobbyEnterScenario):
-    return WorldRaidSeasonManageExcelAddWorldRaidLobbyEnterScenario(builder, worldRaidLobbyEnterScenario)
-def WorldRaidSeasonManageExcelAddCanPlayNotSeasonTime(builder, canPlayNotSeasonTime): builder.PrependBoolSlot(9, canPlayNotSeasonTime, 0)
-def AddCanPlayNotSeasonTime(builder, canPlayNotSeasonTime):
-    return WorldRaidSeasonManageExcelAddCanPlayNotSeasonTime(builder, canPlayNotSeasonTime)
-def WorldRaidSeasonManageExcelAddWorldRaidUniqueThemeLobbyUI(builder, worldRaidUniqueThemeLobbyUI): builder.PrependBoolSlot(10, worldRaidUniqueThemeLobbyUI, 0)
-def AddWorldRaidUniqueThemeLobbyUI(builder, worldRaidUniqueThemeLobbyUI):
-    return WorldRaidSeasonManageExcelAddWorldRaidUniqueThemeLobbyUI(builder, worldRaidUniqueThemeLobbyUI)
-def WorldRaidSeasonManageExcelAddWorldRaidUniqueThemeName(builder, worldRaidUniqueThemeName): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidUniqueThemeName), 0)
-def AddWorldRaidUniqueThemeName(builder, worldRaidUniqueThemeName):
-    return WorldRaidSeasonManageExcelAddWorldRaidUniqueThemeName(builder, worldRaidUniqueThemeName)
-def WorldRaidSeasonManageExcelAddCanWorldRaidGemEnter(builder, canWorldRaidGemEnter): builder.PrependBoolSlot(12, canWorldRaidGemEnter, 0)
-def AddCanWorldRaidGemEnter(builder, canWorldRaidGemEnter):
-    return WorldRaidSeasonManageExcelAddCanWorldRaidGemEnter(builder, canWorldRaidGemEnter)
-def WorldRaidSeasonManageExcelAddHideWorldRaidTicketUI(builder, hideWorldRaidTicketUI): builder.PrependBoolSlot(13, hideWorldRaidTicketUI, 0)
-def AddHideWorldRaidTicketUI(builder, hideWorldRaidTicketUI):
-    return WorldRaidSeasonManageExcelAddHideWorldRaidTicketUI(builder, hideWorldRaidTicketUI)
-def WorldRaidSeasonManageExcelAddHideWorldRaidBossCompleteRewardUI(builder, hideWorldRaidBossCompleteRewardUI): builder.PrependBoolSlot(14, hideWorldRaidBossCompleteRewardUI, 0)
-def AddHideWorldRaidBossCompleteRewardUI(builder, hideWorldRaidBossCompleteRewardUI):
-    return WorldRaidSeasonManageExcelAddHideWorldRaidBossCompleteRewardUI(builder, hideWorldRaidBossCompleteRewardUI)
-def WorldRaidSeasonManageExcelAddUseWorldRaidCommonToast(builder, useWorldRaidCommonToast): builder.PrependBoolSlot(15, useWorldRaidCommonToast, 0)
-def AddUseWorldRaidCommonToast(builder, useWorldRaidCommonToast):
-    return WorldRaidSeasonManageExcelAddUseWorldRaidCommonToast(builder, useWorldRaidCommonToast)
-def WorldRaidSeasonManageExcelAddOpenRaidBossGroupId(builder, openRaidBossGroupId): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(openRaidBossGroupId), 0)
-def AddOpenRaidBossGroupId(builder, openRaidBossGroupId):
-    return WorldRaidSeasonManageExcelAddOpenRaidBossGroupId(builder, openRaidBossGroupId)
-def WorldRaidSeasonManageExcelStartOpenRaidBossGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartOpenRaidBossGroupIdVector(builder, numElems):
-    return WorldRaidSeasonManageExcelStartOpenRaidBossGroupIdVector(builder, numElems)
-def WorldRaidSeasonManageExcelAddBossSpawnTime(builder, bossSpawnTime): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(bossSpawnTime), 0)
-def AddBossSpawnTime(builder, bossSpawnTime):
-    return WorldRaidSeasonManageExcelAddBossSpawnTime(builder, bossSpawnTime)
-def WorldRaidSeasonManageExcelStartBossSpawnTimeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBossSpawnTimeVector(builder, numElems):
-    return WorldRaidSeasonManageExcelStartBossSpawnTimeVector(builder, numElems)
-def WorldRaidSeasonManageExcelAddEliminateTime(builder, eliminateTime): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(eliminateTime), 0)
-def AddEliminateTime(builder, eliminateTime):
-    return WorldRaidSeasonManageExcelAddEliminateTime(builder, eliminateTime)
-def WorldRaidSeasonManageExcelStartEliminateTimeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEliminateTimeVector(builder, numElems):
-    return WorldRaidSeasonManageExcelStartEliminateTimeVector(builder, numElems)
-def WorldRaidSeasonManageExcelAddScenarioOutputConditionId(builder, scenarioOutputConditionId): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(scenarioOutputConditionId), 0)
-def AddScenarioOutputConditionId(builder, scenarioOutputConditionId):
-    return WorldRaidSeasonManageExcelAddScenarioOutputConditionId(builder, scenarioOutputConditionId)
-def WorldRaidSeasonManageExcelStartScenarioOutputConditionIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartScenarioOutputConditionIdVector(builder, numElems):
-    return WorldRaidSeasonManageExcelStartScenarioOutputConditionIdVector(builder, numElems)
-def WorldRaidSeasonManageExcelAddConditionScenarioGroupid(builder, conditionScenarioGroupid): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(conditionScenarioGroupid), 0)
-def AddConditionScenarioGroupid(builder, conditionScenarioGroupid):
-    return WorldRaidSeasonManageExcelAddConditionScenarioGroupid(builder, conditionScenarioGroupid)
-def WorldRaidSeasonManageExcelStartConditionScenarioGroupidVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartConditionScenarioGroupidVector(builder, numElems):
-    return WorldRaidSeasonManageExcelStartConditionScenarioGroupidVector(builder, numElems)
-def WorldRaidSeasonManageExcelAddWorldRaidMapEnterOperator(builder, worldRaidMapEnterOperator): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidMapEnterOperator), 0)
-def AddWorldRaidMapEnterOperator(builder, worldRaidMapEnterOperator):
-    return WorldRaidSeasonManageExcelAddWorldRaidMapEnterOperator(builder, worldRaidMapEnterOperator)
-def WorldRaidSeasonManageExcelAddUseFavorRankBuff(builder, useFavorRankBuff): builder.PrependBoolSlot(22, useFavorRankBuff, 0)
-def AddUseFavorRankBuff(builder, useFavorRankBuff):
-    return WorldRaidSeasonManageExcelAddUseFavorRankBuff(builder, useFavorRankBuff)
+def WorldRaidSeasonManageExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(0, seasonIdField, 0)
+def AddSeasonIdField(builder, seasonIdField):
+    return WorldRaidSeasonManageExcelAddSeasonIdField(builder, seasonIdField)
+def WorldRaidSeasonManageExcelAddPhaseIdField(builder, phaseIdField): builder.PrependInt32Slot(1, phaseIdField, 0)
+def AddPhaseIdField(builder, phaseIdField):
+    return WorldRaidSeasonManageExcelAddPhaseIdField(builder, phaseIdField)
+def WorldRaidSeasonManageExcelAddEnterTicketField(builder, enterTicketField): builder.PrependInt32Slot(2, enterTicketField, 0)
+def AddEnterTicketField(builder, enterTicketField):
+    return WorldRaidSeasonManageExcelAddEnterTicketField(builder, enterTicketField)
+def WorldRaidSeasonManageExcelAddWorldRaidLobbySceneField(builder, worldRaidLobbySceneField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidLobbySceneField), 0)
+def AddWorldRaidLobbySceneField(builder, worldRaidLobbySceneField):
+    return WorldRaidSeasonManageExcelAddWorldRaidLobbySceneField(builder, worldRaidLobbySceneField)
+def WorldRaidSeasonManageExcelAddWorldRaidLobbyBannerField(builder, worldRaidLobbyBannerField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidLobbyBannerField), 0)
+def AddWorldRaidLobbyBannerField(builder, worldRaidLobbyBannerField):
+    return WorldRaidSeasonManageExcelAddWorldRaidLobbyBannerField(builder, worldRaidLobbyBannerField)
+def WorldRaidSeasonManageExcelAddWorldRaidLobbyBGField(builder, worldRaidLobbyBGField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidLobbyBGField), 0)
+def AddWorldRaidLobbyBGField(builder, worldRaidLobbyBGField):
+    return WorldRaidSeasonManageExcelAddWorldRaidLobbyBGField(builder, worldRaidLobbyBGField)
+def WorldRaidSeasonManageExcelAddWorldRaidLobbyBannerShowField(builder, worldRaidLobbyBannerShowField): builder.PrependBoolSlot(6, worldRaidLobbyBannerShowField, 0)
+def AddWorldRaidLobbyBannerShowField(builder, worldRaidLobbyBannerShowField):
+    return WorldRaidSeasonManageExcelAddWorldRaidLobbyBannerShowField(builder, worldRaidLobbyBannerShowField)
+def WorldRaidSeasonManageExcelAddSeasonOpenConditionField(builder, seasonOpenConditionField): builder.PrependInt32Slot(7, seasonOpenConditionField, 0)
+def AddSeasonOpenConditionField(builder, seasonOpenConditionField):
+    return WorldRaidSeasonManageExcelAddSeasonOpenConditionField(builder, seasonOpenConditionField)
+def WorldRaidSeasonManageExcelAddWorldRaidLobbyEnterScenarioField(builder, worldRaidLobbyEnterScenarioField): builder.PrependInt32Slot(8, worldRaidLobbyEnterScenarioField, 0)
+def AddWorldRaidLobbyEnterScenarioField(builder, worldRaidLobbyEnterScenarioField):
+    return WorldRaidSeasonManageExcelAddWorldRaidLobbyEnterScenarioField(builder, worldRaidLobbyEnterScenarioField)
+def WorldRaidSeasonManageExcelAddCanPlayNotSeasonTimeField(builder, canPlayNotSeasonTimeField): builder.PrependBoolSlot(9, canPlayNotSeasonTimeField, 0)
+def AddCanPlayNotSeasonTimeField(builder, canPlayNotSeasonTimeField):
+    return WorldRaidSeasonManageExcelAddCanPlayNotSeasonTimeField(builder, canPlayNotSeasonTimeField)
+def WorldRaidSeasonManageExcelAddWorldRaidUniqueThemeLobbyUIField(builder, worldRaidUniqueThemeLobbyUIField): builder.PrependBoolSlot(10, worldRaidUniqueThemeLobbyUIField, 0)
+def AddWorldRaidUniqueThemeLobbyUIField(builder, worldRaidUniqueThemeLobbyUIField):
+    return WorldRaidSeasonManageExcelAddWorldRaidUniqueThemeLobbyUIField(builder, worldRaidUniqueThemeLobbyUIField)
+def WorldRaidSeasonManageExcelAddWorldRaidUniqueThemeNameField(builder, worldRaidUniqueThemeNameField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidUniqueThemeNameField), 0)
+def AddWorldRaidUniqueThemeNameField(builder, worldRaidUniqueThemeNameField):
+    return WorldRaidSeasonManageExcelAddWorldRaidUniqueThemeNameField(builder, worldRaidUniqueThemeNameField)
+def WorldRaidSeasonManageExcelAddCanWorldRaidGemEnterField(builder, canWorldRaidGemEnterField): builder.PrependBoolSlot(12, canWorldRaidGemEnterField, 0)
+def AddCanWorldRaidGemEnterField(builder, canWorldRaidGemEnterField):
+    return WorldRaidSeasonManageExcelAddCanWorldRaidGemEnterField(builder, canWorldRaidGemEnterField)
+def WorldRaidSeasonManageExcelAddHideWorldRaidTicketUIField(builder, hideWorldRaidTicketUIField): builder.PrependBoolSlot(13, hideWorldRaidTicketUIField, 0)
+def AddHideWorldRaidTicketUIField(builder, hideWorldRaidTicketUIField):
+    return WorldRaidSeasonManageExcelAddHideWorldRaidTicketUIField(builder, hideWorldRaidTicketUIField)
+def WorldRaidSeasonManageExcelAddHideWorldRaidBossCompleteRewardUIField(builder, hideWorldRaidBossCompleteRewardUIField): builder.PrependBoolSlot(14, hideWorldRaidBossCompleteRewardUIField, 0)
+def AddHideWorldRaidBossCompleteRewardUIField(builder, hideWorldRaidBossCompleteRewardUIField):
+    return WorldRaidSeasonManageExcelAddHideWorldRaidBossCompleteRewardUIField(builder, hideWorldRaidBossCompleteRewardUIField)
+def WorldRaidSeasonManageExcelAddUseWorldRaidCommonToastField(builder, useWorldRaidCommonToastField): builder.PrependBoolSlot(15, useWorldRaidCommonToastField, 0)
+def AddUseWorldRaidCommonToastField(builder, useWorldRaidCommonToastField):
+    return WorldRaidSeasonManageExcelAddUseWorldRaidCommonToastField(builder, useWorldRaidCommonToastField)
+def WorldRaidSeasonManageExcelAddOpenRaidBossGroupIdField(builder, openRaidBossGroupIdField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(openRaidBossGroupIdField), 0)
+def AddOpenRaidBossGroupIdField(builder, openRaidBossGroupIdField):
+    return WorldRaidSeasonManageExcelAddOpenRaidBossGroupIdField(builder, openRaidBossGroupIdField)
+def WorldRaidSeasonManageExcelStartOpenRaidBossGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartOpenRaidBossGroupIdFieldVector(builder, numElems):
+    return WorldRaidSeasonManageExcelStartOpenRaidBossGroupIdFieldVector(builder, numElems)
+def WorldRaidSeasonManageExcelAddBossSpawnTimeField(builder, bossSpawnTimeField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(bossSpawnTimeField), 0)
+def AddBossSpawnTimeField(builder, bossSpawnTimeField):
+    return WorldRaidSeasonManageExcelAddBossSpawnTimeField(builder, bossSpawnTimeField)
+def WorldRaidSeasonManageExcelStartBossSpawnTimeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartBossSpawnTimeFieldVector(builder, numElems):
+    return WorldRaidSeasonManageExcelStartBossSpawnTimeFieldVector(builder, numElems)
+def WorldRaidSeasonManageExcelAddEliminateTimeField(builder, eliminateTimeField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(eliminateTimeField), 0)
+def AddEliminateTimeField(builder, eliminateTimeField):
+    return WorldRaidSeasonManageExcelAddEliminateTimeField(builder, eliminateTimeField)
+def WorldRaidSeasonManageExcelStartEliminateTimeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEliminateTimeFieldVector(builder, numElems):
+    return WorldRaidSeasonManageExcelStartEliminateTimeFieldVector(builder, numElems)
+def WorldRaidSeasonManageExcelAddScenarioOutputConditionIdField(builder, scenarioOutputConditionIdField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(scenarioOutputConditionIdField), 0)
+def AddScenarioOutputConditionIdField(builder, scenarioOutputConditionIdField):
+    return WorldRaidSeasonManageExcelAddScenarioOutputConditionIdField(builder, scenarioOutputConditionIdField)
+def WorldRaidSeasonManageExcelStartScenarioOutputConditionIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartScenarioOutputConditionIdFieldVector(builder, numElems):
+    return WorldRaidSeasonManageExcelStartScenarioOutputConditionIdFieldVector(builder, numElems)
+def WorldRaidSeasonManageExcelAddConditionScenarioGroupidField(builder, conditionScenarioGroupidField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(conditionScenarioGroupidField), 0)
+def AddConditionScenarioGroupidField(builder, conditionScenarioGroupidField):
+    return WorldRaidSeasonManageExcelAddConditionScenarioGroupidField(builder, conditionScenarioGroupidField)
+def WorldRaidSeasonManageExcelStartConditionScenarioGroupidFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartConditionScenarioGroupidFieldVector(builder, numElems):
+    return WorldRaidSeasonManageExcelStartConditionScenarioGroupidFieldVector(builder, numElems)
+def WorldRaidSeasonManageExcelAddWorldRaidMapEnterOperatorField(builder, worldRaidMapEnterOperatorField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(worldRaidMapEnterOperatorField), 0)
+def AddWorldRaidMapEnterOperatorField(builder, worldRaidMapEnterOperatorField):
+    return WorldRaidSeasonManageExcelAddWorldRaidMapEnterOperatorField(builder, worldRaidMapEnterOperatorField)
+def WorldRaidSeasonManageExcelAddUseFavorRankBuffField(builder, useFavorRankBuffField): builder.PrependBoolSlot(22, useFavorRankBuffField, 0)
+def AddUseFavorRankBuffField(builder, useFavorRankBuffField):
+    return WorldRaidSeasonManageExcelAddUseFavorRankBuffField(builder, useFavorRankBuffField)
 def WorldRaidSeasonManageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WorldRaidSeasonManageExcelEnd(builder)

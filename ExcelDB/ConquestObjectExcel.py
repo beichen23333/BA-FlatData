@@ -25,84 +25,84 @@ class ConquestObjectExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConquestObjectExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestObjectExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestObjectExcel
-    def ConquestObjectType(self):
+    def ConquestObjectTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestObjectExcel
-    def Key(self):
+    def KeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestObjectExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestObjectExcel
-    def PrefabName(self):
+    def PrefabNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestObjectExcel
-    def ConquestRewardParcelType(self):
+    def ConquestRewardParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestObjectExcel
-    def ConquestRewardID(self):
+    def ConquestRewardIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestObjectExcel
-    def ConquestRewardAmount(self):
+    def ConquestRewardAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestObjectExcel
-    def Disposable(self):
+    def DisposableField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ConquestObjectExcel
-    def StepIndex(self):
+    def StepIndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestObjectExcel
-    def StepObjectCount(self):
+    def StepObjectCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -111,42 +111,42 @@ class ConquestObjectExcel(object):
 def ConquestObjectExcelStart(builder): builder.StartObject(12)
 def Start(builder):
     return ConquestObjectExcelStart(builder)
-def ConquestObjectExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ConquestObjectExcelAddId(builder, id)
-def ConquestObjectExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(1, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return ConquestObjectExcelAddEventContentId(builder, eventContentId)
-def ConquestObjectExcelAddConquestObjectType(builder, conquestObjectType): builder.PrependInt32Slot(2, conquestObjectType, 0)
-def AddConquestObjectType(builder, conquestObjectType):
-    return ConquestObjectExcelAddConquestObjectType(builder, conquestObjectType)
-def ConquestObjectExcelAddKey(builder, key): builder.PrependUint32Slot(3, key, 0)
-def AddKey(builder, key):
-    return ConquestObjectExcelAddKey(builder, key)
-def ConquestObjectExcelAddName(builder, name): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return ConquestObjectExcelAddName(builder, name)
-def ConquestObjectExcelAddPrefabName(builder, prefabName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(prefabName), 0)
-def AddPrefabName(builder, prefabName):
-    return ConquestObjectExcelAddPrefabName(builder, prefabName)
-def ConquestObjectExcelAddConquestRewardParcelType(builder, conquestRewardParcelType): builder.PrependInt32Slot(6, conquestRewardParcelType, 0)
-def AddConquestRewardParcelType(builder, conquestRewardParcelType):
-    return ConquestObjectExcelAddConquestRewardParcelType(builder, conquestRewardParcelType)
-def ConquestObjectExcelAddConquestRewardID(builder, conquestRewardID): builder.PrependInt32Slot(7, conquestRewardID, 0)
-def AddConquestRewardID(builder, conquestRewardID):
-    return ConquestObjectExcelAddConquestRewardID(builder, conquestRewardID)
-def ConquestObjectExcelAddConquestRewardAmount(builder, conquestRewardAmount): builder.PrependInt32Slot(8, conquestRewardAmount, 0)
-def AddConquestRewardAmount(builder, conquestRewardAmount):
-    return ConquestObjectExcelAddConquestRewardAmount(builder, conquestRewardAmount)
-def ConquestObjectExcelAddDisposable(builder, disposable): builder.PrependBoolSlot(9, disposable, 0)
-def AddDisposable(builder, disposable):
-    return ConquestObjectExcelAddDisposable(builder, disposable)
-def ConquestObjectExcelAddStepIndex(builder, stepIndex): builder.PrependInt32Slot(10, stepIndex, 0)
-def AddStepIndex(builder, stepIndex):
-    return ConquestObjectExcelAddStepIndex(builder, stepIndex)
-def ConquestObjectExcelAddStepObjectCount(builder, stepObjectCount): builder.PrependInt32Slot(11, stepObjectCount, 0)
-def AddStepObjectCount(builder, stepObjectCount):
-    return ConquestObjectExcelAddStepObjectCount(builder, stepObjectCount)
+def ConquestObjectExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ConquestObjectExcelAddIdField(builder, idField)
+def ConquestObjectExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return ConquestObjectExcelAddEventContentIdField(builder, eventContentIdField)
+def ConquestObjectExcelAddConquestObjectTypeField(builder, conquestObjectTypeField): builder.PrependInt32Slot(2, conquestObjectTypeField, 0)
+def AddConquestObjectTypeField(builder, conquestObjectTypeField):
+    return ConquestObjectExcelAddConquestObjectTypeField(builder, conquestObjectTypeField)
+def ConquestObjectExcelAddKeyField(builder, keyField): builder.PrependUint32Slot(3, keyField, 0)
+def AddKeyField(builder, keyField):
+    return ConquestObjectExcelAddKeyField(builder, keyField)
+def ConquestObjectExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return ConquestObjectExcelAddNameField(builder, nameField)
+def ConquestObjectExcelAddPrefabNameField(builder, prefabNameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+def AddPrefabNameField(builder, prefabNameField):
+    return ConquestObjectExcelAddPrefabNameField(builder, prefabNameField)
+def ConquestObjectExcelAddConquestRewardParcelTypeField(builder, conquestRewardParcelTypeField): builder.PrependInt32Slot(6, conquestRewardParcelTypeField, 0)
+def AddConquestRewardParcelTypeField(builder, conquestRewardParcelTypeField):
+    return ConquestObjectExcelAddConquestRewardParcelTypeField(builder, conquestRewardParcelTypeField)
+def ConquestObjectExcelAddConquestRewardIDField(builder, conquestRewardIDField): builder.PrependInt32Slot(7, conquestRewardIDField, 0)
+def AddConquestRewardIDField(builder, conquestRewardIDField):
+    return ConquestObjectExcelAddConquestRewardIDField(builder, conquestRewardIDField)
+def ConquestObjectExcelAddConquestRewardAmountField(builder, conquestRewardAmountField): builder.PrependInt32Slot(8, conquestRewardAmountField, 0)
+def AddConquestRewardAmountField(builder, conquestRewardAmountField):
+    return ConquestObjectExcelAddConquestRewardAmountField(builder, conquestRewardAmountField)
+def ConquestObjectExcelAddDisposableField(builder, disposableField): builder.PrependBoolSlot(9, disposableField, 0)
+def AddDisposableField(builder, disposableField):
+    return ConquestObjectExcelAddDisposableField(builder, disposableField)
+def ConquestObjectExcelAddStepIndexField(builder, stepIndexField): builder.PrependInt32Slot(10, stepIndexField, 0)
+def AddStepIndexField(builder, stepIndexField):
+    return ConquestObjectExcelAddStepIndexField(builder, stepIndexField)
+def ConquestObjectExcelAddStepObjectCountField(builder, stepObjectCountField): builder.PrependInt32Slot(11, stepObjectCountField, 0)
+def AddStepObjectCountField(builder, stepObjectCountField):
+    return ConquestObjectExcelAddStepObjectCountField(builder, stepObjectCountField)
 def ConquestObjectExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConquestObjectExcelEnd(builder)

@@ -25,126 +25,126 @@ class ObstacleStatExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ObstacleStatExcel
-    def StringID(self):
+    def StringIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ObstacleStatExcel
-    def MaxHP1(self):
+    def MaxHP1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def MaxHP100(self):
+    def MaxHP100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def BlockRate(self):
+    def BlockRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def Dodge(self):
+    def DodgeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def CanNotStandRange(self):
+    def CanNotStandRangeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def HighlightFloaterHeight(self):
+    def HighlightFloaterHeightField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ObstacleStatExcel
-    def EnhanceLightArmorRate(self):
+    def EnhanceLightArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def EnhanceHeavyArmorRate(self):
+    def EnhanceHeavyArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def EnhanceUnarmedRate(self):
+    def EnhanceUnarmedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def EnhanceElasticArmorRate(self):
+    def EnhanceElasticArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def EnhanceCompositeArmorRate(self):
+    def EnhanceCompositeArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def EnhanceStructureRate(self):
+    def EnhanceStructureRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def EnhanceNormalArmorRate(self):
+    def EnhanceNormalArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def ReduceExDamagedRate(self):
+    def ReduceExDamagedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def ReduceBasicsDamagedRate(self):
+    def ReduceBasicsDamagedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ObstacleStatExcel
-    def ReduceWeakDamagedRate(self):
+    def ReduceWeakDamagedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -153,60 +153,60 @@ class ObstacleStatExcel(object):
 def ObstacleStatExcelStart(builder): builder.StartObject(18)
 def Start(builder):
     return ObstacleStatExcelStart(builder)
-def ObstacleStatExcelAddStringID(builder, stringID): builder.PrependUint32Slot(0, stringID, 0)
-def AddStringID(builder, stringID):
-    return ObstacleStatExcelAddStringID(builder, stringID)
-def ObstacleStatExcelAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return ObstacleStatExcelAddName(builder, name)
-def ObstacleStatExcelAddMaxHP1(builder, maxHP1): builder.PrependInt32Slot(2, maxHP1, 0)
-def AddMaxHP1(builder, maxHP1):
-    return ObstacleStatExcelAddMaxHP1(builder, maxHP1)
-def ObstacleStatExcelAddMaxHP100(builder, maxHP100): builder.PrependInt32Slot(3, maxHP100, 0)
-def AddMaxHP100(builder, maxHP100):
-    return ObstacleStatExcelAddMaxHP100(builder, maxHP100)
-def ObstacleStatExcelAddBlockRate(builder, blockRate): builder.PrependInt32Slot(4, blockRate, 0)
-def AddBlockRate(builder, blockRate):
-    return ObstacleStatExcelAddBlockRate(builder, blockRate)
-def ObstacleStatExcelAddDodge(builder, dodge): builder.PrependInt32Slot(5, dodge, 0)
-def AddDodge(builder, dodge):
-    return ObstacleStatExcelAddDodge(builder, dodge)
-def ObstacleStatExcelAddCanNotStandRange(builder, canNotStandRange): builder.PrependInt32Slot(6, canNotStandRange, 0)
-def AddCanNotStandRange(builder, canNotStandRange):
-    return ObstacleStatExcelAddCanNotStandRange(builder, canNotStandRange)
-def ObstacleStatExcelAddHighlightFloaterHeight(builder, highlightFloaterHeight): builder.PrependFloat32Slot(7, highlightFloaterHeight, 0.0)
-def AddHighlightFloaterHeight(builder, highlightFloaterHeight):
-    return ObstacleStatExcelAddHighlightFloaterHeight(builder, highlightFloaterHeight)
-def ObstacleStatExcelAddEnhanceLightArmorRate(builder, enhanceLightArmorRate): builder.PrependInt32Slot(8, enhanceLightArmorRate, 0)
-def AddEnhanceLightArmorRate(builder, enhanceLightArmorRate):
-    return ObstacleStatExcelAddEnhanceLightArmorRate(builder, enhanceLightArmorRate)
-def ObstacleStatExcelAddEnhanceHeavyArmorRate(builder, enhanceHeavyArmorRate): builder.PrependInt32Slot(9, enhanceHeavyArmorRate, 0)
-def AddEnhanceHeavyArmorRate(builder, enhanceHeavyArmorRate):
-    return ObstacleStatExcelAddEnhanceHeavyArmorRate(builder, enhanceHeavyArmorRate)
-def ObstacleStatExcelAddEnhanceUnarmedRate(builder, enhanceUnarmedRate): builder.PrependInt32Slot(10, enhanceUnarmedRate, 0)
-def AddEnhanceUnarmedRate(builder, enhanceUnarmedRate):
-    return ObstacleStatExcelAddEnhanceUnarmedRate(builder, enhanceUnarmedRate)
-def ObstacleStatExcelAddEnhanceElasticArmorRate(builder, enhanceElasticArmorRate): builder.PrependInt32Slot(11, enhanceElasticArmorRate, 0)
-def AddEnhanceElasticArmorRate(builder, enhanceElasticArmorRate):
-    return ObstacleStatExcelAddEnhanceElasticArmorRate(builder, enhanceElasticArmorRate)
-def ObstacleStatExcelAddEnhanceCompositeArmorRate(builder, enhanceCompositeArmorRate): builder.PrependInt32Slot(12, enhanceCompositeArmorRate, 0)
-def AddEnhanceCompositeArmorRate(builder, enhanceCompositeArmorRate):
-    return ObstacleStatExcelAddEnhanceCompositeArmorRate(builder, enhanceCompositeArmorRate)
-def ObstacleStatExcelAddEnhanceStructureRate(builder, enhanceStructureRate): builder.PrependInt32Slot(13, enhanceStructureRate, 0)
-def AddEnhanceStructureRate(builder, enhanceStructureRate):
-    return ObstacleStatExcelAddEnhanceStructureRate(builder, enhanceStructureRate)
-def ObstacleStatExcelAddEnhanceNormalArmorRate(builder, enhanceNormalArmorRate): builder.PrependInt32Slot(14, enhanceNormalArmorRate, 0)
-def AddEnhanceNormalArmorRate(builder, enhanceNormalArmorRate):
-    return ObstacleStatExcelAddEnhanceNormalArmorRate(builder, enhanceNormalArmorRate)
-def ObstacleStatExcelAddReduceExDamagedRate(builder, reduceExDamagedRate): builder.PrependInt32Slot(15, reduceExDamagedRate, 0)
-def AddReduceExDamagedRate(builder, reduceExDamagedRate):
-    return ObstacleStatExcelAddReduceExDamagedRate(builder, reduceExDamagedRate)
-def ObstacleStatExcelAddReduceBasicsDamagedRate(builder, reduceBasicsDamagedRate): builder.PrependInt32Slot(16, reduceBasicsDamagedRate, 0)
-def AddReduceBasicsDamagedRate(builder, reduceBasicsDamagedRate):
-    return ObstacleStatExcelAddReduceBasicsDamagedRate(builder, reduceBasicsDamagedRate)
-def ObstacleStatExcelAddReduceWeakDamagedRate(builder, reduceWeakDamagedRate): builder.PrependInt32Slot(17, reduceWeakDamagedRate, 0)
-def AddReduceWeakDamagedRate(builder, reduceWeakDamagedRate):
-    return ObstacleStatExcelAddReduceWeakDamagedRate(builder, reduceWeakDamagedRate)
+def ObstacleStatExcelAddStringIDField(builder, stringIDField): builder.PrependUint32Slot(0, stringIDField, 0)
+def AddStringIDField(builder, stringIDField):
+    return ObstacleStatExcelAddStringIDField(builder, stringIDField)
+def ObstacleStatExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return ObstacleStatExcelAddNameField(builder, nameField)
+def ObstacleStatExcelAddMaxHP1Field(builder, maxHP1Field): builder.PrependInt32Slot(2, maxHP1Field, 0)
+def AddMaxHP1Field(builder, maxHP1Field):
+    return ObstacleStatExcelAddMaxHP1Field(builder, maxHP1Field)
+def ObstacleStatExcelAddMaxHP100Field(builder, maxHP100Field): builder.PrependInt32Slot(3, maxHP100Field, 0)
+def AddMaxHP100Field(builder, maxHP100Field):
+    return ObstacleStatExcelAddMaxHP100Field(builder, maxHP100Field)
+def ObstacleStatExcelAddBlockRateField(builder, blockRateField): builder.PrependInt32Slot(4, blockRateField, 0)
+def AddBlockRateField(builder, blockRateField):
+    return ObstacleStatExcelAddBlockRateField(builder, blockRateField)
+def ObstacleStatExcelAddDodgeField(builder, dodgeField): builder.PrependInt32Slot(5, dodgeField, 0)
+def AddDodgeField(builder, dodgeField):
+    return ObstacleStatExcelAddDodgeField(builder, dodgeField)
+def ObstacleStatExcelAddCanNotStandRangeField(builder, canNotStandRangeField): builder.PrependInt32Slot(6, canNotStandRangeField, 0)
+def AddCanNotStandRangeField(builder, canNotStandRangeField):
+    return ObstacleStatExcelAddCanNotStandRangeField(builder, canNotStandRangeField)
+def ObstacleStatExcelAddHighlightFloaterHeightField(builder, highlightFloaterHeightField): builder.PrependFloat32Slot(7, highlightFloaterHeightField, 0.0)
+def AddHighlightFloaterHeightField(builder, highlightFloaterHeightField):
+    return ObstacleStatExcelAddHighlightFloaterHeightField(builder, highlightFloaterHeightField)
+def ObstacleStatExcelAddEnhanceLightArmorRateField(builder, enhanceLightArmorRateField): builder.PrependInt32Slot(8, enhanceLightArmorRateField, 0)
+def AddEnhanceLightArmorRateField(builder, enhanceLightArmorRateField):
+    return ObstacleStatExcelAddEnhanceLightArmorRateField(builder, enhanceLightArmorRateField)
+def ObstacleStatExcelAddEnhanceHeavyArmorRateField(builder, enhanceHeavyArmorRateField): builder.PrependInt32Slot(9, enhanceHeavyArmorRateField, 0)
+def AddEnhanceHeavyArmorRateField(builder, enhanceHeavyArmorRateField):
+    return ObstacleStatExcelAddEnhanceHeavyArmorRateField(builder, enhanceHeavyArmorRateField)
+def ObstacleStatExcelAddEnhanceUnarmedRateField(builder, enhanceUnarmedRateField): builder.PrependInt32Slot(10, enhanceUnarmedRateField, 0)
+def AddEnhanceUnarmedRateField(builder, enhanceUnarmedRateField):
+    return ObstacleStatExcelAddEnhanceUnarmedRateField(builder, enhanceUnarmedRateField)
+def ObstacleStatExcelAddEnhanceElasticArmorRateField(builder, enhanceElasticArmorRateField): builder.PrependInt32Slot(11, enhanceElasticArmorRateField, 0)
+def AddEnhanceElasticArmorRateField(builder, enhanceElasticArmorRateField):
+    return ObstacleStatExcelAddEnhanceElasticArmorRateField(builder, enhanceElasticArmorRateField)
+def ObstacleStatExcelAddEnhanceCompositeArmorRateField(builder, enhanceCompositeArmorRateField): builder.PrependInt32Slot(12, enhanceCompositeArmorRateField, 0)
+def AddEnhanceCompositeArmorRateField(builder, enhanceCompositeArmorRateField):
+    return ObstacleStatExcelAddEnhanceCompositeArmorRateField(builder, enhanceCompositeArmorRateField)
+def ObstacleStatExcelAddEnhanceStructureRateField(builder, enhanceStructureRateField): builder.PrependInt32Slot(13, enhanceStructureRateField, 0)
+def AddEnhanceStructureRateField(builder, enhanceStructureRateField):
+    return ObstacleStatExcelAddEnhanceStructureRateField(builder, enhanceStructureRateField)
+def ObstacleStatExcelAddEnhanceNormalArmorRateField(builder, enhanceNormalArmorRateField): builder.PrependInt32Slot(14, enhanceNormalArmorRateField, 0)
+def AddEnhanceNormalArmorRateField(builder, enhanceNormalArmorRateField):
+    return ObstacleStatExcelAddEnhanceNormalArmorRateField(builder, enhanceNormalArmorRateField)
+def ObstacleStatExcelAddReduceExDamagedRateField(builder, reduceExDamagedRateField): builder.PrependInt32Slot(15, reduceExDamagedRateField, 0)
+def AddReduceExDamagedRateField(builder, reduceExDamagedRateField):
+    return ObstacleStatExcelAddReduceExDamagedRateField(builder, reduceExDamagedRateField)
+def ObstacleStatExcelAddReduceBasicsDamagedRateField(builder, reduceBasicsDamagedRateField): builder.PrependInt32Slot(16, reduceBasicsDamagedRateField, 0)
+def AddReduceBasicsDamagedRateField(builder, reduceBasicsDamagedRateField):
+    return ObstacleStatExcelAddReduceBasicsDamagedRateField(builder, reduceBasicsDamagedRateField)
+def ObstacleStatExcelAddReduceWeakDamagedRateField(builder, reduceWeakDamagedRateField): builder.PrependInt32Slot(17, reduceWeakDamagedRateField, 0)
+def AddReduceWeakDamagedRateField(builder, reduceWeakDamagedRateField):
+    return ObstacleStatExcelAddReduceWeakDamagedRateField(builder, reduceWeakDamagedRateField)
 def ObstacleStatExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ObstacleStatExcelEnd(builder)

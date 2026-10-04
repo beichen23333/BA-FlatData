@@ -25,28 +25,28 @@ class EventContentDebuffRewardExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentDebuffRewardExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentDebuffRewardExcel
-    def EventStageId(self):
+    def EventStageIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentDebuffRewardExcel
-    def EventContentItemType(self):
+    def EventContentItemTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentDebuffRewardExcel
-    def RewardPercentage(self):
+    def RewardPercentageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class EventContentDebuffRewardExcel(object):
 def EventContentDebuffRewardExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentDebuffRewardExcelStart(builder)
-def EventContentDebuffRewardExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentDebuffRewardExcelAddEventContentId(builder, eventContentId)
-def EventContentDebuffRewardExcelAddEventStageId(builder, eventStageId): builder.PrependInt32Slot(1, eventStageId, 0)
-def AddEventStageId(builder, eventStageId):
-    return EventContentDebuffRewardExcelAddEventStageId(builder, eventStageId)
-def EventContentDebuffRewardExcelAddEventContentItemType(builder, eventContentItemType): builder.PrependInt32Slot(2, eventContentItemType, 0)
-def AddEventContentItemType(builder, eventContentItemType):
-    return EventContentDebuffRewardExcelAddEventContentItemType(builder, eventContentItemType)
-def EventContentDebuffRewardExcelAddRewardPercentage(builder, rewardPercentage): builder.PrependInt32Slot(3, rewardPercentage, 0)
-def AddRewardPercentage(builder, rewardPercentage):
-    return EventContentDebuffRewardExcelAddRewardPercentage(builder, rewardPercentage)
+def EventContentDebuffRewardExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentDebuffRewardExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentDebuffRewardExcelAddEventStageIdField(builder, eventStageIdField): builder.PrependInt32Slot(1, eventStageIdField, 0)
+def AddEventStageIdField(builder, eventStageIdField):
+    return EventContentDebuffRewardExcelAddEventStageIdField(builder, eventStageIdField)
+def EventContentDebuffRewardExcelAddEventContentItemTypeField(builder, eventContentItemTypeField): builder.PrependInt32Slot(2, eventContentItemTypeField, 0)
+def AddEventContentItemTypeField(builder, eventContentItemTypeField):
+    return EventContentDebuffRewardExcelAddEventContentItemTypeField(builder, eventContentItemTypeField)
+def EventContentDebuffRewardExcelAddRewardPercentageField(builder, rewardPercentageField): builder.PrependInt32Slot(3, rewardPercentageField, 0)
+def AddRewardPercentageField(builder, rewardPercentageField):
+    return EventContentDebuffRewardExcelAddRewardPercentageField(builder, rewardPercentageField)
 def EventContentDebuffRewardExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentDebuffRewardExcelEnd(builder)

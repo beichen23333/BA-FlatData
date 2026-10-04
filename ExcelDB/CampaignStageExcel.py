@@ -25,91 +25,91 @@ class CampaignStageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CampaignStageExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def Deprecated(self):
+    def DeprecatedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CampaignStageExcel
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CampaignStageExcel
-    def StageNumber(self):
+    def StageNumberField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CampaignStageExcel
-    def CleardScenarioId(self):
+    def CleardScenarioIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def BattleDuration(self):
+    def BattleDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StageEnterCostType(self):
+    def StageEnterCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StageEnterCostId(self):
+    def StageEnterCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StageEnterCostAmount(self):
+    def StageEnterCostAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StageEnterEchelonCount(self):
+    def StageEnterEchelonCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StarConditionTacticRankSCount(self):
+    def StarConditionTacticRankSCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StarConditionTurnCount(self):
+    def StarConditionTurnCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def EnterScenarioGroupId(self, j):
+    def EnterScenarioGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             a = self._tab.Vector(o)
@@ -117,26 +117,26 @@ class CampaignStageExcel(object):
         return 0
 
     # CampaignStageExcel
-    def EnterScenarioGroupIdAsNumpy(self):
+    def EnterScenarioGroupIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CampaignStageExcel
-    def EnterScenarioGroupIdLength(self):
+    def EnterScenarioGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CampaignStageExcel
-    def EnterScenarioGroupIdIsNone(self):
+    def EnterScenarioGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         return o == 0
 
     # CampaignStageExcel
-    def ClearScenarioGroupId(self, j):
+    def ClearScenarioGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             a = self._tab.Vector(o)
@@ -144,75 +144,75 @@ class CampaignStageExcel(object):
         return 0
 
     # CampaignStageExcel
-    def ClearScenarioGroupIdAsNumpy(self):
+    def ClearScenarioGroupIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CampaignStageExcel
-    def ClearScenarioGroupIdLength(self):
+    def ClearScenarioGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CampaignStageExcel
-    def ClearScenarioGroupIdIsNone(self):
+    def ClearScenarioGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         return o == 0
 
     # CampaignStageExcel
-    def StrategyMap(self):
+    def StrategyMapField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CampaignStageExcel
-    def StrategyMapBG(self):
+    def StrategyMapBGField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CampaignStageExcel
-    def CampaignStageRewardId(self):
+    def CampaignStageRewardIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def MaxTurn(self):
+    def MaxTurnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StageTopography(self):
+    def StageTopographyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def RecommandLevel(self):
+    def RecommandLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def RecommandLevelGapForGuide(self):
+    def RecommandLevelGapForGuideField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def MinEquipmentTierForGuide(self, j):
+    def MinEquipmentTierForGuideField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             a = self._tab.Vector(o)
@@ -220,26 +220,26 @@ class CampaignStageExcel(object):
         return 0
 
     # CampaignStageExcel
-    def MinEquipmentTierForGuideAsNumpy(self):
+    def MinEquipmentTierForGuideFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CampaignStageExcel
-    def MinEquipmentTierForGuideLength(self):
+    def MinEquipmentTierForGuideFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CampaignStageExcel
-    def MinEquipmentTierForGuideIsNone(self):
+    def MinEquipmentTierForGuideFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         return o == 0
 
     # CampaignStageExcel
-    def MinSkillLevelForGuide(self, j):
+    def MinSkillLevelForGuideField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             a = self._tab.Vector(o)
@@ -247,89 +247,89 @@ class CampaignStageExcel(object):
         return 0
 
     # CampaignStageExcel
-    def MinSkillLevelForGuideAsNumpy(self):
+    def MinSkillLevelForGuideFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CampaignStageExcel
-    def MinSkillLevelForGuideLength(self):
+    def MinSkillLevelForGuideFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CampaignStageExcel
-    def MinSkillLevelForGuideIsNone(self):
+    def MinSkillLevelForGuideFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         return o == 0
 
     # CampaignStageExcel
-    def BgmId(self):
+    def BgmIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StrategyEnvironment(self):
+    def StrategyEnvironmentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def GroundId(self):
+    def GroundIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def StrategySkipGroundId(self):
+    def StrategySkipGroundIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def ContentType(self):
+    def ContentTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def BGMId(self):
+    def BGMIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def FirstClearReportEventName(self):
+    def FirstClearReportEventNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CampaignStageExcel
-    def TacticRewardExp(self):
+    def TacticRewardExpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def FixedEchelonId(self):
+    def FixedEchelonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CampaignStageExcel
-    def EchelonExtensionType(self):
+    def EchelonExtensionTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -338,117 +338,117 @@ class CampaignStageExcel(object):
 def CampaignStageExcelStart(builder): builder.StartObject(33)
 def Start(builder):
     return CampaignStageExcelStart(builder)
-def CampaignStageExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CampaignStageExcelAddId(builder, id)
-def CampaignStageExcelAddDeprecated(builder, deprecated): builder.PrependBoolSlot(1, deprecated, 0)
-def AddDeprecated(builder, deprecated):
-    return CampaignStageExcelAddDeprecated(builder, deprecated)
-def CampaignStageExcelAddName(builder, name): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return CampaignStageExcelAddName(builder, name)
-def CampaignStageExcelAddStageNumber(builder, stageNumber): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(stageNumber), 0)
-def AddStageNumber(builder, stageNumber):
-    return CampaignStageExcelAddStageNumber(builder, stageNumber)
-def CampaignStageExcelAddCleardScenarioId(builder, cleardScenarioId): builder.PrependInt32Slot(4, cleardScenarioId, 0)
-def AddCleardScenarioId(builder, cleardScenarioId):
-    return CampaignStageExcelAddCleardScenarioId(builder, cleardScenarioId)
-def CampaignStageExcelAddBattleDuration(builder, battleDuration): builder.PrependInt32Slot(5, battleDuration, 0)
-def AddBattleDuration(builder, battleDuration):
-    return CampaignStageExcelAddBattleDuration(builder, battleDuration)
-def CampaignStageExcelAddStageEnterCostType(builder, stageEnterCostType): builder.PrependInt32Slot(6, stageEnterCostType, 0)
-def AddStageEnterCostType(builder, stageEnterCostType):
-    return CampaignStageExcelAddStageEnterCostType(builder, stageEnterCostType)
-def CampaignStageExcelAddStageEnterCostId(builder, stageEnterCostId): builder.PrependInt32Slot(7, stageEnterCostId, 0)
-def AddStageEnterCostId(builder, stageEnterCostId):
-    return CampaignStageExcelAddStageEnterCostId(builder, stageEnterCostId)
-def CampaignStageExcelAddStageEnterCostAmount(builder, stageEnterCostAmount): builder.PrependInt32Slot(8, stageEnterCostAmount, 0)
-def AddStageEnterCostAmount(builder, stageEnterCostAmount):
-    return CampaignStageExcelAddStageEnterCostAmount(builder, stageEnterCostAmount)
-def CampaignStageExcelAddStageEnterEchelonCount(builder, stageEnterEchelonCount): builder.PrependInt32Slot(9, stageEnterEchelonCount, 0)
-def AddStageEnterEchelonCount(builder, stageEnterEchelonCount):
-    return CampaignStageExcelAddStageEnterEchelonCount(builder, stageEnterEchelonCount)
-def CampaignStageExcelAddStarConditionTacticRankSCount(builder, starConditionTacticRankSCount): builder.PrependInt32Slot(10, starConditionTacticRankSCount, 0)
-def AddStarConditionTacticRankSCount(builder, starConditionTacticRankSCount):
-    return CampaignStageExcelAddStarConditionTacticRankSCount(builder, starConditionTacticRankSCount)
-def CampaignStageExcelAddStarConditionTurnCount(builder, starConditionTurnCount): builder.PrependInt32Slot(11, starConditionTurnCount, 0)
-def AddStarConditionTurnCount(builder, starConditionTurnCount):
-    return CampaignStageExcelAddStarConditionTurnCount(builder, starConditionTurnCount)
-def CampaignStageExcelAddEnterScenarioGroupId(builder, enterScenarioGroupId): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(enterScenarioGroupId), 0)
-def AddEnterScenarioGroupId(builder, enterScenarioGroupId):
-    return CampaignStageExcelAddEnterScenarioGroupId(builder, enterScenarioGroupId)
-def CampaignStageExcelStartEnterScenarioGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEnterScenarioGroupIdVector(builder, numElems):
-    return CampaignStageExcelStartEnterScenarioGroupIdVector(builder, numElems)
-def CampaignStageExcelAddClearScenarioGroupId(builder, clearScenarioGroupId): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(clearScenarioGroupId), 0)
-def AddClearScenarioGroupId(builder, clearScenarioGroupId):
-    return CampaignStageExcelAddClearScenarioGroupId(builder, clearScenarioGroupId)
-def CampaignStageExcelStartClearScenarioGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartClearScenarioGroupIdVector(builder, numElems):
-    return CampaignStageExcelStartClearScenarioGroupIdVector(builder, numElems)
-def CampaignStageExcelAddStrategyMap(builder, strategyMap): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(strategyMap), 0)
-def AddStrategyMap(builder, strategyMap):
-    return CampaignStageExcelAddStrategyMap(builder, strategyMap)
-def CampaignStageExcelAddStrategyMapBG(builder, strategyMapBG): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(strategyMapBG), 0)
-def AddStrategyMapBG(builder, strategyMapBG):
-    return CampaignStageExcelAddStrategyMapBG(builder, strategyMapBG)
-def CampaignStageExcelAddCampaignStageRewardId(builder, campaignStageRewardId): builder.PrependInt32Slot(16, campaignStageRewardId, 0)
-def AddCampaignStageRewardId(builder, campaignStageRewardId):
-    return CampaignStageExcelAddCampaignStageRewardId(builder, campaignStageRewardId)
-def CampaignStageExcelAddMaxTurn(builder, maxTurn): builder.PrependInt32Slot(17, maxTurn, 0)
-def AddMaxTurn(builder, maxTurn):
-    return CampaignStageExcelAddMaxTurn(builder, maxTurn)
-def CampaignStageExcelAddStageTopography(builder, stageTopography): builder.PrependInt32Slot(18, stageTopography, 0)
-def AddStageTopography(builder, stageTopography):
-    return CampaignStageExcelAddStageTopography(builder, stageTopography)
-def CampaignStageExcelAddRecommandLevel(builder, recommandLevel): builder.PrependInt32Slot(19, recommandLevel, 0)
-def AddRecommandLevel(builder, recommandLevel):
-    return CampaignStageExcelAddRecommandLevel(builder, recommandLevel)
-def CampaignStageExcelAddRecommandLevelGapForGuide(builder, recommandLevelGapForGuide): builder.PrependInt32Slot(20, recommandLevelGapForGuide, 0)
-def AddRecommandLevelGapForGuide(builder, recommandLevelGapForGuide):
-    return CampaignStageExcelAddRecommandLevelGapForGuide(builder, recommandLevelGapForGuide)
-def CampaignStageExcelAddMinEquipmentTierForGuide(builder, minEquipmentTierForGuide): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(minEquipmentTierForGuide), 0)
-def AddMinEquipmentTierForGuide(builder, minEquipmentTierForGuide):
-    return CampaignStageExcelAddMinEquipmentTierForGuide(builder, minEquipmentTierForGuide)
-def CampaignStageExcelStartMinEquipmentTierForGuideVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMinEquipmentTierForGuideVector(builder, numElems):
-    return CampaignStageExcelStartMinEquipmentTierForGuideVector(builder, numElems)
-def CampaignStageExcelAddMinSkillLevelForGuide(builder, minSkillLevelForGuide): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(minSkillLevelForGuide), 0)
-def AddMinSkillLevelForGuide(builder, minSkillLevelForGuide):
-    return CampaignStageExcelAddMinSkillLevelForGuide(builder, minSkillLevelForGuide)
-def CampaignStageExcelStartMinSkillLevelForGuideVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMinSkillLevelForGuideVector(builder, numElems):
-    return CampaignStageExcelStartMinSkillLevelForGuideVector(builder, numElems)
-def CampaignStageExcelAddBgmId(builder, bgmId): builder.PrependInt32Slot(23, bgmId, 0)
-def AddBgmId(builder, bgmId):
-    return CampaignStageExcelAddBgmId(builder, bgmId)
-def CampaignStageExcelAddStrategyEnvironment(builder, strategyEnvironment): builder.PrependInt32Slot(24, strategyEnvironment, 0)
-def AddStrategyEnvironment(builder, strategyEnvironment):
-    return CampaignStageExcelAddStrategyEnvironment(builder, strategyEnvironment)
-def CampaignStageExcelAddGroundId(builder, groundId): builder.PrependInt32Slot(25, groundId, 0)
-def AddGroundId(builder, groundId):
-    return CampaignStageExcelAddGroundId(builder, groundId)
-def CampaignStageExcelAddStrategySkipGroundId(builder, strategySkipGroundId): builder.PrependInt32Slot(26, strategySkipGroundId, 0)
-def AddStrategySkipGroundId(builder, strategySkipGroundId):
-    return CampaignStageExcelAddStrategySkipGroundId(builder, strategySkipGroundId)
-def CampaignStageExcelAddContentType(builder, contentType): builder.PrependInt32Slot(27, contentType, 0)
-def AddContentType(builder, contentType):
-    return CampaignStageExcelAddContentType(builder, contentType)
-def CampaignStageExcelAddBGMId(builder, bGMId): builder.PrependInt32Slot(28, bGMId, 0)
-def AddBGMId(builder, bGMId):
-    return CampaignStageExcelAddBGMId(builder, bGMId)
-def CampaignStageExcelAddFirstClearReportEventName(builder, firstClearReportEventName): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(firstClearReportEventName), 0)
-def AddFirstClearReportEventName(builder, firstClearReportEventName):
-    return CampaignStageExcelAddFirstClearReportEventName(builder, firstClearReportEventName)
-def CampaignStageExcelAddTacticRewardExp(builder, tacticRewardExp): builder.PrependInt32Slot(30, tacticRewardExp, 0)
-def AddTacticRewardExp(builder, tacticRewardExp):
-    return CampaignStageExcelAddTacticRewardExp(builder, tacticRewardExp)
-def CampaignStageExcelAddFixedEchelonId(builder, fixedEchelonId): builder.PrependInt32Slot(31, fixedEchelonId, 0)
-def AddFixedEchelonId(builder, fixedEchelonId):
-    return CampaignStageExcelAddFixedEchelonId(builder, fixedEchelonId)
-def CampaignStageExcelAddEchelonExtensionType(builder, echelonExtensionType): builder.PrependInt32Slot(32, echelonExtensionType, 0)
-def AddEchelonExtensionType(builder, echelonExtensionType):
-    return CampaignStageExcelAddEchelonExtensionType(builder, echelonExtensionType)
+def CampaignStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CampaignStageExcelAddIdField(builder, idField)
+def CampaignStageExcelAddDeprecatedField(builder, deprecatedField): builder.PrependBoolSlot(1, deprecatedField, 0)
+def AddDeprecatedField(builder, deprecatedField):
+    return CampaignStageExcelAddDeprecatedField(builder, deprecatedField)
+def CampaignStageExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return CampaignStageExcelAddNameField(builder, nameField)
+def CampaignStageExcelAddStageNumberField(builder, stageNumberField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(stageNumberField), 0)
+def AddStageNumberField(builder, stageNumberField):
+    return CampaignStageExcelAddStageNumberField(builder, stageNumberField)
+def CampaignStageExcelAddCleardScenarioIdField(builder, cleardScenarioIdField): builder.PrependInt32Slot(4, cleardScenarioIdField, 0)
+def AddCleardScenarioIdField(builder, cleardScenarioIdField):
+    return CampaignStageExcelAddCleardScenarioIdField(builder, cleardScenarioIdField)
+def CampaignStageExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(5, battleDurationField, 0)
+def AddBattleDurationField(builder, battleDurationField):
+    return CampaignStageExcelAddBattleDurationField(builder, battleDurationField)
+def CampaignStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField): builder.PrependInt32Slot(6, stageEnterCostTypeField, 0)
+def AddStageEnterCostTypeField(builder, stageEnterCostTypeField):
+    return CampaignStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
+def CampaignStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField): builder.PrependInt32Slot(7, stageEnterCostIdField, 0)
+def AddStageEnterCostIdField(builder, stageEnterCostIdField):
+    return CampaignStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
+def CampaignStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField): builder.PrependInt32Slot(8, stageEnterCostAmountField, 0)
+def AddStageEnterCostAmountField(builder, stageEnterCostAmountField):
+    return CampaignStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
+def CampaignStageExcelAddStageEnterEchelonCountField(builder, stageEnterEchelonCountField): builder.PrependInt32Slot(9, stageEnterEchelonCountField, 0)
+def AddStageEnterEchelonCountField(builder, stageEnterEchelonCountField):
+    return CampaignStageExcelAddStageEnterEchelonCountField(builder, stageEnterEchelonCountField)
+def CampaignStageExcelAddStarConditionTacticRankSCountField(builder, starConditionTacticRankSCountField): builder.PrependInt32Slot(10, starConditionTacticRankSCountField, 0)
+def AddStarConditionTacticRankSCountField(builder, starConditionTacticRankSCountField):
+    return CampaignStageExcelAddStarConditionTacticRankSCountField(builder, starConditionTacticRankSCountField)
+def CampaignStageExcelAddStarConditionTurnCountField(builder, starConditionTurnCountField): builder.PrependInt32Slot(11, starConditionTurnCountField, 0)
+def AddStarConditionTurnCountField(builder, starConditionTurnCountField):
+    return CampaignStageExcelAddStarConditionTurnCountField(builder, starConditionTurnCountField)
+def CampaignStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(enterScenarioGroupIdField), 0)
+def AddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField):
+    return CampaignStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField)
+def CampaignStageExcelStartEnterScenarioGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEnterScenarioGroupIdFieldVector(builder, numElems):
+    return CampaignStageExcelStartEnterScenarioGroupIdFieldVector(builder, numElems)
+def CampaignStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(clearScenarioGroupIdField), 0)
+def AddClearScenarioGroupIdField(builder, clearScenarioGroupIdField):
+    return CampaignStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField)
+def CampaignStageExcelStartClearScenarioGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartClearScenarioGroupIdFieldVector(builder, numElems):
+    return CampaignStageExcelStartClearScenarioGroupIdFieldVector(builder, numElems)
+def CampaignStageExcelAddStrategyMapField(builder, strategyMapField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(strategyMapField), 0)
+def AddStrategyMapField(builder, strategyMapField):
+    return CampaignStageExcelAddStrategyMapField(builder, strategyMapField)
+def CampaignStageExcelAddStrategyMapBGField(builder, strategyMapBGField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(strategyMapBGField), 0)
+def AddStrategyMapBGField(builder, strategyMapBGField):
+    return CampaignStageExcelAddStrategyMapBGField(builder, strategyMapBGField)
+def CampaignStageExcelAddCampaignStageRewardIdField(builder, campaignStageRewardIdField): builder.PrependInt32Slot(16, campaignStageRewardIdField, 0)
+def AddCampaignStageRewardIdField(builder, campaignStageRewardIdField):
+    return CampaignStageExcelAddCampaignStageRewardIdField(builder, campaignStageRewardIdField)
+def CampaignStageExcelAddMaxTurnField(builder, maxTurnField): builder.PrependInt32Slot(17, maxTurnField, 0)
+def AddMaxTurnField(builder, maxTurnField):
+    return CampaignStageExcelAddMaxTurnField(builder, maxTurnField)
+def CampaignStageExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(18, stageTopographyField, 0)
+def AddStageTopographyField(builder, stageTopographyField):
+    return CampaignStageExcelAddStageTopographyField(builder, stageTopographyField)
+def CampaignStageExcelAddRecommandLevelField(builder, recommandLevelField): builder.PrependInt32Slot(19, recommandLevelField, 0)
+def AddRecommandLevelField(builder, recommandLevelField):
+    return CampaignStageExcelAddRecommandLevelField(builder, recommandLevelField)
+def CampaignStageExcelAddRecommandLevelGapForGuideField(builder, recommandLevelGapForGuideField): builder.PrependInt32Slot(20, recommandLevelGapForGuideField, 0)
+def AddRecommandLevelGapForGuideField(builder, recommandLevelGapForGuideField):
+    return CampaignStageExcelAddRecommandLevelGapForGuideField(builder, recommandLevelGapForGuideField)
+def CampaignStageExcelAddMinEquipmentTierForGuideField(builder, minEquipmentTierForGuideField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(minEquipmentTierForGuideField), 0)
+def AddMinEquipmentTierForGuideField(builder, minEquipmentTierForGuideField):
+    return CampaignStageExcelAddMinEquipmentTierForGuideField(builder, minEquipmentTierForGuideField)
+def CampaignStageExcelStartMinEquipmentTierForGuideFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMinEquipmentTierForGuideFieldVector(builder, numElems):
+    return CampaignStageExcelStartMinEquipmentTierForGuideFieldVector(builder, numElems)
+def CampaignStageExcelAddMinSkillLevelForGuideField(builder, minSkillLevelForGuideField): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(minSkillLevelForGuideField), 0)
+def AddMinSkillLevelForGuideField(builder, minSkillLevelForGuideField):
+    return CampaignStageExcelAddMinSkillLevelForGuideField(builder, minSkillLevelForGuideField)
+def CampaignStageExcelStartMinSkillLevelForGuideFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMinSkillLevelForGuideFieldVector(builder, numElems):
+    return CampaignStageExcelStartMinSkillLevelForGuideFieldVector(builder, numElems)
+def CampaignStageExcelAddBgmIdField(builder, bgmIdField): builder.PrependInt32Slot(23, bgmIdField, 0)
+def AddBgmIdField(builder, bgmIdField):
+    return CampaignStageExcelAddBgmIdField(builder, bgmIdField)
+def CampaignStageExcelAddStrategyEnvironmentField(builder, strategyEnvironmentField): builder.PrependInt32Slot(24, strategyEnvironmentField, 0)
+def AddStrategyEnvironmentField(builder, strategyEnvironmentField):
+    return CampaignStageExcelAddStrategyEnvironmentField(builder, strategyEnvironmentField)
+def CampaignStageExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(25, groundIdField, 0)
+def AddGroundIdField(builder, groundIdField):
+    return CampaignStageExcelAddGroundIdField(builder, groundIdField)
+def CampaignStageExcelAddStrategySkipGroundIdField(builder, strategySkipGroundIdField): builder.PrependInt32Slot(26, strategySkipGroundIdField, 0)
+def AddStrategySkipGroundIdField(builder, strategySkipGroundIdField):
+    return CampaignStageExcelAddStrategySkipGroundIdField(builder, strategySkipGroundIdField)
+def CampaignStageExcelAddContentTypeField(builder, contentTypeField): builder.PrependInt32Slot(27, contentTypeField, 0)
+def AddContentTypeField(builder, contentTypeField):
+    return CampaignStageExcelAddContentTypeField(builder, contentTypeField)
+def CampaignStageExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(28, bGMIdField, 0)
+def AddBGMIdField(builder, bGMIdField):
+    return CampaignStageExcelAddBGMIdField(builder, bGMIdField)
+def CampaignStageExcelAddFirstClearReportEventNameField(builder, firstClearReportEventNameField): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(firstClearReportEventNameField), 0)
+def AddFirstClearReportEventNameField(builder, firstClearReportEventNameField):
+    return CampaignStageExcelAddFirstClearReportEventNameField(builder, firstClearReportEventNameField)
+def CampaignStageExcelAddTacticRewardExpField(builder, tacticRewardExpField): builder.PrependInt32Slot(30, tacticRewardExpField, 0)
+def AddTacticRewardExpField(builder, tacticRewardExpField):
+    return CampaignStageExcelAddTacticRewardExpField(builder, tacticRewardExpField)
+def CampaignStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField): builder.PrependInt32Slot(31, fixedEchelonIdField, 0)
+def AddFixedEchelonIdField(builder, fixedEchelonIdField):
+    return CampaignStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
+def CampaignStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(32, echelonExtensionTypeField, 0)
+def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
+    return CampaignStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
 def CampaignStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CampaignStageExcelEnd(builder)

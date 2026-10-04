@@ -25,56 +25,56 @@ class BossExternalBTExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # BossExternalBTExcel
-    def ExternalBTId(self):
+    def ExternalBTIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BossExternalBTExcel
-    def AIPhase(self):
+    def AIPhaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BossExternalBTExcel
-    def ExternalBTNodeType(self):
+    def ExternalBTNodeTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BossExternalBTExcel
-    def ExternalBTTrigger(self):
+    def ExternalBTTriggerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BossExternalBTExcel
-    def TriggerArgument(self):
+    def TriggerArgumentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # BossExternalBTExcel
-    def BehaviorRate(self):
+    def BehaviorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BossExternalBTExcel
-    def ExternalBehavior(self):
+    def ExternalBehaviorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # BossExternalBTExcel
-    def BehaviorArgument(self):
+    def BehaviorArgumentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -83,30 +83,30 @@ class BossExternalBTExcel(object):
 def BossExternalBTExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return BossExternalBTExcelStart(builder)
-def BossExternalBTExcelAddExternalBTId(builder, externalBTId): builder.PrependInt32Slot(0, externalBTId, 0)
-def AddExternalBTId(builder, externalBTId):
-    return BossExternalBTExcelAddExternalBTId(builder, externalBTId)
-def BossExternalBTExcelAddAIPhase(builder, aIPhase): builder.PrependInt32Slot(1, aIPhase, 0)
-def AddAIPhase(builder, aIPhase):
-    return BossExternalBTExcelAddAIPhase(builder, aIPhase)
-def BossExternalBTExcelAddExternalBTNodeType(builder, externalBTNodeType): builder.PrependInt32Slot(2, externalBTNodeType, 0)
-def AddExternalBTNodeType(builder, externalBTNodeType):
-    return BossExternalBTExcelAddExternalBTNodeType(builder, externalBTNodeType)
-def BossExternalBTExcelAddExternalBTTrigger(builder, externalBTTrigger): builder.PrependInt32Slot(3, externalBTTrigger, 0)
-def AddExternalBTTrigger(builder, externalBTTrigger):
-    return BossExternalBTExcelAddExternalBTTrigger(builder, externalBTTrigger)
-def BossExternalBTExcelAddTriggerArgument(builder, triggerArgument): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(triggerArgument), 0)
-def AddTriggerArgument(builder, triggerArgument):
-    return BossExternalBTExcelAddTriggerArgument(builder, triggerArgument)
-def BossExternalBTExcelAddBehaviorRate(builder, behaviorRate): builder.PrependInt32Slot(5, behaviorRate, 0)
-def AddBehaviorRate(builder, behaviorRate):
-    return BossExternalBTExcelAddBehaviorRate(builder, behaviorRate)
-def BossExternalBTExcelAddExternalBehavior(builder, externalBehavior): builder.PrependInt32Slot(6, externalBehavior, 0)
-def AddExternalBehavior(builder, externalBehavior):
-    return BossExternalBTExcelAddExternalBehavior(builder, externalBehavior)
-def BossExternalBTExcelAddBehaviorArgument(builder, behaviorArgument): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(behaviorArgument), 0)
-def AddBehaviorArgument(builder, behaviorArgument):
-    return BossExternalBTExcelAddBehaviorArgument(builder, behaviorArgument)
+def BossExternalBTExcelAddExternalBTIdField(builder, externalBTIdField): builder.PrependInt32Slot(0, externalBTIdField, 0)
+def AddExternalBTIdField(builder, externalBTIdField):
+    return BossExternalBTExcelAddExternalBTIdField(builder, externalBTIdField)
+def BossExternalBTExcelAddAIPhaseField(builder, aIPhaseField): builder.PrependInt32Slot(1, aIPhaseField, 0)
+def AddAIPhaseField(builder, aIPhaseField):
+    return BossExternalBTExcelAddAIPhaseField(builder, aIPhaseField)
+def BossExternalBTExcelAddExternalBTNodeTypeField(builder, externalBTNodeTypeField): builder.PrependInt32Slot(2, externalBTNodeTypeField, 0)
+def AddExternalBTNodeTypeField(builder, externalBTNodeTypeField):
+    return BossExternalBTExcelAddExternalBTNodeTypeField(builder, externalBTNodeTypeField)
+def BossExternalBTExcelAddExternalBTTriggerField(builder, externalBTTriggerField): builder.PrependInt32Slot(3, externalBTTriggerField, 0)
+def AddExternalBTTriggerField(builder, externalBTTriggerField):
+    return BossExternalBTExcelAddExternalBTTriggerField(builder, externalBTTriggerField)
+def BossExternalBTExcelAddTriggerArgumentField(builder, triggerArgumentField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(triggerArgumentField), 0)
+def AddTriggerArgumentField(builder, triggerArgumentField):
+    return BossExternalBTExcelAddTriggerArgumentField(builder, triggerArgumentField)
+def BossExternalBTExcelAddBehaviorRateField(builder, behaviorRateField): builder.PrependInt32Slot(5, behaviorRateField, 0)
+def AddBehaviorRateField(builder, behaviorRateField):
+    return BossExternalBTExcelAddBehaviorRateField(builder, behaviorRateField)
+def BossExternalBTExcelAddExternalBehaviorField(builder, externalBehaviorField): builder.PrependInt32Slot(6, externalBehaviorField, 0)
+def AddExternalBehaviorField(builder, externalBehaviorField):
+    return BossExternalBTExcelAddExternalBehaviorField(builder, externalBehaviorField)
+def BossExternalBTExcelAddBehaviorArgumentField(builder, behaviorArgumentField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(behaviorArgumentField), 0)
+def AddBehaviorArgumentField(builder, behaviorArgumentField):
+    return BossExternalBTExcelAddBehaviorArgumentField(builder, behaviorArgumentField)
 def BossExternalBTExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return BossExternalBTExcelEnd(builder)

@@ -25,21 +25,21 @@ class EchelonConstraintExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EchelonConstraintExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EchelonConstraintExcel
-    def IsWhiteList(self):
+    def IsWhiteListField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EchelonConstraintExcel
-    def CharacterId(self, j):
+    def CharacterIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,26 +47,26 @@ class EchelonConstraintExcel(object):
         return 0
 
     # EchelonConstraintExcel
-    def CharacterIdAsNumpy(self):
+    def CharacterIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EchelonConstraintExcel
-    def CharacterIdLength(self):
+    def CharacterIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EchelonConstraintExcel
-    def CharacterIdIsNone(self):
+    def CharacterIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
     # EchelonConstraintExcel
-    def PersonalityId(self, j):
+    def PersonalityIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -74,47 +74,47 @@ class EchelonConstraintExcel(object):
         return 0
 
     # EchelonConstraintExcel
-    def PersonalityIdAsNumpy(self):
+    def PersonalityIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EchelonConstraintExcel
-    def PersonalityIdLength(self):
+    def PersonalityIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EchelonConstraintExcel
-    def PersonalityIdIsNone(self):
+    def PersonalityIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # EchelonConstraintExcel
-    def WeaponType(self):
+    def WeaponTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EchelonConstraintExcel
-    def School(self):
+    def SchoolField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EchelonConstraintExcel
-    def Club(self):
+    def ClubField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EchelonConstraintExcel
-    def Role(self):
+    def RoleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -123,36 +123,36 @@ class EchelonConstraintExcel(object):
 def EchelonConstraintExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return EchelonConstraintExcelStart(builder)
-def EchelonConstraintExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return EchelonConstraintExcelAddGroupId(builder, groupId)
-def EchelonConstraintExcelAddIsWhiteList(builder, isWhiteList): builder.PrependBoolSlot(1, isWhiteList, 0)
-def AddIsWhiteList(builder, isWhiteList):
-    return EchelonConstraintExcelAddIsWhiteList(builder, isWhiteList)
-def EchelonConstraintExcelAddCharacterId(builder, characterId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(characterId), 0)
-def AddCharacterId(builder, characterId):
-    return EchelonConstraintExcelAddCharacterId(builder, characterId)
-def EchelonConstraintExcelStartCharacterIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCharacterIdVector(builder, numElems):
-    return EchelonConstraintExcelStartCharacterIdVector(builder, numElems)
-def EchelonConstraintExcelAddPersonalityId(builder, personalityId): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(personalityId), 0)
-def AddPersonalityId(builder, personalityId):
-    return EchelonConstraintExcelAddPersonalityId(builder, personalityId)
-def EchelonConstraintExcelStartPersonalityIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPersonalityIdVector(builder, numElems):
-    return EchelonConstraintExcelStartPersonalityIdVector(builder, numElems)
-def EchelonConstraintExcelAddWeaponType(builder, weaponType): builder.PrependInt32Slot(4, weaponType, 0)
-def AddWeaponType(builder, weaponType):
-    return EchelonConstraintExcelAddWeaponType(builder, weaponType)
-def EchelonConstraintExcelAddSchool(builder, school): builder.PrependInt32Slot(5, school, 0)
-def AddSchool(builder, school):
-    return EchelonConstraintExcelAddSchool(builder, school)
-def EchelonConstraintExcelAddClub(builder, club): builder.PrependInt32Slot(6, club, 0)
-def AddClub(builder, club):
-    return EchelonConstraintExcelAddClub(builder, club)
-def EchelonConstraintExcelAddRole(builder, role): builder.PrependFloat32Slot(7, role, 0.0)
-def AddRole(builder, role):
-    return EchelonConstraintExcelAddRole(builder, role)
+def EchelonConstraintExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return EchelonConstraintExcelAddGroupIdField(builder, groupIdField)
+def EchelonConstraintExcelAddIsWhiteListField(builder, isWhiteListField): builder.PrependBoolSlot(1, isWhiteListField, 0)
+def AddIsWhiteListField(builder, isWhiteListField):
+    return EchelonConstraintExcelAddIsWhiteListField(builder, isWhiteListField)
+def EchelonConstraintExcelAddCharacterIdField(builder, characterIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(characterIdField), 0)
+def AddCharacterIdField(builder, characterIdField):
+    return EchelonConstraintExcelAddCharacterIdField(builder, characterIdField)
+def EchelonConstraintExcelStartCharacterIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCharacterIdFieldVector(builder, numElems):
+    return EchelonConstraintExcelStartCharacterIdFieldVector(builder, numElems)
+def EchelonConstraintExcelAddPersonalityIdField(builder, personalityIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(personalityIdField), 0)
+def AddPersonalityIdField(builder, personalityIdField):
+    return EchelonConstraintExcelAddPersonalityIdField(builder, personalityIdField)
+def EchelonConstraintExcelStartPersonalityIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartPersonalityIdFieldVector(builder, numElems):
+    return EchelonConstraintExcelStartPersonalityIdFieldVector(builder, numElems)
+def EchelonConstraintExcelAddWeaponTypeField(builder, weaponTypeField): builder.PrependInt32Slot(4, weaponTypeField, 0)
+def AddWeaponTypeField(builder, weaponTypeField):
+    return EchelonConstraintExcelAddWeaponTypeField(builder, weaponTypeField)
+def EchelonConstraintExcelAddSchoolField(builder, schoolField): builder.PrependInt32Slot(5, schoolField, 0)
+def AddSchoolField(builder, schoolField):
+    return EchelonConstraintExcelAddSchoolField(builder, schoolField)
+def EchelonConstraintExcelAddClubField(builder, clubField): builder.PrependInt32Slot(6, clubField, 0)
+def AddClubField(builder, clubField):
+    return EchelonConstraintExcelAddClubField(builder, clubField)
+def EchelonConstraintExcelAddRoleField(builder, roleField): builder.PrependFloat32Slot(7, roleField, 0.0)
+def AddRoleField(builder, roleField):
+    return EchelonConstraintExcelAddRoleField(builder, roleField)
 def EchelonConstraintExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EchelonConstraintExcelEnd(builder)

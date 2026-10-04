@@ -25,168 +25,168 @@ class ConstMinigameCCGExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstMinigameCCGExcel
-    def TurnDrawCount(self):
+    def TurnDrawCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def ConquestMapBoundaryOffsetRight(self):
+    def ConquestMapBoundaryOffsetRightField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def ConquestMapBoundaryOffsetTop(self):
+    def ConquestMapBoundaryOffsetTopField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def ConquestMapBoundaryOffsetBottom(self):
+    def ConquestMapBoundaryOffsetBottomField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def ConquestMapCenterOffsetX(self):
+    def ConquestMapCenterOffsetXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def ConquestMapCenterOffsetY(self):
+    def ConquestMapCenterOffsetYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def CameraAngle(self):
+    def CameraAngleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def CameraZoomMax(self):
+    def CameraZoomMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def CameraZoomMin(self):
+    def CameraZoomMinField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def CameraZoomDefault(self):
+    def CameraZoomDefaultField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def ThemaLoadingProgressTime(self):
+    def ThemaLoadingProgressTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def MapAllyRotation(self):
+    def MapAllyRotationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstMinigameCCGExcel
-    def AniAllyBattleAttack(self):
+    def AniAllyBattleAttackField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstMinigameCCGExcel
-    def MaxHandCount(self):
+    def MaxHandCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def MaxCost(self):
+    def MaxCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def StartCost(self):
+    def StartCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def TurnCost(self):
+    def TurnCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def StrikerSwapFrontCost(self):
+    def StrikerSwapFrontCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def StrikerMaxEquipCount(self):
+    def StrikerMaxEquipCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def StartDrawCount(self):
+    def StartDrawCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def CampReviveHealthRate(self):
+    def CampReviveHealthRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def BaseRewardRerollPoint(self):
+    def BaseRewardRerollPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def SelectRewardOptionCount(self):
+    def SelectRewardOptionCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstMinigameCCGExcel
-    def AlternativeCardImagePath(self):
+    def AlternativeCardImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -195,78 +195,78 @@ class ConstMinigameCCGExcel(object):
 def ConstMinigameCCGExcelStart(builder): builder.StartObject(24)
 def Start(builder):
     return ConstMinigameCCGExcelStart(builder)
-def ConstMinigameCCGExcelAddTurnDrawCount(builder, turnDrawCount): builder.PrependInt32Slot(0, turnDrawCount, 0)
-def AddTurnDrawCount(builder, turnDrawCount):
-    return ConstMinigameCCGExcelAddTurnDrawCount(builder, turnDrawCount)
-def ConstMinigameCCGExcelAddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight): builder.PrependFloat32Slot(1, conquestMapBoundaryOffsetRight, 0.0)
-def AddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight):
-    return ConstMinigameCCGExcelAddConquestMapBoundaryOffsetRight(builder, conquestMapBoundaryOffsetRight)
-def ConstMinigameCCGExcelAddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop): builder.PrependFloat32Slot(2, conquestMapBoundaryOffsetTop, 0.0)
-def AddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop):
-    return ConstMinigameCCGExcelAddConquestMapBoundaryOffsetTop(builder, conquestMapBoundaryOffsetTop)
-def ConstMinigameCCGExcelAddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom): builder.PrependFloat32Slot(3, conquestMapBoundaryOffsetBottom, 0.0)
-def AddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom):
-    return ConstMinigameCCGExcelAddConquestMapBoundaryOffsetBottom(builder, conquestMapBoundaryOffsetBottom)
-def ConstMinigameCCGExcelAddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX): builder.PrependFloat32Slot(4, conquestMapCenterOffsetX, 0.0)
-def AddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX):
-    return ConstMinigameCCGExcelAddConquestMapCenterOffsetX(builder, conquestMapCenterOffsetX)
-def ConstMinigameCCGExcelAddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY): builder.PrependFloat32Slot(5, conquestMapCenterOffsetY, 0.0)
-def AddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY):
-    return ConstMinigameCCGExcelAddConquestMapCenterOffsetY(builder, conquestMapCenterOffsetY)
-def ConstMinigameCCGExcelAddCameraAngle(builder, cameraAngle): builder.PrependFloat32Slot(6, cameraAngle, 0.0)
-def AddCameraAngle(builder, cameraAngle):
-    return ConstMinigameCCGExcelAddCameraAngle(builder, cameraAngle)
-def ConstMinigameCCGExcelAddCameraZoomMax(builder, cameraZoomMax): builder.PrependFloat32Slot(7, cameraZoomMax, 0.0)
-def AddCameraZoomMax(builder, cameraZoomMax):
-    return ConstMinigameCCGExcelAddCameraZoomMax(builder, cameraZoomMax)
-def ConstMinigameCCGExcelAddCameraZoomMin(builder, cameraZoomMin): builder.PrependFloat32Slot(8, cameraZoomMin, 0.0)
-def AddCameraZoomMin(builder, cameraZoomMin):
-    return ConstMinigameCCGExcelAddCameraZoomMin(builder, cameraZoomMin)
-def ConstMinigameCCGExcelAddCameraZoomDefault(builder, cameraZoomDefault): builder.PrependFloat32Slot(9, cameraZoomDefault, 0.0)
-def AddCameraZoomDefault(builder, cameraZoomDefault):
-    return ConstMinigameCCGExcelAddCameraZoomDefault(builder, cameraZoomDefault)
-def ConstMinigameCCGExcelAddThemaLoadingProgressTime(builder, themaLoadingProgressTime): builder.PrependFloat32Slot(10, themaLoadingProgressTime, 0.0)
-def AddThemaLoadingProgressTime(builder, themaLoadingProgressTime):
-    return ConstMinigameCCGExcelAddThemaLoadingProgressTime(builder, themaLoadingProgressTime)
-def ConstMinigameCCGExcelAddMapAllyRotation(builder, mapAllyRotation): builder.PrependFloat32Slot(11, mapAllyRotation, 0.0)
-def AddMapAllyRotation(builder, mapAllyRotation):
-    return ConstMinigameCCGExcelAddMapAllyRotation(builder, mapAllyRotation)
-def ConstMinigameCCGExcelAddAniAllyBattleAttack(builder, aniAllyBattleAttack): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(aniAllyBattleAttack), 0)
-def AddAniAllyBattleAttack(builder, aniAllyBattleAttack):
-    return ConstMinigameCCGExcelAddAniAllyBattleAttack(builder, aniAllyBattleAttack)
-def ConstMinigameCCGExcelAddMaxHandCount(builder, maxHandCount): builder.PrependInt32Slot(13, maxHandCount, 0)
-def AddMaxHandCount(builder, maxHandCount):
-    return ConstMinigameCCGExcelAddMaxHandCount(builder, maxHandCount)
-def ConstMinigameCCGExcelAddMaxCost(builder, maxCost): builder.PrependInt32Slot(14, maxCost, 0)
-def AddMaxCost(builder, maxCost):
-    return ConstMinigameCCGExcelAddMaxCost(builder, maxCost)
-def ConstMinigameCCGExcelAddStartCost(builder, startCost): builder.PrependInt32Slot(15, startCost, 0)
-def AddStartCost(builder, startCost):
-    return ConstMinigameCCGExcelAddStartCost(builder, startCost)
-def ConstMinigameCCGExcelAddTurnCost(builder, turnCost): builder.PrependInt32Slot(16, turnCost, 0)
-def AddTurnCost(builder, turnCost):
-    return ConstMinigameCCGExcelAddTurnCost(builder, turnCost)
-def ConstMinigameCCGExcelAddStrikerSwapFrontCost(builder, strikerSwapFrontCost): builder.PrependInt32Slot(17, strikerSwapFrontCost, 0)
-def AddStrikerSwapFrontCost(builder, strikerSwapFrontCost):
-    return ConstMinigameCCGExcelAddStrikerSwapFrontCost(builder, strikerSwapFrontCost)
-def ConstMinigameCCGExcelAddStrikerMaxEquipCount(builder, strikerMaxEquipCount): builder.PrependInt32Slot(18, strikerMaxEquipCount, 0)
-def AddStrikerMaxEquipCount(builder, strikerMaxEquipCount):
-    return ConstMinigameCCGExcelAddStrikerMaxEquipCount(builder, strikerMaxEquipCount)
-def ConstMinigameCCGExcelAddStartDrawCount(builder, startDrawCount): builder.PrependInt32Slot(19, startDrawCount, 0)
-def AddStartDrawCount(builder, startDrawCount):
-    return ConstMinigameCCGExcelAddStartDrawCount(builder, startDrawCount)
-def ConstMinigameCCGExcelAddCampReviveHealthRate(builder, campReviveHealthRate): builder.PrependInt32Slot(20, campReviveHealthRate, 0)
-def AddCampReviveHealthRate(builder, campReviveHealthRate):
-    return ConstMinigameCCGExcelAddCampReviveHealthRate(builder, campReviveHealthRate)
-def ConstMinigameCCGExcelAddBaseRewardRerollPoint(builder, baseRewardRerollPoint): builder.PrependInt32Slot(21, baseRewardRerollPoint, 0)
-def AddBaseRewardRerollPoint(builder, baseRewardRerollPoint):
-    return ConstMinigameCCGExcelAddBaseRewardRerollPoint(builder, baseRewardRerollPoint)
-def ConstMinigameCCGExcelAddSelectRewardOptionCount(builder, selectRewardOptionCount): builder.PrependInt32Slot(22, selectRewardOptionCount, 0)
-def AddSelectRewardOptionCount(builder, selectRewardOptionCount):
-    return ConstMinigameCCGExcelAddSelectRewardOptionCount(builder, selectRewardOptionCount)
-def ConstMinigameCCGExcelAddAlternativeCardImagePath(builder, alternativeCardImagePath): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(alternativeCardImagePath), 0)
-def AddAlternativeCardImagePath(builder, alternativeCardImagePath):
-    return ConstMinigameCCGExcelAddAlternativeCardImagePath(builder, alternativeCardImagePath)
+def ConstMinigameCCGExcelAddTurnDrawCountField(builder, turnDrawCountField): builder.PrependInt32Slot(0, turnDrawCountField, 0)
+def AddTurnDrawCountField(builder, turnDrawCountField):
+    return ConstMinigameCCGExcelAddTurnDrawCountField(builder, turnDrawCountField)
+def ConstMinigameCCGExcelAddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField): builder.PrependFloat32Slot(1, conquestMapBoundaryOffsetRightField, 0.0)
+def AddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField):
+    return ConstMinigameCCGExcelAddConquestMapBoundaryOffsetRightField(builder, conquestMapBoundaryOffsetRightField)
+def ConstMinigameCCGExcelAddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField): builder.PrependFloat32Slot(2, conquestMapBoundaryOffsetTopField, 0.0)
+def AddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField):
+    return ConstMinigameCCGExcelAddConquestMapBoundaryOffsetTopField(builder, conquestMapBoundaryOffsetTopField)
+def ConstMinigameCCGExcelAddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField): builder.PrependFloat32Slot(3, conquestMapBoundaryOffsetBottomField, 0.0)
+def AddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField):
+    return ConstMinigameCCGExcelAddConquestMapBoundaryOffsetBottomField(builder, conquestMapBoundaryOffsetBottomField)
+def ConstMinigameCCGExcelAddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField): builder.PrependFloat32Slot(4, conquestMapCenterOffsetXField, 0.0)
+def AddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField):
+    return ConstMinigameCCGExcelAddConquestMapCenterOffsetXField(builder, conquestMapCenterOffsetXField)
+def ConstMinigameCCGExcelAddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField): builder.PrependFloat32Slot(5, conquestMapCenterOffsetYField, 0.0)
+def AddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField):
+    return ConstMinigameCCGExcelAddConquestMapCenterOffsetYField(builder, conquestMapCenterOffsetYField)
+def ConstMinigameCCGExcelAddCameraAngleField(builder, cameraAngleField): builder.PrependFloat32Slot(6, cameraAngleField, 0.0)
+def AddCameraAngleField(builder, cameraAngleField):
+    return ConstMinigameCCGExcelAddCameraAngleField(builder, cameraAngleField)
+def ConstMinigameCCGExcelAddCameraZoomMaxField(builder, cameraZoomMaxField): builder.PrependFloat32Slot(7, cameraZoomMaxField, 0.0)
+def AddCameraZoomMaxField(builder, cameraZoomMaxField):
+    return ConstMinigameCCGExcelAddCameraZoomMaxField(builder, cameraZoomMaxField)
+def ConstMinigameCCGExcelAddCameraZoomMinField(builder, cameraZoomMinField): builder.PrependFloat32Slot(8, cameraZoomMinField, 0.0)
+def AddCameraZoomMinField(builder, cameraZoomMinField):
+    return ConstMinigameCCGExcelAddCameraZoomMinField(builder, cameraZoomMinField)
+def ConstMinigameCCGExcelAddCameraZoomDefaultField(builder, cameraZoomDefaultField): builder.PrependFloat32Slot(9, cameraZoomDefaultField, 0.0)
+def AddCameraZoomDefaultField(builder, cameraZoomDefaultField):
+    return ConstMinigameCCGExcelAddCameraZoomDefaultField(builder, cameraZoomDefaultField)
+def ConstMinigameCCGExcelAddThemaLoadingProgressTimeField(builder, themaLoadingProgressTimeField): builder.PrependFloat32Slot(10, themaLoadingProgressTimeField, 0.0)
+def AddThemaLoadingProgressTimeField(builder, themaLoadingProgressTimeField):
+    return ConstMinigameCCGExcelAddThemaLoadingProgressTimeField(builder, themaLoadingProgressTimeField)
+def ConstMinigameCCGExcelAddMapAllyRotationField(builder, mapAllyRotationField): builder.PrependFloat32Slot(11, mapAllyRotationField, 0.0)
+def AddMapAllyRotationField(builder, mapAllyRotationField):
+    return ConstMinigameCCGExcelAddMapAllyRotationField(builder, mapAllyRotationField)
+def ConstMinigameCCGExcelAddAniAllyBattleAttackField(builder, aniAllyBattleAttackField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(aniAllyBattleAttackField), 0)
+def AddAniAllyBattleAttackField(builder, aniAllyBattleAttackField):
+    return ConstMinigameCCGExcelAddAniAllyBattleAttackField(builder, aniAllyBattleAttackField)
+def ConstMinigameCCGExcelAddMaxHandCountField(builder, maxHandCountField): builder.PrependInt32Slot(13, maxHandCountField, 0)
+def AddMaxHandCountField(builder, maxHandCountField):
+    return ConstMinigameCCGExcelAddMaxHandCountField(builder, maxHandCountField)
+def ConstMinigameCCGExcelAddMaxCostField(builder, maxCostField): builder.PrependInt32Slot(14, maxCostField, 0)
+def AddMaxCostField(builder, maxCostField):
+    return ConstMinigameCCGExcelAddMaxCostField(builder, maxCostField)
+def ConstMinigameCCGExcelAddStartCostField(builder, startCostField): builder.PrependInt32Slot(15, startCostField, 0)
+def AddStartCostField(builder, startCostField):
+    return ConstMinigameCCGExcelAddStartCostField(builder, startCostField)
+def ConstMinigameCCGExcelAddTurnCostField(builder, turnCostField): builder.PrependInt32Slot(16, turnCostField, 0)
+def AddTurnCostField(builder, turnCostField):
+    return ConstMinigameCCGExcelAddTurnCostField(builder, turnCostField)
+def ConstMinigameCCGExcelAddStrikerSwapFrontCostField(builder, strikerSwapFrontCostField): builder.PrependInt32Slot(17, strikerSwapFrontCostField, 0)
+def AddStrikerSwapFrontCostField(builder, strikerSwapFrontCostField):
+    return ConstMinigameCCGExcelAddStrikerSwapFrontCostField(builder, strikerSwapFrontCostField)
+def ConstMinigameCCGExcelAddStrikerMaxEquipCountField(builder, strikerMaxEquipCountField): builder.PrependInt32Slot(18, strikerMaxEquipCountField, 0)
+def AddStrikerMaxEquipCountField(builder, strikerMaxEquipCountField):
+    return ConstMinigameCCGExcelAddStrikerMaxEquipCountField(builder, strikerMaxEquipCountField)
+def ConstMinigameCCGExcelAddStartDrawCountField(builder, startDrawCountField): builder.PrependInt32Slot(19, startDrawCountField, 0)
+def AddStartDrawCountField(builder, startDrawCountField):
+    return ConstMinigameCCGExcelAddStartDrawCountField(builder, startDrawCountField)
+def ConstMinigameCCGExcelAddCampReviveHealthRateField(builder, campReviveHealthRateField): builder.PrependInt32Slot(20, campReviveHealthRateField, 0)
+def AddCampReviveHealthRateField(builder, campReviveHealthRateField):
+    return ConstMinigameCCGExcelAddCampReviveHealthRateField(builder, campReviveHealthRateField)
+def ConstMinigameCCGExcelAddBaseRewardRerollPointField(builder, baseRewardRerollPointField): builder.PrependInt32Slot(21, baseRewardRerollPointField, 0)
+def AddBaseRewardRerollPointField(builder, baseRewardRerollPointField):
+    return ConstMinigameCCGExcelAddBaseRewardRerollPointField(builder, baseRewardRerollPointField)
+def ConstMinigameCCGExcelAddSelectRewardOptionCountField(builder, selectRewardOptionCountField): builder.PrependInt32Slot(22, selectRewardOptionCountField, 0)
+def AddSelectRewardOptionCountField(builder, selectRewardOptionCountField):
+    return ConstMinigameCCGExcelAddSelectRewardOptionCountField(builder, selectRewardOptionCountField)
+def ConstMinigameCCGExcelAddAlternativeCardImagePathField(builder, alternativeCardImagePathField): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(alternativeCardImagePathField), 0)
+def AddAlternativeCardImagePathField(builder, alternativeCardImagePathField):
+    return ConstMinigameCCGExcelAddAlternativeCardImagePathField(builder, alternativeCardImagePathField)
 def ConstMinigameCCGExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstMinigameCCGExcelEnd(builder)

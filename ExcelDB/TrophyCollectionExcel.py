@@ -25,21 +25,21 @@ class TrophyCollectionExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # TrophyCollectionExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # TrophyCollectionExcel
-    def LocalizeCodeId(self):
+    def LocalizeCodeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # TrophyCollectionExcel
-    def FurnitureId(self, j):
+    def FurnitureIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             a = self._tab.Vector(o)
@@ -47,39 +47,39 @@ class TrophyCollectionExcel(object):
         return 0
 
     # TrophyCollectionExcel
-    def FurnitureIdAsNumpy(self):
+    def FurnitureIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # TrophyCollectionExcel
-    def FurnitureIdLength(self):
+    def FurnitureIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # TrophyCollectionExcel
-    def FurnitureIdIsNone(self):
+    def FurnitureIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
 def TrophyCollectionExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return TrophyCollectionExcelStart(builder)
-def TrophyCollectionExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return TrophyCollectionExcelAddGroupId(builder, groupId)
-def TrophyCollectionExcelAddLocalizeCodeId(builder, localizeCodeId): builder.PrependUint32Slot(1, localizeCodeId, 0)
-def AddLocalizeCodeId(builder, localizeCodeId):
-    return TrophyCollectionExcelAddLocalizeCodeId(builder, localizeCodeId)
-def TrophyCollectionExcelAddFurnitureId(builder, furnitureId): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(furnitureId), 0)
-def AddFurnitureId(builder, furnitureId):
-    return TrophyCollectionExcelAddFurnitureId(builder, furnitureId)
-def TrophyCollectionExcelStartFurnitureIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFurnitureIdVector(builder, numElems):
-    return TrophyCollectionExcelStartFurnitureIdVector(builder, numElems)
+def TrophyCollectionExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return TrophyCollectionExcelAddGroupIdField(builder, groupIdField)
+def TrophyCollectionExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUint32Slot(1, localizeCodeIdField, 0)
+def AddLocalizeCodeIdField(builder, localizeCodeIdField):
+    return TrophyCollectionExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+def TrophyCollectionExcelAddFurnitureIdField(builder, furnitureIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(furnitureIdField), 0)
+def AddFurnitureIdField(builder, furnitureIdField):
+    return TrophyCollectionExcelAddFurnitureIdField(builder, furnitureIdField)
+def TrophyCollectionExcelStartFurnitureIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartFurnitureIdFieldVector(builder, numElems):
+    return TrophyCollectionExcelStartFurnitureIdFieldVector(builder, numElems)
 def TrophyCollectionExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return TrophyCollectionExcelEnd(builder)

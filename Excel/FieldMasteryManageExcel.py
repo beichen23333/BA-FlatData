@@ -25,28 +25,28 @@ class FieldMasteryManageExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FieldMasteryManageExcel
-    def FieldSeason(self):
+    def FieldSeasonField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldMasteryManageExcel
-    def LocalizeEtc(self):
+    def LocalizeEtcField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # FieldMasteryManageExcel
-    def ImagePath(self):
+    def ImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FieldMasteryManageExcel
-    def LevelId(self):
+    def LevelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class FieldMasteryManageExcel(object):
 def FieldMasteryManageExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return FieldMasteryManageExcelStart(builder)
-def FieldMasteryManageExcelAddFieldSeason(builder, fieldSeason): builder.PrependInt32Slot(0, fieldSeason, 0)
-def AddFieldSeason(builder, fieldSeason):
-    return FieldMasteryManageExcelAddFieldSeason(builder, fieldSeason)
-def FieldMasteryManageExcelAddLocalizeEtc(builder, localizeEtc): builder.PrependUint32Slot(1, localizeEtc, 0)
-def AddLocalizeEtc(builder, localizeEtc):
-    return FieldMasteryManageExcelAddLocalizeEtc(builder, localizeEtc)
-def FieldMasteryManageExcelAddImagePath(builder, imagePath): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(imagePath), 0)
-def AddImagePath(builder, imagePath):
-    return FieldMasteryManageExcelAddImagePath(builder, imagePath)
-def FieldMasteryManageExcelAddLevelId(builder, levelId): builder.PrependInt32Slot(3, levelId, 0)
-def AddLevelId(builder, levelId):
-    return FieldMasteryManageExcelAddLevelId(builder, levelId)
+def FieldMasteryManageExcelAddFieldSeasonField(builder, fieldSeasonField): builder.PrependInt32Slot(0, fieldSeasonField, 0)
+def AddFieldSeasonField(builder, fieldSeasonField):
+    return FieldMasteryManageExcelAddFieldSeasonField(builder, fieldSeasonField)
+def FieldMasteryManageExcelAddLocalizeEtcField(builder, localizeEtcField): builder.PrependUint32Slot(1, localizeEtcField, 0)
+def AddLocalizeEtcField(builder, localizeEtcField):
+    return FieldMasteryManageExcelAddLocalizeEtcField(builder, localizeEtcField)
+def FieldMasteryManageExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+def AddImagePathField(builder, imagePathField):
+    return FieldMasteryManageExcelAddImagePathField(builder, imagePathField)
+def FieldMasteryManageExcelAddLevelIdField(builder, levelIdField): builder.PrependInt32Slot(3, levelIdField, 0)
+def AddLevelIdField(builder, levelIdField):
+    return FieldMasteryManageExcelAddLevelIdField(builder, levelIdField)
 def FieldMasteryManageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FieldMasteryManageExcelEnd(builder)

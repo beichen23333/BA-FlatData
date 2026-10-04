@@ -25,70 +25,70 @@ class CharacterGearExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterGearExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def StatLevelUpType(self):
+    def StatLevelUpTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def Tier(self):
+    def TierField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def NextTierEquipment(self):
+    def NextTierEquipmentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def RecipeId(self):
+    def RecipeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def OpenFavorLevel(self):
+    def OpenFavorLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def MaxLevel(self):
+    def MaxLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def LearnSkillSlot(self):
+    def LearnSkillSlotField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterGearExcel
-    def StatType(self, j):
+    def StatTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             a = self._tab.Vector(o)
@@ -96,26 +96,26 @@ class CharacterGearExcel(object):
         return 0
 
     # CharacterGearExcel
-    def StatTypeAsNumpy(self):
+    def StatTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterGearExcel
-    def StatTypeLength(self):
+    def StatTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterGearExcel
-    def StatTypeIsNone(self):
+    def StatTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
     # CharacterGearExcel
-    def MinStatValue(self, j):
+    def MinStatValueField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             a = self._tab.Vector(o)
@@ -123,26 +123,26 @@ class CharacterGearExcel(object):
         return 0
 
     # CharacterGearExcel
-    def MinStatValueAsNumpy(self):
+    def MinStatValueFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterGearExcel
-    def MinStatValueLength(self):
+    def MinStatValueFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterGearExcel
-    def MinStatValueIsNone(self):
+    def MinStatValueFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         return o == 0
 
     # CharacterGearExcel
-    def MaxStatValue(self, j):
+    def MaxStatValueField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
@@ -150,40 +150,40 @@ class CharacterGearExcel(object):
         return 0
 
     # CharacterGearExcel
-    def MaxStatValueAsNumpy(self):
+    def MaxStatValueFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterGearExcel
-    def MaxStatValueLength(self):
+    def MaxStatValueFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterGearExcel
-    def MaxStatValueIsNone(self):
+    def MaxStatValueFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
     # CharacterGearExcel
-    def Icon(self):
+    def IconField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterGearExcel
-    def LocalizeEtcId(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterGearExcel
-    def Tags(self, j):
+    def TagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             a = self._tab.Vector(o)
@@ -191,84 +191,84 @@ class CharacterGearExcel(object):
         return 0
 
     # CharacterGearExcel
-    def TagsAsNumpy(self):
+    def TagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterGearExcel
-    def TagsLength(self):
+    def TagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterGearExcel
-    def TagsIsNone(self):
+    def TagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         return o == 0
 
 def CharacterGearExcelStart(builder): builder.StartObject(15)
 def Start(builder):
     return CharacterGearExcelStart(builder)
-def CharacterGearExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CharacterGearExcelAddId(builder, id)
-def CharacterGearExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(1, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return CharacterGearExcelAddCharacterId(builder, characterId)
-def CharacterGearExcelAddStatLevelUpType(builder, statLevelUpType): builder.PrependInt32Slot(2, statLevelUpType, 0)
-def AddStatLevelUpType(builder, statLevelUpType):
-    return CharacterGearExcelAddStatLevelUpType(builder, statLevelUpType)
-def CharacterGearExcelAddTier(builder, tier): builder.PrependInt32Slot(3, tier, 0)
-def AddTier(builder, tier):
-    return CharacterGearExcelAddTier(builder, tier)
-def CharacterGearExcelAddNextTierEquipment(builder, nextTierEquipment): builder.PrependInt32Slot(4, nextTierEquipment, 0)
-def AddNextTierEquipment(builder, nextTierEquipment):
-    return CharacterGearExcelAddNextTierEquipment(builder, nextTierEquipment)
-def CharacterGearExcelAddRecipeId(builder, recipeId): builder.PrependInt32Slot(5, recipeId, 0)
-def AddRecipeId(builder, recipeId):
-    return CharacterGearExcelAddRecipeId(builder, recipeId)
-def CharacterGearExcelAddOpenFavorLevel(builder, openFavorLevel): builder.PrependInt32Slot(6, openFavorLevel, 0)
-def AddOpenFavorLevel(builder, openFavorLevel):
-    return CharacterGearExcelAddOpenFavorLevel(builder, openFavorLevel)
-def CharacterGearExcelAddMaxLevel(builder, maxLevel): builder.PrependInt32Slot(7, maxLevel, 0)
-def AddMaxLevel(builder, maxLevel):
-    return CharacterGearExcelAddMaxLevel(builder, maxLevel)
-def CharacterGearExcelAddLearnSkillSlot(builder, learnSkillSlot): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(learnSkillSlot), 0)
-def AddLearnSkillSlot(builder, learnSkillSlot):
-    return CharacterGearExcelAddLearnSkillSlot(builder, learnSkillSlot)
-def CharacterGearExcelAddStatType(builder, statType): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(statType), 0)
-def AddStatType(builder, statType):
-    return CharacterGearExcelAddStatType(builder, statType)
-def CharacterGearExcelStartStatTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatTypeVector(builder, numElems):
-    return CharacterGearExcelStartStatTypeVector(builder, numElems)
-def CharacterGearExcelAddMinStatValue(builder, minStatValue): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(minStatValue), 0)
-def AddMinStatValue(builder, minStatValue):
-    return CharacterGearExcelAddMinStatValue(builder, minStatValue)
-def CharacterGearExcelStartMinStatValueVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMinStatValueVector(builder, numElems):
-    return CharacterGearExcelStartMinStatValueVector(builder, numElems)
-def CharacterGearExcelAddMaxStatValue(builder, maxStatValue): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(maxStatValue), 0)
-def AddMaxStatValue(builder, maxStatValue):
-    return CharacterGearExcelAddMaxStatValue(builder, maxStatValue)
-def CharacterGearExcelStartMaxStatValueVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMaxStatValueVector(builder, numElems):
-    return CharacterGearExcelStartMaxStatValueVector(builder, numElems)
-def CharacterGearExcelAddIcon(builder, icon): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(icon), 0)
-def AddIcon(builder, icon):
-    return CharacterGearExcelAddIcon(builder, icon)
-def CharacterGearExcelAddLocalizeEtcId(builder, localizeEtcId): builder.PrependUint32Slot(13, localizeEtcId, 0)
-def AddLocalizeEtcId(builder, localizeEtcId):
-    return CharacterGearExcelAddLocalizeEtcId(builder, localizeEtcId)
-def CharacterGearExcelAddTags(builder, tags): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(tags), 0)
-def AddTags(builder, tags):
-    return CharacterGearExcelAddTags(builder, tags)
-def CharacterGearExcelStartTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTagsVector(builder, numElems):
-    return CharacterGearExcelStartTagsVector(builder, numElems)
+def CharacterGearExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CharacterGearExcelAddIdField(builder, idField)
+def CharacterGearExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return CharacterGearExcelAddCharacterIdField(builder, characterIdField)
+def CharacterGearExcelAddStatLevelUpTypeField(builder, statLevelUpTypeField): builder.PrependInt32Slot(2, statLevelUpTypeField, 0)
+def AddStatLevelUpTypeField(builder, statLevelUpTypeField):
+    return CharacterGearExcelAddStatLevelUpTypeField(builder, statLevelUpTypeField)
+def CharacterGearExcelAddTierField(builder, tierField): builder.PrependInt32Slot(3, tierField, 0)
+def AddTierField(builder, tierField):
+    return CharacterGearExcelAddTierField(builder, tierField)
+def CharacterGearExcelAddNextTierEquipmentField(builder, nextTierEquipmentField): builder.PrependInt32Slot(4, nextTierEquipmentField, 0)
+def AddNextTierEquipmentField(builder, nextTierEquipmentField):
+    return CharacterGearExcelAddNextTierEquipmentField(builder, nextTierEquipmentField)
+def CharacterGearExcelAddRecipeIdField(builder, recipeIdField): builder.PrependInt32Slot(5, recipeIdField, 0)
+def AddRecipeIdField(builder, recipeIdField):
+    return CharacterGearExcelAddRecipeIdField(builder, recipeIdField)
+def CharacterGearExcelAddOpenFavorLevelField(builder, openFavorLevelField): builder.PrependInt32Slot(6, openFavorLevelField, 0)
+def AddOpenFavorLevelField(builder, openFavorLevelField):
+    return CharacterGearExcelAddOpenFavorLevelField(builder, openFavorLevelField)
+def CharacterGearExcelAddMaxLevelField(builder, maxLevelField): builder.PrependInt32Slot(7, maxLevelField, 0)
+def AddMaxLevelField(builder, maxLevelField):
+    return CharacterGearExcelAddMaxLevelField(builder, maxLevelField)
+def CharacterGearExcelAddLearnSkillSlotField(builder, learnSkillSlotField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(learnSkillSlotField), 0)
+def AddLearnSkillSlotField(builder, learnSkillSlotField):
+    return CharacterGearExcelAddLearnSkillSlotField(builder, learnSkillSlotField)
+def CharacterGearExcelAddStatTypeField(builder, statTypeField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(statTypeField), 0)
+def AddStatTypeField(builder, statTypeField):
+    return CharacterGearExcelAddStatTypeField(builder, statTypeField)
+def CharacterGearExcelStartStatTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStatTypeFieldVector(builder, numElems):
+    return CharacterGearExcelStartStatTypeFieldVector(builder, numElems)
+def CharacterGearExcelAddMinStatValueField(builder, minStatValueField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(minStatValueField), 0)
+def AddMinStatValueField(builder, minStatValueField):
+    return CharacterGearExcelAddMinStatValueField(builder, minStatValueField)
+def CharacterGearExcelStartMinStatValueFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMinStatValueFieldVector(builder, numElems):
+    return CharacterGearExcelStartMinStatValueFieldVector(builder, numElems)
+def CharacterGearExcelAddMaxStatValueField(builder, maxStatValueField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(maxStatValueField), 0)
+def AddMaxStatValueField(builder, maxStatValueField):
+    return CharacterGearExcelAddMaxStatValueField(builder, maxStatValueField)
+def CharacterGearExcelStartMaxStatValueFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMaxStatValueFieldVector(builder, numElems):
+    return CharacterGearExcelStartMaxStatValueFieldVector(builder, numElems)
+def CharacterGearExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+def AddIconField(builder, iconField):
+    return CharacterGearExcelAddIconField(builder, iconField)
+def CharacterGearExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(13, localizeEtcIdField, 0)
+def AddLocalizeEtcIdField(builder, localizeEtcIdField):
+    return CharacterGearExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+def CharacterGearExcelAddTagsField(builder, tagsField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+def AddTagsField(builder, tagsField):
+    return CharacterGearExcelAddTagsField(builder, tagsField)
+def CharacterGearExcelStartTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartTagsFieldVector(builder, numElems):
+    return CharacterGearExcelStartTagsFieldVector(builder, numElems)
 def CharacterGearExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterGearExcelEnd(builder)

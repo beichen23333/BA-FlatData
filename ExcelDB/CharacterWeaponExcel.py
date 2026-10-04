@@ -25,77 +25,77 @@ class CharacterWeaponExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterWeaponExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def ImagePath(self):
+    def ImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterWeaponExcel
-    def SetRecipe(self):
+    def SetRecipeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def StatLevelUpType(self):
+    def StatLevelUpTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def AttackPower(self):
+    def AttackPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def AttackPower100(self):
+    def AttackPower100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def MaxHP(self):
+    def MaxHPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def MaxHP100(self):
+    def MaxHP100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def HealPower(self):
+    def HealPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def HealPower100(self):
+    def HealPower100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterWeaponExcel
-    def Unlock(self, j):
+    def UnlockField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             a = self._tab.Vector(o)
@@ -103,26 +103,26 @@ class CharacterWeaponExcel(object):
         return 0
 
     # CharacterWeaponExcel
-    def UnlockAsNumpy(self):
+    def UnlockFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.BoolFlags, o)
         return 0
 
     # CharacterWeaponExcel
-    def UnlockLength(self):
+    def UnlockFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterWeaponExcel
-    def UnlockIsNone(self):
+    def UnlockFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         return o == 0
 
     # CharacterWeaponExcel
-    def RecipeId(self, j):
+    def RecipeIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
@@ -130,26 +130,26 @@ class CharacterWeaponExcel(object):
         return 0
 
     # CharacterWeaponExcel
-    def RecipeIdAsNumpy(self):
+    def RecipeIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterWeaponExcel
-    def RecipeIdLength(self):
+    def RecipeIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterWeaponExcel
-    def RecipeIdIsNone(self):
+    def RecipeIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
     # CharacterWeaponExcel
-    def MaxLevel(self, j):
+    def MaxLevelField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             a = self._tab.Vector(o)
@@ -157,26 +157,26 @@ class CharacterWeaponExcel(object):
         return 0
 
     # CharacterWeaponExcel
-    def MaxLevelAsNumpy(self):
+    def MaxLevelFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterWeaponExcel
-    def MaxLevelLength(self):
+    def MaxLevelFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterWeaponExcel
-    def MaxLevelIsNone(self):
+    def MaxLevelFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         return o == 0
 
     # CharacterWeaponExcel
-    def LearnSkillSlot(self, j):
+    def LearnSkillSlotField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             a = self._tab.Vector(o)
@@ -184,19 +184,19 @@ class CharacterWeaponExcel(object):
         return ""
 
     # CharacterWeaponExcel
-    def LearnSkillSlotLength(self):
+    def LearnSkillSlotFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterWeaponExcel
-    def LearnSkillSlotIsNone(self):
+    def LearnSkillSlotFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         return o == 0
 
     # CharacterWeaponExcel
-    def StatType(self, j):
+    def StatTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             a = self._tab.Vector(o)
@@ -204,26 +204,26 @@ class CharacterWeaponExcel(object):
         return 0
 
     # CharacterWeaponExcel
-    def StatTypeAsNumpy(self):
+    def StatTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterWeaponExcel
-    def StatTypeLength(self):
+    def StatTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterWeaponExcel
-    def StatTypeIsNone(self):
+    def StatTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         return o == 0
 
     # CharacterWeaponExcel
-    def StatValue(self, j):
+    def StatValueField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             a = self._tab.Vector(o)
@@ -231,93 +231,93 @@ class CharacterWeaponExcel(object):
         return 0
 
     # CharacterWeaponExcel
-    def StatValueAsNumpy(self):
+    def StatValueFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CharacterWeaponExcel
-    def StatValueLength(self):
+    def StatValueFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CharacterWeaponExcel
-    def StatValueIsNone(self):
+    def StatValueFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         return o == 0
 
 def CharacterWeaponExcelStart(builder): builder.StartObject(16)
 def Start(builder):
     return CharacterWeaponExcelStart(builder)
-def CharacterWeaponExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return CharacterWeaponExcelAddId(builder, id)
-def CharacterWeaponExcelAddImagePath(builder, imagePath): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(imagePath), 0)
-def AddImagePath(builder, imagePath):
-    return CharacterWeaponExcelAddImagePath(builder, imagePath)
-def CharacterWeaponExcelAddSetRecipe(builder, setRecipe): builder.PrependInt32Slot(2, setRecipe, 0)
-def AddSetRecipe(builder, setRecipe):
-    return CharacterWeaponExcelAddSetRecipe(builder, setRecipe)
-def CharacterWeaponExcelAddStatLevelUpType(builder, statLevelUpType): builder.PrependInt32Slot(3, statLevelUpType, 0)
-def AddStatLevelUpType(builder, statLevelUpType):
-    return CharacterWeaponExcelAddStatLevelUpType(builder, statLevelUpType)
-def CharacterWeaponExcelAddAttackPower(builder, attackPower): builder.PrependInt32Slot(4, attackPower, 0)
-def AddAttackPower(builder, attackPower):
-    return CharacterWeaponExcelAddAttackPower(builder, attackPower)
-def CharacterWeaponExcelAddAttackPower100(builder, attackPower100): builder.PrependInt32Slot(5, attackPower100, 0)
-def AddAttackPower100(builder, attackPower100):
-    return CharacterWeaponExcelAddAttackPower100(builder, attackPower100)
-def CharacterWeaponExcelAddMaxHP(builder, maxHP): builder.PrependInt32Slot(6, maxHP, 0)
-def AddMaxHP(builder, maxHP):
-    return CharacterWeaponExcelAddMaxHP(builder, maxHP)
-def CharacterWeaponExcelAddMaxHP100(builder, maxHP100): builder.PrependInt32Slot(7, maxHP100, 0)
-def AddMaxHP100(builder, maxHP100):
-    return CharacterWeaponExcelAddMaxHP100(builder, maxHP100)
-def CharacterWeaponExcelAddHealPower(builder, healPower): builder.PrependInt32Slot(8, healPower, 0)
-def AddHealPower(builder, healPower):
-    return CharacterWeaponExcelAddHealPower(builder, healPower)
-def CharacterWeaponExcelAddHealPower100(builder, healPower100): builder.PrependInt32Slot(9, healPower100, 0)
-def AddHealPower100(builder, healPower100):
-    return CharacterWeaponExcelAddHealPower100(builder, healPower100)
-def CharacterWeaponExcelAddUnlock(builder, unlock): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(unlock), 0)
-def AddUnlock(builder, unlock):
-    return CharacterWeaponExcelAddUnlock(builder, unlock)
-def CharacterWeaponExcelStartUnlockVector(builder, numElems): return builder.StartVector(1, numElems, 1)
-def StartUnlockVector(builder, numElems):
-    return CharacterWeaponExcelStartUnlockVector(builder, numElems)
-def CharacterWeaponExcelAddRecipeId(builder, recipeId): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(recipeId), 0)
-def AddRecipeId(builder, recipeId):
-    return CharacterWeaponExcelAddRecipeId(builder, recipeId)
-def CharacterWeaponExcelStartRecipeIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRecipeIdVector(builder, numElems):
-    return CharacterWeaponExcelStartRecipeIdVector(builder, numElems)
-def CharacterWeaponExcelAddMaxLevel(builder, maxLevel): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(maxLevel), 0)
-def AddMaxLevel(builder, maxLevel):
-    return CharacterWeaponExcelAddMaxLevel(builder, maxLevel)
-def CharacterWeaponExcelStartMaxLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMaxLevelVector(builder, numElems):
-    return CharacterWeaponExcelStartMaxLevelVector(builder, numElems)
-def CharacterWeaponExcelAddLearnSkillSlot(builder, learnSkillSlot): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(learnSkillSlot), 0)
-def AddLearnSkillSlot(builder, learnSkillSlot):
-    return CharacterWeaponExcelAddLearnSkillSlot(builder, learnSkillSlot)
-def CharacterWeaponExcelStartLearnSkillSlotVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLearnSkillSlotVector(builder, numElems):
-    return CharacterWeaponExcelStartLearnSkillSlotVector(builder, numElems)
-def CharacterWeaponExcelAddStatType(builder, statType): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(statType), 0)
-def AddStatType(builder, statType):
-    return CharacterWeaponExcelAddStatType(builder, statType)
-def CharacterWeaponExcelStartStatTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatTypeVector(builder, numElems):
-    return CharacterWeaponExcelStartStatTypeVector(builder, numElems)
-def CharacterWeaponExcelAddStatValue(builder, statValue): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(statValue), 0)
-def AddStatValue(builder, statValue):
-    return CharacterWeaponExcelAddStatValue(builder, statValue)
-def CharacterWeaponExcelStartStatValueVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatValueVector(builder, numElems):
-    return CharacterWeaponExcelStartStatValueVector(builder, numElems)
+def CharacterWeaponExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return CharacterWeaponExcelAddIdField(builder, idField)
+def CharacterWeaponExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+def AddImagePathField(builder, imagePathField):
+    return CharacterWeaponExcelAddImagePathField(builder, imagePathField)
+def CharacterWeaponExcelAddSetRecipeField(builder, setRecipeField): builder.PrependInt32Slot(2, setRecipeField, 0)
+def AddSetRecipeField(builder, setRecipeField):
+    return CharacterWeaponExcelAddSetRecipeField(builder, setRecipeField)
+def CharacterWeaponExcelAddStatLevelUpTypeField(builder, statLevelUpTypeField): builder.PrependInt32Slot(3, statLevelUpTypeField, 0)
+def AddStatLevelUpTypeField(builder, statLevelUpTypeField):
+    return CharacterWeaponExcelAddStatLevelUpTypeField(builder, statLevelUpTypeField)
+def CharacterWeaponExcelAddAttackPowerField(builder, attackPowerField): builder.PrependInt32Slot(4, attackPowerField, 0)
+def AddAttackPowerField(builder, attackPowerField):
+    return CharacterWeaponExcelAddAttackPowerField(builder, attackPowerField)
+def CharacterWeaponExcelAddAttackPower100Field(builder, attackPower100Field): builder.PrependInt32Slot(5, attackPower100Field, 0)
+def AddAttackPower100Field(builder, attackPower100Field):
+    return CharacterWeaponExcelAddAttackPower100Field(builder, attackPower100Field)
+def CharacterWeaponExcelAddMaxHPField(builder, maxHPField): builder.PrependInt32Slot(6, maxHPField, 0)
+def AddMaxHPField(builder, maxHPField):
+    return CharacterWeaponExcelAddMaxHPField(builder, maxHPField)
+def CharacterWeaponExcelAddMaxHP100Field(builder, maxHP100Field): builder.PrependInt32Slot(7, maxHP100Field, 0)
+def AddMaxHP100Field(builder, maxHP100Field):
+    return CharacterWeaponExcelAddMaxHP100Field(builder, maxHP100Field)
+def CharacterWeaponExcelAddHealPowerField(builder, healPowerField): builder.PrependInt32Slot(8, healPowerField, 0)
+def AddHealPowerField(builder, healPowerField):
+    return CharacterWeaponExcelAddHealPowerField(builder, healPowerField)
+def CharacterWeaponExcelAddHealPower100Field(builder, healPower100Field): builder.PrependInt32Slot(9, healPower100Field, 0)
+def AddHealPower100Field(builder, healPower100Field):
+    return CharacterWeaponExcelAddHealPower100Field(builder, healPower100Field)
+def CharacterWeaponExcelAddUnlockField(builder, unlockField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(unlockField), 0)
+def AddUnlockField(builder, unlockField):
+    return CharacterWeaponExcelAddUnlockField(builder, unlockField)
+def CharacterWeaponExcelStartUnlockFieldVector(builder, numElems): return builder.StartVector(1, numElems, 1)
+def StartUnlockFieldVector(builder, numElems):
+    return CharacterWeaponExcelStartUnlockFieldVector(builder, numElems)
+def CharacterWeaponExcelAddRecipeIdField(builder, recipeIdField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(recipeIdField), 0)
+def AddRecipeIdField(builder, recipeIdField):
+    return CharacterWeaponExcelAddRecipeIdField(builder, recipeIdField)
+def CharacterWeaponExcelStartRecipeIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRecipeIdFieldVector(builder, numElems):
+    return CharacterWeaponExcelStartRecipeIdFieldVector(builder, numElems)
+def CharacterWeaponExcelAddMaxLevelField(builder, maxLevelField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(maxLevelField), 0)
+def AddMaxLevelField(builder, maxLevelField):
+    return CharacterWeaponExcelAddMaxLevelField(builder, maxLevelField)
+def CharacterWeaponExcelStartMaxLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartMaxLevelFieldVector(builder, numElems):
+    return CharacterWeaponExcelStartMaxLevelFieldVector(builder, numElems)
+def CharacterWeaponExcelAddLearnSkillSlotField(builder, learnSkillSlotField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(learnSkillSlotField), 0)
+def AddLearnSkillSlotField(builder, learnSkillSlotField):
+    return CharacterWeaponExcelAddLearnSkillSlotField(builder, learnSkillSlotField)
+def CharacterWeaponExcelStartLearnSkillSlotFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartLearnSkillSlotFieldVector(builder, numElems):
+    return CharacterWeaponExcelStartLearnSkillSlotFieldVector(builder, numElems)
+def CharacterWeaponExcelAddStatTypeField(builder, statTypeField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(statTypeField), 0)
+def AddStatTypeField(builder, statTypeField):
+    return CharacterWeaponExcelAddStatTypeField(builder, statTypeField)
+def CharacterWeaponExcelStartStatTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStatTypeFieldVector(builder, numElems):
+    return CharacterWeaponExcelStartStatTypeFieldVector(builder, numElems)
+def CharacterWeaponExcelAddStatValueField(builder, statValueField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(statValueField), 0)
+def AddStatValueField(builder, statValueField):
+    return CharacterWeaponExcelAddStatValueField(builder, statValueField)
+def CharacterWeaponExcelStartStatValueFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStatValueFieldVector(builder, numElems):
+    return CharacterWeaponExcelStartStatValueFieldVector(builder, numElems)
 def CharacterWeaponExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterWeaponExcelEnd(builder)

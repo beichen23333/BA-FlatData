@@ -25,28 +25,28 @@ class ConstKeyMappingExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstKeyMappingExcel
-    def DragSensitivity(self):
+    def DragSensitivityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def ScrollWheelFactor(self):
+    def ScrollWheelFactorField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstKeyMappingExcel
-    def RemoveKeycodeWord(self):
+    def RemoveKeycodeWordField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstKeyMappingExcel
-    def TutorialDialogTouchKey(self):
+    def TutorialDialogTouchKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -55,18 +55,18 @@ class ConstKeyMappingExcel(object):
 def ConstKeyMappingExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return ConstKeyMappingExcelStart(builder)
-def ConstKeyMappingExcelAddDragSensitivity(builder, dragSensitivity): builder.PrependFloat32Slot(0, dragSensitivity, 0.0)
-def AddDragSensitivity(builder, dragSensitivity):
-    return ConstKeyMappingExcelAddDragSensitivity(builder, dragSensitivity)
-def ConstKeyMappingExcelAddScrollWheelFactor(builder, scrollWheelFactor): builder.PrependFloat32Slot(1, scrollWheelFactor, 0.0)
-def AddScrollWheelFactor(builder, scrollWheelFactor):
-    return ConstKeyMappingExcelAddScrollWheelFactor(builder, scrollWheelFactor)
-def ConstKeyMappingExcelAddRemoveKeycodeWord(builder, removeKeycodeWord): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(removeKeycodeWord), 0)
-def AddRemoveKeycodeWord(builder, removeKeycodeWord):
-    return ConstKeyMappingExcelAddRemoveKeycodeWord(builder, removeKeycodeWord)
-def ConstKeyMappingExcelAddTutorialDialogTouchKey(builder, tutorialDialogTouchKey): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(tutorialDialogTouchKey), 0)
-def AddTutorialDialogTouchKey(builder, tutorialDialogTouchKey):
-    return ConstKeyMappingExcelAddTutorialDialogTouchKey(builder, tutorialDialogTouchKey)
+def ConstKeyMappingExcelAddDragSensitivityField(builder, dragSensitivityField): builder.PrependFloat32Slot(0, dragSensitivityField, 0.0)
+def AddDragSensitivityField(builder, dragSensitivityField):
+    return ConstKeyMappingExcelAddDragSensitivityField(builder, dragSensitivityField)
+def ConstKeyMappingExcelAddScrollWheelFactorField(builder, scrollWheelFactorField): builder.PrependFloat32Slot(1, scrollWheelFactorField, 0.0)
+def AddScrollWheelFactorField(builder, scrollWheelFactorField):
+    return ConstKeyMappingExcelAddScrollWheelFactorField(builder, scrollWheelFactorField)
+def ConstKeyMappingExcelAddRemoveKeycodeWordField(builder, removeKeycodeWordField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(removeKeycodeWordField), 0)
+def AddRemoveKeycodeWordField(builder, removeKeycodeWordField):
+    return ConstKeyMappingExcelAddRemoveKeycodeWordField(builder, removeKeycodeWordField)
+def ConstKeyMappingExcelAddTutorialDialogTouchKeyField(builder, tutorialDialogTouchKeyField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(tutorialDialogTouchKeyField), 0)
+def AddTutorialDialogTouchKeyField(builder, tutorialDialogTouchKeyField):
+    return ConstKeyMappingExcelAddTutorialDialogTouchKeyField(builder, tutorialDialogTouchKeyField)
 def ConstKeyMappingExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstKeyMappingExcelEnd(builder)

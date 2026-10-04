@@ -25,7 +25,7 @@ class Motion(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # Motion
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -34,9 +34,9 @@ class Motion(object):
 def MotionStart(builder): builder.StartObject(1)
 def Start(builder):
     return MotionStart(builder)
-def MotionAddName(builder, name): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return MotionAddName(builder, name)
+def MotionAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return MotionAddNameField(builder, nameField)
 def MotionEnd(builder): return builder.EndObject()
 def End(builder):
     return MotionEnd(builder)

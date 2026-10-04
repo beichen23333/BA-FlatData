@@ -25,28 +25,28 @@ class EventContentCurrencyItemExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentCurrencyItemExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCurrencyItemExcel
-    def EventContentItemType(self):
+    def EventContentItemTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCurrencyItemExcel
-    def ItemUniqueId(self):
+    def ItemUniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCurrencyItemExcel
-    def UseShortCutContentType(self):
+    def UseShortCutContentTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -55,18 +55,18 @@ class EventContentCurrencyItemExcel(object):
 def EventContentCurrencyItemExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentCurrencyItemExcelStart(builder)
-def EventContentCurrencyItemExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentCurrencyItemExcelAddEventContentId(builder, eventContentId)
-def EventContentCurrencyItemExcelAddEventContentItemType(builder, eventContentItemType): builder.PrependInt32Slot(1, eventContentItemType, 0)
-def AddEventContentItemType(builder, eventContentItemType):
-    return EventContentCurrencyItemExcelAddEventContentItemType(builder, eventContentItemType)
-def EventContentCurrencyItemExcelAddItemUniqueId(builder, itemUniqueId): builder.PrependInt32Slot(2, itemUniqueId, 0)
-def AddItemUniqueId(builder, itemUniqueId):
-    return EventContentCurrencyItemExcelAddItemUniqueId(builder, itemUniqueId)
-def EventContentCurrencyItemExcelAddUseShortCutContentType(builder, useShortCutContentType): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(useShortCutContentType), 0)
-def AddUseShortCutContentType(builder, useShortCutContentType):
-    return EventContentCurrencyItemExcelAddUseShortCutContentType(builder, useShortCutContentType)
+def EventContentCurrencyItemExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentCurrencyItemExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentCurrencyItemExcelAddEventContentItemTypeField(builder, eventContentItemTypeField): builder.PrependInt32Slot(1, eventContentItemTypeField, 0)
+def AddEventContentItemTypeField(builder, eventContentItemTypeField):
+    return EventContentCurrencyItemExcelAddEventContentItemTypeField(builder, eventContentItemTypeField)
+def EventContentCurrencyItemExcelAddItemUniqueIdField(builder, itemUniqueIdField): builder.PrependInt32Slot(2, itemUniqueIdField, 0)
+def AddItemUniqueIdField(builder, itemUniqueIdField):
+    return EventContentCurrencyItemExcelAddItemUniqueIdField(builder, itemUniqueIdField)
+def EventContentCurrencyItemExcelAddUseShortCutContentTypeField(builder, useShortCutContentTypeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(useShortCutContentTypeField), 0)
+def AddUseShortCutContentTypeField(builder, useShortCutContentTypeField):
+    return EventContentCurrencyItemExcelAddUseShortCutContentTypeField(builder, useShortCutContentTypeField)
 def EventContentCurrencyItemExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentCurrencyItemExcelEnd(builder)

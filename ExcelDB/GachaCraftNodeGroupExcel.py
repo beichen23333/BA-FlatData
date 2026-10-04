@@ -25,21 +25,21 @@ class GachaCraftNodeGroupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # GachaCraftNodeGroupExcel
-    def NodeId(self):
+    def NodeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaCraftNodeGroupExcel
-    def GachaGroupId(self):
+    def GachaGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaCraftNodeGroupExcel
-    def ProbWeight(self):
+    def ProbWeightField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -48,15 +48,15 @@ class GachaCraftNodeGroupExcel(object):
 def GachaCraftNodeGroupExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return GachaCraftNodeGroupExcelStart(builder)
-def GachaCraftNodeGroupExcelAddNodeId(builder, nodeId): builder.PrependInt32Slot(0, nodeId, 0)
-def AddNodeId(builder, nodeId):
-    return GachaCraftNodeGroupExcelAddNodeId(builder, nodeId)
-def GachaCraftNodeGroupExcelAddGachaGroupId(builder, gachaGroupId): builder.PrependInt32Slot(1, gachaGroupId, 0)
-def AddGachaGroupId(builder, gachaGroupId):
-    return GachaCraftNodeGroupExcelAddGachaGroupId(builder, gachaGroupId)
-def GachaCraftNodeGroupExcelAddProbWeight(builder, probWeight): builder.PrependInt32Slot(2, probWeight, 0)
-def AddProbWeight(builder, probWeight):
-    return GachaCraftNodeGroupExcelAddProbWeight(builder, probWeight)
+def GachaCraftNodeGroupExcelAddNodeIdField(builder, nodeIdField): builder.PrependInt32Slot(0, nodeIdField, 0)
+def AddNodeIdField(builder, nodeIdField):
+    return GachaCraftNodeGroupExcelAddNodeIdField(builder, nodeIdField)
+def GachaCraftNodeGroupExcelAddGachaGroupIdField(builder, gachaGroupIdField): builder.PrependInt32Slot(1, gachaGroupIdField, 0)
+def AddGachaGroupIdField(builder, gachaGroupIdField):
+    return GachaCraftNodeGroupExcelAddGachaGroupIdField(builder, gachaGroupIdField)
+def GachaCraftNodeGroupExcelAddProbWeightField(builder, probWeightField): builder.PrependInt32Slot(2, probWeightField, 0)
+def AddProbWeightField(builder, probWeightField):
+    return GachaCraftNodeGroupExcelAddProbWeightField(builder, probWeightField)
 def GachaCraftNodeGroupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return GachaCraftNodeGroupExcelEnd(builder)

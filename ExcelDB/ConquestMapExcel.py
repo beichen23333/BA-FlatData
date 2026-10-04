@@ -25,49 +25,49 @@ class ConquestMapExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConquestMapExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestMapExcel
-    def DevName(self):
+    def DevNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestMapExcel
-    def MapDifficulty(self):
+    def MapDifficultyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestMapExcel
-    def StepIndex(self):
+    def StepIndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestMapExcel
-    def ConquestMap(self):
+    def ConquestMapField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestMapExcel
-    def StepEnterScenarioGroupId(self):
+    def StepEnterScenarioGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConquestMapExcel
-    def StepOpenConditionType(self, j):
+    def StepOpenConditionTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -75,26 +75,26 @@ class ConquestMapExcel(object):
         return 0
 
     # ConquestMapExcel
-    def StepOpenConditionTypeAsNumpy(self):
+    def StepOpenConditionTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConquestMapExcel
-    def StepOpenConditionTypeLength(self):
+    def StepOpenConditionTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestMapExcel
-    def StepOpenConditionTypeIsNone(self):
+    def StepOpenConditionTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
     # ConquestMapExcel
-    def StepOpenConditionParameter(self, j):
+    def StepOpenConditionParameterField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             a = self._tab.Vector(o)
@@ -102,47 +102,47 @@ class ConquestMapExcel(object):
         return ""
 
     # ConquestMapExcel
-    def StepOpenConditionParameterLength(self):
+    def StepOpenConditionParameterFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConquestMapExcel
-    def StepOpenConditionParameterIsNone(self):
+    def StepOpenConditionParameterFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
     # ConquestMapExcel
-    def MapGoalLocalize(self):
+    def MapGoalLocalizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestMapExcel
-    def StepGoalLocalize(self):
+    def StepGoalLocalizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestMapExcel
-    def StepNameLocalize(self):
+    def StepNameLocalizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestMapExcel
-    def ConquestMapBG(self):
+    def ConquestMapBGField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConquestMapExcel
-    def CameraSettingId(self):
+    def CameraSettingIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -151,51 +151,51 @@ class ConquestMapExcel(object):
 def ConquestMapExcelStart(builder): builder.StartObject(13)
 def Start(builder):
     return ConquestMapExcelStart(builder)
-def ConquestMapExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return ConquestMapExcelAddEventContentId(builder, eventContentId)
-def ConquestMapExcelAddDevName(builder, devName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devName), 0)
-def AddDevName(builder, devName):
-    return ConquestMapExcelAddDevName(builder, devName)
-def ConquestMapExcelAddMapDifficulty(builder, mapDifficulty): builder.PrependInt32Slot(2, mapDifficulty, 0)
-def AddMapDifficulty(builder, mapDifficulty):
-    return ConquestMapExcelAddMapDifficulty(builder, mapDifficulty)
-def ConquestMapExcelAddStepIndex(builder, stepIndex): builder.PrependInt32Slot(3, stepIndex, 0)
-def AddStepIndex(builder, stepIndex):
-    return ConquestMapExcelAddStepIndex(builder, stepIndex)
-def ConquestMapExcelAddConquestMap(builder, conquestMap): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(conquestMap), 0)
-def AddConquestMap(builder, conquestMap):
-    return ConquestMapExcelAddConquestMap(builder, conquestMap)
-def ConquestMapExcelAddStepEnterScenarioGroupId(builder, stepEnterScenarioGroupId): builder.PrependInt32Slot(5, stepEnterScenarioGroupId, 0)
-def AddStepEnterScenarioGroupId(builder, stepEnterScenarioGroupId):
-    return ConquestMapExcelAddStepEnterScenarioGroupId(builder, stepEnterScenarioGroupId)
-def ConquestMapExcelAddStepOpenConditionType(builder, stepOpenConditionType): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(stepOpenConditionType), 0)
-def AddStepOpenConditionType(builder, stepOpenConditionType):
-    return ConquestMapExcelAddStepOpenConditionType(builder, stepOpenConditionType)
-def ConquestMapExcelStartStepOpenConditionTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStepOpenConditionTypeVector(builder, numElems):
-    return ConquestMapExcelStartStepOpenConditionTypeVector(builder, numElems)
-def ConquestMapExcelAddStepOpenConditionParameter(builder, stepOpenConditionParameter): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(stepOpenConditionParameter), 0)
-def AddStepOpenConditionParameter(builder, stepOpenConditionParameter):
-    return ConquestMapExcelAddStepOpenConditionParameter(builder, stepOpenConditionParameter)
-def ConquestMapExcelStartStepOpenConditionParameterVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStepOpenConditionParameterVector(builder, numElems):
-    return ConquestMapExcelStartStepOpenConditionParameterVector(builder, numElems)
-def ConquestMapExcelAddMapGoalLocalize(builder, mapGoalLocalize): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(mapGoalLocalize), 0)
-def AddMapGoalLocalize(builder, mapGoalLocalize):
-    return ConquestMapExcelAddMapGoalLocalize(builder, mapGoalLocalize)
-def ConquestMapExcelAddStepGoalLocalize(builder, stepGoalLocalize): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(stepGoalLocalize), 0)
-def AddStepGoalLocalize(builder, stepGoalLocalize):
-    return ConquestMapExcelAddStepGoalLocalize(builder, stepGoalLocalize)
-def ConquestMapExcelAddStepNameLocalize(builder, stepNameLocalize): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(stepNameLocalize), 0)
-def AddStepNameLocalize(builder, stepNameLocalize):
-    return ConquestMapExcelAddStepNameLocalize(builder, stepNameLocalize)
-def ConquestMapExcelAddConquestMapBG(builder, conquestMapBG): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(conquestMapBG), 0)
-def AddConquestMapBG(builder, conquestMapBG):
-    return ConquestMapExcelAddConquestMapBG(builder, conquestMapBG)
-def ConquestMapExcelAddCameraSettingId(builder, cameraSettingId): builder.PrependInt32Slot(12, cameraSettingId, 0)
-def AddCameraSettingId(builder, cameraSettingId):
-    return ConquestMapExcelAddCameraSettingId(builder, cameraSettingId)
+def ConquestMapExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return ConquestMapExcelAddEventContentIdField(builder, eventContentIdField)
+def ConquestMapExcelAddDevNameField(builder, devNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+def AddDevNameField(builder, devNameField):
+    return ConquestMapExcelAddDevNameField(builder, devNameField)
+def ConquestMapExcelAddMapDifficultyField(builder, mapDifficultyField): builder.PrependInt32Slot(2, mapDifficultyField, 0)
+def AddMapDifficultyField(builder, mapDifficultyField):
+    return ConquestMapExcelAddMapDifficultyField(builder, mapDifficultyField)
+def ConquestMapExcelAddStepIndexField(builder, stepIndexField): builder.PrependInt32Slot(3, stepIndexField, 0)
+def AddStepIndexField(builder, stepIndexField):
+    return ConquestMapExcelAddStepIndexField(builder, stepIndexField)
+def ConquestMapExcelAddConquestMapField(builder, conquestMapField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(conquestMapField), 0)
+def AddConquestMapField(builder, conquestMapField):
+    return ConquestMapExcelAddConquestMapField(builder, conquestMapField)
+def ConquestMapExcelAddStepEnterScenarioGroupIdField(builder, stepEnterScenarioGroupIdField): builder.PrependInt32Slot(5, stepEnterScenarioGroupIdField, 0)
+def AddStepEnterScenarioGroupIdField(builder, stepEnterScenarioGroupIdField):
+    return ConquestMapExcelAddStepEnterScenarioGroupIdField(builder, stepEnterScenarioGroupIdField)
+def ConquestMapExcelAddStepOpenConditionTypeField(builder, stepOpenConditionTypeField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(stepOpenConditionTypeField), 0)
+def AddStepOpenConditionTypeField(builder, stepOpenConditionTypeField):
+    return ConquestMapExcelAddStepOpenConditionTypeField(builder, stepOpenConditionTypeField)
+def ConquestMapExcelStartStepOpenConditionTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStepOpenConditionTypeFieldVector(builder, numElems):
+    return ConquestMapExcelStartStepOpenConditionTypeFieldVector(builder, numElems)
+def ConquestMapExcelAddStepOpenConditionParameterField(builder, stepOpenConditionParameterField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(stepOpenConditionParameterField), 0)
+def AddStepOpenConditionParameterField(builder, stepOpenConditionParameterField):
+    return ConquestMapExcelAddStepOpenConditionParameterField(builder, stepOpenConditionParameterField)
+def ConquestMapExcelStartStepOpenConditionParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStepOpenConditionParameterFieldVector(builder, numElems):
+    return ConquestMapExcelStartStepOpenConditionParameterFieldVector(builder, numElems)
+def ConquestMapExcelAddMapGoalLocalizeField(builder, mapGoalLocalizeField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(mapGoalLocalizeField), 0)
+def AddMapGoalLocalizeField(builder, mapGoalLocalizeField):
+    return ConquestMapExcelAddMapGoalLocalizeField(builder, mapGoalLocalizeField)
+def ConquestMapExcelAddStepGoalLocalizeField(builder, stepGoalLocalizeField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(stepGoalLocalizeField), 0)
+def AddStepGoalLocalizeField(builder, stepGoalLocalizeField):
+    return ConquestMapExcelAddStepGoalLocalizeField(builder, stepGoalLocalizeField)
+def ConquestMapExcelAddStepNameLocalizeField(builder, stepNameLocalizeField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(stepNameLocalizeField), 0)
+def AddStepNameLocalizeField(builder, stepNameLocalizeField):
+    return ConquestMapExcelAddStepNameLocalizeField(builder, stepNameLocalizeField)
+def ConquestMapExcelAddConquestMapBGField(builder, conquestMapBGField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(conquestMapBGField), 0)
+def AddConquestMapBGField(builder, conquestMapBGField):
+    return ConquestMapExcelAddConquestMapBGField(builder, conquestMapBGField)
+def ConquestMapExcelAddCameraSettingIdField(builder, cameraSettingIdField): builder.PrependInt32Slot(12, cameraSettingIdField, 0)
+def AddCameraSettingIdField(builder, cameraSettingIdField):
+    return ConquestMapExcelAddCameraSettingIdField(builder, cameraSettingIdField)
 def ConquestMapExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConquestMapExcelEnd(builder)

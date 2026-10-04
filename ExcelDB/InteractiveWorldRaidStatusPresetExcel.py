@@ -25,35 +25,35 @@ class InteractiveWorldRaidStatusPresetExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # InteractiveWorldRaidStatusPresetExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def WorldRaidSeasonId(self):
+    def WorldRaidSeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def WorldRaidPhaseId(self):
+    def WorldRaidPhaseIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def ScenarioModeId(self):
+    def ScenarioModeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def IAWorldRaidGroupId(self, j):
+    def IAWorldRaidGroupIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -61,26 +61,26 @@ class InteractiveWorldRaidStatusPresetExcel(object):
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def IAWorldRaidGroupIdAsNumpy(self):
+    def IAWorldRaidGroupIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def IAWorldRaidGroupIdLength(self):
+    def IAWorldRaidGroupIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def IAWorldRaidGroupIdIsNone(self):
+    def IAWorldRaidGroupIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def EventContentStageId(self, j):
+    def EventContentStageIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -88,26 +88,26 @@ class InteractiveWorldRaidStatusPresetExcel(object):
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def EventContentStageIdAsNumpy(self):
+    def EventContentStageIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def EventContentStageIdLength(self):
+    def EventContentStageIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def EventContentStageIdIsNone(self):
+    def EventContentStageIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def EventContentScenarioId(self, j):
+    def EventContentScenarioIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -115,57 +115,57 @@ class InteractiveWorldRaidStatusPresetExcel(object):
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def EventContentScenarioIdAsNumpy(self):
+    def EventContentScenarioIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def EventContentScenarioIdLength(self):
+    def EventContentScenarioIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # InteractiveWorldRaidStatusPresetExcel
-    def EventContentScenarioIdIsNone(self):
+    def EventContentScenarioIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def InteractiveWorldRaidStatusPresetExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return InteractiveWorldRaidStatusPresetExcelStart(builder)
-def InteractiveWorldRaidStatusPresetExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return InteractiveWorldRaidStatusPresetExcelAddId(builder, id)
-def InteractiveWorldRaidStatusPresetExcelAddWorldRaidSeasonId(builder, worldRaidSeasonId): builder.PrependInt32Slot(1, worldRaidSeasonId, 0)
-def AddWorldRaidSeasonId(builder, worldRaidSeasonId):
-    return InteractiveWorldRaidStatusPresetExcelAddWorldRaidSeasonId(builder, worldRaidSeasonId)
-def InteractiveWorldRaidStatusPresetExcelAddWorldRaidPhaseId(builder, worldRaidPhaseId): builder.PrependInt32Slot(2, worldRaidPhaseId, 0)
-def AddWorldRaidPhaseId(builder, worldRaidPhaseId):
-    return InteractiveWorldRaidStatusPresetExcelAddWorldRaidPhaseId(builder, worldRaidPhaseId)
-def InteractiveWorldRaidStatusPresetExcelAddScenarioModeId(builder, scenarioModeId): builder.PrependInt32Slot(3, scenarioModeId, 0)
-def AddScenarioModeId(builder, scenarioModeId):
-    return InteractiveWorldRaidStatusPresetExcelAddScenarioModeId(builder, scenarioModeId)
-def InteractiveWorldRaidStatusPresetExcelAddIAWorldRaidGroupId(builder, iAWorldRaidGroupId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iAWorldRaidGroupId), 0)
-def AddIAWorldRaidGroupId(builder, iAWorldRaidGroupId):
-    return InteractiveWorldRaidStatusPresetExcelAddIAWorldRaidGroupId(builder, iAWorldRaidGroupId)
-def InteractiveWorldRaidStatusPresetExcelStartIAWorldRaidGroupIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartIAWorldRaidGroupIdVector(builder, numElems):
-    return InteractiveWorldRaidStatusPresetExcelStartIAWorldRaidGroupIdVector(builder, numElems)
-def InteractiveWorldRaidStatusPresetExcelAddEventContentStageId(builder, eventContentStageId): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(eventContentStageId), 0)
-def AddEventContentStageId(builder, eventContentStageId):
-    return InteractiveWorldRaidStatusPresetExcelAddEventContentStageId(builder, eventContentStageId)
-def InteractiveWorldRaidStatusPresetExcelStartEventContentStageIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEventContentStageIdVector(builder, numElems):
-    return InteractiveWorldRaidStatusPresetExcelStartEventContentStageIdVector(builder, numElems)
-def InteractiveWorldRaidStatusPresetExcelAddEventContentScenarioId(builder, eventContentScenarioId): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(eventContentScenarioId), 0)
-def AddEventContentScenarioId(builder, eventContentScenarioId):
-    return InteractiveWorldRaidStatusPresetExcelAddEventContentScenarioId(builder, eventContentScenarioId)
-def InteractiveWorldRaidStatusPresetExcelStartEventContentScenarioIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEventContentScenarioIdVector(builder, numElems):
-    return InteractiveWorldRaidStatusPresetExcelStartEventContentScenarioIdVector(builder, numElems)
+def InteractiveWorldRaidStatusPresetExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return InteractiveWorldRaidStatusPresetExcelAddIdField(builder, idField)
+def InteractiveWorldRaidStatusPresetExcelAddWorldRaidSeasonIdField(builder, worldRaidSeasonIdField): builder.PrependInt32Slot(1, worldRaidSeasonIdField, 0)
+def AddWorldRaidSeasonIdField(builder, worldRaidSeasonIdField):
+    return InteractiveWorldRaidStatusPresetExcelAddWorldRaidSeasonIdField(builder, worldRaidSeasonIdField)
+def InteractiveWorldRaidStatusPresetExcelAddWorldRaidPhaseIdField(builder, worldRaidPhaseIdField): builder.PrependInt32Slot(2, worldRaidPhaseIdField, 0)
+def AddWorldRaidPhaseIdField(builder, worldRaidPhaseIdField):
+    return InteractiveWorldRaidStatusPresetExcelAddWorldRaidPhaseIdField(builder, worldRaidPhaseIdField)
+def InteractiveWorldRaidStatusPresetExcelAddScenarioModeIdField(builder, scenarioModeIdField): builder.PrependInt32Slot(3, scenarioModeIdField, 0)
+def AddScenarioModeIdField(builder, scenarioModeIdField):
+    return InteractiveWorldRaidStatusPresetExcelAddScenarioModeIdField(builder, scenarioModeIdField)
+def InteractiveWorldRaidStatusPresetExcelAddIAWorldRaidGroupIdField(builder, iAWorldRaidGroupIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iAWorldRaidGroupIdField), 0)
+def AddIAWorldRaidGroupIdField(builder, iAWorldRaidGroupIdField):
+    return InteractiveWorldRaidStatusPresetExcelAddIAWorldRaidGroupIdField(builder, iAWorldRaidGroupIdField)
+def InteractiveWorldRaidStatusPresetExcelStartIAWorldRaidGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartIAWorldRaidGroupIdFieldVector(builder, numElems):
+    return InteractiveWorldRaidStatusPresetExcelStartIAWorldRaidGroupIdFieldVector(builder, numElems)
+def InteractiveWorldRaidStatusPresetExcelAddEventContentStageIdField(builder, eventContentStageIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(eventContentStageIdField), 0)
+def AddEventContentStageIdField(builder, eventContentStageIdField):
+    return InteractiveWorldRaidStatusPresetExcelAddEventContentStageIdField(builder, eventContentStageIdField)
+def InteractiveWorldRaidStatusPresetExcelStartEventContentStageIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEventContentStageIdFieldVector(builder, numElems):
+    return InteractiveWorldRaidStatusPresetExcelStartEventContentStageIdFieldVector(builder, numElems)
+def InteractiveWorldRaidStatusPresetExcelAddEventContentScenarioIdField(builder, eventContentScenarioIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(eventContentScenarioIdField), 0)
+def AddEventContentScenarioIdField(builder, eventContentScenarioIdField):
+    return InteractiveWorldRaidStatusPresetExcelAddEventContentScenarioIdField(builder, eventContentScenarioIdField)
+def InteractiveWorldRaidStatusPresetExcelStartEventContentScenarioIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEventContentScenarioIdFieldVector(builder, numElems):
+    return InteractiveWorldRaidStatusPresetExcelStartEventContentScenarioIdFieldVector(builder, numElems)
 def InteractiveWorldRaidStatusPresetExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return InteractiveWorldRaidStatusPresetExcelEnd(builder)

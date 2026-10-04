@@ -25,42 +25,42 @@ class FieldEvidenceExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # FieldEvidenceExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldEvidenceExcel
-    def SeasonId(self):
+    def SeasonIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # FieldEvidenceExcel
-    def NameLocalizeKey(self):
+    def NameLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FieldEvidenceExcel
-    def DescriptionLocalizeKey(self):
+    def DescriptionLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FieldEvidenceExcel
-    def DetailLocalizeKey(self):
+    def DetailLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # FieldEvidenceExcel
-    def ImagePath(self):
+    def ImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -69,24 +69,24 @@ class FieldEvidenceExcel(object):
 def FieldEvidenceExcelStart(builder): builder.StartObject(6)
 def Start(builder):
     return FieldEvidenceExcelStart(builder)
-def FieldEvidenceExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(0, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return FieldEvidenceExcelAddUniqueId(builder, uniqueId)
-def FieldEvidenceExcelAddSeasonId(builder, seasonId): builder.PrependInt32Slot(1, seasonId, 0)
-def AddSeasonId(builder, seasonId):
-    return FieldEvidenceExcelAddSeasonId(builder, seasonId)
-def FieldEvidenceExcelAddNameLocalizeKey(builder, nameLocalizeKey): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nameLocalizeKey), 0)
-def AddNameLocalizeKey(builder, nameLocalizeKey):
-    return FieldEvidenceExcelAddNameLocalizeKey(builder, nameLocalizeKey)
-def FieldEvidenceExcelAddDescriptionLocalizeKey(builder, descriptionLocalizeKey): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionLocalizeKey), 0)
-def AddDescriptionLocalizeKey(builder, descriptionLocalizeKey):
-    return FieldEvidenceExcelAddDescriptionLocalizeKey(builder, descriptionLocalizeKey)
-def FieldEvidenceExcelAddDetailLocalizeKey(builder, detailLocalizeKey): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(detailLocalizeKey), 0)
-def AddDetailLocalizeKey(builder, detailLocalizeKey):
-    return FieldEvidenceExcelAddDetailLocalizeKey(builder, detailLocalizeKey)
-def FieldEvidenceExcelAddImagePath(builder, imagePath): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(imagePath), 0)
-def AddImagePath(builder, imagePath):
-    return FieldEvidenceExcelAddImagePath(builder, imagePath)
+def FieldEvidenceExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return FieldEvidenceExcelAddUniqueIdField(builder, uniqueIdField)
+def FieldEvidenceExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(1, seasonIdField, 0)
+def AddSeasonIdField(builder, seasonIdField):
+    return FieldEvidenceExcelAddSeasonIdField(builder, seasonIdField)
+def FieldEvidenceExcelAddNameLocalizeKeyField(builder, nameLocalizeKeyField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nameLocalizeKeyField), 0)
+def AddNameLocalizeKeyField(builder, nameLocalizeKeyField):
+    return FieldEvidenceExcelAddNameLocalizeKeyField(builder, nameLocalizeKeyField)
+def FieldEvidenceExcelAddDescriptionLocalizeKeyField(builder, descriptionLocalizeKeyField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionLocalizeKeyField), 0)
+def AddDescriptionLocalizeKeyField(builder, descriptionLocalizeKeyField):
+    return FieldEvidenceExcelAddDescriptionLocalizeKeyField(builder, descriptionLocalizeKeyField)
+def FieldEvidenceExcelAddDetailLocalizeKeyField(builder, detailLocalizeKeyField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(detailLocalizeKeyField), 0)
+def AddDetailLocalizeKeyField(builder, detailLocalizeKeyField):
+    return FieldEvidenceExcelAddDetailLocalizeKeyField(builder, detailLocalizeKeyField)
+def FieldEvidenceExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+def AddImagePathField(builder, imagePathField):
+    return FieldEvidenceExcelAddImagePathField(builder, imagePathField)
 def FieldEvidenceExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return FieldEvidenceExcelEnd(builder)

@@ -25,49 +25,49 @@ class CharacterDialogSubtitleExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterDialogSubtitleExcel
-    def LocalizeCVGroup(self):
+    def LocalizeCVGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogSubtitleExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogSubtitleExcel
-    def Duration(self):
+    def DurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogSubtitleExcel
-    def Separate(self):
+    def SeparateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterDialogSubtitleExcel
-    def LocalizeKR(self):
+    def LocalizeKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogSubtitleExcel
-    def LocalizeJP(self):
+    def LocalizeJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogSubtitleExcel
-    def DurationCN(self):
+    def DurationCNField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class CharacterDialogSubtitleExcel(object):
 def CharacterDialogSubtitleExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return CharacterDialogSubtitleExcelStart(builder)
-def CharacterDialogSubtitleExcelAddLocalizeCVGroup(builder, localizeCVGroup): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroup), 0)
-def AddLocalizeCVGroup(builder, localizeCVGroup):
-    return CharacterDialogSubtitleExcelAddLocalizeCVGroup(builder, localizeCVGroup)
-def CharacterDialogSubtitleExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(1, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return CharacterDialogSubtitleExcelAddCharacterId(builder, characterId)
-def CharacterDialogSubtitleExcelAddDuration(builder, duration): builder.PrependInt32Slot(2, duration, 0)
-def AddDuration(builder, duration):
-    return CharacterDialogSubtitleExcelAddDuration(builder, duration)
-def CharacterDialogSubtitleExcelAddSeparate(builder, separate): builder.PrependBoolSlot(3, separate, 0)
-def AddSeparate(builder, separate):
-    return CharacterDialogSubtitleExcelAddSeparate(builder, separate)
-def CharacterDialogSubtitleExcelAddLocalizeKR(builder, localizeKR): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKR), 0)
-def AddLocalizeKR(builder, localizeKR):
-    return CharacterDialogSubtitleExcelAddLocalizeKR(builder, localizeKR)
-def CharacterDialogSubtitleExcelAddLocalizeJP(builder, localizeJP): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJP), 0)
-def AddLocalizeJP(builder, localizeJP):
-    return CharacterDialogSubtitleExcelAddLocalizeJP(builder, localizeJP)
-def CharacterDialogSubtitleExcelAddDurationCN(builder, durationCN): builder.PrependInt32Slot(6, durationCN, 0)
-def AddDurationCN(builder, durationCN):
-    return CharacterDialogSubtitleExcelAddDurationCN(builder, durationCN)
+def CharacterDialogSubtitleExcelAddLocalizeCVGroupField(builder, localizeCVGroupField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+def AddLocalizeCVGroupField(builder, localizeCVGroupField):
+    return CharacterDialogSubtitleExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
+def CharacterDialogSubtitleExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return CharacterDialogSubtitleExcelAddCharacterIdField(builder, characterIdField)
+def CharacterDialogSubtitleExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(2, durationField, 0)
+def AddDurationField(builder, durationField):
+    return CharacterDialogSubtitleExcelAddDurationField(builder, durationField)
+def CharacterDialogSubtitleExcelAddSeparateField(builder, separateField): builder.PrependBoolSlot(3, separateField, 0)
+def AddSeparateField(builder, separateField):
+    return CharacterDialogSubtitleExcelAddSeparateField(builder, separateField)
+def CharacterDialogSubtitleExcelAddLocalizeKRField(builder, localizeKRField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+def AddLocalizeKRField(builder, localizeKRField):
+    return CharacterDialogSubtitleExcelAddLocalizeKRField(builder, localizeKRField)
+def CharacterDialogSubtitleExcelAddLocalizeJPField(builder, localizeJPField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+def AddLocalizeJPField(builder, localizeJPField):
+    return CharacterDialogSubtitleExcelAddLocalizeJPField(builder, localizeJPField)
+def CharacterDialogSubtitleExcelAddDurationCNField(builder, durationCNField): builder.PrependInt32Slot(6, durationCNField, 0)
+def AddDurationCNField(builder, durationCNField):
+    return CharacterDialogSubtitleExcelAddDurationCNField(builder, durationCNField)
 def CharacterDialogSubtitleExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterDialogSubtitleExcelEnd(builder)

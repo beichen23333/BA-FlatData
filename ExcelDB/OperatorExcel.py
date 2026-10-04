@@ -25,77 +25,77 @@ class OperatorExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # OperatorExcel
-    def UniqueId(self):
+    def UniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OperatorExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # OperatorExcel
-    def OperatorCondition(self):
+    def OperatorConditionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OperatorExcel
-    def OutputSequence(self):
+    def OutputSequenceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OperatorExcel
-    def RandomWeight(self):
+    def RandomWeightField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OperatorExcel
-    def OutputDelay(self):
+    def OutputDelayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OperatorExcel
-    def Duration(self):
+    def DurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OperatorExcel
-    def OperatorOutputPriority(self):
+    def OperatorOutputPriorityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # OperatorExcel
-    def PortraitPath(self):
+    def PortraitPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # OperatorExcel
-    def TextLocalizeKey(self):
+    def TextLocalizeKeyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # OperatorExcel
-    def VoiceId(self, j):
+    def VoiceIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             a = self._tab.Vector(o)
@@ -103,33 +103,33 @@ class OperatorExcel(object):
         return 0
 
     # OperatorExcel
-    def VoiceIdAsNumpy(self):
+    def VoiceIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
         return 0
 
     # OperatorExcel
-    def VoiceIdLength(self):
+    def VoiceIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # OperatorExcel
-    def VoiceIdIsNone(self):
+    def VoiceIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         return o == 0
 
     # OperatorExcel
-    def OperatorWaitQueue(self):
+    def OperatorWaitQueueField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # OperatorExcel
-    def CharacterVoiceOverridePriority(self):
+    def CharacterVoiceOverridePriorityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -138,48 +138,48 @@ class OperatorExcel(object):
 def OperatorExcelStart(builder): builder.StartObject(13)
 def Start(builder):
     return OperatorExcelStart(builder)
-def OperatorExcelAddUniqueId(builder, uniqueId): builder.PrependInt32Slot(0, uniqueId, 0)
-def AddUniqueId(builder, uniqueId):
-    return OperatorExcelAddUniqueId(builder, uniqueId)
-def OperatorExcelAddGroupId(builder, groupId): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(groupId), 0)
-def AddGroupId(builder, groupId):
-    return OperatorExcelAddGroupId(builder, groupId)
-def OperatorExcelAddOperatorCondition(builder, operatorCondition): builder.PrependInt32Slot(2, operatorCondition, 0)
-def AddOperatorCondition(builder, operatorCondition):
-    return OperatorExcelAddOperatorCondition(builder, operatorCondition)
-def OperatorExcelAddOutputSequence(builder, outputSequence): builder.PrependInt32Slot(3, outputSequence, 0)
-def AddOutputSequence(builder, outputSequence):
-    return OperatorExcelAddOutputSequence(builder, outputSequence)
-def OperatorExcelAddRandomWeight(builder, randomWeight): builder.PrependInt32Slot(4, randomWeight, 0)
-def AddRandomWeight(builder, randomWeight):
-    return OperatorExcelAddRandomWeight(builder, randomWeight)
-def OperatorExcelAddOutputDelay(builder, outputDelay): builder.PrependInt32Slot(5, outputDelay, 0)
-def AddOutputDelay(builder, outputDelay):
-    return OperatorExcelAddOutputDelay(builder, outputDelay)
-def OperatorExcelAddDuration(builder, duration): builder.PrependInt32Slot(6, duration, 0)
-def AddDuration(builder, duration):
-    return OperatorExcelAddDuration(builder, duration)
-def OperatorExcelAddOperatorOutputPriority(builder, operatorOutputPriority): builder.PrependInt32Slot(7, operatorOutputPriority, 0)
-def AddOperatorOutputPriority(builder, operatorOutputPriority):
-    return OperatorExcelAddOperatorOutputPriority(builder, operatorOutputPriority)
-def OperatorExcelAddPortraitPath(builder, portraitPath): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(portraitPath), 0)
-def AddPortraitPath(builder, portraitPath):
-    return OperatorExcelAddPortraitPath(builder, portraitPath)
-def OperatorExcelAddTextLocalizeKey(builder, textLocalizeKey): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(textLocalizeKey), 0)
-def AddTextLocalizeKey(builder, textLocalizeKey):
-    return OperatorExcelAddTextLocalizeKey(builder, textLocalizeKey)
-def OperatorExcelAddVoiceId(builder, voiceId): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(voiceId), 0)
-def AddVoiceId(builder, voiceId):
-    return OperatorExcelAddVoiceId(builder, voiceId)
-def OperatorExcelStartVoiceIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVoiceIdVector(builder, numElems):
-    return OperatorExcelStartVoiceIdVector(builder, numElems)
-def OperatorExcelAddOperatorWaitQueue(builder, operatorWaitQueue): builder.PrependBoolSlot(11, operatorWaitQueue, 0)
-def AddOperatorWaitQueue(builder, operatorWaitQueue):
-    return OperatorExcelAddOperatorWaitQueue(builder, operatorWaitQueue)
-def OperatorExcelAddCharacterVoiceOverridePriority(builder, characterVoiceOverridePriority): builder.PrependInt32Slot(12, characterVoiceOverridePriority, 0)
-def AddCharacterVoiceOverridePriority(builder, characterVoiceOverridePriority):
-    return OperatorExcelAddCharacterVoiceOverridePriority(builder, characterVoiceOverridePriority)
+def OperatorExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+def AddUniqueIdField(builder, uniqueIdField):
+    return OperatorExcelAddUniqueIdField(builder, uniqueIdField)
+def OperatorExcelAddGroupIdField(builder, groupIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(groupIdField), 0)
+def AddGroupIdField(builder, groupIdField):
+    return OperatorExcelAddGroupIdField(builder, groupIdField)
+def OperatorExcelAddOperatorConditionField(builder, operatorConditionField): builder.PrependInt32Slot(2, operatorConditionField, 0)
+def AddOperatorConditionField(builder, operatorConditionField):
+    return OperatorExcelAddOperatorConditionField(builder, operatorConditionField)
+def OperatorExcelAddOutputSequenceField(builder, outputSequenceField): builder.PrependInt32Slot(3, outputSequenceField, 0)
+def AddOutputSequenceField(builder, outputSequenceField):
+    return OperatorExcelAddOutputSequenceField(builder, outputSequenceField)
+def OperatorExcelAddRandomWeightField(builder, randomWeightField): builder.PrependInt32Slot(4, randomWeightField, 0)
+def AddRandomWeightField(builder, randomWeightField):
+    return OperatorExcelAddRandomWeightField(builder, randomWeightField)
+def OperatorExcelAddOutputDelayField(builder, outputDelayField): builder.PrependInt32Slot(5, outputDelayField, 0)
+def AddOutputDelayField(builder, outputDelayField):
+    return OperatorExcelAddOutputDelayField(builder, outputDelayField)
+def OperatorExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(6, durationField, 0)
+def AddDurationField(builder, durationField):
+    return OperatorExcelAddDurationField(builder, durationField)
+def OperatorExcelAddOperatorOutputPriorityField(builder, operatorOutputPriorityField): builder.PrependInt32Slot(7, operatorOutputPriorityField, 0)
+def AddOperatorOutputPriorityField(builder, operatorOutputPriorityField):
+    return OperatorExcelAddOperatorOutputPriorityField(builder, operatorOutputPriorityField)
+def OperatorExcelAddPortraitPathField(builder, portraitPathField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(portraitPathField), 0)
+def AddPortraitPathField(builder, portraitPathField):
+    return OperatorExcelAddPortraitPathField(builder, portraitPathField)
+def OperatorExcelAddTextLocalizeKeyField(builder, textLocalizeKeyField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(textLocalizeKeyField), 0)
+def AddTextLocalizeKeyField(builder, textLocalizeKeyField):
+    return OperatorExcelAddTextLocalizeKeyField(builder, textLocalizeKeyField)
+def OperatorExcelAddVoiceIdField(builder, voiceIdField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(voiceIdField), 0)
+def AddVoiceIdField(builder, voiceIdField):
+    return OperatorExcelAddVoiceIdField(builder, voiceIdField)
+def OperatorExcelStartVoiceIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartVoiceIdFieldVector(builder, numElems):
+    return OperatorExcelStartVoiceIdFieldVector(builder, numElems)
+def OperatorExcelAddOperatorWaitQueueField(builder, operatorWaitQueueField): builder.PrependBoolSlot(11, operatorWaitQueueField, 0)
+def AddOperatorWaitQueueField(builder, operatorWaitQueueField):
+    return OperatorExcelAddOperatorWaitQueueField(builder, operatorWaitQueueField)
+def OperatorExcelAddCharacterVoiceOverridePriorityField(builder, characterVoiceOverridePriorityField): builder.PrependInt32Slot(12, characterVoiceOverridePriorityField, 0)
+def AddCharacterVoiceOverridePriorityField(builder, characterVoiceOverridePriorityField):
+    return OperatorExcelAddCharacterVoiceOverridePriorityField(builder, characterVoiceOverridePriorityField)
 def OperatorExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return OperatorExcelEnd(builder)

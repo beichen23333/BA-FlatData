@@ -25,28 +25,28 @@ class ShopTabGroupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ShopTabGroupExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopTabGroupExcel
-    def ShopGroupType(self):
+    def ShopGroupTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopTabGroupExcel
-    def DisplayOrder(self):
+    def DisplayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ShopTabGroupExcel
-    def ShopCategoryTypes(self, j):
+    def ShopCategoryTypesField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -54,42 +54,42 @@ class ShopTabGroupExcel(object):
         return 0
 
     # ShopTabGroupExcel
-    def ShopCategoryTypesAsNumpy(self):
+    def ShopCategoryTypesFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Float32Flags, o)
         return 0
 
     # ShopTabGroupExcel
-    def ShopCategoryTypesLength(self):
+    def ShopCategoryTypesFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ShopTabGroupExcel
-    def ShopCategoryTypesIsNone(self):
+    def ShopCategoryTypesFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
 def ShopTabGroupExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return ShopTabGroupExcelStart(builder)
-def ShopTabGroupExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return ShopTabGroupExcelAddId(builder, id)
-def ShopTabGroupExcelAddShopGroupType(builder, shopGroupType): builder.PrependInt32Slot(1, shopGroupType, 0)
-def AddShopGroupType(builder, shopGroupType):
-    return ShopTabGroupExcelAddShopGroupType(builder, shopGroupType)
-def ShopTabGroupExcelAddDisplayOrder(builder, displayOrder): builder.PrependInt32Slot(2, displayOrder, 0)
-def AddDisplayOrder(builder, displayOrder):
-    return ShopTabGroupExcelAddDisplayOrder(builder, displayOrder)
-def ShopTabGroupExcelAddShopCategoryTypes(builder, shopCategoryTypes): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(shopCategoryTypes), 0)
-def AddShopCategoryTypes(builder, shopCategoryTypes):
-    return ShopTabGroupExcelAddShopCategoryTypes(builder, shopCategoryTypes)
-def ShopTabGroupExcelStartShopCategoryTypesVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShopCategoryTypesVector(builder, numElems):
-    return ShopTabGroupExcelStartShopCategoryTypesVector(builder, numElems)
+def ShopTabGroupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return ShopTabGroupExcelAddIdField(builder, idField)
+def ShopTabGroupExcelAddShopGroupTypeField(builder, shopGroupTypeField): builder.PrependInt32Slot(1, shopGroupTypeField, 0)
+def AddShopGroupTypeField(builder, shopGroupTypeField):
+    return ShopTabGroupExcelAddShopGroupTypeField(builder, shopGroupTypeField)
+def ShopTabGroupExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(2, displayOrderField, 0)
+def AddDisplayOrderField(builder, displayOrderField):
+    return ShopTabGroupExcelAddDisplayOrderField(builder, displayOrderField)
+def ShopTabGroupExcelAddShopCategoryTypesField(builder, shopCategoryTypesField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(shopCategoryTypesField), 0)
+def AddShopCategoryTypesField(builder, shopCategoryTypesField):
+    return ShopTabGroupExcelAddShopCategoryTypesField(builder, shopCategoryTypesField)
+def ShopTabGroupExcelStartShopCategoryTypesFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShopCategoryTypesFieldVector(builder, numElems):
+    return ShopTabGroupExcelStartShopCategoryTypesFieldVector(builder, numElems)
 def ShopTabGroupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ShopTabGroupExcelEnd(builder)

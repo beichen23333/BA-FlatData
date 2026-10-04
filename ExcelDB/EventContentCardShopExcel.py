@@ -25,70 +25,70 @@ class EventContentCardShopExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentCardShopExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCardShopExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCardShopExcel
-    def Rarity(self):
+    def RarityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCardShopExcel
-    def CostGoodsId(self):
+    def CostGoodsIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCardShopExcel
-    def CardGroupId(self):
+    def CardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCardShopExcel
-    def IsLegacy(self):
+    def IsLegacyField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EventContentCardShopExcel
-    def RefreshGroup(self):
+    def RefreshGroupField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCardShopExcel
-    def Prob(self):
+    def ProbField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCardShopExcel
-    def ProbWeight1(self):
+    def ProbWeight1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             a = self._tab.Vector(o)
@@ -96,26 +96,26 @@ class EventContentCardShopExcel(object):
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
     # EventContentCardShopExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             a = self._tab.Vector(o)
@@ -123,26 +123,26 @@ class EventContentCardShopExcel(object):
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         return o == 0
 
     # EventContentCardShopExcel
-    def RewardParcelAmount(self, j):
+    def RewardParcelAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
@@ -150,72 +150,72 @@ class EventContentCardShopExcel(object):
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelAmountAsNumpy(self):
+    def RewardParcelAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelAmountLength(self):
+    def RewardParcelAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentCardShopExcel
-    def RewardParcelAmountIsNone(self):
+    def RewardParcelAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
 def EventContentCardShopExcelStart(builder): builder.StartObject(12)
 def Start(builder):
     return EventContentCardShopExcelStart(builder)
-def EventContentCardShopExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentCardShopExcelAddEventContentId(builder, eventContentId)
-def EventContentCardShopExcelAddId(builder, id): builder.PrependInt32Slot(1, id, 0)
-def AddId(builder, id):
-    return EventContentCardShopExcelAddId(builder, id)
-def EventContentCardShopExcelAddRarity(builder, rarity): builder.PrependInt32Slot(2, rarity, 0)
-def AddRarity(builder, rarity):
-    return EventContentCardShopExcelAddRarity(builder, rarity)
-def EventContentCardShopExcelAddCostGoodsId(builder, costGoodsId): builder.PrependInt32Slot(3, costGoodsId, 0)
-def AddCostGoodsId(builder, costGoodsId):
-    return EventContentCardShopExcelAddCostGoodsId(builder, costGoodsId)
-def EventContentCardShopExcelAddCardGroupId(builder, cardGroupId): builder.PrependInt32Slot(4, cardGroupId, 0)
-def AddCardGroupId(builder, cardGroupId):
-    return EventContentCardShopExcelAddCardGroupId(builder, cardGroupId)
-def EventContentCardShopExcelAddIsLegacy(builder, isLegacy): builder.PrependBoolSlot(5, isLegacy, 0)
-def AddIsLegacy(builder, isLegacy):
-    return EventContentCardShopExcelAddIsLegacy(builder, isLegacy)
-def EventContentCardShopExcelAddRefreshGroup(builder, refreshGroup): builder.PrependInt32Slot(6, refreshGroup, 0)
-def AddRefreshGroup(builder, refreshGroup):
-    return EventContentCardShopExcelAddRefreshGroup(builder, refreshGroup)
-def EventContentCardShopExcelAddProb(builder, prob): builder.PrependInt32Slot(7, prob, 0)
-def AddProb(builder, prob):
-    return EventContentCardShopExcelAddProb(builder, prob)
-def EventContentCardShopExcelAddProbWeight1(builder, probWeight1): builder.PrependInt32Slot(8, probWeight1, 0)
-def AddProbWeight1(builder, probWeight1):
-    return EventContentCardShopExcelAddProbWeight1(builder, probWeight1)
-def EventContentCardShopExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return EventContentCardShopExcelAddRewardParcelType(builder, rewardParcelType)
-def EventContentCardShopExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return EventContentCardShopExcelStartRewardParcelTypeVector(builder, numElems)
-def EventContentCardShopExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return EventContentCardShopExcelAddRewardParcelId(builder, rewardParcelId)
-def EventContentCardShopExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return EventContentCardShopExcelStartRewardParcelIdVector(builder, numElems)
-def EventContentCardShopExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmount), 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return EventContentCardShopExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def EventContentCardShopExcelStartRewardParcelAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountVector(builder, numElems):
-    return EventContentCardShopExcelStartRewardParcelAmountVector(builder, numElems)
+def EventContentCardShopExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentCardShopExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentCardShopExcelAddIdField(builder, idField): builder.PrependInt32Slot(1, idField, 0)
+def AddIdField(builder, idField):
+    return EventContentCardShopExcelAddIdField(builder, idField)
+def EventContentCardShopExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(2, rarityField, 0)
+def AddRarityField(builder, rarityField):
+    return EventContentCardShopExcelAddRarityField(builder, rarityField)
+def EventContentCardShopExcelAddCostGoodsIdField(builder, costGoodsIdField): builder.PrependInt32Slot(3, costGoodsIdField, 0)
+def AddCostGoodsIdField(builder, costGoodsIdField):
+    return EventContentCardShopExcelAddCostGoodsIdField(builder, costGoodsIdField)
+def EventContentCardShopExcelAddCardGroupIdField(builder, cardGroupIdField): builder.PrependInt32Slot(4, cardGroupIdField, 0)
+def AddCardGroupIdField(builder, cardGroupIdField):
+    return EventContentCardShopExcelAddCardGroupIdField(builder, cardGroupIdField)
+def EventContentCardShopExcelAddIsLegacyField(builder, isLegacyField): builder.PrependBoolSlot(5, isLegacyField, 0)
+def AddIsLegacyField(builder, isLegacyField):
+    return EventContentCardShopExcelAddIsLegacyField(builder, isLegacyField)
+def EventContentCardShopExcelAddRefreshGroupField(builder, refreshGroupField): builder.PrependInt32Slot(6, refreshGroupField, 0)
+def AddRefreshGroupField(builder, refreshGroupField):
+    return EventContentCardShopExcelAddRefreshGroupField(builder, refreshGroupField)
+def EventContentCardShopExcelAddProbField(builder, probField): builder.PrependInt32Slot(7, probField, 0)
+def AddProbField(builder, probField):
+    return EventContentCardShopExcelAddProbField(builder, probField)
+def EventContentCardShopExcelAddProbWeight1Field(builder, probWeight1Field): builder.PrependInt32Slot(8, probWeight1Field, 0)
+def AddProbWeight1Field(builder, probWeight1Field):
+    return EventContentCardShopExcelAddProbWeight1Field(builder, probWeight1Field)
+def EventContentCardShopExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return EventContentCardShopExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def EventContentCardShopExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return EventContentCardShopExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def EventContentCardShopExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return EventContentCardShopExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def EventContentCardShopExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return EventContentCardShopExcelStartRewardParcelIdFieldVector(builder, numElems)
+def EventContentCardShopExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return EventContentCardShopExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def EventContentCardShopExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelAmountFieldVector(builder, numElems):
+    return EventContentCardShopExcelStartRewardParcelAmountFieldVector(builder, numElems)
 def EventContentCardShopExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentCardShopExcelEnd(builder)

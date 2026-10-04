@@ -25,28 +25,28 @@ class EventContentExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentExcel
-    def DevName(self):
+    def DevNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EventContentExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentExcel
-    def BgImagePath(self):
+    def BgImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -55,18 +55,18 @@ class EventContentExcel(object):
 def EventContentExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentExcelStart(builder)
-def EventContentExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return EventContentExcelAddId(builder, id)
-def EventContentExcelAddDevName(builder, devName): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devName), 0)
-def AddDevName(builder, devName):
-    return EventContentExcelAddDevName(builder, devName)
-def EventContentExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(2, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentExcelAddEventContentId(builder, eventContentId)
-def EventContentExcelAddBgImagePath(builder, bgImagePath): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(bgImagePath), 0)
-def AddBgImagePath(builder, bgImagePath):
-    return EventContentExcelAddBgImagePath(builder, bgImagePath)
+def EventContentExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return EventContentExcelAddIdField(builder, idField)
+def EventContentExcelAddDevNameField(builder, devNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+def AddDevNameField(builder, devNameField):
+    return EventContentExcelAddDevNameField(builder, devNameField)
+def EventContentExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(2, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentExcelAddBgImagePathField(builder, bgImagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(bgImagePathField), 0)
+def AddBgImagePathField(builder, bgImagePathField):
+    return EventContentExcelAddBgImagePathField(builder, bgImagePathField)
 def EventContentExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentExcelEnd(builder)

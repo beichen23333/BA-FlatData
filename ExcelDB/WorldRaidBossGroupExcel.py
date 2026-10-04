@@ -25,91 +25,91 @@ class WorldRaidBossGroupExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # WorldRaidBossGroupExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidBossGroupExcel
-    def WorldRaidBossGroupId(self):
+    def WorldRaidBossGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidBossGroupExcel
-    def WorldBossName(self):
+    def WorldBossNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def WorldBossPopupPortrait(self):
+    def WorldBossPopupPortraitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def WorldBossPopupBG(self):
+    def WorldBossPopupBGField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def WorldBossParcelPortrait(self):
+    def WorldBossParcelPortraitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def WorldBossListParcel(self):
+    def WorldBossListParcelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def WorldBossHP(self):
+    def WorldBossHPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidBossGroupExcel
-    def WorldBossHPUO(self):
+    def WorldBossHPUOField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidBossGroupExcel
-    def UIHideBeforeSpawn(self):
+    def UIHideBeforeSpawnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidBossGroupExcel
-    def HideAnotherBossKilled(self):
+    def HideAnotherBossKilledField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # WorldRaidBossGroupExcel
-    def WorldBossClearRewardGroupId(self):
+    def WorldBossClearRewardGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidBossGroupExcel
-    def AnotherBossKilled(self, j):
+    def AnotherBossKilledField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             a = self._tab.Vector(o)
@@ -117,61 +117,61 @@ class WorldRaidBossGroupExcel(object):
         return 0
 
     # WorldRaidBossGroupExcel
-    def AnotherBossKilledAsNumpy(self):
+    def AnotherBossKilledFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # WorldRaidBossGroupExcel
-    def AnotherBossKilledLength(self):
+    def AnotherBossKilledFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # WorldRaidBossGroupExcel
-    def AnotherBossKilledIsNone(self):
+    def AnotherBossKilledFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         return o == 0
 
     # WorldRaidBossGroupExcel
-    def EchelonConstraintGroupId(self):
+    def EchelonConstraintGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WorldRaidBossGroupExcel
-    def ExclusiveOperatorBossSpawn(self):
+    def ExclusiveOperatorBossSpawnField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def ExclusiveOperatorBossKill(self):
+    def ExclusiveOperatorBossKillField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def ExclusiveOperatorScenarioBattle(self):
+    def ExclusiveOperatorScenarioBattleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def ExclusiveOperatorBossDamaged(self):
+    def ExclusiveOperatorBossDamagedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WorldRaidBossGroupExcel
-    def BossGroupOpenCondition(self):
+    def BossGroupOpenConditionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -180,66 +180,66 @@ class WorldRaidBossGroupExcel(object):
 def WorldRaidBossGroupExcelStart(builder): builder.StartObject(19)
 def Start(builder):
     return WorldRaidBossGroupExcelStart(builder)
-def WorldRaidBossGroupExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return WorldRaidBossGroupExcelAddId(builder, id)
-def WorldRaidBossGroupExcelAddWorldRaidBossGroupId(builder, worldRaidBossGroupId): builder.PrependInt32Slot(1, worldRaidBossGroupId, 0)
-def AddWorldRaidBossGroupId(builder, worldRaidBossGroupId):
-    return WorldRaidBossGroupExcelAddWorldRaidBossGroupId(builder, worldRaidBossGroupId)
-def WorldRaidBossGroupExcelAddWorldBossName(builder, worldBossName): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossName), 0)
-def AddWorldBossName(builder, worldBossName):
-    return WorldRaidBossGroupExcelAddWorldBossName(builder, worldBossName)
-def WorldRaidBossGroupExcelAddWorldBossPopupPortrait(builder, worldBossPopupPortrait): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossPopupPortrait), 0)
-def AddWorldBossPopupPortrait(builder, worldBossPopupPortrait):
-    return WorldRaidBossGroupExcelAddWorldBossPopupPortrait(builder, worldBossPopupPortrait)
-def WorldRaidBossGroupExcelAddWorldBossPopupBG(builder, worldBossPopupBG): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossPopupBG), 0)
-def AddWorldBossPopupBG(builder, worldBossPopupBG):
-    return WorldRaidBossGroupExcelAddWorldBossPopupBG(builder, worldBossPopupBG)
-def WorldRaidBossGroupExcelAddWorldBossParcelPortrait(builder, worldBossParcelPortrait): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossParcelPortrait), 0)
-def AddWorldBossParcelPortrait(builder, worldBossParcelPortrait):
-    return WorldRaidBossGroupExcelAddWorldBossParcelPortrait(builder, worldBossParcelPortrait)
-def WorldRaidBossGroupExcelAddWorldBossListParcel(builder, worldBossListParcel): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossListParcel), 0)
-def AddWorldBossListParcel(builder, worldBossListParcel):
-    return WorldRaidBossGroupExcelAddWorldBossListParcel(builder, worldBossListParcel)
-def WorldRaidBossGroupExcelAddWorldBossHP(builder, worldBossHP): builder.PrependInt32Slot(7, worldBossHP, 0)
-def AddWorldBossHP(builder, worldBossHP):
-    return WorldRaidBossGroupExcelAddWorldBossHP(builder, worldBossHP)
-def WorldRaidBossGroupExcelAddWorldBossHPUO(builder, worldBossHPUO): builder.PrependInt32Slot(8, worldBossHPUO, 0)
-def AddWorldBossHPUO(builder, worldBossHPUO):
-    return WorldRaidBossGroupExcelAddWorldBossHPUO(builder, worldBossHPUO)
-def WorldRaidBossGroupExcelAddUIHideBeforeSpawn(builder, uIHideBeforeSpawn): builder.PrependBoolSlot(9, uIHideBeforeSpawn, 0)
-def AddUIHideBeforeSpawn(builder, uIHideBeforeSpawn):
-    return WorldRaidBossGroupExcelAddUIHideBeforeSpawn(builder, uIHideBeforeSpawn)
-def WorldRaidBossGroupExcelAddHideAnotherBossKilled(builder, hideAnotherBossKilled): builder.PrependBoolSlot(10, hideAnotherBossKilled, 0)
-def AddHideAnotherBossKilled(builder, hideAnotherBossKilled):
-    return WorldRaidBossGroupExcelAddHideAnotherBossKilled(builder, hideAnotherBossKilled)
-def WorldRaidBossGroupExcelAddWorldBossClearRewardGroupId(builder, worldBossClearRewardGroupId): builder.PrependInt32Slot(11, worldBossClearRewardGroupId, 0)
-def AddWorldBossClearRewardGroupId(builder, worldBossClearRewardGroupId):
-    return WorldRaidBossGroupExcelAddWorldBossClearRewardGroupId(builder, worldBossClearRewardGroupId)
-def WorldRaidBossGroupExcelAddAnotherBossKilled(builder, anotherBossKilled): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(anotherBossKilled), 0)
-def AddAnotherBossKilled(builder, anotherBossKilled):
-    return WorldRaidBossGroupExcelAddAnotherBossKilled(builder, anotherBossKilled)
-def WorldRaidBossGroupExcelStartAnotherBossKilledVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAnotherBossKilledVector(builder, numElems):
-    return WorldRaidBossGroupExcelStartAnotherBossKilledVector(builder, numElems)
-def WorldRaidBossGroupExcelAddEchelonConstraintGroupId(builder, echelonConstraintGroupId): builder.PrependInt32Slot(13, echelonConstraintGroupId, 0)
-def AddEchelonConstraintGroupId(builder, echelonConstraintGroupId):
-    return WorldRaidBossGroupExcelAddEchelonConstraintGroupId(builder, echelonConstraintGroupId)
-def WorldRaidBossGroupExcelAddExclusiveOperatorBossSpawn(builder, exclusiveOperatorBossSpawn): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(exclusiveOperatorBossSpawn), 0)
-def AddExclusiveOperatorBossSpawn(builder, exclusiveOperatorBossSpawn):
-    return WorldRaidBossGroupExcelAddExclusiveOperatorBossSpawn(builder, exclusiveOperatorBossSpawn)
-def WorldRaidBossGroupExcelAddExclusiveOperatorBossKill(builder, exclusiveOperatorBossKill): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(exclusiveOperatorBossKill), 0)
-def AddExclusiveOperatorBossKill(builder, exclusiveOperatorBossKill):
-    return WorldRaidBossGroupExcelAddExclusiveOperatorBossKill(builder, exclusiveOperatorBossKill)
-def WorldRaidBossGroupExcelAddExclusiveOperatorScenarioBattle(builder, exclusiveOperatorScenarioBattle): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(exclusiveOperatorScenarioBattle), 0)
-def AddExclusiveOperatorScenarioBattle(builder, exclusiveOperatorScenarioBattle):
-    return WorldRaidBossGroupExcelAddExclusiveOperatorScenarioBattle(builder, exclusiveOperatorScenarioBattle)
-def WorldRaidBossGroupExcelAddExclusiveOperatorBossDamaged(builder, exclusiveOperatorBossDamaged): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(exclusiveOperatorBossDamaged), 0)
-def AddExclusiveOperatorBossDamaged(builder, exclusiveOperatorBossDamaged):
-    return WorldRaidBossGroupExcelAddExclusiveOperatorBossDamaged(builder, exclusiveOperatorBossDamaged)
-def WorldRaidBossGroupExcelAddBossGroupOpenCondition(builder, bossGroupOpenCondition): builder.PrependInt32Slot(18, bossGroupOpenCondition, 0)
-def AddBossGroupOpenCondition(builder, bossGroupOpenCondition):
-    return WorldRaidBossGroupExcelAddBossGroupOpenCondition(builder, bossGroupOpenCondition)
+def WorldRaidBossGroupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return WorldRaidBossGroupExcelAddIdField(builder, idField)
+def WorldRaidBossGroupExcelAddWorldRaidBossGroupIdField(builder, worldRaidBossGroupIdField): builder.PrependInt32Slot(1, worldRaidBossGroupIdField, 0)
+def AddWorldRaidBossGroupIdField(builder, worldRaidBossGroupIdField):
+    return WorldRaidBossGroupExcelAddWorldRaidBossGroupIdField(builder, worldRaidBossGroupIdField)
+def WorldRaidBossGroupExcelAddWorldBossNameField(builder, worldBossNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossNameField), 0)
+def AddWorldBossNameField(builder, worldBossNameField):
+    return WorldRaidBossGroupExcelAddWorldBossNameField(builder, worldBossNameField)
+def WorldRaidBossGroupExcelAddWorldBossPopupPortraitField(builder, worldBossPopupPortraitField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossPopupPortraitField), 0)
+def AddWorldBossPopupPortraitField(builder, worldBossPopupPortraitField):
+    return WorldRaidBossGroupExcelAddWorldBossPopupPortraitField(builder, worldBossPopupPortraitField)
+def WorldRaidBossGroupExcelAddWorldBossPopupBGField(builder, worldBossPopupBGField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossPopupBGField), 0)
+def AddWorldBossPopupBGField(builder, worldBossPopupBGField):
+    return WorldRaidBossGroupExcelAddWorldBossPopupBGField(builder, worldBossPopupBGField)
+def WorldRaidBossGroupExcelAddWorldBossParcelPortraitField(builder, worldBossParcelPortraitField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossParcelPortraitField), 0)
+def AddWorldBossParcelPortraitField(builder, worldBossParcelPortraitField):
+    return WorldRaidBossGroupExcelAddWorldBossParcelPortraitField(builder, worldBossParcelPortraitField)
+def WorldRaidBossGroupExcelAddWorldBossListParcelField(builder, worldBossListParcelField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(worldBossListParcelField), 0)
+def AddWorldBossListParcelField(builder, worldBossListParcelField):
+    return WorldRaidBossGroupExcelAddWorldBossListParcelField(builder, worldBossListParcelField)
+def WorldRaidBossGroupExcelAddWorldBossHPField(builder, worldBossHPField): builder.PrependInt32Slot(7, worldBossHPField, 0)
+def AddWorldBossHPField(builder, worldBossHPField):
+    return WorldRaidBossGroupExcelAddWorldBossHPField(builder, worldBossHPField)
+def WorldRaidBossGroupExcelAddWorldBossHPUOField(builder, worldBossHPUOField): builder.PrependInt32Slot(8, worldBossHPUOField, 0)
+def AddWorldBossHPUOField(builder, worldBossHPUOField):
+    return WorldRaidBossGroupExcelAddWorldBossHPUOField(builder, worldBossHPUOField)
+def WorldRaidBossGroupExcelAddUIHideBeforeSpawnField(builder, uIHideBeforeSpawnField): builder.PrependBoolSlot(9, uIHideBeforeSpawnField, 0)
+def AddUIHideBeforeSpawnField(builder, uIHideBeforeSpawnField):
+    return WorldRaidBossGroupExcelAddUIHideBeforeSpawnField(builder, uIHideBeforeSpawnField)
+def WorldRaidBossGroupExcelAddHideAnotherBossKilledField(builder, hideAnotherBossKilledField): builder.PrependBoolSlot(10, hideAnotherBossKilledField, 0)
+def AddHideAnotherBossKilledField(builder, hideAnotherBossKilledField):
+    return WorldRaidBossGroupExcelAddHideAnotherBossKilledField(builder, hideAnotherBossKilledField)
+def WorldRaidBossGroupExcelAddWorldBossClearRewardGroupIdField(builder, worldBossClearRewardGroupIdField): builder.PrependInt32Slot(11, worldBossClearRewardGroupIdField, 0)
+def AddWorldBossClearRewardGroupIdField(builder, worldBossClearRewardGroupIdField):
+    return WorldRaidBossGroupExcelAddWorldBossClearRewardGroupIdField(builder, worldBossClearRewardGroupIdField)
+def WorldRaidBossGroupExcelAddAnotherBossKilledField(builder, anotherBossKilledField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(anotherBossKilledField), 0)
+def AddAnotherBossKilledField(builder, anotherBossKilledField):
+    return WorldRaidBossGroupExcelAddAnotherBossKilledField(builder, anotherBossKilledField)
+def WorldRaidBossGroupExcelStartAnotherBossKilledFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartAnotherBossKilledFieldVector(builder, numElems):
+    return WorldRaidBossGroupExcelStartAnotherBossKilledFieldVector(builder, numElems)
+def WorldRaidBossGroupExcelAddEchelonConstraintGroupIdField(builder, echelonConstraintGroupIdField): builder.PrependInt32Slot(13, echelonConstraintGroupIdField, 0)
+def AddEchelonConstraintGroupIdField(builder, echelonConstraintGroupIdField):
+    return WorldRaidBossGroupExcelAddEchelonConstraintGroupIdField(builder, echelonConstraintGroupIdField)
+def WorldRaidBossGroupExcelAddExclusiveOperatorBossSpawnField(builder, exclusiveOperatorBossSpawnField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(exclusiveOperatorBossSpawnField), 0)
+def AddExclusiveOperatorBossSpawnField(builder, exclusiveOperatorBossSpawnField):
+    return WorldRaidBossGroupExcelAddExclusiveOperatorBossSpawnField(builder, exclusiveOperatorBossSpawnField)
+def WorldRaidBossGroupExcelAddExclusiveOperatorBossKillField(builder, exclusiveOperatorBossKillField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(exclusiveOperatorBossKillField), 0)
+def AddExclusiveOperatorBossKillField(builder, exclusiveOperatorBossKillField):
+    return WorldRaidBossGroupExcelAddExclusiveOperatorBossKillField(builder, exclusiveOperatorBossKillField)
+def WorldRaidBossGroupExcelAddExclusiveOperatorScenarioBattleField(builder, exclusiveOperatorScenarioBattleField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(exclusiveOperatorScenarioBattleField), 0)
+def AddExclusiveOperatorScenarioBattleField(builder, exclusiveOperatorScenarioBattleField):
+    return WorldRaidBossGroupExcelAddExclusiveOperatorScenarioBattleField(builder, exclusiveOperatorScenarioBattleField)
+def WorldRaidBossGroupExcelAddExclusiveOperatorBossDamagedField(builder, exclusiveOperatorBossDamagedField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(exclusiveOperatorBossDamagedField), 0)
+def AddExclusiveOperatorBossDamagedField(builder, exclusiveOperatorBossDamagedField):
+    return WorldRaidBossGroupExcelAddExclusiveOperatorBossDamagedField(builder, exclusiveOperatorBossDamagedField)
+def WorldRaidBossGroupExcelAddBossGroupOpenConditionField(builder, bossGroupOpenConditionField): builder.PrependInt32Slot(18, bossGroupOpenConditionField, 0)
+def AddBossGroupOpenConditionField(builder, bossGroupOpenConditionField):
+    return WorldRaidBossGroupExcelAddBossGroupOpenConditionField(builder, bossGroupOpenConditionField)
 def WorldRaidBossGroupExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WorldRaidBossGroupExcelEnd(builder)

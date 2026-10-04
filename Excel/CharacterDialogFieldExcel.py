@@ -25,70 +25,70 @@ class CharacterDialogFieldExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterDialogFieldExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogFieldExcel
-    def Phase(self):
+    def PhaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogFieldExcel
-    def TargetIndex(self):
+    def TargetIndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogFieldExcel
-    def DialogType(self):
+    def DialogTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogFieldExcel
-    def Duration(self):
+    def DurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterDialogFieldExcel
-    def MotionName(self):
+    def MotionNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogFieldExcel
-    def IsInteractionDialog(self):
+    def IsInteractionDialogField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterDialogFieldExcel
-    def HideUI(self):
+    def HideUIField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # CharacterDialogFieldExcel
-    def LocalizeKR(self):
+    def LocalizeKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CharacterDialogFieldExcel
-    def LocalizeJP(self):
+    def LocalizeJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -97,36 +97,36 @@ class CharacterDialogFieldExcel(object):
 def CharacterDialogFieldExcelStart(builder): builder.StartObject(10)
 def Start(builder):
     return CharacterDialogFieldExcelStart(builder)
-def CharacterDialogFieldExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return CharacterDialogFieldExcelAddGroupId(builder, groupId)
-def CharacterDialogFieldExcelAddPhase(builder, phase): builder.PrependInt32Slot(1, phase, 0)
-def AddPhase(builder, phase):
-    return CharacterDialogFieldExcelAddPhase(builder, phase)
-def CharacterDialogFieldExcelAddTargetIndex(builder, targetIndex): builder.PrependInt32Slot(2, targetIndex, 0)
-def AddTargetIndex(builder, targetIndex):
-    return CharacterDialogFieldExcelAddTargetIndex(builder, targetIndex)
-def CharacterDialogFieldExcelAddDialogType(builder, dialogType): builder.PrependInt32Slot(3, dialogType, 0)
-def AddDialogType(builder, dialogType):
-    return CharacterDialogFieldExcelAddDialogType(builder, dialogType)
-def CharacterDialogFieldExcelAddDuration(builder, duration): builder.PrependInt32Slot(4, duration, 0)
-def AddDuration(builder, duration):
-    return CharacterDialogFieldExcelAddDuration(builder, duration)
-def CharacterDialogFieldExcelAddMotionName(builder, motionName): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(motionName), 0)
-def AddMotionName(builder, motionName):
-    return CharacterDialogFieldExcelAddMotionName(builder, motionName)
-def CharacterDialogFieldExcelAddIsInteractionDialog(builder, isInteractionDialog): builder.PrependBoolSlot(6, isInteractionDialog, 0)
-def AddIsInteractionDialog(builder, isInteractionDialog):
-    return CharacterDialogFieldExcelAddIsInteractionDialog(builder, isInteractionDialog)
-def CharacterDialogFieldExcelAddHideUI(builder, hideUI): builder.PrependBoolSlot(7, hideUI, 0)
-def AddHideUI(builder, hideUI):
-    return CharacterDialogFieldExcelAddHideUI(builder, hideUI)
-def CharacterDialogFieldExcelAddLocalizeKR(builder, localizeKR): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKR), 0)
-def AddLocalizeKR(builder, localizeKR):
-    return CharacterDialogFieldExcelAddLocalizeKR(builder, localizeKR)
-def CharacterDialogFieldExcelAddLocalizeJP(builder, localizeJP): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJP), 0)
-def AddLocalizeJP(builder, localizeJP):
-    return CharacterDialogFieldExcelAddLocalizeJP(builder, localizeJP)
+def CharacterDialogFieldExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return CharacterDialogFieldExcelAddGroupIdField(builder, groupIdField)
+def CharacterDialogFieldExcelAddPhaseField(builder, phaseField): builder.PrependInt32Slot(1, phaseField, 0)
+def AddPhaseField(builder, phaseField):
+    return CharacterDialogFieldExcelAddPhaseField(builder, phaseField)
+def CharacterDialogFieldExcelAddTargetIndexField(builder, targetIndexField): builder.PrependInt32Slot(2, targetIndexField, 0)
+def AddTargetIndexField(builder, targetIndexField):
+    return CharacterDialogFieldExcelAddTargetIndexField(builder, targetIndexField)
+def CharacterDialogFieldExcelAddDialogTypeField(builder, dialogTypeField): builder.PrependInt32Slot(3, dialogTypeField, 0)
+def AddDialogTypeField(builder, dialogTypeField):
+    return CharacterDialogFieldExcelAddDialogTypeField(builder, dialogTypeField)
+def CharacterDialogFieldExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(4, durationField, 0)
+def AddDurationField(builder, durationField):
+    return CharacterDialogFieldExcelAddDurationField(builder, durationField)
+def CharacterDialogFieldExcelAddMotionNameField(builder, motionNameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(motionNameField), 0)
+def AddMotionNameField(builder, motionNameField):
+    return CharacterDialogFieldExcelAddMotionNameField(builder, motionNameField)
+def CharacterDialogFieldExcelAddIsInteractionDialogField(builder, isInteractionDialogField): builder.PrependBoolSlot(6, isInteractionDialogField, 0)
+def AddIsInteractionDialogField(builder, isInteractionDialogField):
+    return CharacterDialogFieldExcelAddIsInteractionDialogField(builder, isInteractionDialogField)
+def CharacterDialogFieldExcelAddHideUIField(builder, hideUIField): builder.PrependBoolSlot(7, hideUIField, 0)
+def AddHideUIField(builder, hideUIField):
+    return CharacterDialogFieldExcelAddHideUIField(builder, hideUIField)
+def CharacterDialogFieldExcelAddLocalizeKRField(builder, localizeKRField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+def AddLocalizeKRField(builder, localizeKRField):
+    return CharacterDialogFieldExcelAddLocalizeKRField(builder, localizeKRField)
+def CharacterDialogFieldExcelAddLocalizeJPField(builder, localizeJPField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+def AddLocalizeJPField(builder, localizeJPField):
+    return CharacterDialogFieldExcelAddLocalizeJPField(builder, localizeJPField)
 def CharacterDialogFieldExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterDialogFieldExcelEnd(builder)

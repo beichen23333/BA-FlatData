@@ -25,35 +25,35 @@ class DefaultFurnitureExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # DefaultFurnitureExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # DefaultFurnitureExcel
-    def Location(self):
+    def LocationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # DefaultFurnitureExcel
-    def PositionX(self):
+    def PositionXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # DefaultFurnitureExcel
-    def PositionY(self):
+    def PositionYField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # DefaultFurnitureExcel
-    def Rotation(self):
+    def RotationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -62,21 +62,21 @@ class DefaultFurnitureExcel(object):
 def DefaultFurnitureExcelStart(builder): builder.StartObject(5)
 def Start(builder):
     return DefaultFurnitureExcelStart(builder)
-def DefaultFurnitureExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return DefaultFurnitureExcelAddId(builder, id)
-def DefaultFurnitureExcelAddLocation(builder, location): builder.PrependInt32Slot(1, location, 0)
-def AddLocation(builder, location):
-    return DefaultFurnitureExcelAddLocation(builder, location)
-def DefaultFurnitureExcelAddPositionX(builder, positionX): builder.PrependFloat32Slot(2, positionX, 0.0)
-def AddPositionX(builder, positionX):
-    return DefaultFurnitureExcelAddPositionX(builder, positionX)
-def DefaultFurnitureExcelAddPositionY(builder, positionY): builder.PrependFloat32Slot(3, positionY, 0.0)
-def AddPositionY(builder, positionY):
-    return DefaultFurnitureExcelAddPositionY(builder, positionY)
-def DefaultFurnitureExcelAddRotation(builder, rotation): builder.PrependFloat32Slot(4, rotation, 0.0)
-def AddRotation(builder, rotation):
-    return DefaultFurnitureExcelAddRotation(builder, rotation)
+def DefaultFurnitureExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return DefaultFurnitureExcelAddIdField(builder, idField)
+def DefaultFurnitureExcelAddLocationField(builder, locationField): builder.PrependInt32Slot(1, locationField, 0)
+def AddLocationField(builder, locationField):
+    return DefaultFurnitureExcelAddLocationField(builder, locationField)
+def DefaultFurnitureExcelAddPositionXField(builder, positionXField): builder.PrependFloat32Slot(2, positionXField, 0.0)
+def AddPositionXField(builder, positionXField):
+    return DefaultFurnitureExcelAddPositionXField(builder, positionXField)
+def DefaultFurnitureExcelAddPositionYField(builder, positionYField): builder.PrependFloat32Slot(3, positionYField, 0.0)
+def AddPositionYField(builder, positionYField):
+    return DefaultFurnitureExcelAddPositionYField(builder, positionYField)
+def DefaultFurnitureExcelAddRotationField(builder, rotationField): builder.PrependFloat32Slot(4, rotationField, 0.0)
+def AddRotationField(builder, rotationField):
+    return DefaultFurnitureExcelAddRotationField(builder, rotationField)
 def DefaultFurnitureExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return DefaultFurnitureExcelEnd(builder)

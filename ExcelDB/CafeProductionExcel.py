@@ -25,49 +25,49 @@ class CafeProductionExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CafeProductionExcel
-    def CafeId(self):
+    def CafeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CafeProductionExcel
-    def Rank(self):
+    def RankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CafeProductionExcel
-    def CafeProductionParcelType(self):
+    def CafeProductionParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CafeProductionExcel
-    def CafeProductionParcelId(self):
+    def CafeProductionParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CafeProductionExcel
-    def ParcelProductionCoefficient(self):
+    def ParcelProductionCoefficientField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CafeProductionExcel
-    def ParcelProductionCorrectionValue(self):
+    def ParcelProductionCorrectionValueField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CafeProductionExcel
-    def ParcelStorageMax(self):
+    def ParcelStorageMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -76,27 +76,27 @@ class CafeProductionExcel(object):
 def CafeProductionExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return CafeProductionExcelStart(builder)
-def CafeProductionExcelAddCafeId(builder, cafeId): builder.PrependInt32Slot(0, cafeId, 0)
-def AddCafeId(builder, cafeId):
-    return CafeProductionExcelAddCafeId(builder, cafeId)
-def CafeProductionExcelAddRank(builder, rank): builder.PrependInt32Slot(1, rank, 0)
-def AddRank(builder, rank):
-    return CafeProductionExcelAddRank(builder, rank)
-def CafeProductionExcelAddCafeProductionParcelType(builder, cafeProductionParcelType): builder.PrependInt32Slot(2, cafeProductionParcelType, 0)
-def AddCafeProductionParcelType(builder, cafeProductionParcelType):
-    return CafeProductionExcelAddCafeProductionParcelType(builder, cafeProductionParcelType)
-def CafeProductionExcelAddCafeProductionParcelId(builder, cafeProductionParcelId): builder.PrependInt32Slot(3, cafeProductionParcelId, 0)
-def AddCafeProductionParcelId(builder, cafeProductionParcelId):
-    return CafeProductionExcelAddCafeProductionParcelId(builder, cafeProductionParcelId)
-def CafeProductionExcelAddParcelProductionCoefficient(builder, parcelProductionCoefficient): builder.PrependInt32Slot(4, parcelProductionCoefficient, 0)
-def AddParcelProductionCoefficient(builder, parcelProductionCoefficient):
-    return CafeProductionExcelAddParcelProductionCoefficient(builder, parcelProductionCoefficient)
-def CafeProductionExcelAddParcelProductionCorrectionValue(builder, parcelProductionCorrectionValue): builder.PrependInt32Slot(5, parcelProductionCorrectionValue, 0)
-def AddParcelProductionCorrectionValue(builder, parcelProductionCorrectionValue):
-    return CafeProductionExcelAddParcelProductionCorrectionValue(builder, parcelProductionCorrectionValue)
-def CafeProductionExcelAddParcelStorageMax(builder, parcelStorageMax): builder.PrependInt32Slot(6, parcelStorageMax, 0)
-def AddParcelStorageMax(builder, parcelStorageMax):
-    return CafeProductionExcelAddParcelStorageMax(builder, parcelStorageMax)
+def CafeProductionExcelAddCafeIdField(builder, cafeIdField): builder.PrependInt32Slot(0, cafeIdField, 0)
+def AddCafeIdField(builder, cafeIdField):
+    return CafeProductionExcelAddCafeIdField(builder, cafeIdField)
+def CafeProductionExcelAddRankField(builder, rankField): builder.PrependInt32Slot(1, rankField, 0)
+def AddRankField(builder, rankField):
+    return CafeProductionExcelAddRankField(builder, rankField)
+def CafeProductionExcelAddCafeProductionParcelTypeField(builder, cafeProductionParcelTypeField): builder.PrependInt32Slot(2, cafeProductionParcelTypeField, 0)
+def AddCafeProductionParcelTypeField(builder, cafeProductionParcelTypeField):
+    return CafeProductionExcelAddCafeProductionParcelTypeField(builder, cafeProductionParcelTypeField)
+def CafeProductionExcelAddCafeProductionParcelIdField(builder, cafeProductionParcelIdField): builder.PrependInt32Slot(3, cafeProductionParcelIdField, 0)
+def AddCafeProductionParcelIdField(builder, cafeProductionParcelIdField):
+    return CafeProductionExcelAddCafeProductionParcelIdField(builder, cafeProductionParcelIdField)
+def CafeProductionExcelAddParcelProductionCoefficientField(builder, parcelProductionCoefficientField): builder.PrependInt32Slot(4, parcelProductionCoefficientField, 0)
+def AddParcelProductionCoefficientField(builder, parcelProductionCoefficientField):
+    return CafeProductionExcelAddParcelProductionCoefficientField(builder, parcelProductionCoefficientField)
+def CafeProductionExcelAddParcelProductionCorrectionValueField(builder, parcelProductionCorrectionValueField): builder.PrependInt32Slot(5, parcelProductionCorrectionValueField, 0)
+def AddParcelProductionCorrectionValueField(builder, parcelProductionCorrectionValueField):
+    return CafeProductionExcelAddParcelProductionCorrectionValueField(builder, parcelProductionCorrectionValueField)
+def CafeProductionExcelAddParcelStorageMaxField(builder, parcelStorageMaxField): builder.PrependInt32Slot(6, parcelStorageMaxField, 0)
+def AddParcelStorageMaxField(builder, parcelStorageMaxField):
+    return CafeProductionExcelAddParcelStorageMaxField(builder, parcelStorageMaxField)
 def CafeProductionExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CafeProductionExcelEnd(builder)

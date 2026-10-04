@@ -25,14 +25,14 @@ class ConstContentsExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstContentsExcel
-    def UseSearchFieldOptimize(self):
+    def UseSearchFieldOptimizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # ConstContentsExcel
-    def SearchUpdateTime(self):
+    def SearchUpdateTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
@@ -41,12 +41,12 @@ class ConstContentsExcel(object):
 def ConstContentsExcelStart(builder): builder.StartObject(2)
 def Start(builder):
     return ConstContentsExcelStart(builder)
-def ConstContentsExcelAddUseSearchFieldOptimize(builder, useSearchFieldOptimize): builder.PrependBoolSlot(0, useSearchFieldOptimize, 0)
-def AddUseSearchFieldOptimize(builder, useSearchFieldOptimize):
-    return ConstContentsExcelAddUseSearchFieldOptimize(builder, useSearchFieldOptimize)
-def ConstContentsExcelAddSearchUpdateTime(builder, searchUpdateTime): builder.PrependFloat32Slot(1, searchUpdateTime, 0.0)
-def AddSearchUpdateTime(builder, searchUpdateTime):
-    return ConstContentsExcelAddSearchUpdateTime(builder, searchUpdateTime)
+def ConstContentsExcelAddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField): builder.PrependBoolSlot(0, useSearchFieldOptimizeField, 0)
+def AddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField):
+    return ConstContentsExcelAddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField)
+def ConstContentsExcelAddSearchUpdateTimeField(builder, searchUpdateTimeField): builder.PrependFloat32Slot(1, searchUpdateTimeField, 0.0)
+def AddSearchUpdateTimeField(builder, searchUpdateTimeField):
+    return ConstContentsExcelAddSearchUpdateTimeField(builder, searchUpdateTimeField)
 def ConstContentsExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstContentsExcelEnd(builder)

@@ -25,28 +25,28 @@ class EventContentBoxGachaElementExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentBoxGachaElementExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaElementExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaElementExcel
-    def Round(self):
+    def RoundField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentBoxGachaElementExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -55,18 +55,18 @@ class EventContentBoxGachaElementExcel(object):
 def EventContentBoxGachaElementExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return EventContentBoxGachaElementExcelStart(builder)
-def EventContentBoxGachaElementExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentBoxGachaElementExcelAddEventContentId(builder, eventContentId)
-def EventContentBoxGachaElementExcelAddId(builder, id): builder.PrependInt32Slot(1, id, 0)
-def AddId(builder, id):
-    return EventContentBoxGachaElementExcelAddId(builder, id)
-def EventContentBoxGachaElementExcelAddRound(builder, round): builder.PrependInt32Slot(2, round, 0)
-def AddRound(builder, round):
-    return EventContentBoxGachaElementExcelAddRound(builder, round)
-def EventContentBoxGachaElementExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(3, groupId, 0)
-def AddGroupId(builder, groupId):
-    return EventContentBoxGachaElementExcelAddGroupId(builder, groupId)
+def EventContentBoxGachaElementExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentBoxGachaElementExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentBoxGachaElementExcelAddIdField(builder, idField): builder.PrependInt32Slot(1, idField, 0)
+def AddIdField(builder, idField):
+    return EventContentBoxGachaElementExcelAddIdField(builder, idField)
+def EventContentBoxGachaElementExcelAddRoundField(builder, roundField): builder.PrependInt32Slot(2, roundField, 0)
+def AddRoundField(builder, roundField):
+    return EventContentBoxGachaElementExcelAddRoundField(builder, roundField)
+def EventContentBoxGachaElementExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(3, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return EventContentBoxGachaElementExcelAddGroupIdField(builder, groupIdField)
 def EventContentBoxGachaElementExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentBoxGachaElementExcelEnd(builder)

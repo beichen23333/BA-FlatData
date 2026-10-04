@@ -25,14 +25,14 @@ class CouponCompleteExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CouponCompleteExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CouponCompleteExcel
-    def GiftId(self, j):
+    def GiftIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             a = self._tab.Vector(o)
@@ -40,40 +40,40 @@ class CouponCompleteExcel(object):
         return 0
 
     # CouponCompleteExcel
-    def GiftIdAsNumpy(self):
+    def GiftIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CouponCompleteExcel
-    def GiftIdLength(self):
+    def GiftIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CouponCompleteExcel
-    def GiftIdIsNone(self):
+    def GiftIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
     # CouponCompleteExcel
-    def Comment(self):
+    def CommentField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # CouponCompleteExcel
-    def ExpiredDay(self):
+    def ExpiredDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelType(self, j):
+    def RewardParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -81,26 +81,26 @@ class CouponCompleteExcel(object):
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelTypeAsNumpy(self):
+    def RewardParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelTypeLength(self):
+    def RewardParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelTypeIsNone(self):
+    def RewardParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # CouponCompleteExcel
-    def RewardParcelId(self, j):
+    def RewardParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
@@ -108,26 +108,26 @@ class CouponCompleteExcel(object):
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelIdAsNumpy(self):
+    def RewardParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelIdLength(self):
+    def RewardParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelIdIsNone(self):
+    def RewardParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # CouponCompleteExcel
-    def RewardParcelAmount(self, j):
+    def RewardParcelAmountField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             a = self._tab.Vector(o)
@@ -135,60 +135,60 @@ class CouponCompleteExcel(object):
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelAmountAsNumpy(self):
+    def RewardParcelAmountFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelAmountLength(self):
+    def RewardParcelAmountFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # CouponCompleteExcel
-    def RewardParcelAmountIsNone(self):
+    def RewardParcelAmountFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
 def CouponCompleteExcelStart(builder): builder.StartObject(7)
 def Start(builder):
     return CouponCompleteExcelStart(builder)
-def CouponCompleteExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return CouponCompleteExcelAddGroupId(builder, groupId)
-def CouponCompleteExcelAddGiftId(builder, giftId): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(giftId), 0)
-def AddGiftId(builder, giftId):
-    return CouponCompleteExcelAddGiftId(builder, giftId)
-def CouponCompleteExcelStartGiftIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGiftIdVector(builder, numElems):
-    return CouponCompleteExcelStartGiftIdVector(builder, numElems)
-def CouponCompleteExcelAddComment(builder, comment): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(comment), 0)
-def AddComment(builder, comment):
-    return CouponCompleteExcelAddComment(builder, comment)
-def CouponCompleteExcelAddExpiredDay(builder, expiredDay): builder.PrependInt32Slot(3, expiredDay, 0)
-def AddExpiredDay(builder, expiredDay):
-    return CouponCompleteExcelAddExpiredDay(builder, expiredDay)
-def CouponCompleteExcelAddRewardParcelType(builder, rewardParcelType): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelType), 0)
-def AddRewardParcelType(builder, rewardParcelType):
-    return CouponCompleteExcelAddRewardParcelType(builder, rewardParcelType)
-def CouponCompleteExcelStartRewardParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeVector(builder, numElems):
-    return CouponCompleteExcelStartRewardParcelTypeVector(builder, numElems)
-def CouponCompleteExcelAddRewardParcelId(builder, rewardParcelId): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelId), 0)
-def AddRewardParcelId(builder, rewardParcelId):
-    return CouponCompleteExcelAddRewardParcelId(builder, rewardParcelId)
-def CouponCompleteExcelStartRewardParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdVector(builder, numElems):
-    return CouponCompleteExcelStartRewardParcelIdVector(builder, numElems)
-def CouponCompleteExcelAddRewardParcelAmount(builder, rewardParcelAmount): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmount), 0)
-def AddRewardParcelAmount(builder, rewardParcelAmount):
-    return CouponCompleteExcelAddRewardParcelAmount(builder, rewardParcelAmount)
-def CouponCompleteExcelStartRewardParcelAmountVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountVector(builder, numElems):
-    return CouponCompleteExcelStartRewardParcelAmountVector(builder, numElems)
+def CouponCompleteExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return CouponCompleteExcelAddGroupIdField(builder, groupIdField)
+def CouponCompleteExcelAddGiftIdField(builder, giftIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(giftIdField), 0)
+def AddGiftIdField(builder, giftIdField):
+    return CouponCompleteExcelAddGiftIdField(builder, giftIdField)
+def CouponCompleteExcelStartGiftIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartGiftIdFieldVector(builder, numElems):
+    return CouponCompleteExcelStartGiftIdFieldVector(builder, numElems)
+def CouponCompleteExcelAddCommentField(builder, commentField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(commentField), 0)
+def AddCommentField(builder, commentField):
+    return CouponCompleteExcelAddCommentField(builder, commentField)
+def CouponCompleteExcelAddExpiredDayField(builder, expiredDayField): builder.PrependInt32Slot(3, expiredDayField, 0)
+def AddExpiredDayField(builder, expiredDayField):
+    return CouponCompleteExcelAddExpiredDayField(builder, expiredDayField)
+def CouponCompleteExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+def AddRewardParcelTypeField(builder, rewardParcelTypeField):
+    return CouponCompleteExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+def CouponCompleteExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelTypeFieldVector(builder, numElems):
+    return CouponCompleteExcelStartRewardParcelTypeFieldVector(builder, numElems)
+def CouponCompleteExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+def AddRewardParcelIdField(builder, rewardParcelIdField):
+    return CouponCompleteExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+def CouponCompleteExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelIdFieldVector(builder, numElems):
+    return CouponCompleteExcelStartRewardParcelIdFieldVector(builder, numElems)
+def CouponCompleteExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+def AddRewardParcelAmountField(builder, rewardParcelAmountField):
+    return CouponCompleteExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+def CouponCompleteExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartRewardParcelAmountFieldVector(builder, numElems):
+    return CouponCompleteExcelStartRewardParcelAmountFieldVector(builder, numElems)
 def CouponCompleteExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CouponCompleteExcelEnd(builder)

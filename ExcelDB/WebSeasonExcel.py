@@ -25,63 +25,63 @@ class WebSeasonExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # WebSeasonExcel
-    def WebId(self):
+    def WebIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WebSeasonExcel
-    def OpenTime(self):
+    def OpenTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WebSeasonExcel
-    def CloseTime(self):
+    def CloseTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WebSeasonExcel
-    def Type(self):
+    def TypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WebSeasonExcel
-    def MailExpiredDay(self):
+    def MailExpiredDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WebSeasonExcel
-    def MainIconParcelPath(self):
+    def MainIconParcelPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # WebSeasonExcel
-    def BannerType(self):
+    def BannerTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WebSeasonExcel
-    def IconOrder(self):
+    def IconOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # WebSeasonExcel
-    def Url(self):
+    def UrlField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -90,33 +90,33 @@ class WebSeasonExcel(object):
 def WebSeasonExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return WebSeasonExcelStart(builder)
-def WebSeasonExcelAddWebId(builder, webId): builder.PrependInt32Slot(0, webId, 0)
-def AddWebId(builder, webId):
-    return WebSeasonExcelAddWebId(builder, webId)
-def WebSeasonExcelAddOpenTime(builder, openTime): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(openTime), 0)
-def AddOpenTime(builder, openTime):
-    return WebSeasonExcelAddOpenTime(builder, openTime)
-def WebSeasonExcelAddCloseTime(builder, closeTime): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(closeTime), 0)
-def AddCloseTime(builder, closeTime):
-    return WebSeasonExcelAddCloseTime(builder, closeTime)
-def WebSeasonExcelAddType(builder, type): builder.PrependInt32Slot(3, type, 0)
-def AddType(builder, type):
-    return WebSeasonExcelAddType(builder, type)
-def WebSeasonExcelAddMailExpiredDay(builder, mailExpiredDay): builder.PrependInt32Slot(4, mailExpiredDay, 0)
-def AddMailExpiredDay(builder, mailExpiredDay):
-    return WebSeasonExcelAddMailExpiredDay(builder, mailExpiredDay)
-def WebSeasonExcelAddMainIconParcelPath(builder, mainIconParcelPath): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(mainIconParcelPath), 0)
-def AddMainIconParcelPath(builder, mainIconParcelPath):
-    return WebSeasonExcelAddMainIconParcelPath(builder, mainIconParcelPath)
-def WebSeasonExcelAddBannerType(builder, bannerType): builder.PrependInt32Slot(6, bannerType, 0)
-def AddBannerType(builder, bannerType):
-    return WebSeasonExcelAddBannerType(builder, bannerType)
-def WebSeasonExcelAddIconOrder(builder, iconOrder): builder.PrependInt32Slot(7, iconOrder, 0)
-def AddIconOrder(builder, iconOrder):
-    return WebSeasonExcelAddIconOrder(builder, iconOrder)
-def WebSeasonExcelAddUrl(builder, url): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(url), 0)
-def AddUrl(builder, url):
-    return WebSeasonExcelAddUrl(builder, url)
+def WebSeasonExcelAddWebIdField(builder, webIdField): builder.PrependInt32Slot(0, webIdField, 0)
+def AddWebIdField(builder, webIdField):
+    return WebSeasonExcelAddWebIdField(builder, webIdField)
+def WebSeasonExcelAddOpenTimeField(builder, openTimeField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(openTimeField), 0)
+def AddOpenTimeField(builder, openTimeField):
+    return WebSeasonExcelAddOpenTimeField(builder, openTimeField)
+def WebSeasonExcelAddCloseTimeField(builder, closeTimeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(closeTimeField), 0)
+def AddCloseTimeField(builder, closeTimeField):
+    return WebSeasonExcelAddCloseTimeField(builder, closeTimeField)
+def WebSeasonExcelAddTypeField(builder, typeField): builder.PrependInt32Slot(3, typeField, 0)
+def AddTypeField(builder, typeField):
+    return WebSeasonExcelAddTypeField(builder, typeField)
+def WebSeasonExcelAddMailExpiredDayField(builder, mailExpiredDayField): builder.PrependInt32Slot(4, mailExpiredDayField, 0)
+def AddMailExpiredDayField(builder, mailExpiredDayField):
+    return WebSeasonExcelAddMailExpiredDayField(builder, mailExpiredDayField)
+def WebSeasonExcelAddMainIconParcelPathField(builder, mainIconParcelPathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(mainIconParcelPathField), 0)
+def AddMainIconParcelPathField(builder, mainIconParcelPathField):
+    return WebSeasonExcelAddMainIconParcelPathField(builder, mainIconParcelPathField)
+def WebSeasonExcelAddBannerTypeField(builder, bannerTypeField): builder.PrependInt32Slot(6, bannerTypeField, 0)
+def AddBannerTypeField(builder, bannerTypeField):
+    return WebSeasonExcelAddBannerTypeField(builder, bannerTypeField)
+def WebSeasonExcelAddIconOrderField(builder, iconOrderField): builder.PrependInt32Slot(7, iconOrderField, 0)
+def AddIconOrderField(builder, iconOrderField):
+    return WebSeasonExcelAddIconOrderField(builder, iconOrderField)
+def WebSeasonExcelAddUrlField(builder, urlField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(urlField), 0)
+def AddUrlField(builder, urlField):
+    return WebSeasonExcelAddUrlField(builder, urlField)
 def WebSeasonExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WebSeasonExcelEnd(builder)

@@ -25,224 +25,224 @@ class ConstCommonExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # ConstCommonExcel
-    def CampaignMainStageMaxRank(self):
+    def CampaignMainStageMaxRankField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CampaignMainStageBestRecord(self):
+    def CampaignMainStageBestRecordField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def HardAdventurePlayCountRecoverDailyNumber(self):
+    def HardAdventurePlayCountRecoverDailyNumberField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def HardStageCount(self):
+    def HardStageCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TacticRankClearTime(self):
+    def TacticRankClearTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BaseTimeScale(self):
+    def BaseTimeScaleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def GachaPercentage(self):
+    def GachaPercentageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AcademyFavorZoneId(self):
+    def AcademyFavorZoneIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafePresetSlotCount(self):
+    def CafePresetSlotCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeMonologueIntervalMillisec(self):
+    def CafeMonologueIntervalMillisecField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeMonologueDefaultDuration(self):
+    def CafeMonologueDefaultDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeBubbleIdleDurationMilliSec(self):
+    def CafeBubbleIdleDurationMilliSecField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FindGiftTimeLimit(self):
+    def FindGiftTimeLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeAutoChargePeriodInMsc(self):
+    def CafeAutoChargePeriodInMscField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeProductionDecimalPosition(self):
+    def CafeProductionDecimalPositionField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeSetGroupApplyCount(self):
+    def CafeSetGroupApplyCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def WeekDungeonFindGiftRewardLimitCount(self):
+    def WeekDungeonFindGiftRewardLimitCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def StageFailedCurrencyRefundRate(self):
+    def StageFailedCurrencyRefundRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def EnterDeposit(self):
+    def EnterDepositField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AccountMaxLevel(self):
+    def AccountMaxLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MainSquadExpBonus(self):
+    def MainSquadExpBonusField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def SupportSquadExpBonus(self):
+    def SupportSquadExpBonusField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AccountExpRatio(self):
+    def AccountExpRatioField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MissionToastLifeTime(self):
+    def MissionToastLifeTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ExpItemInsertLimit(self):
+    def ExpItemInsertLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ExpItemInsertAccelTime(self):
+    def ExpItemInsertAccelTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CharacterLvUpCoefficient(self):
+    def CharacterLvUpCoefficientField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def EquipmentLvUpCoefficient(self):
+    def EquipmentLvUpCoefficientField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ExpEquipInsertLimit(self):
+    def ExpEquipInsertLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def EquipLvUpCoefficient(self):
+    def EquipLvUpCoefficientField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def NicknameLength(self):
+    def NicknameLengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftDuration(self, j):
+    def CraftDurationField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             a = self._tab.Vector(o)
@@ -250,33 +250,33 @@ class ConstCommonExcel(object):
         return 0
 
     # ConstCommonExcel
-    def CraftDurationAsNumpy(self):
+    def CraftDurationFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstCommonExcel
-    def CraftDurationLength(self):
+    def CraftDurationFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstCommonExcel
-    def CraftDurationIsNone(self):
+    def CraftDurationFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         return o == 0
 
     # ConstCommonExcel
-    def CraftLimitTime(self):
+    def CraftLimitTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ShiftingCraftDuration(self, j):
+    def ShiftingCraftDurationField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             a = self._tab.Vector(o)
@@ -284,117 +284,117 @@ class ConstCommonExcel(object):
         return 0
 
     # ConstCommonExcel
-    def ShiftingCraftDurationAsNumpy(self):
+    def ShiftingCraftDurationFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstCommonExcel
-    def ShiftingCraftDurationLength(self):
+    def ShiftingCraftDurationFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstCommonExcel
-    def ShiftingCraftDurationIsNone(self):
+    def ShiftingCraftDurationFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         return o == 0
 
     # ConstCommonExcel
-    def ShiftingCraftTicketConsumeAmount(self):
+    def ShiftingCraftTicketConsumeAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ShiftingCraftSlotMaxCapacity(self):
+    def ShiftingCraftSlotMaxCapacityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftTicketItemUniqueId(self):
+    def CraftTicketItemUniqueIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftTicketConsumeAmount(self):
+    def CraftTicketConsumeAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AcademyEnterCostType(self):
+    def AcademyEnterCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AcademyEnterCostId(self):
+    def AcademyEnterCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AcademyTicketCost(self):
+    def AcademyTicketCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MassangerMessageExpireDay(self):
+    def MassangerMessageExpireDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftLeafNodeGenerateLv1Count(self):
+    def CraftLeafNodeGenerateLv1CountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftLeafNodeGenerateLv2Count(self):
+    def CraftLeafNodeGenerateLv2CountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TutorialGachaShopId(self):
+    def TutorialGachaShopIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BeforehandGachaShopId(self):
+    def BeforehandGachaShopIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TutorialGachaGoodsId(self):
+    def TutorialGachaGoodsIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(96))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def EquipmentSlotOpenLevel(self, j):
+    def EquipmentSlotOpenLevelField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         if o != 0:
             a = self._tab.Vector(o)
@@ -402,173 +402,173 @@ class ConstCommonExcel(object):
         return 0
 
     # ConstCommonExcel
-    def EquipmentSlotOpenLevelAsNumpy(self):
+    def EquipmentSlotOpenLevelFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstCommonExcel
-    def EquipmentSlotOpenLevelLength(self):
+    def EquipmentSlotOpenLevelFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstCommonExcel
-    def EquipmentSlotOpenLevelIsNone(self):
+    def EquipmentSlotOpenLevelFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         return o == 0
 
     # ConstCommonExcel
-    def JoinOrCreateClanCoolTimeFromHour(self):
+    def JoinOrCreateClanCoolTimeFromHourField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(100))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClanMaxMember(self):
+    def ClanMaxMemberField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(102))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClanSearchResultCount(self):
+    def ClanSearchResultCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(104))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClanMaxApplicant(self):
+    def ClanMaxApplicantField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(106))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClanRejoinCoolTimeFromSecond(self):
+    def ClanRejoinCoolTimeFromSecondField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(108))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClanWordBalloonMaxCharacter(self):
+    def ClanWordBalloonMaxCharacterField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(110))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CallNameRenameCoolTimeFromHour(self):
+    def CallNameRenameCoolTimeFromHourField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CallNameMinimumLength(self):
+    def CallNameMinimumLengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CallNameMaximumLength(self):
+    def CallNameMaximumLengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def LobbyToScreenModeWaitTime(self):
+    def LobbyToScreenModeWaitTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ScreenshotToLobbyButtonHideDelay(self):
+    def ScreenshotToLobbyButtonHideDelayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PrologueScenarioID01(self):
+    def PrologueScenarioID01Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PrologueScenarioID02(self):
+    def PrologueScenarioID02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(124))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TutorialHardStage11(self):
+    def TutorialHardStage11Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(126))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TutorialSpeedButtonStage(self):
+    def TutorialSpeedButtonStageField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(128))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TutorialCharacterDefaultCount(self):
+    def TutorialCharacterDefaultCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(130))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TutorialShopCategoryType(self):
+    def TutorialShopCategoryTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstCommonExcel
-    def AdventureStrategyPlayTimeLimitInSeconds(self):
+    def AdventureStrategyPlayTimeLimitInSecondsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(134))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def WeekDungoenTacticPlayTimeLimitInSeconds(self):
+    def WeekDungoenTacticPlayTimeLimitInSecondsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(136))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RaidTacticPlayTimeLimitInSeconds(self):
+    def RaidTacticPlayTimeLimitInSecondsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(138))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RaidOpponentListAmount(self):
+    def RaidOpponentListAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(140))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftBaseGoldRequired(self, j):
+    def CraftBaseGoldRequiredField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
         if o != 0:
             a = self._tab.Vector(o)
@@ -576,292 +576,292 @@ class ConstCommonExcel(object):
         return 0
 
     # ConstCommonExcel
-    def CraftBaseGoldRequiredAsNumpy(self):
+    def CraftBaseGoldRequiredFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstCommonExcel
-    def CraftBaseGoldRequiredLength(self):
+    def CraftBaseGoldRequiredFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstCommonExcel
-    def CraftBaseGoldRequiredIsNone(self):
+    def CraftBaseGoldRequiredFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
         return o == 0
 
     # ConstCommonExcel
-    def PostExpiredDayAttendance(self):
+    def PostExpiredDayAttendanceField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(144))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PostExpiredDayInventoryOverflow(self):
+    def PostExpiredDayInventoryOverflowField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(146))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PostExpiredDayGameManager(self):
+    def PostExpiredDayGameManagerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(148))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def UILabelCharacterWrap(self):
+    def UILabelCharacterWrapField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(150))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstCommonExcel
-    def RequestTimeOut(self):
+    def RequestTimeOutField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(152))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstCommonExcel
-    def MailStorageSoftCap(self):
+    def MailStorageSoftCapField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(154))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MailStorageHardCap(self):
+    def MailStorageHardCapField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(156))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClearDeckStorageSize(self):
+    def ClearDeckStorageSizeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(158))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClearDeckNoStarViewCount(self):
+    def ClearDeckNoStarViewCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(160))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClearDeck1StarViewCount(self):
+    def ClearDeck1StarViewCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(162))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClearDeck2StarViewCount(self):
+    def ClearDeck2StarViewCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(164))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClearDeck3StarViewCount(self):
+    def ClearDeck3StarViewCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(166))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ExSkillLevelMax(self):
+    def ExSkillLevelMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(168))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PublicSkillLevelMax(self):
+    def PublicSkillLevelMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(170))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PassiveSkillLevelMax(self):
+    def PassiveSkillLevelMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(172))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ExtraPassiveSkillLevelMax(self):
+    def ExtraPassiveSkillLevelMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(174))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AccountCommentMaxLength(self):
+    def AccountCommentMaxLengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(176))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeSummonCoolTimeFromHour(self):
+    def CafeSummonCoolTimeFromHourField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(178))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def LimitedStageDailyClearCount(self):
+    def LimitedStageDailyClearCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(180))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def LimitedStageEntryTimeLimit(self):
+    def LimitedStageEntryTimeLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(182))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def LimitedStageEntryTimeBuffer(self):
+    def LimitedStageEntryTimeBufferField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(184))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def LimitedStagePointAmount(self):
+    def LimitedStagePointAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(186))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def LimitedStagePointPerApMin(self):
+    def LimitedStagePointPerApMinField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(188))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def LimitedStagePointPerApMax(self):
+    def LimitedStagePointPerApMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(190))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AccountLinkReward(self):
+    def AccountLinkRewardField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(192))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MonthlyProductCheckDays(self):
+    def MonthlyProductCheckDaysField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(194))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def WeaponLvUpCoefficient(self):
+    def WeaponLvUpCoefficientField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(196))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ShowRaidMyListCount(self):
+    def ShowRaidMyListCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(198))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RaidEnterCostType(self):
+    def RaidEnterCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(200))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RaidEnterCostId(self):
+    def RaidEnterCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(202))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RaidTicketCost(self):
+    def RaidTicketCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(204))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TimeAttackDungeonScenarioId(self):
+    def TimeAttackDungeonScenarioIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(206))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstCommonExcel
-    def TimeAttackDungoenPlayCountPerTicket(self):
+    def TimeAttackDungoenPlayCountPerTicketField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(208))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TimeAttackDungeonEnterCostType(self):
+    def TimeAttackDungeonEnterCostTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(210))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TimeAttackDungeonEnterCostId(self):
+    def TimeAttackDungeonEnterCostIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(212))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TimeAttackDungeonEnterCost(self):
+    def TimeAttackDungeonEnterCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(214))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClanLeaderTransferLastLoginLimit(self):
+    def ClanLeaderTransferLastLoginLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(216))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MonthlyProductRepurchasePopupLimit(self):
+    def MonthlyProductRepurchasePopupLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(218))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CommonFavorItemTags(self, j):
+    def CommonFavorItemTagsField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(220))
         if o != 0:
             a = self._tab.Vector(o)
@@ -869,593 +869,593 @@ class ConstCommonExcel(object):
         return 0
 
     # ConstCommonExcel
-    def CommonFavorItemTagsAsNumpy(self):
+    def CommonFavorItemTagsFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(220))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # ConstCommonExcel
-    def CommonFavorItemTagsLength(self):
+    def CommonFavorItemTagsFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(220))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # ConstCommonExcel
-    def CommonFavorItemTagsIsNone(self):
+    def CommonFavorItemTagsFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(220))
         return o == 0
 
     # ConstCommonExcel
-    def MaxApMasterCoinPerWeek(self):
+    def MaxApMasterCoinPerWeekField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(222))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftOpenExpTier1(self):
+    def CraftOpenExpTier1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(224))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftOpenExpTier2(self):
+    def CraftOpenExpTier2Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(226))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftOpenExpTier3(self):
+    def CraftOpenExpTier3Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(228))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CharacterEquipmentGearSlot(self):
+    def CharacterEquipmentGearSlotField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(230))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BirthDayDDay(self):
+    def BirthDayDDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(232))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RecommendedFriendsLvDifferenceLimit(self):
+    def RecommendedFriendsLvDifferenceLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(234))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def DDosDetectCount(self):
+    def DDosDetectCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(236))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def DDosCheckIntervalInSeconds(self):
+    def DDosCheckIntervalInSecondsField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(238))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MaxFriendsCount(self):
+    def MaxFriendsCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(240))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MaxFriendsRequest(self):
+    def MaxFriendsRequestField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(242))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FriendsSearchRequestCount(self):
+    def FriendsSearchRequestCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(244))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FriendsMaxApplicant(self):
+    def FriendsMaxApplicantField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(246))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def IdCardDefaultCharacterId(self):
+    def IdCardDefaultCharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(248))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def IdCardDefaultBgId(self):
+    def IdCardDefaultBgIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(250))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def WorldRaidGemEnterCost(self):
+    def WorldRaidGemEnterCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(252))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def WorldRaidGemEnterAmout(self):
+    def WorldRaidGemEnterAmoutField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(254))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FriendIdCardCommentMaxLength(self):
+    def FriendIdCardCommentMaxLengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(256))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FormationPresetNumberOfEchelonTab(self):
+    def FormationPresetNumberOfEchelonTabField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(258))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FormationPresetNumberOfEchelon(self):
+    def FormationPresetNumberOfEchelonField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(260))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FormationPresetRecentNumberOfEchelon(self):
+    def FormationPresetRecentNumberOfEchelonField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(262))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FormationPresetEchelonTabTextLength(self):
+    def FormationPresetEchelonTabTextLengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(264))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def FormationPresetEchelonSlotTextLength(self):
+    def FormationPresetEchelonSlotTextLengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(266))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CharProfileRowIntervalKr(self):
+    def CharProfileRowIntervalKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(268))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CharProfileRowIntervalJp(self):
+    def CharProfileRowIntervalJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(270))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CharProfilePopupRowIntervalKr(self):
+    def CharProfilePopupRowIntervalKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(272))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CharProfilePopupRowIntervalJp(self):
+    def CharProfilePopupRowIntervalJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(274))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BeforehandGachaCount(self):
+    def BeforehandGachaCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(276))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BeforehandGachaGroupId(self):
+    def BeforehandGachaGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(278))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RenewalDisplayOrderDay(self):
+    def RenewalDisplayOrderDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(280))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def EmblemDefaultId(self):
+    def EmblemDefaultIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(282))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BirthdayMailStartDate(self):
+    def BirthdayMailStartDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(284))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstCommonExcel
-    def BirthdayMailRemainDate(self):
+    def BirthdayMailRemainDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(286))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BirthdayMailParcelType(self):
+    def BirthdayMailParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(288))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BirthdayMailParcelId(self):
+    def BirthdayMailParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(290))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BirthdayMailParcelAmount(self):
+    def BirthdayMailParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(292))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClearDeckAverageDeckCount(self):
+    def ClearDeckAverageDeckCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(294))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClearDeckWorldRaidSaveConditionCoefficient(self):
+    def ClearDeckWorldRaidSaveConditionCoefficientField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(296))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ClearDeckShowCount(self):
+    def ClearDeckShowCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(298))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CharacterMaxLevel(self):
+    def CharacterMaxLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(300))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PotentialBonusStatMaxLevelMaxHP(self):
+    def PotentialBonusStatMaxLevelMaxHPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(302))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PotentialBonusStatMaxLevelAttackPower(self):
+    def PotentialBonusStatMaxLevelAttackPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(304))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PotentialBonusStatMaxLevelHealPower(self):
+    def PotentialBonusStatMaxLevelHealPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(306))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def PotentialOpenConditionCharacterLevel(self):
+    def PotentialOpenConditionCharacterLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(308))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AssistStrangerMinLevel(self):
+    def AssistStrangerMinLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(310))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AssistStrangerMaxLevel(self):
+    def AssistStrangerMaxLevelField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(312))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def MaxBlockedUserCount(self):
+    def MaxBlockedUserCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(314))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeRandomVisitMinComfortBonus(self):
+    def CafeRandomVisitMinComfortBonusField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(316))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeRandomVisitMinLastLogin(self):
+    def CafeRandomVisitMinLastLoginField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(318))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeTravelSyncIntervalByMillisec(self):
+    def CafeTravelSyncIntervalByMillisecField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(320))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RankBracketPercentage1(self):
+    def RankBracketPercentage1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(322))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RankBracketPercentage2(self):
+    def RankBracketPercentage2Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(324))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RankBracketPercentage3(self):
+    def RankBracketPercentage3Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(326))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RankBracketPercentage4(self):
+    def RankBracketPercentage4Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(328))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RankBracketPercentage5(self):
+    def RankBracketPercentage5Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(330))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RankBracketPercentage6(self):
+    def RankBracketPercentage6Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(332))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RankBracketPercentage7(self):
+    def RankBracketPercentage7Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(334))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ExpiryBattlePassItemReceiveDay(self):
+    def ExpiryBattlePassItemReceiveDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(336))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BattlePassFlavorTextIdleDurationMilliSec(self):
+    def BattlePassFlavorTextIdleDurationMilliSecField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(338))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BattlePassEndImminentDay(self):
+    def BattlePassEndImminentDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(340))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def BattlePassExpIconPath(self):
+    def BattlePassExpIconPathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(342))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # ConstCommonExcel
-    def CafeCameraDragThreshold(self):
+    def CafeCameraDragThresholdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(344))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstCommonExcel
-    def CafeSummonTicketBuyLimitForValidate(self):
+    def CafeSummonTicketBuyLimitForValidateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(346))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AutoCraftPresetCountLimit(self):
+    def AutoCraftPresetCountLimitField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(348))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def AutoCraftNodeSelectCount(self):
+    def AutoCraftNodeSelectCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(350))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CraftPresetNameMaxLength(self):
+    def CraftPresetNameMaxLengthField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(352))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def SelectionWaitTime(self):
+    def SelectionWaitTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(354))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def RewardWaitTime(self):
+    def RewardWaitTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(356))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def EpisodeContinueWaitTime(self):
+    def EpisodeContinueWaitTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(358))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ScenarioAutoDelayMillisecLong(self):
+    def ScenarioAutoDelayMillisecLongField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(360))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstCommonExcel
-    def ScenarioAutoDelayMillisec(self):
+    def ScenarioAutoDelayMillisecField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(362))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstCommonExcel
-    def ScenarioAutoDelayMillisecShort(self):
+    def ScenarioAutoDelayMillisecShortField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(364))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstCommonExcel
-    def ScenarioAutoDelayMillisecVeryShort(self):
+    def ScenarioAutoDelayMillisecVeryShortField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(366))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # ConstCommonExcel
-    def PcBuildEnterInformation(self):
+    def PcBuildEnterInformationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(368))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ComebackUserStandardDay(self):
+    def ComebackUserStandardDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(370))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ComebackUserLogSaveDay(self):
+    def ComebackUserLogSaveDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(372))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ComeBackActivateCooldown(self):
+    def ComeBackActivateCooldownField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(374))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def CafeCopyPresetSlotCount(self):
+    def CafeCopyPresetSlotCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(376))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def ExpiryProductDailyRecordItemReceiveDay(self):
+    def ExpiryProductDailyRecordItemReceiveDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(378))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def NewbieUserStandardDay(self):
+    def NewbieUserStandardDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(380))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def NewbieStateHoldDay(self):
+    def NewbieStateHoldDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(382))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # ConstCommonExcel
-    def TTSVCN02(self):
+    def TTSVCN02Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(384))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -1464,594 +1464,594 @@ class ConstCommonExcel(object):
 def ConstCommonExcelStart(builder): builder.StartObject(191)
 def Start(builder):
     return ConstCommonExcelStart(builder)
-def ConstCommonExcelAddCampaignMainStageMaxRank(builder, campaignMainStageMaxRank): builder.PrependInt32Slot(0, campaignMainStageMaxRank, 0)
-def AddCampaignMainStageMaxRank(builder, campaignMainStageMaxRank):
-    return ConstCommonExcelAddCampaignMainStageMaxRank(builder, campaignMainStageMaxRank)
-def ConstCommonExcelAddCampaignMainStageBestRecord(builder, campaignMainStageBestRecord): builder.PrependInt32Slot(1, campaignMainStageBestRecord, 0)
-def AddCampaignMainStageBestRecord(builder, campaignMainStageBestRecord):
-    return ConstCommonExcelAddCampaignMainStageBestRecord(builder, campaignMainStageBestRecord)
-def ConstCommonExcelAddHardAdventurePlayCountRecoverDailyNumber(builder, hardAdventurePlayCountRecoverDailyNumber): builder.PrependInt32Slot(2, hardAdventurePlayCountRecoverDailyNumber, 0)
-def AddHardAdventurePlayCountRecoverDailyNumber(builder, hardAdventurePlayCountRecoverDailyNumber):
-    return ConstCommonExcelAddHardAdventurePlayCountRecoverDailyNumber(builder, hardAdventurePlayCountRecoverDailyNumber)
-def ConstCommonExcelAddHardStageCount(builder, hardStageCount): builder.PrependInt32Slot(3, hardStageCount, 0)
-def AddHardStageCount(builder, hardStageCount):
-    return ConstCommonExcelAddHardStageCount(builder, hardStageCount)
-def ConstCommonExcelAddTacticRankClearTime(builder, tacticRankClearTime): builder.PrependInt32Slot(4, tacticRankClearTime, 0)
-def AddTacticRankClearTime(builder, tacticRankClearTime):
-    return ConstCommonExcelAddTacticRankClearTime(builder, tacticRankClearTime)
-def ConstCommonExcelAddBaseTimeScale(builder, baseTimeScale): builder.PrependInt32Slot(5, baseTimeScale, 0)
-def AddBaseTimeScale(builder, baseTimeScale):
-    return ConstCommonExcelAddBaseTimeScale(builder, baseTimeScale)
-def ConstCommonExcelAddGachaPercentage(builder, gachaPercentage): builder.PrependInt32Slot(6, gachaPercentage, 0)
-def AddGachaPercentage(builder, gachaPercentage):
-    return ConstCommonExcelAddGachaPercentage(builder, gachaPercentage)
-def ConstCommonExcelAddAcademyFavorZoneId(builder, academyFavorZoneId): builder.PrependInt32Slot(7, academyFavorZoneId, 0)
-def AddAcademyFavorZoneId(builder, academyFavorZoneId):
-    return ConstCommonExcelAddAcademyFavorZoneId(builder, academyFavorZoneId)
-def ConstCommonExcelAddCafePresetSlotCount(builder, cafePresetSlotCount): builder.PrependInt32Slot(8, cafePresetSlotCount, 0)
-def AddCafePresetSlotCount(builder, cafePresetSlotCount):
-    return ConstCommonExcelAddCafePresetSlotCount(builder, cafePresetSlotCount)
-def ConstCommonExcelAddCafeMonologueIntervalMillisec(builder, cafeMonologueIntervalMillisec): builder.PrependInt32Slot(9, cafeMonologueIntervalMillisec, 0)
-def AddCafeMonologueIntervalMillisec(builder, cafeMonologueIntervalMillisec):
-    return ConstCommonExcelAddCafeMonologueIntervalMillisec(builder, cafeMonologueIntervalMillisec)
-def ConstCommonExcelAddCafeMonologueDefaultDuration(builder, cafeMonologueDefaultDuration): builder.PrependInt32Slot(10, cafeMonologueDefaultDuration, 0)
-def AddCafeMonologueDefaultDuration(builder, cafeMonologueDefaultDuration):
-    return ConstCommonExcelAddCafeMonologueDefaultDuration(builder, cafeMonologueDefaultDuration)
-def ConstCommonExcelAddCafeBubbleIdleDurationMilliSec(builder, cafeBubbleIdleDurationMilliSec): builder.PrependInt32Slot(11, cafeBubbleIdleDurationMilliSec, 0)
-def AddCafeBubbleIdleDurationMilliSec(builder, cafeBubbleIdleDurationMilliSec):
-    return ConstCommonExcelAddCafeBubbleIdleDurationMilliSec(builder, cafeBubbleIdleDurationMilliSec)
-def ConstCommonExcelAddFindGiftTimeLimit(builder, findGiftTimeLimit): builder.PrependInt32Slot(12, findGiftTimeLimit, 0)
-def AddFindGiftTimeLimit(builder, findGiftTimeLimit):
-    return ConstCommonExcelAddFindGiftTimeLimit(builder, findGiftTimeLimit)
-def ConstCommonExcelAddCafeAutoChargePeriodInMsc(builder, cafeAutoChargePeriodInMsc): builder.PrependInt32Slot(13, cafeAutoChargePeriodInMsc, 0)
-def AddCafeAutoChargePeriodInMsc(builder, cafeAutoChargePeriodInMsc):
-    return ConstCommonExcelAddCafeAutoChargePeriodInMsc(builder, cafeAutoChargePeriodInMsc)
-def ConstCommonExcelAddCafeProductionDecimalPosition(builder, cafeProductionDecimalPosition): builder.PrependInt32Slot(14, cafeProductionDecimalPosition, 0)
-def AddCafeProductionDecimalPosition(builder, cafeProductionDecimalPosition):
-    return ConstCommonExcelAddCafeProductionDecimalPosition(builder, cafeProductionDecimalPosition)
-def ConstCommonExcelAddCafeSetGroupApplyCount(builder, cafeSetGroupApplyCount): builder.PrependInt32Slot(15, cafeSetGroupApplyCount, 0)
-def AddCafeSetGroupApplyCount(builder, cafeSetGroupApplyCount):
-    return ConstCommonExcelAddCafeSetGroupApplyCount(builder, cafeSetGroupApplyCount)
-def ConstCommonExcelAddWeekDungeonFindGiftRewardLimitCount(builder, weekDungeonFindGiftRewardLimitCount): builder.PrependInt32Slot(16, weekDungeonFindGiftRewardLimitCount, 0)
-def AddWeekDungeonFindGiftRewardLimitCount(builder, weekDungeonFindGiftRewardLimitCount):
-    return ConstCommonExcelAddWeekDungeonFindGiftRewardLimitCount(builder, weekDungeonFindGiftRewardLimitCount)
-def ConstCommonExcelAddStageFailedCurrencyRefundRate(builder, stageFailedCurrencyRefundRate): builder.PrependInt32Slot(17, stageFailedCurrencyRefundRate, 0)
-def AddStageFailedCurrencyRefundRate(builder, stageFailedCurrencyRefundRate):
-    return ConstCommonExcelAddStageFailedCurrencyRefundRate(builder, stageFailedCurrencyRefundRate)
-def ConstCommonExcelAddEnterDeposit(builder, enterDeposit): builder.PrependInt32Slot(18, enterDeposit, 0)
-def AddEnterDeposit(builder, enterDeposit):
-    return ConstCommonExcelAddEnterDeposit(builder, enterDeposit)
-def ConstCommonExcelAddAccountMaxLevel(builder, accountMaxLevel): builder.PrependInt32Slot(19, accountMaxLevel, 0)
-def AddAccountMaxLevel(builder, accountMaxLevel):
-    return ConstCommonExcelAddAccountMaxLevel(builder, accountMaxLevel)
-def ConstCommonExcelAddMainSquadExpBonus(builder, mainSquadExpBonus): builder.PrependInt32Slot(20, mainSquadExpBonus, 0)
-def AddMainSquadExpBonus(builder, mainSquadExpBonus):
-    return ConstCommonExcelAddMainSquadExpBonus(builder, mainSquadExpBonus)
-def ConstCommonExcelAddSupportSquadExpBonus(builder, supportSquadExpBonus): builder.PrependInt32Slot(21, supportSquadExpBonus, 0)
-def AddSupportSquadExpBonus(builder, supportSquadExpBonus):
-    return ConstCommonExcelAddSupportSquadExpBonus(builder, supportSquadExpBonus)
-def ConstCommonExcelAddAccountExpRatio(builder, accountExpRatio): builder.PrependInt32Slot(22, accountExpRatio, 0)
-def AddAccountExpRatio(builder, accountExpRatio):
-    return ConstCommonExcelAddAccountExpRatio(builder, accountExpRatio)
-def ConstCommonExcelAddMissionToastLifeTime(builder, missionToastLifeTime): builder.PrependInt32Slot(23, missionToastLifeTime, 0)
-def AddMissionToastLifeTime(builder, missionToastLifeTime):
-    return ConstCommonExcelAddMissionToastLifeTime(builder, missionToastLifeTime)
-def ConstCommonExcelAddExpItemInsertLimit(builder, expItemInsertLimit): builder.PrependInt32Slot(24, expItemInsertLimit, 0)
-def AddExpItemInsertLimit(builder, expItemInsertLimit):
-    return ConstCommonExcelAddExpItemInsertLimit(builder, expItemInsertLimit)
-def ConstCommonExcelAddExpItemInsertAccelTime(builder, expItemInsertAccelTime): builder.PrependInt32Slot(25, expItemInsertAccelTime, 0)
-def AddExpItemInsertAccelTime(builder, expItemInsertAccelTime):
-    return ConstCommonExcelAddExpItemInsertAccelTime(builder, expItemInsertAccelTime)
-def ConstCommonExcelAddCharacterLvUpCoefficient(builder, characterLvUpCoefficient): builder.PrependInt32Slot(26, characterLvUpCoefficient, 0)
-def AddCharacterLvUpCoefficient(builder, characterLvUpCoefficient):
-    return ConstCommonExcelAddCharacterLvUpCoefficient(builder, characterLvUpCoefficient)
-def ConstCommonExcelAddEquipmentLvUpCoefficient(builder, equipmentLvUpCoefficient): builder.PrependInt32Slot(27, equipmentLvUpCoefficient, 0)
-def AddEquipmentLvUpCoefficient(builder, equipmentLvUpCoefficient):
-    return ConstCommonExcelAddEquipmentLvUpCoefficient(builder, equipmentLvUpCoefficient)
-def ConstCommonExcelAddExpEquipInsertLimit(builder, expEquipInsertLimit): builder.PrependInt32Slot(28, expEquipInsertLimit, 0)
-def AddExpEquipInsertLimit(builder, expEquipInsertLimit):
-    return ConstCommonExcelAddExpEquipInsertLimit(builder, expEquipInsertLimit)
-def ConstCommonExcelAddEquipLvUpCoefficient(builder, equipLvUpCoefficient): builder.PrependInt32Slot(29, equipLvUpCoefficient, 0)
-def AddEquipLvUpCoefficient(builder, equipLvUpCoefficient):
-    return ConstCommonExcelAddEquipLvUpCoefficient(builder, equipLvUpCoefficient)
-def ConstCommonExcelAddNicknameLength(builder, nicknameLength): builder.PrependInt32Slot(30, nicknameLength, 0)
-def AddNicknameLength(builder, nicknameLength):
-    return ConstCommonExcelAddNicknameLength(builder, nicknameLength)
-def ConstCommonExcelAddCraftDuration(builder, craftDuration): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(craftDuration), 0)
-def AddCraftDuration(builder, craftDuration):
-    return ConstCommonExcelAddCraftDuration(builder, craftDuration)
-def ConstCommonExcelStartCraftDurationVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCraftDurationVector(builder, numElems):
-    return ConstCommonExcelStartCraftDurationVector(builder, numElems)
-def ConstCommonExcelAddCraftLimitTime(builder, craftLimitTime): builder.PrependInt32Slot(32, craftLimitTime, 0)
-def AddCraftLimitTime(builder, craftLimitTime):
-    return ConstCommonExcelAddCraftLimitTime(builder, craftLimitTime)
-def ConstCommonExcelAddShiftingCraftDuration(builder, shiftingCraftDuration): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(shiftingCraftDuration), 0)
-def AddShiftingCraftDuration(builder, shiftingCraftDuration):
-    return ConstCommonExcelAddShiftingCraftDuration(builder, shiftingCraftDuration)
-def ConstCommonExcelStartShiftingCraftDurationVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShiftingCraftDurationVector(builder, numElems):
-    return ConstCommonExcelStartShiftingCraftDurationVector(builder, numElems)
-def ConstCommonExcelAddShiftingCraftTicketConsumeAmount(builder, shiftingCraftTicketConsumeAmount): builder.PrependInt32Slot(34, shiftingCraftTicketConsumeAmount, 0)
-def AddShiftingCraftTicketConsumeAmount(builder, shiftingCraftTicketConsumeAmount):
-    return ConstCommonExcelAddShiftingCraftTicketConsumeAmount(builder, shiftingCraftTicketConsumeAmount)
-def ConstCommonExcelAddShiftingCraftSlotMaxCapacity(builder, shiftingCraftSlotMaxCapacity): builder.PrependInt32Slot(35, shiftingCraftSlotMaxCapacity, 0)
-def AddShiftingCraftSlotMaxCapacity(builder, shiftingCraftSlotMaxCapacity):
-    return ConstCommonExcelAddShiftingCraftSlotMaxCapacity(builder, shiftingCraftSlotMaxCapacity)
-def ConstCommonExcelAddCraftTicketItemUniqueId(builder, craftTicketItemUniqueId): builder.PrependInt32Slot(36, craftTicketItemUniqueId, 0)
-def AddCraftTicketItemUniqueId(builder, craftTicketItemUniqueId):
-    return ConstCommonExcelAddCraftTicketItemUniqueId(builder, craftTicketItemUniqueId)
-def ConstCommonExcelAddCraftTicketConsumeAmount(builder, craftTicketConsumeAmount): builder.PrependInt32Slot(37, craftTicketConsumeAmount, 0)
-def AddCraftTicketConsumeAmount(builder, craftTicketConsumeAmount):
-    return ConstCommonExcelAddCraftTicketConsumeAmount(builder, craftTicketConsumeAmount)
-def ConstCommonExcelAddAcademyEnterCostType(builder, academyEnterCostType): builder.PrependInt32Slot(38, academyEnterCostType, 0)
-def AddAcademyEnterCostType(builder, academyEnterCostType):
-    return ConstCommonExcelAddAcademyEnterCostType(builder, academyEnterCostType)
-def ConstCommonExcelAddAcademyEnterCostId(builder, academyEnterCostId): builder.PrependInt32Slot(39, academyEnterCostId, 0)
-def AddAcademyEnterCostId(builder, academyEnterCostId):
-    return ConstCommonExcelAddAcademyEnterCostId(builder, academyEnterCostId)
-def ConstCommonExcelAddAcademyTicketCost(builder, academyTicketCost): builder.PrependInt32Slot(40, academyTicketCost, 0)
-def AddAcademyTicketCost(builder, academyTicketCost):
-    return ConstCommonExcelAddAcademyTicketCost(builder, academyTicketCost)
-def ConstCommonExcelAddMassangerMessageExpireDay(builder, massangerMessageExpireDay): builder.PrependInt32Slot(41, massangerMessageExpireDay, 0)
-def AddMassangerMessageExpireDay(builder, massangerMessageExpireDay):
-    return ConstCommonExcelAddMassangerMessageExpireDay(builder, massangerMessageExpireDay)
-def ConstCommonExcelAddCraftLeafNodeGenerateLv1Count(builder, craftLeafNodeGenerateLv1Count): builder.PrependInt32Slot(42, craftLeafNodeGenerateLv1Count, 0)
-def AddCraftLeafNodeGenerateLv1Count(builder, craftLeafNodeGenerateLv1Count):
-    return ConstCommonExcelAddCraftLeafNodeGenerateLv1Count(builder, craftLeafNodeGenerateLv1Count)
-def ConstCommonExcelAddCraftLeafNodeGenerateLv2Count(builder, craftLeafNodeGenerateLv2Count): builder.PrependInt32Slot(43, craftLeafNodeGenerateLv2Count, 0)
-def AddCraftLeafNodeGenerateLv2Count(builder, craftLeafNodeGenerateLv2Count):
-    return ConstCommonExcelAddCraftLeafNodeGenerateLv2Count(builder, craftLeafNodeGenerateLv2Count)
-def ConstCommonExcelAddTutorialGachaShopId(builder, tutorialGachaShopId): builder.PrependInt32Slot(44, tutorialGachaShopId, 0)
-def AddTutorialGachaShopId(builder, tutorialGachaShopId):
-    return ConstCommonExcelAddTutorialGachaShopId(builder, tutorialGachaShopId)
-def ConstCommonExcelAddBeforehandGachaShopId(builder, beforehandGachaShopId): builder.PrependInt32Slot(45, beforehandGachaShopId, 0)
-def AddBeforehandGachaShopId(builder, beforehandGachaShopId):
-    return ConstCommonExcelAddBeforehandGachaShopId(builder, beforehandGachaShopId)
-def ConstCommonExcelAddTutorialGachaGoodsId(builder, tutorialGachaGoodsId): builder.PrependInt32Slot(46, tutorialGachaGoodsId, 0)
-def AddTutorialGachaGoodsId(builder, tutorialGachaGoodsId):
-    return ConstCommonExcelAddTutorialGachaGoodsId(builder, tutorialGachaGoodsId)
-def ConstCommonExcelAddEquipmentSlotOpenLevel(builder, equipmentSlotOpenLevel): builder.PrependUOffsetTRelativeSlot(47, flatbuffers.number_types.UOffsetTFlags.py_type(equipmentSlotOpenLevel), 0)
-def AddEquipmentSlotOpenLevel(builder, equipmentSlotOpenLevel):
-    return ConstCommonExcelAddEquipmentSlotOpenLevel(builder, equipmentSlotOpenLevel)
-def ConstCommonExcelStartEquipmentSlotOpenLevelVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEquipmentSlotOpenLevelVector(builder, numElems):
-    return ConstCommonExcelStartEquipmentSlotOpenLevelVector(builder, numElems)
-def ConstCommonExcelAddJoinOrCreateClanCoolTimeFromHour(builder, joinOrCreateClanCoolTimeFromHour): builder.PrependInt32Slot(48, joinOrCreateClanCoolTimeFromHour, 0)
-def AddJoinOrCreateClanCoolTimeFromHour(builder, joinOrCreateClanCoolTimeFromHour):
-    return ConstCommonExcelAddJoinOrCreateClanCoolTimeFromHour(builder, joinOrCreateClanCoolTimeFromHour)
-def ConstCommonExcelAddClanMaxMember(builder, clanMaxMember): builder.PrependInt32Slot(49, clanMaxMember, 0)
-def AddClanMaxMember(builder, clanMaxMember):
-    return ConstCommonExcelAddClanMaxMember(builder, clanMaxMember)
-def ConstCommonExcelAddClanSearchResultCount(builder, clanSearchResultCount): builder.PrependInt32Slot(50, clanSearchResultCount, 0)
-def AddClanSearchResultCount(builder, clanSearchResultCount):
-    return ConstCommonExcelAddClanSearchResultCount(builder, clanSearchResultCount)
-def ConstCommonExcelAddClanMaxApplicant(builder, clanMaxApplicant): builder.PrependInt32Slot(51, clanMaxApplicant, 0)
-def AddClanMaxApplicant(builder, clanMaxApplicant):
-    return ConstCommonExcelAddClanMaxApplicant(builder, clanMaxApplicant)
-def ConstCommonExcelAddClanRejoinCoolTimeFromSecond(builder, clanRejoinCoolTimeFromSecond): builder.PrependInt32Slot(52, clanRejoinCoolTimeFromSecond, 0)
-def AddClanRejoinCoolTimeFromSecond(builder, clanRejoinCoolTimeFromSecond):
-    return ConstCommonExcelAddClanRejoinCoolTimeFromSecond(builder, clanRejoinCoolTimeFromSecond)
-def ConstCommonExcelAddClanWordBalloonMaxCharacter(builder, clanWordBalloonMaxCharacter): builder.PrependInt32Slot(53, clanWordBalloonMaxCharacter, 0)
-def AddClanWordBalloonMaxCharacter(builder, clanWordBalloonMaxCharacter):
-    return ConstCommonExcelAddClanWordBalloonMaxCharacter(builder, clanWordBalloonMaxCharacter)
-def ConstCommonExcelAddCallNameRenameCoolTimeFromHour(builder, callNameRenameCoolTimeFromHour): builder.PrependInt32Slot(54, callNameRenameCoolTimeFromHour, 0)
-def AddCallNameRenameCoolTimeFromHour(builder, callNameRenameCoolTimeFromHour):
-    return ConstCommonExcelAddCallNameRenameCoolTimeFromHour(builder, callNameRenameCoolTimeFromHour)
-def ConstCommonExcelAddCallNameMinimumLength(builder, callNameMinimumLength): builder.PrependInt32Slot(55, callNameMinimumLength, 0)
-def AddCallNameMinimumLength(builder, callNameMinimumLength):
-    return ConstCommonExcelAddCallNameMinimumLength(builder, callNameMinimumLength)
-def ConstCommonExcelAddCallNameMaximumLength(builder, callNameMaximumLength): builder.PrependInt32Slot(56, callNameMaximumLength, 0)
-def AddCallNameMaximumLength(builder, callNameMaximumLength):
-    return ConstCommonExcelAddCallNameMaximumLength(builder, callNameMaximumLength)
-def ConstCommonExcelAddLobbyToScreenModeWaitTime(builder, lobbyToScreenModeWaitTime): builder.PrependInt32Slot(57, lobbyToScreenModeWaitTime, 0)
-def AddLobbyToScreenModeWaitTime(builder, lobbyToScreenModeWaitTime):
-    return ConstCommonExcelAddLobbyToScreenModeWaitTime(builder, lobbyToScreenModeWaitTime)
-def ConstCommonExcelAddScreenshotToLobbyButtonHideDelay(builder, screenshotToLobbyButtonHideDelay): builder.PrependInt32Slot(58, screenshotToLobbyButtonHideDelay, 0)
-def AddScreenshotToLobbyButtonHideDelay(builder, screenshotToLobbyButtonHideDelay):
-    return ConstCommonExcelAddScreenshotToLobbyButtonHideDelay(builder, screenshotToLobbyButtonHideDelay)
-def ConstCommonExcelAddPrologueScenarioID01(builder, prologueScenarioID01): builder.PrependInt32Slot(59, prologueScenarioID01, 0)
-def AddPrologueScenarioID01(builder, prologueScenarioID01):
-    return ConstCommonExcelAddPrologueScenarioID01(builder, prologueScenarioID01)
-def ConstCommonExcelAddPrologueScenarioID02(builder, prologueScenarioID02): builder.PrependInt32Slot(60, prologueScenarioID02, 0)
-def AddPrologueScenarioID02(builder, prologueScenarioID02):
-    return ConstCommonExcelAddPrologueScenarioID02(builder, prologueScenarioID02)
-def ConstCommonExcelAddTutorialHardStage11(builder, tutorialHardStage11): builder.PrependInt32Slot(61, tutorialHardStage11, 0)
-def AddTutorialHardStage11(builder, tutorialHardStage11):
-    return ConstCommonExcelAddTutorialHardStage11(builder, tutorialHardStage11)
-def ConstCommonExcelAddTutorialSpeedButtonStage(builder, tutorialSpeedButtonStage): builder.PrependInt32Slot(62, tutorialSpeedButtonStage, 0)
-def AddTutorialSpeedButtonStage(builder, tutorialSpeedButtonStage):
-    return ConstCommonExcelAddTutorialSpeedButtonStage(builder, tutorialSpeedButtonStage)
-def ConstCommonExcelAddTutorialCharacterDefaultCount(builder, tutorialCharacterDefaultCount): builder.PrependInt32Slot(63, tutorialCharacterDefaultCount, 0)
-def AddTutorialCharacterDefaultCount(builder, tutorialCharacterDefaultCount):
-    return ConstCommonExcelAddTutorialCharacterDefaultCount(builder, tutorialCharacterDefaultCount)
-def ConstCommonExcelAddTutorialShopCategoryType(builder, tutorialShopCategoryType): builder.PrependFloat32Slot(64, tutorialShopCategoryType, 0.0)
-def AddTutorialShopCategoryType(builder, tutorialShopCategoryType):
-    return ConstCommonExcelAddTutorialShopCategoryType(builder, tutorialShopCategoryType)
-def ConstCommonExcelAddAdventureStrategyPlayTimeLimitInSeconds(builder, adventureStrategyPlayTimeLimitInSeconds): builder.PrependInt32Slot(65, adventureStrategyPlayTimeLimitInSeconds, 0)
-def AddAdventureStrategyPlayTimeLimitInSeconds(builder, adventureStrategyPlayTimeLimitInSeconds):
-    return ConstCommonExcelAddAdventureStrategyPlayTimeLimitInSeconds(builder, adventureStrategyPlayTimeLimitInSeconds)
-def ConstCommonExcelAddWeekDungoenTacticPlayTimeLimitInSeconds(builder, weekDungoenTacticPlayTimeLimitInSeconds): builder.PrependInt32Slot(66, weekDungoenTacticPlayTimeLimitInSeconds, 0)
-def AddWeekDungoenTacticPlayTimeLimitInSeconds(builder, weekDungoenTacticPlayTimeLimitInSeconds):
-    return ConstCommonExcelAddWeekDungoenTacticPlayTimeLimitInSeconds(builder, weekDungoenTacticPlayTimeLimitInSeconds)
-def ConstCommonExcelAddRaidTacticPlayTimeLimitInSeconds(builder, raidTacticPlayTimeLimitInSeconds): builder.PrependInt32Slot(67, raidTacticPlayTimeLimitInSeconds, 0)
-def AddRaidTacticPlayTimeLimitInSeconds(builder, raidTacticPlayTimeLimitInSeconds):
-    return ConstCommonExcelAddRaidTacticPlayTimeLimitInSeconds(builder, raidTacticPlayTimeLimitInSeconds)
-def ConstCommonExcelAddRaidOpponentListAmount(builder, raidOpponentListAmount): builder.PrependInt32Slot(68, raidOpponentListAmount, 0)
-def AddRaidOpponentListAmount(builder, raidOpponentListAmount):
-    return ConstCommonExcelAddRaidOpponentListAmount(builder, raidOpponentListAmount)
-def ConstCommonExcelAddCraftBaseGoldRequired(builder, craftBaseGoldRequired): builder.PrependUOffsetTRelativeSlot(69, flatbuffers.number_types.UOffsetTFlags.py_type(craftBaseGoldRequired), 0)
-def AddCraftBaseGoldRequired(builder, craftBaseGoldRequired):
-    return ConstCommonExcelAddCraftBaseGoldRequired(builder, craftBaseGoldRequired)
-def ConstCommonExcelStartCraftBaseGoldRequiredVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCraftBaseGoldRequiredVector(builder, numElems):
-    return ConstCommonExcelStartCraftBaseGoldRequiredVector(builder, numElems)
-def ConstCommonExcelAddPostExpiredDayAttendance(builder, postExpiredDayAttendance): builder.PrependInt32Slot(70, postExpiredDayAttendance, 0)
-def AddPostExpiredDayAttendance(builder, postExpiredDayAttendance):
-    return ConstCommonExcelAddPostExpiredDayAttendance(builder, postExpiredDayAttendance)
-def ConstCommonExcelAddPostExpiredDayInventoryOverflow(builder, postExpiredDayInventoryOverflow): builder.PrependInt32Slot(71, postExpiredDayInventoryOverflow, 0)
-def AddPostExpiredDayInventoryOverflow(builder, postExpiredDayInventoryOverflow):
-    return ConstCommonExcelAddPostExpiredDayInventoryOverflow(builder, postExpiredDayInventoryOverflow)
-def ConstCommonExcelAddPostExpiredDayGameManager(builder, postExpiredDayGameManager): builder.PrependInt32Slot(72, postExpiredDayGameManager, 0)
-def AddPostExpiredDayGameManager(builder, postExpiredDayGameManager):
-    return ConstCommonExcelAddPostExpiredDayGameManager(builder, postExpiredDayGameManager)
-def ConstCommonExcelAddUILabelCharacterWrap(builder, uILabelCharacterWrap): builder.PrependUOffsetTRelativeSlot(73, flatbuffers.number_types.UOffsetTFlags.py_type(uILabelCharacterWrap), 0)
-def AddUILabelCharacterWrap(builder, uILabelCharacterWrap):
-    return ConstCommonExcelAddUILabelCharacterWrap(builder, uILabelCharacterWrap)
-def ConstCommonExcelAddRequestTimeOut(builder, requestTimeOut): builder.PrependFloat32Slot(74, requestTimeOut, 0.0)
-def AddRequestTimeOut(builder, requestTimeOut):
-    return ConstCommonExcelAddRequestTimeOut(builder, requestTimeOut)
-def ConstCommonExcelAddMailStorageSoftCap(builder, mailStorageSoftCap): builder.PrependInt32Slot(75, mailStorageSoftCap, 0)
-def AddMailStorageSoftCap(builder, mailStorageSoftCap):
-    return ConstCommonExcelAddMailStorageSoftCap(builder, mailStorageSoftCap)
-def ConstCommonExcelAddMailStorageHardCap(builder, mailStorageHardCap): builder.PrependInt32Slot(76, mailStorageHardCap, 0)
-def AddMailStorageHardCap(builder, mailStorageHardCap):
-    return ConstCommonExcelAddMailStorageHardCap(builder, mailStorageHardCap)
-def ConstCommonExcelAddClearDeckStorageSize(builder, clearDeckStorageSize): builder.PrependInt32Slot(77, clearDeckStorageSize, 0)
-def AddClearDeckStorageSize(builder, clearDeckStorageSize):
-    return ConstCommonExcelAddClearDeckStorageSize(builder, clearDeckStorageSize)
-def ConstCommonExcelAddClearDeckNoStarViewCount(builder, clearDeckNoStarViewCount): builder.PrependInt32Slot(78, clearDeckNoStarViewCount, 0)
-def AddClearDeckNoStarViewCount(builder, clearDeckNoStarViewCount):
-    return ConstCommonExcelAddClearDeckNoStarViewCount(builder, clearDeckNoStarViewCount)
-def ConstCommonExcelAddClearDeck1StarViewCount(builder, clearDeck1StarViewCount): builder.PrependInt32Slot(79, clearDeck1StarViewCount, 0)
-def AddClearDeck1StarViewCount(builder, clearDeck1StarViewCount):
-    return ConstCommonExcelAddClearDeck1StarViewCount(builder, clearDeck1StarViewCount)
-def ConstCommonExcelAddClearDeck2StarViewCount(builder, clearDeck2StarViewCount): builder.PrependInt32Slot(80, clearDeck2StarViewCount, 0)
-def AddClearDeck2StarViewCount(builder, clearDeck2StarViewCount):
-    return ConstCommonExcelAddClearDeck2StarViewCount(builder, clearDeck2StarViewCount)
-def ConstCommonExcelAddClearDeck3StarViewCount(builder, clearDeck3StarViewCount): builder.PrependInt32Slot(81, clearDeck3StarViewCount, 0)
-def AddClearDeck3StarViewCount(builder, clearDeck3StarViewCount):
-    return ConstCommonExcelAddClearDeck3StarViewCount(builder, clearDeck3StarViewCount)
-def ConstCommonExcelAddExSkillLevelMax(builder, exSkillLevelMax): builder.PrependInt32Slot(82, exSkillLevelMax, 0)
-def AddExSkillLevelMax(builder, exSkillLevelMax):
-    return ConstCommonExcelAddExSkillLevelMax(builder, exSkillLevelMax)
-def ConstCommonExcelAddPublicSkillLevelMax(builder, publicSkillLevelMax): builder.PrependInt32Slot(83, publicSkillLevelMax, 0)
-def AddPublicSkillLevelMax(builder, publicSkillLevelMax):
-    return ConstCommonExcelAddPublicSkillLevelMax(builder, publicSkillLevelMax)
-def ConstCommonExcelAddPassiveSkillLevelMax(builder, passiveSkillLevelMax): builder.PrependInt32Slot(84, passiveSkillLevelMax, 0)
-def AddPassiveSkillLevelMax(builder, passiveSkillLevelMax):
-    return ConstCommonExcelAddPassiveSkillLevelMax(builder, passiveSkillLevelMax)
-def ConstCommonExcelAddExtraPassiveSkillLevelMax(builder, extraPassiveSkillLevelMax): builder.PrependInt32Slot(85, extraPassiveSkillLevelMax, 0)
-def AddExtraPassiveSkillLevelMax(builder, extraPassiveSkillLevelMax):
-    return ConstCommonExcelAddExtraPassiveSkillLevelMax(builder, extraPassiveSkillLevelMax)
-def ConstCommonExcelAddAccountCommentMaxLength(builder, accountCommentMaxLength): builder.PrependInt32Slot(86, accountCommentMaxLength, 0)
-def AddAccountCommentMaxLength(builder, accountCommentMaxLength):
-    return ConstCommonExcelAddAccountCommentMaxLength(builder, accountCommentMaxLength)
-def ConstCommonExcelAddCafeSummonCoolTimeFromHour(builder, cafeSummonCoolTimeFromHour): builder.PrependInt32Slot(87, cafeSummonCoolTimeFromHour, 0)
-def AddCafeSummonCoolTimeFromHour(builder, cafeSummonCoolTimeFromHour):
-    return ConstCommonExcelAddCafeSummonCoolTimeFromHour(builder, cafeSummonCoolTimeFromHour)
-def ConstCommonExcelAddLimitedStageDailyClearCount(builder, limitedStageDailyClearCount): builder.PrependInt32Slot(88, limitedStageDailyClearCount, 0)
-def AddLimitedStageDailyClearCount(builder, limitedStageDailyClearCount):
-    return ConstCommonExcelAddLimitedStageDailyClearCount(builder, limitedStageDailyClearCount)
-def ConstCommonExcelAddLimitedStageEntryTimeLimit(builder, limitedStageEntryTimeLimit): builder.PrependInt32Slot(89, limitedStageEntryTimeLimit, 0)
-def AddLimitedStageEntryTimeLimit(builder, limitedStageEntryTimeLimit):
-    return ConstCommonExcelAddLimitedStageEntryTimeLimit(builder, limitedStageEntryTimeLimit)
-def ConstCommonExcelAddLimitedStageEntryTimeBuffer(builder, limitedStageEntryTimeBuffer): builder.PrependInt32Slot(90, limitedStageEntryTimeBuffer, 0)
-def AddLimitedStageEntryTimeBuffer(builder, limitedStageEntryTimeBuffer):
-    return ConstCommonExcelAddLimitedStageEntryTimeBuffer(builder, limitedStageEntryTimeBuffer)
-def ConstCommonExcelAddLimitedStagePointAmount(builder, limitedStagePointAmount): builder.PrependInt32Slot(91, limitedStagePointAmount, 0)
-def AddLimitedStagePointAmount(builder, limitedStagePointAmount):
-    return ConstCommonExcelAddLimitedStagePointAmount(builder, limitedStagePointAmount)
-def ConstCommonExcelAddLimitedStagePointPerApMin(builder, limitedStagePointPerApMin): builder.PrependInt32Slot(92, limitedStagePointPerApMin, 0)
-def AddLimitedStagePointPerApMin(builder, limitedStagePointPerApMin):
-    return ConstCommonExcelAddLimitedStagePointPerApMin(builder, limitedStagePointPerApMin)
-def ConstCommonExcelAddLimitedStagePointPerApMax(builder, limitedStagePointPerApMax): builder.PrependInt32Slot(93, limitedStagePointPerApMax, 0)
-def AddLimitedStagePointPerApMax(builder, limitedStagePointPerApMax):
-    return ConstCommonExcelAddLimitedStagePointPerApMax(builder, limitedStagePointPerApMax)
-def ConstCommonExcelAddAccountLinkReward(builder, accountLinkReward): builder.PrependInt32Slot(94, accountLinkReward, 0)
-def AddAccountLinkReward(builder, accountLinkReward):
-    return ConstCommonExcelAddAccountLinkReward(builder, accountLinkReward)
-def ConstCommonExcelAddMonthlyProductCheckDays(builder, monthlyProductCheckDays): builder.PrependInt32Slot(95, monthlyProductCheckDays, 0)
-def AddMonthlyProductCheckDays(builder, monthlyProductCheckDays):
-    return ConstCommonExcelAddMonthlyProductCheckDays(builder, monthlyProductCheckDays)
-def ConstCommonExcelAddWeaponLvUpCoefficient(builder, weaponLvUpCoefficient): builder.PrependInt32Slot(96, weaponLvUpCoefficient, 0)
-def AddWeaponLvUpCoefficient(builder, weaponLvUpCoefficient):
-    return ConstCommonExcelAddWeaponLvUpCoefficient(builder, weaponLvUpCoefficient)
-def ConstCommonExcelAddShowRaidMyListCount(builder, showRaidMyListCount): builder.PrependInt32Slot(97, showRaidMyListCount, 0)
-def AddShowRaidMyListCount(builder, showRaidMyListCount):
-    return ConstCommonExcelAddShowRaidMyListCount(builder, showRaidMyListCount)
-def ConstCommonExcelAddRaidEnterCostType(builder, raidEnterCostType): builder.PrependInt32Slot(98, raidEnterCostType, 0)
-def AddRaidEnterCostType(builder, raidEnterCostType):
-    return ConstCommonExcelAddRaidEnterCostType(builder, raidEnterCostType)
-def ConstCommonExcelAddRaidEnterCostId(builder, raidEnterCostId): builder.PrependInt32Slot(99, raidEnterCostId, 0)
-def AddRaidEnterCostId(builder, raidEnterCostId):
-    return ConstCommonExcelAddRaidEnterCostId(builder, raidEnterCostId)
-def ConstCommonExcelAddRaidTicketCost(builder, raidTicketCost): builder.PrependInt32Slot(100, raidTicketCost, 0)
-def AddRaidTicketCost(builder, raidTicketCost):
-    return ConstCommonExcelAddRaidTicketCost(builder, raidTicketCost)
-def ConstCommonExcelAddTimeAttackDungeonScenarioId(builder, timeAttackDungeonScenarioId): builder.PrependUOffsetTRelativeSlot(101, flatbuffers.number_types.UOffsetTFlags.py_type(timeAttackDungeonScenarioId), 0)
-def AddTimeAttackDungeonScenarioId(builder, timeAttackDungeonScenarioId):
-    return ConstCommonExcelAddTimeAttackDungeonScenarioId(builder, timeAttackDungeonScenarioId)
-def ConstCommonExcelAddTimeAttackDungoenPlayCountPerTicket(builder, timeAttackDungoenPlayCountPerTicket): builder.PrependInt32Slot(102, timeAttackDungoenPlayCountPerTicket, 0)
-def AddTimeAttackDungoenPlayCountPerTicket(builder, timeAttackDungoenPlayCountPerTicket):
-    return ConstCommonExcelAddTimeAttackDungoenPlayCountPerTicket(builder, timeAttackDungoenPlayCountPerTicket)
-def ConstCommonExcelAddTimeAttackDungeonEnterCostType(builder, timeAttackDungeonEnterCostType): builder.PrependInt32Slot(103, timeAttackDungeonEnterCostType, 0)
-def AddTimeAttackDungeonEnterCostType(builder, timeAttackDungeonEnterCostType):
-    return ConstCommonExcelAddTimeAttackDungeonEnterCostType(builder, timeAttackDungeonEnterCostType)
-def ConstCommonExcelAddTimeAttackDungeonEnterCostId(builder, timeAttackDungeonEnterCostId): builder.PrependInt32Slot(104, timeAttackDungeonEnterCostId, 0)
-def AddTimeAttackDungeonEnterCostId(builder, timeAttackDungeonEnterCostId):
-    return ConstCommonExcelAddTimeAttackDungeonEnterCostId(builder, timeAttackDungeonEnterCostId)
-def ConstCommonExcelAddTimeAttackDungeonEnterCost(builder, timeAttackDungeonEnterCost): builder.PrependInt32Slot(105, timeAttackDungeonEnterCost, 0)
-def AddTimeAttackDungeonEnterCost(builder, timeAttackDungeonEnterCost):
-    return ConstCommonExcelAddTimeAttackDungeonEnterCost(builder, timeAttackDungeonEnterCost)
-def ConstCommonExcelAddClanLeaderTransferLastLoginLimit(builder, clanLeaderTransferLastLoginLimit): builder.PrependInt32Slot(106, clanLeaderTransferLastLoginLimit, 0)
-def AddClanLeaderTransferLastLoginLimit(builder, clanLeaderTransferLastLoginLimit):
-    return ConstCommonExcelAddClanLeaderTransferLastLoginLimit(builder, clanLeaderTransferLastLoginLimit)
-def ConstCommonExcelAddMonthlyProductRepurchasePopupLimit(builder, monthlyProductRepurchasePopupLimit): builder.PrependInt32Slot(107, monthlyProductRepurchasePopupLimit, 0)
-def AddMonthlyProductRepurchasePopupLimit(builder, monthlyProductRepurchasePopupLimit):
-    return ConstCommonExcelAddMonthlyProductRepurchasePopupLimit(builder, monthlyProductRepurchasePopupLimit)
-def ConstCommonExcelAddCommonFavorItemTags(builder, commonFavorItemTags): builder.PrependUOffsetTRelativeSlot(108, flatbuffers.number_types.UOffsetTFlags.py_type(commonFavorItemTags), 0)
-def AddCommonFavorItemTags(builder, commonFavorItemTags):
-    return ConstCommonExcelAddCommonFavorItemTags(builder, commonFavorItemTags)
-def ConstCommonExcelStartCommonFavorItemTagsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCommonFavorItemTagsVector(builder, numElems):
-    return ConstCommonExcelStartCommonFavorItemTagsVector(builder, numElems)
-def ConstCommonExcelAddMaxApMasterCoinPerWeek(builder, maxApMasterCoinPerWeek): builder.PrependInt32Slot(109, maxApMasterCoinPerWeek, 0)
-def AddMaxApMasterCoinPerWeek(builder, maxApMasterCoinPerWeek):
-    return ConstCommonExcelAddMaxApMasterCoinPerWeek(builder, maxApMasterCoinPerWeek)
-def ConstCommonExcelAddCraftOpenExpTier1(builder, craftOpenExpTier1): builder.PrependInt32Slot(110, craftOpenExpTier1, 0)
-def AddCraftOpenExpTier1(builder, craftOpenExpTier1):
-    return ConstCommonExcelAddCraftOpenExpTier1(builder, craftOpenExpTier1)
-def ConstCommonExcelAddCraftOpenExpTier2(builder, craftOpenExpTier2): builder.PrependInt32Slot(111, craftOpenExpTier2, 0)
-def AddCraftOpenExpTier2(builder, craftOpenExpTier2):
-    return ConstCommonExcelAddCraftOpenExpTier2(builder, craftOpenExpTier2)
-def ConstCommonExcelAddCraftOpenExpTier3(builder, craftOpenExpTier3): builder.PrependInt32Slot(112, craftOpenExpTier3, 0)
-def AddCraftOpenExpTier3(builder, craftOpenExpTier3):
-    return ConstCommonExcelAddCraftOpenExpTier3(builder, craftOpenExpTier3)
-def ConstCommonExcelAddCharacterEquipmentGearSlot(builder, characterEquipmentGearSlot): builder.PrependInt32Slot(113, characterEquipmentGearSlot, 0)
-def AddCharacterEquipmentGearSlot(builder, characterEquipmentGearSlot):
-    return ConstCommonExcelAddCharacterEquipmentGearSlot(builder, characterEquipmentGearSlot)
-def ConstCommonExcelAddBirthDayDDay(builder, birthDayDDay): builder.PrependInt32Slot(114, birthDayDDay, 0)
-def AddBirthDayDDay(builder, birthDayDDay):
-    return ConstCommonExcelAddBirthDayDDay(builder, birthDayDDay)
-def ConstCommonExcelAddRecommendedFriendsLvDifferenceLimit(builder, recommendedFriendsLvDifferenceLimit): builder.PrependInt32Slot(115, recommendedFriendsLvDifferenceLimit, 0)
-def AddRecommendedFriendsLvDifferenceLimit(builder, recommendedFriendsLvDifferenceLimit):
-    return ConstCommonExcelAddRecommendedFriendsLvDifferenceLimit(builder, recommendedFriendsLvDifferenceLimit)
-def ConstCommonExcelAddDDosDetectCount(builder, dDosDetectCount): builder.PrependInt32Slot(116, dDosDetectCount, 0)
-def AddDDosDetectCount(builder, dDosDetectCount):
-    return ConstCommonExcelAddDDosDetectCount(builder, dDosDetectCount)
-def ConstCommonExcelAddDDosCheckIntervalInSeconds(builder, dDosCheckIntervalInSeconds): builder.PrependInt32Slot(117, dDosCheckIntervalInSeconds, 0)
-def AddDDosCheckIntervalInSeconds(builder, dDosCheckIntervalInSeconds):
-    return ConstCommonExcelAddDDosCheckIntervalInSeconds(builder, dDosCheckIntervalInSeconds)
-def ConstCommonExcelAddMaxFriendsCount(builder, maxFriendsCount): builder.PrependInt32Slot(118, maxFriendsCount, 0)
-def AddMaxFriendsCount(builder, maxFriendsCount):
-    return ConstCommonExcelAddMaxFriendsCount(builder, maxFriendsCount)
-def ConstCommonExcelAddMaxFriendsRequest(builder, maxFriendsRequest): builder.PrependInt32Slot(119, maxFriendsRequest, 0)
-def AddMaxFriendsRequest(builder, maxFriendsRequest):
-    return ConstCommonExcelAddMaxFriendsRequest(builder, maxFriendsRequest)
-def ConstCommonExcelAddFriendsSearchRequestCount(builder, friendsSearchRequestCount): builder.PrependInt32Slot(120, friendsSearchRequestCount, 0)
-def AddFriendsSearchRequestCount(builder, friendsSearchRequestCount):
-    return ConstCommonExcelAddFriendsSearchRequestCount(builder, friendsSearchRequestCount)
-def ConstCommonExcelAddFriendsMaxApplicant(builder, friendsMaxApplicant): builder.PrependInt32Slot(121, friendsMaxApplicant, 0)
-def AddFriendsMaxApplicant(builder, friendsMaxApplicant):
-    return ConstCommonExcelAddFriendsMaxApplicant(builder, friendsMaxApplicant)
-def ConstCommonExcelAddIdCardDefaultCharacterId(builder, idCardDefaultCharacterId): builder.PrependInt32Slot(122, idCardDefaultCharacterId, 0)
-def AddIdCardDefaultCharacterId(builder, idCardDefaultCharacterId):
-    return ConstCommonExcelAddIdCardDefaultCharacterId(builder, idCardDefaultCharacterId)
-def ConstCommonExcelAddIdCardDefaultBgId(builder, idCardDefaultBgId): builder.PrependInt32Slot(123, idCardDefaultBgId, 0)
-def AddIdCardDefaultBgId(builder, idCardDefaultBgId):
-    return ConstCommonExcelAddIdCardDefaultBgId(builder, idCardDefaultBgId)
-def ConstCommonExcelAddWorldRaidGemEnterCost(builder, worldRaidGemEnterCost): builder.PrependInt32Slot(124, worldRaidGemEnterCost, 0)
-def AddWorldRaidGemEnterCost(builder, worldRaidGemEnterCost):
-    return ConstCommonExcelAddWorldRaidGemEnterCost(builder, worldRaidGemEnterCost)
-def ConstCommonExcelAddWorldRaidGemEnterAmout(builder, worldRaidGemEnterAmout): builder.PrependInt32Slot(125, worldRaidGemEnterAmout, 0)
-def AddWorldRaidGemEnterAmout(builder, worldRaidGemEnterAmout):
-    return ConstCommonExcelAddWorldRaidGemEnterAmout(builder, worldRaidGemEnterAmout)
-def ConstCommonExcelAddFriendIdCardCommentMaxLength(builder, friendIdCardCommentMaxLength): builder.PrependInt32Slot(126, friendIdCardCommentMaxLength, 0)
-def AddFriendIdCardCommentMaxLength(builder, friendIdCardCommentMaxLength):
-    return ConstCommonExcelAddFriendIdCardCommentMaxLength(builder, friendIdCardCommentMaxLength)
-def ConstCommonExcelAddFormationPresetNumberOfEchelonTab(builder, formationPresetNumberOfEchelonTab): builder.PrependInt32Slot(127, formationPresetNumberOfEchelonTab, 0)
-def AddFormationPresetNumberOfEchelonTab(builder, formationPresetNumberOfEchelonTab):
-    return ConstCommonExcelAddFormationPresetNumberOfEchelonTab(builder, formationPresetNumberOfEchelonTab)
-def ConstCommonExcelAddFormationPresetNumberOfEchelon(builder, formationPresetNumberOfEchelon): builder.PrependInt32Slot(128, formationPresetNumberOfEchelon, 0)
-def AddFormationPresetNumberOfEchelon(builder, formationPresetNumberOfEchelon):
-    return ConstCommonExcelAddFormationPresetNumberOfEchelon(builder, formationPresetNumberOfEchelon)
-def ConstCommonExcelAddFormationPresetRecentNumberOfEchelon(builder, formationPresetRecentNumberOfEchelon): builder.PrependInt32Slot(129, formationPresetRecentNumberOfEchelon, 0)
-def AddFormationPresetRecentNumberOfEchelon(builder, formationPresetRecentNumberOfEchelon):
-    return ConstCommonExcelAddFormationPresetRecentNumberOfEchelon(builder, formationPresetRecentNumberOfEchelon)
-def ConstCommonExcelAddFormationPresetEchelonTabTextLength(builder, formationPresetEchelonTabTextLength): builder.PrependInt32Slot(130, formationPresetEchelonTabTextLength, 0)
-def AddFormationPresetEchelonTabTextLength(builder, formationPresetEchelonTabTextLength):
-    return ConstCommonExcelAddFormationPresetEchelonTabTextLength(builder, formationPresetEchelonTabTextLength)
-def ConstCommonExcelAddFormationPresetEchelonSlotTextLength(builder, formationPresetEchelonSlotTextLength): builder.PrependInt32Slot(131, formationPresetEchelonSlotTextLength, 0)
-def AddFormationPresetEchelonSlotTextLength(builder, formationPresetEchelonSlotTextLength):
-    return ConstCommonExcelAddFormationPresetEchelonSlotTextLength(builder, formationPresetEchelonSlotTextLength)
-def ConstCommonExcelAddCharProfileRowIntervalKr(builder, charProfileRowIntervalKr): builder.PrependInt32Slot(132, charProfileRowIntervalKr, 0)
-def AddCharProfileRowIntervalKr(builder, charProfileRowIntervalKr):
-    return ConstCommonExcelAddCharProfileRowIntervalKr(builder, charProfileRowIntervalKr)
-def ConstCommonExcelAddCharProfileRowIntervalJp(builder, charProfileRowIntervalJp): builder.PrependInt32Slot(133, charProfileRowIntervalJp, 0)
-def AddCharProfileRowIntervalJp(builder, charProfileRowIntervalJp):
-    return ConstCommonExcelAddCharProfileRowIntervalJp(builder, charProfileRowIntervalJp)
-def ConstCommonExcelAddCharProfilePopupRowIntervalKr(builder, charProfilePopupRowIntervalKr): builder.PrependInt32Slot(134, charProfilePopupRowIntervalKr, 0)
-def AddCharProfilePopupRowIntervalKr(builder, charProfilePopupRowIntervalKr):
-    return ConstCommonExcelAddCharProfilePopupRowIntervalKr(builder, charProfilePopupRowIntervalKr)
-def ConstCommonExcelAddCharProfilePopupRowIntervalJp(builder, charProfilePopupRowIntervalJp): builder.PrependInt32Slot(135, charProfilePopupRowIntervalJp, 0)
-def AddCharProfilePopupRowIntervalJp(builder, charProfilePopupRowIntervalJp):
-    return ConstCommonExcelAddCharProfilePopupRowIntervalJp(builder, charProfilePopupRowIntervalJp)
-def ConstCommonExcelAddBeforehandGachaCount(builder, beforehandGachaCount): builder.PrependInt32Slot(136, beforehandGachaCount, 0)
-def AddBeforehandGachaCount(builder, beforehandGachaCount):
-    return ConstCommonExcelAddBeforehandGachaCount(builder, beforehandGachaCount)
-def ConstCommonExcelAddBeforehandGachaGroupId(builder, beforehandGachaGroupId): builder.PrependInt32Slot(137, beforehandGachaGroupId, 0)
-def AddBeforehandGachaGroupId(builder, beforehandGachaGroupId):
-    return ConstCommonExcelAddBeforehandGachaGroupId(builder, beforehandGachaGroupId)
-def ConstCommonExcelAddRenewalDisplayOrderDay(builder, renewalDisplayOrderDay): builder.PrependInt32Slot(138, renewalDisplayOrderDay, 0)
-def AddRenewalDisplayOrderDay(builder, renewalDisplayOrderDay):
-    return ConstCommonExcelAddRenewalDisplayOrderDay(builder, renewalDisplayOrderDay)
-def ConstCommonExcelAddEmblemDefaultId(builder, emblemDefaultId): builder.PrependInt32Slot(139, emblemDefaultId, 0)
-def AddEmblemDefaultId(builder, emblemDefaultId):
-    return ConstCommonExcelAddEmblemDefaultId(builder, emblemDefaultId)
-def ConstCommonExcelAddBirthdayMailStartDate(builder, birthdayMailStartDate): builder.PrependUOffsetTRelativeSlot(140, flatbuffers.number_types.UOffsetTFlags.py_type(birthdayMailStartDate), 0)
-def AddBirthdayMailStartDate(builder, birthdayMailStartDate):
-    return ConstCommonExcelAddBirthdayMailStartDate(builder, birthdayMailStartDate)
-def ConstCommonExcelAddBirthdayMailRemainDate(builder, birthdayMailRemainDate): builder.PrependInt32Slot(141, birthdayMailRemainDate, 0)
-def AddBirthdayMailRemainDate(builder, birthdayMailRemainDate):
-    return ConstCommonExcelAddBirthdayMailRemainDate(builder, birthdayMailRemainDate)
-def ConstCommonExcelAddBirthdayMailParcelType(builder, birthdayMailParcelType): builder.PrependInt32Slot(142, birthdayMailParcelType, 0)
-def AddBirthdayMailParcelType(builder, birthdayMailParcelType):
-    return ConstCommonExcelAddBirthdayMailParcelType(builder, birthdayMailParcelType)
-def ConstCommonExcelAddBirthdayMailParcelId(builder, birthdayMailParcelId): builder.PrependInt32Slot(143, birthdayMailParcelId, 0)
-def AddBirthdayMailParcelId(builder, birthdayMailParcelId):
-    return ConstCommonExcelAddBirthdayMailParcelId(builder, birthdayMailParcelId)
-def ConstCommonExcelAddBirthdayMailParcelAmount(builder, birthdayMailParcelAmount): builder.PrependInt32Slot(144, birthdayMailParcelAmount, 0)
-def AddBirthdayMailParcelAmount(builder, birthdayMailParcelAmount):
-    return ConstCommonExcelAddBirthdayMailParcelAmount(builder, birthdayMailParcelAmount)
-def ConstCommonExcelAddClearDeckAverageDeckCount(builder, clearDeckAverageDeckCount): builder.PrependInt32Slot(145, clearDeckAverageDeckCount, 0)
-def AddClearDeckAverageDeckCount(builder, clearDeckAverageDeckCount):
-    return ConstCommonExcelAddClearDeckAverageDeckCount(builder, clearDeckAverageDeckCount)
-def ConstCommonExcelAddClearDeckWorldRaidSaveConditionCoefficient(builder, clearDeckWorldRaidSaveConditionCoefficient): builder.PrependInt32Slot(146, clearDeckWorldRaidSaveConditionCoefficient, 0)
-def AddClearDeckWorldRaidSaveConditionCoefficient(builder, clearDeckWorldRaidSaveConditionCoefficient):
-    return ConstCommonExcelAddClearDeckWorldRaidSaveConditionCoefficient(builder, clearDeckWorldRaidSaveConditionCoefficient)
-def ConstCommonExcelAddClearDeckShowCount(builder, clearDeckShowCount): builder.PrependInt32Slot(147, clearDeckShowCount, 0)
-def AddClearDeckShowCount(builder, clearDeckShowCount):
-    return ConstCommonExcelAddClearDeckShowCount(builder, clearDeckShowCount)
-def ConstCommonExcelAddCharacterMaxLevel(builder, characterMaxLevel): builder.PrependInt32Slot(148, characterMaxLevel, 0)
-def AddCharacterMaxLevel(builder, characterMaxLevel):
-    return ConstCommonExcelAddCharacterMaxLevel(builder, characterMaxLevel)
-def ConstCommonExcelAddPotentialBonusStatMaxLevelMaxHP(builder, potentialBonusStatMaxLevelMaxHP): builder.PrependInt32Slot(149, potentialBonusStatMaxLevelMaxHP, 0)
-def AddPotentialBonusStatMaxLevelMaxHP(builder, potentialBonusStatMaxLevelMaxHP):
-    return ConstCommonExcelAddPotentialBonusStatMaxLevelMaxHP(builder, potentialBonusStatMaxLevelMaxHP)
-def ConstCommonExcelAddPotentialBonusStatMaxLevelAttackPower(builder, potentialBonusStatMaxLevelAttackPower): builder.PrependInt32Slot(150, potentialBonusStatMaxLevelAttackPower, 0)
-def AddPotentialBonusStatMaxLevelAttackPower(builder, potentialBonusStatMaxLevelAttackPower):
-    return ConstCommonExcelAddPotentialBonusStatMaxLevelAttackPower(builder, potentialBonusStatMaxLevelAttackPower)
-def ConstCommonExcelAddPotentialBonusStatMaxLevelHealPower(builder, potentialBonusStatMaxLevelHealPower): builder.PrependInt32Slot(151, potentialBonusStatMaxLevelHealPower, 0)
-def AddPotentialBonusStatMaxLevelHealPower(builder, potentialBonusStatMaxLevelHealPower):
-    return ConstCommonExcelAddPotentialBonusStatMaxLevelHealPower(builder, potentialBonusStatMaxLevelHealPower)
-def ConstCommonExcelAddPotentialOpenConditionCharacterLevel(builder, potentialOpenConditionCharacterLevel): builder.PrependInt32Slot(152, potentialOpenConditionCharacterLevel, 0)
-def AddPotentialOpenConditionCharacterLevel(builder, potentialOpenConditionCharacterLevel):
-    return ConstCommonExcelAddPotentialOpenConditionCharacterLevel(builder, potentialOpenConditionCharacterLevel)
-def ConstCommonExcelAddAssistStrangerMinLevel(builder, assistStrangerMinLevel): builder.PrependInt32Slot(153, assistStrangerMinLevel, 0)
-def AddAssistStrangerMinLevel(builder, assistStrangerMinLevel):
-    return ConstCommonExcelAddAssistStrangerMinLevel(builder, assistStrangerMinLevel)
-def ConstCommonExcelAddAssistStrangerMaxLevel(builder, assistStrangerMaxLevel): builder.PrependInt32Slot(154, assistStrangerMaxLevel, 0)
-def AddAssistStrangerMaxLevel(builder, assistStrangerMaxLevel):
-    return ConstCommonExcelAddAssistStrangerMaxLevel(builder, assistStrangerMaxLevel)
-def ConstCommonExcelAddMaxBlockedUserCount(builder, maxBlockedUserCount): builder.PrependInt32Slot(155, maxBlockedUserCount, 0)
-def AddMaxBlockedUserCount(builder, maxBlockedUserCount):
-    return ConstCommonExcelAddMaxBlockedUserCount(builder, maxBlockedUserCount)
-def ConstCommonExcelAddCafeRandomVisitMinComfortBonus(builder, cafeRandomVisitMinComfortBonus): builder.PrependInt32Slot(156, cafeRandomVisitMinComfortBonus, 0)
-def AddCafeRandomVisitMinComfortBonus(builder, cafeRandomVisitMinComfortBonus):
-    return ConstCommonExcelAddCafeRandomVisitMinComfortBonus(builder, cafeRandomVisitMinComfortBonus)
-def ConstCommonExcelAddCafeRandomVisitMinLastLogin(builder, cafeRandomVisitMinLastLogin): builder.PrependInt32Slot(157, cafeRandomVisitMinLastLogin, 0)
-def AddCafeRandomVisitMinLastLogin(builder, cafeRandomVisitMinLastLogin):
-    return ConstCommonExcelAddCafeRandomVisitMinLastLogin(builder, cafeRandomVisitMinLastLogin)
-def ConstCommonExcelAddCafeTravelSyncIntervalByMillisec(builder, cafeTravelSyncIntervalByMillisec): builder.PrependInt32Slot(158, cafeTravelSyncIntervalByMillisec, 0)
-def AddCafeTravelSyncIntervalByMillisec(builder, cafeTravelSyncIntervalByMillisec):
-    return ConstCommonExcelAddCafeTravelSyncIntervalByMillisec(builder, cafeTravelSyncIntervalByMillisec)
-def ConstCommonExcelAddRankBracketPercentage1(builder, rankBracketPercentage1): builder.PrependInt32Slot(159, rankBracketPercentage1, 0)
-def AddRankBracketPercentage1(builder, rankBracketPercentage1):
-    return ConstCommonExcelAddRankBracketPercentage1(builder, rankBracketPercentage1)
-def ConstCommonExcelAddRankBracketPercentage2(builder, rankBracketPercentage2): builder.PrependInt32Slot(160, rankBracketPercentage2, 0)
-def AddRankBracketPercentage2(builder, rankBracketPercentage2):
-    return ConstCommonExcelAddRankBracketPercentage2(builder, rankBracketPercentage2)
-def ConstCommonExcelAddRankBracketPercentage3(builder, rankBracketPercentage3): builder.PrependInt32Slot(161, rankBracketPercentage3, 0)
-def AddRankBracketPercentage3(builder, rankBracketPercentage3):
-    return ConstCommonExcelAddRankBracketPercentage3(builder, rankBracketPercentage3)
-def ConstCommonExcelAddRankBracketPercentage4(builder, rankBracketPercentage4): builder.PrependInt32Slot(162, rankBracketPercentage4, 0)
-def AddRankBracketPercentage4(builder, rankBracketPercentage4):
-    return ConstCommonExcelAddRankBracketPercentage4(builder, rankBracketPercentage4)
-def ConstCommonExcelAddRankBracketPercentage5(builder, rankBracketPercentage5): builder.PrependInt32Slot(163, rankBracketPercentage5, 0)
-def AddRankBracketPercentage5(builder, rankBracketPercentage5):
-    return ConstCommonExcelAddRankBracketPercentage5(builder, rankBracketPercentage5)
-def ConstCommonExcelAddRankBracketPercentage6(builder, rankBracketPercentage6): builder.PrependInt32Slot(164, rankBracketPercentage6, 0)
-def AddRankBracketPercentage6(builder, rankBracketPercentage6):
-    return ConstCommonExcelAddRankBracketPercentage6(builder, rankBracketPercentage6)
-def ConstCommonExcelAddRankBracketPercentage7(builder, rankBracketPercentage7): builder.PrependInt32Slot(165, rankBracketPercentage7, 0)
-def AddRankBracketPercentage7(builder, rankBracketPercentage7):
-    return ConstCommonExcelAddRankBracketPercentage7(builder, rankBracketPercentage7)
-def ConstCommonExcelAddExpiryBattlePassItemReceiveDay(builder, expiryBattlePassItemReceiveDay): builder.PrependInt32Slot(166, expiryBattlePassItemReceiveDay, 0)
-def AddExpiryBattlePassItemReceiveDay(builder, expiryBattlePassItemReceiveDay):
-    return ConstCommonExcelAddExpiryBattlePassItemReceiveDay(builder, expiryBattlePassItemReceiveDay)
-def ConstCommonExcelAddBattlePassFlavorTextIdleDurationMilliSec(builder, battlePassFlavorTextIdleDurationMilliSec): builder.PrependInt32Slot(167, battlePassFlavorTextIdleDurationMilliSec, 0)
-def AddBattlePassFlavorTextIdleDurationMilliSec(builder, battlePassFlavorTextIdleDurationMilliSec):
-    return ConstCommonExcelAddBattlePassFlavorTextIdleDurationMilliSec(builder, battlePassFlavorTextIdleDurationMilliSec)
-def ConstCommonExcelAddBattlePassEndImminentDay(builder, battlePassEndImminentDay): builder.PrependInt32Slot(168, battlePassEndImminentDay, 0)
-def AddBattlePassEndImminentDay(builder, battlePassEndImminentDay):
-    return ConstCommonExcelAddBattlePassEndImminentDay(builder, battlePassEndImminentDay)
-def ConstCommonExcelAddBattlePassExpIconPath(builder, battlePassExpIconPath): builder.PrependUOffsetTRelativeSlot(169, flatbuffers.number_types.UOffsetTFlags.py_type(battlePassExpIconPath), 0)
-def AddBattlePassExpIconPath(builder, battlePassExpIconPath):
-    return ConstCommonExcelAddBattlePassExpIconPath(builder, battlePassExpIconPath)
-def ConstCommonExcelAddCafeCameraDragThreshold(builder, cafeCameraDragThreshold): builder.PrependFloat32Slot(170, cafeCameraDragThreshold, 0.0)
-def AddCafeCameraDragThreshold(builder, cafeCameraDragThreshold):
-    return ConstCommonExcelAddCafeCameraDragThreshold(builder, cafeCameraDragThreshold)
-def ConstCommonExcelAddCafeSummonTicketBuyLimitForValidate(builder, cafeSummonTicketBuyLimitForValidate): builder.PrependInt32Slot(171, cafeSummonTicketBuyLimitForValidate, 0)
-def AddCafeSummonTicketBuyLimitForValidate(builder, cafeSummonTicketBuyLimitForValidate):
-    return ConstCommonExcelAddCafeSummonTicketBuyLimitForValidate(builder, cafeSummonTicketBuyLimitForValidate)
-def ConstCommonExcelAddAutoCraftPresetCountLimit(builder, autoCraftPresetCountLimit): builder.PrependInt32Slot(172, autoCraftPresetCountLimit, 0)
-def AddAutoCraftPresetCountLimit(builder, autoCraftPresetCountLimit):
-    return ConstCommonExcelAddAutoCraftPresetCountLimit(builder, autoCraftPresetCountLimit)
-def ConstCommonExcelAddAutoCraftNodeSelectCount(builder, autoCraftNodeSelectCount): builder.PrependInt32Slot(173, autoCraftNodeSelectCount, 0)
-def AddAutoCraftNodeSelectCount(builder, autoCraftNodeSelectCount):
-    return ConstCommonExcelAddAutoCraftNodeSelectCount(builder, autoCraftNodeSelectCount)
-def ConstCommonExcelAddCraftPresetNameMaxLength(builder, craftPresetNameMaxLength): builder.PrependInt32Slot(174, craftPresetNameMaxLength, 0)
-def AddCraftPresetNameMaxLength(builder, craftPresetNameMaxLength):
-    return ConstCommonExcelAddCraftPresetNameMaxLength(builder, craftPresetNameMaxLength)
-def ConstCommonExcelAddSelectionWaitTime(builder, selectionWaitTime): builder.PrependInt32Slot(175, selectionWaitTime, 0)
-def AddSelectionWaitTime(builder, selectionWaitTime):
-    return ConstCommonExcelAddSelectionWaitTime(builder, selectionWaitTime)
-def ConstCommonExcelAddRewardWaitTime(builder, rewardWaitTime): builder.PrependInt32Slot(176, rewardWaitTime, 0)
-def AddRewardWaitTime(builder, rewardWaitTime):
-    return ConstCommonExcelAddRewardWaitTime(builder, rewardWaitTime)
-def ConstCommonExcelAddEpisodeContinueWaitTime(builder, episodeContinueWaitTime): builder.PrependInt32Slot(177, episodeContinueWaitTime, 0)
-def AddEpisodeContinueWaitTime(builder, episodeContinueWaitTime):
-    return ConstCommonExcelAddEpisodeContinueWaitTime(builder, episodeContinueWaitTime)
-def ConstCommonExcelAddScenarioAutoDelayMillisecLong(builder, scenarioAutoDelayMillisecLong): builder.PrependFloat32Slot(178, scenarioAutoDelayMillisecLong, 0.0)
-def AddScenarioAutoDelayMillisecLong(builder, scenarioAutoDelayMillisecLong):
-    return ConstCommonExcelAddScenarioAutoDelayMillisecLong(builder, scenarioAutoDelayMillisecLong)
-def ConstCommonExcelAddScenarioAutoDelayMillisec(builder, scenarioAutoDelayMillisec): builder.PrependFloat32Slot(179, scenarioAutoDelayMillisec, 0.0)
-def AddScenarioAutoDelayMillisec(builder, scenarioAutoDelayMillisec):
-    return ConstCommonExcelAddScenarioAutoDelayMillisec(builder, scenarioAutoDelayMillisec)
-def ConstCommonExcelAddScenarioAutoDelayMillisecShort(builder, scenarioAutoDelayMillisecShort): builder.PrependFloat32Slot(180, scenarioAutoDelayMillisecShort, 0.0)
-def AddScenarioAutoDelayMillisecShort(builder, scenarioAutoDelayMillisecShort):
-    return ConstCommonExcelAddScenarioAutoDelayMillisecShort(builder, scenarioAutoDelayMillisecShort)
-def ConstCommonExcelAddScenarioAutoDelayMillisecVeryShort(builder, scenarioAutoDelayMillisecVeryShort): builder.PrependFloat32Slot(181, scenarioAutoDelayMillisecVeryShort, 0.0)
-def AddScenarioAutoDelayMillisecVeryShort(builder, scenarioAutoDelayMillisecVeryShort):
-    return ConstCommonExcelAddScenarioAutoDelayMillisecVeryShort(builder, scenarioAutoDelayMillisecVeryShort)
-def ConstCommonExcelAddPcBuildEnterInformation(builder, pcBuildEnterInformation): builder.PrependInt32Slot(182, pcBuildEnterInformation, 0)
-def AddPcBuildEnterInformation(builder, pcBuildEnterInformation):
-    return ConstCommonExcelAddPcBuildEnterInformation(builder, pcBuildEnterInformation)
-def ConstCommonExcelAddComebackUserStandardDay(builder, comebackUserStandardDay): builder.PrependInt32Slot(183, comebackUserStandardDay, 0)
-def AddComebackUserStandardDay(builder, comebackUserStandardDay):
-    return ConstCommonExcelAddComebackUserStandardDay(builder, comebackUserStandardDay)
-def ConstCommonExcelAddComebackUserLogSaveDay(builder, comebackUserLogSaveDay): builder.PrependInt32Slot(184, comebackUserLogSaveDay, 0)
-def AddComebackUserLogSaveDay(builder, comebackUserLogSaveDay):
-    return ConstCommonExcelAddComebackUserLogSaveDay(builder, comebackUserLogSaveDay)
-def ConstCommonExcelAddComeBackActivateCooldown(builder, comeBackActivateCooldown): builder.PrependInt32Slot(185, comeBackActivateCooldown, 0)
-def AddComeBackActivateCooldown(builder, comeBackActivateCooldown):
-    return ConstCommonExcelAddComeBackActivateCooldown(builder, comeBackActivateCooldown)
-def ConstCommonExcelAddCafeCopyPresetSlotCount(builder, cafeCopyPresetSlotCount): builder.PrependInt32Slot(186, cafeCopyPresetSlotCount, 0)
-def AddCafeCopyPresetSlotCount(builder, cafeCopyPresetSlotCount):
-    return ConstCommonExcelAddCafeCopyPresetSlotCount(builder, cafeCopyPresetSlotCount)
-def ConstCommonExcelAddExpiryProductDailyRecordItemReceiveDay(builder, expiryProductDailyRecordItemReceiveDay): builder.PrependInt32Slot(187, expiryProductDailyRecordItemReceiveDay, 0)
-def AddExpiryProductDailyRecordItemReceiveDay(builder, expiryProductDailyRecordItemReceiveDay):
-    return ConstCommonExcelAddExpiryProductDailyRecordItemReceiveDay(builder, expiryProductDailyRecordItemReceiveDay)
-def ConstCommonExcelAddNewbieUserStandardDay(builder, newbieUserStandardDay): builder.PrependInt32Slot(188, newbieUserStandardDay, 0)
-def AddNewbieUserStandardDay(builder, newbieUserStandardDay):
-    return ConstCommonExcelAddNewbieUserStandardDay(builder, newbieUserStandardDay)
-def ConstCommonExcelAddNewbieStateHoldDay(builder, newbieStateHoldDay): builder.PrependInt32Slot(189, newbieStateHoldDay, 0)
-def AddNewbieStateHoldDay(builder, newbieStateHoldDay):
-    return ConstCommonExcelAddNewbieStateHoldDay(builder, newbieStateHoldDay)
-def ConstCommonExcelAddTTSVCN02(builder, tTSVCN02): builder.PrependUOffsetTRelativeSlot(190, flatbuffers.number_types.UOffsetTFlags.py_type(tTSVCN02), 0)
-def AddTTSVCN02(builder, tTSVCN02):
-    return ConstCommonExcelAddTTSVCN02(builder, tTSVCN02)
+def ConstCommonExcelAddCampaignMainStageMaxRankField(builder, campaignMainStageMaxRankField): builder.PrependInt32Slot(0, campaignMainStageMaxRankField, 0)
+def AddCampaignMainStageMaxRankField(builder, campaignMainStageMaxRankField):
+    return ConstCommonExcelAddCampaignMainStageMaxRankField(builder, campaignMainStageMaxRankField)
+def ConstCommonExcelAddCampaignMainStageBestRecordField(builder, campaignMainStageBestRecordField): builder.PrependInt32Slot(1, campaignMainStageBestRecordField, 0)
+def AddCampaignMainStageBestRecordField(builder, campaignMainStageBestRecordField):
+    return ConstCommonExcelAddCampaignMainStageBestRecordField(builder, campaignMainStageBestRecordField)
+def ConstCommonExcelAddHardAdventurePlayCountRecoverDailyNumberField(builder, hardAdventurePlayCountRecoverDailyNumberField): builder.PrependInt32Slot(2, hardAdventurePlayCountRecoverDailyNumberField, 0)
+def AddHardAdventurePlayCountRecoverDailyNumberField(builder, hardAdventurePlayCountRecoverDailyNumberField):
+    return ConstCommonExcelAddHardAdventurePlayCountRecoverDailyNumberField(builder, hardAdventurePlayCountRecoverDailyNumberField)
+def ConstCommonExcelAddHardStageCountField(builder, hardStageCountField): builder.PrependInt32Slot(3, hardStageCountField, 0)
+def AddHardStageCountField(builder, hardStageCountField):
+    return ConstCommonExcelAddHardStageCountField(builder, hardStageCountField)
+def ConstCommonExcelAddTacticRankClearTimeField(builder, tacticRankClearTimeField): builder.PrependInt32Slot(4, tacticRankClearTimeField, 0)
+def AddTacticRankClearTimeField(builder, tacticRankClearTimeField):
+    return ConstCommonExcelAddTacticRankClearTimeField(builder, tacticRankClearTimeField)
+def ConstCommonExcelAddBaseTimeScaleField(builder, baseTimeScaleField): builder.PrependInt32Slot(5, baseTimeScaleField, 0)
+def AddBaseTimeScaleField(builder, baseTimeScaleField):
+    return ConstCommonExcelAddBaseTimeScaleField(builder, baseTimeScaleField)
+def ConstCommonExcelAddGachaPercentageField(builder, gachaPercentageField): builder.PrependInt32Slot(6, gachaPercentageField, 0)
+def AddGachaPercentageField(builder, gachaPercentageField):
+    return ConstCommonExcelAddGachaPercentageField(builder, gachaPercentageField)
+def ConstCommonExcelAddAcademyFavorZoneIdField(builder, academyFavorZoneIdField): builder.PrependInt32Slot(7, academyFavorZoneIdField, 0)
+def AddAcademyFavorZoneIdField(builder, academyFavorZoneIdField):
+    return ConstCommonExcelAddAcademyFavorZoneIdField(builder, academyFavorZoneIdField)
+def ConstCommonExcelAddCafePresetSlotCountField(builder, cafePresetSlotCountField): builder.PrependInt32Slot(8, cafePresetSlotCountField, 0)
+def AddCafePresetSlotCountField(builder, cafePresetSlotCountField):
+    return ConstCommonExcelAddCafePresetSlotCountField(builder, cafePresetSlotCountField)
+def ConstCommonExcelAddCafeMonologueIntervalMillisecField(builder, cafeMonologueIntervalMillisecField): builder.PrependInt32Slot(9, cafeMonologueIntervalMillisecField, 0)
+def AddCafeMonologueIntervalMillisecField(builder, cafeMonologueIntervalMillisecField):
+    return ConstCommonExcelAddCafeMonologueIntervalMillisecField(builder, cafeMonologueIntervalMillisecField)
+def ConstCommonExcelAddCafeMonologueDefaultDurationField(builder, cafeMonologueDefaultDurationField): builder.PrependInt32Slot(10, cafeMonologueDefaultDurationField, 0)
+def AddCafeMonologueDefaultDurationField(builder, cafeMonologueDefaultDurationField):
+    return ConstCommonExcelAddCafeMonologueDefaultDurationField(builder, cafeMonologueDefaultDurationField)
+def ConstCommonExcelAddCafeBubbleIdleDurationMilliSecField(builder, cafeBubbleIdleDurationMilliSecField): builder.PrependInt32Slot(11, cafeBubbleIdleDurationMilliSecField, 0)
+def AddCafeBubbleIdleDurationMilliSecField(builder, cafeBubbleIdleDurationMilliSecField):
+    return ConstCommonExcelAddCafeBubbleIdleDurationMilliSecField(builder, cafeBubbleIdleDurationMilliSecField)
+def ConstCommonExcelAddFindGiftTimeLimitField(builder, findGiftTimeLimitField): builder.PrependInt32Slot(12, findGiftTimeLimitField, 0)
+def AddFindGiftTimeLimitField(builder, findGiftTimeLimitField):
+    return ConstCommonExcelAddFindGiftTimeLimitField(builder, findGiftTimeLimitField)
+def ConstCommonExcelAddCafeAutoChargePeriodInMscField(builder, cafeAutoChargePeriodInMscField): builder.PrependInt32Slot(13, cafeAutoChargePeriodInMscField, 0)
+def AddCafeAutoChargePeriodInMscField(builder, cafeAutoChargePeriodInMscField):
+    return ConstCommonExcelAddCafeAutoChargePeriodInMscField(builder, cafeAutoChargePeriodInMscField)
+def ConstCommonExcelAddCafeProductionDecimalPositionField(builder, cafeProductionDecimalPositionField): builder.PrependInt32Slot(14, cafeProductionDecimalPositionField, 0)
+def AddCafeProductionDecimalPositionField(builder, cafeProductionDecimalPositionField):
+    return ConstCommonExcelAddCafeProductionDecimalPositionField(builder, cafeProductionDecimalPositionField)
+def ConstCommonExcelAddCafeSetGroupApplyCountField(builder, cafeSetGroupApplyCountField): builder.PrependInt32Slot(15, cafeSetGroupApplyCountField, 0)
+def AddCafeSetGroupApplyCountField(builder, cafeSetGroupApplyCountField):
+    return ConstCommonExcelAddCafeSetGroupApplyCountField(builder, cafeSetGroupApplyCountField)
+def ConstCommonExcelAddWeekDungeonFindGiftRewardLimitCountField(builder, weekDungeonFindGiftRewardLimitCountField): builder.PrependInt32Slot(16, weekDungeonFindGiftRewardLimitCountField, 0)
+def AddWeekDungeonFindGiftRewardLimitCountField(builder, weekDungeonFindGiftRewardLimitCountField):
+    return ConstCommonExcelAddWeekDungeonFindGiftRewardLimitCountField(builder, weekDungeonFindGiftRewardLimitCountField)
+def ConstCommonExcelAddStageFailedCurrencyRefundRateField(builder, stageFailedCurrencyRefundRateField): builder.PrependInt32Slot(17, stageFailedCurrencyRefundRateField, 0)
+def AddStageFailedCurrencyRefundRateField(builder, stageFailedCurrencyRefundRateField):
+    return ConstCommonExcelAddStageFailedCurrencyRefundRateField(builder, stageFailedCurrencyRefundRateField)
+def ConstCommonExcelAddEnterDepositField(builder, enterDepositField): builder.PrependInt32Slot(18, enterDepositField, 0)
+def AddEnterDepositField(builder, enterDepositField):
+    return ConstCommonExcelAddEnterDepositField(builder, enterDepositField)
+def ConstCommonExcelAddAccountMaxLevelField(builder, accountMaxLevelField): builder.PrependInt32Slot(19, accountMaxLevelField, 0)
+def AddAccountMaxLevelField(builder, accountMaxLevelField):
+    return ConstCommonExcelAddAccountMaxLevelField(builder, accountMaxLevelField)
+def ConstCommonExcelAddMainSquadExpBonusField(builder, mainSquadExpBonusField): builder.PrependInt32Slot(20, mainSquadExpBonusField, 0)
+def AddMainSquadExpBonusField(builder, mainSquadExpBonusField):
+    return ConstCommonExcelAddMainSquadExpBonusField(builder, mainSquadExpBonusField)
+def ConstCommonExcelAddSupportSquadExpBonusField(builder, supportSquadExpBonusField): builder.PrependInt32Slot(21, supportSquadExpBonusField, 0)
+def AddSupportSquadExpBonusField(builder, supportSquadExpBonusField):
+    return ConstCommonExcelAddSupportSquadExpBonusField(builder, supportSquadExpBonusField)
+def ConstCommonExcelAddAccountExpRatioField(builder, accountExpRatioField): builder.PrependInt32Slot(22, accountExpRatioField, 0)
+def AddAccountExpRatioField(builder, accountExpRatioField):
+    return ConstCommonExcelAddAccountExpRatioField(builder, accountExpRatioField)
+def ConstCommonExcelAddMissionToastLifeTimeField(builder, missionToastLifeTimeField): builder.PrependInt32Slot(23, missionToastLifeTimeField, 0)
+def AddMissionToastLifeTimeField(builder, missionToastLifeTimeField):
+    return ConstCommonExcelAddMissionToastLifeTimeField(builder, missionToastLifeTimeField)
+def ConstCommonExcelAddExpItemInsertLimitField(builder, expItemInsertLimitField): builder.PrependInt32Slot(24, expItemInsertLimitField, 0)
+def AddExpItemInsertLimitField(builder, expItemInsertLimitField):
+    return ConstCommonExcelAddExpItemInsertLimitField(builder, expItemInsertLimitField)
+def ConstCommonExcelAddExpItemInsertAccelTimeField(builder, expItemInsertAccelTimeField): builder.PrependInt32Slot(25, expItemInsertAccelTimeField, 0)
+def AddExpItemInsertAccelTimeField(builder, expItemInsertAccelTimeField):
+    return ConstCommonExcelAddExpItemInsertAccelTimeField(builder, expItemInsertAccelTimeField)
+def ConstCommonExcelAddCharacterLvUpCoefficientField(builder, characterLvUpCoefficientField): builder.PrependInt32Slot(26, characterLvUpCoefficientField, 0)
+def AddCharacterLvUpCoefficientField(builder, characterLvUpCoefficientField):
+    return ConstCommonExcelAddCharacterLvUpCoefficientField(builder, characterLvUpCoefficientField)
+def ConstCommonExcelAddEquipmentLvUpCoefficientField(builder, equipmentLvUpCoefficientField): builder.PrependInt32Slot(27, equipmentLvUpCoefficientField, 0)
+def AddEquipmentLvUpCoefficientField(builder, equipmentLvUpCoefficientField):
+    return ConstCommonExcelAddEquipmentLvUpCoefficientField(builder, equipmentLvUpCoefficientField)
+def ConstCommonExcelAddExpEquipInsertLimitField(builder, expEquipInsertLimitField): builder.PrependInt32Slot(28, expEquipInsertLimitField, 0)
+def AddExpEquipInsertLimitField(builder, expEquipInsertLimitField):
+    return ConstCommonExcelAddExpEquipInsertLimitField(builder, expEquipInsertLimitField)
+def ConstCommonExcelAddEquipLvUpCoefficientField(builder, equipLvUpCoefficientField): builder.PrependInt32Slot(29, equipLvUpCoefficientField, 0)
+def AddEquipLvUpCoefficientField(builder, equipLvUpCoefficientField):
+    return ConstCommonExcelAddEquipLvUpCoefficientField(builder, equipLvUpCoefficientField)
+def ConstCommonExcelAddNicknameLengthField(builder, nicknameLengthField): builder.PrependInt32Slot(30, nicknameLengthField, 0)
+def AddNicknameLengthField(builder, nicknameLengthField):
+    return ConstCommonExcelAddNicknameLengthField(builder, nicknameLengthField)
+def ConstCommonExcelAddCraftDurationField(builder, craftDurationField): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(craftDurationField), 0)
+def AddCraftDurationField(builder, craftDurationField):
+    return ConstCommonExcelAddCraftDurationField(builder, craftDurationField)
+def ConstCommonExcelStartCraftDurationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCraftDurationFieldVector(builder, numElems):
+    return ConstCommonExcelStartCraftDurationFieldVector(builder, numElems)
+def ConstCommonExcelAddCraftLimitTimeField(builder, craftLimitTimeField): builder.PrependInt32Slot(32, craftLimitTimeField, 0)
+def AddCraftLimitTimeField(builder, craftLimitTimeField):
+    return ConstCommonExcelAddCraftLimitTimeField(builder, craftLimitTimeField)
+def ConstCommonExcelAddShiftingCraftDurationField(builder, shiftingCraftDurationField): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(shiftingCraftDurationField), 0)
+def AddShiftingCraftDurationField(builder, shiftingCraftDurationField):
+    return ConstCommonExcelAddShiftingCraftDurationField(builder, shiftingCraftDurationField)
+def ConstCommonExcelStartShiftingCraftDurationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartShiftingCraftDurationFieldVector(builder, numElems):
+    return ConstCommonExcelStartShiftingCraftDurationFieldVector(builder, numElems)
+def ConstCommonExcelAddShiftingCraftTicketConsumeAmountField(builder, shiftingCraftTicketConsumeAmountField): builder.PrependInt32Slot(34, shiftingCraftTicketConsumeAmountField, 0)
+def AddShiftingCraftTicketConsumeAmountField(builder, shiftingCraftTicketConsumeAmountField):
+    return ConstCommonExcelAddShiftingCraftTicketConsumeAmountField(builder, shiftingCraftTicketConsumeAmountField)
+def ConstCommonExcelAddShiftingCraftSlotMaxCapacityField(builder, shiftingCraftSlotMaxCapacityField): builder.PrependInt32Slot(35, shiftingCraftSlotMaxCapacityField, 0)
+def AddShiftingCraftSlotMaxCapacityField(builder, shiftingCraftSlotMaxCapacityField):
+    return ConstCommonExcelAddShiftingCraftSlotMaxCapacityField(builder, shiftingCraftSlotMaxCapacityField)
+def ConstCommonExcelAddCraftTicketItemUniqueIdField(builder, craftTicketItemUniqueIdField): builder.PrependInt32Slot(36, craftTicketItemUniqueIdField, 0)
+def AddCraftTicketItemUniqueIdField(builder, craftTicketItemUniqueIdField):
+    return ConstCommonExcelAddCraftTicketItemUniqueIdField(builder, craftTicketItemUniqueIdField)
+def ConstCommonExcelAddCraftTicketConsumeAmountField(builder, craftTicketConsumeAmountField): builder.PrependInt32Slot(37, craftTicketConsumeAmountField, 0)
+def AddCraftTicketConsumeAmountField(builder, craftTicketConsumeAmountField):
+    return ConstCommonExcelAddCraftTicketConsumeAmountField(builder, craftTicketConsumeAmountField)
+def ConstCommonExcelAddAcademyEnterCostTypeField(builder, academyEnterCostTypeField): builder.PrependInt32Slot(38, academyEnterCostTypeField, 0)
+def AddAcademyEnterCostTypeField(builder, academyEnterCostTypeField):
+    return ConstCommonExcelAddAcademyEnterCostTypeField(builder, academyEnterCostTypeField)
+def ConstCommonExcelAddAcademyEnterCostIdField(builder, academyEnterCostIdField): builder.PrependInt32Slot(39, academyEnterCostIdField, 0)
+def AddAcademyEnterCostIdField(builder, academyEnterCostIdField):
+    return ConstCommonExcelAddAcademyEnterCostIdField(builder, academyEnterCostIdField)
+def ConstCommonExcelAddAcademyTicketCostField(builder, academyTicketCostField): builder.PrependInt32Slot(40, academyTicketCostField, 0)
+def AddAcademyTicketCostField(builder, academyTicketCostField):
+    return ConstCommonExcelAddAcademyTicketCostField(builder, academyTicketCostField)
+def ConstCommonExcelAddMassangerMessageExpireDayField(builder, massangerMessageExpireDayField): builder.PrependInt32Slot(41, massangerMessageExpireDayField, 0)
+def AddMassangerMessageExpireDayField(builder, massangerMessageExpireDayField):
+    return ConstCommonExcelAddMassangerMessageExpireDayField(builder, massangerMessageExpireDayField)
+def ConstCommonExcelAddCraftLeafNodeGenerateLv1CountField(builder, craftLeafNodeGenerateLv1CountField): builder.PrependInt32Slot(42, craftLeafNodeGenerateLv1CountField, 0)
+def AddCraftLeafNodeGenerateLv1CountField(builder, craftLeafNodeGenerateLv1CountField):
+    return ConstCommonExcelAddCraftLeafNodeGenerateLv1CountField(builder, craftLeafNodeGenerateLv1CountField)
+def ConstCommonExcelAddCraftLeafNodeGenerateLv2CountField(builder, craftLeafNodeGenerateLv2CountField): builder.PrependInt32Slot(43, craftLeafNodeGenerateLv2CountField, 0)
+def AddCraftLeafNodeGenerateLv2CountField(builder, craftLeafNodeGenerateLv2CountField):
+    return ConstCommonExcelAddCraftLeafNodeGenerateLv2CountField(builder, craftLeafNodeGenerateLv2CountField)
+def ConstCommonExcelAddTutorialGachaShopIdField(builder, tutorialGachaShopIdField): builder.PrependInt32Slot(44, tutorialGachaShopIdField, 0)
+def AddTutorialGachaShopIdField(builder, tutorialGachaShopIdField):
+    return ConstCommonExcelAddTutorialGachaShopIdField(builder, tutorialGachaShopIdField)
+def ConstCommonExcelAddBeforehandGachaShopIdField(builder, beforehandGachaShopIdField): builder.PrependInt32Slot(45, beforehandGachaShopIdField, 0)
+def AddBeforehandGachaShopIdField(builder, beforehandGachaShopIdField):
+    return ConstCommonExcelAddBeforehandGachaShopIdField(builder, beforehandGachaShopIdField)
+def ConstCommonExcelAddTutorialGachaGoodsIdField(builder, tutorialGachaGoodsIdField): builder.PrependInt32Slot(46, tutorialGachaGoodsIdField, 0)
+def AddTutorialGachaGoodsIdField(builder, tutorialGachaGoodsIdField):
+    return ConstCommonExcelAddTutorialGachaGoodsIdField(builder, tutorialGachaGoodsIdField)
+def ConstCommonExcelAddEquipmentSlotOpenLevelField(builder, equipmentSlotOpenLevelField): builder.PrependUOffsetTRelativeSlot(47, flatbuffers.number_types.UOffsetTFlags.py_type(equipmentSlotOpenLevelField), 0)
+def AddEquipmentSlotOpenLevelField(builder, equipmentSlotOpenLevelField):
+    return ConstCommonExcelAddEquipmentSlotOpenLevelField(builder, equipmentSlotOpenLevelField)
+def ConstCommonExcelStartEquipmentSlotOpenLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEquipmentSlotOpenLevelFieldVector(builder, numElems):
+    return ConstCommonExcelStartEquipmentSlotOpenLevelFieldVector(builder, numElems)
+def ConstCommonExcelAddJoinOrCreateClanCoolTimeFromHourField(builder, joinOrCreateClanCoolTimeFromHourField): builder.PrependInt32Slot(48, joinOrCreateClanCoolTimeFromHourField, 0)
+def AddJoinOrCreateClanCoolTimeFromHourField(builder, joinOrCreateClanCoolTimeFromHourField):
+    return ConstCommonExcelAddJoinOrCreateClanCoolTimeFromHourField(builder, joinOrCreateClanCoolTimeFromHourField)
+def ConstCommonExcelAddClanMaxMemberField(builder, clanMaxMemberField): builder.PrependInt32Slot(49, clanMaxMemberField, 0)
+def AddClanMaxMemberField(builder, clanMaxMemberField):
+    return ConstCommonExcelAddClanMaxMemberField(builder, clanMaxMemberField)
+def ConstCommonExcelAddClanSearchResultCountField(builder, clanSearchResultCountField): builder.PrependInt32Slot(50, clanSearchResultCountField, 0)
+def AddClanSearchResultCountField(builder, clanSearchResultCountField):
+    return ConstCommonExcelAddClanSearchResultCountField(builder, clanSearchResultCountField)
+def ConstCommonExcelAddClanMaxApplicantField(builder, clanMaxApplicantField): builder.PrependInt32Slot(51, clanMaxApplicantField, 0)
+def AddClanMaxApplicantField(builder, clanMaxApplicantField):
+    return ConstCommonExcelAddClanMaxApplicantField(builder, clanMaxApplicantField)
+def ConstCommonExcelAddClanRejoinCoolTimeFromSecondField(builder, clanRejoinCoolTimeFromSecondField): builder.PrependInt32Slot(52, clanRejoinCoolTimeFromSecondField, 0)
+def AddClanRejoinCoolTimeFromSecondField(builder, clanRejoinCoolTimeFromSecondField):
+    return ConstCommonExcelAddClanRejoinCoolTimeFromSecondField(builder, clanRejoinCoolTimeFromSecondField)
+def ConstCommonExcelAddClanWordBalloonMaxCharacterField(builder, clanWordBalloonMaxCharacterField): builder.PrependInt32Slot(53, clanWordBalloonMaxCharacterField, 0)
+def AddClanWordBalloonMaxCharacterField(builder, clanWordBalloonMaxCharacterField):
+    return ConstCommonExcelAddClanWordBalloonMaxCharacterField(builder, clanWordBalloonMaxCharacterField)
+def ConstCommonExcelAddCallNameRenameCoolTimeFromHourField(builder, callNameRenameCoolTimeFromHourField): builder.PrependInt32Slot(54, callNameRenameCoolTimeFromHourField, 0)
+def AddCallNameRenameCoolTimeFromHourField(builder, callNameRenameCoolTimeFromHourField):
+    return ConstCommonExcelAddCallNameRenameCoolTimeFromHourField(builder, callNameRenameCoolTimeFromHourField)
+def ConstCommonExcelAddCallNameMinimumLengthField(builder, callNameMinimumLengthField): builder.PrependInt32Slot(55, callNameMinimumLengthField, 0)
+def AddCallNameMinimumLengthField(builder, callNameMinimumLengthField):
+    return ConstCommonExcelAddCallNameMinimumLengthField(builder, callNameMinimumLengthField)
+def ConstCommonExcelAddCallNameMaximumLengthField(builder, callNameMaximumLengthField): builder.PrependInt32Slot(56, callNameMaximumLengthField, 0)
+def AddCallNameMaximumLengthField(builder, callNameMaximumLengthField):
+    return ConstCommonExcelAddCallNameMaximumLengthField(builder, callNameMaximumLengthField)
+def ConstCommonExcelAddLobbyToScreenModeWaitTimeField(builder, lobbyToScreenModeWaitTimeField): builder.PrependInt32Slot(57, lobbyToScreenModeWaitTimeField, 0)
+def AddLobbyToScreenModeWaitTimeField(builder, lobbyToScreenModeWaitTimeField):
+    return ConstCommonExcelAddLobbyToScreenModeWaitTimeField(builder, lobbyToScreenModeWaitTimeField)
+def ConstCommonExcelAddScreenshotToLobbyButtonHideDelayField(builder, screenshotToLobbyButtonHideDelayField): builder.PrependInt32Slot(58, screenshotToLobbyButtonHideDelayField, 0)
+def AddScreenshotToLobbyButtonHideDelayField(builder, screenshotToLobbyButtonHideDelayField):
+    return ConstCommonExcelAddScreenshotToLobbyButtonHideDelayField(builder, screenshotToLobbyButtonHideDelayField)
+def ConstCommonExcelAddPrologueScenarioID01Field(builder, prologueScenarioID01Field): builder.PrependInt32Slot(59, prologueScenarioID01Field, 0)
+def AddPrologueScenarioID01Field(builder, prologueScenarioID01Field):
+    return ConstCommonExcelAddPrologueScenarioID01Field(builder, prologueScenarioID01Field)
+def ConstCommonExcelAddPrologueScenarioID02Field(builder, prologueScenarioID02Field): builder.PrependInt32Slot(60, prologueScenarioID02Field, 0)
+def AddPrologueScenarioID02Field(builder, prologueScenarioID02Field):
+    return ConstCommonExcelAddPrologueScenarioID02Field(builder, prologueScenarioID02Field)
+def ConstCommonExcelAddTutorialHardStage11Field(builder, tutorialHardStage11Field): builder.PrependInt32Slot(61, tutorialHardStage11Field, 0)
+def AddTutorialHardStage11Field(builder, tutorialHardStage11Field):
+    return ConstCommonExcelAddTutorialHardStage11Field(builder, tutorialHardStage11Field)
+def ConstCommonExcelAddTutorialSpeedButtonStageField(builder, tutorialSpeedButtonStageField): builder.PrependInt32Slot(62, tutorialSpeedButtonStageField, 0)
+def AddTutorialSpeedButtonStageField(builder, tutorialSpeedButtonStageField):
+    return ConstCommonExcelAddTutorialSpeedButtonStageField(builder, tutorialSpeedButtonStageField)
+def ConstCommonExcelAddTutorialCharacterDefaultCountField(builder, tutorialCharacterDefaultCountField): builder.PrependInt32Slot(63, tutorialCharacterDefaultCountField, 0)
+def AddTutorialCharacterDefaultCountField(builder, tutorialCharacterDefaultCountField):
+    return ConstCommonExcelAddTutorialCharacterDefaultCountField(builder, tutorialCharacterDefaultCountField)
+def ConstCommonExcelAddTutorialShopCategoryTypeField(builder, tutorialShopCategoryTypeField): builder.PrependFloat32Slot(64, tutorialShopCategoryTypeField, 0.0)
+def AddTutorialShopCategoryTypeField(builder, tutorialShopCategoryTypeField):
+    return ConstCommonExcelAddTutorialShopCategoryTypeField(builder, tutorialShopCategoryTypeField)
+def ConstCommonExcelAddAdventureStrategyPlayTimeLimitInSecondsField(builder, adventureStrategyPlayTimeLimitInSecondsField): builder.PrependInt32Slot(65, adventureStrategyPlayTimeLimitInSecondsField, 0)
+def AddAdventureStrategyPlayTimeLimitInSecondsField(builder, adventureStrategyPlayTimeLimitInSecondsField):
+    return ConstCommonExcelAddAdventureStrategyPlayTimeLimitInSecondsField(builder, adventureStrategyPlayTimeLimitInSecondsField)
+def ConstCommonExcelAddWeekDungoenTacticPlayTimeLimitInSecondsField(builder, weekDungoenTacticPlayTimeLimitInSecondsField): builder.PrependInt32Slot(66, weekDungoenTacticPlayTimeLimitInSecondsField, 0)
+def AddWeekDungoenTacticPlayTimeLimitInSecondsField(builder, weekDungoenTacticPlayTimeLimitInSecondsField):
+    return ConstCommonExcelAddWeekDungoenTacticPlayTimeLimitInSecondsField(builder, weekDungoenTacticPlayTimeLimitInSecondsField)
+def ConstCommonExcelAddRaidTacticPlayTimeLimitInSecondsField(builder, raidTacticPlayTimeLimitInSecondsField): builder.PrependInt32Slot(67, raidTacticPlayTimeLimitInSecondsField, 0)
+def AddRaidTacticPlayTimeLimitInSecondsField(builder, raidTacticPlayTimeLimitInSecondsField):
+    return ConstCommonExcelAddRaidTacticPlayTimeLimitInSecondsField(builder, raidTacticPlayTimeLimitInSecondsField)
+def ConstCommonExcelAddRaidOpponentListAmountField(builder, raidOpponentListAmountField): builder.PrependInt32Slot(68, raidOpponentListAmountField, 0)
+def AddRaidOpponentListAmountField(builder, raidOpponentListAmountField):
+    return ConstCommonExcelAddRaidOpponentListAmountField(builder, raidOpponentListAmountField)
+def ConstCommonExcelAddCraftBaseGoldRequiredField(builder, craftBaseGoldRequiredField): builder.PrependUOffsetTRelativeSlot(69, flatbuffers.number_types.UOffsetTFlags.py_type(craftBaseGoldRequiredField), 0)
+def AddCraftBaseGoldRequiredField(builder, craftBaseGoldRequiredField):
+    return ConstCommonExcelAddCraftBaseGoldRequiredField(builder, craftBaseGoldRequiredField)
+def ConstCommonExcelStartCraftBaseGoldRequiredFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCraftBaseGoldRequiredFieldVector(builder, numElems):
+    return ConstCommonExcelStartCraftBaseGoldRequiredFieldVector(builder, numElems)
+def ConstCommonExcelAddPostExpiredDayAttendanceField(builder, postExpiredDayAttendanceField): builder.PrependInt32Slot(70, postExpiredDayAttendanceField, 0)
+def AddPostExpiredDayAttendanceField(builder, postExpiredDayAttendanceField):
+    return ConstCommonExcelAddPostExpiredDayAttendanceField(builder, postExpiredDayAttendanceField)
+def ConstCommonExcelAddPostExpiredDayInventoryOverflowField(builder, postExpiredDayInventoryOverflowField): builder.PrependInt32Slot(71, postExpiredDayInventoryOverflowField, 0)
+def AddPostExpiredDayInventoryOverflowField(builder, postExpiredDayInventoryOverflowField):
+    return ConstCommonExcelAddPostExpiredDayInventoryOverflowField(builder, postExpiredDayInventoryOverflowField)
+def ConstCommonExcelAddPostExpiredDayGameManagerField(builder, postExpiredDayGameManagerField): builder.PrependInt32Slot(72, postExpiredDayGameManagerField, 0)
+def AddPostExpiredDayGameManagerField(builder, postExpiredDayGameManagerField):
+    return ConstCommonExcelAddPostExpiredDayGameManagerField(builder, postExpiredDayGameManagerField)
+def ConstCommonExcelAddUILabelCharacterWrapField(builder, uILabelCharacterWrapField): builder.PrependUOffsetTRelativeSlot(73, flatbuffers.number_types.UOffsetTFlags.py_type(uILabelCharacterWrapField), 0)
+def AddUILabelCharacterWrapField(builder, uILabelCharacterWrapField):
+    return ConstCommonExcelAddUILabelCharacterWrapField(builder, uILabelCharacterWrapField)
+def ConstCommonExcelAddRequestTimeOutField(builder, requestTimeOutField): builder.PrependFloat32Slot(74, requestTimeOutField, 0.0)
+def AddRequestTimeOutField(builder, requestTimeOutField):
+    return ConstCommonExcelAddRequestTimeOutField(builder, requestTimeOutField)
+def ConstCommonExcelAddMailStorageSoftCapField(builder, mailStorageSoftCapField): builder.PrependInt32Slot(75, mailStorageSoftCapField, 0)
+def AddMailStorageSoftCapField(builder, mailStorageSoftCapField):
+    return ConstCommonExcelAddMailStorageSoftCapField(builder, mailStorageSoftCapField)
+def ConstCommonExcelAddMailStorageHardCapField(builder, mailStorageHardCapField): builder.PrependInt32Slot(76, mailStorageHardCapField, 0)
+def AddMailStorageHardCapField(builder, mailStorageHardCapField):
+    return ConstCommonExcelAddMailStorageHardCapField(builder, mailStorageHardCapField)
+def ConstCommonExcelAddClearDeckStorageSizeField(builder, clearDeckStorageSizeField): builder.PrependInt32Slot(77, clearDeckStorageSizeField, 0)
+def AddClearDeckStorageSizeField(builder, clearDeckStorageSizeField):
+    return ConstCommonExcelAddClearDeckStorageSizeField(builder, clearDeckStorageSizeField)
+def ConstCommonExcelAddClearDeckNoStarViewCountField(builder, clearDeckNoStarViewCountField): builder.PrependInt32Slot(78, clearDeckNoStarViewCountField, 0)
+def AddClearDeckNoStarViewCountField(builder, clearDeckNoStarViewCountField):
+    return ConstCommonExcelAddClearDeckNoStarViewCountField(builder, clearDeckNoStarViewCountField)
+def ConstCommonExcelAddClearDeck1StarViewCountField(builder, clearDeck1StarViewCountField): builder.PrependInt32Slot(79, clearDeck1StarViewCountField, 0)
+def AddClearDeck1StarViewCountField(builder, clearDeck1StarViewCountField):
+    return ConstCommonExcelAddClearDeck1StarViewCountField(builder, clearDeck1StarViewCountField)
+def ConstCommonExcelAddClearDeck2StarViewCountField(builder, clearDeck2StarViewCountField): builder.PrependInt32Slot(80, clearDeck2StarViewCountField, 0)
+def AddClearDeck2StarViewCountField(builder, clearDeck2StarViewCountField):
+    return ConstCommonExcelAddClearDeck2StarViewCountField(builder, clearDeck2StarViewCountField)
+def ConstCommonExcelAddClearDeck3StarViewCountField(builder, clearDeck3StarViewCountField): builder.PrependInt32Slot(81, clearDeck3StarViewCountField, 0)
+def AddClearDeck3StarViewCountField(builder, clearDeck3StarViewCountField):
+    return ConstCommonExcelAddClearDeck3StarViewCountField(builder, clearDeck3StarViewCountField)
+def ConstCommonExcelAddExSkillLevelMaxField(builder, exSkillLevelMaxField): builder.PrependInt32Slot(82, exSkillLevelMaxField, 0)
+def AddExSkillLevelMaxField(builder, exSkillLevelMaxField):
+    return ConstCommonExcelAddExSkillLevelMaxField(builder, exSkillLevelMaxField)
+def ConstCommonExcelAddPublicSkillLevelMaxField(builder, publicSkillLevelMaxField): builder.PrependInt32Slot(83, publicSkillLevelMaxField, 0)
+def AddPublicSkillLevelMaxField(builder, publicSkillLevelMaxField):
+    return ConstCommonExcelAddPublicSkillLevelMaxField(builder, publicSkillLevelMaxField)
+def ConstCommonExcelAddPassiveSkillLevelMaxField(builder, passiveSkillLevelMaxField): builder.PrependInt32Slot(84, passiveSkillLevelMaxField, 0)
+def AddPassiveSkillLevelMaxField(builder, passiveSkillLevelMaxField):
+    return ConstCommonExcelAddPassiveSkillLevelMaxField(builder, passiveSkillLevelMaxField)
+def ConstCommonExcelAddExtraPassiveSkillLevelMaxField(builder, extraPassiveSkillLevelMaxField): builder.PrependInt32Slot(85, extraPassiveSkillLevelMaxField, 0)
+def AddExtraPassiveSkillLevelMaxField(builder, extraPassiveSkillLevelMaxField):
+    return ConstCommonExcelAddExtraPassiveSkillLevelMaxField(builder, extraPassiveSkillLevelMaxField)
+def ConstCommonExcelAddAccountCommentMaxLengthField(builder, accountCommentMaxLengthField): builder.PrependInt32Slot(86, accountCommentMaxLengthField, 0)
+def AddAccountCommentMaxLengthField(builder, accountCommentMaxLengthField):
+    return ConstCommonExcelAddAccountCommentMaxLengthField(builder, accountCommentMaxLengthField)
+def ConstCommonExcelAddCafeSummonCoolTimeFromHourField(builder, cafeSummonCoolTimeFromHourField): builder.PrependInt32Slot(87, cafeSummonCoolTimeFromHourField, 0)
+def AddCafeSummonCoolTimeFromHourField(builder, cafeSummonCoolTimeFromHourField):
+    return ConstCommonExcelAddCafeSummonCoolTimeFromHourField(builder, cafeSummonCoolTimeFromHourField)
+def ConstCommonExcelAddLimitedStageDailyClearCountField(builder, limitedStageDailyClearCountField): builder.PrependInt32Slot(88, limitedStageDailyClearCountField, 0)
+def AddLimitedStageDailyClearCountField(builder, limitedStageDailyClearCountField):
+    return ConstCommonExcelAddLimitedStageDailyClearCountField(builder, limitedStageDailyClearCountField)
+def ConstCommonExcelAddLimitedStageEntryTimeLimitField(builder, limitedStageEntryTimeLimitField): builder.PrependInt32Slot(89, limitedStageEntryTimeLimitField, 0)
+def AddLimitedStageEntryTimeLimitField(builder, limitedStageEntryTimeLimitField):
+    return ConstCommonExcelAddLimitedStageEntryTimeLimitField(builder, limitedStageEntryTimeLimitField)
+def ConstCommonExcelAddLimitedStageEntryTimeBufferField(builder, limitedStageEntryTimeBufferField): builder.PrependInt32Slot(90, limitedStageEntryTimeBufferField, 0)
+def AddLimitedStageEntryTimeBufferField(builder, limitedStageEntryTimeBufferField):
+    return ConstCommonExcelAddLimitedStageEntryTimeBufferField(builder, limitedStageEntryTimeBufferField)
+def ConstCommonExcelAddLimitedStagePointAmountField(builder, limitedStagePointAmountField): builder.PrependInt32Slot(91, limitedStagePointAmountField, 0)
+def AddLimitedStagePointAmountField(builder, limitedStagePointAmountField):
+    return ConstCommonExcelAddLimitedStagePointAmountField(builder, limitedStagePointAmountField)
+def ConstCommonExcelAddLimitedStagePointPerApMinField(builder, limitedStagePointPerApMinField): builder.PrependInt32Slot(92, limitedStagePointPerApMinField, 0)
+def AddLimitedStagePointPerApMinField(builder, limitedStagePointPerApMinField):
+    return ConstCommonExcelAddLimitedStagePointPerApMinField(builder, limitedStagePointPerApMinField)
+def ConstCommonExcelAddLimitedStagePointPerApMaxField(builder, limitedStagePointPerApMaxField): builder.PrependInt32Slot(93, limitedStagePointPerApMaxField, 0)
+def AddLimitedStagePointPerApMaxField(builder, limitedStagePointPerApMaxField):
+    return ConstCommonExcelAddLimitedStagePointPerApMaxField(builder, limitedStagePointPerApMaxField)
+def ConstCommonExcelAddAccountLinkRewardField(builder, accountLinkRewardField): builder.PrependInt32Slot(94, accountLinkRewardField, 0)
+def AddAccountLinkRewardField(builder, accountLinkRewardField):
+    return ConstCommonExcelAddAccountLinkRewardField(builder, accountLinkRewardField)
+def ConstCommonExcelAddMonthlyProductCheckDaysField(builder, monthlyProductCheckDaysField): builder.PrependInt32Slot(95, monthlyProductCheckDaysField, 0)
+def AddMonthlyProductCheckDaysField(builder, monthlyProductCheckDaysField):
+    return ConstCommonExcelAddMonthlyProductCheckDaysField(builder, monthlyProductCheckDaysField)
+def ConstCommonExcelAddWeaponLvUpCoefficientField(builder, weaponLvUpCoefficientField): builder.PrependInt32Slot(96, weaponLvUpCoefficientField, 0)
+def AddWeaponLvUpCoefficientField(builder, weaponLvUpCoefficientField):
+    return ConstCommonExcelAddWeaponLvUpCoefficientField(builder, weaponLvUpCoefficientField)
+def ConstCommonExcelAddShowRaidMyListCountField(builder, showRaidMyListCountField): builder.PrependInt32Slot(97, showRaidMyListCountField, 0)
+def AddShowRaidMyListCountField(builder, showRaidMyListCountField):
+    return ConstCommonExcelAddShowRaidMyListCountField(builder, showRaidMyListCountField)
+def ConstCommonExcelAddRaidEnterCostTypeField(builder, raidEnterCostTypeField): builder.PrependInt32Slot(98, raidEnterCostTypeField, 0)
+def AddRaidEnterCostTypeField(builder, raidEnterCostTypeField):
+    return ConstCommonExcelAddRaidEnterCostTypeField(builder, raidEnterCostTypeField)
+def ConstCommonExcelAddRaidEnterCostIdField(builder, raidEnterCostIdField): builder.PrependInt32Slot(99, raidEnterCostIdField, 0)
+def AddRaidEnterCostIdField(builder, raidEnterCostIdField):
+    return ConstCommonExcelAddRaidEnterCostIdField(builder, raidEnterCostIdField)
+def ConstCommonExcelAddRaidTicketCostField(builder, raidTicketCostField): builder.PrependInt32Slot(100, raidTicketCostField, 0)
+def AddRaidTicketCostField(builder, raidTicketCostField):
+    return ConstCommonExcelAddRaidTicketCostField(builder, raidTicketCostField)
+def ConstCommonExcelAddTimeAttackDungeonScenarioIdField(builder, timeAttackDungeonScenarioIdField): builder.PrependUOffsetTRelativeSlot(101, flatbuffers.number_types.UOffsetTFlags.py_type(timeAttackDungeonScenarioIdField), 0)
+def AddTimeAttackDungeonScenarioIdField(builder, timeAttackDungeonScenarioIdField):
+    return ConstCommonExcelAddTimeAttackDungeonScenarioIdField(builder, timeAttackDungeonScenarioIdField)
+def ConstCommonExcelAddTimeAttackDungoenPlayCountPerTicketField(builder, timeAttackDungoenPlayCountPerTicketField): builder.PrependInt32Slot(102, timeAttackDungoenPlayCountPerTicketField, 0)
+def AddTimeAttackDungoenPlayCountPerTicketField(builder, timeAttackDungoenPlayCountPerTicketField):
+    return ConstCommonExcelAddTimeAttackDungoenPlayCountPerTicketField(builder, timeAttackDungoenPlayCountPerTicketField)
+def ConstCommonExcelAddTimeAttackDungeonEnterCostTypeField(builder, timeAttackDungeonEnterCostTypeField): builder.PrependInt32Slot(103, timeAttackDungeonEnterCostTypeField, 0)
+def AddTimeAttackDungeonEnterCostTypeField(builder, timeAttackDungeonEnterCostTypeField):
+    return ConstCommonExcelAddTimeAttackDungeonEnterCostTypeField(builder, timeAttackDungeonEnterCostTypeField)
+def ConstCommonExcelAddTimeAttackDungeonEnterCostIdField(builder, timeAttackDungeonEnterCostIdField): builder.PrependInt32Slot(104, timeAttackDungeonEnterCostIdField, 0)
+def AddTimeAttackDungeonEnterCostIdField(builder, timeAttackDungeonEnterCostIdField):
+    return ConstCommonExcelAddTimeAttackDungeonEnterCostIdField(builder, timeAttackDungeonEnterCostIdField)
+def ConstCommonExcelAddTimeAttackDungeonEnterCostField(builder, timeAttackDungeonEnterCostField): builder.PrependInt32Slot(105, timeAttackDungeonEnterCostField, 0)
+def AddTimeAttackDungeonEnterCostField(builder, timeAttackDungeonEnterCostField):
+    return ConstCommonExcelAddTimeAttackDungeonEnterCostField(builder, timeAttackDungeonEnterCostField)
+def ConstCommonExcelAddClanLeaderTransferLastLoginLimitField(builder, clanLeaderTransferLastLoginLimitField): builder.PrependInt32Slot(106, clanLeaderTransferLastLoginLimitField, 0)
+def AddClanLeaderTransferLastLoginLimitField(builder, clanLeaderTransferLastLoginLimitField):
+    return ConstCommonExcelAddClanLeaderTransferLastLoginLimitField(builder, clanLeaderTransferLastLoginLimitField)
+def ConstCommonExcelAddMonthlyProductRepurchasePopupLimitField(builder, monthlyProductRepurchasePopupLimitField): builder.PrependInt32Slot(107, monthlyProductRepurchasePopupLimitField, 0)
+def AddMonthlyProductRepurchasePopupLimitField(builder, monthlyProductRepurchasePopupLimitField):
+    return ConstCommonExcelAddMonthlyProductRepurchasePopupLimitField(builder, monthlyProductRepurchasePopupLimitField)
+def ConstCommonExcelAddCommonFavorItemTagsField(builder, commonFavorItemTagsField): builder.PrependUOffsetTRelativeSlot(108, flatbuffers.number_types.UOffsetTFlags.py_type(commonFavorItemTagsField), 0)
+def AddCommonFavorItemTagsField(builder, commonFavorItemTagsField):
+    return ConstCommonExcelAddCommonFavorItemTagsField(builder, commonFavorItemTagsField)
+def ConstCommonExcelStartCommonFavorItemTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCommonFavorItemTagsFieldVector(builder, numElems):
+    return ConstCommonExcelStartCommonFavorItemTagsFieldVector(builder, numElems)
+def ConstCommonExcelAddMaxApMasterCoinPerWeekField(builder, maxApMasterCoinPerWeekField): builder.PrependInt32Slot(109, maxApMasterCoinPerWeekField, 0)
+def AddMaxApMasterCoinPerWeekField(builder, maxApMasterCoinPerWeekField):
+    return ConstCommonExcelAddMaxApMasterCoinPerWeekField(builder, maxApMasterCoinPerWeekField)
+def ConstCommonExcelAddCraftOpenExpTier1Field(builder, craftOpenExpTier1Field): builder.PrependInt32Slot(110, craftOpenExpTier1Field, 0)
+def AddCraftOpenExpTier1Field(builder, craftOpenExpTier1Field):
+    return ConstCommonExcelAddCraftOpenExpTier1Field(builder, craftOpenExpTier1Field)
+def ConstCommonExcelAddCraftOpenExpTier2Field(builder, craftOpenExpTier2Field): builder.PrependInt32Slot(111, craftOpenExpTier2Field, 0)
+def AddCraftOpenExpTier2Field(builder, craftOpenExpTier2Field):
+    return ConstCommonExcelAddCraftOpenExpTier2Field(builder, craftOpenExpTier2Field)
+def ConstCommonExcelAddCraftOpenExpTier3Field(builder, craftOpenExpTier3Field): builder.PrependInt32Slot(112, craftOpenExpTier3Field, 0)
+def AddCraftOpenExpTier3Field(builder, craftOpenExpTier3Field):
+    return ConstCommonExcelAddCraftOpenExpTier3Field(builder, craftOpenExpTier3Field)
+def ConstCommonExcelAddCharacterEquipmentGearSlotField(builder, characterEquipmentGearSlotField): builder.PrependInt32Slot(113, characterEquipmentGearSlotField, 0)
+def AddCharacterEquipmentGearSlotField(builder, characterEquipmentGearSlotField):
+    return ConstCommonExcelAddCharacterEquipmentGearSlotField(builder, characterEquipmentGearSlotField)
+def ConstCommonExcelAddBirthDayDDayField(builder, birthDayDDayField): builder.PrependInt32Slot(114, birthDayDDayField, 0)
+def AddBirthDayDDayField(builder, birthDayDDayField):
+    return ConstCommonExcelAddBirthDayDDayField(builder, birthDayDDayField)
+def ConstCommonExcelAddRecommendedFriendsLvDifferenceLimitField(builder, recommendedFriendsLvDifferenceLimitField): builder.PrependInt32Slot(115, recommendedFriendsLvDifferenceLimitField, 0)
+def AddRecommendedFriendsLvDifferenceLimitField(builder, recommendedFriendsLvDifferenceLimitField):
+    return ConstCommonExcelAddRecommendedFriendsLvDifferenceLimitField(builder, recommendedFriendsLvDifferenceLimitField)
+def ConstCommonExcelAddDDosDetectCountField(builder, dDosDetectCountField): builder.PrependInt32Slot(116, dDosDetectCountField, 0)
+def AddDDosDetectCountField(builder, dDosDetectCountField):
+    return ConstCommonExcelAddDDosDetectCountField(builder, dDosDetectCountField)
+def ConstCommonExcelAddDDosCheckIntervalInSecondsField(builder, dDosCheckIntervalInSecondsField): builder.PrependInt32Slot(117, dDosCheckIntervalInSecondsField, 0)
+def AddDDosCheckIntervalInSecondsField(builder, dDosCheckIntervalInSecondsField):
+    return ConstCommonExcelAddDDosCheckIntervalInSecondsField(builder, dDosCheckIntervalInSecondsField)
+def ConstCommonExcelAddMaxFriendsCountField(builder, maxFriendsCountField): builder.PrependInt32Slot(118, maxFriendsCountField, 0)
+def AddMaxFriendsCountField(builder, maxFriendsCountField):
+    return ConstCommonExcelAddMaxFriendsCountField(builder, maxFriendsCountField)
+def ConstCommonExcelAddMaxFriendsRequestField(builder, maxFriendsRequestField): builder.PrependInt32Slot(119, maxFriendsRequestField, 0)
+def AddMaxFriendsRequestField(builder, maxFriendsRequestField):
+    return ConstCommonExcelAddMaxFriendsRequestField(builder, maxFriendsRequestField)
+def ConstCommonExcelAddFriendsSearchRequestCountField(builder, friendsSearchRequestCountField): builder.PrependInt32Slot(120, friendsSearchRequestCountField, 0)
+def AddFriendsSearchRequestCountField(builder, friendsSearchRequestCountField):
+    return ConstCommonExcelAddFriendsSearchRequestCountField(builder, friendsSearchRequestCountField)
+def ConstCommonExcelAddFriendsMaxApplicantField(builder, friendsMaxApplicantField): builder.PrependInt32Slot(121, friendsMaxApplicantField, 0)
+def AddFriendsMaxApplicantField(builder, friendsMaxApplicantField):
+    return ConstCommonExcelAddFriendsMaxApplicantField(builder, friendsMaxApplicantField)
+def ConstCommonExcelAddIdCardDefaultCharacterIdField(builder, idCardDefaultCharacterIdField): builder.PrependInt32Slot(122, idCardDefaultCharacterIdField, 0)
+def AddIdCardDefaultCharacterIdField(builder, idCardDefaultCharacterIdField):
+    return ConstCommonExcelAddIdCardDefaultCharacterIdField(builder, idCardDefaultCharacterIdField)
+def ConstCommonExcelAddIdCardDefaultBgIdField(builder, idCardDefaultBgIdField): builder.PrependInt32Slot(123, idCardDefaultBgIdField, 0)
+def AddIdCardDefaultBgIdField(builder, idCardDefaultBgIdField):
+    return ConstCommonExcelAddIdCardDefaultBgIdField(builder, idCardDefaultBgIdField)
+def ConstCommonExcelAddWorldRaidGemEnterCostField(builder, worldRaidGemEnterCostField): builder.PrependInt32Slot(124, worldRaidGemEnterCostField, 0)
+def AddWorldRaidGemEnterCostField(builder, worldRaidGemEnterCostField):
+    return ConstCommonExcelAddWorldRaidGemEnterCostField(builder, worldRaidGemEnterCostField)
+def ConstCommonExcelAddWorldRaidGemEnterAmoutField(builder, worldRaidGemEnterAmoutField): builder.PrependInt32Slot(125, worldRaidGemEnterAmoutField, 0)
+def AddWorldRaidGemEnterAmoutField(builder, worldRaidGemEnterAmoutField):
+    return ConstCommonExcelAddWorldRaidGemEnterAmoutField(builder, worldRaidGemEnterAmoutField)
+def ConstCommonExcelAddFriendIdCardCommentMaxLengthField(builder, friendIdCardCommentMaxLengthField): builder.PrependInt32Slot(126, friendIdCardCommentMaxLengthField, 0)
+def AddFriendIdCardCommentMaxLengthField(builder, friendIdCardCommentMaxLengthField):
+    return ConstCommonExcelAddFriendIdCardCommentMaxLengthField(builder, friendIdCardCommentMaxLengthField)
+def ConstCommonExcelAddFormationPresetNumberOfEchelonTabField(builder, formationPresetNumberOfEchelonTabField): builder.PrependInt32Slot(127, formationPresetNumberOfEchelonTabField, 0)
+def AddFormationPresetNumberOfEchelonTabField(builder, formationPresetNumberOfEchelonTabField):
+    return ConstCommonExcelAddFormationPresetNumberOfEchelonTabField(builder, formationPresetNumberOfEchelonTabField)
+def ConstCommonExcelAddFormationPresetNumberOfEchelonField(builder, formationPresetNumberOfEchelonField): builder.PrependInt32Slot(128, formationPresetNumberOfEchelonField, 0)
+def AddFormationPresetNumberOfEchelonField(builder, formationPresetNumberOfEchelonField):
+    return ConstCommonExcelAddFormationPresetNumberOfEchelonField(builder, formationPresetNumberOfEchelonField)
+def ConstCommonExcelAddFormationPresetRecentNumberOfEchelonField(builder, formationPresetRecentNumberOfEchelonField): builder.PrependInt32Slot(129, formationPresetRecentNumberOfEchelonField, 0)
+def AddFormationPresetRecentNumberOfEchelonField(builder, formationPresetRecentNumberOfEchelonField):
+    return ConstCommonExcelAddFormationPresetRecentNumberOfEchelonField(builder, formationPresetRecentNumberOfEchelonField)
+def ConstCommonExcelAddFormationPresetEchelonTabTextLengthField(builder, formationPresetEchelonTabTextLengthField): builder.PrependInt32Slot(130, formationPresetEchelonTabTextLengthField, 0)
+def AddFormationPresetEchelonTabTextLengthField(builder, formationPresetEchelonTabTextLengthField):
+    return ConstCommonExcelAddFormationPresetEchelonTabTextLengthField(builder, formationPresetEchelonTabTextLengthField)
+def ConstCommonExcelAddFormationPresetEchelonSlotTextLengthField(builder, formationPresetEchelonSlotTextLengthField): builder.PrependInt32Slot(131, formationPresetEchelonSlotTextLengthField, 0)
+def AddFormationPresetEchelonSlotTextLengthField(builder, formationPresetEchelonSlotTextLengthField):
+    return ConstCommonExcelAddFormationPresetEchelonSlotTextLengthField(builder, formationPresetEchelonSlotTextLengthField)
+def ConstCommonExcelAddCharProfileRowIntervalKrField(builder, charProfileRowIntervalKrField): builder.PrependInt32Slot(132, charProfileRowIntervalKrField, 0)
+def AddCharProfileRowIntervalKrField(builder, charProfileRowIntervalKrField):
+    return ConstCommonExcelAddCharProfileRowIntervalKrField(builder, charProfileRowIntervalKrField)
+def ConstCommonExcelAddCharProfileRowIntervalJpField(builder, charProfileRowIntervalJpField): builder.PrependInt32Slot(133, charProfileRowIntervalJpField, 0)
+def AddCharProfileRowIntervalJpField(builder, charProfileRowIntervalJpField):
+    return ConstCommonExcelAddCharProfileRowIntervalJpField(builder, charProfileRowIntervalJpField)
+def ConstCommonExcelAddCharProfilePopupRowIntervalKrField(builder, charProfilePopupRowIntervalKrField): builder.PrependInt32Slot(134, charProfilePopupRowIntervalKrField, 0)
+def AddCharProfilePopupRowIntervalKrField(builder, charProfilePopupRowIntervalKrField):
+    return ConstCommonExcelAddCharProfilePopupRowIntervalKrField(builder, charProfilePopupRowIntervalKrField)
+def ConstCommonExcelAddCharProfilePopupRowIntervalJpField(builder, charProfilePopupRowIntervalJpField): builder.PrependInt32Slot(135, charProfilePopupRowIntervalJpField, 0)
+def AddCharProfilePopupRowIntervalJpField(builder, charProfilePopupRowIntervalJpField):
+    return ConstCommonExcelAddCharProfilePopupRowIntervalJpField(builder, charProfilePopupRowIntervalJpField)
+def ConstCommonExcelAddBeforehandGachaCountField(builder, beforehandGachaCountField): builder.PrependInt32Slot(136, beforehandGachaCountField, 0)
+def AddBeforehandGachaCountField(builder, beforehandGachaCountField):
+    return ConstCommonExcelAddBeforehandGachaCountField(builder, beforehandGachaCountField)
+def ConstCommonExcelAddBeforehandGachaGroupIdField(builder, beforehandGachaGroupIdField): builder.PrependInt32Slot(137, beforehandGachaGroupIdField, 0)
+def AddBeforehandGachaGroupIdField(builder, beforehandGachaGroupIdField):
+    return ConstCommonExcelAddBeforehandGachaGroupIdField(builder, beforehandGachaGroupIdField)
+def ConstCommonExcelAddRenewalDisplayOrderDayField(builder, renewalDisplayOrderDayField): builder.PrependInt32Slot(138, renewalDisplayOrderDayField, 0)
+def AddRenewalDisplayOrderDayField(builder, renewalDisplayOrderDayField):
+    return ConstCommonExcelAddRenewalDisplayOrderDayField(builder, renewalDisplayOrderDayField)
+def ConstCommonExcelAddEmblemDefaultIdField(builder, emblemDefaultIdField): builder.PrependInt32Slot(139, emblemDefaultIdField, 0)
+def AddEmblemDefaultIdField(builder, emblemDefaultIdField):
+    return ConstCommonExcelAddEmblemDefaultIdField(builder, emblemDefaultIdField)
+def ConstCommonExcelAddBirthdayMailStartDateField(builder, birthdayMailStartDateField): builder.PrependUOffsetTRelativeSlot(140, flatbuffers.number_types.UOffsetTFlags.py_type(birthdayMailStartDateField), 0)
+def AddBirthdayMailStartDateField(builder, birthdayMailStartDateField):
+    return ConstCommonExcelAddBirthdayMailStartDateField(builder, birthdayMailStartDateField)
+def ConstCommonExcelAddBirthdayMailRemainDateField(builder, birthdayMailRemainDateField): builder.PrependInt32Slot(141, birthdayMailRemainDateField, 0)
+def AddBirthdayMailRemainDateField(builder, birthdayMailRemainDateField):
+    return ConstCommonExcelAddBirthdayMailRemainDateField(builder, birthdayMailRemainDateField)
+def ConstCommonExcelAddBirthdayMailParcelTypeField(builder, birthdayMailParcelTypeField): builder.PrependInt32Slot(142, birthdayMailParcelTypeField, 0)
+def AddBirthdayMailParcelTypeField(builder, birthdayMailParcelTypeField):
+    return ConstCommonExcelAddBirthdayMailParcelTypeField(builder, birthdayMailParcelTypeField)
+def ConstCommonExcelAddBirthdayMailParcelIdField(builder, birthdayMailParcelIdField): builder.PrependInt32Slot(143, birthdayMailParcelIdField, 0)
+def AddBirthdayMailParcelIdField(builder, birthdayMailParcelIdField):
+    return ConstCommonExcelAddBirthdayMailParcelIdField(builder, birthdayMailParcelIdField)
+def ConstCommonExcelAddBirthdayMailParcelAmountField(builder, birthdayMailParcelAmountField): builder.PrependInt32Slot(144, birthdayMailParcelAmountField, 0)
+def AddBirthdayMailParcelAmountField(builder, birthdayMailParcelAmountField):
+    return ConstCommonExcelAddBirthdayMailParcelAmountField(builder, birthdayMailParcelAmountField)
+def ConstCommonExcelAddClearDeckAverageDeckCountField(builder, clearDeckAverageDeckCountField): builder.PrependInt32Slot(145, clearDeckAverageDeckCountField, 0)
+def AddClearDeckAverageDeckCountField(builder, clearDeckAverageDeckCountField):
+    return ConstCommonExcelAddClearDeckAverageDeckCountField(builder, clearDeckAverageDeckCountField)
+def ConstCommonExcelAddClearDeckWorldRaidSaveConditionCoefficientField(builder, clearDeckWorldRaidSaveConditionCoefficientField): builder.PrependInt32Slot(146, clearDeckWorldRaidSaveConditionCoefficientField, 0)
+def AddClearDeckWorldRaidSaveConditionCoefficientField(builder, clearDeckWorldRaidSaveConditionCoefficientField):
+    return ConstCommonExcelAddClearDeckWorldRaidSaveConditionCoefficientField(builder, clearDeckWorldRaidSaveConditionCoefficientField)
+def ConstCommonExcelAddClearDeckShowCountField(builder, clearDeckShowCountField): builder.PrependInt32Slot(147, clearDeckShowCountField, 0)
+def AddClearDeckShowCountField(builder, clearDeckShowCountField):
+    return ConstCommonExcelAddClearDeckShowCountField(builder, clearDeckShowCountField)
+def ConstCommonExcelAddCharacterMaxLevelField(builder, characterMaxLevelField): builder.PrependInt32Slot(148, characterMaxLevelField, 0)
+def AddCharacterMaxLevelField(builder, characterMaxLevelField):
+    return ConstCommonExcelAddCharacterMaxLevelField(builder, characterMaxLevelField)
+def ConstCommonExcelAddPotentialBonusStatMaxLevelMaxHPField(builder, potentialBonusStatMaxLevelMaxHPField): builder.PrependInt32Slot(149, potentialBonusStatMaxLevelMaxHPField, 0)
+def AddPotentialBonusStatMaxLevelMaxHPField(builder, potentialBonusStatMaxLevelMaxHPField):
+    return ConstCommonExcelAddPotentialBonusStatMaxLevelMaxHPField(builder, potentialBonusStatMaxLevelMaxHPField)
+def ConstCommonExcelAddPotentialBonusStatMaxLevelAttackPowerField(builder, potentialBonusStatMaxLevelAttackPowerField): builder.PrependInt32Slot(150, potentialBonusStatMaxLevelAttackPowerField, 0)
+def AddPotentialBonusStatMaxLevelAttackPowerField(builder, potentialBonusStatMaxLevelAttackPowerField):
+    return ConstCommonExcelAddPotentialBonusStatMaxLevelAttackPowerField(builder, potentialBonusStatMaxLevelAttackPowerField)
+def ConstCommonExcelAddPotentialBonusStatMaxLevelHealPowerField(builder, potentialBonusStatMaxLevelHealPowerField): builder.PrependInt32Slot(151, potentialBonusStatMaxLevelHealPowerField, 0)
+def AddPotentialBonusStatMaxLevelHealPowerField(builder, potentialBonusStatMaxLevelHealPowerField):
+    return ConstCommonExcelAddPotentialBonusStatMaxLevelHealPowerField(builder, potentialBonusStatMaxLevelHealPowerField)
+def ConstCommonExcelAddPotentialOpenConditionCharacterLevelField(builder, potentialOpenConditionCharacterLevelField): builder.PrependInt32Slot(152, potentialOpenConditionCharacterLevelField, 0)
+def AddPotentialOpenConditionCharacterLevelField(builder, potentialOpenConditionCharacterLevelField):
+    return ConstCommonExcelAddPotentialOpenConditionCharacterLevelField(builder, potentialOpenConditionCharacterLevelField)
+def ConstCommonExcelAddAssistStrangerMinLevelField(builder, assistStrangerMinLevelField): builder.PrependInt32Slot(153, assistStrangerMinLevelField, 0)
+def AddAssistStrangerMinLevelField(builder, assistStrangerMinLevelField):
+    return ConstCommonExcelAddAssistStrangerMinLevelField(builder, assistStrangerMinLevelField)
+def ConstCommonExcelAddAssistStrangerMaxLevelField(builder, assistStrangerMaxLevelField): builder.PrependInt32Slot(154, assistStrangerMaxLevelField, 0)
+def AddAssistStrangerMaxLevelField(builder, assistStrangerMaxLevelField):
+    return ConstCommonExcelAddAssistStrangerMaxLevelField(builder, assistStrangerMaxLevelField)
+def ConstCommonExcelAddMaxBlockedUserCountField(builder, maxBlockedUserCountField): builder.PrependInt32Slot(155, maxBlockedUserCountField, 0)
+def AddMaxBlockedUserCountField(builder, maxBlockedUserCountField):
+    return ConstCommonExcelAddMaxBlockedUserCountField(builder, maxBlockedUserCountField)
+def ConstCommonExcelAddCafeRandomVisitMinComfortBonusField(builder, cafeRandomVisitMinComfortBonusField): builder.PrependInt32Slot(156, cafeRandomVisitMinComfortBonusField, 0)
+def AddCafeRandomVisitMinComfortBonusField(builder, cafeRandomVisitMinComfortBonusField):
+    return ConstCommonExcelAddCafeRandomVisitMinComfortBonusField(builder, cafeRandomVisitMinComfortBonusField)
+def ConstCommonExcelAddCafeRandomVisitMinLastLoginField(builder, cafeRandomVisitMinLastLoginField): builder.PrependInt32Slot(157, cafeRandomVisitMinLastLoginField, 0)
+def AddCafeRandomVisitMinLastLoginField(builder, cafeRandomVisitMinLastLoginField):
+    return ConstCommonExcelAddCafeRandomVisitMinLastLoginField(builder, cafeRandomVisitMinLastLoginField)
+def ConstCommonExcelAddCafeTravelSyncIntervalByMillisecField(builder, cafeTravelSyncIntervalByMillisecField): builder.PrependInt32Slot(158, cafeTravelSyncIntervalByMillisecField, 0)
+def AddCafeTravelSyncIntervalByMillisecField(builder, cafeTravelSyncIntervalByMillisecField):
+    return ConstCommonExcelAddCafeTravelSyncIntervalByMillisecField(builder, cafeTravelSyncIntervalByMillisecField)
+def ConstCommonExcelAddRankBracketPercentage1Field(builder, rankBracketPercentage1Field): builder.PrependInt32Slot(159, rankBracketPercentage1Field, 0)
+def AddRankBracketPercentage1Field(builder, rankBracketPercentage1Field):
+    return ConstCommonExcelAddRankBracketPercentage1Field(builder, rankBracketPercentage1Field)
+def ConstCommonExcelAddRankBracketPercentage2Field(builder, rankBracketPercentage2Field): builder.PrependInt32Slot(160, rankBracketPercentage2Field, 0)
+def AddRankBracketPercentage2Field(builder, rankBracketPercentage2Field):
+    return ConstCommonExcelAddRankBracketPercentage2Field(builder, rankBracketPercentage2Field)
+def ConstCommonExcelAddRankBracketPercentage3Field(builder, rankBracketPercentage3Field): builder.PrependInt32Slot(161, rankBracketPercentage3Field, 0)
+def AddRankBracketPercentage3Field(builder, rankBracketPercentage3Field):
+    return ConstCommonExcelAddRankBracketPercentage3Field(builder, rankBracketPercentage3Field)
+def ConstCommonExcelAddRankBracketPercentage4Field(builder, rankBracketPercentage4Field): builder.PrependInt32Slot(162, rankBracketPercentage4Field, 0)
+def AddRankBracketPercentage4Field(builder, rankBracketPercentage4Field):
+    return ConstCommonExcelAddRankBracketPercentage4Field(builder, rankBracketPercentage4Field)
+def ConstCommonExcelAddRankBracketPercentage5Field(builder, rankBracketPercentage5Field): builder.PrependInt32Slot(163, rankBracketPercentage5Field, 0)
+def AddRankBracketPercentage5Field(builder, rankBracketPercentage5Field):
+    return ConstCommonExcelAddRankBracketPercentage5Field(builder, rankBracketPercentage5Field)
+def ConstCommonExcelAddRankBracketPercentage6Field(builder, rankBracketPercentage6Field): builder.PrependInt32Slot(164, rankBracketPercentage6Field, 0)
+def AddRankBracketPercentage6Field(builder, rankBracketPercentage6Field):
+    return ConstCommonExcelAddRankBracketPercentage6Field(builder, rankBracketPercentage6Field)
+def ConstCommonExcelAddRankBracketPercentage7Field(builder, rankBracketPercentage7Field): builder.PrependInt32Slot(165, rankBracketPercentage7Field, 0)
+def AddRankBracketPercentage7Field(builder, rankBracketPercentage7Field):
+    return ConstCommonExcelAddRankBracketPercentage7Field(builder, rankBracketPercentage7Field)
+def ConstCommonExcelAddExpiryBattlePassItemReceiveDayField(builder, expiryBattlePassItemReceiveDayField): builder.PrependInt32Slot(166, expiryBattlePassItemReceiveDayField, 0)
+def AddExpiryBattlePassItemReceiveDayField(builder, expiryBattlePassItemReceiveDayField):
+    return ConstCommonExcelAddExpiryBattlePassItemReceiveDayField(builder, expiryBattlePassItemReceiveDayField)
+def ConstCommonExcelAddBattlePassFlavorTextIdleDurationMilliSecField(builder, battlePassFlavorTextIdleDurationMilliSecField): builder.PrependInt32Slot(167, battlePassFlavorTextIdleDurationMilliSecField, 0)
+def AddBattlePassFlavorTextIdleDurationMilliSecField(builder, battlePassFlavorTextIdleDurationMilliSecField):
+    return ConstCommonExcelAddBattlePassFlavorTextIdleDurationMilliSecField(builder, battlePassFlavorTextIdleDurationMilliSecField)
+def ConstCommonExcelAddBattlePassEndImminentDayField(builder, battlePassEndImminentDayField): builder.PrependInt32Slot(168, battlePassEndImminentDayField, 0)
+def AddBattlePassEndImminentDayField(builder, battlePassEndImminentDayField):
+    return ConstCommonExcelAddBattlePassEndImminentDayField(builder, battlePassEndImminentDayField)
+def ConstCommonExcelAddBattlePassExpIconPathField(builder, battlePassExpIconPathField): builder.PrependUOffsetTRelativeSlot(169, flatbuffers.number_types.UOffsetTFlags.py_type(battlePassExpIconPathField), 0)
+def AddBattlePassExpIconPathField(builder, battlePassExpIconPathField):
+    return ConstCommonExcelAddBattlePassExpIconPathField(builder, battlePassExpIconPathField)
+def ConstCommonExcelAddCafeCameraDragThresholdField(builder, cafeCameraDragThresholdField): builder.PrependFloat32Slot(170, cafeCameraDragThresholdField, 0.0)
+def AddCafeCameraDragThresholdField(builder, cafeCameraDragThresholdField):
+    return ConstCommonExcelAddCafeCameraDragThresholdField(builder, cafeCameraDragThresholdField)
+def ConstCommonExcelAddCafeSummonTicketBuyLimitForValidateField(builder, cafeSummonTicketBuyLimitForValidateField): builder.PrependInt32Slot(171, cafeSummonTicketBuyLimitForValidateField, 0)
+def AddCafeSummonTicketBuyLimitForValidateField(builder, cafeSummonTicketBuyLimitForValidateField):
+    return ConstCommonExcelAddCafeSummonTicketBuyLimitForValidateField(builder, cafeSummonTicketBuyLimitForValidateField)
+def ConstCommonExcelAddAutoCraftPresetCountLimitField(builder, autoCraftPresetCountLimitField): builder.PrependInt32Slot(172, autoCraftPresetCountLimitField, 0)
+def AddAutoCraftPresetCountLimitField(builder, autoCraftPresetCountLimitField):
+    return ConstCommonExcelAddAutoCraftPresetCountLimitField(builder, autoCraftPresetCountLimitField)
+def ConstCommonExcelAddAutoCraftNodeSelectCountField(builder, autoCraftNodeSelectCountField): builder.PrependInt32Slot(173, autoCraftNodeSelectCountField, 0)
+def AddAutoCraftNodeSelectCountField(builder, autoCraftNodeSelectCountField):
+    return ConstCommonExcelAddAutoCraftNodeSelectCountField(builder, autoCraftNodeSelectCountField)
+def ConstCommonExcelAddCraftPresetNameMaxLengthField(builder, craftPresetNameMaxLengthField): builder.PrependInt32Slot(174, craftPresetNameMaxLengthField, 0)
+def AddCraftPresetNameMaxLengthField(builder, craftPresetNameMaxLengthField):
+    return ConstCommonExcelAddCraftPresetNameMaxLengthField(builder, craftPresetNameMaxLengthField)
+def ConstCommonExcelAddSelectionWaitTimeField(builder, selectionWaitTimeField): builder.PrependInt32Slot(175, selectionWaitTimeField, 0)
+def AddSelectionWaitTimeField(builder, selectionWaitTimeField):
+    return ConstCommonExcelAddSelectionWaitTimeField(builder, selectionWaitTimeField)
+def ConstCommonExcelAddRewardWaitTimeField(builder, rewardWaitTimeField): builder.PrependInt32Slot(176, rewardWaitTimeField, 0)
+def AddRewardWaitTimeField(builder, rewardWaitTimeField):
+    return ConstCommonExcelAddRewardWaitTimeField(builder, rewardWaitTimeField)
+def ConstCommonExcelAddEpisodeContinueWaitTimeField(builder, episodeContinueWaitTimeField): builder.PrependInt32Slot(177, episodeContinueWaitTimeField, 0)
+def AddEpisodeContinueWaitTimeField(builder, episodeContinueWaitTimeField):
+    return ConstCommonExcelAddEpisodeContinueWaitTimeField(builder, episodeContinueWaitTimeField)
+def ConstCommonExcelAddScenarioAutoDelayMillisecLongField(builder, scenarioAutoDelayMillisecLongField): builder.PrependFloat32Slot(178, scenarioAutoDelayMillisecLongField, 0.0)
+def AddScenarioAutoDelayMillisecLongField(builder, scenarioAutoDelayMillisecLongField):
+    return ConstCommonExcelAddScenarioAutoDelayMillisecLongField(builder, scenarioAutoDelayMillisecLongField)
+def ConstCommonExcelAddScenarioAutoDelayMillisecField(builder, scenarioAutoDelayMillisecField): builder.PrependFloat32Slot(179, scenarioAutoDelayMillisecField, 0.0)
+def AddScenarioAutoDelayMillisecField(builder, scenarioAutoDelayMillisecField):
+    return ConstCommonExcelAddScenarioAutoDelayMillisecField(builder, scenarioAutoDelayMillisecField)
+def ConstCommonExcelAddScenarioAutoDelayMillisecShortField(builder, scenarioAutoDelayMillisecShortField): builder.PrependFloat32Slot(180, scenarioAutoDelayMillisecShortField, 0.0)
+def AddScenarioAutoDelayMillisecShortField(builder, scenarioAutoDelayMillisecShortField):
+    return ConstCommonExcelAddScenarioAutoDelayMillisecShortField(builder, scenarioAutoDelayMillisecShortField)
+def ConstCommonExcelAddScenarioAutoDelayMillisecVeryShortField(builder, scenarioAutoDelayMillisecVeryShortField): builder.PrependFloat32Slot(181, scenarioAutoDelayMillisecVeryShortField, 0.0)
+def AddScenarioAutoDelayMillisecVeryShortField(builder, scenarioAutoDelayMillisecVeryShortField):
+    return ConstCommonExcelAddScenarioAutoDelayMillisecVeryShortField(builder, scenarioAutoDelayMillisecVeryShortField)
+def ConstCommonExcelAddPcBuildEnterInformationField(builder, pcBuildEnterInformationField): builder.PrependInt32Slot(182, pcBuildEnterInformationField, 0)
+def AddPcBuildEnterInformationField(builder, pcBuildEnterInformationField):
+    return ConstCommonExcelAddPcBuildEnterInformationField(builder, pcBuildEnterInformationField)
+def ConstCommonExcelAddComebackUserStandardDayField(builder, comebackUserStandardDayField): builder.PrependInt32Slot(183, comebackUserStandardDayField, 0)
+def AddComebackUserStandardDayField(builder, comebackUserStandardDayField):
+    return ConstCommonExcelAddComebackUserStandardDayField(builder, comebackUserStandardDayField)
+def ConstCommonExcelAddComebackUserLogSaveDayField(builder, comebackUserLogSaveDayField): builder.PrependInt32Slot(184, comebackUserLogSaveDayField, 0)
+def AddComebackUserLogSaveDayField(builder, comebackUserLogSaveDayField):
+    return ConstCommonExcelAddComebackUserLogSaveDayField(builder, comebackUserLogSaveDayField)
+def ConstCommonExcelAddComeBackActivateCooldownField(builder, comeBackActivateCooldownField): builder.PrependInt32Slot(185, comeBackActivateCooldownField, 0)
+def AddComeBackActivateCooldownField(builder, comeBackActivateCooldownField):
+    return ConstCommonExcelAddComeBackActivateCooldownField(builder, comeBackActivateCooldownField)
+def ConstCommonExcelAddCafeCopyPresetSlotCountField(builder, cafeCopyPresetSlotCountField): builder.PrependInt32Slot(186, cafeCopyPresetSlotCountField, 0)
+def AddCafeCopyPresetSlotCountField(builder, cafeCopyPresetSlotCountField):
+    return ConstCommonExcelAddCafeCopyPresetSlotCountField(builder, cafeCopyPresetSlotCountField)
+def ConstCommonExcelAddExpiryProductDailyRecordItemReceiveDayField(builder, expiryProductDailyRecordItemReceiveDayField): builder.PrependInt32Slot(187, expiryProductDailyRecordItemReceiveDayField, 0)
+def AddExpiryProductDailyRecordItemReceiveDayField(builder, expiryProductDailyRecordItemReceiveDayField):
+    return ConstCommonExcelAddExpiryProductDailyRecordItemReceiveDayField(builder, expiryProductDailyRecordItemReceiveDayField)
+def ConstCommonExcelAddNewbieUserStandardDayField(builder, newbieUserStandardDayField): builder.PrependInt32Slot(188, newbieUserStandardDayField, 0)
+def AddNewbieUserStandardDayField(builder, newbieUserStandardDayField):
+    return ConstCommonExcelAddNewbieUserStandardDayField(builder, newbieUserStandardDayField)
+def ConstCommonExcelAddNewbieStateHoldDayField(builder, newbieStateHoldDayField): builder.PrependInt32Slot(189, newbieStateHoldDayField, 0)
+def AddNewbieStateHoldDayField(builder, newbieStateHoldDayField):
+    return ConstCommonExcelAddNewbieStateHoldDayField(builder, newbieStateHoldDayField)
+def ConstCommonExcelAddTTSVCN02Field(builder, tTSVCN02Field): builder.PrependUOffsetTRelativeSlot(190, flatbuffers.number_types.UOffsetTFlags.py_type(tTSVCN02Field), 0)
+def AddTTSVCN02Field(builder, tTSVCN02Field):
+    return ConstCommonExcelAddTTSVCN02Field(builder, tTSVCN02Field)
 def ConstCommonExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstCommonExcelEnd(builder)

@@ -25,21 +25,21 @@ class SkillAdditionalTooltipExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # SkillAdditionalTooltipExcel
-    def GroupId(self):
+    def GroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # SkillAdditionalTooltipExcel
-    def AdditionalSkillGroupId(self):
+    def AdditionalSkillGroupIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # SkillAdditionalTooltipExcel
-    def ShowSkillSlot(self):
+    def ShowSkillSlotField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -48,15 +48,15 @@ class SkillAdditionalTooltipExcel(object):
 def SkillAdditionalTooltipExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return SkillAdditionalTooltipExcelStart(builder)
-def SkillAdditionalTooltipExcelAddGroupId(builder, groupId): builder.PrependInt32Slot(0, groupId, 0)
-def AddGroupId(builder, groupId):
-    return SkillAdditionalTooltipExcelAddGroupId(builder, groupId)
-def SkillAdditionalTooltipExcelAddAdditionalSkillGroupId(builder, additionalSkillGroupId): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(additionalSkillGroupId), 0)
-def AddAdditionalSkillGroupId(builder, additionalSkillGroupId):
-    return SkillAdditionalTooltipExcelAddAdditionalSkillGroupId(builder, additionalSkillGroupId)
-def SkillAdditionalTooltipExcelAddShowSkillSlot(builder, showSkillSlot): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(showSkillSlot), 0)
-def AddShowSkillSlot(builder, showSkillSlot):
-    return SkillAdditionalTooltipExcelAddShowSkillSlot(builder, showSkillSlot)
+def SkillAdditionalTooltipExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+def AddGroupIdField(builder, groupIdField):
+    return SkillAdditionalTooltipExcelAddGroupIdField(builder, groupIdField)
+def SkillAdditionalTooltipExcelAddAdditionalSkillGroupIdField(builder, additionalSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(additionalSkillGroupIdField), 0)
+def AddAdditionalSkillGroupIdField(builder, additionalSkillGroupIdField):
+    return SkillAdditionalTooltipExcelAddAdditionalSkillGroupIdField(builder, additionalSkillGroupIdField)
+def SkillAdditionalTooltipExcelAddShowSkillSlotField(builder, showSkillSlotField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(showSkillSlotField), 0)
+def AddShowSkillSlotField(builder, showSkillSlotField):
+    return SkillAdditionalTooltipExcelAddShowSkillSlotField(builder, showSkillSlotField)
 def SkillAdditionalTooltipExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SkillAdditionalTooltipExcelEnd(builder)

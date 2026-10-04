@@ -25,7 +25,7 @@ class PropMotion(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # PropMotion
-    def Name(self):
+    def NameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -34,9 +34,9 @@ class PropMotion(object):
 def PropMotionStart(builder): builder.StartObject(1)
 def Start(builder):
     return PropMotionStart(builder)
-def PropMotionAddName(builder, name): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
-def AddName(builder, name):
-    return PropMotionAddName(builder, name)
+def PropMotionAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+def AddNameField(builder, nameField):
+    return PropMotionAddNameField(builder, nameField)
 def PropMotionEnd(builder): return builder.EndObject()
 def End(builder):
     return PropMotionEnd(builder)

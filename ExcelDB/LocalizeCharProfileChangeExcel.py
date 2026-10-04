@@ -25,28 +25,28 @@ class LocalizeCharProfileChangeExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # LocalizeCharProfileChangeExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeCharProfileChangeExcel
-    def ScenarioModeId(self):
+    def ScenarioModeIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeCharProfileChangeExcel
-    def ChangeCharacterID(self):
+    def ChangeCharacterIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeCharProfileChangeExcel
-    def OverrideClub(self):
+    def OverrideClubField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
@@ -55,18 +55,18 @@ class LocalizeCharProfileChangeExcel(object):
 def LocalizeCharProfileChangeExcelStart(builder): builder.StartObject(4)
 def Start(builder):
     return LocalizeCharProfileChangeExcelStart(builder)
-def LocalizeCharProfileChangeExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(0, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return LocalizeCharProfileChangeExcelAddCharacterId(builder, characterId)
-def LocalizeCharProfileChangeExcelAddScenarioModeId(builder, scenarioModeId): builder.PrependInt32Slot(1, scenarioModeId, 0)
-def AddScenarioModeId(builder, scenarioModeId):
-    return LocalizeCharProfileChangeExcelAddScenarioModeId(builder, scenarioModeId)
-def LocalizeCharProfileChangeExcelAddChangeCharacterID(builder, changeCharacterID): builder.PrependInt32Slot(2, changeCharacterID, 0)
-def AddChangeCharacterID(builder, changeCharacterID):
-    return LocalizeCharProfileChangeExcelAddChangeCharacterID(builder, changeCharacterID)
-def LocalizeCharProfileChangeExcelAddOverrideClub(builder, overrideClub): builder.PrependBoolSlot(3, overrideClub, 0)
-def AddOverrideClub(builder, overrideClub):
-    return LocalizeCharProfileChangeExcelAddOverrideClub(builder, overrideClub)
+def LocalizeCharProfileChangeExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(0, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return LocalizeCharProfileChangeExcelAddCharacterIdField(builder, characterIdField)
+def LocalizeCharProfileChangeExcelAddScenarioModeIdField(builder, scenarioModeIdField): builder.PrependInt32Slot(1, scenarioModeIdField, 0)
+def AddScenarioModeIdField(builder, scenarioModeIdField):
+    return LocalizeCharProfileChangeExcelAddScenarioModeIdField(builder, scenarioModeIdField)
+def LocalizeCharProfileChangeExcelAddChangeCharacterIDField(builder, changeCharacterIDField): builder.PrependInt32Slot(2, changeCharacterIDField, 0)
+def AddChangeCharacterIDField(builder, changeCharacterIDField):
+    return LocalizeCharProfileChangeExcelAddChangeCharacterIDField(builder, changeCharacterIDField)
+def LocalizeCharProfileChangeExcelAddOverrideClubField(builder, overrideClubField): builder.PrependBoolSlot(3, overrideClubField, 0)
+def AddOverrideClubField(builder, overrideClubField):
+    return LocalizeCharProfileChangeExcelAddOverrideClubField(builder, overrideClubField)
 def LocalizeCharProfileChangeExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return LocalizeCharProfileChangeExcelEnd(builder)

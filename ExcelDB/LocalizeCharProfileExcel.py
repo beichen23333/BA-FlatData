@@ -25,273 +25,273 @@ class LocalizeCharProfileExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # LocalizeCharProfileExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeCharProfileExcel
-    def StatusMessageKr(self):
+    def StatusMessageKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def StatusMessageJp(self):
+    def StatusMessageJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def FullNameKr(self):
+    def FullNameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def FullNameJp(self):
+    def FullNameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def FamilyNameKr(self):
+    def FamilyNameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def FamilyNameRubyKr(self):
+    def FamilyNameRubyKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def PersonalNameKr(self):
+    def PersonalNameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def PersonalNameRubyKr(self):
+    def PersonalNameRubyKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def FamilyNameJp(self):
+    def FamilyNameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def FamilyNameRubyJp(self):
+    def FamilyNameRubyJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def PersonalNameJp(self):
+    def PersonalNameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def PersonalNameRubyJp(self):
+    def PersonalNameRubyJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def Club(self):
+    def ClubField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # LocalizeCharProfileExcel
-    def SchoolYearKr(self):
+    def SchoolYearKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def SchoolYearJp(self):
+    def SchoolYearJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def CharacterAgeKr(self):
+    def CharacterAgeKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def CharacterAgeJp(self):
+    def CharacterAgeJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def BirthDay(self):
+    def BirthDayField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def BirthdayKr(self):
+    def BirthdayKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def BirthdayJp(self):
+    def BirthdayJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def CharHeightKr(self):
+    def CharHeightKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def CharHeightJp(self):
+    def CharHeightJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def DesignerNameKr(self):
+    def DesignerNameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def DesignerNameJp(self):
+    def DesignerNameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def IllustratorNameKr(self):
+    def IllustratorNameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def IllustratorNameJp(self):
+    def IllustratorNameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def CharacterVoiceKr(self):
+    def CharacterVoiceKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def CharacterVoiceJp(self):
+    def CharacterVoiceJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def HobbyKr(self):
+    def HobbyKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def HobbyJp(self):
+    def HobbyJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def WeaponNameKr(self):
+    def WeaponNameKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def WeaponDescKr(self):
+    def WeaponDescKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def WeaponNameJp(self):
+    def WeaponNameJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def WeaponDescJp(self):
+    def WeaponDescJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def ProfileIntroductionKr(self):
+    def ProfileIntroductionKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def ProfileIntroductionJp(self):
+    def ProfileIntroductionJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def CharacterSSRNewKr(self):
+    def CharacterSSRNewKrField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeCharProfileExcel
-    def CharacterSSRNewJp(self):
+    def CharacterSSRNewJpField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -300,123 +300,123 @@ class LocalizeCharProfileExcel(object):
 def LocalizeCharProfileExcelStart(builder): builder.StartObject(39)
 def Start(builder):
     return LocalizeCharProfileExcelStart(builder)
-def LocalizeCharProfileExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(0, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return LocalizeCharProfileExcelAddCharacterId(builder, characterId)
-def LocalizeCharProfileExcelAddStatusMessageKr(builder, statusMessageKr): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(statusMessageKr), 0)
-def AddStatusMessageKr(builder, statusMessageKr):
-    return LocalizeCharProfileExcelAddStatusMessageKr(builder, statusMessageKr)
-def LocalizeCharProfileExcelAddStatusMessageJp(builder, statusMessageJp): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(statusMessageJp), 0)
-def AddStatusMessageJp(builder, statusMessageJp):
-    return LocalizeCharProfileExcelAddStatusMessageJp(builder, statusMessageJp)
-def LocalizeCharProfileExcelAddFullNameKr(builder, fullNameKr): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(fullNameKr), 0)
-def AddFullNameKr(builder, fullNameKr):
-    return LocalizeCharProfileExcelAddFullNameKr(builder, fullNameKr)
-def LocalizeCharProfileExcelAddFullNameJp(builder, fullNameJp): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(fullNameJp), 0)
-def AddFullNameJp(builder, fullNameJp):
-    return LocalizeCharProfileExcelAddFullNameJp(builder, fullNameJp)
-def LocalizeCharProfileExcelAddFamilyNameKr(builder, familyNameKr): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(familyNameKr), 0)
-def AddFamilyNameKr(builder, familyNameKr):
-    return LocalizeCharProfileExcelAddFamilyNameKr(builder, familyNameKr)
-def LocalizeCharProfileExcelAddFamilyNameRubyKr(builder, familyNameRubyKr): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(familyNameRubyKr), 0)
-def AddFamilyNameRubyKr(builder, familyNameRubyKr):
-    return LocalizeCharProfileExcelAddFamilyNameRubyKr(builder, familyNameRubyKr)
-def LocalizeCharProfileExcelAddPersonalNameKr(builder, personalNameKr): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(personalNameKr), 0)
-def AddPersonalNameKr(builder, personalNameKr):
-    return LocalizeCharProfileExcelAddPersonalNameKr(builder, personalNameKr)
-def LocalizeCharProfileExcelAddPersonalNameRubyKr(builder, personalNameRubyKr): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(personalNameRubyKr), 0)
-def AddPersonalNameRubyKr(builder, personalNameRubyKr):
-    return LocalizeCharProfileExcelAddPersonalNameRubyKr(builder, personalNameRubyKr)
-def LocalizeCharProfileExcelAddFamilyNameJp(builder, familyNameJp): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(familyNameJp), 0)
-def AddFamilyNameJp(builder, familyNameJp):
-    return LocalizeCharProfileExcelAddFamilyNameJp(builder, familyNameJp)
-def LocalizeCharProfileExcelAddFamilyNameRubyJp(builder, familyNameRubyJp): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(familyNameRubyJp), 0)
-def AddFamilyNameRubyJp(builder, familyNameRubyJp):
-    return LocalizeCharProfileExcelAddFamilyNameRubyJp(builder, familyNameRubyJp)
-def LocalizeCharProfileExcelAddPersonalNameJp(builder, personalNameJp): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(personalNameJp), 0)
-def AddPersonalNameJp(builder, personalNameJp):
-    return LocalizeCharProfileExcelAddPersonalNameJp(builder, personalNameJp)
-def LocalizeCharProfileExcelAddPersonalNameRubyJp(builder, personalNameRubyJp): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(personalNameRubyJp), 0)
-def AddPersonalNameRubyJp(builder, personalNameRubyJp):
-    return LocalizeCharProfileExcelAddPersonalNameRubyJp(builder, personalNameRubyJp)
-def LocalizeCharProfileExcelAddClub(builder, club): builder.PrependInt32Slot(13, club, 0)
-def AddClub(builder, club):
-    return LocalizeCharProfileExcelAddClub(builder, club)
-def LocalizeCharProfileExcelAddSchoolYearKr(builder, schoolYearKr): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(schoolYearKr), 0)
-def AddSchoolYearKr(builder, schoolYearKr):
-    return LocalizeCharProfileExcelAddSchoolYearKr(builder, schoolYearKr)
-def LocalizeCharProfileExcelAddSchoolYearJp(builder, schoolYearJp): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(schoolYearJp), 0)
-def AddSchoolYearJp(builder, schoolYearJp):
-    return LocalizeCharProfileExcelAddSchoolYearJp(builder, schoolYearJp)
-def LocalizeCharProfileExcelAddCharacterAgeKr(builder, characterAgeKr): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(characterAgeKr), 0)
-def AddCharacterAgeKr(builder, characterAgeKr):
-    return LocalizeCharProfileExcelAddCharacterAgeKr(builder, characterAgeKr)
-def LocalizeCharProfileExcelAddCharacterAgeJp(builder, characterAgeJp): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(characterAgeJp), 0)
-def AddCharacterAgeJp(builder, characterAgeJp):
-    return LocalizeCharProfileExcelAddCharacterAgeJp(builder, characterAgeJp)
-def LocalizeCharProfileExcelAddBirthDay(builder, birthDay): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(birthDay), 0)
-def AddBirthDay(builder, birthDay):
-    return LocalizeCharProfileExcelAddBirthDay(builder, birthDay)
-def LocalizeCharProfileExcelAddBirthdayKr(builder, birthdayKr): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(birthdayKr), 0)
-def AddBirthdayKr(builder, birthdayKr):
-    return LocalizeCharProfileExcelAddBirthdayKr(builder, birthdayKr)
-def LocalizeCharProfileExcelAddBirthdayJp(builder, birthdayJp): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(birthdayJp), 0)
-def AddBirthdayJp(builder, birthdayJp):
-    return LocalizeCharProfileExcelAddBirthdayJp(builder, birthdayJp)
-def LocalizeCharProfileExcelAddCharHeightKr(builder, charHeightKr): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(charHeightKr), 0)
-def AddCharHeightKr(builder, charHeightKr):
-    return LocalizeCharProfileExcelAddCharHeightKr(builder, charHeightKr)
-def LocalizeCharProfileExcelAddCharHeightJp(builder, charHeightJp): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(charHeightJp), 0)
-def AddCharHeightJp(builder, charHeightJp):
-    return LocalizeCharProfileExcelAddCharHeightJp(builder, charHeightJp)
-def LocalizeCharProfileExcelAddDesignerNameKr(builder, designerNameKr): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(designerNameKr), 0)
-def AddDesignerNameKr(builder, designerNameKr):
-    return LocalizeCharProfileExcelAddDesignerNameKr(builder, designerNameKr)
-def LocalizeCharProfileExcelAddDesignerNameJp(builder, designerNameJp): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(designerNameJp), 0)
-def AddDesignerNameJp(builder, designerNameJp):
-    return LocalizeCharProfileExcelAddDesignerNameJp(builder, designerNameJp)
-def LocalizeCharProfileExcelAddIllustratorNameKr(builder, illustratorNameKr): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(illustratorNameKr), 0)
-def AddIllustratorNameKr(builder, illustratorNameKr):
-    return LocalizeCharProfileExcelAddIllustratorNameKr(builder, illustratorNameKr)
-def LocalizeCharProfileExcelAddIllustratorNameJp(builder, illustratorNameJp): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(illustratorNameJp), 0)
-def AddIllustratorNameJp(builder, illustratorNameJp):
-    return LocalizeCharProfileExcelAddIllustratorNameJp(builder, illustratorNameJp)
-def LocalizeCharProfileExcelAddCharacterVoiceKr(builder, characterVoiceKr): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(characterVoiceKr), 0)
-def AddCharacterVoiceKr(builder, characterVoiceKr):
-    return LocalizeCharProfileExcelAddCharacterVoiceKr(builder, characterVoiceKr)
-def LocalizeCharProfileExcelAddCharacterVoiceJp(builder, characterVoiceJp): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(characterVoiceJp), 0)
-def AddCharacterVoiceJp(builder, characterVoiceJp):
-    return LocalizeCharProfileExcelAddCharacterVoiceJp(builder, characterVoiceJp)
-def LocalizeCharProfileExcelAddHobbyKr(builder, hobbyKr): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(hobbyKr), 0)
-def AddHobbyKr(builder, hobbyKr):
-    return LocalizeCharProfileExcelAddHobbyKr(builder, hobbyKr)
-def LocalizeCharProfileExcelAddHobbyJp(builder, hobbyJp): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(hobbyJp), 0)
-def AddHobbyJp(builder, hobbyJp):
-    return LocalizeCharProfileExcelAddHobbyJp(builder, hobbyJp)
-def LocalizeCharProfileExcelAddWeaponNameKr(builder, weaponNameKr): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(weaponNameKr), 0)
-def AddWeaponNameKr(builder, weaponNameKr):
-    return LocalizeCharProfileExcelAddWeaponNameKr(builder, weaponNameKr)
-def LocalizeCharProfileExcelAddWeaponDescKr(builder, weaponDescKr): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(weaponDescKr), 0)
-def AddWeaponDescKr(builder, weaponDescKr):
-    return LocalizeCharProfileExcelAddWeaponDescKr(builder, weaponDescKr)
-def LocalizeCharProfileExcelAddWeaponNameJp(builder, weaponNameJp): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(weaponNameJp), 0)
-def AddWeaponNameJp(builder, weaponNameJp):
-    return LocalizeCharProfileExcelAddWeaponNameJp(builder, weaponNameJp)
-def LocalizeCharProfileExcelAddWeaponDescJp(builder, weaponDescJp): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(weaponDescJp), 0)
-def AddWeaponDescJp(builder, weaponDescJp):
-    return LocalizeCharProfileExcelAddWeaponDescJp(builder, weaponDescJp)
-def LocalizeCharProfileExcelAddProfileIntroductionKr(builder, profileIntroductionKr): builder.PrependUOffsetTRelativeSlot(35, flatbuffers.number_types.UOffsetTFlags.py_type(profileIntroductionKr), 0)
-def AddProfileIntroductionKr(builder, profileIntroductionKr):
-    return LocalizeCharProfileExcelAddProfileIntroductionKr(builder, profileIntroductionKr)
-def LocalizeCharProfileExcelAddProfileIntroductionJp(builder, profileIntroductionJp): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(profileIntroductionJp), 0)
-def AddProfileIntroductionJp(builder, profileIntroductionJp):
-    return LocalizeCharProfileExcelAddProfileIntroductionJp(builder, profileIntroductionJp)
-def LocalizeCharProfileExcelAddCharacterSSRNewKr(builder, characterSSRNewKr): builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(characterSSRNewKr), 0)
-def AddCharacterSSRNewKr(builder, characterSSRNewKr):
-    return LocalizeCharProfileExcelAddCharacterSSRNewKr(builder, characterSSRNewKr)
-def LocalizeCharProfileExcelAddCharacterSSRNewJp(builder, characterSSRNewJp): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(characterSSRNewJp), 0)
-def AddCharacterSSRNewJp(builder, characterSSRNewJp):
-    return LocalizeCharProfileExcelAddCharacterSSRNewJp(builder, characterSSRNewJp)
+def LocalizeCharProfileExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(0, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return LocalizeCharProfileExcelAddCharacterIdField(builder, characterIdField)
+def LocalizeCharProfileExcelAddStatusMessageKrField(builder, statusMessageKrField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(statusMessageKrField), 0)
+def AddStatusMessageKrField(builder, statusMessageKrField):
+    return LocalizeCharProfileExcelAddStatusMessageKrField(builder, statusMessageKrField)
+def LocalizeCharProfileExcelAddStatusMessageJpField(builder, statusMessageJpField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(statusMessageJpField), 0)
+def AddStatusMessageJpField(builder, statusMessageJpField):
+    return LocalizeCharProfileExcelAddStatusMessageJpField(builder, statusMessageJpField)
+def LocalizeCharProfileExcelAddFullNameKrField(builder, fullNameKrField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(fullNameKrField), 0)
+def AddFullNameKrField(builder, fullNameKrField):
+    return LocalizeCharProfileExcelAddFullNameKrField(builder, fullNameKrField)
+def LocalizeCharProfileExcelAddFullNameJpField(builder, fullNameJpField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(fullNameJpField), 0)
+def AddFullNameJpField(builder, fullNameJpField):
+    return LocalizeCharProfileExcelAddFullNameJpField(builder, fullNameJpField)
+def LocalizeCharProfileExcelAddFamilyNameKrField(builder, familyNameKrField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(familyNameKrField), 0)
+def AddFamilyNameKrField(builder, familyNameKrField):
+    return LocalizeCharProfileExcelAddFamilyNameKrField(builder, familyNameKrField)
+def LocalizeCharProfileExcelAddFamilyNameRubyKrField(builder, familyNameRubyKrField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(familyNameRubyKrField), 0)
+def AddFamilyNameRubyKrField(builder, familyNameRubyKrField):
+    return LocalizeCharProfileExcelAddFamilyNameRubyKrField(builder, familyNameRubyKrField)
+def LocalizeCharProfileExcelAddPersonalNameKrField(builder, personalNameKrField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(personalNameKrField), 0)
+def AddPersonalNameKrField(builder, personalNameKrField):
+    return LocalizeCharProfileExcelAddPersonalNameKrField(builder, personalNameKrField)
+def LocalizeCharProfileExcelAddPersonalNameRubyKrField(builder, personalNameRubyKrField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(personalNameRubyKrField), 0)
+def AddPersonalNameRubyKrField(builder, personalNameRubyKrField):
+    return LocalizeCharProfileExcelAddPersonalNameRubyKrField(builder, personalNameRubyKrField)
+def LocalizeCharProfileExcelAddFamilyNameJpField(builder, familyNameJpField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(familyNameJpField), 0)
+def AddFamilyNameJpField(builder, familyNameJpField):
+    return LocalizeCharProfileExcelAddFamilyNameJpField(builder, familyNameJpField)
+def LocalizeCharProfileExcelAddFamilyNameRubyJpField(builder, familyNameRubyJpField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(familyNameRubyJpField), 0)
+def AddFamilyNameRubyJpField(builder, familyNameRubyJpField):
+    return LocalizeCharProfileExcelAddFamilyNameRubyJpField(builder, familyNameRubyJpField)
+def LocalizeCharProfileExcelAddPersonalNameJpField(builder, personalNameJpField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(personalNameJpField), 0)
+def AddPersonalNameJpField(builder, personalNameJpField):
+    return LocalizeCharProfileExcelAddPersonalNameJpField(builder, personalNameJpField)
+def LocalizeCharProfileExcelAddPersonalNameRubyJpField(builder, personalNameRubyJpField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(personalNameRubyJpField), 0)
+def AddPersonalNameRubyJpField(builder, personalNameRubyJpField):
+    return LocalizeCharProfileExcelAddPersonalNameRubyJpField(builder, personalNameRubyJpField)
+def LocalizeCharProfileExcelAddClubField(builder, clubField): builder.PrependInt32Slot(13, clubField, 0)
+def AddClubField(builder, clubField):
+    return LocalizeCharProfileExcelAddClubField(builder, clubField)
+def LocalizeCharProfileExcelAddSchoolYearKrField(builder, schoolYearKrField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(schoolYearKrField), 0)
+def AddSchoolYearKrField(builder, schoolYearKrField):
+    return LocalizeCharProfileExcelAddSchoolYearKrField(builder, schoolYearKrField)
+def LocalizeCharProfileExcelAddSchoolYearJpField(builder, schoolYearJpField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(schoolYearJpField), 0)
+def AddSchoolYearJpField(builder, schoolYearJpField):
+    return LocalizeCharProfileExcelAddSchoolYearJpField(builder, schoolYearJpField)
+def LocalizeCharProfileExcelAddCharacterAgeKrField(builder, characterAgeKrField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(characterAgeKrField), 0)
+def AddCharacterAgeKrField(builder, characterAgeKrField):
+    return LocalizeCharProfileExcelAddCharacterAgeKrField(builder, characterAgeKrField)
+def LocalizeCharProfileExcelAddCharacterAgeJpField(builder, characterAgeJpField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(characterAgeJpField), 0)
+def AddCharacterAgeJpField(builder, characterAgeJpField):
+    return LocalizeCharProfileExcelAddCharacterAgeJpField(builder, characterAgeJpField)
+def LocalizeCharProfileExcelAddBirthDayField(builder, birthDayField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(birthDayField), 0)
+def AddBirthDayField(builder, birthDayField):
+    return LocalizeCharProfileExcelAddBirthDayField(builder, birthDayField)
+def LocalizeCharProfileExcelAddBirthdayKrField(builder, birthdayKrField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(birthdayKrField), 0)
+def AddBirthdayKrField(builder, birthdayKrField):
+    return LocalizeCharProfileExcelAddBirthdayKrField(builder, birthdayKrField)
+def LocalizeCharProfileExcelAddBirthdayJpField(builder, birthdayJpField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(birthdayJpField), 0)
+def AddBirthdayJpField(builder, birthdayJpField):
+    return LocalizeCharProfileExcelAddBirthdayJpField(builder, birthdayJpField)
+def LocalizeCharProfileExcelAddCharHeightKrField(builder, charHeightKrField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(charHeightKrField), 0)
+def AddCharHeightKrField(builder, charHeightKrField):
+    return LocalizeCharProfileExcelAddCharHeightKrField(builder, charHeightKrField)
+def LocalizeCharProfileExcelAddCharHeightJpField(builder, charHeightJpField): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(charHeightJpField), 0)
+def AddCharHeightJpField(builder, charHeightJpField):
+    return LocalizeCharProfileExcelAddCharHeightJpField(builder, charHeightJpField)
+def LocalizeCharProfileExcelAddDesignerNameKrField(builder, designerNameKrField): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(designerNameKrField), 0)
+def AddDesignerNameKrField(builder, designerNameKrField):
+    return LocalizeCharProfileExcelAddDesignerNameKrField(builder, designerNameKrField)
+def LocalizeCharProfileExcelAddDesignerNameJpField(builder, designerNameJpField): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(designerNameJpField), 0)
+def AddDesignerNameJpField(builder, designerNameJpField):
+    return LocalizeCharProfileExcelAddDesignerNameJpField(builder, designerNameJpField)
+def LocalizeCharProfileExcelAddIllustratorNameKrField(builder, illustratorNameKrField): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(illustratorNameKrField), 0)
+def AddIllustratorNameKrField(builder, illustratorNameKrField):
+    return LocalizeCharProfileExcelAddIllustratorNameKrField(builder, illustratorNameKrField)
+def LocalizeCharProfileExcelAddIllustratorNameJpField(builder, illustratorNameJpField): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(illustratorNameJpField), 0)
+def AddIllustratorNameJpField(builder, illustratorNameJpField):
+    return LocalizeCharProfileExcelAddIllustratorNameJpField(builder, illustratorNameJpField)
+def LocalizeCharProfileExcelAddCharacterVoiceKrField(builder, characterVoiceKrField): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(characterVoiceKrField), 0)
+def AddCharacterVoiceKrField(builder, characterVoiceKrField):
+    return LocalizeCharProfileExcelAddCharacterVoiceKrField(builder, characterVoiceKrField)
+def LocalizeCharProfileExcelAddCharacterVoiceJpField(builder, characterVoiceJpField): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(characterVoiceJpField), 0)
+def AddCharacterVoiceJpField(builder, characterVoiceJpField):
+    return LocalizeCharProfileExcelAddCharacterVoiceJpField(builder, characterVoiceJpField)
+def LocalizeCharProfileExcelAddHobbyKrField(builder, hobbyKrField): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(hobbyKrField), 0)
+def AddHobbyKrField(builder, hobbyKrField):
+    return LocalizeCharProfileExcelAddHobbyKrField(builder, hobbyKrField)
+def LocalizeCharProfileExcelAddHobbyJpField(builder, hobbyJpField): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(hobbyJpField), 0)
+def AddHobbyJpField(builder, hobbyJpField):
+    return LocalizeCharProfileExcelAddHobbyJpField(builder, hobbyJpField)
+def LocalizeCharProfileExcelAddWeaponNameKrField(builder, weaponNameKrField): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(weaponNameKrField), 0)
+def AddWeaponNameKrField(builder, weaponNameKrField):
+    return LocalizeCharProfileExcelAddWeaponNameKrField(builder, weaponNameKrField)
+def LocalizeCharProfileExcelAddWeaponDescKrField(builder, weaponDescKrField): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(weaponDescKrField), 0)
+def AddWeaponDescKrField(builder, weaponDescKrField):
+    return LocalizeCharProfileExcelAddWeaponDescKrField(builder, weaponDescKrField)
+def LocalizeCharProfileExcelAddWeaponNameJpField(builder, weaponNameJpField): builder.PrependUOffsetTRelativeSlot(33, flatbuffers.number_types.UOffsetTFlags.py_type(weaponNameJpField), 0)
+def AddWeaponNameJpField(builder, weaponNameJpField):
+    return LocalizeCharProfileExcelAddWeaponNameJpField(builder, weaponNameJpField)
+def LocalizeCharProfileExcelAddWeaponDescJpField(builder, weaponDescJpField): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(weaponDescJpField), 0)
+def AddWeaponDescJpField(builder, weaponDescJpField):
+    return LocalizeCharProfileExcelAddWeaponDescJpField(builder, weaponDescJpField)
+def LocalizeCharProfileExcelAddProfileIntroductionKrField(builder, profileIntroductionKrField): builder.PrependUOffsetTRelativeSlot(35, flatbuffers.number_types.UOffsetTFlags.py_type(profileIntroductionKrField), 0)
+def AddProfileIntroductionKrField(builder, profileIntroductionKrField):
+    return LocalizeCharProfileExcelAddProfileIntroductionKrField(builder, profileIntroductionKrField)
+def LocalizeCharProfileExcelAddProfileIntroductionJpField(builder, profileIntroductionJpField): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(profileIntroductionJpField), 0)
+def AddProfileIntroductionJpField(builder, profileIntroductionJpField):
+    return LocalizeCharProfileExcelAddProfileIntroductionJpField(builder, profileIntroductionJpField)
+def LocalizeCharProfileExcelAddCharacterSSRNewKrField(builder, characterSSRNewKrField): builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(characterSSRNewKrField), 0)
+def AddCharacterSSRNewKrField(builder, characterSSRNewKrField):
+    return LocalizeCharProfileExcelAddCharacterSSRNewKrField(builder, characterSSRNewKrField)
+def LocalizeCharProfileExcelAddCharacterSSRNewJpField(builder, characterSSRNewJpField): builder.PrependUOffsetTRelativeSlot(38, flatbuffers.number_types.UOffsetTFlags.py_type(characterSSRNewJpField), 0)
+def AddCharacterSSRNewJpField(builder, characterSSRNewJpField):
+    return LocalizeCharProfileExcelAddCharacterSSRNewJpField(builder, characterSSRNewJpField)
 def LocalizeCharProfileExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return LocalizeCharProfileExcelEnd(builder)

@@ -25,595 +25,595 @@ class CharacterStatExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # CharacterStatExcel
-    def CharacterId(self):
+    def CharacterIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def StabilityRate(self):
+    def StabilityRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def StabilityPoint(self):
+    def StabilityPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def AttackPower1(self):
+    def AttackPower1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def AttackPower100(self):
+    def AttackPower100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def MaxHP1(self):
+    def MaxHP1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def MaxHP100(self):
+    def MaxHP100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DefensePower1(self):
+    def DefensePower1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DefensePower100(self):
+    def DefensePower100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealPower1(self):
+    def HealPower1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealPower100(self):
+    def HealPower100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DodgePoint(self):
+    def DodgePointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def AccuracyPoint(self):
+    def AccuracyPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def CriticalPoint(self):
+    def CriticalPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def CriticalResistPoint(self):
+    def CriticalResistPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def CriticalDamageRate(self):
+    def CriticalDamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def CriticalDamageResistRate(self):
+    def CriticalDamageResistRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def BlockRate(self):
+    def BlockRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealEffectivenessRate(self):
+    def HealEffectivenessRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def OppressionPower(self):
+    def OppressionPowerField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def OppressionResist(self):
+    def OppressionResistField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DefensePenetration1(self):
+    def DefensePenetration1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DefensePenetration100(self):
+    def DefensePenetration100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DefensePenetrationResist1(self):
+    def DefensePenetrationResist1Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DefensePenetrationResist100(self):
+    def DefensePenetrationResist100Field(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceExplosionRate(self):
+    def EnhanceExplosionRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhancePierceRate(self):
+    def EnhancePierceRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceMysticRate(self):
+    def EnhanceMysticRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceSonicRate(self):
+    def EnhanceSonicRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceChemicalRate(self):
+    def EnhanceChemicalRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceSiegeRate(self):
+    def EnhanceSiegeRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceNormalRate(self):
+    def EnhanceNormalRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceLightArmorRate(self):
+    def EnhanceLightArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceHeavyArmorRate(self):
+    def EnhanceHeavyArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceUnarmedRate(self):
+    def EnhanceUnarmedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceElasticArmorRate(self):
+    def EnhanceElasticArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceCompositeArmorRate(self):
+    def EnhanceCompositeArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceStructureRate(self):
+    def EnhanceStructureRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceNormalArmorRate(self):
+    def EnhanceNormalArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(80))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ExtendBuffDuration(self):
+    def ExtendBuffDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(82))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ExtendDebuffDuration(self):
+    def ExtendDebuffDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(84))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ExtendCrowdControlDuration(self):
+    def ExtendCrowdControlDurationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(86))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def AmmoCount(self):
+    def AmmoCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(88))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def AmmoCost(self):
+    def AmmoCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def IgnoreDelayCount(self):
+    def IgnoreDelayCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(92))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def NormalAttackSpeed(self):
+    def NormalAttackSpeedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(94))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def Range(self):
+    def RangeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(96))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def InitialRangeRate(self):
+    def InitialRangeRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(98))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def MoveSpeed(self):
+    def MoveSpeedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(100))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def SightPoint(self):
+    def SightPointField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(102))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ActiveGauge(self):
+    def ActiveGaugeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(104))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def GroggyGauge(self):
+    def GroggyGaugeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(106))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def GroggyTime(self):
+    def GroggyTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(108))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def StrategyMobility(self):
+    def StrategyMobilityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(110))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ActionCount(self):
+    def ActionCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(112))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def StrategySightRange(self):
+    def StrategySightRangeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(114))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DamageRatio(self):
+    def DamageRatioField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(116))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DamagedRatio(self):
+    def DamagedRatioField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(118))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DamageRatio2Increase(self):
+    def DamageRatio2IncreaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(120))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DamageRatio2Decrease(self):
+    def DamageRatio2DecreaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(122))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DamagedRatio2Increase(self):
+    def DamagedRatio2IncreaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(124))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def DamagedRatio2Decrease(self):
+    def DamagedRatio2DecreaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(126))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ExDamagedRatioIncrease(self):
+    def ExDamagedRatioIncreaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(128))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ExDamagedRatioDecrease(self):
+    def ExDamagedRatioDecreaseField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(130))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceExDamageRate(self):
+    def EnhanceExDamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(132))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ReduceExDamagedRate(self):
+    def ReduceExDamagedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(134))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceBasicsDamageRate(self):
+    def EnhanceBasicsDamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(136))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ReduceBasicsDamagedRate(self):
+    def ReduceBasicsDamagedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(138))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def EnhanceWeakDamageRate(self):
+    def EnhanceWeakDamageRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(140))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def ReduceWeakDamagedRate(self):
+    def ReduceWeakDamagedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(142))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealRate(self):
+    def HealRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(144))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealLightArmorRate(self):
+    def HealLightArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(146))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealHeavyArmorRate(self):
+    def HealHeavyArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(148))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealUnarmedRate(self):
+    def HealUnarmedRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(150))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealElasticArmorRate(self):
+    def HealElasticArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(152))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealNormalArmorRate(self):
+    def HealNormalArmorRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(154))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealedExplosionRate(self):
+    def HealedExplosionRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(156))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealedPierceRate(self):
+    def HealedPierceRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(158))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealedMysticRate(self):
+    def HealedMysticRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(160))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealedSonicRate(self):
+    def HealedSonicRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(162))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def HealedNormalRate(self):
+    def HealedNormalRateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(164))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def StreetBattleAdaptation(self):
+    def StreetBattleAdaptationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(166))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def OutdoorBattleAdaptation(self):
+    def OutdoorBattleAdaptationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(168))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def IndoorBattleAdaptation(self):
+    def IndoorBattleAdaptationField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(170))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # CharacterStatExcel
-    def RegenCost(self):
+    def RegenCostField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(172))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -622,261 +622,261 @@ class CharacterStatExcel(object):
 def CharacterStatExcelStart(builder): builder.StartObject(85)
 def Start(builder):
     return CharacterStatExcelStart(builder)
-def CharacterStatExcelAddCharacterId(builder, characterId): builder.PrependInt32Slot(0, characterId, 0)
-def AddCharacterId(builder, characterId):
-    return CharacterStatExcelAddCharacterId(builder, characterId)
-def CharacterStatExcelAddStabilityRate(builder, stabilityRate): builder.PrependInt32Slot(1, stabilityRate, 0)
-def AddStabilityRate(builder, stabilityRate):
-    return CharacterStatExcelAddStabilityRate(builder, stabilityRate)
-def CharacterStatExcelAddStabilityPoint(builder, stabilityPoint): builder.PrependInt32Slot(2, stabilityPoint, 0)
-def AddStabilityPoint(builder, stabilityPoint):
-    return CharacterStatExcelAddStabilityPoint(builder, stabilityPoint)
-def CharacterStatExcelAddAttackPower1(builder, attackPower1): builder.PrependInt32Slot(3, attackPower1, 0)
-def AddAttackPower1(builder, attackPower1):
-    return CharacterStatExcelAddAttackPower1(builder, attackPower1)
-def CharacterStatExcelAddAttackPower100(builder, attackPower100): builder.PrependInt32Slot(4, attackPower100, 0)
-def AddAttackPower100(builder, attackPower100):
-    return CharacterStatExcelAddAttackPower100(builder, attackPower100)
-def CharacterStatExcelAddMaxHP1(builder, maxHP1): builder.PrependInt32Slot(5, maxHP1, 0)
-def AddMaxHP1(builder, maxHP1):
-    return CharacterStatExcelAddMaxHP1(builder, maxHP1)
-def CharacterStatExcelAddMaxHP100(builder, maxHP100): builder.PrependInt32Slot(6, maxHP100, 0)
-def AddMaxHP100(builder, maxHP100):
-    return CharacterStatExcelAddMaxHP100(builder, maxHP100)
-def CharacterStatExcelAddDefensePower1(builder, defensePower1): builder.PrependInt32Slot(7, defensePower1, 0)
-def AddDefensePower1(builder, defensePower1):
-    return CharacterStatExcelAddDefensePower1(builder, defensePower1)
-def CharacterStatExcelAddDefensePower100(builder, defensePower100): builder.PrependInt32Slot(8, defensePower100, 0)
-def AddDefensePower100(builder, defensePower100):
-    return CharacterStatExcelAddDefensePower100(builder, defensePower100)
-def CharacterStatExcelAddHealPower1(builder, healPower1): builder.PrependInt32Slot(9, healPower1, 0)
-def AddHealPower1(builder, healPower1):
-    return CharacterStatExcelAddHealPower1(builder, healPower1)
-def CharacterStatExcelAddHealPower100(builder, healPower100): builder.PrependInt32Slot(10, healPower100, 0)
-def AddHealPower100(builder, healPower100):
-    return CharacterStatExcelAddHealPower100(builder, healPower100)
-def CharacterStatExcelAddDodgePoint(builder, dodgePoint): builder.PrependInt32Slot(11, dodgePoint, 0)
-def AddDodgePoint(builder, dodgePoint):
-    return CharacterStatExcelAddDodgePoint(builder, dodgePoint)
-def CharacterStatExcelAddAccuracyPoint(builder, accuracyPoint): builder.PrependInt32Slot(12, accuracyPoint, 0)
-def AddAccuracyPoint(builder, accuracyPoint):
-    return CharacterStatExcelAddAccuracyPoint(builder, accuracyPoint)
-def CharacterStatExcelAddCriticalPoint(builder, criticalPoint): builder.PrependInt32Slot(13, criticalPoint, 0)
-def AddCriticalPoint(builder, criticalPoint):
-    return CharacterStatExcelAddCriticalPoint(builder, criticalPoint)
-def CharacterStatExcelAddCriticalResistPoint(builder, criticalResistPoint): builder.PrependInt32Slot(14, criticalResistPoint, 0)
-def AddCriticalResistPoint(builder, criticalResistPoint):
-    return CharacterStatExcelAddCriticalResistPoint(builder, criticalResistPoint)
-def CharacterStatExcelAddCriticalDamageRate(builder, criticalDamageRate): builder.PrependInt32Slot(15, criticalDamageRate, 0)
-def AddCriticalDamageRate(builder, criticalDamageRate):
-    return CharacterStatExcelAddCriticalDamageRate(builder, criticalDamageRate)
-def CharacterStatExcelAddCriticalDamageResistRate(builder, criticalDamageResistRate): builder.PrependInt32Slot(16, criticalDamageResistRate, 0)
-def AddCriticalDamageResistRate(builder, criticalDamageResistRate):
-    return CharacterStatExcelAddCriticalDamageResistRate(builder, criticalDamageResistRate)
-def CharacterStatExcelAddBlockRate(builder, blockRate): builder.PrependInt32Slot(17, blockRate, 0)
-def AddBlockRate(builder, blockRate):
-    return CharacterStatExcelAddBlockRate(builder, blockRate)
-def CharacterStatExcelAddHealEffectivenessRate(builder, healEffectivenessRate): builder.PrependInt32Slot(18, healEffectivenessRate, 0)
-def AddHealEffectivenessRate(builder, healEffectivenessRate):
-    return CharacterStatExcelAddHealEffectivenessRate(builder, healEffectivenessRate)
-def CharacterStatExcelAddOppressionPower(builder, oppressionPower): builder.PrependInt32Slot(19, oppressionPower, 0)
-def AddOppressionPower(builder, oppressionPower):
-    return CharacterStatExcelAddOppressionPower(builder, oppressionPower)
-def CharacterStatExcelAddOppressionResist(builder, oppressionResist): builder.PrependInt32Slot(20, oppressionResist, 0)
-def AddOppressionResist(builder, oppressionResist):
-    return CharacterStatExcelAddOppressionResist(builder, oppressionResist)
-def CharacterStatExcelAddDefensePenetration1(builder, defensePenetration1): builder.PrependInt32Slot(21, defensePenetration1, 0)
-def AddDefensePenetration1(builder, defensePenetration1):
-    return CharacterStatExcelAddDefensePenetration1(builder, defensePenetration1)
-def CharacterStatExcelAddDefensePenetration100(builder, defensePenetration100): builder.PrependInt32Slot(22, defensePenetration100, 0)
-def AddDefensePenetration100(builder, defensePenetration100):
-    return CharacterStatExcelAddDefensePenetration100(builder, defensePenetration100)
-def CharacterStatExcelAddDefensePenetrationResist1(builder, defensePenetrationResist1): builder.PrependInt32Slot(23, defensePenetrationResist1, 0)
-def AddDefensePenetrationResist1(builder, defensePenetrationResist1):
-    return CharacterStatExcelAddDefensePenetrationResist1(builder, defensePenetrationResist1)
-def CharacterStatExcelAddDefensePenetrationResist100(builder, defensePenetrationResist100): builder.PrependInt32Slot(24, defensePenetrationResist100, 0)
-def AddDefensePenetrationResist100(builder, defensePenetrationResist100):
-    return CharacterStatExcelAddDefensePenetrationResist100(builder, defensePenetrationResist100)
-def CharacterStatExcelAddEnhanceExplosionRate(builder, enhanceExplosionRate): builder.PrependInt32Slot(25, enhanceExplosionRate, 0)
-def AddEnhanceExplosionRate(builder, enhanceExplosionRate):
-    return CharacterStatExcelAddEnhanceExplosionRate(builder, enhanceExplosionRate)
-def CharacterStatExcelAddEnhancePierceRate(builder, enhancePierceRate): builder.PrependInt32Slot(26, enhancePierceRate, 0)
-def AddEnhancePierceRate(builder, enhancePierceRate):
-    return CharacterStatExcelAddEnhancePierceRate(builder, enhancePierceRate)
-def CharacterStatExcelAddEnhanceMysticRate(builder, enhanceMysticRate): builder.PrependInt32Slot(27, enhanceMysticRate, 0)
-def AddEnhanceMysticRate(builder, enhanceMysticRate):
-    return CharacterStatExcelAddEnhanceMysticRate(builder, enhanceMysticRate)
-def CharacterStatExcelAddEnhanceSonicRate(builder, enhanceSonicRate): builder.PrependInt32Slot(28, enhanceSonicRate, 0)
-def AddEnhanceSonicRate(builder, enhanceSonicRate):
-    return CharacterStatExcelAddEnhanceSonicRate(builder, enhanceSonicRate)
-def CharacterStatExcelAddEnhanceChemicalRate(builder, enhanceChemicalRate): builder.PrependInt32Slot(29, enhanceChemicalRate, 0)
-def AddEnhanceChemicalRate(builder, enhanceChemicalRate):
-    return CharacterStatExcelAddEnhanceChemicalRate(builder, enhanceChemicalRate)
-def CharacterStatExcelAddEnhanceSiegeRate(builder, enhanceSiegeRate): builder.PrependInt32Slot(30, enhanceSiegeRate, 0)
-def AddEnhanceSiegeRate(builder, enhanceSiegeRate):
-    return CharacterStatExcelAddEnhanceSiegeRate(builder, enhanceSiegeRate)
-def CharacterStatExcelAddEnhanceNormalRate(builder, enhanceNormalRate): builder.PrependInt32Slot(31, enhanceNormalRate, 0)
-def AddEnhanceNormalRate(builder, enhanceNormalRate):
-    return CharacterStatExcelAddEnhanceNormalRate(builder, enhanceNormalRate)
-def CharacterStatExcelAddEnhanceLightArmorRate(builder, enhanceLightArmorRate): builder.PrependInt32Slot(32, enhanceLightArmorRate, 0)
-def AddEnhanceLightArmorRate(builder, enhanceLightArmorRate):
-    return CharacterStatExcelAddEnhanceLightArmorRate(builder, enhanceLightArmorRate)
-def CharacterStatExcelAddEnhanceHeavyArmorRate(builder, enhanceHeavyArmorRate): builder.PrependInt32Slot(33, enhanceHeavyArmorRate, 0)
-def AddEnhanceHeavyArmorRate(builder, enhanceHeavyArmorRate):
-    return CharacterStatExcelAddEnhanceHeavyArmorRate(builder, enhanceHeavyArmorRate)
-def CharacterStatExcelAddEnhanceUnarmedRate(builder, enhanceUnarmedRate): builder.PrependInt32Slot(34, enhanceUnarmedRate, 0)
-def AddEnhanceUnarmedRate(builder, enhanceUnarmedRate):
-    return CharacterStatExcelAddEnhanceUnarmedRate(builder, enhanceUnarmedRate)
-def CharacterStatExcelAddEnhanceElasticArmorRate(builder, enhanceElasticArmorRate): builder.PrependInt32Slot(35, enhanceElasticArmorRate, 0)
-def AddEnhanceElasticArmorRate(builder, enhanceElasticArmorRate):
-    return CharacterStatExcelAddEnhanceElasticArmorRate(builder, enhanceElasticArmorRate)
-def CharacterStatExcelAddEnhanceCompositeArmorRate(builder, enhanceCompositeArmorRate): builder.PrependInt32Slot(36, enhanceCompositeArmorRate, 0)
-def AddEnhanceCompositeArmorRate(builder, enhanceCompositeArmorRate):
-    return CharacterStatExcelAddEnhanceCompositeArmorRate(builder, enhanceCompositeArmorRate)
-def CharacterStatExcelAddEnhanceStructureRate(builder, enhanceStructureRate): builder.PrependInt32Slot(37, enhanceStructureRate, 0)
-def AddEnhanceStructureRate(builder, enhanceStructureRate):
-    return CharacterStatExcelAddEnhanceStructureRate(builder, enhanceStructureRate)
-def CharacterStatExcelAddEnhanceNormalArmorRate(builder, enhanceNormalArmorRate): builder.PrependInt32Slot(38, enhanceNormalArmorRate, 0)
-def AddEnhanceNormalArmorRate(builder, enhanceNormalArmorRate):
-    return CharacterStatExcelAddEnhanceNormalArmorRate(builder, enhanceNormalArmorRate)
-def CharacterStatExcelAddExtendBuffDuration(builder, extendBuffDuration): builder.PrependInt32Slot(39, extendBuffDuration, 0)
-def AddExtendBuffDuration(builder, extendBuffDuration):
-    return CharacterStatExcelAddExtendBuffDuration(builder, extendBuffDuration)
-def CharacterStatExcelAddExtendDebuffDuration(builder, extendDebuffDuration): builder.PrependInt32Slot(40, extendDebuffDuration, 0)
-def AddExtendDebuffDuration(builder, extendDebuffDuration):
-    return CharacterStatExcelAddExtendDebuffDuration(builder, extendDebuffDuration)
-def CharacterStatExcelAddExtendCrowdControlDuration(builder, extendCrowdControlDuration): builder.PrependInt32Slot(41, extendCrowdControlDuration, 0)
-def AddExtendCrowdControlDuration(builder, extendCrowdControlDuration):
-    return CharacterStatExcelAddExtendCrowdControlDuration(builder, extendCrowdControlDuration)
-def CharacterStatExcelAddAmmoCount(builder, ammoCount): builder.PrependInt32Slot(42, ammoCount, 0)
-def AddAmmoCount(builder, ammoCount):
-    return CharacterStatExcelAddAmmoCount(builder, ammoCount)
-def CharacterStatExcelAddAmmoCost(builder, ammoCost): builder.PrependInt32Slot(43, ammoCost, 0)
-def AddAmmoCost(builder, ammoCost):
-    return CharacterStatExcelAddAmmoCost(builder, ammoCost)
-def CharacterStatExcelAddIgnoreDelayCount(builder, ignoreDelayCount): builder.PrependInt32Slot(44, ignoreDelayCount, 0)
-def AddIgnoreDelayCount(builder, ignoreDelayCount):
-    return CharacterStatExcelAddIgnoreDelayCount(builder, ignoreDelayCount)
-def CharacterStatExcelAddNormalAttackSpeed(builder, normalAttackSpeed): builder.PrependInt32Slot(45, normalAttackSpeed, 0)
-def AddNormalAttackSpeed(builder, normalAttackSpeed):
-    return CharacterStatExcelAddNormalAttackSpeed(builder, normalAttackSpeed)
-def CharacterStatExcelAddRange(builder, range): builder.PrependInt32Slot(46, range, 0)
-def AddRange(builder, range):
-    return CharacterStatExcelAddRange(builder, range)
-def CharacterStatExcelAddInitialRangeRate(builder, initialRangeRate): builder.PrependInt32Slot(47, initialRangeRate, 0)
-def AddInitialRangeRate(builder, initialRangeRate):
-    return CharacterStatExcelAddInitialRangeRate(builder, initialRangeRate)
-def CharacterStatExcelAddMoveSpeed(builder, moveSpeed): builder.PrependInt32Slot(48, moveSpeed, 0)
-def AddMoveSpeed(builder, moveSpeed):
-    return CharacterStatExcelAddMoveSpeed(builder, moveSpeed)
-def CharacterStatExcelAddSightPoint(builder, sightPoint): builder.PrependInt32Slot(49, sightPoint, 0)
-def AddSightPoint(builder, sightPoint):
-    return CharacterStatExcelAddSightPoint(builder, sightPoint)
-def CharacterStatExcelAddActiveGauge(builder, activeGauge): builder.PrependInt32Slot(50, activeGauge, 0)
-def AddActiveGauge(builder, activeGauge):
-    return CharacterStatExcelAddActiveGauge(builder, activeGauge)
-def CharacterStatExcelAddGroggyGauge(builder, groggyGauge): builder.PrependInt32Slot(51, groggyGauge, 0)
-def AddGroggyGauge(builder, groggyGauge):
-    return CharacterStatExcelAddGroggyGauge(builder, groggyGauge)
-def CharacterStatExcelAddGroggyTime(builder, groggyTime): builder.PrependInt32Slot(52, groggyTime, 0)
-def AddGroggyTime(builder, groggyTime):
-    return CharacterStatExcelAddGroggyTime(builder, groggyTime)
-def CharacterStatExcelAddStrategyMobility(builder, strategyMobility): builder.PrependInt32Slot(53, strategyMobility, 0)
-def AddStrategyMobility(builder, strategyMobility):
-    return CharacterStatExcelAddStrategyMobility(builder, strategyMobility)
-def CharacterStatExcelAddActionCount(builder, actionCount): builder.PrependInt32Slot(54, actionCount, 0)
-def AddActionCount(builder, actionCount):
-    return CharacterStatExcelAddActionCount(builder, actionCount)
-def CharacterStatExcelAddStrategySightRange(builder, strategySightRange): builder.PrependInt32Slot(55, strategySightRange, 0)
-def AddStrategySightRange(builder, strategySightRange):
-    return CharacterStatExcelAddStrategySightRange(builder, strategySightRange)
-def CharacterStatExcelAddDamageRatio(builder, damageRatio): builder.PrependInt32Slot(56, damageRatio, 0)
-def AddDamageRatio(builder, damageRatio):
-    return CharacterStatExcelAddDamageRatio(builder, damageRatio)
-def CharacterStatExcelAddDamagedRatio(builder, damagedRatio): builder.PrependInt32Slot(57, damagedRatio, 0)
-def AddDamagedRatio(builder, damagedRatio):
-    return CharacterStatExcelAddDamagedRatio(builder, damagedRatio)
-def CharacterStatExcelAddDamageRatio2Increase(builder, damageRatio2Increase): builder.PrependInt32Slot(58, damageRatio2Increase, 0)
-def AddDamageRatio2Increase(builder, damageRatio2Increase):
-    return CharacterStatExcelAddDamageRatio2Increase(builder, damageRatio2Increase)
-def CharacterStatExcelAddDamageRatio2Decrease(builder, damageRatio2Decrease): builder.PrependInt32Slot(59, damageRatio2Decrease, 0)
-def AddDamageRatio2Decrease(builder, damageRatio2Decrease):
-    return CharacterStatExcelAddDamageRatio2Decrease(builder, damageRatio2Decrease)
-def CharacterStatExcelAddDamagedRatio2Increase(builder, damagedRatio2Increase): builder.PrependInt32Slot(60, damagedRatio2Increase, 0)
-def AddDamagedRatio2Increase(builder, damagedRatio2Increase):
-    return CharacterStatExcelAddDamagedRatio2Increase(builder, damagedRatio2Increase)
-def CharacterStatExcelAddDamagedRatio2Decrease(builder, damagedRatio2Decrease): builder.PrependInt32Slot(61, damagedRatio2Decrease, 0)
-def AddDamagedRatio2Decrease(builder, damagedRatio2Decrease):
-    return CharacterStatExcelAddDamagedRatio2Decrease(builder, damagedRatio2Decrease)
-def CharacterStatExcelAddExDamagedRatioIncrease(builder, exDamagedRatioIncrease): builder.PrependInt32Slot(62, exDamagedRatioIncrease, 0)
-def AddExDamagedRatioIncrease(builder, exDamagedRatioIncrease):
-    return CharacterStatExcelAddExDamagedRatioIncrease(builder, exDamagedRatioIncrease)
-def CharacterStatExcelAddExDamagedRatioDecrease(builder, exDamagedRatioDecrease): builder.PrependInt32Slot(63, exDamagedRatioDecrease, 0)
-def AddExDamagedRatioDecrease(builder, exDamagedRatioDecrease):
-    return CharacterStatExcelAddExDamagedRatioDecrease(builder, exDamagedRatioDecrease)
-def CharacterStatExcelAddEnhanceExDamageRate(builder, enhanceExDamageRate): builder.PrependInt32Slot(64, enhanceExDamageRate, 0)
-def AddEnhanceExDamageRate(builder, enhanceExDamageRate):
-    return CharacterStatExcelAddEnhanceExDamageRate(builder, enhanceExDamageRate)
-def CharacterStatExcelAddReduceExDamagedRate(builder, reduceExDamagedRate): builder.PrependInt32Slot(65, reduceExDamagedRate, 0)
-def AddReduceExDamagedRate(builder, reduceExDamagedRate):
-    return CharacterStatExcelAddReduceExDamagedRate(builder, reduceExDamagedRate)
-def CharacterStatExcelAddEnhanceBasicsDamageRate(builder, enhanceBasicsDamageRate): builder.PrependInt32Slot(66, enhanceBasicsDamageRate, 0)
-def AddEnhanceBasicsDamageRate(builder, enhanceBasicsDamageRate):
-    return CharacterStatExcelAddEnhanceBasicsDamageRate(builder, enhanceBasicsDamageRate)
-def CharacterStatExcelAddReduceBasicsDamagedRate(builder, reduceBasicsDamagedRate): builder.PrependInt32Slot(67, reduceBasicsDamagedRate, 0)
-def AddReduceBasicsDamagedRate(builder, reduceBasicsDamagedRate):
-    return CharacterStatExcelAddReduceBasicsDamagedRate(builder, reduceBasicsDamagedRate)
-def CharacterStatExcelAddEnhanceWeakDamageRate(builder, enhanceWeakDamageRate): builder.PrependInt32Slot(68, enhanceWeakDamageRate, 0)
-def AddEnhanceWeakDamageRate(builder, enhanceWeakDamageRate):
-    return CharacterStatExcelAddEnhanceWeakDamageRate(builder, enhanceWeakDamageRate)
-def CharacterStatExcelAddReduceWeakDamagedRate(builder, reduceWeakDamagedRate): builder.PrependInt32Slot(69, reduceWeakDamagedRate, 0)
-def AddReduceWeakDamagedRate(builder, reduceWeakDamagedRate):
-    return CharacterStatExcelAddReduceWeakDamagedRate(builder, reduceWeakDamagedRate)
-def CharacterStatExcelAddHealRate(builder, healRate): builder.PrependInt32Slot(70, healRate, 0)
-def AddHealRate(builder, healRate):
-    return CharacterStatExcelAddHealRate(builder, healRate)
-def CharacterStatExcelAddHealLightArmorRate(builder, healLightArmorRate): builder.PrependInt32Slot(71, healLightArmorRate, 0)
-def AddHealLightArmorRate(builder, healLightArmorRate):
-    return CharacterStatExcelAddHealLightArmorRate(builder, healLightArmorRate)
-def CharacterStatExcelAddHealHeavyArmorRate(builder, healHeavyArmorRate): builder.PrependInt32Slot(72, healHeavyArmorRate, 0)
-def AddHealHeavyArmorRate(builder, healHeavyArmorRate):
-    return CharacterStatExcelAddHealHeavyArmorRate(builder, healHeavyArmorRate)
-def CharacterStatExcelAddHealUnarmedRate(builder, healUnarmedRate): builder.PrependInt32Slot(73, healUnarmedRate, 0)
-def AddHealUnarmedRate(builder, healUnarmedRate):
-    return CharacterStatExcelAddHealUnarmedRate(builder, healUnarmedRate)
-def CharacterStatExcelAddHealElasticArmorRate(builder, healElasticArmorRate): builder.PrependInt32Slot(74, healElasticArmorRate, 0)
-def AddHealElasticArmorRate(builder, healElasticArmorRate):
-    return CharacterStatExcelAddHealElasticArmorRate(builder, healElasticArmorRate)
-def CharacterStatExcelAddHealNormalArmorRate(builder, healNormalArmorRate): builder.PrependInt32Slot(75, healNormalArmorRate, 0)
-def AddHealNormalArmorRate(builder, healNormalArmorRate):
-    return CharacterStatExcelAddHealNormalArmorRate(builder, healNormalArmorRate)
-def CharacterStatExcelAddHealedExplosionRate(builder, healedExplosionRate): builder.PrependInt32Slot(76, healedExplosionRate, 0)
-def AddHealedExplosionRate(builder, healedExplosionRate):
-    return CharacterStatExcelAddHealedExplosionRate(builder, healedExplosionRate)
-def CharacterStatExcelAddHealedPierceRate(builder, healedPierceRate): builder.PrependInt32Slot(77, healedPierceRate, 0)
-def AddHealedPierceRate(builder, healedPierceRate):
-    return CharacterStatExcelAddHealedPierceRate(builder, healedPierceRate)
-def CharacterStatExcelAddHealedMysticRate(builder, healedMysticRate): builder.PrependInt32Slot(78, healedMysticRate, 0)
-def AddHealedMysticRate(builder, healedMysticRate):
-    return CharacterStatExcelAddHealedMysticRate(builder, healedMysticRate)
-def CharacterStatExcelAddHealedSonicRate(builder, healedSonicRate): builder.PrependInt32Slot(79, healedSonicRate, 0)
-def AddHealedSonicRate(builder, healedSonicRate):
-    return CharacterStatExcelAddHealedSonicRate(builder, healedSonicRate)
-def CharacterStatExcelAddHealedNormalRate(builder, healedNormalRate): builder.PrependInt32Slot(80, healedNormalRate, 0)
-def AddHealedNormalRate(builder, healedNormalRate):
-    return CharacterStatExcelAddHealedNormalRate(builder, healedNormalRate)
-def CharacterStatExcelAddStreetBattleAdaptation(builder, streetBattleAdaptation): builder.PrependInt32Slot(81, streetBattleAdaptation, 0)
-def AddStreetBattleAdaptation(builder, streetBattleAdaptation):
-    return CharacterStatExcelAddStreetBattleAdaptation(builder, streetBattleAdaptation)
-def CharacterStatExcelAddOutdoorBattleAdaptation(builder, outdoorBattleAdaptation): builder.PrependInt32Slot(82, outdoorBattleAdaptation, 0)
-def AddOutdoorBattleAdaptation(builder, outdoorBattleAdaptation):
-    return CharacterStatExcelAddOutdoorBattleAdaptation(builder, outdoorBattleAdaptation)
-def CharacterStatExcelAddIndoorBattleAdaptation(builder, indoorBattleAdaptation): builder.PrependInt32Slot(83, indoorBattleAdaptation, 0)
-def AddIndoorBattleAdaptation(builder, indoorBattleAdaptation):
-    return CharacterStatExcelAddIndoorBattleAdaptation(builder, indoorBattleAdaptation)
-def CharacterStatExcelAddRegenCost(builder, regenCost): builder.PrependInt32Slot(84, regenCost, 0)
-def AddRegenCost(builder, regenCost):
-    return CharacterStatExcelAddRegenCost(builder, regenCost)
+def CharacterStatExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(0, characterIdField, 0)
+def AddCharacterIdField(builder, characterIdField):
+    return CharacterStatExcelAddCharacterIdField(builder, characterIdField)
+def CharacterStatExcelAddStabilityRateField(builder, stabilityRateField): builder.PrependInt32Slot(1, stabilityRateField, 0)
+def AddStabilityRateField(builder, stabilityRateField):
+    return CharacterStatExcelAddStabilityRateField(builder, stabilityRateField)
+def CharacterStatExcelAddStabilityPointField(builder, stabilityPointField): builder.PrependInt32Slot(2, stabilityPointField, 0)
+def AddStabilityPointField(builder, stabilityPointField):
+    return CharacterStatExcelAddStabilityPointField(builder, stabilityPointField)
+def CharacterStatExcelAddAttackPower1Field(builder, attackPower1Field): builder.PrependInt32Slot(3, attackPower1Field, 0)
+def AddAttackPower1Field(builder, attackPower1Field):
+    return CharacterStatExcelAddAttackPower1Field(builder, attackPower1Field)
+def CharacterStatExcelAddAttackPower100Field(builder, attackPower100Field): builder.PrependInt32Slot(4, attackPower100Field, 0)
+def AddAttackPower100Field(builder, attackPower100Field):
+    return CharacterStatExcelAddAttackPower100Field(builder, attackPower100Field)
+def CharacterStatExcelAddMaxHP1Field(builder, maxHP1Field): builder.PrependInt32Slot(5, maxHP1Field, 0)
+def AddMaxHP1Field(builder, maxHP1Field):
+    return CharacterStatExcelAddMaxHP1Field(builder, maxHP1Field)
+def CharacterStatExcelAddMaxHP100Field(builder, maxHP100Field): builder.PrependInt32Slot(6, maxHP100Field, 0)
+def AddMaxHP100Field(builder, maxHP100Field):
+    return CharacterStatExcelAddMaxHP100Field(builder, maxHP100Field)
+def CharacterStatExcelAddDefensePower1Field(builder, defensePower1Field): builder.PrependInt32Slot(7, defensePower1Field, 0)
+def AddDefensePower1Field(builder, defensePower1Field):
+    return CharacterStatExcelAddDefensePower1Field(builder, defensePower1Field)
+def CharacterStatExcelAddDefensePower100Field(builder, defensePower100Field): builder.PrependInt32Slot(8, defensePower100Field, 0)
+def AddDefensePower100Field(builder, defensePower100Field):
+    return CharacterStatExcelAddDefensePower100Field(builder, defensePower100Field)
+def CharacterStatExcelAddHealPower1Field(builder, healPower1Field): builder.PrependInt32Slot(9, healPower1Field, 0)
+def AddHealPower1Field(builder, healPower1Field):
+    return CharacterStatExcelAddHealPower1Field(builder, healPower1Field)
+def CharacterStatExcelAddHealPower100Field(builder, healPower100Field): builder.PrependInt32Slot(10, healPower100Field, 0)
+def AddHealPower100Field(builder, healPower100Field):
+    return CharacterStatExcelAddHealPower100Field(builder, healPower100Field)
+def CharacterStatExcelAddDodgePointField(builder, dodgePointField): builder.PrependInt32Slot(11, dodgePointField, 0)
+def AddDodgePointField(builder, dodgePointField):
+    return CharacterStatExcelAddDodgePointField(builder, dodgePointField)
+def CharacterStatExcelAddAccuracyPointField(builder, accuracyPointField): builder.PrependInt32Slot(12, accuracyPointField, 0)
+def AddAccuracyPointField(builder, accuracyPointField):
+    return CharacterStatExcelAddAccuracyPointField(builder, accuracyPointField)
+def CharacterStatExcelAddCriticalPointField(builder, criticalPointField): builder.PrependInt32Slot(13, criticalPointField, 0)
+def AddCriticalPointField(builder, criticalPointField):
+    return CharacterStatExcelAddCriticalPointField(builder, criticalPointField)
+def CharacterStatExcelAddCriticalResistPointField(builder, criticalResistPointField): builder.PrependInt32Slot(14, criticalResistPointField, 0)
+def AddCriticalResistPointField(builder, criticalResistPointField):
+    return CharacterStatExcelAddCriticalResistPointField(builder, criticalResistPointField)
+def CharacterStatExcelAddCriticalDamageRateField(builder, criticalDamageRateField): builder.PrependInt32Slot(15, criticalDamageRateField, 0)
+def AddCriticalDamageRateField(builder, criticalDamageRateField):
+    return CharacterStatExcelAddCriticalDamageRateField(builder, criticalDamageRateField)
+def CharacterStatExcelAddCriticalDamageResistRateField(builder, criticalDamageResistRateField): builder.PrependInt32Slot(16, criticalDamageResistRateField, 0)
+def AddCriticalDamageResistRateField(builder, criticalDamageResistRateField):
+    return CharacterStatExcelAddCriticalDamageResistRateField(builder, criticalDamageResistRateField)
+def CharacterStatExcelAddBlockRateField(builder, blockRateField): builder.PrependInt32Slot(17, blockRateField, 0)
+def AddBlockRateField(builder, blockRateField):
+    return CharacterStatExcelAddBlockRateField(builder, blockRateField)
+def CharacterStatExcelAddHealEffectivenessRateField(builder, healEffectivenessRateField): builder.PrependInt32Slot(18, healEffectivenessRateField, 0)
+def AddHealEffectivenessRateField(builder, healEffectivenessRateField):
+    return CharacterStatExcelAddHealEffectivenessRateField(builder, healEffectivenessRateField)
+def CharacterStatExcelAddOppressionPowerField(builder, oppressionPowerField): builder.PrependInt32Slot(19, oppressionPowerField, 0)
+def AddOppressionPowerField(builder, oppressionPowerField):
+    return CharacterStatExcelAddOppressionPowerField(builder, oppressionPowerField)
+def CharacterStatExcelAddOppressionResistField(builder, oppressionResistField): builder.PrependInt32Slot(20, oppressionResistField, 0)
+def AddOppressionResistField(builder, oppressionResistField):
+    return CharacterStatExcelAddOppressionResistField(builder, oppressionResistField)
+def CharacterStatExcelAddDefensePenetration1Field(builder, defensePenetration1Field): builder.PrependInt32Slot(21, defensePenetration1Field, 0)
+def AddDefensePenetration1Field(builder, defensePenetration1Field):
+    return CharacterStatExcelAddDefensePenetration1Field(builder, defensePenetration1Field)
+def CharacterStatExcelAddDefensePenetration100Field(builder, defensePenetration100Field): builder.PrependInt32Slot(22, defensePenetration100Field, 0)
+def AddDefensePenetration100Field(builder, defensePenetration100Field):
+    return CharacterStatExcelAddDefensePenetration100Field(builder, defensePenetration100Field)
+def CharacterStatExcelAddDefensePenetrationResist1Field(builder, defensePenetrationResist1Field): builder.PrependInt32Slot(23, defensePenetrationResist1Field, 0)
+def AddDefensePenetrationResist1Field(builder, defensePenetrationResist1Field):
+    return CharacterStatExcelAddDefensePenetrationResist1Field(builder, defensePenetrationResist1Field)
+def CharacterStatExcelAddDefensePenetrationResist100Field(builder, defensePenetrationResist100Field): builder.PrependInt32Slot(24, defensePenetrationResist100Field, 0)
+def AddDefensePenetrationResist100Field(builder, defensePenetrationResist100Field):
+    return CharacterStatExcelAddDefensePenetrationResist100Field(builder, defensePenetrationResist100Field)
+def CharacterStatExcelAddEnhanceExplosionRateField(builder, enhanceExplosionRateField): builder.PrependInt32Slot(25, enhanceExplosionRateField, 0)
+def AddEnhanceExplosionRateField(builder, enhanceExplosionRateField):
+    return CharacterStatExcelAddEnhanceExplosionRateField(builder, enhanceExplosionRateField)
+def CharacterStatExcelAddEnhancePierceRateField(builder, enhancePierceRateField): builder.PrependInt32Slot(26, enhancePierceRateField, 0)
+def AddEnhancePierceRateField(builder, enhancePierceRateField):
+    return CharacterStatExcelAddEnhancePierceRateField(builder, enhancePierceRateField)
+def CharacterStatExcelAddEnhanceMysticRateField(builder, enhanceMysticRateField): builder.PrependInt32Slot(27, enhanceMysticRateField, 0)
+def AddEnhanceMysticRateField(builder, enhanceMysticRateField):
+    return CharacterStatExcelAddEnhanceMysticRateField(builder, enhanceMysticRateField)
+def CharacterStatExcelAddEnhanceSonicRateField(builder, enhanceSonicRateField): builder.PrependInt32Slot(28, enhanceSonicRateField, 0)
+def AddEnhanceSonicRateField(builder, enhanceSonicRateField):
+    return CharacterStatExcelAddEnhanceSonicRateField(builder, enhanceSonicRateField)
+def CharacterStatExcelAddEnhanceChemicalRateField(builder, enhanceChemicalRateField): builder.PrependInt32Slot(29, enhanceChemicalRateField, 0)
+def AddEnhanceChemicalRateField(builder, enhanceChemicalRateField):
+    return CharacterStatExcelAddEnhanceChemicalRateField(builder, enhanceChemicalRateField)
+def CharacterStatExcelAddEnhanceSiegeRateField(builder, enhanceSiegeRateField): builder.PrependInt32Slot(30, enhanceSiegeRateField, 0)
+def AddEnhanceSiegeRateField(builder, enhanceSiegeRateField):
+    return CharacterStatExcelAddEnhanceSiegeRateField(builder, enhanceSiegeRateField)
+def CharacterStatExcelAddEnhanceNormalRateField(builder, enhanceNormalRateField): builder.PrependInt32Slot(31, enhanceNormalRateField, 0)
+def AddEnhanceNormalRateField(builder, enhanceNormalRateField):
+    return CharacterStatExcelAddEnhanceNormalRateField(builder, enhanceNormalRateField)
+def CharacterStatExcelAddEnhanceLightArmorRateField(builder, enhanceLightArmorRateField): builder.PrependInt32Slot(32, enhanceLightArmorRateField, 0)
+def AddEnhanceLightArmorRateField(builder, enhanceLightArmorRateField):
+    return CharacterStatExcelAddEnhanceLightArmorRateField(builder, enhanceLightArmorRateField)
+def CharacterStatExcelAddEnhanceHeavyArmorRateField(builder, enhanceHeavyArmorRateField): builder.PrependInt32Slot(33, enhanceHeavyArmorRateField, 0)
+def AddEnhanceHeavyArmorRateField(builder, enhanceHeavyArmorRateField):
+    return CharacterStatExcelAddEnhanceHeavyArmorRateField(builder, enhanceHeavyArmorRateField)
+def CharacterStatExcelAddEnhanceUnarmedRateField(builder, enhanceUnarmedRateField): builder.PrependInt32Slot(34, enhanceUnarmedRateField, 0)
+def AddEnhanceUnarmedRateField(builder, enhanceUnarmedRateField):
+    return CharacterStatExcelAddEnhanceUnarmedRateField(builder, enhanceUnarmedRateField)
+def CharacterStatExcelAddEnhanceElasticArmorRateField(builder, enhanceElasticArmorRateField): builder.PrependInt32Slot(35, enhanceElasticArmorRateField, 0)
+def AddEnhanceElasticArmorRateField(builder, enhanceElasticArmorRateField):
+    return CharacterStatExcelAddEnhanceElasticArmorRateField(builder, enhanceElasticArmorRateField)
+def CharacterStatExcelAddEnhanceCompositeArmorRateField(builder, enhanceCompositeArmorRateField): builder.PrependInt32Slot(36, enhanceCompositeArmorRateField, 0)
+def AddEnhanceCompositeArmorRateField(builder, enhanceCompositeArmorRateField):
+    return CharacterStatExcelAddEnhanceCompositeArmorRateField(builder, enhanceCompositeArmorRateField)
+def CharacterStatExcelAddEnhanceStructureRateField(builder, enhanceStructureRateField): builder.PrependInt32Slot(37, enhanceStructureRateField, 0)
+def AddEnhanceStructureRateField(builder, enhanceStructureRateField):
+    return CharacterStatExcelAddEnhanceStructureRateField(builder, enhanceStructureRateField)
+def CharacterStatExcelAddEnhanceNormalArmorRateField(builder, enhanceNormalArmorRateField): builder.PrependInt32Slot(38, enhanceNormalArmorRateField, 0)
+def AddEnhanceNormalArmorRateField(builder, enhanceNormalArmorRateField):
+    return CharacterStatExcelAddEnhanceNormalArmorRateField(builder, enhanceNormalArmorRateField)
+def CharacterStatExcelAddExtendBuffDurationField(builder, extendBuffDurationField): builder.PrependInt32Slot(39, extendBuffDurationField, 0)
+def AddExtendBuffDurationField(builder, extendBuffDurationField):
+    return CharacterStatExcelAddExtendBuffDurationField(builder, extendBuffDurationField)
+def CharacterStatExcelAddExtendDebuffDurationField(builder, extendDebuffDurationField): builder.PrependInt32Slot(40, extendDebuffDurationField, 0)
+def AddExtendDebuffDurationField(builder, extendDebuffDurationField):
+    return CharacterStatExcelAddExtendDebuffDurationField(builder, extendDebuffDurationField)
+def CharacterStatExcelAddExtendCrowdControlDurationField(builder, extendCrowdControlDurationField): builder.PrependInt32Slot(41, extendCrowdControlDurationField, 0)
+def AddExtendCrowdControlDurationField(builder, extendCrowdControlDurationField):
+    return CharacterStatExcelAddExtendCrowdControlDurationField(builder, extendCrowdControlDurationField)
+def CharacterStatExcelAddAmmoCountField(builder, ammoCountField): builder.PrependInt32Slot(42, ammoCountField, 0)
+def AddAmmoCountField(builder, ammoCountField):
+    return CharacterStatExcelAddAmmoCountField(builder, ammoCountField)
+def CharacterStatExcelAddAmmoCostField(builder, ammoCostField): builder.PrependInt32Slot(43, ammoCostField, 0)
+def AddAmmoCostField(builder, ammoCostField):
+    return CharacterStatExcelAddAmmoCostField(builder, ammoCostField)
+def CharacterStatExcelAddIgnoreDelayCountField(builder, ignoreDelayCountField): builder.PrependInt32Slot(44, ignoreDelayCountField, 0)
+def AddIgnoreDelayCountField(builder, ignoreDelayCountField):
+    return CharacterStatExcelAddIgnoreDelayCountField(builder, ignoreDelayCountField)
+def CharacterStatExcelAddNormalAttackSpeedField(builder, normalAttackSpeedField): builder.PrependInt32Slot(45, normalAttackSpeedField, 0)
+def AddNormalAttackSpeedField(builder, normalAttackSpeedField):
+    return CharacterStatExcelAddNormalAttackSpeedField(builder, normalAttackSpeedField)
+def CharacterStatExcelAddRangeField(builder, rangeField): builder.PrependInt32Slot(46, rangeField, 0)
+def AddRangeField(builder, rangeField):
+    return CharacterStatExcelAddRangeField(builder, rangeField)
+def CharacterStatExcelAddInitialRangeRateField(builder, initialRangeRateField): builder.PrependInt32Slot(47, initialRangeRateField, 0)
+def AddInitialRangeRateField(builder, initialRangeRateField):
+    return CharacterStatExcelAddInitialRangeRateField(builder, initialRangeRateField)
+def CharacterStatExcelAddMoveSpeedField(builder, moveSpeedField): builder.PrependInt32Slot(48, moveSpeedField, 0)
+def AddMoveSpeedField(builder, moveSpeedField):
+    return CharacterStatExcelAddMoveSpeedField(builder, moveSpeedField)
+def CharacterStatExcelAddSightPointField(builder, sightPointField): builder.PrependInt32Slot(49, sightPointField, 0)
+def AddSightPointField(builder, sightPointField):
+    return CharacterStatExcelAddSightPointField(builder, sightPointField)
+def CharacterStatExcelAddActiveGaugeField(builder, activeGaugeField): builder.PrependInt32Slot(50, activeGaugeField, 0)
+def AddActiveGaugeField(builder, activeGaugeField):
+    return CharacterStatExcelAddActiveGaugeField(builder, activeGaugeField)
+def CharacterStatExcelAddGroggyGaugeField(builder, groggyGaugeField): builder.PrependInt32Slot(51, groggyGaugeField, 0)
+def AddGroggyGaugeField(builder, groggyGaugeField):
+    return CharacterStatExcelAddGroggyGaugeField(builder, groggyGaugeField)
+def CharacterStatExcelAddGroggyTimeField(builder, groggyTimeField): builder.PrependInt32Slot(52, groggyTimeField, 0)
+def AddGroggyTimeField(builder, groggyTimeField):
+    return CharacterStatExcelAddGroggyTimeField(builder, groggyTimeField)
+def CharacterStatExcelAddStrategyMobilityField(builder, strategyMobilityField): builder.PrependInt32Slot(53, strategyMobilityField, 0)
+def AddStrategyMobilityField(builder, strategyMobilityField):
+    return CharacterStatExcelAddStrategyMobilityField(builder, strategyMobilityField)
+def CharacterStatExcelAddActionCountField(builder, actionCountField): builder.PrependInt32Slot(54, actionCountField, 0)
+def AddActionCountField(builder, actionCountField):
+    return CharacterStatExcelAddActionCountField(builder, actionCountField)
+def CharacterStatExcelAddStrategySightRangeField(builder, strategySightRangeField): builder.PrependInt32Slot(55, strategySightRangeField, 0)
+def AddStrategySightRangeField(builder, strategySightRangeField):
+    return CharacterStatExcelAddStrategySightRangeField(builder, strategySightRangeField)
+def CharacterStatExcelAddDamageRatioField(builder, damageRatioField): builder.PrependInt32Slot(56, damageRatioField, 0)
+def AddDamageRatioField(builder, damageRatioField):
+    return CharacterStatExcelAddDamageRatioField(builder, damageRatioField)
+def CharacterStatExcelAddDamagedRatioField(builder, damagedRatioField): builder.PrependInt32Slot(57, damagedRatioField, 0)
+def AddDamagedRatioField(builder, damagedRatioField):
+    return CharacterStatExcelAddDamagedRatioField(builder, damagedRatioField)
+def CharacterStatExcelAddDamageRatio2IncreaseField(builder, damageRatio2IncreaseField): builder.PrependInt32Slot(58, damageRatio2IncreaseField, 0)
+def AddDamageRatio2IncreaseField(builder, damageRatio2IncreaseField):
+    return CharacterStatExcelAddDamageRatio2IncreaseField(builder, damageRatio2IncreaseField)
+def CharacterStatExcelAddDamageRatio2DecreaseField(builder, damageRatio2DecreaseField): builder.PrependInt32Slot(59, damageRatio2DecreaseField, 0)
+def AddDamageRatio2DecreaseField(builder, damageRatio2DecreaseField):
+    return CharacterStatExcelAddDamageRatio2DecreaseField(builder, damageRatio2DecreaseField)
+def CharacterStatExcelAddDamagedRatio2IncreaseField(builder, damagedRatio2IncreaseField): builder.PrependInt32Slot(60, damagedRatio2IncreaseField, 0)
+def AddDamagedRatio2IncreaseField(builder, damagedRatio2IncreaseField):
+    return CharacterStatExcelAddDamagedRatio2IncreaseField(builder, damagedRatio2IncreaseField)
+def CharacterStatExcelAddDamagedRatio2DecreaseField(builder, damagedRatio2DecreaseField): builder.PrependInt32Slot(61, damagedRatio2DecreaseField, 0)
+def AddDamagedRatio2DecreaseField(builder, damagedRatio2DecreaseField):
+    return CharacterStatExcelAddDamagedRatio2DecreaseField(builder, damagedRatio2DecreaseField)
+def CharacterStatExcelAddExDamagedRatioIncreaseField(builder, exDamagedRatioIncreaseField): builder.PrependInt32Slot(62, exDamagedRatioIncreaseField, 0)
+def AddExDamagedRatioIncreaseField(builder, exDamagedRatioIncreaseField):
+    return CharacterStatExcelAddExDamagedRatioIncreaseField(builder, exDamagedRatioIncreaseField)
+def CharacterStatExcelAddExDamagedRatioDecreaseField(builder, exDamagedRatioDecreaseField): builder.PrependInt32Slot(63, exDamagedRatioDecreaseField, 0)
+def AddExDamagedRatioDecreaseField(builder, exDamagedRatioDecreaseField):
+    return CharacterStatExcelAddExDamagedRatioDecreaseField(builder, exDamagedRatioDecreaseField)
+def CharacterStatExcelAddEnhanceExDamageRateField(builder, enhanceExDamageRateField): builder.PrependInt32Slot(64, enhanceExDamageRateField, 0)
+def AddEnhanceExDamageRateField(builder, enhanceExDamageRateField):
+    return CharacterStatExcelAddEnhanceExDamageRateField(builder, enhanceExDamageRateField)
+def CharacterStatExcelAddReduceExDamagedRateField(builder, reduceExDamagedRateField): builder.PrependInt32Slot(65, reduceExDamagedRateField, 0)
+def AddReduceExDamagedRateField(builder, reduceExDamagedRateField):
+    return CharacterStatExcelAddReduceExDamagedRateField(builder, reduceExDamagedRateField)
+def CharacterStatExcelAddEnhanceBasicsDamageRateField(builder, enhanceBasicsDamageRateField): builder.PrependInt32Slot(66, enhanceBasicsDamageRateField, 0)
+def AddEnhanceBasicsDamageRateField(builder, enhanceBasicsDamageRateField):
+    return CharacterStatExcelAddEnhanceBasicsDamageRateField(builder, enhanceBasicsDamageRateField)
+def CharacterStatExcelAddReduceBasicsDamagedRateField(builder, reduceBasicsDamagedRateField): builder.PrependInt32Slot(67, reduceBasicsDamagedRateField, 0)
+def AddReduceBasicsDamagedRateField(builder, reduceBasicsDamagedRateField):
+    return CharacterStatExcelAddReduceBasicsDamagedRateField(builder, reduceBasicsDamagedRateField)
+def CharacterStatExcelAddEnhanceWeakDamageRateField(builder, enhanceWeakDamageRateField): builder.PrependInt32Slot(68, enhanceWeakDamageRateField, 0)
+def AddEnhanceWeakDamageRateField(builder, enhanceWeakDamageRateField):
+    return CharacterStatExcelAddEnhanceWeakDamageRateField(builder, enhanceWeakDamageRateField)
+def CharacterStatExcelAddReduceWeakDamagedRateField(builder, reduceWeakDamagedRateField): builder.PrependInt32Slot(69, reduceWeakDamagedRateField, 0)
+def AddReduceWeakDamagedRateField(builder, reduceWeakDamagedRateField):
+    return CharacterStatExcelAddReduceWeakDamagedRateField(builder, reduceWeakDamagedRateField)
+def CharacterStatExcelAddHealRateField(builder, healRateField): builder.PrependInt32Slot(70, healRateField, 0)
+def AddHealRateField(builder, healRateField):
+    return CharacterStatExcelAddHealRateField(builder, healRateField)
+def CharacterStatExcelAddHealLightArmorRateField(builder, healLightArmorRateField): builder.PrependInt32Slot(71, healLightArmorRateField, 0)
+def AddHealLightArmorRateField(builder, healLightArmorRateField):
+    return CharacterStatExcelAddHealLightArmorRateField(builder, healLightArmorRateField)
+def CharacterStatExcelAddHealHeavyArmorRateField(builder, healHeavyArmorRateField): builder.PrependInt32Slot(72, healHeavyArmorRateField, 0)
+def AddHealHeavyArmorRateField(builder, healHeavyArmorRateField):
+    return CharacterStatExcelAddHealHeavyArmorRateField(builder, healHeavyArmorRateField)
+def CharacterStatExcelAddHealUnarmedRateField(builder, healUnarmedRateField): builder.PrependInt32Slot(73, healUnarmedRateField, 0)
+def AddHealUnarmedRateField(builder, healUnarmedRateField):
+    return CharacterStatExcelAddHealUnarmedRateField(builder, healUnarmedRateField)
+def CharacterStatExcelAddHealElasticArmorRateField(builder, healElasticArmorRateField): builder.PrependInt32Slot(74, healElasticArmorRateField, 0)
+def AddHealElasticArmorRateField(builder, healElasticArmorRateField):
+    return CharacterStatExcelAddHealElasticArmorRateField(builder, healElasticArmorRateField)
+def CharacterStatExcelAddHealNormalArmorRateField(builder, healNormalArmorRateField): builder.PrependInt32Slot(75, healNormalArmorRateField, 0)
+def AddHealNormalArmorRateField(builder, healNormalArmorRateField):
+    return CharacterStatExcelAddHealNormalArmorRateField(builder, healNormalArmorRateField)
+def CharacterStatExcelAddHealedExplosionRateField(builder, healedExplosionRateField): builder.PrependInt32Slot(76, healedExplosionRateField, 0)
+def AddHealedExplosionRateField(builder, healedExplosionRateField):
+    return CharacterStatExcelAddHealedExplosionRateField(builder, healedExplosionRateField)
+def CharacterStatExcelAddHealedPierceRateField(builder, healedPierceRateField): builder.PrependInt32Slot(77, healedPierceRateField, 0)
+def AddHealedPierceRateField(builder, healedPierceRateField):
+    return CharacterStatExcelAddHealedPierceRateField(builder, healedPierceRateField)
+def CharacterStatExcelAddHealedMysticRateField(builder, healedMysticRateField): builder.PrependInt32Slot(78, healedMysticRateField, 0)
+def AddHealedMysticRateField(builder, healedMysticRateField):
+    return CharacterStatExcelAddHealedMysticRateField(builder, healedMysticRateField)
+def CharacterStatExcelAddHealedSonicRateField(builder, healedSonicRateField): builder.PrependInt32Slot(79, healedSonicRateField, 0)
+def AddHealedSonicRateField(builder, healedSonicRateField):
+    return CharacterStatExcelAddHealedSonicRateField(builder, healedSonicRateField)
+def CharacterStatExcelAddHealedNormalRateField(builder, healedNormalRateField): builder.PrependInt32Slot(80, healedNormalRateField, 0)
+def AddHealedNormalRateField(builder, healedNormalRateField):
+    return CharacterStatExcelAddHealedNormalRateField(builder, healedNormalRateField)
+def CharacterStatExcelAddStreetBattleAdaptationField(builder, streetBattleAdaptationField): builder.PrependInt32Slot(81, streetBattleAdaptationField, 0)
+def AddStreetBattleAdaptationField(builder, streetBattleAdaptationField):
+    return CharacterStatExcelAddStreetBattleAdaptationField(builder, streetBattleAdaptationField)
+def CharacterStatExcelAddOutdoorBattleAdaptationField(builder, outdoorBattleAdaptationField): builder.PrependInt32Slot(82, outdoorBattleAdaptationField, 0)
+def AddOutdoorBattleAdaptationField(builder, outdoorBattleAdaptationField):
+    return CharacterStatExcelAddOutdoorBattleAdaptationField(builder, outdoorBattleAdaptationField)
+def CharacterStatExcelAddIndoorBattleAdaptationField(builder, indoorBattleAdaptationField): builder.PrependInt32Slot(83, indoorBattleAdaptationField, 0)
+def AddIndoorBattleAdaptationField(builder, indoorBattleAdaptationField):
+    return CharacterStatExcelAddIndoorBattleAdaptationField(builder, indoorBattleAdaptationField)
+def CharacterStatExcelAddRegenCostField(builder, regenCostField): builder.PrependInt32Slot(84, regenCostField, 0)
+def AddRegenCostField(builder, regenCostField):
+    return CharacterStatExcelAddRegenCostField(builder, regenCostField)
 def CharacterStatExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CharacterStatExcelEnd(builder)

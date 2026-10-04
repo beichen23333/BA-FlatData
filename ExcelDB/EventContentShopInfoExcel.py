@@ -25,28 +25,28 @@ class EventContentShopInfoExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # EventContentShopInfoExcel
-    def EventContentId(self):
+    def EventContentIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentShopInfoExcel
-    def CategoryType(self):
+    def CategoryTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
     # EventContentShopInfoExcel
-    def LocalizeCode(self):
+    def LocalizeCodeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentShopInfoExcel
-    def CostParcelType(self, j):
+    def CostParcelTypeField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             a = self._tab.Vector(o)
@@ -54,26 +54,26 @@ class EventContentShopInfoExcel(object):
         return 0
 
     # EventContentShopInfoExcel
-    def CostParcelTypeAsNumpy(self):
+    def CostParcelTypeFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentShopInfoExcel
-    def CostParcelTypeLength(self):
+    def CostParcelTypeFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentShopInfoExcel
-    def CostParcelTypeIsNone(self):
+    def CostParcelTypeFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
     # EventContentShopInfoExcel
-    def CostParcelId(self, j):
+    def CostParcelIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             a = self._tab.Vector(o)
@@ -81,54 +81,54 @@ class EventContentShopInfoExcel(object):
         return 0
 
     # EventContentShopInfoExcel
-    def CostParcelIdAsNumpy(self):
+    def CostParcelIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentShopInfoExcel
-    def CostParcelIdLength(self):
+    def CostParcelIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentShopInfoExcel
-    def CostParcelIdIsNone(self):
+    def CostParcelIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
     # EventContentShopInfoExcel
-    def IsRefresh(self):
+    def IsRefreshField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EventContentShopInfoExcel
-    def IsSoldOutDimmed(self):
+    def IsSoldOutDimmedField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EventContentShopInfoExcel
-    def AutoRefreshCoolTime(self):
+    def AutoRefreshCoolTimeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentShopInfoExcel
-    def RefreshAbleCount(self):
+    def RefreshAbleCountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EventContentShopInfoExcel
-    def GoodsId(self, j):
+    def GoodsIdField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             a = self._tab.Vector(o)
@@ -136,40 +136,40 @@ class EventContentShopInfoExcel(object):
         return 0
 
     # EventContentShopInfoExcel
-    def GoodsIdAsNumpy(self):
+    def GoodsIdFieldAsNumpy(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EventContentShopInfoExcel
-    def GoodsIdLength(self):
+    def GoodsIdFieldLength(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EventContentShopInfoExcel
-    def GoodsIdIsNone(self):
+    def GoodsIdFieldIsNone(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
     # EventContentShopInfoExcel
-    def OpenPeriodFrom(self):
+    def OpenPeriodFromField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EventContentShopInfoExcel
-    def OpenPeriodTo(self):
+    def OpenPeriodToField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EventContentShopInfoExcel
-    def ShopProductUpdateDate(self):
+    def ShopProductUpdateDateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
@@ -178,54 +178,54 @@ class EventContentShopInfoExcel(object):
 def EventContentShopInfoExcelStart(builder): builder.StartObject(13)
 def Start(builder):
     return EventContentShopInfoExcelStart(builder)
-def EventContentShopInfoExcelAddEventContentId(builder, eventContentId): builder.PrependInt32Slot(0, eventContentId, 0)
-def AddEventContentId(builder, eventContentId):
-    return EventContentShopInfoExcelAddEventContentId(builder, eventContentId)
-def EventContentShopInfoExcelAddCategoryType(builder, categoryType): builder.PrependFloat32Slot(1, categoryType, 0.0)
-def AddCategoryType(builder, categoryType):
-    return EventContentShopInfoExcelAddCategoryType(builder, categoryType)
-def EventContentShopInfoExcelAddLocalizeCode(builder, localizeCode): builder.PrependUint32Slot(2, localizeCode, 0)
-def AddLocalizeCode(builder, localizeCode):
-    return EventContentShopInfoExcelAddLocalizeCode(builder, localizeCode)
-def EventContentShopInfoExcelAddCostParcelType(builder, costParcelType): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelType), 0)
-def AddCostParcelType(builder, costParcelType):
-    return EventContentShopInfoExcelAddCostParcelType(builder, costParcelType)
-def EventContentShopInfoExcelStartCostParcelTypeVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCostParcelTypeVector(builder, numElems):
-    return EventContentShopInfoExcelStartCostParcelTypeVector(builder, numElems)
-def EventContentShopInfoExcelAddCostParcelId(builder, costParcelId): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelId), 0)
-def AddCostParcelId(builder, costParcelId):
-    return EventContentShopInfoExcelAddCostParcelId(builder, costParcelId)
-def EventContentShopInfoExcelStartCostParcelIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCostParcelIdVector(builder, numElems):
-    return EventContentShopInfoExcelStartCostParcelIdVector(builder, numElems)
-def EventContentShopInfoExcelAddIsRefresh(builder, isRefresh): builder.PrependBoolSlot(5, isRefresh, 0)
-def AddIsRefresh(builder, isRefresh):
-    return EventContentShopInfoExcelAddIsRefresh(builder, isRefresh)
-def EventContentShopInfoExcelAddIsSoldOutDimmed(builder, isSoldOutDimmed): builder.PrependBoolSlot(6, isSoldOutDimmed, 0)
-def AddIsSoldOutDimmed(builder, isSoldOutDimmed):
-    return EventContentShopInfoExcelAddIsSoldOutDimmed(builder, isSoldOutDimmed)
-def EventContentShopInfoExcelAddAutoRefreshCoolTime(builder, autoRefreshCoolTime): builder.PrependInt32Slot(7, autoRefreshCoolTime, 0)
-def AddAutoRefreshCoolTime(builder, autoRefreshCoolTime):
-    return EventContentShopInfoExcelAddAutoRefreshCoolTime(builder, autoRefreshCoolTime)
-def EventContentShopInfoExcelAddRefreshAbleCount(builder, refreshAbleCount): builder.PrependInt32Slot(8, refreshAbleCount, 0)
-def AddRefreshAbleCount(builder, refreshAbleCount):
-    return EventContentShopInfoExcelAddRefreshAbleCount(builder, refreshAbleCount)
-def EventContentShopInfoExcelAddGoodsId(builder, goodsId): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(goodsId), 0)
-def AddGoodsId(builder, goodsId):
-    return EventContentShopInfoExcelAddGoodsId(builder, goodsId)
-def EventContentShopInfoExcelStartGoodsIdVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGoodsIdVector(builder, numElems):
-    return EventContentShopInfoExcelStartGoodsIdVector(builder, numElems)
-def EventContentShopInfoExcelAddOpenPeriodFrom(builder, openPeriodFrom): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(openPeriodFrom), 0)
-def AddOpenPeriodFrom(builder, openPeriodFrom):
-    return EventContentShopInfoExcelAddOpenPeriodFrom(builder, openPeriodFrom)
-def EventContentShopInfoExcelAddOpenPeriodTo(builder, openPeriodTo): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(openPeriodTo), 0)
-def AddOpenPeriodTo(builder, openPeriodTo):
-    return EventContentShopInfoExcelAddOpenPeriodTo(builder, openPeriodTo)
-def EventContentShopInfoExcelAddShopProductUpdateDate(builder, shopProductUpdateDate): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(shopProductUpdateDate), 0)
-def AddShopProductUpdateDate(builder, shopProductUpdateDate):
-    return EventContentShopInfoExcelAddShopProductUpdateDate(builder, shopProductUpdateDate)
+def EventContentShopInfoExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+def AddEventContentIdField(builder, eventContentIdField):
+    return EventContentShopInfoExcelAddEventContentIdField(builder, eventContentIdField)
+def EventContentShopInfoExcelAddCategoryTypeField(builder, categoryTypeField): builder.PrependFloat32Slot(1, categoryTypeField, 0.0)
+def AddCategoryTypeField(builder, categoryTypeField):
+    return EventContentShopInfoExcelAddCategoryTypeField(builder, categoryTypeField)
+def EventContentShopInfoExcelAddLocalizeCodeField(builder, localizeCodeField): builder.PrependUint32Slot(2, localizeCodeField, 0)
+def AddLocalizeCodeField(builder, localizeCodeField):
+    return EventContentShopInfoExcelAddLocalizeCodeField(builder, localizeCodeField)
+def EventContentShopInfoExcelAddCostParcelTypeField(builder, costParcelTypeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelTypeField), 0)
+def AddCostParcelTypeField(builder, costParcelTypeField):
+    return EventContentShopInfoExcelAddCostParcelTypeField(builder, costParcelTypeField)
+def EventContentShopInfoExcelStartCostParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCostParcelTypeFieldVector(builder, numElems):
+    return EventContentShopInfoExcelStartCostParcelTypeFieldVector(builder, numElems)
+def EventContentShopInfoExcelAddCostParcelIdField(builder, costParcelIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelIdField), 0)
+def AddCostParcelIdField(builder, costParcelIdField):
+    return EventContentShopInfoExcelAddCostParcelIdField(builder, costParcelIdField)
+def EventContentShopInfoExcelStartCostParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartCostParcelIdFieldVector(builder, numElems):
+    return EventContentShopInfoExcelStartCostParcelIdFieldVector(builder, numElems)
+def EventContentShopInfoExcelAddIsRefreshField(builder, isRefreshField): builder.PrependBoolSlot(5, isRefreshField, 0)
+def AddIsRefreshField(builder, isRefreshField):
+    return EventContentShopInfoExcelAddIsRefreshField(builder, isRefreshField)
+def EventContentShopInfoExcelAddIsSoldOutDimmedField(builder, isSoldOutDimmedField): builder.PrependBoolSlot(6, isSoldOutDimmedField, 0)
+def AddIsSoldOutDimmedField(builder, isSoldOutDimmedField):
+    return EventContentShopInfoExcelAddIsSoldOutDimmedField(builder, isSoldOutDimmedField)
+def EventContentShopInfoExcelAddAutoRefreshCoolTimeField(builder, autoRefreshCoolTimeField): builder.PrependInt32Slot(7, autoRefreshCoolTimeField, 0)
+def AddAutoRefreshCoolTimeField(builder, autoRefreshCoolTimeField):
+    return EventContentShopInfoExcelAddAutoRefreshCoolTimeField(builder, autoRefreshCoolTimeField)
+def EventContentShopInfoExcelAddRefreshAbleCountField(builder, refreshAbleCountField): builder.PrependInt32Slot(8, refreshAbleCountField, 0)
+def AddRefreshAbleCountField(builder, refreshAbleCountField):
+    return EventContentShopInfoExcelAddRefreshAbleCountField(builder, refreshAbleCountField)
+def EventContentShopInfoExcelAddGoodsIdField(builder, goodsIdField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(goodsIdField), 0)
+def AddGoodsIdField(builder, goodsIdField):
+    return EventContentShopInfoExcelAddGoodsIdField(builder, goodsIdField)
+def EventContentShopInfoExcelStartGoodsIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartGoodsIdFieldVector(builder, numElems):
+    return EventContentShopInfoExcelStartGoodsIdFieldVector(builder, numElems)
+def EventContentShopInfoExcelAddOpenPeriodFromField(builder, openPeriodFromField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(openPeriodFromField), 0)
+def AddOpenPeriodFromField(builder, openPeriodFromField):
+    return EventContentShopInfoExcelAddOpenPeriodFromField(builder, openPeriodFromField)
+def EventContentShopInfoExcelAddOpenPeriodToField(builder, openPeriodToField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(openPeriodToField), 0)
+def AddOpenPeriodToField(builder, openPeriodToField):
+    return EventContentShopInfoExcelAddOpenPeriodToField(builder, openPeriodToField)
+def EventContentShopInfoExcelAddShopProductUpdateDateField(builder, shopProductUpdateDateField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(shopProductUpdateDateField), 0)
+def AddShopProductUpdateDateField(builder, shopProductUpdateDateField):
+    return EventContentShopInfoExcelAddShopProductUpdateDateField(builder, shopProductUpdateDateField)
 def EventContentShopInfoExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentShopInfoExcelEnd(builder)

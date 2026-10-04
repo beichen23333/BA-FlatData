@@ -25,63 +25,63 @@ class GachaElementExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # GachaElementExcel
-    def ID(self):
+    def IDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaElementExcel
-    def GachaGroupID(self):
+    def GachaGroupIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaElementExcel
-    def ParcelType(self):
+    def ParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaElementExcel
-    def ParcelID(self):
+    def ParcelIDField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaElementExcel
-    def Rarity(self):
+    def RarityField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaElementExcel
-    def ParcelAmountMin(self):
+    def ParcelAmountMinField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaElementExcel
-    def ParcelAmountMax(self):
+    def ParcelAmountMaxField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaElementExcel
-    def Prob(self):
+    def ProbField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # GachaElementExcel
-    def State(self):
+    def StateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -90,33 +90,33 @@ class GachaElementExcel(object):
 def GachaElementExcelStart(builder): builder.StartObject(9)
 def Start(builder):
     return GachaElementExcelStart(builder)
-def GachaElementExcelAddID(builder, iD): builder.PrependInt32Slot(0, iD, 0)
-def AddID(builder, iD):
-    return GachaElementExcelAddID(builder, iD)
-def GachaElementExcelAddGachaGroupID(builder, gachaGroupID): builder.PrependInt32Slot(1, gachaGroupID, 0)
-def AddGachaGroupID(builder, gachaGroupID):
-    return GachaElementExcelAddGachaGroupID(builder, gachaGroupID)
-def GachaElementExcelAddParcelType(builder, parcelType): builder.PrependInt32Slot(2, parcelType, 0)
-def AddParcelType(builder, parcelType):
-    return GachaElementExcelAddParcelType(builder, parcelType)
-def GachaElementExcelAddParcelID(builder, parcelID): builder.PrependInt32Slot(3, parcelID, 0)
-def AddParcelID(builder, parcelID):
-    return GachaElementExcelAddParcelID(builder, parcelID)
-def GachaElementExcelAddRarity(builder, rarity): builder.PrependInt32Slot(4, rarity, 0)
-def AddRarity(builder, rarity):
-    return GachaElementExcelAddRarity(builder, rarity)
-def GachaElementExcelAddParcelAmountMin(builder, parcelAmountMin): builder.PrependInt32Slot(5, parcelAmountMin, 0)
-def AddParcelAmountMin(builder, parcelAmountMin):
-    return GachaElementExcelAddParcelAmountMin(builder, parcelAmountMin)
-def GachaElementExcelAddParcelAmountMax(builder, parcelAmountMax): builder.PrependInt32Slot(6, parcelAmountMax, 0)
-def AddParcelAmountMax(builder, parcelAmountMax):
-    return GachaElementExcelAddParcelAmountMax(builder, parcelAmountMax)
-def GachaElementExcelAddProb(builder, prob): builder.PrependInt32Slot(7, prob, 0)
-def AddProb(builder, prob):
-    return GachaElementExcelAddProb(builder, prob)
-def GachaElementExcelAddState(builder, state): builder.PrependInt32Slot(8, state, 0)
-def AddState(builder, state):
-    return GachaElementExcelAddState(builder, state)
+def GachaElementExcelAddIDField(builder, iDField): builder.PrependInt32Slot(0, iDField, 0)
+def AddIDField(builder, iDField):
+    return GachaElementExcelAddIDField(builder, iDField)
+def GachaElementExcelAddGachaGroupIDField(builder, gachaGroupIDField): builder.PrependInt32Slot(1, gachaGroupIDField, 0)
+def AddGachaGroupIDField(builder, gachaGroupIDField):
+    return GachaElementExcelAddGachaGroupIDField(builder, gachaGroupIDField)
+def GachaElementExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependInt32Slot(2, parcelTypeField, 0)
+def AddParcelTypeField(builder, parcelTypeField):
+    return GachaElementExcelAddParcelTypeField(builder, parcelTypeField)
+def GachaElementExcelAddParcelIDField(builder, parcelIDField): builder.PrependInt32Slot(3, parcelIDField, 0)
+def AddParcelIDField(builder, parcelIDField):
+    return GachaElementExcelAddParcelIDField(builder, parcelIDField)
+def GachaElementExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(4, rarityField, 0)
+def AddRarityField(builder, rarityField):
+    return GachaElementExcelAddRarityField(builder, rarityField)
+def GachaElementExcelAddParcelAmountMinField(builder, parcelAmountMinField): builder.PrependInt32Slot(5, parcelAmountMinField, 0)
+def AddParcelAmountMinField(builder, parcelAmountMinField):
+    return GachaElementExcelAddParcelAmountMinField(builder, parcelAmountMinField)
+def GachaElementExcelAddParcelAmountMaxField(builder, parcelAmountMaxField): builder.PrependInt32Slot(6, parcelAmountMaxField, 0)
+def AddParcelAmountMaxField(builder, parcelAmountMaxField):
+    return GachaElementExcelAddParcelAmountMaxField(builder, parcelAmountMaxField)
+def GachaElementExcelAddProbField(builder, probField): builder.PrependInt32Slot(7, probField, 0)
+def AddProbField(builder, probField):
+    return GachaElementExcelAddProbField(builder, probField)
+def GachaElementExcelAddStateField(builder, stateField): builder.PrependInt32Slot(8, stateField, 0)
+def AddStateField(builder, stateField):
+    return GachaElementExcelAddStateField(builder, stateField)
 def GachaElementExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return GachaElementExcelEnd(builder)

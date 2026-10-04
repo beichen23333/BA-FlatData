@@ -25,56 +25,56 @@ class RaidContentPlayGuideExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # RaidContentPlayGuideExcel
-    def Id(self):
+    def IdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # RaidContentPlayGuideExcel
-    def RaidBossGroupType(self):
+    def RaidBossGroupTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # RaidContentPlayGuideExcel
-    def IsPCBuild(self):
+    def IsPCBuildField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # RaidContentPlayGuideExcel
-    def IdExport(self):
+    def IdExportField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # RaidContentPlayGuideExcel
-    def DisplayOrder(self):
+    def DisplayOrderField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # RaidContentPlayGuideExcel
-    def GuideTitle(self):
+    def GuideTitleField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # RaidContentPlayGuideExcel
-    def GuideImagePath(self):
+    def GuideImagePathField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # RaidContentPlayGuideExcel
-    def GuideText(self):
+    def GuideTextField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
@@ -83,30 +83,30 @@ class RaidContentPlayGuideExcel(object):
 def RaidContentPlayGuideExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return RaidContentPlayGuideExcelStart(builder)
-def RaidContentPlayGuideExcelAddId(builder, id): builder.PrependInt32Slot(0, id, 0)
-def AddId(builder, id):
-    return RaidContentPlayGuideExcelAddId(builder, id)
-def RaidContentPlayGuideExcelAddRaidBossGroupType(builder, raidBossGroupType): builder.PrependInt32Slot(1, raidBossGroupType, 0)
-def AddRaidBossGroupType(builder, raidBossGroupType):
-    return RaidContentPlayGuideExcelAddRaidBossGroupType(builder, raidBossGroupType)
-def RaidContentPlayGuideExcelAddIsPCBuild(builder, isPCBuild): builder.PrependBoolSlot(2, isPCBuild, 0)
-def AddIsPCBuild(builder, isPCBuild):
-    return RaidContentPlayGuideExcelAddIsPCBuild(builder, isPCBuild)
-def RaidContentPlayGuideExcelAddIdExport(builder, idExport): builder.PrependBoolSlot(3, idExport, 0)
-def AddIdExport(builder, idExport):
-    return RaidContentPlayGuideExcelAddIdExport(builder, idExport)
-def RaidContentPlayGuideExcelAddDisplayOrder(builder, displayOrder): builder.PrependInt32Slot(4, displayOrder, 0)
-def AddDisplayOrder(builder, displayOrder):
-    return RaidContentPlayGuideExcelAddDisplayOrder(builder, displayOrder)
-def RaidContentPlayGuideExcelAddGuideTitle(builder, guideTitle): builder.PrependUint32Slot(5, guideTitle, 0)
-def AddGuideTitle(builder, guideTitle):
-    return RaidContentPlayGuideExcelAddGuideTitle(builder, guideTitle)
-def RaidContentPlayGuideExcelAddGuideImagePath(builder, guideImagePath): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(guideImagePath), 0)
-def AddGuideImagePath(builder, guideImagePath):
-    return RaidContentPlayGuideExcelAddGuideImagePath(builder, guideImagePath)
-def RaidContentPlayGuideExcelAddGuideText(builder, guideText): builder.PrependUint32Slot(7, guideText, 0)
-def AddGuideText(builder, guideText):
-    return RaidContentPlayGuideExcelAddGuideText(builder, guideText)
+def RaidContentPlayGuideExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+def AddIdField(builder, idField):
+    return RaidContentPlayGuideExcelAddIdField(builder, idField)
+def RaidContentPlayGuideExcelAddRaidBossGroupTypeField(builder, raidBossGroupTypeField): builder.PrependInt32Slot(1, raidBossGroupTypeField, 0)
+def AddRaidBossGroupTypeField(builder, raidBossGroupTypeField):
+    return RaidContentPlayGuideExcelAddRaidBossGroupTypeField(builder, raidBossGroupTypeField)
+def RaidContentPlayGuideExcelAddIsPCBuildField(builder, isPCBuildField): builder.PrependBoolSlot(2, isPCBuildField, 0)
+def AddIsPCBuildField(builder, isPCBuildField):
+    return RaidContentPlayGuideExcelAddIsPCBuildField(builder, isPCBuildField)
+def RaidContentPlayGuideExcelAddIdExportField(builder, idExportField): builder.PrependBoolSlot(3, idExportField, 0)
+def AddIdExportField(builder, idExportField):
+    return RaidContentPlayGuideExcelAddIdExportField(builder, idExportField)
+def RaidContentPlayGuideExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(4, displayOrderField, 0)
+def AddDisplayOrderField(builder, displayOrderField):
+    return RaidContentPlayGuideExcelAddDisplayOrderField(builder, displayOrderField)
+def RaidContentPlayGuideExcelAddGuideTitleField(builder, guideTitleField): builder.PrependUint32Slot(5, guideTitleField, 0)
+def AddGuideTitleField(builder, guideTitleField):
+    return RaidContentPlayGuideExcelAddGuideTitleField(builder, guideTitleField)
+def RaidContentPlayGuideExcelAddGuideImagePathField(builder, guideImagePathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(guideImagePathField), 0)
+def AddGuideImagePathField(builder, guideImagePathField):
+    return RaidContentPlayGuideExcelAddGuideImagePathField(builder, guideImagePathField)
+def RaidContentPlayGuideExcelAddGuideTextField(builder, guideTextField): builder.PrependUint32Slot(7, guideTextField, 0)
+def AddGuideTextField(builder, guideTextField):
+    return RaidContentPlayGuideExcelAddGuideTextField(builder, guideTextField)
 def RaidContentPlayGuideExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return RaidContentPlayGuideExcelEnd(builder)

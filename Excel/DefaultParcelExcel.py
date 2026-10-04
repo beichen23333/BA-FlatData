@@ -25,21 +25,21 @@ class DefaultParcelExcel(object):
         self._tab = flatbuffers.table.Table(buf, pos)
 
     # DefaultParcelExcel
-    def ParcelType(self):
+    def ParcelTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # DefaultParcelExcel
-    def ParcelId(self):
+    def ParcelIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # DefaultParcelExcel
-    def ParcelAmount(self):
+    def ParcelAmountField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
@@ -48,15 +48,15 @@ class DefaultParcelExcel(object):
 def DefaultParcelExcelStart(builder): builder.StartObject(3)
 def Start(builder):
     return DefaultParcelExcelStart(builder)
-def DefaultParcelExcelAddParcelType(builder, parcelType): builder.PrependInt32Slot(0, parcelType, 0)
-def AddParcelType(builder, parcelType):
-    return DefaultParcelExcelAddParcelType(builder, parcelType)
-def DefaultParcelExcelAddParcelId(builder, parcelId): builder.PrependInt32Slot(1, parcelId, 0)
-def AddParcelId(builder, parcelId):
-    return DefaultParcelExcelAddParcelId(builder, parcelId)
-def DefaultParcelExcelAddParcelAmount(builder, parcelAmount): builder.PrependInt32Slot(2, parcelAmount, 0)
-def AddParcelAmount(builder, parcelAmount):
-    return DefaultParcelExcelAddParcelAmount(builder, parcelAmount)
+def DefaultParcelExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependInt32Slot(0, parcelTypeField, 0)
+def AddParcelTypeField(builder, parcelTypeField):
+    return DefaultParcelExcelAddParcelTypeField(builder, parcelTypeField)
+def DefaultParcelExcelAddParcelIdField(builder, parcelIdField): builder.PrependInt32Slot(1, parcelIdField, 0)
+def AddParcelIdField(builder, parcelIdField):
+    return DefaultParcelExcelAddParcelIdField(builder, parcelIdField)
+def DefaultParcelExcelAddParcelAmountField(builder, parcelAmountField): builder.PrependInt32Slot(2, parcelAmountField, 0)
+def AddParcelAmountField(builder, parcelAmountField):
+    return DefaultParcelExcelAddParcelAmountField(builder, parcelAmountField)
 def DefaultParcelExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return DefaultParcelExcelEnd(builder)
