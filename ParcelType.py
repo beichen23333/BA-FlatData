@@ -31,3 +31,4 @@ class ParcelType:
     SNSPost = 29
     ProductDailyRecord = 30
     StudentFrame = 31
+    ProductStreakRecord = 32

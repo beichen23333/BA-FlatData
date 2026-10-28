@@ -335,7 +335,14 @@ class CampaignStageExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def CampaignStageExcelStart(builder): builder.StartObject(33)
+    # CampaignStageExcel
+    def EchelonRecommendPresetIdField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+def CampaignStageExcelStart(builder): builder.StartObject(34)
 def Start(builder):
     return CampaignStageExcelStart(builder)
 def CampaignStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
@@ -449,6 +456,9 @@ def AddFixedEchelonIdField(builder, fixedEchelonIdField):
 def CampaignStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(32, echelonExtensionTypeField, 0)
 def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
     return CampaignStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+def CampaignStageExcelAddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField): builder.PrependInt32Slot(33, echelonRecommendPresetIdField, 0)
+def AddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField):
+    return CampaignStageExcelAddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField)
 def CampaignStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return CampaignStageExcelEnd(builder)

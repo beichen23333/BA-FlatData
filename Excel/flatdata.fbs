@@ -473,6 +473,9 @@ table ConstCommonExcel {
     ex_skill_level_max_by_engrave_field:int;
     ex_skill_upgrade_level_max_field:int;
     raid_reset_count_field:int;
+    gacha_history_count_field:int;
+    gacha_history_time_to_live_in_days_field:int;
+    product_monthly_extension_lookback_days_field:int;
 }
 
 table ConstConquestExcel {
@@ -489,6 +492,12 @@ table ConstContentsExcel {
     search_update_time_field:float;
     lobby_day_time_from_field:int;
     lobby_night_time_from_field:int;
+    character_usage_raid_recent_season_field:int;
+    character_usage_eliminate_raid_recent_season_field:int;
+    character_usage_min_sample_difficulty_field:Difficulty;
+    character_usage_min_account_sample_count_field:int;
+    character_usage_raw_data_retention_in_days_field:int;
+    character_usage_aggregate_cycle_in_hours_field:int;
 }
 
 table ConstEventCommonExcel {
@@ -611,6 +620,27 @@ table ConstMiniGameShootingExcel {
     spawn_effect_path_field:string;
     wait_time_after_spawn_field:float;
     free_gear_interval_field:int;
+}
+
+table ConstMiniGameTankExcel {
+    start_count_duration_field:int;
+    perfect_start_duration_field:int;
+    first_pattern_trigger_offset_field:int;
+    rival_spawn_offset_field:int;
+    boss_spawn_offset_field:int;
+    appear_surplus_speed_field:int;
+    distance_to_player_field:int;
+    disappear_accelerate_value_field:int;
+    disappear_duration_field:int;
+    adjust_accelerate_time_field:int;
+    obstacle_check_interval_field:int;
+    projectile_speed_field:int;
+    projectile_extinct_time_field:int;
+    boss_stage_speed_field:int;
+    combo_voice_play_interval_field:int;
+    speed_effect_threshold1_field:int;
+    speed_effect_threshold2_field:int;
+    speed_visual_multiplier_field:float;
 }
 
 table ConstMinigameTBGExcel {
@@ -1390,6 +1420,10 @@ table ConstMinigameRoadPuzzleExcelTable {
 
 table ConstMiniGameShootingExcelTable {
     data_list:[ConstMiniGameShootingExcel];
+}
+
+table ConstMiniGameTankExcelTable {
+    data_list:[ConstMiniGameTankExcel];
 }
 
 table ConstMinigameTBGExcelTable {

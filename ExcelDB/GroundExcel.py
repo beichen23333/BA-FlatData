@@ -66,11 +66,31 @@ class GroundExcel(object):
         return 0
 
     # GroundExcel
-    def StageTopographyField(self):
+    def StageTopographyField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
         return 0
+
+    # GroundExcel
+    def StageTopographyFieldAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
+        return 0
+
+    # GroundExcel
+    def StageTopographyFieldLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    # GroundExcel
+    def StageTopographyFieldIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        return o == 0
 
     # GroundExcel
     def EnemyBulletTypeField(self):
@@ -541,9 +561,12 @@ def AddGroundSceneNameField(builder, groundSceneNameField):
 def GroundExcelAddFormationGroupIdField(builder, formationGroupIdField): builder.PrependInt32Slot(3, formationGroupIdField, 0)
 def AddFormationGroupIdField(builder, formationGroupIdField):
     return GroundExcelAddFormationGroupIdField(builder, formationGroupIdField)
-def GroundExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(4, stageTopographyField, 0)
+def GroundExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stageTopographyField), 0)
 def AddStageTopographyField(builder, stageTopographyField):
     return GroundExcelAddStageTopographyField(builder, stageTopographyField)
+def GroundExcelStartStageTopographyFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartStageTopographyFieldVector(builder, numElems):
+    return GroundExcelStartStageTopographyFieldVector(builder, numElems)
 def GroundExcelAddEnemyBulletTypeField(builder, enemyBulletTypeField): builder.PrependInt32Slot(5, enemyBulletTypeField, 0)
 def AddEnemyBulletTypeField(builder, enemyBulletTypeField):
     return GroundExcelAddEnemyBulletTypeField(builder, enemyBulletTypeField)

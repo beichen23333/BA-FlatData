@@ -63,3 +63,4 @@ class OpenConditionContent:
     MinigameJanken = 61
     TacticalRelay = 62
     Engrave = 63
+    MiniGameTank = 64

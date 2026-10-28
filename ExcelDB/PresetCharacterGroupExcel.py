@@ -256,27 +256,61 @@ class PresetCharacterGroupExcel(object):
         return 0
 
     # PresetCharacterGroupExcel
-    def EngraveLevelEgoField(self):
+    def EngraveNormalNodeIndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PresetCharacterGroupExcel
-    def EngraveLevelConsciousField(self):
+    def EngraveSpecialNodeIndicesField(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        if o != 0:
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return 0
+
+    # PresetCharacterGroupExcel
+    def EngraveSpecialNodeIndicesFieldAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
+        return 0
+
+    # PresetCharacterGroupExcel
+    def EngraveSpecialNodeIndicesFieldLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    # PresetCharacterGroupExcel
+    def EngraveSpecialNodeIndicesFieldIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(72))
+        return o == 0
+
+    # PresetCharacterGroupExcel
+    def EngraveLevelEgoField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # PresetCharacterGroupExcel
+    def EngraveLevelConsciousField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(76))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # PresetCharacterGroupExcel
     def EngraveLevelUnconsciousField(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(74))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(78))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def PresetCharacterGroupExcelStart(builder): builder.StartObject(36)
+def PresetCharacterGroupExcelStart(builder): builder.StartObject(38)
 def Start(builder):
     return PresetCharacterGroupExcelStart(builder)
 def PresetCharacterGroupExcelAddPresetCharacterGroupIdField(builder, presetCharacterGroupIdField): builder.PrependInt32Slot(0, presetCharacterGroupIdField, 0)
@@ -378,13 +412,22 @@ def AddPotentialType03Field(builder, potentialType03Field):
 def PresetCharacterGroupExcelAddPotentialLevel03Field(builder, potentialLevel03Field): builder.PrependInt32Slot(32, potentialLevel03Field, 0)
 def AddPotentialLevel03Field(builder, potentialLevel03Field):
     return PresetCharacterGroupExcelAddPotentialLevel03Field(builder, potentialLevel03Field)
-def PresetCharacterGroupExcelAddEngraveLevelEgoField(builder, engraveLevelEgoField): builder.PrependInt32Slot(33, engraveLevelEgoField, 0)
+def PresetCharacterGroupExcelAddEngraveNormalNodeIndexField(builder, engraveNormalNodeIndexField): builder.PrependInt32Slot(33, engraveNormalNodeIndexField, 0)
+def AddEngraveNormalNodeIndexField(builder, engraveNormalNodeIndexField):
+    return PresetCharacterGroupExcelAddEngraveNormalNodeIndexField(builder, engraveNormalNodeIndexField)
+def PresetCharacterGroupExcelAddEngraveSpecialNodeIndicesField(builder, engraveSpecialNodeIndicesField): builder.PrependUOffsetTRelativeSlot(34, flatbuffers.number_types.UOffsetTFlags.py_type(engraveSpecialNodeIndicesField), 0)
+def AddEngraveSpecialNodeIndicesField(builder, engraveSpecialNodeIndicesField):
+    return PresetCharacterGroupExcelAddEngraveSpecialNodeIndicesField(builder, engraveSpecialNodeIndicesField)
+def PresetCharacterGroupExcelStartEngraveSpecialNodeIndicesFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartEngraveSpecialNodeIndicesFieldVector(builder, numElems):
+    return PresetCharacterGroupExcelStartEngraveSpecialNodeIndicesFieldVector(builder, numElems)
+def PresetCharacterGroupExcelAddEngraveLevelEgoField(builder, engraveLevelEgoField): builder.PrependInt32Slot(35, engraveLevelEgoField, 0)
 def AddEngraveLevelEgoField(builder, engraveLevelEgoField):
     return PresetCharacterGroupExcelAddEngraveLevelEgoField(builder, engraveLevelEgoField)
-def PresetCharacterGroupExcelAddEngraveLevelConsciousField(builder, engraveLevelConsciousField): builder.PrependInt32Slot(34, engraveLevelConsciousField, 0)
+def PresetCharacterGroupExcelAddEngraveLevelConsciousField(builder, engraveLevelConsciousField): builder.PrependInt32Slot(36, engraveLevelConsciousField, 0)
 def AddEngraveLevelConsciousField(builder, engraveLevelConsciousField):
     return PresetCharacterGroupExcelAddEngraveLevelConsciousField(builder, engraveLevelConsciousField)
-def PresetCharacterGroupExcelAddEngraveLevelUnconsciousField(builder, engraveLevelUnconsciousField): builder.PrependInt32Slot(35, engraveLevelUnconsciousField, 0)
+def PresetCharacterGroupExcelAddEngraveLevelUnconsciousField(builder, engraveLevelUnconsciousField): builder.PrependInt32Slot(37, engraveLevelUnconsciousField, 0)
 def AddEngraveLevelUnconsciousField(builder, engraveLevelUnconsciousField):
     return PresetCharacterGroupExcelAddEngraveLevelUnconsciousField(builder, engraveLevelUnconsciousField)
 def PresetCharacterGroupExcelEnd(builder): return builder.EndObject()

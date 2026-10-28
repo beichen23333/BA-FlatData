@@ -341,6 +341,16 @@ class ObstacleHeightType(IntEnum):
     Middle = 1
     High = 2
 
+class LogicEffectCategory(IntEnum):
+    None_ = 0
+    Attack = 1
+    Heal = 2
+    Buff = 3
+    Debuff = 4
+    CrowdControl = 5
+    Boss = 6
+    Dummy = 7
+
 class AimIKType(IntEnum):
     None_ = 0
     OneHandRight = 1
@@ -499,6 +509,16 @@ class SkillSlotHighLightType(IntEnum):
     None_ = 0
     New = 1
     Upgrade = 2
+
+class SkillDamagedTargetCountingRule(IntEnum):
+    None_ = 0
+    SingleTarget = 1
+    MultiTarget = 2
+
+class SkillKind(IntEnum):
+    Normal = 0
+    SelectableChild = 1
+    CardChangeOnly = 2
 
 class StatLevelUpType(IntEnum):
     Standard = 0
@@ -666,6 +686,11 @@ class GrowthReturnType(IntEnum):
     EquipmentExpItemReturn = 3
     EquipmentCreditReturn = 4
 
+class EngraveNodeType(IntEnum):
+    None_ = 0
+    Normal = 1
+    Special = 2
+
 class ClanRewardType(IntEnum):
     None_ = 0
     AssistTerm = 1
@@ -795,6 +820,7 @@ class EventContentType(IntEnum):
     InteractiveWorldRaid = 42
     ClueSearch = 43
     MinigameJanken = 44
+    MiniGameTank = 45
 
 class StarGoalType(IntEnum):
     None_ = 0
@@ -805,6 +831,8 @@ class StarGoalType(IntEnum):
     AllyBaseDamage = 5
     UsedTurn = 6
     LeftHitPoint = 7
+    GetScore = 8
+    HitCount = 9
 
 class OpenConditionContent(IntEnum):
     Shop = 0
@@ -871,6 +899,7 @@ class OpenConditionContent(IntEnum):
     MinigameJanken = 61
     TacticalRelay = 62
     Engrave = 63
+    MiniGameTank = 64
 
 class TutorialFailureContentType(IntEnum):
     None_ = 0
@@ -1323,6 +1352,11 @@ class GachaTicketType(IntEnum):
     PackageThreeStar_R88_Mystic = 14
     PackageThreeStar_R88_Pierce = 15
     PackageThreeStar_R88_Sonic = 16
+    PackageUnownedThreeStar = 17
+    PackageThreeStar_R97_Explosion = 18
+    PackageThreeStar_R97_Mystic = 19
+    PackageThreeStar_R97_Pierce = 20
+    PackageThreeStar_R97_Sonic = 21
 
 class EventChangeType(IntEnum):
     MainSub = 0
@@ -1560,6 +1594,7 @@ class ItemCategory(IntEnum):
     BattlePass = 9
     ProductSelect = 10
     ProductDailyRecord = 11
+    ProductStreakRecord = 12
 
 class MailType(IntEnum):
     System = 0
@@ -1787,6 +1822,38 @@ class Geas(IntEnum):
     MoveSpeed = 11
     LifeSteal = 12
     Evasion = 13
+
+class TankRacingStageType(IntEnum):
+    None_ = 0
+    Racing = 1
+    Boss = 2
+    Free = 3
+
+class TankRacingObstacleType(IntEnum):
+    None_ = 0
+    Fixed = 1
+    Falling = 2
+
+class TankRacingItemType(IntEnum):
+    None_ = 0
+    Fuel = 1
+    Dash = 2
+
+class TankRacingVoiceCondition(IntEnum):
+    None_ = 0
+    CharacterSelect = 1
+    MiniGameStart = 2
+    DashItemGet = 3
+    EtcItemGet = 4
+    GunFire = 5
+    Combo = 6
+    BossSkill = 7
+    UpgradeSelect = 8
+
+class TankRacingChatBubbleType(IntEnum):
+    None_ = 0
+    Normal = 1
+    Dynamic = 2
 
 class TBGObjectType(IntEnum):
     None_ = 0
@@ -2071,6 +2138,12 @@ class MissionCompleteConditionType(IntEnum):
     Reset_SpecificTacticalRelayWaveClear = 193
     Achieve_ClearTacticalRelayCount = 194
     Achieve_EngraveLevelUpCount = 195
+    Reset_TankRacingClearCount = 196
+    Reset_TankRacingUpgradeTierCheck = 197
+    Reset_ClearSpecificTankRacingStage = 198
+    Reset_ClearSpecificCampaignStageWithAdaptationCount = 199
+    Reset_ClearSpecificPermanentRaidCount = 200
+    Reset_CharacterAtSpecificSkillLevelReachCount = 201
 
 class MissionToastDisplayConditionType(IntEnum):
     Always = 0
@@ -2210,6 +2283,7 @@ class ParcelType(IntEnum):
     SNSPost = 29
     ProductDailyRecord = 30
     StudentFrame = 31
+    ProductStreakRecord = 32
 
 class Rarity(IntEnum):
     N = 0
@@ -2597,6 +2671,7 @@ class ShopGroupType(IntEnum):
     EliminateRaid = 8
     Gem = 9
     Chaser = 10
+    TacticalRelayBeta = 11
 
 class StoreType(IntEnum):
     None_ = 0
@@ -2627,6 +2702,7 @@ class PurchaseSourceType(IntEnum):
     ProductGooglePoint = 5
     ProductDailyRecord = 6
     ProductStreakRecord = 7
+    ProductPickupPackage_UseGlobal = 8
 
 class ProductCategory(IntEnum):
     None_ = 0
@@ -2684,6 +2760,7 @@ class GachaDisplayTag(IntEnum):
     Revival = 9
     SelectLimited = 10
     NewbieDateLimited = 11
+    Unowned = 12
 
 class ShopRefresherType(IntEnum):
     None_ = 0
@@ -6394,6 +6471,9 @@ def dump_Excel_ConstCommonExcel(excel_instance, password: bytes = b"") -> dict:
         "ExSkillLevelMaxByEngrave": convert_int(excel_instance.ExSkillLevelMaxByEngraveField(), password),
         "ExSkillUpgradeLevelMax": convert_int(excel_instance.ExSkillUpgradeLevelMaxField(), password),
         "RaidResetCount": convert_int(excel_instance.RaidResetCountField(), password),
+        "GachaHistoryCount": convert_int(excel_instance.GachaHistoryCountField(), password),
+        "GachaHistoryTimeToLiveInDays": convert_int(excel_instance.GachaHistoryTimeToLiveInDaysField(), password),
+        "ProductMonthlyExtensionLookbackDays": convert_int(excel_instance.ProductMonthlyExtensionLookbackDaysField(), password),
     }
 
 def dump_Excel_ConstConquestExcel(excel_instance, password: bytes = b"") -> dict:
@@ -6412,6 +6492,12 @@ def dump_Excel_ConstContentsExcel(excel_instance, password: bytes = b"") -> dict
         "SearchUpdateTime": convert_float(excel_instance.SearchUpdateTimeField(), password),
         "LobbyDayTimeFrom": convert_int(excel_instance.LobbyDayTimeFromField(), password),
         "LobbyNightTimeFrom": convert_int(excel_instance.LobbyNightTimeFromField(), password),
+        "CharacterUsageRaidRecentSeason": convert_int(excel_instance.CharacterUsageRaidRecentSeasonField(), password),
+        "CharacterUsageEliminateRaidRecentSeason": convert_int(excel_instance.CharacterUsageEliminateRaidRecentSeasonField(), password),
+        "CharacterUsageMinSampleDifficulty": Difficulty(convert_int(excel_instance.CharacterUsageMinSampleDifficultyField(), password)).name,
+        "CharacterUsageMinAccountSampleCount": convert_int(excel_instance.CharacterUsageMinAccountSampleCountField(), password),
+        "CharacterUsageRawDataRetentionInDays": convert_int(excel_instance.CharacterUsageRawDataRetentionInDaysField(), password),
+        "CharacterUsageAggregateCycleInHours": convert_int(excel_instance.CharacterUsageAggregateCycleInHoursField(), password),
     }
 
 def dump_Excel_ConstEventCommonExcel(excel_instance, password: bytes = b"") -> dict:
@@ -6541,6 +6627,28 @@ def dump_Excel_ConstMiniGameShootingExcel(excel_instance, password: bytes = b"")
         "SpawnEffectPath": convert_string(excel_instance.SpawnEffectPathField(), password),
         "WaitTimeAfterSpawn": convert_float(excel_instance.WaitTimeAfterSpawnField(), password),
         "FreeGearInterval": convert_int(excel_instance.FreeGearIntervalField(), password),
+    }
+
+def dump_Excel_ConstMiniGameTankExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "StartCountDuration": convert_int(excel_instance.StartCountDurationField(), password),
+        "PerfectStartDuration": convert_int(excel_instance.PerfectStartDurationField(), password),
+        "FirstPatternTriggerOffset": convert_int(excel_instance.FirstPatternTriggerOffsetField(), password),
+        "RivalSpawnOffset": convert_int(excel_instance.RivalSpawnOffsetField(), password),
+        "BossSpawnOffset": convert_int(excel_instance.BossSpawnOffsetField(), password),
+        "AppearSurplusSpeed": convert_int(excel_instance.AppearSurplusSpeedField(), password),
+        "DistanceToPlayer": convert_int(excel_instance.DistanceToPlayerField(), password),
+        "DisappearAccelerateValue": convert_int(excel_instance.DisappearAccelerateValueField(), password),
+        "DisappearDuration": convert_int(excel_instance.DisappearDurationField(), password),
+        "AdjustAccelerateTime": convert_int(excel_instance.AdjustAccelerateTimeField(), password),
+        "ObstacleCheckInterval": convert_int(excel_instance.ObstacleCheckIntervalField(), password),
+        "ProjectileSpeed": convert_int(excel_instance.ProjectileSpeedField(), password),
+        "ProjectileExtinctTime": convert_int(excel_instance.ProjectileExtinctTimeField(), password),
+        "BossStageSpeed": convert_int(excel_instance.BossStageSpeedField(), password),
+        "ComboVoicePlayInterval": convert_int(excel_instance.ComboVoicePlayIntervalField(), password),
+        "SpeedEffectThreshold1": convert_int(excel_instance.SpeedEffectThreshold1Field(), password),
+        "SpeedEffectThreshold2": convert_int(excel_instance.SpeedEffectThreshold2Field(), password),
+        "SpeedVisualMultiplier": convert_float(excel_instance.SpeedVisualMultiplierField(), password),
     }
 
 def dump_Excel_ConstMinigameTBGExcel(excel_instance, password: bytes = b"") -> dict:
@@ -7904,6 +8012,7 @@ def dump_ExcelDB_CampaignStageExcel(excel_instance, password: bytes = b"") -> di
         "TacticRewardExp": convert_int(excel_instance.TacticRewardExpField(), password),
         "FixedEchelonId": convert_int(excel_instance.FixedEchelonIdField(), password),
         "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionTypeField(), password)).name,
+        "EchelonRecommendPresetId": convert_int(excel_instance.EchelonRecommendPresetIdField(), password),
     }
 
 def dump_ExcelDB_CampaignStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -8185,6 +8294,7 @@ def dump_ExcelDB_CharacterEngraveExcel(excel_instance, password: bytes = b"") ->
     return {
         "Id": convert_int(excel_instance.IdField(), password),
         "UnlockAllNode": bool(excel_instance.UnlockAllNodeField()),
+        "NodeTreeId": convert_int(excel_instance.NodeTreeIdField(), password),
         "NodeTreeEgo": convert_int(excel_instance.NodeTreeEgoField(), password),
         "NodeTreeConsciousness": convert_int(excel_instance.NodeTreeConsciousnessField(), password),
         "NodeTreeUnconscious": convert_int(excel_instance.NodeTreeUnconsciousField(), password),
@@ -9085,6 +9195,27 @@ def dump_ExcelDB_EchelonConstraintExcel(excel_instance, password: bytes = b"") -
         "Role": convert_float(excel_instance.RoleField(), password),
     }
 
+def dump_ExcelDB_EchelonRecommendPresetExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "Id": convert_int(excel_instance.IdField(), password),
+        "Tank": convert_int(excel_instance.TankField(), password),
+        "DamageDealer": convert_int(excel_instance.DamageDealerField(), password),
+        "Healer": convert_int(excel_instance.HealerField(), password),
+        "Supporter": convert_int(excel_instance.SupporterField(), password),
+        "TSA": convert_int(excel_instance.TSAField(), password),
+        "CharacterLevel": convert_int(excel_instance.CharacterLevelField(), password),
+        "ExSkillLevel": convert_int(excel_instance.ExSkillLevelField(), password),
+        "PublicSkillLevel": convert_int(excel_instance.PublicSkillLevelField(), password),
+        "PassiveSkillLevel": convert_int(excel_instance.PassiveSkillLevelField(), password),
+        "ExtraPassiveSkillLevel": convert_int(excel_instance.ExtraPassiveSkillLevelField(), password),
+        "Equipment1Tier": convert_int(excel_instance.Equipment1TierField(), password),
+        "Equipment1Level": convert_int(excel_instance.Equipment1LevelField(), password),
+        "Equipment2Tier": convert_int(excel_instance.Equipment2TierField(), password),
+        "Equipment2Level": convert_int(excel_instance.Equipment2LevelField(), password),
+        "Equipment3Tier": convert_int(excel_instance.Equipment3TierField(), password),
+        "Equipment3Level": convert_int(excel_instance.Equipment3LevelField(), password),
+    }
+
 def dump_ExcelDB_EliminateRaidRankingRewardExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "RankingRewardGroupId": convert_int(excel_instance.RankingRewardGroupIdField(), password),
@@ -9143,6 +9274,7 @@ def dump_ExcelDB_EliminateRaidStageExcel(excel_instance, password: bytes = b"") 
         "IsOpen": bool(excel_instance.IsOpenField()),
         "MaxPlayerCount": convert_int(excel_instance.MaxPlayerCountField(), password),
         "RaidRoomLifeTime": convert_int(excel_instance.RaidRoomLifeTimeField(), password),
+        "ExtraRoomLifeTime": convert_int(excel_instance.ExtraRoomLifeTimeField(), password),
         "BattleDuration": convert_int(excel_instance.BattleDurationField(), password),
         "GroundId": convert_int(excel_instance.GroundIdField(), password),
         "RaidBossGroupType": RaidBossGroupType(convert_int(excel_instance.RaidBossGroupTypeField(), password)).name,
@@ -9223,8 +9355,10 @@ def dump_ExcelDB_EmblemExcel(excel_instance, password: bytes = b"") -> dict:
 def dump_ExcelDB_EngraveTreeExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Id": convert_int(excel_instance.IdField(), password),
+        "NodeType": EngraveNodeType(convert_int(excel_instance.NodeTypeField(), password)).name,
         "NodeIndex": convert_int(excel_instance.NodeIndexField(), password),
         "IsUnlock": bool(excel_instance.IsUnlockField()),
+        "PreNodeType": EngraveNodeType(convert_int(excel_instance.PreNodeTypeField(), password)).name,
         "PreNodeIndex": [convert_int(excel_instance.PreNodeIndexField(j), password) for j in range(excel_instance.PreNodeIndexFieldLength())],
         "GradeType": NodeGrade(convert_int(excel_instance.GradeTypeField(), password)).name,
         "LocalizeEtcId": convert_string(excel_instance.LocalizeEtcIdField(), password),
@@ -9976,6 +10110,7 @@ def dump_ExcelDB_EventContentStageExcel(excel_instance, password: bytes = b"") -
         "IsDefeatBattle": bool(excel_instance.IsDefeatBattleField()),
         "StageHint": convert_uint(excel_instance.StageHintField(), password),
         "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionTypeField(), password)).name,
+        "EchelonRecommendPresetId": convert_int(excel_instance.EchelonRecommendPresetIdField(), password),
     }
 
 def dump_ExcelDB_EventContentStageRewardExcel(excel_instance, password: bytes = b"") -> dict:
@@ -10441,7 +10576,7 @@ def dump_ExcelDB_GroundExcel(excel_instance, password: bytes = b"") -> dict:
         "StageFileName": [convert_string(excel_instance.StageFileNameField(j), password) for j in range(excel_instance.StageFileNameFieldLength())],
         "GroundSceneName": convert_string(excel_instance.GroundSceneNameField(), password),
         "FormationGroupId": convert_int(excel_instance.FormationGroupIdField(), password),
-        "StageTopography": StageTopography(convert_int(excel_instance.StageTopographyField(), password)).name,
+        "StageTopography": [StageTopography(convert_int(excel_instance.StageTopographyField(j), password)).name for j in range(excel_instance.StageTopographyFieldLength())],
         "EnemyBulletType": BulletType(convert_int(excel_instance.EnemyBulletTypeField(), password)).name,
         "EnemyArmorType": ArmorType(convert_int(excel_instance.EnemyArmorTypeField(), password)).name,
         "EnemySubArmorType": ArmorType(convert_int(excel_instance.EnemySubArmorTypeField(), password)).name,
@@ -11020,6 +11155,8 @@ def dump_ExcelDB_LocalizeGachaShopExcel(excel_instance, password: bytes = b"") -
 def dump_ExcelDB_LocalizeSkillEffectExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "Key": convert_uint(excel_instance.KeyField(), password),
+        "SkillFilterActivate": bool(excel_instance.SkillFilterActivateField()),
+        "SkillFilterLogicEffectCategory": LogicEffectCategory(convert_int(excel_instance.SkillFilterLogicEffectCategoryField(), password)).name,
         "IconSpriteName": convert_string(excel_instance.IconSpriteNameField(), password),
         "SkillEffectNameKR": convert_string(excel_instance.SkillEffectNameKRField(), password),
         "SkillEffectNameJP": convert_string(excel_instance.SkillEffectNameJPField(), password),
@@ -11041,6 +11178,7 @@ def dump_ExcelDB_LocalizeSkillExcel(excel_instance, password: bytes = b"") -> di
         "NameJp": convert_string(excel_instance.NameJpField(), password),
         "DescriptionJp": convert_string(excel_instance.DescriptionJpField(), password),
         "SkillInvokeLocalizeJp": convert_string(excel_instance.SkillInvokeLocalizeJpField(), password),
+        "SkillEffectList": [convert_uint(excel_instance.SkillEffectListField(j), password) for j in range(excel_instance.SkillEffectListFieldLength())],
     }
 
 def dump_ExcelDB_LocalizeSkillNewExcel(excel_instance, password: bytes = b"") -> dict:
@@ -11886,6 +12024,155 @@ def dump_ExcelDB_MiniGameShootingStageRewardExcel(excel_instance, password: byte
         "RewardParcelAmount": [convert_int(excel_instance.RewardParcelAmountField(j), password) for j in range(excel_instance.RewardParcelAmountFieldLength())],
     }
 
+def dump_ExcelDB_MiniGameTankCharacterExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
+        "GroupId": convert_int(excel_instance.GroupIdField(), password),
+        "UniqueId": convert_int(excel_instance.UniqueIdField(), password),
+        "PrevGradeId": convert_int(excel_instance.PrevGradeIdField(), password),
+        "Playable": bool(excel_instance.PlayableField()),
+        "Grade": convert_int(excel_instance.GradeField(), password),
+        "TankName": convert_uint(excel_instance.TankNameField(), password),
+        "TeamName": convert_uint(excel_instance.TeamNameField(), password),
+        "ModelPrefabName": convert_string(excel_instance.ModelPrefabNameField(), password),
+        "IconResourceName": convert_string(excel_instance.IconResourceNameField(), password),
+        "HUDIconResourceName": convert_string(excel_instance.HUDIconResourceNameField(), password),
+        "UnlockConditionStageId": convert_int(excel_instance.UnlockConditionStageIdField(), password),
+        "UpgradeItemParcelType": ParcelType(convert_int(excel_instance.UpgradeItemParcelTypeField(), password)).name,
+        "UpgradeItemParcelId": convert_int(excel_instance.UpgradeItemParcelIdField(), password),
+        "UpgradeItemAmount": convert_int(excel_instance.UpgradeItemAmountField(), password),
+        "MaxHP": convert_int(excel_instance.MaxHPField(), password),
+        "AttackPower": convert_int(excel_instance.AttackPowerField(), password),
+        "AttackCooltime": convert_int(excel_instance.AttackCooltimeField(), password),
+        "DecelerationScale": convert_float(excel_instance.DecelerationScaleField(), password),
+        "DecelerationCycle": convert_int(excel_instance.DecelerationCycleField(), password),
+        "DecelerationTime": convert_int(excel_instance.DecelerationTimeField(), password),
+        "Acceleration": convert_int(excel_instance.AccelerationField(), password),
+        "MinSpeed": convert_int(excel_instance.MinSpeedField(), password),
+        "MaxSpeed": convert_int(excel_instance.MaxSpeedField(), password),
+        "DriftSpeed": convert_int(excel_instance.DriftSpeedField(), password),
+        "DashItemSpeed": convert_int(excel_instance.DashItemSpeedField(), password),
+        "PerfectStartDashSpeed": convert_int(excel_instance.PerfectStartDashSpeedField(), password),
+        "RivalDestroyDashSpeed": convert_int(excel_instance.RivalDestroyDashSpeedField(), password),
+        "RivalDestroyDashDuration": convert_int(excel_instance.RivalDestroyDashDurationField(), password),
+        "Cornering": convert_int(excel_instance.CorneringField(), password),
+        "MaxFuel": convert_int(excel_instance.MaxFuelField(), password),
+        "FuelReductionAmount": convert_int(excel_instance.FuelReductionAmountField(), password),
+        "FuelReductionRate": convert_int(excel_instance.FuelReductionRateField(), password),
+        "MinBossReactionTime": convert_int(excel_instance.MinBossReactionTimeField(), password),
+        "MaxBossReactionTime": convert_int(excel_instance.MaxBossReactionTimeField(), password),
+        "MinBossChaseTime": convert_int(excel_instance.MinBossChaseTimeField(), password),
+        "MaxBossChaseTime": convert_int(excel_instance.MaxBossChaseTimeField(), password),
+        "MinBossDelayTime": convert_int(excel_instance.MinBossDelayTimeField(), password),
+        "MaxBossDelayTime": convert_int(excel_instance.MaxBossDelayTimeField(), password),
+        "NormalAttackSkillData": convert_string(excel_instance.NormalAttackSkillDataField(), password),
+        "PublicSkillBaseWeight": [convert_int(excel_instance.PublicSkillBaseWeightField(j), password) for j in range(excel_instance.PublicSkillBaseWeightFieldLength())],
+        "PublicSkillMaxConsecutive": [convert_int(excel_instance.PublicSkillMaxConsecutiveField(j), password) for j in range(excel_instance.PublicSkillMaxConsecutiveFieldLength())],
+        "PublicSkillData": [convert_string(excel_instance.PublicSkillDataField(j), password) for j in range(excel_instance.PublicSkillDataFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankItemExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
+        "UniqueId": convert_int(excel_instance.UniqueIdField(), password),
+        "ItemType": TankRacingItemType(convert_int(excel_instance.ItemTypeField(), password)).name,
+        "ItemParameter": convert_int(excel_instance.ItemParameterField(), password),
+        "SpawnLane": [convert_int(excel_instance.SpawnLaneField(j), password) for j in range(excel_instance.SpawnLaneFieldLength())],
+        "PrefabName": convert_string(excel_instance.PrefabNameField(), password),
+    }
+
+def dump_ExcelDB_MiniGameTankLevelExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
+        "StageId": convert_int(excel_instance.StageIdField(), password),
+        "ArtLevel": convert_string(excel_instance.ArtLevelField(), password),
+        "BGMId": convert_int(excel_instance.BGMIdField(), password),
+        "FirstPatternDistance": convert_int(excel_instance.FirstPatternDistanceField(), password),
+        "GoalCreateDistance": convert_int(excel_instance.GoalCreateDistanceField(), password),
+        "RivalRushDistance": convert_int(excel_instance.RivalRushDistanceField(), password),
+        "RivalCharacterId": [convert_int(excel_instance.RivalCharacterIdField(j), password) for j in range(excel_instance.RivalCharacterIdFieldLength())],
+        "RivalVanishTime": convert_int(excel_instance.RivalVanishTimeField(), password),
+        "RivalInterval": convert_int(excel_instance.RivalIntervalField(), password),
+        "MinVerticalSpacing": convert_int(excel_instance.MinVerticalSpacingField(), password),
+        "MaxVerticalSpacing": convert_int(excel_instance.MaxVerticalSpacingField(), password),
+        "ItemId": [convert_int(excel_instance.ItemIdField(j), password) for j in range(excel_instance.ItemIdFieldLength())],
+        "ItemCreateDistance": [convert_int(excel_instance.ItemCreateDistanceField(j), password) for j in range(excel_instance.ItemCreateDistanceFieldLength())],
+        "ItemInterval": [convert_int(excel_instance.ItemIntervalField(j), password) for j in range(excel_instance.ItemIntervalFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankObstacleExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
+        "UniqueId": convert_int(excel_instance.UniqueIdField(), password),
+        "PrefabName": convert_string(excel_instance.PrefabNameField(), password),
+        "ObstacleType": TankRacingObstacleType(convert_int(excel_instance.ObstacleTypeField(), password)).name,
+        "FallingScanDistance": convert_int(excel_instance.FallingScanDistanceField(), password),
+        "FallingIndicatorDisplayTime": convert_int(excel_instance.FallingIndicatorDisplayTimeField(), password),
+        "FallingTime": convert_int(excel_instance.FallingTimeField(), password),
+    }
+
+def dump_ExcelDB_MiniGameTankPatternExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
+        "StageId": convert_int(excel_instance.StageIdField(), password),
+        "UniqueId": convert_int(excel_instance.UniqueIdField(), password),
+        "Pattern": convert_string(excel_instance.PatternField(), password),
+        "BaseWeight": convert_int(excel_instance.BaseWeightField(), password),
+        "MinReqSpeed": convert_int(excel_instance.MinReqSpeedField(), password),
+        "MaxReqSpeed": convert_int(excel_instance.MaxReqSpeedField(), password),
+        "MaxConsecutive": convert_int(excel_instance.MaxConsecutiveField(), password),
+        "Spacing": convert_int(excel_instance.SpacingField(), password),
+    }
+
+def dump_ExcelDB_MiniGameTankScoreExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
+        "DistanceScore": convert_int(excel_instance.DistanceScoreField(), password),
+        "DestroyScore": convert_int(excel_instance.DestroyScoreField(), password),
+        "MinComboValue": convert_int(excel_instance.MinComboValueField(), password),
+        "ComboStepInterval": convert_int(excel_instance.ComboStepIntervalField(), password),
+        "ComboMultiplier": convert_float(excel_instance.ComboMultiplierField(), password),
+        "MaxComboMultiplier": convert_float(excel_instance.MaxComboMultiplierField(), password),
+        "ComboDuration": convert_int(excel_instance.ComboDurationField(), password),
+        "RivalDestroyScore": convert_int(excel_instance.RivalDestroyScoreField(), password),
+        "BossTimeMaxScore": convert_int(excel_instance.BossTimeMaxScoreField(), password),
+        "BossPerSecMinusScore": convert_int(excel_instance.BossPerSecMinusScoreField(), password),
+        "BossHitScore": convert_int(excel_instance.BossHitScoreField(), password),
+        "BossHitMinusScore": convert_int(excel_instance.BossHitMinusScoreField(), password),
+    }
+
+def dump_ExcelDB_MiniGameTankStageExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
+        "UniqueId": convert_int(excel_instance.UniqueIdField(), password),
+        "StageNumber": convert_int(excel_instance.StageNumberField(), password),
+        "Name": convert_uint(excel_instance.NameField(), password),
+        "StageType": TankRacingStageType(convert_int(excel_instance.StageTypeField(), password)).name,
+        "PrevStageId": convert_int(excel_instance.PrevStageIdField(), password),
+        "StageDuration": convert_int(excel_instance.StageDurationField(), password),
+        "CostParcelType": ParcelType(convert_int(excel_instance.CostParcelTypeField(), password)).name,
+        "CostParcelId": convert_int(excel_instance.CostParcelIdField(), password),
+        "CostParcelAmount": convert_int(excel_instance.CostParcelAmountField(), password),
+        "RewardGroupId": convert_int(excel_instance.RewardGroupIdField(), password),
+        "StarGoal": [StarGoalType(convert_int(excel_instance.StarGoalField(j), password)).name for j in range(excel_instance.StarGoalFieldLength())],
+        "StarGoalAmount": [convert_int(excel_instance.StarGoalAmountField(j), password) for j in range(excel_instance.StarGoalAmountFieldLength())],
+        "BossEntryPlayerTankGroupIds": [convert_int(excel_instance.BossEntryPlayerTankGroupIdsField(j), password) for j in range(excel_instance.BossEntryPlayerTankGroupIdsFieldLength())],
+        "BossEntryBossGroupIds": [convert_int(excel_instance.BossEntryBossGroupIdsField(j), password) for j in range(excel_instance.BossEntryBossGroupIdsFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankVoiceExcel(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
+        "CharacterGroupId": convert_int(excel_instance.CharacterGroupIdField(), password),
+        "UniqueId": convert_int(excel_instance.UniqueIdField(), password),
+        "VoiceCondition": TankRacingVoiceCondition(convert_int(excel_instance.VoiceConditionField(), password)).name,
+        "ChatBubbleType": TankRacingChatBubbleType(convert_int(excel_instance.ChatBubbleTypeField(), password)).name,
+        "VoiceClip": convert_uint(excel_instance.VoiceClipField(), password),
+        "SubtitleLocalizeKR": convert_string(excel_instance.SubtitleLocalizeKRField(), password),
+        "SubtitleLocalizeJP": convert_string(excel_instance.SubtitleLocalizeJPField(), password),
+        "SubtitlePortrait": convert_string(excel_instance.SubtitlePortraitField(), password),
+    }
+
 def dump_ExcelDB_MinigameTBGDiceExcel(excel_instance, password: bytes = b"") -> dict:
     return {
         "EventContentId": convert_int(excel_instance.EventContentIdField(), password),
@@ -12347,6 +12634,8 @@ def dump_ExcelDB_PresetCharacterGroupExcel(excel_instance, password: bytes = b""
         "PotentialLevel02": convert_int(excel_instance.PotentialLevel02Field(), password),
         "PotentialType03": PotentialStatBonusRateType(convert_int(excel_instance.PotentialType03Field(), password)).name,
         "PotentialLevel03": convert_int(excel_instance.PotentialLevel03Field(), password),
+        "EngraveNormalNodeIndex": convert_int(excel_instance.EngraveNormalNodeIndexField(), password),
+        "EngraveSpecialNodeIndices": [convert_int(excel_instance.EngraveSpecialNodeIndicesField(j), password) for j in range(excel_instance.EngraveSpecialNodeIndicesFieldLength())],
         "EngraveLevelEgo": convert_int(excel_instance.EngraveLevelEgoField(), password),
         "EngraveLevelConscious": convert_int(excel_instance.EngraveLevelConsciousField(), password),
         "EngraveLevelUnconscious": convert_int(excel_instance.EngraveLevelUnconsciousField(), password),
@@ -12499,7 +12788,6 @@ def dump_ExcelDB_RaidContentPlayGuideExcel(excel_instance, password: bytes = b""
         "Id": convert_int(excel_instance.IdField(), password),
         "RaidBossGroupType": RaidBossGroupType(convert_int(excel_instance.RaidBossGroupTypeField(), password)).name,
         "IsPCBuild": bool(excel_instance.IsPCBuildField()),
-        "IdExport": bool(excel_instance.IdExportField()),
         "DisplayOrder": convert_int(excel_instance.DisplayOrderField(), password),
         "GuideTitle": convert_uint(excel_instance.GuideTitleField(), password),
         "GuideImagePath": convert_string(excel_instance.GuideImagePathField(), password),
@@ -12560,6 +12848,7 @@ def dump_ExcelDB_RaidStageExcel(excel_instance, password: bytes = b"") -> dict:
         "DifficultyOpenCondition": bool(excel_instance.DifficultyOpenConditionField()),
         "MaxPlayerCount": convert_int(excel_instance.MaxPlayerCountField(), password),
         "RaidRoomLifeTime": convert_int(excel_instance.RaidRoomLifeTimeField(), password),
+        "ExtraRoomLifeTime": convert_int(excel_instance.ExtraRoomLifeTimeField(), password),
         "BattleDuration": convert_int(excel_instance.BattleDurationField(), password),
         "GroundId": convert_int(excel_instance.GroundIdField(), password),
         "RaidBossGroupType": RaidBossGroupType(convert_int(excel_instance.RaidBossGroupTypeField(), password)).name,
@@ -12753,6 +13042,7 @@ def dump_ExcelDB_ScenarioModeExcel(excel_instance, password: bytes = b"") -> dic
         "FrontScenarioGroupId": [convert_int(excel_instance.FrontScenarioGroupIdField(j), password) for j in range(excel_instance.FrontScenarioGroupIdFieldLength())],
         "StrategyId": convert_int(excel_instance.StrategyIdField(), password),
         "GroundId": convert_int(excel_instance.GroundIdField(), password),
+        "EchelonRecommendPresetId": convert_int(excel_instance.EchelonRecommendPresetIdField(), password),
         "IsDefeatBattle": bool(excel_instance.IsDefeatBattleField()),
         "BattleDuration": convert_int(excel_instance.BattleDurationField(), password),
         "FieldDateId": convert_int(excel_instance.FieldDateIdField(), password),
@@ -12882,6 +13172,7 @@ def dump_ExcelDB_SchoolDungeonStageExcel(excel_instance, password: bytes = b"") 
         "StageRewardId": convert_int(excel_instance.StageRewardIdField(), password),
         "PlayTimeLimitInSeconds": convert_int(excel_instance.PlayTimeLimitInSecondsField(), password),
         "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionTypeField(), password)).name,
+        "EchelonRecommendPresetId": convert_int(excel_instance.EchelonRecommendPresetIdField(), password),
     }
 
 def dump_ExcelDB_SeasonRecordInfoExcel(excel_instance, password: bytes = b"") -> dict:
@@ -13276,6 +13567,9 @@ def dump_ExcelDB_SkillExcel(excel_instance, password: bytes = b"") -> dict:
         "TextureSkillCardForFormConversion": convert_string(excel_instance.TextureSkillCardForFormConversionField(), password),
         "SkillCardLabelPath": convert_string(excel_instance.SkillCardLabelPathField(), password),
         "SkillRemainCountOverride": convert_string(excel_instance.SkillRemainCountOverrideField(), password),
+        "SkillDamageTargetCount": SkillDamagedTargetCountingRule(convert_int(excel_instance.SkillDamageTargetCountField(), password)).name,
+        "SkillFilterActivate": bool(excel_instance.SkillFilterActivateField()),
+        "SkillKind": SkillKind(convert_int(excel_instance.SkillKindField(), password)).name,
     }
 
 def dump_ExcelDB_SkillSelectExTooltipExcel(excel_instance, password: bytes = b"") -> dict:
@@ -13771,6 +14065,8 @@ def dump_ExcelDB_WeekDungeonExcel(excel_instance, password: bytes = b"") -> dict
         "BattleRewardPlayerExp": convert_int(excel_instance.BattleRewardPlayerExpField(), password),
         "GroupBuffID": [convert_int(excel_instance.GroupBuffIDField(j), password) for j in range(excel_instance.GroupBuffIDFieldLength())],
         "EchelonExtensionType": EchelonExtensionType(convert_int(excel_instance.EchelonExtensionTypeField(), password)).name,
+        "EchelonRecommendPresetId": convert_int(excel_instance.EchelonRecommendPresetIdField(), password),
+        "HideChaserPortraitSpawnTemplateId": [convert_string(excel_instance.HideChaserPortraitSpawnTemplateIdField(j), password) for j in range(excel_instance.HideChaserPortraitSpawnTemplateIdFieldLength())],
     }
 
 def dump_ExcelDB_WeekDungeonGroupBuffExcel(excel_instance, password: bytes = b"") -> dict:
@@ -14087,6 +14383,11 @@ def dump_Excel_ConstMinigameRoadPuzzleExcelTable(excel_instance, password: bytes
 def dump_Excel_ConstMiniGameShootingExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [Excel_ConstMiniGameShootingExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_Excel_ConstMiniGameTankExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [Excel_ConstMiniGameTankExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
     }
 
 def dump_Excel_ConstMinigameTBGExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -14947,6 +15248,11 @@ def dump_ExcelDB_DuplicateBonusExcelTable(excel_instance, password: bytes = b"")
 def dump_ExcelDB_EchelonConstraintExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [ExcelDB_EchelonConstraintExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_EchelonRecommendPresetExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_EchelonRecommendPresetExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
     }
 
 def dump_ExcelDB_EliminateRaidRankingRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
@@ -15927,6 +16233,46 @@ def dump_ExcelDB_MiniGameShootingStageExcelTable(excel_instance, password: bytes
 def dump_ExcelDB_MiniGameShootingStageRewardExcelTable(excel_instance, password: bytes = b"") -> dict:
     return {
         "DataList": [ExcelDB_MiniGameShootingStageRewardExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankCharacterExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_MiniGameTankCharacterExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankItemExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_MiniGameTankItemExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankLevelExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_MiniGameTankLevelExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankObstacleExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_MiniGameTankObstacleExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankPatternExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_MiniGameTankPatternExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankScoreExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_MiniGameTankScoreExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankStageExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_MiniGameTankStageExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
+    }
+
+def dump_ExcelDB_MiniGameTankVoiceExcelTable(excel_instance, password: bytes = b"") -> dict:
+    return {
+        "DataList": [ExcelDB_MiniGameTankVoiceExcel(excel_instance.DataListField(j), password) for j in range(excel_instance.DataListFieldLength())],
     }
 
 def dump_ExcelDB_MinigameTBGDiceExcelTable(excel_instance, password: bytes = b"") -> dict:

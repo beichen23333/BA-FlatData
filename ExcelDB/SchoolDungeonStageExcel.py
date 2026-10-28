@@ -263,7 +263,14 @@ class SchoolDungeonStageExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def SchoolDungeonStageExcelStart(builder): builder.StartObject(17)
+    # SchoolDungeonStageExcel
+    def EchelonRecommendPresetIdField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+def SchoolDungeonStageExcelStart(builder): builder.StartObject(18)
 def Start(builder):
     return SchoolDungeonStageExcelStart(builder)
 def SchoolDungeonStageExcelAddStageIdField(builder, stageIdField): builder.PrependInt32Slot(0, stageIdField, 0)
@@ -335,6 +342,9 @@ def AddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField):
 def SchoolDungeonStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(16, echelonExtensionTypeField, 0)
 def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
     return SchoolDungeonStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+def SchoolDungeonStageExcelAddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField): builder.PrependInt32Slot(17, echelonRecommendPresetIdField, 0)
+def AddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField):
+    return SchoolDungeonStageExcelAddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField)
 def SchoolDungeonStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SchoolDungeonStageExcelEnd(builder)

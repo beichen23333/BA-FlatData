@@ -1,0 +1,10 @@
+class TankRacingVoiceCondition:
+    None_ = 0
+    CharacterSelect = 1
+    MiniGameStart = 2
+    DashItemGet = 3
+    EtcItemGet = 4
+    GunFire = 5
+    Combo = 6
+    BossSkill = 7
+    UpgradeSelect = 8

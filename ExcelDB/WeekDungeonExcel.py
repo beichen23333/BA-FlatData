@@ -277,7 +277,34 @@ class WeekDungeonExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def WeekDungeonExcelStart(builder): builder.StartObject(19)
+    # WeekDungeonExcel
+    def EchelonRecommendPresetIdField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # WeekDungeonExcel
+    def HideChaserPortraitSpawnTemplateIdField(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
+        if o != 0:
+            a = self._tab.Vector(o)
+            return self._tab.String(a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return ""
+
+    # WeekDungeonExcel
+    def HideChaserPortraitSpawnTemplateIdFieldLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    # WeekDungeonExcel
+    def HideChaserPortraitSpawnTemplateIdFieldIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
+        return o == 0
+
+def WeekDungeonExcelStart(builder): builder.StartObject(21)
 def Start(builder):
     return WeekDungeonExcelStart(builder)
 def WeekDungeonExcelAddStageIdField(builder, stageIdField): builder.PrependInt32Slot(0, stageIdField, 0)
@@ -355,6 +382,15 @@ def StartGroupBuffIDFieldVector(builder, numElems):
 def WeekDungeonExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(18, echelonExtensionTypeField, 0)
 def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
     return WeekDungeonExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+def WeekDungeonExcelAddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField): builder.PrependInt32Slot(19, echelonRecommendPresetIdField, 0)
+def AddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField):
+    return WeekDungeonExcelAddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField)
+def WeekDungeonExcelAddHideChaserPortraitSpawnTemplateIdField(builder, hideChaserPortraitSpawnTemplateIdField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(hideChaserPortraitSpawnTemplateIdField), 0)
+def AddHideChaserPortraitSpawnTemplateIdField(builder, hideChaserPortraitSpawnTemplateIdField):
+    return WeekDungeonExcelAddHideChaserPortraitSpawnTemplateIdField(builder, hideChaserPortraitSpawnTemplateIdField)
+def WeekDungeonExcelStartHideChaserPortraitSpawnTemplateIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartHideChaserPortraitSpawnTemplateIdFieldVector(builder, numElems):
+    return WeekDungeonExcelStartHideChaserPortraitSpawnTemplateIdFieldVector(builder, numElems)
 def WeekDungeonExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return WeekDungeonExcelEnd(builder)

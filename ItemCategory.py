@@ -11,3 +11,4 @@ class ItemCategory:
     BattlePass = 9
     ProductSelect = 10
     ProductDailyRecord = 11
+    ProductStreakRecord = 12

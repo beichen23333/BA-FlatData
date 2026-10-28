@@ -73,7 +73,34 @@ class LocalizeSkillExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def LocalizeSkillExcelStart(builder): builder.StartObject(7)
+    # LocalizeSkillExcel
+    def SkillEffectListField(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Uint32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return 0
+
+    # LocalizeSkillExcel
+    def SkillEffectListFieldAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Uint32Flags, o)
+        return 0
+
+    # LocalizeSkillExcel
+    def SkillEffectListFieldLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    # LocalizeSkillExcel
+    def SkillEffectListFieldIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        return o == 0
+
+def LocalizeSkillExcelStart(builder): builder.StartObject(8)
 def Start(builder):
     return LocalizeSkillExcelStart(builder)
 def LocalizeSkillExcelAddKeyField(builder, keyField): builder.PrependUint32Slot(0, keyField, 0)
@@ -97,6 +124,12 @@ def AddDescriptionJpField(builder, descriptionJpField):
 def LocalizeSkillExcelAddSkillInvokeLocalizeJpField(builder, skillInvokeLocalizeJpField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(skillInvokeLocalizeJpField), 0)
 def AddSkillInvokeLocalizeJpField(builder, skillInvokeLocalizeJpField):
     return LocalizeSkillExcelAddSkillInvokeLocalizeJpField(builder, skillInvokeLocalizeJpField)
+def LocalizeSkillExcelAddSkillEffectListField(builder, skillEffectListField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectListField), 0)
+def AddSkillEffectListField(builder, skillEffectListField):
+    return LocalizeSkillExcelAddSkillEffectListField(builder, skillEffectListField)
+def LocalizeSkillExcelStartSkillEffectListFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
+def StartSkillEffectListFieldVector(builder, numElems):
+    return LocalizeSkillExcelStartSkillEffectListFieldVector(builder, numElems)
 def LocalizeSkillExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return LocalizeSkillExcelEnd(builder)

@@ -32,22 +32,36 @@ class EngraveTreeExcel(object):
         return 0
 
     # EngraveTreeExcel
-    def NodeIndexField(self):
+    def NodeTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EngraveTreeExcel
-    def IsUnlockField(self):
+    def NodeIndexField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # EngraveTreeExcel
+    def IsUnlockField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
     # EngraveTreeExcel
+    def PreNodeTypeField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # EngraveTreeExcel
     def PreNodeIndexField(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
@@ -55,61 +69,61 @@ class EngraveTreeExcel(object):
 
     # EngraveTreeExcel
     def PreNodeIndexFieldAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EngraveTreeExcel
     def PreNodeIndexFieldLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EngraveTreeExcel
     def PreNodeIndexFieldIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
     # EngraveTreeExcel
     def GradeTypeField(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
-        if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
-
-    # EngraveTreeExcel
-    def LocalizeEtcIdField(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
-        if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
-
-    # EngraveTreeExcel
-    def RecipeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EngraveTreeExcel
-    def MaxLevelField(self):
+    def LocalizeEtcIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+    # EngraveTreeExcel
+    def RecipeField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # EngraveTreeExcel
+    def MaxLevelField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
     # EngraveTreeExcel
     def LearnSkillSlotField(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EngraveTreeExcel
     def StatTypeField(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
@@ -117,26 +131,26 @@ class EngraveTreeExcel(object):
 
     # EngraveTreeExcel
     def StatTypeFieldAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EngraveTreeExcel
     def StatTypeFieldLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EngraveTreeExcel
     def StatTypeFieldIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
     # EngraveTreeExcel
     def StatValueField(self, j):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
@@ -144,63 +158,69 @@ class EngraveTreeExcel(object):
 
     # EngraveTreeExcel
     def StatValueFieldAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # EngraveTreeExcel
     def StatValueFieldLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # EngraveTreeExcel
     def StatValueFieldIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         return o == 0
 
-def EngraveTreeExcelStart(builder): builder.StartObject(11)
+def EngraveTreeExcelStart(builder): builder.StartObject(13)
 def Start(builder):
     return EngraveTreeExcelStart(builder)
 def EngraveTreeExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
 def AddIdField(builder, idField):
     return EngraveTreeExcelAddIdField(builder, idField)
-def EngraveTreeExcelAddNodeIndexField(builder, nodeIndexField): builder.PrependInt32Slot(1, nodeIndexField, 0)
+def EngraveTreeExcelAddNodeTypeField(builder, nodeTypeField): builder.PrependInt32Slot(1, nodeTypeField, 0)
+def AddNodeTypeField(builder, nodeTypeField):
+    return EngraveTreeExcelAddNodeTypeField(builder, nodeTypeField)
+def EngraveTreeExcelAddNodeIndexField(builder, nodeIndexField): builder.PrependInt32Slot(2, nodeIndexField, 0)
 def AddNodeIndexField(builder, nodeIndexField):
     return EngraveTreeExcelAddNodeIndexField(builder, nodeIndexField)
-def EngraveTreeExcelAddIsUnlockField(builder, isUnlockField): builder.PrependBoolSlot(2, isUnlockField, 0)
+def EngraveTreeExcelAddIsUnlockField(builder, isUnlockField): builder.PrependBoolSlot(3, isUnlockField, 0)
 def AddIsUnlockField(builder, isUnlockField):
     return EngraveTreeExcelAddIsUnlockField(builder, isUnlockField)
-def EngraveTreeExcelAddPreNodeIndexField(builder, preNodeIndexField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(preNodeIndexField), 0)
+def EngraveTreeExcelAddPreNodeTypeField(builder, preNodeTypeField): builder.PrependInt32Slot(4, preNodeTypeField, 0)
+def AddPreNodeTypeField(builder, preNodeTypeField):
+    return EngraveTreeExcelAddPreNodeTypeField(builder, preNodeTypeField)
+def EngraveTreeExcelAddPreNodeIndexField(builder, preNodeIndexField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(preNodeIndexField), 0)
 def AddPreNodeIndexField(builder, preNodeIndexField):
     return EngraveTreeExcelAddPreNodeIndexField(builder, preNodeIndexField)
 def EngraveTreeExcelStartPreNodeIndexFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def StartPreNodeIndexFieldVector(builder, numElems):
     return EngraveTreeExcelStartPreNodeIndexFieldVector(builder, numElems)
-def EngraveTreeExcelAddGradeTypeField(builder, gradeTypeField): builder.PrependInt32Slot(4, gradeTypeField, 0)
+def EngraveTreeExcelAddGradeTypeField(builder, gradeTypeField): builder.PrependInt32Slot(6, gradeTypeField, 0)
 def AddGradeTypeField(builder, gradeTypeField):
     return EngraveTreeExcelAddGradeTypeField(builder, gradeTypeField)
-def EngraveTreeExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(localizeEtcIdField), 0)
+def EngraveTreeExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(localizeEtcIdField), 0)
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
     return EngraveTreeExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def EngraveTreeExcelAddRecipeField(builder, recipeField): builder.PrependInt32Slot(6, recipeField, 0)
+def EngraveTreeExcelAddRecipeField(builder, recipeField): builder.PrependInt32Slot(8, recipeField, 0)
 def AddRecipeField(builder, recipeField):
     return EngraveTreeExcelAddRecipeField(builder, recipeField)
-def EngraveTreeExcelAddMaxLevelField(builder, maxLevelField): builder.PrependInt32Slot(7, maxLevelField, 0)
+def EngraveTreeExcelAddMaxLevelField(builder, maxLevelField): builder.PrependInt32Slot(9, maxLevelField, 0)
 def AddMaxLevelField(builder, maxLevelField):
     return EngraveTreeExcelAddMaxLevelField(builder, maxLevelField)
-def EngraveTreeExcelAddLearnSkillSlotField(builder, learnSkillSlotField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(learnSkillSlotField), 0)
+def EngraveTreeExcelAddLearnSkillSlotField(builder, learnSkillSlotField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(learnSkillSlotField), 0)
 def AddLearnSkillSlotField(builder, learnSkillSlotField):
     return EngraveTreeExcelAddLearnSkillSlotField(builder, learnSkillSlotField)
-def EngraveTreeExcelAddStatTypeField(builder, statTypeField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(statTypeField), 0)
+def EngraveTreeExcelAddStatTypeField(builder, statTypeField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(statTypeField), 0)
 def AddStatTypeField(builder, statTypeField):
     return EngraveTreeExcelAddStatTypeField(builder, statTypeField)
 def EngraveTreeExcelStartStatTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def StartStatTypeFieldVector(builder, numElems):
     return EngraveTreeExcelStartStatTypeFieldVector(builder, numElems)
-def EngraveTreeExcelAddStatValueField(builder, statValueField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(statValueField), 0)
+def EngraveTreeExcelAddStatValueField(builder, statValueField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(statValueField), 0)
 def AddStatValueField(builder, statValueField):
     return EngraveTreeExcelAddStatValueField(builder, statValueField)
 def EngraveTreeExcelStartStatValueFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)

@@ -32,64 +32,78 @@ class LocalizeSkillEffectExcel(object):
         return 0
 
     # LocalizeSkillEffectExcel
-    def IconSpriteNameField(self):
+    def SkillFilterActivateField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
+        return False
 
     # LocalizeSkillEffectExcel
-    def SkillEffectNameKRField(self):
+    def SkillFilterLogicEffectCategoryField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
-            return self._tab.String(o + self._tab.Pos)
-        return None
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
 
     # LocalizeSkillEffectExcel
-    def SkillEffectNameJPField(self):
+    def IconSpriteNameField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillEffectExcel
-    def SkillEffectDescriptionKRField(self):
+    def SkillEffectNameKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillEffectExcel
-    def SkillEffectDescriptionJPField(self):
+    def SkillEffectNameJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillEffectExcel
-    def SuffixTextKRField(self):
+    def SkillEffectDescriptionKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillEffectExcel
-    def SuffixTextJPField(self):
+    def SkillEffectDescriptionJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillEffectExcel
-    def SuffixLabelField(self):
+    def SuffixTextKRField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # LocalizeSkillEffectExcel
-    def SharedCharacterParcelsField(self, j):
+    def SuffixTextJPField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+    # LocalizeSkillEffectExcel
+    def SuffixLabelField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+    # LocalizeSkillEffectExcel
+    def SharedCharacterParcelsField(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             a = self._tab.Vector(o)
             return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
@@ -97,67 +111,73 @@ class LocalizeSkillEffectExcel(object):
 
     # LocalizeSkillEffectExcel
     def SharedCharacterParcelsFieldAsNumpy(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
         return 0
 
     # LocalizeSkillEffectExcel
     def SharedCharacterParcelsFieldLength(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
 
     # LocalizeSkillEffectExcel
     def SharedCharacterParcelsFieldIsNone(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
     # LocalizeSkillEffectExcel
     def TextFontSizeOverrideField(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
-def LocalizeSkillEffectExcelStart(builder): builder.StartObject(11)
+def LocalizeSkillEffectExcelStart(builder): builder.StartObject(13)
 def Start(builder):
     return LocalizeSkillEffectExcelStart(builder)
 def LocalizeSkillEffectExcelAddKeyField(builder, keyField): builder.PrependUint32Slot(0, keyField, 0)
 def AddKeyField(builder, keyField):
     return LocalizeSkillEffectExcelAddKeyField(builder, keyField)
-def LocalizeSkillEffectExcelAddIconSpriteNameField(builder, iconSpriteNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(iconSpriteNameField), 0)
+def LocalizeSkillEffectExcelAddSkillFilterActivateField(builder, skillFilterActivateField): builder.PrependBoolSlot(1, skillFilterActivateField, 0)
+def AddSkillFilterActivateField(builder, skillFilterActivateField):
+    return LocalizeSkillEffectExcelAddSkillFilterActivateField(builder, skillFilterActivateField)
+def LocalizeSkillEffectExcelAddSkillFilterLogicEffectCategoryField(builder, skillFilterLogicEffectCategoryField): builder.PrependInt32Slot(2, skillFilterLogicEffectCategoryField, 0)
+def AddSkillFilterLogicEffectCategoryField(builder, skillFilterLogicEffectCategoryField):
+    return LocalizeSkillEffectExcelAddSkillFilterLogicEffectCategoryField(builder, skillFilterLogicEffectCategoryField)
+def LocalizeSkillEffectExcelAddIconSpriteNameField(builder, iconSpriteNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(iconSpriteNameField), 0)
 def AddIconSpriteNameField(builder, iconSpriteNameField):
     return LocalizeSkillEffectExcelAddIconSpriteNameField(builder, iconSpriteNameField)
-def LocalizeSkillEffectExcelAddSkillEffectNameKRField(builder, skillEffectNameKRField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectNameKRField), 0)
+def LocalizeSkillEffectExcelAddSkillEffectNameKRField(builder, skillEffectNameKRField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectNameKRField), 0)
 def AddSkillEffectNameKRField(builder, skillEffectNameKRField):
     return LocalizeSkillEffectExcelAddSkillEffectNameKRField(builder, skillEffectNameKRField)
-def LocalizeSkillEffectExcelAddSkillEffectNameJPField(builder, skillEffectNameJPField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectNameJPField), 0)
+def LocalizeSkillEffectExcelAddSkillEffectNameJPField(builder, skillEffectNameJPField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectNameJPField), 0)
 def AddSkillEffectNameJPField(builder, skillEffectNameJPField):
     return LocalizeSkillEffectExcelAddSkillEffectNameJPField(builder, skillEffectNameJPField)
-def LocalizeSkillEffectExcelAddSkillEffectDescriptionKRField(builder, skillEffectDescriptionKRField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectDescriptionKRField), 0)
+def LocalizeSkillEffectExcelAddSkillEffectDescriptionKRField(builder, skillEffectDescriptionKRField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectDescriptionKRField), 0)
 def AddSkillEffectDescriptionKRField(builder, skillEffectDescriptionKRField):
     return LocalizeSkillEffectExcelAddSkillEffectDescriptionKRField(builder, skillEffectDescriptionKRField)
-def LocalizeSkillEffectExcelAddSkillEffectDescriptionJPField(builder, skillEffectDescriptionJPField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectDescriptionJPField), 0)
+def LocalizeSkillEffectExcelAddSkillEffectDescriptionJPField(builder, skillEffectDescriptionJPField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(skillEffectDescriptionJPField), 0)
 def AddSkillEffectDescriptionJPField(builder, skillEffectDescriptionJPField):
     return LocalizeSkillEffectExcelAddSkillEffectDescriptionJPField(builder, skillEffectDescriptionJPField)
-def LocalizeSkillEffectExcelAddSuffixTextKRField(builder, suffixTextKRField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(suffixTextKRField), 0)
+def LocalizeSkillEffectExcelAddSuffixTextKRField(builder, suffixTextKRField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(suffixTextKRField), 0)
 def AddSuffixTextKRField(builder, suffixTextKRField):
     return LocalizeSkillEffectExcelAddSuffixTextKRField(builder, suffixTextKRField)
-def LocalizeSkillEffectExcelAddSuffixTextJPField(builder, suffixTextJPField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(suffixTextJPField), 0)
+def LocalizeSkillEffectExcelAddSuffixTextJPField(builder, suffixTextJPField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(suffixTextJPField), 0)
 def AddSuffixTextJPField(builder, suffixTextJPField):
     return LocalizeSkillEffectExcelAddSuffixTextJPField(builder, suffixTextJPField)
-def LocalizeSkillEffectExcelAddSuffixLabelField(builder, suffixLabelField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(suffixLabelField), 0)
+def LocalizeSkillEffectExcelAddSuffixLabelField(builder, suffixLabelField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(suffixLabelField), 0)
 def AddSuffixLabelField(builder, suffixLabelField):
     return LocalizeSkillEffectExcelAddSuffixLabelField(builder, suffixLabelField)
-def LocalizeSkillEffectExcelAddSharedCharacterParcelsField(builder, sharedCharacterParcelsField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(sharedCharacterParcelsField), 0)
+def LocalizeSkillEffectExcelAddSharedCharacterParcelsField(builder, sharedCharacterParcelsField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(sharedCharacterParcelsField), 0)
 def AddSharedCharacterParcelsField(builder, sharedCharacterParcelsField):
     return LocalizeSkillEffectExcelAddSharedCharacterParcelsField(builder, sharedCharacterParcelsField)
 def LocalizeSkillEffectExcelStartSharedCharacterParcelsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def StartSharedCharacterParcelsFieldVector(builder, numElems):
     return LocalizeSkillEffectExcelStartSharedCharacterParcelsFieldVector(builder, numElems)
-def LocalizeSkillEffectExcelAddTextFontSizeOverrideField(builder, textFontSizeOverrideField): builder.PrependFloat32Slot(10, textFontSizeOverrideField, 0.0)
+def LocalizeSkillEffectExcelAddTextFontSizeOverrideField(builder, textFontSizeOverrideField): builder.PrependFloat32Slot(12, textFontSizeOverrideField, 0.0)
 def AddTextFontSizeOverrideField(builder, textFontSizeOverrideField):
     return LocalizeSkillEffectExcelAddTextFontSizeOverrideField(builder, textFontSizeOverrideField)
 def LocalizeSkillEffectExcelEnd(builder): return builder.EndObject()

@@ -541,6 +541,7 @@ table CampaignStageExcel {
     tactic_reward_exp_field:int;
     fixed_echelon_id_field:int;
     echelon_extension_type_field:EchelonExtensionType;
+    echelon_recommend_preset_id_field:int;
 }
 
 table CampaignStageRewardExcel {
@@ -804,6 +805,7 @@ table CharacterDialogSubtitleExcel {
 table CharacterEngraveExcel {
     id_field:int;
     unlock_all_node_field:bool;
+    node_tree_id_field:int;
     node_tree_ego_field:int;
     node_tree_consciousness_field:int;
     node_tree_unconscious_field:int;
@@ -1652,6 +1654,26 @@ table EchelonConstraintExcel {
     role_field:float;
 }
 
+table EchelonRecommendPresetExcel {
+    id_field:int;
+    tank_field:int;
+    damage_dealer_field:int;
+    healer_field:int;
+    supporter_field:int;
+    t_s_a_field:int;
+    character_level_field:int;
+    ex_skill_level_field:int;
+    public_skill_level_field:int;
+    passive_skill_level_field:int;
+    extra_passive_skill_level_field:int;
+    equipment1_tier_field:int;
+    equipment1_level_field:int;
+    equipment2_tier_field:int;
+    equipment2_level_field:int;
+    equipment3_tier_field:int;
+    equipment3_level_field:int;
+}
+
 table EliminateRaidRankingRewardExcel {
     ranking_reward_group_id_field:int;
     id_field:int;
@@ -1707,6 +1729,7 @@ table EliminateRaidStageExcel {
     is_open_field:bool;
     max_player_count_field:int;
     raid_room_life_time_field:int;
+    extra_room_life_time_field:int;
     battle_duration_field:int;
     ground_id_field:int;
     raid_boss_group_type_field:RaidBossGroupType;
@@ -1782,8 +1805,10 @@ table EmblemExcel {
 
 table EngraveTreeExcel {
     id_field:int;
+    node_type_field:EngraveNodeType;
     node_index_field:int;
     is_unlock_field:bool;
+    pre_node_type_field:EngraveNodeType;
     pre_node_index_field:[int];
     grade_type_field:NodeGrade;
     localize_etc_id_field:string;
@@ -2480,6 +2505,7 @@ table EventContentStageExcel {
     is_defeat_battle_field:bool;
     stage_hint_field:uint;
     echelon_extension_type_field:EchelonExtensionType;
+    echelon_recommend_preset_id_field:int;
 }
 
 table EventContentStageRewardExcel {
@@ -2911,7 +2937,7 @@ table GroundExcel {
     stage_file_name_field:[string];
     ground_scene_name_field:string;
     formation_group_id_field:int;
-    stage_topography_field:StageTopography;
+    stage_topography_field:[StageTopography];
     enemy_bullet_type_field:BulletType;
     enemy_armor_type_field:ArmorType;
     enemy_sub_armor_type_field:ArmorType;
@@ -3457,6 +3483,8 @@ table LocalizeGachaShopExcel {
 
 table LocalizeSkillEffectExcel {
     key_field:uint;
+    skill_filter_activate_field:bool;
+    skill_filter_logic_effect_category_field:LogicEffectCategory;
     icon_sprite_name_field:string;
     skill_effect_name_k_r_field:string;
     skill_effect_name_j_p_field:string;
@@ -3477,6 +3505,7 @@ table LocalizeSkillExcel {
     name_jp_field:string;
     description_jp_field:string;
     skill_invoke_localize_jp_field:string;
+    skill_effect_list_field:[uint];
 }
 
 table LocalizeSkillNewExcel {
@@ -4257,6 +4286,147 @@ table MiniGameShootingStageRewardExcel {
     reward_parcel_amount_field:[int];
 }
 
+table MiniGameTankCharacterExcel {
+    event_content_id_field:int;
+    group_id_field:int;
+    unique_id_field:int;
+    prev_grade_id_field:int;
+    playable_field:bool;
+    grade_field:int;
+    tank_name_field:uint;
+    team_name_field:uint;
+    model_prefab_name_field:string;
+    icon_resource_name_field:string;
+    h_u_d_icon_resource_name_field:string;
+    unlock_condition_stage_id_field:int;
+    upgrade_item_parcel_type_field:ParcelType;
+    upgrade_item_parcel_id_field:int;
+    upgrade_item_amount_field:int;
+    max_h_p_field:int;
+    attack_power_field:int;
+    attack_cooltime_field:int;
+    deceleration_scale_field:float;
+    deceleration_cycle_field:int;
+    deceleration_time_field:int;
+    acceleration_field:int;
+    min_speed_field:int;
+    max_speed_field:int;
+    drift_speed_field:int;
+    dash_item_speed_field:int;
+    perfect_start_dash_speed_field:int;
+    rival_destroy_dash_speed_field:int;
+    rival_destroy_dash_duration_field:int;
+    cornering_field:int;
+    max_fuel_field:int;
+    fuel_reduction_amount_field:int;
+    fuel_reduction_rate_field:int;
+    min_boss_reaction_time_field:int;
+    max_boss_reaction_time_field:int;
+    min_boss_chase_time_field:int;
+    max_boss_chase_time_field:int;
+    min_boss_delay_time_field:int;
+    max_boss_delay_time_field:int;
+    normal_attack_skill_data_field:string;
+    public_skill_base_weight_field:[int];
+    public_skill_max_consecutive_field:[int];
+    public_skill_data_field:[string];
+}
+
+table MiniGameTankItemExcel {
+    event_content_id_field:int;
+    unique_id_field:int;
+    item_type_field:TankRacingItemType;
+    item_parameter_field:int;
+    spawn_lane_field:[int];
+    prefab_name_field:string;
+}
+
+table MiniGameTankLevelExcel {
+    event_content_id_field:int;
+    stage_id_field:int;
+    art_level_field:string;
+    b_g_m_id_field:int;
+    first_pattern_distance_field:int;
+    goal_create_distance_field:int;
+    rival_rush_distance_field:int;
+    rival_character_id_field:[int];
+    rival_vanish_time_field:int;
+    rival_interval_field:int;
+    min_vertical_spacing_field:int;
+    max_vertical_spacing_field:int;
+    item_id_field:[int];
+    item_create_distance_field:[int];
+    item_interval_field:[int];
+}
+
+table MiniGameTankObstacleExcel {
+    event_content_id_field:int;
+    unique_id_field:int;
+    prefab_name_field:string;
+    obstacle_type_field:TankRacingObstacleType;
+    falling_scan_distance_field:int;
+    falling_indicator_display_time_field:int;
+    falling_time_field:int;
+}
+
+table MiniGameTankPatternExcel {
+    event_content_id_field:int;
+    stage_id_field:int;
+    unique_id_field:int;
+    pattern_field:string;
+    base_weight_field:int;
+    min_req_speed_field:int;
+    max_req_speed_field:int;
+    max_consecutive_field:int;
+    spacing_field:int;
+}
+
+table MiniGameTankScoreExcel {
+    event_content_id_field:int;
+    distance_score_field:int;
+    destroy_score_field:int;
+    min_combo_value_field:int;
+    combo_step_interval_field:int;
+    combo_multiplier_field:float;
+    max_combo_multiplier_field:float;
+    combo_duration_field:int;
+    rival_destroy_score_field:int;
+    boss_time_max_score_field:int;
+    boss_per_sec_minus_score_field:int;
+    boss_hit_score_field:int;
+    boss_hit_minus_score_field:int;
+}
+
+table MiniGameTankStageExcel {
+    event_content_id_field:int;
+    unique_id_field:int;
+    stage_number_field:int;
+    name_field:uint;
+    stage_type_field:TankRacingStageType;
+    prev_stage_id_field:int;
+    stage_duration_field:int;
+    cost_parcel_type_field:ParcelType;
+    cost_parcel_id_field:int;
+    cost_parcel_amount_field:int;
+    reward_group_id_field:int;
+    star_goal_field:[StarGoalType];
+    star_goal_amount_field:[int];
+    boss_entry_player_tank_group_ids_field:[int];
+    boss_entry_boss_group_ids_field:[int];
+}
+
+table MiniGameTankVoiceExcel {
+    event_content_id_field:int;
+    character_group_id_field:int;
+    unique_id_field:int;
+    voice_condition_field:TankRacingVoiceCondition;
+    chat_bubble_type_field:TankRacingChatBubbleType;
+    voice_clip_field:uint;
+    subtitle_localize_k_r_field:string;
+    subtitle_localize_j_p_field:string;
+    subtitle_portrait_field:string;
+}
+
 table MinigameTBGDiceExcel {
     event_content_id_field:int;
     unique_id_field:int;
@@ -4689,6 +4859,8 @@ table PresetCharacterGroupExcel {
     potential_level02_field:int;
     potential_type03_field:PotentialStatBonusRateType;
     potential_level03_field:int;
+    engrave_normal_node_index_field:int;
+    engrave_special_node_indices_field:[int];
     engrave_level_ego_field:int;
     engrave_level_conscious_field:int;
     engrave_level_unconscious_field:int;
@@ -4828,7 +5000,6 @@ table RaidContentPlayGuideExcel {
     id_field:int;
     raid_boss_group_type_field:RaidBossGroupType;
     is_p_c_build_field:bool;
-    id_export_field:bool;
     display_order_field:int;
     guide_title_field:uint;
     guide_image_path_field:string;
@@ -4885,6 +5056,7 @@ table RaidStageExcel {
     difficulty_open_condition_field:bool;
     max_player_count_field:int;
     raid_room_life_time_field:int;
+    extra_room_life_time_field:int;
     battle_duration_field:int;
     ground_id_field:int;
     raid_boss_group_type_field:RaidBossGroupType;
@@ -5063,6 +5235,7 @@ table ScenarioModeExcel {
     front_scenario_group_id_field:[int];
     strategy_id_field:int;
     ground_id_field:int;
+    echelon_recommend_preset_id_field:int;
     is_defeat_battle_field:bool;
     battle_duration_field:int;
     field_date_id_field:int;
@@ -5185,6 +5358,7 @@ table SchoolDungeonStageExcel {
     stage_reward_id_field:int;
     play_time_limit_in_seconds_field:int;
     echelon_extension_type_field:EchelonExtensionType;
+    echelon_recommend_preset_id_field:int;
 }
 
 table SeasonRecordInfoExcel {
@@ -5554,6 +5728,9 @@ table SkillExcel {
     texture_skill_card_for_form_conversion_field:string;
     skill_card_label_path_field:string;
     skill_remain_count_override_field:string;
+    skill_damage_target_count_field:SkillDamagedTargetCountingRule;
+    skill_filter_activate_field:bool;
+    skill_kind_field:SkillKind;
 }
 
 table SkillSelectExTooltipExcel {
@@ -6008,6 +6185,8 @@ table WeekDungeonExcel {
     battle_reward_player_exp_field:int;
     group_buff_i_d_field:[int];
     echelon_extension_type_field:EchelonExtensionType;
+    echelon_recommend_preset_id_field:int;
+    hide_chaser_portrait_spawn_template_id_field:[string];
 }
 
 table WeekDungeonGroupBuffExcel {
@@ -6666,6 +6845,10 @@ table DuplicateBonusExcelTable {
 
 table EchelonConstraintExcelTable {
     data_list:[EchelonConstraintExcel];
+}
+
+table EchelonRecommendPresetExcelTable {
+    data_list:[EchelonRecommendPresetExcel];
 }
 
 table EliminateRaidRankingRewardExcelTable {
@@ -7450,6 +7633,38 @@ table MiniGameShootingStageExcelTable {
 
 table MiniGameShootingStageRewardExcelTable {
     data_list:[MiniGameShootingStageRewardExcel];
+}
+
+table MiniGameTankCharacterExcelTable {
+    data_list:[MiniGameTankCharacterExcel];
+}
+
+table MiniGameTankItemExcelTable {
+    data_list:[MiniGameTankItemExcel];
+}
+
+table MiniGameTankLevelExcelTable {
+    data_list:[MiniGameTankLevelExcel];
+}
+
+table MiniGameTankObstacleExcelTable {
+    data_list:[MiniGameTankObstacleExcel];
+}
+
+table MiniGameTankPatternExcelTable {
+    data_list:[MiniGameTankPatternExcel];
+}
+
+table MiniGameTankScoreExcelTable {
+    data_list:[MiniGameTankScoreExcel];
+}
+
+table MiniGameTankStageExcelTable {
+    data_list:[MiniGameTankStageExcel];
+}
+
+table MiniGameTankVoiceExcelTable {
+    data_list:[MiniGameTankVoiceExcel];
 }
 
 table MinigameTBGDiceExcelTable {

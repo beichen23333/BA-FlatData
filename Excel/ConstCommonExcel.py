@@ -1578,7 +1578,28 @@ class ConstCommonExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ConstCommonExcelStart(builder): builder.StartObject(202)
+    # ConstCommonExcel
+    def GachaHistoryCountField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(408))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # ConstCommonExcel
+    def GachaHistoryTimeToLiveInDaysField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(410))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # ConstCommonExcel
+    def ProductMonthlyExtensionLookbackDaysField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(412))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+def ConstCommonExcelStart(builder): builder.StartObject(205)
 def Start(builder):
     return ConstCommonExcelStart(builder)
 def ConstCommonExcelAddCampaignMainStageMaxRankField(builder, campaignMainStageMaxRankField): builder.PrependInt32Slot(0, campaignMainStageMaxRankField, 0)
@@ -2208,6 +2229,15 @@ def AddExSkillUpgradeLevelMaxField(builder, exSkillUpgradeLevelMaxField):
 def ConstCommonExcelAddRaidResetCountField(builder, raidResetCountField): builder.PrependInt32Slot(201, raidResetCountField, 0)
 def AddRaidResetCountField(builder, raidResetCountField):
     return ConstCommonExcelAddRaidResetCountField(builder, raidResetCountField)
+def ConstCommonExcelAddGachaHistoryCountField(builder, gachaHistoryCountField): builder.PrependInt32Slot(202, gachaHistoryCountField, 0)
+def AddGachaHistoryCountField(builder, gachaHistoryCountField):
+    return ConstCommonExcelAddGachaHistoryCountField(builder, gachaHistoryCountField)
+def ConstCommonExcelAddGachaHistoryTimeToLiveInDaysField(builder, gachaHistoryTimeToLiveInDaysField): builder.PrependInt32Slot(203, gachaHistoryTimeToLiveInDaysField, 0)
+def AddGachaHistoryTimeToLiveInDaysField(builder, gachaHistoryTimeToLiveInDaysField):
+    return ConstCommonExcelAddGachaHistoryTimeToLiveInDaysField(builder, gachaHistoryTimeToLiveInDaysField)
+def ConstCommonExcelAddProductMonthlyExtensionLookbackDaysField(builder, productMonthlyExtensionLookbackDaysField): builder.PrependInt32Slot(204, productMonthlyExtensionLookbackDaysField, 0)
+def AddProductMonthlyExtensionLookbackDaysField(builder, productMonthlyExtensionLookbackDaysField):
+    return ConstCommonExcelAddProductMonthlyExtensionLookbackDaysField(builder, productMonthlyExtensionLookbackDaysField)
 def ConstCommonExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstCommonExcelEnd(builder)

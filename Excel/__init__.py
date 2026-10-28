@@ -25,6 +25,7 @@ from .ConstMinigameCCGExcel import ConstMinigameCCGExcel
 from .ConstMinigameJankenExcel import ConstMinigameJankenExcel
 from .ConstMinigameRoadPuzzleExcel import ConstMinigameRoadPuzzleExcel
 from .ConstMiniGameShootingExcel import ConstMiniGameShootingExcel
+from .ConstMiniGameTankExcel import ConstMiniGameTankExcel
 from .ConstMinigameTBGExcel import ConstMinigameTBGExcel
 from .ConstNewbieContentExcel import ConstNewbieContentExcel
 from .ConstStrategyExcel import ConstStrategyExcel
@@ -114,6 +115,7 @@ from .ConstMinigameCCGExcelTable import ConstMinigameCCGExcelTable
 from .ConstMinigameJankenExcelTable import ConstMinigameJankenExcelTable
 from .ConstMinigameRoadPuzzleExcelTable import ConstMinigameRoadPuzzleExcelTable
 from .ConstMiniGameShootingExcelTable import ConstMiniGameShootingExcelTable
+from .ConstMiniGameTankExcelTable import ConstMiniGameTankExcelTable
 from .ConstMinigameTBGExcelTable import ConstMinigameTBGExcelTable
 from .ConstNewbieContentExcelTable import ConstNewbieContentExcelTable
 from .ConstStrategyExcelTable import ConstStrategyExcelTable

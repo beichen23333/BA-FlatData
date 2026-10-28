@@ -7,3 +7,5 @@ class StarGoalType:
     AllyBaseDamage = 5
     UsedTurn = 6
     LeftHitPoint = 7
+    GetScore = 8
+    HitCount = 9

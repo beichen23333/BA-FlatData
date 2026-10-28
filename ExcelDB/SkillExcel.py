@@ -241,7 +241,28 @@ class SkillExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def SkillExcelStart(builder): builder.StartObject(31)
+    # SkillExcel
+    def SkillDamageTargetCountField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # SkillExcel
+    def SkillFilterActivateField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(68))
+        if o != 0:
+            return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
+        return False
+
+    # SkillExcel
+    def SkillKindField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(70))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+def SkillExcelStart(builder): builder.StartObject(34)
 def Start(builder):
     return SkillExcelStart(builder)
 def SkillExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
@@ -337,6 +358,15 @@ def AddSkillCardLabelPathField(builder, skillCardLabelPathField):
 def SkillExcelAddSkillRemainCountOverrideField(builder, skillRemainCountOverrideField): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(skillRemainCountOverrideField), 0)
 def AddSkillRemainCountOverrideField(builder, skillRemainCountOverrideField):
     return SkillExcelAddSkillRemainCountOverrideField(builder, skillRemainCountOverrideField)
+def SkillExcelAddSkillDamageTargetCountField(builder, skillDamageTargetCountField): builder.PrependInt32Slot(31, skillDamageTargetCountField, 0)
+def AddSkillDamageTargetCountField(builder, skillDamageTargetCountField):
+    return SkillExcelAddSkillDamageTargetCountField(builder, skillDamageTargetCountField)
+def SkillExcelAddSkillFilterActivateField(builder, skillFilterActivateField): builder.PrependBoolSlot(32, skillFilterActivateField, 0)
+def AddSkillFilterActivateField(builder, skillFilterActivateField):
+    return SkillExcelAddSkillFilterActivateField(builder, skillFilterActivateField)
+def SkillExcelAddSkillKindField(builder, skillKindField): builder.PrependInt32Slot(33, skillKindField, 0)
+def AddSkillKindField(builder, skillKindField):
+    return SkillExcelAddSkillKindField(builder, skillKindField)
 def SkillExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return SkillExcelEnd(builder)

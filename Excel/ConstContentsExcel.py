@@ -52,7 +52,49 @@ class ConstContentsExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ConstContentsExcelStart(builder): builder.StartObject(4)
+    # ConstContentsExcel
+    def CharacterUsageRaidRecentSeasonField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # ConstContentsExcel
+    def CharacterUsageEliminateRaidRecentSeasonField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # ConstContentsExcel
+    def CharacterUsageMinSampleDifficultyField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # ConstContentsExcel
+    def CharacterUsageMinAccountSampleCountField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # ConstContentsExcel
+    def CharacterUsageRawDataRetentionInDaysField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # ConstContentsExcel
+    def CharacterUsageAggregateCycleInHoursField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+def ConstContentsExcelStart(builder): builder.StartObject(10)
 def Start(builder):
     return ConstContentsExcelStart(builder)
 def ConstContentsExcelAddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField): builder.PrependBoolSlot(0, useSearchFieldOptimizeField, 0)
@@ -67,6 +109,24 @@ def AddLobbyDayTimeFromField(builder, lobbyDayTimeFromField):
 def ConstContentsExcelAddLobbyNightTimeFromField(builder, lobbyNightTimeFromField): builder.PrependInt32Slot(3, lobbyNightTimeFromField, 0)
 def AddLobbyNightTimeFromField(builder, lobbyNightTimeFromField):
     return ConstContentsExcelAddLobbyNightTimeFromField(builder, lobbyNightTimeFromField)
+def ConstContentsExcelAddCharacterUsageRaidRecentSeasonField(builder, characterUsageRaidRecentSeasonField): builder.PrependInt32Slot(4, characterUsageRaidRecentSeasonField, 0)
+def AddCharacterUsageRaidRecentSeasonField(builder, characterUsageRaidRecentSeasonField):
+    return ConstContentsExcelAddCharacterUsageRaidRecentSeasonField(builder, characterUsageRaidRecentSeasonField)
+def ConstContentsExcelAddCharacterUsageEliminateRaidRecentSeasonField(builder, characterUsageEliminateRaidRecentSeasonField): builder.PrependInt32Slot(5, characterUsageEliminateRaidRecentSeasonField, 0)
+def AddCharacterUsageEliminateRaidRecentSeasonField(builder, characterUsageEliminateRaidRecentSeasonField):
+    return ConstContentsExcelAddCharacterUsageEliminateRaidRecentSeasonField(builder, characterUsageEliminateRaidRecentSeasonField)
+def ConstContentsExcelAddCharacterUsageMinSampleDifficultyField(builder, characterUsageMinSampleDifficultyField): builder.PrependInt32Slot(6, characterUsageMinSampleDifficultyField, 0)
+def AddCharacterUsageMinSampleDifficultyField(builder, characterUsageMinSampleDifficultyField):
+    return ConstContentsExcelAddCharacterUsageMinSampleDifficultyField(builder, characterUsageMinSampleDifficultyField)
+def ConstContentsExcelAddCharacterUsageMinAccountSampleCountField(builder, characterUsageMinAccountSampleCountField): builder.PrependInt32Slot(7, characterUsageMinAccountSampleCountField, 0)
+def AddCharacterUsageMinAccountSampleCountField(builder, characterUsageMinAccountSampleCountField):
+    return ConstContentsExcelAddCharacterUsageMinAccountSampleCountField(builder, characterUsageMinAccountSampleCountField)
+def ConstContentsExcelAddCharacterUsageRawDataRetentionInDaysField(builder, characterUsageRawDataRetentionInDaysField): builder.PrependInt32Slot(8, characterUsageRawDataRetentionInDaysField, 0)
+def AddCharacterUsageRawDataRetentionInDaysField(builder, characterUsageRawDataRetentionInDaysField):
+    return ConstContentsExcelAddCharacterUsageRawDataRetentionInDaysField(builder, characterUsageRawDataRetentionInDaysField)
+def ConstContentsExcelAddCharacterUsageAggregateCycleInHoursField(builder, characterUsageAggregateCycleInHoursField): builder.PrependInt32Slot(9, characterUsageAggregateCycleInHoursField, 0)
+def AddCharacterUsageAggregateCycleInHoursField(builder, characterUsageAggregateCycleInHoursField):
+    return ConstContentsExcelAddCharacterUsageAggregateCycleInHoursField(builder, characterUsageAggregateCycleInHoursField)
 def ConstContentsExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return ConstContentsExcelEnd(builder)

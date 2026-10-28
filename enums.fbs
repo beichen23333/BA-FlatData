@@ -363,6 +363,17 @@ enum ObstacleHeightType:int {
     High = 2,
 }
 
+enum LogicEffectCategory:int {
+    None = 0,
+    Attack = 1,
+    Heal = 2,
+    Buff = 3,
+    Debuff = 4,
+    CrowdControl = 5,
+    Boss = 6,
+    Dummy = 7,
+}
+
 enum AimIKType:int {
     None = 0,
     OneHandRight = 1,
@@ -542,6 +553,18 @@ enum SkillSlotHighLightType:int {
     Upgrade = 2,
 }
 
+enum SkillDamagedTargetCountingRule:int {
+    None = 0,
+    SingleTarget = 1,
+    MultiTarget = 2,
+}
+
+enum SkillKind:int {
+    Normal = 0,
+    SelectableChild = 1,
+    CardChangeOnly = 2,
+}
+
 enum StatLevelUpType:int {
     Standard = 0,
     Premature = 1,
@@ -717,6 +740,12 @@ enum GrowthReturnType:int {
     EquipmentCreditReturn = 4,
 }
 
+enum EngraveNodeType:int {
+    None = 0,
+    Normal = 1,
+    Special = 2,
+}
+
 enum ClanRewardType:int {
     None = 0,
     AssistTerm = 1,
@@ -856,6 +885,7 @@ enum EventContentType:int {
     InteractiveWorldRaid = 42,
     ClueSearch = 43,
     MinigameJanken = 44,
+    MiniGameTank = 45,
 }
 
 enum StarGoalType:int {
@@ -867,6 +897,8 @@ enum StarGoalType:int {
     AllyBaseDamage = 5,
     UsedTurn = 6,
     LeftHitPoint = 7,
+    GetScore = 8,
+    HitCount = 9,
 }
 
 enum OpenConditionContent:int {
@@ -934,6 +966,7 @@ enum OpenConditionContent:int {
     MinigameJanken = 61,
     TacticalRelay = 62,
     Engrave = 63,
+    MiniGameTank = 64,
 }
 
 enum TutorialFailureContentType:int {
@@ -1423,6 +1456,11 @@ enum GachaTicketType:int {
     PackageThreeStar_R88_Mystic = 14,
     PackageThreeStar_R88_Pierce = 15,
     PackageThreeStar_R88_Sonic = 16,
+    PackageUnownedThreeStar = 17,
+    PackageThreeStar_R97_Explosion = 18,
+    PackageThreeStar_R97_Mystic = 19,
+    PackageThreeStar_R97_Pierce = 20,
+    PackageThreeStar_R97_Sonic = 21,
 }
 
 enum EventChangeType:int {
@@ -1688,6 +1726,7 @@ enum ItemCategory:int {
     BattlePass = 9,
     ProductSelect = 10,
     ProductDailyRecord = 11,
+    ProductStreakRecord = 12,
 }
 
 enum MailType:int {
@@ -1941,6 +1980,43 @@ enum Geas:int {
     MoveSpeed = 11,
     LifeSteal = 12,
     Evasion = 13,
+}
+
+enum TankRacingStageType:int {
+    None = 0,
+    Racing = 1,
+    Boss = 2,
+    Free = 3,
+}
+
+enum TankRacingObstacleType:int {
+    None = 0,
+    Fixed = 1,
+    Falling = 2,
+}
+
+enum TankRacingItemType:int {
+    None = 0,
+    Fuel = 1,
+    Dash = 2,
+}
+
+enum TankRacingVoiceCondition:int {
+    None = 0,
+    CharacterSelect = 1,
+    MiniGameStart = 2,
+    DashItemGet = 3,
+    EtcItemGet = 4,
+    GunFire = 5,
+    Combo = 6,
+    BossSkill = 7,
+    UpgradeSelect = 8,
+}
+
+enum TankRacingChatBubbleType:int {
+    None = 0,
+    Normal = 1,
+    Dynamic = 2,
 }
 
 enum TBGObjectType:int {
@@ -2237,6 +2313,12 @@ enum MissionCompleteConditionType:int {
     Reset_SpecificTacticalRelayWaveClear = 193,
     Achieve_ClearTacticalRelayCount = 194,
     Achieve_EngraveLevelUpCount = 195,
+    Reset_TankRacingClearCount = 196,
+    Reset_TankRacingUpgradeTierCheck = 197,
+    Reset_ClearSpecificTankRacingStage = 198,
+    Reset_ClearSpecificCampaignStageWithAdaptationCount = 199,
+    Reset_ClearSpecificPermanentRaidCount = 200,
+    Reset_CharacterAtSpecificSkillLevelReachCount = 201,
 }
 
 enum MissionToastDisplayConditionType:int {
@@ -2381,6 +2463,7 @@ enum ParcelType:int {
     SNSPost = 29,
     ProductDailyRecord = 30,
     StudentFrame = 31,
+    ProductStreakRecord = 32,
 }
 
 enum Rarity:int {
@@ -2797,6 +2880,7 @@ enum ShopGroupType:int {
     EliminateRaid = 8,
     Gem = 9,
     Chaser = 10,
+    TacticalRelayBeta = 11,
 }
 
 enum StoreType:int {
@@ -2830,6 +2914,7 @@ enum PurchaseSourceType:int {
     ProductGooglePoint = 5,
     ProductDailyRecord = 6,
     ProductStreakRecord = 7,
+    ProductPickupPackage_UseGlobal = 8,
 }
 
 enum ProductCategory:int {
@@ -2892,6 +2977,7 @@ enum GachaDisplayTag:int {
     Revival = 9,
     SelectLimited = 10,
     NewbieDateLimited = 11,
+    Unowned = 12,
 }
 
 enum ShopRefresherType:int {

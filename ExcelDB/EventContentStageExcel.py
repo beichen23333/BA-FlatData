@@ -405,7 +405,14 @@ class EventContentStageExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentStageExcelStart(builder): builder.StartObject(43)
+    # EventContentStageExcel
+    def EchelonRecommendPresetIdField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(90))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+def EventContentStageExcelStart(builder): builder.StartObject(44)
 def Start(builder):
     return EventContentStageExcelStart(builder)
 def EventContentStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
@@ -549,6 +556,9 @@ def AddStageHintField(builder, stageHintField):
 def EventContentStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(42, echelonExtensionTypeField, 0)
 def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
     return EventContentStageExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+def EventContentStageExcelAddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField): builder.PrependInt32Slot(43, echelonRecommendPresetIdField, 0)
+def AddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField):
+    return EventContentStageExcelAddEchelonRecommendPresetIdField(builder, echelonRecommendPresetIdField)
 def EventContentStageExcelEnd(builder): return builder.EndObject()
 def End(builder):
     return EventContentStageExcelEnd(builder)

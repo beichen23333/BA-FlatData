@@ -33,6 +33,7 @@ from .TerrainAdaptationStat import TerrainAdaptationStat
 from .SquadType import SquadType
 from .ObstacleDestroyType import ObstacleDestroyType
 from .ObstacleHeightType import ObstacleHeightType
+from .LogicEffectCategory import LogicEffectCategory
 from .AimIKType import AimIKType
 from .DamageAttribute import DamageAttribute
 from .SkillPriorityCheckTarget import SkillPriorityCheckTarget
@@ -53,6 +54,8 @@ from .UIEnemyCountType import UIEnemyCountType
 from .CharacterVoiceOverridePriority import CharacterVoiceOverridePriority
 from .SkillSlotShowType import SkillSlotShowType
 from .SkillSlotHighLightType import SkillSlotHighLightType
+from .SkillDamagedTargetCountingRule import SkillDamagedTargetCountingRule
+from .SkillKind import SkillKind
 from .StatLevelUpType import StatLevelUpType
 from .StatType import StatType
 from .ProductionStep import ProductionStep
@@ -62,6 +65,7 @@ from .CVPrintType import CVPrintType
 from .PotentialStatBonusRateType import PotentialStatBonusRateType
 from .GrowthFactor import GrowthFactor
 from .GrowthReturnType import GrowthReturnType
+from .EngraveNodeType import EngraveNodeType
 from .ClanRewardType import ClanRewardType
 from .ConquestEnemyType import ConquestEnemyType
 from .ConquestTeamType import ConquestTeamType
@@ -166,6 +170,11 @@ from .RoadPuzzleMapTileType import RoadPuzzleMapTileType
 from .RoadPuzzleRailTileType import RoadPuzzleRailTileType
 from .RoadPuzzleVoiceCondition import RoadPuzzleVoiceCondition
 from .Geas import Geas
+from .TankRacingStageType import TankRacingStageType
+from .TankRacingObstacleType import TankRacingObstacleType
+from .TankRacingItemType import TankRacingItemType
+from .TankRacingVoiceCondition import TankRacingVoiceCondition
+from .TankRacingChatBubbleType import TankRacingChatBubbleType
 from .TBGObjectType import TBGObjectType
 from .TBGOptionSuccessType import TBGOptionSuccessType
 from .TBGItemType import TBGItemType
