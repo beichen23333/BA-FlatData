@@ -87,36 +87,68 @@ class MinigameTBGObjectExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def MinigameTBGObjectExcelStart(builder): builder.StartObject(9)
+def MinigameTBGObjectExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return MinigameTBGObjectExcelStart(builder)
-def MinigameTBGObjectExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    MinigameTBGObjectExcelStart(builder)
+
+def MinigameTBGObjectExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MinigameTBGObjectExcelAddUniqueIdField(builder, uniqueIdField)
-def MinigameTBGObjectExcelAddKeyField(builder, keyField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(keyField), 0)
+    MinigameTBGObjectExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MinigameTBGObjectExcelAddKeyField(builder, keyField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(keyField), 0)
+
 def AddKeyField(builder, keyField):
-    return MinigameTBGObjectExcelAddKeyField(builder, keyField)
-def MinigameTBGObjectExcelAddPrefabNameField(builder, prefabNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+    MinigameTBGObjectExcelAddKeyField(builder, keyField)
+
+def MinigameTBGObjectExcelAddPrefabNameField(builder, prefabNameField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+
 def AddPrefabNameField(builder, prefabNameField):
-    return MinigameTBGObjectExcelAddPrefabNameField(builder, prefabNameField)
-def MinigameTBGObjectExcelAddObjectTypeField(builder, objectTypeField): builder.PrependInt32Slot(3, objectTypeField, 0)
+    MinigameTBGObjectExcelAddPrefabNameField(builder, prefabNameField)
+
+def MinigameTBGObjectExcelAddObjectTypeField(builder, objectTypeField):
+    builder.PrependInt32Slot(3, objectTypeField, 0)
+
 def AddObjectTypeField(builder, objectTypeField):
-    return MinigameTBGObjectExcelAddObjectTypeField(builder, objectTypeField)
-def MinigameTBGObjectExcelAddObjectCostTypeField(builder, objectCostTypeField): builder.PrependInt32Slot(4, objectCostTypeField, 0)
+    MinigameTBGObjectExcelAddObjectTypeField(builder, objectTypeField)
+
+def MinigameTBGObjectExcelAddObjectCostTypeField(builder, objectCostTypeField):
+    builder.PrependInt32Slot(4, objectCostTypeField, 0)
+
 def AddObjectCostTypeField(builder, objectCostTypeField):
-    return MinigameTBGObjectExcelAddObjectCostTypeField(builder, objectCostTypeField)
-def MinigameTBGObjectExcelAddObjectCostIdField(builder, objectCostIdField): builder.PrependInt32Slot(5, objectCostIdField, 0)
+    MinigameTBGObjectExcelAddObjectCostTypeField(builder, objectCostTypeField)
+
+def MinigameTBGObjectExcelAddObjectCostIdField(builder, objectCostIdField):
+    builder.PrependInt32Slot(5, objectCostIdField, 0)
+
 def AddObjectCostIdField(builder, objectCostIdField):
-    return MinigameTBGObjectExcelAddObjectCostIdField(builder, objectCostIdField)
-def MinigameTBGObjectExcelAddObjectCostAmountField(builder, objectCostAmountField): builder.PrependInt32Slot(6, objectCostAmountField, 0)
+    MinigameTBGObjectExcelAddObjectCostIdField(builder, objectCostIdField)
+
+def MinigameTBGObjectExcelAddObjectCostAmountField(builder, objectCostAmountField):
+    builder.PrependInt32Slot(6, objectCostAmountField, 0)
+
 def AddObjectCostAmountField(builder, objectCostAmountField):
-    return MinigameTBGObjectExcelAddObjectCostAmountField(builder, objectCostAmountField)
-def MinigameTBGObjectExcelAddDisposableField(builder, disposableField): builder.PrependBoolSlot(7, disposableField, 0)
+    MinigameTBGObjectExcelAddObjectCostAmountField(builder, objectCostAmountField)
+
+def MinigameTBGObjectExcelAddDisposableField(builder, disposableField):
+    builder.PrependBoolSlot(7, disposableField, 0)
+
 def AddDisposableField(builder, disposableField):
-    return MinigameTBGObjectExcelAddDisposableField(builder, disposableField)
-def MinigameTBGObjectExcelAddReEncounterCostField(builder, reEncounterCostField): builder.PrependBoolSlot(8, reEncounterCostField, 0)
+    MinigameTBGObjectExcelAddDisposableField(builder, disposableField)
+
+def MinigameTBGObjectExcelAddReEncounterCostField(builder, reEncounterCostField):
+    builder.PrependBoolSlot(8, reEncounterCostField, 0)
+
 def AddReEncounterCostField(builder, reEncounterCostField):
-    return MinigameTBGObjectExcelAddReEncounterCostField(builder, reEncounterCostField)
-def MinigameTBGObjectExcelEnd(builder): return builder.EndObject()
+    MinigameTBGObjectExcelAddReEncounterCostField(builder, reEncounterCostField)
+
+def MinigameTBGObjectExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameTBGObjectExcelEnd(builder)

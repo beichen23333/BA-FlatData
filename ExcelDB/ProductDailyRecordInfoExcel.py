@@ -45,18 +45,32 @@ class ProductDailyRecordInfoExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def ProductDailyRecordInfoExcelStart(builder): builder.StartObject(3)
+def ProductDailyRecordInfoExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return ProductDailyRecordInfoExcelStart(builder)
-def ProductDailyRecordInfoExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ProductDailyRecordInfoExcelStart(builder)
+
+def ProductDailyRecordInfoExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ProductDailyRecordInfoExcelAddIdField(builder, idField)
-def ProductDailyRecordInfoExcelAddDaySizeField(builder, daySizeField): builder.PrependInt32Slot(1, daySizeField, 0)
+    ProductDailyRecordInfoExcelAddIdField(builder, idField)
+
+def ProductDailyRecordInfoExcelAddDaySizeField(builder, daySizeField):
+    builder.PrependInt32Slot(1, daySizeField, 0)
+
 def AddDaySizeField(builder, daySizeField):
-    return ProductDailyRecordInfoExcelAddDaySizeField(builder, daySizeField)
-def ProductDailyRecordInfoExcelAddExpirationDateField(builder, expirationDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(expirationDateField), 0)
+    ProductDailyRecordInfoExcelAddDaySizeField(builder, daySizeField)
+
+def ProductDailyRecordInfoExcelAddExpirationDateField(builder, expirationDateField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(expirationDateField), 0)
+
 def AddExpirationDateField(builder, expirationDateField):
-    return ProductDailyRecordInfoExcelAddExpirationDateField(builder, expirationDateField)
-def ProductDailyRecordInfoExcelEnd(builder): return builder.EndObject()
+    ProductDailyRecordInfoExcelAddExpirationDateField(builder, expirationDateField)
+
+def ProductDailyRecordInfoExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductDailyRecordInfoExcelEnd(builder)

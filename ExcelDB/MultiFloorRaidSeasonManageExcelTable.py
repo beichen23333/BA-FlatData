@@ -49,15 +49,26 @@ class MultiFloorRaidSeasonManageExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MultiFloorRaidSeasonManageExcelTableStart(builder): builder.StartObject(1)
+def MultiFloorRaidSeasonManageExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MultiFloorRaidSeasonManageExcelTableStart(builder)
-def MultiFloorRaidSeasonManageExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MultiFloorRaidSeasonManageExcelTableStart(builder)
+
+def MultiFloorRaidSeasonManageExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MultiFloorRaidSeasonManageExcelTableAddDataList(builder, dataList)
-def MultiFloorRaidSeasonManageExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MultiFloorRaidSeasonManageExcelTableAddDataList(builder, dataList)
+
+def MultiFloorRaidSeasonManageExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MultiFloorRaidSeasonManageExcelTableStartDataListVector(builder, numElems)
-def MultiFloorRaidSeasonManageExcelTableEnd(builder): return builder.EndObject()
+
+def MultiFloorRaidSeasonManageExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MultiFloorRaidSeasonManageExcelTableEnd(builder)

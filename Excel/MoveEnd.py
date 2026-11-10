@@ -24,9 +24,14 @@ class MoveEnd(object):
     def Init(self, buf, pos):
         self._tab = flatbuffers.table.Table(buf, pos)
 
-def MoveEndStart(builder): builder.StartObject(0)
+def MoveEndStart(builder):
+    builder.StartObject(0)
+
 def Start(builder):
-    return MoveEndStart(builder)
-def MoveEndEnd(builder): return builder.EndObject()
+    MoveEndStart(builder)
+
+def MoveEndEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MoveEndEnd(builder)

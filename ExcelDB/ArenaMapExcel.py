@@ -94,39 +94,74 @@ class ArenaMapExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ArenaMapExcelStart(builder): builder.StartObject(10)
+def ArenaMapExcelStart(builder):
+    builder.StartObject(10)
+
 def Start(builder):
-    return ArenaMapExcelStart(builder)
-def ArenaMapExcelAddArenaSeasonIdField(builder, arenaSeasonIdField): builder.PrependInt32Slot(0, arenaSeasonIdField, 0)
+    ArenaMapExcelStart(builder)
+
+def ArenaMapExcelAddArenaSeasonIdField(builder, arenaSeasonIdField):
+    builder.PrependInt32Slot(0, arenaSeasonIdField, 0)
+
 def AddArenaSeasonIdField(builder, arenaSeasonIdField):
-    return ArenaMapExcelAddArenaSeasonIdField(builder, arenaSeasonIdField)
-def ArenaMapExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+    ArenaMapExcelAddArenaSeasonIdField(builder, arenaSeasonIdField)
+
+def ArenaMapExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(1, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return ArenaMapExcelAddUniqueIdField(builder, uniqueIdField)
-def ArenaMapExcelAddTerrainTypeField(builder, terrainTypeField): builder.PrependInt32Slot(2, terrainTypeField, 0)
+    ArenaMapExcelAddUniqueIdField(builder, uniqueIdField)
+
+def ArenaMapExcelAddTerrainTypeField(builder, terrainTypeField):
+    builder.PrependInt32Slot(2, terrainTypeField, 0)
+
 def AddTerrainTypeField(builder, terrainTypeField):
-    return ArenaMapExcelAddTerrainTypeField(builder, terrainTypeField)
-def ArenaMapExcelAddTerrainTypeLocalizeKeyField(builder, terrainTypeLocalizeKeyField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(terrainTypeLocalizeKeyField), 0)
+    ArenaMapExcelAddTerrainTypeField(builder, terrainTypeField)
+
+def ArenaMapExcelAddTerrainTypeLocalizeKeyField(builder, terrainTypeLocalizeKeyField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(terrainTypeLocalizeKeyField), 0)
+
 def AddTerrainTypeLocalizeKeyField(builder, terrainTypeLocalizeKeyField):
-    return ArenaMapExcelAddTerrainTypeLocalizeKeyField(builder, terrainTypeLocalizeKeyField)
-def ArenaMapExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+    ArenaMapExcelAddTerrainTypeLocalizeKeyField(builder, terrainTypeLocalizeKeyField)
+
+def ArenaMapExcelAddImagePathField(builder, imagePathField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+
 def AddImagePathField(builder, imagePathField):
-    return ArenaMapExcelAddImagePathField(builder, imagePathField)
-def ArenaMapExcelAddGroundGroupIdField(builder, groundGroupIdField): builder.PrependInt32Slot(5, groundGroupIdField, 0)
+    ArenaMapExcelAddImagePathField(builder, imagePathField)
+
+def ArenaMapExcelAddGroundGroupIdField(builder, groundGroupIdField):
+    builder.PrependInt32Slot(5, groundGroupIdField, 0)
+
 def AddGroundGroupIdField(builder, groundGroupIdField):
-    return ArenaMapExcelAddGroundGroupIdField(builder, groundGroupIdField)
-def ArenaMapExcelAddGroundGroupNameLocalizeKeyField(builder, groundGroupNameLocalizeKeyField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(groundGroupNameLocalizeKeyField), 0)
+    ArenaMapExcelAddGroundGroupIdField(builder, groundGroupIdField)
+
+def ArenaMapExcelAddGroundGroupNameLocalizeKeyField(builder, groundGroupNameLocalizeKeyField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(groundGroupNameLocalizeKeyField), 0)
+
 def AddGroundGroupNameLocalizeKeyField(builder, groundGroupNameLocalizeKeyField):
-    return ArenaMapExcelAddGroundGroupNameLocalizeKeyField(builder, groundGroupNameLocalizeKeyField)
-def ArenaMapExcelAddStartRankField(builder, startRankField): builder.PrependInt32Slot(7, startRankField, 0)
+    ArenaMapExcelAddGroundGroupNameLocalizeKeyField(builder, groundGroupNameLocalizeKeyField)
+
+def ArenaMapExcelAddStartRankField(builder, startRankField):
+    builder.PrependInt32Slot(7, startRankField, 0)
+
 def AddStartRankField(builder, startRankField):
-    return ArenaMapExcelAddStartRankField(builder, startRankField)
-def ArenaMapExcelAddEndRankField(builder, endRankField): builder.PrependInt32Slot(8, endRankField, 0)
+    ArenaMapExcelAddStartRankField(builder, startRankField)
+
+def ArenaMapExcelAddEndRankField(builder, endRankField):
+    builder.PrependInt32Slot(8, endRankField, 0)
+
 def AddEndRankField(builder, endRankField):
-    return ArenaMapExcelAddEndRankField(builder, endRankField)
-def ArenaMapExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(9, groundIdField, 0)
+    ArenaMapExcelAddEndRankField(builder, endRankField)
+
+def ArenaMapExcelAddGroundIdField(builder, groundIdField):
+    builder.PrependInt32Slot(9, groundIdField, 0)
+
 def AddGroundIdField(builder, groundIdField):
-    return ArenaMapExcelAddGroundIdField(builder, groundIdField)
-def ArenaMapExcelEnd(builder): return builder.EndObject()
+    ArenaMapExcelAddGroundIdField(builder, groundIdField)
+
+def ArenaMapExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ArenaMapExcelEnd(builder)

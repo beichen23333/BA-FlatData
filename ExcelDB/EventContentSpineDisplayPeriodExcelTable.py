@@ -49,15 +49,26 @@ class EventContentSpineDisplayPeriodExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def EventContentSpineDisplayPeriodExcelTableStart(builder): builder.StartObject(1)
+def EventContentSpineDisplayPeriodExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return EventContentSpineDisplayPeriodExcelTableStart(builder)
-def EventContentSpineDisplayPeriodExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    EventContentSpineDisplayPeriodExcelTableStart(builder)
+
+def EventContentSpineDisplayPeriodExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return EventContentSpineDisplayPeriodExcelTableAddDataList(builder, dataList)
-def EventContentSpineDisplayPeriodExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    EventContentSpineDisplayPeriodExcelTableAddDataList(builder, dataList)
+
+def EventContentSpineDisplayPeriodExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return EventContentSpineDisplayPeriodExcelTableStartDataListVector(builder, numElems)
-def EventContentSpineDisplayPeriodExcelTableEnd(builder): return builder.EndObject()
+
+def EventContentSpineDisplayPeriodExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentSpineDisplayPeriodExcelTableEnd(builder)

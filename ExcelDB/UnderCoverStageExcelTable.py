@@ -49,15 +49,26 @@ class UnderCoverStageExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def UnderCoverStageExcelTableStart(builder): builder.StartObject(1)
+def UnderCoverStageExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return UnderCoverStageExcelTableStart(builder)
-def UnderCoverStageExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    UnderCoverStageExcelTableStart(builder)
+
+def UnderCoverStageExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return UnderCoverStageExcelTableAddDataList(builder, dataList)
-def UnderCoverStageExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    UnderCoverStageExcelTableAddDataList(builder, dataList)
+
+def UnderCoverStageExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return UnderCoverStageExcelTableStartDataListVector(builder, numElems)
-def UnderCoverStageExcelTableEnd(builder): return builder.EndObject()
+
+def UnderCoverStageExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return UnderCoverStageExcelTableEnd(builder)

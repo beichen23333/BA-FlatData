@@ -31,12 +31,20 @@ class Motion(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def MotionStart(builder): builder.StartObject(1)
+def MotionStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MotionStart(builder)
-def MotionAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+    MotionStart(builder)
+
+def MotionAddNameField(builder, nameField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+
 def AddNameField(builder, nameField):
-    return MotionAddNameField(builder, nameField)
-def MotionEnd(builder): return builder.EndObject()
+    MotionAddNameField(builder, nameField)
+
+def MotionEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MotionEnd(builder)

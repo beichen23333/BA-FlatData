@@ -61,6 +61,7 @@ from .CVCollectionType import CVCollectionType
 from .CVPrintType import CVPrintType
 from .PotentialStatBonusRateType import PotentialStatBonusRateType
 from .GrowthFactor import GrowthFactor
+from .GrowthReturnType import GrowthReturnType
 from .ClanRewardType import ClanRewardType
 from .ConquestEnemyType import ConquestEnemyType
 from .ConquestTeamType import ConquestTeamType
@@ -99,6 +100,8 @@ from .ConcentrationRewardType import ConcentrationRewardType
 from .RecipeDisplayOptions import RecipeDisplayOptions
 from .SpoilerPopupType import SpoilerPopupType
 from .RaidBossGroupType import RaidBossGroupType
+from .TacticalRelayStageType import TacticalRelayStageType
+from .ApcSynergyTriggerType import ApcSynergyTriggerType
 from .EquipmentCategory import EquipmentCategory
 from .EquipmentOptionType import EquipmentOptionType
 from .MultipleConditionCheckType import MultipleConditionCheckType
@@ -123,6 +126,10 @@ from .WorldRaidConditionType import WorldRaidConditionType
 from .WorldRaidMapType import WorldRaidMapType
 from .GachaPhase import GachaPhase
 from .DirectingCharacter import DirectingCharacter
+from .NodeGrade import NodeGrade
+from .FrameCategory import FrameCategory
+from .FrameDisplayType import FrameDisplayType
+from .FrameCheckPassType import FrameCheckPassType
 from .FieldConditionType import FieldConditionType
 from .FieldInteractionType import FieldInteractionType
 from .FieldConditionClass import FieldConditionClass
@@ -154,6 +161,8 @@ from .DreamMakerEndingCondition import DreamMakerEndingCondition
 from .DreamMakerVoiceCondition import DreamMakerVoiceCondition
 from .DreamMakerEndingType import DreamMakerEndingType
 from .DreamMakerEndingRewardType import DreamMakerEndingRewardType
+from .JankenStageType import JankenStageType
+from .JankenVoiceCondition import JankenVoiceCondition
 from .RoadPuzzleMapTileType import RoadPuzzleMapTileType
 from .RoadPuzzleRailTileType import RoadPuzzleRailTileType
 from .RoadPuzzleVoiceCondition import RoadPuzzleVoiceCondition
@@ -214,13 +223,15 @@ from .ProductDisplayTag import ProductDisplayTag
 from .ProductTagType import ProductTagType
 from .ShopFreeRecruitType import ShopFreeRecruitType
 from .GachaDisplayTag import GachaDisplayTag
-from .ShopFilterType import ShopFilterType
 from .ShopRefresherType import ShopRefresherType
 from .ShopRefreshPeriodType import ShopRefreshPeriodType
 from .ShopPurchasePopupType import ShopPurchasePopupType
 from .ProductSaleType import ProductSaleType
 from .ProductSelectSubType import ProductSelectSubType
 from .AutoSelectPopupType import AutoSelectPopupType
+from .ProductGroupType import ProductGroupType
+from .RecommendPageType import RecommendPageType
+from .WishListConfig import WishListConfig
 from .AccountState import AccountState
 from .MessagePopupLayout import MessagePopupLayout
 from .MessagePopupImagePositionType import MessagePopupImagePositionType

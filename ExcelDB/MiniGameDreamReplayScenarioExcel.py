@@ -73,30 +73,56 @@ class MiniGameDreamReplayScenarioExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def MiniGameDreamReplayScenarioExcelStart(builder): builder.StartObject(7)
+def MiniGameDreamReplayScenarioExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return MiniGameDreamReplayScenarioExcelStart(builder)
-def MiniGameDreamReplayScenarioExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MiniGameDreamReplayScenarioExcelStart(builder)
+
+def MiniGameDreamReplayScenarioExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MiniGameDreamReplayScenarioExcelAddEventContentIdField(builder, eventContentIdField)
-def MiniGameDreamReplayScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField): builder.PrependInt32Slot(1, scenarioGroupIdField, 0)
+    MiniGameDreamReplayScenarioExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MiniGameDreamReplayScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField):
+    builder.PrependInt32Slot(1, scenarioGroupIdField, 0)
+
 def AddScenarioGroupIdField(builder, scenarioGroupIdField):
-    return MiniGameDreamReplayScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField)
-def MiniGameDreamReplayScenarioExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(2, orderField, 0)
+    MiniGameDreamReplayScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField)
+
+def MiniGameDreamReplayScenarioExcelAddOrderField(builder, orderField):
+    builder.PrependInt32Slot(2, orderField, 0)
+
 def AddOrderField(builder, orderField):
-    return MiniGameDreamReplayScenarioExcelAddOrderField(builder, orderField)
-def MiniGameDreamReplayScenarioExcelAddReplaySummaryTitleLocalizeField(builder, replaySummaryTitleLocalizeField): builder.PrependUint32Slot(3, replaySummaryTitleLocalizeField, 0)
+    MiniGameDreamReplayScenarioExcelAddOrderField(builder, orderField)
+
+def MiniGameDreamReplayScenarioExcelAddReplaySummaryTitleLocalizeField(builder, replaySummaryTitleLocalizeField):
+    builder.PrependUint32Slot(3, replaySummaryTitleLocalizeField, 0)
+
 def AddReplaySummaryTitleLocalizeField(builder, replaySummaryTitleLocalizeField):
-    return MiniGameDreamReplayScenarioExcelAddReplaySummaryTitleLocalizeField(builder, replaySummaryTitleLocalizeField)
-def MiniGameDreamReplayScenarioExcelAddReplaySummaryLocalizeScenarioIdField(builder, replaySummaryLocalizeScenarioIdField): builder.PrependUint32Slot(4, replaySummaryLocalizeScenarioIdField, 0)
+    MiniGameDreamReplayScenarioExcelAddReplaySummaryTitleLocalizeField(builder, replaySummaryTitleLocalizeField)
+
+def MiniGameDreamReplayScenarioExcelAddReplaySummaryLocalizeScenarioIdField(builder, replaySummaryLocalizeScenarioIdField):
+    builder.PrependUint32Slot(4, replaySummaryLocalizeScenarioIdField, 0)
+
 def AddReplaySummaryLocalizeScenarioIdField(builder, replaySummaryLocalizeScenarioIdField):
-    return MiniGameDreamReplayScenarioExcelAddReplaySummaryLocalizeScenarioIdField(builder, replaySummaryLocalizeScenarioIdField)
-def MiniGameDreamReplayScenarioExcelAddReplayScenarioResourceField(builder, replayScenarioResourceField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(replayScenarioResourceField), 0)
+    MiniGameDreamReplayScenarioExcelAddReplaySummaryLocalizeScenarioIdField(builder, replaySummaryLocalizeScenarioIdField)
+
+def MiniGameDreamReplayScenarioExcelAddReplayScenarioResourceField(builder, replayScenarioResourceField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(replayScenarioResourceField), 0)
+
 def AddReplayScenarioResourceField(builder, replayScenarioResourceField):
-    return MiniGameDreamReplayScenarioExcelAddReplayScenarioResourceField(builder, replayScenarioResourceField)
-def MiniGameDreamReplayScenarioExcelAddIsReplayScenarioHorizonField(builder, isReplayScenarioHorizonField): builder.PrependBoolSlot(6, isReplayScenarioHorizonField, 0)
+    MiniGameDreamReplayScenarioExcelAddReplayScenarioResourceField(builder, replayScenarioResourceField)
+
+def MiniGameDreamReplayScenarioExcelAddIsReplayScenarioHorizonField(builder, isReplayScenarioHorizonField):
+    builder.PrependBoolSlot(6, isReplayScenarioHorizonField, 0)
+
 def AddIsReplayScenarioHorizonField(builder, isReplayScenarioHorizonField):
-    return MiniGameDreamReplayScenarioExcelAddIsReplayScenarioHorizonField(builder, isReplayScenarioHorizonField)
-def MiniGameDreamReplayScenarioExcelEnd(builder): return builder.EndObject()
+    MiniGameDreamReplayScenarioExcelAddIsReplayScenarioHorizonField(builder, isReplayScenarioHorizonField)
+
+def MiniGameDreamReplayScenarioExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameDreamReplayScenarioExcelEnd(builder)

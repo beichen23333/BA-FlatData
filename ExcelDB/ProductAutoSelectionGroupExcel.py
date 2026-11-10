@@ -133,39 +133,74 @@ class ProductAutoSelectionGroupExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ProductAutoSelectionGroupExcelStart(builder): builder.StartObject(7)
+def ProductAutoSelectionGroupExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return ProductAutoSelectionGroupExcelStart(builder)
-def ProductAutoSelectionGroupExcelAddProductAutoSelectionGroupIdField(builder, productAutoSelectionGroupIdField): builder.PrependInt32Slot(0, productAutoSelectionGroupIdField, 0)
+    ProductAutoSelectionGroupExcelStart(builder)
+
+def ProductAutoSelectionGroupExcelAddProductAutoSelectionGroupIdField(builder, productAutoSelectionGroupIdField):
+    builder.PrependInt32Slot(0, productAutoSelectionGroupIdField, 0)
+
 def AddProductAutoSelectionGroupIdField(builder, productAutoSelectionGroupIdField):
-    return ProductAutoSelectionGroupExcelAddProductAutoSelectionGroupIdField(builder, productAutoSelectionGroupIdField)
-def ProductAutoSelectionGroupExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+    ProductAutoSelectionGroupExcelAddProductAutoSelectionGroupIdField(builder, productAutoSelectionGroupIdField)
+
+def ProductAutoSelectionGroupExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(1, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return ProductAutoSelectionGroupExcelAddCharacterIdField(builder, characterIdField)
-def ProductAutoSelectionGroupExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+    ProductAutoSelectionGroupExcelAddCharacterIdField(builder, characterIdField)
+
+def ProductAutoSelectionGroupExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return ProductAutoSelectionGroupExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def ProductAutoSelectionGroupExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeFieldVector(builder, numElems):
+    ProductAutoSelectionGroupExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def ProductAutoSelectionGroupExcelStartRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return ProductAutoSelectionGroupExcelStartRewardParcelTypeFieldVector(builder, numElems)
-def ProductAutoSelectionGroupExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
+def ProductAutoSelectionGroupExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return ProductAutoSelectionGroupExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def ProductAutoSelectionGroupExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdFieldVector(builder, numElems):
+    ProductAutoSelectionGroupExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def ProductAutoSelectionGroupExcelStartRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return ProductAutoSelectionGroupExcelStartRewardParcelIdFieldVector(builder, numElems)
-def ProductAutoSelectionGroupExcelAddResultAmountField(builder, resultAmountField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(resultAmountField), 0)
+
+def ProductAutoSelectionGroupExcelAddResultAmountField(builder, resultAmountField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(resultAmountField), 0)
+
 def AddResultAmountField(builder, resultAmountField):
-    return ProductAutoSelectionGroupExcelAddResultAmountField(builder, resultAmountField)
-def ProductAutoSelectionGroupExcelStartResultAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartResultAmountFieldVector(builder, numElems):
+    ProductAutoSelectionGroupExcelAddResultAmountField(builder, resultAmountField)
+
+def ProductAutoSelectionGroupExcelStartResultAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartResultAmountFieldVector(builder, numElems: int) -> int:
     return ProductAutoSelectionGroupExcelStartResultAmountFieldVector(builder, numElems)
-def ProductAutoSelectionGroupExcelAddConditionParcelTypeField(builder, conditionParcelTypeField): builder.PrependInt32Slot(5, conditionParcelTypeField, 0)
+
+def ProductAutoSelectionGroupExcelAddConditionParcelTypeField(builder, conditionParcelTypeField):
+    builder.PrependInt32Slot(5, conditionParcelTypeField, 0)
+
 def AddConditionParcelTypeField(builder, conditionParcelTypeField):
-    return ProductAutoSelectionGroupExcelAddConditionParcelTypeField(builder, conditionParcelTypeField)
-def ProductAutoSelectionGroupExcelAddConditionParcelIdField(builder, conditionParcelIdField): builder.PrependInt32Slot(6, conditionParcelIdField, 0)
+    ProductAutoSelectionGroupExcelAddConditionParcelTypeField(builder, conditionParcelTypeField)
+
+def ProductAutoSelectionGroupExcelAddConditionParcelIdField(builder, conditionParcelIdField):
+    builder.PrependInt32Slot(6, conditionParcelIdField, 0)
+
 def AddConditionParcelIdField(builder, conditionParcelIdField):
-    return ProductAutoSelectionGroupExcelAddConditionParcelIdField(builder, conditionParcelIdField)
-def ProductAutoSelectionGroupExcelEnd(builder): return builder.EndObject()
+    ProductAutoSelectionGroupExcelAddConditionParcelIdField(builder, conditionParcelIdField)
+
+def ProductAutoSelectionGroupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductAutoSelectionGroupExcelEnd(builder)

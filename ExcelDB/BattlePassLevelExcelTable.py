@@ -49,15 +49,26 @@ class BattlePassLevelExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def BattlePassLevelExcelTableStart(builder): builder.StartObject(1)
+def BattlePassLevelExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return BattlePassLevelExcelTableStart(builder)
-def BattlePassLevelExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    BattlePassLevelExcelTableStart(builder)
+
+def BattlePassLevelExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return BattlePassLevelExcelTableAddDataList(builder, dataList)
-def BattlePassLevelExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    BattlePassLevelExcelTableAddDataList(builder, dataList)
+
+def BattlePassLevelExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return BattlePassLevelExcelTableStartDataListVector(builder, numElems)
-def BattlePassLevelExcelTableEnd(builder): return builder.EndObject()
+
+def BattlePassLevelExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BattlePassLevelExcelTableEnd(builder)

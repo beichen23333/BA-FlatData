@@ -1,0 +1,6 @@
+class NodeGrade:
+    Start = 0
+    Normal = 1
+    Rare = 2
+    Unique = 3
+    KeyStone = 4

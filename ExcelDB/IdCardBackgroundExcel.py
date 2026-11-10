@@ -80,33 +80,62 @@ class IdCardBackgroundExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def IdCardBackgroundExcelStart(builder): builder.StartObject(8)
+def IdCardBackgroundExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return IdCardBackgroundExcelStart(builder)
-def IdCardBackgroundExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    IdCardBackgroundExcelStart(builder)
+
+def IdCardBackgroundExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return IdCardBackgroundExcelAddIdField(builder, idField)
-def IdCardBackgroundExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(1, rarityField, 0)
+    IdCardBackgroundExcelAddIdField(builder, idField)
+
+def IdCardBackgroundExcelAddRarityField(builder, rarityField):
+    builder.PrependInt32Slot(1, rarityField, 0)
+
 def AddRarityField(builder, rarityField):
-    return IdCardBackgroundExcelAddRarityField(builder, rarityField)
-def IdCardBackgroundExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(2, displayOrderField, 0)
+    IdCardBackgroundExcelAddRarityField(builder, rarityField)
+
+def IdCardBackgroundExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(2, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return IdCardBackgroundExcelAddDisplayOrderField(builder, displayOrderField)
-def IdCardBackgroundExcelAddCollectionVisibleField(builder, collectionVisibleField): builder.PrependBoolSlot(3, collectionVisibleField, 0)
+    IdCardBackgroundExcelAddDisplayOrderField(builder, displayOrderField)
+
+def IdCardBackgroundExcelAddCollectionVisibleField(builder, collectionVisibleField):
+    builder.PrependBoolSlot(3, collectionVisibleField, 0)
+
 def AddCollectionVisibleField(builder, collectionVisibleField):
-    return IdCardBackgroundExcelAddCollectionVisibleField(builder, collectionVisibleField)
-def IdCardBackgroundExcelAddIsDefaultField(builder, isDefaultField): builder.PrependBoolSlot(4, isDefaultField, 0)
+    IdCardBackgroundExcelAddCollectionVisibleField(builder, collectionVisibleField)
+
+def IdCardBackgroundExcelAddIsDefaultField(builder, isDefaultField):
+    builder.PrependBoolSlot(4, isDefaultField, 0)
+
 def AddIsDefaultField(builder, isDefaultField):
-    return IdCardBackgroundExcelAddIsDefaultField(builder, isDefaultField)
-def IdCardBackgroundExcelAddBgPathField(builder, bgPathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(bgPathField), 0)
+    IdCardBackgroundExcelAddIsDefaultField(builder, isDefaultField)
+
+def IdCardBackgroundExcelAddBgPathField(builder, bgPathField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(bgPathField), 0)
+
 def AddBgPathField(builder, bgPathField):
-    return IdCardBackgroundExcelAddBgPathField(builder, bgPathField)
-def IdCardBackgroundExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(6, localizeEtcIdField, 0)
+    IdCardBackgroundExcelAddBgPathField(builder, bgPathField)
+
+def IdCardBackgroundExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(6, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return IdCardBackgroundExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def IdCardBackgroundExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+    IdCardBackgroundExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def IdCardBackgroundExcelAddIconField(builder, iconField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+
 def AddIconField(builder, iconField):
-    return IdCardBackgroundExcelAddIconField(builder, iconField)
-def IdCardBackgroundExcelEnd(builder): return builder.EndObject()
+    IdCardBackgroundExcelAddIconField(builder, iconField)
+
+def IdCardBackgroundExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return IdCardBackgroundExcelEnd(builder)

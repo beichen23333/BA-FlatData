@@ -10,3 +10,4 @@ class EventTargetType:
     Raid = 8
     EliminateRaid = 9
     MultiFloorRaid = 10
+    TacticalRelay = 11

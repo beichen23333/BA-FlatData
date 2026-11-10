@@ -406,156 +406,308 @@ class ScenarioModeExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def ScenarioModeExcelStart(builder): builder.StartObject(46)
+def ScenarioModeExcelStart(builder):
+    builder.StartObject(46)
+
 def Start(builder):
-    return ScenarioModeExcelStart(builder)
-def ScenarioModeExcelAddModeIdField(builder, modeIdField): builder.PrependInt32Slot(0, modeIdField, 0)
+    ScenarioModeExcelStart(builder)
+
+def ScenarioModeExcelAddModeIdField(builder, modeIdField):
+    builder.PrependInt32Slot(0, modeIdField, 0)
+
 def AddModeIdField(builder, modeIdField):
-    return ScenarioModeExcelAddModeIdField(builder, modeIdField)
-def ScenarioModeExcelAddModeTypeField(builder, modeTypeField): builder.PrependInt32Slot(1, modeTypeField, 0)
+    ScenarioModeExcelAddModeIdField(builder, modeIdField)
+
+def ScenarioModeExcelAddModeTypeField(builder, modeTypeField):
+    builder.PrependInt32Slot(1, modeTypeField, 0)
+
 def AddModeTypeField(builder, modeTypeField):
-    return ScenarioModeExcelAddModeTypeField(builder, modeTypeField)
-def ScenarioModeExcelAddSubTypeField(builder, subTypeField): builder.PrependInt32Slot(2, subTypeField, 0)
+    ScenarioModeExcelAddModeTypeField(builder, modeTypeField)
+
+def ScenarioModeExcelAddSubTypeField(builder, subTypeField):
+    builder.PrependInt32Slot(2, subTypeField, 0)
+
 def AddSubTypeField(builder, subTypeField):
-    return ScenarioModeExcelAddSubTypeField(builder, subTypeField)
-def ScenarioModeExcelAddDisplayVolumeIdField(builder, displayVolumeIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(displayVolumeIdField), 0)
+    ScenarioModeExcelAddSubTypeField(builder, subTypeField)
+
+def ScenarioModeExcelAddDisplayVolumeIdField(builder, displayVolumeIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(displayVolumeIdField), 0)
+
 def AddDisplayVolumeIdField(builder, displayVolumeIdField):
-    return ScenarioModeExcelAddDisplayVolumeIdField(builder, displayVolumeIdField)
-def ScenarioModeExcelAddVolumeIdField(builder, volumeIdField): builder.PrependInt32Slot(4, volumeIdField, 0)
+    ScenarioModeExcelAddDisplayVolumeIdField(builder, displayVolumeIdField)
+
+def ScenarioModeExcelAddVolumeIdField(builder, volumeIdField):
+    builder.PrependInt32Slot(4, volumeIdField, 0)
+
 def AddVolumeIdField(builder, volumeIdField):
-    return ScenarioModeExcelAddVolumeIdField(builder, volumeIdField)
-def ScenarioModeExcelAddChapterIdField(builder, chapterIdField): builder.PrependInt32Slot(5, chapterIdField, 0)
+    ScenarioModeExcelAddVolumeIdField(builder, volumeIdField)
+
+def ScenarioModeExcelAddChapterIdField(builder, chapterIdField):
+    builder.PrependInt32Slot(5, chapterIdField, 0)
+
 def AddChapterIdField(builder, chapterIdField):
-    return ScenarioModeExcelAddChapterIdField(builder, chapterIdField)
-def ScenarioModeExcelAddEpisodeIdField(builder, episodeIdField): builder.PrependInt32Slot(6, episodeIdField, 0)
+    ScenarioModeExcelAddChapterIdField(builder, chapterIdField)
+
+def ScenarioModeExcelAddEpisodeIdField(builder, episodeIdField):
+    builder.PrependInt32Slot(6, episodeIdField, 0)
+
 def AddEpisodeIdField(builder, episodeIdField):
-    return ScenarioModeExcelAddEpisodeIdField(builder, episodeIdField)
-def ScenarioModeExcelAddExposedTimeField(builder, exposedTimeField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(exposedTimeField), 0)
+    ScenarioModeExcelAddEpisodeIdField(builder, episodeIdField)
+
+def ScenarioModeExcelAddExposedTimeField(builder, exposedTimeField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(exposedTimeField), 0)
+
 def AddExposedTimeField(builder, exposedTimeField):
-    return ScenarioModeExcelAddExposedTimeField(builder, exposedTimeField)
-def ScenarioModeExcelAddHideField(builder, hideField): builder.PrependBoolSlot(8, hideField, 0)
+    ScenarioModeExcelAddExposedTimeField(builder, exposedTimeField)
+
+def ScenarioModeExcelAddHideField(builder, hideField):
+    builder.PrependBoolSlot(8, hideField, 0)
+
 def AddHideField(builder, hideField):
-    return ScenarioModeExcelAddHideField(builder, hideField)
-def ScenarioModeExcelAddOpenField(builder, openField): builder.PrependBoolSlot(9, openField, 0)
+    ScenarioModeExcelAddHideField(builder, hideField)
+
+def ScenarioModeExcelAddOpenField(builder, openField):
+    builder.PrependBoolSlot(9, openField, 0)
+
 def AddOpenField(builder, openField):
-    return ScenarioModeExcelAddOpenField(builder, openField)
-def ScenarioModeExcelAddScenarioOpenDateField(builder, scenarioOpenDateField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(scenarioOpenDateField), 0)
+    ScenarioModeExcelAddOpenField(builder, openField)
+
+def ScenarioModeExcelAddScenarioOpenDateField(builder, scenarioOpenDateField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(scenarioOpenDateField), 0)
+
 def AddScenarioOpenDateField(builder, scenarioOpenDateField):
-    return ScenarioModeExcelAddScenarioOpenDateField(builder, scenarioOpenDateField)
-def ScenarioModeExcelAddScenarioCloseDateField(builder, scenarioCloseDateField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(scenarioCloseDateField), 0)
+    ScenarioModeExcelAddScenarioOpenDateField(builder, scenarioOpenDateField)
+
+def ScenarioModeExcelAddScenarioCloseDateField(builder, scenarioCloseDateField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(scenarioCloseDateField), 0)
+
 def AddScenarioCloseDateField(builder, scenarioCloseDateField):
-    return ScenarioModeExcelAddScenarioCloseDateField(builder, scenarioCloseDateField)
-def ScenarioModeExcelAddIsContinueField(builder, isContinueField): builder.PrependBoolSlot(12, isContinueField, 0)
+    ScenarioModeExcelAddScenarioCloseDateField(builder, scenarioCloseDateField)
+
+def ScenarioModeExcelAddIsContinueField(builder, isContinueField):
+    builder.PrependBoolSlot(12, isContinueField, 0)
+
 def AddIsContinueField(builder, isContinueField):
-    return ScenarioModeExcelAddIsContinueField(builder, isContinueField)
-def ScenarioModeExcelAddEpisodeContinueModeIdField(builder, episodeContinueModeIdField): builder.PrependInt32Slot(13, episodeContinueModeIdField, 0)
+    ScenarioModeExcelAddIsContinueField(builder, isContinueField)
+
+def ScenarioModeExcelAddEpisodeContinueModeIdField(builder, episodeContinueModeIdField):
+    builder.PrependInt32Slot(13, episodeContinueModeIdField, 0)
+
 def AddEpisodeContinueModeIdField(builder, episodeContinueModeIdField):
-    return ScenarioModeExcelAddEpisodeContinueModeIdField(builder, episodeContinueModeIdField)
-def ScenarioModeExcelAddFrontScenarioGroupIdField(builder, frontScenarioGroupIdField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(frontScenarioGroupIdField), 0)
+    ScenarioModeExcelAddEpisodeContinueModeIdField(builder, episodeContinueModeIdField)
+
+def ScenarioModeExcelAddFrontScenarioGroupIdField(builder, frontScenarioGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(frontScenarioGroupIdField), 0)
+
 def AddFrontScenarioGroupIdField(builder, frontScenarioGroupIdField):
-    return ScenarioModeExcelAddFrontScenarioGroupIdField(builder, frontScenarioGroupIdField)
-def ScenarioModeExcelStartFrontScenarioGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFrontScenarioGroupIdFieldVector(builder, numElems):
+    ScenarioModeExcelAddFrontScenarioGroupIdField(builder, frontScenarioGroupIdField)
+
+def ScenarioModeExcelStartFrontScenarioGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFrontScenarioGroupIdFieldVector(builder, numElems: int) -> int:
     return ScenarioModeExcelStartFrontScenarioGroupIdFieldVector(builder, numElems)
-def ScenarioModeExcelAddStrategyIdField(builder, strategyIdField): builder.PrependInt32Slot(15, strategyIdField, 0)
+
+def ScenarioModeExcelAddStrategyIdField(builder, strategyIdField):
+    builder.PrependInt32Slot(15, strategyIdField, 0)
+
 def AddStrategyIdField(builder, strategyIdField):
-    return ScenarioModeExcelAddStrategyIdField(builder, strategyIdField)
-def ScenarioModeExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(16, groundIdField, 0)
+    ScenarioModeExcelAddStrategyIdField(builder, strategyIdField)
+
+def ScenarioModeExcelAddGroundIdField(builder, groundIdField):
+    builder.PrependInt32Slot(16, groundIdField, 0)
+
 def AddGroundIdField(builder, groundIdField):
-    return ScenarioModeExcelAddGroundIdField(builder, groundIdField)
-def ScenarioModeExcelAddIsDefeatBattleField(builder, isDefeatBattleField): builder.PrependBoolSlot(17, isDefeatBattleField, 0)
+    ScenarioModeExcelAddGroundIdField(builder, groundIdField)
+
+def ScenarioModeExcelAddIsDefeatBattleField(builder, isDefeatBattleField):
+    builder.PrependBoolSlot(17, isDefeatBattleField, 0)
+
 def AddIsDefeatBattleField(builder, isDefeatBattleField):
-    return ScenarioModeExcelAddIsDefeatBattleField(builder, isDefeatBattleField)
-def ScenarioModeExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(18, battleDurationField, 0)
+    ScenarioModeExcelAddIsDefeatBattleField(builder, isDefeatBattleField)
+
+def ScenarioModeExcelAddBattleDurationField(builder, battleDurationField):
+    builder.PrependInt32Slot(18, battleDurationField, 0)
+
 def AddBattleDurationField(builder, battleDurationField):
-    return ScenarioModeExcelAddBattleDurationField(builder, battleDurationField)
-def ScenarioModeExcelAddFieldDateIdField(builder, fieldDateIdField): builder.PrependInt32Slot(19, fieldDateIdField, 0)
+    ScenarioModeExcelAddBattleDurationField(builder, battleDurationField)
+
+def ScenarioModeExcelAddFieldDateIdField(builder, fieldDateIdField):
+    builder.PrependInt32Slot(19, fieldDateIdField, 0)
+
 def AddFieldDateIdField(builder, fieldDateIdField):
-    return ScenarioModeExcelAddFieldDateIdField(builder, fieldDateIdField)
-def ScenarioModeExcelAddBackScenarioGroupIdField(builder, backScenarioGroupIdField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(backScenarioGroupIdField), 0)
+    ScenarioModeExcelAddFieldDateIdField(builder, fieldDateIdField)
+
+def ScenarioModeExcelAddBackScenarioGroupIdField(builder, backScenarioGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(backScenarioGroupIdField), 0)
+
 def AddBackScenarioGroupIdField(builder, backScenarioGroupIdField):
-    return ScenarioModeExcelAddBackScenarioGroupIdField(builder, backScenarioGroupIdField)
-def ScenarioModeExcelStartBackScenarioGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBackScenarioGroupIdFieldVector(builder, numElems):
+    ScenarioModeExcelAddBackScenarioGroupIdField(builder, backScenarioGroupIdField)
+
+def ScenarioModeExcelStartBackScenarioGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartBackScenarioGroupIdFieldVector(builder, numElems: int) -> int:
     return ScenarioModeExcelStartBackScenarioGroupIdFieldVector(builder, numElems)
-def ScenarioModeExcelAddClearedModeIdField(builder, clearedModeIdField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(clearedModeIdField), 0)
+
+def ScenarioModeExcelAddClearedModeIdField(builder, clearedModeIdField):
+    builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(clearedModeIdField), 0)
+
 def AddClearedModeIdField(builder, clearedModeIdField):
-    return ScenarioModeExcelAddClearedModeIdField(builder, clearedModeIdField)
-def ScenarioModeExcelStartClearedModeIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartClearedModeIdFieldVector(builder, numElems):
+    ScenarioModeExcelAddClearedModeIdField(builder, clearedModeIdField)
+
+def ScenarioModeExcelStartClearedModeIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartClearedModeIdFieldVector(builder, numElems: int) -> int:
     return ScenarioModeExcelStartClearedModeIdFieldVector(builder, numElems)
-def ScenarioModeExcelAddScenarioModeRewardIdField(builder, scenarioModeRewardIdField): builder.PrependInt32Slot(22, scenarioModeRewardIdField, 0)
+
+def ScenarioModeExcelAddScenarioModeRewardIdField(builder, scenarioModeRewardIdField):
+    builder.PrependInt32Slot(22, scenarioModeRewardIdField, 0)
+
 def AddScenarioModeRewardIdField(builder, scenarioModeRewardIdField):
-    return ScenarioModeExcelAddScenarioModeRewardIdField(builder, scenarioModeRewardIdField)
-def ScenarioModeExcelAddIsScenarioSpecialRewardField(builder, isScenarioSpecialRewardField): builder.PrependBoolSlot(23, isScenarioSpecialRewardField, 0)
+    ScenarioModeExcelAddScenarioModeRewardIdField(builder, scenarioModeRewardIdField)
+
+def ScenarioModeExcelAddIsScenarioSpecialRewardField(builder, isScenarioSpecialRewardField):
+    builder.PrependBoolSlot(23, isScenarioSpecialRewardField, 0)
+
 def AddIsScenarioSpecialRewardField(builder, isScenarioSpecialRewardField):
-    return ScenarioModeExcelAddIsScenarioSpecialRewardField(builder, isScenarioSpecialRewardField)
-def ScenarioModeExcelAddSpecialRewardPrefabNameField(builder, specialRewardPrefabNameField): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(specialRewardPrefabNameField), 0)
+    ScenarioModeExcelAddIsScenarioSpecialRewardField(builder, isScenarioSpecialRewardField)
+
+def ScenarioModeExcelAddSpecialRewardPrefabNameField(builder, specialRewardPrefabNameField):
+    builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(specialRewardPrefabNameField), 0)
+
 def AddSpecialRewardPrefabNameField(builder, specialRewardPrefabNameField):
-    return ScenarioModeExcelAddSpecialRewardPrefabNameField(builder, specialRewardPrefabNameField)
-def ScenarioModeExcelAddSpecialRewardLogOutField(builder, specialRewardLogOutField): builder.PrependBoolSlot(25, specialRewardLogOutField, 0)
+    ScenarioModeExcelAddSpecialRewardPrefabNameField(builder, specialRewardPrefabNameField)
+
+def ScenarioModeExcelAddSpecialRewardLogOutField(builder, specialRewardLogOutField):
+    builder.PrependBoolSlot(25, specialRewardLogOutField, 0)
+
 def AddSpecialRewardLogOutField(builder, specialRewardLogOutField):
-    return ScenarioModeExcelAddSpecialRewardLogOutField(builder, specialRewardLogOutField)
-def ScenarioModeExcelAddAccountLevelLimitField(builder, accountLevelLimitField): builder.PrependInt32Slot(26, accountLevelLimitField, 0)
+    ScenarioModeExcelAddSpecialRewardLogOutField(builder, specialRewardLogOutField)
+
+def ScenarioModeExcelAddAccountLevelLimitField(builder, accountLevelLimitField):
+    builder.PrependInt32Slot(26, accountLevelLimitField, 0)
+
 def AddAccountLevelLimitField(builder, accountLevelLimitField):
-    return ScenarioModeExcelAddAccountLevelLimitField(builder, accountLevelLimitField)
-def ScenarioModeExcelAddClearedStageIdField(builder, clearedStageIdField): builder.PrependInt32Slot(27, clearedStageIdField, 0)
+    ScenarioModeExcelAddAccountLevelLimitField(builder, accountLevelLimitField)
+
+def ScenarioModeExcelAddClearedStageIdField(builder, clearedStageIdField):
+    builder.PrependInt32Slot(27, clearedStageIdField, 0)
+
 def AddClearedStageIdField(builder, clearedStageIdField):
-    return ScenarioModeExcelAddClearedStageIdField(builder, clearedStageIdField)
-def ScenarioModeExcelAddNeedClubField(builder, needClubField): builder.PrependInt32Slot(28, needClubField, 0)
+    ScenarioModeExcelAddClearedStageIdField(builder, clearedStageIdField)
+
+def ScenarioModeExcelAddNeedClubField(builder, needClubField):
+    builder.PrependInt32Slot(28, needClubField, 0)
+
 def AddNeedClubField(builder, needClubField):
-    return ScenarioModeExcelAddNeedClubField(builder, needClubField)
-def ScenarioModeExcelAddNeedClubStudentCountField(builder, needClubStudentCountField): builder.PrependInt32Slot(29, needClubStudentCountField, 0)
+    ScenarioModeExcelAddNeedClubField(builder, needClubField)
+
+def ScenarioModeExcelAddNeedClubStudentCountField(builder, needClubStudentCountField):
+    builder.PrependInt32Slot(29, needClubStudentCountField, 0)
+
 def AddNeedClubStudentCountField(builder, needClubStudentCountField):
-    return ScenarioModeExcelAddNeedClubStudentCountField(builder, needClubStudentCountField)
-def ScenarioModeExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(30, eventContentIdField, 0)
+    ScenarioModeExcelAddNeedClubStudentCountField(builder, needClubStudentCountField)
+
+def ScenarioModeExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(30, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return ScenarioModeExcelAddEventContentIdField(builder, eventContentIdField)
-def ScenarioModeExcelAddEventContentTypeField(builder, eventContentTypeField): builder.PrependInt32Slot(31, eventContentTypeField, 0)
+    ScenarioModeExcelAddEventContentIdField(builder, eventContentIdField)
+
+def ScenarioModeExcelAddEventContentTypeField(builder, eventContentTypeField):
+    builder.PrependInt32Slot(31, eventContentTypeField, 0)
+
 def AddEventContentTypeField(builder, eventContentTypeField):
-    return ScenarioModeExcelAddEventContentTypeField(builder, eventContentTypeField)
-def ScenarioModeExcelAddEventContentConditionField(builder, eventContentConditionField): builder.PrependInt32Slot(32, eventContentConditionField, 0)
+    ScenarioModeExcelAddEventContentTypeField(builder, eventContentTypeField)
+
+def ScenarioModeExcelAddEventContentConditionField(builder, eventContentConditionField):
+    builder.PrependInt32Slot(32, eventContentConditionField, 0)
+
 def AddEventContentConditionField(builder, eventContentConditionField):
-    return ScenarioModeExcelAddEventContentConditionField(builder, eventContentConditionField)
-def ScenarioModeExcelAddEventContentConditionGroupField(builder, eventContentConditionGroupField): builder.PrependInt32Slot(33, eventContentConditionGroupField, 0)
+    ScenarioModeExcelAddEventContentConditionField(builder, eventContentConditionField)
+
+def ScenarioModeExcelAddEventContentConditionGroupField(builder, eventContentConditionGroupField):
+    builder.PrependInt32Slot(33, eventContentConditionGroupField, 0)
+
 def AddEventContentConditionGroupField(builder, eventContentConditionGroupField):
-    return ScenarioModeExcelAddEventContentConditionGroupField(builder, eventContentConditionGroupField)
-def ScenarioModeExcelAddMapDifficultyField(builder, mapDifficultyField): builder.PrependInt32Slot(34, mapDifficultyField, 0)
+    ScenarioModeExcelAddEventContentConditionGroupField(builder, eventContentConditionGroupField)
+
+def ScenarioModeExcelAddMapDifficultyField(builder, mapDifficultyField):
+    builder.PrependInt32Slot(34, mapDifficultyField, 0)
+
 def AddMapDifficultyField(builder, mapDifficultyField):
-    return ScenarioModeExcelAddMapDifficultyField(builder, mapDifficultyField)
-def ScenarioModeExcelAddStepIndexField(builder, stepIndexField): builder.PrependInt32Slot(35, stepIndexField, 0)
+    ScenarioModeExcelAddMapDifficultyField(builder, mapDifficultyField)
+
+def ScenarioModeExcelAddStepIndexField(builder, stepIndexField):
+    builder.PrependInt32Slot(35, stepIndexField, 0)
+
 def AddStepIndexField(builder, stepIndexField):
-    return ScenarioModeExcelAddStepIndexField(builder, stepIndexField)
-def ScenarioModeExcelAddRecommendLevelField(builder, recommendLevelField): builder.PrependInt32Slot(36, recommendLevelField, 0)
+    ScenarioModeExcelAddStepIndexField(builder, stepIndexField)
+
+def ScenarioModeExcelAddRecommendLevelField(builder, recommendLevelField):
+    builder.PrependInt32Slot(36, recommendLevelField, 0)
+
 def AddRecommendLevelField(builder, recommendLevelField):
-    return ScenarioModeExcelAddRecommendLevelField(builder, recommendLevelField)
-def ScenarioModeExcelAddEventIconParcelPathField(builder, eventIconParcelPathField): builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(eventIconParcelPathField), 0)
+    ScenarioModeExcelAddRecommendLevelField(builder, recommendLevelField)
+
+def ScenarioModeExcelAddEventIconParcelPathField(builder, eventIconParcelPathField):
+    builder.PrependUOffsetTRelativeSlot(37, flatbuffers.number_types.UOffsetTFlags.py_type(eventIconParcelPathField), 0)
+
 def AddEventIconParcelPathField(builder, eventIconParcelPathField):
-    return ScenarioModeExcelAddEventIconParcelPathField(builder, eventIconParcelPathField)
-def ScenarioModeExcelAddEventBannerTitleField(builder, eventBannerTitleField): builder.PrependUint32Slot(38, eventBannerTitleField, 0)
+    ScenarioModeExcelAddEventIconParcelPathField(builder, eventIconParcelPathField)
+
+def ScenarioModeExcelAddEventBannerTitleField(builder, eventBannerTitleField):
+    builder.PrependUint32Slot(38, eventBannerTitleField, 0)
+
 def AddEventBannerTitleField(builder, eventBannerTitleField):
-    return ScenarioModeExcelAddEventBannerTitleField(builder, eventBannerTitleField)
-def ScenarioModeExcelAddLofField(builder, lofField): builder.PrependBoolSlot(39, lofField, 0)
+    ScenarioModeExcelAddEventBannerTitleField(builder, eventBannerTitleField)
+
+def ScenarioModeExcelAddLofField(builder, lofField):
+    builder.PrependBoolSlot(39, lofField, 0)
+
 def AddLofField(builder, lofField):
-    return ScenarioModeExcelAddLofField(builder, lofField)
-def ScenarioModeExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(40, stageTopographyField, 0)
+    ScenarioModeExcelAddLofField(builder, lofField)
+
+def ScenarioModeExcelAddStageTopographyField(builder, stageTopographyField):
+    builder.PrependInt32Slot(40, stageTopographyField, 0)
+
 def AddStageTopographyField(builder, stageTopographyField):
-    return ScenarioModeExcelAddStageTopographyField(builder, stageTopographyField)
-def ScenarioModeExcelAddFixedEchelonIdField(builder, fixedEchelonIdField): builder.PrependInt32Slot(41, fixedEchelonIdField, 0)
+    ScenarioModeExcelAddStageTopographyField(builder, stageTopographyField)
+
+def ScenarioModeExcelAddFixedEchelonIdField(builder, fixedEchelonIdField):
+    builder.PrependInt32Slot(41, fixedEchelonIdField, 0)
+
 def AddFixedEchelonIdField(builder, fixedEchelonIdField):
-    return ScenarioModeExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
-def ScenarioModeExcelAddCompleteReportEventNameField(builder, completeReportEventNameField): builder.PrependUOffsetTRelativeSlot(42, flatbuffers.number_types.UOffsetTFlags.py_type(completeReportEventNameField), 0)
+    ScenarioModeExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
+
+def ScenarioModeExcelAddCompleteReportEventNameField(builder, completeReportEventNameField):
+    builder.PrependUOffsetTRelativeSlot(42, flatbuffers.number_types.UOffsetTFlags.py_type(completeReportEventNameField), 0)
+
 def AddCompleteReportEventNameField(builder, completeReportEventNameField):
-    return ScenarioModeExcelAddCompleteReportEventNameField(builder, completeReportEventNameField)
-def ScenarioModeExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(43, echelonExtensionTypeField, 0)
+    ScenarioModeExcelAddCompleteReportEventNameField(builder, completeReportEventNameField)
+
+def ScenarioModeExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
+    builder.PrependInt32Slot(43, echelonExtensionTypeField, 0)
+
 def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
-    return ScenarioModeExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
-def ScenarioModeExcelAddCollectionGroupIdField(builder, collectionGroupIdField): builder.PrependInt32Slot(44, collectionGroupIdField, 0)
+    ScenarioModeExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+
+def ScenarioModeExcelAddCollectionGroupIdField(builder, collectionGroupIdField):
+    builder.PrependInt32Slot(44, collectionGroupIdField, 0)
+
 def AddCollectionGroupIdField(builder, collectionGroupIdField):
-    return ScenarioModeExcelAddCollectionGroupIdField(builder, collectionGroupIdField)
-def ScenarioModeExcelAddFirstClearFunnelMessageField(builder, firstClearFunnelMessageField): builder.PrependUOffsetTRelativeSlot(45, flatbuffers.number_types.UOffsetTFlags.py_type(firstClearFunnelMessageField), 0)
+    ScenarioModeExcelAddCollectionGroupIdField(builder, collectionGroupIdField)
+
+def ScenarioModeExcelAddFirstClearFunnelMessageField(builder, firstClearFunnelMessageField):
+    builder.PrependUOffsetTRelativeSlot(45, flatbuffers.number_types.UOffsetTFlags.py_type(firstClearFunnelMessageField), 0)
+
 def AddFirstClearFunnelMessageField(builder, firstClearFunnelMessageField):
-    return ScenarioModeExcelAddFirstClearFunnelMessageField(builder, firstClearFunnelMessageField)
-def ScenarioModeExcelEnd(builder): return builder.EndObject()
+    ScenarioModeExcelAddFirstClearFunnelMessageField(builder, firstClearFunnelMessageField)
+
+def ScenarioModeExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioModeExcelEnd(builder)

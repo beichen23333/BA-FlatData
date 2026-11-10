@@ -49,15 +49,26 @@ class LoadingImageExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def LoadingImageExcelTableStart(builder): builder.StartObject(1)
+def LoadingImageExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return LoadingImageExcelTableStart(builder)
-def LoadingImageExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    LoadingImageExcelTableStart(builder)
+
+def LoadingImageExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return LoadingImageExcelTableAddDataList(builder, dataList)
-def LoadingImageExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    LoadingImageExcelTableAddDataList(builder, dataList)
+
+def LoadingImageExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return LoadingImageExcelTableStartDataListVector(builder, numElems)
-def LoadingImageExcelTableEnd(builder): return builder.EndObject()
+
+def LoadingImageExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return LoadingImageExcelTableEnd(builder)

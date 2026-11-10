@@ -49,15 +49,26 @@ class MinigameCCGEnemyGroupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameCCGEnemyGroupExcelTableStart(builder): builder.StartObject(1)
+def MinigameCCGEnemyGroupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameCCGEnemyGroupExcelTableStart(builder)
-def MinigameCCGEnemyGroupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MinigameCCGEnemyGroupExcelTableStart(builder)
+
+def MinigameCCGEnemyGroupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MinigameCCGEnemyGroupExcelTableAddDataList(builder, dataList)
-def MinigameCCGEnemyGroupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MinigameCCGEnemyGroupExcelTableAddDataList(builder, dataList)
+
+def MinigameCCGEnemyGroupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MinigameCCGEnemyGroupExcelTableStartDataListVector(builder, numElems)
-def MinigameCCGEnemyGroupExcelTableEnd(builder): return builder.EndObject()
+
+def MinigameCCGEnemyGroupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGEnemyGroupExcelTableEnd(builder)

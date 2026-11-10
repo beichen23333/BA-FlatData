@@ -49,15 +49,26 @@ class InteractiveWorldRaidStageExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def InteractiveWorldRaidStageExcelTableStart(builder): builder.StartObject(1)
+def InteractiveWorldRaidStageExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return InteractiveWorldRaidStageExcelTableStart(builder)
-def InteractiveWorldRaidStageExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    InteractiveWorldRaidStageExcelTableStart(builder)
+
+def InteractiveWorldRaidStageExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return InteractiveWorldRaidStageExcelTableAddDataList(builder, dataList)
-def InteractiveWorldRaidStageExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    InteractiveWorldRaidStageExcelTableAddDataList(builder, dataList)
+
+def InteractiveWorldRaidStageExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidStageExcelTableStartDataListVector(builder, numElems)
-def InteractiveWorldRaidStageExcelTableEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidStageExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidStageExcelTableEnd(builder)

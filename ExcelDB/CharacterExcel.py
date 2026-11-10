@@ -533,216 +533,428 @@ class CharacterExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def CharacterExcelStart(builder): builder.StartObject(67)
+def CharacterExcelStart(builder):
+    builder.StartObject(67)
+
 def Start(builder):
-    return CharacterExcelStart(builder)
-def CharacterExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    CharacterExcelStart(builder)
+
+def CharacterExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return CharacterExcelAddIdField(builder, idField)
-def CharacterExcelAddDevNameField(builder, devNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+    CharacterExcelAddIdField(builder, idField)
+
+def CharacterExcelAddDevNameField(builder, devNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+
 def AddDevNameField(builder, devNameField):
-    return CharacterExcelAddDevNameField(builder, devNameField)
-def CharacterExcelAddCostumeGroupIdField(builder, costumeGroupIdField): builder.PrependInt32Slot(2, costumeGroupIdField, 0)
+    CharacterExcelAddDevNameField(builder, devNameField)
+
+def CharacterExcelAddCostumeGroupIdField(builder, costumeGroupIdField):
+    builder.PrependInt32Slot(2, costumeGroupIdField, 0)
+
 def AddCostumeGroupIdField(builder, costumeGroupIdField):
-    return CharacterExcelAddCostumeGroupIdField(builder, costumeGroupIdField)
-def CharacterExcelAddIsPlayableField(builder, isPlayableField): builder.PrependBoolSlot(3, isPlayableField, 0)
+    CharacterExcelAddCostumeGroupIdField(builder, costumeGroupIdField)
+
+def CharacterExcelAddIsPlayableField(builder, isPlayableField):
+    builder.PrependBoolSlot(3, isPlayableField, 0)
+
 def AddIsPlayableField(builder, isPlayableField):
-    return CharacterExcelAddIsPlayableField(builder, isPlayableField)
-def CharacterExcelAddProductionStepField(builder, productionStepField): builder.PrependInt32Slot(4, productionStepField, 0)
+    CharacterExcelAddIsPlayableField(builder, isPlayableField)
+
+def CharacterExcelAddProductionStepField(builder, productionStepField):
+    builder.PrependInt32Slot(4, productionStepField, 0)
+
 def AddProductionStepField(builder, productionStepField):
-    return CharacterExcelAddProductionStepField(builder, productionStepField)
-def CharacterExcelAddCollectionVisibleField(builder, collectionVisibleField): builder.PrependBoolSlot(5, collectionVisibleField, 0)
+    CharacterExcelAddProductionStepField(builder, productionStepField)
+
+def CharacterExcelAddCollectionVisibleField(builder, collectionVisibleField):
+    builder.PrependBoolSlot(5, collectionVisibleField, 0)
+
 def AddCollectionVisibleField(builder, collectionVisibleField):
-    return CharacterExcelAddCollectionVisibleField(builder, collectionVisibleField)
-def CharacterExcelAddReleaseDateField(builder, releaseDateField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(releaseDateField), 0)
+    CharacterExcelAddCollectionVisibleField(builder, collectionVisibleField)
+
+def CharacterExcelAddReleaseDateField(builder, releaseDateField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(releaseDateField), 0)
+
 def AddReleaseDateField(builder, releaseDateField):
-    return CharacterExcelAddReleaseDateField(builder, releaseDateField)
-def CharacterExcelAddCollectionVisibleStartDateField(builder, collectionVisibleStartDateField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(collectionVisibleStartDateField), 0)
+    CharacterExcelAddReleaseDateField(builder, releaseDateField)
+
+def CharacterExcelAddCollectionVisibleStartDateField(builder, collectionVisibleStartDateField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(collectionVisibleStartDateField), 0)
+
 def AddCollectionVisibleStartDateField(builder, collectionVisibleStartDateField):
-    return CharacterExcelAddCollectionVisibleStartDateField(builder, collectionVisibleStartDateField)
-def CharacterExcelAddCollectionVisibleEndDateField(builder, collectionVisibleEndDateField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(collectionVisibleEndDateField), 0)
+    CharacterExcelAddCollectionVisibleStartDateField(builder, collectionVisibleStartDateField)
+
+def CharacterExcelAddCollectionVisibleEndDateField(builder, collectionVisibleEndDateField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(collectionVisibleEndDateField), 0)
+
 def AddCollectionVisibleEndDateField(builder, collectionVisibleEndDateField):
-    return CharacterExcelAddCollectionVisibleEndDateField(builder, collectionVisibleEndDateField)
-def CharacterExcelAddIsPlayableCharacterField(builder, isPlayableCharacterField): builder.PrependBoolSlot(9, isPlayableCharacterField, 0)
+    CharacterExcelAddCollectionVisibleEndDateField(builder, collectionVisibleEndDateField)
+
+def CharacterExcelAddIsPlayableCharacterField(builder, isPlayableCharacterField):
+    builder.PrependBoolSlot(9, isPlayableCharacterField, 0)
+
 def AddIsPlayableCharacterField(builder, isPlayableCharacterField):
-    return CharacterExcelAddIsPlayableCharacterField(builder, isPlayableCharacterField)
-def CharacterExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(10, localizeEtcIdField, 0)
+    CharacterExcelAddIsPlayableCharacterField(builder, isPlayableCharacterField)
+
+def CharacterExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(10, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return CharacterExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def CharacterExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(11, rarityField, 0)
+    CharacterExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def CharacterExcelAddRarityField(builder, rarityField):
+    builder.PrependInt32Slot(11, rarityField, 0)
+
 def AddRarityField(builder, rarityField):
-    return CharacterExcelAddRarityField(builder, rarityField)
-def CharacterExcelAddIsNPCField(builder, isNPCField): builder.PrependBoolSlot(12, isNPCField, 0)
+    CharacterExcelAddRarityField(builder, rarityField)
+
+def CharacterExcelAddIsNPCField(builder, isNPCField):
+    builder.PrependBoolSlot(12, isNPCField, 0)
+
 def AddIsNPCField(builder, isNPCField):
-    return CharacterExcelAddIsNPCField(builder, isNPCField)
-def CharacterExcelAddTacticEntityTypeField(builder, tacticEntityTypeField): builder.PrependInt32Slot(13, tacticEntityTypeField, 0)
+    CharacterExcelAddIsNPCField(builder, isNPCField)
+
+def CharacterExcelAddTacticEntityTypeField(builder, tacticEntityTypeField):
+    builder.PrependInt32Slot(13, tacticEntityTypeField, 0)
+
 def AddTacticEntityTypeField(builder, tacticEntityTypeField):
-    return CharacterExcelAddTacticEntityTypeField(builder, tacticEntityTypeField)
-def CharacterExcelAddCanSurviveField(builder, canSurviveField): builder.PrependBoolSlot(14, canSurviveField, 0)
+    CharacterExcelAddTacticEntityTypeField(builder, tacticEntityTypeField)
+
+def CharacterExcelAddCanSurviveField(builder, canSurviveField):
+    builder.PrependBoolSlot(14, canSurviveField, 0)
+
 def AddCanSurviveField(builder, canSurviveField):
-    return CharacterExcelAddCanSurviveField(builder, canSurviveField)
-def CharacterExcelAddIsDummyField(builder, isDummyField): builder.PrependBoolSlot(15, isDummyField, 0)
+    CharacterExcelAddCanSurviveField(builder, canSurviveField)
+
+def CharacterExcelAddIsDummyField(builder, isDummyField):
+    builder.PrependBoolSlot(15, isDummyField, 0)
+
 def AddIsDummyField(builder, isDummyField):
-    return CharacterExcelAddIsDummyField(builder, isDummyField)
-def CharacterExcelAddSubPartsCountField(builder, subPartsCountField): builder.PrependInt32Slot(16, subPartsCountField, 0)
+    CharacterExcelAddIsDummyField(builder, isDummyField)
+
+def CharacterExcelAddSubPartsCountField(builder, subPartsCountField):
+    builder.PrependInt32Slot(16, subPartsCountField, 0)
+
 def AddSubPartsCountField(builder, subPartsCountField):
-    return CharacterExcelAddSubPartsCountField(builder, subPartsCountField)
-def CharacterExcelAddTacticRoleField(builder, tacticRoleField): builder.PrependFloat32Slot(17, tacticRoleField, 0.0)
+    CharacterExcelAddSubPartsCountField(builder, subPartsCountField)
+
+def CharacterExcelAddTacticRoleField(builder, tacticRoleField):
+    builder.PrependFloat32Slot(17, tacticRoleField, 0.0)
+
 def AddTacticRoleField(builder, tacticRoleField):
-    return CharacterExcelAddTacticRoleField(builder, tacticRoleField)
-def CharacterExcelAddWeaponTypeField(builder, weaponTypeField): builder.PrependInt32Slot(18, weaponTypeField, 0)
+    CharacterExcelAddTacticRoleField(builder, tacticRoleField)
+
+def CharacterExcelAddWeaponTypeField(builder, weaponTypeField):
+    builder.PrependInt32Slot(18, weaponTypeField, 0)
+
 def AddWeaponTypeField(builder, weaponTypeField):
-    return CharacterExcelAddWeaponTypeField(builder, weaponTypeField)
-def CharacterExcelAddTacticRangeField(builder, tacticRangeField): builder.PrependInt32Slot(19, tacticRangeField, 0)
+    CharacterExcelAddWeaponTypeField(builder, weaponTypeField)
+
+def CharacterExcelAddTacticRangeField(builder, tacticRangeField):
+    builder.PrependInt32Slot(19, tacticRangeField, 0)
+
 def AddTacticRangeField(builder, tacticRangeField):
-    return CharacterExcelAddTacticRangeField(builder, tacticRangeField)
-def CharacterExcelAddBulletTypeField(builder, bulletTypeField): builder.PrependInt32Slot(20, bulletTypeField, 0)
+    CharacterExcelAddTacticRangeField(builder, tacticRangeField)
+
+def CharacterExcelAddBulletTypeField(builder, bulletTypeField):
+    builder.PrependInt32Slot(20, bulletTypeField, 0)
+
 def AddBulletTypeField(builder, bulletTypeField):
-    return CharacterExcelAddBulletTypeField(builder, bulletTypeField)
-def CharacterExcelAddArmorTypeField(builder, armorTypeField): builder.PrependInt32Slot(21, armorTypeField, 0)
+    CharacterExcelAddBulletTypeField(builder, bulletTypeField)
+
+def CharacterExcelAddArmorTypeField(builder, armorTypeField):
+    builder.PrependInt32Slot(21, armorTypeField, 0)
+
 def AddArmorTypeField(builder, armorTypeField):
-    return CharacterExcelAddArmorTypeField(builder, armorTypeField)
-def CharacterExcelAddAimIKTypeField(builder, aimIKTypeField): builder.PrependInt32Slot(22, aimIKTypeField, 0)
+    CharacterExcelAddArmorTypeField(builder, armorTypeField)
+
+def CharacterExcelAddAimIKTypeField(builder, aimIKTypeField):
+    builder.PrependInt32Slot(22, aimIKTypeField, 0)
+
 def AddAimIKTypeField(builder, aimIKTypeField):
-    return CharacterExcelAddAimIKTypeField(builder, aimIKTypeField)
-def CharacterExcelAddSchoolField(builder, schoolField): builder.PrependInt32Slot(23, schoolField, 0)
+    CharacterExcelAddAimIKTypeField(builder, aimIKTypeField)
+
+def CharacterExcelAddSchoolField(builder, schoolField):
+    builder.PrependInt32Slot(23, schoolField, 0)
+
 def AddSchoolField(builder, schoolField):
-    return CharacterExcelAddSchoolField(builder, schoolField)
-def CharacterExcelAddClubField(builder, clubField): builder.PrependInt32Slot(24, clubField, 0)
+    CharacterExcelAddSchoolField(builder, schoolField)
+
+def CharacterExcelAddClubField(builder, clubField):
+    builder.PrependInt32Slot(24, clubField, 0)
+
 def AddClubField(builder, clubField):
-    return CharacterExcelAddClubField(builder, clubField)
-def CharacterExcelAddDefaultStarGradeField(builder, defaultStarGradeField): builder.PrependInt32Slot(25, defaultStarGradeField, 0)
+    CharacterExcelAddClubField(builder, clubField)
+
+def CharacterExcelAddDefaultStarGradeField(builder, defaultStarGradeField):
+    builder.PrependInt32Slot(25, defaultStarGradeField, 0)
+
 def AddDefaultStarGradeField(builder, defaultStarGradeField):
-    return CharacterExcelAddDefaultStarGradeField(builder, defaultStarGradeField)
-def CharacterExcelAddMaxStarGradeField(builder, maxStarGradeField): builder.PrependInt32Slot(26, maxStarGradeField, 0)
+    CharacterExcelAddDefaultStarGradeField(builder, defaultStarGradeField)
+
+def CharacterExcelAddMaxStarGradeField(builder, maxStarGradeField):
+    builder.PrependInt32Slot(26, maxStarGradeField, 0)
+
 def AddMaxStarGradeField(builder, maxStarGradeField):
-    return CharacterExcelAddMaxStarGradeField(builder, maxStarGradeField)
-def CharacterExcelAddStatLevelUpTypeField(builder, statLevelUpTypeField): builder.PrependInt32Slot(27, statLevelUpTypeField, 0)
+    CharacterExcelAddMaxStarGradeField(builder, maxStarGradeField)
+
+def CharacterExcelAddStatLevelUpTypeField(builder, statLevelUpTypeField):
+    builder.PrependInt32Slot(27, statLevelUpTypeField, 0)
+
 def AddStatLevelUpTypeField(builder, statLevelUpTypeField):
-    return CharacterExcelAddStatLevelUpTypeField(builder, statLevelUpTypeField)
-def CharacterExcelAddSquadTypeField(builder, squadTypeField): builder.PrependInt32Slot(28, squadTypeField, 0)
+    CharacterExcelAddStatLevelUpTypeField(builder, statLevelUpTypeField)
+
+def CharacterExcelAddSquadTypeField(builder, squadTypeField):
+    builder.PrependInt32Slot(28, squadTypeField, 0)
+
 def AddSquadTypeField(builder, squadTypeField):
-    return CharacterExcelAddSquadTypeField(builder, squadTypeField)
-def CharacterExcelAddJumpableField(builder, jumpableField): builder.PrependBoolSlot(29, jumpableField, 0)
+    CharacterExcelAddSquadTypeField(builder, squadTypeField)
+
+def CharacterExcelAddJumpableField(builder, jumpableField):
+    builder.PrependBoolSlot(29, jumpableField, 0)
+
 def AddJumpableField(builder, jumpableField):
-    return CharacterExcelAddJumpableField(builder, jumpableField)
-def CharacterExcelAddPersonalityIdField(builder, personalityIdField): builder.PrependInt32Slot(30, personalityIdField, 0)
+    CharacterExcelAddJumpableField(builder, jumpableField)
+
+def CharacterExcelAddPersonalityIdField(builder, personalityIdField):
+    builder.PrependInt32Slot(30, personalityIdField, 0)
+
 def AddPersonalityIdField(builder, personalityIdField):
-    return CharacterExcelAddPersonalityIdField(builder, personalityIdField)
-def CharacterExcelAddCharacterAIIdField(builder, characterAIIdField): builder.PrependInt32Slot(31, characterAIIdField, 0)
+    CharacterExcelAddPersonalityIdField(builder, personalityIdField)
+
+def CharacterExcelAddCharacterAIIdField(builder, characterAIIdField):
+    builder.PrependInt32Slot(31, characterAIIdField, 0)
+
 def AddCharacterAIIdField(builder, characterAIIdField):
-    return CharacterExcelAddCharacterAIIdField(builder, characterAIIdField)
-def CharacterExcelAddExternalBTIdField(builder, externalBTIdField): builder.PrependInt32Slot(32, externalBTIdField, 0)
+    CharacterExcelAddCharacterAIIdField(builder, characterAIIdField)
+
+def CharacterExcelAddExternalBTIdField(builder, externalBTIdField):
+    builder.PrependInt32Slot(32, externalBTIdField, 0)
+
 def AddExternalBTIdField(builder, externalBTIdField):
-    return CharacterExcelAddExternalBTIdField(builder, externalBTIdField)
-def CharacterExcelAddMainCombatStyleIdField(builder, mainCombatStyleIdField): builder.PrependInt32Slot(33, mainCombatStyleIdField, 0)
+    CharacterExcelAddExternalBTIdField(builder, externalBTIdField)
+
+def CharacterExcelAddMainCombatStyleIdField(builder, mainCombatStyleIdField):
+    builder.PrependInt32Slot(33, mainCombatStyleIdField, 0)
+
 def AddMainCombatStyleIdField(builder, mainCombatStyleIdField):
-    return CharacterExcelAddMainCombatStyleIdField(builder, mainCombatStyleIdField)
-def CharacterExcelAddCombatStyleIndexField(builder, combatStyleIndexField): builder.PrependInt32Slot(34, combatStyleIndexField, 0)
+    CharacterExcelAddMainCombatStyleIdField(builder, mainCombatStyleIdField)
+
+def CharacterExcelAddCombatStyleIndexField(builder, combatStyleIndexField):
+    builder.PrependInt32Slot(34, combatStyleIndexField, 0)
+
 def AddCombatStyleIndexField(builder, combatStyleIndexField):
-    return CharacterExcelAddCombatStyleIndexField(builder, combatStyleIndexField)
-def CharacterExcelAddUseRepStyleOnCharacterGrowthField(builder, useRepStyleOnCharacterGrowthField): builder.PrependBoolSlot(35, useRepStyleOnCharacterGrowthField, 0)
+    CharacterExcelAddCombatStyleIndexField(builder, combatStyleIndexField)
+
+def CharacterExcelAddUseRepStyleOnCharacterGrowthField(builder, useRepStyleOnCharacterGrowthField):
+    builder.PrependBoolSlot(35, useRepStyleOnCharacterGrowthField, 0)
+
 def AddUseRepStyleOnCharacterGrowthField(builder, useRepStyleOnCharacterGrowthField):
-    return CharacterExcelAddUseRepStyleOnCharacterGrowthField(builder, useRepStyleOnCharacterGrowthField)
-def CharacterExcelAddScenarioCharacterField(builder, scenarioCharacterField): builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(scenarioCharacterField), 0)
+    CharacterExcelAddUseRepStyleOnCharacterGrowthField(builder, useRepStyleOnCharacterGrowthField)
+
+def CharacterExcelAddScenarioCharacterField(builder, scenarioCharacterField):
+    builder.PrependUOffsetTRelativeSlot(36, flatbuffers.number_types.UOffsetTFlags.py_type(scenarioCharacterField), 0)
+
 def AddScenarioCharacterField(builder, scenarioCharacterField):
-    return CharacterExcelAddScenarioCharacterField(builder, scenarioCharacterField)
-def CharacterExcelAddSpawnTemplateIdField(builder, spawnTemplateIdField): builder.PrependUint32Slot(37, spawnTemplateIdField, 0)
+    CharacterExcelAddScenarioCharacterField(builder, scenarioCharacterField)
+
+def CharacterExcelAddSpawnTemplateIdField(builder, spawnTemplateIdField):
+    builder.PrependUint32Slot(37, spawnTemplateIdField, 0)
+
 def AddSpawnTemplateIdField(builder, spawnTemplateIdField):
-    return CharacterExcelAddSpawnTemplateIdField(builder, spawnTemplateIdField)
-def CharacterExcelAddFavorLevelupTypeField(builder, favorLevelupTypeField): builder.PrependInt32Slot(38, favorLevelupTypeField, 0)
+    CharacterExcelAddSpawnTemplateIdField(builder, spawnTemplateIdField)
+
+def CharacterExcelAddFavorLevelupTypeField(builder, favorLevelupTypeField):
+    builder.PrependInt32Slot(38, favorLevelupTypeField, 0)
+
 def AddFavorLevelupTypeField(builder, favorLevelupTypeField):
-    return CharacterExcelAddFavorLevelupTypeField(builder, favorLevelupTypeField)
-def CharacterExcelAddEquipmentSlotField(builder, equipmentSlotField): builder.PrependUOffsetTRelativeSlot(39, flatbuffers.number_types.UOffsetTFlags.py_type(equipmentSlotField), 0)
+    CharacterExcelAddFavorLevelupTypeField(builder, favorLevelupTypeField)
+
+def CharacterExcelAddEquipmentSlotField(builder, equipmentSlotField):
+    builder.PrependUOffsetTRelativeSlot(39, flatbuffers.number_types.UOffsetTFlags.py_type(equipmentSlotField), 0)
+
 def AddEquipmentSlotField(builder, equipmentSlotField):
-    return CharacterExcelAddEquipmentSlotField(builder, equipmentSlotField)
-def CharacterExcelStartEquipmentSlotFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEquipmentSlotFieldVector(builder, numElems):
+    CharacterExcelAddEquipmentSlotField(builder, equipmentSlotField)
+
+def CharacterExcelStartEquipmentSlotFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartEquipmentSlotFieldVector(builder, numElems: int) -> int:
     return CharacterExcelStartEquipmentSlotFieldVector(builder, numElems)
-def CharacterExcelAddWeaponLocalizeIdField(builder, weaponLocalizeIdField): builder.PrependUint32Slot(40, weaponLocalizeIdField, 0)
+
+def CharacterExcelAddWeaponLocalizeIdField(builder, weaponLocalizeIdField):
+    builder.PrependUint32Slot(40, weaponLocalizeIdField, 0)
+
 def AddWeaponLocalizeIdField(builder, weaponLocalizeIdField):
-    return CharacterExcelAddWeaponLocalizeIdField(builder, weaponLocalizeIdField)
-def CharacterExcelAddDisplayEnemyInfoField(builder, displayEnemyInfoField): builder.PrependBoolSlot(41, displayEnemyInfoField, 0)
+    CharacterExcelAddWeaponLocalizeIdField(builder, weaponLocalizeIdField)
+
+def CharacterExcelAddDisplayEnemyInfoField(builder, displayEnemyInfoField):
+    builder.PrependBoolSlot(41, displayEnemyInfoField, 0)
+
 def AddDisplayEnemyInfoField(builder, displayEnemyInfoField):
-    return CharacterExcelAddDisplayEnemyInfoField(builder, displayEnemyInfoField)
-def CharacterExcelAddBodyRadiusField(builder, bodyRadiusField): builder.PrependInt32Slot(42, bodyRadiusField, 0)
+    CharacterExcelAddDisplayEnemyInfoField(builder, displayEnemyInfoField)
+
+def CharacterExcelAddBodyRadiusField(builder, bodyRadiusField):
+    builder.PrependInt32Slot(42, bodyRadiusField, 0)
+
 def AddBodyRadiusField(builder, bodyRadiusField):
-    return CharacterExcelAddBodyRadiusField(builder, bodyRadiusField)
-def CharacterExcelAddRandomEffectRadiusField(builder, randomEffectRadiusField): builder.PrependInt32Slot(43, randomEffectRadiusField, 0)
+    CharacterExcelAddBodyRadiusField(builder, bodyRadiusField)
+
+def CharacterExcelAddRandomEffectRadiusField(builder, randomEffectRadiusField):
+    builder.PrependInt32Slot(43, randomEffectRadiusField, 0)
+
 def AddRandomEffectRadiusField(builder, randomEffectRadiusField):
-    return CharacterExcelAddRandomEffectRadiusField(builder, randomEffectRadiusField)
-def CharacterExcelAddTargetGuideScaleField(builder, targetGuideScaleField): builder.PrependFloat32Slot(44, targetGuideScaleField, 0.0)
+    CharacterExcelAddRandomEffectRadiusField(builder, randomEffectRadiusField)
+
+def CharacterExcelAddTargetGuideScaleField(builder, targetGuideScaleField):
+    builder.PrependFloat32Slot(44, targetGuideScaleField, 0.0)
+
 def AddTargetGuideScaleField(builder, targetGuideScaleField):
-    return CharacterExcelAddTargetGuideScaleField(builder, targetGuideScaleField)
-def CharacterExcelAddHPBarHideField(builder, hPBarHideField): builder.PrependBoolSlot(45, hPBarHideField, 0)
+    CharacterExcelAddTargetGuideScaleField(builder, targetGuideScaleField)
+
+def CharacterExcelAddHPBarHideField(builder, hPBarHideField):
+    builder.PrependBoolSlot(45, hPBarHideField, 0)
+
 def AddHPBarHideField(builder, hPBarHideField):
-    return CharacterExcelAddHPBarHideField(builder, hPBarHideField)
-def CharacterExcelAddHpBarHeightField(builder, hpBarHeightField): builder.PrependFloat32Slot(46, hpBarHeightField, 0.0)
+    CharacterExcelAddHPBarHideField(builder, hPBarHideField)
+
+def CharacterExcelAddHpBarHeightField(builder, hpBarHeightField):
+    builder.PrependFloat32Slot(46, hpBarHeightField, 0.0)
+
 def AddHpBarHeightField(builder, hpBarHeightField):
-    return CharacterExcelAddHpBarHeightField(builder, hpBarHeightField)
-def CharacterExcelAddHighlightFloaterHeightField(builder, highlightFloaterHeightField): builder.PrependFloat32Slot(47, highlightFloaterHeightField, 0.0)
+    CharacterExcelAddHpBarHeightField(builder, hpBarHeightField)
+
+def CharacterExcelAddHighlightFloaterHeightField(builder, highlightFloaterHeightField):
+    builder.PrependFloat32Slot(47, highlightFloaterHeightField, 0.0)
+
 def AddHighlightFloaterHeightField(builder, highlightFloaterHeightField):
-    return CharacterExcelAddHighlightFloaterHeightField(builder, highlightFloaterHeightField)
-def CharacterExcelAddEmojiOffsetXField(builder, emojiOffsetXField): builder.PrependFloat32Slot(48, emojiOffsetXField, 0.0)
+    CharacterExcelAddHighlightFloaterHeightField(builder, highlightFloaterHeightField)
+
+def CharacterExcelAddEmojiOffsetXField(builder, emojiOffsetXField):
+    builder.PrependFloat32Slot(48, emojiOffsetXField, 0.0)
+
 def AddEmojiOffsetXField(builder, emojiOffsetXField):
-    return CharacterExcelAddEmojiOffsetXField(builder, emojiOffsetXField)
-def CharacterExcelAddEmojiOffsetYField(builder, emojiOffsetYField): builder.PrependFloat32Slot(49, emojiOffsetYField, 0.0)
+    CharacterExcelAddEmojiOffsetXField(builder, emojiOffsetXField)
+
+def CharacterExcelAddEmojiOffsetYField(builder, emojiOffsetYField):
+    builder.PrependFloat32Slot(49, emojiOffsetYField, 0.0)
+
 def AddEmojiOffsetYField(builder, emojiOffsetYField):
-    return CharacterExcelAddEmojiOffsetYField(builder, emojiOffsetYField)
-def CharacterExcelAddMoveStartFrameField(builder, moveStartFrameField): builder.PrependInt32Slot(50, moveStartFrameField, 0)
+    CharacterExcelAddEmojiOffsetYField(builder, emojiOffsetYField)
+
+def CharacterExcelAddMoveStartFrameField(builder, moveStartFrameField):
+    builder.PrependInt32Slot(50, moveStartFrameField, 0)
+
 def AddMoveStartFrameField(builder, moveStartFrameField):
-    return CharacterExcelAddMoveStartFrameField(builder, moveStartFrameField)
-def CharacterExcelAddMoveEndFrameField(builder, moveEndFrameField): builder.PrependInt32Slot(51, moveEndFrameField, 0)
+    CharacterExcelAddMoveStartFrameField(builder, moveStartFrameField)
+
+def CharacterExcelAddMoveEndFrameField(builder, moveEndFrameField):
+    builder.PrependInt32Slot(51, moveEndFrameField, 0)
+
 def AddMoveEndFrameField(builder, moveEndFrameField):
-    return CharacterExcelAddMoveEndFrameField(builder, moveEndFrameField)
-def CharacterExcelAddJumpMotionFrameField(builder, jumpMotionFrameField): builder.PrependInt32Slot(52, jumpMotionFrameField, 0)
+    CharacterExcelAddMoveEndFrameField(builder, moveEndFrameField)
+
+def CharacterExcelAddJumpMotionFrameField(builder, jumpMotionFrameField):
+    builder.PrependInt32Slot(52, jumpMotionFrameField, 0)
+
 def AddJumpMotionFrameField(builder, jumpMotionFrameField):
-    return CharacterExcelAddJumpMotionFrameField(builder, jumpMotionFrameField)
-def CharacterExcelAddAppearFrameField(builder, appearFrameField): builder.PrependInt32Slot(53, appearFrameField, 0)
+    CharacterExcelAddJumpMotionFrameField(builder, jumpMotionFrameField)
+
+def CharacterExcelAddAppearFrameField(builder, appearFrameField):
+    builder.PrependInt32Slot(53, appearFrameField, 0)
+
 def AddAppearFrameField(builder, appearFrameField):
-    return CharacterExcelAddAppearFrameField(builder, appearFrameField)
-def CharacterExcelAddCanMoveField(builder, canMoveField): builder.PrependBoolSlot(54, canMoveField, 0)
+    CharacterExcelAddAppearFrameField(builder, appearFrameField)
+
+def CharacterExcelAddCanMoveField(builder, canMoveField):
+    builder.PrependBoolSlot(54, canMoveField, 0)
+
 def AddCanMoveField(builder, canMoveField):
-    return CharacterExcelAddCanMoveField(builder, canMoveField)
-def CharacterExcelAddCanFixField(builder, canFixField): builder.PrependBoolSlot(55, canFixField, 0)
+    CharacterExcelAddCanMoveField(builder, canMoveField)
+
+def CharacterExcelAddCanFixField(builder, canFixField):
+    builder.PrependBoolSlot(55, canFixField, 0)
+
 def AddCanFixField(builder, canFixField):
-    return CharacterExcelAddCanFixField(builder, canFixField)
-def CharacterExcelAddCanCrowdControlField(builder, canCrowdControlField): builder.PrependBoolSlot(56, canCrowdControlField, 0)
+    CharacterExcelAddCanFixField(builder, canFixField)
+
+def CharacterExcelAddCanCrowdControlField(builder, canCrowdControlField):
+    builder.PrependBoolSlot(56, canCrowdControlField, 0)
+
 def AddCanCrowdControlField(builder, canCrowdControlField):
-    return CharacterExcelAddCanCrowdControlField(builder, canCrowdControlField)
-def CharacterExcelAddCanBattleItemMoveField(builder, canBattleItemMoveField): builder.PrependBoolSlot(57, canBattleItemMoveField, 0)
+    CharacterExcelAddCanCrowdControlField(builder, canCrowdControlField)
+
+def CharacterExcelAddCanBattleItemMoveField(builder, canBattleItemMoveField):
+    builder.PrependBoolSlot(57, canBattleItemMoveField, 0)
+
 def AddCanBattleItemMoveField(builder, canBattleItemMoveField):
-    return CharacterExcelAddCanBattleItemMoveField(builder, canBattleItemMoveField)
-def CharacterExcelAddIgnoreObstacleField(builder, ignoreObstacleField): builder.PrependBoolSlot(58, ignoreObstacleField, 0)
+    CharacterExcelAddCanBattleItemMoveField(builder, canBattleItemMoveField)
+
+def CharacterExcelAddIgnoreObstacleField(builder, ignoreObstacleField):
+    builder.PrependBoolSlot(58, ignoreObstacleField, 0)
+
 def AddIgnoreObstacleField(builder, ignoreObstacleField):
-    return CharacterExcelAddIgnoreObstacleField(builder, ignoreObstacleField)
-def CharacterExcelAddIsAirUnitField(builder, isAirUnitField): builder.PrependBoolSlot(59, isAirUnitField, 0)
+    CharacterExcelAddIgnoreObstacleField(builder, ignoreObstacleField)
+
+def CharacterExcelAddIsAirUnitField(builder, isAirUnitField):
+    builder.PrependBoolSlot(59, isAirUnitField, 0)
+
 def AddIsAirUnitField(builder, isAirUnitField):
-    return CharacterExcelAddIsAirUnitField(builder, isAirUnitField)
-def CharacterExcelAddAirUnitHeightField(builder, airUnitHeightField): builder.PrependInt32Slot(60, airUnitHeightField, 0)
+    CharacterExcelAddIsAirUnitField(builder, isAirUnitField)
+
+def CharacterExcelAddAirUnitHeightField(builder, airUnitHeightField):
+    builder.PrependInt32Slot(60, airUnitHeightField, 0)
+
 def AddAirUnitHeightField(builder, airUnitHeightField):
-    return CharacterExcelAddAirUnitHeightField(builder, airUnitHeightField)
-def CharacterExcelAddTagsField(builder, tagsField): builder.PrependUOffsetTRelativeSlot(61, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+    CharacterExcelAddAirUnitHeightField(builder, airUnitHeightField)
+
+def CharacterExcelAddTagsField(builder, tagsField):
+    builder.PrependUOffsetTRelativeSlot(61, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+
 def AddTagsField(builder, tagsField):
-    return CharacterExcelAddTagsField(builder, tagsField)
-def CharacterExcelStartTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTagsFieldVector(builder, numElems):
+    CharacterExcelAddTagsField(builder, tagsField)
+
+def CharacterExcelStartTagsFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartTagsFieldVector(builder, numElems: int) -> int:
     return CharacterExcelStartTagsFieldVector(builder, numElems)
-def CharacterExcelAddSecretStoneItemIdField(builder, secretStoneItemIdField): builder.PrependInt32Slot(62, secretStoneItemIdField, 0)
+
+def CharacterExcelAddSecretStoneItemIdField(builder, secretStoneItemIdField):
+    builder.PrependInt32Slot(62, secretStoneItemIdField, 0)
+
 def AddSecretStoneItemIdField(builder, secretStoneItemIdField):
-    return CharacterExcelAddSecretStoneItemIdField(builder, secretStoneItemIdField)
-def CharacterExcelAddSecretStoneItemAmountField(builder, secretStoneItemAmountField): builder.PrependInt32Slot(63, secretStoneItemAmountField, 0)
+    CharacterExcelAddSecretStoneItemIdField(builder, secretStoneItemIdField)
+
+def CharacterExcelAddSecretStoneItemAmountField(builder, secretStoneItemAmountField):
+    builder.PrependInt32Slot(63, secretStoneItemAmountField, 0)
+
 def AddSecretStoneItemAmountField(builder, secretStoneItemAmountField):
-    return CharacterExcelAddSecretStoneItemAmountField(builder, secretStoneItemAmountField)
-def CharacterExcelAddCharacterPieceItemIdField(builder, characterPieceItemIdField): builder.PrependInt32Slot(64, characterPieceItemIdField, 0)
+    CharacterExcelAddSecretStoneItemAmountField(builder, secretStoneItemAmountField)
+
+def CharacterExcelAddCharacterPieceItemIdField(builder, characterPieceItemIdField):
+    builder.PrependInt32Slot(64, characterPieceItemIdField, 0)
+
 def AddCharacterPieceItemIdField(builder, characterPieceItemIdField):
-    return CharacterExcelAddCharacterPieceItemIdField(builder, characterPieceItemIdField)
-def CharacterExcelAddCharacterPieceItemAmountField(builder, characterPieceItemAmountField): builder.PrependInt32Slot(65, characterPieceItemAmountField, 0)
+    CharacterExcelAddCharacterPieceItemIdField(builder, characterPieceItemIdField)
+
+def CharacterExcelAddCharacterPieceItemAmountField(builder, characterPieceItemAmountField):
+    builder.PrependInt32Slot(65, characterPieceItemAmountField, 0)
+
 def AddCharacterPieceItemAmountField(builder, characterPieceItemAmountField):
-    return CharacterExcelAddCharacterPieceItemAmountField(builder, characterPieceItemAmountField)
-def CharacterExcelAddCombineRecipeIdField(builder, combineRecipeIdField): builder.PrependInt32Slot(66, combineRecipeIdField, 0)
+    CharacterExcelAddCharacterPieceItemAmountField(builder, characterPieceItemAmountField)
+
+def CharacterExcelAddCombineRecipeIdField(builder, combineRecipeIdField):
+    builder.PrependInt32Slot(66, combineRecipeIdField, 0)
+
 def AddCombineRecipeIdField(builder, combineRecipeIdField):
-    return CharacterExcelAddCombineRecipeIdField(builder, combineRecipeIdField)
-def CharacterExcelEnd(builder): return builder.EndObject()
+    CharacterExcelAddCombineRecipeIdField(builder, combineRecipeIdField)
+
+def CharacterExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterExcelEnd(builder)

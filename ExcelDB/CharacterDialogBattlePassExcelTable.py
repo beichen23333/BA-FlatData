@@ -49,15 +49,26 @@ class CharacterDialogBattlePassExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def CharacterDialogBattlePassExcelTableStart(builder): builder.StartObject(1)
+def CharacterDialogBattlePassExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return CharacterDialogBattlePassExcelTableStart(builder)
-def CharacterDialogBattlePassExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    CharacterDialogBattlePassExcelTableStart(builder)
+
+def CharacterDialogBattlePassExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return CharacterDialogBattlePassExcelTableAddDataList(builder, dataList)
-def CharacterDialogBattlePassExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    CharacterDialogBattlePassExcelTableAddDataList(builder, dataList)
+
+def CharacterDialogBattlePassExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return CharacterDialogBattlePassExcelTableStartDataListVector(builder, numElems)
-def CharacterDialogBattlePassExcelTableEnd(builder): return builder.EndObject()
+
+def CharacterDialogBattlePassExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterDialogBattlePassExcelTableEnd(builder)

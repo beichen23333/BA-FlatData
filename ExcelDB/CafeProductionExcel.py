@@ -73,30 +73,56 @@ class CafeProductionExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def CafeProductionExcelStart(builder): builder.StartObject(7)
+def CafeProductionExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return CafeProductionExcelStart(builder)
-def CafeProductionExcelAddCafeIdField(builder, cafeIdField): builder.PrependInt32Slot(0, cafeIdField, 0)
+    CafeProductionExcelStart(builder)
+
+def CafeProductionExcelAddCafeIdField(builder, cafeIdField):
+    builder.PrependInt32Slot(0, cafeIdField, 0)
+
 def AddCafeIdField(builder, cafeIdField):
-    return CafeProductionExcelAddCafeIdField(builder, cafeIdField)
-def CafeProductionExcelAddRankField(builder, rankField): builder.PrependInt32Slot(1, rankField, 0)
+    CafeProductionExcelAddCafeIdField(builder, cafeIdField)
+
+def CafeProductionExcelAddRankField(builder, rankField):
+    builder.PrependInt32Slot(1, rankField, 0)
+
 def AddRankField(builder, rankField):
-    return CafeProductionExcelAddRankField(builder, rankField)
-def CafeProductionExcelAddCafeProductionParcelTypeField(builder, cafeProductionParcelTypeField): builder.PrependInt32Slot(2, cafeProductionParcelTypeField, 0)
+    CafeProductionExcelAddRankField(builder, rankField)
+
+def CafeProductionExcelAddCafeProductionParcelTypeField(builder, cafeProductionParcelTypeField):
+    builder.PrependInt32Slot(2, cafeProductionParcelTypeField, 0)
+
 def AddCafeProductionParcelTypeField(builder, cafeProductionParcelTypeField):
-    return CafeProductionExcelAddCafeProductionParcelTypeField(builder, cafeProductionParcelTypeField)
-def CafeProductionExcelAddCafeProductionParcelIdField(builder, cafeProductionParcelIdField): builder.PrependInt32Slot(3, cafeProductionParcelIdField, 0)
+    CafeProductionExcelAddCafeProductionParcelTypeField(builder, cafeProductionParcelTypeField)
+
+def CafeProductionExcelAddCafeProductionParcelIdField(builder, cafeProductionParcelIdField):
+    builder.PrependInt32Slot(3, cafeProductionParcelIdField, 0)
+
 def AddCafeProductionParcelIdField(builder, cafeProductionParcelIdField):
-    return CafeProductionExcelAddCafeProductionParcelIdField(builder, cafeProductionParcelIdField)
-def CafeProductionExcelAddParcelProductionCoefficientField(builder, parcelProductionCoefficientField): builder.PrependInt32Slot(4, parcelProductionCoefficientField, 0)
+    CafeProductionExcelAddCafeProductionParcelIdField(builder, cafeProductionParcelIdField)
+
+def CafeProductionExcelAddParcelProductionCoefficientField(builder, parcelProductionCoefficientField):
+    builder.PrependInt32Slot(4, parcelProductionCoefficientField, 0)
+
 def AddParcelProductionCoefficientField(builder, parcelProductionCoefficientField):
-    return CafeProductionExcelAddParcelProductionCoefficientField(builder, parcelProductionCoefficientField)
-def CafeProductionExcelAddParcelProductionCorrectionValueField(builder, parcelProductionCorrectionValueField): builder.PrependInt32Slot(5, parcelProductionCorrectionValueField, 0)
+    CafeProductionExcelAddParcelProductionCoefficientField(builder, parcelProductionCoefficientField)
+
+def CafeProductionExcelAddParcelProductionCorrectionValueField(builder, parcelProductionCorrectionValueField):
+    builder.PrependInt32Slot(5, parcelProductionCorrectionValueField, 0)
+
 def AddParcelProductionCorrectionValueField(builder, parcelProductionCorrectionValueField):
-    return CafeProductionExcelAddParcelProductionCorrectionValueField(builder, parcelProductionCorrectionValueField)
-def CafeProductionExcelAddParcelStorageMaxField(builder, parcelStorageMaxField): builder.PrependInt32Slot(6, parcelStorageMaxField, 0)
+    CafeProductionExcelAddParcelProductionCorrectionValueField(builder, parcelProductionCorrectionValueField)
+
+def CafeProductionExcelAddParcelStorageMaxField(builder, parcelStorageMaxField):
+    builder.PrependInt32Slot(6, parcelStorageMaxField, 0)
+
 def AddParcelStorageMaxField(builder, parcelStorageMaxField):
-    return CafeProductionExcelAddParcelStorageMaxField(builder, parcelStorageMaxField)
-def CafeProductionExcelEnd(builder): return builder.EndObject()
+    CafeProductionExcelAddParcelStorageMaxField(builder, parcelStorageMaxField)
+
+def CafeProductionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CafeProductionExcelEnd(builder)

@@ -38,15 +38,26 @@ class AnimatorData(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def AnimatorDataStart(builder): builder.StartObject(2)
+def AnimatorDataStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return AnimatorDataStart(builder)
-def AnimatorDataAddDefaultStateNameField(builder, defaultStateNameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(defaultStateNameField), 0)
+    AnimatorDataStart(builder)
+
+def AnimatorDataAddDefaultStateNameField(builder, defaultStateNameField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(defaultStateNameField), 0)
+
 def AddDefaultStateNameField(builder, defaultStateNameField):
-    return AnimatorDataAddDefaultStateNameField(builder, defaultStateNameField)
-def AnimatorDataAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+    AnimatorDataAddDefaultStateNameField(builder, defaultStateNameField)
+
+def AnimatorDataAddNameField(builder, nameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+
 def AddNameField(builder, nameField):
-    return AnimatorDataAddNameField(builder, nameField)
-def AnimatorDataEnd(builder): return builder.EndObject()
+    AnimatorDataAddNameField(builder, nameField)
+
+def AnimatorDataEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AnimatorDataEnd(builder)

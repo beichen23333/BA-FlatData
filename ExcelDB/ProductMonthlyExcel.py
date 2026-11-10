@@ -263,78 +263,152 @@ class ProductMonthlyExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         return o == 0
 
-def ProductMonthlyExcelStart(builder): builder.StartObject(17)
+def ProductMonthlyExcelStart(builder):
+    builder.StartObject(17)
+
 def Start(builder):
-    return ProductMonthlyExcelStart(builder)
-def ProductMonthlyExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ProductMonthlyExcelStart(builder)
+
+def ProductMonthlyExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ProductMonthlyExcelAddIdField(builder, idField)
-def ProductMonthlyExcelAddProductIdField(builder, productIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+    ProductMonthlyExcelAddIdField(builder, idField)
+
+def ProductMonthlyExcelAddProductIdField(builder, productIdField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+
 def AddProductIdField(builder, productIdField):
-    return ProductMonthlyExcelAddProductIdField(builder, productIdField)
-def ProductMonthlyExcelAddTeenProductIdField(builder, teenProductIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(teenProductIdField), 0)
+    ProductMonthlyExcelAddProductIdField(builder, productIdField)
+
+def ProductMonthlyExcelAddTeenProductIdField(builder, teenProductIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(teenProductIdField), 0)
+
 def AddTeenProductIdField(builder, teenProductIdField):
-    return ProductMonthlyExcelAddTeenProductIdField(builder, teenProductIdField)
-def ProductMonthlyExcelAddStoreTypeField(builder, storeTypeField): builder.PrependInt32Slot(3, storeTypeField, 0)
+    ProductMonthlyExcelAddTeenProductIdField(builder, teenProductIdField)
+
+def ProductMonthlyExcelAddStoreTypeField(builder, storeTypeField):
+    builder.PrependInt32Slot(3, storeTypeField, 0)
+
 def AddStoreTypeField(builder, storeTypeField):
-    return ProductMonthlyExcelAddStoreTypeField(builder, storeTypeField)
-def ProductMonthlyExcelAddPriceField(builder, priceField): builder.PrependInt32Slot(4, priceField, 0)
+    ProductMonthlyExcelAddStoreTypeField(builder, storeTypeField)
+
+def ProductMonthlyExcelAddPriceField(builder, priceField):
+    builder.PrependInt32Slot(4, priceField, 0)
+
 def AddPriceField(builder, priceField):
-    return ProductMonthlyExcelAddPriceField(builder, priceField)
-def ProductMonthlyExcelAddPriceReferenceField(builder, priceReferenceField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(priceReferenceField), 0)
+    ProductMonthlyExcelAddPriceField(builder, priceField)
+
+def ProductMonthlyExcelAddPriceReferenceField(builder, priceReferenceField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(priceReferenceField), 0)
+
 def AddPriceReferenceField(builder, priceReferenceField):
-    return ProductMonthlyExcelAddPriceReferenceField(builder, priceReferenceField)
-def ProductMonthlyExcelAddProductTagTypeField(builder, productTagTypeField): builder.PrependInt32Slot(6, productTagTypeField, 0)
+    ProductMonthlyExcelAddPriceReferenceField(builder, priceReferenceField)
+
+def ProductMonthlyExcelAddProductTagTypeField(builder, productTagTypeField):
+    builder.PrependInt32Slot(6, productTagTypeField, 0)
+
 def AddProductTagTypeField(builder, productTagTypeField):
-    return ProductMonthlyExcelAddProductTagTypeField(builder, productTagTypeField)
-def ProductMonthlyExcelAddMonthlyDaysField(builder, monthlyDaysField): builder.PrependInt32Slot(7, monthlyDaysField, 0)
+    ProductMonthlyExcelAddProductTagTypeField(builder, productTagTypeField)
+
+def ProductMonthlyExcelAddMonthlyDaysField(builder, monthlyDaysField):
+    builder.PrependInt32Slot(7, monthlyDaysField, 0)
+
 def AddMonthlyDaysField(builder, monthlyDaysField):
-    return ProductMonthlyExcelAddMonthlyDaysField(builder, monthlyDaysField)
-def ProductMonthlyExcelAddUseMonthlyProductCheckField(builder, useMonthlyProductCheckField): builder.PrependBoolSlot(8, useMonthlyProductCheckField, 0)
+    ProductMonthlyExcelAddMonthlyDaysField(builder, monthlyDaysField)
+
+def ProductMonthlyExcelAddUseMonthlyProductCheckField(builder, useMonthlyProductCheckField):
+    builder.PrependBoolSlot(8, useMonthlyProductCheckField, 0)
+
 def AddUseMonthlyProductCheckField(builder, useMonthlyProductCheckField):
-    return ProductMonthlyExcelAddUseMonthlyProductCheckField(builder, useMonthlyProductCheckField)
-def ProductMonthlyExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField): builder.PrependInt32Slot(9, purchaseCountLimitField, 0)
+    ProductMonthlyExcelAddUseMonthlyProductCheckField(builder, useMonthlyProductCheckField)
+
+def ProductMonthlyExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField):
+    builder.PrependInt32Slot(9, purchaseCountLimitField, 0)
+
 def AddPurchaseCountLimitField(builder, purchaseCountLimitField):
-    return ProductMonthlyExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
-def ProductMonthlyExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+    ProductMonthlyExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
+
+def ProductMonthlyExcelAddParcelTypeField(builder, parcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+
 def AddParcelTypeField(builder, parcelTypeField):
-    return ProductMonthlyExcelAddParcelTypeField(builder, parcelTypeField)
-def ProductMonthlyExcelStartParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelTypeFieldVector(builder, numElems):
+    ProductMonthlyExcelAddParcelTypeField(builder, parcelTypeField)
+
+def ProductMonthlyExcelStartParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelTypeFieldVector(builder, numElems: int) -> int:
     return ProductMonthlyExcelStartParcelTypeFieldVector(builder, numElems)
-def ProductMonthlyExcelAddParcelIdField(builder, parcelIdField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(parcelIdField), 0)
+
+def ProductMonthlyExcelAddParcelIdField(builder, parcelIdField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(parcelIdField), 0)
+
 def AddParcelIdField(builder, parcelIdField):
-    return ProductMonthlyExcelAddParcelIdField(builder, parcelIdField)
-def ProductMonthlyExcelStartParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelIdFieldVector(builder, numElems):
+    ProductMonthlyExcelAddParcelIdField(builder, parcelIdField)
+
+def ProductMonthlyExcelStartParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelIdFieldVector(builder, numElems: int) -> int:
     return ProductMonthlyExcelStartParcelIdFieldVector(builder, numElems)
-def ProductMonthlyExcelAddParcelAmountField(builder, parcelAmountField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(parcelAmountField), 0)
+
+def ProductMonthlyExcelAddParcelAmountField(builder, parcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(parcelAmountField), 0)
+
 def AddParcelAmountField(builder, parcelAmountField):
-    return ProductMonthlyExcelAddParcelAmountField(builder, parcelAmountField)
-def ProductMonthlyExcelStartParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelAmountFieldVector(builder, numElems):
+    ProductMonthlyExcelAddParcelAmountField(builder, parcelAmountField)
+
+def ProductMonthlyExcelStartParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelAmountFieldVector(builder, numElems: int) -> int:
     return ProductMonthlyExcelStartParcelAmountFieldVector(builder, numElems)
-def ProductMonthlyExcelAddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField): builder.PrependInt32Slot(13, enterCostReduceGroupIdField, 0)
+
+def ProductMonthlyExcelAddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField):
+    builder.PrependInt32Slot(13, enterCostReduceGroupIdField, 0)
+
 def AddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField):
-    return ProductMonthlyExcelAddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField)
-def ProductMonthlyExcelAddDailyParcelTypeField(builder, dailyParcelTypeField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(dailyParcelTypeField), 0)
+    ProductMonthlyExcelAddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField)
+
+def ProductMonthlyExcelAddDailyParcelTypeField(builder, dailyParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(dailyParcelTypeField), 0)
+
 def AddDailyParcelTypeField(builder, dailyParcelTypeField):
-    return ProductMonthlyExcelAddDailyParcelTypeField(builder, dailyParcelTypeField)
-def ProductMonthlyExcelStartDailyParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDailyParcelTypeFieldVector(builder, numElems):
+    ProductMonthlyExcelAddDailyParcelTypeField(builder, dailyParcelTypeField)
+
+def ProductMonthlyExcelStartDailyParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDailyParcelTypeFieldVector(builder, numElems: int) -> int:
     return ProductMonthlyExcelStartDailyParcelTypeFieldVector(builder, numElems)
-def ProductMonthlyExcelAddDailyParcelIdField(builder, dailyParcelIdField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(dailyParcelIdField), 0)
+
+def ProductMonthlyExcelAddDailyParcelIdField(builder, dailyParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(dailyParcelIdField), 0)
+
 def AddDailyParcelIdField(builder, dailyParcelIdField):
-    return ProductMonthlyExcelAddDailyParcelIdField(builder, dailyParcelIdField)
-def ProductMonthlyExcelStartDailyParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDailyParcelIdFieldVector(builder, numElems):
+    ProductMonthlyExcelAddDailyParcelIdField(builder, dailyParcelIdField)
+
+def ProductMonthlyExcelStartDailyParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDailyParcelIdFieldVector(builder, numElems: int) -> int:
     return ProductMonthlyExcelStartDailyParcelIdFieldVector(builder, numElems)
-def ProductMonthlyExcelAddDailyParcelAmountField(builder, dailyParcelAmountField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(dailyParcelAmountField), 0)
+
+def ProductMonthlyExcelAddDailyParcelAmountField(builder, dailyParcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(dailyParcelAmountField), 0)
+
 def AddDailyParcelAmountField(builder, dailyParcelAmountField):
-    return ProductMonthlyExcelAddDailyParcelAmountField(builder, dailyParcelAmountField)
-def ProductMonthlyExcelStartDailyParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDailyParcelAmountFieldVector(builder, numElems):
+    ProductMonthlyExcelAddDailyParcelAmountField(builder, dailyParcelAmountField)
+
+def ProductMonthlyExcelStartDailyParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDailyParcelAmountFieldVector(builder, numElems: int) -> int:
     return ProductMonthlyExcelStartDailyParcelAmountFieldVector(builder, numElems)
-def ProductMonthlyExcelEnd(builder): return builder.EndObject()
+
+def ProductMonthlyExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductMonthlyExcelEnd(builder)

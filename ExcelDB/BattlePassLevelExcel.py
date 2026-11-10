@@ -45,18 +45,32 @@ class BattlePassLevelExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def BattlePassLevelExcelStart(builder): builder.StartObject(3)
+def BattlePassLevelExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return BattlePassLevelExcelStart(builder)
-def BattlePassLevelExcelAddBattlePassIdField(builder, battlePassIdField): builder.PrependInt32Slot(0, battlePassIdField, 0)
+    BattlePassLevelExcelStart(builder)
+
+def BattlePassLevelExcelAddBattlePassIdField(builder, battlePassIdField):
+    builder.PrependInt32Slot(0, battlePassIdField, 0)
+
 def AddBattlePassIdField(builder, battlePassIdField):
-    return BattlePassLevelExcelAddBattlePassIdField(builder, battlePassIdField)
-def BattlePassLevelExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(1, levelField, 0)
+    BattlePassLevelExcelAddBattlePassIdField(builder, battlePassIdField)
+
+def BattlePassLevelExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(1, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return BattlePassLevelExcelAddLevelField(builder, levelField)
-def BattlePassLevelExcelAddIsPickUpRewardField(builder, isPickUpRewardField): builder.PrependBoolSlot(2, isPickUpRewardField, 0)
+    BattlePassLevelExcelAddLevelField(builder, levelField)
+
+def BattlePassLevelExcelAddIsPickUpRewardField(builder, isPickUpRewardField):
+    builder.PrependBoolSlot(2, isPickUpRewardField, 0)
+
 def AddIsPickUpRewardField(builder, isPickUpRewardField):
-    return BattlePassLevelExcelAddIsPickUpRewardField(builder, isPickUpRewardField)
-def BattlePassLevelExcelEnd(builder): return builder.EndObject()
+    BattlePassLevelExcelAddIsPickUpRewardField(builder, isPickUpRewardField)
+
+def BattlePassLevelExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BattlePassLevelExcelEnd(builder)

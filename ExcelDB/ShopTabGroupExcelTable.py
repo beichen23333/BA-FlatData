@@ -49,15 +49,26 @@ class ShopTabGroupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ShopTabGroupExcelTableStart(builder): builder.StartObject(1)
+def ShopTabGroupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ShopTabGroupExcelTableStart(builder)
-def ShopTabGroupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ShopTabGroupExcelTableStart(builder)
+
+def ShopTabGroupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ShopTabGroupExcelTableAddDataList(builder, dataList)
-def ShopTabGroupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ShopTabGroupExcelTableAddDataList(builder, dataList)
+
+def ShopTabGroupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ShopTabGroupExcelTableStartDataListVector(builder, numElems)
-def ShopTabGroupExcelTableEnd(builder): return builder.EndObject()
+
+def ShopTabGroupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ShopTabGroupExcelTableEnd(builder)

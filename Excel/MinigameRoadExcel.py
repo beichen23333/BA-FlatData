@@ -51,15 +51,26 @@ class MinigameRoadExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameRoadExcelStart(builder): builder.StartObject(1)
+def MinigameRoadExcelStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameRoadExcelStart(builder)
-def MinigameRoadExcelAddNoneField(builder, noneField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(noneField), 0)
+    MinigameRoadExcelStart(builder)
+
+def MinigameRoadExcelAddNoneField(builder, noneField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(noneField), 0)
+
 def AddNoneField(builder, noneField):
-    return MinigameRoadExcelAddNoneField(builder, noneField)
-def MinigameRoadExcelStartNoneFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNoneFieldVector(builder, numElems):
+    MinigameRoadExcelAddNoneField(builder, noneField)
+
+def MinigameRoadExcelStartNoneFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartNoneFieldVector(builder, numElems: int) -> int:
     return MinigameRoadExcelStartNoneFieldVector(builder, numElems)
-def MinigameRoadExcelEnd(builder): return builder.EndObject()
+
+def MinigameRoadExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameRoadExcelEnd(builder)

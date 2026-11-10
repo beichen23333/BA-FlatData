@@ -327,96 +327,188 @@ class InteractiveWorldRaidCarrierExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         return o == 0
 
-def InteractiveWorldRaidCarrierExcelStart(builder): builder.StartObject(17)
+def InteractiveWorldRaidCarrierExcelStart(builder):
+    builder.StartObject(17)
+
 def Start(builder):
-    return InteractiveWorldRaidCarrierExcelStart(builder)
-def InteractiveWorldRaidCarrierExcelAddCarrierSkillListGroupIdField(builder, carrierSkillListGroupIdField): builder.PrependInt32Slot(0, carrierSkillListGroupIdField, 0)
+    InteractiveWorldRaidCarrierExcelStart(builder)
+
+def InteractiveWorldRaidCarrierExcelAddCarrierSkillListGroupIdField(builder, carrierSkillListGroupIdField):
+    builder.PrependInt32Slot(0, carrierSkillListGroupIdField, 0)
+
 def AddCarrierSkillListGroupIdField(builder, carrierSkillListGroupIdField):
-    return InteractiveWorldRaidCarrierExcelAddCarrierSkillListGroupIdField(builder, carrierSkillListGroupIdField)
-def InteractiveWorldRaidCarrierExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+    InteractiveWorldRaidCarrierExcelAddCarrierSkillListGroupIdField(builder, carrierSkillListGroupIdField)
+
+def InteractiveWorldRaidCarrierExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(1, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return InteractiveWorldRaidCarrierExcelAddEventContentIdField(builder, eventContentIdField)
-def InteractiveWorldRaidCarrierExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(2, characterIdField, 0)
+    InteractiveWorldRaidCarrierExcelAddEventContentIdField(builder, eventContentIdField)
+
+def InteractiveWorldRaidCarrierExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(2, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return InteractiveWorldRaidCarrierExcelAddCharacterIdField(builder, characterIdField)
-def InteractiveWorldRaidCarrierExcelAddCharacterLevelField(builder, characterLevelField): builder.PrependInt32Slot(3, characterLevelField, 0)
+    InteractiveWorldRaidCarrierExcelAddCharacterIdField(builder, characterIdField)
+
+def InteractiveWorldRaidCarrierExcelAddCharacterLevelField(builder, characterLevelField):
+    builder.PrependInt32Slot(3, characterLevelField, 0)
+
 def AddCharacterLevelField(builder, characterLevelField):
-    return InteractiveWorldRaidCarrierExcelAddCharacterLevelField(builder, characterLevelField)
-def InteractiveWorldRaidCarrierExcelAddCharacterGradeField(builder, characterGradeField): builder.PrependInt32Slot(4, characterGradeField, 0)
+    InteractiveWorldRaidCarrierExcelAddCharacterLevelField(builder, characterLevelField)
+
+def InteractiveWorldRaidCarrierExcelAddCharacterGradeField(builder, characterGradeField):
+    builder.PrependInt32Slot(4, characterGradeField, 0)
+
 def AddCharacterGradeField(builder, characterGradeField):
-    return InteractiveWorldRaidCarrierExcelAddCharacterGradeField(builder, characterGradeField)
-def InteractiveWorldRaidCarrierExcelAddExSkillGroupIdField(builder, exSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(exSkillGroupIdField), 0)
+    InteractiveWorldRaidCarrierExcelAddCharacterGradeField(builder, characterGradeField)
+
+def InteractiveWorldRaidCarrierExcelAddExSkillGroupIdField(builder, exSkillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(exSkillGroupIdField), 0)
+
 def AddExSkillGroupIdField(builder, exSkillGroupIdField):
-    return InteractiveWorldRaidCarrierExcelAddExSkillGroupIdField(builder, exSkillGroupIdField)
-def InteractiveWorldRaidCarrierExcelStartExSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExSkillGroupIdFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddExSkillGroupIdField(builder, exSkillGroupIdField)
+
+def InteractiveWorldRaidCarrierExcelStartExSkillGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExSkillGroupIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartExSkillGroupIdFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddExSkillCardTextureField(builder, exSkillCardTextureField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(exSkillCardTextureField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddExSkillCardTextureField(builder, exSkillCardTextureField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(exSkillCardTextureField), 0)
+
 def AddExSkillCardTextureField(builder, exSkillCardTextureField):
-    return InteractiveWorldRaidCarrierExcelAddExSkillCardTextureField(builder, exSkillCardTextureField)
-def InteractiveWorldRaidCarrierExcelStartExSkillCardTextureFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExSkillCardTextureFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddExSkillCardTextureField(builder, exSkillCardTextureField)
+
+def InteractiveWorldRaidCarrierExcelStartExSkillCardTextureFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExSkillCardTextureFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartExSkillCardTextureFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddFixedExSkillLevelField(builder, fixedExSkillLevelField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(fixedExSkillLevelField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddFixedExSkillLevelField(builder, fixedExSkillLevelField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(fixedExSkillLevelField), 0)
+
 def AddFixedExSkillLevelField(builder, fixedExSkillLevelField):
-    return InteractiveWorldRaidCarrierExcelAddFixedExSkillLevelField(builder, fixedExSkillLevelField)
-def InteractiveWorldRaidCarrierExcelStartFixedExSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFixedExSkillLevelFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddFixedExSkillLevelField(builder, fixedExSkillLevelField)
+
+def InteractiveWorldRaidCarrierExcelStartFixedExSkillLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFixedExSkillLevelFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartFixedExSkillLevelFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddPassiveSkillGroupIdField(builder, passiveSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillGroupIdField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddPassiveSkillGroupIdField(builder, passiveSkillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillGroupIdField), 0)
+
 def AddPassiveSkillGroupIdField(builder, passiveSkillGroupIdField):
-    return InteractiveWorldRaidCarrierExcelAddPassiveSkillGroupIdField(builder, passiveSkillGroupIdField)
-def InteractiveWorldRaidCarrierExcelStartPassiveSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPassiveSkillGroupIdFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddPassiveSkillGroupIdField(builder, passiveSkillGroupIdField)
+
+def InteractiveWorldRaidCarrierExcelStartPassiveSkillGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPassiveSkillGroupIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartPassiveSkillGroupIdFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddPassiveSkillCardTextureField(builder, passiveSkillCardTextureField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillCardTextureField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddPassiveSkillCardTextureField(builder, passiveSkillCardTextureField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillCardTextureField), 0)
+
 def AddPassiveSkillCardTextureField(builder, passiveSkillCardTextureField):
-    return InteractiveWorldRaidCarrierExcelAddPassiveSkillCardTextureField(builder, passiveSkillCardTextureField)
-def InteractiveWorldRaidCarrierExcelStartPassiveSkillCardTextureFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPassiveSkillCardTextureFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddPassiveSkillCardTextureField(builder, passiveSkillCardTextureField)
+
+def InteractiveWorldRaidCarrierExcelStartPassiveSkillCardTextureFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPassiveSkillCardTextureFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartPassiveSkillCardTextureFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddFixedPassiveSkillLevelField(builder, fixedPassiveSkillLevelField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(fixedPassiveSkillLevelField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddFixedPassiveSkillLevelField(builder, fixedPassiveSkillLevelField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(fixedPassiveSkillLevelField), 0)
+
 def AddFixedPassiveSkillLevelField(builder, fixedPassiveSkillLevelField):
-    return InteractiveWorldRaidCarrierExcelAddFixedPassiveSkillLevelField(builder, fixedPassiveSkillLevelField)
-def InteractiveWorldRaidCarrierExcelStartFixedPassiveSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFixedPassiveSkillLevelFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddFixedPassiveSkillLevelField(builder, fixedPassiveSkillLevelField)
+
+def InteractiveWorldRaidCarrierExcelStartFixedPassiveSkillLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFixedPassiveSkillLevelFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartFixedPassiveSkillLevelFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddExtraPassiveSkillGroupIdField(builder, extraPassiveSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(extraPassiveSkillGroupIdField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddExtraPassiveSkillGroupIdField(builder, extraPassiveSkillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(extraPassiveSkillGroupIdField), 0)
+
 def AddExtraPassiveSkillGroupIdField(builder, extraPassiveSkillGroupIdField):
-    return InteractiveWorldRaidCarrierExcelAddExtraPassiveSkillGroupIdField(builder, extraPassiveSkillGroupIdField)
-def InteractiveWorldRaidCarrierExcelStartExtraPassiveSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExtraPassiveSkillGroupIdFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddExtraPassiveSkillGroupIdField(builder, extraPassiveSkillGroupIdField)
+
+def InteractiveWorldRaidCarrierExcelStartExtraPassiveSkillGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExtraPassiveSkillGroupIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartExtraPassiveSkillGroupIdFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddExtraPassiveSkillCardTextureField(builder, extraPassiveSkillCardTextureField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(extraPassiveSkillCardTextureField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddExtraPassiveSkillCardTextureField(builder, extraPassiveSkillCardTextureField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(extraPassiveSkillCardTextureField), 0)
+
 def AddExtraPassiveSkillCardTextureField(builder, extraPassiveSkillCardTextureField):
-    return InteractiveWorldRaidCarrierExcelAddExtraPassiveSkillCardTextureField(builder, extraPassiveSkillCardTextureField)
-def InteractiveWorldRaidCarrierExcelStartExtraPassiveSkillCardTextureFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExtraPassiveSkillCardTextureFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddExtraPassiveSkillCardTextureField(builder, extraPassiveSkillCardTextureField)
+
+def InteractiveWorldRaidCarrierExcelStartExtraPassiveSkillCardTextureFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExtraPassiveSkillCardTextureFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartExtraPassiveSkillCardTextureFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddFixedExtraPassiveSkillLevelField(builder, fixedExtraPassiveSkillLevelField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(fixedExtraPassiveSkillLevelField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddFixedExtraPassiveSkillLevelField(builder, fixedExtraPassiveSkillLevelField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(fixedExtraPassiveSkillLevelField), 0)
+
 def AddFixedExtraPassiveSkillLevelField(builder, fixedExtraPassiveSkillLevelField):
-    return InteractiveWorldRaidCarrierExcelAddFixedExtraPassiveSkillLevelField(builder, fixedExtraPassiveSkillLevelField)
-def InteractiveWorldRaidCarrierExcelStartFixedExtraPassiveSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFixedExtraPassiveSkillLevelFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddFixedExtraPassiveSkillLevelField(builder, fixedExtraPassiveSkillLevelField)
+
+def InteractiveWorldRaidCarrierExcelStartFixedExtraPassiveSkillLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFixedExtraPassiveSkillLevelFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartFixedExtraPassiveSkillLevelFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddHiddenPassiveSkillGroupIdField(builder, hiddenPassiveSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(hiddenPassiveSkillGroupIdField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddHiddenPassiveSkillGroupIdField(builder, hiddenPassiveSkillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(hiddenPassiveSkillGroupIdField), 0)
+
 def AddHiddenPassiveSkillGroupIdField(builder, hiddenPassiveSkillGroupIdField):
-    return InteractiveWorldRaidCarrierExcelAddHiddenPassiveSkillGroupIdField(builder, hiddenPassiveSkillGroupIdField)
-def InteractiveWorldRaidCarrierExcelStartHiddenPassiveSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartHiddenPassiveSkillGroupIdFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddHiddenPassiveSkillGroupIdField(builder, hiddenPassiveSkillGroupIdField)
+
+def InteractiveWorldRaidCarrierExcelStartHiddenPassiveSkillGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartHiddenPassiveSkillGroupIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartHiddenPassiveSkillGroupIdFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddHiddenPassiveSkillCardTextureField(builder, hiddenPassiveSkillCardTextureField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(hiddenPassiveSkillCardTextureField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddHiddenPassiveSkillCardTextureField(builder, hiddenPassiveSkillCardTextureField):
+    builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(hiddenPassiveSkillCardTextureField), 0)
+
 def AddHiddenPassiveSkillCardTextureField(builder, hiddenPassiveSkillCardTextureField):
-    return InteractiveWorldRaidCarrierExcelAddHiddenPassiveSkillCardTextureField(builder, hiddenPassiveSkillCardTextureField)
-def InteractiveWorldRaidCarrierExcelStartHiddenPassiveSkillCardTextureFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartHiddenPassiveSkillCardTextureFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddHiddenPassiveSkillCardTextureField(builder, hiddenPassiveSkillCardTextureField)
+
+def InteractiveWorldRaidCarrierExcelStartHiddenPassiveSkillCardTextureFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartHiddenPassiveSkillCardTextureFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartHiddenPassiveSkillCardTextureFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelAddFixedHiddenPassiveSkillLevelField(builder, fixedHiddenPassiveSkillLevelField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(fixedHiddenPassiveSkillLevelField), 0)
+
+def InteractiveWorldRaidCarrierExcelAddFixedHiddenPassiveSkillLevelField(builder, fixedHiddenPassiveSkillLevelField):
+    builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(fixedHiddenPassiveSkillLevelField), 0)
+
 def AddFixedHiddenPassiveSkillLevelField(builder, fixedHiddenPassiveSkillLevelField):
-    return InteractiveWorldRaidCarrierExcelAddFixedHiddenPassiveSkillLevelField(builder, fixedHiddenPassiveSkillLevelField)
-def InteractiveWorldRaidCarrierExcelStartFixedHiddenPassiveSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFixedHiddenPassiveSkillLevelFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierExcelAddFixedHiddenPassiveSkillLevelField(builder, fixedHiddenPassiveSkillLevelField)
+
+def InteractiveWorldRaidCarrierExcelStartFixedHiddenPassiveSkillLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFixedHiddenPassiveSkillLevelFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierExcelStartFixedHiddenPassiveSkillLevelFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierExcelEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidCarrierExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidCarrierExcelEnd(builder)

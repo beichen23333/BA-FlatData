@@ -66,27 +66,50 @@ class TacticTimeAttackSimulatorConfigExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def TacticTimeAttackSimulatorConfigExcelStart(builder): builder.StartObject(6)
+def TacticTimeAttackSimulatorConfigExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return TacticTimeAttackSimulatorConfigExcelStart(builder)
-def TacticTimeAttackSimulatorConfigExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(0, orderField, 0)
+    TacticTimeAttackSimulatorConfigExcelStart(builder)
+
+def TacticTimeAttackSimulatorConfigExcelAddOrderField(builder, orderField):
+    builder.PrependInt32Slot(0, orderField, 0)
+
 def AddOrderField(builder, orderField):
-    return TacticTimeAttackSimulatorConfigExcelAddOrderField(builder, orderField)
-def TacticTimeAttackSimulatorConfigExcelAddRepeatField(builder, repeatField): builder.PrependInt32Slot(1, repeatField, 0)
+    TacticTimeAttackSimulatorConfigExcelAddOrderField(builder, orderField)
+
+def TacticTimeAttackSimulatorConfigExcelAddRepeatField(builder, repeatField):
+    builder.PrependInt32Slot(1, repeatField, 0)
+
 def AddRepeatField(builder, repeatField):
-    return TacticTimeAttackSimulatorConfigExcelAddRepeatField(builder, repeatField)
-def TacticTimeAttackSimulatorConfigExcelAddPresetGroupIdField(builder, presetGroupIdField): builder.PrependInt32Slot(2, presetGroupIdField, 0)
+    TacticTimeAttackSimulatorConfigExcelAddRepeatField(builder, repeatField)
+
+def TacticTimeAttackSimulatorConfigExcelAddPresetGroupIdField(builder, presetGroupIdField):
+    builder.PrependInt32Slot(2, presetGroupIdField, 0)
+
 def AddPresetGroupIdField(builder, presetGroupIdField):
-    return TacticTimeAttackSimulatorConfigExcelAddPresetGroupIdField(builder, presetGroupIdField)
-def TacticTimeAttackSimulatorConfigExcelAddAttackStrikerNumField(builder, attackStrikerNumField): builder.PrependInt32Slot(3, attackStrikerNumField, 0)
+    TacticTimeAttackSimulatorConfigExcelAddPresetGroupIdField(builder, presetGroupIdField)
+
+def TacticTimeAttackSimulatorConfigExcelAddAttackStrikerNumField(builder, attackStrikerNumField):
+    builder.PrependInt32Slot(3, attackStrikerNumField, 0)
+
 def AddAttackStrikerNumField(builder, attackStrikerNumField):
-    return TacticTimeAttackSimulatorConfigExcelAddAttackStrikerNumField(builder, attackStrikerNumField)
-def TacticTimeAttackSimulatorConfigExcelAddAttackSpecialNumField(builder, attackSpecialNumField): builder.PrependInt32Slot(4, attackSpecialNumField, 0)
+    TacticTimeAttackSimulatorConfigExcelAddAttackStrikerNumField(builder, attackStrikerNumField)
+
+def TacticTimeAttackSimulatorConfigExcelAddAttackSpecialNumField(builder, attackSpecialNumField):
+    builder.PrependInt32Slot(4, attackSpecialNumField, 0)
+
 def AddAttackSpecialNumField(builder, attackSpecialNumField):
-    return TacticTimeAttackSimulatorConfigExcelAddAttackSpecialNumField(builder, attackSpecialNumField)
-def TacticTimeAttackSimulatorConfigExcelAddGeasIdField(builder, geasIdField): builder.PrependInt32Slot(5, geasIdField, 0)
+    TacticTimeAttackSimulatorConfigExcelAddAttackSpecialNumField(builder, attackSpecialNumField)
+
+def TacticTimeAttackSimulatorConfigExcelAddGeasIdField(builder, geasIdField):
+    builder.PrependInt32Slot(5, geasIdField, 0)
+
 def AddGeasIdField(builder, geasIdField):
-    return TacticTimeAttackSimulatorConfigExcelAddGeasIdField(builder, geasIdField)
-def TacticTimeAttackSimulatorConfigExcelEnd(builder): return builder.EndObject()
+    TacticTimeAttackSimulatorConfigExcelAddGeasIdField(builder, geasIdField)
+
+def TacticTimeAttackSimulatorConfigExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TacticTimeAttackSimulatorConfigExcelEnd(builder)

@@ -49,15 +49,26 @@ class EventContentSpoilerPopupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def EventContentSpoilerPopupExcelTableStart(builder): builder.StartObject(1)
+def EventContentSpoilerPopupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return EventContentSpoilerPopupExcelTableStart(builder)
-def EventContentSpoilerPopupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    EventContentSpoilerPopupExcelTableStart(builder)
+
+def EventContentSpoilerPopupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return EventContentSpoilerPopupExcelTableAddDataList(builder, dataList)
-def EventContentSpoilerPopupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    EventContentSpoilerPopupExcelTableAddDataList(builder, dataList)
+
+def EventContentSpoilerPopupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return EventContentSpoilerPopupExcelTableStartDataListVector(builder, numElems)
-def EventContentSpoilerPopupExcelTableEnd(builder): return builder.EndObject()
+
+def EventContentSpoilerPopupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentSpoilerPopupExcelTableEnd(builder)

@@ -113,36 +113,68 @@ class AcademyZoneExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
-def AcademyZoneExcelStart(builder): builder.StartObject(7)
+def AcademyZoneExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return AcademyZoneExcelStart(builder)
-def AcademyZoneExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    AcademyZoneExcelStart(builder)
+
+def AcademyZoneExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return AcademyZoneExcelAddIdField(builder, idField)
-def AcademyZoneExcelAddLocationIdField(builder, locationIdField): builder.PrependInt32Slot(1, locationIdField, 0)
+    AcademyZoneExcelAddIdField(builder, idField)
+
+def AcademyZoneExcelAddLocationIdField(builder, locationIdField):
+    builder.PrependInt32Slot(1, locationIdField, 0)
+
 def AddLocationIdField(builder, locationIdField):
-    return AcademyZoneExcelAddLocationIdField(builder, locationIdField)
-def AcademyZoneExcelAddLocationRankForUnlockField(builder, locationRankForUnlockField): builder.PrependInt32Slot(2, locationRankForUnlockField, 0)
+    AcademyZoneExcelAddLocationIdField(builder, locationIdField)
+
+def AcademyZoneExcelAddLocationRankForUnlockField(builder, locationRankForUnlockField):
+    builder.PrependInt32Slot(2, locationRankForUnlockField, 0)
+
 def AddLocationRankForUnlockField(builder, locationRankForUnlockField):
-    return AcademyZoneExcelAddLocationRankForUnlockField(builder, locationRankForUnlockField)
-def AcademyZoneExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(3, localizeEtcIdField, 0)
+    AcademyZoneExcelAddLocationRankForUnlockField(builder, locationRankForUnlockField)
+
+def AcademyZoneExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(3, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return AcademyZoneExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def AcademyZoneExcelAddStudentVisitProbField(builder, studentVisitProbField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(studentVisitProbField), 0)
+    AcademyZoneExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def AcademyZoneExcelAddStudentVisitProbField(builder, studentVisitProbField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(studentVisitProbField), 0)
+
 def AddStudentVisitProbField(builder, studentVisitProbField):
-    return AcademyZoneExcelAddStudentVisitProbField(builder, studentVisitProbField)
-def AcademyZoneExcelStartStudentVisitProbFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStudentVisitProbFieldVector(builder, numElems):
+    AcademyZoneExcelAddStudentVisitProbField(builder, studentVisitProbField)
+
+def AcademyZoneExcelStartStudentVisitProbFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStudentVisitProbFieldVector(builder, numElems: int) -> int:
     return AcademyZoneExcelStartStudentVisitProbFieldVector(builder, numElems)
-def AcademyZoneExcelAddRewardGroupIdField(builder, rewardGroupIdField): builder.PrependInt32Slot(5, rewardGroupIdField, 0)
+
+def AcademyZoneExcelAddRewardGroupIdField(builder, rewardGroupIdField):
+    builder.PrependInt32Slot(5, rewardGroupIdField, 0)
+
 def AddRewardGroupIdField(builder, rewardGroupIdField):
-    return AcademyZoneExcelAddRewardGroupIdField(builder, rewardGroupIdField)
-def AcademyZoneExcelAddTagsField(builder, tagsField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+    AcademyZoneExcelAddRewardGroupIdField(builder, rewardGroupIdField)
+
+def AcademyZoneExcelAddTagsField(builder, tagsField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+
 def AddTagsField(builder, tagsField):
-    return AcademyZoneExcelAddTagsField(builder, tagsField)
-def AcademyZoneExcelStartTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTagsFieldVector(builder, numElems):
+    AcademyZoneExcelAddTagsField(builder, tagsField)
+
+def AcademyZoneExcelStartTagsFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartTagsFieldVector(builder, numElems: int) -> int:
     return AcademyZoneExcelStartTagsFieldVector(builder, numElems)
-def AcademyZoneExcelEnd(builder): return builder.EndObject()
+
+def AcademyZoneExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AcademyZoneExcelEnd(builder)

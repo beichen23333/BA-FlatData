@@ -140,42 +140,80 @@ class MiniGameDreamEndingRewardExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
-def MiniGameDreamEndingRewardExcelStart(builder): builder.StartObject(8)
+def MiniGameDreamEndingRewardExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return MiniGameDreamEndingRewardExcelStart(builder)
-def MiniGameDreamEndingRewardExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MiniGameDreamEndingRewardExcelStart(builder)
+
+def MiniGameDreamEndingRewardExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MiniGameDreamEndingRewardExcelAddEventContentIdField(builder, eventContentIdField)
-def MiniGameDreamEndingRewardExcelAddEndingIdField(builder, endingIdField): builder.PrependInt32Slot(1, endingIdField, 0)
+    MiniGameDreamEndingRewardExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MiniGameDreamEndingRewardExcelAddEndingIdField(builder, endingIdField):
+    builder.PrependInt32Slot(1, endingIdField, 0)
+
 def AddEndingIdField(builder, endingIdField):
-    return MiniGameDreamEndingRewardExcelAddEndingIdField(builder, endingIdField)
-def MiniGameDreamEndingRewardExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+    MiniGameDreamEndingRewardExcelAddEndingIdField(builder, endingIdField)
+
+def MiniGameDreamEndingRewardExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return MiniGameDreamEndingRewardExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def MiniGameDreamEndingRewardExcelAddDreamMakerEndingRewardTypeField(builder, dreamMakerEndingRewardTypeField): builder.PrependInt32Slot(3, dreamMakerEndingRewardTypeField, 0)
+    MiniGameDreamEndingRewardExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def MiniGameDreamEndingRewardExcelAddDreamMakerEndingRewardTypeField(builder, dreamMakerEndingRewardTypeField):
+    builder.PrependInt32Slot(3, dreamMakerEndingRewardTypeField, 0)
+
 def AddDreamMakerEndingRewardTypeField(builder, dreamMakerEndingRewardTypeField):
-    return MiniGameDreamEndingRewardExcelAddDreamMakerEndingRewardTypeField(builder, dreamMakerEndingRewardTypeField)
-def MiniGameDreamEndingRewardExcelAddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField): builder.PrependInt32Slot(4, dreamMakerEndingTypeField, 0)
+    MiniGameDreamEndingRewardExcelAddDreamMakerEndingRewardTypeField(builder, dreamMakerEndingRewardTypeField)
+
+def MiniGameDreamEndingRewardExcelAddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField):
+    builder.PrependInt32Slot(4, dreamMakerEndingTypeField, 0)
+
 def AddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField):
-    return MiniGameDreamEndingRewardExcelAddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField)
-def MiniGameDreamEndingRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+    MiniGameDreamEndingRewardExcelAddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField)
+
+def MiniGameDreamEndingRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return MiniGameDreamEndingRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def MiniGameDreamEndingRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeFieldVector(builder, numElems):
+    MiniGameDreamEndingRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def MiniGameDreamEndingRewardExcelStartRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return MiniGameDreamEndingRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
-def MiniGameDreamEndingRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
+def MiniGameDreamEndingRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return MiniGameDreamEndingRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def MiniGameDreamEndingRewardExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdFieldVector(builder, numElems):
+    MiniGameDreamEndingRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def MiniGameDreamEndingRewardExcelStartRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return MiniGameDreamEndingRewardExcelStartRewardParcelIdFieldVector(builder, numElems)
-def MiniGameDreamEndingRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+
+def MiniGameDreamEndingRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return MiniGameDreamEndingRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def MiniGameDreamEndingRewardExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountFieldVector(builder, numElems):
+    MiniGameDreamEndingRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def MiniGameDreamEndingRewardExcelStartRewardParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelAmountFieldVector(builder, numElems: int) -> int:
     return MiniGameDreamEndingRewardExcelStartRewardParcelAmountFieldVector(builder, numElems)
-def MiniGameDreamEndingRewardExcelEnd(builder): return builder.EndObject()
+
+def MiniGameDreamEndingRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameDreamEndingRewardExcelEnd(builder)

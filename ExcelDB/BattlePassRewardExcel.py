@@ -66,27 +66,50 @@ class BattlePassRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def BattlePassRewardExcelStart(builder): builder.StartObject(6)
+def BattlePassRewardExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return BattlePassRewardExcelStart(builder)
-def BattlePassRewardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    BattlePassRewardExcelStart(builder)
+
+def BattlePassRewardExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return BattlePassRewardExcelAddIdField(builder, idField)
-def BattlePassRewardExcelAddRewardGroupIdField(builder, rewardGroupIdField): builder.PrependInt32Slot(1, rewardGroupIdField, 0)
+    BattlePassRewardExcelAddIdField(builder, idField)
+
+def BattlePassRewardExcelAddRewardGroupIdField(builder, rewardGroupIdField):
+    builder.PrependInt32Slot(1, rewardGroupIdField, 0)
+
 def AddRewardGroupIdField(builder, rewardGroupIdField):
-    return BattlePassRewardExcelAddRewardGroupIdField(builder, rewardGroupIdField)
-def BattlePassRewardExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(2, levelField, 0)
+    BattlePassRewardExcelAddRewardGroupIdField(builder, rewardGroupIdField)
+
+def BattlePassRewardExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(2, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return BattlePassRewardExcelAddLevelField(builder, levelField)
-def BattlePassRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+    BattlePassRewardExcelAddLevelField(builder, levelField)
+
+def BattlePassRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return BattlePassRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def BattlePassRewardExcelAddRewardParcelUniqueIdField(builder, rewardParcelUniqueIdField): builder.PrependInt32Slot(4, rewardParcelUniqueIdField, 0)
+    BattlePassRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def BattlePassRewardExcelAddRewardParcelUniqueIdField(builder, rewardParcelUniqueIdField):
+    builder.PrependInt32Slot(4, rewardParcelUniqueIdField, 0)
+
 def AddRewardParcelUniqueIdField(builder, rewardParcelUniqueIdField):
-    return BattlePassRewardExcelAddRewardParcelUniqueIdField(builder, rewardParcelUniqueIdField)
-def BattlePassRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(5, rewardParcelAmountField, 0)
+    BattlePassRewardExcelAddRewardParcelUniqueIdField(builder, rewardParcelUniqueIdField)
+
+def BattlePassRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependInt32Slot(5, rewardParcelAmountField, 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return BattlePassRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def BattlePassRewardExcelEnd(builder): return builder.EndObject()
+    BattlePassRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def BattlePassRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BattlePassRewardExcelEnd(builder)

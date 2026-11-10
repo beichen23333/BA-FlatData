@@ -73,30 +73,56 @@ class EventContentNotifyExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def EventContentNotifyExcelStart(builder): builder.StartObject(7)
+def EventContentNotifyExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return EventContentNotifyExcelStart(builder)
-def EventContentNotifyExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    EventContentNotifyExcelStart(builder)
+
+def EventContentNotifyExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return EventContentNotifyExcelAddIdField(builder, idField)
-def EventContentNotifyExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(1, localizeEtcIdField, 0)
+    EventContentNotifyExcelAddIdField(builder, idField)
+
+def EventContentNotifyExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(1, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return EventContentNotifyExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def EventContentNotifyExcelAddIconPathField(builder, iconPathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+    EventContentNotifyExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def EventContentNotifyExcelAddIconPathField(builder, iconPathField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+
 def AddIconPathField(builder, iconPathField):
-    return EventContentNotifyExcelAddIconPathField(builder, iconPathField)
-def EventContentNotifyExcelAddEventNotifyTypeField(builder, eventNotifyTypeField): builder.PrependInt32Slot(3, eventNotifyTypeField, 0)
+    EventContentNotifyExcelAddIconPathField(builder, iconPathField)
+
+def EventContentNotifyExcelAddEventNotifyTypeField(builder, eventNotifyTypeField):
+    builder.PrependInt32Slot(3, eventNotifyTypeField, 0)
+
 def AddEventNotifyTypeField(builder, eventNotifyTypeField):
-    return EventContentNotifyExcelAddEventNotifyTypeField(builder, eventNotifyTypeField)
-def EventContentNotifyExcelAddEventTargetTypeField(builder, eventTargetTypeField): builder.PrependInt32Slot(4, eventTargetTypeField, 0)
+    EventContentNotifyExcelAddEventNotifyTypeField(builder, eventNotifyTypeField)
+
+def EventContentNotifyExcelAddEventTargetTypeField(builder, eventTargetTypeField):
+    builder.PrependInt32Slot(4, eventTargetTypeField, 0)
+
 def AddEventTargetTypeField(builder, eventTargetTypeField):
-    return EventContentNotifyExcelAddEventTargetTypeField(builder, eventTargetTypeField)
-def EventContentNotifyExcelAddShortcutEventTargetTypeField(builder, shortcutEventTargetTypeField): builder.PrependInt32Slot(5, shortcutEventTargetTypeField, 0)
+    EventContentNotifyExcelAddEventTargetTypeField(builder, eventTargetTypeField)
+
+def EventContentNotifyExcelAddShortcutEventTargetTypeField(builder, shortcutEventTargetTypeField):
+    builder.PrependInt32Slot(5, shortcutEventTargetTypeField, 0)
+
 def AddShortcutEventTargetTypeField(builder, shortcutEventTargetTypeField):
-    return EventContentNotifyExcelAddShortcutEventTargetTypeField(builder, shortcutEventTargetTypeField)
-def EventContentNotifyExcelAddIsShortcutEnableField(builder, isShortcutEnableField): builder.PrependBoolSlot(6, isShortcutEnableField, 0)
+    EventContentNotifyExcelAddShortcutEventTargetTypeField(builder, shortcutEventTargetTypeField)
+
+def EventContentNotifyExcelAddIsShortcutEnableField(builder, isShortcutEnableField):
+    builder.PrependBoolSlot(6, isShortcutEnableField, 0)
+
 def AddIsShortcutEnableField(builder, isShortcutEnableField):
-    return EventContentNotifyExcelAddIsShortcutEnableField(builder, isShortcutEnableField)
-def EventContentNotifyExcelEnd(builder): return builder.EndObject()
+    EventContentNotifyExcelAddIsShortcutEnableField(builder, isShortcutEnableField)
+
+def EventContentNotifyExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentNotifyExcelEnd(builder)

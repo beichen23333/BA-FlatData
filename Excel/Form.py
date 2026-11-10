@@ -24,9 +24,14 @@ class Form(object):
     def Init(self, buf, pos):
         self._tab = flatbuffers.table.Table(buf, pos)
 
-def FormStart(builder): builder.StartObject(0)
+def FormStart(builder):
+    builder.StartObject(0)
+
 def Start(builder):
-    return FormStart(builder)
-def FormEnd(builder): return builder.EndObject()
+    FormStart(builder)
+
+def FormEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FormEnd(builder)

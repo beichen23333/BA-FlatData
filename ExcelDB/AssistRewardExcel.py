@@ -59,24 +59,44 @@ class AssistRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def AssistRewardExcelStart(builder): builder.StartObject(5)
+def AssistRewardExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return AssistRewardExcelStart(builder)
-def AssistRewardExcelAddRewardTypeField(builder, rewardTypeField): builder.PrependInt32Slot(0, rewardTypeField, 0)
+    AssistRewardExcelStart(builder)
+
+def AssistRewardExcelAddRewardTypeField(builder, rewardTypeField):
+    builder.PrependInt32Slot(0, rewardTypeField, 0)
+
 def AddRewardTypeField(builder, rewardTypeField):
-    return AssistRewardExcelAddRewardTypeField(builder, rewardTypeField)
-def AssistRewardExcelAddEchelonTypeField(builder, echelonTypeField): builder.PrependInt32Slot(1, echelonTypeField, 0)
+    AssistRewardExcelAddRewardTypeField(builder, rewardTypeField)
+
+def AssistRewardExcelAddEchelonTypeField(builder, echelonTypeField):
+    builder.PrependInt32Slot(1, echelonTypeField, 0)
+
 def AddEchelonTypeField(builder, echelonTypeField):
-    return AssistRewardExcelAddEchelonTypeField(builder, echelonTypeField)
-def AssistRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(2, rewardParcelTypeField, 0)
+    AssistRewardExcelAddEchelonTypeField(builder, echelonTypeField)
+
+def AssistRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(2, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return AssistRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def AssistRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(3, rewardParcelIdField, 0)
+    AssistRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def AssistRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependInt32Slot(3, rewardParcelIdField, 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return AssistRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def AssistRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(4, rewardParcelAmountField, 0)
+    AssistRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def AssistRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependInt32Slot(4, rewardParcelAmountField, 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return AssistRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def AssistRewardExcelEnd(builder): return builder.EndObject()
+    AssistRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def AssistRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AssistRewardExcelEnd(builder)

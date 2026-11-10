@@ -49,15 +49,26 @@ class ProductDailyRecordRewardExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ProductDailyRecordRewardExcelTableStart(builder): builder.StartObject(1)
+def ProductDailyRecordRewardExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ProductDailyRecordRewardExcelTableStart(builder)
-def ProductDailyRecordRewardExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ProductDailyRecordRewardExcelTableStart(builder)
+
+def ProductDailyRecordRewardExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ProductDailyRecordRewardExcelTableAddDataList(builder, dataList)
-def ProductDailyRecordRewardExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ProductDailyRecordRewardExcelTableAddDataList(builder, dataList)
+
+def ProductDailyRecordRewardExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ProductDailyRecordRewardExcelTableStartDataListVector(builder, numElems)
-def ProductDailyRecordRewardExcelTableEnd(builder): return builder.EndObject()
+
+def ProductDailyRecordRewardExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductDailyRecordRewardExcelTableEnd(builder)

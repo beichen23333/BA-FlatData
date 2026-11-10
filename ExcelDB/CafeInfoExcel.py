@@ -87,36 +87,68 @@ class CafeInfoExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def CafeInfoExcelStart(builder): builder.StartObject(9)
+def CafeInfoExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return CafeInfoExcelStart(builder)
-def CafeInfoExcelAddCafeIdField(builder, cafeIdField): builder.PrependInt32Slot(0, cafeIdField, 0)
+    CafeInfoExcelStart(builder)
+
+def CafeInfoExcelAddCafeIdField(builder, cafeIdField):
+    builder.PrependInt32Slot(0, cafeIdField, 0)
+
 def AddCafeIdField(builder, cafeIdField):
-    return CafeInfoExcelAddCafeIdField(builder, cafeIdField)
-def CafeInfoExcelAddIsDefaultField(builder, isDefaultField): builder.PrependBoolSlot(1, isDefaultField, 0)
+    CafeInfoExcelAddCafeIdField(builder, cafeIdField)
+
+def CafeInfoExcelAddIsDefaultField(builder, isDefaultField):
+    builder.PrependBoolSlot(1, isDefaultField, 0)
+
 def AddIsDefaultField(builder, isDefaultField):
-    return CafeInfoExcelAddIsDefaultField(builder, isDefaultField)
-def CafeInfoExcelAddOpenConditionCafeIdField(builder, openConditionCafeIdField): builder.PrependInt32Slot(2, openConditionCafeIdField, 0)
+    CafeInfoExcelAddIsDefaultField(builder, isDefaultField)
+
+def CafeInfoExcelAddOpenConditionCafeIdField(builder, openConditionCafeIdField):
+    builder.PrependInt32Slot(2, openConditionCafeIdField, 0)
+
 def AddOpenConditionCafeIdField(builder, openConditionCafeIdField):
-    return CafeInfoExcelAddOpenConditionCafeIdField(builder, openConditionCafeIdField)
-def CafeInfoExcelAddOpenConditionCafeInviteField(builder, openConditionCafeInviteField): builder.PrependInt32Slot(3, openConditionCafeInviteField, 0)
+    CafeInfoExcelAddOpenConditionCafeIdField(builder, openConditionCafeIdField)
+
+def CafeInfoExcelAddOpenConditionCafeInviteField(builder, openConditionCafeInviteField):
+    builder.PrependInt32Slot(3, openConditionCafeInviteField, 0)
+
 def AddOpenConditionCafeInviteField(builder, openConditionCafeInviteField):
-    return CafeInfoExcelAddOpenConditionCafeInviteField(builder, openConditionCafeInviteField)
-def CafeInfoExcelAddSummonParcelTypeField(builder, summonParcelTypeField): builder.PrependInt32Slot(4, summonParcelTypeField, 0)
+    CafeInfoExcelAddOpenConditionCafeInviteField(builder, openConditionCafeInviteField)
+
+def CafeInfoExcelAddSummonParcelTypeField(builder, summonParcelTypeField):
+    builder.PrependInt32Slot(4, summonParcelTypeField, 0)
+
 def AddSummonParcelTypeField(builder, summonParcelTypeField):
-    return CafeInfoExcelAddSummonParcelTypeField(builder, summonParcelTypeField)
-def CafeInfoExcelAddSummonParcelIdField(builder, summonParcelIdField): builder.PrependInt32Slot(5, summonParcelIdField, 0)
+    CafeInfoExcelAddSummonParcelTypeField(builder, summonParcelTypeField)
+
+def CafeInfoExcelAddSummonParcelIdField(builder, summonParcelIdField):
+    builder.PrependInt32Slot(5, summonParcelIdField, 0)
+
 def AddSummonParcelIdField(builder, summonParcelIdField):
-    return CafeInfoExcelAddSummonParcelIdField(builder, summonParcelIdField)
-def CafeInfoExcelAddSummonParcelAmountField(builder, summonParcelAmountField): builder.PrependInt32Slot(6, summonParcelAmountField, 0)
+    CafeInfoExcelAddSummonParcelIdField(builder, summonParcelIdField)
+
+def CafeInfoExcelAddSummonParcelAmountField(builder, summonParcelAmountField):
+    builder.PrependInt32Slot(6, summonParcelAmountField, 0)
+
 def AddSummonParcelAmountField(builder, summonParcelAmountField):
-    return CafeInfoExcelAddSummonParcelAmountField(builder, summonParcelAmountField)
-def CafeInfoExcelAddCategoryTypeField(builder, categoryTypeField): builder.PrependFloat32Slot(7, categoryTypeField, 0.0)
+    CafeInfoExcelAddSummonParcelAmountField(builder, summonParcelAmountField)
+
+def CafeInfoExcelAddCategoryTypeField(builder, categoryTypeField):
+    builder.PrependFloat32Slot(7, categoryTypeField, 0.0)
+
 def AddCategoryTypeField(builder, categoryTypeField):
-    return CafeInfoExcelAddCategoryTypeField(builder, categoryTypeField)
-def CafeInfoExcelAddSummonTicketIconPathField(builder, summonTicketIconPathField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(summonTicketIconPathField), 0)
+    CafeInfoExcelAddCategoryTypeField(builder, categoryTypeField)
+
+def CafeInfoExcelAddSummonTicketIconPathField(builder, summonTicketIconPathField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(summonTicketIconPathField), 0)
+
 def AddSummonTicketIconPathField(builder, summonTicketIconPathField):
-    return CafeInfoExcelAddSummonTicketIconPathField(builder, summonTicketIconPathField)
-def CafeInfoExcelEnd(builder): return builder.EndObject()
+    CafeInfoExcelAddSummonTicketIconPathField(builder, summonTicketIconPathField)
+
+def CafeInfoExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CafeInfoExcelEnd(builder)

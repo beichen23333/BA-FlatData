@@ -49,6 +49,13 @@ table AniEventData {
     string_param_field:string;
 }
 
+table AppIconExcel {
+    app_icon_i_d_field:int;
+    start_date_field:string;
+    end_date_field:string;
+    app_icon_name_field:string;
+}
+
 table BattleExcel {
     none_field:[UnitType];
     single_field:AttackType;
@@ -196,6 +203,7 @@ table ConstCombatExcel {
     show_bufficon_extra_passive_skill_field:bool;
     show_bufficon_leader_skill_field:bool;
     show_bufficon_ground_passive_skill_field:bool;
+    show_bufficon_apc_synergy_passive_skill_field:bool;
     supplies_condition_string_id_field:string;
     public_speech_bubble_offset_x_field:float;
     public_speech_bubble_offset_y_field:float;
@@ -213,6 +221,7 @@ table ConstCombatExcel {
     enemy_regen_cost_field:int;
     champion_regen_cost_field:int;
     player_regen_cost_delay_field:int;
+    player_auto_use_start_delay_field:int;
     crowd_control_factor_field:int;
     raid_open_scenario_id_field:string;
     eliminate_raid_open_scenario_id_field:string;
@@ -293,6 +302,7 @@ table ConstCombatExcel {
     move_correction_skip_ratio_field:int;
     obstacle_collider_height_jumpable_field:float;
     obstacle_collider_height_not_jumpable_field:float;
+    check_cheater_max_use_cost_tactical_relay_field:int;
 }
 
 table ConstCommonExcel {
@@ -348,6 +358,7 @@ table ConstCommonExcel {
     clan_max_member_field:int;
     clan_search_result_count_field:int;
     clan_max_applicant_field:int;
+    clan_kick_history_max_field:int;
     clan_rejoin_cool_time_from_second_field:int;
     clan_word_balloon_max_character_field:int;
     call_name_rename_cool_time_from_hour_field:int;
@@ -370,7 +381,6 @@ table ConstCommonExcel {
     post_expired_day_inventory_overflow_field:int;
     post_expired_day_game_manager_field:int;
     u_i_label_character_wrap_field:string;
-    request_time_out_field:float;
     mail_storage_soft_cap_field:int;
     mail_storage_hard_cap_field:int;
     clear_deck_storage_size_field:int;
@@ -406,6 +416,10 @@ table ConstCommonExcel {
     monthly_product_repurchase_popup_limit_field:int;
     common_favor_item_tags_field:[Tag];
     max_ap_master_coin_per_week_field:int;
+    plus_max_ap_master_coin_per_week_product_monthly_id1_field:[int];
+    plus_max_ap_master_coin_per_week1_field:int;
+    plus_max_ap_master_coin_per_week_product_monthly_id2_field:[int];
+    plus_max_ap_master_coin_per_week2_field:int;
     craft_open_exp_tier1_field:int;
     craft_open_exp_tier2_field:int;
     craft_open_exp_tier3_field:int;
@@ -444,6 +458,7 @@ table ConstCommonExcel {
     beforehand_gacha_group_id_field:int;
     renewal_display_order_day_field:int;
     emblem_default_id_field:int;
+    student_frame_default_id_field:int;
     birthday_mail_start_date_field:string;
     birthday_mail_remain_date_field:int;
     birthday_mail_parcel_type_field:ParcelType;
@@ -505,6 +520,13 @@ table ConstCommonExcel {
     q_r_icon_url_live_field:string;
     probablity_info_btn_link_k_r_field:string;
     clear_deck_echelon_show_max_count_field:int;
+    expiry_streak_record_item_receive_day_field:int;
+    expiry_season_record_item_receive_day_field:int;
+    engrave_contents_is_open_field:bool;
+    tactical_relay_contents_is_open_field:bool;
+    ex_skill_level_max_by_engrave_field:int;
+    ex_skill_upgrade_level_max_field:int;
+    raid_reset_count_field:int;
 }
 
 table ConstConquestExcel {
@@ -593,6 +615,24 @@ table ConstMinigameCCGExcel {
     base_reward_reroll_point_field:int;
     select_reward_option_count_field:int;
     alternative_card_image_path_field:string;
+}
+
+table ConstMinigameJankenExcel {
+    time_limit_per_turn_field:int;
+    max_damage_rate_field:int;
+    damage_curve_coefficient_field:float;
+    draw_constant_attack_field:int;
+    draw_constant_block_field:int;
+    win_scene_rate_field:int;
+    lose_scene_rate_field:int;
+    enemy_appear_rate_field:int;
+    player_sp_atk_condition_rate_field:int;
+    enemy_sp_atk_condition_rate_field:int;
+    a_t_g_groggy_fixed_damage_field:int;
+    max_skill_cost_field:int;
+    time_limit_q_t_e_field:int;
+    stage_outro_time_offset_field:int;
+    u_i_boss_hp_bar_count_field:int;
 }
 
 table ConstMinigameRoadPuzzleExcel {
@@ -686,6 +726,7 @@ table ConstStrategyExcel {
     multi_sweep_preset_select_stage_max_count_field:int;
     multi_sweep_preset_max_sweep_count_field:int;
     multi_sweep_preset_select_parcel_max_count_field:int;
+    tactical_relay_echelon_count_field:int;
 }
 
 table CouponStuffExcel {
@@ -1301,6 +1342,10 @@ table AddressableWhiteListExcelTable {
     data_list:[AddressableWhiteListExcel];
 }
 
+table AppIconExcelTable {
+    data_list:[AppIconExcel];
+}
+
 table BattleExcelTable {
     data_list:[BattleExcel];
 }
@@ -1367,6 +1412,10 @@ table ConstKeyMappingExcelTable {
 
 table ConstMinigameCCGExcelTable {
     data_list:[ConstMinigameCCGExcel];
+}
+
+table ConstMinigameJankenExcelTable {
+    data_list:[ConstMinigameJankenExcel];
 }
 
 table ConstMinigameRoadPuzzleExcelTable {

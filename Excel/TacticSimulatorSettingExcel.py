@@ -38,15 +38,26 @@ class TacticSimulatorSettingExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def TacticSimulatorSettingExcelStart(builder): builder.StartObject(2)
+def TacticSimulatorSettingExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return TacticSimulatorSettingExcelStart(builder)
-def TacticSimulatorSettingExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(0, groundIdField, 0)
+    TacticSimulatorSettingExcelStart(builder)
+
+def TacticSimulatorSettingExcelAddGroundIdField(builder, groundIdField):
+    builder.PrependInt32Slot(0, groundIdField, 0)
+
 def AddGroundIdField(builder, groundIdField):
-    return TacticSimulatorSettingExcelAddGroundIdField(builder, groundIdField)
-def TacticSimulatorSettingExcelAddFixedEchelonIdField(builder, fixedEchelonIdField): builder.PrependInt32Slot(1, fixedEchelonIdField, 0)
+    TacticSimulatorSettingExcelAddGroundIdField(builder, groundIdField)
+
+def TacticSimulatorSettingExcelAddFixedEchelonIdField(builder, fixedEchelonIdField):
+    builder.PrependInt32Slot(1, fixedEchelonIdField, 0)
+
 def AddFixedEchelonIdField(builder, fixedEchelonIdField):
-    return TacticSimulatorSettingExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
-def TacticSimulatorSettingExcelEnd(builder): return builder.EndObject()
+    TacticSimulatorSettingExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
+
+def TacticSimulatorSettingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TacticSimulatorSettingExcelEnd(builder)

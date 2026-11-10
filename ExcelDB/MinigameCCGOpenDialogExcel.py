@@ -73,30 +73,56 @@ class MinigameCCGOpenDialogExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGOpenDialogExcelStart(builder): builder.StartObject(7)
+def MinigameCCGOpenDialogExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return MinigameCCGOpenDialogExcelStart(builder)
-def MinigameCCGOpenDialogExcelAddDialogIdField(builder, dialogIdField): builder.PrependInt32Slot(0, dialogIdField, 0)
+    MinigameCCGOpenDialogExcelStart(builder)
+
+def MinigameCCGOpenDialogExcelAddDialogIdField(builder, dialogIdField):
+    builder.PrependInt32Slot(0, dialogIdField, 0)
+
 def AddDialogIdField(builder, dialogIdField):
-    return MinigameCCGOpenDialogExcelAddDialogIdField(builder, dialogIdField)
-def MinigameCCGOpenDialogExcelAddPlayOrderField(builder, playOrderField): builder.PrependInt32Slot(1, playOrderField, 0)
+    MinigameCCGOpenDialogExcelAddDialogIdField(builder, dialogIdField)
+
+def MinigameCCGOpenDialogExcelAddPlayOrderField(builder, playOrderField):
+    builder.PrependInt32Slot(1, playOrderField, 0)
+
 def AddPlayOrderField(builder, playOrderField):
-    return MinigameCCGOpenDialogExcelAddPlayOrderField(builder, playOrderField)
-def MinigameCCGOpenDialogExcelAddConditionCardField(builder, conditionCardField): builder.PrependInt32Slot(2, conditionCardField, 0)
+    MinigameCCGOpenDialogExcelAddPlayOrderField(builder, playOrderField)
+
+def MinigameCCGOpenDialogExcelAddConditionCardField(builder, conditionCardField):
+    builder.PrependInt32Slot(2, conditionCardField, 0)
+
 def AddConditionCardField(builder, conditionCardField):
-    return MinigameCCGOpenDialogExcelAddConditionCardField(builder, conditionCardField)
-def MinigameCCGOpenDialogExcelAddDialogField(builder, dialogField): builder.PrependUint32Slot(3, dialogField, 0)
+    MinigameCCGOpenDialogExcelAddConditionCardField(builder, conditionCardField)
+
+def MinigameCCGOpenDialogExcelAddDialogField(builder, dialogField):
+    builder.PrependUint32Slot(3, dialogField, 0)
+
 def AddDialogField(builder, dialogField):
-    return MinigameCCGOpenDialogExcelAddDialogField(builder, dialogField)
-def MinigameCCGOpenDialogExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(4, durationField, 0)
+    MinigameCCGOpenDialogExcelAddDialogField(builder, dialogField)
+
+def MinigameCCGOpenDialogExcelAddDurationField(builder, durationField):
+    builder.PrependInt32Slot(4, durationField, 0)
+
 def AddDurationField(builder, durationField):
-    return MinigameCCGOpenDialogExcelAddDurationField(builder, durationField)
-def MinigameCCGOpenDialogExcelAddDurationKrField(builder, durationKrField): builder.PrependInt32Slot(5, durationKrField, 0)
+    MinigameCCGOpenDialogExcelAddDurationField(builder, durationField)
+
+def MinigameCCGOpenDialogExcelAddDurationKrField(builder, durationKrField):
+    builder.PrependInt32Slot(5, durationKrField, 0)
+
 def AddDurationKrField(builder, durationKrField):
-    return MinigameCCGOpenDialogExcelAddDurationKrField(builder, durationKrField)
-def MinigameCCGOpenDialogExcelAddVoiceField(builder, voiceField): builder.PrependUint32Slot(6, voiceField, 0)
+    MinigameCCGOpenDialogExcelAddDurationKrField(builder, durationKrField)
+
+def MinigameCCGOpenDialogExcelAddVoiceField(builder, voiceField):
+    builder.PrependUint32Slot(6, voiceField, 0)
+
 def AddVoiceField(builder, voiceField):
-    return MinigameCCGOpenDialogExcelAddVoiceField(builder, voiceField)
-def MinigameCCGOpenDialogExcelEnd(builder): return builder.EndObject()
+    MinigameCCGOpenDialogExcelAddVoiceField(builder, voiceField)
+
+def MinigameCCGOpenDialogExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGOpenDialogExcelEnd(builder)

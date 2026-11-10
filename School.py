@@ -16,3 +16,4 @@ class School:
     Tokiwadai = 14
     Sakugawa = 15
     Highlander = 16
+    Odyssey = 17

@@ -141,48 +141,92 @@ class MinigameCCGPerkExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGPerkExcelStart(builder): builder.StartObject(11)
+def MinigameCCGPerkExcelStart(builder):
+    builder.StartObject(11)
+
 def Start(builder):
-    return MinigameCCGPerkExcelStart(builder)
-def MinigameCCGPerkExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    MinigameCCGPerkExcelStart(builder)
+
+def MinigameCCGPerkExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return MinigameCCGPerkExcelAddIdField(builder, idField)
-def MinigameCCGPerkExcelAddCCGIdField(builder, cCGIdField): builder.PrependInt32Slot(1, cCGIdField, 0)
+    MinigameCCGPerkExcelAddIdField(builder, idField)
+
+def MinigameCCGPerkExcelAddCCGIdField(builder, cCGIdField):
+    builder.PrependInt32Slot(1, cCGIdField, 0)
+
 def AddCCGIdField(builder, cCGIdField):
-    return MinigameCCGPerkExcelAddCCGIdField(builder, cCGIdField)
-def MinigameCCGPerkExcelAddCostParcelAmountField(builder, costParcelAmountField): builder.PrependInt32Slot(2, costParcelAmountField, 0)
+    MinigameCCGPerkExcelAddCCGIdField(builder, cCGIdField)
+
+def MinigameCCGPerkExcelAddCostParcelAmountField(builder, costParcelAmountField):
+    builder.PrependInt32Slot(2, costParcelAmountField, 0)
+
 def AddCostParcelAmountField(builder, costParcelAmountField):
-    return MinigameCCGPerkExcelAddCostParcelAmountField(builder, costParcelAmountField)
-def MinigameCCGPerkExcelAddRerollPointField(builder, rerollPointField): builder.PrependInt32Slot(3, rerollPointField, 0)
+    MinigameCCGPerkExcelAddCostParcelAmountField(builder, costParcelAmountField)
+
+def MinigameCCGPerkExcelAddRerollPointField(builder, rerollPointField):
+    builder.PrependInt32Slot(3, rerollPointField, 0)
+
 def AddRerollPointField(builder, rerollPointField):
-    return MinigameCCGPerkExcelAddRerollPointField(builder, rerollPointField)
-def MinigameCCGPerkExcelAddDiscardPointField(builder, discardPointField): builder.PrependInt32Slot(4, discardPointField, 0)
+    MinigameCCGPerkExcelAddRerollPointField(builder, rerollPointField)
+
+def MinigameCCGPerkExcelAddDiscardPointField(builder, discardPointField):
+    builder.PrependInt32Slot(4, discardPointField, 0)
+
 def AddDiscardPointField(builder, discardPointField):
-    return MinigameCCGPerkExcelAddDiscardPointField(builder, discardPointField)
-def MinigameCCGPerkExcelAddEnvironmentLogicEffectIdField(builder, environmentLogicEffectIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(environmentLogicEffectIdField), 0)
+    MinigameCCGPerkExcelAddDiscardPointField(builder, discardPointField)
+
+def MinigameCCGPerkExcelAddEnvironmentLogicEffectIdField(builder, environmentLogicEffectIdField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(environmentLogicEffectIdField), 0)
+
 def AddEnvironmentLogicEffectIdField(builder, environmentLogicEffectIdField):
-    return MinigameCCGPerkExcelAddEnvironmentLogicEffectIdField(builder, environmentLogicEffectIdField)
-def MinigameCCGPerkExcelStartEnvironmentLogicEffectIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEnvironmentLogicEffectIdFieldVector(builder, numElems):
+    MinigameCCGPerkExcelAddEnvironmentLogicEffectIdField(builder, environmentLogicEffectIdField)
+
+def MinigameCCGPerkExcelStartEnvironmentLogicEffectIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartEnvironmentLogicEffectIdFieldVector(builder, numElems: int) -> int:
     return MinigameCCGPerkExcelStartEnvironmentLogicEffectIdFieldVector(builder, numElems)
-def MinigameCCGPerkExcelAddRequiredPerkIdField(builder, requiredPerkIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(requiredPerkIdField), 0)
+
+def MinigameCCGPerkExcelAddRequiredPerkIdField(builder, requiredPerkIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(requiredPerkIdField), 0)
+
 def AddRequiredPerkIdField(builder, requiredPerkIdField):
-    return MinigameCCGPerkExcelAddRequiredPerkIdField(builder, requiredPerkIdField)
-def MinigameCCGPerkExcelStartRequiredPerkIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRequiredPerkIdFieldVector(builder, numElems):
+    MinigameCCGPerkExcelAddRequiredPerkIdField(builder, requiredPerkIdField)
+
+def MinigameCCGPerkExcelStartRequiredPerkIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRequiredPerkIdFieldVector(builder, numElems: int) -> int:
     return MinigameCCGPerkExcelStartRequiredPerkIdFieldVector(builder, numElems)
-def MinigameCCGPerkExcelAddShopOrderField(builder, shopOrderField): builder.PrependInt32Slot(7, shopOrderField, 0)
+
+def MinigameCCGPerkExcelAddShopOrderField(builder, shopOrderField):
+    builder.PrependInt32Slot(7, shopOrderField, 0)
+
 def AddShopOrderField(builder, shopOrderField):
-    return MinigameCCGPerkExcelAddShopOrderField(builder, shopOrderField)
-def MinigameCCGPerkExcelAddShopIconField(builder, shopIconField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(shopIconField), 0)
+    MinigameCCGPerkExcelAddShopOrderField(builder, shopOrderField)
+
+def MinigameCCGPerkExcelAddShopIconField(builder, shopIconField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(shopIconField), 0)
+
 def AddShopIconField(builder, shopIconField):
-    return MinigameCCGPerkExcelAddShopIconField(builder, shopIconField)
-def MinigameCCGPerkExcelAddShopLocalizeTitleField(builder, shopLocalizeTitleField): builder.PrependUint32Slot(9, shopLocalizeTitleField, 0)
+    MinigameCCGPerkExcelAddShopIconField(builder, shopIconField)
+
+def MinigameCCGPerkExcelAddShopLocalizeTitleField(builder, shopLocalizeTitleField):
+    builder.PrependUint32Slot(9, shopLocalizeTitleField, 0)
+
 def AddShopLocalizeTitleField(builder, shopLocalizeTitleField):
-    return MinigameCCGPerkExcelAddShopLocalizeTitleField(builder, shopLocalizeTitleField)
-def MinigameCCGPerkExcelAddShopLocalizeDescField(builder, shopLocalizeDescField): builder.PrependUint32Slot(10, shopLocalizeDescField, 0)
+    MinigameCCGPerkExcelAddShopLocalizeTitleField(builder, shopLocalizeTitleField)
+
+def MinigameCCGPerkExcelAddShopLocalizeDescField(builder, shopLocalizeDescField):
+    builder.PrependUint32Slot(10, shopLocalizeDescField, 0)
+
 def AddShopLocalizeDescField(builder, shopLocalizeDescField):
-    return MinigameCCGPerkExcelAddShopLocalizeDescField(builder, shopLocalizeDescField)
-def MinigameCCGPerkExcelEnd(builder): return builder.EndObject()
+    MinigameCCGPerkExcelAddShopLocalizeDescField(builder, shopLocalizeDescField)
+
+def MinigameCCGPerkExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGPerkExcelEnd(builder)

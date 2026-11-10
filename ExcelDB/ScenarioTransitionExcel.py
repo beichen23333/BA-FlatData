@@ -73,30 +73,56 @@ class ScenarioTransitionExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def ScenarioTransitionExcelStart(builder): builder.StartObject(7)
+def ScenarioTransitionExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return ScenarioTransitionExcelStart(builder)
-def ScenarioTransitionExcelAddNameField(builder, nameField): builder.PrependUint32Slot(0, nameField, 0)
+    ScenarioTransitionExcelStart(builder)
+
+def ScenarioTransitionExcelAddNameField(builder, nameField):
+    builder.PrependUint32Slot(0, nameField, 0)
+
 def AddNameField(builder, nameField):
-    return ScenarioTransitionExcelAddNameField(builder, nameField)
-def ScenarioTransitionExcelAddTransitionOutField(builder, transitionOutField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(transitionOutField), 0)
+    ScenarioTransitionExcelAddNameField(builder, nameField)
+
+def ScenarioTransitionExcelAddTransitionOutField(builder, transitionOutField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(transitionOutField), 0)
+
 def AddTransitionOutField(builder, transitionOutField):
-    return ScenarioTransitionExcelAddTransitionOutField(builder, transitionOutField)
-def ScenarioTransitionExcelAddTransitionOutDurationField(builder, transitionOutDurationField): builder.PrependInt32Slot(2, transitionOutDurationField, 0)
+    ScenarioTransitionExcelAddTransitionOutField(builder, transitionOutField)
+
+def ScenarioTransitionExcelAddTransitionOutDurationField(builder, transitionOutDurationField):
+    builder.PrependInt32Slot(2, transitionOutDurationField, 0)
+
 def AddTransitionOutDurationField(builder, transitionOutDurationField):
-    return ScenarioTransitionExcelAddTransitionOutDurationField(builder, transitionOutDurationField)
-def ScenarioTransitionExcelAddTransitionOutResourceField(builder, transitionOutResourceField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(transitionOutResourceField), 0)
+    ScenarioTransitionExcelAddTransitionOutDurationField(builder, transitionOutDurationField)
+
+def ScenarioTransitionExcelAddTransitionOutResourceField(builder, transitionOutResourceField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(transitionOutResourceField), 0)
+
 def AddTransitionOutResourceField(builder, transitionOutResourceField):
-    return ScenarioTransitionExcelAddTransitionOutResourceField(builder, transitionOutResourceField)
-def ScenarioTransitionExcelAddTransitionInField(builder, transitionInField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(transitionInField), 0)
+    ScenarioTransitionExcelAddTransitionOutResourceField(builder, transitionOutResourceField)
+
+def ScenarioTransitionExcelAddTransitionInField(builder, transitionInField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(transitionInField), 0)
+
 def AddTransitionInField(builder, transitionInField):
-    return ScenarioTransitionExcelAddTransitionInField(builder, transitionInField)
-def ScenarioTransitionExcelAddTransitionInDurationField(builder, transitionInDurationField): builder.PrependInt32Slot(5, transitionInDurationField, 0)
+    ScenarioTransitionExcelAddTransitionInField(builder, transitionInField)
+
+def ScenarioTransitionExcelAddTransitionInDurationField(builder, transitionInDurationField):
+    builder.PrependInt32Slot(5, transitionInDurationField, 0)
+
 def AddTransitionInDurationField(builder, transitionInDurationField):
-    return ScenarioTransitionExcelAddTransitionInDurationField(builder, transitionInDurationField)
-def ScenarioTransitionExcelAddTransitionInResourceField(builder, transitionInResourceField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(transitionInResourceField), 0)
+    ScenarioTransitionExcelAddTransitionInDurationField(builder, transitionInDurationField)
+
+def ScenarioTransitionExcelAddTransitionInResourceField(builder, transitionInResourceField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(transitionInResourceField), 0)
+
 def AddTransitionInResourceField(builder, transitionInResourceField):
-    return ScenarioTransitionExcelAddTransitionInResourceField(builder, transitionInResourceField)
-def ScenarioTransitionExcelEnd(builder): return builder.EndObject()
+    ScenarioTransitionExcelAddTransitionInResourceField(builder, transitionInResourceField)
+
+def ScenarioTransitionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioTransitionExcelEnd(builder)

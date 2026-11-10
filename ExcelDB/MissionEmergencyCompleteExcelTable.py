@@ -49,15 +49,26 @@ class MissionEmergencyCompleteExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MissionEmergencyCompleteExcelTableStart(builder): builder.StartObject(1)
+def MissionEmergencyCompleteExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MissionEmergencyCompleteExcelTableStart(builder)
-def MissionEmergencyCompleteExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MissionEmergencyCompleteExcelTableStart(builder)
+
+def MissionEmergencyCompleteExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MissionEmergencyCompleteExcelTableAddDataList(builder, dataList)
-def MissionEmergencyCompleteExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MissionEmergencyCompleteExcelTableAddDataList(builder, dataList)
+
+def MissionEmergencyCompleteExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MissionEmergencyCompleteExcelTableStartDataListVector(builder, numElems)
-def MissionEmergencyCompleteExcelTableEnd(builder): return builder.EndObject()
+
+def MissionEmergencyCompleteExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MissionEmergencyCompleteExcelTableEnd(builder)

@@ -101,42 +101,80 @@ class CharacterVoiceSubtitleExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def CharacterVoiceSubtitleExcelStart(builder): builder.StartObject(11)
+def CharacterVoiceSubtitleExcelStart(builder):
+    builder.StartObject(11)
+
 def Start(builder):
-    return CharacterVoiceSubtitleExcelStart(builder)
-def CharacterVoiceSubtitleExcelAddLocalizeCVGroupField(builder, localizeCVGroupField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+    CharacterVoiceSubtitleExcelStart(builder)
+
+def CharacterVoiceSubtitleExcelAddLocalizeCVGroupField(builder, localizeCVGroupField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+
 def AddLocalizeCVGroupField(builder, localizeCVGroupField):
-    return CharacterVoiceSubtitleExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
-def CharacterVoiceSubtitleExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField): builder.PrependInt32Slot(1, characterVoiceGroupIdField, 0)
+    CharacterVoiceSubtitleExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
+
+def CharacterVoiceSubtitleExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField):
+    builder.PrependInt32Slot(1, characterVoiceGroupIdField, 0)
+
 def AddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField):
-    return CharacterVoiceSubtitleExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField)
-def CharacterVoiceSubtitleExcelAddTLMIDField(builder, tLMIDField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(tLMIDField), 0)
+    CharacterVoiceSubtitleExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField)
+
+def CharacterVoiceSubtitleExcelAddTLMIDField(builder, tLMIDField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(tLMIDField), 0)
+
 def AddTLMIDField(builder, tLMIDField):
-    return CharacterVoiceSubtitleExcelAddTLMIDField(builder, tLMIDField)
-def CharacterVoiceSubtitleExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(3, durationField, 0)
+    CharacterVoiceSubtitleExcelAddTLMIDField(builder, tLMIDField)
+
+def CharacterVoiceSubtitleExcelAddDurationField(builder, durationField):
+    builder.PrependInt32Slot(3, durationField, 0)
+
 def AddDurationField(builder, durationField):
-    return CharacterVoiceSubtitleExcelAddDurationField(builder, durationField)
-def CharacterVoiceSubtitleExcelAddDurationKrField(builder, durationKrField): builder.PrependInt32Slot(4, durationKrField, 0)
+    CharacterVoiceSubtitleExcelAddDurationField(builder, durationField)
+
+def CharacterVoiceSubtitleExcelAddDurationKrField(builder, durationKrField):
+    builder.PrependInt32Slot(4, durationKrField, 0)
+
 def AddDurationKrField(builder, durationKrField):
-    return CharacterVoiceSubtitleExcelAddDurationKrField(builder, durationKrField)
-def CharacterVoiceSubtitleExcelAddSeparateField(builder, separateField): builder.PrependBoolSlot(5, separateField, 0)
+    CharacterVoiceSubtitleExcelAddDurationKrField(builder, durationKrField)
+
+def CharacterVoiceSubtitleExcelAddSeparateField(builder, separateField):
+    builder.PrependBoolSlot(5, separateField, 0)
+
 def AddSeparateField(builder, separateField):
-    return CharacterVoiceSubtitleExcelAddSeparateField(builder, separateField)
-def CharacterVoiceSubtitleExcelAddLocalizeKRField(builder, localizeKRField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+    CharacterVoiceSubtitleExcelAddSeparateField(builder, separateField)
+
+def CharacterVoiceSubtitleExcelAddLocalizeKRField(builder, localizeKRField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+
 def AddLocalizeKRField(builder, localizeKRField):
-    return CharacterVoiceSubtitleExcelAddLocalizeKRField(builder, localizeKRField)
-def CharacterVoiceSubtitleExcelAddLocalizeJPField(builder, localizeJPField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+    CharacterVoiceSubtitleExcelAddLocalizeKRField(builder, localizeKRField)
+
+def CharacterVoiceSubtitleExcelAddLocalizeJPField(builder, localizeJPField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+
 def AddLocalizeJPField(builder, localizeJPField):
-    return CharacterVoiceSubtitleExcelAddLocalizeJPField(builder, localizeJPField)
-def CharacterVoiceSubtitleExcelAddLocalizeTHField(builder, localizeTHField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTHField), 0)
+    CharacterVoiceSubtitleExcelAddLocalizeJPField(builder, localizeJPField)
+
+def CharacterVoiceSubtitleExcelAddLocalizeTHField(builder, localizeTHField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTHField), 0)
+
 def AddLocalizeTHField(builder, localizeTHField):
-    return CharacterVoiceSubtitleExcelAddLocalizeTHField(builder, localizeTHField)
-def CharacterVoiceSubtitleExcelAddLocalizeTWField(builder, localizeTWField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTWField), 0)
+    CharacterVoiceSubtitleExcelAddLocalizeTHField(builder, localizeTHField)
+
+def CharacterVoiceSubtitleExcelAddLocalizeTWField(builder, localizeTWField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTWField), 0)
+
 def AddLocalizeTWField(builder, localizeTWField):
-    return CharacterVoiceSubtitleExcelAddLocalizeTWField(builder, localizeTWField)
-def CharacterVoiceSubtitleExcelAddLocalizeENField(builder, localizeENField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(localizeENField), 0)
+    CharacterVoiceSubtitleExcelAddLocalizeTWField(builder, localizeTWField)
+
+def CharacterVoiceSubtitleExcelAddLocalizeENField(builder, localizeENField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(localizeENField), 0)
+
 def AddLocalizeENField(builder, localizeENField):
-    return CharacterVoiceSubtitleExcelAddLocalizeENField(builder, localizeENField)
-def CharacterVoiceSubtitleExcelEnd(builder): return builder.EndObject()
+    CharacterVoiceSubtitleExcelAddLocalizeENField(builder, localizeENField)
+
+def CharacterVoiceSubtitleExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterVoiceSubtitleExcelEnd(builder)

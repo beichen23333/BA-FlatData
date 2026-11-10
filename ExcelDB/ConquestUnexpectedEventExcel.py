@@ -113,39 +113,74 @@ class ConquestUnexpectedEventExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
-def ConquestUnexpectedEventExcelStart(builder): builder.StartObject(8)
+def ConquestUnexpectedEventExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return ConquestUnexpectedEventExcelStart(builder)
-def ConquestUnexpectedEventExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    ConquestUnexpectedEventExcelStart(builder)
+
+def ConquestUnexpectedEventExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return ConquestUnexpectedEventExcelAddEventContentIdField(builder, eventContentIdField)
-def ConquestUnexpectedEventExcelAddUnexpectedEventConditionTypeField(builder, unexpectedEventConditionTypeField): builder.PrependInt32Slot(1, unexpectedEventConditionTypeField, 0)
+    ConquestUnexpectedEventExcelAddEventContentIdField(builder, eventContentIdField)
+
+def ConquestUnexpectedEventExcelAddUnexpectedEventConditionTypeField(builder, unexpectedEventConditionTypeField):
+    builder.PrependInt32Slot(1, unexpectedEventConditionTypeField, 0)
+
 def AddUnexpectedEventConditionTypeField(builder, unexpectedEventConditionTypeField):
-    return ConquestUnexpectedEventExcelAddUnexpectedEventConditionTypeField(builder, unexpectedEventConditionTypeField)
-def ConquestUnexpectedEventExcelAddUnexpectedEventConditionUniqueIdField(builder, unexpectedEventConditionUniqueIdField): builder.PrependInt32Slot(2, unexpectedEventConditionUniqueIdField, 0)
+    ConquestUnexpectedEventExcelAddUnexpectedEventConditionTypeField(builder, unexpectedEventConditionTypeField)
+
+def ConquestUnexpectedEventExcelAddUnexpectedEventConditionUniqueIdField(builder, unexpectedEventConditionUniqueIdField):
+    builder.PrependInt32Slot(2, unexpectedEventConditionUniqueIdField, 0)
+
 def AddUnexpectedEventConditionUniqueIdField(builder, unexpectedEventConditionUniqueIdField):
-    return ConquestUnexpectedEventExcelAddUnexpectedEventConditionUniqueIdField(builder, unexpectedEventConditionUniqueIdField)
-def ConquestUnexpectedEventExcelAddUnexpectedEventConditionAmountField(builder, unexpectedEventConditionAmountField): builder.PrependInt32Slot(3, unexpectedEventConditionAmountField, 0)
+    ConquestUnexpectedEventExcelAddUnexpectedEventConditionUniqueIdField(builder, unexpectedEventConditionUniqueIdField)
+
+def ConquestUnexpectedEventExcelAddUnexpectedEventConditionAmountField(builder, unexpectedEventConditionAmountField):
+    builder.PrependInt32Slot(3, unexpectedEventConditionAmountField, 0)
+
 def AddUnexpectedEventConditionAmountField(builder, unexpectedEventConditionAmountField):
-    return ConquestUnexpectedEventExcelAddUnexpectedEventConditionAmountField(builder, unexpectedEventConditionAmountField)
-def ConquestUnexpectedEventExcelAddUnexpectedEventOccurDailyLimitCountField(builder, unexpectedEventOccurDailyLimitCountField): builder.PrependInt32Slot(4, unexpectedEventOccurDailyLimitCountField, 0)
+    ConquestUnexpectedEventExcelAddUnexpectedEventConditionAmountField(builder, unexpectedEventConditionAmountField)
+
+def ConquestUnexpectedEventExcelAddUnexpectedEventOccurDailyLimitCountField(builder, unexpectedEventOccurDailyLimitCountField):
+    builder.PrependInt32Slot(4, unexpectedEventOccurDailyLimitCountField, 0)
+
 def AddUnexpectedEventOccurDailyLimitCountField(builder, unexpectedEventOccurDailyLimitCountField):
-    return ConquestUnexpectedEventExcelAddUnexpectedEventOccurDailyLimitCountField(builder, unexpectedEventOccurDailyLimitCountField)
-def ConquestUnexpectedEventExcelAddUnitCountPerStepField(builder, unitCountPerStepField): builder.PrependInt32Slot(5, unitCountPerStepField, 0)
+    ConquestUnexpectedEventExcelAddUnexpectedEventOccurDailyLimitCountField(builder, unexpectedEventOccurDailyLimitCountField)
+
+def ConquestUnexpectedEventExcelAddUnitCountPerStepField(builder, unitCountPerStepField):
+    builder.PrependInt32Slot(5, unitCountPerStepField, 0)
+
 def AddUnitCountPerStepField(builder, unitCountPerStepField):
-    return ConquestUnexpectedEventExcelAddUnitCountPerStepField(builder, unitCountPerStepField)
-def ConquestUnexpectedEventExcelAddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(unexpectedEventPrefabField), 0)
+    ConquestUnexpectedEventExcelAddUnitCountPerStepField(builder, unitCountPerStepField)
+
+def ConquestUnexpectedEventExcelAddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(unexpectedEventPrefabField), 0)
+
 def AddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField):
-    return ConquestUnexpectedEventExcelAddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField)
-def ConquestUnexpectedEventExcelStartUnexpectedEventPrefabFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartUnexpectedEventPrefabFieldVector(builder, numElems):
+    ConquestUnexpectedEventExcelAddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField)
+
+def ConquestUnexpectedEventExcelStartUnexpectedEventPrefabFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartUnexpectedEventPrefabFieldVector(builder, numElems: int) -> int:
     return ConquestUnexpectedEventExcelStartUnexpectedEventPrefabFieldVector(builder, numElems)
-def ConquestUnexpectedEventExcelAddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(unexpectedEventUnitIdField), 0)
+
+def ConquestUnexpectedEventExcelAddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(unexpectedEventUnitIdField), 0)
+
 def AddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField):
-    return ConquestUnexpectedEventExcelAddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField)
-def ConquestUnexpectedEventExcelStartUnexpectedEventUnitIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartUnexpectedEventUnitIdFieldVector(builder, numElems):
+    ConquestUnexpectedEventExcelAddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField)
+
+def ConquestUnexpectedEventExcelStartUnexpectedEventUnitIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartUnexpectedEventUnitIdFieldVector(builder, numElems: int) -> int:
     return ConquestUnexpectedEventExcelStartUnexpectedEventUnitIdFieldVector(builder, numElems)
-def ConquestUnexpectedEventExcelEnd(builder): return builder.EndObject()
+
+def ConquestUnexpectedEventExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ConquestUnexpectedEventExcelEnd(builder)

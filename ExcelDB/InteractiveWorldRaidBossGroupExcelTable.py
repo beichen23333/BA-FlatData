@@ -49,15 +49,26 @@ class InteractiveWorldRaidBossGroupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def InteractiveWorldRaidBossGroupExcelTableStart(builder): builder.StartObject(1)
+def InteractiveWorldRaidBossGroupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return InteractiveWorldRaidBossGroupExcelTableStart(builder)
-def InteractiveWorldRaidBossGroupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    InteractiveWorldRaidBossGroupExcelTableStart(builder)
+
+def InteractiveWorldRaidBossGroupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return InteractiveWorldRaidBossGroupExcelTableAddDataList(builder, dataList)
-def InteractiveWorldRaidBossGroupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    InteractiveWorldRaidBossGroupExcelTableAddDataList(builder, dataList)
+
+def InteractiveWorldRaidBossGroupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidBossGroupExcelTableStartDataListVector(builder, numElems)
-def InteractiveWorldRaidBossGroupExcelTableEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidBossGroupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidBossGroupExcelTableEnd(builder)

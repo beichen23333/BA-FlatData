@@ -119,33 +119,62 @@ class ProductDailyRecordRewardExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
-def ProductDailyRecordRewardExcelStart(builder): builder.StartObject(5)
+def ProductDailyRecordRewardExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return ProductDailyRecordRewardExcelStart(builder)
-def ProductDailyRecordRewardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ProductDailyRecordRewardExcelStart(builder)
+
+def ProductDailyRecordRewardExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ProductDailyRecordRewardExcelAddIdField(builder, idField)
-def ProductDailyRecordRewardExcelAddDayField(builder, dayField): builder.PrependInt32Slot(1, dayField, 0)
+    ProductDailyRecordRewardExcelAddIdField(builder, idField)
+
+def ProductDailyRecordRewardExcelAddDayField(builder, dayField):
+    builder.PrependInt32Slot(1, dayField, 0)
+
 def AddDayField(builder, dayField):
-    return ProductDailyRecordRewardExcelAddDayField(builder, dayField)
-def ProductDailyRecordRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+    ProductDailyRecordRewardExcelAddDayField(builder, dayField)
+
+def ProductDailyRecordRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return ProductDailyRecordRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def ProductDailyRecordRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeFieldVector(builder, numElems):
+    ProductDailyRecordRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def ProductDailyRecordRewardExcelStartRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return ProductDailyRecordRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
-def ProductDailyRecordRewardExcelAddRewardIdField(builder, rewardIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardIdField), 0)
+
+def ProductDailyRecordRewardExcelAddRewardIdField(builder, rewardIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(rewardIdField), 0)
+
 def AddRewardIdField(builder, rewardIdField):
-    return ProductDailyRecordRewardExcelAddRewardIdField(builder, rewardIdField)
-def ProductDailyRecordRewardExcelStartRewardIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardIdFieldVector(builder, numElems):
+    ProductDailyRecordRewardExcelAddRewardIdField(builder, rewardIdField)
+
+def ProductDailyRecordRewardExcelStartRewardIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardIdFieldVector(builder, numElems: int) -> int:
     return ProductDailyRecordRewardExcelStartRewardIdFieldVector(builder, numElems)
-def ProductDailyRecordRewardExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmountField), 0)
+
+def ProductDailyRecordRewardExcelAddRewardAmountField(builder, rewardAmountField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmountField), 0)
+
 def AddRewardAmountField(builder, rewardAmountField):
-    return ProductDailyRecordRewardExcelAddRewardAmountField(builder, rewardAmountField)
-def ProductDailyRecordRewardExcelStartRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardAmountFieldVector(builder, numElems):
+    ProductDailyRecordRewardExcelAddRewardAmountField(builder, rewardAmountField)
+
+def ProductDailyRecordRewardExcelStartRewardAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardAmountFieldVector(builder, numElems: int) -> int:
     return ProductDailyRecordRewardExcelStartRewardAmountFieldVector(builder, numElems)
-def ProductDailyRecordRewardExcelEnd(builder): return builder.EndObject()
+
+def ProductDailyRecordRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductDailyRecordRewardExcelEnd(builder)

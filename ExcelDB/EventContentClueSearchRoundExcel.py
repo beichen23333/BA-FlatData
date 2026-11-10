@@ -168,54 +168,104 @@ class EventContentClueSearchRoundExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EventContentClueSearchRoundExcelStart(builder): builder.StartObject(12)
+def EventContentClueSearchRoundExcelStart(builder):
+    builder.StartObject(12)
+
 def Start(builder):
-    return EventContentClueSearchRoundExcelStart(builder)
-def EventContentClueSearchRoundExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentClueSearchRoundExcelStart(builder)
+
+def EventContentClueSearchRoundExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentClueSearchRoundExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentClueSearchRoundExcelAddRoundField(builder, roundField): builder.PrependInt32Slot(1, roundField, 0)
+    EventContentClueSearchRoundExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentClueSearchRoundExcelAddRoundField(builder, roundField):
+    builder.PrependInt32Slot(1, roundField, 0)
+
 def AddRoundField(builder, roundField):
-    return EventContentClueSearchRoundExcelAddRoundField(builder, roundField)
-def EventContentClueSearchRoundExcelAddIsLoopField(builder, isLoopField): builder.PrependBoolSlot(2, isLoopField, 0)
+    EventContentClueSearchRoundExcelAddRoundField(builder, roundField)
+
+def EventContentClueSearchRoundExcelAddIsLoopField(builder, isLoopField):
+    builder.PrependBoolSlot(2, isLoopField, 0)
+
 def AddIsLoopField(builder, isLoopField):
-    return EventContentClueSearchRoundExcelAddIsLoopField(builder, isLoopField)
-def EventContentClueSearchRoundExcelAddTargetImagePathField(builder, targetImagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(targetImagePathField), 0)
+    EventContentClueSearchRoundExcelAddIsLoopField(builder, isLoopField)
+
+def EventContentClueSearchRoundExcelAddTargetImagePathField(builder, targetImagePathField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(targetImagePathField), 0)
+
 def AddTargetImagePathField(builder, targetImagePathField):
-    return EventContentClueSearchRoundExcelAddTargetImagePathField(builder, targetImagePathField)
-def EventContentClueSearchRoundExcelAddLocalizeldField(builder, localizeldField): builder.PrependUint32Slot(4, localizeldField, 0)
+    EventContentClueSearchRoundExcelAddTargetImagePathField(builder, targetImagePathField)
+
+def EventContentClueSearchRoundExcelAddLocalizeldField(builder, localizeldField):
+    builder.PrependUint32Slot(4, localizeldField, 0)
+
 def AddLocalizeldField(builder, localizeldField):
-    return EventContentClueSearchRoundExcelAddLocalizeldField(builder, localizeldField)
-def EventContentClueSearchRoundExcelAddRewardIdField(builder, rewardIdField): builder.PrependInt32Slot(5, rewardIdField, 0)
+    EventContentClueSearchRoundExcelAddLocalizeldField(builder, localizeldField)
+
+def EventContentClueSearchRoundExcelAddRewardIdField(builder, rewardIdField):
+    builder.PrependInt32Slot(5, rewardIdField, 0)
+
 def AddRewardIdField(builder, rewardIdField):
-    return EventContentClueSearchRoundExcelAddRewardIdField(builder, rewardIdField)
-def EventContentClueSearchRoundExcelAddClueSlotNumberField(builder, clueSlotNumberField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(clueSlotNumberField), 0)
+    EventContentClueSearchRoundExcelAddRewardIdField(builder, rewardIdField)
+
+def EventContentClueSearchRoundExcelAddClueSlotNumberField(builder, clueSlotNumberField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(clueSlotNumberField), 0)
+
 def AddClueSlotNumberField(builder, clueSlotNumberField):
-    return EventContentClueSearchRoundExcelAddClueSlotNumberField(builder, clueSlotNumberField)
-def EventContentClueSearchRoundExcelStartClueSlotNumberFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartClueSlotNumberFieldVector(builder, numElems):
+    EventContentClueSearchRoundExcelAddClueSlotNumberField(builder, clueSlotNumberField)
+
+def EventContentClueSearchRoundExcelStartClueSlotNumberFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartClueSlotNumberFieldVector(builder, numElems: int) -> int:
     return EventContentClueSearchRoundExcelStartClueSlotNumberFieldVector(builder, numElems)
-def EventContentClueSearchRoundExcelAddClueIdField(builder, clueIdField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(clueIdField), 0)
+
+def EventContentClueSearchRoundExcelAddClueIdField(builder, clueIdField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(clueIdField), 0)
+
 def AddClueIdField(builder, clueIdField):
-    return EventContentClueSearchRoundExcelAddClueIdField(builder, clueIdField)
-def EventContentClueSearchRoundExcelStartClueIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartClueIdFieldVector(builder, numElems):
+    EventContentClueSearchRoundExcelAddClueIdField(builder, clueIdField)
+
+def EventContentClueSearchRoundExcelStartClueIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartClueIdFieldVector(builder, numElems: int) -> int:
     return EventContentClueSearchRoundExcelStartClueIdFieldVector(builder, numElems)
-def EventContentClueSearchRoundExcelAddClueCostAmountField(builder, clueCostAmountField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(clueCostAmountField), 0)
+
+def EventContentClueSearchRoundExcelAddClueCostAmountField(builder, clueCostAmountField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(clueCostAmountField), 0)
+
 def AddClueCostAmountField(builder, clueCostAmountField):
-    return EventContentClueSearchRoundExcelAddClueCostAmountField(builder, clueCostAmountField)
-def EventContentClueSearchRoundExcelStartClueCostAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartClueCostAmountFieldVector(builder, numElems):
+    EventContentClueSearchRoundExcelAddClueCostAmountField(builder, clueCostAmountField)
+
+def EventContentClueSearchRoundExcelStartClueCostAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartClueCostAmountFieldVector(builder, numElems: int) -> int:
     return EventContentClueSearchRoundExcelStartClueCostAmountFieldVector(builder, numElems)
-def EventContentClueSearchRoundExcelAddHintlocalizeIdField(builder, hintlocalizeIdField): builder.PrependUint32Slot(9, hintlocalizeIdField, 0)
+
+def EventContentClueSearchRoundExcelAddHintlocalizeIdField(builder, hintlocalizeIdField):
+    builder.PrependUint32Slot(9, hintlocalizeIdField, 0)
+
 def AddHintlocalizeIdField(builder, hintlocalizeIdField):
-    return EventContentClueSearchRoundExcelAddHintlocalizeIdField(builder, hintlocalizeIdField)
-def EventContentClueSearchRoundExcelAddClearlocalizeIdField(builder, clearlocalizeIdField): builder.PrependUint32Slot(10, clearlocalizeIdField, 0)
+    EventContentClueSearchRoundExcelAddHintlocalizeIdField(builder, hintlocalizeIdField)
+
+def EventContentClueSearchRoundExcelAddClearlocalizeIdField(builder, clearlocalizeIdField):
+    builder.PrependUint32Slot(10, clearlocalizeIdField, 0)
+
 def AddClearlocalizeIdField(builder, clearlocalizeIdField):
-    return EventContentClueSearchRoundExcelAddClearlocalizeIdField(builder, clearlocalizeIdField)
-def EventContentClueSearchRoundExcelAddClearPageImagePathField(builder, clearPageImagePathField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(clearPageImagePathField), 0)
+    EventContentClueSearchRoundExcelAddClearlocalizeIdField(builder, clearlocalizeIdField)
+
+def EventContentClueSearchRoundExcelAddClearPageImagePathField(builder, clearPageImagePathField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(clearPageImagePathField), 0)
+
 def AddClearPageImagePathField(builder, clearPageImagePathField):
-    return EventContentClueSearchRoundExcelAddClearPageImagePathField(builder, clearPageImagePathField)
-def EventContentClueSearchRoundExcelEnd(builder): return builder.EndObject()
+    EventContentClueSearchRoundExcelAddClearPageImagePathField(builder, clearPageImagePathField)
+
+def EventContentClueSearchRoundExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentClueSearchRoundExcelEnd(builder)

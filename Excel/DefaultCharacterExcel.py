@@ -108,45 +108,86 @@ class DefaultCharacterExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def DefaultCharacterExcelStart(builder): builder.StartObject(12)
+def DefaultCharacterExcelStart(builder):
+    builder.StartObject(12)
+
 def Start(builder):
-    return DefaultCharacterExcelStart(builder)
-def DefaultCharacterExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(0, characterIdField, 0)
+    DefaultCharacterExcelStart(builder)
+
+def DefaultCharacterExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(0, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return DefaultCharacterExcelAddCharacterIdField(builder, characterIdField)
-def DefaultCharacterExcelAddFavoriteCharacterField(builder, favoriteCharacterField): builder.PrependBoolSlot(1, favoriteCharacterField, 0)
+    DefaultCharacterExcelAddCharacterIdField(builder, characterIdField)
+
+def DefaultCharacterExcelAddFavoriteCharacterField(builder, favoriteCharacterField):
+    builder.PrependBoolSlot(1, favoriteCharacterField, 0)
+
 def AddFavoriteCharacterField(builder, favoriteCharacterField):
-    return DefaultCharacterExcelAddFavoriteCharacterField(builder, favoriteCharacterField)
-def DefaultCharacterExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(2, levelField, 0)
+    DefaultCharacterExcelAddFavoriteCharacterField(builder, favoriteCharacterField)
+
+def DefaultCharacterExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(2, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return DefaultCharacterExcelAddLevelField(builder, levelField)
-def DefaultCharacterExcelAddExpField(builder, expField): builder.PrependInt32Slot(3, expField, 0)
+    DefaultCharacterExcelAddLevelField(builder, levelField)
+
+def DefaultCharacterExcelAddExpField(builder, expField):
+    builder.PrependInt32Slot(3, expField, 0)
+
 def AddExpField(builder, expField):
-    return DefaultCharacterExcelAddExpField(builder, expField)
-def DefaultCharacterExcelAddFavorExpField(builder, favorExpField): builder.PrependInt32Slot(4, favorExpField, 0)
+    DefaultCharacterExcelAddExpField(builder, expField)
+
+def DefaultCharacterExcelAddFavorExpField(builder, favorExpField):
+    builder.PrependInt32Slot(4, favorExpField, 0)
+
 def AddFavorExpField(builder, favorExpField):
-    return DefaultCharacterExcelAddFavorExpField(builder, favorExpField)
-def DefaultCharacterExcelAddFavorRankField(builder, favorRankField): builder.PrependInt32Slot(5, favorRankField, 0)
+    DefaultCharacterExcelAddFavorExpField(builder, favorExpField)
+
+def DefaultCharacterExcelAddFavorRankField(builder, favorRankField):
+    builder.PrependInt32Slot(5, favorRankField, 0)
+
 def AddFavorRankField(builder, favorRankField):
-    return DefaultCharacterExcelAddFavorRankField(builder, favorRankField)
-def DefaultCharacterExcelAddStarGradeField(builder, starGradeField): builder.PrependInt32Slot(6, starGradeField, 0)
+    DefaultCharacterExcelAddFavorRankField(builder, favorRankField)
+
+def DefaultCharacterExcelAddStarGradeField(builder, starGradeField):
+    builder.PrependInt32Slot(6, starGradeField, 0)
+
 def AddStarGradeField(builder, starGradeField):
-    return DefaultCharacterExcelAddStarGradeField(builder, starGradeField)
-def DefaultCharacterExcelAddExSkillLevelField(builder, exSkillLevelField): builder.PrependInt32Slot(7, exSkillLevelField, 0)
+    DefaultCharacterExcelAddStarGradeField(builder, starGradeField)
+
+def DefaultCharacterExcelAddExSkillLevelField(builder, exSkillLevelField):
+    builder.PrependInt32Slot(7, exSkillLevelField, 0)
+
 def AddExSkillLevelField(builder, exSkillLevelField):
-    return DefaultCharacterExcelAddExSkillLevelField(builder, exSkillLevelField)
-def DefaultCharacterExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField): builder.PrependInt32Slot(8, passiveSkillLevelField, 0)
+    DefaultCharacterExcelAddExSkillLevelField(builder, exSkillLevelField)
+
+def DefaultCharacterExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField):
+    builder.PrependInt32Slot(8, passiveSkillLevelField, 0)
+
 def AddPassiveSkillLevelField(builder, passiveSkillLevelField):
-    return DefaultCharacterExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField)
-def DefaultCharacterExcelAddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField): builder.PrependInt32Slot(9, extraPassiveSkillLevelField, 0)
+    DefaultCharacterExcelAddPassiveSkillLevelField(builder, passiveSkillLevelField)
+
+def DefaultCharacterExcelAddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField):
+    builder.PrependInt32Slot(9, extraPassiveSkillLevelField, 0)
+
 def AddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField):
-    return DefaultCharacterExcelAddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField)
-def DefaultCharacterExcelAddCommonSkillLevelField(builder, commonSkillLevelField): builder.PrependInt32Slot(10, commonSkillLevelField, 0)
+    DefaultCharacterExcelAddExtraPassiveSkillLevelField(builder, extraPassiveSkillLevelField)
+
+def DefaultCharacterExcelAddCommonSkillLevelField(builder, commonSkillLevelField):
+    builder.PrependInt32Slot(10, commonSkillLevelField, 0)
+
 def AddCommonSkillLevelField(builder, commonSkillLevelField):
-    return DefaultCharacterExcelAddCommonSkillLevelField(builder, commonSkillLevelField)
-def DefaultCharacterExcelAddLeaderSkillLevelField(builder, leaderSkillLevelField): builder.PrependInt32Slot(11, leaderSkillLevelField, 0)
+    DefaultCharacterExcelAddCommonSkillLevelField(builder, commonSkillLevelField)
+
+def DefaultCharacterExcelAddLeaderSkillLevelField(builder, leaderSkillLevelField):
+    builder.PrependInt32Slot(11, leaderSkillLevelField, 0)
+
 def AddLeaderSkillLevelField(builder, leaderSkillLevelField):
-    return DefaultCharacterExcelAddLeaderSkillLevelField(builder, leaderSkillLevelField)
-def DefaultCharacterExcelEnd(builder): return builder.EndObject()
+    DefaultCharacterExcelAddLeaderSkillLevelField(builder, leaderSkillLevelField)
+
+def DefaultCharacterExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return DefaultCharacterExcelEnd(builder)

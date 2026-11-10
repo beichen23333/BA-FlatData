@@ -59,24 +59,44 @@ class ToastExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ToastExcelStart(builder): builder.StartObject(5)
+def ToastExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return ToastExcelStart(builder)
-def ToastExcelAddIdField(builder, idField): builder.PrependUint32Slot(0, idField, 0)
+    ToastExcelStart(builder)
+
+def ToastExcelAddIdField(builder, idField):
+    builder.PrependUint32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ToastExcelAddIdField(builder, idField)
-def ToastExcelAddToastTypeField(builder, toastTypeField): builder.PrependInt32Slot(1, toastTypeField, 0)
+    ToastExcelAddIdField(builder, idField)
+
+def ToastExcelAddToastTypeField(builder, toastTypeField):
+    builder.PrependInt32Slot(1, toastTypeField, 0)
+
 def AddToastTypeField(builder, toastTypeField):
-    return ToastExcelAddToastTypeField(builder, toastTypeField)
-def ToastExcelAddMissionIdField(builder, missionIdField): builder.PrependUint32Slot(2, missionIdField, 0)
+    ToastExcelAddToastTypeField(builder, toastTypeField)
+
+def ToastExcelAddMissionIdField(builder, missionIdField):
+    builder.PrependUint32Slot(2, missionIdField, 0)
+
 def AddMissionIdField(builder, missionIdField):
-    return ToastExcelAddMissionIdField(builder, missionIdField)
-def ToastExcelAddTextIdField(builder, textIdField): builder.PrependUint32Slot(3, textIdField, 0)
+    ToastExcelAddMissionIdField(builder, missionIdField)
+
+def ToastExcelAddTextIdField(builder, textIdField):
+    builder.PrependUint32Slot(3, textIdField, 0)
+
 def AddTextIdField(builder, textIdField):
-    return ToastExcelAddTextIdField(builder, textIdField)
-def ToastExcelAddLifeTimeField(builder, lifeTimeField): builder.PrependInt32Slot(4, lifeTimeField, 0)
+    ToastExcelAddTextIdField(builder, textIdField)
+
+def ToastExcelAddLifeTimeField(builder, lifeTimeField):
+    builder.PrependInt32Slot(4, lifeTimeField, 0)
+
 def AddLifeTimeField(builder, lifeTimeField):
-    return ToastExcelAddLifeTimeField(builder, lifeTimeField)
-def ToastExcelEnd(builder): return builder.EndObject()
+    ToastExcelAddLifeTimeField(builder, lifeTimeField)
+
+def ToastExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ToastExcelEnd(builder)

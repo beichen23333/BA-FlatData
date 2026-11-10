@@ -49,15 +49,26 @@ class MiniGameDreamCollectionScenarioExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MiniGameDreamCollectionScenarioExcelTableStart(builder): builder.StartObject(1)
+def MiniGameDreamCollectionScenarioExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MiniGameDreamCollectionScenarioExcelTableStart(builder)
-def MiniGameDreamCollectionScenarioExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MiniGameDreamCollectionScenarioExcelTableStart(builder)
+
+def MiniGameDreamCollectionScenarioExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MiniGameDreamCollectionScenarioExcelTableAddDataList(builder, dataList)
-def MiniGameDreamCollectionScenarioExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MiniGameDreamCollectionScenarioExcelTableAddDataList(builder, dataList)
+
+def MiniGameDreamCollectionScenarioExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MiniGameDreamCollectionScenarioExcelTableStartDataListVector(builder, numElems)
-def MiniGameDreamCollectionScenarioExcelTableEnd(builder): return builder.EndObject()
+
+def MiniGameDreamCollectionScenarioExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameDreamCollectionScenarioExcelTableEnd(builder)

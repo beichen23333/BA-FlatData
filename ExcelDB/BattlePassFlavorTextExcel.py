@@ -59,24 +59,44 @@ class BattlePassFlavorTextExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def BattlePassFlavorTextExcelStart(builder): builder.StartObject(5)
+def BattlePassFlavorTextExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return BattlePassFlavorTextExcelStart(builder)
-def BattlePassFlavorTextExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    BattlePassFlavorTextExcelStart(builder)
+
+def BattlePassFlavorTextExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return BattlePassFlavorTextExcelAddGroupIdField(builder, groupIdField)
-def BattlePassFlavorTextExcelAddIdField(builder, idField): builder.PrependInt32Slot(1, idField, 0)
+    BattlePassFlavorTextExcelAddGroupIdField(builder, groupIdField)
+
+def BattlePassFlavorTextExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(1, idField, 0)
+
 def AddIdField(builder, idField):
-    return BattlePassFlavorTextExcelAddIdField(builder, idField)
-def BattlePassFlavorTextExcelAddTextGroupField(builder, textGroupField): builder.PrependInt32Slot(2, textGroupField, 0)
+    BattlePassFlavorTextExcelAddIdField(builder, idField)
+
+def BattlePassFlavorTextExcelAddTextGroupField(builder, textGroupField):
+    builder.PrependInt32Slot(2, textGroupField, 0)
+
 def AddTextGroupField(builder, textGroupField):
-    return BattlePassFlavorTextExcelAddTextGroupField(builder, textGroupField)
-def BattlePassFlavorTextExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUint32Slot(3, localizeCodeIdField, 0)
+    BattlePassFlavorTextExcelAddTextGroupField(builder, textGroupField)
+
+def BattlePassFlavorTextExcelAddLocalizeCodeIdField(builder, localizeCodeIdField):
+    builder.PrependUint32Slot(3, localizeCodeIdField, 0)
+
 def AddLocalizeCodeIdField(builder, localizeCodeIdField):
-    return BattlePassFlavorTextExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
-def BattlePassFlavorTextExcelAddSortField(builder, sortField): builder.PrependInt32Slot(4, sortField, 0)
+    BattlePassFlavorTextExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+
+def BattlePassFlavorTextExcelAddSortField(builder, sortField):
+    builder.PrependInt32Slot(4, sortField, 0)
+
 def AddSortField(builder, sortField):
-    return BattlePassFlavorTextExcelAddSortField(builder, sortField)
-def BattlePassFlavorTextExcelEnd(builder): return builder.EndObject()
+    BattlePassFlavorTextExcelAddSortField(builder, sortField)
+
+def BattlePassFlavorTextExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BattlePassFlavorTextExcelEnd(builder)

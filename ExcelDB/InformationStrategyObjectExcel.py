@@ -52,21 +52,38 @@ class InformationStrategyObjectExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def InformationStrategyObjectExcelStart(builder): builder.StartObject(4)
+def InformationStrategyObjectExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return InformationStrategyObjectExcelStart(builder)
-def InformationStrategyObjectExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    InformationStrategyObjectExcelStart(builder)
+
+def InformationStrategyObjectExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return InformationStrategyObjectExcelAddIdField(builder, idField)
-def InformationStrategyObjectExcelAddStageIdField(builder, stageIdField): builder.PrependInt32Slot(1, stageIdField, 0)
+    InformationStrategyObjectExcelAddIdField(builder, idField)
+
+def InformationStrategyObjectExcelAddStageIdField(builder, stageIdField):
+    builder.PrependInt32Slot(1, stageIdField, 0)
+
 def AddStageIdField(builder, stageIdField):
-    return InformationStrategyObjectExcelAddStageIdField(builder, stageIdField)
-def InformationStrategyObjectExcelAddPageNameField(builder, pageNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(pageNameField), 0)
+    InformationStrategyObjectExcelAddStageIdField(builder, stageIdField)
+
+def InformationStrategyObjectExcelAddPageNameField(builder, pageNameField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(pageNameField), 0)
+
 def AddPageNameField(builder, pageNameField):
-    return InformationStrategyObjectExcelAddPageNameField(builder, pageNameField)
-def InformationStrategyObjectExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCodeIdField), 0)
+    InformationStrategyObjectExcelAddPageNameField(builder, pageNameField)
+
+def InformationStrategyObjectExcelAddLocalizeCodeIdField(builder, localizeCodeIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCodeIdField), 0)
+
 def AddLocalizeCodeIdField(builder, localizeCodeIdField):
-    return InformationStrategyObjectExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
-def InformationStrategyObjectExcelEnd(builder): return builder.EndObject()
+    InformationStrategyObjectExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+
+def InformationStrategyObjectExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InformationStrategyObjectExcelEnd(builder)

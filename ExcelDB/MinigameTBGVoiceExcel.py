@@ -52,21 +52,38 @@ class MinigameTBGVoiceExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameTBGVoiceExcelStart(builder): builder.StartObject(4)
+def MinigameTBGVoiceExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return MinigameTBGVoiceExcelStart(builder)
-def MinigameTBGVoiceExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MinigameTBGVoiceExcelStart(builder)
+
+def MinigameTBGVoiceExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MinigameTBGVoiceExcelAddEventContentIdField(builder, eventContentIdField)
-def MinigameTBGVoiceExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+    MinigameTBGVoiceExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MinigameTBGVoiceExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(1, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MinigameTBGVoiceExcelAddUniqueIdField(builder, uniqueIdField)
-def MinigameTBGVoiceExcelAddVoiceConditionField(builder, voiceConditionField): builder.PrependInt32Slot(2, voiceConditionField, 0)
+    MinigameTBGVoiceExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MinigameTBGVoiceExcelAddVoiceConditionField(builder, voiceConditionField):
+    builder.PrependInt32Slot(2, voiceConditionField, 0)
+
 def AddVoiceConditionField(builder, voiceConditionField):
-    return MinigameTBGVoiceExcelAddVoiceConditionField(builder, voiceConditionField)
-def MinigameTBGVoiceExcelAddVoiceIdField(builder, voiceIdField): builder.PrependUint32Slot(3, voiceIdField, 0)
+    MinigameTBGVoiceExcelAddVoiceConditionField(builder, voiceConditionField)
+
+def MinigameTBGVoiceExcelAddVoiceIdField(builder, voiceIdField):
+    builder.PrependUint32Slot(3, voiceIdField, 0)
+
 def AddVoiceIdField(builder, voiceIdField):
-    return MinigameTBGVoiceExcelAddVoiceIdField(builder, voiceIdField)
-def MinigameTBGVoiceExcelEnd(builder): return builder.EndObject()
+    MinigameTBGVoiceExcelAddVoiceIdField(builder, voiceIdField)
+
+def MinigameTBGVoiceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameTBGVoiceExcelEnd(builder)

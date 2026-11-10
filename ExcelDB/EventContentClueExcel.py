@@ -154,48 +154,92 @@ class EventContentClueExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentClueExcelStart(builder): builder.StartObject(10)
+def EventContentClueExcelStart(builder):
+    builder.StartObject(10)
+
 def Start(builder):
-    return EventContentClueExcelStart(builder)
-def EventContentClueExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentClueExcelStart(builder)
+
+def EventContentClueExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentClueExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentClueExcelAddClueIdField(builder, clueIdField): builder.PrependInt32Slot(1, clueIdField, 0)
+    EventContentClueExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentClueExcelAddClueIdField(builder, clueIdField):
+    builder.PrependInt32Slot(1, clueIdField, 0)
+
 def AddClueIdField(builder, clueIdField):
-    return EventContentClueExcelAddClueIdField(builder, clueIdField)
-def EventContentClueExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+    EventContentClueExcelAddClueIdField(builder, clueIdField)
+
+def EventContentClueExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return EventContentClueExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def EventContentClueExcelAddSlotClueImagePathField(builder, slotClueImagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(slotClueImagePathField), 0)
+    EventContentClueExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def EventContentClueExcelAddSlotClueImagePathField(builder, slotClueImagePathField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(slotClueImagePathField), 0)
+
 def AddSlotClueImagePathField(builder, slotClueImagePathField):
-    return EventContentClueExcelAddSlotClueImagePathField(builder, slotClueImagePathField)
-def EventContentClueExcelAddClueImagePathField(builder, clueImagePathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(clueImagePathField), 0)
+    EventContentClueExcelAddSlotClueImagePathField(builder, slotClueImagePathField)
+
+def EventContentClueExcelAddClueImagePathField(builder, clueImagePathField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(clueImagePathField), 0)
+
 def AddClueImagePathField(builder, clueImagePathField):
-    return EventContentClueExcelAddClueImagePathField(builder, clueImagePathField)
-def EventContentClueExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+    EventContentClueExcelAddClueImagePathField(builder, clueImagePathField)
+
+def EventContentClueExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return EventContentClueExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def EventContentClueExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeFieldVector(builder, numElems):
+    EventContentClueExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def EventContentClueExcelStartRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return EventContentClueExcelStartRewardParcelTypeFieldVector(builder, numElems)
-def EventContentClueExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
+def EventContentClueExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return EventContentClueExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def EventContentClueExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdFieldVector(builder, numElems):
+    EventContentClueExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def EventContentClueExcelStartRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return EventContentClueExcelStartRewardParcelIdFieldVector(builder, numElems)
-def EventContentClueExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+
+def EventContentClueExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return EventContentClueExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def EventContentClueExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountFieldVector(builder, numElems):
+    EventContentClueExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def EventContentClueExcelStartRewardParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelAmountFieldVector(builder, numElems: int) -> int:
     return EventContentClueExcelStartRewardParcelAmountFieldVector(builder, numElems)
-def EventContentClueExcelAddHintUseField(builder, hintUseField): builder.PrependBoolSlot(8, hintUseField, 0)
+
+def EventContentClueExcelAddHintUseField(builder, hintUseField):
+    builder.PrependBoolSlot(8, hintUseField, 0)
+
 def AddHintUseField(builder, hintUseField):
-    return EventContentClueExcelAddHintUseField(builder, hintUseField)
-def EventContentClueExcelAddHintlocalizeidField(builder, hintlocalizeidField): builder.PrependUint32Slot(9, hintlocalizeidField, 0)
+    EventContentClueExcelAddHintUseField(builder, hintUseField)
+
+def EventContentClueExcelAddHintlocalizeidField(builder, hintlocalizeidField):
+    builder.PrependUint32Slot(9, hintlocalizeidField, 0)
+
 def AddHintlocalizeidField(builder, hintlocalizeidField):
-    return EventContentClueExcelAddHintlocalizeidField(builder, hintlocalizeidField)
-def EventContentClueExcelEnd(builder): return builder.EndObject()
+    EventContentClueExcelAddHintlocalizeidField(builder, hintlocalizeidField)
+
+def EventContentClueExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentClueExcelEnd(builder)

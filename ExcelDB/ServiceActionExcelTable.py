@@ -49,15 +49,26 @@ class ServiceActionExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ServiceActionExcelTableStart(builder): builder.StartObject(1)
+def ServiceActionExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ServiceActionExcelTableStart(builder)
-def ServiceActionExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ServiceActionExcelTableStart(builder)
+
+def ServiceActionExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ServiceActionExcelTableAddDataList(builder, dataList)
-def ServiceActionExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ServiceActionExcelTableAddDataList(builder, dataList)
+
+def ServiceActionExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ServiceActionExcelTableStartDataListVector(builder, numElems)
-def ServiceActionExcelTableEnd(builder): return builder.EndObject()
+
+def ServiceActionExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ServiceActionExcelTableEnd(builder)

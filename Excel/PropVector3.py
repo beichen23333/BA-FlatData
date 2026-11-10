@@ -45,18 +45,32 @@ class PropVector3(object):
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
-def PropVector3Start(builder): builder.StartObject(3)
+def PropVector3Start(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return PropVector3Start(builder)
-def PropVector3AddXField(builder, xField): builder.PrependFloat32Slot(0, xField, 0.0)
+    PropVector3Start(builder)
+
+def PropVector3AddXField(builder, xField):
+    builder.PrependFloat32Slot(0, xField, 0.0)
+
 def AddXField(builder, xField):
-    return PropVector3AddXField(builder, xField)
-def PropVector3AddYField(builder, yField): builder.PrependFloat32Slot(1, yField, 0.0)
+    PropVector3AddXField(builder, xField)
+
+def PropVector3AddYField(builder, yField):
+    builder.PrependFloat32Slot(1, yField, 0.0)
+
 def AddYField(builder, yField):
-    return PropVector3AddYField(builder, yField)
-def PropVector3AddZField(builder, zField): builder.PrependFloat32Slot(2, zField, 0.0)
+    PropVector3AddYField(builder, yField)
+
+def PropVector3AddZField(builder, zField):
+    builder.PrependFloat32Slot(2, zField, 0.0)
+
 def AddZField(builder, zField):
-    return PropVector3AddZField(builder, zField)
-def PropVector3End(builder): return builder.EndObject()
+    PropVector3AddZField(builder, zField)
+
+def PropVector3End(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PropVector3End(builder)

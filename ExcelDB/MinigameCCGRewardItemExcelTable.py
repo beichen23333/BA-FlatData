@@ -49,15 +49,26 @@ class MinigameCCGRewardItemExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameCCGRewardItemExcelTableStart(builder): builder.StartObject(1)
+def MinigameCCGRewardItemExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameCCGRewardItemExcelTableStart(builder)
-def MinigameCCGRewardItemExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MinigameCCGRewardItemExcelTableStart(builder)
+
+def MinigameCCGRewardItemExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MinigameCCGRewardItemExcelTableAddDataList(builder, dataList)
-def MinigameCCGRewardItemExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MinigameCCGRewardItemExcelTableAddDataList(builder, dataList)
+
+def MinigameCCGRewardItemExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MinigameCCGRewardItemExcelTableStartDataListVector(builder, numElems)
-def MinigameCCGRewardItemExcelTableEnd(builder): return builder.EndObject()
+
+def MinigameCCGRewardItemExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGRewardItemExcelTableEnd(builder)

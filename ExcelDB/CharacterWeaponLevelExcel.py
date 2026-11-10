@@ -45,18 +45,32 @@ class CharacterWeaponLevelExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def CharacterWeaponLevelExcelStart(builder): builder.StartObject(3)
+def CharacterWeaponLevelExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return CharacterWeaponLevelExcelStart(builder)
-def CharacterWeaponLevelExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(0, levelField, 0)
+    CharacterWeaponLevelExcelStart(builder)
+
+def CharacterWeaponLevelExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(0, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return CharacterWeaponLevelExcelAddLevelField(builder, levelField)
-def CharacterWeaponLevelExcelAddExpField(builder, expField): builder.PrependInt32Slot(1, expField, 0)
+    CharacterWeaponLevelExcelAddLevelField(builder, levelField)
+
+def CharacterWeaponLevelExcelAddExpField(builder, expField):
+    builder.PrependInt32Slot(1, expField, 0)
+
 def AddExpField(builder, expField):
-    return CharacterWeaponLevelExcelAddExpField(builder, expField)
-def CharacterWeaponLevelExcelAddTotalExpField(builder, totalExpField): builder.PrependInt32Slot(2, totalExpField, 0)
+    CharacterWeaponLevelExcelAddExpField(builder, expField)
+
+def CharacterWeaponLevelExcelAddTotalExpField(builder, totalExpField):
+    builder.PrependInt32Slot(2, totalExpField, 0)
+
 def AddTotalExpField(builder, totalExpField):
-    return CharacterWeaponLevelExcelAddTotalExpField(builder, totalExpField)
-def CharacterWeaponLevelExcelEnd(builder): return builder.EndObject()
+    CharacterWeaponLevelExcelAddTotalExpField(builder, totalExpField)
+
+def CharacterWeaponLevelExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterWeaponLevelExcelEnd(builder)

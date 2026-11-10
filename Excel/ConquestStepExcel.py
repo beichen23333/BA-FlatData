@@ -128,48 +128,92 @@ class ConquestStepExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ConquestStepExcelStart(builder): builder.StartObject(12)
+def ConquestStepExcelStart(builder):
+    builder.StartObject(12)
+
 def Start(builder):
-    return ConquestStepExcelStart(builder)
-def ConquestStepExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    ConquestStepExcelStart(builder)
+
+def ConquestStepExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return ConquestStepExcelAddEventContentIdField(builder, eventContentIdField)
-def ConquestStepExcelAddMapDifficultyField(builder, mapDifficultyField): builder.PrependInt32Slot(1, mapDifficultyField, 0)
+    ConquestStepExcelAddEventContentIdField(builder, eventContentIdField)
+
+def ConquestStepExcelAddMapDifficultyField(builder, mapDifficultyField):
+    builder.PrependInt32Slot(1, mapDifficultyField, 0)
+
 def AddMapDifficultyField(builder, mapDifficultyField):
-    return ConquestStepExcelAddMapDifficultyField(builder, mapDifficultyField)
-def ConquestStepExcelAddStepField(builder, stepField): builder.PrependInt32Slot(2, stepField, 0)
+    ConquestStepExcelAddMapDifficultyField(builder, mapDifficultyField)
+
+def ConquestStepExcelAddStepField(builder, stepField):
+    builder.PrependInt32Slot(2, stepField, 0)
+
 def AddStepField(builder, stepField):
-    return ConquestStepExcelAddStepField(builder, stepField)
-def ConquestStepExcelAddStepGoalLocalizeField(builder, stepGoalLocalizeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(stepGoalLocalizeField), 0)
+    ConquestStepExcelAddStepField(builder, stepField)
+
+def ConquestStepExcelAddStepGoalLocalizeField(builder, stepGoalLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(stepGoalLocalizeField), 0)
+
 def AddStepGoalLocalizeField(builder, stepGoalLocalizeField):
-    return ConquestStepExcelAddStepGoalLocalizeField(builder, stepGoalLocalizeField)
-def ConquestStepExcelAddStepEnterScenarioGroupIdField(builder, stepEnterScenarioGroupIdField): builder.PrependInt32Slot(4, stepEnterScenarioGroupIdField, 0)
+    ConquestStepExcelAddStepGoalLocalizeField(builder, stepGoalLocalizeField)
+
+def ConquestStepExcelAddStepEnterScenarioGroupIdField(builder, stepEnterScenarioGroupIdField):
+    builder.PrependInt32Slot(4, stepEnterScenarioGroupIdField, 0)
+
 def AddStepEnterScenarioGroupIdField(builder, stepEnterScenarioGroupIdField):
-    return ConquestStepExcelAddStepEnterScenarioGroupIdField(builder, stepEnterScenarioGroupIdField)
-def ConquestStepExcelAddStepEnterItemTypeField(builder, stepEnterItemTypeField): builder.PrependInt32Slot(5, stepEnterItemTypeField, 0)
+    ConquestStepExcelAddStepEnterScenarioGroupIdField(builder, stepEnterScenarioGroupIdField)
+
+def ConquestStepExcelAddStepEnterItemTypeField(builder, stepEnterItemTypeField):
+    builder.PrependInt32Slot(5, stepEnterItemTypeField, 0)
+
 def AddStepEnterItemTypeField(builder, stepEnterItemTypeField):
-    return ConquestStepExcelAddStepEnterItemTypeField(builder, stepEnterItemTypeField)
-def ConquestStepExcelAddStepEnterItemUniqueIdField(builder, stepEnterItemUniqueIdField): builder.PrependInt32Slot(6, stepEnterItemUniqueIdField, 0)
+    ConquestStepExcelAddStepEnterItemTypeField(builder, stepEnterItemTypeField)
+
+def ConquestStepExcelAddStepEnterItemUniqueIdField(builder, stepEnterItemUniqueIdField):
+    builder.PrependInt32Slot(6, stepEnterItemUniqueIdField, 0)
+
 def AddStepEnterItemUniqueIdField(builder, stepEnterItemUniqueIdField):
-    return ConquestStepExcelAddStepEnterItemUniqueIdField(builder, stepEnterItemUniqueIdField)
-def ConquestStepExcelAddStepEnterItemAmountField(builder, stepEnterItemAmountField): builder.PrependInt32Slot(7, stepEnterItemAmountField, 0)
+    ConquestStepExcelAddStepEnterItemUniqueIdField(builder, stepEnterItemUniqueIdField)
+
+def ConquestStepExcelAddStepEnterItemAmountField(builder, stepEnterItemAmountField):
+    builder.PrependInt32Slot(7, stepEnterItemAmountField, 0)
+
 def AddStepEnterItemAmountField(builder, stepEnterItemAmountField):
-    return ConquestStepExcelAddStepEnterItemAmountField(builder, stepEnterItemAmountField)
-def ConquestStepExcelAddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(unexpectedEventUnitIdField), 0)
+    ConquestStepExcelAddStepEnterItemAmountField(builder, stepEnterItemAmountField)
+
+def ConquestStepExcelAddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(unexpectedEventUnitIdField), 0)
+
 def AddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField):
-    return ConquestStepExcelAddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField)
-def ConquestStepExcelStartUnexpectedEventUnitIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartUnexpectedEventUnitIdFieldVector(builder, numElems):
+    ConquestStepExcelAddUnexpectedEventUnitIdField(builder, unexpectedEventUnitIdField)
+
+def ConquestStepExcelStartUnexpectedEventUnitIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartUnexpectedEventUnitIdFieldVector(builder, numElems: int) -> int:
     return ConquestStepExcelStartUnexpectedEventUnitIdFieldVector(builder, numElems)
-def ConquestStepExcelAddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(unexpectedEventPrefabField), 0)
+
+def ConquestStepExcelAddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(unexpectedEventPrefabField), 0)
+
 def AddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField):
-    return ConquestStepExcelAddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField)
-def ConquestStepExcelAddTreasureBoxObjectIdField(builder, treasureBoxObjectIdField): builder.PrependInt32Slot(10, treasureBoxObjectIdField, 0)
+    ConquestStepExcelAddUnexpectedEventPrefabField(builder, unexpectedEventPrefabField)
+
+def ConquestStepExcelAddTreasureBoxObjectIdField(builder, treasureBoxObjectIdField):
+    builder.PrependInt32Slot(10, treasureBoxObjectIdField, 0)
+
 def AddTreasureBoxObjectIdField(builder, treasureBoxObjectIdField):
-    return ConquestStepExcelAddTreasureBoxObjectIdField(builder, treasureBoxObjectIdField)
-def ConquestStepExcelAddTreasureBoxCountPerStepOpenField(builder, treasureBoxCountPerStepOpenField): builder.PrependInt32Slot(11, treasureBoxCountPerStepOpenField, 0)
+    ConquestStepExcelAddTreasureBoxObjectIdField(builder, treasureBoxObjectIdField)
+
+def ConquestStepExcelAddTreasureBoxCountPerStepOpenField(builder, treasureBoxCountPerStepOpenField):
+    builder.PrependInt32Slot(11, treasureBoxCountPerStepOpenField, 0)
+
 def AddTreasureBoxCountPerStepOpenField(builder, treasureBoxCountPerStepOpenField):
-    return ConquestStepExcelAddTreasureBoxCountPerStepOpenField(builder, treasureBoxCountPerStepOpenField)
-def ConquestStepExcelEnd(builder): return builder.EndObject()
+    ConquestStepExcelAddTreasureBoxCountPerStepOpenField(builder, treasureBoxCountPerStepOpenField)
+
+def ConquestStepExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ConquestStepExcelEnd(builder)

@@ -253,66 +253,128 @@ class CharacterTranscendenceExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
-def CharacterTranscendenceExcelStart(builder): builder.StartObject(10)
+def CharacterTranscendenceExcelStart(builder):
+    builder.StartObject(10)
+
 def Start(builder):
-    return CharacterTranscendenceExcelStart(builder)
-def CharacterTranscendenceExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(0, characterIdField, 0)
+    CharacterTranscendenceExcelStart(builder)
+
+def CharacterTranscendenceExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(0, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return CharacterTranscendenceExcelAddCharacterIdField(builder, characterIdField)
-def CharacterTranscendenceExcelAddMaxFavorLevelField(builder, maxFavorLevelField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(maxFavorLevelField), 0)
+    CharacterTranscendenceExcelAddCharacterIdField(builder, characterIdField)
+
+def CharacterTranscendenceExcelAddMaxFavorLevelField(builder, maxFavorLevelField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(maxFavorLevelField), 0)
+
 def AddMaxFavorLevelField(builder, maxFavorLevelField):
-    return CharacterTranscendenceExcelAddMaxFavorLevelField(builder, maxFavorLevelField)
-def CharacterTranscendenceExcelStartMaxFavorLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMaxFavorLevelFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddMaxFavorLevelField(builder, maxFavorLevelField)
+
+def CharacterTranscendenceExcelStartMaxFavorLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMaxFavorLevelFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartMaxFavorLevelFieldVector(builder, numElems)
-def CharacterTranscendenceExcelAddStatBonusRateAttackField(builder, statBonusRateAttackField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(statBonusRateAttackField), 0)
+
+def CharacterTranscendenceExcelAddStatBonusRateAttackField(builder, statBonusRateAttackField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(statBonusRateAttackField), 0)
+
 def AddStatBonusRateAttackField(builder, statBonusRateAttackField):
-    return CharacterTranscendenceExcelAddStatBonusRateAttackField(builder, statBonusRateAttackField)
-def CharacterTranscendenceExcelStartStatBonusRateAttackFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatBonusRateAttackFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddStatBonusRateAttackField(builder, statBonusRateAttackField)
+
+def CharacterTranscendenceExcelStartStatBonusRateAttackFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStatBonusRateAttackFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartStatBonusRateAttackFieldVector(builder, numElems)
-def CharacterTranscendenceExcelAddStatBonusRateHPField(builder, statBonusRateHPField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(statBonusRateHPField), 0)
+
+def CharacterTranscendenceExcelAddStatBonusRateHPField(builder, statBonusRateHPField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(statBonusRateHPField), 0)
+
 def AddStatBonusRateHPField(builder, statBonusRateHPField):
-    return CharacterTranscendenceExcelAddStatBonusRateHPField(builder, statBonusRateHPField)
-def CharacterTranscendenceExcelStartStatBonusRateHPFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatBonusRateHPFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddStatBonusRateHPField(builder, statBonusRateHPField)
+
+def CharacterTranscendenceExcelStartStatBonusRateHPFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStatBonusRateHPFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartStatBonusRateHPFieldVector(builder, numElems)
-def CharacterTranscendenceExcelAddStatBonusRateHealField(builder, statBonusRateHealField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(statBonusRateHealField), 0)
+
+def CharacterTranscendenceExcelAddStatBonusRateHealField(builder, statBonusRateHealField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(statBonusRateHealField), 0)
+
 def AddStatBonusRateHealField(builder, statBonusRateHealField):
-    return CharacterTranscendenceExcelAddStatBonusRateHealField(builder, statBonusRateHealField)
-def CharacterTranscendenceExcelStartStatBonusRateHealFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatBonusRateHealFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddStatBonusRateHealField(builder, statBonusRateHealField)
+
+def CharacterTranscendenceExcelStartStatBonusRateHealFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStatBonusRateHealFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartStatBonusRateHealFieldVector(builder, numElems)
-def CharacterTranscendenceExcelAddRecipeIdField(builder, recipeIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(recipeIdField), 0)
+
+def CharacterTranscendenceExcelAddRecipeIdField(builder, recipeIdField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(recipeIdField), 0)
+
 def AddRecipeIdField(builder, recipeIdField):
-    return CharacterTranscendenceExcelAddRecipeIdField(builder, recipeIdField)
-def CharacterTranscendenceExcelStartRecipeIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRecipeIdFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddRecipeIdField(builder, recipeIdField)
+
+def CharacterTranscendenceExcelStartRecipeIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRecipeIdFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartRecipeIdFieldVector(builder, numElems)
-def CharacterTranscendenceExcelAddSkillSlotAField(builder, skillSlotAField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(skillSlotAField), 0)
+
+def CharacterTranscendenceExcelAddSkillSlotAField(builder, skillSlotAField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(skillSlotAField), 0)
+
 def AddSkillSlotAField(builder, skillSlotAField):
-    return CharacterTranscendenceExcelAddSkillSlotAField(builder, skillSlotAField)
-def CharacterTranscendenceExcelStartSkillSlotAFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillSlotAFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddSkillSlotAField(builder, skillSlotAField)
+
+def CharacterTranscendenceExcelStartSkillSlotAFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSkillSlotAFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartSkillSlotAFieldVector(builder, numElems)
-def CharacterTranscendenceExcelAddSkillSlotBField(builder, skillSlotBField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(skillSlotBField), 0)
+
+def CharacterTranscendenceExcelAddSkillSlotBField(builder, skillSlotBField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(skillSlotBField), 0)
+
 def AddSkillSlotBField(builder, skillSlotBField):
-    return CharacterTranscendenceExcelAddSkillSlotBField(builder, skillSlotBField)
-def CharacterTranscendenceExcelStartSkillSlotBFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillSlotBFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddSkillSlotBField(builder, skillSlotBField)
+
+def CharacterTranscendenceExcelStartSkillSlotBFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSkillSlotBFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartSkillSlotBFieldVector(builder, numElems)
-def CharacterTranscendenceExcelAddSkillSlotCField(builder, skillSlotCField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(skillSlotCField), 0)
+
+def CharacterTranscendenceExcelAddSkillSlotCField(builder, skillSlotCField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(skillSlotCField), 0)
+
 def AddSkillSlotCField(builder, skillSlotCField):
-    return CharacterTranscendenceExcelAddSkillSlotCField(builder, skillSlotCField)
-def CharacterTranscendenceExcelStartSkillSlotCFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillSlotCFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddSkillSlotCField(builder, skillSlotCField)
+
+def CharacterTranscendenceExcelStartSkillSlotCFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSkillSlotCFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartSkillSlotCFieldVector(builder, numElems)
-def CharacterTranscendenceExcelAddMaxlevelStarField(builder, maxlevelStarField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(maxlevelStarField), 0)
+
+def CharacterTranscendenceExcelAddMaxlevelStarField(builder, maxlevelStarField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(maxlevelStarField), 0)
+
 def AddMaxlevelStarField(builder, maxlevelStarField):
-    return CharacterTranscendenceExcelAddMaxlevelStarField(builder, maxlevelStarField)
-def CharacterTranscendenceExcelStartMaxlevelStarFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMaxlevelStarFieldVector(builder, numElems):
+    CharacterTranscendenceExcelAddMaxlevelStarField(builder, maxlevelStarField)
+
+def CharacterTranscendenceExcelStartMaxlevelStarFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMaxlevelStarFieldVector(builder, numElems: int) -> int:
     return CharacterTranscendenceExcelStartMaxlevelStarFieldVector(builder, numElems)
-def CharacterTranscendenceExcelEnd(builder): return builder.EndObject()
+
+def CharacterTranscendenceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterTranscendenceExcelEnd(builder)

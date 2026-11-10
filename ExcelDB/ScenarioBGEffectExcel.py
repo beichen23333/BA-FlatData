@@ -73,30 +73,56 @@ class ScenarioBGEffectExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ScenarioBGEffectExcelStart(builder): builder.StartObject(7)
+def ScenarioBGEffectExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return ScenarioBGEffectExcelStart(builder)
-def ScenarioBGEffectExcelAddNameField(builder, nameField): builder.PrependUint32Slot(0, nameField, 0)
+    ScenarioBGEffectExcelStart(builder)
+
+def ScenarioBGEffectExcelAddNameField(builder, nameField):
+    builder.PrependUint32Slot(0, nameField, 0)
+
 def AddNameField(builder, nameField):
-    return ScenarioBGEffectExcelAddNameField(builder, nameField)
-def ScenarioBGEffectExcelAddEffectField(builder, effectField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(effectField), 0)
+    ScenarioBGEffectExcelAddNameField(builder, nameField)
+
+def ScenarioBGEffectExcelAddEffectField(builder, effectField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(effectField), 0)
+
 def AddEffectField(builder, effectField):
-    return ScenarioBGEffectExcelAddEffectField(builder, effectField)
-def ScenarioBGEffectExcelAddEffect2Field(builder, effect2Field): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(effect2Field), 0)
+    ScenarioBGEffectExcelAddEffectField(builder, effectField)
+
+def ScenarioBGEffectExcelAddEffect2Field(builder, effect2Field):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(effect2Field), 0)
+
 def AddEffect2Field(builder, effect2Field):
-    return ScenarioBGEffectExcelAddEffect2Field(builder, effect2Field)
-def ScenarioBGEffectExcelAddScrollField(builder, scrollField): builder.PrependInt32Slot(3, scrollField, 0)
+    ScenarioBGEffectExcelAddEffect2Field(builder, effect2Field)
+
+def ScenarioBGEffectExcelAddScrollField(builder, scrollField):
+    builder.PrependInt32Slot(3, scrollField, 0)
+
 def AddScrollField(builder, scrollField):
-    return ScenarioBGEffectExcelAddScrollField(builder, scrollField)
-def ScenarioBGEffectExcelAddScrollTimeField(builder, scrollTimeField): builder.PrependInt32Slot(4, scrollTimeField, 0)
+    ScenarioBGEffectExcelAddScrollField(builder, scrollField)
+
+def ScenarioBGEffectExcelAddScrollTimeField(builder, scrollTimeField):
+    builder.PrependInt32Slot(4, scrollTimeField, 0)
+
 def AddScrollTimeField(builder, scrollTimeField):
-    return ScenarioBGEffectExcelAddScrollTimeField(builder, scrollTimeField)
-def ScenarioBGEffectExcelAddScrollFromField(builder, scrollFromField): builder.PrependInt32Slot(5, scrollFromField, 0)
+    ScenarioBGEffectExcelAddScrollTimeField(builder, scrollTimeField)
+
+def ScenarioBGEffectExcelAddScrollFromField(builder, scrollFromField):
+    builder.PrependInt32Slot(5, scrollFromField, 0)
+
 def AddScrollFromField(builder, scrollFromField):
-    return ScenarioBGEffectExcelAddScrollFromField(builder, scrollFromField)
-def ScenarioBGEffectExcelAddScrollToField(builder, scrollToField): builder.PrependInt32Slot(6, scrollToField, 0)
+    ScenarioBGEffectExcelAddScrollFromField(builder, scrollFromField)
+
+def ScenarioBGEffectExcelAddScrollToField(builder, scrollToField):
+    builder.PrependInt32Slot(6, scrollToField, 0)
+
 def AddScrollToField(builder, scrollToField):
-    return ScenarioBGEffectExcelAddScrollToField(builder, scrollToField)
-def ScenarioBGEffectExcelEnd(builder): return builder.EndObject()
+    ScenarioBGEffectExcelAddScrollToField(builder, scrollToField)
+
+def ScenarioBGEffectExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioBGEffectExcelEnd(builder)

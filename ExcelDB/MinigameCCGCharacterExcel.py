@@ -155,54 +155,104 @@ class MinigameCCGCharacterExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         return o == 0
 
-def MinigameCCGCharacterExcelStart(builder): builder.StartObject(13)
+def MinigameCCGCharacterExcelStart(builder):
+    builder.StartObject(13)
+
 def Start(builder):
-    return MinigameCCGCharacterExcelStart(builder)
-def MinigameCCGCharacterExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    MinigameCCGCharacterExcelStart(builder)
+
+def MinigameCCGCharacterExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return MinigameCCGCharacterExcelAddIdField(builder, idField)
-def MinigameCCGCharacterExcelAddTypeField(builder, typeField): builder.PrependInt32Slot(1, typeField, 0)
+    MinigameCCGCharacterExcelAddIdField(builder, idField)
+
+def MinigameCCGCharacterExcelAddTypeField(builder, typeField):
+    builder.PrependInt32Slot(1, typeField, 0)
+
 def AddTypeField(builder, typeField):
-    return MinigameCCGCharacterExcelAddTypeField(builder, typeField)
-def MinigameCCGCharacterExcelAddActiveSkillIdField(builder, activeSkillIdField): builder.PrependInt32Slot(2, activeSkillIdField, 0)
+    MinigameCCGCharacterExcelAddTypeField(builder, typeField)
+
+def MinigameCCGCharacterExcelAddActiveSkillIdField(builder, activeSkillIdField):
+    builder.PrependInt32Slot(2, activeSkillIdField, 0)
+
 def AddActiveSkillIdField(builder, activeSkillIdField):
-    return MinigameCCGCharacterExcelAddActiveSkillIdField(builder, activeSkillIdField)
-def MinigameCCGCharacterExcelAddActiveSkillCostField(builder, activeSkillCostField): builder.PrependInt32Slot(3, activeSkillCostField, 0)
+    MinigameCCGCharacterExcelAddActiveSkillIdField(builder, activeSkillIdField)
+
+def MinigameCCGCharacterExcelAddActiveSkillCostField(builder, activeSkillCostField):
+    builder.PrependInt32Slot(3, activeSkillCostField, 0)
+
 def AddActiveSkillCostField(builder, activeSkillCostField):
-    return MinigameCCGCharacterExcelAddActiveSkillCostField(builder, activeSkillCostField)
-def MinigameCCGCharacterExcelAddActiveSkilleCostVisibleField(builder, activeSkilleCostVisibleField): builder.PrependBoolSlot(4, activeSkilleCostVisibleField, 0)
+    MinigameCCGCharacterExcelAddActiveSkillCostField(builder, activeSkillCostField)
+
+def MinigameCCGCharacterExcelAddActiveSkilleCostVisibleField(builder, activeSkilleCostVisibleField):
+    builder.PrependBoolSlot(4, activeSkilleCostVisibleField, 0)
+
 def AddActiveSkilleCostVisibleField(builder, activeSkilleCostVisibleField):
-    return MinigameCCGCharacterExcelAddActiveSkilleCostVisibleField(builder, activeSkilleCostVisibleField)
-def MinigameCCGCharacterExcelAddActiveSkillCooldownField(builder, activeSkillCooldownField): builder.PrependInt32Slot(5, activeSkillCooldownField, 0)
+    MinigameCCGCharacterExcelAddActiveSkilleCostVisibleField(builder, activeSkilleCostVisibleField)
+
+def MinigameCCGCharacterExcelAddActiveSkillCooldownField(builder, activeSkillCooldownField):
+    builder.PrependInt32Slot(5, activeSkillCooldownField, 0)
+
 def AddActiveSkillCooldownField(builder, activeSkillCooldownField):
-    return MinigameCCGCharacterExcelAddActiveSkillCooldownField(builder, activeSkillCooldownField)
-def MinigameCCGCharacterExcelAddMaxHealthField(builder, maxHealthField): builder.PrependInt32Slot(6, maxHealthField, 0)
+    MinigameCCGCharacterExcelAddActiveSkillCooldownField(builder, activeSkillCooldownField)
+
+def MinigameCCGCharacterExcelAddMaxHealthField(builder, maxHealthField):
+    builder.PrependInt32Slot(6, maxHealthField, 0)
+
 def AddMaxHealthField(builder, maxHealthField):
-    return MinigameCCGCharacterExcelAddMaxHealthField(builder, maxHealthField)
-def MinigameCCGCharacterExcelAddPassiveSkillIdField(builder, passiveSkillIdField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillIdField), 0)
+    MinigameCCGCharacterExcelAddMaxHealthField(builder, maxHealthField)
+
+def MinigameCCGCharacterExcelAddPassiveSkillIdField(builder, passiveSkillIdField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(passiveSkillIdField), 0)
+
 def AddPassiveSkillIdField(builder, passiveSkillIdField):
-    return MinigameCCGCharacterExcelAddPassiveSkillIdField(builder, passiveSkillIdField)
-def MinigameCCGCharacterExcelStartPassiveSkillIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPassiveSkillIdFieldVector(builder, numElems):
+    MinigameCCGCharacterExcelAddPassiveSkillIdField(builder, passiveSkillIdField)
+
+def MinigameCCGCharacterExcelStartPassiveSkillIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPassiveSkillIdFieldVector(builder, numElems: int) -> int:
     return MinigameCCGCharacterExcelStartPassiveSkillIdFieldVector(builder, numElems)
-def MinigameCCGCharacterExcelAddNameField(builder, nameField): builder.PrependUint32Slot(8, nameField, 0)
+
+def MinigameCCGCharacterExcelAddNameField(builder, nameField):
+    builder.PrependUint32Slot(8, nameField, 0)
+
 def AddNameField(builder, nameField):
-    return MinigameCCGCharacterExcelAddNameField(builder, nameField)
-def MinigameCCGCharacterExcelAddDescriptionField(builder, descriptionField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionField), 0)
+    MinigameCCGCharacterExcelAddNameField(builder, nameField)
+
+def MinigameCCGCharacterExcelAddDescriptionField(builder, descriptionField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(descriptionField), 0)
+
 def AddDescriptionField(builder, descriptionField):
-    return MinigameCCGCharacterExcelAddDescriptionField(builder, descriptionField)
-def MinigameCCGCharacterExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+    MinigameCCGCharacterExcelAddDescriptionField(builder, descriptionField)
+
+def MinigameCCGCharacterExcelAddImagePathField(builder, imagePathField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+
 def AddImagePathField(builder, imagePathField):
-    return MinigameCCGCharacterExcelAddImagePathField(builder, imagePathField)
-def MinigameCCGCharacterExcelAddUIImagePathField(builder, uIImagePathField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(uIImagePathField), 0)
+    MinigameCCGCharacterExcelAddImagePathField(builder, imagePathField)
+
+def MinigameCCGCharacterExcelAddUIImagePathField(builder, uIImagePathField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(uIImagePathField), 0)
+
 def AddUIImagePathField(builder, uIImagePathField):
-    return MinigameCCGCharacterExcelAddUIImagePathField(builder, uIImagePathField)
-def MinigameCCGCharacterExcelAddTagsField(builder, tagsField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+    MinigameCCGCharacterExcelAddUIImagePathField(builder, uIImagePathField)
+
+def MinigameCCGCharacterExcelAddTagsField(builder, tagsField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+
 def AddTagsField(builder, tagsField):
-    return MinigameCCGCharacterExcelAddTagsField(builder, tagsField)
-def MinigameCCGCharacterExcelStartTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTagsFieldVector(builder, numElems):
+    MinigameCCGCharacterExcelAddTagsField(builder, tagsField)
+
+def MinigameCCGCharacterExcelStartTagsFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartTagsFieldVector(builder, numElems: int) -> int:
     return MinigameCCGCharacterExcelStartTagsFieldVector(builder, numElems)
-def MinigameCCGCharacterExcelEnd(builder): return builder.EndObject()
+
+def MinigameCCGCharacterExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGCharacterExcelEnd(builder)

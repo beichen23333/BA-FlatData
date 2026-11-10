@@ -49,15 +49,26 @@ class CharacterVoiceExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def CharacterVoiceExcelTableStart(builder): builder.StartObject(1)
+def CharacterVoiceExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return CharacterVoiceExcelTableStart(builder)
-def CharacterVoiceExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    CharacterVoiceExcelTableStart(builder)
+
+def CharacterVoiceExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return CharacterVoiceExcelTableAddDataList(builder, dataList)
-def CharacterVoiceExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    CharacterVoiceExcelTableAddDataList(builder, dataList)
+
+def CharacterVoiceExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return CharacterVoiceExcelTableStartDataListVector(builder, numElems)
-def CharacterVoiceExcelTableEnd(builder): return builder.EndObject()
+
+def CharacterVoiceExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterVoiceExcelTableEnd(builder)

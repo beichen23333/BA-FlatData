@@ -59,24 +59,44 @@ class GroundNodeFlat(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def GroundNodeFlatStart(builder): builder.StartObject(5)
+def GroundNodeFlatStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return GroundNodeFlatStart(builder)
-def GroundNodeFlatAddXField(builder, xField): builder.PrependInt32Slot(0, xField, 0)
+    GroundNodeFlatStart(builder)
+
+def GroundNodeFlatAddXField(builder, xField):
+    builder.PrependInt32Slot(0, xField, 0)
+
 def AddXField(builder, xField):
-    return GroundNodeFlatAddXField(builder, xField)
-def GroundNodeFlatAddYField(builder, yField): builder.PrependInt32Slot(1, yField, 0)
+    GroundNodeFlatAddXField(builder, xField)
+
+def GroundNodeFlatAddYField(builder, yField):
+    builder.PrependInt32Slot(1, yField, 0)
+
 def AddYField(builder, yField):
-    return GroundNodeFlatAddYField(builder, yField)
-def GroundNodeFlatAddIsCanNotUseSkillField(builder, isCanNotUseSkillField): builder.PrependBoolSlot(2, isCanNotUseSkillField, 0)
+    GroundNodeFlatAddYField(builder, yField)
+
+def GroundNodeFlatAddIsCanNotUseSkillField(builder, isCanNotUseSkillField):
+    builder.PrependBoolSlot(2, isCanNotUseSkillField, 0)
+
 def AddIsCanNotUseSkillField(builder, isCanNotUseSkillField):
-    return GroundNodeFlatAddIsCanNotUseSkillField(builder, isCanNotUseSkillField)
-def GroundNodeFlatAddNodeTypeField(builder, nodeTypeField): builder.PrependInt32Slot(3, nodeTypeField, 0)
+    GroundNodeFlatAddIsCanNotUseSkillField(builder, isCanNotUseSkillField)
+
+def GroundNodeFlatAddNodeTypeField(builder, nodeTypeField):
+    builder.PrependInt32Slot(3, nodeTypeField, 0)
+
 def AddNodeTypeField(builder, nodeTypeField):
-    return GroundNodeFlatAddNodeTypeField(builder, nodeTypeField)
-def GroundNodeFlatAddOriginalNodeTypeField(builder, originalNodeTypeField): builder.PrependInt32Slot(4, originalNodeTypeField, 0)
+    GroundNodeFlatAddNodeTypeField(builder, nodeTypeField)
+
+def GroundNodeFlatAddOriginalNodeTypeField(builder, originalNodeTypeField):
+    builder.PrependInt32Slot(4, originalNodeTypeField, 0)
+
 def AddOriginalNodeTypeField(builder, originalNodeTypeField):
-    return GroundNodeFlatAddOriginalNodeTypeField(builder, originalNodeTypeField)
-def GroundNodeFlatEnd(builder): return builder.EndObject()
+    GroundNodeFlatAddOriginalNodeTypeField(builder, originalNodeTypeField)
+
+def GroundNodeFlatEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return GroundNodeFlatEnd(builder)

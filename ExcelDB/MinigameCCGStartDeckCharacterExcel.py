@@ -38,15 +38,26 @@ class MinigameCCGStartDeckCharacterExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGStartDeckCharacterExcelStart(builder): builder.StartObject(2)
+def MinigameCCGStartDeckCharacterExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return MinigameCCGStartDeckCharacterExcelStart(builder)
-def MinigameCCGStartDeckCharacterExcelAddCCGIdField(builder, cCGIdField): builder.PrependInt32Slot(0, cCGIdField, 0)
+    MinigameCCGStartDeckCharacterExcelStart(builder)
+
+def MinigameCCGStartDeckCharacterExcelAddCCGIdField(builder, cCGIdField):
+    builder.PrependInt32Slot(0, cCGIdField, 0)
+
 def AddCCGIdField(builder, cCGIdField):
-    return MinigameCCGStartDeckCharacterExcelAddCCGIdField(builder, cCGIdField)
-def MinigameCCGStartDeckCharacterExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+    MinigameCCGStartDeckCharacterExcelAddCCGIdField(builder, cCGIdField)
+
+def MinigameCCGStartDeckCharacterExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(1, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return MinigameCCGStartDeckCharacterExcelAddCharacterIdField(builder, characterIdField)
-def MinigameCCGStartDeckCharacterExcelEnd(builder): return builder.EndObject()
+    MinigameCCGStartDeckCharacterExcelAddCharacterIdField(builder, characterIdField)
+
+def MinigameCCGStartDeckCharacterExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGStartDeckCharacterExcelEnd(builder)

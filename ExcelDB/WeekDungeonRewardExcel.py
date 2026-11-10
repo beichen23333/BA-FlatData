@@ -80,33 +80,62 @@ class WeekDungeonRewardExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def WeekDungeonRewardExcelStart(builder): builder.StartObject(8)
+def WeekDungeonRewardExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return WeekDungeonRewardExcelStart(builder)
-def WeekDungeonRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    WeekDungeonRewardExcelStart(builder)
+
+def WeekDungeonRewardExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return WeekDungeonRewardExcelAddGroupIdField(builder, groupIdField)
-def WeekDungeonRewardExcelAddDungeonTypeField(builder, dungeonTypeField): builder.PrependFloat32Slot(1, dungeonTypeField, 0.0)
+    WeekDungeonRewardExcelAddGroupIdField(builder, groupIdField)
+
+def WeekDungeonRewardExcelAddDungeonTypeField(builder, dungeonTypeField):
+    builder.PrependFloat32Slot(1, dungeonTypeField, 0.0)
+
 def AddDungeonTypeField(builder, dungeonTypeField):
-    return WeekDungeonRewardExcelAddDungeonTypeField(builder, dungeonTypeField)
-def WeekDungeonRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(2, rewardParcelTypeField, 0)
+    WeekDungeonRewardExcelAddDungeonTypeField(builder, dungeonTypeField)
+
+def WeekDungeonRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(2, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return WeekDungeonRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def WeekDungeonRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(3, rewardParcelIdField, 0)
+    WeekDungeonRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def WeekDungeonRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependInt32Slot(3, rewardParcelIdField, 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return WeekDungeonRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def WeekDungeonRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(4, rewardParcelAmountField, 0)
+    WeekDungeonRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def WeekDungeonRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependInt32Slot(4, rewardParcelAmountField, 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return WeekDungeonRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def WeekDungeonRewardExcelAddRewardParcelProbabilityField(builder, rewardParcelProbabilityField): builder.PrependInt32Slot(5, rewardParcelProbabilityField, 0)
+    WeekDungeonRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def WeekDungeonRewardExcelAddRewardParcelProbabilityField(builder, rewardParcelProbabilityField):
+    builder.PrependInt32Slot(5, rewardParcelProbabilityField, 0)
+
 def AddRewardParcelProbabilityField(builder, rewardParcelProbabilityField):
-    return WeekDungeonRewardExcelAddRewardParcelProbabilityField(builder, rewardParcelProbabilityField)
-def WeekDungeonRewardExcelAddIsDisplayedField(builder, isDisplayedField): builder.PrependBoolSlot(6, isDisplayedField, 0)
+    WeekDungeonRewardExcelAddRewardParcelProbabilityField(builder, rewardParcelProbabilityField)
+
+def WeekDungeonRewardExcelAddIsDisplayedField(builder, isDisplayedField):
+    builder.PrependBoolSlot(6, isDisplayedField, 0)
+
 def AddIsDisplayedField(builder, isDisplayedField):
-    return WeekDungeonRewardExcelAddIsDisplayedField(builder, isDisplayedField)
-def WeekDungeonRewardExcelAddDropItemModelPrefabPathField(builder, dropItemModelPrefabPathField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(dropItemModelPrefabPathField), 0)
+    WeekDungeonRewardExcelAddIsDisplayedField(builder, isDisplayedField)
+
+def WeekDungeonRewardExcelAddDropItemModelPrefabPathField(builder, dropItemModelPrefabPathField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(dropItemModelPrefabPathField), 0)
+
 def AddDropItemModelPrefabPathField(builder, dropItemModelPrefabPathField):
-    return WeekDungeonRewardExcelAddDropItemModelPrefabPathField(builder, dropItemModelPrefabPathField)
-def WeekDungeonRewardExcelEnd(builder): return builder.EndObject()
+    WeekDungeonRewardExcelAddDropItemModelPrefabPathField(builder, dropItemModelPrefabPathField)
+
+def WeekDungeonRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WeekDungeonRewardExcelEnd(builder)

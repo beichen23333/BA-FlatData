@@ -129,54 +129,104 @@ class ShopRefreshExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ShopRefreshExcelStart(builder): builder.StartObject(15)
+def ShopRefreshExcelStart(builder):
+    builder.StartObject(15)
+
 def Start(builder):
-    return ShopRefreshExcelStart(builder)
-def ShopRefreshExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ShopRefreshExcelStart(builder)
+
+def ShopRefreshExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ShopRefreshExcelAddIdField(builder, idField)
-def ShopRefreshExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(1, localizeEtcIdField, 0)
+    ShopRefreshExcelAddIdField(builder, idField)
+
+def ShopRefreshExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(1, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return ShopRefreshExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def ShopRefreshExcelAddIsLegacyField(builder, isLegacyField): builder.PrependBoolSlot(2, isLegacyField, 0)
+    ShopRefreshExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def ShopRefreshExcelAddIsLegacyField(builder, isLegacyField):
+    builder.PrependBoolSlot(2, isLegacyField, 0)
+
 def AddIsLegacyField(builder, isLegacyField):
-    return ShopRefreshExcelAddIsLegacyField(builder, isLegacyField)
-def ShopRefreshExcelAddGoodsIdField(builder, goodsIdField): builder.PrependInt32Slot(3, goodsIdField, 0)
+    ShopRefreshExcelAddIsLegacyField(builder, isLegacyField)
+
+def ShopRefreshExcelAddGoodsIdField(builder, goodsIdField):
+    builder.PrependInt32Slot(3, goodsIdField, 0)
+
 def AddGoodsIdField(builder, goodsIdField):
-    return ShopRefreshExcelAddGoodsIdField(builder, goodsIdField)
-def ShopRefreshExcelAddIsBundleField(builder, isBundleField): builder.PrependBoolSlot(4, isBundleField, 0)
+    ShopRefreshExcelAddGoodsIdField(builder, goodsIdField)
+
+def ShopRefreshExcelAddIsBundleField(builder, isBundleField):
+    builder.PrependBoolSlot(4, isBundleField, 0)
+
 def AddIsBundleField(builder, isBundleField):
-    return ShopRefreshExcelAddIsBundleField(builder, isBundleField)
-def ShopRefreshExcelAddShopPurchasePopupTypeField(builder, shopPurchasePopupTypeField): builder.PrependInt32Slot(5, shopPurchasePopupTypeField, 0)
+    ShopRefreshExcelAddIsBundleField(builder, isBundleField)
+
+def ShopRefreshExcelAddShopPurchasePopupTypeField(builder, shopPurchasePopupTypeField):
+    builder.PrependInt32Slot(5, shopPurchasePopupTypeField, 0)
+
 def AddShopPurchasePopupTypeField(builder, shopPurchasePopupTypeField):
-    return ShopRefreshExcelAddShopPurchasePopupTypeField(builder, shopPurchasePopupTypeField)
-def ShopRefreshExcelAddVisibleAmountField(builder, visibleAmountField): builder.PrependInt32Slot(6, visibleAmountField, 0)
+    ShopRefreshExcelAddShopPurchasePopupTypeField(builder, shopPurchasePopupTypeField)
+
+def ShopRefreshExcelAddVisibleAmountField(builder, visibleAmountField):
+    builder.PrependInt32Slot(6, visibleAmountField, 0)
+
 def AddVisibleAmountField(builder, visibleAmountField):
-    return ShopRefreshExcelAddVisibleAmountField(builder, visibleAmountField)
-def ShopRefreshExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField): builder.PrependInt32Slot(7, purchaseCountLimitField, 0)
+    ShopRefreshExcelAddVisibleAmountField(builder, visibleAmountField)
+
+def ShopRefreshExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField):
+    builder.PrependInt32Slot(7, purchaseCountLimitField, 0)
+
 def AddPurchaseCountLimitField(builder, purchaseCountLimitField):
-    return ShopRefreshExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
-def ShopRefreshExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(8, displayOrderField, 0)
+    ShopRefreshExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
+
+def ShopRefreshExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(8, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return ShopRefreshExcelAddDisplayOrderField(builder, displayOrderField)
-def ShopRefreshExcelAddCategoryTypeField(builder, categoryTypeField): builder.PrependFloat32Slot(9, categoryTypeField, 0.0)
+    ShopRefreshExcelAddDisplayOrderField(builder, displayOrderField)
+
+def ShopRefreshExcelAddCategoryTypeField(builder, categoryTypeField):
+    builder.PrependFloat32Slot(9, categoryTypeField, 0.0)
+
 def AddCategoryTypeField(builder, categoryTypeField):
-    return ShopRefreshExcelAddCategoryTypeField(builder, categoryTypeField)
-def ShopRefreshExcelAddRefreshGroupField(builder, refreshGroupField): builder.PrependInt32Slot(10, refreshGroupField, 0)
+    ShopRefreshExcelAddCategoryTypeField(builder, categoryTypeField)
+
+def ShopRefreshExcelAddRefreshGroupField(builder, refreshGroupField):
+    builder.PrependInt32Slot(10, refreshGroupField, 0)
+
 def AddRefreshGroupField(builder, refreshGroupField):
-    return ShopRefreshExcelAddRefreshGroupField(builder, refreshGroupField)
-def ShopRefreshExcelAddProbField(builder, probField): builder.PrependInt32Slot(11, probField, 0)
+    ShopRefreshExcelAddRefreshGroupField(builder, refreshGroupField)
+
+def ShopRefreshExcelAddProbField(builder, probField):
+    builder.PrependInt32Slot(11, probField, 0)
+
 def AddProbField(builder, probField):
-    return ShopRefreshExcelAddProbField(builder, probField)
-def ShopRefreshExcelAddBuyReportEventNameField(builder, buyReportEventNameField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(buyReportEventNameField), 0)
+    ShopRefreshExcelAddProbField(builder, probField)
+
+def ShopRefreshExcelAddBuyReportEventNameField(builder, buyReportEventNameField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(buyReportEventNameField), 0)
+
 def AddBuyReportEventNameField(builder, buyReportEventNameField):
-    return ShopRefreshExcelAddBuyReportEventNameField(builder, buyReportEventNameField)
-def ShopRefreshExcelAddProductUpdateTimeField(builder, productUpdateTimeField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(productUpdateTimeField), 0)
+    ShopRefreshExcelAddBuyReportEventNameField(builder, buyReportEventNameField)
+
+def ShopRefreshExcelAddProductUpdateTimeField(builder, productUpdateTimeField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(productUpdateTimeField), 0)
+
 def AddProductUpdateTimeField(builder, productUpdateTimeField):
-    return ShopRefreshExcelAddProductUpdateTimeField(builder, productUpdateTimeField)
-def ShopRefreshExcelAddDisplayTagField(builder, displayTagField): builder.PrependInt32Slot(14, displayTagField, 0)
+    ShopRefreshExcelAddProductUpdateTimeField(builder, productUpdateTimeField)
+
+def ShopRefreshExcelAddDisplayTagField(builder, displayTagField):
+    builder.PrependInt32Slot(14, displayTagField, 0)
+
 def AddDisplayTagField(builder, displayTagField):
-    return ShopRefreshExcelAddDisplayTagField(builder, displayTagField)
-def ShopRefreshExcelEnd(builder): return builder.EndObject()
+    ShopRefreshExcelAddDisplayTagField(builder, displayTagField)
+
+def ShopRefreshExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ShopRefreshExcelEnd(builder)

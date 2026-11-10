@@ -168,54 +168,104 @@ class EventContentCardShopExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         return o == 0
 
-def EventContentCardShopExcelStart(builder): builder.StartObject(12)
+def EventContentCardShopExcelStart(builder):
+    builder.StartObject(12)
+
 def Start(builder):
-    return EventContentCardShopExcelStart(builder)
-def EventContentCardShopExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentCardShopExcelStart(builder)
+
+def EventContentCardShopExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentCardShopExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentCardShopExcelAddIdField(builder, idField): builder.PrependInt32Slot(1, idField, 0)
+    EventContentCardShopExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentCardShopExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(1, idField, 0)
+
 def AddIdField(builder, idField):
-    return EventContentCardShopExcelAddIdField(builder, idField)
-def EventContentCardShopExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(2, rarityField, 0)
+    EventContentCardShopExcelAddIdField(builder, idField)
+
+def EventContentCardShopExcelAddRarityField(builder, rarityField):
+    builder.PrependInt32Slot(2, rarityField, 0)
+
 def AddRarityField(builder, rarityField):
-    return EventContentCardShopExcelAddRarityField(builder, rarityField)
-def EventContentCardShopExcelAddCostGoodsIdField(builder, costGoodsIdField): builder.PrependInt32Slot(3, costGoodsIdField, 0)
+    EventContentCardShopExcelAddRarityField(builder, rarityField)
+
+def EventContentCardShopExcelAddCostGoodsIdField(builder, costGoodsIdField):
+    builder.PrependInt32Slot(3, costGoodsIdField, 0)
+
 def AddCostGoodsIdField(builder, costGoodsIdField):
-    return EventContentCardShopExcelAddCostGoodsIdField(builder, costGoodsIdField)
-def EventContentCardShopExcelAddCardGroupIdField(builder, cardGroupIdField): builder.PrependInt32Slot(4, cardGroupIdField, 0)
+    EventContentCardShopExcelAddCostGoodsIdField(builder, costGoodsIdField)
+
+def EventContentCardShopExcelAddCardGroupIdField(builder, cardGroupIdField):
+    builder.PrependInt32Slot(4, cardGroupIdField, 0)
+
 def AddCardGroupIdField(builder, cardGroupIdField):
-    return EventContentCardShopExcelAddCardGroupIdField(builder, cardGroupIdField)
-def EventContentCardShopExcelAddIsLegacyField(builder, isLegacyField): builder.PrependBoolSlot(5, isLegacyField, 0)
+    EventContentCardShopExcelAddCardGroupIdField(builder, cardGroupIdField)
+
+def EventContentCardShopExcelAddIsLegacyField(builder, isLegacyField):
+    builder.PrependBoolSlot(5, isLegacyField, 0)
+
 def AddIsLegacyField(builder, isLegacyField):
-    return EventContentCardShopExcelAddIsLegacyField(builder, isLegacyField)
-def EventContentCardShopExcelAddRefreshGroupField(builder, refreshGroupField): builder.PrependInt32Slot(6, refreshGroupField, 0)
+    EventContentCardShopExcelAddIsLegacyField(builder, isLegacyField)
+
+def EventContentCardShopExcelAddRefreshGroupField(builder, refreshGroupField):
+    builder.PrependInt32Slot(6, refreshGroupField, 0)
+
 def AddRefreshGroupField(builder, refreshGroupField):
-    return EventContentCardShopExcelAddRefreshGroupField(builder, refreshGroupField)
-def EventContentCardShopExcelAddProbField(builder, probField): builder.PrependInt32Slot(7, probField, 0)
+    EventContentCardShopExcelAddRefreshGroupField(builder, refreshGroupField)
+
+def EventContentCardShopExcelAddProbField(builder, probField):
+    builder.PrependInt32Slot(7, probField, 0)
+
 def AddProbField(builder, probField):
-    return EventContentCardShopExcelAddProbField(builder, probField)
-def EventContentCardShopExcelAddProbWeight1Field(builder, probWeight1Field): builder.PrependInt32Slot(8, probWeight1Field, 0)
+    EventContentCardShopExcelAddProbField(builder, probField)
+
+def EventContentCardShopExcelAddProbWeight1Field(builder, probWeight1Field):
+    builder.PrependInt32Slot(8, probWeight1Field, 0)
+
 def AddProbWeight1Field(builder, probWeight1Field):
-    return EventContentCardShopExcelAddProbWeight1Field(builder, probWeight1Field)
-def EventContentCardShopExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+    EventContentCardShopExcelAddProbWeight1Field(builder, probWeight1Field)
+
+def EventContentCardShopExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return EventContentCardShopExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def EventContentCardShopExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeFieldVector(builder, numElems):
+    EventContentCardShopExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def EventContentCardShopExcelStartRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return EventContentCardShopExcelStartRewardParcelTypeFieldVector(builder, numElems)
-def EventContentCardShopExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
+def EventContentCardShopExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return EventContentCardShopExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def EventContentCardShopExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdFieldVector(builder, numElems):
+    EventContentCardShopExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def EventContentCardShopExcelStartRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return EventContentCardShopExcelStartRewardParcelIdFieldVector(builder, numElems)
-def EventContentCardShopExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+
+def EventContentCardShopExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return EventContentCardShopExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def EventContentCardShopExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountFieldVector(builder, numElems):
+    EventContentCardShopExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def EventContentCardShopExcelStartRewardParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelAmountFieldVector(builder, numElems: int) -> int:
     return EventContentCardShopExcelStartRewardParcelAmountFieldVector(builder, numElems)
-def EventContentCardShopExcelEnd(builder): return builder.EndObject()
+
+def EventContentCardShopExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentCardShopExcelEnd(builder)

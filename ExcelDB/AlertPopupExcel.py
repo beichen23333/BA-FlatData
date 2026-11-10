@@ -73,30 +73,56 @@ class AlertPopupExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def AlertPopupExcelStart(builder): builder.StartObject(7)
+def AlertPopupExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return AlertPopupExcelStart(builder)
-def AlertPopupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    AlertPopupExcelStart(builder)
+
+def AlertPopupExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return AlertPopupExcelAddIdField(builder, idField)
-def AlertPopupExcelAddCheckConfirmAbleField(builder, checkConfirmAbleField): builder.PrependBoolSlot(1, checkConfirmAbleField, 0)
+    AlertPopupExcelAddIdField(builder, idField)
+
+def AlertPopupExcelAddCheckConfirmAbleField(builder, checkConfirmAbleField):
+    builder.PrependBoolSlot(1, checkConfirmAbleField, 0)
+
 def AddCheckConfirmAbleField(builder, checkConfirmAbleField):
-    return AlertPopupExcelAddCheckConfirmAbleField(builder, checkConfirmAbleField)
-def AlertPopupExcelAddSystemPopupTitleField(builder, systemPopupTitleField): builder.PrependUint32Slot(2, systemPopupTitleField, 0)
+    AlertPopupExcelAddCheckConfirmAbleField(builder, checkConfirmAbleField)
+
+def AlertPopupExcelAddSystemPopupTitleField(builder, systemPopupTitleField):
+    builder.PrependUint32Slot(2, systemPopupTitleField, 0)
+
 def AddSystemPopupTitleField(builder, systemPopupTitleField):
-    return AlertPopupExcelAddSystemPopupTitleField(builder, systemPopupTitleField)
-def AlertPopupExcelAddSystemPopupDescriptionField(builder, systemPopupDescriptionField): builder.PrependUint32Slot(3, systemPopupDescriptionField, 0)
+    AlertPopupExcelAddSystemPopupTitleField(builder, systemPopupTitleField)
+
+def AlertPopupExcelAddSystemPopupDescriptionField(builder, systemPopupDescriptionField):
+    builder.PrependUint32Slot(3, systemPopupDescriptionField, 0)
+
 def AddSystemPopupDescriptionField(builder, systemPopupDescriptionField):
-    return AlertPopupExcelAddSystemPopupDescriptionField(builder, systemPopupDescriptionField)
-def AlertPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField): builder.PrependUint32Slot(4, spoilerPopupTitleField, 0)
+    AlertPopupExcelAddSystemPopupDescriptionField(builder, systemPopupDescriptionField)
+
+def AlertPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField):
+    builder.PrependUint32Slot(4, spoilerPopupTitleField, 0)
+
 def AddSpoilerPopupTitleField(builder, spoilerPopupTitleField):
-    return AlertPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField)
-def AlertPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField): builder.PrependUint32Slot(5, spoilerPopupDescriptionField, 0)
+    AlertPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField)
+
+def AlertPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField):
+    builder.PrependUint32Slot(5, spoilerPopupDescriptionField, 0)
+
 def AddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField):
-    return AlertPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField)
-def AlertPopupExcelAddPopupTypeField(builder, popupTypeField): builder.PrependInt32Slot(6, popupTypeField, 0)
+    AlertPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField)
+
+def AlertPopupExcelAddPopupTypeField(builder, popupTypeField):
+    builder.PrependInt32Slot(6, popupTypeField, 0)
+
 def AddPopupTypeField(builder, popupTypeField):
-    return AlertPopupExcelAddPopupTypeField(builder, popupTypeField)
-def AlertPopupExcelEnd(builder): return builder.EndObject()
+    AlertPopupExcelAddPopupTypeField(builder, popupTypeField)
+
+def AlertPopupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AlertPopupExcelEnd(builder)

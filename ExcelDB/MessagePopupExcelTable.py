@@ -49,15 +49,26 @@ class MessagePopupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MessagePopupExcelTableStart(builder): builder.StartObject(1)
+def MessagePopupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MessagePopupExcelTableStart(builder)
-def MessagePopupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MessagePopupExcelTableStart(builder)
+
+def MessagePopupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MessagePopupExcelTableAddDataList(builder, dataList)
-def MessagePopupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MessagePopupExcelTableAddDataList(builder, dataList)
+
+def MessagePopupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MessagePopupExcelTableStartDataListVector(builder, numElems)
-def MessagePopupExcelTableEnd(builder): return builder.EndObject()
+
+def MessagePopupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MessagePopupExcelTableEnd(builder)

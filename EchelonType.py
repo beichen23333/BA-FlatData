@@ -26,3 +26,11 @@ class EchelonType:
     MultiFloorRaid = 24
     MinigameDefense = 25
     PermanentRaid = 26
+    TacticalRelay = 27
+    TacticalRelayExplosion = 28
+    TacticalRelayPierce = 29
+    TacticalRelayMystic = 30
+    TacticalRelaySonic = 31
+    TacticalRelayChemical = 32
+    WeekDungeonChaserD = 33
+    WeekDungeonChaserE = 34

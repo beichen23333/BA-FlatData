@@ -45,18 +45,32 @@ class ServiceActionExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ServiceActionExcelStart(builder): builder.StartObject(3)
+def ServiceActionExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return ServiceActionExcelStart(builder)
-def ServiceActionExcelAddServiceActionTypeField(builder, serviceActionTypeField): builder.PrependInt32Slot(0, serviceActionTypeField, 0)
+    ServiceActionExcelStart(builder)
+
+def ServiceActionExcelAddServiceActionTypeField(builder, serviceActionTypeField):
+    builder.PrependInt32Slot(0, serviceActionTypeField, 0)
+
 def AddServiceActionTypeField(builder, serviceActionTypeField):
-    return ServiceActionExcelAddServiceActionTypeField(builder, serviceActionTypeField)
-def ServiceActionExcelAddIsLegacyField(builder, isLegacyField): builder.PrependBoolSlot(1, isLegacyField, 0)
+    ServiceActionExcelAddServiceActionTypeField(builder, serviceActionTypeField)
+
+def ServiceActionExcelAddIsLegacyField(builder, isLegacyField):
+    builder.PrependBoolSlot(1, isLegacyField, 0)
+
 def AddIsLegacyField(builder, isLegacyField):
-    return ServiceActionExcelAddIsLegacyField(builder, isLegacyField)
-def ServiceActionExcelAddGoodsIdField(builder, goodsIdField): builder.PrependInt32Slot(2, goodsIdField, 0)
+    ServiceActionExcelAddIsLegacyField(builder, isLegacyField)
+
+def ServiceActionExcelAddGoodsIdField(builder, goodsIdField):
+    builder.PrependInt32Slot(2, goodsIdField, 0)
+
 def AddGoodsIdField(builder, goodsIdField):
-    return ServiceActionExcelAddGoodsIdField(builder, goodsIdField)
-def ServiceActionExcelEnd(builder): return builder.EndObject()
+    ServiceActionExcelAddGoodsIdField(builder, goodsIdField)
+
+def ServiceActionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ServiceActionExcelEnd(builder)

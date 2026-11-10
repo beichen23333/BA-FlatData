@@ -38,15 +38,26 @@ class WorldRaidFavorBuffExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def WorldRaidFavorBuffExcelStart(builder): builder.StartObject(2)
+def WorldRaidFavorBuffExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return WorldRaidFavorBuffExcelStart(builder)
-def WorldRaidFavorBuffExcelAddWorldRaidFavorRankField(builder, worldRaidFavorRankField): builder.PrependInt32Slot(0, worldRaidFavorRankField, 0)
+    WorldRaidFavorBuffExcelStart(builder)
+
+def WorldRaidFavorBuffExcelAddWorldRaidFavorRankField(builder, worldRaidFavorRankField):
+    builder.PrependInt32Slot(0, worldRaidFavorRankField, 0)
+
 def AddWorldRaidFavorRankField(builder, worldRaidFavorRankField):
-    return WorldRaidFavorBuffExcelAddWorldRaidFavorRankField(builder, worldRaidFavorRankField)
-def WorldRaidFavorBuffExcelAddWorldRaidFavorRankBonusField(builder, worldRaidFavorRankBonusField): builder.PrependInt32Slot(1, worldRaidFavorRankBonusField, 0)
+    WorldRaidFavorBuffExcelAddWorldRaidFavorRankField(builder, worldRaidFavorRankField)
+
+def WorldRaidFavorBuffExcelAddWorldRaidFavorRankBonusField(builder, worldRaidFavorRankBonusField):
+    builder.PrependInt32Slot(1, worldRaidFavorRankBonusField, 0)
+
 def AddWorldRaidFavorRankBonusField(builder, worldRaidFavorRankBonusField):
-    return WorldRaidFavorBuffExcelAddWorldRaidFavorRankBonusField(builder, worldRaidFavorRankBonusField)
-def WorldRaidFavorBuffExcelEnd(builder): return builder.EndObject()
+    WorldRaidFavorBuffExcelAddWorldRaidFavorRankBonusField(builder, worldRaidFavorRankBonusField)
+
+def WorldRaidFavorBuffExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WorldRaidFavorBuffExcelEnd(builder)

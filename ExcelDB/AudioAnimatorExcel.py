@@ -155,57 +155,110 @@ class AudioAnimatorExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         return o == 0
 
-def AudioAnimatorExcelStart(builder): builder.StartObject(14)
+def AudioAnimatorExcelStart(builder):
+    builder.StartObject(14)
+
 def Start(builder):
-    return AudioAnimatorExcelStart(builder)
-def AudioAnimatorExcelAddControllerNameHashField(builder, controllerNameHashField): builder.PrependUint32Slot(0, controllerNameHashField, 0)
+    AudioAnimatorExcelStart(builder)
+
+def AudioAnimatorExcelAddControllerNameHashField(builder, controllerNameHashField):
+    builder.PrependUint32Slot(0, controllerNameHashField, 0)
+
 def AddControllerNameHashField(builder, controllerNameHashField):
-    return AudioAnimatorExcelAddControllerNameHashField(builder, controllerNameHashField)
-def AudioAnimatorExcelAddVoiceNamePrefixField(builder, voiceNamePrefixField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(voiceNamePrefixField), 0)
+    AudioAnimatorExcelAddControllerNameHashField(builder, controllerNameHashField)
+
+def AudioAnimatorExcelAddVoiceNamePrefixField(builder, voiceNamePrefixField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(voiceNamePrefixField), 0)
+
 def AddVoiceNamePrefixField(builder, voiceNamePrefixField):
-    return AudioAnimatorExcelAddVoiceNamePrefixField(builder, voiceNamePrefixField)
-def AudioAnimatorExcelAddStateNameHashField(builder, stateNameHashField): builder.PrependUint32Slot(2, stateNameHashField, 0)
+    AudioAnimatorExcelAddVoiceNamePrefixField(builder, voiceNamePrefixField)
+
+def AudioAnimatorExcelAddStateNameHashField(builder, stateNameHashField):
+    builder.PrependUint32Slot(2, stateNameHashField, 0)
+
 def AddStateNameHashField(builder, stateNameHashField):
-    return AudioAnimatorExcelAddStateNameHashField(builder, stateNameHashField)
-def AudioAnimatorExcelAddStateNameField(builder, stateNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(stateNameField), 0)
+    AudioAnimatorExcelAddStateNameHashField(builder, stateNameHashField)
+
+def AudioAnimatorExcelAddStateNameField(builder, stateNameField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(stateNameField), 0)
+
 def AddStateNameField(builder, stateNameField):
-    return AudioAnimatorExcelAddStateNameField(builder, stateNameField)
-def AudioAnimatorExcelAddIgnoreInterruptDelayField(builder, ignoreInterruptDelayField): builder.PrependBoolSlot(4, ignoreInterruptDelayField, 0)
+    AudioAnimatorExcelAddStateNameField(builder, stateNameField)
+
+def AudioAnimatorExcelAddIgnoreInterruptDelayField(builder, ignoreInterruptDelayField):
+    builder.PrependBoolSlot(4, ignoreInterruptDelayField, 0)
+
 def AddIgnoreInterruptDelayField(builder, ignoreInterruptDelayField):
-    return AudioAnimatorExcelAddIgnoreInterruptDelayField(builder, ignoreInterruptDelayField)
-def AudioAnimatorExcelAddIgnoreInterruptPlayField(builder, ignoreInterruptPlayField): builder.PrependBoolSlot(5, ignoreInterruptPlayField, 0)
+    AudioAnimatorExcelAddIgnoreInterruptDelayField(builder, ignoreInterruptDelayField)
+
+def AudioAnimatorExcelAddIgnoreInterruptPlayField(builder, ignoreInterruptPlayField):
+    builder.PrependBoolSlot(5, ignoreInterruptPlayField, 0)
+
 def AddIgnoreInterruptPlayField(builder, ignoreInterruptPlayField):
-    return AudioAnimatorExcelAddIgnoreInterruptPlayField(builder, ignoreInterruptPlayField)
-def AudioAnimatorExcelAddIgnoreVelocityField(builder, ignoreVelocityField): builder.PrependBoolSlot(6, ignoreVelocityField, 0)
+    AudioAnimatorExcelAddIgnoreInterruptPlayField(builder, ignoreInterruptPlayField)
+
+def AudioAnimatorExcelAddIgnoreVelocityField(builder, ignoreVelocityField):
+    builder.PrependBoolSlot(6, ignoreVelocityField, 0)
+
 def AddIgnoreVelocityField(builder, ignoreVelocityField):
-    return AudioAnimatorExcelAddIgnoreVelocityField(builder, ignoreVelocityField)
-def AudioAnimatorExcelAddVolumeField(builder, volumeField): builder.PrependFloat32Slot(7, volumeField, 0.0)
+    AudioAnimatorExcelAddIgnoreVelocityField(builder, ignoreVelocityField)
+
+def AudioAnimatorExcelAddVolumeField(builder, volumeField):
+    builder.PrependFloat32Slot(7, volumeField, 0.0)
+
 def AddVolumeField(builder, volumeField):
-    return AudioAnimatorExcelAddVolumeField(builder, volumeField)
-def AudioAnimatorExcelAddDelayField(builder, delayField): builder.PrependFloat32Slot(8, delayField, 0.0)
+    AudioAnimatorExcelAddVolumeField(builder, volumeField)
+
+def AudioAnimatorExcelAddDelayField(builder, delayField):
+    builder.PrependFloat32Slot(8, delayField, 0.0)
+
 def AddDelayField(builder, delayField):
-    return AudioAnimatorExcelAddDelayField(builder, delayField)
-def AudioAnimatorExcelAddRandomPitchMinField(builder, randomPitchMinField): builder.PrependInt32Slot(9, randomPitchMinField, 0)
+    AudioAnimatorExcelAddDelayField(builder, delayField)
+
+def AudioAnimatorExcelAddRandomPitchMinField(builder, randomPitchMinField):
+    builder.PrependInt32Slot(9, randomPitchMinField, 0)
+
 def AddRandomPitchMinField(builder, randomPitchMinField):
-    return AudioAnimatorExcelAddRandomPitchMinField(builder, randomPitchMinField)
-def AudioAnimatorExcelAddRandomPitchMaxField(builder, randomPitchMaxField): builder.PrependInt32Slot(10, randomPitchMaxField, 0)
+    AudioAnimatorExcelAddRandomPitchMinField(builder, randomPitchMinField)
+
+def AudioAnimatorExcelAddRandomPitchMaxField(builder, randomPitchMaxField):
+    builder.PrependInt32Slot(10, randomPitchMaxField, 0)
+
 def AddRandomPitchMaxField(builder, randomPitchMaxField):
-    return AudioAnimatorExcelAddRandomPitchMaxField(builder, randomPitchMaxField)
-def AudioAnimatorExcelAddAudioPriorityField(builder, audioPriorityField): builder.PrependInt32Slot(11, audioPriorityField, 0)
+    AudioAnimatorExcelAddRandomPitchMaxField(builder, randomPitchMaxField)
+
+def AudioAnimatorExcelAddAudioPriorityField(builder, audioPriorityField):
+    builder.PrependInt32Slot(11, audioPriorityField, 0)
+
 def AddAudioPriorityField(builder, audioPriorityField):
-    return AudioAnimatorExcelAddAudioPriorityField(builder, audioPriorityField)
-def AudioAnimatorExcelAddAudioClipPathField(builder, audioClipPathField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipPathField), 0)
+    AudioAnimatorExcelAddAudioPriorityField(builder, audioPriorityField)
+
+def AudioAnimatorExcelAddAudioClipPathField(builder, audioClipPathField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(audioClipPathField), 0)
+
 def AddAudioClipPathField(builder, audioClipPathField):
-    return AudioAnimatorExcelAddAudioClipPathField(builder, audioClipPathField)
-def AudioAnimatorExcelStartAudioClipPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAudioClipPathFieldVector(builder, numElems):
+    AudioAnimatorExcelAddAudioClipPathField(builder, audioClipPathField)
+
+def AudioAnimatorExcelStartAudioClipPathFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartAudioClipPathFieldVector(builder, numElems: int) -> int:
     return AudioAnimatorExcelStartAudioClipPathFieldVector(builder, numElems)
-def AudioAnimatorExcelAddVoiceHashField(builder, voiceHashField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(voiceHashField), 0)
+
+def AudioAnimatorExcelAddVoiceHashField(builder, voiceHashField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(voiceHashField), 0)
+
 def AddVoiceHashField(builder, voiceHashField):
-    return AudioAnimatorExcelAddVoiceHashField(builder, voiceHashField)
-def AudioAnimatorExcelStartVoiceHashFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVoiceHashFieldVector(builder, numElems):
+    AudioAnimatorExcelAddVoiceHashField(builder, voiceHashField)
+
+def AudioAnimatorExcelStartVoiceHashFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartVoiceHashFieldVector(builder, numElems: int) -> int:
     return AudioAnimatorExcelStartVoiceHashFieldVector(builder, numElems)
-def AudioAnimatorExcelEnd(builder): return builder.EndObject()
+
+def AudioAnimatorExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AudioAnimatorExcelEnd(builder)

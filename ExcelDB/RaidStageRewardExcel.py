@@ -66,27 +66,50 @@ class RaidStageRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def RaidStageRewardExcelStart(builder): builder.StartObject(6)
+def RaidStageRewardExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return RaidStageRewardExcelStart(builder)
-def RaidStageRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    RaidStageRewardExcelStart(builder)
+
+def RaidStageRewardExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return RaidStageRewardExcelAddGroupIdField(builder, groupIdField)
-def RaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField): builder.PrependBoolSlot(1, isClearStageRewardHideInfoField, 0)
+    RaidStageRewardExcelAddGroupIdField(builder, groupIdField)
+
+def RaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField):
+    builder.PrependBoolSlot(1, isClearStageRewardHideInfoField, 0)
+
 def AddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField):
-    return RaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField)
-def RaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField): builder.PrependInt32Slot(2, clearStageRewardProbField, 0)
+    RaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField)
+
+def RaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField):
+    builder.PrependInt32Slot(2, clearStageRewardProbField, 0)
+
 def AddClearStageRewardProbField(builder, clearStageRewardProbField):
-    return RaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField)
-def RaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField): builder.PrependInt32Slot(3, clearStageRewardParcelTypeField, 0)
+    RaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField)
+
+def RaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField):
+    builder.PrependInt32Slot(3, clearStageRewardParcelTypeField, 0)
+
 def AddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField):
-    return RaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField)
-def RaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField): builder.PrependInt32Slot(4, clearStageRewardParcelUniqueIDField, 0)
+    RaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField)
+
+def RaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField):
+    builder.PrependInt32Slot(4, clearStageRewardParcelUniqueIDField, 0)
+
 def AddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField):
-    return RaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField)
-def RaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField): builder.PrependInt32Slot(5, clearStageRewardAmountField, 0)
+    RaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField)
+
+def RaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField):
+    builder.PrependInt32Slot(5, clearStageRewardAmountField, 0)
+
 def AddClearStageRewardAmountField(builder, clearStageRewardAmountField):
-    return RaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField)
-def RaidStageRewardExcelEnd(builder): return builder.EndObject()
+    RaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField)
+
+def RaidStageRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return RaidStageRewardExcelEnd(builder)

@@ -73,30 +73,56 @@ class LoadingImageExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def LoadingImageExcelStart(builder): builder.StartObject(7)
+def LoadingImageExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return LoadingImageExcelStart(builder)
-def LoadingImageExcelAddIDField(builder, iDField): builder.PrependInt32Slot(0, iDField, 0)
+    LoadingImageExcelStart(builder)
+
+def LoadingImageExcelAddIDField(builder, iDField):
+    builder.PrependInt32Slot(0, iDField, 0)
+
 def AddIDField(builder, iDField):
-    return LoadingImageExcelAddIDField(builder, iDField)
-def LoadingImageExcelAddImagePathKrField(builder, imagePathKrField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathKrField), 0)
+    LoadingImageExcelAddIDField(builder, iDField)
+
+def LoadingImageExcelAddImagePathKrField(builder, imagePathKrField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathKrField), 0)
+
 def AddImagePathKrField(builder, imagePathKrField):
-    return LoadingImageExcelAddImagePathKrField(builder, imagePathKrField)
-def LoadingImageExcelAddImagePathJpField(builder, imagePathJpField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathJpField), 0)
+    LoadingImageExcelAddImagePathKrField(builder, imagePathKrField)
+
+def LoadingImageExcelAddImagePathJpField(builder, imagePathJpField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathJpField), 0)
+
 def AddImagePathJpField(builder, imagePathJpField):
-    return LoadingImageExcelAddImagePathJpField(builder, imagePathJpField)
-def LoadingImageExcelAddDisplayWeightField(builder, displayWeightField): builder.PrependInt32Slot(3, displayWeightField, 0)
+    LoadingImageExcelAddImagePathJpField(builder, imagePathJpField)
+
+def LoadingImageExcelAddDisplayWeightField(builder, displayWeightField):
+    builder.PrependInt32Slot(3, displayWeightField, 0)
+
 def AddDisplayWeightField(builder, displayWeightField):
-    return LoadingImageExcelAddDisplayWeightField(builder, displayWeightField)
-def LoadingImageExcelAddImagePathThField(builder, imagePathThField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathThField), 0)
+    LoadingImageExcelAddDisplayWeightField(builder, displayWeightField)
+
+def LoadingImageExcelAddImagePathThField(builder, imagePathThField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathThField), 0)
+
 def AddImagePathThField(builder, imagePathThField):
-    return LoadingImageExcelAddImagePathThField(builder, imagePathThField)
-def LoadingImageExcelAddImagePathTwField(builder, imagePathTwField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathTwField), 0)
+    LoadingImageExcelAddImagePathThField(builder, imagePathThField)
+
+def LoadingImageExcelAddImagePathTwField(builder, imagePathTwField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathTwField), 0)
+
 def AddImagePathTwField(builder, imagePathTwField):
-    return LoadingImageExcelAddImagePathTwField(builder, imagePathTwField)
-def LoadingImageExcelAddImagePathEnField(builder, imagePathEnField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathEnField), 0)
+    LoadingImageExcelAddImagePathTwField(builder, imagePathTwField)
+
+def LoadingImageExcelAddImagePathEnField(builder, imagePathEnField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathEnField), 0)
+
 def AddImagePathEnField(builder, imagePathEnField):
-    return LoadingImageExcelAddImagePathEnField(builder, imagePathEnField)
-def LoadingImageExcelEnd(builder): return builder.EndObject()
+    LoadingImageExcelAddImagePathEnField(builder, imagePathEnField)
+
+def LoadingImageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return LoadingImageExcelEnd(builder)

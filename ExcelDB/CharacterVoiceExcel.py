@@ -195,63 +195,122 @@ class CharacterVoiceExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         return o == 0
 
-def CharacterVoiceExcelStart(builder): builder.StartObject(14)
+def CharacterVoiceExcelStart(builder):
+    builder.StartObject(14)
+
 def Start(builder):
-    return CharacterVoiceExcelStart(builder)
-def CharacterVoiceExcelAddCharacterVoiceUniqueIdField(builder, characterVoiceUniqueIdField): builder.PrependInt32Slot(0, characterVoiceUniqueIdField, 0)
+    CharacterVoiceExcelStart(builder)
+
+def CharacterVoiceExcelAddCharacterVoiceUniqueIdField(builder, characterVoiceUniqueIdField):
+    builder.PrependInt32Slot(0, characterVoiceUniqueIdField, 0)
+
 def AddCharacterVoiceUniqueIdField(builder, characterVoiceUniqueIdField):
-    return CharacterVoiceExcelAddCharacterVoiceUniqueIdField(builder, characterVoiceUniqueIdField)
-def CharacterVoiceExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField): builder.PrependInt32Slot(1, characterVoiceGroupIdField, 0)
+    CharacterVoiceExcelAddCharacterVoiceUniqueIdField(builder, characterVoiceUniqueIdField)
+
+def CharacterVoiceExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField):
+    builder.PrependInt32Slot(1, characterVoiceGroupIdField, 0)
+
 def AddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField):
-    return CharacterVoiceExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField)
-def CharacterVoiceExcelAddVoiceHashField(builder, voiceHashField): builder.PrependUint32Slot(2, voiceHashField, 0)
+    CharacterVoiceExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField)
+
+def CharacterVoiceExcelAddVoiceHashField(builder, voiceHashField):
+    builder.PrependUint32Slot(2, voiceHashField, 0)
+
 def AddVoiceHashField(builder, voiceHashField):
-    return CharacterVoiceExcelAddVoiceHashField(builder, voiceHashField)
-def CharacterVoiceExcelAddOnlyOneField(builder, onlyOneField): builder.PrependBoolSlot(3, onlyOneField, 0)
+    CharacterVoiceExcelAddVoiceHashField(builder, voiceHashField)
+
+def CharacterVoiceExcelAddOnlyOneField(builder, onlyOneField):
+    builder.PrependBoolSlot(3, onlyOneField, 0)
+
 def AddOnlyOneField(builder, onlyOneField):
-    return CharacterVoiceExcelAddOnlyOneField(builder, onlyOneField)
-def CharacterVoiceExcelAddPriorityField(builder, priorityField): builder.PrependInt32Slot(4, priorityField, 0)
+    CharacterVoiceExcelAddOnlyOneField(builder, onlyOneField)
+
+def CharacterVoiceExcelAddPriorityField(builder, priorityField):
+    builder.PrependInt32Slot(4, priorityField, 0)
+
 def AddPriorityField(builder, priorityField):
-    return CharacterVoiceExcelAddPriorityField(builder, priorityField)
-def CharacterVoiceExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(5, displayOrderField, 0)
+    CharacterVoiceExcelAddPriorityField(builder, priorityField)
+
+def CharacterVoiceExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(5, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return CharacterVoiceExcelAddDisplayOrderField(builder, displayOrderField)
-def CharacterVoiceExcelAddCollectionVisibleField(builder, collectionVisibleField): builder.PrependBoolSlot(6, collectionVisibleField, 0)
+    CharacterVoiceExcelAddDisplayOrderField(builder, displayOrderField)
+
+def CharacterVoiceExcelAddCollectionVisibleField(builder, collectionVisibleField):
+    builder.PrependBoolSlot(6, collectionVisibleField, 0)
+
 def AddCollectionVisibleField(builder, collectionVisibleField):
-    return CharacterVoiceExcelAddCollectionVisibleField(builder, collectionVisibleField)
-def CharacterVoiceExcelAddCVCollectionTypeField(builder, cVCollectionTypeField): builder.PrependInt32Slot(7, cVCollectionTypeField, 0)
+    CharacterVoiceExcelAddCollectionVisibleField(builder, collectionVisibleField)
+
+def CharacterVoiceExcelAddCVCollectionTypeField(builder, cVCollectionTypeField):
+    builder.PrependInt32Slot(7, cVCollectionTypeField, 0)
+
 def AddCVCollectionTypeField(builder, cVCollectionTypeField):
-    return CharacterVoiceExcelAddCVCollectionTypeField(builder, cVCollectionTypeField)
-def CharacterVoiceExcelAddUnlockFavorRankField(builder, unlockFavorRankField): builder.PrependInt32Slot(8, unlockFavorRankField, 0)
+    CharacterVoiceExcelAddCVCollectionTypeField(builder, cVCollectionTypeField)
+
+def CharacterVoiceExcelAddUnlockFavorRankField(builder, unlockFavorRankField):
+    builder.PrependInt32Slot(8, unlockFavorRankField, 0)
+
 def AddUnlockFavorRankField(builder, unlockFavorRankField):
-    return CharacterVoiceExcelAddUnlockFavorRankField(builder, unlockFavorRankField)
-def CharacterVoiceExcelAddLocalizeCVGroupField(builder, localizeCVGroupField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+    CharacterVoiceExcelAddUnlockFavorRankField(builder, unlockFavorRankField)
+
+def CharacterVoiceExcelAddLocalizeCVGroupField(builder, localizeCVGroupField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+
 def AddLocalizeCVGroupField(builder, localizeCVGroupField):
-    return CharacterVoiceExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
-def CharacterVoiceExcelAddNationField(builder, nationField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+    CharacterVoiceExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
+
+def CharacterVoiceExcelAddNationField(builder, nationField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+
 def AddNationField(builder, nationField):
-    return CharacterVoiceExcelAddNationField(builder, nationField)
-def CharacterVoiceExcelStartNationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNationFieldVector(builder, numElems):
+    CharacterVoiceExcelAddNationField(builder, nationField)
+
+def CharacterVoiceExcelStartNationFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartNationFieldVector(builder, numElems: int) -> int:
     return CharacterVoiceExcelStartNationFieldVector(builder, numElems)
-def CharacterVoiceExcelAddVolumeField(builder, volumeField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(volumeField), 0)
+
+def CharacterVoiceExcelAddVolumeField(builder, volumeField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(volumeField), 0)
+
 def AddVolumeField(builder, volumeField):
-    return CharacterVoiceExcelAddVolumeField(builder, volumeField)
-def CharacterVoiceExcelStartVolumeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVolumeFieldVector(builder, numElems):
+    CharacterVoiceExcelAddVolumeField(builder, volumeField)
+
+def CharacterVoiceExcelStartVolumeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartVolumeFieldVector(builder, numElems: int) -> int:
     return CharacterVoiceExcelStartVolumeFieldVector(builder, numElems)
-def CharacterVoiceExcelAddDelayField(builder, delayField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(delayField), 0)
+
+def CharacterVoiceExcelAddDelayField(builder, delayField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(delayField), 0)
+
 def AddDelayField(builder, delayField):
-    return CharacterVoiceExcelAddDelayField(builder, delayField)
-def CharacterVoiceExcelStartDelayFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDelayFieldVector(builder, numElems):
+    CharacterVoiceExcelAddDelayField(builder, delayField)
+
+def CharacterVoiceExcelStartDelayFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDelayFieldVector(builder, numElems: int) -> int:
     return CharacterVoiceExcelStartDelayFieldVector(builder, numElems)
-def CharacterVoiceExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
+def CharacterVoiceExcelAddPathField(builder, pathField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
 def AddPathField(builder, pathField):
-    return CharacterVoiceExcelAddPathField(builder, pathField)
-def CharacterVoiceExcelStartPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPathFieldVector(builder, numElems):
+    CharacterVoiceExcelAddPathField(builder, pathField)
+
+def CharacterVoiceExcelStartPathFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPathFieldVector(builder, numElems: int) -> int:
     return CharacterVoiceExcelStartPathFieldVector(builder, numElems)
-def CharacterVoiceExcelEnd(builder): return builder.EndObject()
+
+def CharacterVoiceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterVoiceExcelEnd(builder)

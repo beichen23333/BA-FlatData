@@ -49,15 +49,26 @@ class MiniGameRoadPuzzleRewardExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MiniGameRoadPuzzleRewardExcelTableStart(builder): builder.StartObject(1)
+def MiniGameRoadPuzzleRewardExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MiniGameRoadPuzzleRewardExcelTableStart(builder)
-def MiniGameRoadPuzzleRewardExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MiniGameRoadPuzzleRewardExcelTableStart(builder)
+
+def MiniGameRoadPuzzleRewardExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MiniGameRoadPuzzleRewardExcelTableAddDataList(builder, dataList)
-def MiniGameRoadPuzzleRewardExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MiniGameRoadPuzzleRewardExcelTableAddDataList(builder, dataList)
+
+def MiniGameRoadPuzzleRewardExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MiniGameRoadPuzzleRewardExcelTableStartDataListVector(builder, numElems)
-def MiniGameRoadPuzzleRewardExcelTableEnd(builder): return builder.EndObject()
+
+def MiniGameRoadPuzzleRewardExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameRoadPuzzleRewardExcelTableEnd(builder)

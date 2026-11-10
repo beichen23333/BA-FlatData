@@ -65,21 +65,38 @@ class TrophyCollectionExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
-def TrophyCollectionExcelStart(builder): builder.StartObject(3)
+def TrophyCollectionExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return TrophyCollectionExcelStart(builder)
-def TrophyCollectionExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    TrophyCollectionExcelStart(builder)
+
+def TrophyCollectionExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return TrophyCollectionExcelAddGroupIdField(builder, groupIdField)
-def TrophyCollectionExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUint32Slot(1, localizeCodeIdField, 0)
+    TrophyCollectionExcelAddGroupIdField(builder, groupIdField)
+
+def TrophyCollectionExcelAddLocalizeCodeIdField(builder, localizeCodeIdField):
+    builder.PrependUint32Slot(1, localizeCodeIdField, 0)
+
 def AddLocalizeCodeIdField(builder, localizeCodeIdField):
-    return TrophyCollectionExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
-def TrophyCollectionExcelAddFurnitureIdField(builder, furnitureIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(furnitureIdField), 0)
+    TrophyCollectionExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+
+def TrophyCollectionExcelAddFurnitureIdField(builder, furnitureIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(furnitureIdField), 0)
+
 def AddFurnitureIdField(builder, furnitureIdField):
-    return TrophyCollectionExcelAddFurnitureIdField(builder, furnitureIdField)
-def TrophyCollectionExcelStartFurnitureIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFurnitureIdFieldVector(builder, numElems):
+    TrophyCollectionExcelAddFurnitureIdField(builder, furnitureIdField)
+
+def TrophyCollectionExcelStartFurnitureIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFurnitureIdFieldVector(builder, numElems: int) -> int:
     return TrophyCollectionExcelStartFurnitureIdFieldVector(builder, numElems)
-def TrophyCollectionExcelEnd(builder): return builder.EndObject()
+
+def TrophyCollectionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TrophyCollectionExcelEnd(builder)

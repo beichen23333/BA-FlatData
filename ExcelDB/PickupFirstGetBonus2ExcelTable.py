@@ -49,15 +49,26 @@ class PickupFirstGetBonus2ExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def PickupFirstGetBonus2ExcelTableStart(builder): builder.StartObject(1)
+def PickupFirstGetBonus2ExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return PickupFirstGetBonus2ExcelTableStart(builder)
-def PickupFirstGetBonus2ExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    PickupFirstGetBonus2ExcelTableStart(builder)
+
+def PickupFirstGetBonus2ExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return PickupFirstGetBonus2ExcelTableAddDataList(builder, dataList)
-def PickupFirstGetBonus2ExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    PickupFirstGetBonus2ExcelTableAddDataList(builder, dataList)
+
+def PickupFirstGetBonus2ExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return PickupFirstGetBonus2ExcelTableStartDataListVector(builder, numElems)
-def PickupFirstGetBonus2ExcelTableEnd(builder): return builder.EndObject()
+
+def PickupFirstGetBonus2ExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PickupFirstGetBonus2ExcelTableEnd(builder)

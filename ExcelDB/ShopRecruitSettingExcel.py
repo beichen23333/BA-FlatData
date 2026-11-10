@@ -80,33 +80,62 @@ class ShopRecruitSettingExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ShopRecruitSettingExcelStart(builder): builder.StartObject(8)
+def ShopRecruitSettingExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return ShopRecruitSettingExcelStart(builder)
-def ShopRecruitSettingExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ShopRecruitSettingExcelStart(builder)
+
+def ShopRecruitSettingExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ShopRecruitSettingExcelAddIdField(builder, idField)
-def ShopRecruitSettingExcelAddRecruitChangeScenarioModeIDField(builder, recruitChangeScenarioModeIDField): builder.PrependInt32Slot(1, recruitChangeScenarioModeIDField, 0)
+    ShopRecruitSettingExcelAddIdField(builder, idField)
+
+def ShopRecruitSettingExcelAddRecruitChangeScenarioModeIDField(builder, recruitChangeScenarioModeIDField):
+    builder.PrependInt32Slot(1, recruitChangeScenarioModeIDField, 0)
+
 def AddRecruitChangeScenarioModeIDField(builder, recruitChangeScenarioModeIDField):
-    return ShopRecruitSettingExcelAddRecruitChangeScenarioModeIDField(builder, recruitChangeScenarioModeIDField)
-def ShopRecruitSettingExcelAddPriorityOrderField(builder, priorityOrderField): builder.PrependInt32Slot(2, priorityOrderField, 0)
+    ShopRecruitSettingExcelAddRecruitChangeScenarioModeIDField(builder, recruitChangeScenarioModeIDField)
+
+def ShopRecruitSettingExcelAddPriorityOrderField(builder, priorityOrderField):
+    builder.PrependInt32Slot(2, priorityOrderField, 0)
+
 def AddPriorityOrderField(builder, priorityOrderField):
-    return ShopRecruitSettingExcelAddPriorityOrderField(builder, priorityOrderField)
-def ShopRecruitSettingExcelAddTogetherPercentageField(builder, togetherPercentageField): builder.PrependInt32Slot(3, togetherPercentageField, 0)
+    ShopRecruitSettingExcelAddPriorityOrderField(builder, priorityOrderField)
+
+def ShopRecruitSettingExcelAddTogetherPercentageField(builder, togetherPercentageField):
+    builder.PrependInt32Slot(3, togetherPercentageField, 0)
+
 def AddTogetherPercentageField(builder, togetherPercentageField):
-    return ShopRecruitSettingExcelAddTogetherPercentageField(builder, togetherPercentageField)
-def ShopRecruitSettingExcelAddAnotherPercentageField(builder, anotherPercentageField): builder.PrependInt32Slot(4, anotherPercentageField, 0)
+    ShopRecruitSettingExcelAddTogetherPercentageField(builder, togetherPercentageField)
+
+def ShopRecruitSettingExcelAddAnotherPercentageField(builder, anotherPercentageField):
+    builder.PrependInt32Slot(4, anotherPercentageField, 0)
+
 def AddAnotherPercentageField(builder, anotherPercentageField):
-    return ShopRecruitSettingExcelAddAnotherPercentageField(builder, anotherPercentageField)
-def ShopRecruitSettingExcelAddTwistPercentageField(builder, twistPercentageField): builder.PrependInt32Slot(5, twistPercentageField, 0)
+    ShopRecruitSettingExcelAddAnotherPercentageField(builder, anotherPercentageField)
+
+def ShopRecruitSettingExcelAddTwistPercentageField(builder, twistPercentageField):
+    builder.PrependInt32Slot(5, twistPercentageField, 0)
+
 def AddTwistPercentageField(builder, twistPercentageField):
-    return ShopRecruitSettingExcelAddTwistPercentageField(builder, twistPercentageField)
-def ShopRecruitSettingExcelAddRecruitChangeIconField(builder, recruitChangeIconField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(recruitChangeIconField), 0)
+    ShopRecruitSettingExcelAddTwistPercentageField(builder, twistPercentageField)
+
+def ShopRecruitSettingExcelAddRecruitChangeIconField(builder, recruitChangeIconField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(recruitChangeIconField), 0)
+
 def AddRecruitChangeIconField(builder, recruitChangeIconField):
-    return ShopRecruitSettingExcelAddRecruitChangeIconField(builder, recruitChangeIconField)
-def ShopRecruitSettingExcelAddSeriesForceEnterField(builder, seriesForceEnterField): builder.PrependInt32Slot(7, seriesForceEnterField, 0)
+    ShopRecruitSettingExcelAddRecruitChangeIconField(builder, recruitChangeIconField)
+
+def ShopRecruitSettingExcelAddSeriesForceEnterField(builder, seriesForceEnterField):
+    builder.PrependInt32Slot(7, seriesForceEnterField, 0)
+
 def AddSeriesForceEnterField(builder, seriesForceEnterField):
-    return ShopRecruitSettingExcelAddSeriesForceEnterField(builder, seriesForceEnterField)
-def ShopRecruitSettingExcelEnd(builder): return builder.EndObject()
+    ShopRecruitSettingExcelAddSeriesForceEnterField(builder, seriesForceEnterField)
+
+def ShopRecruitSettingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ShopRecruitSettingExcelEnd(builder)

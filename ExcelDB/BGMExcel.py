@@ -213,54 +213,104 @@ class BGMExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
-def BGMExcelStart(builder): builder.StartObject(8)
+def BGMExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return BGMExcelStart(builder)
-def BGMExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    BGMExcelStart(builder)
+
+def BGMExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return BGMExcelAddIdField(builder, idField)
-def BGMExcelAddNationField(builder, nationField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+    BGMExcelAddIdField(builder, idField)
+
+def BGMExcelAddNationField(builder, nationField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+
 def AddNationField(builder, nationField):
-    return BGMExcelAddNationField(builder, nationField)
-def BGMExcelStartNationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNationFieldVector(builder, numElems):
+    BGMExcelAddNationField(builder, nationField)
+
+def BGMExcelStartNationFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartNationFieldVector(builder, numElems: int) -> int:
     return BGMExcelStartNationFieldVector(builder, numElems)
-def BGMExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
+def BGMExcelAddPathField(builder, pathField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
 def AddPathField(builder, pathField):
-    return BGMExcelAddPathField(builder, pathField)
-def BGMExcelStartPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPathFieldVector(builder, numElems):
+    BGMExcelAddPathField(builder, pathField)
+
+def BGMExcelStartPathFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPathFieldVector(builder, numElems: int) -> int:
     return BGMExcelStartPathFieldVector(builder, numElems)
-def BGMExcelAddVolumeField(builder, volumeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(volumeField), 0)
+
+def BGMExcelAddVolumeField(builder, volumeField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(volumeField), 0)
+
 def AddVolumeField(builder, volumeField):
-    return BGMExcelAddVolumeField(builder, volumeField)
-def BGMExcelStartVolumeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVolumeFieldVector(builder, numElems):
+    BGMExcelAddVolumeField(builder, volumeField)
+
+def BGMExcelStartVolumeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartVolumeFieldVector(builder, numElems: int) -> int:
     return BGMExcelStartVolumeFieldVector(builder, numElems)
-def BGMExcelAddLoopStartTimeField(builder, loopStartTimeField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(loopStartTimeField), 0)
+
+def BGMExcelAddLoopStartTimeField(builder, loopStartTimeField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(loopStartTimeField), 0)
+
 def AddLoopStartTimeField(builder, loopStartTimeField):
-    return BGMExcelAddLoopStartTimeField(builder, loopStartTimeField)
-def BGMExcelStartLoopStartTimeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLoopStartTimeFieldVector(builder, numElems):
+    BGMExcelAddLoopStartTimeField(builder, loopStartTimeField)
+
+def BGMExcelStartLoopStartTimeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartLoopStartTimeFieldVector(builder, numElems: int) -> int:
     return BGMExcelStartLoopStartTimeFieldVector(builder, numElems)
-def BGMExcelAddLoopEndTimeField(builder, loopEndTimeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(loopEndTimeField), 0)
+
+def BGMExcelAddLoopEndTimeField(builder, loopEndTimeField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(loopEndTimeField), 0)
+
 def AddLoopEndTimeField(builder, loopEndTimeField):
-    return BGMExcelAddLoopEndTimeField(builder, loopEndTimeField)
-def BGMExcelStartLoopEndTimeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLoopEndTimeFieldVector(builder, numElems):
+    BGMExcelAddLoopEndTimeField(builder, loopEndTimeField)
+
+def BGMExcelStartLoopEndTimeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartLoopEndTimeFieldVector(builder, numElems: int) -> int:
     return BGMExcelStartLoopEndTimeFieldVector(builder, numElems)
-def BGMExcelAddLoopTranstionTimeField(builder, loopTranstionTimeField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(loopTranstionTimeField), 0)
+
+def BGMExcelAddLoopTranstionTimeField(builder, loopTranstionTimeField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(loopTranstionTimeField), 0)
+
 def AddLoopTranstionTimeField(builder, loopTranstionTimeField):
-    return BGMExcelAddLoopTranstionTimeField(builder, loopTranstionTimeField)
-def BGMExcelStartLoopTranstionTimeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLoopTranstionTimeFieldVector(builder, numElems):
+    BGMExcelAddLoopTranstionTimeField(builder, loopTranstionTimeField)
+
+def BGMExcelStartLoopTranstionTimeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartLoopTranstionTimeFieldVector(builder, numElems: int) -> int:
     return BGMExcelStartLoopTranstionTimeFieldVector(builder, numElems)
-def BGMExcelAddLoopOffsetTimeField(builder, loopOffsetTimeField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(loopOffsetTimeField), 0)
+
+def BGMExcelAddLoopOffsetTimeField(builder, loopOffsetTimeField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(loopOffsetTimeField), 0)
+
 def AddLoopOffsetTimeField(builder, loopOffsetTimeField):
-    return BGMExcelAddLoopOffsetTimeField(builder, loopOffsetTimeField)
-def BGMExcelStartLoopOffsetTimeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLoopOffsetTimeFieldVector(builder, numElems):
+    BGMExcelAddLoopOffsetTimeField(builder, loopOffsetTimeField)
+
+def BGMExcelStartLoopOffsetTimeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartLoopOffsetTimeFieldVector(builder, numElems: int) -> int:
     return BGMExcelStartLoopOffsetTimeFieldVector(builder, numElems)
-def BGMExcelEnd(builder): return builder.EndObject()
+
+def BGMExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BGMExcelEnd(builder)

@@ -101,42 +101,80 @@ class FieldSNSPostExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def FieldSNSPostExcelStart(builder): builder.StartObject(11)
+def FieldSNSPostExcelStart(builder):
+    builder.StartObject(11)
+
 def Start(builder):
-    return FieldSNSPostExcelStart(builder)
-def FieldSNSPostExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    FieldSNSPostExcelStart(builder)
+
+def FieldSNSPostExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return FieldSNSPostExcelAddIdField(builder, idField)
-def FieldSNSPostExcelAddGroupInteractionIdField(builder, groupInteractionIdField): builder.PrependInt32Slot(1, groupInteractionIdField, 0)
+    FieldSNSPostExcelAddIdField(builder, idField)
+
+def FieldSNSPostExcelAddGroupInteractionIdField(builder, groupInteractionIdField):
+    builder.PrependInt32Slot(1, groupInteractionIdField, 0)
+
 def AddGroupInteractionIdField(builder, groupInteractionIdField):
-    return FieldSNSPostExcelAddGroupInteractionIdField(builder, groupInteractionIdField)
-def FieldSNSPostExcelAddPostTypeField(builder, postTypeField): builder.PrependInt32Slot(2, postTypeField, 0)
+    FieldSNSPostExcelAddGroupInteractionIdField(builder, groupInteractionIdField)
+
+def FieldSNSPostExcelAddPostTypeField(builder, postTypeField):
+    builder.PrependInt32Slot(2, postTypeField, 0)
+
 def AddPostTypeField(builder, postTypeField):
-    return FieldSNSPostExcelAddPostTypeField(builder, postTypeField)
-def FieldSNSPostExcelAddSNSPostIdField(builder, sNSPostIdField): builder.PrependInt32Slot(3, sNSPostIdField, 0)
+    FieldSNSPostExcelAddPostTypeField(builder, postTypeField)
+
+def FieldSNSPostExcelAddSNSPostIdField(builder, sNSPostIdField):
+    builder.PrependInt32Slot(3, sNSPostIdField, 0)
+
 def AddSNSPostIdField(builder, sNSPostIdField):
-    return FieldSNSPostExcelAddSNSPostIdField(builder, sNSPostIdField)
-def FieldSNSPostExcelAddIsSequenceField(builder, isSequenceField): builder.PrependBoolSlot(4, isSequenceField, 0)
+    FieldSNSPostExcelAddSNSPostIdField(builder, sNSPostIdField)
+
+def FieldSNSPostExcelAddIsSequenceField(builder, isSequenceField):
+    builder.PrependBoolSlot(4, isSequenceField, 0)
+
 def AddIsSequenceField(builder, isSequenceField):
-    return FieldSNSPostExcelAddIsSequenceField(builder, isSequenceField)
-def FieldSNSPostExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(5, orderField, 0)
+    FieldSNSPostExcelAddIsSequenceField(builder, isSequenceField)
+
+def FieldSNSPostExcelAddOrderField(builder, orderField):
+    builder.PrependInt32Slot(5, orderField, 0)
+
 def AddOrderField(builder, orderField):
-    return FieldSNSPostExcelAddOrderField(builder, orderField)
-def FieldSNSPostExcelAddDelayTimeField(builder, delayTimeField): builder.PrependInt32Slot(6, delayTimeField, 0)
+    FieldSNSPostExcelAddOrderField(builder, orderField)
+
+def FieldSNSPostExcelAddDelayTimeField(builder, delayTimeField):
+    builder.PrependInt32Slot(6, delayTimeField, 0)
+
 def AddDelayTimeField(builder, delayTimeField):
-    return FieldSNSPostExcelAddDelayTimeField(builder, delayTimeField)
-def FieldSNSPostExcelAddRepostMinNumField(builder, repostMinNumField): builder.PrependInt32Slot(7, repostMinNumField, 0)
+    FieldSNSPostExcelAddDelayTimeField(builder, delayTimeField)
+
+def FieldSNSPostExcelAddRepostMinNumField(builder, repostMinNumField):
+    builder.PrependInt32Slot(7, repostMinNumField, 0)
+
 def AddRepostMinNumField(builder, repostMinNumField):
-    return FieldSNSPostExcelAddRepostMinNumField(builder, repostMinNumField)
-def FieldSNSPostExcelAddRepostMaxNumField(builder, repostMaxNumField): builder.PrependInt32Slot(8, repostMaxNumField, 0)
+    FieldSNSPostExcelAddRepostMinNumField(builder, repostMinNumField)
+
+def FieldSNSPostExcelAddRepostMaxNumField(builder, repostMaxNumField):
+    builder.PrependInt32Slot(8, repostMaxNumField, 0)
+
 def AddRepostMaxNumField(builder, repostMaxNumField):
-    return FieldSNSPostExcelAddRepostMaxNumField(builder, repostMaxNumField)
-def FieldSNSPostExcelAddFavorMinNumField(builder, favorMinNumField): builder.PrependInt32Slot(9, favorMinNumField, 0)
+    FieldSNSPostExcelAddRepostMaxNumField(builder, repostMaxNumField)
+
+def FieldSNSPostExcelAddFavorMinNumField(builder, favorMinNumField):
+    builder.PrependInt32Slot(9, favorMinNumField, 0)
+
 def AddFavorMinNumField(builder, favorMinNumField):
-    return FieldSNSPostExcelAddFavorMinNumField(builder, favorMinNumField)
-def FieldSNSPostExcelAddFavorMaxNumField(builder, favorMaxNumField): builder.PrependInt32Slot(10, favorMaxNumField, 0)
+    FieldSNSPostExcelAddFavorMinNumField(builder, favorMinNumField)
+
+def FieldSNSPostExcelAddFavorMaxNumField(builder, favorMaxNumField):
+    builder.PrependInt32Slot(10, favorMaxNumField, 0)
+
 def AddFavorMaxNumField(builder, favorMaxNumField):
-    return FieldSNSPostExcelAddFavorMaxNumField(builder, favorMaxNumField)
-def FieldSNSPostExcelEnd(builder): return builder.EndObject()
+    FieldSNSPostExcelAddFavorMaxNumField(builder, favorMaxNumField)
+
+def FieldSNSPostExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldSNSPostExcelEnd(builder)

@@ -49,15 +49,26 @@ class WelcomeCampaignRewardIncreaseExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def WelcomeCampaignRewardIncreaseExcelTableStart(builder): builder.StartObject(1)
+def WelcomeCampaignRewardIncreaseExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return WelcomeCampaignRewardIncreaseExcelTableStart(builder)
-def WelcomeCampaignRewardIncreaseExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    WelcomeCampaignRewardIncreaseExcelTableStart(builder)
+
+def WelcomeCampaignRewardIncreaseExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return WelcomeCampaignRewardIncreaseExcelTableAddDataList(builder, dataList)
-def WelcomeCampaignRewardIncreaseExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    WelcomeCampaignRewardIncreaseExcelTableAddDataList(builder, dataList)
+
+def WelcomeCampaignRewardIncreaseExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return WelcomeCampaignRewardIncreaseExcelTableStartDataListVector(builder, numElems)
-def WelcomeCampaignRewardIncreaseExcelTableEnd(builder): return builder.EndObject()
+
+def WelcomeCampaignRewardIncreaseExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WelcomeCampaignRewardIncreaseExcelTableEnd(builder)

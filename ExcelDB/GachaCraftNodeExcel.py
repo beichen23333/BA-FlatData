@@ -73,30 +73,56 @@ class GachaCraftNodeExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def GachaCraftNodeExcelStart(builder): builder.StartObject(7)
+def GachaCraftNodeExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return GachaCraftNodeExcelStart(builder)
-def GachaCraftNodeExcelAddIDField(builder, iDField): builder.PrependInt32Slot(0, iDField, 0)
+    GachaCraftNodeExcelStart(builder)
+
+def GachaCraftNodeExcelAddIDField(builder, iDField):
+    builder.PrependInt32Slot(0, iDField, 0)
+
 def AddIDField(builder, iDField):
-    return GachaCraftNodeExcelAddIDField(builder, iDField)
-def GachaCraftNodeExcelAddTierField(builder, tierField): builder.PrependInt32Slot(1, tierField, 0)
+    GachaCraftNodeExcelAddIDField(builder, iDField)
+
+def GachaCraftNodeExcelAddTierField(builder, tierField):
+    builder.PrependInt32Slot(1, tierField, 0)
+
 def AddTierField(builder, tierField):
-    return GachaCraftNodeExcelAddTierField(builder, tierField)
-def GachaCraftNodeExcelAddQuickCraftNodeDisplayOrderField(builder, quickCraftNodeDisplayOrderField): builder.PrependInt32Slot(2, quickCraftNodeDisplayOrderField, 0)
+    GachaCraftNodeExcelAddTierField(builder, tierField)
+
+def GachaCraftNodeExcelAddQuickCraftNodeDisplayOrderField(builder, quickCraftNodeDisplayOrderField):
+    builder.PrependInt32Slot(2, quickCraftNodeDisplayOrderField, 0)
+
 def AddQuickCraftNodeDisplayOrderField(builder, quickCraftNodeDisplayOrderField):
-    return GachaCraftNodeExcelAddQuickCraftNodeDisplayOrderField(builder, quickCraftNodeDisplayOrderField)
-def GachaCraftNodeExcelAddNodeQualityField(builder, nodeQualityField): builder.PrependInt32Slot(3, nodeQualityField, 0)
+    GachaCraftNodeExcelAddQuickCraftNodeDisplayOrderField(builder, quickCraftNodeDisplayOrderField)
+
+def GachaCraftNodeExcelAddNodeQualityField(builder, nodeQualityField):
+    builder.PrependInt32Slot(3, nodeQualityField, 0)
+
 def AddNodeQualityField(builder, nodeQualityField):
-    return GachaCraftNodeExcelAddNodeQualityField(builder, nodeQualityField)
-def GachaCraftNodeExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+    GachaCraftNodeExcelAddNodeQualityField(builder, nodeQualityField)
+
+def GachaCraftNodeExcelAddIconField(builder, iconField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+
 def AddIconField(builder, iconField):
-    return GachaCraftNodeExcelAddIconField(builder, iconField)
-def GachaCraftNodeExcelAddLocalizeKeyField(builder, localizeKeyField): builder.PrependUint32Slot(5, localizeKeyField, 0)
+    GachaCraftNodeExcelAddIconField(builder, iconField)
+
+def GachaCraftNodeExcelAddLocalizeKeyField(builder, localizeKeyField):
+    builder.PrependUint32Slot(5, localizeKeyField, 0)
+
 def AddLocalizeKeyField(builder, localizeKeyField):
-    return GachaCraftNodeExcelAddLocalizeKeyField(builder, localizeKeyField)
-def GachaCraftNodeExcelAddPropertyField(builder, propertyField): builder.PrependInt32Slot(6, propertyField, 0)
+    GachaCraftNodeExcelAddLocalizeKeyField(builder, localizeKeyField)
+
+def GachaCraftNodeExcelAddPropertyField(builder, propertyField):
+    builder.PrependInt32Slot(6, propertyField, 0)
+
 def AddPropertyField(builder, propertyField):
-    return GachaCraftNodeExcelAddPropertyField(builder, propertyField)
-def GachaCraftNodeExcelEnd(builder): return builder.EndObject()
+    GachaCraftNodeExcelAddPropertyField(builder, propertyField)
+
+def GachaCraftNodeExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return GachaCraftNodeExcelEnd(builder)

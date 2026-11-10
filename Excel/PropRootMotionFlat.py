@@ -24,9 +24,14 @@ class PropRootMotionFlat(object):
     def Init(self, buf, pos):
         self._tab = flatbuffers.table.Table(buf, pos)
 
-def PropRootMotionFlatStart(builder): builder.StartObject(0)
+def PropRootMotionFlatStart(builder):
+    builder.StartObject(0)
+
 def Start(builder):
-    return PropRootMotionFlatStart(builder)
-def PropRootMotionFlatEnd(builder): return builder.EndObject()
+    PropRootMotionFlatStart(builder)
+
+def PropRootMotionFlatEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PropRootMotionFlatEnd(builder)

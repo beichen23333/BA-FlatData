@@ -66,27 +66,50 @@ class WorldRaidStageRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def WorldRaidStageRewardExcelStart(builder): builder.StartObject(6)
+def WorldRaidStageRewardExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return WorldRaidStageRewardExcelStart(builder)
-def WorldRaidStageRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    WorldRaidStageRewardExcelStart(builder)
+
+def WorldRaidStageRewardExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return WorldRaidStageRewardExcelAddGroupIdField(builder, groupIdField)
-def WorldRaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField): builder.PrependBoolSlot(1, isClearStageRewardHideInfoField, 0)
+    WorldRaidStageRewardExcelAddGroupIdField(builder, groupIdField)
+
+def WorldRaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField):
+    builder.PrependBoolSlot(1, isClearStageRewardHideInfoField, 0)
+
 def AddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField):
-    return WorldRaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField)
-def WorldRaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField): builder.PrependInt32Slot(2, clearStageRewardProbField, 0)
+    WorldRaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField)
+
+def WorldRaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField):
+    builder.PrependInt32Slot(2, clearStageRewardProbField, 0)
+
 def AddClearStageRewardProbField(builder, clearStageRewardProbField):
-    return WorldRaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField)
-def WorldRaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField): builder.PrependInt32Slot(3, clearStageRewardParcelTypeField, 0)
+    WorldRaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField)
+
+def WorldRaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField):
+    builder.PrependInt32Slot(3, clearStageRewardParcelTypeField, 0)
+
 def AddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField):
-    return WorldRaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField)
-def WorldRaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField): builder.PrependInt32Slot(4, clearStageRewardParcelUniqueIDField, 0)
+    WorldRaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField)
+
+def WorldRaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField):
+    builder.PrependInt32Slot(4, clearStageRewardParcelUniqueIDField, 0)
+
 def AddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField):
-    return WorldRaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField)
-def WorldRaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField): builder.PrependInt32Slot(5, clearStageRewardAmountField, 0)
+    WorldRaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField)
+
+def WorldRaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField):
+    builder.PrependInt32Slot(5, clearStageRewardAmountField, 0)
+
 def AddClearStageRewardAmountField(builder, clearStageRewardAmountField):
-    return WorldRaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField)
-def WorldRaidStageRewardExcelEnd(builder): return builder.EndObject()
+    WorldRaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField)
+
+def WorldRaidStageRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WorldRaidStageRewardExcelEnd(builder)

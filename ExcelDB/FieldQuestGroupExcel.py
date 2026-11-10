@@ -59,24 +59,44 @@ class FieldQuestGroupExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def FieldQuestGroupExcelStart(builder): builder.StartObject(5)
+def FieldQuestGroupExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return FieldQuestGroupExcelStart(builder)
-def FieldQuestGroupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    FieldQuestGroupExcelStart(builder)
+
+def FieldQuestGroupExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return FieldQuestGroupExcelAddIdField(builder, idField)
-def FieldQuestGroupExcelAddSkipFromInteractionIdField(builder, skipFromInteractionIdField): builder.PrependInt32Slot(1, skipFromInteractionIdField, 0)
+    FieldQuestGroupExcelAddIdField(builder, idField)
+
+def FieldQuestGroupExcelAddSkipFromInteractionIdField(builder, skipFromInteractionIdField):
+    builder.PrependInt32Slot(1, skipFromInteractionIdField, 0)
+
 def AddSkipFromInteractionIdField(builder, skipFromInteractionIdField):
-    return FieldQuestGroupExcelAddSkipFromInteractionIdField(builder, skipFromInteractionIdField)
-def FieldQuestGroupExcelAddSkipToInteractionIdField(builder, skipToInteractionIdField): builder.PrependInt32Slot(2, skipToInteractionIdField, 0)
+    FieldQuestGroupExcelAddSkipFromInteractionIdField(builder, skipFromInteractionIdField)
+
+def FieldQuestGroupExcelAddSkipToInteractionIdField(builder, skipToInteractionIdField):
+    builder.PrependInt32Slot(2, skipToInteractionIdField, 0)
+
 def AddSkipToInteractionIdField(builder, skipToInteractionIdField):
-    return FieldQuestGroupExcelAddSkipToInteractionIdField(builder, skipToInteractionIdField)
-def FieldQuestGroupExcelAddNextSceneIdField(builder, nextSceneIdField): builder.PrependInt32Slot(3, nextSceneIdField, 0)
+    FieldQuestGroupExcelAddSkipToInteractionIdField(builder, skipToInteractionIdField)
+
+def FieldQuestGroupExcelAddNextSceneIdField(builder, nextSceneIdField):
+    builder.PrependInt32Slot(3, nextSceneIdField, 0)
+
 def AddNextSceneIdField(builder, nextSceneIdField):
-    return FieldQuestGroupExcelAddNextSceneIdField(builder, nextSceneIdField)
-def FieldQuestGroupExcelAddSkipResultUIField(builder, skipResultUIField): builder.PrependBoolSlot(4, skipResultUIField, 0)
+    FieldQuestGroupExcelAddNextSceneIdField(builder, nextSceneIdField)
+
+def FieldQuestGroupExcelAddSkipResultUIField(builder, skipResultUIField):
+    builder.PrependBoolSlot(4, skipResultUIField, 0)
+
 def AddSkipResultUIField(builder, skipResultUIField):
-    return FieldQuestGroupExcelAddSkipResultUIField(builder, skipResultUIField)
-def FieldQuestGroupExcelEnd(builder): return builder.EndObject()
+    FieldQuestGroupExcelAddSkipResultUIField(builder, skipResultUIField)
+
+def FieldQuestGroupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldQuestGroupExcelEnd(builder)

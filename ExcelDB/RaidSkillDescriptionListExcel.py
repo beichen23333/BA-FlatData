@@ -146,42 +146,80 @@ class RaidSkillDescriptionListExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
-def RaidSkillDescriptionListExcelStart(builder): builder.StartObject(7)
+def RaidSkillDescriptionListExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return RaidSkillDescriptionListExcelStart(builder)
-def RaidSkillDescriptionListExcelAddBossGroupField(builder, bossGroupField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(bossGroupField), 0)
+    RaidSkillDescriptionListExcelStart(builder)
+
+def RaidSkillDescriptionListExcelAddBossGroupField(builder, bossGroupField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(bossGroupField), 0)
+
 def AddBossGroupField(builder, bossGroupField):
-    return RaidSkillDescriptionListExcelAddBossGroupField(builder, bossGroupField)
-def RaidSkillDescriptionListExcelAddDifficultyField(builder, difficultyField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(difficultyField), 0)
+    RaidSkillDescriptionListExcelAddBossGroupField(builder, bossGroupField)
+
+def RaidSkillDescriptionListExcelAddDifficultyField(builder, difficultyField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(difficultyField), 0)
+
 def AddDifficultyField(builder, difficultyField):
-    return RaidSkillDescriptionListExcelAddDifficultyField(builder, difficultyField)
-def RaidSkillDescriptionListExcelAddPhaseNameOverrideKeyField(builder, phaseNameOverrideKeyField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(phaseNameOverrideKeyField), 0)
+    RaidSkillDescriptionListExcelAddDifficultyField(builder, difficultyField)
+
+def RaidSkillDescriptionListExcelAddPhaseNameOverrideKeyField(builder, phaseNameOverrideKeyField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(phaseNameOverrideKeyField), 0)
+
 def AddPhaseNameOverrideKeyField(builder, phaseNameOverrideKeyField):
-    return RaidSkillDescriptionListExcelAddPhaseNameOverrideKeyField(builder, phaseNameOverrideKeyField)
-def RaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+    RaidSkillDescriptionListExcelAddPhaseNameOverrideKeyField(builder, phaseNameOverrideKeyField)
+
+def RaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+
 def AddSkillGroupIdField(builder, skillGroupIdField):
-    return RaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField)
-def RaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillGroupIdFieldVector(builder, numElems):
+    RaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField)
+
+def RaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSkillGroupIdFieldVector(builder, numElems: int) -> int:
     return RaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems)
-def RaidSkillDescriptionListExcelAddSkillUsePhaseField(builder, skillUsePhaseField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(skillUsePhaseField), 0)
+
+def RaidSkillDescriptionListExcelAddSkillUsePhaseField(builder, skillUsePhaseField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(skillUsePhaseField), 0)
+
 def AddSkillUsePhaseField(builder, skillUsePhaseField):
-    return RaidSkillDescriptionListExcelAddSkillUsePhaseField(builder, skillUsePhaseField)
-def RaidSkillDescriptionListExcelStartSkillUsePhaseFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillUsePhaseFieldVector(builder, numElems):
+    RaidSkillDescriptionListExcelAddSkillUsePhaseField(builder, skillUsePhaseField)
+
+def RaidSkillDescriptionListExcelStartSkillUsePhaseFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSkillUsePhaseFieldVector(builder, numElems: int) -> int:
     return RaidSkillDescriptionListExcelStartSkillUsePhaseFieldVector(builder, numElems)
-def RaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(showSkillSlotField), 0)
+
+def RaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(showSkillSlotField), 0)
+
 def AddShowSkillSlotField(builder, showSkillSlotField):
-    return RaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField)
-def RaidSkillDescriptionListExcelStartShowSkillSlotFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShowSkillSlotFieldVector(builder, numElems):
+    RaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField)
+
+def RaidSkillDescriptionListExcelStartShowSkillSlotFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartShowSkillSlotFieldVector(builder, numElems: int) -> int:
     return RaidSkillDescriptionListExcelStartShowSkillSlotFieldVector(builder, numElems)
-def RaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(highlightResourceField), 0)
+
+def RaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(highlightResourceField), 0)
+
 def AddHighlightResourceField(builder, highlightResourceField):
-    return RaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField)
-def RaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartHighlightResourceFieldVector(builder, numElems):
+    RaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField)
+
+def RaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartHighlightResourceFieldVector(builder, numElems: int) -> int:
     return RaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems)
-def RaidSkillDescriptionListExcelEnd(builder): return builder.EndObject()
+
+def RaidSkillDescriptionListExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return RaidSkillDescriptionListExcelEnd(builder)

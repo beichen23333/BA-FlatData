@@ -73,30 +73,56 @@ class PossessionCheckExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def PossessionCheckExcelStart(builder): builder.StartObject(7)
+def PossessionCheckExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return PossessionCheckExcelStart(builder)
-def PossessionCheckExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    PossessionCheckExcelStart(builder)
+
+def PossessionCheckExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return PossessionCheckExcelAddUniqueIdField(builder, uniqueIdField)
-def PossessionCheckExcelAddDefaultParcelTypeField(builder, defaultParcelTypeField): builder.PrependInt32Slot(1, defaultParcelTypeField, 0)
+    PossessionCheckExcelAddUniqueIdField(builder, uniqueIdField)
+
+def PossessionCheckExcelAddDefaultParcelTypeField(builder, defaultParcelTypeField):
+    builder.PrependInt32Slot(1, defaultParcelTypeField, 0)
+
 def AddDefaultParcelTypeField(builder, defaultParcelTypeField):
-    return PossessionCheckExcelAddDefaultParcelTypeField(builder, defaultParcelTypeField)
-def PossessionCheckExcelAddDefaultParcelIdField(builder, defaultParcelIdField): builder.PrependInt32Slot(2, defaultParcelIdField, 0)
+    PossessionCheckExcelAddDefaultParcelTypeField(builder, defaultParcelTypeField)
+
+def PossessionCheckExcelAddDefaultParcelIdField(builder, defaultParcelIdField):
+    builder.PrependInt32Slot(2, defaultParcelIdField, 0)
+
 def AddDefaultParcelIdField(builder, defaultParcelIdField):
-    return PossessionCheckExcelAddDefaultParcelIdField(builder, defaultParcelIdField)
-def PossessionCheckExcelAddDefaultParcelAmountField(builder, defaultParcelAmountField): builder.PrependInt32Slot(3, defaultParcelAmountField, 0)
+    PossessionCheckExcelAddDefaultParcelIdField(builder, defaultParcelIdField)
+
+def PossessionCheckExcelAddDefaultParcelAmountField(builder, defaultParcelAmountField):
+    builder.PrependInt32Slot(3, defaultParcelAmountField, 0)
+
 def AddDefaultParcelAmountField(builder, defaultParcelAmountField):
-    return PossessionCheckExcelAddDefaultParcelAmountField(builder, defaultParcelAmountField)
-def PossessionCheckExcelAddReplaceParcelTypeField(builder, replaceParcelTypeField): builder.PrependInt32Slot(4, replaceParcelTypeField, 0)
+    PossessionCheckExcelAddDefaultParcelAmountField(builder, defaultParcelAmountField)
+
+def PossessionCheckExcelAddReplaceParcelTypeField(builder, replaceParcelTypeField):
+    builder.PrependInt32Slot(4, replaceParcelTypeField, 0)
+
 def AddReplaceParcelTypeField(builder, replaceParcelTypeField):
-    return PossessionCheckExcelAddReplaceParcelTypeField(builder, replaceParcelTypeField)
-def PossessionCheckExcelAddReplaceParcelIdField(builder, replaceParcelIdField): builder.PrependInt32Slot(5, replaceParcelIdField, 0)
+    PossessionCheckExcelAddReplaceParcelTypeField(builder, replaceParcelTypeField)
+
+def PossessionCheckExcelAddReplaceParcelIdField(builder, replaceParcelIdField):
+    builder.PrependInt32Slot(5, replaceParcelIdField, 0)
+
 def AddReplaceParcelIdField(builder, replaceParcelIdField):
-    return PossessionCheckExcelAddReplaceParcelIdField(builder, replaceParcelIdField)
-def PossessionCheckExcelAddReplaceParcelAmountField(builder, replaceParcelAmountField): builder.PrependInt32Slot(6, replaceParcelAmountField, 0)
+    PossessionCheckExcelAddReplaceParcelIdField(builder, replaceParcelIdField)
+
+def PossessionCheckExcelAddReplaceParcelAmountField(builder, replaceParcelAmountField):
+    builder.PrependInt32Slot(6, replaceParcelAmountField, 0)
+
 def AddReplaceParcelAmountField(builder, replaceParcelAmountField):
-    return PossessionCheckExcelAddReplaceParcelAmountField(builder, replaceParcelAmountField)
-def PossessionCheckExcelEnd(builder): return builder.EndObject()
+    PossessionCheckExcelAddReplaceParcelAmountField(builder, replaceParcelAmountField)
+
+def PossessionCheckExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PossessionCheckExcelEnd(builder)

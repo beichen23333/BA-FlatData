@@ -87,36 +87,68 @@ class TutorialFailureImageExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def TutorialFailureImageExcelStart(builder): builder.StartObject(9)
+def TutorialFailureImageExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return TutorialFailureImageExcelStart(builder)
-def TutorialFailureImageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    TutorialFailureImageExcelStart(builder)
+
+def TutorialFailureImageExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return TutorialFailureImageExcelAddIdField(builder, idField)
-def TutorialFailureImageExcelAddContentsField(builder, contentsField): builder.PrependInt32Slot(1, contentsField, 0)
+    TutorialFailureImageExcelAddIdField(builder, idField)
+
+def TutorialFailureImageExcelAddContentsField(builder, contentsField):
+    builder.PrependInt32Slot(1, contentsField, 0)
+
 def AddContentsField(builder, contentsField):
-    return TutorialFailureImageExcelAddContentsField(builder, contentsField)
-def TutorialFailureImageExcelAddTypeField(builder, typeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(typeField), 0)
+    TutorialFailureImageExcelAddContentsField(builder, contentsField)
+
+def TutorialFailureImageExcelAddTypeField(builder, typeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(typeField), 0)
+
 def AddTypeField(builder, typeField):
-    return TutorialFailureImageExcelAddTypeField(builder, typeField)
-def TutorialFailureImageExcelAddImagePathKrField(builder, imagePathKrField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathKrField), 0)
+    TutorialFailureImageExcelAddTypeField(builder, typeField)
+
+def TutorialFailureImageExcelAddImagePathKrField(builder, imagePathKrField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathKrField), 0)
+
 def AddImagePathKrField(builder, imagePathKrField):
-    return TutorialFailureImageExcelAddImagePathKrField(builder, imagePathKrField)
-def TutorialFailureImageExcelAddImagePathJpField(builder, imagePathJpField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathJpField), 0)
+    TutorialFailureImageExcelAddImagePathKrField(builder, imagePathKrField)
+
+def TutorialFailureImageExcelAddImagePathJpField(builder, imagePathJpField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathJpField), 0)
+
 def AddImagePathJpField(builder, imagePathJpField):
-    return TutorialFailureImageExcelAddImagePathJpField(builder, imagePathJpField)
-def TutorialFailureImageExcelAddImagePathThField(builder, imagePathThField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathThField), 0)
+    TutorialFailureImageExcelAddImagePathJpField(builder, imagePathJpField)
+
+def TutorialFailureImageExcelAddImagePathThField(builder, imagePathThField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathThField), 0)
+
 def AddImagePathThField(builder, imagePathThField):
-    return TutorialFailureImageExcelAddImagePathThField(builder, imagePathThField)
-def TutorialFailureImageExcelAddImagePathTwField(builder, imagePathTwField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathTwField), 0)
+    TutorialFailureImageExcelAddImagePathThField(builder, imagePathThField)
+
+def TutorialFailureImageExcelAddImagePathTwField(builder, imagePathTwField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathTwField), 0)
+
 def AddImagePathTwField(builder, imagePathTwField):
-    return TutorialFailureImageExcelAddImagePathTwField(builder, imagePathTwField)
-def TutorialFailureImageExcelAddImagePathEnField(builder, imagePathEnField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathEnField), 0)
+    TutorialFailureImageExcelAddImagePathTwField(builder, imagePathTwField)
+
+def TutorialFailureImageExcelAddImagePathEnField(builder, imagePathEnField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathEnField), 0)
+
 def AddImagePathEnField(builder, imagePathEnField):
-    return TutorialFailureImageExcelAddImagePathEnField(builder, imagePathEnField)
-def TutorialFailureImageExcelAddReplaceLocalizeKeyField(builder, replaceLocalizeKeyField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(replaceLocalizeKeyField), 0)
+    TutorialFailureImageExcelAddImagePathEnField(builder, imagePathEnField)
+
+def TutorialFailureImageExcelAddReplaceLocalizeKeyField(builder, replaceLocalizeKeyField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(replaceLocalizeKeyField), 0)
+
 def AddReplaceLocalizeKeyField(builder, replaceLocalizeKeyField):
-    return TutorialFailureImageExcelAddReplaceLocalizeKeyField(builder, replaceLocalizeKeyField)
-def TutorialFailureImageExcelEnd(builder): return builder.EndObject()
+    TutorialFailureImageExcelAddReplaceLocalizeKeyField(builder, replaceLocalizeKeyField)
+
+def TutorialFailureImageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TutorialFailureImageExcelEnd(builder)

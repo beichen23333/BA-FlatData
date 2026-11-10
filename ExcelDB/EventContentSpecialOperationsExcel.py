@@ -38,15 +38,26 @@ class EventContentSpecialOperationsExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentSpecialOperationsExcelStart(builder): builder.StartObject(2)
+def EventContentSpecialOperationsExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return EventContentSpecialOperationsExcelStart(builder)
-def EventContentSpecialOperationsExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentSpecialOperationsExcelStart(builder)
+
+def EventContentSpecialOperationsExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentSpecialOperationsExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentSpecialOperationsExcelAddPointItemIdField(builder, pointItemIdField): builder.PrependInt32Slot(1, pointItemIdField, 0)
+    EventContentSpecialOperationsExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentSpecialOperationsExcelAddPointItemIdField(builder, pointItemIdField):
+    builder.PrependInt32Slot(1, pointItemIdField, 0)
+
 def AddPointItemIdField(builder, pointItemIdField):
-    return EventContentSpecialOperationsExcelAddPointItemIdField(builder, pointItemIdField)
-def EventContentSpecialOperationsExcelEnd(builder): return builder.EndObject()
+    EventContentSpecialOperationsExcelAddPointItemIdField(builder, pointItemIdField)
+
+def EventContentSpecialOperationsExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentSpecialOperationsExcelEnd(builder)

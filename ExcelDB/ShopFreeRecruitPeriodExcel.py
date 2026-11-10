@@ -52,21 +52,38 @@ class ShopFreeRecruitPeriodExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ShopFreeRecruitPeriodExcelStart(builder): builder.StartObject(4)
+def ShopFreeRecruitPeriodExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return ShopFreeRecruitPeriodExcelStart(builder)
-def ShopFreeRecruitPeriodExcelAddShopFreeRecruitIdField(builder, shopFreeRecruitIdField): builder.PrependInt32Slot(0, shopFreeRecruitIdField, 0)
+    ShopFreeRecruitPeriodExcelStart(builder)
+
+def ShopFreeRecruitPeriodExcelAddShopFreeRecruitIdField(builder, shopFreeRecruitIdField):
+    builder.PrependInt32Slot(0, shopFreeRecruitIdField, 0)
+
 def AddShopFreeRecruitIdField(builder, shopFreeRecruitIdField):
-    return ShopFreeRecruitPeriodExcelAddShopFreeRecruitIdField(builder, shopFreeRecruitIdField)
-def ShopFreeRecruitPeriodExcelAddShopFreeRecruitIntervalIdField(builder, shopFreeRecruitIntervalIdField): builder.PrependInt32Slot(1, shopFreeRecruitIntervalIdField, 0)
+    ShopFreeRecruitPeriodExcelAddShopFreeRecruitIdField(builder, shopFreeRecruitIdField)
+
+def ShopFreeRecruitPeriodExcelAddShopFreeRecruitIntervalIdField(builder, shopFreeRecruitIntervalIdField):
+    builder.PrependInt32Slot(1, shopFreeRecruitIntervalIdField, 0)
+
 def AddShopFreeRecruitIntervalIdField(builder, shopFreeRecruitIntervalIdField):
-    return ShopFreeRecruitPeriodExcelAddShopFreeRecruitIntervalIdField(builder, shopFreeRecruitIntervalIdField)
-def ShopFreeRecruitPeriodExcelAddIntervalDateField(builder, intervalDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(intervalDateField), 0)
+    ShopFreeRecruitPeriodExcelAddShopFreeRecruitIntervalIdField(builder, shopFreeRecruitIntervalIdField)
+
+def ShopFreeRecruitPeriodExcelAddIntervalDateField(builder, intervalDateField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(intervalDateField), 0)
+
 def AddIntervalDateField(builder, intervalDateField):
-    return ShopFreeRecruitPeriodExcelAddIntervalDateField(builder, intervalDateField)
-def ShopFreeRecruitPeriodExcelAddFreeRecruitCountField(builder, freeRecruitCountField): builder.PrependInt32Slot(3, freeRecruitCountField, 0)
+    ShopFreeRecruitPeriodExcelAddIntervalDateField(builder, intervalDateField)
+
+def ShopFreeRecruitPeriodExcelAddFreeRecruitCountField(builder, freeRecruitCountField):
+    builder.PrependInt32Slot(3, freeRecruitCountField, 0)
+
 def AddFreeRecruitCountField(builder, freeRecruitCountField):
-    return ShopFreeRecruitPeriodExcelAddFreeRecruitCountField(builder, freeRecruitCountField)
-def ShopFreeRecruitPeriodExcelEnd(builder): return builder.EndObject()
+    ShopFreeRecruitPeriodExcelAddFreeRecruitCountField(builder, freeRecruitCountField)
+
+def ShopFreeRecruitPeriodExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ShopFreeRecruitPeriodExcelEnd(builder)

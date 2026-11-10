@@ -87,36 +87,68 @@ class ScenarioBGNameExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ScenarioBGNameExcelStart(builder): builder.StartObject(9)
+def ScenarioBGNameExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return ScenarioBGNameExcelStart(builder)
-def ScenarioBGNameExcelAddNameField(builder, nameField): builder.PrependUint32Slot(0, nameField, 0)
+    ScenarioBGNameExcelStart(builder)
+
+def ScenarioBGNameExcelAddNameField(builder, nameField):
+    builder.PrependUint32Slot(0, nameField, 0)
+
 def AddNameField(builder, nameField):
-    return ScenarioBGNameExcelAddNameField(builder, nameField)
-def ScenarioBGNameExcelAddProductionStepField(builder, productionStepField): builder.PrependInt32Slot(1, productionStepField, 0)
+    ScenarioBGNameExcelAddNameField(builder, nameField)
+
+def ScenarioBGNameExcelAddProductionStepField(builder, productionStepField):
+    builder.PrependInt32Slot(1, productionStepField, 0)
+
 def AddProductionStepField(builder, productionStepField):
-    return ScenarioBGNameExcelAddProductionStepField(builder, productionStepField)
-def ScenarioBGNameExcelAddBGFileNameField(builder, bGFileNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(bGFileNameField), 0)
+    ScenarioBGNameExcelAddProductionStepField(builder, productionStepField)
+
+def ScenarioBGNameExcelAddBGFileNameField(builder, bGFileNameField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(bGFileNameField), 0)
+
 def AddBGFileNameField(builder, bGFileNameField):
-    return ScenarioBGNameExcelAddBGFileNameField(builder, bGFileNameField)
-def ScenarioBGNameExcelAddBGTypeField(builder, bGTypeField): builder.PrependInt32Slot(3, bGTypeField, 0)
+    ScenarioBGNameExcelAddBGFileNameField(builder, bGFileNameField)
+
+def ScenarioBGNameExcelAddBGTypeField(builder, bGTypeField):
+    builder.PrependInt32Slot(3, bGTypeField, 0)
+
 def AddBGTypeField(builder, bGTypeField):
-    return ScenarioBGNameExcelAddBGTypeField(builder, bGTypeField)
-def ScenarioBGNameExcelAddAnimationRootField(builder, animationRootField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(animationRootField), 0)
+    ScenarioBGNameExcelAddBGTypeField(builder, bGTypeField)
+
+def ScenarioBGNameExcelAddAnimationRootField(builder, animationRootField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(animationRootField), 0)
+
 def AddAnimationRootField(builder, animationRootField):
-    return ScenarioBGNameExcelAddAnimationRootField(builder, animationRootField)
-def ScenarioBGNameExcelAddAnimationNameField(builder, animationNameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(animationNameField), 0)
+    ScenarioBGNameExcelAddAnimationRootField(builder, animationRootField)
+
+def ScenarioBGNameExcelAddAnimationNameField(builder, animationNameField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(animationNameField), 0)
+
 def AddAnimationNameField(builder, animationNameField):
-    return ScenarioBGNameExcelAddAnimationNameField(builder, animationNameField)
-def ScenarioBGNameExcelAddSpineScaleField(builder, spineScaleField): builder.PrependFloat32Slot(6, spineScaleField, 0.0)
+    ScenarioBGNameExcelAddAnimationNameField(builder, animationNameField)
+
+def ScenarioBGNameExcelAddSpineScaleField(builder, spineScaleField):
+    builder.PrependFloat32Slot(6, spineScaleField, 0.0)
+
 def AddSpineScaleField(builder, spineScaleField):
-    return ScenarioBGNameExcelAddSpineScaleField(builder, spineScaleField)
-def ScenarioBGNameExcelAddSpineLocalPosXField(builder, spineLocalPosXField): builder.PrependInt32Slot(7, spineLocalPosXField, 0)
+    ScenarioBGNameExcelAddSpineScaleField(builder, spineScaleField)
+
+def ScenarioBGNameExcelAddSpineLocalPosXField(builder, spineLocalPosXField):
+    builder.PrependInt32Slot(7, spineLocalPosXField, 0)
+
 def AddSpineLocalPosXField(builder, spineLocalPosXField):
-    return ScenarioBGNameExcelAddSpineLocalPosXField(builder, spineLocalPosXField)
-def ScenarioBGNameExcelAddSpineLocalPosYField(builder, spineLocalPosYField): builder.PrependInt32Slot(8, spineLocalPosYField, 0)
+    ScenarioBGNameExcelAddSpineLocalPosXField(builder, spineLocalPosXField)
+
+def ScenarioBGNameExcelAddSpineLocalPosYField(builder, spineLocalPosYField):
+    builder.PrependInt32Slot(8, spineLocalPosYField, 0)
+
 def AddSpineLocalPosYField(builder, spineLocalPosYField):
-    return ScenarioBGNameExcelAddSpineLocalPosYField(builder, spineLocalPosYField)
-def ScenarioBGNameExcelEnd(builder): return builder.EndObject()
+    ScenarioBGNameExcelAddSpineLocalPosYField(builder, spineLocalPosYField)
+
+def ScenarioBGNameExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioBGNameExcelEnd(builder)

@@ -161,51 +161,98 @@ class ProductDailyRecordExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def ProductDailyRecordExcelStart(builder): builder.StartObject(11)
+def ProductDailyRecordExcelStart(builder):
+    builder.StartObject(11)
+
 def Start(builder):
-    return ProductDailyRecordExcelStart(builder)
-def ProductDailyRecordExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ProductDailyRecordExcelStart(builder)
+
+def ProductDailyRecordExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ProductDailyRecordExcelAddIdField(builder, idField)
-def ProductDailyRecordExcelAddProductIdField(builder, productIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+    ProductDailyRecordExcelAddIdField(builder, idField)
+
+def ProductDailyRecordExcelAddProductIdField(builder, productIdField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+
 def AddProductIdField(builder, productIdField):
-    return ProductDailyRecordExcelAddProductIdField(builder, productIdField)
-def ProductDailyRecordExcelAddTeenProductIdField(builder, teenProductIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(teenProductIdField), 0)
+    ProductDailyRecordExcelAddProductIdField(builder, productIdField)
+
+def ProductDailyRecordExcelAddTeenProductIdField(builder, teenProductIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(teenProductIdField), 0)
+
 def AddTeenProductIdField(builder, teenProductIdField):
-    return ProductDailyRecordExcelAddTeenProductIdField(builder, teenProductIdField)
-def ProductDailyRecordExcelAddStoreTypeField(builder, storeTypeField): builder.PrependInt32Slot(3, storeTypeField, 0)
+    ProductDailyRecordExcelAddTeenProductIdField(builder, teenProductIdField)
+
+def ProductDailyRecordExcelAddStoreTypeField(builder, storeTypeField):
+    builder.PrependInt32Slot(3, storeTypeField, 0)
+
 def AddStoreTypeField(builder, storeTypeField):
-    return ProductDailyRecordExcelAddStoreTypeField(builder, storeTypeField)
-def ProductDailyRecordExcelAddPriceField(builder, priceField): builder.PrependInt32Slot(4, priceField, 0)
+    ProductDailyRecordExcelAddStoreTypeField(builder, storeTypeField)
+
+def ProductDailyRecordExcelAddPriceField(builder, priceField):
+    builder.PrependInt32Slot(4, priceField, 0)
+
 def AddPriceField(builder, priceField):
-    return ProductDailyRecordExcelAddPriceField(builder, priceField)
-def ProductDailyRecordExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField): builder.PrependInt32Slot(5, purchaseCountLimitField, 0)
+    ProductDailyRecordExcelAddPriceField(builder, priceField)
+
+def ProductDailyRecordExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField):
+    builder.PrependInt32Slot(5, purchaseCountLimitField, 0)
+
 def AddPurchaseCountLimitField(builder, purchaseCountLimitField):
-    return ProductDailyRecordExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
-def ProductDailyRecordExcelAddRewardIdField(builder, rewardIdField): builder.PrependInt32Slot(6, rewardIdField, 0)
+    ProductDailyRecordExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
+
+def ProductDailyRecordExcelAddRewardIdField(builder, rewardIdField):
+    builder.PrependInt32Slot(6, rewardIdField, 0)
+
 def AddRewardIdField(builder, rewardIdField):
-    return ProductDailyRecordExcelAddRewardIdField(builder, rewardIdField)
-def ProductDailyRecordExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+    ProductDailyRecordExcelAddRewardIdField(builder, rewardIdField)
+
+def ProductDailyRecordExcelAddParcelTypeField(builder, parcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+
 def AddParcelTypeField(builder, parcelTypeField):
-    return ProductDailyRecordExcelAddParcelTypeField(builder, parcelTypeField)
-def ProductDailyRecordExcelStartParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelTypeFieldVector(builder, numElems):
+    ProductDailyRecordExcelAddParcelTypeField(builder, parcelTypeField)
+
+def ProductDailyRecordExcelStartParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelTypeFieldVector(builder, numElems: int) -> int:
     return ProductDailyRecordExcelStartParcelTypeFieldVector(builder, numElems)
-def ProductDailyRecordExcelAddParcelIdField(builder, parcelIdField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(parcelIdField), 0)
+
+def ProductDailyRecordExcelAddParcelIdField(builder, parcelIdField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(parcelIdField), 0)
+
 def AddParcelIdField(builder, parcelIdField):
-    return ProductDailyRecordExcelAddParcelIdField(builder, parcelIdField)
-def ProductDailyRecordExcelStartParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelIdFieldVector(builder, numElems):
+    ProductDailyRecordExcelAddParcelIdField(builder, parcelIdField)
+
+def ProductDailyRecordExcelStartParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelIdFieldVector(builder, numElems: int) -> int:
     return ProductDailyRecordExcelStartParcelIdFieldVector(builder, numElems)
-def ProductDailyRecordExcelAddParcelAmountField(builder, parcelAmountField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(parcelAmountField), 0)
+
+def ProductDailyRecordExcelAddParcelAmountField(builder, parcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(parcelAmountField), 0)
+
 def AddParcelAmountField(builder, parcelAmountField):
-    return ProductDailyRecordExcelAddParcelAmountField(builder, parcelAmountField)
-def ProductDailyRecordExcelStartParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelAmountFieldVector(builder, numElems):
+    ProductDailyRecordExcelAddParcelAmountField(builder, parcelAmountField)
+
+def ProductDailyRecordExcelStartParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelAmountFieldVector(builder, numElems: int) -> int:
     return ProductDailyRecordExcelStartParcelAmountFieldVector(builder, numElems)
-def ProductDailyRecordExcelAddTitleImagePathField(builder, titleImagePathField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePathField), 0)
+
+def ProductDailyRecordExcelAddTitleImagePathField(builder, titleImagePathField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePathField), 0)
+
 def AddTitleImagePathField(builder, titleImagePathField):
-    return ProductDailyRecordExcelAddTitleImagePathField(builder, titleImagePathField)
-def ProductDailyRecordExcelEnd(builder): return builder.EndObject()
+    ProductDailyRecordExcelAddTitleImagePathField(builder, titleImagePathField)
+
+def ProductDailyRecordExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductDailyRecordExcelEnd(builder)

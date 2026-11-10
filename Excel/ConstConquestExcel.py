@@ -66,27 +66,50 @@ class ConstConquestExcel(object):
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
-def ConstConquestExcelStart(builder): builder.StartObject(6)
+def ConstConquestExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return ConstConquestExcelStart(builder)
-def ConstConquestExcelAddManageUnitChangeField(builder, manageUnitChangeField): builder.PrependInt32Slot(0, manageUnitChangeField, 0)
+    ConstConquestExcelStart(builder)
+
+def ConstConquestExcelAddManageUnitChangeField(builder, manageUnitChangeField):
+    builder.PrependInt32Slot(0, manageUnitChangeField, 0)
+
 def AddManageUnitChangeField(builder, manageUnitChangeField):
-    return ConstConquestExcelAddManageUnitChangeField(builder, manageUnitChangeField)
-def ConstConquestExcelAddAssistCountField(builder, assistCountField): builder.PrependInt32Slot(1, assistCountField, 0)
+    ConstConquestExcelAddManageUnitChangeField(builder, manageUnitChangeField)
+
+def ConstConquestExcelAddAssistCountField(builder, assistCountField):
+    builder.PrependInt32Slot(1, assistCountField, 0)
+
 def AddAssistCountField(builder, assistCountField):
-    return ConstConquestExcelAddAssistCountField(builder, assistCountField)
-def ConstConquestExcelAddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField): builder.PrependInt32Slot(2, playTimeLimitInSecondsField, 0)
+    ConstConquestExcelAddAssistCountField(builder, assistCountField)
+
+def ConstConquestExcelAddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField):
+    builder.PrependInt32Slot(2, playTimeLimitInSecondsField, 0)
+
 def AddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField):
-    return ConstConquestExcelAddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField)
-def ConstConquestExcelAddAnimationUnitAmountMinField(builder, animationUnitAmountMinField): builder.PrependInt32Slot(3, animationUnitAmountMinField, 0)
+    ConstConquestExcelAddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField)
+
+def ConstConquestExcelAddAnimationUnitAmountMinField(builder, animationUnitAmountMinField):
+    builder.PrependInt32Slot(3, animationUnitAmountMinField, 0)
+
 def AddAnimationUnitAmountMinField(builder, animationUnitAmountMinField):
-    return ConstConquestExcelAddAnimationUnitAmountMinField(builder, animationUnitAmountMinField)
-def ConstConquestExcelAddAnimationUnitAmountMaxField(builder, animationUnitAmountMaxField): builder.PrependInt32Slot(4, animationUnitAmountMaxField, 0)
+    ConstConquestExcelAddAnimationUnitAmountMinField(builder, animationUnitAmountMinField)
+
+def ConstConquestExcelAddAnimationUnitAmountMaxField(builder, animationUnitAmountMaxField):
+    builder.PrependInt32Slot(4, animationUnitAmountMaxField, 0)
+
 def AddAnimationUnitAmountMaxField(builder, animationUnitAmountMaxField):
-    return ConstConquestExcelAddAnimationUnitAmountMaxField(builder, animationUnitAmountMaxField)
-def ConstConquestExcelAddAnimationUnitDelayField(builder, animationUnitDelayField): builder.PrependFloat32Slot(5, animationUnitDelayField, 0.0)
+    ConstConquestExcelAddAnimationUnitAmountMaxField(builder, animationUnitAmountMaxField)
+
+def ConstConquestExcelAddAnimationUnitDelayField(builder, animationUnitDelayField):
+    builder.PrependFloat32Slot(5, animationUnitDelayField, 0.0)
+
 def AddAnimationUnitDelayField(builder, animationUnitDelayField):
-    return ConstConquestExcelAddAnimationUnitDelayField(builder, animationUnitDelayField)
-def ConstConquestExcelEnd(builder): return builder.EndObject()
+    ConstConquestExcelAddAnimationUnitDelayField(builder, animationUnitDelayField)
+
+def ConstConquestExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ConstConquestExcelEnd(builder)

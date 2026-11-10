@@ -440,129 +440,254 @@ class MiniGameMissionExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         return o == 0
 
-def MiniGameMissionExcelStart(builder): builder.StartObject(29)
+def MiniGameMissionExcelStart(builder):
+    builder.StartObject(29)
+
 def Start(builder):
-    return MiniGameMissionExcelStart(builder)
-def MiniGameMissionExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    MiniGameMissionExcelStart(builder)
+
+def MiniGameMissionExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return MiniGameMissionExcelAddIdField(builder, idField)
-def MiniGameMissionExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+    MiniGameMissionExcelAddIdField(builder, idField)
+
+def MiniGameMissionExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(1, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MiniGameMissionExcelAddEventContentIdField(builder, eventContentIdField)
-def MiniGameMissionExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(2, groupIdField, 0)
+    MiniGameMissionExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MiniGameMissionExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(2, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return MiniGameMissionExcelAddGroupIdField(builder, groupIdField)
-def MiniGameMissionExcelAddGroupNameField(builder, groupNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(groupNameField), 0)
+    MiniGameMissionExcelAddGroupIdField(builder, groupIdField)
+
+def MiniGameMissionExcelAddGroupNameField(builder, groupNameField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(groupNameField), 0)
+
 def AddGroupNameField(builder, groupNameField):
-    return MiniGameMissionExcelAddGroupNameField(builder, groupNameField)
-def MiniGameMissionExcelAddCategoryField(builder, categoryField): builder.PrependInt32Slot(4, categoryField, 0)
+    MiniGameMissionExcelAddGroupNameField(builder, groupNameField)
+
+def MiniGameMissionExcelAddCategoryField(builder, categoryField):
+    builder.PrependInt32Slot(4, categoryField, 0)
+
 def AddCategoryField(builder, categoryField):
-    return MiniGameMissionExcelAddCategoryField(builder, categoryField)
-def MiniGameMissionExcelAddDescriptionField(builder, descriptionField): builder.PrependUint32Slot(5, descriptionField, 0)
+    MiniGameMissionExcelAddCategoryField(builder, categoryField)
+
+def MiniGameMissionExcelAddDescriptionField(builder, descriptionField):
+    builder.PrependUint32Slot(5, descriptionField, 0)
+
 def AddDescriptionField(builder, descriptionField):
-    return MiniGameMissionExcelAddDescriptionField(builder, descriptionField)
-def MiniGameMissionExcelAddResetTypeField(builder, resetTypeField): builder.PrependInt32Slot(6, resetTypeField, 0)
+    MiniGameMissionExcelAddDescriptionField(builder, descriptionField)
+
+def MiniGameMissionExcelAddResetTypeField(builder, resetTypeField):
+    builder.PrependInt32Slot(6, resetTypeField, 0)
+
 def AddResetTypeField(builder, resetTypeField):
-    return MiniGameMissionExcelAddResetTypeField(builder, resetTypeField)
-def MiniGameMissionExcelAddToastDisplayTypeField(builder, toastDisplayTypeField): builder.PrependInt32Slot(7, toastDisplayTypeField, 0)
+    MiniGameMissionExcelAddResetTypeField(builder, resetTypeField)
+
+def MiniGameMissionExcelAddToastDisplayTypeField(builder, toastDisplayTypeField):
+    builder.PrependInt32Slot(7, toastDisplayTypeField, 0)
+
 def AddToastDisplayTypeField(builder, toastDisplayTypeField):
-    return MiniGameMissionExcelAddToastDisplayTypeField(builder, toastDisplayTypeField)
-def MiniGameMissionExcelAddToastImagePathField(builder, toastImagePathField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(toastImagePathField), 0)
+    MiniGameMissionExcelAddToastDisplayTypeField(builder, toastDisplayTypeField)
+
+def MiniGameMissionExcelAddToastImagePathField(builder, toastImagePathField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(toastImagePathField), 0)
+
 def AddToastImagePathField(builder, toastImagePathField):
-    return MiniGameMissionExcelAddToastImagePathField(builder, toastImagePathField)
-def MiniGameMissionExcelAddViewFlagField(builder, viewFlagField): builder.PrependBoolSlot(9, viewFlagField, 0)
+    MiniGameMissionExcelAddToastImagePathField(builder, toastImagePathField)
+
+def MiniGameMissionExcelAddViewFlagField(builder, viewFlagField):
+    builder.PrependBoolSlot(9, viewFlagField, 0)
+
 def AddViewFlagField(builder, viewFlagField):
-    return MiniGameMissionExcelAddViewFlagField(builder, viewFlagField)
-def MiniGameMissionExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(10, displayOrderField, 0)
+    MiniGameMissionExcelAddViewFlagField(builder, viewFlagField)
+
+def MiniGameMissionExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(10, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return MiniGameMissionExcelAddDisplayOrderField(builder, displayOrderField)
-def MiniGameMissionExcelAddPreMissionIdField(builder, preMissionIdField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(preMissionIdField), 0)
+    MiniGameMissionExcelAddDisplayOrderField(builder, displayOrderField)
+
+def MiniGameMissionExcelAddPreMissionIdField(builder, preMissionIdField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(preMissionIdField), 0)
+
 def AddPreMissionIdField(builder, preMissionIdField):
-    return MiniGameMissionExcelAddPreMissionIdField(builder, preMissionIdField)
-def MiniGameMissionExcelStartPreMissionIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPreMissionIdFieldVector(builder, numElems):
+    MiniGameMissionExcelAddPreMissionIdField(builder, preMissionIdField)
+
+def MiniGameMissionExcelStartPreMissionIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPreMissionIdFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartPreMissionIdFieldVector(builder, numElems)
-def MiniGameMissionExcelAddTargetGroupField(builder, targetGroupField): builder.PrependInt32Slot(12, targetGroupField, 0)
+
+def MiniGameMissionExcelAddTargetGroupField(builder, targetGroupField):
+    builder.PrependInt32Slot(12, targetGroupField, 0)
+
 def AddTargetGroupField(builder, targetGroupField):
-    return MiniGameMissionExcelAddTargetGroupField(builder, targetGroupField)
-def MiniGameMissionExcelAddAccountLevelField(builder, accountLevelField): builder.PrependInt32Slot(13, accountLevelField, 0)
+    MiniGameMissionExcelAddTargetGroupField(builder, targetGroupField)
+
+def MiniGameMissionExcelAddAccountLevelField(builder, accountLevelField):
+    builder.PrependInt32Slot(13, accountLevelField, 0)
+
 def AddAccountLevelField(builder, accountLevelField):
-    return MiniGameMissionExcelAddAccountLevelField(builder, accountLevelField)
-def MiniGameMissionExcelAddShortcutUIField(builder, shortcutUIField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(shortcutUIField), 0)
+    MiniGameMissionExcelAddAccountLevelField(builder, accountLevelField)
+
+def MiniGameMissionExcelAddShortcutUIField(builder, shortcutUIField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(shortcutUIField), 0)
+
 def AddShortcutUIField(builder, shortcutUIField):
-    return MiniGameMissionExcelAddShortcutUIField(builder, shortcutUIField)
-def MiniGameMissionExcelStartShortcutUIFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShortcutUIFieldVector(builder, numElems):
+    MiniGameMissionExcelAddShortcutUIField(builder, shortcutUIField)
+
+def MiniGameMissionExcelStartShortcutUIFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartShortcutUIFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartShortcutUIFieldVector(builder, numElems)
-def MiniGameMissionExcelAddCompleteConditionTypeField(builder, completeConditionTypeField): builder.PrependInt32Slot(15, completeConditionTypeField, 0)
+
+def MiniGameMissionExcelAddCompleteConditionTypeField(builder, completeConditionTypeField):
+    builder.PrependInt32Slot(15, completeConditionTypeField, 0)
+
 def AddCompleteConditionTypeField(builder, completeConditionTypeField):
-    return MiniGameMissionExcelAddCompleteConditionTypeField(builder, completeConditionTypeField)
-def MiniGameMissionExcelAddIsCompleteExtensionTimeField(builder, isCompleteExtensionTimeField): builder.PrependBoolSlot(16, isCompleteExtensionTimeField, 0)
+    MiniGameMissionExcelAddCompleteConditionTypeField(builder, completeConditionTypeField)
+
+def MiniGameMissionExcelAddIsCompleteExtensionTimeField(builder, isCompleteExtensionTimeField):
+    builder.PrependBoolSlot(16, isCompleteExtensionTimeField, 0)
+
 def AddIsCompleteExtensionTimeField(builder, isCompleteExtensionTimeField):
-    return MiniGameMissionExcelAddIsCompleteExtensionTimeField(builder, isCompleteExtensionTimeField)
-def MiniGameMissionExcelAddCompleteConditionCountField(builder, completeConditionCountField): builder.PrependInt32Slot(17, completeConditionCountField, 0)
+    MiniGameMissionExcelAddIsCompleteExtensionTimeField(builder, isCompleteExtensionTimeField)
+
+def MiniGameMissionExcelAddCompleteConditionCountField(builder, completeConditionCountField):
+    builder.PrependInt32Slot(17, completeConditionCountField, 0)
+
 def AddCompleteConditionCountField(builder, completeConditionCountField):
-    return MiniGameMissionExcelAddCompleteConditionCountField(builder, completeConditionCountField)
-def MiniGameMissionExcelAddCompleteConditionParameterField(builder, completeConditionParameterField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionParameterField), 0)
+    MiniGameMissionExcelAddCompleteConditionCountField(builder, completeConditionCountField)
+
+def MiniGameMissionExcelAddCompleteConditionParameterField(builder, completeConditionParameterField):
+    builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionParameterField), 0)
+
 def AddCompleteConditionParameterField(builder, completeConditionParameterField):
-    return MiniGameMissionExcelAddCompleteConditionParameterField(builder, completeConditionParameterField)
-def MiniGameMissionExcelStartCompleteConditionParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCompleteConditionParameterFieldVector(builder, numElems):
+    MiniGameMissionExcelAddCompleteConditionParameterField(builder, completeConditionParameterField)
+
+def MiniGameMissionExcelStartCompleteConditionParameterFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCompleteConditionParameterFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartCompleteConditionParameterFieldVector(builder, numElems)
-def MiniGameMissionExcelAddCompleteConditionParameterTagField(builder, completeConditionParameterTagField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionParameterTagField), 0)
+
+def MiniGameMissionExcelAddCompleteConditionParameterTagField(builder, completeConditionParameterTagField):
+    builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionParameterTagField), 0)
+
 def AddCompleteConditionParameterTagField(builder, completeConditionParameterTagField):
-    return MiniGameMissionExcelAddCompleteConditionParameterTagField(builder, completeConditionParameterTagField)
-def MiniGameMissionExcelStartCompleteConditionParameterTagFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCompleteConditionParameterTagFieldVector(builder, numElems):
+    MiniGameMissionExcelAddCompleteConditionParameterTagField(builder, completeConditionParameterTagField)
+
+def MiniGameMissionExcelStartCompleteConditionParameterTagFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCompleteConditionParameterTagFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartCompleteConditionParameterTagFieldVector(builder, numElems)
-def MiniGameMissionExcelAddRewardIconField(builder, rewardIconField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(rewardIconField), 0)
+
+def MiniGameMissionExcelAddRewardIconField(builder, rewardIconField):
+    builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(rewardIconField), 0)
+
 def AddRewardIconField(builder, rewardIconField):
-    return MiniGameMissionExcelAddRewardIconField(builder, rewardIconField)
-def MiniGameMissionExcelAddCompleteConditionMissionIdField(builder, completeConditionMissionIdField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionMissionIdField), 0)
+    MiniGameMissionExcelAddRewardIconField(builder, rewardIconField)
+
+def MiniGameMissionExcelAddCompleteConditionMissionIdField(builder, completeConditionMissionIdField):
+    builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(completeConditionMissionIdField), 0)
+
 def AddCompleteConditionMissionIdField(builder, completeConditionMissionIdField):
-    return MiniGameMissionExcelAddCompleteConditionMissionIdField(builder, completeConditionMissionIdField)
-def MiniGameMissionExcelStartCompleteConditionMissionIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCompleteConditionMissionIdFieldVector(builder, numElems):
+    MiniGameMissionExcelAddCompleteConditionMissionIdField(builder, completeConditionMissionIdField)
+
+def MiniGameMissionExcelStartCompleteConditionMissionIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCompleteConditionMissionIdFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartCompleteConditionMissionIdFieldVector(builder, numElems)
-def MiniGameMissionExcelAddCompleteConditionMissionCountField(builder, completeConditionMissionCountField): builder.PrependInt32Slot(22, completeConditionMissionCountField, 0)
+
+def MiniGameMissionExcelAddCompleteConditionMissionCountField(builder, completeConditionMissionCountField):
+    builder.PrependInt32Slot(22, completeConditionMissionCountField, 0)
+
 def AddCompleteConditionMissionCountField(builder, completeConditionMissionCountField):
-    return MiniGameMissionExcelAddCompleteConditionMissionCountField(builder, completeConditionMissionCountField)
-def MiniGameMissionExcelAddMissionRewardParcelTypeField(builder, missionRewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardParcelTypeField), 0)
+    MiniGameMissionExcelAddCompleteConditionMissionCountField(builder, completeConditionMissionCountField)
+
+def MiniGameMissionExcelAddMissionRewardParcelTypeField(builder, missionRewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardParcelTypeField), 0)
+
 def AddMissionRewardParcelTypeField(builder, missionRewardParcelTypeField):
-    return MiniGameMissionExcelAddMissionRewardParcelTypeField(builder, missionRewardParcelTypeField)
-def MiniGameMissionExcelStartMissionRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMissionRewardParcelTypeFieldVector(builder, numElems):
+    MiniGameMissionExcelAddMissionRewardParcelTypeField(builder, missionRewardParcelTypeField)
+
+def MiniGameMissionExcelStartMissionRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMissionRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartMissionRewardParcelTypeFieldVector(builder, numElems)
-def MiniGameMissionExcelAddMissionRewardParcelIdField(builder, missionRewardParcelIdField): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardParcelIdField), 0)
+
+def MiniGameMissionExcelAddMissionRewardParcelIdField(builder, missionRewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardParcelIdField), 0)
+
 def AddMissionRewardParcelIdField(builder, missionRewardParcelIdField):
-    return MiniGameMissionExcelAddMissionRewardParcelIdField(builder, missionRewardParcelIdField)
-def MiniGameMissionExcelStartMissionRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMissionRewardParcelIdFieldVector(builder, numElems):
+    MiniGameMissionExcelAddMissionRewardParcelIdField(builder, missionRewardParcelIdField)
+
+def MiniGameMissionExcelStartMissionRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMissionRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartMissionRewardParcelIdFieldVector(builder, numElems)
-def MiniGameMissionExcelAddMissionRewardAmountField(builder, missionRewardAmountField): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardAmountField), 0)
+
+def MiniGameMissionExcelAddMissionRewardAmountField(builder, missionRewardAmountField):
+    builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(missionRewardAmountField), 0)
+
 def AddMissionRewardAmountField(builder, missionRewardAmountField):
-    return MiniGameMissionExcelAddMissionRewardAmountField(builder, missionRewardAmountField)
-def MiniGameMissionExcelStartMissionRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMissionRewardAmountFieldVector(builder, numElems):
+    MiniGameMissionExcelAddMissionRewardAmountField(builder, missionRewardAmountField)
+
+def MiniGameMissionExcelStartMissionRewardAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMissionRewardAmountFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartMissionRewardAmountFieldVector(builder, numElems)
-def MiniGameMissionExcelAddConditionRewardParcelTypeField(builder, conditionRewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(conditionRewardParcelTypeField), 0)
+
+def MiniGameMissionExcelAddConditionRewardParcelTypeField(builder, conditionRewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(conditionRewardParcelTypeField), 0)
+
 def AddConditionRewardParcelTypeField(builder, conditionRewardParcelTypeField):
-    return MiniGameMissionExcelAddConditionRewardParcelTypeField(builder, conditionRewardParcelTypeField)
-def MiniGameMissionExcelStartConditionRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartConditionRewardParcelTypeFieldVector(builder, numElems):
+    MiniGameMissionExcelAddConditionRewardParcelTypeField(builder, conditionRewardParcelTypeField)
+
+def MiniGameMissionExcelStartConditionRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartConditionRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartConditionRewardParcelTypeFieldVector(builder, numElems)
-def MiniGameMissionExcelAddConditionRewardParcelIdField(builder, conditionRewardParcelIdField): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(conditionRewardParcelIdField), 0)
+
+def MiniGameMissionExcelAddConditionRewardParcelIdField(builder, conditionRewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(conditionRewardParcelIdField), 0)
+
 def AddConditionRewardParcelIdField(builder, conditionRewardParcelIdField):
-    return MiniGameMissionExcelAddConditionRewardParcelIdField(builder, conditionRewardParcelIdField)
-def MiniGameMissionExcelStartConditionRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartConditionRewardParcelIdFieldVector(builder, numElems):
+    MiniGameMissionExcelAddConditionRewardParcelIdField(builder, conditionRewardParcelIdField)
+
+def MiniGameMissionExcelStartConditionRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartConditionRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartConditionRewardParcelIdFieldVector(builder, numElems)
-def MiniGameMissionExcelAddConditionRewardAmountField(builder, conditionRewardAmountField): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(conditionRewardAmountField), 0)
+
+def MiniGameMissionExcelAddConditionRewardAmountField(builder, conditionRewardAmountField):
+    builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(conditionRewardAmountField), 0)
+
 def AddConditionRewardAmountField(builder, conditionRewardAmountField):
-    return MiniGameMissionExcelAddConditionRewardAmountField(builder, conditionRewardAmountField)
-def MiniGameMissionExcelStartConditionRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartConditionRewardAmountFieldVector(builder, numElems):
+    MiniGameMissionExcelAddConditionRewardAmountField(builder, conditionRewardAmountField)
+
+def MiniGameMissionExcelStartConditionRewardAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartConditionRewardAmountFieldVector(builder, numElems: int) -> int:
     return MiniGameMissionExcelStartConditionRewardAmountFieldVector(builder, numElems)
-def MiniGameMissionExcelEnd(builder): return builder.EndObject()
+
+def MiniGameMissionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameMissionExcelEnd(builder)

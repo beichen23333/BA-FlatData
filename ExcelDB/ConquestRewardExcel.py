@@ -73,30 +73,56 @@ class ConquestRewardExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def ConquestRewardExcelStart(builder): builder.StartObject(7)
+def ConquestRewardExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return ConquestRewardExcelStart(builder)
-def ConquestRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    ConquestRewardExcelStart(builder)
+
+def ConquestRewardExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return ConquestRewardExcelAddGroupIdField(builder, groupIdField)
-def ConquestRewardExcelAddRewardTagField(builder, rewardTagField): builder.PrependFloat32Slot(1, rewardTagField, 0.0)
+    ConquestRewardExcelAddGroupIdField(builder, groupIdField)
+
+def ConquestRewardExcelAddRewardTagField(builder, rewardTagField):
+    builder.PrependFloat32Slot(1, rewardTagField, 0.0)
+
 def AddRewardTagField(builder, rewardTagField):
-    return ConquestRewardExcelAddRewardTagField(builder, rewardTagField)
-def ConquestRewardExcelAddRewardProbField(builder, rewardProbField): builder.PrependInt32Slot(2, rewardProbField, 0)
+    ConquestRewardExcelAddRewardTagField(builder, rewardTagField)
+
+def ConquestRewardExcelAddRewardProbField(builder, rewardProbField):
+    builder.PrependInt32Slot(2, rewardProbField, 0)
+
 def AddRewardProbField(builder, rewardProbField):
-    return ConquestRewardExcelAddRewardProbField(builder, rewardProbField)
-def ConquestRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+    ConquestRewardExcelAddRewardProbField(builder, rewardProbField)
+
+def ConquestRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return ConquestRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def ConquestRewardExcelAddRewardIdField(builder, rewardIdField): builder.PrependInt32Slot(4, rewardIdField, 0)
+    ConquestRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def ConquestRewardExcelAddRewardIdField(builder, rewardIdField):
+    builder.PrependInt32Slot(4, rewardIdField, 0)
+
 def AddRewardIdField(builder, rewardIdField):
-    return ConquestRewardExcelAddRewardIdField(builder, rewardIdField)
-def ConquestRewardExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependInt32Slot(5, rewardAmountField, 0)
+    ConquestRewardExcelAddRewardIdField(builder, rewardIdField)
+
+def ConquestRewardExcelAddRewardAmountField(builder, rewardAmountField):
+    builder.PrependInt32Slot(5, rewardAmountField, 0)
+
 def AddRewardAmountField(builder, rewardAmountField):
-    return ConquestRewardExcelAddRewardAmountField(builder, rewardAmountField)
-def ConquestRewardExcelAddIsDisplayedField(builder, isDisplayedField): builder.PrependBoolSlot(6, isDisplayedField, 0)
+    ConquestRewardExcelAddRewardAmountField(builder, rewardAmountField)
+
+def ConquestRewardExcelAddIsDisplayedField(builder, isDisplayedField):
+    builder.PrependBoolSlot(6, isDisplayedField, 0)
+
 def AddIsDisplayedField(builder, isDisplayedField):
-    return ConquestRewardExcelAddIsDisplayedField(builder, isDisplayedField)
-def ConquestRewardExcelEnd(builder): return builder.EndObject()
+    ConquestRewardExcelAddIsDisplayedField(builder, isDisplayedField)
+
+def ConquestRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ConquestRewardExcelEnd(builder)

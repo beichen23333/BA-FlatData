@@ -73,30 +73,199 @@ class AccountLevelExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def AccountLevelExcelStart(builder): builder.StartObject(7)
+    # AccountLevelExcel
+    def PlusExpProductMonthlyId1Field(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return 0
+
+    # AccountLevelExcel
+    def PlusExpProductMonthlyId1FieldAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
+        return 0
+
+    # AccountLevelExcel
+    def PlusExpProductMonthlyId1FieldLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    # AccountLevelExcel
+    def PlusExpProductMonthlyId1FieldIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        return o == 0
+
+    # AccountLevelExcel
+    def PlusExpRatio1Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # AccountLevelExcel
+    def PlusExpIconName1Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+    # AccountLevelExcel
+    def PlusExpProductMonthlyId2Field(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return 0
+
+    # AccountLevelExcel
+    def PlusExpProductMonthlyId2FieldAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
+        return 0
+
+    # AccountLevelExcel
+    def PlusExpProductMonthlyId2FieldLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    # AccountLevelExcel
+    def PlusExpProductMonthlyId2FieldIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        return o == 0
+
+    # AccountLevelExcel
+    def PlusExpRatio2Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # AccountLevelExcel
+    def PlusExpIconName2Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+    # AccountLevelExcel
+    def PlusExpIconName3Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+def AccountLevelExcelStart(builder):
+    builder.StartObject(14)
+
 def Start(builder):
-    return AccountLevelExcelStart(builder)
-def AccountLevelExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    AccountLevelExcelStart(builder)
+
+def AccountLevelExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return AccountLevelExcelAddIdField(builder, idField)
-def AccountLevelExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(1, levelField, 0)
+    AccountLevelExcelAddIdField(builder, idField)
+
+def AccountLevelExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(1, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return AccountLevelExcelAddLevelField(builder, levelField)
-def AccountLevelExcelAddExpField(builder, expField): builder.PrependInt32Slot(2, expField, 0)
+    AccountLevelExcelAddLevelField(builder, levelField)
+
+def AccountLevelExcelAddExpField(builder, expField):
+    builder.PrependInt32Slot(2, expField, 0)
+
 def AddExpField(builder, expField):
-    return AccountLevelExcelAddExpField(builder, expField)
-def AccountLevelExcelAddNewbieExpRatioField(builder, newbieExpRatioField): builder.PrependInt32Slot(3, newbieExpRatioField, 0)
+    AccountLevelExcelAddExpField(builder, expField)
+
+def AccountLevelExcelAddNewbieExpRatioField(builder, newbieExpRatioField):
+    builder.PrependInt32Slot(3, newbieExpRatioField, 0)
+
 def AddNewbieExpRatioField(builder, newbieExpRatioField):
-    return AccountLevelExcelAddNewbieExpRatioField(builder, newbieExpRatioField)
-def AccountLevelExcelAddCloseIntervalField(builder, closeIntervalField): builder.PrependInt32Slot(4, closeIntervalField, 0)
+    AccountLevelExcelAddNewbieExpRatioField(builder, newbieExpRatioField)
+
+def AccountLevelExcelAddCloseIntervalField(builder, closeIntervalField):
+    builder.PrependInt32Slot(4, closeIntervalField, 0)
+
 def AddCloseIntervalField(builder, closeIntervalField):
-    return AccountLevelExcelAddCloseIntervalField(builder, closeIntervalField)
-def AccountLevelExcelAddAPAutoChargeMaxField(builder, aPAutoChargeMaxField): builder.PrependInt32Slot(5, aPAutoChargeMaxField, 0)
+    AccountLevelExcelAddCloseIntervalField(builder, closeIntervalField)
+
+def AccountLevelExcelAddAPAutoChargeMaxField(builder, aPAutoChargeMaxField):
+    builder.PrependInt32Slot(5, aPAutoChargeMaxField, 0)
+
 def AddAPAutoChargeMaxField(builder, aPAutoChargeMaxField):
-    return AccountLevelExcelAddAPAutoChargeMaxField(builder, aPAutoChargeMaxField)
-def AccountLevelExcelAddNeedReportEventField(builder, needReportEventField): builder.PrependBoolSlot(6, needReportEventField, 0)
+    AccountLevelExcelAddAPAutoChargeMaxField(builder, aPAutoChargeMaxField)
+
+def AccountLevelExcelAddNeedReportEventField(builder, needReportEventField):
+    builder.PrependBoolSlot(6, needReportEventField, 0)
+
 def AddNeedReportEventField(builder, needReportEventField):
-    return AccountLevelExcelAddNeedReportEventField(builder, needReportEventField)
-def AccountLevelExcelEnd(builder): return builder.EndObject()
+    AccountLevelExcelAddNeedReportEventField(builder, needReportEventField)
+
+def AccountLevelExcelAddPlusExpProductMonthlyId1Field(builder, plusExpProductMonthlyId1Field):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(plusExpProductMonthlyId1Field), 0)
+
+def AddPlusExpProductMonthlyId1Field(builder, plusExpProductMonthlyId1Field):
+    AccountLevelExcelAddPlusExpProductMonthlyId1Field(builder, plusExpProductMonthlyId1Field)
+
+def AccountLevelExcelStartPlusExpProductMonthlyId1FieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPlusExpProductMonthlyId1FieldVector(builder, numElems: int) -> int:
+    return AccountLevelExcelStartPlusExpProductMonthlyId1FieldVector(builder, numElems)
+
+def AccountLevelExcelAddPlusExpRatio1Field(builder, plusExpRatio1Field):
+    builder.PrependInt32Slot(8, plusExpRatio1Field, 0)
+
+def AddPlusExpRatio1Field(builder, plusExpRatio1Field):
+    AccountLevelExcelAddPlusExpRatio1Field(builder, plusExpRatio1Field)
+
+def AccountLevelExcelAddPlusExpIconName1Field(builder, plusExpIconName1Field):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(plusExpIconName1Field), 0)
+
+def AddPlusExpIconName1Field(builder, plusExpIconName1Field):
+    AccountLevelExcelAddPlusExpIconName1Field(builder, plusExpIconName1Field)
+
+def AccountLevelExcelAddPlusExpProductMonthlyId2Field(builder, plusExpProductMonthlyId2Field):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(plusExpProductMonthlyId2Field), 0)
+
+def AddPlusExpProductMonthlyId2Field(builder, plusExpProductMonthlyId2Field):
+    AccountLevelExcelAddPlusExpProductMonthlyId2Field(builder, plusExpProductMonthlyId2Field)
+
+def AccountLevelExcelStartPlusExpProductMonthlyId2FieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPlusExpProductMonthlyId2FieldVector(builder, numElems: int) -> int:
+    return AccountLevelExcelStartPlusExpProductMonthlyId2FieldVector(builder, numElems)
+
+def AccountLevelExcelAddPlusExpRatio2Field(builder, plusExpRatio2Field):
+    builder.PrependInt32Slot(11, plusExpRatio2Field, 0)
+
+def AddPlusExpRatio2Field(builder, plusExpRatio2Field):
+    AccountLevelExcelAddPlusExpRatio2Field(builder, plusExpRatio2Field)
+
+def AccountLevelExcelAddPlusExpIconName2Field(builder, plusExpIconName2Field):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(plusExpIconName2Field), 0)
+
+def AddPlusExpIconName2Field(builder, plusExpIconName2Field):
+    AccountLevelExcelAddPlusExpIconName2Field(builder, plusExpIconName2Field)
+
+def AccountLevelExcelAddPlusExpIconName3Field(builder, plusExpIconName3Field):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(plusExpIconName3Field), 0)
+
+def AddPlusExpIconName3Field(builder, plusExpIconName3Field):
+    AccountLevelExcelAddPlusExpIconName3Field(builder, plusExpIconName3Field)
+
+def AccountLevelExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AccountLevelExcelEnd(builder)

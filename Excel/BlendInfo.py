@@ -45,18 +45,32 @@ class BlendInfo(object):
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
-def BlendInfoStart(builder): builder.StartObject(3)
+def BlendInfoStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return BlendInfoStart(builder)
-def BlendInfoAddFromField(builder, fromField): builder.PrependInt32Slot(0, fromField, 0)
+    BlendInfoStart(builder)
+
+def BlendInfoAddFromField(builder, fromField):
+    builder.PrependInt32Slot(0, fromField, 0)
+
 def AddFromField(builder, fromField):
-    return BlendInfoAddFromField(builder, fromField)
-def BlendInfoAddToField(builder, toField): builder.PrependInt32Slot(1, toField, 0)
+    BlendInfoAddFromField(builder, fromField)
+
+def BlendInfoAddToField(builder, toField):
+    builder.PrependInt32Slot(1, toField, 0)
+
 def AddToField(builder, toField):
-    return BlendInfoAddToField(builder, toField)
-def BlendInfoAddBlendField(builder, blendField): builder.PrependFloat32Slot(2, blendField, 0.0)
+    BlendInfoAddToField(builder, toField)
+
+def BlendInfoAddBlendField(builder, blendField):
+    builder.PrependFloat32Slot(2, blendField, 0.0)
+
 def AddBlendField(builder, blendField):
-    return BlendInfoAddBlendField(builder, blendField)
-def BlendInfoEnd(builder): return builder.EndObject()
+    BlendInfoAddBlendField(builder, blendField)
+
+def BlendInfoEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BlendInfoEnd(builder)

@@ -49,15 +49,26 @@ class KeyControllerImageExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def KeyControllerImageExcelTableStart(builder): builder.StartObject(1)
+def KeyControllerImageExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return KeyControllerImageExcelTableStart(builder)
-def KeyControllerImageExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    KeyControllerImageExcelTableStart(builder)
+
+def KeyControllerImageExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return KeyControllerImageExcelTableAddDataList(builder, dataList)
-def KeyControllerImageExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    KeyControllerImageExcelTableAddDataList(builder, dataList)
+
+def KeyControllerImageExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return KeyControllerImageExcelTableStartDataListVector(builder, numElems)
-def KeyControllerImageExcelTableEnd(builder): return builder.EndObject()
+
+def KeyControllerImageExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return KeyControllerImageExcelTableEnd(builder)

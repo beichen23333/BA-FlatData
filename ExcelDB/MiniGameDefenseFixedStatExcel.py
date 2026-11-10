@@ -129,54 +129,104 @@ class MiniGameDefenseFixedStatExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MiniGameDefenseFixedStatExcelStart(builder): builder.StartObject(15)
+def MiniGameDefenseFixedStatExcelStart(builder):
+    builder.StartObject(15)
+
 def Start(builder):
-    return MiniGameDefenseFixedStatExcelStart(builder)
-def MiniGameDefenseFixedStatExcelAddMinigameDefenseFixedStatIdField(builder, minigameDefenseFixedStatIdField): builder.PrependInt32Slot(0, minigameDefenseFixedStatIdField, 0)
+    MiniGameDefenseFixedStatExcelStart(builder)
+
+def MiniGameDefenseFixedStatExcelAddMinigameDefenseFixedStatIdField(builder, minigameDefenseFixedStatIdField):
+    builder.PrependInt32Slot(0, minigameDefenseFixedStatIdField, 0)
+
 def AddMinigameDefenseFixedStatIdField(builder, minigameDefenseFixedStatIdField):
-    return MiniGameDefenseFixedStatExcelAddMinigameDefenseFixedStatIdField(builder, minigameDefenseFixedStatIdField)
-def MiniGameDefenseFixedStatExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(1, levelField, 0)
+    MiniGameDefenseFixedStatExcelAddMinigameDefenseFixedStatIdField(builder, minigameDefenseFixedStatIdField)
+
+def MiniGameDefenseFixedStatExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(1, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return MiniGameDefenseFixedStatExcelAddLevelField(builder, levelField)
-def MiniGameDefenseFixedStatExcelAddGradeField(builder, gradeField): builder.PrependInt32Slot(2, gradeField, 0)
+    MiniGameDefenseFixedStatExcelAddLevelField(builder, levelField)
+
+def MiniGameDefenseFixedStatExcelAddGradeField(builder, gradeField):
+    builder.PrependInt32Slot(2, gradeField, 0)
+
 def AddGradeField(builder, gradeField):
-    return MiniGameDefenseFixedStatExcelAddGradeField(builder, gradeField)
-def MiniGameDefenseFixedStatExcelAddExSkillLevelField(builder, exSkillLevelField): builder.PrependInt32Slot(3, exSkillLevelField, 0)
+    MiniGameDefenseFixedStatExcelAddGradeField(builder, gradeField)
+
+def MiniGameDefenseFixedStatExcelAddExSkillLevelField(builder, exSkillLevelField):
+    builder.PrependInt32Slot(3, exSkillLevelField, 0)
+
 def AddExSkillLevelField(builder, exSkillLevelField):
-    return MiniGameDefenseFixedStatExcelAddExSkillLevelField(builder, exSkillLevelField)
-def MiniGameDefenseFixedStatExcelAddNoneExSkillLevelField(builder, noneExSkillLevelField): builder.PrependInt32Slot(4, noneExSkillLevelField, 0)
+    MiniGameDefenseFixedStatExcelAddExSkillLevelField(builder, exSkillLevelField)
+
+def MiniGameDefenseFixedStatExcelAddNoneExSkillLevelField(builder, noneExSkillLevelField):
+    builder.PrependInt32Slot(4, noneExSkillLevelField, 0)
+
 def AddNoneExSkillLevelField(builder, noneExSkillLevelField):
-    return MiniGameDefenseFixedStatExcelAddNoneExSkillLevelField(builder, noneExSkillLevelField)
-def MiniGameDefenseFixedStatExcelAddEquipment1TierField(builder, equipment1TierField): builder.PrependInt32Slot(5, equipment1TierField, 0)
+    MiniGameDefenseFixedStatExcelAddNoneExSkillLevelField(builder, noneExSkillLevelField)
+
+def MiniGameDefenseFixedStatExcelAddEquipment1TierField(builder, equipment1TierField):
+    builder.PrependInt32Slot(5, equipment1TierField, 0)
+
 def AddEquipment1TierField(builder, equipment1TierField):
-    return MiniGameDefenseFixedStatExcelAddEquipment1TierField(builder, equipment1TierField)
-def MiniGameDefenseFixedStatExcelAddEquipment1LevelField(builder, equipment1LevelField): builder.PrependInt32Slot(6, equipment1LevelField, 0)
+    MiniGameDefenseFixedStatExcelAddEquipment1TierField(builder, equipment1TierField)
+
+def MiniGameDefenseFixedStatExcelAddEquipment1LevelField(builder, equipment1LevelField):
+    builder.PrependInt32Slot(6, equipment1LevelField, 0)
+
 def AddEquipment1LevelField(builder, equipment1LevelField):
-    return MiniGameDefenseFixedStatExcelAddEquipment1LevelField(builder, equipment1LevelField)
-def MiniGameDefenseFixedStatExcelAddEquipment2TierField(builder, equipment2TierField): builder.PrependInt32Slot(7, equipment2TierField, 0)
+    MiniGameDefenseFixedStatExcelAddEquipment1LevelField(builder, equipment1LevelField)
+
+def MiniGameDefenseFixedStatExcelAddEquipment2TierField(builder, equipment2TierField):
+    builder.PrependInt32Slot(7, equipment2TierField, 0)
+
 def AddEquipment2TierField(builder, equipment2TierField):
-    return MiniGameDefenseFixedStatExcelAddEquipment2TierField(builder, equipment2TierField)
-def MiniGameDefenseFixedStatExcelAddEquipment2LevelField(builder, equipment2LevelField): builder.PrependInt32Slot(8, equipment2LevelField, 0)
+    MiniGameDefenseFixedStatExcelAddEquipment2TierField(builder, equipment2TierField)
+
+def MiniGameDefenseFixedStatExcelAddEquipment2LevelField(builder, equipment2LevelField):
+    builder.PrependInt32Slot(8, equipment2LevelField, 0)
+
 def AddEquipment2LevelField(builder, equipment2LevelField):
-    return MiniGameDefenseFixedStatExcelAddEquipment2LevelField(builder, equipment2LevelField)
-def MiniGameDefenseFixedStatExcelAddEquipment3TierField(builder, equipment3TierField): builder.PrependInt32Slot(9, equipment3TierField, 0)
+    MiniGameDefenseFixedStatExcelAddEquipment2LevelField(builder, equipment2LevelField)
+
+def MiniGameDefenseFixedStatExcelAddEquipment3TierField(builder, equipment3TierField):
+    builder.PrependInt32Slot(9, equipment3TierField, 0)
+
 def AddEquipment3TierField(builder, equipment3TierField):
-    return MiniGameDefenseFixedStatExcelAddEquipment3TierField(builder, equipment3TierField)
-def MiniGameDefenseFixedStatExcelAddEquipment3LevelField(builder, equipment3LevelField): builder.PrependInt32Slot(10, equipment3LevelField, 0)
+    MiniGameDefenseFixedStatExcelAddEquipment3TierField(builder, equipment3TierField)
+
+def MiniGameDefenseFixedStatExcelAddEquipment3LevelField(builder, equipment3LevelField):
+    builder.PrependInt32Slot(10, equipment3LevelField, 0)
+
 def AddEquipment3LevelField(builder, equipment3LevelField):
-    return MiniGameDefenseFixedStatExcelAddEquipment3LevelField(builder, equipment3LevelField)
-def MiniGameDefenseFixedStatExcelAddCharacterWeaponGradeField(builder, characterWeaponGradeField): builder.PrependInt32Slot(11, characterWeaponGradeField, 0)
+    MiniGameDefenseFixedStatExcelAddEquipment3LevelField(builder, equipment3LevelField)
+
+def MiniGameDefenseFixedStatExcelAddCharacterWeaponGradeField(builder, characterWeaponGradeField):
+    builder.PrependInt32Slot(11, characterWeaponGradeField, 0)
+
 def AddCharacterWeaponGradeField(builder, characterWeaponGradeField):
-    return MiniGameDefenseFixedStatExcelAddCharacterWeaponGradeField(builder, characterWeaponGradeField)
-def MiniGameDefenseFixedStatExcelAddCharacterWeaponLevelField(builder, characterWeaponLevelField): builder.PrependInt32Slot(12, characterWeaponLevelField, 0)
+    MiniGameDefenseFixedStatExcelAddCharacterWeaponGradeField(builder, characterWeaponGradeField)
+
+def MiniGameDefenseFixedStatExcelAddCharacterWeaponLevelField(builder, characterWeaponLevelField):
+    builder.PrependInt32Slot(12, characterWeaponLevelField, 0)
+
 def AddCharacterWeaponLevelField(builder, characterWeaponLevelField):
-    return MiniGameDefenseFixedStatExcelAddCharacterWeaponLevelField(builder, characterWeaponLevelField)
-def MiniGameDefenseFixedStatExcelAddCharacterGearTierField(builder, characterGearTierField): builder.PrependInt32Slot(13, characterGearTierField, 0)
+    MiniGameDefenseFixedStatExcelAddCharacterWeaponLevelField(builder, characterWeaponLevelField)
+
+def MiniGameDefenseFixedStatExcelAddCharacterGearTierField(builder, characterGearTierField):
+    builder.PrependInt32Slot(13, characterGearTierField, 0)
+
 def AddCharacterGearTierField(builder, characterGearTierField):
-    return MiniGameDefenseFixedStatExcelAddCharacterGearTierField(builder, characterGearTierField)
-def MiniGameDefenseFixedStatExcelAddCharacterGearLevelField(builder, characterGearLevelField): builder.PrependInt32Slot(14, characterGearLevelField, 0)
+    MiniGameDefenseFixedStatExcelAddCharacterGearTierField(builder, characterGearTierField)
+
+def MiniGameDefenseFixedStatExcelAddCharacterGearLevelField(builder, characterGearLevelField):
+    builder.PrependInt32Slot(14, characterGearLevelField, 0)
+
 def AddCharacterGearLevelField(builder, characterGearLevelField):
-    return MiniGameDefenseFixedStatExcelAddCharacterGearLevelField(builder, characterGearLevelField)
-def MiniGameDefenseFixedStatExcelEnd(builder): return builder.EndObject()
+    MiniGameDefenseFixedStatExcelAddCharacterGearLevelField(builder, characterGearLevelField)
+
+def MiniGameDefenseFixedStatExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameDefenseFixedStatExcelEnd(builder)

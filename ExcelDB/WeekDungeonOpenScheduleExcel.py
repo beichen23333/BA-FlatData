@@ -58,18 +58,32 @@ class WeekDungeonOpenScheduleExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
-def WeekDungeonOpenScheduleExcelStart(builder): builder.StartObject(2)
+def WeekDungeonOpenScheduleExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return WeekDungeonOpenScheduleExcelStart(builder)
-def WeekDungeonOpenScheduleExcelAddWeekDayField(builder, weekDayField): builder.PrependInt32Slot(0, weekDayField, 0)
+    WeekDungeonOpenScheduleExcelStart(builder)
+
+def WeekDungeonOpenScheduleExcelAddWeekDayField(builder, weekDayField):
+    builder.PrependInt32Slot(0, weekDayField, 0)
+
 def AddWeekDayField(builder, weekDayField):
-    return WeekDungeonOpenScheduleExcelAddWeekDayField(builder, weekDayField)
-def WeekDungeonOpenScheduleExcelAddOpenField(builder, openField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(openField), 0)
+    WeekDungeonOpenScheduleExcelAddWeekDayField(builder, weekDayField)
+
+def WeekDungeonOpenScheduleExcelAddOpenField(builder, openField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(openField), 0)
+
 def AddOpenField(builder, openField):
-    return WeekDungeonOpenScheduleExcelAddOpenField(builder, openField)
-def WeekDungeonOpenScheduleExcelStartOpenFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartOpenFieldVector(builder, numElems):
+    WeekDungeonOpenScheduleExcelAddOpenField(builder, openField)
+
+def WeekDungeonOpenScheduleExcelStartOpenFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartOpenFieldVector(builder, numElems: int) -> int:
     return WeekDungeonOpenScheduleExcelStartOpenFieldVector(builder, numElems)
-def WeekDungeonOpenScheduleExcelEnd(builder): return builder.EndObject()
+
+def WeekDungeonOpenScheduleExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WeekDungeonOpenScheduleExcelEnd(builder)

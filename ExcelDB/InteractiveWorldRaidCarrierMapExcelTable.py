@@ -49,15 +49,26 @@ class InteractiveWorldRaidCarrierMapExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def InteractiveWorldRaidCarrierMapExcelTableStart(builder): builder.StartObject(1)
+def InteractiveWorldRaidCarrierMapExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return InteractiveWorldRaidCarrierMapExcelTableStart(builder)
-def InteractiveWorldRaidCarrierMapExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    InteractiveWorldRaidCarrierMapExcelTableStart(builder)
+
+def InteractiveWorldRaidCarrierMapExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return InteractiveWorldRaidCarrierMapExcelTableAddDataList(builder, dataList)
-def InteractiveWorldRaidCarrierMapExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    InteractiveWorldRaidCarrierMapExcelTableAddDataList(builder, dataList)
+
+def InteractiveWorldRaidCarrierMapExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierMapExcelTableStartDataListVector(builder, numElems)
-def InteractiveWorldRaidCarrierMapExcelTableEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidCarrierMapExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidCarrierMapExcelTableEnd(builder)

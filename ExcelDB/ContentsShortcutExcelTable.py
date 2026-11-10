@@ -49,15 +49,26 @@ class ContentsShortcutExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ContentsShortcutExcelTableStart(builder): builder.StartObject(1)
+def ContentsShortcutExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ContentsShortcutExcelTableStart(builder)
-def ContentsShortcutExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ContentsShortcutExcelTableStart(builder)
+
+def ContentsShortcutExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ContentsShortcutExcelTableAddDataList(builder, dataList)
-def ContentsShortcutExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ContentsShortcutExcelTableAddDataList(builder, dataList)
+
+def ContentsShortcutExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ContentsShortcutExcelTableStartDataListVector(builder, numElems)
-def ContentsShortcutExcelTableEnd(builder): return builder.EndObject()
+
+def ContentsShortcutExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ContentsShortcutExcelTableEnd(builder)

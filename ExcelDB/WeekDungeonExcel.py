@@ -277,84 +277,164 @@ class WeekDungeonExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def WeekDungeonExcelStart(builder): builder.StartObject(19)
+def WeekDungeonExcelStart(builder):
+    builder.StartObject(19)
+
 def Start(builder):
-    return WeekDungeonExcelStart(builder)
-def WeekDungeonExcelAddStageIdField(builder, stageIdField): builder.PrependInt32Slot(0, stageIdField, 0)
+    WeekDungeonExcelStart(builder)
+
+def WeekDungeonExcelAddStageIdField(builder, stageIdField):
+    builder.PrependInt32Slot(0, stageIdField, 0)
+
 def AddStageIdField(builder, stageIdField):
-    return WeekDungeonExcelAddStageIdField(builder, stageIdField)
-def WeekDungeonExcelAddWeekDungeonTypeField(builder, weekDungeonTypeField): builder.PrependFloat32Slot(1, weekDungeonTypeField, 0.0)
+    WeekDungeonExcelAddStageIdField(builder, stageIdField)
+
+def WeekDungeonExcelAddWeekDungeonTypeField(builder, weekDungeonTypeField):
+    builder.PrependFloat32Slot(1, weekDungeonTypeField, 0.0)
+
 def AddWeekDungeonTypeField(builder, weekDungeonTypeField):
-    return WeekDungeonExcelAddWeekDungeonTypeField(builder, weekDungeonTypeField)
-def WeekDungeonExcelAddDifficultyField(builder, difficultyField): builder.PrependInt32Slot(2, difficultyField, 0)
+    WeekDungeonExcelAddWeekDungeonTypeField(builder, weekDungeonTypeField)
+
+def WeekDungeonExcelAddDifficultyField(builder, difficultyField):
+    builder.PrependInt32Slot(2, difficultyField, 0)
+
 def AddDifficultyField(builder, difficultyField):
-    return WeekDungeonExcelAddDifficultyField(builder, difficultyField)
-def WeekDungeonExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(3, battleDurationField, 0)
+    WeekDungeonExcelAddDifficultyField(builder, difficultyField)
+
+def WeekDungeonExcelAddBattleDurationField(builder, battleDurationField):
+    builder.PrependInt32Slot(3, battleDurationField, 0)
+
 def AddBattleDurationField(builder, battleDurationField):
-    return WeekDungeonExcelAddBattleDurationField(builder, battleDurationField)
-def WeekDungeonExcelAddPrevStageIdField(builder, prevStageIdField): builder.PrependInt32Slot(4, prevStageIdField, 0)
+    WeekDungeonExcelAddBattleDurationField(builder, battleDurationField)
+
+def WeekDungeonExcelAddPrevStageIdField(builder, prevStageIdField):
+    builder.PrependInt32Slot(4, prevStageIdField, 0)
+
 def AddPrevStageIdField(builder, prevStageIdField):
-    return WeekDungeonExcelAddPrevStageIdField(builder, prevStageIdField)
-def WeekDungeonExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(stageEnterCostTypeField), 0)
+    WeekDungeonExcelAddPrevStageIdField(builder, prevStageIdField)
+
+def WeekDungeonExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(stageEnterCostTypeField), 0)
+
 def AddStageEnterCostTypeField(builder, stageEnterCostTypeField):
-    return WeekDungeonExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
-def WeekDungeonExcelStartStageEnterCostTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStageEnterCostTypeFieldVector(builder, numElems):
+    WeekDungeonExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
+
+def WeekDungeonExcelStartStageEnterCostTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStageEnterCostTypeFieldVector(builder, numElems: int) -> int:
     return WeekDungeonExcelStartStageEnterCostTypeFieldVector(builder, numElems)
-def WeekDungeonExcelAddStageEnterCostIdField(builder, stageEnterCostIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(stageEnterCostIdField), 0)
+
+def WeekDungeonExcelAddStageEnterCostIdField(builder, stageEnterCostIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(stageEnterCostIdField), 0)
+
 def AddStageEnterCostIdField(builder, stageEnterCostIdField):
-    return WeekDungeonExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
-def WeekDungeonExcelStartStageEnterCostIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStageEnterCostIdFieldVector(builder, numElems):
+    WeekDungeonExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
+
+def WeekDungeonExcelStartStageEnterCostIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStageEnterCostIdFieldVector(builder, numElems: int) -> int:
     return WeekDungeonExcelStartStageEnterCostIdFieldVector(builder, numElems)
-def WeekDungeonExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(stageEnterCostAmountField), 0)
+
+def WeekDungeonExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(stageEnterCostAmountField), 0)
+
 def AddStageEnterCostAmountField(builder, stageEnterCostAmountField):
-    return WeekDungeonExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
-def WeekDungeonExcelStartStageEnterCostAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStageEnterCostAmountFieldVector(builder, numElems):
+    WeekDungeonExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
+
+def WeekDungeonExcelStartStageEnterCostAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStageEnterCostAmountFieldVector(builder, numElems: int) -> int:
     return WeekDungeonExcelStartStageEnterCostAmountFieldVector(builder, numElems)
-def WeekDungeonExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(8, groundIdField, 0)
+
+def WeekDungeonExcelAddGroundIdField(builder, groundIdField):
+    builder.PrependInt32Slot(8, groundIdField, 0)
+
 def AddGroundIdField(builder, groundIdField):
-    return WeekDungeonExcelAddGroundIdField(builder, groundIdField)
-def WeekDungeonExcelAddStarGoalField(builder, starGoalField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalField), 0)
+    WeekDungeonExcelAddGroundIdField(builder, groundIdField)
+
+def WeekDungeonExcelAddStarGoalField(builder, starGoalField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalField), 0)
+
 def AddStarGoalField(builder, starGoalField):
-    return WeekDungeonExcelAddStarGoalField(builder, starGoalField)
-def WeekDungeonExcelStartStarGoalFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStarGoalFieldVector(builder, numElems):
+    WeekDungeonExcelAddStarGoalField(builder, starGoalField)
+
+def WeekDungeonExcelStartStarGoalFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStarGoalFieldVector(builder, numElems: int) -> int:
     return WeekDungeonExcelStartStarGoalFieldVector(builder, numElems)
-def WeekDungeonExcelAddStarGoalAmountField(builder, starGoalAmountField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalAmountField), 0)
+
+def WeekDungeonExcelAddStarGoalAmountField(builder, starGoalAmountField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalAmountField), 0)
+
 def AddStarGoalAmountField(builder, starGoalAmountField):
-    return WeekDungeonExcelAddStarGoalAmountField(builder, starGoalAmountField)
-def WeekDungeonExcelStartStarGoalAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStarGoalAmountFieldVector(builder, numElems):
+    WeekDungeonExcelAddStarGoalAmountField(builder, starGoalAmountField)
+
+def WeekDungeonExcelStartStarGoalAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStarGoalAmountFieldVector(builder, numElems: int) -> int:
     return WeekDungeonExcelStartStarGoalAmountFieldVector(builder, numElems)
-def WeekDungeonExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(11, stageTopographyField, 0)
+
+def WeekDungeonExcelAddStageTopographyField(builder, stageTopographyField):
+    builder.PrependInt32Slot(11, stageTopographyField, 0)
+
 def AddStageTopographyField(builder, stageTopographyField):
-    return WeekDungeonExcelAddStageTopographyField(builder, stageTopographyField)
-def WeekDungeonExcelAddRecommandLevelField(builder, recommandLevelField): builder.PrependInt32Slot(12, recommandLevelField, 0)
+    WeekDungeonExcelAddStageTopographyField(builder, stageTopographyField)
+
+def WeekDungeonExcelAddRecommandLevelField(builder, recommandLevelField):
+    builder.PrependInt32Slot(12, recommandLevelField, 0)
+
 def AddRecommandLevelField(builder, recommandLevelField):
-    return WeekDungeonExcelAddRecommandLevelField(builder, recommandLevelField)
-def WeekDungeonExcelAddStageRewardIdField(builder, stageRewardIdField): builder.PrependInt32Slot(13, stageRewardIdField, 0)
+    WeekDungeonExcelAddRecommandLevelField(builder, recommandLevelField)
+
+def WeekDungeonExcelAddStageRewardIdField(builder, stageRewardIdField):
+    builder.PrependInt32Slot(13, stageRewardIdField, 0)
+
 def AddStageRewardIdField(builder, stageRewardIdField):
-    return WeekDungeonExcelAddStageRewardIdField(builder, stageRewardIdField)
-def WeekDungeonExcelAddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField): builder.PrependInt32Slot(14, playTimeLimitInSecondsField, 0)
+    WeekDungeonExcelAddStageRewardIdField(builder, stageRewardIdField)
+
+def WeekDungeonExcelAddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField):
+    builder.PrependInt32Slot(14, playTimeLimitInSecondsField, 0)
+
 def AddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField):
-    return WeekDungeonExcelAddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField)
-def WeekDungeonExcelAddBattleRewardExpField(builder, battleRewardExpField): builder.PrependInt32Slot(15, battleRewardExpField, 0)
+    WeekDungeonExcelAddPlayTimeLimitInSecondsField(builder, playTimeLimitInSecondsField)
+
+def WeekDungeonExcelAddBattleRewardExpField(builder, battleRewardExpField):
+    builder.PrependInt32Slot(15, battleRewardExpField, 0)
+
 def AddBattleRewardExpField(builder, battleRewardExpField):
-    return WeekDungeonExcelAddBattleRewardExpField(builder, battleRewardExpField)
-def WeekDungeonExcelAddBattleRewardPlayerExpField(builder, battleRewardPlayerExpField): builder.PrependInt32Slot(16, battleRewardPlayerExpField, 0)
+    WeekDungeonExcelAddBattleRewardExpField(builder, battleRewardExpField)
+
+def WeekDungeonExcelAddBattleRewardPlayerExpField(builder, battleRewardPlayerExpField):
+    builder.PrependInt32Slot(16, battleRewardPlayerExpField, 0)
+
 def AddBattleRewardPlayerExpField(builder, battleRewardPlayerExpField):
-    return WeekDungeonExcelAddBattleRewardPlayerExpField(builder, battleRewardPlayerExpField)
-def WeekDungeonExcelAddGroupBuffIDField(builder, groupBuffIDField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(groupBuffIDField), 0)
+    WeekDungeonExcelAddBattleRewardPlayerExpField(builder, battleRewardPlayerExpField)
+
+def WeekDungeonExcelAddGroupBuffIDField(builder, groupBuffIDField):
+    builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(groupBuffIDField), 0)
+
 def AddGroupBuffIDField(builder, groupBuffIDField):
-    return WeekDungeonExcelAddGroupBuffIDField(builder, groupBuffIDField)
-def WeekDungeonExcelStartGroupBuffIDFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGroupBuffIDFieldVector(builder, numElems):
+    WeekDungeonExcelAddGroupBuffIDField(builder, groupBuffIDField)
+
+def WeekDungeonExcelStartGroupBuffIDFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartGroupBuffIDFieldVector(builder, numElems: int) -> int:
     return WeekDungeonExcelStartGroupBuffIDFieldVector(builder, numElems)
-def WeekDungeonExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField): builder.PrependInt32Slot(18, echelonExtensionTypeField, 0)
+
+def WeekDungeonExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
+    builder.PrependInt32Slot(18, echelonExtensionTypeField, 0)
+
 def AddEchelonExtensionTypeField(builder, echelonExtensionTypeField):
-    return WeekDungeonExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
-def WeekDungeonExcelEnd(builder): return builder.EndObject()
+    WeekDungeonExcelAddEchelonExtensionTypeField(builder, echelonExtensionTypeField)
+
+def WeekDungeonExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WeekDungeonExcelEnd(builder)

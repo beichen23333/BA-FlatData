@@ -38,15 +38,26 @@ class BattleLevelFactorExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def BattleLevelFactorExcelStart(builder): builder.StartObject(2)
+def BattleLevelFactorExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return BattleLevelFactorExcelStart(builder)
-def BattleLevelFactorExcelAddLevelDiffField(builder, levelDiffField): builder.PrependInt32Slot(0, levelDiffField, 0)
+    BattleLevelFactorExcelStart(builder)
+
+def BattleLevelFactorExcelAddLevelDiffField(builder, levelDiffField):
+    builder.PrependInt32Slot(0, levelDiffField, 0)
+
 def AddLevelDiffField(builder, levelDiffField):
-    return BattleLevelFactorExcelAddLevelDiffField(builder, levelDiffField)
-def BattleLevelFactorExcelAddDamageRateField(builder, damageRateField): builder.PrependInt32Slot(1, damageRateField, 0)
+    BattleLevelFactorExcelAddLevelDiffField(builder, levelDiffField)
+
+def BattleLevelFactorExcelAddDamageRateField(builder, damageRateField):
+    builder.PrependInt32Slot(1, damageRateField, 0)
+
 def AddDamageRateField(builder, damageRateField):
-    return BattleLevelFactorExcelAddDamageRateField(builder, damageRateField)
-def BattleLevelFactorExcelEnd(builder): return builder.EndObject()
+    BattleLevelFactorExcelAddDamageRateField(builder, damageRateField)
+
+def BattleLevelFactorExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BattleLevelFactorExcelEnd(builder)

@@ -78,27 +78,50 @@ class PermanentRaidManageExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def PermanentRaidManageExcelStart(builder): builder.StartObject(4)
+def PermanentRaidManageExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return PermanentRaidManageExcelStart(builder)
-def PermanentRaidManageExcelAddTypeField(builder, typeField): builder.PrependInt32Slot(0, typeField, 0)
+    PermanentRaidManageExcelStart(builder)
+
+def PermanentRaidManageExcelAddTypeField(builder, typeField):
+    builder.PrependInt32Slot(0, typeField, 0)
+
 def AddTypeField(builder, typeField):
-    return PermanentRaidManageExcelAddTypeField(builder, typeField)
-def PermanentRaidManageExcelAddOpenRaidBossGroupField(builder, openRaidBossGroupField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(openRaidBossGroupField), 0)
+    PermanentRaidManageExcelAddTypeField(builder, typeField)
+
+def PermanentRaidManageExcelAddOpenRaidBossGroupField(builder, openRaidBossGroupField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(openRaidBossGroupField), 0)
+
 def AddOpenRaidBossGroupField(builder, openRaidBossGroupField):
-    return PermanentRaidManageExcelAddOpenRaidBossGroupField(builder, openRaidBossGroupField)
-def PermanentRaidManageExcelStartOpenRaidBossGroupFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartOpenRaidBossGroupFieldVector(builder, numElems):
+    PermanentRaidManageExcelAddOpenRaidBossGroupField(builder, openRaidBossGroupField)
+
+def PermanentRaidManageExcelStartOpenRaidBossGroupFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartOpenRaidBossGroupFieldVector(builder, numElems: int) -> int:
     return PermanentRaidManageExcelStartOpenRaidBossGroupFieldVector(builder, numElems)
-def PermanentRaidManageExcelAddHideDifficultyField(builder, hideDifficultyField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(hideDifficultyField), 0)
+
+def PermanentRaidManageExcelAddHideDifficultyField(builder, hideDifficultyField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(hideDifficultyField), 0)
+
 def AddHideDifficultyField(builder, hideDifficultyField):
-    return PermanentRaidManageExcelAddHideDifficultyField(builder, hideDifficultyField)
-def PermanentRaidManageExcelStartHideDifficultyFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartHideDifficultyFieldVector(builder, numElems):
+    PermanentRaidManageExcelAddHideDifficultyField(builder, hideDifficultyField)
+
+def PermanentRaidManageExcelStartHideDifficultyFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartHideDifficultyFieldVector(builder, numElems: int) -> int:
     return PermanentRaidManageExcelStartHideDifficultyFieldVector(builder, numElems)
-def PermanentRaidManageExcelAddOpenDateField(builder, openDateField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(openDateField), 0)
+
+def PermanentRaidManageExcelAddOpenDateField(builder, openDateField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(openDateField), 0)
+
 def AddOpenDateField(builder, openDateField):
-    return PermanentRaidManageExcelAddOpenDateField(builder, openDateField)
-def PermanentRaidManageExcelEnd(builder): return builder.EndObject()
+    PermanentRaidManageExcelAddOpenDateField(builder, openDateField)
+
+def PermanentRaidManageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PermanentRaidManageExcelEnd(builder)

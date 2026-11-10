@@ -213,57 +213,110 @@ class InteractiveWorldRaidSkillDescriptionListExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         return o == 0
 
-def InteractiveWorldRaidSkillDescriptionListExcelStart(builder): builder.StartObject(9)
+def InteractiveWorldRaidSkillDescriptionListExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return InteractiveWorldRaidSkillDescriptionListExcelStart(builder)
-def InteractiveWorldRaidSkillDescriptionListExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    InteractiveWorldRaidSkillDescriptionListExcelStart(builder)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddIdField(builder, idField)
-def InteractiveWorldRaidSkillDescriptionListExcelAddSkillParcelEchelonTypeField(builder, skillParcelEchelonTypeField): builder.PrependInt32Slot(1, skillParcelEchelonTypeField, 0)
+    InteractiveWorldRaidSkillDescriptionListExcelAddIdField(builder, idField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddSkillParcelEchelonTypeField(builder, skillParcelEchelonTypeField):
+    builder.PrependInt32Slot(1, skillParcelEchelonTypeField, 0)
+
 def AddSkillParcelEchelonTypeField(builder, skillParcelEchelonTypeField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddSkillParcelEchelonTypeField(builder, skillParcelEchelonTypeField)
-def InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillGroupIdField(builder, globalSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillGroupIdField), 0)
+    InteractiveWorldRaidSkillDescriptionListExcelAddSkillParcelEchelonTypeField(builder, skillParcelEchelonTypeField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillGroupIdField(builder, globalSkillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillGroupIdField), 0)
+
 def AddGlobalSkillGroupIdField(builder, globalSkillGroupIdField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillGroupIdField(builder, globalSkillGroupIdField)
-def InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGlobalSkillGroupIdFieldVector(builder, numElems):
+    InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillGroupIdField(builder, globalSkillGroupIdField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartGlobalSkillGroupIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillGroupIdFieldVector(builder, numElems)
-def InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillRemoveConditionField(builder, globalSkillRemoveConditionField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillRemoveConditionField), 0)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillRemoveConditionField(builder, globalSkillRemoveConditionField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillRemoveConditionField), 0)
+
 def AddGlobalSkillRemoveConditionField(builder, globalSkillRemoveConditionField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillRemoveConditionField(builder, globalSkillRemoveConditionField)
-def InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillRemoveConditionFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGlobalSkillRemoveConditionFieldVector(builder, numElems):
+    InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillRemoveConditionField(builder, globalSkillRemoveConditionField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillRemoveConditionFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartGlobalSkillRemoveConditionFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillRemoveConditionFieldVector(builder, numElems)
-def InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillShowSkillSlotField(builder, globalSkillShowSkillSlotField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillShowSkillSlotField), 0)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillShowSkillSlotField(builder, globalSkillShowSkillSlotField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillShowSkillSlotField), 0)
+
 def AddGlobalSkillShowSkillSlotField(builder, globalSkillShowSkillSlotField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillShowSkillSlotField(builder, globalSkillShowSkillSlotField)
-def InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillShowSkillSlotFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGlobalSkillShowSkillSlotFieldVector(builder, numElems):
+    InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillShowSkillSlotField(builder, globalSkillShowSkillSlotField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillShowSkillSlotFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartGlobalSkillShowSkillSlotFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillShowSkillSlotFieldVector(builder, numElems)
-def InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillHighlightResourceField(builder, globalSkillHighlightResourceField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillHighlightResourceField), 0)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillHighlightResourceField(builder, globalSkillHighlightResourceField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(globalSkillHighlightResourceField), 0)
+
 def AddGlobalSkillHighlightResourceField(builder, globalSkillHighlightResourceField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillHighlightResourceField(builder, globalSkillHighlightResourceField)
-def InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillHighlightResourceFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGlobalSkillHighlightResourceFieldVector(builder, numElems):
+    InteractiveWorldRaidSkillDescriptionListExcelAddGlobalSkillHighlightResourceField(builder, globalSkillHighlightResourceField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillHighlightResourceFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartGlobalSkillHighlightResourceFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSkillDescriptionListExcelStartGlobalSkillHighlightResourceFieldVector(builder, numElems)
-def InteractiveWorldRaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+
 def AddSkillGroupIdField(builder, skillGroupIdField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField)
-def InteractiveWorldRaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSkillGroupIdFieldVector(builder, numElems):
+    InteractiveWorldRaidSkillDescriptionListExcelAddSkillGroupIdField(builder, skillGroupIdField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSkillGroupIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSkillDescriptionListExcelStartSkillGroupIdFieldVector(builder, numElems)
-def InteractiveWorldRaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(showSkillSlotField), 0)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(showSkillSlotField), 0)
+
 def AddShowSkillSlotField(builder, showSkillSlotField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField)
-def InteractiveWorldRaidSkillDescriptionListExcelStartShowSkillSlotFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShowSkillSlotFieldVector(builder, numElems):
+    InteractiveWorldRaidSkillDescriptionListExcelAddShowSkillSlotField(builder, showSkillSlotField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelStartShowSkillSlotFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartShowSkillSlotFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSkillDescriptionListExcelStartShowSkillSlotFieldVector(builder, numElems)
-def InteractiveWorldRaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(highlightResourceField), 0)
+
+def InteractiveWorldRaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(highlightResourceField), 0)
+
 def AddHighlightResourceField(builder, highlightResourceField):
-    return InteractiveWorldRaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField)
-def InteractiveWorldRaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartHighlightResourceFieldVector(builder, numElems):
+    InteractiveWorldRaidSkillDescriptionListExcelAddHighlightResourceField(builder, highlightResourceField)
+
+def InteractiveWorldRaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartHighlightResourceFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSkillDescriptionListExcelStartHighlightResourceFieldVector(builder, numElems)
-def InteractiveWorldRaidSkillDescriptionListExcelEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidSkillDescriptionListExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidSkillDescriptionListExcelEnd(builder)

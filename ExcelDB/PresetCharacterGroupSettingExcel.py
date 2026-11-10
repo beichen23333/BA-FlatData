@@ -58,21 +58,38 @@ class PresetCharacterGroupSettingExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
-def PresetCharacterGroupSettingExcelStart(builder): builder.StartObject(3)
+def PresetCharacterGroupSettingExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return PresetCharacterGroupSettingExcelStart(builder)
-def PresetCharacterGroupSettingExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(0, characterIdField, 0)
+    PresetCharacterGroupSettingExcelStart(builder)
+
+def PresetCharacterGroupSettingExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(0, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return PresetCharacterGroupSettingExcelAddCharacterIdField(builder, characterIdField)
-def PresetCharacterGroupSettingExcelAddArenaSimulatorFixedField(builder, arenaSimulatorFixedField): builder.PrependBoolSlot(1, arenaSimulatorFixedField, 0)
+    PresetCharacterGroupSettingExcelAddCharacterIdField(builder, characterIdField)
+
+def PresetCharacterGroupSettingExcelAddArenaSimulatorFixedField(builder, arenaSimulatorFixedField):
+    builder.PrependBoolSlot(1, arenaSimulatorFixedField, 0)
+
 def AddArenaSimulatorFixedField(builder, arenaSimulatorFixedField):
-    return PresetCharacterGroupSettingExcelAddArenaSimulatorFixedField(builder, arenaSimulatorFixedField)
-def PresetCharacterGroupSettingExcelAddPresetTypeField(builder, presetTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(presetTypeField), 0)
+    PresetCharacterGroupSettingExcelAddArenaSimulatorFixedField(builder, arenaSimulatorFixedField)
+
+def PresetCharacterGroupSettingExcelAddPresetTypeField(builder, presetTypeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(presetTypeField), 0)
+
 def AddPresetTypeField(builder, presetTypeField):
-    return PresetCharacterGroupSettingExcelAddPresetTypeField(builder, presetTypeField)
-def PresetCharacterGroupSettingExcelStartPresetTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPresetTypeFieldVector(builder, numElems):
+    PresetCharacterGroupSettingExcelAddPresetTypeField(builder, presetTypeField)
+
+def PresetCharacterGroupSettingExcelStartPresetTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPresetTypeFieldVector(builder, numElems: int) -> int:
     return PresetCharacterGroupSettingExcelStartPresetTypeFieldVector(builder, numElems)
-def PresetCharacterGroupSettingExcelEnd(builder): return builder.EndObject()
+
+def PresetCharacterGroupSettingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PresetCharacterGroupSettingExcelEnd(builder)

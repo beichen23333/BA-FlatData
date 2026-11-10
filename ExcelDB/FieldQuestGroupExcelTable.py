@@ -49,15 +49,26 @@ class FieldQuestGroupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def FieldQuestGroupExcelTableStart(builder): builder.StartObject(1)
+def FieldQuestGroupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return FieldQuestGroupExcelTableStart(builder)
-def FieldQuestGroupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    FieldQuestGroupExcelTableStart(builder)
+
+def FieldQuestGroupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return FieldQuestGroupExcelTableAddDataList(builder, dataList)
-def FieldQuestGroupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    FieldQuestGroupExcelTableAddDataList(builder, dataList)
+
+def FieldQuestGroupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return FieldQuestGroupExcelTableStartDataListVector(builder, numElems)
-def FieldQuestGroupExcelTableEnd(builder): return builder.EndObject()
+
+def FieldQuestGroupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldQuestGroupExcelTableEnd(builder)

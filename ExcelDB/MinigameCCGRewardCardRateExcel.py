@@ -45,18 +45,32 @@ class MinigameCCGRewardCardRateExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGRewardCardRateExcelStart(builder): builder.StartObject(3)
+def MinigameCCGRewardCardRateExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return MinigameCCGRewardCardRateExcelStart(builder)
-def MinigameCCGRewardCardRateExcelAddRarityGroupIdField(builder, rarityGroupIdField): builder.PrependInt32Slot(0, rarityGroupIdField, 0)
+    MinigameCCGRewardCardRateExcelStart(builder)
+
+def MinigameCCGRewardCardRateExcelAddRarityGroupIdField(builder, rarityGroupIdField):
+    builder.PrependInt32Slot(0, rarityGroupIdField, 0)
+
 def AddRarityGroupIdField(builder, rarityGroupIdField):
-    return MinigameCCGRewardCardRateExcelAddRarityGroupIdField(builder, rarityGroupIdField)
-def MinigameCCGRewardCardRateExcelAddCardRarityField(builder, cardRarityField): builder.PrependInt32Slot(1, cardRarityField, 0)
+    MinigameCCGRewardCardRateExcelAddRarityGroupIdField(builder, rarityGroupIdField)
+
+def MinigameCCGRewardCardRateExcelAddCardRarityField(builder, cardRarityField):
+    builder.PrependInt32Slot(1, cardRarityField, 0)
+
 def AddCardRarityField(builder, cardRarityField):
-    return MinigameCCGRewardCardRateExcelAddCardRarityField(builder, cardRarityField)
-def MinigameCCGRewardCardRateExcelAddRateField(builder, rateField): builder.PrependInt32Slot(2, rateField, 0)
+    MinigameCCGRewardCardRateExcelAddCardRarityField(builder, cardRarityField)
+
+def MinigameCCGRewardCardRateExcelAddRateField(builder, rateField):
+    builder.PrependInt32Slot(2, rateField, 0)
+
 def AddRateField(builder, rateField):
-    return MinigameCCGRewardCardRateExcelAddRateField(builder, rateField)
-def MinigameCCGRewardCardRateExcelEnd(builder): return builder.EndObject()
+    MinigameCCGRewardCardRateExcelAddRateField(builder, rateField)
+
+def MinigameCCGRewardCardRateExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGRewardCardRateExcelEnd(builder)

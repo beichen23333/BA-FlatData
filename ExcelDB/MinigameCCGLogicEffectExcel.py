@@ -45,18 +45,32 @@ class MinigameCCGLogicEffectExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def MinigameCCGLogicEffectExcelStart(builder): builder.StartObject(3)
+def MinigameCCGLogicEffectExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return MinigameCCGLogicEffectExcelStart(builder)
-def MinigameCCGLogicEffectExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    MinigameCCGLogicEffectExcelStart(builder)
+
+def MinigameCCGLogicEffectExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return MinigameCCGLogicEffectExcelAddIdField(builder, idField)
-def MinigameCCGLogicEffectExcelAddDataLoadPathField(builder, dataLoadPathField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(dataLoadPathField), 0)
+    MinigameCCGLogicEffectExcelAddIdField(builder, idField)
+
+def MinigameCCGLogicEffectExcelAddDataLoadPathField(builder, dataLoadPathField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(dataLoadPathField), 0)
+
 def AddDataLoadPathField(builder, dataLoadPathField):
-    return MinigameCCGLogicEffectExcelAddDataLoadPathField(builder, dataLoadPathField)
-def MinigameCCGLogicEffectExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+    MinigameCCGLogicEffectExcelAddDataLoadPathField(builder, dataLoadPathField)
+
+def MinigameCCGLogicEffectExcelAddIconField(builder, iconField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+
 def AddIconField(builder, iconField):
-    return MinigameCCGLogicEffectExcelAddIconField(builder, iconField)
-def MinigameCCGLogicEffectExcelEnd(builder): return builder.EndObject()
+    MinigameCCGLogicEffectExcelAddIconField(builder, iconField)
+
+def MinigameCCGLogicEffectExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGLogicEffectExcelEnd(builder)

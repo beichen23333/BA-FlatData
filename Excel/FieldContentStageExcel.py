@@ -211,78 +211,152 @@ class FieldContentStageExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         return o == 0
 
-def FieldContentStageExcelStart(builder): builder.StartObject(21)
+def FieldContentStageExcelStart(builder):
+    builder.StartObject(21)
+
 def Start(builder):
-    return FieldContentStageExcelStart(builder)
-def FieldContentStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    FieldContentStageExcelStart(builder)
+
+def FieldContentStageExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return FieldContentStageExcelAddIdField(builder, idField)
-def FieldContentStageExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(1, seasonIdField, 0)
+    FieldContentStageExcelAddIdField(builder, idField)
+
+def FieldContentStageExcelAddSeasonIdField(builder, seasonIdField):
+    builder.PrependInt32Slot(1, seasonIdField, 0)
+
 def AddSeasonIdField(builder, seasonIdField):
-    return FieldContentStageExcelAddSeasonIdField(builder, seasonIdField)
-def FieldContentStageExcelAddAreaIdField(builder, areaIdField): builder.PrependInt32Slot(2, areaIdField, 0)
+    FieldContentStageExcelAddSeasonIdField(builder, seasonIdField)
+
+def FieldContentStageExcelAddAreaIdField(builder, areaIdField):
+    builder.PrependInt32Slot(2, areaIdField, 0)
+
 def AddAreaIdField(builder, areaIdField):
-    return FieldContentStageExcelAddAreaIdField(builder, areaIdField)
-def FieldContentStageExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(3, groupIdField, 0)
+    FieldContentStageExcelAddAreaIdField(builder, areaIdField)
+
+def FieldContentStageExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(3, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return FieldContentStageExcelAddGroupIdField(builder, groupIdField)
-def FieldContentStageExcelAddStageDifficultyField(builder, stageDifficultyField): builder.PrependInt32Slot(4, stageDifficultyField, 0)
+    FieldContentStageExcelAddGroupIdField(builder, groupIdField)
+
+def FieldContentStageExcelAddStageDifficultyField(builder, stageDifficultyField):
+    builder.PrependInt32Slot(4, stageDifficultyField, 0)
+
 def AddStageDifficultyField(builder, stageDifficultyField):
-    return FieldContentStageExcelAddStageDifficultyField(builder, stageDifficultyField)
-def FieldContentStageExcelAddPrevStageIdField(builder, prevStageIdField): builder.PrependInt32Slot(5, prevStageIdField, 0)
+    FieldContentStageExcelAddStageDifficultyField(builder, stageDifficultyField)
+
+def FieldContentStageExcelAddPrevStageIdField(builder, prevStageIdField):
+    builder.PrependInt32Slot(5, prevStageIdField, 0)
+
 def AddPrevStageIdField(builder, prevStageIdField):
-    return FieldContentStageExcelAddPrevStageIdField(builder, prevStageIdField)
-def FieldContentStageExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+    FieldContentStageExcelAddPrevStageIdField(builder, prevStageIdField)
+
+def FieldContentStageExcelAddNameField(builder, nameField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+
 def AddNameField(builder, nameField):
-    return FieldContentStageExcelAddNameField(builder, nameField)
-def FieldContentStageExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(7, battleDurationField, 0)
+    FieldContentStageExcelAddNameField(builder, nameField)
+
+def FieldContentStageExcelAddBattleDurationField(builder, battleDurationField):
+    builder.PrependInt32Slot(7, battleDurationField, 0)
+
 def AddBattleDurationField(builder, battleDurationField):
-    return FieldContentStageExcelAddBattleDurationField(builder, battleDurationField)
-def FieldContentStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField): builder.PrependInt32Slot(8, stageEnterCostTypeField, 0)
+    FieldContentStageExcelAddBattleDurationField(builder, battleDurationField)
+
+def FieldContentStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField):
+    builder.PrependInt32Slot(8, stageEnterCostTypeField, 0)
+
 def AddStageEnterCostTypeField(builder, stageEnterCostTypeField):
-    return FieldContentStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
-def FieldContentStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField): builder.PrependInt32Slot(9, stageEnterCostIdField, 0)
+    FieldContentStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
+
+def FieldContentStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField):
+    builder.PrependInt32Slot(9, stageEnterCostIdField, 0)
+
 def AddStageEnterCostIdField(builder, stageEnterCostIdField):
-    return FieldContentStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
-def FieldContentStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField): builder.PrependInt32Slot(10, stageEnterCostAmountField, 0)
+    FieldContentStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
+
+def FieldContentStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField):
+    builder.PrependInt32Slot(10, stageEnterCostAmountField, 0)
+
 def AddStageEnterCostAmountField(builder, stageEnterCostAmountField):
-    return FieldContentStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
-def FieldContentStageExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(11, stageTopographyField, 0)
+    FieldContentStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
+
+def FieldContentStageExcelAddStageTopographyField(builder, stageTopographyField):
+    builder.PrependInt32Slot(11, stageTopographyField, 0)
+
 def AddStageTopographyField(builder, stageTopographyField):
-    return FieldContentStageExcelAddStageTopographyField(builder, stageTopographyField)
-def FieldContentStageExcelAddRecommandLevelField(builder, recommandLevelField): builder.PrependInt32Slot(12, recommandLevelField, 0)
+    FieldContentStageExcelAddStageTopographyField(builder, stageTopographyField)
+
+def FieldContentStageExcelAddRecommandLevelField(builder, recommandLevelField):
+    builder.PrependInt32Slot(12, recommandLevelField, 0)
+
 def AddRecommandLevelField(builder, recommandLevelField):
-    return FieldContentStageExcelAddRecommandLevelField(builder, recommandLevelField)
-def FieldContentStageExcelAddGroundIDField(builder, groundIDField): builder.PrependInt32Slot(13, groundIDField, 0)
+    FieldContentStageExcelAddRecommandLevelField(builder, recommandLevelField)
+
+def FieldContentStageExcelAddGroundIDField(builder, groundIDField):
+    builder.PrependInt32Slot(13, groundIDField, 0)
+
 def AddGroundIDField(builder, groundIDField):
-    return FieldContentStageExcelAddGroundIDField(builder, groundIDField)
-def FieldContentStageExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(14, bGMIdField, 0)
+    FieldContentStageExcelAddGroundIDField(builder, groundIDField)
+
+def FieldContentStageExcelAddBGMIdField(builder, bGMIdField):
+    builder.PrependInt32Slot(14, bGMIdField, 0)
+
 def AddBGMIdField(builder, bGMIdField):
-    return FieldContentStageExcelAddBGMIdField(builder, bGMIdField)
-def FieldContentStageExcelAddInstantClearField(builder, instantClearField): builder.PrependBoolSlot(15, instantClearField, 0)
+    FieldContentStageExcelAddBGMIdField(builder, bGMIdField)
+
+def FieldContentStageExcelAddInstantClearField(builder, instantClearField):
+    builder.PrependBoolSlot(15, instantClearField, 0)
+
 def AddInstantClearField(builder, instantClearField):
-    return FieldContentStageExcelAddInstantClearField(builder, instantClearField)
-def FieldContentStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField): builder.PrependInt32Slot(16, fixedEchelonIdField, 0)
+    FieldContentStageExcelAddInstantClearField(builder, instantClearField)
+
+def FieldContentStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField):
+    builder.PrependInt32Slot(16, fixedEchelonIdField, 0)
+
 def AddFixedEchelonIdField(builder, fixedEchelonIdField):
-    return FieldContentStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
-def FieldContentStageExcelAddSkipFormationSettingsField(builder, skipFormationSettingsField): builder.PrependBoolSlot(17, skipFormationSettingsField, 0)
+    FieldContentStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
+
+def FieldContentStageExcelAddSkipFormationSettingsField(builder, skipFormationSettingsField):
+    builder.PrependBoolSlot(17, skipFormationSettingsField, 0)
+
 def AddSkipFormationSettingsField(builder, skipFormationSettingsField):
-    return FieldContentStageExcelAddSkipFormationSettingsField(builder, skipFormationSettingsField)
-def FieldContentStageExcelAddDailyLastPlayField(builder, dailyLastPlayField): builder.PrependBoolSlot(18, dailyLastPlayField, 0)
+    FieldContentStageExcelAddSkipFormationSettingsField(builder, skipFormationSettingsField)
+
+def FieldContentStageExcelAddDailyLastPlayField(builder, dailyLastPlayField):
+    builder.PrependBoolSlot(18, dailyLastPlayField, 0)
+
 def AddDailyLastPlayField(builder, dailyLastPlayField):
-    return FieldContentStageExcelAddDailyLastPlayField(builder, dailyLastPlayField)
-def FieldContentStageExcelAddStarGoalField(builder, starGoalField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalField), 0)
+    FieldContentStageExcelAddDailyLastPlayField(builder, dailyLastPlayField)
+
+def FieldContentStageExcelAddStarGoalField(builder, starGoalField):
+    builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalField), 0)
+
 def AddStarGoalField(builder, starGoalField):
-    return FieldContentStageExcelAddStarGoalField(builder, starGoalField)
-def FieldContentStageExcelStartStarGoalFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStarGoalFieldVector(builder, numElems):
+    FieldContentStageExcelAddStarGoalField(builder, starGoalField)
+
+def FieldContentStageExcelStartStarGoalFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStarGoalFieldVector(builder, numElems: int) -> int:
     return FieldContentStageExcelStartStarGoalFieldVector(builder, numElems)
-def FieldContentStageExcelAddStarGoalAmountField(builder, starGoalAmountField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalAmountField), 0)
+
+def FieldContentStageExcelAddStarGoalAmountField(builder, starGoalAmountField):
+    builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(starGoalAmountField), 0)
+
 def AddStarGoalAmountField(builder, starGoalAmountField):
-    return FieldContentStageExcelAddStarGoalAmountField(builder, starGoalAmountField)
-def FieldContentStageExcelStartStarGoalAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStarGoalAmountFieldVector(builder, numElems):
+    FieldContentStageExcelAddStarGoalAmountField(builder, starGoalAmountField)
+
+def FieldContentStageExcelStartStarGoalAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStarGoalAmountFieldVector(builder, numElems: int) -> int:
     return FieldContentStageExcelStartStarGoalAmountFieldVector(builder, numElems)
-def FieldContentStageExcelEnd(builder): return builder.EndObject()
+
+def FieldContentStageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldContentStageExcelEnd(builder)

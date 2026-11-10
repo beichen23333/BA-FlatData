@@ -80,33 +80,62 @@ class MinigameCCGInfoExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGInfoExcelStart(builder): builder.StartObject(8)
+def MinigameCCGInfoExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return MinigameCCGInfoExcelStart(builder)
-def MinigameCCGInfoExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MinigameCCGInfoExcelStart(builder)
+
+def MinigameCCGInfoExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MinigameCCGInfoExcelAddEventContentIdField(builder, eventContentIdField)
-def MinigameCCGInfoExcelAddCCGIdField(builder, cCGIdField): builder.PrependInt32Slot(1, cCGIdField, 0)
+    MinigameCCGInfoExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MinigameCCGInfoExcelAddCCGIdField(builder, cCGIdField):
+    builder.PrependInt32Slot(1, cCGIdField, 0)
+
 def AddCCGIdField(builder, cCGIdField):
-    return MinigameCCGInfoExcelAddCCGIdField(builder, cCGIdField)
-def MinigameCCGInfoExcelAddCostParcelTypeField(builder, costParcelTypeField): builder.PrependInt32Slot(2, costParcelTypeField, 0)
+    MinigameCCGInfoExcelAddCCGIdField(builder, cCGIdField)
+
+def MinigameCCGInfoExcelAddCostParcelTypeField(builder, costParcelTypeField):
+    builder.PrependInt32Slot(2, costParcelTypeField, 0)
+
 def AddCostParcelTypeField(builder, costParcelTypeField):
-    return MinigameCCGInfoExcelAddCostParcelTypeField(builder, costParcelTypeField)
-def MinigameCCGInfoExcelAddCostParcelIdField(builder, costParcelIdField): builder.PrependInt32Slot(3, costParcelIdField, 0)
+    MinigameCCGInfoExcelAddCostParcelTypeField(builder, costParcelTypeField)
+
+def MinigameCCGInfoExcelAddCostParcelIdField(builder, costParcelIdField):
+    builder.PrependInt32Slot(3, costParcelIdField, 0)
+
 def AddCostParcelIdField(builder, costParcelIdField):
-    return MinigameCCGInfoExcelAddCostParcelIdField(builder, costParcelIdField)
-def MinigameCCGInfoExcelAddCostParcelAmountField(builder, costParcelAmountField): builder.PrependInt32Slot(4, costParcelAmountField, 0)
+    MinigameCCGInfoExcelAddCostParcelIdField(builder, costParcelIdField)
+
+def MinigameCCGInfoExcelAddCostParcelAmountField(builder, costParcelAmountField):
+    builder.PrependInt32Slot(4, costParcelAmountField, 0)
+
 def AddCostParcelAmountField(builder, costParcelAmountField):
-    return MinigameCCGInfoExcelAddCostParcelAmountField(builder, costParcelAmountField)
-def MinigameCCGInfoExcelAddCardBackPathField(builder, cardBackPathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(cardBackPathField), 0)
+    MinigameCCGInfoExcelAddCostParcelAmountField(builder, costParcelAmountField)
+
+def MinigameCCGInfoExcelAddCardBackPathField(builder, cardBackPathField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(cardBackPathField), 0)
+
 def AddCardBackPathField(builder, cardBackPathField):
-    return MinigameCCGInfoExcelAddCardBackPathField(builder, cardBackPathField)
-def MinigameCCGInfoExcelAddPerkCostParcelTypeField(builder, perkCostParcelTypeField): builder.PrependInt32Slot(6, perkCostParcelTypeField, 0)
+    MinigameCCGInfoExcelAddCardBackPathField(builder, cardBackPathField)
+
+def MinigameCCGInfoExcelAddPerkCostParcelTypeField(builder, perkCostParcelTypeField):
+    builder.PrependInt32Slot(6, perkCostParcelTypeField, 0)
+
 def AddPerkCostParcelTypeField(builder, perkCostParcelTypeField):
-    return MinigameCCGInfoExcelAddPerkCostParcelTypeField(builder, perkCostParcelTypeField)
-def MinigameCCGInfoExcelAddPerkCostParcelIdField(builder, perkCostParcelIdField): builder.PrependInt32Slot(7, perkCostParcelIdField, 0)
+    MinigameCCGInfoExcelAddPerkCostParcelTypeField(builder, perkCostParcelTypeField)
+
+def MinigameCCGInfoExcelAddPerkCostParcelIdField(builder, perkCostParcelIdField):
+    builder.PrependInt32Slot(7, perkCostParcelIdField, 0)
+
 def AddPerkCostParcelIdField(builder, perkCostParcelIdField):
-    return MinigameCCGInfoExcelAddPerkCostParcelIdField(builder, perkCostParcelIdField)
-def MinigameCCGInfoExcelEnd(builder): return builder.EndObject()
+    MinigameCCGInfoExcelAddPerkCostParcelIdField(builder, perkCostParcelIdField)
+
+def MinigameCCGInfoExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGInfoExcelEnd(builder)

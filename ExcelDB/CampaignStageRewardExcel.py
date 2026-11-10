@@ -73,30 +73,56 @@ class CampaignStageRewardExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def CampaignStageRewardExcelStart(builder): builder.StartObject(7)
+def CampaignStageRewardExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return CampaignStageRewardExcelStart(builder)
-def CampaignStageRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    CampaignStageRewardExcelStart(builder)
+
+def CampaignStageRewardExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return CampaignStageRewardExcelAddGroupIdField(builder, groupIdField)
-def CampaignStageRewardExcelAddRewardTagField(builder, rewardTagField): builder.PrependFloat32Slot(1, rewardTagField, 0.0)
+    CampaignStageRewardExcelAddGroupIdField(builder, groupIdField)
+
+def CampaignStageRewardExcelAddRewardTagField(builder, rewardTagField):
+    builder.PrependFloat32Slot(1, rewardTagField, 0.0)
+
 def AddRewardTagField(builder, rewardTagField):
-    return CampaignStageRewardExcelAddRewardTagField(builder, rewardTagField)
-def CampaignStageRewardExcelAddStageRewardProbField(builder, stageRewardProbField): builder.PrependInt32Slot(2, stageRewardProbField, 0)
+    CampaignStageRewardExcelAddRewardTagField(builder, rewardTagField)
+
+def CampaignStageRewardExcelAddStageRewardProbField(builder, stageRewardProbField):
+    builder.PrependInt32Slot(2, stageRewardProbField, 0)
+
 def AddStageRewardProbField(builder, stageRewardProbField):
-    return CampaignStageRewardExcelAddStageRewardProbField(builder, stageRewardProbField)
-def CampaignStageRewardExcelAddStageRewardParcelTypeField(builder, stageRewardParcelTypeField): builder.PrependInt32Slot(3, stageRewardParcelTypeField, 0)
+    CampaignStageRewardExcelAddStageRewardProbField(builder, stageRewardProbField)
+
+def CampaignStageRewardExcelAddStageRewardParcelTypeField(builder, stageRewardParcelTypeField):
+    builder.PrependInt32Slot(3, stageRewardParcelTypeField, 0)
+
 def AddStageRewardParcelTypeField(builder, stageRewardParcelTypeField):
-    return CampaignStageRewardExcelAddStageRewardParcelTypeField(builder, stageRewardParcelTypeField)
-def CampaignStageRewardExcelAddStageRewardIdField(builder, stageRewardIdField): builder.PrependInt32Slot(4, stageRewardIdField, 0)
+    CampaignStageRewardExcelAddStageRewardParcelTypeField(builder, stageRewardParcelTypeField)
+
+def CampaignStageRewardExcelAddStageRewardIdField(builder, stageRewardIdField):
+    builder.PrependInt32Slot(4, stageRewardIdField, 0)
+
 def AddStageRewardIdField(builder, stageRewardIdField):
-    return CampaignStageRewardExcelAddStageRewardIdField(builder, stageRewardIdField)
-def CampaignStageRewardExcelAddStageRewardAmountField(builder, stageRewardAmountField): builder.PrependInt32Slot(5, stageRewardAmountField, 0)
+    CampaignStageRewardExcelAddStageRewardIdField(builder, stageRewardIdField)
+
+def CampaignStageRewardExcelAddStageRewardAmountField(builder, stageRewardAmountField):
+    builder.PrependInt32Slot(5, stageRewardAmountField, 0)
+
 def AddStageRewardAmountField(builder, stageRewardAmountField):
-    return CampaignStageRewardExcelAddStageRewardAmountField(builder, stageRewardAmountField)
-def CampaignStageRewardExcelAddIsDisplayedField(builder, isDisplayedField): builder.PrependBoolSlot(6, isDisplayedField, 0)
+    CampaignStageRewardExcelAddStageRewardAmountField(builder, stageRewardAmountField)
+
+def CampaignStageRewardExcelAddIsDisplayedField(builder, isDisplayedField):
+    builder.PrependBoolSlot(6, isDisplayedField, 0)
+
 def AddIsDisplayedField(builder, isDisplayedField):
-    return CampaignStageRewardExcelAddIsDisplayedField(builder, isDisplayedField)
-def CampaignStageRewardExcelEnd(builder): return builder.EndObject()
+    CampaignStageRewardExcelAddIsDisplayedField(builder, isDisplayedField)
+
+def CampaignStageRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CampaignStageRewardExcelEnd(builder)

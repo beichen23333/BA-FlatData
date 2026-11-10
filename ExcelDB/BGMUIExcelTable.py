@@ -49,15 +49,26 @@ class BGMUIExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def BGMUIExcelTableStart(builder): builder.StartObject(1)
+def BGMUIExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return BGMUIExcelTableStart(builder)
-def BGMUIExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    BGMUIExcelTableStart(builder)
+
+def BGMUIExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return BGMUIExcelTableAddDataList(builder, dataList)
-def BGMUIExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    BGMUIExcelTableAddDataList(builder, dataList)
+
+def BGMUIExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return BGMUIExcelTableStartDataListVector(builder, numElems)
-def BGMUIExcelTableEnd(builder): return builder.EndObject()
+
+def BGMUIExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BGMUIExcelTableEnd(builder)

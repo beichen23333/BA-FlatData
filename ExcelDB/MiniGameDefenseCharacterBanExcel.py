@@ -38,15 +38,26 @@ class MiniGameDefenseCharacterBanExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MiniGameDefenseCharacterBanExcelStart(builder): builder.StartObject(2)
+def MiniGameDefenseCharacterBanExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return MiniGameDefenseCharacterBanExcelStart(builder)
-def MiniGameDefenseCharacterBanExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MiniGameDefenseCharacterBanExcelStart(builder)
+
+def MiniGameDefenseCharacterBanExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MiniGameDefenseCharacterBanExcelAddEventContentIdField(builder, eventContentIdField)
-def MiniGameDefenseCharacterBanExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+    MiniGameDefenseCharacterBanExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MiniGameDefenseCharacterBanExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(1, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return MiniGameDefenseCharacterBanExcelAddCharacterIdField(builder, characterIdField)
-def MiniGameDefenseCharacterBanExcelEnd(builder): return builder.EndObject()
+    MiniGameDefenseCharacterBanExcelAddCharacterIdField(builder, characterIdField)
+
+def MiniGameDefenseCharacterBanExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameDefenseCharacterBanExcelEnd(builder)

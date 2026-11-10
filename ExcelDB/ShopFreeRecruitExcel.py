@@ -93,33 +93,62 @@ class ShopFreeRecruitExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
-def ShopFreeRecruitExcelStart(builder): builder.StartObject(7)
+def ShopFreeRecruitExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return ShopFreeRecruitExcelStart(builder)
-def ShopFreeRecruitExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ShopFreeRecruitExcelStart(builder)
+
+def ShopFreeRecruitExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ShopFreeRecruitExcelAddIdField(builder, idField)
-def ShopFreeRecruitExcelAddFreeRecruitPeriodFromField(builder, freeRecruitPeriodFromField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(freeRecruitPeriodFromField), 0)
+    ShopFreeRecruitExcelAddIdField(builder, idField)
+
+def ShopFreeRecruitExcelAddFreeRecruitPeriodFromField(builder, freeRecruitPeriodFromField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(freeRecruitPeriodFromField), 0)
+
 def AddFreeRecruitPeriodFromField(builder, freeRecruitPeriodFromField):
-    return ShopFreeRecruitExcelAddFreeRecruitPeriodFromField(builder, freeRecruitPeriodFromField)
-def ShopFreeRecruitExcelAddFreeRecruitPeriodToField(builder, freeRecruitPeriodToField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(freeRecruitPeriodToField), 0)
+    ShopFreeRecruitExcelAddFreeRecruitPeriodFromField(builder, freeRecruitPeriodFromField)
+
+def ShopFreeRecruitExcelAddFreeRecruitPeriodToField(builder, freeRecruitPeriodToField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(freeRecruitPeriodToField), 0)
+
 def AddFreeRecruitPeriodToField(builder, freeRecruitPeriodToField):
-    return ShopFreeRecruitExcelAddFreeRecruitPeriodToField(builder, freeRecruitPeriodToField)
-def ShopFreeRecruitExcelAddFreeRecruitTypeField(builder, freeRecruitTypeField): builder.PrependInt32Slot(3, freeRecruitTypeField, 0)
+    ShopFreeRecruitExcelAddFreeRecruitPeriodToField(builder, freeRecruitPeriodToField)
+
+def ShopFreeRecruitExcelAddFreeRecruitTypeField(builder, freeRecruitTypeField):
+    builder.PrependInt32Slot(3, freeRecruitTypeField, 0)
+
 def AddFreeRecruitTypeField(builder, freeRecruitTypeField):
-    return ShopFreeRecruitExcelAddFreeRecruitTypeField(builder, freeRecruitTypeField)
-def ShopFreeRecruitExcelAddFreeRecruitDecorationImagePathField(builder, freeRecruitDecorationImagePathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(freeRecruitDecorationImagePathField), 0)
+    ShopFreeRecruitExcelAddFreeRecruitTypeField(builder, freeRecruitTypeField)
+
+def ShopFreeRecruitExcelAddFreeRecruitDecorationImagePathField(builder, freeRecruitDecorationImagePathField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(freeRecruitDecorationImagePathField), 0)
+
 def AddFreeRecruitDecorationImagePathField(builder, freeRecruitDecorationImagePathField):
-    return ShopFreeRecruitExcelAddFreeRecruitDecorationImagePathField(builder, freeRecruitDecorationImagePathField)
-def ShopFreeRecruitExcelAddTenRecruitCountOnlyField(builder, tenRecruitCountOnlyField): builder.PrependBoolSlot(5, tenRecruitCountOnlyField, 0)
+    ShopFreeRecruitExcelAddFreeRecruitDecorationImagePathField(builder, freeRecruitDecorationImagePathField)
+
+def ShopFreeRecruitExcelAddTenRecruitCountOnlyField(builder, tenRecruitCountOnlyField):
+    builder.PrependBoolSlot(5, tenRecruitCountOnlyField, 0)
+
 def AddTenRecruitCountOnlyField(builder, tenRecruitCountOnlyField):
-    return ShopFreeRecruitExcelAddTenRecruitCountOnlyField(builder, tenRecruitCountOnlyField)
-def ShopFreeRecruitExcelAddShopRecruitIdField(builder, shopRecruitIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(shopRecruitIdField), 0)
+    ShopFreeRecruitExcelAddTenRecruitCountOnlyField(builder, tenRecruitCountOnlyField)
+
+def ShopFreeRecruitExcelAddShopRecruitIdField(builder, shopRecruitIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(shopRecruitIdField), 0)
+
 def AddShopRecruitIdField(builder, shopRecruitIdField):
-    return ShopFreeRecruitExcelAddShopRecruitIdField(builder, shopRecruitIdField)
-def ShopFreeRecruitExcelStartShopRecruitIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShopRecruitIdFieldVector(builder, numElems):
+    ShopFreeRecruitExcelAddShopRecruitIdField(builder, shopRecruitIdField)
+
+def ShopFreeRecruitExcelStartShopRecruitIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartShopRecruitIdFieldVector(builder, numElems: int) -> int:
     return ShopFreeRecruitExcelStartShopRecruitIdFieldVector(builder, numElems)
-def ShopFreeRecruitExcelEnd(builder): return builder.EndObject()
+
+def ShopFreeRecruitExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ShopFreeRecruitExcelEnd(builder)

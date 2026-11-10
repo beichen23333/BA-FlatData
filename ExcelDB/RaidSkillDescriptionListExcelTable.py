@@ -49,15 +49,26 @@ class RaidSkillDescriptionListExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def RaidSkillDescriptionListExcelTableStart(builder): builder.StartObject(1)
+def RaidSkillDescriptionListExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return RaidSkillDescriptionListExcelTableStart(builder)
-def RaidSkillDescriptionListExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    RaidSkillDescriptionListExcelTableStart(builder)
+
+def RaidSkillDescriptionListExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return RaidSkillDescriptionListExcelTableAddDataList(builder, dataList)
-def RaidSkillDescriptionListExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    RaidSkillDescriptionListExcelTableAddDataList(builder, dataList)
+
+def RaidSkillDescriptionListExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return RaidSkillDescriptionListExcelTableStartDataListVector(builder, numElems)
-def RaidSkillDescriptionListExcelTableEnd(builder): return builder.EndObject()
+
+def RaidSkillDescriptionListExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return RaidSkillDescriptionListExcelTableEnd(builder)

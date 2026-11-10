@@ -49,15 +49,26 @@ class InteractiveWorldRaidCarrierRecipeExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def InteractiveWorldRaidCarrierRecipeExcelTableStart(builder): builder.StartObject(1)
+def InteractiveWorldRaidCarrierRecipeExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return InteractiveWorldRaidCarrierRecipeExcelTableStart(builder)
-def InteractiveWorldRaidCarrierRecipeExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    InteractiveWorldRaidCarrierRecipeExcelTableStart(builder)
+
+def InteractiveWorldRaidCarrierRecipeExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return InteractiveWorldRaidCarrierRecipeExcelTableAddDataList(builder, dataList)
-def InteractiveWorldRaidCarrierRecipeExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    InteractiveWorldRaidCarrierRecipeExcelTableAddDataList(builder, dataList)
+
+def InteractiveWorldRaidCarrierRecipeExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierRecipeExcelTableStartDataListVector(builder, numElems)
-def InteractiveWorldRaidCarrierRecipeExcelTableEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidCarrierRecipeExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidCarrierRecipeExcelTableEnd(builder)

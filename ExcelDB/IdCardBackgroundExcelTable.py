@@ -49,15 +49,26 @@ class IdCardBackgroundExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def IdCardBackgroundExcelTableStart(builder): builder.StartObject(1)
+def IdCardBackgroundExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return IdCardBackgroundExcelTableStart(builder)
-def IdCardBackgroundExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    IdCardBackgroundExcelTableStart(builder)
+
+def IdCardBackgroundExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return IdCardBackgroundExcelTableAddDataList(builder, dataList)
-def IdCardBackgroundExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    IdCardBackgroundExcelTableAddDataList(builder, dataList)
+
+def IdCardBackgroundExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return IdCardBackgroundExcelTableStartDataListVector(builder, numElems)
-def IdCardBackgroundExcelTableEnd(builder): return builder.EndObject()
+
+def IdCardBackgroundExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return IdCardBackgroundExcelTableEnd(builder)

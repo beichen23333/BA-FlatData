@@ -31,12 +31,20 @@ class PropMotion(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def PropMotionStart(builder): builder.StartObject(1)
+def PropMotionStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return PropMotionStart(builder)
-def PropMotionAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+    PropMotionStart(builder)
+
+def PropMotionAddNameField(builder, nameField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+
 def AddNameField(builder, nameField):
-    return PropMotionAddNameField(builder, nameField)
-def PropMotionEnd(builder): return builder.EndObject()
+    PropMotionAddNameField(builder, nameField)
+
+def PropMotionEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PropMotionEnd(builder)

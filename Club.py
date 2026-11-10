@@ -57,3 +57,5 @@ class Club:
     NicomediasTroop = 55
     PublishingDepartment = 56
     FoxSquad = 57
+    DivingClub = 58
+    Class183 = 59

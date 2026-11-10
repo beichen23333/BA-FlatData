@@ -162,57 +162,110 @@ class StickerPageContentExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def StickerPageContentExcelStart(builder): builder.StartObject(14)
+def StickerPageContentExcelStart(builder):
+    builder.StartObject(14)
+
 def Start(builder):
-    return StickerPageContentExcelStart(builder)
-def StickerPageContentExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    StickerPageContentExcelStart(builder)
+
+def StickerPageContentExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return StickerPageContentExcelAddIdField(builder, idField)
-def StickerPageContentExcelAddStickerGroupIdField(builder, stickerGroupIdField): builder.PrependInt32Slot(1, stickerGroupIdField, 0)
+    StickerPageContentExcelAddIdField(builder, idField)
+
+def StickerPageContentExcelAddStickerGroupIdField(builder, stickerGroupIdField):
+    builder.PrependInt32Slot(1, stickerGroupIdField, 0)
+
 def AddStickerGroupIdField(builder, stickerGroupIdField):
-    return StickerPageContentExcelAddStickerGroupIdField(builder, stickerGroupIdField)
-def StickerPageContentExcelAddStickerPageIdField(builder, stickerPageIdField): builder.PrependInt32Slot(2, stickerPageIdField, 0)
+    StickerPageContentExcelAddStickerGroupIdField(builder, stickerGroupIdField)
+
+def StickerPageContentExcelAddStickerPageIdField(builder, stickerPageIdField):
+    builder.PrependInt32Slot(2, stickerPageIdField, 0)
+
 def AddStickerPageIdField(builder, stickerPageIdField):
-    return StickerPageContentExcelAddStickerPageIdField(builder, stickerPageIdField)
-def StickerPageContentExcelAddStickerSlotField(builder, stickerSlotField): builder.PrependInt32Slot(3, stickerSlotField, 0)
+    StickerPageContentExcelAddStickerPageIdField(builder, stickerPageIdField)
+
+def StickerPageContentExcelAddStickerSlotField(builder, stickerSlotField):
+    builder.PrependInt32Slot(3, stickerSlotField, 0)
+
 def AddStickerSlotField(builder, stickerSlotField):
-    return StickerPageContentExcelAddStickerSlotField(builder, stickerSlotField)
-def StickerPageContentExcelAddStickerGetConditionTypeField(builder, stickerGetConditionTypeField): builder.PrependInt32Slot(4, stickerGetConditionTypeField, 0)
+    StickerPageContentExcelAddStickerSlotField(builder, stickerSlotField)
+
+def StickerPageContentExcelAddStickerGetConditionTypeField(builder, stickerGetConditionTypeField):
+    builder.PrependInt32Slot(4, stickerGetConditionTypeField, 0)
+
 def AddStickerGetConditionTypeField(builder, stickerGetConditionTypeField):
-    return StickerPageContentExcelAddStickerGetConditionTypeField(builder, stickerGetConditionTypeField)
-def StickerPageContentExcelAddStickerCheckPassTypeField(builder, stickerCheckPassTypeField): builder.PrependInt32Slot(5, stickerCheckPassTypeField, 0)
+    StickerPageContentExcelAddStickerGetConditionTypeField(builder, stickerGetConditionTypeField)
+
+def StickerPageContentExcelAddStickerCheckPassTypeField(builder, stickerCheckPassTypeField):
+    builder.PrependInt32Slot(5, stickerCheckPassTypeField, 0)
+
 def AddStickerCheckPassTypeField(builder, stickerCheckPassTypeField):
-    return StickerPageContentExcelAddStickerCheckPassTypeField(builder, stickerCheckPassTypeField)
-def StickerPageContentExcelAddGetStickerConditionTypeField(builder, getStickerConditionTypeField): builder.PrependInt32Slot(6, getStickerConditionTypeField, 0)
+    StickerPageContentExcelAddStickerCheckPassTypeField(builder, stickerCheckPassTypeField)
+
+def StickerPageContentExcelAddGetStickerConditionTypeField(builder, getStickerConditionTypeField):
+    builder.PrependInt32Slot(6, getStickerConditionTypeField, 0)
+
 def AddGetStickerConditionTypeField(builder, getStickerConditionTypeField):
-    return StickerPageContentExcelAddGetStickerConditionTypeField(builder, getStickerConditionTypeField)
-def StickerPageContentExcelAddStickerGetConditionCountField(builder, stickerGetConditionCountField): builder.PrependInt32Slot(7, stickerGetConditionCountField, 0)
+    StickerPageContentExcelAddGetStickerConditionTypeField(builder, getStickerConditionTypeField)
+
+def StickerPageContentExcelAddStickerGetConditionCountField(builder, stickerGetConditionCountField):
+    builder.PrependInt32Slot(7, stickerGetConditionCountField, 0)
+
 def AddStickerGetConditionCountField(builder, stickerGetConditionCountField):
-    return StickerPageContentExcelAddStickerGetConditionCountField(builder, stickerGetConditionCountField)
-def StickerPageContentExcelAddStickerGetConditionParameterField(builder, stickerGetConditionParameterField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(stickerGetConditionParameterField), 0)
+    StickerPageContentExcelAddStickerGetConditionCountField(builder, stickerGetConditionCountField)
+
+def StickerPageContentExcelAddStickerGetConditionParameterField(builder, stickerGetConditionParameterField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(stickerGetConditionParameterField), 0)
+
 def AddStickerGetConditionParameterField(builder, stickerGetConditionParameterField):
-    return StickerPageContentExcelAddStickerGetConditionParameterField(builder, stickerGetConditionParameterField)
-def StickerPageContentExcelStartStickerGetConditionParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStickerGetConditionParameterFieldVector(builder, numElems):
+    StickerPageContentExcelAddStickerGetConditionParameterField(builder, stickerGetConditionParameterField)
+
+def StickerPageContentExcelStartStickerGetConditionParameterFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStickerGetConditionParameterFieldVector(builder, numElems: int) -> int:
     return StickerPageContentExcelStartStickerGetConditionParameterFieldVector(builder, numElems)
-def StickerPageContentExcelAddStickerGetConditionParameterTagField(builder, stickerGetConditionParameterTagField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(stickerGetConditionParameterTagField), 0)
+
+def StickerPageContentExcelAddStickerGetConditionParameterTagField(builder, stickerGetConditionParameterTagField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(stickerGetConditionParameterTagField), 0)
+
 def AddStickerGetConditionParameterTagField(builder, stickerGetConditionParameterTagField):
-    return StickerPageContentExcelAddStickerGetConditionParameterTagField(builder, stickerGetConditionParameterTagField)
-def StickerPageContentExcelStartStickerGetConditionParameterTagFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStickerGetConditionParameterTagFieldVector(builder, numElems):
+    StickerPageContentExcelAddStickerGetConditionParameterTagField(builder, stickerGetConditionParameterTagField)
+
+def StickerPageContentExcelStartStickerGetConditionParameterTagFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStickerGetConditionParameterTagFieldVector(builder, numElems: int) -> int:
     return StickerPageContentExcelStartStickerGetConditionParameterTagFieldVector(builder, numElems)
-def StickerPageContentExcelAddPackedStickerIconLocalizeEtcIdField(builder, packedStickerIconLocalizeEtcIdField): builder.PrependUint32Slot(10, packedStickerIconLocalizeEtcIdField, 0)
+
+def StickerPageContentExcelAddPackedStickerIconLocalizeEtcIdField(builder, packedStickerIconLocalizeEtcIdField):
+    builder.PrependUint32Slot(10, packedStickerIconLocalizeEtcIdField, 0)
+
 def AddPackedStickerIconLocalizeEtcIdField(builder, packedStickerIconLocalizeEtcIdField):
-    return StickerPageContentExcelAddPackedStickerIconLocalizeEtcIdField(builder, packedStickerIconLocalizeEtcIdField)
-def StickerPageContentExcelAddPackedStickerIconPathField(builder, packedStickerIconPathField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(packedStickerIconPathField), 0)
+    StickerPageContentExcelAddPackedStickerIconLocalizeEtcIdField(builder, packedStickerIconLocalizeEtcIdField)
+
+def StickerPageContentExcelAddPackedStickerIconPathField(builder, packedStickerIconPathField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(packedStickerIconPathField), 0)
+
 def AddPackedStickerIconPathField(builder, packedStickerIconPathField):
-    return StickerPageContentExcelAddPackedStickerIconPathField(builder, packedStickerIconPathField)
-def StickerPageContentExcelAddIconPathField(builder, iconPathField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+    StickerPageContentExcelAddPackedStickerIconPathField(builder, packedStickerIconPathField)
+
+def StickerPageContentExcelAddIconPathField(builder, iconPathField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+
 def AddIconPathField(builder, iconPathField):
-    return StickerPageContentExcelAddIconPathField(builder, iconPathField)
-def StickerPageContentExcelAddStickerDetailPathField(builder, stickerDetailPathField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(stickerDetailPathField), 0)
+    StickerPageContentExcelAddIconPathField(builder, iconPathField)
+
+def StickerPageContentExcelAddStickerDetailPathField(builder, stickerDetailPathField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(stickerDetailPathField), 0)
+
 def AddStickerDetailPathField(builder, stickerDetailPathField):
-    return StickerPageContentExcelAddStickerDetailPathField(builder, stickerDetailPathField)
-def StickerPageContentExcelEnd(builder): return builder.EndObject()
+    StickerPageContentExcelAddStickerDetailPathField(builder, stickerDetailPathField)
+
+def StickerPageContentExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return StickerPageContentExcelEnd(builder)

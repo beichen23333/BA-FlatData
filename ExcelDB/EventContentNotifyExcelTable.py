@@ -49,15 +49,26 @@ class EventContentNotifyExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def EventContentNotifyExcelTableStart(builder): builder.StartObject(1)
+def EventContentNotifyExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return EventContentNotifyExcelTableStart(builder)
-def EventContentNotifyExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    EventContentNotifyExcelTableStart(builder)
+
+def EventContentNotifyExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return EventContentNotifyExcelTableAddDataList(builder, dataList)
-def EventContentNotifyExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    EventContentNotifyExcelTableAddDataList(builder, dataList)
+
+def EventContentNotifyExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return EventContentNotifyExcelTableStartDataListVector(builder, numElems)
-def EventContentNotifyExcelTableEnd(builder): return builder.EndObject()
+
+def EventContentNotifyExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentNotifyExcelTableEnd(builder)

@@ -49,15 +49,26 @@ class WelcomeCampaignEnterRewardExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def WelcomeCampaignEnterRewardExcelTableStart(builder): builder.StartObject(1)
+def WelcomeCampaignEnterRewardExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return WelcomeCampaignEnterRewardExcelTableStart(builder)
-def WelcomeCampaignEnterRewardExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    WelcomeCampaignEnterRewardExcelTableStart(builder)
+
+def WelcomeCampaignEnterRewardExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return WelcomeCampaignEnterRewardExcelTableAddDataList(builder, dataList)
-def WelcomeCampaignEnterRewardExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    WelcomeCampaignEnterRewardExcelTableAddDataList(builder, dataList)
+
+def WelcomeCampaignEnterRewardExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return WelcomeCampaignEnterRewardExcelTableStartDataListVector(builder, numElems)
-def WelcomeCampaignEnterRewardExcelTableEnd(builder): return builder.EndObject()
+
+def WelcomeCampaignEnterRewardExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WelcomeCampaignEnterRewardExcelTableEnd(builder)

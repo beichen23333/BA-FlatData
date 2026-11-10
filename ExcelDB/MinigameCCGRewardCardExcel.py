@@ -59,24 +59,44 @@ class MinigameCCGRewardCardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGRewardCardExcelStart(builder): builder.StartObject(5)
+def MinigameCCGRewardCardExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return MinigameCCGRewardCardExcelStart(builder)
-def MinigameCCGRewardCardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    MinigameCCGRewardCardExcelStart(builder)
+
+def MinigameCCGRewardCardExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return MinigameCCGRewardCardExcelAddIdField(builder, idField)
-def MinigameCCGRewardCardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(1, groupIdField, 0)
+    MinigameCCGRewardCardExcelAddIdField(builder, idField)
+
+def MinigameCCGRewardCardExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(1, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return MinigameCCGRewardCardExcelAddGroupIdField(builder, groupIdField)
-def MinigameCCGRewardCardExcelAddEntityTypeField(builder, entityTypeField): builder.PrependInt32Slot(2, entityTypeField, 0)
+    MinigameCCGRewardCardExcelAddGroupIdField(builder, groupIdField)
+
+def MinigameCCGRewardCardExcelAddEntityTypeField(builder, entityTypeField):
+    builder.PrependInt32Slot(2, entityTypeField, 0)
+
 def AddEntityTypeField(builder, entityTypeField):
-    return MinigameCCGRewardCardExcelAddEntityTypeField(builder, entityTypeField)
-def MinigameCCGRewardCardExcelAddCardIdField(builder, cardIdField): builder.PrependInt32Slot(3, cardIdField, 0)
+    MinigameCCGRewardCardExcelAddEntityTypeField(builder, entityTypeField)
+
+def MinigameCCGRewardCardExcelAddCardIdField(builder, cardIdField):
+    builder.PrependInt32Slot(3, cardIdField, 0)
+
 def AddCardIdField(builder, cardIdField):
-    return MinigameCCGRewardCardExcelAddCardIdField(builder, cardIdField)
-def MinigameCCGRewardCardExcelAddCardRarityField(builder, cardRarityField): builder.PrependInt32Slot(4, cardRarityField, 0)
+    MinigameCCGRewardCardExcelAddCardIdField(builder, cardIdField)
+
+def MinigameCCGRewardCardExcelAddCardRarityField(builder, cardRarityField):
+    builder.PrependInt32Slot(4, cardRarityField, 0)
+
 def AddCardRarityField(builder, cardRarityField):
-    return MinigameCCGRewardCardExcelAddCardRarityField(builder, cardRarityField)
-def MinigameCCGRewardCardExcelEnd(builder): return builder.EndObject()
+    MinigameCCGRewardCardExcelAddCardRarityField(builder, cardRarityField)
+
+def MinigameCCGRewardCardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGRewardCardExcelEnd(builder)

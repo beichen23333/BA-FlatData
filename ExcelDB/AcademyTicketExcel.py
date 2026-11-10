@@ -38,15 +38,26 @@ class AcademyTicketExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def AcademyTicketExcelStart(builder): builder.StartObject(2)
+def AcademyTicketExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return AcademyTicketExcelStart(builder)
-def AcademyTicketExcelAddLocationRankSumField(builder, locationRankSumField): builder.PrependInt32Slot(0, locationRankSumField, 0)
+    AcademyTicketExcelStart(builder)
+
+def AcademyTicketExcelAddLocationRankSumField(builder, locationRankSumField):
+    builder.PrependInt32Slot(0, locationRankSumField, 0)
+
 def AddLocationRankSumField(builder, locationRankSumField):
-    return AcademyTicketExcelAddLocationRankSumField(builder, locationRankSumField)
-def AcademyTicketExcelAddScheduleTicktetMaxField(builder, scheduleTicktetMaxField): builder.PrependInt32Slot(1, scheduleTicktetMaxField, 0)
+    AcademyTicketExcelAddLocationRankSumField(builder, locationRankSumField)
+
+def AcademyTicketExcelAddScheduleTicktetMaxField(builder, scheduleTicktetMaxField):
+    builder.PrependInt32Slot(1, scheduleTicktetMaxField, 0)
+
 def AddScheduleTicktetMaxField(builder, scheduleTicktetMaxField):
-    return AcademyTicketExcelAddScheduleTicktetMaxField(builder, scheduleTicktetMaxField)
-def AcademyTicketExcelEnd(builder): return builder.EndObject()
+    AcademyTicketExcelAddScheduleTicktetMaxField(builder, scheduleTicktetMaxField)
+
+def AcademyTicketExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AcademyTicketExcelEnd(builder)

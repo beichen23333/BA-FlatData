@@ -49,15 +49,26 @@ class EquipmentChangePieceExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def EquipmentChangePieceExcelTableStart(builder): builder.StartObject(1)
+def EquipmentChangePieceExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return EquipmentChangePieceExcelTableStart(builder)
-def EquipmentChangePieceExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    EquipmentChangePieceExcelTableStart(builder)
+
+def EquipmentChangePieceExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return EquipmentChangePieceExcelTableAddDataList(builder, dataList)
-def EquipmentChangePieceExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    EquipmentChangePieceExcelTableAddDataList(builder, dataList)
+
+def EquipmentChangePieceExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return EquipmentChangePieceExcelTableStartDataListVector(builder, numElems)
-def EquipmentChangePieceExcelTableEnd(builder): return builder.EndObject()
+
+def EquipmentChangePieceExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EquipmentChangePieceExcelTableEnd(builder)

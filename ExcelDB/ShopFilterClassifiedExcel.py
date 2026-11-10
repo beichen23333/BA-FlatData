@@ -56,8 +56,8 @@ class ShopFilterClassifiedExcel(object):
     def ShopFilterTypeField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
-        return 0
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0.0
 
     # ShopFilterClassifiedExcel
     def GoodsIdField(self):
@@ -66,27 +66,50 @@ class ShopFilterClassifiedExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ShopFilterClassifiedExcelStart(builder): builder.StartObject(6)
+def ShopFilterClassifiedExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return ShopFilterClassifiedExcelStart(builder)
-def ShopFilterClassifiedExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ShopFilterClassifiedExcelStart(builder)
+
+def ShopFilterClassifiedExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ShopFilterClassifiedExcelAddIdField(builder, idField)
-def ShopFilterClassifiedExcelAddCategoryTypeField(builder, categoryTypeField): builder.PrependFloat32Slot(1, categoryTypeField, 0.0)
+    ShopFilterClassifiedExcelAddIdField(builder, idField)
+
+def ShopFilterClassifiedExcelAddCategoryTypeField(builder, categoryTypeField):
+    builder.PrependFloat32Slot(1, categoryTypeField, 0.0)
+
 def AddCategoryTypeField(builder, categoryTypeField):
-    return ShopFilterClassifiedExcelAddCategoryTypeField(builder, categoryTypeField)
-def ShopFilterClassifiedExcelAddConsumeParcelTypeField(builder, consumeParcelTypeField): builder.PrependInt32Slot(2, consumeParcelTypeField, 0)
+    ShopFilterClassifiedExcelAddCategoryTypeField(builder, categoryTypeField)
+
+def ShopFilterClassifiedExcelAddConsumeParcelTypeField(builder, consumeParcelTypeField):
+    builder.PrependInt32Slot(2, consumeParcelTypeField, 0)
+
 def AddConsumeParcelTypeField(builder, consumeParcelTypeField):
-    return ShopFilterClassifiedExcelAddConsumeParcelTypeField(builder, consumeParcelTypeField)
-def ShopFilterClassifiedExcelAddConsumeParcelIdField(builder, consumeParcelIdField): builder.PrependInt32Slot(3, consumeParcelIdField, 0)
+    ShopFilterClassifiedExcelAddConsumeParcelTypeField(builder, consumeParcelTypeField)
+
+def ShopFilterClassifiedExcelAddConsumeParcelIdField(builder, consumeParcelIdField):
+    builder.PrependInt32Slot(3, consumeParcelIdField, 0)
+
 def AddConsumeParcelIdField(builder, consumeParcelIdField):
-    return ShopFilterClassifiedExcelAddConsumeParcelIdField(builder, consumeParcelIdField)
-def ShopFilterClassifiedExcelAddShopFilterTypeField(builder, shopFilterTypeField): builder.PrependInt32Slot(4, shopFilterTypeField, 0)
+    ShopFilterClassifiedExcelAddConsumeParcelIdField(builder, consumeParcelIdField)
+
+def ShopFilterClassifiedExcelAddShopFilterTypeField(builder, shopFilterTypeField):
+    builder.PrependFloat32Slot(4, shopFilterTypeField, 0.0)
+
 def AddShopFilterTypeField(builder, shopFilterTypeField):
-    return ShopFilterClassifiedExcelAddShopFilterTypeField(builder, shopFilterTypeField)
-def ShopFilterClassifiedExcelAddGoodsIdField(builder, goodsIdField): builder.PrependInt32Slot(5, goodsIdField, 0)
+    ShopFilterClassifiedExcelAddShopFilterTypeField(builder, shopFilterTypeField)
+
+def ShopFilterClassifiedExcelAddGoodsIdField(builder, goodsIdField):
+    builder.PrependInt32Slot(5, goodsIdField, 0)
+
 def AddGoodsIdField(builder, goodsIdField):
-    return ShopFilterClassifiedExcelAddGoodsIdField(builder, goodsIdField)
-def ShopFilterClassifiedExcelEnd(builder): return builder.EndObject()
+    ShopFilterClassifiedExcelAddGoodsIdField(builder, goodsIdField)
+
+def ShopFilterClassifiedExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ShopFilterClassifiedExcelEnd(builder)

@@ -52,21 +52,38 @@ class ArenaLevelSectionExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ArenaLevelSectionExcelStart(builder): builder.StartObject(4)
+def ArenaLevelSectionExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return ArenaLevelSectionExcelStart(builder)
-def ArenaLevelSectionExcelAddArenaSeasonIdField(builder, arenaSeasonIdField): builder.PrependInt32Slot(0, arenaSeasonIdField, 0)
+    ArenaLevelSectionExcelStart(builder)
+
+def ArenaLevelSectionExcelAddArenaSeasonIdField(builder, arenaSeasonIdField):
+    builder.PrependInt32Slot(0, arenaSeasonIdField, 0)
+
 def AddArenaSeasonIdField(builder, arenaSeasonIdField):
-    return ArenaLevelSectionExcelAddArenaSeasonIdField(builder, arenaSeasonIdField)
-def ArenaLevelSectionExcelAddStartLevelField(builder, startLevelField): builder.PrependInt32Slot(1, startLevelField, 0)
+    ArenaLevelSectionExcelAddArenaSeasonIdField(builder, arenaSeasonIdField)
+
+def ArenaLevelSectionExcelAddStartLevelField(builder, startLevelField):
+    builder.PrependInt32Slot(1, startLevelField, 0)
+
 def AddStartLevelField(builder, startLevelField):
-    return ArenaLevelSectionExcelAddStartLevelField(builder, startLevelField)
-def ArenaLevelSectionExcelAddLastLevelField(builder, lastLevelField): builder.PrependInt32Slot(2, lastLevelField, 0)
+    ArenaLevelSectionExcelAddStartLevelField(builder, startLevelField)
+
+def ArenaLevelSectionExcelAddLastLevelField(builder, lastLevelField):
+    builder.PrependInt32Slot(2, lastLevelField, 0)
+
 def AddLastLevelField(builder, lastLevelField):
-    return ArenaLevelSectionExcelAddLastLevelField(builder, lastLevelField)
-def ArenaLevelSectionExcelAddUserCountField(builder, userCountField): builder.PrependInt32Slot(3, userCountField, 0)
+    ArenaLevelSectionExcelAddLastLevelField(builder, lastLevelField)
+
+def ArenaLevelSectionExcelAddUserCountField(builder, userCountField):
+    builder.PrependInt32Slot(3, userCountField, 0)
+
 def AddUserCountField(builder, userCountField):
-    return ArenaLevelSectionExcelAddUserCountField(builder, userCountField)
-def ArenaLevelSectionExcelEnd(builder): return builder.EndObject()
+    ArenaLevelSectionExcelAddUserCountField(builder, userCountField)
+
+def ArenaLevelSectionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ArenaLevelSectionExcelEnd(builder)

@@ -80,33 +80,62 @@ class ScenarioModeSpoilerPopupExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ScenarioModeSpoilerPopupExcelStart(builder): builder.StartObject(8)
+def ScenarioModeSpoilerPopupExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return ScenarioModeSpoilerPopupExcelStart(builder)
-def ScenarioModeSpoilerPopupExcelAddModeTypeField(builder, modeTypeField): builder.PrependInt32Slot(0, modeTypeField, 0)
+    ScenarioModeSpoilerPopupExcelStart(builder)
+
+def ScenarioModeSpoilerPopupExcelAddModeTypeField(builder, modeTypeField):
+    builder.PrependInt32Slot(0, modeTypeField, 0)
+
 def AddModeTypeField(builder, modeTypeField):
-    return ScenarioModeSpoilerPopupExcelAddModeTypeField(builder, modeTypeField)
-def ScenarioModeSpoilerPopupExcelAddSubTypeField(builder, subTypeField): builder.PrependInt32Slot(1, subTypeField, 0)
+    ScenarioModeSpoilerPopupExcelAddModeTypeField(builder, modeTypeField)
+
+def ScenarioModeSpoilerPopupExcelAddSubTypeField(builder, subTypeField):
+    builder.PrependInt32Slot(1, subTypeField, 0)
+
 def AddSubTypeField(builder, subTypeField):
-    return ScenarioModeSpoilerPopupExcelAddSubTypeField(builder, subTypeField)
-def ScenarioModeSpoilerPopupExcelAddVolumeIdField(builder, volumeIdField): builder.PrependInt32Slot(2, volumeIdField, 0)
+    ScenarioModeSpoilerPopupExcelAddSubTypeField(builder, subTypeField)
+
+def ScenarioModeSpoilerPopupExcelAddVolumeIdField(builder, volumeIdField):
+    builder.PrependInt32Slot(2, volumeIdField, 0)
+
 def AddVolumeIdField(builder, volumeIdField):
-    return ScenarioModeSpoilerPopupExcelAddVolumeIdField(builder, volumeIdField)
-def ScenarioModeSpoilerPopupExcelAddChapterIdField(builder, chapterIdField): builder.PrependInt32Slot(3, chapterIdField, 0)
+    ScenarioModeSpoilerPopupExcelAddVolumeIdField(builder, volumeIdField)
+
+def ScenarioModeSpoilerPopupExcelAddChapterIdField(builder, chapterIdField):
+    builder.PrependInt32Slot(3, chapterIdField, 0)
+
 def AddChapterIdField(builder, chapterIdField):
-    return ScenarioModeSpoilerPopupExcelAddChapterIdField(builder, chapterIdField)
-def ScenarioModeSpoilerPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField): builder.PrependUint32Slot(4, spoilerPopupTitleField, 0)
+    ScenarioModeSpoilerPopupExcelAddChapterIdField(builder, chapterIdField)
+
+def ScenarioModeSpoilerPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField):
+    builder.PrependUint32Slot(4, spoilerPopupTitleField, 0)
+
 def AddSpoilerPopupTitleField(builder, spoilerPopupTitleField):
-    return ScenarioModeSpoilerPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField)
-def ScenarioModeSpoilerPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField): builder.PrependUint32Slot(5, spoilerPopupDescriptionField, 0)
+    ScenarioModeSpoilerPopupExcelAddSpoilerPopupTitleField(builder, spoilerPopupTitleField)
+
+def ScenarioModeSpoilerPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField):
+    builder.PrependUint32Slot(5, spoilerPopupDescriptionField, 0)
+
 def AddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField):
-    return ScenarioModeSpoilerPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField)
-def ScenarioModeSpoilerPopupExcelAddPopupTypeField(builder, popupTypeField): builder.PrependInt32Slot(6, popupTypeField, 0)
+    ScenarioModeSpoilerPopupExcelAddSpoilerPopupDescriptionField(builder, spoilerPopupDescriptionField)
+
+def ScenarioModeSpoilerPopupExcelAddPopupTypeField(builder, popupTypeField):
+    builder.PrependInt32Slot(6, popupTypeField, 0)
+
 def AddPopupTypeField(builder, popupTypeField):
-    return ScenarioModeSpoilerPopupExcelAddPopupTypeField(builder, popupTypeField)
-def ScenarioModeSpoilerPopupExcelAddConditionScenarioModeIdField(builder, conditionScenarioModeIdField): builder.PrependInt32Slot(7, conditionScenarioModeIdField, 0)
+    ScenarioModeSpoilerPopupExcelAddPopupTypeField(builder, popupTypeField)
+
+def ScenarioModeSpoilerPopupExcelAddConditionScenarioModeIdField(builder, conditionScenarioModeIdField):
+    builder.PrependInt32Slot(7, conditionScenarioModeIdField, 0)
+
 def AddConditionScenarioModeIdField(builder, conditionScenarioModeIdField):
-    return ScenarioModeSpoilerPopupExcelAddConditionScenarioModeIdField(builder, conditionScenarioModeIdField)
-def ScenarioModeSpoilerPopupExcelEnd(builder): return builder.EndObject()
+    ScenarioModeSpoilerPopupExcelAddConditionScenarioModeIdField(builder, conditionScenarioModeIdField)
+
+def ScenarioModeSpoilerPopupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioModeSpoilerPopupExcelEnd(builder)

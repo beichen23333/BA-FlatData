@@ -45,18 +45,32 @@ class CharacterLevelExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def CharacterLevelExcelStart(builder): builder.StartObject(3)
+def CharacterLevelExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return CharacterLevelExcelStart(builder)
-def CharacterLevelExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(0, levelField, 0)
+    CharacterLevelExcelStart(builder)
+
+def CharacterLevelExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(0, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return CharacterLevelExcelAddLevelField(builder, levelField)
-def CharacterLevelExcelAddExpField(builder, expField): builder.PrependInt32Slot(1, expField, 0)
+    CharacterLevelExcelAddLevelField(builder, levelField)
+
+def CharacterLevelExcelAddExpField(builder, expField):
+    builder.PrependInt32Slot(1, expField, 0)
+
 def AddExpField(builder, expField):
-    return CharacterLevelExcelAddExpField(builder, expField)
-def CharacterLevelExcelAddTotalExpField(builder, totalExpField): builder.PrependInt32Slot(2, totalExpField, 0)
+    CharacterLevelExcelAddExpField(builder, expField)
+
+def CharacterLevelExcelAddTotalExpField(builder, totalExpField):
+    builder.PrependInt32Slot(2, totalExpField, 0)
+
 def AddTotalExpField(builder, totalExpField):
-    return CharacterLevelExcelAddTotalExpField(builder, totalExpField)
-def CharacterLevelExcelEnd(builder): return builder.EndObject()
+    CharacterLevelExcelAddTotalExpField(builder, totalExpField)
+
+def CharacterLevelExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterLevelExcelEnd(builder)

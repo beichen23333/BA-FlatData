@@ -49,15 +49,26 @@ class FieldSNSPostExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def FieldSNSPostExcelTableStart(builder): builder.StartObject(1)
+def FieldSNSPostExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return FieldSNSPostExcelTableStart(builder)
-def FieldSNSPostExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    FieldSNSPostExcelTableStart(builder)
+
+def FieldSNSPostExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return FieldSNSPostExcelTableAddDataList(builder, dataList)
-def FieldSNSPostExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    FieldSNSPostExcelTableAddDataList(builder, dataList)
+
+def FieldSNSPostExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return FieldSNSPostExcelTableStartDataListVector(builder, numElems)
-def FieldSNSPostExcelTableEnd(builder): return builder.EndObject()
+
+def FieldSNSPostExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldSNSPostExcelTableEnd(builder)

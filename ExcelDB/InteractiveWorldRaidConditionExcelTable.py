@@ -49,15 +49,26 @@ class InteractiveWorldRaidConditionExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def InteractiveWorldRaidConditionExcelTableStart(builder): builder.StartObject(1)
+def InteractiveWorldRaidConditionExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return InteractiveWorldRaidConditionExcelTableStart(builder)
-def InteractiveWorldRaidConditionExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    InteractiveWorldRaidConditionExcelTableStart(builder)
+
+def InteractiveWorldRaidConditionExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return InteractiveWorldRaidConditionExcelTableAddDataList(builder, dataList)
-def InteractiveWorldRaidConditionExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    InteractiveWorldRaidConditionExcelTableAddDataList(builder, dataList)
+
+def InteractiveWorldRaidConditionExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidConditionExcelTableStartDataListVector(builder, numElems)
-def InteractiveWorldRaidConditionExcelTableEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidConditionExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidConditionExcelTableEnd(builder)

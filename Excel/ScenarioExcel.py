@@ -127,42 +127,80 @@ class ScenarioExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ScenarioExcelStart(builder): builder.StartObject(9)
+def ScenarioExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return ScenarioExcelStart(builder)
-def ScenarioExcelAddNoneField(builder, noneField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(noneField), 0)
+    ScenarioExcelStart(builder)
+
+def ScenarioExcelAddNoneField(builder, noneField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(noneField), 0)
+
 def AddNoneField(builder, noneField):
-    return ScenarioExcelAddNoneField(builder, noneField)
-def ScenarioExcelStartNoneFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNoneFieldVector(builder, numElems):
+    ScenarioExcelAddNoneField(builder, noneField)
+
+def ScenarioExcelStartNoneFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartNoneFieldVector(builder, numElems: int) -> int:
     return ScenarioExcelStartNoneFieldVector(builder, numElems)
-def ScenarioExcelAddIdleField(builder, idleField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(idleField), 0)
+
+def ScenarioExcelAddIdleField(builder, idleField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(idleField), 0)
+
 def AddIdleField(builder, idleField):
-    return ScenarioExcelAddIdleField(builder, idleField)
-def ScenarioExcelStartIdleFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartIdleFieldVector(builder, numElems):
+    ScenarioExcelAddIdleField(builder, idleField)
+
+def ScenarioExcelStartIdleFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartIdleFieldVector(builder, numElems: int) -> int:
     return ScenarioExcelStartIdleFieldVector(builder, numElems)
-def ScenarioExcelAddCafeField(builder, cafeField): builder.PrependInt32Slot(2, cafeField, 0)
+
+def ScenarioExcelAddCafeField(builder, cafeField):
+    builder.PrependInt32Slot(2, cafeField, 0)
+
 def AddCafeField(builder, cafeField):
-    return ScenarioExcelAddCafeField(builder, cafeField)
-def ScenarioExcelAddTalkField(builder, talkField): builder.PrependInt32Slot(3, talkField, 0)
+    ScenarioExcelAddCafeField(builder, cafeField)
+
+def ScenarioExcelAddTalkField(builder, talkField):
+    builder.PrependInt32Slot(3, talkField, 0)
+
 def AddTalkField(builder, talkField):
-    return ScenarioExcelAddTalkField(builder, talkField)
-def ScenarioExcelAddOpenField(builder, openField): builder.PrependInt32Slot(4, openField, 0)
+    ScenarioExcelAddTalkField(builder, talkField)
+
+def ScenarioExcelAddOpenField(builder, openField):
+    builder.PrependInt32Slot(4, openField, 0)
+
 def AddOpenField(builder, openField):
-    return ScenarioExcelAddOpenField(builder, openField)
-def ScenarioExcelAddEnterConverField(builder, enterConverField): builder.PrependInt32Slot(5, enterConverField, 0)
+    ScenarioExcelAddOpenField(builder, openField)
+
+def ScenarioExcelAddEnterConverField(builder, enterConverField):
+    builder.PrependInt32Slot(5, enterConverField, 0)
+
 def AddEnterConverField(builder, enterConverField):
-    return ScenarioExcelAddEnterConverField(builder, enterConverField)
-def ScenarioExcelAddCenterField(builder, centerField): builder.PrependInt32Slot(6, centerField, 0)
+    ScenarioExcelAddEnterConverField(builder, enterConverField)
+
+def ScenarioExcelAddCenterField(builder, centerField):
+    builder.PrependInt32Slot(6, centerField, 0)
+
 def AddCenterField(builder, centerField):
-    return ScenarioExcelAddCenterField(builder, centerField)
-def ScenarioExcelAddInstantField(builder, instantField): builder.PrependInt32Slot(7, instantField, 0)
+    ScenarioExcelAddCenterField(builder, centerField)
+
+def ScenarioExcelAddInstantField(builder, instantField):
+    builder.PrependInt32Slot(7, instantField, 0)
+
 def AddInstantField(builder, instantField):
-    return ScenarioExcelAddInstantField(builder, instantField)
-def ScenarioExcelAddPrologueField(builder, prologueField): builder.PrependInt32Slot(8, prologueField, 0)
+    ScenarioExcelAddInstantField(builder, instantField)
+
+def ScenarioExcelAddPrologueField(builder, prologueField):
+    builder.PrependInt32Slot(8, prologueField, 0)
+
 def AddPrologueField(builder, prologueField):
-    return ScenarioExcelAddPrologueField(builder, prologueField)
-def ScenarioExcelEnd(builder): return builder.EndObject()
+    ScenarioExcelAddPrologueField(builder, prologueField)
+
+def ScenarioExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioExcelEnd(builder)

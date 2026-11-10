@@ -38,15 +38,26 @@ class TagExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def TagExcelStart(builder): builder.StartObject(2)
+def TagExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return TagExcelStart(builder)
-def TagExcelAddFurnitureField(builder, furnitureField): builder.PrependInt32Slot(0, furnitureField, 0)
+    TagExcelStart(builder)
+
+def TagExcelAddFurnitureField(builder, furnitureField):
+    builder.PrependInt32Slot(0, furnitureField, 0)
+
 def AddFurnitureField(builder, furnitureField):
-    return TagExcelAddFurnitureField(builder, furnitureField)
-def TagExcelAddNoneField(builder, noneField): builder.PrependInt32Slot(1, noneField, 0)
+    TagExcelAddFurnitureField(builder, furnitureField)
+
+def TagExcelAddNoneField(builder, noneField):
+    builder.PrependInt32Slot(1, noneField, 0)
+
 def AddNoneField(builder, noneField):
-    return TagExcelAddNoneField(builder, noneField)
-def TagExcelEnd(builder): return builder.EndObject()
+    TagExcelAddNoneField(builder, noneField)
+
+def TagExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TagExcelEnd(builder)

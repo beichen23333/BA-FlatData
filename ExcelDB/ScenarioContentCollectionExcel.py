@@ -122,64 +122,150 @@ class ScenarioContentCollectionExcel(object):
         return None
 
     # ScenarioContentCollectionExcel
-    def LocalizeEtcIdField(self):
+    def FullResourcePosXField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0.0
+
+    # ScenarioContentCollectionExcel
+    def FullResourcePosYField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0.0
+
+    # ScenarioContentCollectionExcel
+    def FullResourceScaleField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
+        return 0.0
+
+    # ScenarioContentCollectionExcel
+    def LocalizeEtcIdField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
     # ScenarioContentCollectionExcel
     def SubNameLocalizeCodeIdField(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def ScenarioContentCollectionExcelStart(builder): builder.StartObject(13)
+def ScenarioContentCollectionExcelStart(builder):
+    builder.StartObject(16)
+
 def Start(builder):
-    return ScenarioContentCollectionExcelStart(builder)
-def ScenarioContentCollectionExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ScenarioContentCollectionExcelStart(builder)
+
+def ScenarioContentCollectionExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ScenarioContentCollectionExcelAddIdField(builder, idField)
-def ScenarioContentCollectionExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(1, groupIdField, 0)
+    ScenarioContentCollectionExcelAddIdField(builder, idField)
+
+def ScenarioContentCollectionExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(1, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return ScenarioContentCollectionExcelAddGroupIdField(builder, groupIdField)
-def ScenarioContentCollectionExcelAddUnlockConditionTypeField(builder, unlockConditionTypeField): builder.PrependInt32Slot(2, unlockConditionTypeField, 0)
+    ScenarioContentCollectionExcelAddGroupIdField(builder, groupIdField)
+
+def ScenarioContentCollectionExcelAddUnlockConditionTypeField(builder, unlockConditionTypeField):
+    builder.PrependInt32Slot(2, unlockConditionTypeField, 0)
+
 def AddUnlockConditionTypeField(builder, unlockConditionTypeField):
-    return ScenarioContentCollectionExcelAddUnlockConditionTypeField(builder, unlockConditionTypeField)
-def ScenarioContentCollectionExcelAddUnlockConditionParameterField(builder, unlockConditionParameterField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(unlockConditionParameterField), 0)
+    ScenarioContentCollectionExcelAddUnlockConditionTypeField(builder, unlockConditionTypeField)
+
+def ScenarioContentCollectionExcelAddUnlockConditionParameterField(builder, unlockConditionParameterField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(unlockConditionParameterField), 0)
+
 def AddUnlockConditionParameterField(builder, unlockConditionParameterField):
-    return ScenarioContentCollectionExcelAddUnlockConditionParameterField(builder, unlockConditionParameterField)
-def ScenarioContentCollectionExcelStartUnlockConditionParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartUnlockConditionParameterFieldVector(builder, numElems):
+    ScenarioContentCollectionExcelAddUnlockConditionParameterField(builder, unlockConditionParameterField)
+
+def ScenarioContentCollectionExcelStartUnlockConditionParameterFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartUnlockConditionParameterFieldVector(builder, numElems: int) -> int:
     return ScenarioContentCollectionExcelStartUnlockConditionParameterFieldVector(builder, numElems)
-def ScenarioContentCollectionExcelAddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField): builder.PrependInt32Slot(4, multipleConditionCheckTypeField, 0)
+
+def ScenarioContentCollectionExcelAddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField):
+    builder.PrependInt32Slot(4, multipleConditionCheckTypeField, 0)
+
 def AddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField):
-    return ScenarioContentCollectionExcelAddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField)
-def ScenarioContentCollectionExcelAddUnlockConditionCountField(builder, unlockConditionCountField): builder.PrependInt32Slot(5, unlockConditionCountField, 0)
+    ScenarioContentCollectionExcelAddMultipleConditionCheckTypeField(builder, multipleConditionCheckTypeField)
+
+def ScenarioContentCollectionExcelAddUnlockConditionCountField(builder, unlockConditionCountField):
+    builder.PrependInt32Slot(5, unlockConditionCountField, 0)
+
 def AddUnlockConditionCountField(builder, unlockConditionCountField):
-    return ScenarioContentCollectionExcelAddUnlockConditionCountField(builder, unlockConditionCountField)
-def ScenarioContentCollectionExcelAddIsObjectField(builder, isObjectField): builder.PrependBoolSlot(6, isObjectField, 0)
+    ScenarioContentCollectionExcelAddUnlockConditionCountField(builder, unlockConditionCountField)
+
+def ScenarioContentCollectionExcelAddIsObjectField(builder, isObjectField):
+    builder.PrependBoolSlot(6, isObjectField, 0)
+
 def AddIsObjectField(builder, isObjectField):
-    return ScenarioContentCollectionExcelAddIsObjectField(builder, isObjectField)
-def ScenarioContentCollectionExcelAddIsHorizonField(builder, isHorizonField): builder.PrependBoolSlot(7, isHorizonField, 0)
+    ScenarioContentCollectionExcelAddIsObjectField(builder, isObjectField)
+
+def ScenarioContentCollectionExcelAddIsHorizonField(builder, isHorizonField):
+    builder.PrependBoolSlot(7, isHorizonField, 0)
+
 def AddIsHorizonField(builder, isHorizonField):
-    return ScenarioContentCollectionExcelAddIsHorizonField(builder, isHorizonField)
-def ScenarioContentCollectionExcelAddEmblemResourceField(builder, emblemResourceField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(emblemResourceField), 0)
+    ScenarioContentCollectionExcelAddIsHorizonField(builder, isHorizonField)
+
+def ScenarioContentCollectionExcelAddEmblemResourceField(builder, emblemResourceField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(emblemResourceField), 0)
+
 def AddEmblemResourceField(builder, emblemResourceField):
-    return ScenarioContentCollectionExcelAddEmblemResourceField(builder, emblemResourceField)
-def ScenarioContentCollectionExcelAddThumbResourceField(builder, thumbResourceField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(thumbResourceField), 0)
+    ScenarioContentCollectionExcelAddEmblemResourceField(builder, emblemResourceField)
+
+def ScenarioContentCollectionExcelAddThumbResourceField(builder, thumbResourceField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(thumbResourceField), 0)
+
 def AddThumbResourceField(builder, thumbResourceField):
-    return ScenarioContentCollectionExcelAddThumbResourceField(builder, thumbResourceField)
-def ScenarioContentCollectionExcelAddFullResourceField(builder, fullResourceField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(fullResourceField), 0)
+    ScenarioContentCollectionExcelAddThumbResourceField(builder, thumbResourceField)
+
+def ScenarioContentCollectionExcelAddFullResourceField(builder, fullResourceField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(fullResourceField), 0)
+
 def AddFullResourceField(builder, fullResourceField):
-    return ScenarioContentCollectionExcelAddFullResourceField(builder, fullResourceField)
-def ScenarioContentCollectionExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(11, localizeEtcIdField, 0)
+    ScenarioContentCollectionExcelAddFullResourceField(builder, fullResourceField)
+
+def ScenarioContentCollectionExcelAddFullResourcePosXField(builder, fullResourcePosXField):
+    builder.PrependFloat32Slot(11, fullResourcePosXField, 0.0)
+
+def AddFullResourcePosXField(builder, fullResourcePosXField):
+    ScenarioContentCollectionExcelAddFullResourcePosXField(builder, fullResourcePosXField)
+
+def ScenarioContentCollectionExcelAddFullResourcePosYField(builder, fullResourcePosYField):
+    builder.PrependFloat32Slot(12, fullResourcePosYField, 0.0)
+
+def AddFullResourcePosYField(builder, fullResourcePosYField):
+    ScenarioContentCollectionExcelAddFullResourcePosYField(builder, fullResourcePosYField)
+
+def ScenarioContentCollectionExcelAddFullResourceScaleField(builder, fullResourceScaleField):
+    builder.PrependFloat32Slot(13, fullResourceScaleField, 0.0)
+
+def AddFullResourceScaleField(builder, fullResourceScaleField):
+    ScenarioContentCollectionExcelAddFullResourceScaleField(builder, fullResourceScaleField)
+
+def ScenarioContentCollectionExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(14, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return ScenarioContentCollectionExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def ScenarioContentCollectionExcelAddSubNameLocalizeCodeIdField(builder, subNameLocalizeCodeIdField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(subNameLocalizeCodeIdField), 0)
+    ScenarioContentCollectionExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def ScenarioContentCollectionExcelAddSubNameLocalizeCodeIdField(builder, subNameLocalizeCodeIdField):
+    builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(subNameLocalizeCodeIdField), 0)
+
 def AddSubNameLocalizeCodeIdField(builder, subNameLocalizeCodeIdField):
-    return ScenarioContentCollectionExcelAddSubNameLocalizeCodeIdField(builder, subNameLocalizeCodeIdField)
-def ScenarioContentCollectionExcelEnd(builder): return builder.EndObject()
+    ScenarioContentCollectionExcelAddSubNameLocalizeCodeIdField(builder, subNameLocalizeCodeIdField)
+
+def ScenarioContentCollectionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioContentCollectionExcelEnd(builder)

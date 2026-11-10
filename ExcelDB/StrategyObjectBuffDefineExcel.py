@@ -59,24 +59,44 @@ class StrategyObjectBuffDefineExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def StrategyObjectBuffDefineExcelStart(builder): builder.StartObject(5)
+def StrategyObjectBuffDefineExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return StrategyObjectBuffDefineExcelStart(builder)
-def StrategyObjectBuffDefineExcelAddStrategyObjectBuffIDField(builder, strategyObjectBuffIDField): builder.PrependInt32Slot(0, strategyObjectBuffIDField, 0)
+    StrategyObjectBuffDefineExcelStart(builder)
+
+def StrategyObjectBuffDefineExcelAddStrategyObjectBuffIDField(builder, strategyObjectBuffIDField):
+    builder.PrependInt32Slot(0, strategyObjectBuffIDField, 0)
+
 def AddStrategyObjectBuffIDField(builder, strategyObjectBuffIDField):
-    return StrategyObjectBuffDefineExcelAddStrategyObjectBuffIDField(builder, strategyObjectBuffIDField)
-def StrategyObjectBuffDefineExcelAddStrategyObjectTurnField(builder, strategyObjectTurnField): builder.PrependInt32Slot(1, strategyObjectTurnField, 0)
+    StrategyObjectBuffDefineExcelAddStrategyObjectBuffIDField(builder, strategyObjectBuffIDField)
+
+def StrategyObjectBuffDefineExcelAddStrategyObjectTurnField(builder, strategyObjectTurnField):
+    builder.PrependInt32Slot(1, strategyObjectTurnField, 0)
+
 def AddStrategyObjectTurnField(builder, strategyObjectTurnField):
-    return StrategyObjectBuffDefineExcelAddStrategyObjectTurnField(builder, strategyObjectTurnField)
-def StrategyObjectBuffDefineExcelAddSkillGroupIdField(builder, skillGroupIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+    StrategyObjectBuffDefineExcelAddStrategyObjectTurnField(builder, strategyObjectTurnField)
+
+def StrategyObjectBuffDefineExcelAddSkillGroupIdField(builder, skillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+
 def AddSkillGroupIdField(builder, skillGroupIdField):
-    return StrategyObjectBuffDefineExcelAddSkillGroupIdField(builder, skillGroupIdField)
-def StrategyObjectBuffDefineExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUint32Slot(3, localizeCodeIdField, 0)
+    StrategyObjectBuffDefineExcelAddSkillGroupIdField(builder, skillGroupIdField)
+
+def StrategyObjectBuffDefineExcelAddLocalizeCodeIdField(builder, localizeCodeIdField):
+    builder.PrependUint32Slot(3, localizeCodeIdField, 0)
+
 def AddLocalizeCodeIdField(builder, localizeCodeIdField):
-    return StrategyObjectBuffDefineExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
-def StrategyObjectBuffDefineExcelAddIconPathField(builder, iconPathField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+    StrategyObjectBuffDefineExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+
+def StrategyObjectBuffDefineExcelAddIconPathField(builder, iconPathField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(iconPathField), 0)
+
 def AddIconPathField(builder, iconPathField):
-    return StrategyObjectBuffDefineExcelAddIconPathField(builder, iconPathField)
-def StrategyObjectBuffDefineExcelEnd(builder): return builder.EndObject()
+    StrategyObjectBuffDefineExcelAddIconPathField(builder, iconPathField)
+
+def StrategyObjectBuffDefineExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return StrategyObjectBuffDefineExcelEnd(builder)

@@ -107,39 +107,74 @@ class TimeAttackDungeonSeasonManageExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def TimeAttackDungeonSeasonManageExcelStart(builder): builder.StartObject(9)
+def TimeAttackDungeonSeasonManageExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return TimeAttackDungeonSeasonManageExcelStart(builder)
-def TimeAttackDungeonSeasonManageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    TimeAttackDungeonSeasonManageExcelStart(builder)
+
+def TimeAttackDungeonSeasonManageExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return TimeAttackDungeonSeasonManageExcelAddIdField(builder, idField)
-def TimeAttackDungeonSeasonManageExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+    TimeAttackDungeonSeasonManageExcelAddIdField(builder, idField)
+
+def TimeAttackDungeonSeasonManageExcelAddStartDateField(builder, startDateField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+
 def AddStartDateField(builder, startDateField):
-    return TimeAttackDungeonSeasonManageExcelAddStartDateField(builder, startDateField)
-def TimeAttackDungeonSeasonManageExcelAddEndNoteLabelStartDateField(builder, endNoteLabelStartDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(endNoteLabelStartDateField), 0)
+    TimeAttackDungeonSeasonManageExcelAddStartDateField(builder, startDateField)
+
+def TimeAttackDungeonSeasonManageExcelAddEndNoteLabelStartDateField(builder, endNoteLabelStartDateField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(endNoteLabelStartDateField), 0)
+
 def AddEndNoteLabelStartDateField(builder, endNoteLabelStartDateField):
-    return TimeAttackDungeonSeasonManageExcelAddEndNoteLabelStartDateField(builder, endNoteLabelStartDateField)
-def TimeAttackDungeonSeasonManageExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+    TimeAttackDungeonSeasonManageExcelAddEndNoteLabelStartDateField(builder, endNoteLabelStartDateField)
+
+def TimeAttackDungeonSeasonManageExcelAddEndDateField(builder, endDateField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+
 def AddEndDateField(builder, endDateField):
-    return TimeAttackDungeonSeasonManageExcelAddEndDateField(builder, endDateField)
-def TimeAttackDungeonSeasonManageExcelAddUISlotField(builder, uISlotField): builder.PrependInt32Slot(4, uISlotField, 0)
+    TimeAttackDungeonSeasonManageExcelAddEndDateField(builder, endDateField)
+
+def TimeAttackDungeonSeasonManageExcelAddUISlotField(builder, uISlotField):
+    builder.PrependInt32Slot(4, uISlotField, 0)
+
 def AddUISlotField(builder, uISlotField):
-    return TimeAttackDungeonSeasonManageExcelAddUISlotField(builder, uISlotField)
-def TimeAttackDungeonSeasonManageExcelAddDungeonIdField(builder, dungeonIdField): builder.PrependInt32Slot(5, dungeonIdField, 0)
+    TimeAttackDungeonSeasonManageExcelAddUISlotField(builder, uISlotField)
+
+def TimeAttackDungeonSeasonManageExcelAddDungeonIdField(builder, dungeonIdField):
+    builder.PrependInt32Slot(5, dungeonIdField, 0)
+
 def AddDungeonIdField(builder, dungeonIdField):
-    return TimeAttackDungeonSeasonManageExcelAddDungeonIdField(builder, dungeonIdField)
-def TimeAttackDungeonSeasonManageExcelAddDifficultyGeasField(builder, difficultyGeasField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(difficultyGeasField), 0)
+    TimeAttackDungeonSeasonManageExcelAddDungeonIdField(builder, dungeonIdField)
+
+def TimeAttackDungeonSeasonManageExcelAddDifficultyGeasField(builder, difficultyGeasField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(difficultyGeasField), 0)
+
 def AddDifficultyGeasField(builder, difficultyGeasField):
-    return TimeAttackDungeonSeasonManageExcelAddDifficultyGeasField(builder, difficultyGeasField)
-def TimeAttackDungeonSeasonManageExcelStartDifficultyGeasFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDifficultyGeasFieldVector(builder, numElems):
+    TimeAttackDungeonSeasonManageExcelAddDifficultyGeasField(builder, difficultyGeasField)
+
+def TimeAttackDungeonSeasonManageExcelStartDifficultyGeasFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDifficultyGeasFieldVector(builder, numElems: int) -> int:
     return TimeAttackDungeonSeasonManageExcelStartDifficultyGeasFieldVector(builder, numElems)
-def TimeAttackDungeonSeasonManageExcelAddTimeAttackDungeonRewardIdField(builder, timeAttackDungeonRewardIdField): builder.PrependInt32Slot(7, timeAttackDungeonRewardIdField, 0)
+
+def TimeAttackDungeonSeasonManageExcelAddTimeAttackDungeonRewardIdField(builder, timeAttackDungeonRewardIdField):
+    builder.PrependInt32Slot(7, timeAttackDungeonRewardIdField, 0)
+
 def AddTimeAttackDungeonRewardIdField(builder, timeAttackDungeonRewardIdField):
-    return TimeAttackDungeonSeasonManageExcelAddTimeAttackDungeonRewardIdField(builder, timeAttackDungeonRewardIdField)
-def TimeAttackDungeonSeasonManageExcelAddRoomLifeTimeInSecondsField(builder, roomLifeTimeInSecondsField): builder.PrependInt32Slot(8, roomLifeTimeInSecondsField, 0)
+    TimeAttackDungeonSeasonManageExcelAddTimeAttackDungeonRewardIdField(builder, timeAttackDungeonRewardIdField)
+
+def TimeAttackDungeonSeasonManageExcelAddRoomLifeTimeInSecondsField(builder, roomLifeTimeInSecondsField):
+    builder.PrependInt32Slot(8, roomLifeTimeInSecondsField, 0)
+
 def AddRoomLifeTimeInSecondsField(builder, roomLifeTimeInSecondsField):
-    return TimeAttackDungeonSeasonManageExcelAddRoomLifeTimeInSecondsField(builder, roomLifeTimeInSecondsField)
-def TimeAttackDungeonSeasonManageExcelEnd(builder): return builder.EndObject()
+    TimeAttackDungeonSeasonManageExcelAddRoomLifeTimeInSecondsField(builder, roomLifeTimeInSecondsField)
+
+def TimeAttackDungeonSeasonManageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TimeAttackDungeonSeasonManageExcelEnd(builder)

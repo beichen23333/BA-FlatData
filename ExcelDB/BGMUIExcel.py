@@ -59,24 +59,44 @@ class BGMUIExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def BGMUIExcelStart(builder): builder.StartObject(5)
+def BGMUIExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return BGMUIExcelStart(builder)
-def BGMUIExcelAddUIPrefabField(builder, uIPrefabField): builder.PrependUint32Slot(0, uIPrefabField, 0)
+    BGMUIExcelStart(builder)
+
+def BGMUIExcelAddUIPrefabField(builder, uIPrefabField):
+    builder.PrependUint32Slot(0, uIPrefabField, 0)
+
 def AddUIPrefabField(builder, uIPrefabField):
-    return BGMUIExcelAddUIPrefabField(builder, uIPrefabField)
-def BGMUIExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(1, bGMIdField, 0)
+    BGMUIExcelAddUIPrefabField(builder, uIPrefabField)
+
+def BGMUIExcelAddBGMIdField(builder, bGMIdField):
+    builder.PrependInt32Slot(1, bGMIdField, 0)
+
 def AddBGMIdField(builder, bGMIdField):
-    return BGMUIExcelAddBGMIdField(builder, bGMIdField)
-def BGMUIExcelAddBGMId2ndField(builder, bGMId2ndField): builder.PrependInt32Slot(2, bGMId2ndField, 0)
+    BGMUIExcelAddBGMIdField(builder, bGMIdField)
+
+def BGMUIExcelAddBGMId2ndField(builder, bGMId2ndField):
+    builder.PrependInt32Slot(2, bGMId2ndField, 0)
+
 def AddBGMId2ndField(builder, bGMId2ndField):
-    return BGMUIExcelAddBGMId2ndField(builder, bGMId2ndField)
-def BGMUIExcelAddBGMId3rdField(builder, bGMId3rdField): builder.PrependInt32Slot(3, bGMId3rdField, 0)
+    BGMUIExcelAddBGMId2ndField(builder, bGMId2ndField)
+
+def BGMUIExcelAddBGMId3rdField(builder, bGMId3rdField):
+    builder.PrependInt32Slot(3, bGMId3rdField, 0)
+
 def AddBGMId3rdField(builder, bGMId3rdField):
-    return BGMUIExcelAddBGMId3rdField(builder, bGMId3rdField)
-def BGMUIExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(4, eventContentIdField, 0)
+    BGMUIExcelAddBGMId3rdField(builder, bGMId3rdField)
+
+def BGMUIExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(4, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return BGMUIExcelAddEventContentIdField(builder, eventContentIdField)
-def BGMUIExcelEnd(builder): return builder.EndObject()
+    BGMUIExcelAddEventContentIdField(builder, eventContentIdField)
+
+def BGMUIExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BGMUIExcelEnd(builder)

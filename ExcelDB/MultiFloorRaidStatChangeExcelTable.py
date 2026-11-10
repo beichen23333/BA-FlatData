@@ -49,15 +49,26 @@ class MultiFloorRaidStatChangeExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MultiFloorRaidStatChangeExcelTableStart(builder): builder.StartObject(1)
+def MultiFloorRaidStatChangeExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MultiFloorRaidStatChangeExcelTableStart(builder)
-def MultiFloorRaidStatChangeExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MultiFloorRaidStatChangeExcelTableStart(builder)
+
+def MultiFloorRaidStatChangeExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MultiFloorRaidStatChangeExcelTableAddDataList(builder, dataList)
-def MultiFloorRaidStatChangeExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MultiFloorRaidStatChangeExcelTableAddDataList(builder, dataList)
+
+def MultiFloorRaidStatChangeExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MultiFloorRaidStatChangeExcelTableStartDataListVector(builder, numElems)
-def MultiFloorRaidStatChangeExcelTableEnd(builder): return builder.EndObject()
+
+def MultiFloorRaidStatChangeExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MultiFloorRaidStatChangeExcelTableEnd(builder)

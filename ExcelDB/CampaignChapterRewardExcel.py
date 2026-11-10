@@ -119,33 +119,62 @@ class CampaignChapterRewardExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
-def CampaignChapterRewardExcelStart(builder): builder.StartObject(5)
+def CampaignChapterRewardExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return CampaignChapterRewardExcelStart(builder)
-def CampaignChapterRewardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    CampaignChapterRewardExcelStart(builder)
+
+def CampaignChapterRewardExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return CampaignChapterRewardExcelAddIdField(builder, idField)
-def CampaignChapterRewardExcelAddCampaignChapterStarField(builder, campaignChapterStarField): builder.PrependInt32Slot(1, campaignChapterStarField, 0)
+    CampaignChapterRewardExcelAddIdField(builder, idField)
+
+def CampaignChapterRewardExcelAddCampaignChapterStarField(builder, campaignChapterStarField):
+    builder.PrependInt32Slot(1, campaignChapterStarField, 0)
+
 def AddCampaignChapterStarField(builder, campaignChapterStarField):
-    return CampaignChapterRewardExcelAddCampaignChapterStarField(builder, campaignChapterStarField)
-def CampaignChapterRewardExcelAddChapterRewardParcelTypeField(builder, chapterRewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(chapterRewardParcelTypeField), 0)
+    CampaignChapterRewardExcelAddCampaignChapterStarField(builder, campaignChapterStarField)
+
+def CampaignChapterRewardExcelAddChapterRewardParcelTypeField(builder, chapterRewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(chapterRewardParcelTypeField), 0)
+
 def AddChapterRewardParcelTypeField(builder, chapterRewardParcelTypeField):
-    return CampaignChapterRewardExcelAddChapterRewardParcelTypeField(builder, chapterRewardParcelTypeField)
-def CampaignChapterRewardExcelStartChapterRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartChapterRewardParcelTypeFieldVector(builder, numElems):
+    CampaignChapterRewardExcelAddChapterRewardParcelTypeField(builder, chapterRewardParcelTypeField)
+
+def CampaignChapterRewardExcelStartChapterRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartChapterRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return CampaignChapterRewardExcelStartChapterRewardParcelTypeFieldVector(builder, numElems)
-def CampaignChapterRewardExcelAddChapterRewardIdField(builder, chapterRewardIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(chapterRewardIdField), 0)
+
+def CampaignChapterRewardExcelAddChapterRewardIdField(builder, chapterRewardIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(chapterRewardIdField), 0)
+
 def AddChapterRewardIdField(builder, chapterRewardIdField):
-    return CampaignChapterRewardExcelAddChapterRewardIdField(builder, chapterRewardIdField)
-def CampaignChapterRewardExcelStartChapterRewardIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartChapterRewardIdFieldVector(builder, numElems):
+    CampaignChapterRewardExcelAddChapterRewardIdField(builder, chapterRewardIdField)
+
+def CampaignChapterRewardExcelStartChapterRewardIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartChapterRewardIdFieldVector(builder, numElems: int) -> int:
     return CampaignChapterRewardExcelStartChapterRewardIdFieldVector(builder, numElems)
-def CampaignChapterRewardExcelAddChapterRewardAmountField(builder, chapterRewardAmountField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(chapterRewardAmountField), 0)
+
+def CampaignChapterRewardExcelAddChapterRewardAmountField(builder, chapterRewardAmountField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(chapterRewardAmountField), 0)
+
 def AddChapterRewardAmountField(builder, chapterRewardAmountField):
-    return CampaignChapterRewardExcelAddChapterRewardAmountField(builder, chapterRewardAmountField)
-def CampaignChapterRewardExcelStartChapterRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartChapterRewardAmountFieldVector(builder, numElems):
+    CampaignChapterRewardExcelAddChapterRewardAmountField(builder, chapterRewardAmountField)
+
+def CampaignChapterRewardExcelStartChapterRewardAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartChapterRewardAmountFieldVector(builder, numElems: int) -> int:
     return CampaignChapterRewardExcelStartChapterRewardAmountFieldVector(builder, numElems)
-def CampaignChapterRewardExcelEnd(builder): return builder.EndObject()
+
+def CampaignChapterRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CampaignChapterRewardExcelEnd(builder)

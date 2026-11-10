@@ -58,18 +58,32 @@ class StatLevelInterpolationExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
-def StatLevelInterpolationExcelStart(builder): builder.StartObject(2)
+def StatLevelInterpolationExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return StatLevelInterpolationExcelStart(builder)
-def StatLevelInterpolationExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(0, levelField, 0)
+    StatLevelInterpolationExcelStart(builder)
+
+def StatLevelInterpolationExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(0, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return StatLevelInterpolationExcelAddLevelField(builder, levelField)
-def StatLevelInterpolationExcelAddStatTypeIndexField(builder, statTypeIndexField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(statTypeIndexField), 0)
+    StatLevelInterpolationExcelAddLevelField(builder, levelField)
+
+def StatLevelInterpolationExcelAddStatTypeIndexField(builder, statTypeIndexField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(statTypeIndexField), 0)
+
 def AddStatTypeIndexField(builder, statTypeIndexField):
-    return StatLevelInterpolationExcelAddStatTypeIndexField(builder, statTypeIndexField)
-def StatLevelInterpolationExcelStartStatTypeIndexFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartStatTypeIndexFieldVector(builder, numElems):
+    StatLevelInterpolationExcelAddStatTypeIndexField(builder, statTypeIndexField)
+
+def StatLevelInterpolationExcelStartStatTypeIndexFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartStatTypeIndexFieldVector(builder, numElems: int) -> int:
     return StatLevelInterpolationExcelStartStatTypeIndexFieldVector(builder, numElems)
-def StatLevelInterpolationExcelEnd(builder): return builder.EndObject()
+
+def StatLevelInterpolationExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return StatLevelInterpolationExcelEnd(builder)

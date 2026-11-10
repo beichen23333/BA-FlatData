@@ -101,42 +101,80 @@ class KeyMappingTabExcel(object):
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
-def KeyMappingTabExcelStart(builder): builder.StartObject(11)
+def KeyMappingTabExcelStart(builder):
+    builder.StartObject(11)
+
 def Start(builder):
-    return KeyMappingTabExcelStart(builder)
-def KeyMappingTabExcelAddIdField(builder, idField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(idField), 0)
+    KeyMappingTabExcelStart(builder)
+
+def KeyMappingTabExcelAddIdField(builder, idField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(idField), 0)
+
 def AddIdField(builder, idField):
-    return KeyMappingTabExcelAddIdField(builder, idField)
-def KeyMappingTabExcelAddLeftArrowKeyField(builder, leftArrowKeyField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(leftArrowKeyField), 0)
+    KeyMappingTabExcelAddIdField(builder, idField)
+
+def KeyMappingTabExcelAddLeftArrowKeyField(builder, leftArrowKeyField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(leftArrowKeyField), 0)
+
 def AddLeftArrowKeyField(builder, leftArrowKeyField):
-    return KeyMappingTabExcelAddLeftArrowKeyField(builder, leftArrowKeyField)
-def KeyMappingTabExcelAddRightArrowKeyField(builder, rightArrowKeyField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rightArrowKeyField), 0)
+    KeyMappingTabExcelAddLeftArrowKeyField(builder, leftArrowKeyField)
+
+def KeyMappingTabExcelAddRightArrowKeyField(builder, rightArrowKeyField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(rightArrowKeyField), 0)
+
 def AddRightArrowKeyField(builder, rightArrowKeyField):
-    return KeyMappingTabExcelAddRightArrowKeyField(builder, rightArrowKeyField)
-def KeyMappingTabExcelAddLeftIconPositionXField(builder, leftIconPositionXField): builder.PrependFloat32Slot(3, leftIconPositionXField, 0.0)
+    KeyMappingTabExcelAddRightArrowKeyField(builder, rightArrowKeyField)
+
+def KeyMappingTabExcelAddLeftIconPositionXField(builder, leftIconPositionXField):
+    builder.PrependFloat32Slot(3, leftIconPositionXField, 0.0)
+
 def AddLeftIconPositionXField(builder, leftIconPositionXField):
-    return KeyMappingTabExcelAddLeftIconPositionXField(builder, leftIconPositionXField)
-def KeyMappingTabExcelAddLeftIconPositionYField(builder, leftIconPositionYField): builder.PrependFloat32Slot(4, leftIconPositionYField, 0.0)
+    KeyMappingTabExcelAddLeftIconPositionXField(builder, leftIconPositionXField)
+
+def KeyMappingTabExcelAddLeftIconPositionYField(builder, leftIconPositionYField):
+    builder.PrependFloat32Slot(4, leftIconPositionYField, 0.0)
+
 def AddLeftIconPositionYField(builder, leftIconPositionYField):
-    return KeyMappingTabExcelAddLeftIconPositionYField(builder, leftIconPositionYField)
-def KeyMappingTabExcelAddLeftIconScaleXField(builder, leftIconScaleXField): builder.PrependFloat32Slot(5, leftIconScaleXField, 0.0)
+    KeyMappingTabExcelAddLeftIconPositionYField(builder, leftIconPositionYField)
+
+def KeyMappingTabExcelAddLeftIconScaleXField(builder, leftIconScaleXField):
+    builder.PrependFloat32Slot(5, leftIconScaleXField, 0.0)
+
 def AddLeftIconScaleXField(builder, leftIconScaleXField):
-    return KeyMappingTabExcelAddLeftIconScaleXField(builder, leftIconScaleXField)
-def KeyMappingTabExcelAddLeftIconScaleYField(builder, leftIconScaleYField): builder.PrependFloat32Slot(6, leftIconScaleYField, 0.0)
+    KeyMappingTabExcelAddLeftIconScaleXField(builder, leftIconScaleXField)
+
+def KeyMappingTabExcelAddLeftIconScaleYField(builder, leftIconScaleYField):
+    builder.PrependFloat32Slot(6, leftIconScaleYField, 0.0)
+
 def AddLeftIconScaleYField(builder, leftIconScaleYField):
-    return KeyMappingTabExcelAddLeftIconScaleYField(builder, leftIconScaleYField)
-def KeyMappingTabExcelAddRightIconPositionXField(builder, rightIconPositionXField): builder.PrependFloat32Slot(7, rightIconPositionXField, 0.0)
+    KeyMappingTabExcelAddLeftIconScaleYField(builder, leftIconScaleYField)
+
+def KeyMappingTabExcelAddRightIconPositionXField(builder, rightIconPositionXField):
+    builder.PrependFloat32Slot(7, rightIconPositionXField, 0.0)
+
 def AddRightIconPositionXField(builder, rightIconPositionXField):
-    return KeyMappingTabExcelAddRightIconPositionXField(builder, rightIconPositionXField)
-def KeyMappingTabExcelAddRightIconPositionYField(builder, rightIconPositionYField): builder.PrependFloat32Slot(8, rightIconPositionYField, 0.0)
+    KeyMappingTabExcelAddRightIconPositionXField(builder, rightIconPositionXField)
+
+def KeyMappingTabExcelAddRightIconPositionYField(builder, rightIconPositionYField):
+    builder.PrependFloat32Slot(8, rightIconPositionYField, 0.0)
+
 def AddRightIconPositionYField(builder, rightIconPositionYField):
-    return KeyMappingTabExcelAddRightIconPositionYField(builder, rightIconPositionYField)
-def KeyMappingTabExcelAddRightIconScaleXField(builder, rightIconScaleXField): builder.PrependFloat32Slot(9, rightIconScaleXField, 0.0)
+    KeyMappingTabExcelAddRightIconPositionYField(builder, rightIconPositionYField)
+
+def KeyMappingTabExcelAddRightIconScaleXField(builder, rightIconScaleXField):
+    builder.PrependFloat32Slot(9, rightIconScaleXField, 0.0)
+
 def AddRightIconScaleXField(builder, rightIconScaleXField):
-    return KeyMappingTabExcelAddRightIconScaleXField(builder, rightIconScaleXField)
-def KeyMappingTabExcelAddRightIconScaleYField(builder, rightIconScaleYField): builder.PrependFloat32Slot(10, rightIconScaleYField, 0.0)
+    KeyMappingTabExcelAddRightIconScaleXField(builder, rightIconScaleXField)
+
+def KeyMappingTabExcelAddRightIconScaleYField(builder, rightIconScaleYField):
+    builder.PrependFloat32Slot(10, rightIconScaleYField, 0.0)
+
 def AddRightIconScaleYField(builder, rightIconScaleYField):
-    return KeyMappingTabExcelAddRightIconScaleYField(builder, rightIconScaleYField)
-def KeyMappingTabExcelEnd(builder): return builder.EndObject()
+    KeyMappingTabExcelAddRightIconScaleYField(builder, rightIconScaleYField)
+
+def KeyMappingTabExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return KeyMappingTabExcelEnd(builder)

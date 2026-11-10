@@ -52,21 +52,38 @@ class BattlePassExpLimitExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def BattlePassExpLimitExcelStart(builder): builder.StartObject(4)
+def BattlePassExpLimitExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return BattlePassExpLimitExcelStart(builder)
-def BattlePassExpLimitExcelAddBattlePassIdField(builder, battlePassIdField): builder.PrependInt32Slot(0, battlePassIdField, 0)
+    BattlePassExpLimitExcelStart(builder)
+
+def BattlePassExpLimitExcelAddBattlePassIdField(builder, battlePassIdField):
+    builder.PrependInt32Slot(0, battlePassIdField, 0)
+
 def AddBattlePassIdField(builder, battlePassIdField):
-    return BattlePassExpLimitExcelAddBattlePassIdField(builder, battlePassIdField)
-def BattlePassExpLimitExcelAddLimitStartTimeField(builder, limitStartTimeField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(limitStartTimeField), 0)
+    BattlePassExpLimitExcelAddBattlePassIdField(builder, battlePassIdField)
+
+def BattlePassExpLimitExcelAddLimitStartTimeField(builder, limitStartTimeField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(limitStartTimeField), 0)
+
 def AddLimitStartTimeField(builder, limitStartTimeField):
-    return BattlePassExpLimitExcelAddLimitStartTimeField(builder, limitStartTimeField)
-def BattlePassExpLimitExcelAddLimitEndTimeField(builder, limitEndTimeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(limitEndTimeField), 0)
+    BattlePassExpLimitExcelAddLimitStartTimeField(builder, limitStartTimeField)
+
+def BattlePassExpLimitExcelAddLimitEndTimeField(builder, limitEndTimeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(limitEndTimeField), 0)
+
 def AddLimitEndTimeField(builder, limitEndTimeField):
-    return BattlePassExpLimitExcelAddLimitEndTimeField(builder, limitEndTimeField)
-def BattlePassExpLimitExcelAddExpLimitAmountField(builder, expLimitAmountField): builder.PrependInt32Slot(3, expLimitAmountField, 0)
+    BattlePassExpLimitExcelAddLimitEndTimeField(builder, limitEndTimeField)
+
+def BattlePassExpLimitExcelAddExpLimitAmountField(builder, expLimitAmountField):
+    builder.PrependInt32Slot(3, expLimitAmountField, 0)
+
 def AddExpLimitAmountField(builder, expLimitAmountField):
-    return BattlePassExpLimitExcelAddExpLimitAmountField(builder, expLimitAmountField)
-def BattlePassExpLimitExcelEnd(builder): return builder.EndObject()
+    BattlePassExpLimitExcelAddExpLimitAmountField(builder, expLimitAmountField)
+
+def BattlePassExpLimitExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BattlePassExpLimitExcelEnd(builder)

@@ -65,21 +65,38 @@ class ShortcutTypeExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
-def ShortcutTypeExcelStart(builder): builder.StartObject(3)
+def ShortcutTypeExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return ShortcutTypeExcelStart(builder)
-def ShortcutTypeExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ShortcutTypeExcelStart(builder)
+
+def ShortcutTypeExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ShortcutTypeExcelAddIdField(builder, idField)
-def ShortcutTypeExcelAddIsAscendingField(builder, isAscendingField): builder.PrependBoolSlot(1, isAscendingField, 0)
+    ShortcutTypeExcelAddIdField(builder, idField)
+
+def ShortcutTypeExcelAddIsAscendingField(builder, isAscendingField):
+    builder.PrependBoolSlot(1, isAscendingField, 0)
+
 def AddIsAscendingField(builder, isAscendingField):
-    return ShortcutTypeExcelAddIsAscendingField(builder, isAscendingField)
-def ShortcutTypeExcelAddContentTypeField(builder, contentTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(contentTypeField), 0)
+    ShortcutTypeExcelAddIsAscendingField(builder, isAscendingField)
+
+def ShortcutTypeExcelAddContentTypeField(builder, contentTypeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(contentTypeField), 0)
+
 def AddContentTypeField(builder, contentTypeField):
-    return ShortcutTypeExcelAddContentTypeField(builder, contentTypeField)
-def ShortcutTypeExcelStartContentTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartContentTypeFieldVector(builder, numElems):
+    ShortcutTypeExcelAddContentTypeField(builder, contentTypeField)
+
+def ShortcutTypeExcelStartContentTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartContentTypeFieldVector(builder, numElems: int) -> int:
     return ShortcutTypeExcelStartContentTypeFieldVector(builder, numElems)
-def ShortcutTypeExcelEnd(builder): return builder.EndObject()
+
+def ShortcutTypeExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ShortcutTypeExcelEnd(builder)

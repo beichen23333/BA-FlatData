@@ -49,15 +49,26 @@ class MultiFloorRaidRewardExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MultiFloorRaidRewardExcelTableStart(builder): builder.StartObject(1)
+def MultiFloorRaidRewardExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MultiFloorRaidRewardExcelTableStart(builder)
-def MultiFloorRaidRewardExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MultiFloorRaidRewardExcelTableStart(builder)
+
+def MultiFloorRaidRewardExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MultiFloorRaidRewardExcelTableAddDataList(builder, dataList)
-def MultiFloorRaidRewardExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MultiFloorRaidRewardExcelTableAddDataList(builder, dataList)
+
+def MultiFloorRaidRewardExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MultiFloorRaidRewardExcelTableStartDataListVector(builder, numElems)
-def MultiFloorRaidRewardExcelTableEnd(builder): return builder.EndObject()
+
+def MultiFloorRaidRewardExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MultiFloorRaidRewardExcelTableEnd(builder)

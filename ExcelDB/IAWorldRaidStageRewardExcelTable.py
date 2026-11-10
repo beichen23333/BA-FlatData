@@ -49,15 +49,26 @@ class IAWorldRaidStageRewardExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def IAWorldRaidStageRewardExcelTableStart(builder): builder.StartObject(1)
+def IAWorldRaidStageRewardExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return IAWorldRaidStageRewardExcelTableStart(builder)
-def IAWorldRaidStageRewardExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    IAWorldRaidStageRewardExcelTableStart(builder)
+
+def IAWorldRaidStageRewardExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return IAWorldRaidStageRewardExcelTableAddDataList(builder, dataList)
-def IAWorldRaidStageRewardExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    IAWorldRaidStageRewardExcelTableAddDataList(builder, dataList)
+
+def IAWorldRaidStageRewardExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return IAWorldRaidStageRewardExcelTableStartDataListVector(builder, numElems)
-def IAWorldRaidStageRewardExcelTableEnd(builder): return builder.EndObject()
+
+def IAWorldRaidStageRewardExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return IAWorldRaidStageRewardExcelTableEnd(builder)

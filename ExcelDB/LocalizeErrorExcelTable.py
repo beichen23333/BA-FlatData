@@ -49,15 +49,26 @@ class LocalizeErrorExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def LocalizeErrorExcelTableStart(builder): builder.StartObject(1)
+def LocalizeErrorExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return LocalizeErrorExcelTableStart(builder)
-def LocalizeErrorExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    LocalizeErrorExcelTableStart(builder)
+
+def LocalizeErrorExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return LocalizeErrorExcelTableAddDataList(builder, dataList)
-def LocalizeErrorExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    LocalizeErrorExcelTableAddDataList(builder, dataList)
+
+def LocalizeErrorExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return LocalizeErrorExcelTableStartDataListVector(builder, numElems)
-def LocalizeErrorExcelTableEnd(builder): return builder.EndObject()
+
+def LocalizeErrorExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return LocalizeErrorExcelTableEnd(builder)

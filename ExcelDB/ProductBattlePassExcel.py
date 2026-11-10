@@ -154,48 +154,92 @@ class ProductBattlePassExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
-def ProductBattlePassExcelStart(builder): builder.StartObject(10)
+def ProductBattlePassExcelStart(builder):
+    builder.StartObject(10)
+
 def Start(builder):
-    return ProductBattlePassExcelStart(builder)
-def ProductBattlePassExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ProductBattlePassExcelStart(builder)
+
+def ProductBattlePassExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ProductBattlePassExcelAddIdField(builder, idField)
-def ProductBattlePassExcelAddProductIdField(builder, productIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+    ProductBattlePassExcelAddIdField(builder, idField)
+
+def ProductBattlePassExcelAddProductIdField(builder, productIdField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+
 def AddProductIdField(builder, productIdField):
-    return ProductBattlePassExcelAddProductIdField(builder, productIdField)
-def ProductBattlePassExcelAddTeenProductIdField(builder, teenProductIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(teenProductIdField), 0)
+    ProductBattlePassExcelAddProductIdField(builder, productIdField)
+
+def ProductBattlePassExcelAddTeenProductIdField(builder, teenProductIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(teenProductIdField), 0)
+
 def AddTeenProductIdField(builder, teenProductIdField):
-    return ProductBattlePassExcelAddTeenProductIdField(builder, teenProductIdField)
-def ProductBattlePassExcelAddStoreTypeField(builder, storeTypeField): builder.PrependInt32Slot(3, storeTypeField, 0)
+    ProductBattlePassExcelAddTeenProductIdField(builder, teenProductIdField)
+
+def ProductBattlePassExcelAddStoreTypeField(builder, storeTypeField):
+    builder.PrependInt32Slot(3, storeTypeField, 0)
+
 def AddStoreTypeField(builder, storeTypeField):
-    return ProductBattlePassExcelAddStoreTypeField(builder, storeTypeField)
-def ProductBattlePassExcelAddPriceField(builder, priceField): builder.PrependInt32Slot(4, priceField, 0)
+    ProductBattlePassExcelAddStoreTypeField(builder, storeTypeField)
+
+def ProductBattlePassExcelAddPriceField(builder, priceField):
+    builder.PrependInt32Slot(4, priceField, 0)
+
 def AddPriceField(builder, priceField):
-    return ProductBattlePassExcelAddPriceField(builder, priceField)
-def ProductBattlePassExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField): builder.PrependInt32Slot(5, purchaseCountLimitField, 0)
+    ProductBattlePassExcelAddPriceField(builder, priceField)
+
+def ProductBattlePassExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField):
+    builder.PrependInt32Slot(5, purchaseCountLimitField, 0)
+
 def AddPurchaseCountLimitField(builder, purchaseCountLimitField):
-    return ProductBattlePassExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
-def ProductBattlePassExcelAddBattlePassProductGroupIdField(builder, battlePassProductGroupIdField): builder.PrependInt32Slot(6, battlePassProductGroupIdField, 0)
+    ProductBattlePassExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
+
+def ProductBattlePassExcelAddBattlePassProductGroupIdField(builder, battlePassProductGroupIdField):
+    builder.PrependInt32Slot(6, battlePassProductGroupIdField, 0)
+
 def AddBattlePassProductGroupIdField(builder, battlePassProductGroupIdField):
-    return ProductBattlePassExcelAddBattlePassProductGroupIdField(builder, battlePassProductGroupIdField)
-def ProductBattlePassExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+    ProductBattlePassExcelAddBattlePassProductGroupIdField(builder, battlePassProductGroupIdField)
+
+def ProductBattlePassExcelAddParcelTypeField(builder, parcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+
 def AddParcelTypeField(builder, parcelTypeField):
-    return ProductBattlePassExcelAddParcelTypeField(builder, parcelTypeField)
-def ProductBattlePassExcelStartParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelTypeFieldVector(builder, numElems):
+    ProductBattlePassExcelAddParcelTypeField(builder, parcelTypeField)
+
+def ProductBattlePassExcelStartParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelTypeFieldVector(builder, numElems: int) -> int:
     return ProductBattlePassExcelStartParcelTypeFieldVector(builder, numElems)
-def ProductBattlePassExcelAddParcelIdField(builder, parcelIdField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(parcelIdField), 0)
+
+def ProductBattlePassExcelAddParcelIdField(builder, parcelIdField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(parcelIdField), 0)
+
 def AddParcelIdField(builder, parcelIdField):
-    return ProductBattlePassExcelAddParcelIdField(builder, parcelIdField)
-def ProductBattlePassExcelStartParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelIdFieldVector(builder, numElems):
+    ProductBattlePassExcelAddParcelIdField(builder, parcelIdField)
+
+def ProductBattlePassExcelStartParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelIdFieldVector(builder, numElems: int) -> int:
     return ProductBattlePassExcelStartParcelIdFieldVector(builder, numElems)
-def ProductBattlePassExcelAddParcelAmountField(builder, parcelAmountField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(parcelAmountField), 0)
+
+def ProductBattlePassExcelAddParcelAmountField(builder, parcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(parcelAmountField), 0)
+
 def AddParcelAmountField(builder, parcelAmountField):
-    return ProductBattlePassExcelAddParcelAmountField(builder, parcelAmountField)
-def ProductBattlePassExcelStartParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelAmountFieldVector(builder, numElems):
+    ProductBattlePassExcelAddParcelAmountField(builder, parcelAmountField)
+
+def ProductBattlePassExcelStartParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelAmountFieldVector(builder, numElems: int) -> int:
     return ProductBattlePassExcelStartParcelAmountFieldVector(builder, numElems)
-def ProductBattlePassExcelEnd(builder): return builder.EndObject()
+
+def ProductBattlePassExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductBattlePassExcelEnd(builder)

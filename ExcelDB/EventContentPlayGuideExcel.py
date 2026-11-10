@@ -73,30 +73,56 @@ class EventContentPlayGuideExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EventContentPlayGuideExcelStart(builder): builder.StartObject(7)
+def EventContentPlayGuideExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return EventContentPlayGuideExcelStart(builder)
-def EventContentPlayGuideExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    EventContentPlayGuideExcelStart(builder)
+
+def EventContentPlayGuideExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return EventContentPlayGuideExcelAddIdField(builder, idField)
-def EventContentPlayGuideExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+    EventContentPlayGuideExcelAddIdField(builder, idField)
+
+def EventContentPlayGuideExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(1, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentPlayGuideExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentPlayGuideExcelAddIsPcBuildField(builder, isPcBuildField): builder.PrependBoolSlot(2, isPcBuildField, 0)
+    EventContentPlayGuideExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentPlayGuideExcelAddIsPcBuildField(builder, isPcBuildField):
+    builder.PrependBoolSlot(2, isPcBuildField, 0)
+
 def AddIsPcBuildField(builder, isPcBuildField):
-    return EventContentPlayGuideExcelAddIsPcBuildField(builder, isPcBuildField)
-def EventContentPlayGuideExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(3, displayOrderField, 0)
+    EventContentPlayGuideExcelAddIsPcBuildField(builder, isPcBuildField)
+
+def EventContentPlayGuideExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(3, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return EventContentPlayGuideExcelAddDisplayOrderField(builder, displayOrderField)
-def EventContentPlayGuideExcelAddGuideTitleField(builder, guideTitleField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(guideTitleField), 0)
+    EventContentPlayGuideExcelAddDisplayOrderField(builder, displayOrderField)
+
+def EventContentPlayGuideExcelAddGuideTitleField(builder, guideTitleField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(guideTitleField), 0)
+
 def AddGuideTitleField(builder, guideTitleField):
-    return EventContentPlayGuideExcelAddGuideTitleField(builder, guideTitleField)
-def EventContentPlayGuideExcelAddGuideImagePathField(builder, guideImagePathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(guideImagePathField), 0)
+    EventContentPlayGuideExcelAddGuideTitleField(builder, guideTitleField)
+
+def EventContentPlayGuideExcelAddGuideImagePathField(builder, guideImagePathField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(guideImagePathField), 0)
+
 def AddGuideImagePathField(builder, guideImagePathField):
-    return EventContentPlayGuideExcelAddGuideImagePathField(builder, guideImagePathField)
-def EventContentPlayGuideExcelAddGuideTextField(builder, guideTextField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(guideTextField), 0)
+    EventContentPlayGuideExcelAddGuideImagePathField(builder, guideImagePathField)
+
+def EventContentPlayGuideExcelAddGuideTextField(builder, guideTextField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(guideTextField), 0)
+
 def AddGuideTextField(builder, guideTextField):
-    return EventContentPlayGuideExcelAddGuideTextField(builder, guideTextField)
-def EventContentPlayGuideExcelEnd(builder): return builder.EndObject()
+    EventContentPlayGuideExcelAddGuideTextField(builder, guideTextField)
+
+def EventContentPlayGuideExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentPlayGuideExcelEnd(builder)

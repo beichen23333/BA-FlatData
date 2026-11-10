@@ -59,24 +59,44 @@ class CharacterLevelStatFactorExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def CharacterLevelStatFactorExcelStart(builder): builder.StartObject(5)
+def CharacterLevelStatFactorExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return CharacterLevelStatFactorExcelStart(builder)
-def CharacterLevelStatFactorExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(0, levelField, 0)
+    CharacterLevelStatFactorExcelStart(builder)
+
+def CharacterLevelStatFactorExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(0, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return CharacterLevelStatFactorExcelAddLevelField(builder, levelField)
-def CharacterLevelStatFactorExcelAddCriticalFactorField(builder, criticalFactorField): builder.PrependInt32Slot(1, criticalFactorField, 0)
+    CharacterLevelStatFactorExcelAddLevelField(builder, levelField)
+
+def CharacterLevelStatFactorExcelAddCriticalFactorField(builder, criticalFactorField):
+    builder.PrependInt32Slot(1, criticalFactorField, 0)
+
 def AddCriticalFactorField(builder, criticalFactorField):
-    return CharacterLevelStatFactorExcelAddCriticalFactorField(builder, criticalFactorField)
-def CharacterLevelStatFactorExcelAddStabilityFactorField(builder, stabilityFactorField): builder.PrependInt32Slot(2, stabilityFactorField, 0)
+    CharacterLevelStatFactorExcelAddCriticalFactorField(builder, criticalFactorField)
+
+def CharacterLevelStatFactorExcelAddStabilityFactorField(builder, stabilityFactorField):
+    builder.PrependInt32Slot(2, stabilityFactorField, 0)
+
 def AddStabilityFactorField(builder, stabilityFactorField):
-    return CharacterLevelStatFactorExcelAddStabilityFactorField(builder, stabilityFactorField)
-def CharacterLevelStatFactorExcelAddDefenceFactorField(builder, defenceFactorField): builder.PrependInt32Slot(3, defenceFactorField, 0)
+    CharacterLevelStatFactorExcelAddStabilityFactorField(builder, stabilityFactorField)
+
+def CharacterLevelStatFactorExcelAddDefenceFactorField(builder, defenceFactorField):
+    builder.PrependInt32Slot(3, defenceFactorField, 0)
+
 def AddDefenceFactorField(builder, defenceFactorField):
-    return CharacterLevelStatFactorExcelAddDefenceFactorField(builder, defenceFactorField)
-def CharacterLevelStatFactorExcelAddAccuracyFactorField(builder, accuracyFactorField): builder.PrependInt32Slot(4, accuracyFactorField, 0)
+    CharacterLevelStatFactorExcelAddDefenceFactorField(builder, defenceFactorField)
+
+def CharacterLevelStatFactorExcelAddAccuracyFactorField(builder, accuracyFactorField):
+    builder.PrependInt32Slot(4, accuracyFactorField, 0)
+
 def AddAccuracyFactorField(builder, accuracyFactorField):
-    return CharacterLevelStatFactorExcelAddAccuracyFactorField(builder, accuracyFactorField)
-def CharacterLevelStatFactorExcelEnd(builder): return builder.EndObject()
+    CharacterLevelStatFactorExcelAddAccuracyFactorField(builder, accuracyFactorField)
+
+def CharacterLevelStatFactorExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterLevelStatFactorExcelEnd(builder)

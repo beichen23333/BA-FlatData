@@ -73,30 +73,56 @@ class EventContentSpineDialogOffsetExcel(object):
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
-def EventContentSpineDialogOffsetExcelStart(builder): builder.StartObject(7)
+def EventContentSpineDialogOffsetExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return EventContentSpineDialogOffsetExcelStart(builder)
-def EventContentSpineDialogOffsetExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentSpineDialogOffsetExcelStart(builder)
+
+def EventContentSpineDialogOffsetExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentSpineDialogOffsetExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentSpineDialogOffsetExcelAddEventContentTypeField(builder, eventContentTypeField): builder.PrependInt32Slot(1, eventContentTypeField, 0)
+    EventContentSpineDialogOffsetExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentSpineDialogOffsetExcelAddEventContentTypeField(builder, eventContentTypeField):
+    builder.PrependInt32Slot(1, eventContentTypeField, 0)
+
 def AddEventContentTypeField(builder, eventContentTypeField):
-    return EventContentSpineDialogOffsetExcelAddEventContentTypeField(builder, eventContentTypeField)
-def EventContentSpineDialogOffsetExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField): builder.PrependInt32Slot(2, costumeUniqueIdField, 0)
+    EventContentSpineDialogOffsetExcelAddEventContentTypeField(builder, eventContentTypeField)
+
+def EventContentSpineDialogOffsetExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField):
+    builder.PrependInt32Slot(2, costumeUniqueIdField, 0)
+
 def AddCostumeUniqueIdField(builder, costumeUniqueIdField):
-    return EventContentSpineDialogOffsetExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
-def EventContentSpineDialogOffsetExcelAddSpineOffsetXField(builder, spineOffsetXField): builder.PrependFloat32Slot(3, spineOffsetXField, 0.0)
+    EventContentSpineDialogOffsetExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
+
+def EventContentSpineDialogOffsetExcelAddSpineOffsetXField(builder, spineOffsetXField):
+    builder.PrependFloat32Slot(3, spineOffsetXField, 0.0)
+
 def AddSpineOffsetXField(builder, spineOffsetXField):
-    return EventContentSpineDialogOffsetExcelAddSpineOffsetXField(builder, spineOffsetXField)
-def EventContentSpineDialogOffsetExcelAddSpineOffsetYField(builder, spineOffsetYField): builder.PrependFloat32Slot(4, spineOffsetYField, 0.0)
+    EventContentSpineDialogOffsetExcelAddSpineOffsetXField(builder, spineOffsetXField)
+
+def EventContentSpineDialogOffsetExcelAddSpineOffsetYField(builder, spineOffsetYField):
+    builder.PrependFloat32Slot(4, spineOffsetYField, 0.0)
+
 def AddSpineOffsetYField(builder, spineOffsetYField):
-    return EventContentSpineDialogOffsetExcelAddSpineOffsetYField(builder, spineOffsetYField)
-def EventContentSpineDialogOffsetExcelAddDialogOffsetXField(builder, dialogOffsetXField): builder.PrependFloat32Slot(5, dialogOffsetXField, 0.0)
+    EventContentSpineDialogOffsetExcelAddSpineOffsetYField(builder, spineOffsetYField)
+
+def EventContentSpineDialogOffsetExcelAddDialogOffsetXField(builder, dialogOffsetXField):
+    builder.PrependFloat32Slot(5, dialogOffsetXField, 0.0)
+
 def AddDialogOffsetXField(builder, dialogOffsetXField):
-    return EventContentSpineDialogOffsetExcelAddDialogOffsetXField(builder, dialogOffsetXField)
-def EventContentSpineDialogOffsetExcelAddDialogOffsetYField(builder, dialogOffsetYField): builder.PrependFloat32Slot(6, dialogOffsetYField, 0.0)
+    EventContentSpineDialogOffsetExcelAddDialogOffsetXField(builder, dialogOffsetXField)
+
+def EventContentSpineDialogOffsetExcelAddDialogOffsetYField(builder, dialogOffsetYField):
+    builder.PrependFloat32Slot(6, dialogOffsetYField, 0.0)
+
 def AddDialogOffsetYField(builder, dialogOffsetYField):
-    return EventContentSpineDialogOffsetExcelAddDialogOffsetYField(builder, dialogOffsetYField)
-def EventContentSpineDialogOffsetExcelEnd(builder): return builder.EndObject()
+    EventContentSpineDialogOffsetExcelAddDialogOffsetYField(builder, dialogOffsetYField)
+
+def EventContentSpineDialogOffsetExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentSpineDialogOffsetExcelEnd(builder)

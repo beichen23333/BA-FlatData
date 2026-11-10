@@ -52,21 +52,38 @@ class KeyControllerImageExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def KeyControllerImageExcelStart(builder): builder.StartObject(4)
+def KeyControllerImageExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return KeyControllerImageExcelStart(builder)
-def KeyControllerImageExcelAddControllerKeyCodeField(builder, controllerKeyCodeField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(controllerKeyCodeField), 0)
+    KeyControllerImageExcelStart(builder)
+
+def KeyControllerImageExcelAddControllerKeyCodeField(builder, controllerKeyCodeField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(controllerKeyCodeField), 0)
+
 def AddControllerKeyCodeField(builder, controllerKeyCodeField):
-    return KeyControllerImageExcelAddControllerKeyCodeField(builder, controllerKeyCodeField)
-def KeyControllerImageExcelAddPSIconNameField(builder, pSIconNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(pSIconNameField), 0)
+    KeyControllerImageExcelAddControllerKeyCodeField(builder, controllerKeyCodeField)
+
+def KeyControllerImageExcelAddPSIconNameField(builder, pSIconNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(pSIconNameField), 0)
+
 def AddPSIconNameField(builder, pSIconNameField):
-    return KeyControllerImageExcelAddPSIconNameField(builder, pSIconNameField)
-def KeyControllerImageExcelAddXBoxIconNameField(builder, xBoxIconNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(xBoxIconNameField), 0)
+    KeyControllerImageExcelAddPSIconNameField(builder, pSIconNameField)
+
+def KeyControllerImageExcelAddXBoxIconNameField(builder, xBoxIconNameField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(xBoxIconNameField), 0)
+
 def AddXBoxIconNameField(builder, xBoxIconNameField):
-    return KeyControllerImageExcelAddXBoxIconNameField(builder, xBoxIconNameField)
-def KeyControllerImageExcelAddSteamDeckIconNameField(builder, steamDeckIconNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(steamDeckIconNameField), 0)
+    KeyControllerImageExcelAddXBoxIconNameField(builder, xBoxIconNameField)
+
+def KeyControllerImageExcelAddSteamDeckIconNameField(builder, steamDeckIconNameField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(steamDeckIconNameField), 0)
+
 def AddSteamDeckIconNameField(builder, steamDeckIconNameField):
-    return KeyControllerImageExcelAddSteamDeckIconNameField(builder, steamDeckIconNameField)
-def KeyControllerImageExcelEnd(builder): return builder.EndObject()
+    KeyControllerImageExcelAddSteamDeckIconNameField(builder, steamDeckIconNameField)
+
+def KeyControllerImageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return KeyControllerImageExcelEnd(builder)

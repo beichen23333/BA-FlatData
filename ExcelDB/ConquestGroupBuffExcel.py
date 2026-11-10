@@ -72,24 +72,44 @@ class ConquestGroupBuffExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def ConquestGroupBuffExcelStart(builder): builder.StartObject(4)
+def ConquestGroupBuffExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return ConquestGroupBuffExcelStart(builder)
-def ConquestGroupBuffExcelAddConquestBuffIdField(builder, conquestBuffIdField): builder.PrependInt32Slot(0, conquestBuffIdField, 0)
+    ConquestGroupBuffExcelStart(builder)
+
+def ConquestGroupBuffExcelAddConquestBuffIdField(builder, conquestBuffIdField):
+    builder.PrependInt32Slot(0, conquestBuffIdField, 0)
+
 def AddConquestBuffIdField(builder, conquestBuffIdField):
-    return ConquestGroupBuffExcelAddConquestBuffIdField(builder, conquestBuffIdField)
-def ConquestGroupBuffExcelAddSchoolField(builder, schoolField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(schoolField), 0)
+    ConquestGroupBuffExcelAddConquestBuffIdField(builder, conquestBuffIdField)
+
+def ConquestGroupBuffExcelAddSchoolField(builder, schoolField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(schoolField), 0)
+
 def AddSchoolField(builder, schoolField):
-    return ConquestGroupBuffExcelAddSchoolField(builder, schoolField)
-def ConquestGroupBuffExcelStartSchoolFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSchoolFieldVector(builder, numElems):
+    ConquestGroupBuffExcelAddSchoolField(builder, schoolField)
+
+def ConquestGroupBuffExcelStartSchoolFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSchoolFieldVector(builder, numElems: int) -> int:
     return ConquestGroupBuffExcelStartSchoolFieldVector(builder, numElems)
-def ConquestGroupBuffExcelAddRecommandLocalizeEtcIdField(builder, recommandLocalizeEtcIdField): builder.PrependUint32Slot(2, recommandLocalizeEtcIdField, 0)
+
+def ConquestGroupBuffExcelAddRecommandLocalizeEtcIdField(builder, recommandLocalizeEtcIdField):
+    builder.PrependUint32Slot(2, recommandLocalizeEtcIdField, 0)
+
 def AddRecommandLocalizeEtcIdField(builder, recommandLocalizeEtcIdField):
-    return ConquestGroupBuffExcelAddRecommandLocalizeEtcIdField(builder, recommandLocalizeEtcIdField)
-def ConquestGroupBuffExcelAddSkillGroupIdField(builder, skillGroupIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+    ConquestGroupBuffExcelAddRecommandLocalizeEtcIdField(builder, recommandLocalizeEtcIdField)
+
+def ConquestGroupBuffExcelAddSkillGroupIdField(builder, skillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(skillGroupIdField), 0)
+
 def AddSkillGroupIdField(builder, skillGroupIdField):
-    return ConquestGroupBuffExcelAddSkillGroupIdField(builder, skillGroupIdField)
-def ConquestGroupBuffExcelEnd(builder): return builder.EndObject()
+    ConquestGroupBuffExcelAddSkillGroupIdField(builder, skillGroupIdField)
+
+def ConquestGroupBuffExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ConquestGroupBuffExcelEnd(builder)

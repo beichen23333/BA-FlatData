@@ -58,18 +58,32 @@ class FavorLevelExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
-def FavorLevelExcelStart(builder): builder.StartObject(2)
+def FavorLevelExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return FavorLevelExcelStart(builder)
-def FavorLevelExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(0, levelField, 0)
+    FavorLevelExcelStart(builder)
+
+def FavorLevelExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(0, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return FavorLevelExcelAddLevelField(builder, levelField)
-def FavorLevelExcelAddExpTypeField(builder, expTypeField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(expTypeField), 0)
+    FavorLevelExcelAddLevelField(builder, levelField)
+
+def FavorLevelExcelAddExpTypeField(builder, expTypeField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(expTypeField), 0)
+
 def AddExpTypeField(builder, expTypeField):
-    return FavorLevelExcelAddExpTypeField(builder, expTypeField)
-def FavorLevelExcelStartExpTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExpTypeFieldVector(builder, numElems):
+    FavorLevelExcelAddExpTypeField(builder, expTypeField)
+
+def FavorLevelExcelStartExpTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExpTypeFieldVector(builder, numElems: int) -> int:
     return FavorLevelExcelStartExpTypeFieldVector(builder, numElems)
-def FavorLevelExcelEnd(builder): return builder.EndObject()
+
+def FavorLevelExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FavorLevelExcelEnd(builder)

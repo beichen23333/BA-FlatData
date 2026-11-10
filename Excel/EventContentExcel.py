@@ -52,21 +52,38 @@ class EventContentExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EventContentExcelStart(builder): builder.StartObject(4)
+def EventContentExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return EventContentExcelStart(builder)
-def EventContentExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    EventContentExcelStart(builder)
+
+def EventContentExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return EventContentExcelAddIdField(builder, idField)
-def EventContentExcelAddDevNameField(builder, devNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+    EventContentExcelAddIdField(builder, idField)
+
+def EventContentExcelAddDevNameField(builder, devNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+
 def AddDevNameField(builder, devNameField):
-    return EventContentExcelAddDevNameField(builder, devNameField)
-def EventContentExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(2, eventContentIdField, 0)
+    EventContentExcelAddDevNameField(builder, devNameField)
+
+def EventContentExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(2, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentExcelAddBgImagePathField(builder, bgImagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(bgImagePathField), 0)
+    EventContentExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentExcelAddBgImagePathField(builder, bgImagePathField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(bgImagePathField), 0)
+
 def AddBgImagePathField(builder, bgImagePathField):
-    return EventContentExcelAddBgImagePathField(builder, bgImagePathField)
-def EventContentExcelEnd(builder): return builder.EndObject()
+    EventContentExcelAddBgImagePathField(builder, bgImagePathField)
+
+def EventContentExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentExcelEnd(builder)

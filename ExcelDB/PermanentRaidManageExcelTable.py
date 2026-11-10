@@ -49,15 +49,26 @@ class PermanentRaidManageExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def PermanentRaidManageExcelTableStart(builder): builder.StartObject(1)
+def PermanentRaidManageExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return PermanentRaidManageExcelTableStart(builder)
-def PermanentRaidManageExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    PermanentRaidManageExcelTableStart(builder)
+
+def PermanentRaidManageExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return PermanentRaidManageExcelTableAddDataList(builder, dataList)
-def PermanentRaidManageExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    PermanentRaidManageExcelTableAddDataList(builder, dataList)
+
+def PermanentRaidManageExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return PermanentRaidManageExcelTableStartDataListVector(builder, numElems)
-def PermanentRaidManageExcelTableEnd(builder): return builder.EndObject()
+
+def PermanentRaidManageExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PermanentRaidManageExcelTableEnd(builder)

@@ -49,15 +49,26 @@ class VoiceLogicEffectExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def VoiceLogicEffectExcelTableStart(builder): builder.StartObject(1)
+def VoiceLogicEffectExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return VoiceLogicEffectExcelTableStart(builder)
-def VoiceLogicEffectExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    VoiceLogicEffectExcelTableStart(builder)
+
+def VoiceLogicEffectExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return VoiceLogicEffectExcelTableAddDataList(builder, dataList)
-def VoiceLogicEffectExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    VoiceLogicEffectExcelTableAddDataList(builder, dataList)
+
+def VoiceLogicEffectExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return VoiceLogicEffectExcelTableStartDataListVector(builder, numElems)
-def VoiceLogicEffectExcelTableEnd(builder): return builder.EndObject()
+
+def VoiceLogicEffectExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return VoiceLogicEffectExcelTableEnd(builder)

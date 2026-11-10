@@ -51,15 +51,26 @@ class MinigameCardExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameCardExcelStart(builder): builder.StartObject(1)
+def MinigameCardExcelStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameCardExcelStart(builder)
-def MinigameCardExcelAddNoneField(builder, noneField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(noneField), 0)
+    MinigameCardExcelStart(builder)
+
+def MinigameCardExcelAddNoneField(builder, noneField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(noneField), 0)
+
 def AddNoneField(builder, noneField):
-    return MinigameCardExcelAddNoneField(builder, noneField)
-def MinigameCardExcelStartNoneFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNoneFieldVector(builder, numElems):
+    MinigameCardExcelAddNoneField(builder, noneField)
+
+def MinigameCardExcelStartNoneFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartNoneFieldVector(builder, numElems: int) -> int:
     return MinigameCardExcelStartNoneFieldVector(builder, numElems)
-def MinigameCardExcelEnd(builder): return builder.EndObject()
+
+def MinigameCardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCardExcelEnd(builder)

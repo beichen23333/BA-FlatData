@@ -204,75 +204,146 @@ class EquipmentExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EquipmentExcelStart(builder): builder.StartObject(20)
+def EquipmentExcelStart(builder):
+    builder.StartObject(20)
+
 def Start(builder):
-    return EquipmentExcelStart(builder)
-def EquipmentExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    EquipmentExcelStart(builder)
+
+def EquipmentExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return EquipmentExcelAddIdField(builder, idField)
-def EquipmentExcelAddEquipmentCategoryField(builder, equipmentCategoryField): builder.PrependInt32Slot(1, equipmentCategoryField, 0)
+    EquipmentExcelAddIdField(builder, idField)
+
+def EquipmentExcelAddEquipmentCategoryField(builder, equipmentCategoryField):
+    builder.PrependInt32Slot(1, equipmentCategoryField, 0)
+
 def AddEquipmentCategoryField(builder, equipmentCategoryField):
-    return EquipmentExcelAddEquipmentCategoryField(builder, equipmentCategoryField)
-def EquipmentExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(2, rarityField, 0)
+    EquipmentExcelAddEquipmentCategoryField(builder, equipmentCategoryField)
+
+def EquipmentExcelAddRarityField(builder, rarityField):
+    builder.PrependInt32Slot(2, rarityField, 0)
+
 def AddRarityField(builder, rarityField):
-    return EquipmentExcelAddRarityField(builder, rarityField)
-def EquipmentExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(3, localizeEtcIdField, 0)
+    EquipmentExcelAddRarityField(builder, rarityField)
+
+def EquipmentExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(3, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return EquipmentExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def EquipmentExcelAddWearField(builder, wearField): builder.PrependBoolSlot(4, wearField, 0)
+    EquipmentExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def EquipmentExcelAddWearField(builder, wearField):
+    builder.PrependBoolSlot(4, wearField, 0)
+
 def AddWearField(builder, wearField):
-    return EquipmentExcelAddWearField(builder, wearField)
-def EquipmentExcelAddMaxLevelField(builder, maxLevelField): builder.PrependInt32Slot(5, maxLevelField, 0)
+    EquipmentExcelAddWearField(builder, wearField)
+
+def EquipmentExcelAddMaxLevelField(builder, maxLevelField):
+    builder.PrependInt32Slot(5, maxLevelField, 0)
+
 def AddMaxLevelField(builder, maxLevelField):
-    return EquipmentExcelAddMaxLevelField(builder, maxLevelField)
-def EquipmentExcelAddRecipeIdField(builder, recipeIdField): builder.PrependInt32Slot(6, recipeIdField, 0)
+    EquipmentExcelAddMaxLevelField(builder, maxLevelField)
+
+def EquipmentExcelAddRecipeIdField(builder, recipeIdField):
+    builder.PrependInt32Slot(6, recipeIdField, 0)
+
 def AddRecipeIdField(builder, recipeIdField):
-    return EquipmentExcelAddRecipeIdField(builder, recipeIdField)
-def EquipmentExcelAddTierInitField(builder, tierInitField): builder.PrependInt32Slot(7, tierInitField, 0)
+    EquipmentExcelAddRecipeIdField(builder, recipeIdField)
+
+def EquipmentExcelAddTierInitField(builder, tierInitField):
+    builder.PrependInt32Slot(7, tierInitField, 0)
+
 def AddTierInitField(builder, tierInitField):
-    return EquipmentExcelAddTierInitField(builder, tierInitField)
-def EquipmentExcelAddNextTierEquipmentField(builder, nextTierEquipmentField): builder.PrependInt32Slot(8, nextTierEquipmentField, 0)
+    EquipmentExcelAddTierInitField(builder, tierInitField)
+
+def EquipmentExcelAddNextTierEquipmentField(builder, nextTierEquipmentField):
+    builder.PrependInt32Slot(8, nextTierEquipmentField, 0)
+
 def AddNextTierEquipmentField(builder, nextTierEquipmentField):
-    return EquipmentExcelAddNextTierEquipmentField(builder, nextTierEquipmentField)
-def EquipmentExcelAddStackableMaxField(builder, stackableMaxField): builder.PrependInt32Slot(9, stackableMaxField, 0)
+    EquipmentExcelAddNextTierEquipmentField(builder, nextTierEquipmentField)
+
+def EquipmentExcelAddStackableMaxField(builder, stackableMaxField):
+    builder.PrependInt32Slot(9, stackableMaxField, 0)
+
 def AddStackableMaxField(builder, stackableMaxField):
-    return EquipmentExcelAddStackableMaxField(builder, stackableMaxField)
-def EquipmentExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+    EquipmentExcelAddStackableMaxField(builder, stackableMaxField)
+
+def EquipmentExcelAddIconField(builder, iconField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+
 def AddIconField(builder, iconField):
-    return EquipmentExcelAddIconField(builder, iconField)
-def EquipmentExcelAddImageNameField(builder, imageNameField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(imageNameField), 0)
+    EquipmentExcelAddIconField(builder, iconField)
+
+def EquipmentExcelAddImageNameField(builder, imageNameField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(imageNameField), 0)
+
 def AddImageNameField(builder, imageNameField):
-    return EquipmentExcelAddImageNameField(builder, imageNameField)
-def EquipmentExcelAddTagsField(builder, tagsField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+    EquipmentExcelAddImageNameField(builder, imageNameField)
+
+def EquipmentExcelAddTagsField(builder, tagsField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(tagsField), 0)
+
 def AddTagsField(builder, tagsField):
-    return EquipmentExcelAddTagsField(builder, tagsField)
-def EquipmentExcelStartTagsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTagsFieldVector(builder, numElems):
+    EquipmentExcelAddTagsField(builder, tagsField)
+
+def EquipmentExcelStartTagsFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartTagsFieldVector(builder, numElems: int) -> int:
     return EquipmentExcelStartTagsFieldVector(builder, numElems)
-def EquipmentExcelAddCraftQualityTier0Field(builder, craftQualityTier0Field): builder.PrependInt32Slot(13, craftQualityTier0Field, 0)
+
+def EquipmentExcelAddCraftQualityTier0Field(builder, craftQualityTier0Field):
+    builder.PrependInt32Slot(13, craftQualityTier0Field, 0)
+
 def AddCraftQualityTier0Field(builder, craftQualityTier0Field):
-    return EquipmentExcelAddCraftQualityTier0Field(builder, craftQualityTier0Field)
-def EquipmentExcelAddCraftQualityTier1Field(builder, craftQualityTier1Field): builder.PrependInt32Slot(14, craftQualityTier1Field, 0)
+    EquipmentExcelAddCraftQualityTier0Field(builder, craftQualityTier0Field)
+
+def EquipmentExcelAddCraftQualityTier1Field(builder, craftQualityTier1Field):
+    builder.PrependInt32Slot(14, craftQualityTier1Field, 0)
+
 def AddCraftQualityTier1Field(builder, craftQualityTier1Field):
-    return EquipmentExcelAddCraftQualityTier1Field(builder, craftQualityTier1Field)
-def EquipmentExcelAddCraftQualityTier2Field(builder, craftQualityTier2Field): builder.PrependInt32Slot(15, craftQualityTier2Field, 0)
+    EquipmentExcelAddCraftQualityTier1Field(builder, craftQualityTier1Field)
+
+def EquipmentExcelAddCraftQualityTier2Field(builder, craftQualityTier2Field):
+    builder.PrependInt32Slot(15, craftQualityTier2Field, 0)
+
 def AddCraftQualityTier2Field(builder, craftQualityTier2Field):
-    return EquipmentExcelAddCraftQualityTier2Field(builder, craftQualityTier2Field)
-def EquipmentExcelAddShiftingCraftQualityField(builder, shiftingCraftQualityField): builder.PrependInt32Slot(16, shiftingCraftQualityField, 0)
+    EquipmentExcelAddCraftQualityTier2Field(builder, craftQualityTier2Field)
+
+def EquipmentExcelAddShiftingCraftQualityField(builder, shiftingCraftQualityField):
+    builder.PrependInt32Slot(16, shiftingCraftQualityField, 0)
+
 def AddShiftingCraftQualityField(builder, shiftingCraftQualityField):
-    return EquipmentExcelAddShiftingCraftQualityField(builder, shiftingCraftQualityField)
-def EquipmentExcelAddShopCategoryField(builder, shopCategoryField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(shopCategoryField), 0)
+    EquipmentExcelAddShiftingCraftQualityField(builder, shiftingCraftQualityField)
+
+def EquipmentExcelAddShopCategoryField(builder, shopCategoryField):
+    builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(shopCategoryField), 0)
+
 def AddShopCategoryField(builder, shopCategoryField):
-    return EquipmentExcelAddShopCategoryField(builder, shopCategoryField)
-def EquipmentExcelStartShopCategoryFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartShopCategoryFieldVector(builder, numElems):
+    EquipmentExcelAddShopCategoryField(builder, shopCategoryField)
+
+def EquipmentExcelStartShopCategoryFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartShopCategoryFieldVector(builder, numElems: int) -> int:
     return EquipmentExcelStartShopCategoryFieldVector(builder, numElems)
-def EquipmentExcelAddShortcutTypeIdField(builder, shortcutTypeIdField): builder.PrependInt32Slot(18, shortcutTypeIdField, 0)
+
+def EquipmentExcelAddShortcutTypeIdField(builder, shortcutTypeIdField):
+    builder.PrependInt32Slot(18, shortcutTypeIdField, 0)
+
 def AddShortcutTypeIdField(builder, shortcutTypeIdField):
-    return EquipmentExcelAddShortcutTypeIdField(builder, shortcutTypeIdField)
-def EquipmentExcelAddRedirectItemIdField(builder, redirectItemIdField): builder.PrependInt32Slot(19, redirectItemIdField, 0)
+    EquipmentExcelAddShortcutTypeIdField(builder, shortcutTypeIdField)
+
+def EquipmentExcelAddRedirectItemIdField(builder, redirectItemIdField):
+    builder.PrependInt32Slot(19, redirectItemIdField, 0)
+
 def AddRedirectItemIdField(builder, redirectItemIdField):
-    return EquipmentExcelAddRedirectItemIdField(builder, redirectItemIdField)
-def EquipmentExcelEnd(builder): return builder.EndObject()
+    EquipmentExcelAddRedirectItemIdField(builder, redirectItemIdField)
+
+def EquipmentExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EquipmentExcelEnd(builder)

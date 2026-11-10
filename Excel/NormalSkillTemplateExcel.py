@@ -52,21 +52,38 @@ class NormalSkillTemplateExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def NormalSkillTemplateExcelStart(builder): builder.StartObject(4)
+def NormalSkillTemplateExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return NormalSkillTemplateExcelStart(builder)
-def NormalSkillTemplateExcelAddIndexField(builder, indexField): builder.PrependInt32Slot(0, indexField, 0)
+    NormalSkillTemplateExcelStart(builder)
+
+def NormalSkillTemplateExcelAddIndexField(builder, indexField):
+    builder.PrependInt32Slot(0, indexField, 0)
+
 def AddIndexField(builder, indexField):
-    return NormalSkillTemplateExcelAddIndexField(builder, indexField)
-def NormalSkillTemplateExcelAddFirstCoolTimeField(builder, firstCoolTimeField): builder.PrependFloat32Slot(1, firstCoolTimeField, 0.0)
+    NormalSkillTemplateExcelAddIndexField(builder, indexField)
+
+def NormalSkillTemplateExcelAddFirstCoolTimeField(builder, firstCoolTimeField):
+    builder.PrependFloat32Slot(1, firstCoolTimeField, 0.0)
+
 def AddFirstCoolTimeField(builder, firstCoolTimeField):
-    return NormalSkillTemplateExcelAddFirstCoolTimeField(builder, firstCoolTimeField)
-def NormalSkillTemplateExcelAddCoolTimeField(builder, coolTimeField): builder.PrependFloat32Slot(2, coolTimeField, 0.0)
+    NormalSkillTemplateExcelAddFirstCoolTimeField(builder, firstCoolTimeField)
+
+def NormalSkillTemplateExcelAddCoolTimeField(builder, coolTimeField):
+    builder.PrependFloat32Slot(2, coolTimeField, 0.0)
+
 def AddCoolTimeField(builder, coolTimeField):
-    return NormalSkillTemplateExcelAddCoolTimeField(builder, coolTimeField)
-def NormalSkillTemplateExcelAddMultiAniField(builder, multiAniField): builder.PrependBoolSlot(3, multiAniField, 0)
+    NormalSkillTemplateExcelAddCoolTimeField(builder, coolTimeField)
+
+def NormalSkillTemplateExcelAddMultiAniField(builder, multiAniField):
+    builder.PrependBoolSlot(3, multiAniField, 0)
+
 def AddMultiAniField(builder, multiAniField):
-    return NormalSkillTemplateExcelAddMultiAniField(builder, multiAniField)
-def NormalSkillTemplateExcelEnd(builder): return builder.EndObject()
+    NormalSkillTemplateExcelAddMultiAniField(builder, multiAniField)
+
+def NormalSkillTemplateExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return NormalSkillTemplateExcelEnd(builder)

@@ -52,21 +52,38 @@ class EventContentDebuffRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentDebuffRewardExcelStart(builder): builder.StartObject(4)
+def EventContentDebuffRewardExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return EventContentDebuffRewardExcelStart(builder)
-def EventContentDebuffRewardExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentDebuffRewardExcelStart(builder)
+
+def EventContentDebuffRewardExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentDebuffRewardExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentDebuffRewardExcelAddEventStageIdField(builder, eventStageIdField): builder.PrependInt32Slot(1, eventStageIdField, 0)
+    EventContentDebuffRewardExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentDebuffRewardExcelAddEventStageIdField(builder, eventStageIdField):
+    builder.PrependInt32Slot(1, eventStageIdField, 0)
+
 def AddEventStageIdField(builder, eventStageIdField):
-    return EventContentDebuffRewardExcelAddEventStageIdField(builder, eventStageIdField)
-def EventContentDebuffRewardExcelAddEventContentItemTypeField(builder, eventContentItemTypeField): builder.PrependInt32Slot(2, eventContentItemTypeField, 0)
+    EventContentDebuffRewardExcelAddEventStageIdField(builder, eventStageIdField)
+
+def EventContentDebuffRewardExcelAddEventContentItemTypeField(builder, eventContentItemTypeField):
+    builder.PrependInt32Slot(2, eventContentItemTypeField, 0)
+
 def AddEventContentItemTypeField(builder, eventContentItemTypeField):
-    return EventContentDebuffRewardExcelAddEventContentItemTypeField(builder, eventContentItemTypeField)
-def EventContentDebuffRewardExcelAddRewardPercentageField(builder, rewardPercentageField): builder.PrependInt32Slot(3, rewardPercentageField, 0)
+    EventContentDebuffRewardExcelAddEventContentItemTypeField(builder, eventContentItemTypeField)
+
+def EventContentDebuffRewardExcelAddRewardPercentageField(builder, rewardPercentageField):
+    builder.PrependInt32Slot(3, rewardPercentageField, 0)
+
 def AddRewardPercentageField(builder, rewardPercentageField):
-    return EventContentDebuffRewardExcelAddRewardPercentageField(builder, rewardPercentageField)
-def EventContentDebuffRewardExcelEnd(builder): return builder.EndObject()
+    EventContentDebuffRewardExcelAddRewardPercentageField(builder, rewardPercentageField)
+
+def EventContentDebuffRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentDebuffRewardExcelEnd(builder)

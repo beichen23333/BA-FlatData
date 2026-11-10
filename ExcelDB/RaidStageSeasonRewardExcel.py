@@ -112,30 +112,56 @@ class RaidStageSeasonRewardExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
-def RaidStageSeasonRewardExcelStart(builder): builder.StartObject(4)
+def RaidStageSeasonRewardExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return RaidStageSeasonRewardExcelStart(builder)
-def RaidStageSeasonRewardExcelAddSeasonRewardIdField(builder, seasonRewardIdField): builder.PrependInt32Slot(0, seasonRewardIdField, 0)
+    RaidStageSeasonRewardExcelStart(builder)
+
+def RaidStageSeasonRewardExcelAddSeasonRewardIdField(builder, seasonRewardIdField):
+    builder.PrependInt32Slot(0, seasonRewardIdField, 0)
+
 def AddSeasonRewardIdField(builder, seasonRewardIdField):
-    return RaidStageSeasonRewardExcelAddSeasonRewardIdField(builder, seasonRewardIdField)
-def RaidStageSeasonRewardExcelAddSeasonRewardParcelTypeField(builder, seasonRewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(seasonRewardParcelTypeField), 0)
+    RaidStageSeasonRewardExcelAddSeasonRewardIdField(builder, seasonRewardIdField)
+
+def RaidStageSeasonRewardExcelAddSeasonRewardParcelTypeField(builder, seasonRewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(seasonRewardParcelTypeField), 0)
+
 def AddSeasonRewardParcelTypeField(builder, seasonRewardParcelTypeField):
-    return RaidStageSeasonRewardExcelAddSeasonRewardParcelTypeField(builder, seasonRewardParcelTypeField)
-def RaidStageSeasonRewardExcelStartSeasonRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSeasonRewardParcelTypeFieldVector(builder, numElems):
+    RaidStageSeasonRewardExcelAddSeasonRewardParcelTypeField(builder, seasonRewardParcelTypeField)
+
+def RaidStageSeasonRewardExcelStartSeasonRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSeasonRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return RaidStageSeasonRewardExcelStartSeasonRewardParcelTypeFieldVector(builder, numElems)
-def RaidStageSeasonRewardExcelAddSeasonRewardParcelUniqueIdField(builder, seasonRewardParcelUniqueIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(seasonRewardParcelUniqueIdField), 0)
+
+def RaidStageSeasonRewardExcelAddSeasonRewardParcelUniqueIdField(builder, seasonRewardParcelUniqueIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(seasonRewardParcelUniqueIdField), 0)
+
 def AddSeasonRewardParcelUniqueIdField(builder, seasonRewardParcelUniqueIdField):
-    return RaidStageSeasonRewardExcelAddSeasonRewardParcelUniqueIdField(builder, seasonRewardParcelUniqueIdField)
-def RaidStageSeasonRewardExcelStartSeasonRewardParcelUniqueIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSeasonRewardParcelUniqueIdFieldVector(builder, numElems):
+    RaidStageSeasonRewardExcelAddSeasonRewardParcelUniqueIdField(builder, seasonRewardParcelUniqueIdField)
+
+def RaidStageSeasonRewardExcelStartSeasonRewardParcelUniqueIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSeasonRewardParcelUniqueIdFieldVector(builder, numElems: int) -> int:
     return RaidStageSeasonRewardExcelStartSeasonRewardParcelUniqueIdFieldVector(builder, numElems)
-def RaidStageSeasonRewardExcelAddSeasonRewardAmountField(builder, seasonRewardAmountField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(seasonRewardAmountField), 0)
+
+def RaidStageSeasonRewardExcelAddSeasonRewardAmountField(builder, seasonRewardAmountField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(seasonRewardAmountField), 0)
+
 def AddSeasonRewardAmountField(builder, seasonRewardAmountField):
-    return RaidStageSeasonRewardExcelAddSeasonRewardAmountField(builder, seasonRewardAmountField)
-def RaidStageSeasonRewardExcelStartSeasonRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSeasonRewardAmountFieldVector(builder, numElems):
+    RaidStageSeasonRewardExcelAddSeasonRewardAmountField(builder, seasonRewardAmountField)
+
+def RaidStageSeasonRewardExcelStartSeasonRewardAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSeasonRewardAmountFieldVector(builder, numElems: int) -> int:
     return RaidStageSeasonRewardExcelStartSeasonRewardAmountFieldVector(builder, numElems)
-def RaidStageSeasonRewardExcelEnd(builder): return builder.EndObject()
+
+def RaidStageSeasonRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return RaidStageSeasonRewardExcelEnd(builder)

@@ -49,15 +49,26 @@ class MinigameRoadPuzzleMapExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameRoadPuzzleMapExcelTableStart(builder): builder.StartObject(1)
+def MinigameRoadPuzzleMapExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameRoadPuzzleMapExcelTableStart(builder)
-def MinigameRoadPuzzleMapExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MinigameRoadPuzzleMapExcelTableStart(builder)
+
+def MinigameRoadPuzzleMapExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MinigameRoadPuzzleMapExcelTableAddDataList(builder, dataList)
-def MinigameRoadPuzzleMapExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MinigameRoadPuzzleMapExcelTableAddDataList(builder, dataList)
+
+def MinigameRoadPuzzleMapExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MinigameRoadPuzzleMapExcelTableStartDataListVector(builder, numElems)
-def MinigameRoadPuzzleMapExcelTableEnd(builder): return builder.EndObject()
+
+def MinigameRoadPuzzleMapExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameRoadPuzzleMapExcelTableEnd(builder)

@@ -52,21 +52,38 @@ class CharacterPotentialStatExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def CharacterPotentialStatExcelStart(builder): builder.StartObject(4)
+def CharacterPotentialStatExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return CharacterPotentialStatExcelStart(builder)
-def CharacterPotentialStatExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField): builder.PrependInt32Slot(0, potentialStatGroupIdField, 0)
+    CharacterPotentialStatExcelStart(builder)
+
+def CharacterPotentialStatExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField):
+    builder.PrependInt32Slot(0, potentialStatGroupIdField, 0)
+
 def AddPotentialStatGroupIdField(builder, potentialStatGroupIdField):
-    return CharacterPotentialStatExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField)
-def CharacterPotentialStatExcelAddPotentialLevelField(builder, potentialLevelField): builder.PrependInt32Slot(1, potentialLevelField, 0)
+    CharacterPotentialStatExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField)
+
+def CharacterPotentialStatExcelAddPotentialLevelField(builder, potentialLevelField):
+    builder.PrependInt32Slot(1, potentialLevelField, 0)
+
 def AddPotentialLevelField(builder, potentialLevelField):
-    return CharacterPotentialStatExcelAddPotentialLevelField(builder, potentialLevelField)
-def CharacterPotentialStatExcelAddRecipeIdField(builder, recipeIdField): builder.PrependInt32Slot(2, recipeIdField, 0)
+    CharacterPotentialStatExcelAddPotentialLevelField(builder, potentialLevelField)
+
+def CharacterPotentialStatExcelAddRecipeIdField(builder, recipeIdField):
+    builder.PrependInt32Slot(2, recipeIdField, 0)
+
 def AddRecipeIdField(builder, recipeIdField):
-    return CharacterPotentialStatExcelAddRecipeIdField(builder, recipeIdField)
-def CharacterPotentialStatExcelAddStatBonusRateField(builder, statBonusRateField): builder.PrependInt32Slot(3, statBonusRateField, 0)
+    CharacterPotentialStatExcelAddRecipeIdField(builder, recipeIdField)
+
+def CharacterPotentialStatExcelAddStatBonusRateField(builder, statBonusRateField):
+    builder.PrependInt32Slot(3, statBonusRateField, 0)
+
 def AddStatBonusRateField(builder, statBonusRateField):
-    return CharacterPotentialStatExcelAddStatBonusRateField(builder, statBonusRateField)
-def CharacterPotentialStatExcelEnd(builder): return builder.EndObject()
+    CharacterPotentialStatExcelAddStatBonusRateField(builder, statBonusRateField)
+
+def CharacterPotentialStatExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterPotentialStatExcelEnd(builder)

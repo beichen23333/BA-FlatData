@@ -49,15 +49,26 @@ class ScenarioCharacterNameExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ScenarioCharacterNameExcelTableStart(builder): builder.StartObject(1)
+def ScenarioCharacterNameExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ScenarioCharacterNameExcelTableStart(builder)
-def ScenarioCharacterNameExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ScenarioCharacterNameExcelTableStart(builder)
+
+def ScenarioCharacterNameExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ScenarioCharacterNameExcelTableAddDataList(builder, dataList)
-def ScenarioCharacterNameExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ScenarioCharacterNameExcelTableAddDataList(builder, dataList)
+
+def ScenarioCharacterNameExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ScenarioCharacterNameExcelTableStartDataListVector(builder, numElems)
-def ScenarioCharacterNameExcelTableEnd(builder): return builder.EndObject()
+
+def ScenarioCharacterNameExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioCharacterNameExcelTableEnd(builder)

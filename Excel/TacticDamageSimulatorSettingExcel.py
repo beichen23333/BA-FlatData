@@ -163,63 +163,122 @@ class TacticDamageSimulatorSettingExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         return o == 0
 
-def TacticDamageSimulatorSettingExcelStart(builder): builder.StartObject(17)
+def TacticDamageSimulatorSettingExcelStart(builder):
+    builder.StartObject(17)
+
 def Start(builder):
-    return TacticDamageSimulatorSettingExcelStart(builder)
-def TacticDamageSimulatorSettingExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(0, orderField, 0)
+    TacticDamageSimulatorSettingExcelStart(builder)
+
+def TacticDamageSimulatorSettingExcelAddOrderField(builder, orderField):
+    builder.PrependInt32Slot(0, orderField, 0)
+
 def AddOrderField(builder, orderField):
-    return TacticDamageSimulatorSettingExcelAddOrderField(builder, orderField)
-def TacticDamageSimulatorSettingExcelAddRepeatField(builder, repeatField): builder.PrependInt32Slot(1, repeatField, 0)
+    TacticDamageSimulatorSettingExcelAddOrderField(builder, orderField)
+
+def TacticDamageSimulatorSettingExcelAddRepeatField(builder, repeatField):
+    builder.PrependInt32Slot(1, repeatField, 0)
+
 def AddRepeatField(builder, repeatField):
-    return TacticDamageSimulatorSettingExcelAddRepeatField(builder, repeatField)
-def TacticDamageSimulatorSettingExcelAddTestPresetField(builder, testPresetField): builder.PrependInt32Slot(2, testPresetField, 0)
+    TacticDamageSimulatorSettingExcelAddRepeatField(builder, repeatField)
+
+def TacticDamageSimulatorSettingExcelAddTestPresetField(builder, testPresetField):
+    builder.PrependInt32Slot(2, testPresetField, 0)
+
 def AddTestPresetField(builder, testPresetField):
-    return TacticDamageSimulatorSettingExcelAddTestPresetField(builder, testPresetField)
-def TacticDamageSimulatorSettingExcelAddTestBattleTimeField(builder, testBattleTimeField): builder.PrependInt32Slot(3, testBattleTimeField, 0)
+    TacticDamageSimulatorSettingExcelAddTestPresetField(builder, testPresetField)
+
+def TacticDamageSimulatorSettingExcelAddTestBattleTimeField(builder, testBattleTimeField):
+    builder.PrependInt32Slot(3, testBattleTimeField, 0)
+
 def AddTestBattleTimeField(builder, testBattleTimeField):
-    return TacticDamageSimulatorSettingExcelAddTestBattleTimeField(builder, testBattleTimeField)
-def TacticDamageSimulatorSettingExcelAddStrikerSquardField(builder, strikerSquardField): builder.PrependInt32Slot(4, strikerSquardField, 0)
+    TacticDamageSimulatorSettingExcelAddTestBattleTimeField(builder, testBattleTimeField)
+
+def TacticDamageSimulatorSettingExcelAddStrikerSquardField(builder, strikerSquardField):
+    builder.PrependInt32Slot(4, strikerSquardField, 0)
+
 def AddStrikerSquardField(builder, strikerSquardField):
-    return TacticDamageSimulatorSettingExcelAddStrikerSquardField(builder, strikerSquardField)
-def TacticDamageSimulatorSettingExcelAddSpecialSquardField(builder, specialSquardField): builder.PrependInt32Slot(5, specialSquardField, 0)
+    TacticDamageSimulatorSettingExcelAddStrikerSquardField(builder, strikerSquardField)
+
+def TacticDamageSimulatorSettingExcelAddSpecialSquardField(builder, specialSquardField):
+    builder.PrependInt32Slot(5, specialSquardField, 0)
+
 def AddSpecialSquardField(builder, specialSquardField):
-    return TacticDamageSimulatorSettingExcelAddSpecialSquardField(builder, specialSquardField)
-def TacticDamageSimulatorSettingExcelAddReplaceCharacterCostRegenField(builder, replaceCharacterCostRegenField): builder.PrependBoolSlot(6, replaceCharacterCostRegenField, 0)
+    TacticDamageSimulatorSettingExcelAddSpecialSquardField(builder, specialSquardField)
+
+def TacticDamageSimulatorSettingExcelAddReplaceCharacterCostRegenField(builder, replaceCharacterCostRegenField):
+    builder.PrependBoolSlot(6, replaceCharacterCostRegenField, 0)
+
 def AddReplaceCharacterCostRegenField(builder, replaceCharacterCostRegenField):
-    return TacticDamageSimulatorSettingExcelAddReplaceCharacterCostRegenField(builder, replaceCharacterCostRegenField)
-def TacticDamageSimulatorSettingExcelAddReplaceCostRegenValueField(builder, replaceCostRegenValueField): builder.PrependInt32Slot(7, replaceCostRegenValueField, 0)
+    TacticDamageSimulatorSettingExcelAddReplaceCharacterCostRegenField(builder, replaceCharacterCostRegenField)
+
+def TacticDamageSimulatorSettingExcelAddReplaceCostRegenValueField(builder, replaceCostRegenValueField):
+    builder.PrependInt32Slot(7, replaceCostRegenValueField, 0)
+
 def AddReplaceCostRegenValueField(builder, replaceCostRegenValueField):
-    return TacticDamageSimulatorSettingExcelAddReplaceCostRegenValueField(builder, replaceCostRegenValueField)
-def TacticDamageSimulatorSettingExcelAddUseAutoSkillField(builder, useAutoSkillField): builder.PrependBoolSlot(8, useAutoSkillField, 0)
+    TacticDamageSimulatorSettingExcelAddReplaceCostRegenValueField(builder, replaceCostRegenValueField)
+
+def TacticDamageSimulatorSettingExcelAddUseAutoSkillField(builder, useAutoSkillField):
+    builder.PrependBoolSlot(8, useAutoSkillField, 0)
+
 def AddUseAutoSkillField(builder, useAutoSkillField):
-    return TacticDamageSimulatorSettingExcelAddUseAutoSkillField(builder, useAutoSkillField)
-def TacticDamageSimulatorSettingExcelAddOverrideStreetAdaptationField(builder, overrideStreetAdaptationField): builder.PrependInt32Slot(9, overrideStreetAdaptationField, 0)
+    TacticDamageSimulatorSettingExcelAddUseAutoSkillField(builder, useAutoSkillField)
+
+def TacticDamageSimulatorSettingExcelAddOverrideStreetAdaptationField(builder, overrideStreetAdaptationField):
+    builder.PrependInt32Slot(9, overrideStreetAdaptationField, 0)
+
 def AddOverrideStreetAdaptationField(builder, overrideStreetAdaptationField):
-    return TacticDamageSimulatorSettingExcelAddOverrideStreetAdaptationField(builder, overrideStreetAdaptationField)
-def TacticDamageSimulatorSettingExcelAddOverrideOutdoorAdaptationField(builder, overrideOutdoorAdaptationField): builder.PrependInt32Slot(10, overrideOutdoorAdaptationField, 0)
+    TacticDamageSimulatorSettingExcelAddOverrideStreetAdaptationField(builder, overrideStreetAdaptationField)
+
+def TacticDamageSimulatorSettingExcelAddOverrideOutdoorAdaptationField(builder, overrideOutdoorAdaptationField):
+    builder.PrependInt32Slot(10, overrideOutdoorAdaptationField, 0)
+
 def AddOverrideOutdoorAdaptationField(builder, overrideOutdoorAdaptationField):
-    return TacticDamageSimulatorSettingExcelAddOverrideOutdoorAdaptationField(builder, overrideOutdoorAdaptationField)
-def TacticDamageSimulatorSettingExcelAddOverrideIndoorAdaptationField(builder, overrideIndoorAdaptationField): builder.PrependInt32Slot(11, overrideIndoorAdaptationField, 0)
+    TacticDamageSimulatorSettingExcelAddOverrideOutdoorAdaptationField(builder, overrideOutdoorAdaptationField)
+
+def TacticDamageSimulatorSettingExcelAddOverrideIndoorAdaptationField(builder, overrideIndoorAdaptationField):
+    builder.PrependInt32Slot(11, overrideIndoorAdaptationField, 0)
+
 def AddOverrideIndoorAdaptationField(builder, overrideIndoorAdaptationField):
-    return TacticDamageSimulatorSettingExcelAddOverrideIndoorAdaptationField(builder, overrideIndoorAdaptationField)
-def TacticDamageSimulatorSettingExcelAddApplyOverrideAdaptationField(builder, applyOverrideAdaptationField): builder.PrependBoolSlot(12, applyOverrideAdaptationField, 0)
+    TacticDamageSimulatorSettingExcelAddOverrideIndoorAdaptationField(builder, overrideIndoorAdaptationField)
+
+def TacticDamageSimulatorSettingExcelAddApplyOverrideAdaptationField(builder, applyOverrideAdaptationField):
+    builder.PrependBoolSlot(12, applyOverrideAdaptationField, 0)
+
 def AddApplyOverrideAdaptationField(builder, applyOverrideAdaptationField):
-    return TacticDamageSimulatorSettingExcelAddApplyOverrideAdaptationField(builder, applyOverrideAdaptationField)
-def TacticDamageSimulatorSettingExcelAddOverrideFavorLevelField(builder, overrideFavorLevelField): builder.PrependInt32Slot(13, overrideFavorLevelField, 0)
+    TacticDamageSimulatorSettingExcelAddApplyOverrideAdaptationField(builder, applyOverrideAdaptationField)
+
+def TacticDamageSimulatorSettingExcelAddOverrideFavorLevelField(builder, overrideFavorLevelField):
+    builder.PrependInt32Slot(13, overrideFavorLevelField, 0)
+
 def AddOverrideFavorLevelField(builder, overrideFavorLevelField):
-    return TacticDamageSimulatorSettingExcelAddOverrideFavorLevelField(builder, overrideFavorLevelField)
-def TacticDamageSimulatorSettingExcelAddApplyOverrideFavorLevelField(builder, applyOverrideFavorLevelField): builder.PrependBoolSlot(14, applyOverrideFavorLevelField, 0)
+    TacticDamageSimulatorSettingExcelAddOverrideFavorLevelField(builder, overrideFavorLevelField)
+
+def TacticDamageSimulatorSettingExcelAddApplyOverrideFavorLevelField(builder, applyOverrideFavorLevelField):
+    builder.PrependBoolSlot(14, applyOverrideFavorLevelField, 0)
+
 def AddApplyOverrideFavorLevelField(builder, applyOverrideFavorLevelField):
-    return TacticDamageSimulatorSettingExcelAddApplyOverrideFavorLevelField(builder, applyOverrideFavorLevelField)
-def TacticDamageSimulatorSettingExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(15, groundIdField, 0)
+    TacticDamageSimulatorSettingExcelAddApplyOverrideFavorLevelField(builder, applyOverrideFavorLevelField)
+
+def TacticDamageSimulatorSettingExcelAddGroundIdField(builder, groundIdField):
+    builder.PrependInt32Slot(15, groundIdField, 0)
+
 def AddGroundIdField(builder, groundIdField):
-    return TacticDamageSimulatorSettingExcelAddGroundIdField(builder, groundIdField)
-def TacticDamageSimulatorSettingExcelAddFixedCharacterField(builder, fixedCharacterField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(fixedCharacterField), 0)
+    TacticDamageSimulatorSettingExcelAddGroundIdField(builder, groundIdField)
+
+def TacticDamageSimulatorSettingExcelAddFixedCharacterField(builder, fixedCharacterField):
+    builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(fixedCharacterField), 0)
+
 def AddFixedCharacterField(builder, fixedCharacterField):
-    return TacticDamageSimulatorSettingExcelAddFixedCharacterField(builder, fixedCharacterField)
-def TacticDamageSimulatorSettingExcelStartFixedCharacterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFixedCharacterFieldVector(builder, numElems):
+    TacticDamageSimulatorSettingExcelAddFixedCharacterField(builder, fixedCharacterField)
+
+def TacticDamageSimulatorSettingExcelStartFixedCharacterFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFixedCharacterFieldVector(builder, numElems: int) -> int:
     return TacticDamageSimulatorSettingExcelStartFixedCharacterFieldVector(builder, numElems)
-def TacticDamageSimulatorSettingExcelEnd(builder): return builder.EndObject()
+
+def TacticDamageSimulatorSettingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TacticDamageSimulatorSettingExcelEnd(builder)

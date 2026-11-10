@@ -49,15 +49,26 @@ class MemoryLobbyExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MemoryLobbyExcelTableStart(builder): builder.StartObject(1)
+def MemoryLobbyExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MemoryLobbyExcelTableStart(builder)
-def MemoryLobbyExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MemoryLobbyExcelTableStart(builder)
+
+def MemoryLobbyExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MemoryLobbyExcelTableAddDataList(builder, dataList)
-def MemoryLobbyExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MemoryLobbyExcelTableAddDataList(builder, dataList)
+
+def MemoryLobbyExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MemoryLobbyExcelTableStartDataListVector(builder, numElems)
-def MemoryLobbyExcelTableEnd(builder): return builder.EndObject()
+
+def MemoryLobbyExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MemoryLobbyExcelTableEnd(builder)

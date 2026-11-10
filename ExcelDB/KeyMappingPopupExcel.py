@@ -71,24 +71,44 @@ class KeyMappingPopupExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
-def KeyMappingPopupExcelStart(builder): builder.StartObject(3)
+def KeyMappingPopupExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return KeyMappingPopupExcelStart(builder)
-def KeyMappingPopupExcelAddPrefabNameField(builder, prefabNameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+    KeyMappingPopupExcelStart(builder)
+
+def KeyMappingPopupExcelAddPrefabNameField(builder, prefabNameField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+
 def AddPrefabNameField(builder, prefabNameField):
-    return KeyMappingPopupExcelAddPrefabNameField(builder, prefabNameField)
-def KeyMappingPopupExcelAddButtonNameField(builder, buttonNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(buttonNameField), 0)
+    KeyMappingPopupExcelAddPrefabNameField(builder, prefabNameField)
+
+def KeyMappingPopupExcelAddButtonNameField(builder, buttonNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(buttonNameField), 0)
+
 def AddButtonNameField(builder, buttonNameField):
-    return KeyMappingPopupExcelAddButtonNameField(builder, buttonNameField)
-def KeyMappingPopupExcelStartButtonNameFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartButtonNameFieldVector(builder, numElems):
+    KeyMappingPopupExcelAddButtonNameField(builder, buttonNameField)
+
+def KeyMappingPopupExcelStartButtonNameFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartButtonNameFieldVector(builder, numElems: int) -> int:
     return KeyMappingPopupExcelStartButtonNameFieldVector(builder, numElems)
-def KeyMappingPopupExcelAddKeyMappingIdField(builder, keyMappingIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(keyMappingIdField), 0)
+
+def KeyMappingPopupExcelAddKeyMappingIdField(builder, keyMappingIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(keyMappingIdField), 0)
+
 def AddKeyMappingIdField(builder, keyMappingIdField):
-    return KeyMappingPopupExcelAddKeyMappingIdField(builder, keyMappingIdField)
-def KeyMappingPopupExcelStartKeyMappingIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartKeyMappingIdFieldVector(builder, numElems):
+    KeyMappingPopupExcelAddKeyMappingIdField(builder, keyMappingIdField)
+
+def KeyMappingPopupExcelStartKeyMappingIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartKeyMappingIdFieldVector(builder, numElems: int) -> int:
     return KeyMappingPopupExcelStartKeyMappingIdFieldVector(builder, numElems)
-def KeyMappingPopupExcelEnd(builder): return builder.EndObject()
+
+def KeyMappingPopupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return KeyMappingPopupExcelEnd(builder)

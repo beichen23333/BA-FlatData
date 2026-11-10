@@ -35,3 +35,7 @@ class MailType:
     PaymentCenterBattlePass = 33
     PaymentCenterDailyRecord = 34
     ExpiryProductDailyRecordItem = 35
+    ExpiryStreakRecordItem = 36
+    ExpirySeasonRecordItem = 37
+    PaymentCenterStreakRecord = 38
+    ExpiryGlobalAttendanceItem = 39

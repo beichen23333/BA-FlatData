@@ -49,15 +49,26 @@ class InteractiveWorldRaidSeasonManageExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def InteractiveWorldRaidSeasonManageExcelTableStart(builder): builder.StartObject(1)
+def InteractiveWorldRaidSeasonManageExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return InteractiveWorldRaidSeasonManageExcelTableStart(builder)
-def InteractiveWorldRaidSeasonManageExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    InteractiveWorldRaidSeasonManageExcelTableStart(builder)
+
+def InteractiveWorldRaidSeasonManageExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return InteractiveWorldRaidSeasonManageExcelTableAddDataList(builder, dataList)
-def InteractiveWorldRaidSeasonManageExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    InteractiveWorldRaidSeasonManageExcelTableAddDataList(builder, dataList)
+
+def InteractiveWorldRaidSeasonManageExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSeasonManageExcelTableStartDataListVector(builder, numElems)
-def InteractiveWorldRaidSeasonManageExcelTableEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidSeasonManageExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidSeasonManageExcelTableEnd(builder)

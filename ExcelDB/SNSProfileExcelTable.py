@@ -49,15 +49,26 @@ class SNSProfileExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def SNSProfileExcelTableStart(builder): builder.StartObject(1)
+def SNSProfileExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return SNSProfileExcelTableStart(builder)
-def SNSProfileExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    SNSProfileExcelTableStart(builder)
+
+def SNSProfileExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return SNSProfileExcelTableAddDataList(builder, dataList)
-def SNSProfileExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    SNSProfileExcelTableAddDataList(builder, dataList)
+
+def SNSProfileExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return SNSProfileExcelTableStartDataListVector(builder, numElems)
-def SNSProfileExcelTableEnd(builder): return builder.EndObject()
+
+def SNSProfileExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return SNSProfileExcelTableEnd(builder)

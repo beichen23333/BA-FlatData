@@ -49,15 +49,26 @@ class ProductSelectionGroupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ProductSelectionGroupExcelTableStart(builder): builder.StartObject(1)
+def ProductSelectionGroupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ProductSelectionGroupExcelTableStart(builder)
-def ProductSelectionGroupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ProductSelectionGroupExcelTableStart(builder)
+
+def ProductSelectionGroupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ProductSelectionGroupExcelTableAddDataList(builder, dataList)
-def ProductSelectionGroupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ProductSelectionGroupExcelTableAddDataList(builder, dataList)
+
+def ProductSelectionGroupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ProductSelectionGroupExcelTableStartDataListVector(builder, numElems)
-def ProductSelectionGroupExcelTableEnd(builder): return builder.EndObject()
+
+def ProductSelectionGroupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductSelectionGroupExcelTableEnd(builder)

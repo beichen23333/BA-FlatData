@@ -49,15 +49,26 @@ class MinigameDreamVoiceExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameDreamVoiceExcelTableStart(builder): builder.StartObject(1)
+def MinigameDreamVoiceExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameDreamVoiceExcelTableStart(builder)
-def MinigameDreamVoiceExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MinigameDreamVoiceExcelTableStart(builder)
+
+def MinigameDreamVoiceExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MinigameDreamVoiceExcelTableAddDataList(builder, dataList)
-def MinigameDreamVoiceExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MinigameDreamVoiceExcelTableAddDataList(builder, dataList)
+
+def MinigameDreamVoiceExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MinigameDreamVoiceExcelTableStartDataListVector(builder, numElems)
-def MinigameDreamVoiceExcelTableEnd(builder): return builder.EndObject()
+
+def MinigameDreamVoiceExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameDreamVoiceExcelTableEnd(builder)

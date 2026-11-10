@@ -52,21 +52,181 @@ class LevelExpMasterCoinExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def LevelExpMasterCoinExcelStart(builder): builder.StartObject(4)
+    # LevelExpMasterCoinExcel
+    def ProductMonthlyId1Field(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return 0
+
+    # LevelExpMasterCoinExcel
+    def ProductMonthlyId1FieldAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
+        return 0
+
+    # LevelExpMasterCoinExcel
+    def ProductMonthlyId1FieldLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    # LevelExpMasterCoinExcel
+    def ProductMonthlyId1FieldIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        return o == 0
+
+    # LevelExpMasterCoinExcel
+    def PlusMasterCoinRatio1Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # LevelExpMasterCoinExcel
+    def PlusMasterCoinIconName1Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+    # LevelExpMasterCoinExcel
+    def ProductMonthlyId2Field(self, j):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            a = self._tab.Vector(o)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, a + flatbuffers.number_types.UOffsetTFlags.py_type(j * 4))
+        return 0
+
+    # LevelExpMasterCoinExcel
+    def ProductMonthlyId2FieldAsNumpy(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.GetVectorAsNumpy(flatbuffers.number_types.Int32Flags, o)
+        return 0
+
+    # LevelExpMasterCoinExcel
+    def ProductMonthlyId2FieldLength(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        if o != 0:
+            return self._tab.VectorLen(o)
+        return 0
+
+    # LevelExpMasterCoinExcel
+    def ProductMonthlyId2FieldIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        return o == 0
+
+    # LevelExpMasterCoinExcel
+    def PlusMasterCoinRatio2Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # LevelExpMasterCoinExcel
+    def PlusMasterCoinIconName2Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+    # LevelExpMasterCoinExcel
+    def PlusMasterCoinIconName3Field(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        if o != 0:
+            return self._tab.String(o + self._tab.Pos)
+        return None
+
+def LevelExpMasterCoinExcelStart(builder):
+    builder.StartObject(11)
+
 def Start(builder):
-    return LevelExpMasterCoinExcelStart(builder)
-def LevelExpMasterCoinExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    LevelExpMasterCoinExcelStart(builder)
+
+def LevelExpMasterCoinExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return LevelExpMasterCoinExcelAddIdField(builder, idField)
-def LevelExpMasterCoinExcelAddMinLevelField(builder, minLevelField): builder.PrependInt32Slot(1, minLevelField, 0)
+    LevelExpMasterCoinExcelAddIdField(builder, idField)
+
+def LevelExpMasterCoinExcelAddMinLevelField(builder, minLevelField):
+    builder.PrependInt32Slot(1, minLevelField, 0)
+
 def AddMinLevelField(builder, minLevelField):
-    return LevelExpMasterCoinExcelAddMinLevelField(builder, minLevelField)
-def LevelExpMasterCoinExcelAddMaxLevelField(builder, maxLevelField): builder.PrependInt32Slot(2, maxLevelField, 0)
+    LevelExpMasterCoinExcelAddMinLevelField(builder, minLevelField)
+
+def LevelExpMasterCoinExcelAddMaxLevelField(builder, maxLevelField):
+    builder.PrependInt32Slot(2, maxLevelField, 0)
+
 def AddMaxLevelField(builder, maxLevelField):
-    return LevelExpMasterCoinExcelAddMaxLevelField(builder, maxLevelField)
-def LevelExpMasterCoinExcelAddRatioField(builder, ratioField): builder.PrependInt32Slot(3, ratioField, 0)
+    LevelExpMasterCoinExcelAddMaxLevelField(builder, maxLevelField)
+
+def LevelExpMasterCoinExcelAddRatioField(builder, ratioField):
+    builder.PrependInt32Slot(3, ratioField, 0)
+
 def AddRatioField(builder, ratioField):
-    return LevelExpMasterCoinExcelAddRatioField(builder, ratioField)
-def LevelExpMasterCoinExcelEnd(builder): return builder.EndObject()
+    LevelExpMasterCoinExcelAddRatioField(builder, ratioField)
+
+def LevelExpMasterCoinExcelAddProductMonthlyId1Field(builder, productMonthlyId1Field):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(productMonthlyId1Field), 0)
+
+def AddProductMonthlyId1Field(builder, productMonthlyId1Field):
+    LevelExpMasterCoinExcelAddProductMonthlyId1Field(builder, productMonthlyId1Field)
+
+def LevelExpMasterCoinExcelStartProductMonthlyId1FieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartProductMonthlyId1FieldVector(builder, numElems: int) -> int:
+    return LevelExpMasterCoinExcelStartProductMonthlyId1FieldVector(builder, numElems)
+
+def LevelExpMasterCoinExcelAddPlusMasterCoinRatio1Field(builder, plusMasterCoinRatio1Field):
+    builder.PrependInt32Slot(5, plusMasterCoinRatio1Field, 0)
+
+def AddPlusMasterCoinRatio1Field(builder, plusMasterCoinRatio1Field):
+    LevelExpMasterCoinExcelAddPlusMasterCoinRatio1Field(builder, plusMasterCoinRatio1Field)
+
+def LevelExpMasterCoinExcelAddPlusMasterCoinIconName1Field(builder, plusMasterCoinIconName1Field):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(plusMasterCoinIconName1Field), 0)
+
+def AddPlusMasterCoinIconName1Field(builder, plusMasterCoinIconName1Field):
+    LevelExpMasterCoinExcelAddPlusMasterCoinIconName1Field(builder, plusMasterCoinIconName1Field)
+
+def LevelExpMasterCoinExcelAddProductMonthlyId2Field(builder, productMonthlyId2Field):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(productMonthlyId2Field), 0)
+
+def AddProductMonthlyId2Field(builder, productMonthlyId2Field):
+    LevelExpMasterCoinExcelAddProductMonthlyId2Field(builder, productMonthlyId2Field)
+
+def LevelExpMasterCoinExcelStartProductMonthlyId2FieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartProductMonthlyId2FieldVector(builder, numElems: int) -> int:
+    return LevelExpMasterCoinExcelStartProductMonthlyId2FieldVector(builder, numElems)
+
+def LevelExpMasterCoinExcelAddPlusMasterCoinRatio2Field(builder, plusMasterCoinRatio2Field):
+    builder.PrependInt32Slot(8, plusMasterCoinRatio2Field, 0)
+
+def AddPlusMasterCoinRatio2Field(builder, plusMasterCoinRatio2Field):
+    LevelExpMasterCoinExcelAddPlusMasterCoinRatio2Field(builder, plusMasterCoinRatio2Field)
+
+def LevelExpMasterCoinExcelAddPlusMasterCoinIconName2Field(builder, plusMasterCoinIconName2Field):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(plusMasterCoinIconName2Field), 0)
+
+def AddPlusMasterCoinIconName2Field(builder, plusMasterCoinIconName2Field):
+    LevelExpMasterCoinExcelAddPlusMasterCoinIconName2Field(builder, plusMasterCoinIconName2Field)
+
+def LevelExpMasterCoinExcelAddPlusMasterCoinIconName3Field(builder, plusMasterCoinIconName3Field):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(plusMasterCoinIconName3Field), 0)
+
+def AddPlusMasterCoinIconName3Field(builder, plusMasterCoinIconName3Field):
+    LevelExpMasterCoinExcelAddPlusMasterCoinIconName3Field(builder, plusMasterCoinIconName3Field)
+
+def LevelExpMasterCoinExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return LevelExpMasterCoinExcelEnd(builder)

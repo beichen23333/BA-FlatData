@@ -112,33 +112,62 @@ class VoiceExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
-def VoiceExcelStart(builder): builder.StartObject(5)
+def VoiceExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return VoiceExcelStart(builder)
-def VoiceExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    VoiceExcelStart(builder)
+
+def VoiceExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return VoiceExcelAddUniqueIdField(builder, uniqueIdField)
-def VoiceExcelAddIdField(builder, idField): builder.PrependUint32Slot(1, idField, 0)
+    VoiceExcelAddUniqueIdField(builder, uniqueIdField)
+
+def VoiceExcelAddIdField(builder, idField):
+    builder.PrependUint32Slot(1, idField, 0)
+
 def AddIdField(builder, idField):
-    return VoiceExcelAddIdField(builder, idField)
-def VoiceExcelAddNationField(builder, nationField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+    VoiceExcelAddIdField(builder, idField)
+
+def VoiceExcelAddNationField(builder, nationField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+
 def AddNationField(builder, nationField):
-    return VoiceExcelAddNationField(builder, nationField)
-def VoiceExcelStartNationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNationFieldVector(builder, numElems):
+    VoiceExcelAddNationField(builder, nationField)
+
+def VoiceExcelStartNationFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartNationFieldVector(builder, numElems: int) -> int:
     return VoiceExcelStartNationFieldVector(builder, numElems)
-def VoiceExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
+def VoiceExcelAddPathField(builder, pathField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
 def AddPathField(builder, pathField):
-    return VoiceExcelAddPathField(builder, pathField)
-def VoiceExcelStartPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPathFieldVector(builder, numElems):
+    VoiceExcelAddPathField(builder, pathField)
+
+def VoiceExcelStartPathFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPathFieldVector(builder, numElems: int) -> int:
     return VoiceExcelStartPathFieldVector(builder, numElems)
-def VoiceExcelAddVolumeField(builder, volumeField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(volumeField), 0)
+
+def VoiceExcelAddVolumeField(builder, volumeField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(volumeField), 0)
+
 def AddVolumeField(builder, volumeField):
-    return VoiceExcelAddVolumeField(builder, volumeField)
-def VoiceExcelStartVolumeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVolumeFieldVector(builder, numElems):
+    VoiceExcelAddVolumeField(builder, volumeField)
+
+def VoiceExcelStartVolumeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartVolumeFieldVector(builder, numElems: int) -> int:
     return VoiceExcelStartVolumeFieldVector(builder, numElems)
-def VoiceExcelEnd(builder): return builder.EndObject()
+
+def VoiceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return VoiceExcelEnd(builder)

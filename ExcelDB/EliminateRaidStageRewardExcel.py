@@ -66,27 +66,50 @@ class EliminateRaidStageRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EliminateRaidStageRewardExcelStart(builder): builder.StartObject(6)
+def EliminateRaidStageRewardExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return EliminateRaidStageRewardExcelStart(builder)
-def EliminateRaidStageRewardExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    EliminateRaidStageRewardExcelStart(builder)
+
+def EliminateRaidStageRewardExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return EliminateRaidStageRewardExcelAddGroupIdField(builder, groupIdField)
-def EliminateRaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField): builder.PrependBoolSlot(1, isClearStageRewardHideInfoField, 0)
+    EliminateRaidStageRewardExcelAddGroupIdField(builder, groupIdField)
+
+def EliminateRaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField):
+    builder.PrependBoolSlot(1, isClearStageRewardHideInfoField, 0)
+
 def AddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField):
-    return EliminateRaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField)
-def EliminateRaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField): builder.PrependInt32Slot(2, clearStageRewardProbField, 0)
+    EliminateRaidStageRewardExcelAddIsClearStageRewardHideInfoField(builder, isClearStageRewardHideInfoField)
+
+def EliminateRaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField):
+    builder.PrependInt32Slot(2, clearStageRewardProbField, 0)
+
 def AddClearStageRewardProbField(builder, clearStageRewardProbField):
-    return EliminateRaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField)
-def EliminateRaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField): builder.PrependInt32Slot(3, clearStageRewardParcelTypeField, 0)
+    EliminateRaidStageRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField)
+
+def EliminateRaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField):
+    builder.PrependInt32Slot(3, clearStageRewardParcelTypeField, 0)
+
 def AddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField):
-    return EliminateRaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField)
-def EliminateRaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField): builder.PrependInt32Slot(4, clearStageRewardParcelUniqueIDField, 0)
+    EliminateRaidStageRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField)
+
+def EliminateRaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField):
+    builder.PrependInt32Slot(4, clearStageRewardParcelUniqueIDField, 0)
+
 def AddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField):
-    return EliminateRaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField)
-def EliminateRaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField): builder.PrependInt32Slot(5, clearStageRewardAmountField, 0)
+    EliminateRaidStageRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField)
+
+def EliminateRaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField):
+    builder.PrependInt32Slot(5, clearStageRewardAmountField, 0)
+
 def AddClearStageRewardAmountField(builder, clearStageRewardAmountField):
-    return EliminateRaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField)
-def EliminateRaidStageRewardExcelEnd(builder): return builder.EndObject()
+    EliminateRaidStageRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField)
+
+def EliminateRaidStageRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EliminateRaidStageRewardExcelEnd(builder)

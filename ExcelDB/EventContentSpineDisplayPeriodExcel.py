@@ -73,30 +73,56 @@ class EventContentSpineDisplayPeriodExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentSpineDisplayPeriodExcelStart(builder): builder.StartObject(7)
+def EventContentSpineDisplayPeriodExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return EventContentSpineDisplayPeriodExcelStart(builder)
-def EventContentSpineDisplayPeriodExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentSpineDisplayPeriodExcelStart(builder)
+
+def EventContentSpineDisplayPeriodExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentSpineDisplayPeriodExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentSpineDisplayPeriodExcelAddDialogCategoryField(builder, dialogCategoryField): builder.PrependInt32Slot(1, dialogCategoryField, 0)
+    EventContentSpineDisplayPeriodExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentSpineDisplayPeriodExcelAddDialogCategoryField(builder, dialogCategoryField):
+    builder.PrependInt32Slot(1, dialogCategoryField, 0)
+
 def AddDialogCategoryField(builder, dialogCategoryField):
-    return EventContentSpineDisplayPeriodExcelAddDialogCategoryField(builder, dialogCategoryField)
-def EventContentSpineDisplayPeriodExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField): builder.PrependInt32Slot(2, costumeUniqueIdField, 0)
+    EventContentSpineDisplayPeriodExcelAddDialogCategoryField(builder, dialogCategoryField)
+
+def EventContentSpineDisplayPeriodExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField):
+    builder.PrependInt32Slot(2, costumeUniqueIdField, 0)
+
 def AddCostumeUniqueIdField(builder, costumeUniqueIdField):
-    return EventContentSpineDisplayPeriodExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
-def EventContentSpineDisplayPeriodExcelAddShowPeriodFromField(builder, showPeriodFromField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(showPeriodFromField), 0)
+    EventContentSpineDisplayPeriodExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
+
+def EventContentSpineDisplayPeriodExcelAddShowPeriodFromField(builder, showPeriodFromField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(showPeriodFromField), 0)
+
 def AddShowPeriodFromField(builder, showPeriodFromField):
-    return EventContentSpineDisplayPeriodExcelAddShowPeriodFromField(builder, showPeriodFromField)
-def EventContentSpineDisplayPeriodExcelAddShowPeriodToField(builder, showPeriodToField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(showPeriodToField), 0)
+    EventContentSpineDisplayPeriodExcelAddShowPeriodFromField(builder, showPeriodFromField)
+
+def EventContentSpineDisplayPeriodExcelAddShowPeriodToField(builder, showPeriodToField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(showPeriodToField), 0)
+
 def AddShowPeriodToField(builder, showPeriodToField):
-    return EventContentSpineDisplayPeriodExcelAddShowPeriodToField(builder, showPeriodToField)
-def EventContentSpineDisplayPeriodExcelAddShowWorldRaidConditionIDFromField(builder, showWorldRaidConditionIDFromField): builder.PrependInt32Slot(5, showWorldRaidConditionIDFromField, 0)
+    EventContentSpineDisplayPeriodExcelAddShowPeriodToField(builder, showPeriodToField)
+
+def EventContentSpineDisplayPeriodExcelAddShowWorldRaidConditionIDFromField(builder, showWorldRaidConditionIDFromField):
+    builder.PrependInt32Slot(5, showWorldRaidConditionIDFromField, 0)
+
 def AddShowWorldRaidConditionIDFromField(builder, showWorldRaidConditionIDFromField):
-    return EventContentSpineDisplayPeriodExcelAddShowWorldRaidConditionIDFromField(builder, showWorldRaidConditionIDFromField)
-def EventContentSpineDisplayPeriodExcelAddShowWorldRaidConditionIDToField(builder, showWorldRaidConditionIDToField): builder.PrependInt32Slot(6, showWorldRaidConditionIDToField, 0)
+    EventContentSpineDisplayPeriodExcelAddShowWorldRaidConditionIDFromField(builder, showWorldRaidConditionIDFromField)
+
+def EventContentSpineDisplayPeriodExcelAddShowWorldRaidConditionIDToField(builder, showWorldRaidConditionIDToField):
+    builder.PrependInt32Slot(6, showWorldRaidConditionIDToField, 0)
+
 def AddShowWorldRaidConditionIDToField(builder, showWorldRaidConditionIDToField):
-    return EventContentSpineDisplayPeriodExcelAddShowWorldRaidConditionIDToField(builder, showWorldRaidConditionIDToField)
-def EventContentSpineDisplayPeriodExcelEnd(builder): return builder.EndObject()
+    EventContentSpineDisplayPeriodExcelAddShowWorldRaidConditionIDToField(builder, showWorldRaidConditionIDToField)
+
+def EventContentSpineDisplayPeriodExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentSpineDisplayPeriodExcelEnd(builder)

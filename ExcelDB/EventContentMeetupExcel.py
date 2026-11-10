@@ -93,33 +93,62 @@ class EventContentMeetupExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentMeetupExcelStart(builder): builder.StartObject(7)
+def EventContentMeetupExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return EventContentMeetupExcelStart(builder)
-def EventContentMeetupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    EventContentMeetupExcelStart(builder)
+
+def EventContentMeetupExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return EventContentMeetupExcelAddIdField(builder, idField)
-def EventContentMeetupExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+    EventContentMeetupExcelAddIdField(builder, idField)
+
+def EventContentMeetupExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(1, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentMeetupExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentMeetupExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(2, characterIdField, 0)
+    EventContentMeetupExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentMeetupExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(2, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return EventContentMeetupExcelAddCharacterIdField(builder, characterIdField)
-def EventContentMeetupExcelAddConditionScenarioGroupIdField(builder, conditionScenarioGroupIdField): builder.PrependInt32Slot(3, conditionScenarioGroupIdField, 0)
+    EventContentMeetupExcelAddCharacterIdField(builder, characterIdField)
+
+def EventContentMeetupExcelAddConditionScenarioGroupIdField(builder, conditionScenarioGroupIdField):
+    builder.PrependInt32Slot(3, conditionScenarioGroupIdField, 0)
+
 def AddConditionScenarioGroupIdField(builder, conditionScenarioGroupIdField):
-    return EventContentMeetupExcelAddConditionScenarioGroupIdField(builder, conditionScenarioGroupIdField)
-def EventContentMeetupExcelAddConditionTypeField(builder, conditionTypeField): builder.PrependInt32Slot(4, conditionTypeField, 0)
+    EventContentMeetupExcelAddConditionScenarioGroupIdField(builder, conditionScenarioGroupIdField)
+
+def EventContentMeetupExcelAddConditionTypeField(builder, conditionTypeField):
+    builder.PrependInt32Slot(4, conditionTypeField, 0)
+
 def AddConditionTypeField(builder, conditionTypeField):
-    return EventContentMeetupExcelAddConditionTypeField(builder, conditionTypeField)
-def EventContentMeetupExcelAddConditionParameterField(builder, conditionParameterField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(conditionParameterField), 0)
+    EventContentMeetupExcelAddConditionTypeField(builder, conditionTypeField)
+
+def EventContentMeetupExcelAddConditionParameterField(builder, conditionParameterField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(conditionParameterField), 0)
+
 def AddConditionParameterField(builder, conditionParameterField):
-    return EventContentMeetupExcelAddConditionParameterField(builder, conditionParameterField)
-def EventContentMeetupExcelStartConditionParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartConditionParameterFieldVector(builder, numElems):
+    EventContentMeetupExcelAddConditionParameterField(builder, conditionParameterField)
+
+def EventContentMeetupExcelStartConditionParameterFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartConditionParameterFieldVector(builder, numElems: int) -> int:
     return EventContentMeetupExcelStartConditionParameterFieldVector(builder, numElems)
-def EventContentMeetupExcelAddConditionPrintTypeField(builder, conditionPrintTypeField): builder.PrependInt32Slot(6, conditionPrintTypeField, 0)
+
+def EventContentMeetupExcelAddConditionPrintTypeField(builder, conditionPrintTypeField):
+    builder.PrependInt32Slot(6, conditionPrintTypeField, 0)
+
 def AddConditionPrintTypeField(builder, conditionPrintTypeField):
-    return EventContentMeetupExcelAddConditionPrintTypeField(builder, conditionPrintTypeField)
-def EventContentMeetupExcelEnd(builder): return builder.EndObject()
+    EventContentMeetupExcelAddConditionPrintTypeField(builder, conditionPrintTypeField)
+
+def EventContentMeetupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentMeetupExcelEnd(builder)

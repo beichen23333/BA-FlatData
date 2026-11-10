@@ -38,15 +38,26 @@ class MissionEmergencyCompleteExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def MissionEmergencyCompleteExcelStart(builder): builder.StartObject(2)
+def MissionEmergencyCompleteExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return MissionEmergencyCompleteExcelStart(builder)
-def MissionEmergencyCompleteExcelAddMissionIdField(builder, missionIdField): builder.PrependInt32Slot(0, missionIdField, 0)
+    MissionEmergencyCompleteExcelStart(builder)
+
+def MissionEmergencyCompleteExcelAddMissionIdField(builder, missionIdField):
+    builder.PrependInt32Slot(0, missionIdField, 0)
+
 def AddMissionIdField(builder, missionIdField):
-    return MissionEmergencyCompleteExcelAddMissionIdField(builder, missionIdField)
-def MissionEmergencyCompleteExcelAddEmergencyCompleteField(builder, emergencyCompleteField): builder.PrependBoolSlot(1, emergencyCompleteField, 0)
+    MissionEmergencyCompleteExcelAddMissionIdField(builder, missionIdField)
+
+def MissionEmergencyCompleteExcelAddEmergencyCompleteField(builder, emergencyCompleteField):
+    builder.PrependBoolSlot(1, emergencyCompleteField, 0)
+
 def AddEmergencyCompleteField(builder, emergencyCompleteField):
-    return MissionEmergencyCompleteExcelAddEmergencyCompleteField(builder, emergencyCompleteField)
-def MissionEmergencyCompleteExcelEnd(builder): return builder.EndObject()
+    MissionEmergencyCompleteExcelAddEmergencyCompleteField(builder, emergencyCompleteField)
+
+def MissionEmergencyCompleteExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MissionEmergencyCompleteExcelEnd(builder)

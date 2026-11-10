@@ -140,42 +140,80 @@ class DefaultMailExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         return o == 0
 
-def DefaultMailExcelStart(builder): builder.StartObject(8)
+def DefaultMailExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return DefaultMailExcelStart(builder)
-def DefaultMailExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    DefaultMailExcelStart(builder)
+
+def DefaultMailExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return DefaultMailExcelAddIdField(builder, idField)
-def DefaultMailExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUint32Slot(1, localizeCodeIdField, 0)
+    DefaultMailExcelAddIdField(builder, idField)
+
+def DefaultMailExcelAddLocalizeCodeIdField(builder, localizeCodeIdField):
+    builder.PrependUint32Slot(1, localizeCodeIdField, 0)
+
 def AddLocalizeCodeIdField(builder, localizeCodeIdField):
-    return DefaultMailExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
-def DefaultMailExcelAddMailTypeField(builder, mailTypeField): builder.PrependInt32Slot(2, mailTypeField, 0)
+    DefaultMailExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+
+def DefaultMailExcelAddMailTypeField(builder, mailTypeField):
+    builder.PrependInt32Slot(2, mailTypeField, 0)
+
 def AddMailTypeField(builder, mailTypeField):
-    return DefaultMailExcelAddMailTypeField(builder, mailTypeField)
-def DefaultMailExcelAddMailSendPeriodFromField(builder, mailSendPeriodFromField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(mailSendPeriodFromField), 0)
+    DefaultMailExcelAddMailTypeField(builder, mailTypeField)
+
+def DefaultMailExcelAddMailSendPeriodFromField(builder, mailSendPeriodFromField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(mailSendPeriodFromField), 0)
+
 def AddMailSendPeriodFromField(builder, mailSendPeriodFromField):
-    return DefaultMailExcelAddMailSendPeriodFromField(builder, mailSendPeriodFromField)
-def DefaultMailExcelAddMailSendPeriodToField(builder, mailSendPeriodToField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(mailSendPeriodToField), 0)
+    DefaultMailExcelAddMailSendPeriodFromField(builder, mailSendPeriodFromField)
+
+def DefaultMailExcelAddMailSendPeriodToField(builder, mailSendPeriodToField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(mailSendPeriodToField), 0)
+
 def AddMailSendPeriodToField(builder, mailSendPeriodToField):
-    return DefaultMailExcelAddMailSendPeriodToField(builder, mailSendPeriodToField)
-def DefaultMailExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+    DefaultMailExcelAddMailSendPeriodToField(builder, mailSendPeriodToField)
+
+def DefaultMailExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return DefaultMailExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def DefaultMailExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeFieldVector(builder, numElems):
+    DefaultMailExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def DefaultMailExcelStartRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return DefaultMailExcelStartRewardParcelTypeFieldVector(builder, numElems)
-def DefaultMailExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
+def DefaultMailExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return DefaultMailExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def DefaultMailExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdFieldVector(builder, numElems):
+    DefaultMailExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def DefaultMailExcelStartRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return DefaultMailExcelStartRewardParcelIdFieldVector(builder, numElems)
-def DefaultMailExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+
+def DefaultMailExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelAmountField), 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return DefaultMailExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def DefaultMailExcelStartRewardParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelAmountFieldVector(builder, numElems):
+    DefaultMailExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def DefaultMailExcelStartRewardParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelAmountFieldVector(builder, numElems: int) -> int:
     return DefaultMailExcelStartRewardParcelAmountFieldVector(builder, numElems)
-def DefaultMailExcelEnd(builder): return builder.EndObject()
+
+def DefaultMailExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return DefaultMailExcelEnd(builder)

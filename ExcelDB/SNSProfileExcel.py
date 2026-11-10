@@ -66,27 +66,50 @@ class SNSProfileExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def SNSProfileExcelStart(builder): builder.StartObject(6)
+def SNSProfileExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return SNSProfileExcelStart(builder)
-def SNSProfileExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    SNSProfileExcelStart(builder)
+
+def SNSProfileExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return SNSProfileExcelAddIdField(builder, idField)
-def SNSProfileExcelAddDevNameField(builder, devNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+    SNSProfileExcelAddIdField(builder, idField)
+
+def SNSProfileExcelAddDevNameField(builder, devNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(devNameField), 0)
+
 def AddDevNameField(builder, devNameField):
-    return SNSProfileExcelAddDevNameField(builder, devNameField)
-def SNSProfileExcelAddProfileImagePathField(builder, profileImagePathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(profileImagePathField), 0)
+    SNSProfileExcelAddDevNameField(builder, devNameField)
+
+def SNSProfileExcelAddProfileImagePathField(builder, profileImagePathField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(profileImagePathField), 0)
+
 def AddProfileImagePathField(builder, profileImagePathField):
-    return SNSProfileExcelAddProfileImagePathField(builder, profileImagePathField)
-def SNSProfileExcelAddNameLocalizeKeyField(builder, nameLocalizeKeyField): builder.PrependUint32Slot(3, nameLocalizeKeyField, 0)
+    SNSProfileExcelAddProfileImagePathField(builder, profileImagePathField)
+
+def SNSProfileExcelAddNameLocalizeKeyField(builder, nameLocalizeKeyField):
+    builder.PrependUint32Slot(3, nameLocalizeKeyField, 0)
+
 def AddNameLocalizeKeyField(builder, nameLocalizeKeyField):
-    return SNSProfileExcelAddNameLocalizeKeyField(builder, nameLocalizeKeyField)
-def SNSProfileExcelAddIdLocalizeKeyField(builder, idLocalizeKeyField): builder.PrependUint32Slot(4, idLocalizeKeyField, 0)
+    SNSProfileExcelAddNameLocalizeKeyField(builder, nameLocalizeKeyField)
+
+def SNSProfileExcelAddIdLocalizeKeyField(builder, idLocalizeKeyField):
+    builder.PrependUint32Slot(4, idLocalizeKeyField, 0)
+
 def AddIdLocalizeKeyField(builder, idLocalizeKeyField):
-    return SNSProfileExcelAddIdLocalizeKeyField(builder, idLocalizeKeyField)
-def SNSProfileExcelAddMarkIconVisibleField(builder, markIconVisibleField): builder.PrependBoolSlot(5, markIconVisibleField, 0)
+    SNSProfileExcelAddIdLocalizeKeyField(builder, idLocalizeKeyField)
+
+def SNSProfileExcelAddMarkIconVisibleField(builder, markIconVisibleField):
+    builder.PrependBoolSlot(5, markIconVisibleField, 0)
+
 def AddMarkIconVisibleField(builder, markIconVisibleField):
-    return SNSProfileExcelAddMarkIconVisibleField(builder, markIconVisibleField)
-def SNSProfileExcelEnd(builder): return builder.EndObject()
+    SNSProfileExcelAddMarkIconVisibleField(builder, markIconVisibleField)
+
+def SNSProfileExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return SNSProfileExcelEnd(builder)

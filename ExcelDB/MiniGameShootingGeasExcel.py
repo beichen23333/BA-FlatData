@@ -80,33 +80,62 @@ class MiniGameShootingGeasExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def MiniGameShootingGeasExcelStart(builder): builder.StartObject(8)
+def MiniGameShootingGeasExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return MiniGameShootingGeasExcelStart(builder)
-def MiniGameShootingGeasExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    MiniGameShootingGeasExcelStart(builder)
+
+def MiniGameShootingGeasExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MiniGameShootingGeasExcelAddUniqueIdField(builder, uniqueIdField)
-def MiniGameShootingGeasExcelAddGeasTypeField(builder, geasTypeField): builder.PrependInt32Slot(1, geasTypeField, 0)
+    MiniGameShootingGeasExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MiniGameShootingGeasExcelAddGeasTypeField(builder, geasTypeField):
+    builder.PrependInt32Slot(1, geasTypeField, 0)
+
 def AddGeasTypeField(builder, geasTypeField):
-    return MiniGameShootingGeasExcelAddGeasTypeField(builder, geasTypeField)
-def MiniGameShootingGeasExcelAddIconField(builder, iconField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+    MiniGameShootingGeasExcelAddGeasTypeField(builder, geasTypeField)
+
+def MiniGameShootingGeasExcelAddIconField(builder, iconField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(iconField), 0)
+
 def AddIconField(builder, iconField):
-    return MiniGameShootingGeasExcelAddIconField(builder, iconField)
-def MiniGameShootingGeasExcelAddProbabilityField(builder, probabilityField): builder.PrependInt32Slot(3, probabilityField, 0)
+    MiniGameShootingGeasExcelAddIconField(builder, iconField)
+
+def MiniGameShootingGeasExcelAddProbabilityField(builder, probabilityField):
+    builder.PrependInt32Slot(3, probabilityField, 0)
+
 def AddProbabilityField(builder, probabilityField):
-    return MiniGameShootingGeasExcelAddProbabilityField(builder, probabilityField)
-def MiniGameShootingGeasExcelAddMaxOverlapCountField(builder, maxOverlapCountField): builder.PrependInt32Slot(4, maxOverlapCountField, 0)
+    MiniGameShootingGeasExcelAddProbabilityField(builder, probabilityField)
+
+def MiniGameShootingGeasExcelAddMaxOverlapCountField(builder, maxOverlapCountField):
+    builder.PrependInt32Slot(4, maxOverlapCountField, 0)
+
 def AddMaxOverlapCountField(builder, maxOverlapCountField):
-    return MiniGameShootingGeasExcelAddMaxOverlapCountField(builder, maxOverlapCountField)
-def MiniGameShootingGeasExcelAddGeasDataField(builder, geasDataField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(geasDataField), 0)
+    MiniGameShootingGeasExcelAddMaxOverlapCountField(builder, maxOverlapCountField)
+
+def MiniGameShootingGeasExcelAddGeasDataField(builder, geasDataField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(geasDataField), 0)
+
 def AddGeasDataField(builder, geasDataField):
-    return MiniGameShootingGeasExcelAddGeasDataField(builder, geasDataField)
-def MiniGameShootingGeasExcelAddNeedGeasIdField(builder, needGeasIdField): builder.PrependInt32Slot(6, needGeasIdField, 0)
+    MiniGameShootingGeasExcelAddGeasDataField(builder, geasDataField)
+
+def MiniGameShootingGeasExcelAddNeedGeasIdField(builder, needGeasIdField):
+    builder.PrependInt32Slot(6, needGeasIdField, 0)
+
 def AddNeedGeasIdField(builder, needGeasIdField):
-    return MiniGameShootingGeasExcelAddNeedGeasIdField(builder, needGeasIdField)
-def MiniGameShootingGeasExcelAddHideInPausePopupField(builder, hideInPausePopupField): builder.PrependBoolSlot(7, hideInPausePopupField, 0)
+    MiniGameShootingGeasExcelAddNeedGeasIdField(builder, needGeasIdField)
+
+def MiniGameShootingGeasExcelAddHideInPausePopupField(builder, hideInPausePopupField):
+    builder.PrependBoolSlot(7, hideInPausePopupField, 0)
+
 def AddHideInPausePopupField(builder, hideInPausePopupField):
-    return MiniGameShootingGeasExcelAddHideInPausePopupField(builder, hideInPausePopupField)
-def MiniGameShootingGeasExcelEnd(builder): return builder.EndObject()
+    MiniGameShootingGeasExcelAddHideInPausePopupField(builder, hideInPausePopupField)
+
+def MiniGameShootingGeasExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameShootingGeasExcelEnd(builder)

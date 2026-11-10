@@ -52,21 +52,38 @@ class EventContentChangeScenarioExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentChangeScenarioExcelStart(builder): builder.StartObject(4)
+def EventContentChangeScenarioExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return EventContentChangeScenarioExcelStart(builder)
-def EventContentChangeScenarioExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentChangeScenarioExcelStart(builder)
+
+def EventContentChangeScenarioExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentChangeScenarioExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentChangeScenarioExcelAddChangeTypeField(builder, changeTypeField): builder.PrependInt32Slot(1, changeTypeField, 0)
+    EventContentChangeScenarioExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentChangeScenarioExcelAddChangeTypeField(builder, changeTypeField):
+    builder.PrependInt32Slot(1, changeTypeField, 0)
+
 def AddChangeTypeField(builder, changeTypeField):
-    return EventContentChangeScenarioExcelAddChangeTypeField(builder, changeTypeField)
-def EventContentChangeScenarioExcelAddChangeCountField(builder, changeCountField): builder.PrependInt32Slot(2, changeCountField, 0)
+    EventContentChangeScenarioExcelAddChangeTypeField(builder, changeTypeField)
+
+def EventContentChangeScenarioExcelAddChangeCountField(builder, changeCountField):
+    builder.PrependInt32Slot(2, changeCountField, 0)
+
 def AddChangeCountField(builder, changeCountField):
-    return EventContentChangeScenarioExcelAddChangeCountField(builder, changeCountField)
-def EventContentChangeScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField): builder.PrependInt32Slot(3, scenarioGroupIdField, 0)
+    EventContentChangeScenarioExcelAddChangeCountField(builder, changeCountField)
+
+def EventContentChangeScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField):
+    builder.PrependInt32Slot(3, scenarioGroupIdField, 0)
+
 def AddScenarioGroupIdField(builder, scenarioGroupIdField):
-    return EventContentChangeScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField)
-def EventContentChangeScenarioExcelEnd(builder): return builder.EndObject()
+    EventContentChangeScenarioExcelAddScenarioGroupIdField(builder, scenarioGroupIdField)
+
+def EventContentChangeScenarioExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentChangeScenarioExcelEnd(builder)

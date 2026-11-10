@@ -162,60 +162,116 @@ class ScenarioResourceInfoExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         return o == 0
 
-def ScenarioResourceInfoExcelStart(builder): builder.StartObject(15)
+def ScenarioResourceInfoExcelStart(builder):
+    builder.StartObject(15)
+
 def Start(builder):
-    return ScenarioResourceInfoExcelStart(builder)
-def ScenarioResourceInfoExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ScenarioResourceInfoExcelStart(builder)
+
+def ScenarioResourceInfoExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ScenarioResourceInfoExcelAddIdField(builder, idField)
-def ScenarioResourceInfoExcelAddScenarioModeIdField(builder, scenarioModeIdField): builder.PrependInt32Slot(1, scenarioModeIdField, 0)
+    ScenarioResourceInfoExcelAddIdField(builder, idField)
+
+def ScenarioResourceInfoExcelAddScenarioModeIdField(builder, scenarioModeIdField):
+    builder.PrependInt32Slot(1, scenarioModeIdField, 0)
+
 def AddScenarioModeIdField(builder, scenarioModeIdField):
-    return ScenarioResourceInfoExcelAddScenarioModeIdField(builder, scenarioModeIdField)
-def ScenarioResourceInfoExcelAddPriorityOrderField(builder, priorityOrderField): builder.PrependInt32Slot(2, priorityOrderField, 0)
+    ScenarioResourceInfoExcelAddScenarioModeIdField(builder, scenarioModeIdField)
+
+def ScenarioResourceInfoExcelAddPriorityOrderField(builder, priorityOrderField):
+    builder.PrependInt32Slot(2, priorityOrderField, 0)
+
 def AddPriorityOrderField(builder, priorityOrderField):
-    return ScenarioResourceInfoExcelAddPriorityOrderField(builder, priorityOrderField)
-def ScenarioResourceInfoExcelAddPVDisplayOrderField(builder, pVDisplayOrderField): builder.PrependInt32Slot(3, pVDisplayOrderField, 0)
+    ScenarioResourceInfoExcelAddPriorityOrderField(builder, priorityOrderField)
+
+def ScenarioResourceInfoExcelAddPVDisplayOrderField(builder, pVDisplayOrderField):
+    builder.PrependInt32Slot(3, pVDisplayOrderField, 0)
+
 def AddPVDisplayOrderField(builder, pVDisplayOrderField):
-    return ScenarioResourceInfoExcelAddPVDisplayOrderField(builder, pVDisplayOrderField)
-def ScenarioResourceInfoExcelAddVideoIdField(builder, videoIdField): builder.PrependInt32Slot(4, videoIdField, 0)
+    ScenarioResourceInfoExcelAddPVDisplayOrderField(builder, pVDisplayOrderField)
+
+def ScenarioResourceInfoExcelAddVideoIdField(builder, videoIdField):
+    builder.PrependInt32Slot(4, videoIdField, 0)
+
 def AddVideoIdField(builder, videoIdField):
-    return ScenarioResourceInfoExcelAddVideoIdField(builder, videoIdField)
-def ScenarioResourceInfoExcelAddBgmIdField(builder, bgmIdField): builder.PrependInt32Slot(5, bgmIdField, 0)
+    ScenarioResourceInfoExcelAddVideoIdField(builder, videoIdField)
+
+def ScenarioResourceInfoExcelAddBgmIdField(builder, bgmIdField):
+    builder.PrependInt32Slot(5, bgmIdField, 0)
+
 def AddBgmIdField(builder, bgmIdField):
-    return ScenarioResourceInfoExcelAddBgmIdField(builder, bgmIdField)
-def ScenarioResourceInfoExcelAddAudioNameField(builder, audioNameField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(audioNameField), 0)
+    ScenarioResourceInfoExcelAddBgmIdField(builder, bgmIdField)
+
+def ScenarioResourceInfoExcelAddAudioNameField(builder, audioNameField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(audioNameField), 0)
+
 def AddAudioNameField(builder, audioNameField):
-    return ScenarioResourceInfoExcelAddAudioNameField(builder, audioNameField)
-def ScenarioResourceInfoExcelAddSpinePathField(builder, spinePathField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(spinePathField), 0)
+    ScenarioResourceInfoExcelAddAudioNameField(builder, audioNameField)
+
+def ScenarioResourceInfoExcelAddSpinePathField(builder, spinePathField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(spinePathField), 0)
+
 def AddSpinePathField(builder, spinePathField):
-    return ScenarioResourceInfoExcelAddSpinePathField(builder, spinePathField)
-def ScenarioResourceInfoExcelAddRatioField(builder, ratioField): builder.PrependInt32Slot(8, ratioField, 0)
+    ScenarioResourceInfoExcelAddSpinePathField(builder, spinePathField)
+
+def ScenarioResourceInfoExcelAddRatioField(builder, ratioField):
+    builder.PrependInt32Slot(8, ratioField, 0)
+
 def AddRatioField(builder, ratioField):
-    return ScenarioResourceInfoExcelAddRatioField(builder, ratioField)
-def ScenarioResourceInfoExcelAddLobbyAniPathField(builder, lobbyAniPathField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(lobbyAniPathField), 0)
+    ScenarioResourceInfoExcelAddRatioField(builder, ratioField)
+
+def ScenarioResourceInfoExcelAddLobbyAniPathField(builder, lobbyAniPathField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(lobbyAniPathField), 0)
+
 def AddLobbyAniPathField(builder, lobbyAniPathField):
-    return ScenarioResourceInfoExcelAddLobbyAniPathField(builder, lobbyAniPathField)
-def ScenarioResourceInfoExcelAddMovieCGPathField(builder, movieCGPathField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(movieCGPathField), 0)
+    ScenarioResourceInfoExcelAddLobbyAniPathField(builder, lobbyAniPathField)
+
+def ScenarioResourceInfoExcelAddMovieCGPathField(builder, movieCGPathField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(movieCGPathField), 0)
+
 def AddMovieCGPathField(builder, movieCGPathField):
-    return ScenarioResourceInfoExcelAddMovieCGPathField(builder, movieCGPathField)
-def ScenarioResourceInfoExcelAddScenarioForceEnterField(builder, scenarioForceEnterField): builder.PrependInt32Slot(11, scenarioForceEnterField, 0)
+    ScenarioResourceInfoExcelAddMovieCGPathField(builder, movieCGPathField)
+
+def ScenarioResourceInfoExcelAddScenarioForceEnterField(builder, scenarioForceEnterField):
+    builder.PrependInt32Slot(11, scenarioForceEnterField, 0)
+
 def AddScenarioForceEnterField(builder, scenarioForceEnterField):
-    return ScenarioResourceInfoExcelAddScenarioForceEnterField(builder, scenarioForceEnterField)
-def ScenarioResourceInfoExcelAddLocalizeIdField(builder, localizeIdField): builder.PrependUint32Slot(12, localizeIdField, 0)
+    ScenarioResourceInfoExcelAddScenarioForceEnterField(builder, scenarioForceEnterField)
+
+def ScenarioResourceInfoExcelAddLocalizeIdField(builder, localizeIdField):
+    builder.PrependUint32Slot(12, localizeIdField, 0)
+
 def AddLocalizeIdField(builder, localizeIdField):
-    return ScenarioResourceInfoExcelAddLocalizeIdField(builder, localizeIdField)
-def ScenarioResourceInfoExcelAddAcademyLobbyCharacterIdField(builder, academyLobbyCharacterIdField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(academyLobbyCharacterIdField), 0)
+    ScenarioResourceInfoExcelAddLocalizeIdField(builder, localizeIdField)
+
+def ScenarioResourceInfoExcelAddAcademyLobbyCharacterIdField(builder, academyLobbyCharacterIdField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(academyLobbyCharacterIdField), 0)
+
 def AddAcademyLobbyCharacterIdField(builder, academyLobbyCharacterIdField):
-    return ScenarioResourceInfoExcelAddAcademyLobbyCharacterIdField(builder, academyLobbyCharacterIdField)
-def ScenarioResourceInfoExcelStartAcademyLobbyCharacterIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAcademyLobbyCharacterIdFieldVector(builder, numElems):
+    ScenarioResourceInfoExcelAddAcademyLobbyCharacterIdField(builder, academyLobbyCharacterIdField)
+
+def ScenarioResourceInfoExcelStartAcademyLobbyCharacterIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartAcademyLobbyCharacterIdFieldVector(builder, numElems: int) -> int:
     return ScenarioResourceInfoExcelStartAcademyLobbyCharacterIdFieldVector(builder, numElems)
-def ScenarioResourceInfoExcelAddSweepAnimationField(builder, sweepAnimationField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(sweepAnimationField), 0)
+
+def ScenarioResourceInfoExcelAddSweepAnimationField(builder, sweepAnimationField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(sweepAnimationField), 0)
+
 def AddSweepAnimationField(builder, sweepAnimationField):
-    return ScenarioResourceInfoExcelAddSweepAnimationField(builder, sweepAnimationField)
-def ScenarioResourceInfoExcelStartSweepAnimationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSweepAnimationFieldVector(builder, numElems):
+    ScenarioResourceInfoExcelAddSweepAnimationField(builder, sweepAnimationField)
+
+def ScenarioResourceInfoExcelStartSweepAnimationFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSweepAnimationFieldVector(builder, numElems: int) -> int:
     return ScenarioResourceInfoExcelStartSweepAnimationFieldVector(builder, numElems)
-def ScenarioResourceInfoExcelEnd(builder): return builder.EndObject()
+
+def ScenarioResourceInfoExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioResourceInfoExcelEnd(builder)

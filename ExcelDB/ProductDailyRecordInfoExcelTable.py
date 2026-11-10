@@ -49,15 +49,26 @@ class ProductDailyRecordInfoExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ProductDailyRecordInfoExcelTableStart(builder): builder.StartObject(1)
+def ProductDailyRecordInfoExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ProductDailyRecordInfoExcelTableStart(builder)
-def ProductDailyRecordInfoExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ProductDailyRecordInfoExcelTableStart(builder)
+
+def ProductDailyRecordInfoExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ProductDailyRecordInfoExcelTableAddDataList(builder, dataList)
-def ProductDailyRecordInfoExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ProductDailyRecordInfoExcelTableAddDataList(builder, dataList)
+
+def ProductDailyRecordInfoExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ProductDailyRecordInfoExcelTableStartDataListVector(builder, numElems)
-def ProductDailyRecordInfoExcelTableEnd(builder): return builder.EndObject()
+
+def ProductDailyRecordInfoExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductDailyRecordInfoExcelTableEnd(builder)

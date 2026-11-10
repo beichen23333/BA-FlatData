@@ -66,27 +66,63 @@ class FloaterCommonExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def FloaterCommonExcelStart(builder): builder.StartObject(6)
+    # FloaterCommonExcel
+    def LimitedFloaterRandomPosRangeYField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+def FloaterCommonExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return FloaterCommonExcelStart(builder)
-def FloaterCommonExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    FloaterCommonExcelStart(builder)
+
+def FloaterCommonExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return FloaterCommonExcelAddIdField(builder, idField)
-def FloaterCommonExcelAddTacticEntityTypeField(builder, tacticEntityTypeField): builder.PrependInt32Slot(1, tacticEntityTypeField, 0)
+    FloaterCommonExcelAddIdField(builder, idField)
+
+def FloaterCommonExcelAddTacticEntityTypeField(builder, tacticEntityTypeField):
+    builder.PrependInt32Slot(1, tacticEntityTypeField, 0)
+
 def AddTacticEntityTypeField(builder, tacticEntityTypeField):
-    return FloaterCommonExcelAddTacticEntityTypeField(builder, tacticEntityTypeField)
-def FloaterCommonExcelAddFloaterOffsetPosXField(builder, floaterOffsetPosXField): builder.PrependInt32Slot(2, floaterOffsetPosXField, 0)
+    FloaterCommonExcelAddTacticEntityTypeField(builder, tacticEntityTypeField)
+
+def FloaterCommonExcelAddFloaterOffsetPosXField(builder, floaterOffsetPosXField):
+    builder.PrependInt32Slot(2, floaterOffsetPosXField, 0)
+
 def AddFloaterOffsetPosXField(builder, floaterOffsetPosXField):
-    return FloaterCommonExcelAddFloaterOffsetPosXField(builder, floaterOffsetPosXField)
-def FloaterCommonExcelAddFloaterOffsetPosYField(builder, floaterOffsetPosYField): builder.PrependInt32Slot(3, floaterOffsetPosYField, 0)
+    FloaterCommonExcelAddFloaterOffsetPosXField(builder, floaterOffsetPosXField)
+
+def FloaterCommonExcelAddFloaterOffsetPosYField(builder, floaterOffsetPosYField):
+    builder.PrependInt32Slot(3, floaterOffsetPosYField, 0)
+
 def AddFloaterOffsetPosYField(builder, floaterOffsetPosYField):
-    return FloaterCommonExcelAddFloaterOffsetPosYField(builder, floaterOffsetPosYField)
-def FloaterCommonExcelAddFloaterRandomPosRangeXField(builder, floaterRandomPosRangeXField): builder.PrependInt32Slot(4, floaterRandomPosRangeXField, 0)
+    FloaterCommonExcelAddFloaterOffsetPosYField(builder, floaterOffsetPosYField)
+
+def FloaterCommonExcelAddFloaterRandomPosRangeXField(builder, floaterRandomPosRangeXField):
+    builder.PrependInt32Slot(4, floaterRandomPosRangeXField, 0)
+
 def AddFloaterRandomPosRangeXField(builder, floaterRandomPosRangeXField):
-    return FloaterCommonExcelAddFloaterRandomPosRangeXField(builder, floaterRandomPosRangeXField)
-def FloaterCommonExcelAddFloaterRandomPosRangeYField(builder, floaterRandomPosRangeYField): builder.PrependInt32Slot(5, floaterRandomPosRangeYField, 0)
+    FloaterCommonExcelAddFloaterRandomPosRangeXField(builder, floaterRandomPosRangeXField)
+
+def FloaterCommonExcelAddFloaterRandomPosRangeYField(builder, floaterRandomPosRangeYField):
+    builder.PrependInt32Slot(5, floaterRandomPosRangeYField, 0)
+
 def AddFloaterRandomPosRangeYField(builder, floaterRandomPosRangeYField):
-    return FloaterCommonExcelAddFloaterRandomPosRangeYField(builder, floaterRandomPosRangeYField)
-def FloaterCommonExcelEnd(builder): return builder.EndObject()
+    FloaterCommonExcelAddFloaterRandomPosRangeYField(builder, floaterRandomPosRangeYField)
+
+def FloaterCommonExcelAddLimitedFloaterRandomPosRangeYField(builder, limitedFloaterRandomPosRangeYField):
+    builder.PrependInt32Slot(6, limitedFloaterRandomPosRangeYField, 0)
+
+def AddLimitedFloaterRandomPosRangeYField(builder, limitedFloaterRandomPosRangeYField):
+    FloaterCommonExcelAddLimitedFloaterRandomPosRangeYField(builder, limitedFloaterRandomPosRangeYField)
+
+def FloaterCommonExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FloaterCommonExcelEnd(builder)

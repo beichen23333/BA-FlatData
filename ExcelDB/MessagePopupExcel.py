@@ -201,63 +201,122 @@ class MessagePopupExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         return o == 0
 
-def MessagePopupExcelStart(builder): builder.StartObject(13)
+def MessagePopupExcelStart(builder):
+    builder.StartObject(13)
+
 def Start(builder):
-    return MessagePopupExcelStart(builder)
-def MessagePopupExcelAddStringIdField(builder, stringIdField): builder.PrependUint32Slot(0, stringIdField, 0)
+    MessagePopupExcelStart(builder)
+
+def MessagePopupExcelAddStringIdField(builder, stringIdField):
+    builder.PrependUint32Slot(0, stringIdField, 0)
+
 def AddStringIdField(builder, stringIdField):
-    return MessagePopupExcelAddStringIdField(builder, stringIdField)
-def MessagePopupExcelAddMessagePopupLayoutField(builder, messagePopupLayoutField): builder.PrependInt32Slot(1, messagePopupLayoutField, 0)
+    MessagePopupExcelAddStringIdField(builder, stringIdField)
+
+def MessagePopupExcelAddMessagePopupLayoutField(builder, messagePopupLayoutField):
+    builder.PrependInt32Slot(1, messagePopupLayoutField, 0)
+
 def AddMessagePopupLayoutField(builder, messagePopupLayoutField):
-    return MessagePopupExcelAddMessagePopupLayoutField(builder, messagePopupLayoutField)
-def MessagePopupExcelAddOrderTypeField(builder, orderTypeField): builder.PrependInt32Slot(2, orderTypeField, 0)
+    MessagePopupExcelAddMessagePopupLayoutField(builder, messagePopupLayoutField)
+
+def MessagePopupExcelAddOrderTypeField(builder, orderTypeField):
+    builder.PrependInt32Slot(2, orderTypeField, 0)
+
 def AddOrderTypeField(builder, orderTypeField):
-    return MessagePopupExcelAddOrderTypeField(builder, orderTypeField)
-def MessagePopupExcelAddImageField(builder, imageField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imageField), 0)
+    MessagePopupExcelAddOrderTypeField(builder, orderTypeField)
+
+def MessagePopupExcelAddImageField(builder, imageField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imageField), 0)
+
 def AddImageField(builder, imageField):
-    return MessagePopupExcelAddImageField(builder, imageField)
-def MessagePopupExcelAddTitleTextField(builder, titleTextField): builder.PrependUint32Slot(4, titleTextField, 0)
+    MessagePopupExcelAddImageField(builder, imageField)
+
+def MessagePopupExcelAddTitleTextField(builder, titleTextField):
+    builder.PrependUint32Slot(4, titleTextField, 0)
+
 def AddTitleTextField(builder, titleTextField):
-    return MessagePopupExcelAddTitleTextField(builder, titleTextField)
-def MessagePopupExcelAddSubTitleTextField(builder, subTitleTextField): builder.PrependUint32Slot(5, subTitleTextField, 0)
+    MessagePopupExcelAddTitleTextField(builder, titleTextField)
+
+def MessagePopupExcelAddSubTitleTextField(builder, subTitleTextField):
+    builder.PrependUint32Slot(5, subTitleTextField, 0)
+
 def AddSubTitleTextField(builder, subTitleTextField):
-    return MessagePopupExcelAddSubTitleTextField(builder, subTitleTextField)
-def MessagePopupExcelAddMessageTextField(builder, messageTextField): builder.PrependUint32Slot(6, messageTextField, 0)
+    MessagePopupExcelAddSubTitleTextField(builder, subTitleTextField)
+
+def MessagePopupExcelAddMessageTextField(builder, messageTextField):
+    builder.PrependUint32Slot(6, messageTextField, 0)
+
 def AddMessageTextField(builder, messageTextField):
-    return MessagePopupExcelAddMessageTextField(builder, messageTextField)
-def MessagePopupExcelAddConditionTextField(builder, conditionTextField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(conditionTextField), 0)
+    MessagePopupExcelAddMessageTextField(builder, messageTextField)
+
+def MessagePopupExcelAddConditionTextField(builder, conditionTextField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(conditionTextField), 0)
+
 def AddConditionTextField(builder, conditionTextField):
-    return MessagePopupExcelAddConditionTextField(builder, conditionTextField)
-def MessagePopupExcelStartConditionTextFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartConditionTextFieldVector(builder, numElems):
+    MessagePopupExcelAddConditionTextField(builder, conditionTextField)
+
+def MessagePopupExcelStartConditionTextFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartConditionTextFieldVector(builder, numElems: int) -> int:
     return MessagePopupExcelStartConditionTextFieldVector(builder, numElems)
-def MessagePopupExcelAddDisplayXButtonField(builder, displayXButtonField): builder.PrependBoolSlot(8, displayXButtonField, 0)
+
+def MessagePopupExcelAddDisplayXButtonField(builder, displayXButtonField):
+    builder.PrependBoolSlot(8, displayXButtonField, 0)
+
 def AddDisplayXButtonField(builder, displayXButtonField):
-    return MessagePopupExcelAddDisplayXButtonField(builder, displayXButtonField)
-def MessagePopupExcelAddButtonField(builder, buttonField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(buttonField), 0)
+    MessagePopupExcelAddDisplayXButtonField(builder, displayXButtonField)
+
+def MessagePopupExcelAddButtonField(builder, buttonField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(buttonField), 0)
+
 def AddButtonField(builder, buttonField):
-    return MessagePopupExcelAddButtonField(builder, buttonField)
-def MessagePopupExcelStartButtonFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartButtonFieldVector(builder, numElems):
+    MessagePopupExcelAddButtonField(builder, buttonField)
+
+def MessagePopupExcelStartButtonFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartButtonFieldVector(builder, numElems: int) -> int:
     return MessagePopupExcelStartButtonFieldVector(builder, numElems)
-def MessagePopupExcelAddButtonTextField(builder, buttonTextField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(buttonTextField), 0)
+
+def MessagePopupExcelAddButtonTextField(builder, buttonTextField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(buttonTextField), 0)
+
 def AddButtonTextField(builder, buttonTextField):
-    return MessagePopupExcelAddButtonTextField(builder, buttonTextField)
-def MessagePopupExcelStartButtonTextFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartButtonTextFieldVector(builder, numElems):
+    MessagePopupExcelAddButtonTextField(builder, buttonTextField)
+
+def MessagePopupExcelStartButtonTextFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartButtonTextFieldVector(builder, numElems: int) -> int:
     return MessagePopupExcelStartButtonTextFieldVector(builder, numElems)
-def MessagePopupExcelAddButtonCommandField(builder, buttonCommandField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(buttonCommandField), 0)
+
+def MessagePopupExcelAddButtonCommandField(builder, buttonCommandField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(buttonCommandField), 0)
+
 def AddButtonCommandField(builder, buttonCommandField):
-    return MessagePopupExcelAddButtonCommandField(builder, buttonCommandField)
-def MessagePopupExcelStartButtonCommandFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartButtonCommandFieldVector(builder, numElems):
+    MessagePopupExcelAddButtonCommandField(builder, buttonCommandField)
+
+def MessagePopupExcelStartButtonCommandFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartButtonCommandFieldVector(builder, numElems: int) -> int:
     return MessagePopupExcelStartButtonCommandFieldVector(builder, numElems)
-def MessagePopupExcelAddButtonParameterField(builder, buttonParameterField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(buttonParameterField), 0)
+
+def MessagePopupExcelAddButtonParameterField(builder, buttonParameterField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(buttonParameterField), 0)
+
 def AddButtonParameterField(builder, buttonParameterField):
-    return MessagePopupExcelAddButtonParameterField(builder, buttonParameterField)
-def MessagePopupExcelStartButtonParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartButtonParameterFieldVector(builder, numElems):
+    MessagePopupExcelAddButtonParameterField(builder, buttonParameterField)
+
+def MessagePopupExcelStartButtonParameterFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartButtonParameterFieldVector(builder, numElems: int) -> int:
     return MessagePopupExcelStartButtonParameterFieldVector(builder, numElems)
-def MessagePopupExcelEnd(builder): return builder.EndObject()
+
+def MessagePopupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MessagePopupExcelEnd(builder)

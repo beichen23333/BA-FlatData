@@ -49,15 +49,26 @@ class MiniGameDreamScheduleResultExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MiniGameDreamScheduleResultExcelTableStart(builder): builder.StartObject(1)
+def MiniGameDreamScheduleResultExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MiniGameDreamScheduleResultExcelTableStart(builder)
-def MiniGameDreamScheduleResultExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MiniGameDreamScheduleResultExcelTableStart(builder)
+
+def MiniGameDreamScheduleResultExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MiniGameDreamScheduleResultExcelTableAddDataList(builder, dataList)
-def MiniGameDreamScheduleResultExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MiniGameDreamScheduleResultExcelTableAddDataList(builder, dataList)
+
+def MiniGameDreamScheduleResultExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MiniGameDreamScheduleResultExcelTableStartDataListVector(builder, numElems)
-def MiniGameDreamScheduleResultExcelTableEnd(builder): return builder.EndObject()
+
+def MiniGameDreamScheduleResultExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameDreamScheduleResultExcelTableEnd(builder)

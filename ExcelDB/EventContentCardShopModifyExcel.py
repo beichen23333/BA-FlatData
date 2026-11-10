@@ -38,15 +38,26 @@ class EventContentCardShopModifyExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EventContentCardShopModifyExcelStart(builder): builder.StartObject(2)
+def EventContentCardShopModifyExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return EventContentCardShopModifyExcelStart(builder)
-def EventContentCardShopModifyExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentCardShopModifyExcelStart(builder)
+
+def EventContentCardShopModifyExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentCardShopModifyExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentCardShopModifyExcelAddUsePrefabNameField(builder, usePrefabNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(usePrefabNameField), 0)
+    EventContentCardShopModifyExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentCardShopModifyExcelAddUsePrefabNameField(builder, usePrefabNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(usePrefabNameField), 0)
+
 def AddUsePrefabNameField(builder, usePrefabNameField):
-    return EventContentCardShopModifyExcelAddUsePrefabNameField(builder, usePrefabNameField)
-def EventContentCardShopModifyExcelEnd(builder): return builder.EndObject()
+    EventContentCardShopModifyExcelAddUsePrefabNameField(builder, usePrefabNameField)
+
+def EventContentCardShopModifyExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentCardShopModifyExcelEnd(builder)

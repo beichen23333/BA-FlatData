@@ -87,36 +87,68 @@ class FieldMasteryExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def FieldMasteryExcelStart(builder): builder.StartObject(9)
+def FieldMasteryExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return FieldMasteryExcelStart(builder)
-def FieldMasteryExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    FieldMasteryExcelStart(builder)
+
+def FieldMasteryExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return FieldMasteryExcelAddUniqueIdField(builder, uniqueIdField)
-def FieldMasteryExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(1, seasonIdField, 0)
+    FieldMasteryExcelAddUniqueIdField(builder, uniqueIdField)
+
+def FieldMasteryExcelAddSeasonIdField(builder, seasonIdField):
+    builder.PrependInt32Slot(1, seasonIdField, 0)
+
 def AddSeasonIdField(builder, seasonIdField):
-    return FieldMasteryExcelAddSeasonIdField(builder, seasonIdField)
-def FieldMasteryExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(2, orderField, 0)
+    FieldMasteryExcelAddSeasonIdField(builder, seasonIdField)
+
+def FieldMasteryExcelAddOrderField(builder, orderField):
+    builder.PrependInt32Slot(2, orderField, 0)
+
 def AddOrderField(builder, orderField):
-    return FieldMasteryExcelAddOrderField(builder, orderField)
-def FieldMasteryExcelAddExpAmountField(builder, expAmountField): builder.PrependInt32Slot(3, expAmountField, 0)
+    FieldMasteryExcelAddOrderField(builder, orderField)
+
+def FieldMasteryExcelAddExpAmountField(builder, expAmountField):
+    builder.PrependInt32Slot(3, expAmountField, 0)
+
 def AddExpAmountField(builder, expAmountField):
-    return FieldMasteryExcelAddExpAmountField(builder, expAmountField)
-def FieldMasteryExcelAddTokenTypeField(builder, tokenTypeField): builder.PrependInt32Slot(4, tokenTypeField, 0)
+    FieldMasteryExcelAddExpAmountField(builder, expAmountField)
+
+def FieldMasteryExcelAddTokenTypeField(builder, tokenTypeField):
+    builder.PrependInt32Slot(4, tokenTypeField, 0)
+
 def AddTokenTypeField(builder, tokenTypeField):
-    return FieldMasteryExcelAddTokenTypeField(builder, tokenTypeField)
-def FieldMasteryExcelAddTokenIdField(builder, tokenIdField): builder.PrependInt32Slot(5, tokenIdField, 0)
+    FieldMasteryExcelAddTokenTypeField(builder, tokenTypeField)
+
+def FieldMasteryExcelAddTokenIdField(builder, tokenIdField):
+    builder.PrependInt32Slot(5, tokenIdField, 0)
+
 def AddTokenIdField(builder, tokenIdField):
-    return FieldMasteryExcelAddTokenIdField(builder, tokenIdField)
-def FieldMasteryExcelAddTokenRequirementField(builder, tokenRequirementField): builder.PrependInt32Slot(6, tokenRequirementField, 0)
+    FieldMasteryExcelAddTokenIdField(builder, tokenIdField)
+
+def FieldMasteryExcelAddTokenRequirementField(builder, tokenRequirementField):
+    builder.PrependInt32Slot(6, tokenRequirementField, 0)
+
 def AddTokenRequirementField(builder, tokenRequirementField):
-    return FieldMasteryExcelAddTokenRequirementField(builder, tokenRequirementField)
-def FieldMasteryExcelAddAccomplishmentConditionTypeField(builder, accomplishmentConditionTypeField): builder.PrependInt32Slot(7, accomplishmentConditionTypeField, 0)
+    FieldMasteryExcelAddTokenRequirementField(builder, tokenRequirementField)
+
+def FieldMasteryExcelAddAccomplishmentConditionTypeField(builder, accomplishmentConditionTypeField):
+    builder.PrependInt32Slot(7, accomplishmentConditionTypeField, 0)
+
 def AddAccomplishmentConditionTypeField(builder, accomplishmentConditionTypeField):
-    return FieldMasteryExcelAddAccomplishmentConditionTypeField(builder, accomplishmentConditionTypeField)
-def FieldMasteryExcelAddAccomplishmentConditionIdField(builder, accomplishmentConditionIdField): builder.PrependInt32Slot(8, accomplishmentConditionIdField, 0)
+    FieldMasteryExcelAddAccomplishmentConditionTypeField(builder, accomplishmentConditionTypeField)
+
+def FieldMasteryExcelAddAccomplishmentConditionIdField(builder, accomplishmentConditionIdField):
+    builder.PrependInt32Slot(8, accomplishmentConditionIdField, 0)
+
 def AddAccomplishmentConditionIdField(builder, accomplishmentConditionIdField):
-    return FieldMasteryExcelAddAccomplishmentConditionIdField(builder, accomplishmentConditionIdField)
-def FieldMasteryExcelEnd(builder): return builder.EndObject()
+    FieldMasteryExcelAddAccomplishmentConditionIdField(builder, accomplishmentConditionIdField)
+
+def FieldMasteryExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldMasteryExcelEnd(builder)

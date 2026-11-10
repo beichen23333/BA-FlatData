@@ -72,24 +72,44 @@ class InteractiveWorldRaidCarrierRecipeExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
-def InteractiveWorldRaidCarrierRecipeExcelStart(builder): builder.StartObject(4)
+def InteractiveWorldRaidCarrierRecipeExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return InteractiveWorldRaidCarrierRecipeExcelStart(builder)
-def InteractiveWorldRaidCarrierRecipeExcelAddSkillIdField(builder, skillIdField): builder.PrependInt32Slot(0, skillIdField, 0)
+    InteractiveWorldRaidCarrierRecipeExcelStart(builder)
+
+def InteractiveWorldRaidCarrierRecipeExcelAddSkillIdField(builder, skillIdField):
+    builder.PrependInt32Slot(0, skillIdField, 0)
+
 def AddSkillIdField(builder, skillIdField):
-    return InteractiveWorldRaidCarrierRecipeExcelAddSkillIdField(builder, skillIdField)
-def InteractiveWorldRaidCarrierRecipeExcelAddSkillSlotField(builder, skillSlotField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(skillSlotField), 0)
+    InteractiveWorldRaidCarrierRecipeExcelAddSkillIdField(builder, skillIdField)
+
+def InteractiveWorldRaidCarrierRecipeExcelAddSkillSlotField(builder, skillSlotField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(skillSlotField), 0)
+
 def AddSkillSlotField(builder, skillSlotField):
-    return InteractiveWorldRaidCarrierRecipeExcelAddSkillSlotField(builder, skillSlotField)
-def InteractiveWorldRaidCarrierRecipeExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(2, levelField, 0)
+    InteractiveWorldRaidCarrierRecipeExcelAddSkillSlotField(builder, skillSlotField)
+
+def InteractiveWorldRaidCarrierRecipeExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(2, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return InteractiveWorldRaidCarrierRecipeExcelAddLevelField(builder, levelField)
-def InteractiveWorldRaidCarrierRecipeExcelAddRecipeIngredientIdField(builder, recipeIngredientIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(recipeIngredientIdField), 0)
+    InteractiveWorldRaidCarrierRecipeExcelAddLevelField(builder, levelField)
+
+def InteractiveWorldRaidCarrierRecipeExcelAddRecipeIngredientIdField(builder, recipeIngredientIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(recipeIngredientIdField), 0)
+
 def AddRecipeIngredientIdField(builder, recipeIngredientIdField):
-    return InteractiveWorldRaidCarrierRecipeExcelAddRecipeIngredientIdField(builder, recipeIngredientIdField)
-def InteractiveWorldRaidCarrierRecipeExcelStartRecipeIngredientIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRecipeIngredientIdFieldVector(builder, numElems):
+    InteractiveWorldRaidCarrierRecipeExcelAddRecipeIngredientIdField(builder, recipeIngredientIdField)
+
+def InteractiveWorldRaidCarrierRecipeExcelStartRecipeIngredientIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRecipeIngredientIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidCarrierRecipeExcelStartRecipeIngredientIdFieldVector(builder, numElems)
-def InteractiveWorldRaidCarrierRecipeExcelEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidCarrierRecipeExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidCarrierRecipeExcelEnd(builder)

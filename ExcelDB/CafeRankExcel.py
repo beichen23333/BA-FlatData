@@ -134,45 +134,86 @@ class CafeRankExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
-def CafeRankExcelStart(builder): builder.StartObject(10)
+def CafeRankExcelStart(builder):
+    builder.StartObject(10)
+
 def Start(builder):
-    return CafeRankExcelStart(builder)
-def CafeRankExcelAddCafeIdField(builder, cafeIdField): builder.PrependInt32Slot(0, cafeIdField, 0)
+    CafeRankExcelStart(builder)
+
+def CafeRankExcelAddCafeIdField(builder, cafeIdField):
+    builder.PrependInt32Slot(0, cafeIdField, 0)
+
 def AddCafeIdField(builder, cafeIdField):
-    return CafeRankExcelAddCafeIdField(builder, cafeIdField)
-def CafeRankExcelAddRankField(builder, rankField): builder.PrependInt32Slot(1, rankField, 0)
+    CafeRankExcelAddCafeIdField(builder, cafeIdField)
+
+def CafeRankExcelAddRankField(builder, rankField):
+    builder.PrependInt32Slot(1, rankField, 0)
+
 def AddRankField(builder, rankField):
-    return CafeRankExcelAddRankField(builder, rankField)
-def CafeRankExcelAddRecipeIdField(builder, recipeIdField): builder.PrependInt32Slot(2, recipeIdField, 0)
+    CafeRankExcelAddRankField(builder, rankField)
+
+def CafeRankExcelAddRecipeIdField(builder, recipeIdField):
+    builder.PrependInt32Slot(2, recipeIdField, 0)
+
 def AddRecipeIdField(builder, recipeIdField):
-    return CafeRankExcelAddRecipeIdField(builder, recipeIdField)
-def CafeRankExcelAddComfortMaxField(builder, comfortMaxField): builder.PrependInt32Slot(3, comfortMaxField, 0)
+    CafeRankExcelAddRecipeIdField(builder, recipeIdField)
+
+def CafeRankExcelAddComfortMaxField(builder, comfortMaxField):
+    builder.PrependInt32Slot(3, comfortMaxField, 0)
+
 def AddComfortMaxField(builder, comfortMaxField):
-    return CafeRankExcelAddComfortMaxField(builder, comfortMaxField)
-def CafeRankExcelAddTagCountMaxField(builder, tagCountMaxField): builder.PrependInt32Slot(4, tagCountMaxField, 0)
+    CafeRankExcelAddComfortMaxField(builder, comfortMaxField)
+
+def CafeRankExcelAddTagCountMaxField(builder, tagCountMaxField):
+    builder.PrependInt32Slot(4, tagCountMaxField, 0)
+
 def AddTagCountMaxField(builder, tagCountMaxField):
-    return CafeRankExcelAddTagCountMaxField(builder, tagCountMaxField)
-def CafeRankExcelAddCharacterVisitMinField(builder, characterVisitMinField): builder.PrependInt32Slot(5, characterVisitMinField, 0)
+    CafeRankExcelAddTagCountMaxField(builder, tagCountMaxField)
+
+def CafeRankExcelAddCharacterVisitMinField(builder, characterVisitMinField):
+    builder.PrependInt32Slot(5, characterVisitMinField, 0)
+
 def AddCharacterVisitMinField(builder, characterVisitMinField):
-    return CafeRankExcelAddCharacterVisitMinField(builder, characterVisitMinField)
-def CafeRankExcelAddCharacterVisitMaxField(builder, characterVisitMaxField): builder.PrependInt32Slot(6, characterVisitMaxField, 0)
+    CafeRankExcelAddCharacterVisitMinField(builder, characterVisitMinField)
+
+def CafeRankExcelAddCharacterVisitMaxField(builder, characterVisitMaxField):
+    builder.PrependInt32Slot(6, characterVisitMaxField, 0)
+
 def AddCharacterVisitMaxField(builder, characterVisitMaxField):
-    return CafeRankExcelAddCharacterVisitMaxField(builder, characterVisitMaxField)
-def CafeRankExcelAddCafeVisitWeightBaseField(builder, cafeVisitWeightBaseField): builder.PrependInt32Slot(7, cafeVisitWeightBaseField, 0)
+    CafeRankExcelAddCharacterVisitMaxField(builder, characterVisitMaxField)
+
+def CafeRankExcelAddCafeVisitWeightBaseField(builder, cafeVisitWeightBaseField):
+    builder.PrependInt32Slot(7, cafeVisitWeightBaseField, 0)
+
 def AddCafeVisitWeightBaseField(builder, cafeVisitWeightBaseField):
-    return CafeRankExcelAddCafeVisitWeightBaseField(builder, cafeVisitWeightBaseField)
-def CafeRankExcelAddCafeVisitWeightTagBonusStepField(builder, cafeVisitWeightTagBonusStepField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(cafeVisitWeightTagBonusStepField), 0)
+    CafeRankExcelAddCafeVisitWeightBaseField(builder, cafeVisitWeightBaseField)
+
+def CafeRankExcelAddCafeVisitWeightTagBonusStepField(builder, cafeVisitWeightTagBonusStepField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(cafeVisitWeightTagBonusStepField), 0)
+
 def AddCafeVisitWeightTagBonusStepField(builder, cafeVisitWeightTagBonusStepField):
-    return CafeRankExcelAddCafeVisitWeightTagBonusStepField(builder, cafeVisitWeightTagBonusStepField)
-def CafeRankExcelStartCafeVisitWeightTagBonusStepFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCafeVisitWeightTagBonusStepFieldVector(builder, numElems):
+    CafeRankExcelAddCafeVisitWeightTagBonusStepField(builder, cafeVisitWeightTagBonusStepField)
+
+def CafeRankExcelStartCafeVisitWeightTagBonusStepFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCafeVisitWeightTagBonusStepFieldVector(builder, numElems: int) -> int:
     return CafeRankExcelStartCafeVisitWeightTagBonusStepFieldVector(builder, numElems)
-def CafeRankExcelAddCafeVisitWeightTagBonusField(builder, cafeVisitWeightTagBonusField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(cafeVisitWeightTagBonusField), 0)
+
+def CafeRankExcelAddCafeVisitWeightTagBonusField(builder, cafeVisitWeightTagBonusField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(cafeVisitWeightTagBonusField), 0)
+
 def AddCafeVisitWeightTagBonusField(builder, cafeVisitWeightTagBonusField):
-    return CafeRankExcelAddCafeVisitWeightTagBonusField(builder, cafeVisitWeightTagBonusField)
-def CafeRankExcelStartCafeVisitWeightTagBonusFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCafeVisitWeightTagBonusFieldVector(builder, numElems):
+    CafeRankExcelAddCafeVisitWeightTagBonusField(builder, cafeVisitWeightTagBonusField)
+
+def CafeRankExcelStartCafeVisitWeightTagBonusFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCafeVisitWeightTagBonusFieldVector(builder, numElems: int) -> int:
     return CafeRankExcelStartCafeVisitWeightTagBonusFieldVector(builder, numElems)
-def CafeRankExcelEnd(builder): return builder.EndObject()
+
+def CafeRankExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CafeRankExcelEnd(builder)

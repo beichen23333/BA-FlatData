@@ -45,18 +45,32 @@ class EmoticonSpecialExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EmoticonSpecialExcelStart(builder): builder.StartObject(3)
+def EmoticonSpecialExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return EmoticonSpecialExcelStart(builder)
-def EmoticonSpecialExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    EmoticonSpecialExcelStart(builder)
+
+def EmoticonSpecialExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return EmoticonSpecialExcelAddUniqueIdField(builder, uniqueIdField)
-def EmoticonSpecialExcelAddCharacterUniqueIdField(builder, characterUniqueIdField): builder.PrependInt32Slot(1, characterUniqueIdField, 0)
+    EmoticonSpecialExcelAddUniqueIdField(builder, uniqueIdField)
+
+def EmoticonSpecialExcelAddCharacterUniqueIdField(builder, characterUniqueIdField):
+    builder.PrependInt32Slot(1, characterUniqueIdField, 0)
+
 def AddCharacterUniqueIdField(builder, characterUniqueIdField):
-    return EmoticonSpecialExcelAddCharacterUniqueIdField(builder, characterUniqueIdField)
-def EmoticonSpecialExcelAddRandomField(builder, randomField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(randomField), 0)
+    EmoticonSpecialExcelAddCharacterUniqueIdField(builder, characterUniqueIdField)
+
+def EmoticonSpecialExcelAddRandomField(builder, randomField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(randomField), 0)
+
 def AddRandomField(builder, randomField):
-    return EmoticonSpecialExcelAddRandomField(builder, randomField)
-def EmoticonSpecialExcelEnd(builder): return builder.EndObject()
+    EmoticonSpecialExcelAddRandomField(builder, randomField)
+
+def EmoticonSpecialExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EmoticonSpecialExcelEnd(builder)

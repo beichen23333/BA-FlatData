@@ -49,15 +49,26 @@ class MemoryLobby_GlobalExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MemoryLobby_GlobalExcelTableStart(builder): builder.StartObject(1)
+def MemoryLobby_GlobalExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MemoryLobby_GlobalExcelTableStart(builder)
-def MemoryLobby_GlobalExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MemoryLobby_GlobalExcelTableStart(builder)
+
+def MemoryLobby_GlobalExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MemoryLobby_GlobalExcelTableAddDataList(builder, dataList)
-def MemoryLobby_GlobalExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MemoryLobby_GlobalExcelTableAddDataList(builder, dataList)
+
+def MemoryLobby_GlobalExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MemoryLobby_GlobalExcelTableStartDataListVector(builder, numElems)
-def MemoryLobby_GlobalExcelTableEnd(builder): return builder.EndObject()
+
+def MemoryLobby_GlobalExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MemoryLobby_GlobalExcelTableEnd(builder)

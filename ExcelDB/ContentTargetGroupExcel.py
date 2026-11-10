@@ -58,18 +58,32 @@ class ContentTargetGroupExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         return o == 0
 
-def ContentTargetGroupExcelStart(builder): builder.StartObject(2)
+def ContentTargetGroupExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return ContentTargetGroupExcelStart(builder)
-def ContentTargetGroupExcelAddTargetGroupField(builder, targetGroupField): builder.PrependInt32Slot(0, targetGroupField, 0)
+    ContentTargetGroupExcelStart(builder)
+
+def ContentTargetGroupExcelAddTargetGroupField(builder, targetGroupField):
+    builder.PrependInt32Slot(0, targetGroupField, 0)
+
 def AddTargetGroupField(builder, targetGroupField):
-    return ContentTargetGroupExcelAddTargetGroupField(builder, targetGroupField)
-def ContentTargetGroupExcelAddAccountTypeField(builder, accountTypeField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(accountTypeField), 0)
+    ContentTargetGroupExcelAddTargetGroupField(builder, targetGroupField)
+
+def ContentTargetGroupExcelAddAccountTypeField(builder, accountTypeField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(accountTypeField), 0)
+
 def AddAccountTypeField(builder, accountTypeField):
-    return ContentTargetGroupExcelAddAccountTypeField(builder, accountTypeField)
-def ContentTargetGroupExcelStartAccountTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAccountTypeFieldVector(builder, numElems):
+    ContentTargetGroupExcelAddAccountTypeField(builder, accountTypeField)
+
+def ContentTargetGroupExcelStartAccountTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartAccountTypeFieldVector(builder, numElems: int) -> int:
     return ContentTargetGroupExcelStartAccountTypeFieldVector(builder, numElems)
-def ContentTargetGroupExcelEnd(builder): return builder.EndObject()
+
+def ContentTargetGroupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ContentTargetGroupExcelEnd(builder)

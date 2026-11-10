@@ -219,87 +219,170 @@ class CharacterDialogBattlePassExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def CharacterDialogBattlePassExcelStart(builder): builder.StartObject(25)
+def CharacterDialogBattlePassExcelStart(builder):
+    builder.StartObject(25)
+
 def Start(builder):
-    return CharacterDialogBattlePassExcelStart(builder)
-def CharacterDialogBattlePassExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField): builder.PrependInt32Slot(0, costumeUniqueIdField, 0)
+    CharacterDialogBattlePassExcelStart(builder)
+
+def CharacterDialogBattlePassExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField):
+    builder.PrependInt32Slot(0, costumeUniqueIdField, 0)
+
 def AddCostumeUniqueIdField(builder, costumeUniqueIdField):
-    return CharacterDialogBattlePassExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
-def CharacterDialogBattlePassExcelAddOriginalCharacterIdField(builder, originalCharacterIdField): builder.PrependInt32Slot(1, originalCharacterIdField, 0)
+    CharacterDialogBattlePassExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
+
+def CharacterDialogBattlePassExcelAddOriginalCharacterIdField(builder, originalCharacterIdField):
+    builder.PrependInt32Slot(1, originalCharacterIdField, 0)
+
 def AddOriginalCharacterIdField(builder, originalCharacterIdField):
-    return CharacterDialogBattlePassExcelAddOriginalCharacterIdField(builder, originalCharacterIdField)
-def CharacterDialogBattlePassExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(2, displayOrderField, 0)
+    CharacterDialogBattlePassExcelAddOriginalCharacterIdField(builder, originalCharacterIdField)
+
+def CharacterDialogBattlePassExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(2, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return CharacterDialogBattlePassExcelAddDisplayOrderField(builder, displayOrderField)
-def CharacterDialogBattlePassExcelAddBattlePassIDField(builder, battlePassIDField): builder.PrependInt32Slot(3, battlePassIDField, 0)
+    CharacterDialogBattlePassExcelAddDisplayOrderField(builder, displayOrderField)
+
+def CharacterDialogBattlePassExcelAddBattlePassIDField(builder, battlePassIDField):
+    builder.PrependInt32Slot(3, battlePassIDField, 0)
+
 def AddBattlePassIDField(builder, battlePassIDField):
-    return CharacterDialogBattlePassExcelAddBattlePassIDField(builder, battlePassIDField)
-def CharacterDialogBattlePassExcelAddProductionStepField(builder, productionStepField): builder.PrependInt32Slot(4, productionStepField, 0)
+    CharacterDialogBattlePassExcelAddBattlePassIDField(builder, battlePassIDField)
+
+def CharacterDialogBattlePassExcelAddProductionStepField(builder, productionStepField):
+    builder.PrependInt32Slot(4, productionStepField, 0)
+
 def AddProductionStepField(builder, productionStepField):
-    return CharacterDialogBattlePassExcelAddProductionStepField(builder, productionStepField)
-def CharacterDialogBattlePassExcelAddDialogCategoryField(builder, dialogCategoryField): builder.PrependInt32Slot(5, dialogCategoryField, 0)
+    CharacterDialogBattlePassExcelAddProductionStepField(builder, productionStepField)
+
+def CharacterDialogBattlePassExcelAddDialogCategoryField(builder, dialogCategoryField):
+    builder.PrependInt32Slot(5, dialogCategoryField, 0)
+
 def AddDialogCategoryField(builder, dialogCategoryField):
-    return CharacterDialogBattlePassExcelAddDialogCategoryField(builder, dialogCategoryField)
-def CharacterDialogBattlePassExcelAddDialogConditionField(builder, dialogConditionField): builder.PrependInt32Slot(6, dialogConditionField, 0)
+    CharacterDialogBattlePassExcelAddDialogCategoryField(builder, dialogCategoryField)
+
+def CharacterDialogBattlePassExcelAddDialogConditionField(builder, dialogConditionField):
+    builder.PrependInt32Slot(6, dialogConditionField, 0)
+
 def AddDialogConditionField(builder, dialogConditionField):
-    return CharacterDialogBattlePassExcelAddDialogConditionField(builder, dialogConditionField)
-def CharacterDialogBattlePassExcelAddDialogConditionDetailField(builder, dialogConditionDetailField): builder.PrependInt32Slot(7, dialogConditionDetailField, 0)
+    CharacterDialogBattlePassExcelAddDialogConditionField(builder, dialogConditionField)
+
+def CharacterDialogBattlePassExcelAddDialogConditionDetailField(builder, dialogConditionDetailField):
+    builder.PrependInt32Slot(7, dialogConditionDetailField, 0)
+
 def AddDialogConditionDetailField(builder, dialogConditionDetailField):
-    return CharacterDialogBattlePassExcelAddDialogConditionDetailField(builder, dialogConditionDetailField)
-def CharacterDialogBattlePassExcelAddDialogConditionDetailValueField(builder, dialogConditionDetailValueField): builder.PrependInt32Slot(8, dialogConditionDetailValueField, 0)
+    CharacterDialogBattlePassExcelAddDialogConditionDetailField(builder, dialogConditionDetailField)
+
+def CharacterDialogBattlePassExcelAddDialogConditionDetailValueField(builder, dialogConditionDetailValueField):
+    builder.PrependInt32Slot(8, dialogConditionDetailValueField, 0)
+
 def AddDialogConditionDetailValueField(builder, dialogConditionDetailValueField):
-    return CharacterDialogBattlePassExcelAddDialogConditionDetailValueField(builder, dialogConditionDetailValueField)
-def CharacterDialogBattlePassExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(9, groupIdField, 0)
+    CharacterDialogBattlePassExcelAddDialogConditionDetailValueField(builder, dialogConditionDetailValueField)
+
+def CharacterDialogBattlePassExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(9, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return CharacterDialogBattlePassExcelAddGroupIdField(builder, groupIdField)
-def CharacterDialogBattlePassExcelAddDialogTypeField(builder, dialogTypeField): builder.PrependInt32Slot(10, dialogTypeField, 0)
+    CharacterDialogBattlePassExcelAddGroupIdField(builder, groupIdField)
+
+def CharacterDialogBattlePassExcelAddDialogTypeField(builder, dialogTypeField):
+    builder.PrependInt32Slot(10, dialogTypeField, 0)
+
 def AddDialogTypeField(builder, dialogTypeField):
-    return CharacterDialogBattlePassExcelAddDialogTypeField(builder, dialogTypeField)
-def CharacterDialogBattlePassExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(11, durationField, 0)
+    CharacterDialogBattlePassExcelAddDialogTypeField(builder, dialogTypeField)
+
+def CharacterDialogBattlePassExcelAddDurationField(builder, durationField):
+    builder.PrependInt32Slot(11, durationField, 0)
+
 def AddDurationField(builder, durationField):
-    return CharacterDialogBattlePassExcelAddDurationField(builder, durationField)
-def CharacterDialogBattlePassExcelAddDurationKrField(builder, durationKrField): builder.PrependInt32Slot(12, durationKrField, 0)
+    CharacterDialogBattlePassExcelAddDurationField(builder, durationField)
+
+def CharacterDialogBattlePassExcelAddDurationKrField(builder, durationKrField):
+    builder.PrependInt32Slot(12, durationKrField, 0)
+
 def AddDurationKrField(builder, durationKrField):
-    return CharacterDialogBattlePassExcelAddDurationKrField(builder, durationKrField)
-def CharacterDialogBattlePassExcelAddAnimationNameField(builder, animationNameField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(animationNameField), 0)
+    CharacterDialogBattlePassExcelAddDurationKrField(builder, durationKrField)
+
+def CharacterDialogBattlePassExcelAddAnimationNameField(builder, animationNameField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(animationNameField), 0)
+
 def AddAnimationNameField(builder, animationNameField):
-    return CharacterDialogBattlePassExcelAddAnimationNameField(builder, animationNameField)
-def CharacterDialogBattlePassExcelAddLocalizeKRField(builder, localizeKRField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+    CharacterDialogBattlePassExcelAddAnimationNameField(builder, animationNameField)
+
+def CharacterDialogBattlePassExcelAddLocalizeKRField(builder, localizeKRField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(localizeKRField), 0)
+
 def AddLocalizeKRField(builder, localizeKRField):
-    return CharacterDialogBattlePassExcelAddLocalizeKRField(builder, localizeKRField)
-def CharacterDialogBattlePassExcelAddLocalizeJPField(builder, localizeJPField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+    CharacterDialogBattlePassExcelAddLocalizeKRField(builder, localizeKRField)
+
+def CharacterDialogBattlePassExcelAddLocalizeJPField(builder, localizeJPField):
+    builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(localizeJPField), 0)
+
 def AddLocalizeJPField(builder, localizeJPField):
-    return CharacterDialogBattlePassExcelAddLocalizeJPField(builder, localizeJPField)
-def CharacterDialogBattlePassExcelAddLocalizeTHField(builder, localizeTHField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTHField), 0)
+    CharacterDialogBattlePassExcelAddLocalizeJPField(builder, localizeJPField)
+
+def CharacterDialogBattlePassExcelAddLocalizeTHField(builder, localizeTHField):
+    builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTHField), 0)
+
 def AddLocalizeTHField(builder, localizeTHField):
-    return CharacterDialogBattlePassExcelAddLocalizeTHField(builder, localizeTHField)
-def CharacterDialogBattlePassExcelAddLocalizeTWField(builder, localizeTWField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTWField), 0)
+    CharacterDialogBattlePassExcelAddLocalizeTHField(builder, localizeTHField)
+
+def CharacterDialogBattlePassExcelAddLocalizeTWField(builder, localizeTWField):
+    builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTWField), 0)
+
 def AddLocalizeTWField(builder, localizeTWField):
-    return CharacterDialogBattlePassExcelAddLocalizeTWField(builder, localizeTWField)
-def CharacterDialogBattlePassExcelAddLocalizeENField(builder, localizeENField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(localizeENField), 0)
+    CharacterDialogBattlePassExcelAddLocalizeTWField(builder, localizeTWField)
+
+def CharacterDialogBattlePassExcelAddLocalizeENField(builder, localizeENField):
+    builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(localizeENField), 0)
+
 def AddLocalizeENField(builder, localizeENField):
-    return CharacterDialogBattlePassExcelAddLocalizeENField(builder, localizeENField)
-def CharacterDialogBattlePassExcelAddVoiceIdField(builder, voiceIdField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(voiceIdField), 0)
+    CharacterDialogBattlePassExcelAddLocalizeENField(builder, localizeENField)
+
+def CharacterDialogBattlePassExcelAddVoiceIdField(builder, voiceIdField):
+    builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(voiceIdField), 0)
+
 def AddVoiceIdField(builder, voiceIdField):
-    return CharacterDialogBattlePassExcelAddVoiceIdField(builder, voiceIdField)
-def CharacterDialogBattlePassExcelStartVoiceIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVoiceIdFieldVector(builder, numElems):
+    CharacterDialogBattlePassExcelAddVoiceIdField(builder, voiceIdField)
+
+def CharacterDialogBattlePassExcelStartVoiceIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartVoiceIdFieldVector(builder, numElems: int) -> int:
     return CharacterDialogBattlePassExcelStartVoiceIdFieldVector(builder, numElems)
-def CharacterDialogBattlePassExcelAddCollectionVisibleField(builder, collectionVisibleField): builder.PrependBoolSlot(20, collectionVisibleField, 0)
+
+def CharacterDialogBattlePassExcelAddCollectionVisibleField(builder, collectionVisibleField):
+    builder.PrependBoolSlot(20, collectionVisibleField, 0)
+
 def AddCollectionVisibleField(builder, collectionVisibleField):
-    return CharacterDialogBattlePassExcelAddCollectionVisibleField(builder, collectionVisibleField)
-def CharacterDialogBattlePassExcelAddCVCollectionTypeField(builder, cVCollectionTypeField): builder.PrependInt32Slot(21, cVCollectionTypeField, 0)
+    CharacterDialogBattlePassExcelAddCollectionVisibleField(builder, collectionVisibleField)
+
+def CharacterDialogBattlePassExcelAddCVCollectionTypeField(builder, cVCollectionTypeField):
+    builder.PrependInt32Slot(21, cVCollectionTypeField, 0)
+
 def AddCVCollectionTypeField(builder, cVCollectionTypeField):
-    return CharacterDialogBattlePassExcelAddCVCollectionTypeField(builder, cVCollectionTypeField)
-def CharacterDialogBattlePassExcelAddUnlockBattlePassIdField(builder, unlockBattlePassIdField): builder.PrependInt32Slot(22, unlockBattlePassIdField, 0)
+    CharacterDialogBattlePassExcelAddCVCollectionTypeField(builder, cVCollectionTypeField)
+
+def CharacterDialogBattlePassExcelAddUnlockBattlePassIdField(builder, unlockBattlePassIdField):
+    builder.PrependInt32Slot(22, unlockBattlePassIdField, 0)
+
 def AddUnlockBattlePassIdField(builder, unlockBattlePassIdField):
-    return CharacterDialogBattlePassExcelAddUnlockBattlePassIdField(builder, unlockBattlePassIdField)
-def CharacterDialogBattlePassExcelAddLocalizeCVGroupField(builder, localizeCVGroupField): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+    CharacterDialogBattlePassExcelAddUnlockBattlePassIdField(builder, unlockBattlePassIdField)
+
+def CharacterDialogBattlePassExcelAddLocalizeCVGroupField(builder, localizeCVGroupField):
+    builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCVGroupField), 0)
+
 def AddLocalizeCVGroupField(builder, localizeCVGroupField):
-    return CharacterDialogBattlePassExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
-def CharacterDialogBattlePassExcelAddTeenModeField(builder, teenModeField): builder.PrependBoolSlot(24, teenModeField, 0)
+    CharacterDialogBattlePassExcelAddLocalizeCVGroupField(builder, localizeCVGroupField)
+
+def CharacterDialogBattlePassExcelAddTeenModeField(builder, teenModeField):
+    builder.PrependBoolSlot(24, teenModeField, 0)
+
 def AddTeenModeField(builder, teenModeField):
-    return CharacterDialogBattlePassExcelAddTeenModeField(builder, teenModeField)
-def CharacterDialogBattlePassExcelEnd(builder): return builder.EndObject()
+    CharacterDialogBattlePassExcelAddTeenModeField(builder, teenModeField)
+
+def CharacterDialogBattlePassExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterDialogBattlePassExcelEnd(builder)

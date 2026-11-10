@@ -49,15 +49,26 @@ class FieldSNSInfoExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def FieldSNSInfoExcelTableStart(builder): builder.StartObject(1)
+def FieldSNSInfoExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return FieldSNSInfoExcelTableStart(builder)
-def FieldSNSInfoExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    FieldSNSInfoExcelTableStart(builder)
+
+def FieldSNSInfoExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return FieldSNSInfoExcelTableAddDataList(builder, dataList)
-def FieldSNSInfoExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    FieldSNSInfoExcelTableAddDataList(builder, dataList)
+
+def FieldSNSInfoExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return FieldSNSInfoExcelTableStartDataListVector(builder, numElems)
-def FieldSNSInfoExcelTableEnd(builder): return builder.EndObject()
+
+def FieldSNSInfoExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldSNSInfoExcelTableEnd(builder)

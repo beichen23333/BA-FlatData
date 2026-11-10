@@ -59,24 +59,44 @@ class FieldSNSInfoExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def FieldSNSInfoExcelStart(builder): builder.StartObject(5)
+def FieldSNSInfoExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return FieldSNSInfoExcelStart(builder)
-def FieldSNSInfoExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    FieldSNSInfoExcelStart(builder)
+
+def FieldSNSInfoExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return FieldSNSInfoExcelAddIdField(builder, idField)
-def FieldSNSInfoExcelAddInteractionGroupIdField(builder, interactionGroupIdField): builder.PrependInt32Slot(1, interactionGroupIdField, 0)
+    FieldSNSInfoExcelAddIdField(builder, idField)
+
+def FieldSNSInfoExcelAddInteractionGroupIdField(builder, interactionGroupIdField):
+    builder.PrependInt32Slot(1, interactionGroupIdField, 0)
+
 def AddInteractionGroupIdField(builder, interactionGroupIdField):
-    return FieldSNSInfoExcelAddInteractionGroupIdField(builder, interactionGroupIdField)
-def FieldSNSInfoExcelAddSNSStateTypeField(builder, sNSStateTypeField): builder.PrependInt32Slot(2, sNSStateTypeField, 0)
+    FieldSNSInfoExcelAddInteractionGroupIdField(builder, interactionGroupIdField)
+
+def FieldSNSInfoExcelAddSNSStateTypeField(builder, sNSStateTypeField):
+    builder.PrependInt32Slot(2, sNSStateTypeField, 0)
+
 def AddSNSStateTypeField(builder, sNSStateTypeField):
-    return FieldSNSInfoExcelAddSNSStateTypeField(builder, sNSStateTypeField)
-def FieldSNSInfoExcelAddStateLocalizeKeyField(builder, stateLocalizeKeyField): builder.PrependUint32Slot(3, stateLocalizeKeyField, 0)
+    FieldSNSInfoExcelAddSNSStateTypeField(builder, sNSStateTypeField)
+
+def FieldSNSInfoExcelAddStateLocalizeKeyField(builder, stateLocalizeKeyField):
+    builder.PrependUint32Slot(3, stateLocalizeKeyField, 0)
+
 def AddStateLocalizeKeyField(builder, stateLocalizeKeyField):
-    return FieldSNSInfoExcelAddStateLocalizeKeyField(builder, stateLocalizeKeyField)
-def FieldSNSInfoExcelAddDescLocalizeKeyField(builder, descLocalizeKeyField): builder.PrependUint32Slot(4, descLocalizeKeyField, 0)
+    FieldSNSInfoExcelAddStateLocalizeKeyField(builder, stateLocalizeKeyField)
+
+def FieldSNSInfoExcelAddDescLocalizeKeyField(builder, descLocalizeKeyField):
+    builder.PrependUint32Slot(4, descLocalizeKeyField, 0)
+
 def AddDescLocalizeKeyField(builder, descLocalizeKeyField):
-    return FieldSNSInfoExcelAddDescLocalizeKeyField(builder, descLocalizeKeyField)
-def FieldSNSInfoExcelEnd(builder): return builder.EndObject()
+    FieldSNSInfoExcelAddDescLocalizeKeyField(builder, descLocalizeKeyField)
+
+def FieldSNSInfoExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldSNSInfoExcelEnd(builder)

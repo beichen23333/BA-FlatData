@@ -59,24 +59,44 @@ class ShopRecruitDirectingExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ShopRecruitDirectingExcelStart(builder): builder.StartObject(5)
+def ShopRecruitDirectingExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return ShopRecruitDirectingExcelStart(builder)
-def ShopRecruitDirectingExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+    ShopRecruitDirectingExcelStart(builder)
+
+def ShopRecruitDirectingExcelAddPathField(builder, pathField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
 def AddPathField(builder, pathField):
-    return ShopRecruitDirectingExcelAddPathField(builder, pathField)
-def ShopRecruitDirectingExcelAddPhaseField(builder, phaseField): builder.PrependInt32Slot(1, phaseField, 0)
+    ShopRecruitDirectingExcelAddPathField(builder, pathField)
+
+def ShopRecruitDirectingExcelAddPhaseField(builder, phaseField):
+    builder.PrependInt32Slot(1, phaseField, 0)
+
 def AddPhaseField(builder, phaseField):
-    return ShopRecruitDirectingExcelAddPhaseField(builder, phaseField)
-def ShopRecruitDirectingExcelAddGachaAmountField(builder, gachaAmountField): builder.PrependInt32Slot(2, gachaAmountField, 0)
+    ShopRecruitDirectingExcelAddPhaseField(builder, phaseField)
+
+def ShopRecruitDirectingExcelAddGachaAmountField(builder, gachaAmountField):
+    builder.PrependInt32Slot(2, gachaAmountField, 0)
+
 def AddGachaAmountField(builder, gachaAmountField):
-    return ShopRecruitDirectingExcelAddGachaAmountField(builder, gachaAmountField)
-def ShopRecruitDirectingExcelAddIsSSRField(builder, isSSRField): builder.PrependBoolSlot(3, isSSRField, 0)
+    ShopRecruitDirectingExcelAddGachaAmountField(builder, gachaAmountField)
+
+def ShopRecruitDirectingExcelAddIsSSRField(builder, isSSRField):
+    builder.PrependBoolSlot(3, isSSRField, 0)
+
 def AddIsSSRField(builder, isSSRField):
-    return ShopRecruitDirectingExcelAddIsSSRField(builder, isSSRField)
-def ShopRecruitDirectingExcelAddCharacterField(builder, characterField): builder.PrependInt32Slot(4, characterField, 0)
+    ShopRecruitDirectingExcelAddIsSSRField(builder, isSSRField)
+
+def ShopRecruitDirectingExcelAddCharacterField(builder, characterField):
+    builder.PrependInt32Slot(4, characterField, 0)
+
 def AddCharacterField(builder, characterField):
-    return ShopRecruitDirectingExcelAddCharacterField(builder, characterField)
-def ShopRecruitDirectingExcelEnd(builder): return builder.EndObject()
+    ShopRecruitDirectingExcelAddCharacterField(builder, characterField)
+
+def ShopRecruitDirectingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ShopRecruitDirectingExcelEnd(builder)

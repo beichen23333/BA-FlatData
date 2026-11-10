@@ -324,93 +324,182 @@ class AcademyRewardExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         return o == 0
 
-def AcademyRewardExcelStart(builder): builder.StartObject(20)
+def AcademyRewardExcelStart(builder):
+    builder.StartObject(20)
+
 def Start(builder):
-    return AcademyRewardExcelStart(builder)
-def AcademyRewardExcelAddLocationField(builder, locationField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(locationField), 0)
+    AcademyRewardExcelStart(builder)
+
+def AcademyRewardExcelAddLocationField(builder, locationField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(locationField), 0)
+
 def AddLocationField(builder, locationField):
-    return AcademyRewardExcelAddLocationField(builder, locationField)
-def AcademyRewardExcelAddScheduleGroupIdField(builder, scheduleGroupIdField): builder.PrependInt32Slot(1, scheduleGroupIdField, 0)
+    AcademyRewardExcelAddLocationField(builder, locationField)
+
+def AcademyRewardExcelAddScheduleGroupIdField(builder, scheduleGroupIdField):
+    builder.PrependInt32Slot(1, scheduleGroupIdField, 0)
+
 def AddScheduleGroupIdField(builder, scheduleGroupIdField):
-    return AcademyRewardExcelAddScheduleGroupIdField(builder, scheduleGroupIdField)
-def AcademyRewardExcelAddOrderInGroupField(builder, orderInGroupField): builder.PrependInt32Slot(2, orderInGroupField, 0)
+    AcademyRewardExcelAddScheduleGroupIdField(builder, scheduleGroupIdField)
+
+def AcademyRewardExcelAddOrderInGroupField(builder, orderInGroupField):
+    builder.PrependInt32Slot(2, orderInGroupField, 0)
+
 def AddOrderInGroupField(builder, orderInGroupField):
-    return AcademyRewardExcelAddOrderInGroupField(builder, orderInGroupField)
-def AcademyRewardExcelAddIdField(builder, idField): builder.PrependInt32Slot(3, idField, 0)
+    AcademyRewardExcelAddOrderInGroupField(builder, orderInGroupField)
+
+def AcademyRewardExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(3, idField, 0)
+
 def AddIdField(builder, idField):
-    return AcademyRewardExcelAddIdField(builder, idField)
-def AcademyRewardExcelAddProgressTextureField(builder, progressTextureField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(progressTextureField), 0)
+    AcademyRewardExcelAddIdField(builder, idField)
+
+def AcademyRewardExcelAddProgressTextureField(builder, progressTextureField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(progressTextureField), 0)
+
 def AddProgressTextureField(builder, progressTextureField):
-    return AcademyRewardExcelAddProgressTextureField(builder, progressTextureField)
-def AcademyRewardExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(5, localizeEtcIdField, 0)
+    AcademyRewardExcelAddProgressTextureField(builder, progressTextureField)
+
+def AcademyRewardExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(5, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return AcademyRewardExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def AcademyRewardExcelAddLocationRankField(builder, locationRankField): builder.PrependInt32Slot(6, locationRankField, 0)
+    AcademyRewardExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def AcademyRewardExcelAddLocationRankField(builder, locationRankField):
+    builder.PrependInt32Slot(6, locationRankField, 0)
+
 def AddLocationRankField(builder, locationRankField):
-    return AcademyRewardExcelAddLocationRankField(builder, locationRankField)
-def AcademyRewardExcelAddFavorExpField(builder, favorExpField): builder.PrependInt32Slot(7, favorExpField, 0)
+    AcademyRewardExcelAddLocationRankField(builder, locationRankField)
+
+def AcademyRewardExcelAddFavorExpField(builder, favorExpField):
+    builder.PrependInt32Slot(7, favorExpField, 0)
+
 def AddFavorExpField(builder, favorExpField):
-    return AcademyRewardExcelAddFavorExpField(builder, favorExpField)
-def AcademyRewardExcelAddSecretStoneAmountField(builder, secretStoneAmountField): builder.PrependInt32Slot(8, secretStoneAmountField, 0)
+    AcademyRewardExcelAddFavorExpField(builder, favorExpField)
+
+def AcademyRewardExcelAddSecretStoneAmountField(builder, secretStoneAmountField):
+    builder.PrependInt32Slot(8, secretStoneAmountField, 0)
+
 def AddSecretStoneAmountField(builder, secretStoneAmountField):
-    return AcademyRewardExcelAddSecretStoneAmountField(builder, secretStoneAmountField)
-def AcademyRewardExcelAddSecretStoneProbField(builder, secretStoneProbField): builder.PrependInt32Slot(9, secretStoneProbField, 0)
+    AcademyRewardExcelAddSecretStoneAmountField(builder, secretStoneAmountField)
+
+def AcademyRewardExcelAddSecretStoneProbField(builder, secretStoneProbField):
+    builder.PrependInt32Slot(9, secretStoneProbField, 0)
+
 def AddSecretStoneProbField(builder, secretStoneProbField):
-    return AcademyRewardExcelAddSecretStoneProbField(builder, secretStoneProbField)
-def AcademyRewardExcelAddExtraFavorExpField(builder, extraFavorExpField): builder.PrependInt32Slot(10, extraFavorExpField, 0)
+    AcademyRewardExcelAddSecretStoneProbField(builder, secretStoneProbField)
+
+def AcademyRewardExcelAddExtraFavorExpField(builder, extraFavorExpField):
+    builder.PrependInt32Slot(10, extraFavorExpField, 0)
+
 def AddExtraFavorExpField(builder, extraFavorExpField):
-    return AcademyRewardExcelAddExtraFavorExpField(builder, extraFavorExpField)
-def AcademyRewardExcelAddExtraFavorExpProbField(builder, extraFavorExpProbField): builder.PrependInt32Slot(11, extraFavorExpProbField, 0)
+    AcademyRewardExcelAddExtraFavorExpField(builder, extraFavorExpField)
+
+def AcademyRewardExcelAddExtraFavorExpProbField(builder, extraFavorExpProbField):
+    builder.PrependInt32Slot(11, extraFavorExpProbField, 0)
+
 def AddExtraFavorExpProbField(builder, extraFavorExpProbField):
-    return AcademyRewardExcelAddExtraFavorExpProbField(builder, extraFavorExpProbField)
-def AcademyRewardExcelAddExtraRewardParcelTypeField(builder, extraRewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(extraRewardParcelTypeField), 0)
+    AcademyRewardExcelAddExtraFavorExpProbField(builder, extraFavorExpProbField)
+
+def AcademyRewardExcelAddExtraRewardParcelTypeField(builder, extraRewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(extraRewardParcelTypeField), 0)
+
 def AddExtraRewardParcelTypeField(builder, extraRewardParcelTypeField):
-    return AcademyRewardExcelAddExtraRewardParcelTypeField(builder, extraRewardParcelTypeField)
-def AcademyRewardExcelStartExtraRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExtraRewardParcelTypeFieldVector(builder, numElems):
+    AcademyRewardExcelAddExtraRewardParcelTypeField(builder, extraRewardParcelTypeField)
+
+def AcademyRewardExcelStartExtraRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExtraRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return AcademyRewardExcelStartExtraRewardParcelTypeFieldVector(builder, numElems)
-def AcademyRewardExcelAddExtraRewardParcelIdField(builder, extraRewardParcelIdField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(extraRewardParcelIdField), 0)
+
+def AcademyRewardExcelAddExtraRewardParcelIdField(builder, extraRewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(extraRewardParcelIdField), 0)
+
 def AddExtraRewardParcelIdField(builder, extraRewardParcelIdField):
-    return AcademyRewardExcelAddExtraRewardParcelIdField(builder, extraRewardParcelIdField)
-def AcademyRewardExcelStartExtraRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExtraRewardParcelIdFieldVector(builder, numElems):
+    AcademyRewardExcelAddExtraRewardParcelIdField(builder, extraRewardParcelIdField)
+
+def AcademyRewardExcelStartExtraRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExtraRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return AcademyRewardExcelStartExtraRewardParcelIdFieldVector(builder, numElems)
-def AcademyRewardExcelAddExtraRewardAmountField(builder, extraRewardAmountField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(extraRewardAmountField), 0)
+
+def AcademyRewardExcelAddExtraRewardAmountField(builder, extraRewardAmountField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(extraRewardAmountField), 0)
+
 def AddExtraRewardAmountField(builder, extraRewardAmountField):
-    return AcademyRewardExcelAddExtraRewardAmountField(builder, extraRewardAmountField)
-def AcademyRewardExcelStartExtraRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExtraRewardAmountFieldVector(builder, numElems):
+    AcademyRewardExcelAddExtraRewardAmountField(builder, extraRewardAmountField)
+
+def AcademyRewardExcelStartExtraRewardAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExtraRewardAmountFieldVector(builder, numElems: int) -> int:
     return AcademyRewardExcelStartExtraRewardAmountFieldVector(builder, numElems)
-def AcademyRewardExcelAddExtraRewardProbField(builder, extraRewardProbField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(extraRewardProbField), 0)
+
+def AcademyRewardExcelAddExtraRewardProbField(builder, extraRewardProbField):
+    builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(extraRewardProbField), 0)
+
 def AddExtraRewardProbField(builder, extraRewardProbField):
-    return AcademyRewardExcelAddExtraRewardProbField(builder, extraRewardProbField)
-def AcademyRewardExcelStartExtraRewardProbFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartExtraRewardProbFieldVector(builder, numElems):
+    AcademyRewardExcelAddExtraRewardProbField(builder, extraRewardProbField)
+
+def AcademyRewardExcelStartExtraRewardProbFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartExtraRewardProbFieldVector(builder, numElems: int) -> int:
     return AcademyRewardExcelStartExtraRewardProbFieldVector(builder, numElems)
-def AcademyRewardExcelAddIsExtraRewardDisplayedField(builder, isExtraRewardDisplayedField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(isExtraRewardDisplayedField), 0)
+
+def AcademyRewardExcelAddIsExtraRewardDisplayedField(builder, isExtraRewardDisplayedField):
+    builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(isExtraRewardDisplayedField), 0)
+
 def AddIsExtraRewardDisplayedField(builder, isExtraRewardDisplayedField):
-    return AcademyRewardExcelAddIsExtraRewardDisplayedField(builder, isExtraRewardDisplayedField)
-def AcademyRewardExcelStartIsExtraRewardDisplayedFieldVector(builder, numElems): return builder.StartVector(1, numElems, 1)
-def StartIsExtraRewardDisplayedFieldVector(builder, numElems):
+    AcademyRewardExcelAddIsExtraRewardDisplayedField(builder, isExtraRewardDisplayedField)
+
+def AcademyRewardExcelStartIsExtraRewardDisplayedFieldVector(builder, numElems):
+    return builder.StartVector(1, numElems, 1)
+
+def StartIsExtraRewardDisplayedFieldVector(builder, numElems: int) -> int:
     return AcademyRewardExcelStartIsExtraRewardDisplayedFieldVector(builder, numElems)
-def AcademyRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+
+def AcademyRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelTypeField), 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return AcademyRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def AcademyRewardExcelStartRewardParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelTypeFieldVector(builder, numElems):
+    AcademyRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def AcademyRewardExcelStartRewardParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelTypeFieldVector(builder, numElems: int) -> int:
     return AcademyRewardExcelStartRewardParcelTypeFieldVector(builder, numElems)
-def AcademyRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
+def AcademyRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParcelIdField), 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return AcademyRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def AcademyRewardExcelStartRewardParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParcelIdFieldVector(builder, numElems):
+    AcademyRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def AcademyRewardExcelStartRewardParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParcelIdFieldVector(builder, numElems: int) -> int:
     return AcademyRewardExcelStartRewardParcelIdFieldVector(builder, numElems)
-def AcademyRewardExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmountField), 0)
+
+def AcademyRewardExcelAddRewardAmountField(builder, rewardAmountField):
+    builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(rewardAmountField), 0)
+
 def AddRewardAmountField(builder, rewardAmountField):
-    return AcademyRewardExcelAddRewardAmountField(builder, rewardAmountField)
-def AcademyRewardExcelStartRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardAmountFieldVector(builder, numElems):
+    AcademyRewardExcelAddRewardAmountField(builder, rewardAmountField)
+
+def AcademyRewardExcelStartRewardAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardAmountFieldVector(builder, numElems: int) -> int:
     return AcademyRewardExcelStartRewardAmountFieldVector(builder, numElems)
-def AcademyRewardExcelEnd(builder): return builder.EndObject()
+
+def AcademyRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AcademyRewardExcelEnd(builder)

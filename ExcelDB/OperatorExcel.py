@@ -135,51 +135,98 @@ class OperatorExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def OperatorExcelStart(builder): builder.StartObject(13)
+def OperatorExcelStart(builder):
+    builder.StartObject(13)
+
 def Start(builder):
-    return OperatorExcelStart(builder)
-def OperatorExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    OperatorExcelStart(builder)
+
+def OperatorExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return OperatorExcelAddUniqueIdField(builder, uniqueIdField)
-def OperatorExcelAddGroupIdField(builder, groupIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(groupIdField), 0)
+    OperatorExcelAddUniqueIdField(builder, uniqueIdField)
+
+def OperatorExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(groupIdField), 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return OperatorExcelAddGroupIdField(builder, groupIdField)
-def OperatorExcelAddOperatorConditionField(builder, operatorConditionField): builder.PrependInt32Slot(2, operatorConditionField, 0)
+    OperatorExcelAddGroupIdField(builder, groupIdField)
+
+def OperatorExcelAddOperatorConditionField(builder, operatorConditionField):
+    builder.PrependInt32Slot(2, operatorConditionField, 0)
+
 def AddOperatorConditionField(builder, operatorConditionField):
-    return OperatorExcelAddOperatorConditionField(builder, operatorConditionField)
-def OperatorExcelAddOutputSequenceField(builder, outputSequenceField): builder.PrependInt32Slot(3, outputSequenceField, 0)
+    OperatorExcelAddOperatorConditionField(builder, operatorConditionField)
+
+def OperatorExcelAddOutputSequenceField(builder, outputSequenceField):
+    builder.PrependInt32Slot(3, outputSequenceField, 0)
+
 def AddOutputSequenceField(builder, outputSequenceField):
-    return OperatorExcelAddOutputSequenceField(builder, outputSequenceField)
-def OperatorExcelAddRandomWeightField(builder, randomWeightField): builder.PrependInt32Slot(4, randomWeightField, 0)
+    OperatorExcelAddOutputSequenceField(builder, outputSequenceField)
+
+def OperatorExcelAddRandomWeightField(builder, randomWeightField):
+    builder.PrependInt32Slot(4, randomWeightField, 0)
+
 def AddRandomWeightField(builder, randomWeightField):
-    return OperatorExcelAddRandomWeightField(builder, randomWeightField)
-def OperatorExcelAddOutputDelayField(builder, outputDelayField): builder.PrependInt32Slot(5, outputDelayField, 0)
+    OperatorExcelAddRandomWeightField(builder, randomWeightField)
+
+def OperatorExcelAddOutputDelayField(builder, outputDelayField):
+    builder.PrependInt32Slot(5, outputDelayField, 0)
+
 def AddOutputDelayField(builder, outputDelayField):
-    return OperatorExcelAddOutputDelayField(builder, outputDelayField)
-def OperatorExcelAddDurationField(builder, durationField): builder.PrependInt32Slot(6, durationField, 0)
+    OperatorExcelAddOutputDelayField(builder, outputDelayField)
+
+def OperatorExcelAddDurationField(builder, durationField):
+    builder.PrependInt32Slot(6, durationField, 0)
+
 def AddDurationField(builder, durationField):
-    return OperatorExcelAddDurationField(builder, durationField)
-def OperatorExcelAddOperatorOutputPriorityField(builder, operatorOutputPriorityField): builder.PrependInt32Slot(7, operatorOutputPriorityField, 0)
+    OperatorExcelAddDurationField(builder, durationField)
+
+def OperatorExcelAddOperatorOutputPriorityField(builder, operatorOutputPriorityField):
+    builder.PrependInt32Slot(7, operatorOutputPriorityField, 0)
+
 def AddOperatorOutputPriorityField(builder, operatorOutputPriorityField):
-    return OperatorExcelAddOperatorOutputPriorityField(builder, operatorOutputPriorityField)
-def OperatorExcelAddPortraitPathField(builder, portraitPathField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(portraitPathField), 0)
+    OperatorExcelAddOperatorOutputPriorityField(builder, operatorOutputPriorityField)
+
+def OperatorExcelAddPortraitPathField(builder, portraitPathField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(portraitPathField), 0)
+
 def AddPortraitPathField(builder, portraitPathField):
-    return OperatorExcelAddPortraitPathField(builder, portraitPathField)
-def OperatorExcelAddTextLocalizeKeyField(builder, textLocalizeKeyField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(textLocalizeKeyField), 0)
+    OperatorExcelAddPortraitPathField(builder, portraitPathField)
+
+def OperatorExcelAddTextLocalizeKeyField(builder, textLocalizeKeyField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(textLocalizeKeyField), 0)
+
 def AddTextLocalizeKeyField(builder, textLocalizeKeyField):
-    return OperatorExcelAddTextLocalizeKeyField(builder, textLocalizeKeyField)
-def OperatorExcelAddVoiceIdField(builder, voiceIdField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(voiceIdField), 0)
+    OperatorExcelAddTextLocalizeKeyField(builder, textLocalizeKeyField)
+
+def OperatorExcelAddVoiceIdField(builder, voiceIdField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(voiceIdField), 0)
+
 def AddVoiceIdField(builder, voiceIdField):
-    return OperatorExcelAddVoiceIdField(builder, voiceIdField)
-def OperatorExcelStartVoiceIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVoiceIdFieldVector(builder, numElems):
+    OperatorExcelAddVoiceIdField(builder, voiceIdField)
+
+def OperatorExcelStartVoiceIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartVoiceIdFieldVector(builder, numElems: int) -> int:
     return OperatorExcelStartVoiceIdFieldVector(builder, numElems)
-def OperatorExcelAddOperatorWaitQueueField(builder, operatorWaitQueueField): builder.PrependBoolSlot(11, operatorWaitQueueField, 0)
+
+def OperatorExcelAddOperatorWaitQueueField(builder, operatorWaitQueueField):
+    builder.PrependBoolSlot(11, operatorWaitQueueField, 0)
+
 def AddOperatorWaitQueueField(builder, operatorWaitQueueField):
-    return OperatorExcelAddOperatorWaitQueueField(builder, operatorWaitQueueField)
-def OperatorExcelAddCharacterVoiceOverridePriorityField(builder, characterVoiceOverridePriorityField): builder.PrependInt32Slot(12, characterVoiceOverridePriorityField, 0)
+    OperatorExcelAddOperatorWaitQueueField(builder, operatorWaitQueueField)
+
+def OperatorExcelAddCharacterVoiceOverridePriorityField(builder, characterVoiceOverridePriorityField):
+    builder.PrependInt32Slot(12, characterVoiceOverridePriorityField, 0)
+
 def AddCharacterVoiceOverridePriorityField(builder, characterVoiceOverridePriorityField):
-    return OperatorExcelAddCharacterVoiceOverridePriorityField(builder, characterVoiceOverridePriorityField)
-def OperatorExcelEnd(builder): return builder.EndObject()
+    OperatorExcelAddCharacterVoiceOverridePriorityField(builder, characterVoiceOverridePriorityField)
+
+def OperatorExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return OperatorExcelEnd(builder)

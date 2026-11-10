@@ -24,9 +24,14 @@ class GroundNodeLayerFlat(object):
     def Init(self, buf, pos):
         self._tab = flatbuffers.table.Table(buf, pos)
 
-def GroundNodeLayerFlatStart(builder): builder.StartObject(0)
+def GroundNodeLayerFlatStart(builder):
+    builder.StartObject(0)
+
 def Start(builder):
-    return GroundNodeLayerFlatStart(builder)
-def GroundNodeLayerFlatEnd(builder): return builder.EndObject()
+    GroundNodeLayerFlatStart(builder)
+
+def GroundNodeLayerFlatEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return GroundNodeLayerFlatEnd(builder)

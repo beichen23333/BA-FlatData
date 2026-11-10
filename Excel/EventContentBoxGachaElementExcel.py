@@ -52,21 +52,38 @@ class EventContentBoxGachaElementExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentBoxGachaElementExcelStart(builder): builder.StartObject(4)
+def EventContentBoxGachaElementExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return EventContentBoxGachaElementExcelStart(builder)
-def EventContentBoxGachaElementExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentBoxGachaElementExcelStart(builder)
+
+def EventContentBoxGachaElementExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentBoxGachaElementExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentBoxGachaElementExcelAddIdField(builder, idField): builder.PrependInt32Slot(1, idField, 0)
+    EventContentBoxGachaElementExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentBoxGachaElementExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(1, idField, 0)
+
 def AddIdField(builder, idField):
-    return EventContentBoxGachaElementExcelAddIdField(builder, idField)
-def EventContentBoxGachaElementExcelAddRoundField(builder, roundField): builder.PrependInt32Slot(2, roundField, 0)
+    EventContentBoxGachaElementExcelAddIdField(builder, idField)
+
+def EventContentBoxGachaElementExcelAddRoundField(builder, roundField):
+    builder.PrependInt32Slot(2, roundField, 0)
+
 def AddRoundField(builder, roundField):
-    return EventContentBoxGachaElementExcelAddRoundField(builder, roundField)
-def EventContentBoxGachaElementExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(3, groupIdField, 0)
+    EventContentBoxGachaElementExcelAddRoundField(builder, roundField)
+
+def EventContentBoxGachaElementExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(3, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return EventContentBoxGachaElementExcelAddGroupIdField(builder, groupIdField)
-def EventContentBoxGachaElementExcelEnd(builder): return builder.EndObject()
+    EventContentBoxGachaElementExcelAddGroupIdField(builder, groupIdField)
+
+def EventContentBoxGachaElementExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentBoxGachaElementExcelEnd(builder)

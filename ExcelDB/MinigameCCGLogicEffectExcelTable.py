@@ -49,15 +49,26 @@ class MinigameCCGLogicEffectExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameCCGLogicEffectExcelTableStart(builder): builder.StartObject(1)
+def MinigameCCGLogicEffectExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameCCGLogicEffectExcelTableStart(builder)
-def MinigameCCGLogicEffectExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MinigameCCGLogicEffectExcelTableStart(builder)
+
+def MinigameCCGLogicEffectExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MinigameCCGLogicEffectExcelTableAddDataList(builder, dataList)
-def MinigameCCGLogicEffectExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MinigameCCGLogicEffectExcelTableAddDataList(builder, dataList)
+
+def MinigameCCGLogicEffectExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MinigameCCGLogicEffectExcelTableStartDataListVector(builder, numElems)
-def MinigameCCGLogicEffectExcelTableEnd(builder): return builder.EndObject()
+
+def MinigameCCGLogicEffectExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGLogicEffectExcelTableEnd(builder)

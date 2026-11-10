@@ -49,15 +49,26 @@ class GrowthScoreCalculationExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def GrowthScoreCalculationExcelTableStart(builder): builder.StartObject(1)
+def GrowthScoreCalculationExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return GrowthScoreCalculationExcelTableStart(builder)
-def GrowthScoreCalculationExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    GrowthScoreCalculationExcelTableStart(builder)
+
+def GrowthScoreCalculationExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return GrowthScoreCalculationExcelTableAddDataList(builder, dataList)
-def GrowthScoreCalculationExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    GrowthScoreCalculationExcelTableAddDataList(builder, dataList)
+
+def GrowthScoreCalculationExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return GrowthScoreCalculationExcelTableStartDataListVector(builder, numElems)
-def GrowthScoreCalculationExcelTableEnd(builder): return builder.EndObject()
+
+def GrowthScoreCalculationExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return GrowthScoreCalculationExcelTableEnd(builder)

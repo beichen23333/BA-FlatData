@@ -87,36 +87,68 @@ class ParcelAutoSynthExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ParcelAutoSynthExcelStart(builder): builder.StartObject(9)
+def ParcelAutoSynthExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return ParcelAutoSynthExcelStart(builder)
-def ParcelAutoSynthExcelAddRequireParcelTypeField(builder, requireParcelTypeField): builder.PrependInt32Slot(0, requireParcelTypeField, 0)
+    ParcelAutoSynthExcelStart(builder)
+
+def ParcelAutoSynthExcelAddRequireParcelTypeField(builder, requireParcelTypeField):
+    builder.PrependInt32Slot(0, requireParcelTypeField, 0)
+
 def AddRequireParcelTypeField(builder, requireParcelTypeField):
-    return ParcelAutoSynthExcelAddRequireParcelTypeField(builder, requireParcelTypeField)
-def ParcelAutoSynthExcelAddRequireParcelIdField(builder, requireParcelIdField): builder.PrependInt32Slot(1, requireParcelIdField, 0)
+    ParcelAutoSynthExcelAddRequireParcelTypeField(builder, requireParcelTypeField)
+
+def ParcelAutoSynthExcelAddRequireParcelIdField(builder, requireParcelIdField):
+    builder.PrependInt32Slot(1, requireParcelIdField, 0)
+
 def AddRequireParcelIdField(builder, requireParcelIdField):
-    return ParcelAutoSynthExcelAddRequireParcelIdField(builder, requireParcelIdField)
-def ParcelAutoSynthExcelAddRequireParcelAmountField(builder, requireParcelAmountField): builder.PrependInt32Slot(2, requireParcelAmountField, 0)
+    ParcelAutoSynthExcelAddRequireParcelIdField(builder, requireParcelIdField)
+
+def ParcelAutoSynthExcelAddRequireParcelAmountField(builder, requireParcelAmountField):
+    builder.PrependInt32Slot(2, requireParcelAmountField, 0)
+
 def AddRequireParcelAmountField(builder, requireParcelAmountField):
-    return ParcelAutoSynthExcelAddRequireParcelAmountField(builder, requireParcelAmountField)
-def ParcelAutoSynthExcelAddSynthStartAmountField(builder, synthStartAmountField): builder.PrependInt32Slot(3, synthStartAmountField, 0)
+    ParcelAutoSynthExcelAddRequireParcelAmountField(builder, requireParcelAmountField)
+
+def ParcelAutoSynthExcelAddSynthStartAmountField(builder, synthStartAmountField):
+    builder.PrependInt32Slot(3, synthStartAmountField, 0)
+
 def AddSynthStartAmountField(builder, synthStartAmountField):
-    return ParcelAutoSynthExcelAddSynthStartAmountField(builder, synthStartAmountField)
-def ParcelAutoSynthExcelAddSynthEndAmountField(builder, synthEndAmountField): builder.PrependInt32Slot(4, synthEndAmountField, 0)
+    ParcelAutoSynthExcelAddSynthStartAmountField(builder, synthStartAmountField)
+
+def ParcelAutoSynthExcelAddSynthEndAmountField(builder, synthEndAmountField):
+    builder.PrependInt32Slot(4, synthEndAmountField, 0)
+
 def AddSynthEndAmountField(builder, synthEndAmountField):
-    return ParcelAutoSynthExcelAddSynthEndAmountField(builder, synthEndAmountField)
-def ParcelAutoSynthExcelAddSynthMaxItemField(builder, synthMaxItemField): builder.PrependBoolSlot(5, synthMaxItemField, 0)
+    ParcelAutoSynthExcelAddSynthEndAmountField(builder, synthEndAmountField)
+
+def ParcelAutoSynthExcelAddSynthMaxItemField(builder, synthMaxItemField):
+    builder.PrependBoolSlot(5, synthMaxItemField, 0)
+
 def AddSynthMaxItemField(builder, synthMaxItemField):
-    return ParcelAutoSynthExcelAddSynthMaxItemField(builder, synthMaxItemField)
-def ParcelAutoSynthExcelAddResultParcelTypeField(builder, resultParcelTypeField): builder.PrependInt32Slot(6, resultParcelTypeField, 0)
+    ParcelAutoSynthExcelAddSynthMaxItemField(builder, synthMaxItemField)
+
+def ParcelAutoSynthExcelAddResultParcelTypeField(builder, resultParcelTypeField):
+    builder.PrependInt32Slot(6, resultParcelTypeField, 0)
+
 def AddResultParcelTypeField(builder, resultParcelTypeField):
-    return ParcelAutoSynthExcelAddResultParcelTypeField(builder, resultParcelTypeField)
-def ParcelAutoSynthExcelAddResultParcelIdField(builder, resultParcelIdField): builder.PrependInt32Slot(7, resultParcelIdField, 0)
+    ParcelAutoSynthExcelAddResultParcelTypeField(builder, resultParcelTypeField)
+
+def ParcelAutoSynthExcelAddResultParcelIdField(builder, resultParcelIdField):
+    builder.PrependInt32Slot(7, resultParcelIdField, 0)
+
 def AddResultParcelIdField(builder, resultParcelIdField):
-    return ParcelAutoSynthExcelAddResultParcelIdField(builder, resultParcelIdField)
-def ParcelAutoSynthExcelAddResultParcelAmountField(builder, resultParcelAmountField): builder.PrependInt32Slot(8, resultParcelAmountField, 0)
+    ParcelAutoSynthExcelAddResultParcelIdField(builder, resultParcelIdField)
+
+def ParcelAutoSynthExcelAddResultParcelAmountField(builder, resultParcelAmountField):
+    builder.PrependInt32Slot(8, resultParcelAmountField, 0)
+
 def AddResultParcelAmountField(builder, resultParcelAmountField):
-    return ParcelAutoSynthExcelAddResultParcelAmountField(builder, resultParcelAmountField)
-def ParcelAutoSynthExcelEnd(builder): return builder.EndObject()
+    ParcelAutoSynthExcelAddResultParcelAmountField(builder, resultParcelAmountField)
+
+def ParcelAutoSynthExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ParcelAutoSynthExcelEnd(builder)

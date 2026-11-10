@@ -129,54 +129,104 @@ class TacticArenaSimulatorSettingExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def TacticArenaSimulatorSettingExcelStart(builder): builder.StartObject(15)
+def TacticArenaSimulatorSettingExcelStart(builder):
+    builder.StartObject(15)
+
 def Start(builder):
-    return TacticArenaSimulatorSettingExcelStart(builder)
-def TacticArenaSimulatorSettingExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(0, orderField, 0)
+    TacticArenaSimulatorSettingExcelStart(builder)
+
+def TacticArenaSimulatorSettingExcelAddOrderField(builder, orderField):
+    builder.PrependInt32Slot(0, orderField, 0)
+
 def AddOrderField(builder, orderField):
-    return TacticArenaSimulatorSettingExcelAddOrderField(builder, orderField)
-def TacticArenaSimulatorSettingExcelAddRepeatField(builder, repeatField): builder.PrependInt32Slot(1, repeatField, 0)
+    TacticArenaSimulatorSettingExcelAddOrderField(builder, orderField)
+
+def TacticArenaSimulatorSettingExcelAddRepeatField(builder, repeatField):
+    builder.PrependInt32Slot(1, repeatField, 0)
+
 def AddRepeatField(builder, repeatField):
-    return TacticArenaSimulatorSettingExcelAddRepeatField(builder, repeatField)
-def TacticArenaSimulatorSettingExcelAddAttackerFromField(builder, attackerFromField): builder.PrependInt32Slot(2, attackerFromField, 0)
+    TacticArenaSimulatorSettingExcelAddRepeatField(builder, repeatField)
+
+def TacticArenaSimulatorSettingExcelAddAttackerFromField(builder, attackerFromField):
+    builder.PrependInt32Slot(2, attackerFromField, 0)
+
 def AddAttackerFromField(builder, attackerFromField):
-    return TacticArenaSimulatorSettingExcelAddAttackerFromField(builder, attackerFromField)
-def TacticArenaSimulatorSettingExcelAddAttackerUserArenaGroupField(builder, attackerUserArenaGroupField): builder.PrependInt32Slot(3, attackerUserArenaGroupField, 0)
+    TacticArenaSimulatorSettingExcelAddAttackerFromField(builder, attackerFromField)
+
+def TacticArenaSimulatorSettingExcelAddAttackerUserArenaGroupField(builder, attackerUserArenaGroupField):
+    builder.PrependInt32Slot(3, attackerUserArenaGroupField, 0)
+
 def AddAttackerUserArenaGroupField(builder, attackerUserArenaGroupField):
-    return TacticArenaSimulatorSettingExcelAddAttackerUserArenaGroupField(builder, attackerUserArenaGroupField)
-def TacticArenaSimulatorSettingExcelAddAttackerUserArenaRankField(builder, attackerUserArenaRankField): builder.PrependInt32Slot(4, attackerUserArenaRankField, 0)
+    TacticArenaSimulatorSettingExcelAddAttackerUserArenaGroupField(builder, attackerUserArenaGroupField)
+
+def TacticArenaSimulatorSettingExcelAddAttackerUserArenaRankField(builder, attackerUserArenaRankField):
+    builder.PrependInt32Slot(4, attackerUserArenaRankField, 0)
+
 def AddAttackerUserArenaRankField(builder, attackerUserArenaRankField):
-    return TacticArenaSimulatorSettingExcelAddAttackerUserArenaRankField(builder, attackerUserArenaRankField)
-def TacticArenaSimulatorSettingExcelAddAttackerPresetGroupIdField(builder, attackerPresetGroupIdField): builder.PrependInt32Slot(5, attackerPresetGroupIdField, 0)
+    TacticArenaSimulatorSettingExcelAddAttackerUserArenaRankField(builder, attackerUserArenaRankField)
+
+def TacticArenaSimulatorSettingExcelAddAttackerPresetGroupIdField(builder, attackerPresetGroupIdField):
+    builder.PrependInt32Slot(5, attackerPresetGroupIdField, 0)
+
 def AddAttackerPresetGroupIdField(builder, attackerPresetGroupIdField):
-    return TacticArenaSimulatorSettingExcelAddAttackerPresetGroupIdField(builder, attackerPresetGroupIdField)
-def TacticArenaSimulatorSettingExcelAddAttackerStrikerNumField(builder, attackerStrikerNumField): builder.PrependInt32Slot(6, attackerStrikerNumField, 0)
+    TacticArenaSimulatorSettingExcelAddAttackerPresetGroupIdField(builder, attackerPresetGroupIdField)
+
+def TacticArenaSimulatorSettingExcelAddAttackerStrikerNumField(builder, attackerStrikerNumField):
+    builder.PrependInt32Slot(6, attackerStrikerNumField, 0)
+
 def AddAttackerStrikerNumField(builder, attackerStrikerNumField):
-    return TacticArenaSimulatorSettingExcelAddAttackerStrikerNumField(builder, attackerStrikerNumField)
-def TacticArenaSimulatorSettingExcelAddAttackerSpecialNumField(builder, attackerSpecialNumField): builder.PrependInt32Slot(7, attackerSpecialNumField, 0)
+    TacticArenaSimulatorSettingExcelAddAttackerStrikerNumField(builder, attackerStrikerNumField)
+
+def TacticArenaSimulatorSettingExcelAddAttackerSpecialNumField(builder, attackerSpecialNumField):
+    builder.PrependInt32Slot(7, attackerSpecialNumField, 0)
+
 def AddAttackerSpecialNumField(builder, attackerSpecialNumField):
-    return TacticArenaSimulatorSettingExcelAddAttackerSpecialNumField(builder, attackerSpecialNumField)
-def TacticArenaSimulatorSettingExcelAddDefenderFromField(builder, defenderFromField): builder.PrependInt32Slot(8, defenderFromField, 0)
+    TacticArenaSimulatorSettingExcelAddAttackerSpecialNumField(builder, attackerSpecialNumField)
+
+def TacticArenaSimulatorSettingExcelAddDefenderFromField(builder, defenderFromField):
+    builder.PrependInt32Slot(8, defenderFromField, 0)
+
 def AddDefenderFromField(builder, defenderFromField):
-    return TacticArenaSimulatorSettingExcelAddDefenderFromField(builder, defenderFromField)
-def TacticArenaSimulatorSettingExcelAddDefenderUserArenaGroupField(builder, defenderUserArenaGroupField): builder.PrependInt32Slot(9, defenderUserArenaGroupField, 0)
+    TacticArenaSimulatorSettingExcelAddDefenderFromField(builder, defenderFromField)
+
+def TacticArenaSimulatorSettingExcelAddDefenderUserArenaGroupField(builder, defenderUserArenaGroupField):
+    builder.PrependInt32Slot(9, defenderUserArenaGroupField, 0)
+
 def AddDefenderUserArenaGroupField(builder, defenderUserArenaGroupField):
-    return TacticArenaSimulatorSettingExcelAddDefenderUserArenaGroupField(builder, defenderUserArenaGroupField)
-def TacticArenaSimulatorSettingExcelAddDefenderUserArenaRankField(builder, defenderUserArenaRankField): builder.PrependInt32Slot(10, defenderUserArenaRankField, 0)
+    TacticArenaSimulatorSettingExcelAddDefenderUserArenaGroupField(builder, defenderUserArenaGroupField)
+
+def TacticArenaSimulatorSettingExcelAddDefenderUserArenaRankField(builder, defenderUserArenaRankField):
+    builder.PrependInt32Slot(10, defenderUserArenaRankField, 0)
+
 def AddDefenderUserArenaRankField(builder, defenderUserArenaRankField):
-    return TacticArenaSimulatorSettingExcelAddDefenderUserArenaRankField(builder, defenderUserArenaRankField)
-def TacticArenaSimulatorSettingExcelAddDefenderPresetGroupIdField(builder, defenderPresetGroupIdField): builder.PrependInt32Slot(11, defenderPresetGroupIdField, 0)
+    TacticArenaSimulatorSettingExcelAddDefenderUserArenaRankField(builder, defenderUserArenaRankField)
+
+def TacticArenaSimulatorSettingExcelAddDefenderPresetGroupIdField(builder, defenderPresetGroupIdField):
+    builder.PrependInt32Slot(11, defenderPresetGroupIdField, 0)
+
 def AddDefenderPresetGroupIdField(builder, defenderPresetGroupIdField):
-    return TacticArenaSimulatorSettingExcelAddDefenderPresetGroupIdField(builder, defenderPresetGroupIdField)
-def TacticArenaSimulatorSettingExcelAddDefenderStrikerNumField(builder, defenderStrikerNumField): builder.PrependInt32Slot(12, defenderStrikerNumField, 0)
+    TacticArenaSimulatorSettingExcelAddDefenderPresetGroupIdField(builder, defenderPresetGroupIdField)
+
+def TacticArenaSimulatorSettingExcelAddDefenderStrikerNumField(builder, defenderStrikerNumField):
+    builder.PrependInt32Slot(12, defenderStrikerNumField, 0)
+
 def AddDefenderStrikerNumField(builder, defenderStrikerNumField):
-    return TacticArenaSimulatorSettingExcelAddDefenderStrikerNumField(builder, defenderStrikerNumField)
-def TacticArenaSimulatorSettingExcelAddDefenderSpecialNumField(builder, defenderSpecialNumField): builder.PrependInt32Slot(13, defenderSpecialNumField, 0)
+    TacticArenaSimulatorSettingExcelAddDefenderStrikerNumField(builder, defenderStrikerNumField)
+
+def TacticArenaSimulatorSettingExcelAddDefenderSpecialNumField(builder, defenderSpecialNumField):
+    builder.PrependInt32Slot(13, defenderSpecialNumField, 0)
+
 def AddDefenderSpecialNumField(builder, defenderSpecialNumField):
-    return TacticArenaSimulatorSettingExcelAddDefenderSpecialNumField(builder, defenderSpecialNumField)
-def TacticArenaSimulatorSettingExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(14, groundIdField, 0)
+    TacticArenaSimulatorSettingExcelAddDefenderSpecialNumField(builder, defenderSpecialNumField)
+
+def TacticArenaSimulatorSettingExcelAddGroundIdField(builder, groundIdField):
+    builder.PrependInt32Slot(14, groundIdField, 0)
+
 def AddGroundIdField(builder, groundIdField):
-    return TacticArenaSimulatorSettingExcelAddGroundIdField(builder, groundIdField)
-def TacticArenaSimulatorSettingExcelEnd(builder): return builder.EndObject()
+    TacticArenaSimulatorSettingExcelAddGroundIdField(builder, groundIdField)
+
+def TacticArenaSimulatorSettingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TacticArenaSimulatorSettingExcelEnd(builder)

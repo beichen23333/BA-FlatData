@@ -170,69 +170,134 @@ class MiniGameShootingCharacterExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MiniGameShootingCharacterExcelStart(builder): builder.StartObject(19)
+def MiniGameShootingCharacterExcelStart(builder):
+    builder.StartObject(19)
+
 def Start(builder):
-    return MiniGameShootingCharacterExcelStart(builder)
-def MiniGameShootingCharacterExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    MiniGameShootingCharacterExcelStart(builder)
+
+def MiniGameShootingCharacterExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MiniGameShootingCharacterExcelAddUniqueIdField(builder, uniqueIdField)
-def MiniGameShootingCharacterExcelAddSpineResourceNameField(builder, spineResourceNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(spineResourceNameField), 0)
+    MiniGameShootingCharacterExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MiniGameShootingCharacterExcelAddSpineResourceNameField(builder, spineResourceNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(spineResourceNameField), 0)
+
 def AddSpineResourceNameField(builder, spineResourceNameField):
-    return MiniGameShootingCharacterExcelAddSpineResourceNameField(builder, spineResourceNameField)
-def MiniGameShootingCharacterExcelAddBodyRadiusField(builder, bodyRadiusField): builder.PrependFloat32Slot(2, bodyRadiusField, 0.0)
+    MiniGameShootingCharacterExcelAddSpineResourceNameField(builder, spineResourceNameField)
+
+def MiniGameShootingCharacterExcelAddBodyRadiusField(builder, bodyRadiusField):
+    builder.PrependFloat32Slot(2, bodyRadiusField, 0.0)
+
 def AddBodyRadiusField(builder, bodyRadiusField):
-    return MiniGameShootingCharacterExcelAddBodyRadiusField(builder, bodyRadiusField)
-def MiniGameShootingCharacterExcelAddModelPrefabNameField(builder, modelPrefabNameField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(modelPrefabNameField), 0)
+    MiniGameShootingCharacterExcelAddBodyRadiusField(builder, bodyRadiusField)
+
+def MiniGameShootingCharacterExcelAddModelPrefabNameField(builder, modelPrefabNameField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(modelPrefabNameField), 0)
+
 def AddModelPrefabNameField(builder, modelPrefabNameField):
-    return MiniGameShootingCharacterExcelAddModelPrefabNameField(builder, modelPrefabNameField)
-def MiniGameShootingCharacterExcelAddNormalAttackSkillDataField(builder, normalAttackSkillDataField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(normalAttackSkillDataField), 0)
+    MiniGameShootingCharacterExcelAddModelPrefabNameField(builder, modelPrefabNameField)
+
+def MiniGameShootingCharacterExcelAddNormalAttackSkillDataField(builder, normalAttackSkillDataField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(normalAttackSkillDataField), 0)
+
 def AddNormalAttackSkillDataField(builder, normalAttackSkillDataField):
-    return MiniGameShootingCharacterExcelAddNormalAttackSkillDataField(builder, normalAttackSkillDataField)
-def MiniGameShootingCharacterExcelAddPublicSkillDataField(builder, publicSkillDataField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(publicSkillDataField), 0)
+    MiniGameShootingCharacterExcelAddNormalAttackSkillDataField(builder, normalAttackSkillDataField)
+
+def MiniGameShootingCharacterExcelAddPublicSkillDataField(builder, publicSkillDataField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(publicSkillDataField), 0)
+
 def AddPublicSkillDataField(builder, publicSkillDataField):
-    return MiniGameShootingCharacterExcelAddPublicSkillDataField(builder, publicSkillDataField)
-def MiniGameShootingCharacterExcelStartPublicSkillDataFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPublicSkillDataFieldVector(builder, numElems):
+    MiniGameShootingCharacterExcelAddPublicSkillDataField(builder, publicSkillDataField)
+
+def MiniGameShootingCharacterExcelStartPublicSkillDataFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPublicSkillDataFieldVector(builder, numElems: int) -> int:
     return MiniGameShootingCharacterExcelStartPublicSkillDataFieldVector(builder, numElems)
-def MiniGameShootingCharacterExcelAddDeathSkillDataField(builder, deathSkillDataField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(deathSkillDataField), 0)
+
+def MiniGameShootingCharacterExcelAddDeathSkillDataField(builder, deathSkillDataField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(deathSkillDataField), 0)
+
 def AddDeathSkillDataField(builder, deathSkillDataField):
-    return MiniGameShootingCharacterExcelAddDeathSkillDataField(builder, deathSkillDataField)
-def MiniGameShootingCharacterExcelAddMaxHPField(builder, maxHPField): builder.PrependInt32Slot(7, maxHPField, 0)
+    MiniGameShootingCharacterExcelAddDeathSkillDataField(builder, deathSkillDataField)
+
+def MiniGameShootingCharacterExcelAddMaxHPField(builder, maxHPField):
+    builder.PrependInt32Slot(7, maxHPField, 0)
+
 def AddMaxHPField(builder, maxHPField):
-    return MiniGameShootingCharacterExcelAddMaxHPField(builder, maxHPField)
-def MiniGameShootingCharacterExcelAddAttackPowerField(builder, attackPowerField): builder.PrependInt32Slot(8, attackPowerField, 0)
+    MiniGameShootingCharacterExcelAddMaxHPField(builder, maxHPField)
+
+def MiniGameShootingCharacterExcelAddAttackPowerField(builder, attackPowerField):
+    builder.PrependInt32Slot(8, attackPowerField, 0)
+
 def AddAttackPowerField(builder, attackPowerField):
-    return MiniGameShootingCharacterExcelAddAttackPowerField(builder, attackPowerField)
-def MiniGameShootingCharacterExcelAddDefensePowerField(builder, defensePowerField): builder.PrependInt32Slot(9, defensePowerField, 0)
+    MiniGameShootingCharacterExcelAddAttackPowerField(builder, attackPowerField)
+
+def MiniGameShootingCharacterExcelAddDefensePowerField(builder, defensePowerField):
+    builder.PrependInt32Slot(9, defensePowerField, 0)
+
 def AddDefensePowerField(builder, defensePowerField):
-    return MiniGameShootingCharacterExcelAddDefensePowerField(builder, defensePowerField)
-def MiniGameShootingCharacterExcelAddCriticalRateField(builder, criticalRateField): builder.PrependInt32Slot(10, criticalRateField, 0)
+    MiniGameShootingCharacterExcelAddDefensePowerField(builder, defensePowerField)
+
+def MiniGameShootingCharacterExcelAddCriticalRateField(builder, criticalRateField):
+    builder.PrependInt32Slot(10, criticalRateField, 0)
+
 def AddCriticalRateField(builder, criticalRateField):
-    return MiniGameShootingCharacterExcelAddCriticalRateField(builder, criticalRateField)
-def MiniGameShootingCharacterExcelAddCriticalDamageRateField(builder, criticalDamageRateField): builder.PrependInt32Slot(11, criticalDamageRateField, 0)
+    MiniGameShootingCharacterExcelAddCriticalRateField(builder, criticalRateField)
+
+def MiniGameShootingCharacterExcelAddCriticalDamageRateField(builder, criticalDamageRateField):
+    builder.PrependInt32Slot(11, criticalDamageRateField, 0)
+
 def AddCriticalDamageRateField(builder, criticalDamageRateField):
-    return MiniGameShootingCharacterExcelAddCriticalDamageRateField(builder, criticalDamageRateField)
-def MiniGameShootingCharacterExcelAddAttackRangeField(builder, attackRangeField): builder.PrependInt32Slot(12, attackRangeField, 0)
+    MiniGameShootingCharacterExcelAddCriticalDamageRateField(builder, criticalDamageRateField)
+
+def MiniGameShootingCharacterExcelAddAttackRangeField(builder, attackRangeField):
+    builder.PrependInt32Slot(12, attackRangeField, 0)
+
 def AddAttackRangeField(builder, attackRangeField):
-    return MiniGameShootingCharacterExcelAddAttackRangeField(builder, attackRangeField)
-def MiniGameShootingCharacterExcelAddMoveSpeedField(builder, moveSpeedField): builder.PrependInt32Slot(13, moveSpeedField, 0)
+    MiniGameShootingCharacterExcelAddAttackRangeField(builder, attackRangeField)
+
+def MiniGameShootingCharacterExcelAddMoveSpeedField(builder, moveSpeedField):
+    builder.PrependInt32Slot(13, moveSpeedField, 0)
+
 def AddMoveSpeedField(builder, moveSpeedField):
-    return MiniGameShootingCharacterExcelAddMoveSpeedField(builder, moveSpeedField)
-def MiniGameShootingCharacterExcelAddShotTimeField(builder, shotTimeField): builder.PrependInt32Slot(14, shotTimeField, 0)
+    MiniGameShootingCharacterExcelAddMoveSpeedField(builder, moveSpeedField)
+
+def MiniGameShootingCharacterExcelAddShotTimeField(builder, shotTimeField):
+    builder.PrependInt32Slot(14, shotTimeField, 0)
+
 def AddShotTimeField(builder, shotTimeField):
-    return MiniGameShootingCharacterExcelAddShotTimeField(builder, shotTimeField)
-def MiniGameShootingCharacterExcelAddIsBossField(builder, isBossField): builder.PrependBoolSlot(15, isBossField, 0)
+    MiniGameShootingCharacterExcelAddShotTimeField(builder, shotTimeField)
+
+def MiniGameShootingCharacterExcelAddIsBossField(builder, isBossField):
+    builder.PrependBoolSlot(15, isBossField, 0)
+
 def AddIsBossField(builder, isBossField):
-    return MiniGameShootingCharacterExcelAddIsBossField(builder, isBossField)
-def MiniGameShootingCharacterExcelAddScaleField(builder, scaleField): builder.PrependFloat32Slot(16, scaleField, 0.0)
+    MiniGameShootingCharacterExcelAddIsBossField(builder, isBossField)
+
+def MiniGameShootingCharacterExcelAddScaleField(builder, scaleField):
+    builder.PrependFloat32Slot(16, scaleField, 0.0)
+
 def AddScaleField(builder, scaleField):
-    return MiniGameShootingCharacterExcelAddScaleField(builder, scaleField)
-def MiniGameShootingCharacterExcelAddIgnoreObstacleCheckField(builder, ignoreObstacleCheckField): builder.PrependBoolSlot(17, ignoreObstacleCheckField, 0)
+    MiniGameShootingCharacterExcelAddScaleField(builder, scaleField)
+
+def MiniGameShootingCharacterExcelAddIgnoreObstacleCheckField(builder, ignoreObstacleCheckField):
+    builder.PrependBoolSlot(17, ignoreObstacleCheckField, 0)
+
 def AddIgnoreObstacleCheckField(builder, ignoreObstacleCheckField):
-    return MiniGameShootingCharacterExcelAddIgnoreObstacleCheckField(builder, ignoreObstacleCheckField)
-def MiniGameShootingCharacterExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField): builder.PrependInt32Slot(18, characterVoiceGroupIdField, 0)
+    MiniGameShootingCharacterExcelAddIgnoreObstacleCheckField(builder, ignoreObstacleCheckField)
+
+def MiniGameShootingCharacterExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField):
+    builder.PrependInt32Slot(18, characterVoiceGroupIdField, 0)
+
 def AddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField):
-    return MiniGameShootingCharacterExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField)
-def MiniGameShootingCharacterExcelEnd(builder): return builder.EndObject()
+    MiniGameShootingCharacterExcelAddCharacterVoiceGroupIdField(builder, characterVoiceGroupIdField)
+
+def MiniGameShootingCharacterExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameShootingCharacterExcelEnd(builder)

@@ -112,33 +112,62 @@ class VoiceTimelineExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
-def VoiceTimelineExcelStart(builder): builder.StartObject(5)
+def VoiceTimelineExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return VoiceTimelineExcelStart(builder)
-def VoiceTimelineExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(0, uniqueIdField, 0)
+    VoiceTimelineExcelStart(builder)
+
+def VoiceTimelineExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(0, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return VoiceTimelineExcelAddUniqueIdField(builder, uniqueIdField)
-def VoiceTimelineExcelAddIdField(builder, idField): builder.PrependUint32Slot(1, idField, 0)
+    VoiceTimelineExcelAddUniqueIdField(builder, uniqueIdField)
+
+def VoiceTimelineExcelAddIdField(builder, idField):
+    builder.PrependUint32Slot(1, idField, 0)
+
 def AddIdField(builder, idField):
-    return VoiceTimelineExcelAddIdField(builder, idField)
-def VoiceTimelineExcelAddNationField(builder, nationField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+    VoiceTimelineExcelAddIdField(builder, idField)
+
+def VoiceTimelineExcelAddNationField(builder, nationField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nationField), 0)
+
 def AddNationField(builder, nationField):
-    return VoiceTimelineExcelAddNationField(builder, nationField)
-def VoiceTimelineExcelStartNationFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartNationFieldVector(builder, numElems):
+    VoiceTimelineExcelAddNationField(builder, nationField)
+
+def VoiceTimelineExcelStartNationFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartNationFieldVector(builder, numElems: int) -> int:
     return VoiceTimelineExcelStartNationFieldVector(builder, numElems)
-def VoiceTimelineExcelAddPathField(builder, pathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
+def VoiceTimelineExcelAddPathField(builder, pathField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(pathField), 0)
+
 def AddPathField(builder, pathField):
-    return VoiceTimelineExcelAddPathField(builder, pathField)
-def VoiceTimelineExcelStartPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPathFieldVector(builder, numElems):
+    VoiceTimelineExcelAddPathField(builder, pathField)
+
+def VoiceTimelineExcelStartPathFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPathFieldVector(builder, numElems: int) -> int:
     return VoiceTimelineExcelStartPathFieldVector(builder, numElems)
-def VoiceTimelineExcelAddSoundVolumeField(builder, soundVolumeField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(soundVolumeField), 0)
+
+def VoiceTimelineExcelAddSoundVolumeField(builder, soundVolumeField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(soundVolumeField), 0)
+
 def AddSoundVolumeField(builder, soundVolumeField):
-    return VoiceTimelineExcelAddSoundVolumeField(builder, soundVolumeField)
-def VoiceTimelineExcelStartSoundVolumeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSoundVolumeFieldVector(builder, numElems):
+    VoiceTimelineExcelAddSoundVolumeField(builder, soundVolumeField)
+
+def VoiceTimelineExcelStartSoundVolumeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSoundVolumeFieldVector(builder, numElems: int) -> int:
     return VoiceTimelineExcelStartSoundVolumeFieldVector(builder, numElems)
-def VoiceTimelineExcelEnd(builder): return builder.EndObject()
+
+def VoiceTimelineExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return VoiceTimelineExcelEnd(builder)

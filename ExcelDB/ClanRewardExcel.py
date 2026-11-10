@@ -59,24 +59,44 @@ class ClanRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ClanRewardExcelStart(builder): builder.StartObject(5)
+def ClanRewardExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return ClanRewardExcelStart(builder)
-def ClanRewardExcelAddClanRewardTypeField(builder, clanRewardTypeField): builder.PrependInt32Slot(0, clanRewardTypeField, 0)
+    ClanRewardExcelStart(builder)
+
+def ClanRewardExcelAddClanRewardTypeField(builder, clanRewardTypeField):
+    builder.PrependInt32Slot(0, clanRewardTypeField, 0)
+
 def AddClanRewardTypeField(builder, clanRewardTypeField):
-    return ClanRewardExcelAddClanRewardTypeField(builder, clanRewardTypeField)
-def ClanRewardExcelAddEchelonTypeField(builder, echelonTypeField): builder.PrependInt32Slot(1, echelonTypeField, 0)
+    ClanRewardExcelAddClanRewardTypeField(builder, clanRewardTypeField)
+
+def ClanRewardExcelAddEchelonTypeField(builder, echelonTypeField):
+    builder.PrependInt32Slot(1, echelonTypeField, 0)
+
 def AddEchelonTypeField(builder, echelonTypeField):
-    return ClanRewardExcelAddEchelonTypeField(builder, echelonTypeField)
-def ClanRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(2, rewardParcelTypeField, 0)
+    ClanRewardExcelAddEchelonTypeField(builder, echelonTypeField)
+
+def ClanRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(2, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return ClanRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def ClanRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(3, rewardParcelIdField, 0)
+    ClanRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def ClanRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependInt32Slot(3, rewardParcelIdField, 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return ClanRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def ClanRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(4, rewardParcelAmountField, 0)
+    ClanRewardExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def ClanRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependInt32Slot(4, rewardParcelAmountField, 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return ClanRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def ClanRewardExcelEnd(builder): return builder.EndObject()
+    ClanRewardExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def ClanRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ClanRewardExcelEnd(builder)

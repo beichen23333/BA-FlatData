@@ -39,34 +39,103 @@ class EventContentClueSearchExcel(object):
         return 0
 
     # EventContentClueSearchExcel
-    def UsePrefabNameField(self):
+    def SearchCostGoodsIdField(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # EventContentClueSearchExcel
+    def DeductionPointItemIdField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # EventContentClueSearchExcel
+    def InspirationConvertCountField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # EventContentClueSearchExcel
+    def MaxSearchCountField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        if o != 0:
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
+        return 0
+
+    # EventContentClueSearchExcel
+    def UsePrefabNameField(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
     # EventContentClueSearchExcel
     def ClueBGImagePathField(self):
-        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EventContentClueSearchExcelStart(builder): builder.StartObject(4)
+def EventContentClueSearchExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return EventContentClueSearchExcelStart(builder)
-def EventContentClueSearchExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentClueSearchExcelStart(builder)
+
+def EventContentClueSearchExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentClueSearchExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentClueSearchExcelAddTitleLocalizeField(builder, titleLocalizeField): builder.PrependUint32Slot(1, titleLocalizeField, 0)
+    EventContentClueSearchExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentClueSearchExcelAddTitleLocalizeField(builder, titleLocalizeField):
+    builder.PrependUint32Slot(1, titleLocalizeField, 0)
+
 def AddTitleLocalizeField(builder, titleLocalizeField):
-    return EventContentClueSearchExcelAddTitleLocalizeField(builder, titleLocalizeField)
-def EventContentClueSearchExcelAddUsePrefabNameField(builder, usePrefabNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(usePrefabNameField), 0)
+    EventContentClueSearchExcelAddTitleLocalizeField(builder, titleLocalizeField)
+
+def EventContentClueSearchExcelAddSearchCostGoodsIdField(builder, searchCostGoodsIdField):
+    builder.PrependInt32Slot(2, searchCostGoodsIdField, 0)
+
+def AddSearchCostGoodsIdField(builder, searchCostGoodsIdField):
+    EventContentClueSearchExcelAddSearchCostGoodsIdField(builder, searchCostGoodsIdField)
+
+def EventContentClueSearchExcelAddDeductionPointItemIdField(builder, deductionPointItemIdField):
+    builder.PrependInt32Slot(3, deductionPointItemIdField, 0)
+
+def AddDeductionPointItemIdField(builder, deductionPointItemIdField):
+    EventContentClueSearchExcelAddDeductionPointItemIdField(builder, deductionPointItemIdField)
+
+def EventContentClueSearchExcelAddInspirationConvertCountField(builder, inspirationConvertCountField):
+    builder.PrependInt32Slot(4, inspirationConvertCountField, 0)
+
+def AddInspirationConvertCountField(builder, inspirationConvertCountField):
+    EventContentClueSearchExcelAddInspirationConvertCountField(builder, inspirationConvertCountField)
+
+def EventContentClueSearchExcelAddMaxSearchCountField(builder, maxSearchCountField):
+    builder.PrependInt32Slot(5, maxSearchCountField, 0)
+
+def AddMaxSearchCountField(builder, maxSearchCountField):
+    EventContentClueSearchExcelAddMaxSearchCountField(builder, maxSearchCountField)
+
+def EventContentClueSearchExcelAddUsePrefabNameField(builder, usePrefabNameField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(usePrefabNameField), 0)
+
 def AddUsePrefabNameField(builder, usePrefabNameField):
-    return EventContentClueSearchExcelAddUsePrefabNameField(builder, usePrefabNameField)
-def EventContentClueSearchExcelAddClueBGImagePathField(builder, clueBGImagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(clueBGImagePathField), 0)
+    EventContentClueSearchExcelAddUsePrefabNameField(builder, usePrefabNameField)
+
+def EventContentClueSearchExcelAddClueBGImagePathField(builder, clueBGImagePathField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(clueBGImagePathField), 0)
+
 def AddClueBGImagePathField(builder, clueBGImagePathField):
-    return EventContentClueSearchExcelAddClueBGImagePathField(builder, clueBGImagePathField)
-def EventContentClueSearchExcelEnd(builder): return builder.EndObject()
+    EventContentClueSearchExcelAddClueBGImagePathField(builder, clueBGImagePathField)
+
+def EventContentClueSearchExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentClueSearchExcelEnd(builder)

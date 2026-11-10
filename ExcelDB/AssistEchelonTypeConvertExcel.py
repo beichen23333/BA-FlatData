@@ -38,15 +38,26 @@ class AssistEchelonTypeConvertExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def AssistEchelonTypeConvertExcelStart(builder): builder.StartObject(2)
+def AssistEchelonTypeConvertExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return AssistEchelonTypeConvertExcelStart(builder)
-def AssistEchelonTypeConvertExcelAddContentsField(builder, contentsField): builder.PrependInt32Slot(0, contentsField, 0)
+    AssistEchelonTypeConvertExcelStart(builder)
+
+def AssistEchelonTypeConvertExcelAddContentsField(builder, contentsField):
+    builder.PrependInt32Slot(0, contentsField, 0)
+
 def AddContentsField(builder, contentsField):
-    return AssistEchelonTypeConvertExcelAddContentsField(builder, contentsField)
-def AssistEchelonTypeConvertExcelAddConvertToField(builder, convertToField): builder.PrependInt32Slot(1, convertToField, 0)
+    AssistEchelonTypeConvertExcelAddContentsField(builder, contentsField)
+
+def AssistEchelonTypeConvertExcelAddConvertToField(builder, convertToField):
+    builder.PrependInt32Slot(1, convertToField, 0)
+
 def AddConvertToField(builder, convertToField):
-    return AssistEchelonTypeConvertExcelAddConvertToField(builder, convertToField)
-def AssistEchelonTypeConvertExcelEnd(builder): return builder.EndObject()
+    AssistEchelonTypeConvertExcelAddConvertToField(builder, convertToField)
+
+def AssistEchelonTypeConvertExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AssistEchelonTypeConvertExcelEnd(builder)

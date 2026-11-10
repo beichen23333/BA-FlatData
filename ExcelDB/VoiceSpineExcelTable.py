@@ -49,15 +49,26 @@ class VoiceSpineExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def VoiceSpineExcelTableStart(builder): builder.StartObject(1)
+def VoiceSpineExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return VoiceSpineExcelTableStart(builder)
-def VoiceSpineExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    VoiceSpineExcelTableStart(builder)
+
+def VoiceSpineExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return VoiceSpineExcelTableAddDataList(builder, dataList)
-def VoiceSpineExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    VoiceSpineExcelTableAddDataList(builder, dataList)
+
+def VoiceSpineExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return VoiceSpineExcelTableStartDataListVector(builder, numElems)
-def VoiceSpineExcelTableEnd(builder): return builder.EndObject()
+
+def VoiceSpineExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return VoiceSpineExcelTableEnd(builder)

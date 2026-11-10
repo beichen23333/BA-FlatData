@@ -49,15 +49,26 @@ class ScenarioModeSpoilerPopupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ScenarioModeSpoilerPopupExcelTableStart(builder): builder.StartObject(1)
+def ScenarioModeSpoilerPopupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ScenarioModeSpoilerPopupExcelTableStart(builder)
-def ScenarioModeSpoilerPopupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ScenarioModeSpoilerPopupExcelTableStart(builder)
+
+def ScenarioModeSpoilerPopupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ScenarioModeSpoilerPopupExcelTableAddDataList(builder, dataList)
-def ScenarioModeSpoilerPopupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ScenarioModeSpoilerPopupExcelTableAddDataList(builder, dataList)
+
+def ScenarioModeSpoilerPopupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ScenarioModeSpoilerPopupExcelTableStartDataListVector(builder, numElems)
-def ScenarioModeSpoilerPopupExcelTableEnd(builder): return builder.EndObject()
+
+def ScenarioModeSpoilerPopupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioModeSpoilerPopupExcelTableEnd(builder)

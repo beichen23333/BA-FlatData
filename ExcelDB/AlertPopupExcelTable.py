@@ -49,15 +49,26 @@ class AlertPopupExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def AlertPopupExcelTableStart(builder): builder.StartObject(1)
+def AlertPopupExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return AlertPopupExcelTableStart(builder)
-def AlertPopupExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    AlertPopupExcelTableStart(builder)
+
+def AlertPopupExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return AlertPopupExcelTableAddDataList(builder, dataList)
-def AlertPopupExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    AlertPopupExcelTableAddDataList(builder, dataList)
+
+def AlertPopupExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return AlertPopupExcelTableStartDataListVector(builder, numElems)
-def AlertPopupExcelTableEnd(builder): return builder.EndObject()
+
+def AlertPopupExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AlertPopupExcelTableEnd(builder)

@@ -99,6 +99,13 @@ table AccountLevelExcel {
     close_interval_field:int;
     a_p_auto_charge_max_field:int;
     need_report_event_field:bool;
+    plus_exp_product_monthly_id1_field:[int];
+    plus_exp_ratio1_field:int;
+    plus_exp_icon_name1_field:string;
+    plus_exp_product_monthly_id2_field:[int];
+    plus_exp_ratio2_field:int;
+    plus_exp_icon_name2_field:string;
+    plus_exp_icon_name3_field:string;
 }
 
 table AccountLevelRewardExcel {
@@ -117,6 +124,44 @@ table AlertPopupExcel {
     spoiler_popup_title_field:uint;
     spoiler_popup_description_field:uint;
     popup_type_field:SpoilerPopupType;
+}
+
+table ApcSlotDefineExcel {
+    apc_slot_define_id_field:int;
+    apc_slot_amount_field:int;
+    apc_slot_squad_type01_field:[SquadType];
+    apc_slot_start_cooltime01_field:int;
+    apc_slot_cooltime01_field:int;
+    apc_slot_squad_type02_field:[SquadType];
+    apc_slot_start_cooltime02_field:int;
+    apc_slot_cooltime02_field:int;
+    apc_slot_squad_type03_field:[SquadType];
+    apc_slot_start_cooltime03_field:int;
+    apc_slot_cooltime03_field:int;
+    apc_slot_squad_type04_field:[SquadType];
+    apc_slot_start_cooltime04_field:int;
+    apc_slot_cooltime04_field:int;
+    apc_synergy_id_field:int;
+    add_cost_rule_field:string;
+    stat_type01_field:StatType;
+    stat_add01_field:int;
+    stat_multiply01_field:int;
+    stat_type02_field:StatType;
+    stat_add02_field:int;
+    stat_multiply02_field:int;
+    stat_type03_field:StatType;
+    stat_add03_field:int;
+    stat_multiply03_field:int;
+}
+
+table ApcSynergySettingExcel {
+    id_field:int;
+    apc_synergy_group_id_field:int;
+    trigger_type_field:ApcSynergyTriggerType;
+    trigger_value_field:[string];
+    trigger_value_count_field:[int];
+    passive_skill_group_id_field:[string];
+    passive_skill_level_field:[int];
 }
 
 table ArenaLevelSectionExcel {
@@ -567,6 +612,71 @@ table CharacterAcademyTagsExcel {
     zone_white_list_tags_field:[Tag];
 }
 
+table CharacterAdaptationExcel {
+    season_id_field:int;
+    adaptation_character_id_field:int;
+    choose_btn_path_field:string;
+    progress_order_field:int;
+    adaptation_mission_step_count_field:int;
+    character_step_growth_group_id_field:int;
+}
+
+table CharacterAdaptationGrowthReturnExcel {
+    id_field:int;
+    growth_return_type_field:GrowthReturnType;
+    return_step_field:int;
+    return_divide_unit_field:int;
+    return_parcel_type_field:ParcelType;
+    return_parcel_id_field:int;
+    return_parcel_amount_field:int;
+}
+
+table CharacterAdaptationMissionExcel {
+    season_id_field:int;
+    character_id_field:int;
+    id_field:int;
+    category_field:MissionCategory;
+    is_legacy_field:bool;
+    step_field:int;
+    description_field:uint;
+    toast_display_type_field:MissionToastDisplayConditionType;
+    toast_image_path_field:string;
+    shortcut_u_i_field:[string];
+    complete_condition_type_field:MissionCompleteConditionType;
+    complete_condition_count_field:int;
+    complete_condition_parameter_field:[int];
+    complete_condition_parameter_tag_field:[Tag];
+    mission_reward_parcel_type_field:[ParcelType];
+    mission_reward_parcel_id_field:[int];
+    mission_reward_amount_field:[int];
+}
+
+table CharacterAdaptationSeasonExcel {
+    id_field:int;
+    enabled_field:bool;
+    start_date_field:string;
+    end_date_field:string;
+    icon_order_field:int;
+    lobby_banner_image_field:string;
+}
+
+table CharacterAdaptationStepGrowthExcel {
+    id_field:int;
+    group_id_field:int;
+    mission_step_field:int;
+    character_level_field:int;
+    equip_slot1_tier_field:int;
+    equip_slot1_level_field:int;
+    equip_slot2_tier_field:int;
+    equip_slot2_level_field:int;
+    equip_slot3_tier_field:int;
+    equip_slot3_level_field:int;
+    ex_skill_level_field:int;
+    public_skill_level_field:int;
+    passive_skill_level_field:int;
+    extra_passive_skill_level_field:int;
+}
+
 table CharacterAIExcel {
     id_field:int;
     engage_type_field:EngageType;
@@ -729,6 +839,14 @@ table CharacterDialogSubtitleExcel {
     localize_e_n_field:string;
 }
 
+table CharacterEngraveExcel {
+    id_field:int;
+    unlock_all_node_field:bool;
+    node_tree_ego_field:int;
+    node_tree_consciousness_field:int;
+    node_tree_unconscious_field:int;
+}
+
 table CharacterExcel {
     id_field:int;
     dev_name_field:string;
@@ -832,6 +950,22 @@ table CharacterIllustCoordinateExcel {
     max_scale_field:float;
 }
 
+table CharacterLeveladjustmentExcel {
+    content_type_field:ContentType;
+    difficulty_field:Difficulty;
+    level_field:int;
+    ex_skill_level_field:int;
+    public_skill_level_field:int;
+    passive_skill_level_field:int;
+    extra_passive_skill_level_field:int;
+    equip_slot_tier01_field:int;
+    equip_slot_level01_field:int;
+    equip_slot_tier02_field:int;
+    equip_slot_level02_field:int;
+    equip_slot_tier03_field:int;
+    equip_slot_level03_field:int;
+}
+
 table CharacterLevelExcel {
     level_field:int;
     exp_field:int;
@@ -867,6 +1001,35 @@ table CharacterPotentialStatExcel {
     potential_level_field:int;
     recipe_id_field:int;
     stat_bonus_rate_field:int;
+}
+
+table CharacterSettingExcel {
+    character_setting_id_field:int;
+    level_field:int;
+    favor_rank_field:int;
+    star_grade_field:int;
+    ex_skill_level_field:int;
+    public_skill_level_field:int;
+    passive_skill_level_field:int;
+    extra_passive_skill_level_field:int;
+    equip_slot_tier01_field:int;
+    equip_slot_level01_field:int;
+    equip_slot_tier02_field:int;
+    equip_slot_level02_field:int;
+    equip_slot_tier03_field:int;
+    equip_slot_level03_field:int;
+    equip_character_weapon_field:bool;
+    equip_character_weapon_tier_field:int;
+    equip_character_weapon_level_field:int;
+    equip_character_gear_field:bool;
+    equip_character_gear_tier_field:int;
+    equip_character_gear_level_field:int;
+    potential_type01_field:PotentialStatBonusRateType;
+    potential_level01_field:int;
+    potential_type02_field:PotentialStatBonusRateType;
+    potential_level02_field:int;
+    potential_type03_field:PotentialStatBonusRateType;
+    potential_level03_field:int;
 }
 
 table CharacterSkillListExcel {
@@ -963,10 +1126,15 @@ table CharacterStatExcel {
     reduce_basics_damaged_rate_field:int;
     enhance_weak_damage_rate_field:int;
     reduce_weak_damaged_rate_field:int;
+    enhance_resist_damage_rate_field:int;
+    reduce_resist_damaged_rate_field:int;
     weak_damaged_ratio_field:int;
     effective_damaged_ratio_field:int;
     normal_damaged_ratio_field:int;
     resist_damaged_ratio_field:int;
+    add_damage_ratio_synergy_bullet_type_field:int;
+    add_summoned_obstacle_damaged_ratio_field:int;
+    damaged_ratio_obstacle_field:int;
     heal_rate_field:int;
     heal_light_armor_rate_field:int;
     heal_heavy_armor_rate_field:int;
@@ -978,6 +1146,9 @@ table CharacterStatExcel {
     healed_mystic_rate_field:int;
     healed_sonic_rate_field:int;
     healed_normal_rate_field:int;
+    add_street_terrain_factor_field:int;
+    add_outdoor_terrain_factor_field:int;
+    add_indoor_terrain_factor_field:int;
     street_battle_adaptation_field:TerrainAdaptationStat;
     outdoor_battle_adaptation_field:TerrainAdaptationStat;
     indoor_battle_adaptation_field:TerrainAdaptationStat;
@@ -1022,6 +1193,7 @@ table CharacterTranscendenceExcel {
 
 table CharacterVictoryInteractionExcel {
     interaction_id_field:int;
+    override_if_echelon_extension_field:bool;
     costume_id01_field:int;
     position_index01_field:int;
     victory_start_animation_path01_field:string;
@@ -1447,6 +1619,8 @@ table CostumeExcel {
     rarity_field:Rarity;
     character_skill_list_group_id_field:int;
     spine_resource_name_field:string;
+    campaign_complete_animation_name_field:string;
+    campaign_fail_animation_name_field:string;
     spine_resource_name_diorama_field:string;
     spine_resource_name_diorama_for_form_conversion_field:[string];
     entity_material_type_field:EntityMaterialType;
@@ -1462,6 +1636,7 @@ table CostumeExcel {
     use_object_h_p_b_a_r_field:bool;
     texture_boss_field:string;
     texture_skill_card_field:[string];
+    texture_gacha_card_field:string;
     information_pacel_field:string;
     animation_s_s_r_field:string;
     enter_strategy_animation_name_field:string;
@@ -1657,6 +1832,20 @@ table EmblemExcel {
     check_pass_count_field:int;
 }
 
+table EngraveTreeExcel {
+    id_field:int;
+    node_index_field:int;
+    is_unlock_field:bool;
+    pre_node_index_field:[int];
+    grade_type_field:NodeGrade;
+    localize_etc_id_field:string;
+    recipe_field:int;
+    max_level_field:int;
+    learn_skill_slot_field:string;
+    stat_type_field:[EquipmentOptionType];
+    stat_value_field:[int];
+}
+
 table EquipmentChangePieceExcel {
     equipment_id_field:int;
     change_equipment_id_field:int;
@@ -1707,6 +1896,11 @@ table EquipmentStatExcel {
     default_max_level_field:int;
     transcendence_max_field:int;
     damage_factor_group_id_field:string;
+}
+
+table EquipmentStatsDetailExcel {
+    detail_show_stats_field:EquipmentOptionType;
+    is_stats_percent_field:bool;
 }
 
 table EventContentArchiveBannerOffsetExcel {
@@ -1836,6 +2030,10 @@ table EventContentClueExcel {
 table EventContentClueSearchExcel {
     event_content_id_field:int;
     title_localize_field:uint;
+    search_cost_goods_id_field:int;
+    deduction_point_item_id_field:int;
+    inspiration_convert_count_field:int;
+    max_search_count_field:int;
     use_prefab_name_field:string;
     clue_b_g_image_path_field:string;
 }
@@ -2026,6 +2224,7 @@ table EventContentLocationExcel {
     id_field:int;
     localize_etc_id_field:uint;
     prefab_path_field:string;
+    b_g_path_field:string;
     location_reset_schedule_count_field:int;
     schedule_event_point_cost_parcel_type_field:ParcelType;
     schedule_event_point_cost_parcel_id_field:int;
@@ -2172,6 +2371,9 @@ table EventContentSeasonExcel {
     name_field:string;
     event_content_type_field:EventContentType;
     open_condition_content_field:OpenConditionContent;
+    event_campaign_stage_id_field:[int];
+    scenario_mode_id_field:[int];
+    scenario_group_id_field:[int];
     event_display_field:bool;
     icon_order_field:int;
     sub_event_type_field:SubEventType;
@@ -2431,6 +2633,56 @@ table FarmingDungeonLocationManageExcel {
     localize_code_info_field:uint;
 }
 
+table FavorCollectionScoreBonusExcel {
+    id_field:int;
+    score_per_owned_student_field:int;
+    score_per_favor_rank_field:int;
+    score_for_rank20_field:int;
+    score_for_rank50_field:int;
+    score_for_rank75_field:int;
+    score_for_rank100_field:int;
+    required_score01_field:int;
+    applied_skill_group_id01_field:string;
+    required_score02_field:int;
+    applied_skill_group_id02_field:string;
+    required_score03_field:int;
+    applied_skill_group_id03_field:string;
+    required_score04_field:int;
+    applied_skill_group_id04_field:string;
+    required_score05_field:int;
+    applied_skill_group_id05_field:string;
+    required_score06_field:int;
+    applied_skill_group_id06_field:string;
+    required_score07_field:int;
+    applied_skill_group_id07_field:string;
+    required_score08_field:int;
+    applied_skill_group_id08_field:string;
+    required_score09_field:int;
+    applied_skill_group_id09_field:string;
+    required_score10_field:int;
+    applied_skill_group_id10_field:string;
+    required_score11_field:int;
+    applied_skill_group_id11_field:string;
+    required_score12_field:int;
+    applied_skill_group_id12_field:string;
+    required_score13_field:int;
+    applied_skill_group_id13_field:string;
+    required_score14_field:int;
+    applied_skill_group_id14_field:string;
+    required_score15_field:int;
+    applied_skill_group_id15_field:string;
+    required_score16_field:int;
+    applied_skill_group_id16_field:string;
+    required_score17_field:int;
+    applied_skill_group_id17_field:string;
+    required_score18_field:int;
+    applied_skill_group_id18_field:string;
+    required_score19_field:int;
+    applied_skill_group_id19_field:string;
+    required_score20_field:int;
+    applied_skill_group_id20_field:string;
+}
+
 table FavorLevelExcel {
     level_field:int;
     exp_type_field:[int];
@@ -2537,6 +2789,7 @@ table FloaterCommonExcel {
     floater_offset_pos_y_field:int;
     floater_random_pos_range_x_field:int;
     floater_random_pos_range_y_field:int;
+    limited_floater_random_pos_range_y_field:int;
 }
 
 table FormationLocationExcel {
@@ -3137,6 +3390,7 @@ table ItemExcel {
     gacha_ticket_field:GachaTicketType;
     alert_popup_id_field:int;
     shifting_craft_recipe_field:int;
+    show_contents_field:bool;
 }
 
 table KeyControllerImageExcel {
@@ -3213,6 +3467,13 @@ table LevelExpMasterCoinExcel {
     min_level_field:int;
     max_level_field:int;
     ratio_field:int;
+    product_monthly_id1_field:[int];
+    plus_master_coin_ratio1_field:int;
+    plus_master_coin_icon_name1_field:string;
+    product_monthly_id2_field:[int];
+    plus_master_coin_ratio2_field:int;
+    plus_master_coin_icon_name2_field:string;
+    plus_master_coin_icon_name3_field:string;
 }
 
 table LoadingImageExcel {
@@ -3403,7 +3664,49 @@ table LocalizeGachaShopExcel {
     gacha_description_en_field:string;
 }
 
+table LocalizeSkillEffectExcel {
+    key_field:uint;
+    icon_sprite_name_field:string;
+    skill_effect_name_k_r_field:string;
+    skill_effect_name_j_p_field:string;
+    skill_effect_name_t_h_field:string;
+    skill_effect_name_t_w_field:string;
+    skill_effect_name_e_n_field:string;
+    skill_effect_description_k_r_field:string;
+    skill_effect_description_j_p_field:string;
+    skill_effect_description_t_h_field:string;
+    skill_effect_description_t_w_field:string;
+    skill_effect_description_e_n_field:string;
+    suffix_text_k_r_field:string;
+    suffix_text_j_p_field:string;
+    suffix_text_t_h_field:string;
+    suffix_text_t_w_field:string;
+    suffix_text_e_n_field:string;
+    suffix_label_field:string;
+    shared_character_parcels_field:[int];
+    text_font_size_override_field:float;
+}
+
 table LocalizeSkillExcel {
+    key_field:uint;
+    name_kr_field:string;
+    description_kr_field:string;
+    skill_invoke_localize_kr_field:string;
+    name_jp_field:string;
+    description_jp_field:string;
+    skill_invoke_localize_jp_field:string;
+    name_th_field:string;
+    description_th_field:string;
+    skill_invoke_localize_th_field:string;
+    name_tw_field:string;
+    description_tw_field:string;
+    skill_invoke_localize_tw_field:string;
+    name_en_field:string;
+    description_en_field:string;
+    skill_invoke_localize_en_field:string;
+}
+
+table LocalizeSkillNewExcel {
     key_field:uint;
     name_kr_field:string;
     description_kr_field:string;
@@ -3842,6 +4145,152 @@ table MinigameDreamVoiceExcel {
     unique_id_field:int;
     voice_condition_field:DreamMakerVoiceCondition;
     voice_clip_field:uint;
+}
+
+table MinigameJankenCharacterAiExcel {
+    id_field:int;
+    group_id_field:int;
+    rock_field:int;
+    scissor_field:int;
+    paper_field:int;
+    group_chance_field:int;
+}
+
+table MinigameJankenCharacterExcel {
+    id_field:int;
+    is_playable_field:bool;
+    display_order_field:int;
+    icon_resource_name_field:string;
+    icon_deco_resource_name_field:string;
+    name_tag_resource_name_field:string;
+    battle_portrait_resource_field:string;
+    skill_icon_resource_name_field:string;
+    skill_card_resource_name_field:string;
+    localize_id_field:uint;
+    character_name_localize_id_field:uint;
+    attack_power_field:int;
+    hit_point_field:int;
+    block_power_field:int;
+    janken_skill_field:int;
+    is_boss_field:bool;
+    is_boss_unit_field:bool;
+    a_t_g_gauge_field:int;
+    a_t_g_dmg_block_field:float;
+    a_t_g_dmg_hit_field:float;
+    a_t_g_logic_effect_field:int;
+    model_prefab_name_field:string;
+    ai_profile_field:int;
+}
+
+table MinigameJankenCharacterSkillExcel {
+    id_field:int;
+    localize_id_field:uint;
+    data_load_path_field:string;
+    janken_logic_effect_field:int;
+    skill_cost_field:int;
+    once_per_match_field:bool;
+}
+
+table MinigameJankenEquipmentExcel {
+    id_field:int;
+    event_content_id_field:int;
+    equipment_group_field:int;
+    tier_field:int;
+    localize_id_field:uint;
+    unlock_condition_stage_field:int;
+    attack_power_field:int;
+    hit_point_field:int;
+    model_prefab_name_field:string;
+    icon_resource_name_field:string;
+}
+
+table MinigameJankenFixedEchelonSetExcel {
+    fixed_echelon_i_d_field:int;
+    echelon_scene_skip_field:bool;
+    character_i_d_field:int;
+    equip_ment_i_d_field:int;
+}
+
+table MinigameJankenInfoExcel {
+    event_content_id_field:int;
+    cost_parcel_type_field:ParcelType;
+    cost_parcel_id_field:int;
+    multiple_max_field:int;
+    cost_parcel_equip_upgrade_type_field:ParcelType;
+    cost_parcel_equip_upgrade_id_field:int;
+    challenge_multiple_unlock_score_field:int;
+    need_item_amount_t2_field:int;
+    need_item_amount_t3_field:int;
+    need_item_amount_t4_field:int;
+    need_item_amount_t5_field:int;
+    equipment_max_tier_field:int;
+    b_g_m_id_field:int;
+    score_max_stack_field:int;
+}
+
+table MinigameJankenLogicEffectExcel {
+    id_field:int;
+    target_field:uint;
+    path_field:string;
+}
+
+table MinigameJankenRewardScoreExcel {
+    id_field:int;
+    event_content_id_field:int;
+    stacked_score_field:[int];
+    score_reward_id_field:[int];
+}
+
+table MinigameJankenRewardScoreItemExcel {
+    id_field:int;
+    event_content_id_field:int;
+    parcel_type_field:[ParcelType];
+    parcel_unique_id_field:[int];
+    amount_field:[int];
+}
+
+table MinigameJankenStageExcel {
+    id_field:int;
+    name_field:string;
+    event_content_id_field:int;
+    janken_stage_type_field:JankenStageType;
+    stage_type_localize_field:uint;
+    stage_number_field:int;
+    stage_display_field:int;
+    prev_stage_id_field:int;
+    enemy_id_field:int;
+    stage_discription_field:uint;
+    s_kill_cost_event_chance_field:int;
+    stage_enter_cost_type_field:ParcelType;
+    stage_enter_cost_id_field:int;
+    stage_enter_cost_amount_field:int;
+    event_content_stage_reward_id_field:int;
+    enter_scenario_group_id_field:int;
+    clear_scenario_group_id_field:int;
+    star_goal_field:[StarGoalType];
+    star_goal_amount_field:[int];
+    enemy_info_image_field:string;
+    enemy_info_difficulty_field:uint;
+    stage_icon_name_field:string;
+    fixed_echelon_field:int;
+    bgm_field:int;
+    bgm_climax_field:int;
+}
+
+table MinigameJankenVoiceExcel {
+    id_field:int;
+    character_id_field:int;
+    costume_unique_id_field:int;
+    event_content_id_field:int;
+    voice_condition_field:JankenVoiceCondition;
+    animation_name_field:string;
+    duration_field:int;
+    localize_k_r_field:string;
+    localize_j_p_field:string;
+    localize_t_h_field:string;
+    localize_t_w_field:string;
+    localize_e_n_field:string;
+    voice_id_field:uint;
 }
 
 table MiniGameMissionExcel {
@@ -4347,6 +4796,9 @@ table ObstacleStatExcel {
     reduce_ex_damaged_rate_field:int;
     reduce_basics_damaged_rate_field:int;
     reduce_weak_damaged_rate_field:int;
+    reduce_resist_damaged_rate_field:int;
+    add_summoned_obstacle_damaged_ratio_field:int;
+    damaged_ratio_obstacle_field:int;
     weak_damaged_ratio_field:int;
     effective_damaged_ratio_field:int;
     normal_damaged_ratio_field:int;
@@ -4434,6 +4886,7 @@ table PickupFirstGetBonus2Excel {
     reward_parcel_type_field:ParcelType;
     reward_parcel_id_field:int;
     reward_parcel_amount_field:int;
+    shop_cash_ids_field:[int];
 }
 
 table PickupFirstGetBonusExcel {
@@ -4443,6 +4896,7 @@ table PickupFirstGetBonusExcel {
     reward_parcel_type_field:ParcelType;
     reward_parcel_id_field:int;
     reward_parcel_amount_field:int;
+    shop_cash_ids_field:[int];
 }
 
 table PossessionCheckExcel {
@@ -4489,6 +4943,9 @@ table PresetCharacterGroupExcel {
     potential_level02_field:int;
     potential_type03_field:PotentialStatBonusRateType;
     potential_level03_field:int;
+    engrave_level_ego_field:int;
+    engrave_level_conscious_field:int;
+    engrave_level_unconscious_field:int;
 }
 
 table PresetCharacterGroupSettingExcel {
@@ -4617,11 +5074,20 @@ table ProductSelectionGroupExcel {
     condition_parcel_id_field:int;
 }
 
+table ProductStreakRecordExcel {
+    id_field:int;
+    product_id_field:string;
+    teen_product_id_field:string;
+    store_type_field:StoreType;
+    price_field:int;
+    purchase_count_limit_field:int;
+    streak_record_id_field:int;
+}
+
 table RaidContentPlayGuideExcel {
     id_field:int;
     raid_boss_group_type_field:RaidBossGroupType;
     is_p_c_build_field:bool;
-    id_export_field:bool;
     display_order_field:int;
     guide_title_field:uint;
     guide_image_path_field:string;
@@ -4843,6 +5309,9 @@ table ScenarioContentCollectionExcel {
     emblem_resource_field:string;
     thumb_resource_field:string;
     full_resource_field:string;
+    full_resource_pos_x_field:float;
+    full_resource_pos_y_field:float;
+    full_resource_scale_field:float;
     localize_etc_id_field:uint;
     sub_name_localize_code_id_field:string;
 }
@@ -4850,6 +5319,15 @@ table ScenarioContentCollectionExcel {
 table ScenarioEffectExcel {
     effect_name_field:string;
     name_field:uint;
+}
+
+table ScenarioModeDigestExcel {
+    id_field:int;
+    series_field:int;
+    order_field:int;
+    image_path_field:string;
+    video_id_field:int;
+    localize_etc_id_field:uint;
 }
 
 table ScenarioModeExcel {
@@ -5005,6 +5483,27 @@ table SchoolDungeonStageExcel {
     echelon_extension_type_field:EchelonExtensionType;
 }
 
+table SeasonRecordInfoExcel {
+    id_field:int;
+    target_group_field:TargetGroup;
+    account_level_limit_field:int;
+    title_field:string;
+    start_date_field:string;
+    end_date_field:string;
+    basic_reward_id_field:int;
+    accumulated_reward_id_field:int;
+    supplement_cost_field:int;
+    title_image_path_field:string;
+}
+
+table SeasonRecordRewardExcel {
+    group_id_field:int;
+    day_field:int;
+    reward_parcel_type_field:[ParcelType];
+    reward_parcel_id_field:[int];
+    reward_amount_field:[int];
+}
+
 table ServiceActionExcel {
     service_action_type_field:ServiceActionType;
     is_legacy_field:bool;
@@ -5038,14 +5537,17 @@ table ShopCashExcel {
     in_mail_purchase_lock_field:bool;
     use_mail_parcel_field:bool;
     icon_path_field:string;
+    sub_icon_path_field:string;
     display_order_field:int;
     renewal_display_order_field:int;
+    shop_cash_stepup_id_field:int;
     category_type_field:ProductCategory;
     display_tag_field:ProductDisplayTag;
     product_sale_type_field:ProductSaleType;
     sale_period_from_field:string;
     sale_period_to_field:string;
     product_sale_day_field:int;
+    product_sale_milli_seconds_field:int;
     period_tag_field:bool;
     account_level_limit_field:int;
     account_level_hide_field:bool;
@@ -5055,12 +5557,69 @@ table ShopCashExcel {
     package_client_type_field:PurchaseSourceType;
     is_start_dash_field:bool;
     view_flag_field:bool;
+    recommend_icon_path_field:string;
+    recommend_prefab_path_field:string;
+}
+
+table ShopCashPromotionPopupExcel {
+    id_field:int;
+    dev_name_field:string;
+    character_id_field:int;
+    illust_offset_x_field:float;
+    illust_offset_y_field:float;
+    illust_scale_field:float;
+    title_image_path_field:string;
+    localize_etc_id_field:uint;
+    shop_cash_ids_field:[int];
+}
+
+table ShopCashRecommendExcel {
+    id_field:int;
+    recommend_page_type_field:RecommendPageType;
+    shop_cash_id_field:int;
+    display_order_field:int;
+    visible_period_from_field:string;
+    visible_period_to_field:string;
+    video_id_field:[int];
+    image_path_field:string;
+    info_localize_code_id_field:uint;
 }
 
 table ShopCashScenarioResourceInfoExcel {
     scenario_resrouce_info_id_field:int;
     shop_cash_id_field:int;
     icon_path_field:string;
+    recommend_icon_path_field:string;
+    recommend_prefab_path_field:string;
+}
+
+table ShopCashStepupExcel {
+    id_field:int;
+    step_field:int;
+    is_free_product_field:bool;
+    shop_cash_ids_field:[int];
+    target_group_field:TargetGroup;
+    title_path_field:string;
+    colors_field:[string];
+    localize_code_id_field:uint;
+    bottom_box_prefab_name_field:string;
+    category_type_field:ProductCategory;
+    stepup_display_tag_field:ProductDisplayTag;
+    product_sale_type_field:ProductSaleType;
+    sale_period_from_field:string;
+    sale_period_to_field:string;
+    product_sale_day_field:int;
+    period_tag_field:bool;
+}
+
+table ShopCashTabGroupExcel {
+    id_field:int;
+    product_group_type_field:ProductGroupType;
+    display_order_field:int;
+    display_tag_field:ProductDisplayTag;
+    product_category_type_field:[ProductCategory];
+    category_order_field:[int];
+    category_localize_code_id_field:[uint];
 }
 
 table ShopExcel {
@@ -5087,7 +5646,7 @@ table ShopFilterClassifiedExcel {
     category_type_field:float;
     consume_parcel_type_field:ParcelType;
     consume_parcel_id_field:int;
-    shop_filter_type_field:ShopFilterType;
+    shop_filter_type_field:float;
     goods_id_field:int;
 }
 
@@ -5156,6 +5715,8 @@ table ShopRecruitExcel {
     is_legacy_field:bool;
     one_gacha_goods_id_field:int;
     ten_gacha_goods_id_field:int;
+    wish_list_one_gacha_goods_id_field:int;
+    wish_list_ten_gacha_goods_id_field:int;
     goods_dev_name_field:string;
     display_tag_field:GachaDisplayTag;
     display_order_field:int;
@@ -5168,6 +5729,9 @@ table ShopRecruitExcel {
     sale_period_to_field:string;
     recruit_coin_id_field:int;
     recruit_sellection_shop_id_field:int;
+    recruit_stack_item_id_field:int;
+    recruit_mileage_group_id_field:int;
+    mileage_count_free_recruit_field:bool;
     purchase_cooltime_min_field:int;
     purchase_count_limit_field:int;
     purchase_count_reset_type_field:PurchaseCountResetType;
@@ -5184,6 +5748,25 @@ table ShopRecruitExcel {
     direct_pay_one_store_shop_cash_id_field:int;
     probability_url_dev_field:string;
     probability_url_live_field:string;
+    recruit_stack_id_field:int;
+    half_stack_display_item_id_field:int;
+    half_stack_gacha_group_id_field:int;
+    full_stack_gacha_group_id_field:int;
+    wish_list_config_field:WishListConfig;
+    wish_list_half_stack_gacha_group_id_field:int;
+    wish_list_full_stack_gacha_group_id_field:int;
+    recruit_season_field:int;
+}
+
+table ShopRecruitMileageExcel {
+    id_field:int;
+    mileage_group_id_field:int;
+    mileage_reward_group_id_field:int;
+    is_loop_field:bool;
+    required_recruit_amount_field:int;
+    reward_parcel_type_field:[ParcelType];
+    reward_parcel_id_field:[int];
+    reward_parcel_amount_field:[int];
 }
 
 table ShopRecruitSettingExcel {
@@ -5195,6 +5778,14 @@ table ShopRecruitSettingExcel {
     twist_percentage_field:int;
     recruit_change_icon_field:string;
     series_force_enter_field:ScenarioModeSubTypes;
+}
+
+table ShopRecruitStackExcel {
+    id_field:int;
+    recruit_stack_item_id_field:int;
+    half_stack_field:int;
+    full_stack_field:int;
+    stack_color_field:[string];
 }
 
 table ShopRefreshExcel {
@@ -5266,6 +5857,7 @@ table SkillExcel {
     select_ex_skill_tool_tip_id_field:int;
     texture_skill_card_for_form_conversion_field:string;
     skill_card_label_path_field:string;
+    skill_remain_count_override_field:string;
 }
 
 table SkillSelectExTooltipExcel {
@@ -5385,6 +5977,119 @@ table StrategyObjectBuffDefineExcel {
     icon_path_field:string;
 }
 
+table StreakRecordInfoExcel {
+    id_field:int;
+    day_size_field:int;
+    start_date_field:string;
+    end_date_field:string;
+    free_reward_group_id_field:int;
+    purchase_reward_group_id_field:int;
+    title_image_path_field:string;
+    decoration_image_path_field:string;
+    restore_cost_parcel_type_field:ParcelType;
+    restore_cost_parcel_id_field:int;
+    restore_cost_parcel_amount_field:int;
+    cost_increase_day_max_field:int;
+}
+
+table StreakRecordRewardExcel {
+    group_id_field:int;
+    step_field:int;
+    streak_day_field:int;
+    reward_parcel_type_field:[ParcelType];
+    reward_parcel_id_field:[int];
+    reward_parcel_amount_field:[int];
+}
+
+table StudentFrameExcel {
+    id_field:int;
+    category_field:FrameCategory;
+    display_order_field:int;
+    localize_etc_id_field:uint;
+    icon_path_field:string;
+    frame_image_path_field:string;
+    big_frame_image_path_field:string;
+    emblem_effect_path_field:string;
+    display_type_field:FrameDisplayType;
+    display_start_date_field:string;
+    display_end_date_field:string;
+    dislpay_level_field:int;
+    check_pass_type_field:FrameCheckPassType;
+    frame_parameter_field:int;
+    check_pass_count_field:int;
+}
+
+table SystemAssistSettingExcel {
+    battle_type_field:ContentType;
+    stage_id_field:int;
+    character_setting_id_field:int;
+    character_id_field:[int];
+}
+
+table TacticalRelayCharacterBanExcel {
+    season_group_id_field:int;
+    character_id_field:int;
+}
+
+table TacticalRelaySeasonManageExcel {
+    season_id_field:int;
+    season_name_field:string;
+    season_start_date_field:string;
+    end_note_label_start_date_field:string;
+    season_end_date_field:string;
+    prev_season_id_field:int;
+    season_rank_still_counting_field:int;
+}
+
+table TacticalRelayStageExcel {
+    id_field:int;
+    name_field:string;
+    season_id_field:int;
+    stage_type_field:TacticalRelayStageType;
+    stage_number_field:string;
+    stage_difficulty_field:Difficulty;
+    waves_per_sections_field:[int];
+    battle_duration_field:int;
+    recommand_level_field:int;
+    recommand_level_gap_for_guide_field:int;
+    min_equipment_tier_for_guide_field:[int];
+    min_skill_level_for_guide_field:[int];
+    prev_stage_id_field:int;
+    ground_i_d_field:int;
+    stage_topography_field:StageTopography;
+    enemy_armor_type_field:ArmorType;
+    enemy_sub_armor_type_field:ArmorType;
+    stage_enter_cost_type_field:ParcelType;
+    stage_enter_cost_id_field:int;
+    stage_enter_cost_amount_field:int;
+    tactic_reward_exp_field:int;
+    stage_reward_id_ego_field:int;
+    stage_reward_id_conscious_field:int;
+    stage_reward_id_unconscious_field:int;
+    stage_reward_localize_prefab_id01_field:uint;
+    stage_reward_localize_prefab_id02_field:uint;
+    stage_reward_localize_prefab_id03_field:uint;
+    echelon_count_field:int;
+    apc_slot_define_id_field:int;
+    favor_collection_score_bonus_id_field:int;
+    echelon_extension_type_field:EchelonExtensionType;
+    assist_slot_field:int;
+    stage_hint_field:uint;
+    wave_info_tip_icon_path_field:[string];
+    wave_info_tip_localize_etc_id_field:[uint];
+}
+
+table TacticalRelayStageRewardExcel {
+    group_id_field:int;
+    reward_tag_field:float;
+    clear_wave_field:int;
+    reward_prob_field:int;
+    reward_parcel_type_field:ParcelType;
+    reward_id_field:int;
+    reward_amount_field:int;
+    is_displayed_field:bool;
+}
+
 table TacticalSupportSystemExcel {
     id_field:int;
     summoned_time_field:int;
@@ -5434,7 +6139,9 @@ table TerrainAdaptationFactorExcel {
     accuracy_factor_field:int;
     dodge_factor_field:int;
     attack_power_factor_field:int;
-    terrain_factor_description_field:string;
+    terrain_factor_description01_field:string;
+    terrain_factor_description02_field:string;
+    terrain_factor_description03_field:string;
 }
 
 table TimeAttackDungeonExcel {
@@ -5554,7 +6261,19 @@ table VideoExcel {
     sound_volume_field:[float];
 }
 
-table Video_GlobalExcel {
+table Video_Global_JPExcel {
+    video_id_field:int;
+    video_path_kr_field:string;
+    video_teen_path_kr_field:string;
+    video_path_th_field:string;
+    video_teen_path_th_field:string;
+    video_path_tw_field:string;
+    video_teen_path_tw_field:string;
+    video_path_en_field:string;
+    video_teen_path_en_field:string;
+}
+
+table Video_Global_KRExcel {
     video_id_field:int;
     video_path_kr_field:string;
     video_teen_path_kr_field:string;
@@ -5893,6 +6612,14 @@ table AlertPopupExcelTable {
     data_list:[AlertPopupExcel];
 }
 
+table ApcSlotDefineExcelTable {
+    data_list:[ApcSlotDefineExcel];
+}
+
+table ApcSynergySettingExcelTable {
+    data_list:[ApcSynergySettingExcel];
+}
+
 table ArenaLevelSectionExcelTable {
     data_list:[ArenaLevelSectionExcel];
 }
@@ -6041,6 +6768,26 @@ table CharacterAcademyTagsExcelTable {
     data_list:[CharacterAcademyTagsExcel];
 }
 
+table CharacterAdaptationExcelTable {
+    data_list:[CharacterAdaptationExcel];
+}
+
+table CharacterAdaptationGrowthReturnExcelTable {
+    data_list:[CharacterAdaptationGrowthReturnExcel];
+}
+
+table CharacterAdaptationMissionExcelTable {
+    data_list:[CharacterAdaptationMissionExcel];
+}
+
+table CharacterAdaptationSeasonExcelTable {
+    data_list:[CharacterAdaptationSeasonExcel];
+}
+
+table CharacterAdaptationStepGrowthExcelTable {
+    data_list:[CharacterAdaptationStepGrowthExcel];
+}
+
 table CharacterAIExcelTable {
     data_list:[CharacterAIExcel];
 }
@@ -6073,6 +6820,10 @@ table CharacterDialogSubtitleExcelTable {
     data_list:[CharacterDialogSubtitleExcel];
 }
 
+table CharacterEngraveExcelTable {
+    data_list:[CharacterEngraveExcel];
+}
+
 table CharacterExcelTable {
     data_list:[CharacterExcel];
 }
@@ -6087,6 +6838,10 @@ table CharacterGearLevelExcelTable {
 
 table CharacterIllustCoordinateExcelTable {
     data_list:[CharacterIllustCoordinateExcel];
+}
+
+table CharacterLeveladjustmentExcelTable {
+    data_list:[CharacterLeveladjustmentExcel];
 }
 
 table CharacterLevelExcelTable {
@@ -6107,6 +6862,10 @@ table CharacterPotentialRewardExcelTable {
 
 table CharacterPotentialStatExcelTable {
     data_list:[CharacterPotentialStatExcel];
+}
+
+table CharacterSettingExcelTable {
+    data_list:[CharacterSettingExcel];
 }
 
 table CharacterSkillListExcelTable {
@@ -6297,6 +7056,10 @@ table EmblemExcelTable {
     data_list:[EmblemExcel];
 }
 
+table EngraveTreeExcelTable {
+    data_list:[EngraveTreeExcel];
+}
+
 table EquipmentChangePieceExcelTable {
     data_list:[EquipmentChangePieceExcel];
 }
@@ -6311,6 +7074,10 @@ table EquipmentLevelExcelTable {
 
 table EquipmentStatExcelTable {
     data_list:[EquipmentStatExcel];
+}
+
+table EquipmentStatsDetailExcelTable {
+    data_list:[EquipmentStatsDetailExcel];
 }
 
 table EventContentArchiveBannerOffsetExcelTable {
@@ -6547,6 +7314,10 @@ table EventContentZoneVisitRewardExcelTable {
 
 table FarmingDungeonLocationManageExcelTable {
     data_list:[FarmingDungeonLocationManageExcel];
+}
+
+table FavorCollectionScoreBonusExcelTable {
+    data_list:[FavorCollectionScoreBonusExcel];
 }
 
 table FavorLevelExcelTable {
@@ -6797,8 +7568,16 @@ table LocalizeGachaShopExcelTable {
     data_list:[LocalizeGachaShopExcel];
 }
 
+table LocalizeSkillEffectExcelTable {
+    data_list:[LocalizeSkillEffectExcel];
+}
+
 table LocalizeSkillExcelTable {
     data_list:[LocalizeSkillExcel];
+}
+
+table LocalizeSkillNewExcelTable {
+    data_list:[LocalizeSkillNewExcel];
 }
 
 table LogicEffectCommonVisualExcelTable {
@@ -6947,6 +7726,50 @@ table MiniGameDreamTimelineExcelTable {
 
 table MinigameDreamVoiceExcelTable {
     data_list:[MinigameDreamVoiceExcel];
+}
+
+table MinigameJankenCharacterAiExcelTable {
+    data_list:[MinigameJankenCharacterAiExcel];
+}
+
+table MinigameJankenCharacterExcelTable {
+    data_list:[MinigameJankenCharacterExcel];
+}
+
+table MinigameJankenCharacterSkillExcelTable {
+    data_list:[MinigameJankenCharacterSkillExcel];
+}
+
+table MinigameJankenEquipmentExcelTable {
+    data_list:[MinigameJankenEquipmentExcel];
+}
+
+table MinigameJankenFixedEchelonSetExcelTable {
+    data_list:[MinigameJankenFixedEchelonSetExcel];
+}
+
+table MinigameJankenInfoExcelTable {
+    data_list:[MinigameJankenInfoExcel];
+}
+
+table MinigameJankenLogicEffectExcelTable {
+    data_list:[MinigameJankenLogicEffectExcel];
+}
+
+table MinigameJankenRewardScoreExcelTable {
+    data_list:[MinigameJankenRewardScoreExcel];
+}
+
+table MinigameJankenRewardScoreItemExcelTable {
+    data_list:[MinigameJankenRewardScoreItemExcel];
+}
+
+table MinigameJankenStageExcelTable {
+    data_list:[MinigameJankenStageExcel];
+}
+
+table MinigameJankenVoiceExcelTable {
+    data_list:[MinigameJankenVoiceExcel];
 }
 
 table MiniGameMissionExcelTable {
@@ -7177,6 +8000,10 @@ table ProductSelectionGroupExcelTable {
     data_list:[ProductSelectionGroupExcel];
 }
 
+table ProductStreakRecordExcelTable {
+    data_list:[ProductStreakRecordExcel];
+}
+
 table RaidContentPlayGuideExcelTable {
     data_list:[RaidContentPlayGuideExcel];
 }
@@ -7253,6 +8080,10 @@ table ScenarioEffectExcelTable {
     data_list:[ScenarioEffectExcel];
 }
 
+table ScenarioModeDigestExcelTable {
+    data_list:[ScenarioModeDigestExcel];
+}
+
 table ScenarioModeExcelTable {
     data_list:[ScenarioModeExcel];
 }
@@ -7289,6 +8120,14 @@ table SchoolDungeonStageExcelTable {
     data_list:[SchoolDungeonStageExcel];
 }
 
+table SeasonRecordInfoExcelTable {
+    data_list:[SeasonRecordInfoExcel];
+}
+
+table SeasonRecordRewardExcelTable {
+    data_list:[SeasonRecordRewardExcel];
+}
+
 table ServiceActionExcelTable {
     data_list:[ServiceActionExcel];
 }
@@ -7301,8 +8140,24 @@ table ShopCashExcelTable {
     data_list:[ShopCashExcel];
 }
 
+table ShopCashPromotionPopupExcelTable {
+    data_list:[ShopCashPromotionPopupExcel];
+}
+
+table ShopCashRecommendExcelTable {
+    data_list:[ShopCashRecommendExcel];
+}
+
 table ShopCashScenarioResourceInfoExcelTable {
     data_list:[ShopCashScenarioResourceInfoExcel];
+}
+
+table ShopCashStepupExcelTable {
+    data_list:[ShopCashStepupExcel];
+}
+
+table ShopCashTabGroupExcelTable {
+    data_list:[ShopCashTabGroupExcel];
 }
 
 table ShopExcelTable {
@@ -7333,8 +8188,16 @@ table ShopRecruitExcelTable {
     data_list:[ShopRecruitExcel];
 }
 
+table ShopRecruitMileageExcelTable {
+    data_list:[ShopRecruitMileageExcel];
+}
+
 table ShopRecruitSettingExcelTable {
     data_list:[ShopRecruitSettingExcel];
+}
+
+table ShopRecruitStackExcelTable {
+    data_list:[ShopRecruitStackExcel];
 }
 
 table ShopRefreshExcelTable {
@@ -7405,6 +8268,38 @@ table StrategyObjectBuffDefineExcelTable {
     data_list:[StrategyObjectBuffDefineExcel];
 }
 
+table StreakRecordInfoExcelTable {
+    data_list:[StreakRecordInfoExcel];
+}
+
+table StreakRecordRewardExcelTable {
+    data_list:[StreakRecordRewardExcel];
+}
+
+table StudentFrameExcelTable {
+    data_list:[StudentFrameExcel];
+}
+
+table SystemAssistSettingExcelTable {
+    data_list:[SystemAssistSettingExcel];
+}
+
+table TacticalRelayCharacterBanExcelTable {
+    data_list:[TacticalRelayCharacterBanExcel];
+}
+
+table TacticalRelaySeasonManageExcelTable {
+    data_list:[TacticalRelaySeasonManageExcel];
+}
+
+table TacticalRelayStageExcelTable {
+    data_list:[TacticalRelayStageExcel];
+}
+
+table TacticalRelayStageRewardExcelTable {
+    data_list:[TacticalRelayStageRewardExcel];
+}
+
 table TacticalSupportSystemExcelTable {
     data_list:[TacticalSupportSystemExcel];
 }
@@ -7465,8 +8360,12 @@ table VideoExcelTable {
     data_list:[VideoExcel];
 }
 
-table Video_GlobalExcelTable {
-    data_list:[Video_GlobalExcel];
+table Video_Global_JPExcelTable {
+    data_list:[Video_Global_JPExcel];
+}
+
+table Video_Global_KRExcelTable {
+    data_list:[Video_Global_KRExcel];
 }
 
 table VoiceCommonExcelTable {

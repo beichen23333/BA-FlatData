@@ -73,30 +73,56 @@ class PickupDuplicateBonusExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def PickupDuplicateBonusExcelStart(builder): builder.StartObject(7)
+def PickupDuplicateBonusExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return PickupDuplicateBonusExcelStart(builder)
-def PickupDuplicateBonusExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    PickupDuplicateBonusExcelStart(builder)
+
+def PickupDuplicateBonusExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return PickupDuplicateBonusExcelAddIdField(builder, idField)
-def PickupDuplicateBonusExcelAddShopCategoryTypeField(builder, shopCategoryTypeField): builder.PrependFloat32Slot(1, shopCategoryTypeField, 0.0)
+    PickupDuplicateBonusExcelAddIdField(builder, idField)
+
+def PickupDuplicateBonusExcelAddShopCategoryTypeField(builder, shopCategoryTypeField):
+    builder.PrependFloat32Slot(1, shopCategoryTypeField, 0.0)
+
 def AddShopCategoryTypeField(builder, shopCategoryTypeField):
-    return PickupDuplicateBonusExcelAddShopCategoryTypeField(builder, shopCategoryTypeField)
-def PickupDuplicateBonusExcelAddShopIdField(builder, shopIdField): builder.PrependInt32Slot(2, shopIdField, 0)
+    PickupDuplicateBonusExcelAddShopCategoryTypeField(builder, shopCategoryTypeField)
+
+def PickupDuplicateBonusExcelAddShopIdField(builder, shopIdField):
+    builder.PrependInt32Slot(2, shopIdField, 0)
+
 def AddShopIdField(builder, shopIdField):
-    return PickupDuplicateBonusExcelAddShopIdField(builder, shopIdField)
-def PickupDuplicateBonusExcelAddPickupCharacterIdField(builder, pickupCharacterIdField): builder.PrependInt32Slot(3, pickupCharacterIdField, 0)
+    PickupDuplicateBonusExcelAddShopIdField(builder, shopIdField)
+
+def PickupDuplicateBonusExcelAddPickupCharacterIdField(builder, pickupCharacterIdField):
+    builder.PrependInt32Slot(3, pickupCharacterIdField, 0)
+
 def AddPickupCharacterIdField(builder, pickupCharacterIdField):
-    return PickupDuplicateBonusExcelAddPickupCharacterIdField(builder, pickupCharacterIdField)
-def PickupDuplicateBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(4, rewardParcelTypeField, 0)
+    PickupDuplicateBonusExcelAddPickupCharacterIdField(builder, pickupCharacterIdField)
+
+def PickupDuplicateBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(4, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return PickupDuplicateBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def PickupDuplicateBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(5, rewardParcelIdField, 0)
+    PickupDuplicateBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def PickupDuplicateBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependInt32Slot(5, rewardParcelIdField, 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return PickupDuplicateBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def PickupDuplicateBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(6, rewardParcelAmountField, 0)
+    PickupDuplicateBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def PickupDuplicateBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependInt32Slot(6, rewardParcelAmountField, 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return PickupDuplicateBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def PickupDuplicateBonusExcelEnd(builder): return builder.EndObject()
+    PickupDuplicateBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def PickupDuplicateBonusExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PickupDuplicateBonusExcelEnd(builder)

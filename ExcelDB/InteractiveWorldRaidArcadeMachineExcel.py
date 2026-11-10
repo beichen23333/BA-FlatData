@@ -226,60 +226,116 @@ class InteractiveWorldRaidArcadeMachineExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         return o == 0
 
-def InteractiveWorldRaidArcadeMachineExcelStart(builder): builder.StartObject(9)
+def InteractiveWorldRaidArcadeMachineExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return InteractiveWorldRaidArcadeMachineExcelStart(builder)
-def InteractiveWorldRaidArcadeMachineExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    InteractiveWorldRaidArcadeMachineExcelStart(builder)
+
+def InteractiveWorldRaidArcadeMachineExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return InteractiveWorldRaidArcadeMachineExcelAddEventContentIdField(builder, eventContentIdField)
-def InteractiveWorldRaidArcadeMachineExcelAddMiniGameTypeField(builder, miniGameTypeField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameTypeField), 0)
+    InteractiveWorldRaidArcadeMachineExcelAddEventContentIdField(builder, eventContentIdField)
+
+def InteractiveWorldRaidArcadeMachineExcelAddMiniGameTypeField(builder, miniGameTypeField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameTypeField), 0)
+
 def AddMiniGameTypeField(builder, miniGameTypeField):
-    return InteractiveWorldRaidArcadeMachineExcelAddMiniGameTypeField(builder, miniGameTypeField)
-def InteractiveWorldRaidArcadeMachineExcelStartMiniGameTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMiniGameTypeFieldVector(builder, numElems):
+    InteractiveWorldRaidArcadeMachineExcelAddMiniGameTypeField(builder, miniGameTypeField)
+
+def InteractiveWorldRaidArcadeMachineExcelStartMiniGameTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMiniGameTypeFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidArcadeMachineExcelStartMiniGameTypeFieldVector(builder, numElems)
-def InteractiveWorldRaidArcadeMachineExcelAddMiniGameCostItemIdField(builder, miniGameCostItemIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameCostItemIdField), 0)
+
+def InteractiveWorldRaidArcadeMachineExcelAddMiniGameCostItemIdField(builder, miniGameCostItemIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameCostItemIdField), 0)
+
 def AddMiniGameCostItemIdField(builder, miniGameCostItemIdField):
-    return InteractiveWorldRaidArcadeMachineExcelAddMiniGameCostItemIdField(builder, miniGameCostItemIdField)
-def InteractiveWorldRaidArcadeMachineExcelStartMiniGameCostItemIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMiniGameCostItemIdFieldVector(builder, numElems):
+    InteractiveWorldRaidArcadeMachineExcelAddMiniGameCostItemIdField(builder, miniGameCostItemIdField)
+
+def InteractiveWorldRaidArcadeMachineExcelStartMiniGameCostItemIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMiniGameCostItemIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidArcadeMachineExcelStartMiniGameCostItemIdFieldVector(builder, numElems)
-def InteractiveWorldRaidArcadeMachineExcelAddMiniGameCostItemAmountField(builder, miniGameCostItemAmountField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameCostItemAmountField), 0)
+
+def InteractiveWorldRaidArcadeMachineExcelAddMiniGameCostItemAmountField(builder, miniGameCostItemAmountField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameCostItemAmountField), 0)
+
 def AddMiniGameCostItemAmountField(builder, miniGameCostItemAmountField):
-    return InteractiveWorldRaidArcadeMachineExcelAddMiniGameCostItemAmountField(builder, miniGameCostItemAmountField)
-def InteractiveWorldRaidArcadeMachineExcelStartMiniGameCostItemAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMiniGameCostItemAmountFieldVector(builder, numElems):
+    InteractiveWorldRaidArcadeMachineExcelAddMiniGameCostItemAmountField(builder, miniGameCostItemAmountField)
+
+def InteractiveWorldRaidArcadeMachineExcelStartMiniGameCostItemAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMiniGameCostItemAmountFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidArcadeMachineExcelStartMiniGameCostItemAmountFieldVector(builder, numElems)
-def InteractiveWorldRaidArcadeMachineExcelAddMiniGameSoftLimitItemIdField(builder, miniGameSoftLimitItemIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameSoftLimitItemIdField), 0)
+
+def InteractiveWorldRaidArcadeMachineExcelAddMiniGameSoftLimitItemIdField(builder, miniGameSoftLimitItemIdField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameSoftLimitItemIdField), 0)
+
 def AddMiniGameSoftLimitItemIdField(builder, miniGameSoftLimitItemIdField):
-    return InteractiveWorldRaidArcadeMachineExcelAddMiniGameSoftLimitItemIdField(builder, miniGameSoftLimitItemIdField)
-def InteractiveWorldRaidArcadeMachineExcelStartMiniGameSoftLimitItemIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMiniGameSoftLimitItemIdFieldVector(builder, numElems):
+    InteractiveWorldRaidArcadeMachineExcelAddMiniGameSoftLimitItemIdField(builder, miniGameSoftLimitItemIdField)
+
+def InteractiveWorldRaidArcadeMachineExcelStartMiniGameSoftLimitItemIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMiniGameSoftLimitItemIdFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidArcadeMachineExcelStartMiniGameSoftLimitItemIdFieldVector(builder, numElems)
-def InteractiveWorldRaidArcadeMachineExcelAddMiniGameSoftLimitItemAmountField(builder, miniGameSoftLimitItemAmountField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameSoftLimitItemAmountField), 0)
+
+def InteractiveWorldRaidArcadeMachineExcelAddMiniGameSoftLimitItemAmountField(builder, miniGameSoftLimitItemAmountField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameSoftLimitItemAmountField), 0)
+
 def AddMiniGameSoftLimitItemAmountField(builder, miniGameSoftLimitItemAmountField):
-    return InteractiveWorldRaidArcadeMachineExcelAddMiniGameSoftLimitItemAmountField(builder, miniGameSoftLimitItemAmountField)
-def InteractiveWorldRaidArcadeMachineExcelStartMiniGameSoftLimitItemAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMiniGameSoftLimitItemAmountFieldVector(builder, numElems):
+    InteractiveWorldRaidArcadeMachineExcelAddMiniGameSoftLimitItemAmountField(builder, miniGameSoftLimitItemAmountField)
+
+def InteractiveWorldRaidArcadeMachineExcelStartMiniGameSoftLimitItemAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMiniGameSoftLimitItemAmountFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidArcadeMachineExcelStartMiniGameSoftLimitItemAmountFieldVector(builder, numElems)
-def InteractiveWorldRaidArcadeMachineExcelAddMiniGameImageField(builder, miniGameImageField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameImageField), 0)
+
+def InteractiveWorldRaidArcadeMachineExcelAddMiniGameImageField(builder, miniGameImageField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(miniGameImageField), 0)
+
 def AddMiniGameImageField(builder, miniGameImageField):
-    return InteractiveWorldRaidArcadeMachineExcelAddMiniGameImageField(builder, miniGameImageField)
-def InteractiveWorldRaidArcadeMachineExcelStartMiniGameImageFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMiniGameImageFieldVector(builder, numElems):
+    InteractiveWorldRaidArcadeMachineExcelAddMiniGameImageField(builder, miniGameImageField)
+
+def InteractiveWorldRaidArcadeMachineExcelStartMiniGameImageFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMiniGameImageFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidArcadeMachineExcelStartMiniGameImageFieldVector(builder, numElems)
-def InteractiveWorldRaidArcadeMachineExcelAddLocalizeTitleField(builder, localizeTitleField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTitleField), 0)
+
+def InteractiveWorldRaidArcadeMachineExcelAddLocalizeTitleField(builder, localizeTitleField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(localizeTitleField), 0)
+
 def AddLocalizeTitleField(builder, localizeTitleField):
-    return InteractiveWorldRaidArcadeMachineExcelAddLocalizeTitleField(builder, localizeTitleField)
-def InteractiveWorldRaidArcadeMachineExcelStartLocalizeTitleFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLocalizeTitleFieldVector(builder, numElems):
+    InteractiveWorldRaidArcadeMachineExcelAddLocalizeTitleField(builder, localizeTitleField)
+
+def InteractiveWorldRaidArcadeMachineExcelStartLocalizeTitleFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartLocalizeTitleFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidArcadeMachineExcelStartLocalizeTitleFieldVector(builder, numElems)
-def InteractiveWorldRaidArcadeMachineExcelAddLocalizeDescField(builder, localizeDescField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(localizeDescField), 0)
+
+def InteractiveWorldRaidArcadeMachineExcelAddLocalizeDescField(builder, localizeDescField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(localizeDescField), 0)
+
 def AddLocalizeDescField(builder, localizeDescField):
-    return InteractiveWorldRaidArcadeMachineExcelAddLocalizeDescField(builder, localizeDescField)
-def InteractiveWorldRaidArcadeMachineExcelStartLocalizeDescFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartLocalizeDescFieldVector(builder, numElems):
+    InteractiveWorldRaidArcadeMachineExcelAddLocalizeDescField(builder, localizeDescField)
+
+def InteractiveWorldRaidArcadeMachineExcelStartLocalizeDescFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartLocalizeDescFieldVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidArcadeMachineExcelStartLocalizeDescFieldVector(builder, numElems)
-def InteractiveWorldRaidArcadeMachineExcelEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidArcadeMachineExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidArcadeMachineExcelEnd(builder)

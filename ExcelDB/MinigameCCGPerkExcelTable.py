@@ -49,15 +49,26 @@ class MinigameCCGPerkExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameCCGPerkExcelTableStart(builder): builder.StartObject(1)
+def MinigameCCGPerkExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameCCGPerkExcelTableStart(builder)
-def MinigameCCGPerkExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MinigameCCGPerkExcelTableStart(builder)
+
+def MinigameCCGPerkExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MinigameCCGPerkExcelTableAddDataList(builder, dataList)
-def MinigameCCGPerkExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MinigameCCGPerkExcelTableAddDataList(builder, dataList)
+
+def MinigameCCGPerkExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MinigameCCGPerkExcelTableStartDataListVector(builder, numElems)
-def MinigameCCGPerkExcelTableEnd(builder): return builder.EndObject()
+
+def MinigameCCGPerkExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGPerkExcelTableEnd(builder)

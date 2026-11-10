@@ -49,15 +49,26 @@ class EventContentConcentrationCardExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def EventContentConcentrationCardExcelTableStart(builder): builder.StartObject(1)
+def EventContentConcentrationCardExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return EventContentConcentrationCardExcelTableStart(builder)
-def EventContentConcentrationCardExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    EventContentConcentrationCardExcelTableStart(builder)
+
+def EventContentConcentrationCardExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return EventContentConcentrationCardExcelTableAddDataList(builder, dataList)
-def EventContentConcentrationCardExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    EventContentConcentrationCardExcelTableAddDataList(builder, dataList)
+
+def EventContentConcentrationCardExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return EventContentConcentrationCardExcelTableStartDataListVector(builder, numElems)
-def EventContentConcentrationCardExcelTableEnd(builder): return builder.EndObject()
+
+def EventContentConcentrationCardExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentConcentrationCardExcelTableEnd(builder)

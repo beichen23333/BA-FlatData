@@ -142,54 +142,104 @@ class EventContentShopExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def EventContentShopExcelStart(builder): builder.StartObject(14)
+def EventContentShopExcelStart(builder):
+    builder.StartObject(14)
+
 def Start(builder):
-    return EventContentShopExcelStart(builder)
-def EventContentShopExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentShopExcelStart(builder)
+
+def EventContentShopExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentShopExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentShopExcelAddIdField(builder, idField): builder.PrependInt32Slot(1, idField, 0)
+    EventContentShopExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentShopExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(1, idField, 0)
+
 def AddIdField(builder, idField):
-    return EventContentShopExcelAddIdField(builder, idField)
-def EventContentShopExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+    EventContentShopExcelAddIdField(builder, idField)
+
+def EventContentShopExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return EventContentShopExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def EventContentShopExcelAddCategoryTypeField(builder, categoryTypeField): builder.PrependFloat32Slot(3, categoryTypeField, 0.0)
+    EventContentShopExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def EventContentShopExcelAddCategoryTypeField(builder, categoryTypeField):
+    builder.PrependFloat32Slot(3, categoryTypeField, 0.0)
+
 def AddCategoryTypeField(builder, categoryTypeField):
-    return EventContentShopExcelAddCategoryTypeField(builder, categoryTypeField)
-def EventContentShopExcelAddIsLegacyField(builder, isLegacyField): builder.PrependBoolSlot(4, isLegacyField, 0)
+    EventContentShopExcelAddCategoryTypeField(builder, categoryTypeField)
+
+def EventContentShopExcelAddIsLegacyField(builder, isLegacyField):
+    builder.PrependBoolSlot(4, isLegacyField, 0)
+
 def AddIsLegacyField(builder, isLegacyField):
-    return EventContentShopExcelAddIsLegacyField(builder, isLegacyField)
-def EventContentShopExcelAddGoodsIdField(builder, goodsIdField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(goodsIdField), 0)
+    EventContentShopExcelAddIsLegacyField(builder, isLegacyField)
+
+def EventContentShopExcelAddGoodsIdField(builder, goodsIdField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(goodsIdField), 0)
+
 def AddGoodsIdField(builder, goodsIdField):
-    return EventContentShopExcelAddGoodsIdField(builder, goodsIdField)
-def EventContentShopExcelStartGoodsIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGoodsIdFieldVector(builder, numElems):
+    EventContentShopExcelAddGoodsIdField(builder, goodsIdField)
+
+def EventContentShopExcelStartGoodsIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartGoodsIdFieldVector(builder, numElems: int) -> int:
     return EventContentShopExcelStartGoodsIdFieldVector(builder, numElems)
-def EventContentShopExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(6, displayOrderField, 0)
+
+def EventContentShopExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(6, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return EventContentShopExcelAddDisplayOrderField(builder, displayOrderField)
-def EventContentShopExcelAddSalePeriodFromField(builder, salePeriodFromField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(salePeriodFromField), 0)
+    EventContentShopExcelAddDisplayOrderField(builder, displayOrderField)
+
+def EventContentShopExcelAddSalePeriodFromField(builder, salePeriodFromField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(salePeriodFromField), 0)
+
 def AddSalePeriodFromField(builder, salePeriodFromField):
-    return EventContentShopExcelAddSalePeriodFromField(builder, salePeriodFromField)
-def EventContentShopExcelAddSalePeriodToField(builder, salePeriodToField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(salePeriodToField), 0)
+    EventContentShopExcelAddSalePeriodFromField(builder, salePeriodFromField)
+
+def EventContentShopExcelAddSalePeriodToField(builder, salePeriodToField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(salePeriodToField), 0)
+
 def AddSalePeriodToField(builder, salePeriodToField):
-    return EventContentShopExcelAddSalePeriodToField(builder, salePeriodToField)
-def EventContentShopExcelAddPurchaseCooltimeMinField(builder, purchaseCooltimeMinField): builder.PrependInt32Slot(9, purchaseCooltimeMinField, 0)
+    EventContentShopExcelAddSalePeriodToField(builder, salePeriodToField)
+
+def EventContentShopExcelAddPurchaseCooltimeMinField(builder, purchaseCooltimeMinField):
+    builder.PrependInt32Slot(9, purchaseCooltimeMinField, 0)
+
 def AddPurchaseCooltimeMinField(builder, purchaseCooltimeMinField):
-    return EventContentShopExcelAddPurchaseCooltimeMinField(builder, purchaseCooltimeMinField)
-def EventContentShopExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField): builder.PrependInt32Slot(10, purchaseCountLimitField, 0)
+    EventContentShopExcelAddPurchaseCooltimeMinField(builder, purchaseCooltimeMinField)
+
+def EventContentShopExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField):
+    builder.PrependInt32Slot(10, purchaseCountLimitField, 0)
+
 def AddPurchaseCountLimitField(builder, purchaseCountLimitField):
-    return EventContentShopExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
-def EventContentShopExcelAddPurchaseCountResetTypeField(builder, purchaseCountResetTypeField): builder.PrependInt32Slot(11, purchaseCountResetTypeField, 0)
+    EventContentShopExcelAddPurchaseCountLimitField(builder, purchaseCountLimitField)
+
+def EventContentShopExcelAddPurchaseCountResetTypeField(builder, purchaseCountResetTypeField):
+    builder.PrependInt32Slot(11, purchaseCountResetTypeField, 0)
+
 def AddPurchaseCountResetTypeField(builder, purchaseCountResetTypeField):
-    return EventContentShopExcelAddPurchaseCountResetTypeField(builder, purchaseCountResetTypeField)
-def EventContentShopExcelAddBuyReportEventNameField(builder, buyReportEventNameField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(buyReportEventNameField), 0)
+    EventContentShopExcelAddPurchaseCountResetTypeField(builder, purchaseCountResetTypeField)
+
+def EventContentShopExcelAddBuyReportEventNameField(builder, buyReportEventNameField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(buyReportEventNameField), 0)
+
 def AddBuyReportEventNameField(builder, buyReportEventNameField):
-    return EventContentShopExcelAddBuyReportEventNameField(builder, buyReportEventNameField)
-def EventContentShopExcelAddRestrictBuyWhenInventoryFullField(builder, restrictBuyWhenInventoryFullField): builder.PrependBoolSlot(13, restrictBuyWhenInventoryFullField, 0)
+    EventContentShopExcelAddBuyReportEventNameField(builder, buyReportEventNameField)
+
+def EventContentShopExcelAddRestrictBuyWhenInventoryFullField(builder, restrictBuyWhenInventoryFullField):
+    builder.PrependBoolSlot(13, restrictBuyWhenInventoryFullField, 0)
+
 def AddRestrictBuyWhenInventoryFullField(builder, restrictBuyWhenInventoryFullField):
-    return EventContentShopExcelAddRestrictBuyWhenInventoryFullField(builder, restrictBuyWhenInventoryFullField)
-def EventContentShopExcelEnd(builder): return builder.EndObject()
+    EventContentShopExcelAddRestrictBuyWhenInventoryFullField(builder, restrictBuyWhenInventoryFullField)
+
+def EventContentShopExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentShopExcelEnd(builder)

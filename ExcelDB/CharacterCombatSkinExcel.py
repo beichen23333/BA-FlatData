@@ -45,18 +45,32 @@ class CharacterCombatSkinExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def CharacterCombatSkinExcelStart(builder): builder.StartObject(3)
+def CharacterCombatSkinExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return CharacterCombatSkinExcelStart(builder)
-def CharacterCombatSkinExcelAddGroupIdField(builder, groupIdField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(groupIdField), 0)
+    CharacterCombatSkinExcelStart(builder)
+
+def CharacterCombatSkinExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(groupIdField), 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return CharacterCombatSkinExcelAddGroupIdField(builder, groupIdField)
-def CharacterCombatSkinExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+    CharacterCombatSkinExcelAddGroupIdField(builder, groupIdField)
+
+def CharacterCombatSkinExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(1, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return CharacterCombatSkinExcelAddUniqueIdField(builder, uniqueIdField)
-def CharacterCombatSkinExcelAddResourcePathField(builder, resourcePathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(resourcePathField), 0)
+    CharacterCombatSkinExcelAddUniqueIdField(builder, uniqueIdField)
+
+def CharacterCombatSkinExcelAddResourcePathField(builder, resourcePathField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(resourcePathField), 0)
+
 def AddResourcePathField(builder, resourcePathField):
-    return CharacterCombatSkinExcelAddResourcePathField(builder, resourcePathField)
-def CharacterCombatSkinExcelEnd(builder): return builder.EndObject()
+    CharacterCombatSkinExcelAddResourcePathField(builder, resourcePathField)
+
+def CharacterCombatSkinExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterCombatSkinExcelEnd(builder)

@@ -73,30 +73,56 @@ class WelcomeCampaignAttendanceRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def WelcomeCampaignAttendanceRewardExcelStart(builder): builder.StartObject(7)
+def WelcomeCampaignAttendanceRewardExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return WelcomeCampaignAttendanceRewardExcelStart(builder)
-def WelcomeCampaignAttendanceRewardExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    WelcomeCampaignAttendanceRewardExcelStart(builder)
+
+def WelcomeCampaignAttendanceRewardExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return WelcomeCampaignAttendanceRewardExcelAddIdField(builder, idField)
-def WelcomeCampaignAttendanceRewardExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(1, seasonIdField, 0)
+    WelcomeCampaignAttendanceRewardExcelAddIdField(builder, idField)
+
+def WelcomeCampaignAttendanceRewardExcelAddSeasonIdField(builder, seasonIdField):
+    builder.PrependInt32Slot(1, seasonIdField, 0)
+
 def AddSeasonIdField(builder, seasonIdField):
-    return WelcomeCampaignAttendanceRewardExcelAddSeasonIdField(builder, seasonIdField)
-def WelcomeCampaignAttendanceRewardExcelAddCountCheckTypeField(builder, countCheckTypeField): builder.PrependInt32Slot(2, countCheckTypeField, 0)
+    WelcomeCampaignAttendanceRewardExcelAddSeasonIdField(builder, seasonIdField)
+
+def WelcomeCampaignAttendanceRewardExcelAddCountCheckTypeField(builder, countCheckTypeField):
+    builder.PrependInt32Slot(2, countCheckTypeField, 0)
+
 def AddCountCheckTypeField(builder, countCheckTypeField):
-    return WelcomeCampaignAttendanceRewardExcelAddCountCheckTypeField(builder, countCheckTypeField)
-def WelcomeCampaignAttendanceRewardExcelAddDayField(builder, dayField): builder.PrependInt32Slot(3, dayField, 0)
+    WelcomeCampaignAttendanceRewardExcelAddCountCheckTypeField(builder, countCheckTypeField)
+
+def WelcomeCampaignAttendanceRewardExcelAddDayField(builder, dayField):
+    builder.PrependInt32Slot(3, dayField, 0)
+
 def AddDayField(builder, dayField):
-    return WelcomeCampaignAttendanceRewardExcelAddDayField(builder, dayField)
-def WelcomeCampaignAttendanceRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(4, rewardParcelTypeField, 0)
+    WelcomeCampaignAttendanceRewardExcelAddDayField(builder, dayField)
+
+def WelcomeCampaignAttendanceRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(4, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return WelcomeCampaignAttendanceRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def WelcomeCampaignAttendanceRewardExcelAddRewardIdField(builder, rewardIdField): builder.PrependInt32Slot(5, rewardIdField, 0)
+    WelcomeCampaignAttendanceRewardExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def WelcomeCampaignAttendanceRewardExcelAddRewardIdField(builder, rewardIdField):
+    builder.PrependInt32Slot(5, rewardIdField, 0)
+
 def AddRewardIdField(builder, rewardIdField):
-    return WelcomeCampaignAttendanceRewardExcelAddRewardIdField(builder, rewardIdField)
-def WelcomeCampaignAttendanceRewardExcelAddRewardAmountField(builder, rewardAmountField): builder.PrependInt32Slot(6, rewardAmountField, 0)
+    WelcomeCampaignAttendanceRewardExcelAddRewardIdField(builder, rewardIdField)
+
+def WelcomeCampaignAttendanceRewardExcelAddRewardAmountField(builder, rewardAmountField):
+    builder.PrependInt32Slot(6, rewardAmountField, 0)
+
 def AddRewardAmountField(builder, rewardAmountField):
-    return WelcomeCampaignAttendanceRewardExcelAddRewardAmountField(builder, rewardAmountField)
-def WelcomeCampaignAttendanceRewardExcelEnd(builder): return builder.EndObject()
+    WelcomeCampaignAttendanceRewardExcelAddRewardAmountField(builder, rewardAmountField)
+
+def WelcomeCampaignAttendanceRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WelcomeCampaignAttendanceRewardExcelEnd(builder)

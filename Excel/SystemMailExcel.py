@@ -66,27 +66,50 @@ class SystemMailExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def SystemMailExcelStart(builder): builder.StartObject(6)
+def SystemMailExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return SystemMailExcelStart(builder)
-def SystemMailExcelAddMailTypeField(builder, mailTypeField): builder.PrependInt32Slot(0, mailTypeField, 0)
+    SystemMailExcelStart(builder)
+
+def SystemMailExcelAddMailTypeField(builder, mailTypeField):
+    builder.PrependInt32Slot(0, mailTypeField, 0)
+
 def AddMailTypeField(builder, mailTypeField):
-    return SystemMailExcelAddMailTypeField(builder, mailTypeField)
-def SystemMailExcelAddIsProductMailField(builder, isProductMailField): builder.PrependBoolSlot(1, isProductMailField, 0)
+    SystemMailExcelAddMailTypeField(builder, mailTypeField)
+
+def SystemMailExcelAddIsProductMailField(builder, isProductMailField):
+    builder.PrependBoolSlot(1, isProductMailField, 0)
+
 def AddIsProductMailField(builder, isProductMailField):
-    return SystemMailExcelAddIsProductMailField(builder, isProductMailField)
-def SystemMailExcelAddIsVariableExpiredDayField(builder, isVariableExpiredDayField): builder.PrependBoolSlot(2, isVariableExpiredDayField, 0)
+    SystemMailExcelAddIsProductMailField(builder, isProductMailField)
+
+def SystemMailExcelAddIsVariableExpiredDayField(builder, isVariableExpiredDayField):
+    builder.PrependBoolSlot(2, isVariableExpiredDayField, 0)
+
 def AddIsVariableExpiredDayField(builder, isVariableExpiredDayField):
-    return SystemMailExcelAddIsVariableExpiredDayField(builder, isVariableExpiredDayField)
-def SystemMailExcelAddExpiredDayField(builder, expiredDayField): builder.PrependInt32Slot(3, expiredDayField, 0)
+    SystemMailExcelAddIsVariableExpiredDayField(builder, isVariableExpiredDayField)
+
+def SystemMailExcelAddExpiredDayField(builder, expiredDayField):
+    builder.PrependInt32Slot(3, expiredDayField, 0)
+
 def AddExpiredDayField(builder, expiredDayField):
-    return SystemMailExcelAddExpiredDayField(builder, expiredDayField)
-def SystemMailExcelAddSenderField(builder, senderField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(senderField), 0)
+    SystemMailExcelAddExpiredDayField(builder, expiredDayField)
+
+def SystemMailExcelAddSenderField(builder, senderField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(senderField), 0)
+
 def AddSenderField(builder, senderField):
-    return SystemMailExcelAddSenderField(builder, senderField)
-def SystemMailExcelAddCommentField(builder, commentField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(commentField), 0)
+    SystemMailExcelAddSenderField(builder, senderField)
+
+def SystemMailExcelAddCommentField(builder, commentField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(commentField), 0)
+
 def AddCommentField(builder, commentField):
-    return SystemMailExcelAddCommentField(builder, commentField)
-def SystemMailExcelEnd(builder): return builder.EndObject()
+    SystemMailExcelAddCommentField(builder, commentField)
+
+def SystemMailExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return SystemMailExcelEnd(builder)

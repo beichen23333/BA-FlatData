@@ -71,24 +71,44 @@ class AddressableBlackListExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
-def AddressableBlackListExcelStart(builder): builder.StartObject(3)
+def AddressableBlackListExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return AddressableBlackListExcelStart(builder)
-def AddressableBlackListExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    AddressableBlackListExcelStart(builder)
+
+def AddressableBlackListExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return AddressableBlackListExcelAddIdField(builder, idField)
-def AddressableBlackListExcelAddFolderPathField(builder, folderPathField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(folderPathField), 0)
+    AddressableBlackListExcelAddIdField(builder, idField)
+
+def AddressableBlackListExcelAddFolderPathField(builder, folderPathField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(folderPathField), 0)
+
 def AddFolderPathField(builder, folderPathField):
-    return AddressableBlackListExcelAddFolderPathField(builder, folderPathField)
-def AddressableBlackListExcelStartFolderPathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFolderPathFieldVector(builder, numElems):
+    AddressableBlackListExcelAddFolderPathField(builder, folderPathField)
+
+def AddressableBlackListExcelStartFolderPathFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFolderPathFieldVector(builder, numElems: int) -> int:
     return AddressableBlackListExcelStartFolderPathFieldVector(builder, numElems)
-def AddressableBlackListExcelAddResourcePathField(builder, resourcePathField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(resourcePathField), 0)
+
+def AddressableBlackListExcelAddResourcePathField(builder, resourcePathField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(resourcePathField), 0)
+
 def AddResourcePathField(builder, resourcePathField):
-    return AddressableBlackListExcelAddResourcePathField(builder, resourcePathField)
-def AddressableBlackListExcelStartResourcePathFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartResourcePathFieldVector(builder, numElems):
+    AddressableBlackListExcelAddResourcePathField(builder, resourcePathField)
+
+def AddressableBlackListExcelStartResourcePathFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartResourcePathFieldVector(builder, numElems: int) -> int:
     return AddressableBlackListExcelStartResourcePathFieldVector(builder, numElems)
-def AddressableBlackListExcelEnd(builder): return builder.EndObject()
+
+def AddressableBlackListExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AddressableBlackListExcelEnd(builder)

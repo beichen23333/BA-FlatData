@@ -45,18 +45,32 @@ class SkillSelectExTooltipExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def SkillSelectExTooltipExcelStart(builder): builder.StartObject(3)
+def SkillSelectExTooltipExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return SkillSelectExTooltipExcelStart(builder)
-def SkillSelectExTooltipExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(0, groupIdField, 0)
+    SkillSelectExTooltipExcelStart(builder)
+
+def SkillSelectExTooltipExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(0, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return SkillSelectExTooltipExcelAddGroupIdField(builder, groupIdField)
-def SkillSelectExTooltipExcelAddSelectableExSkillGroupIdField(builder, selectableExSkillGroupIdField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(selectableExSkillGroupIdField), 0)
+    SkillSelectExTooltipExcelAddGroupIdField(builder, groupIdField)
+
+def SkillSelectExTooltipExcelAddSelectableExSkillGroupIdField(builder, selectableExSkillGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(selectableExSkillGroupIdField), 0)
+
 def AddSelectableExSkillGroupIdField(builder, selectableExSkillGroupIdField):
-    return SkillSelectExTooltipExcelAddSelectableExSkillGroupIdField(builder, selectableExSkillGroupIdField)
-def SkillSelectExTooltipExcelAddSkillUseConditionLocalizeIdField(builder, skillUseConditionLocalizeIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(skillUseConditionLocalizeIdField), 0)
+    SkillSelectExTooltipExcelAddSelectableExSkillGroupIdField(builder, selectableExSkillGroupIdField)
+
+def SkillSelectExTooltipExcelAddSkillUseConditionLocalizeIdField(builder, skillUseConditionLocalizeIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(skillUseConditionLocalizeIdField), 0)
+
 def AddSkillUseConditionLocalizeIdField(builder, skillUseConditionLocalizeIdField):
-    return SkillSelectExTooltipExcelAddSkillUseConditionLocalizeIdField(builder, skillUseConditionLocalizeIdField)
-def SkillSelectExTooltipExcelEnd(builder): return builder.EndObject()
+    SkillSelectExTooltipExcelAddSkillUseConditionLocalizeIdField(builder, skillUseConditionLocalizeIdField)
+
+def SkillSelectExTooltipExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return SkillSelectExTooltipExcelEnd(builder)

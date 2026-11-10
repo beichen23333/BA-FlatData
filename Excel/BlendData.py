@@ -31,12 +31,20 @@ class BlendData(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def BlendDataStart(builder): builder.StartObject(1)
+def BlendDataStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return BlendDataStart(builder)
-def BlendDataAddTypeField(builder, typeField): builder.PrependInt32Slot(0, typeField, 0)
+    BlendDataStart(builder)
+
+def BlendDataAddTypeField(builder, typeField):
+    builder.PrependInt32Slot(0, typeField, 0)
+
 def AddTypeField(builder, typeField):
-    return BlendDataAddTypeField(builder, typeField)
-def BlendDataEnd(builder): return builder.EndObject()
+    BlendDataAddTypeField(builder, typeField)
+
+def BlendDataEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BlendDataEnd(builder)

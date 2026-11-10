@@ -92,27 +92,50 @@ class EventContentCharacterBonusExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
-def EventContentCharacterBonusExcelStart(builder): builder.StartObject(4)
+def EventContentCharacterBonusExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return EventContentCharacterBonusExcelStart(builder)
-def EventContentCharacterBonusExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentCharacterBonusExcelStart(builder)
+
+def EventContentCharacterBonusExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentCharacterBonusExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentCharacterBonusExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(1, characterIdField, 0)
+    EventContentCharacterBonusExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentCharacterBonusExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(1, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return EventContentCharacterBonusExcelAddCharacterIdField(builder, characterIdField)
-def EventContentCharacterBonusExcelAddEventContentItemTypeField(builder, eventContentItemTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(eventContentItemTypeField), 0)
+    EventContentCharacterBonusExcelAddCharacterIdField(builder, characterIdField)
+
+def EventContentCharacterBonusExcelAddEventContentItemTypeField(builder, eventContentItemTypeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(eventContentItemTypeField), 0)
+
 def AddEventContentItemTypeField(builder, eventContentItemTypeField):
-    return EventContentCharacterBonusExcelAddEventContentItemTypeField(builder, eventContentItemTypeField)
-def EventContentCharacterBonusExcelStartEventContentItemTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEventContentItemTypeFieldVector(builder, numElems):
+    EventContentCharacterBonusExcelAddEventContentItemTypeField(builder, eventContentItemTypeField)
+
+def EventContentCharacterBonusExcelStartEventContentItemTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartEventContentItemTypeFieldVector(builder, numElems: int) -> int:
     return EventContentCharacterBonusExcelStartEventContentItemTypeFieldVector(builder, numElems)
-def EventContentCharacterBonusExcelAddBonusPercentageField(builder, bonusPercentageField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(bonusPercentageField), 0)
+
+def EventContentCharacterBonusExcelAddBonusPercentageField(builder, bonusPercentageField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(bonusPercentageField), 0)
+
 def AddBonusPercentageField(builder, bonusPercentageField):
-    return EventContentCharacterBonusExcelAddBonusPercentageField(builder, bonusPercentageField)
-def EventContentCharacterBonusExcelStartBonusPercentageFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartBonusPercentageFieldVector(builder, numElems):
+    EventContentCharacterBonusExcelAddBonusPercentageField(builder, bonusPercentageField)
+
+def EventContentCharacterBonusExcelStartBonusPercentageFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartBonusPercentageFieldVector(builder, numElems: int) -> int:
     return EventContentCharacterBonusExcelStartBonusPercentageFieldVector(builder, numElems)
-def EventContentCharacterBonusExcelEnd(builder): return builder.EndObject()
+
+def EventContentCharacterBonusExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentCharacterBonusExcelEnd(builder)

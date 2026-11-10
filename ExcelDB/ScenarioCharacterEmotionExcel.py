@@ -38,15 +38,26 @@ class ScenarioCharacterEmotionExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def ScenarioCharacterEmotionExcelStart(builder): builder.StartObject(2)
+def ScenarioCharacterEmotionExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return ScenarioCharacterEmotionExcelStart(builder)
-def ScenarioCharacterEmotionExcelAddEmoticonNameField(builder, emoticonNameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(emoticonNameField), 0)
+    ScenarioCharacterEmotionExcelStart(builder)
+
+def ScenarioCharacterEmotionExcelAddEmoticonNameField(builder, emoticonNameField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(emoticonNameField), 0)
+
 def AddEmoticonNameField(builder, emoticonNameField):
-    return ScenarioCharacterEmotionExcelAddEmoticonNameField(builder, emoticonNameField)
-def ScenarioCharacterEmotionExcelAddNameField(builder, nameField): builder.PrependUint32Slot(1, nameField, 0)
+    ScenarioCharacterEmotionExcelAddEmoticonNameField(builder, emoticonNameField)
+
+def ScenarioCharacterEmotionExcelAddNameField(builder, nameField):
+    builder.PrependUint32Slot(1, nameField, 0)
+
 def AddNameField(builder, nameField):
-    return ScenarioCharacterEmotionExcelAddNameField(builder, nameField)
-def ScenarioCharacterEmotionExcelEnd(builder): return builder.EndObject()
+    ScenarioCharacterEmotionExcelAddNameField(builder, nameField)
+
+def ScenarioCharacterEmotionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioCharacterEmotionExcelEnd(builder)

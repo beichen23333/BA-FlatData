@@ -92,33 +92,62 @@ class InformationExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
         return o == 0
 
-def InformationExcelStart(builder): builder.StartObject(6)
+def InformationExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return InformationExcelStart(builder)
-def InformationExcelAddGroupIDField(builder, groupIDField): builder.PrependInt32Slot(0, groupIDField, 0)
+    InformationExcelStart(builder)
+
+def InformationExcelAddGroupIDField(builder, groupIDField):
+    builder.PrependInt32Slot(0, groupIDField, 0)
+
 def AddGroupIDField(builder, groupIDField):
-    return InformationExcelAddGroupIDField(builder, groupIDField)
-def InformationExcelAddPageNameField(builder, pageNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(pageNameField), 0)
+    InformationExcelAddGroupIDField(builder, groupIDField)
+
+def InformationExcelAddPageNameField(builder, pageNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(pageNameField), 0)
+
 def AddPageNameField(builder, pageNameField):
-    return InformationExcelAddPageNameField(builder, pageNameField)
-def InformationExcelAddIsPcBuildField(builder, isPcBuildField): builder.PrependBoolSlot(2, isPcBuildField, 0)
+    InformationExcelAddPageNameField(builder, pageNameField)
+
+def InformationExcelAddIsPcBuildField(builder, isPcBuildField):
+    builder.PrependBoolSlot(2, isPcBuildField, 0)
+
 def AddIsPcBuildField(builder, isPcBuildField):
-    return InformationExcelAddIsPcBuildField(builder, isPcBuildField)
-def InformationExcelAddLocalizeCodeIdField(builder, localizeCodeIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCodeIdField), 0)
+    InformationExcelAddIsPcBuildField(builder, isPcBuildField)
+
+def InformationExcelAddLocalizeCodeIdField(builder, localizeCodeIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(localizeCodeIdField), 0)
+
 def AddLocalizeCodeIdField(builder, localizeCodeIdField):
-    return InformationExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
-def InformationExcelAddTutorialParentNameField(builder, tutorialParentNameField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(tutorialParentNameField), 0)
+    InformationExcelAddLocalizeCodeIdField(builder, localizeCodeIdField)
+
+def InformationExcelAddTutorialParentNameField(builder, tutorialParentNameField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(tutorialParentNameField), 0)
+
 def AddTutorialParentNameField(builder, tutorialParentNameField):
-    return InformationExcelAddTutorialParentNameField(builder, tutorialParentNameField)
-def InformationExcelStartTutorialParentNameFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTutorialParentNameFieldVector(builder, numElems):
+    InformationExcelAddTutorialParentNameField(builder, tutorialParentNameField)
+
+def InformationExcelStartTutorialParentNameFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartTutorialParentNameFieldVector(builder, numElems: int) -> int:
     return InformationExcelStartTutorialParentNameFieldVector(builder, numElems)
-def InformationExcelAddUINameField(builder, uINameField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(uINameField), 0)
+
+def InformationExcelAddUINameField(builder, uINameField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(uINameField), 0)
+
 def AddUINameField(builder, uINameField):
-    return InformationExcelAddUINameField(builder, uINameField)
-def InformationExcelStartUINameFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartUINameFieldVector(builder, numElems):
+    InformationExcelAddUINameField(builder, uINameField)
+
+def InformationExcelStartUINameFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartUINameFieldVector(builder, numElems: int) -> int:
     return InformationExcelStartUINameFieldVector(builder, numElems)
-def InformationExcelEnd(builder): return builder.EndObject()
+
+def InformationExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InformationExcelEnd(builder)

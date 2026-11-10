@@ -862,201 +862,398 @@ class FixedEchelonSettingExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def FixedEchelonSettingExcelStart(builder): builder.StartObject(34)
+def FixedEchelonSettingExcelStart(builder):
+    builder.StartObject(34)
+
 def Start(builder):
-    return FixedEchelonSettingExcelStart(builder)
-def FixedEchelonSettingExcelAddFixedEchelonIDField(builder, fixedEchelonIDField): builder.PrependInt32Slot(0, fixedEchelonIDField, 0)
+    FixedEchelonSettingExcelStart(builder)
+
+def FixedEchelonSettingExcelAddFixedEchelonIDField(builder, fixedEchelonIDField):
+    builder.PrependInt32Slot(0, fixedEchelonIDField, 0)
+
 def AddFixedEchelonIDField(builder, fixedEchelonIDField):
-    return FixedEchelonSettingExcelAddFixedEchelonIDField(builder, fixedEchelonIDField)
-def FixedEchelonSettingExcelAddEchelonSceneSkipField(builder, echelonSceneSkipField): builder.PrependBoolSlot(1, echelonSceneSkipField, 0)
+    FixedEchelonSettingExcelAddFixedEchelonIDField(builder, fixedEchelonIDField)
+
+def FixedEchelonSettingExcelAddEchelonSceneSkipField(builder, echelonSceneSkipField):
+    builder.PrependBoolSlot(1, echelonSceneSkipField, 0)
+
 def AddEchelonSceneSkipField(builder, echelonSceneSkipField):
-    return FixedEchelonSettingExcelAddEchelonSceneSkipField(builder, echelonSceneSkipField)
-def FixedEchelonSettingExcelAddMainLeaderSlotField(builder, mainLeaderSlotField): builder.PrependInt32Slot(2, mainLeaderSlotField, 0)
+    FixedEchelonSettingExcelAddEchelonSceneSkipField(builder, echelonSceneSkipField)
+
+def FixedEchelonSettingExcelAddMainLeaderSlotField(builder, mainLeaderSlotField):
+    builder.PrependInt32Slot(2, mainLeaderSlotField, 0)
+
 def AddMainLeaderSlotField(builder, mainLeaderSlotField):
-    return FixedEchelonSettingExcelAddMainLeaderSlotField(builder, mainLeaderSlotField)
-def FixedEchelonSettingExcelAddMainCharacterIDField(builder, mainCharacterIDField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterIDField), 0)
+    FixedEchelonSettingExcelAddMainLeaderSlotField(builder, mainLeaderSlotField)
+
+def FixedEchelonSettingExcelAddMainCharacterIDField(builder, mainCharacterIDField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterIDField), 0)
+
 def AddMainCharacterIDField(builder, mainCharacterIDField):
-    return FixedEchelonSettingExcelAddMainCharacterIDField(builder, mainCharacterIDField)
-def FixedEchelonSettingExcelStartMainCharacterIDFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainCharacterIDFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainCharacterIDField(builder, mainCharacterIDField)
+
+def FixedEchelonSettingExcelStartMainCharacterIDFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainCharacterIDFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainCharacterIDFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainLevelField(builder, mainLevelField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(mainLevelField), 0)
+
+def FixedEchelonSettingExcelAddMainLevelField(builder, mainLevelField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(mainLevelField), 0)
+
 def AddMainLevelField(builder, mainLevelField):
-    return FixedEchelonSettingExcelAddMainLevelField(builder, mainLevelField)
-def FixedEchelonSettingExcelStartMainLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainLevelField(builder, mainLevelField)
+
+def FixedEchelonSettingExcelStartMainLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainGradeField(builder, mainGradeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(mainGradeField), 0)
+
+def FixedEchelonSettingExcelAddMainGradeField(builder, mainGradeField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(mainGradeField), 0)
+
 def AddMainGradeField(builder, mainGradeField):
-    return FixedEchelonSettingExcelAddMainGradeField(builder, mainGradeField)
-def FixedEchelonSettingExcelStartMainGradeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainGradeFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainGradeField(builder, mainGradeField)
+
+def FixedEchelonSettingExcelStartMainGradeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainGradeFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainGradeFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainExSkillLevelField(builder, mainExSkillLevelField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(mainExSkillLevelField), 0)
+
+def FixedEchelonSettingExcelAddMainExSkillLevelField(builder, mainExSkillLevelField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(mainExSkillLevelField), 0)
+
 def AddMainExSkillLevelField(builder, mainExSkillLevelField):
-    return FixedEchelonSettingExcelAddMainExSkillLevelField(builder, mainExSkillLevelField)
-def FixedEchelonSettingExcelStartMainExSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainExSkillLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainExSkillLevelField(builder, mainExSkillLevelField)
+
+def FixedEchelonSettingExcelStartMainExSkillLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainExSkillLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainExSkillLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainNoneExSkillLevelField(builder, mainNoneExSkillLevelField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(mainNoneExSkillLevelField), 0)
+
+def FixedEchelonSettingExcelAddMainNoneExSkillLevelField(builder, mainNoneExSkillLevelField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(mainNoneExSkillLevelField), 0)
+
 def AddMainNoneExSkillLevelField(builder, mainNoneExSkillLevelField):
-    return FixedEchelonSettingExcelAddMainNoneExSkillLevelField(builder, mainNoneExSkillLevelField)
-def FixedEchelonSettingExcelStartMainNoneExSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainNoneExSkillLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainNoneExSkillLevelField(builder, mainNoneExSkillLevelField)
+
+def FixedEchelonSettingExcelStartMainNoneExSkillLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainNoneExSkillLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainNoneExSkillLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainEquipment1TierField(builder, mainEquipment1TierField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment1TierField), 0)
+
+def FixedEchelonSettingExcelAddMainEquipment1TierField(builder, mainEquipment1TierField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment1TierField), 0)
+
 def AddMainEquipment1TierField(builder, mainEquipment1TierField):
-    return FixedEchelonSettingExcelAddMainEquipment1TierField(builder, mainEquipment1TierField)
-def FixedEchelonSettingExcelStartMainEquipment1TierFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainEquipment1TierFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainEquipment1TierField(builder, mainEquipment1TierField)
+
+def FixedEchelonSettingExcelStartMainEquipment1TierFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainEquipment1TierFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainEquipment1TierFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainEquipment1LevelField(builder, mainEquipment1LevelField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment1LevelField), 0)
+
+def FixedEchelonSettingExcelAddMainEquipment1LevelField(builder, mainEquipment1LevelField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment1LevelField), 0)
+
 def AddMainEquipment1LevelField(builder, mainEquipment1LevelField):
-    return FixedEchelonSettingExcelAddMainEquipment1LevelField(builder, mainEquipment1LevelField)
-def FixedEchelonSettingExcelStartMainEquipment1LevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainEquipment1LevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainEquipment1LevelField(builder, mainEquipment1LevelField)
+
+def FixedEchelonSettingExcelStartMainEquipment1LevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainEquipment1LevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainEquipment1LevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainEquipment2TierField(builder, mainEquipment2TierField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment2TierField), 0)
+
+def FixedEchelonSettingExcelAddMainEquipment2TierField(builder, mainEquipment2TierField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment2TierField), 0)
+
 def AddMainEquipment2TierField(builder, mainEquipment2TierField):
-    return FixedEchelonSettingExcelAddMainEquipment2TierField(builder, mainEquipment2TierField)
-def FixedEchelonSettingExcelStartMainEquipment2TierFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainEquipment2TierFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainEquipment2TierField(builder, mainEquipment2TierField)
+
+def FixedEchelonSettingExcelStartMainEquipment2TierFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainEquipment2TierFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainEquipment2TierFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainEquipment2LevelField(builder, mainEquipment2LevelField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment2LevelField), 0)
+
+def FixedEchelonSettingExcelAddMainEquipment2LevelField(builder, mainEquipment2LevelField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment2LevelField), 0)
+
 def AddMainEquipment2LevelField(builder, mainEquipment2LevelField):
-    return FixedEchelonSettingExcelAddMainEquipment2LevelField(builder, mainEquipment2LevelField)
-def FixedEchelonSettingExcelStartMainEquipment2LevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainEquipment2LevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainEquipment2LevelField(builder, mainEquipment2LevelField)
+
+def FixedEchelonSettingExcelStartMainEquipment2LevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainEquipment2LevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainEquipment2LevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainEquipment3TierField(builder, mainEquipment3TierField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment3TierField), 0)
+
+def FixedEchelonSettingExcelAddMainEquipment3TierField(builder, mainEquipment3TierField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment3TierField), 0)
+
 def AddMainEquipment3TierField(builder, mainEquipment3TierField):
-    return FixedEchelonSettingExcelAddMainEquipment3TierField(builder, mainEquipment3TierField)
-def FixedEchelonSettingExcelStartMainEquipment3TierFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainEquipment3TierFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainEquipment3TierField(builder, mainEquipment3TierField)
+
+def FixedEchelonSettingExcelStartMainEquipment3TierFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainEquipment3TierFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainEquipment3TierFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainEquipment3LevelField(builder, mainEquipment3LevelField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment3LevelField), 0)
+
+def FixedEchelonSettingExcelAddMainEquipment3LevelField(builder, mainEquipment3LevelField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(mainEquipment3LevelField), 0)
+
 def AddMainEquipment3LevelField(builder, mainEquipment3LevelField):
-    return FixedEchelonSettingExcelAddMainEquipment3LevelField(builder, mainEquipment3LevelField)
-def FixedEchelonSettingExcelStartMainEquipment3LevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainEquipment3LevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainEquipment3LevelField(builder, mainEquipment3LevelField)
+
+def FixedEchelonSettingExcelStartMainEquipment3LevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainEquipment3LevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainEquipment3LevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainCharacterWeaponGradeField(builder, mainCharacterWeaponGradeField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterWeaponGradeField), 0)
+
+def FixedEchelonSettingExcelAddMainCharacterWeaponGradeField(builder, mainCharacterWeaponGradeField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterWeaponGradeField), 0)
+
 def AddMainCharacterWeaponGradeField(builder, mainCharacterWeaponGradeField):
-    return FixedEchelonSettingExcelAddMainCharacterWeaponGradeField(builder, mainCharacterWeaponGradeField)
-def FixedEchelonSettingExcelStartMainCharacterWeaponGradeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainCharacterWeaponGradeFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainCharacterWeaponGradeField(builder, mainCharacterWeaponGradeField)
+
+def FixedEchelonSettingExcelStartMainCharacterWeaponGradeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainCharacterWeaponGradeFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainCharacterWeaponGradeFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainCharacterWeaponLevelField(builder, mainCharacterWeaponLevelField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterWeaponLevelField), 0)
+
+def FixedEchelonSettingExcelAddMainCharacterWeaponLevelField(builder, mainCharacterWeaponLevelField):
+    builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterWeaponLevelField), 0)
+
 def AddMainCharacterWeaponLevelField(builder, mainCharacterWeaponLevelField):
-    return FixedEchelonSettingExcelAddMainCharacterWeaponLevelField(builder, mainCharacterWeaponLevelField)
-def FixedEchelonSettingExcelStartMainCharacterWeaponLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainCharacterWeaponLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainCharacterWeaponLevelField(builder, mainCharacterWeaponLevelField)
+
+def FixedEchelonSettingExcelStartMainCharacterWeaponLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainCharacterWeaponLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainCharacterWeaponLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainCharacterGearTierField(builder, mainCharacterGearTierField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterGearTierField), 0)
+
+def FixedEchelonSettingExcelAddMainCharacterGearTierField(builder, mainCharacterGearTierField):
+    builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterGearTierField), 0)
+
 def AddMainCharacterGearTierField(builder, mainCharacterGearTierField):
-    return FixedEchelonSettingExcelAddMainCharacterGearTierField(builder, mainCharacterGearTierField)
-def FixedEchelonSettingExcelStartMainCharacterGearTierFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainCharacterGearTierFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainCharacterGearTierField(builder, mainCharacterGearTierField)
+
+def FixedEchelonSettingExcelStartMainCharacterGearTierFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainCharacterGearTierFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainCharacterGearTierFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddMainCharacterGearLevelField(builder, mainCharacterGearLevelField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterGearLevelField), 0)
+
+def FixedEchelonSettingExcelAddMainCharacterGearLevelField(builder, mainCharacterGearLevelField):
+    builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(mainCharacterGearLevelField), 0)
+
 def AddMainCharacterGearLevelField(builder, mainCharacterGearLevelField):
-    return FixedEchelonSettingExcelAddMainCharacterGearLevelField(builder, mainCharacterGearLevelField)
-def FixedEchelonSettingExcelStartMainCharacterGearLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartMainCharacterGearLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddMainCharacterGearLevelField(builder, mainCharacterGearLevelField)
+
+def FixedEchelonSettingExcelStartMainCharacterGearLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartMainCharacterGearLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartMainCharacterGearLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportCharacterIDField(builder, supportCharacterIDField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterIDField), 0)
+
+def FixedEchelonSettingExcelAddSupportCharacterIDField(builder, supportCharacterIDField):
+    builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterIDField), 0)
+
 def AddSupportCharacterIDField(builder, supportCharacterIDField):
-    return FixedEchelonSettingExcelAddSupportCharacterIDField(builder, supportCharacterIDField)
-def FixedEchelonSettingExcelStartSupportCharacterIDFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportCharacterIDFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportCharacterIDField(builder, supportCharacterIDField)
+
+def FixedEchelonSettingExcelStartSupportCharacterIDFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportCharacterIDFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportCharacterIDFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportLevelField(builder, supportLevelField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(supportLevelField), 0)
+
+def FixedEchelonSettingExcelAddSupportLevelField(builder, supportLevelField):
+    builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(supportLevelField), 0)
+
 def AddSupportLevelField(builder, supportLevelField):
-    return FixedEchelonSettingExcelAddSupportLevelField(builder, supportLevelField)
-def FixedEchelonSettingExcelStartSupportLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportLevelField(builder, supportLevelField)
+
+def FixedEchelonSettingExcelStartSupportLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportGradeField(builder, supportGradeField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(supportGradeField), 0)
+
+def FixedEchelonSettingExcelAddSupportGradeField(builder, supportGradeField):
+    builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(supportGradeField), 0)
+
 def AddSupportGradeField(builder, supportGradeField):
-    return FixedEchelonSettingExcelAddSupportGradeField(builder, supportGradeField)
-def FixedEchelonSettingExcelStartSupportGradeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportGradeFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportGradeField(builder, supportGradeField)
+
+def FixedEchelonSettingExcelStartSupportGradeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportGradeFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportGradeFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportExSkillLevelField(builder, supportExSkillLevelField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(supportExSkillLevelField), 0)
+
+def FixedEchelonSettingExcelAddSupportExSkillLevelField(builder, supportExSkillLevelField):
+    builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(supportExSkillLevelField), 0)
+
 def AddSupportExSkillLevelField(builder, supportExSkillLevelField):
-    return FixedEchelonSettingExcelAddSupportExSkillLevelField(builder, supportExSkillLevelField)
-def FixedEchelonSettingExcelStartSupportExSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportExSkillLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportExSkillLevelField(builder, supportExSkillLevelField)
+
+def FixedEchelonSettingExcelStartSupportExSkillLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportExSkillLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportExSkillLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportNoneExSkillLevelField(builder, supportNoneExSkillLevelField): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(supportNoneExSkillLevelField), 0)
+
+def FixedEchelonSettingExcelAddSupportNoneExSkillLevelField(builder, supportNoneExSkillLevelField):
+    builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(supportNoneExSkillLevelField), 0)
+
 def AddSupportNoneExSkillLevelField(builder, supportNoneExSkillLevelField):
-    return FixedEchelonSettingExcelAddSupportNoneExSkillLevelField(builder, supportNoneExSkillLevelField)
-def FixedEchelonSettingExcelStartSupportNoneExSkillLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportNoneExSkillLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportNoneExSkillLevelField(builder, supportNoneExSkillLevelField)
+
+def FixedEchelonSettingExcelStartSupportNoneExSkillLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportNoneExSkillLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportNoneExSkillLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportEquipment1TierField(builder, supportEquipment1TierField): builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment1TierField), 0)
+
+def FixedEchelonSettingExcelAddSupportEquipment1TierField(builder, supportEquipment1TierField):
+    builder.PrependUOffsetTRelativeSlot(23, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment1TierField), 0)
+
 def AddSupportEquipment1TierField(builder, supportEquipment1TierField):
-    return FixedEchelonSettingExcelAddSupportEquipment1TierField(builder, supportEquipment1TierField)
-def FixedEchelonSettingExcelStartSupportEquipment1TierFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportEquipment1TierFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportEquipment1TierField(builder, supportEquipment1TierField)
+
+def FixedEchelonSettingExcelStartSupportEquipment1TierFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportEquipment1TierFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportEquipment1TierFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportEquipment1LevelField(builder, supportEquipment1LevelField): builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment1LevelField), 0)
+
+def FixedEchelonSettingExcelAddSupportEquipment1LevelField(builder, supportEquipment1LevelField):
+    builder.PrependUOffsetTRelativeSlot(24, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment1LevelField), 0)
+
 def AddSupportEquipment1LevelField(builder, supportEquipment1LevelField):
-    return FixedEchelonSettingExcelAddSupportEquipment1LevelField(builder, supportEquipment1LevelField)
-def FixedEchelonSettingExcelStartSupportEquipment1LevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportEquipment1LevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportEquipment1LevelField(builder, supportEquipment1LevelField)
+
+def FixedEchelonSettingExcelStartSupportEquipment1LevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportEquipment1LevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportEquipment1LevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportEquipment2TierField(builder, supportEquipment2TierField): builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment2TierField), 0)
+
+def FixedEchelonSettingExcelAddSupportEquipment2TierField(builder, supportEquipment2TierField):
+    builder.PrependUOffsetTRelativeSlot(25, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment2TierField), 0)
+
 def AddSupportEquipment2TierField(builder, supportEquipment2TierField):
-    return FixedEchelonSettingExcelAddSupportEquipment2TierField(builder, supportEquipment2TierField)
-def FixedEchelonSettingExcelStartSupportEquipment2TierFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportEquipment2TierFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportEquipment2TierField(builder, supportEquipment2TierField)
+
+def FixedEchelonSettingExcelStartSupportEquipment2TierFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportEquipment2TierFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportEquipment2TierFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportEquipment2LevelField(builder, supportEquipment2LevelField): builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment2LevelField), 0)
+
+def FixedEchelonSettingExcelAddSupportEquipment2LevelField(builder, supportEquipment2LevelField):
+    builder.PrependUOffsetTRelativeSlot(26, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment2LevelField), 0)
+
 def AddSupportEquipment2LevelField(builder, supportEquipment2LevelField):
-    return FixedEchelonSettingExcelAddSupportEquipment2LevelField(builder, supportEquipment2LevelField)
-def FixedEchelonSettingExcelStartSupportEquipment2LevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportEquipment2LevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportEquipment2LevelField(builder, supportEquipment2LevelField)
+
+def FixedEchelonSettingExcelStartSupportEquipment2LevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportEquipment2LevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportEquipment2LevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportEquipment3TierField(builder, supportEquipment3TierField): builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment3TierField), 0)
+
+def FixedEchelonSettingExcelAddSupportEquipment3TierField(builder, supportEquipment3TierField):
+    builder.PrependUOffsetTRelativeSlot(27, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment3TierField), 0)
+
 def AddSupportEquipment3TierField(builder, supportEquipment3TierField):
-    return FixedEchelonSettingExcelAddSupportEquipment3TierField(builder, supportEquipment3TierField)
-def FixedEchelonSettingExcelStartSupportEquipment3TierFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportEquipment3TierFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportEquipment3TierField(builder, supportEquipment3TierField)
+
+def FixedEchelonSettingExcelStartSupportEquipment3TierFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportEquipment3TierFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportEquipment3TierFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportEquipment3LevelField(builder, supportEquipment3LevelField): builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment3LevelField), 0)
+
+def FixedEchelonSettingExcelAddSupportEquipment3LevelField(builder, supportEquipment3LevelField):
+    builder.PrependUOffsetTRelativeSlot(28, flatbuffers.number_types.UOffsetTFlags.py_type(supportEquipment3LevelField), 0)
+
 def AddSupportEquipment3LevelField(builder, supportEquipment3LevelField):
-    return FixedEchelonSettingExcelAddSupportEquipment3LevelField(builder, supportEquipment3LevelField)
-def FixedEchelonSettingExcelStartSupportEquipment3LevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportEquipment3LevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportEquipment3LevelField(builder, supportEquipment3LevelField)
+
+def FixedEchelonSettingExcelStartSupportEquipment3LevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportEquipment3LevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportEquipment3LevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportCharacterWeaponGradeField(builder, supportCharacterWeaponGradeField): builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterWeaponGradeField), 0)
+
+def FixedEchelonSettingExcelAddSupportCharacterWeaponGradeField(builder, supportCharacterWeaponGradeField):
+    builder.PrependUOffsetTRelativeSlot(29, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterWeaponGradeField), 0)
+
 def AddSupportCharacterWeaponGradeField(builder, supportCharacterWeaponGradeField):
-    return FixedEchelonSettingExcelAddSupportCharacterWeaponGradeField(builder, supportCharacterWeaponGradeField)
-def FixedEchelonSettingExcelStartSupportCharacterWeaponGradeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportCharacterWeaponGradeFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportCharacterWeaponGradeField(builder, supportCharacterWeaponGradeField)
+
+def FixedEchelonSettingExcelStartSupportCharacterWeaponGradeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportCharacterWeaponGradeFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportCharacterWeaponGradeFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportCharacterWeaponLevelField(builder, supportCharacterWeaponLevelField): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterWeaponLevelField), 0)
+
+def FixedEchelonSettingExcelAddSupportCharacterWeaponLevelField(builder, supportCharacterWeaponLevelField):
+    builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterWeaponLevelField), 0)
+
 def AddSupportCharacterWeaponLevelField(builder, supportCharacterWeaponLevelField):
-    return FixedEchelonSettingExcelAddSupportCharacterWeaponLevelField(builder, supportCharacterWeaponLevelField)
-def FixedEchelonSettingExcelStartSupportCharacterWeaponLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportCharacterWeaponLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportCharacterWeaponLevelField(builder, supportCharacterWeaponLevelField)
+
+def FixedEchelonSettingExcelStartSupportCharacterWeaponLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportCharacterWeaponLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportCharacterWeaponLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportCharacterGearTierField(builder, supportCharacterGearTierField): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterGearTierField), 0)
+
+def FixedEchelonSettingExcelAddSupportCharacterGearTierField(builder, supportCharacterGearTierField):
+    builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterGearTierField), 0)
+
 def AddSupportCharacterGearTierField(builder, supportCharacterGearTierField):
-    return FixedEchelonSettingExcelAddSupportCharacterGearTierField(builder, supportCharacterGearTierField)
-def FixedEchelonSettingExcelStartSupportCharacterGearTierFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportCharacterGearTierFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportCharacterGearTierField(builder, supportCharacterGearTierField)
+
+def FixedEchelonSettingExcelStartSupportCharacterGearTierFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportCharacterGearTierFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportCharacterGearTierFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddSupportCharacterGearLevelField(builder, supportCharacterGearLevelField): builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterGearLevelField), 0)
+
+def FixedEchelonSettingExcelAddSupportCharacterGearLevelField(builder, supportCharacterGearLevelField):
+    builder.PrependUOffsetTRelativeSlot(32, flatbuffers.number_types.UOffsetTFlags.py_type(supportCharacterGearLevelField), 0)
+
 def AddSupportCharacterGearLevelField(builder, supportCharacterGearLevelField):
-    return FixedEchelonSettingExcelAddSupportCharacterGearLevelField(builder, supportCharacterGearLevelField)
-def FixedEchelonSettingExcelStartSupportCharacterGearLevelFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartSupportCharacterGearLevelFieldVector(builder, numElems):
+    FixedEchelonSettingExcelAddSupportCharacterGearLevelField(builder, supportCharacterGearLevelField)
+
+def FixedEchelonSettingExcelStartSupportCharacterGearLevelFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartSupportCharacterGearLevelFieldVector(builder, numElems: int) -> int:
     return FixedEchelonSettingExcelStartSupportCharacterGearLevelFieldVector(builder, numElems)
-def FixedEchelonSettingExcelAddInteractionTSCharacterIdField(builder, interactionTSCharacterIdField): builder.PrependInt32Slot(33, interactionTSCharacterIdField, 0)
+
+def FixedEchelonSettingExcelAddInteractionTSCharacterIdField(builder, interactionTSCharacterIdField):
+    builder.PrependInt32Slot(33, interactionTSCharacterIdField, 0)
+
 def AddInteractionTSCharacterIdField(builder, interactionTSCharacterIdField):
-    return FixedEchelonSettingExcelAddInteractionTSCharacterIdField(builder, interactionTSCharacterIdField)
-def FixedEchelonSettingExcelEnd(builder): return builder.EndObject()
+    FixedEchelonSettingExcelAddInteractionTSCharacterIdField(builder, interactionTSCharacterIdField)
+
+def FixedEchelonSettingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FixedEchelonSettingExcelEnd(builder)

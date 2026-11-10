@@ -49,15 +49,26 @@ class MinigameCCGStartDeckCharacterExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def MinigameCCGStartDeckCharacterExcelTableStart(builder): builder.StartObject(1)
+def MinigameCCGStartDeckCharacterExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return MinigameCCGStartDeckCharacterExcelTableStart(builder)
-def MinigameCCGStartDeckCharacterExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    MinigameCCGStartDeckCharacterExcelTableStart(builder)
+
+def MinigameCCGStartDeckCharacterExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return MinigameCCGStartDeckCharacterExcelTableAddDataList(builder, dataList)
-def MinigameCCGStartDeckCharacterExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    MinigameCCGStartDeckCharacterExcelTableAddDataList(builder, dataList)
+
+def MinigameCCGStartDeckCharacterExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return MinigameCCGStartDeckCharacterExcelTableStartDataListVector(builder, numElems)
-def MinigameCCGStartDeckCharacterExcelTableEnd(builder): return builder.EndObject()
+
+def MinigameCCGStartDeckCharacterExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGStartDeckCharacterExcelTableEnd(builder)

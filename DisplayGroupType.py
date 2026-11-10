@@ -11,3 +11,4 @@ class DisplayGroupType:
     MinigameShooting = 9
     MinigameRoad = 10
     MinigameCCG = 11
+    MinigameJanken = 12

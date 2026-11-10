@@ -45,18 +45,32 @@ class EquipmentChangePieceExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EquipmentChangePieceExcelStart(builder): builder.StartObject(3)
+def EquipmentChangePieceExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return EquipmentChangePieceExcelStart(builder)
-def EquipmentChangePieceExcelAddEquipmentIdField(builder, equipmentIdField): builder.PrependInt32Slot(0, equipmentIdField, 0)
+    EquipmentChangePieceExcelStart(builder)
+
+def EquipmentChangePieceExcelAddEquipmentIdField(builder, equipmentIdField):
+    builder.PrependInt32Slot(0, equipmentIdField, 0)
+
 def AddEquipmentIdField(builder, equipmentIdField):
-    return EquipmentChangePieceExcelAddEquipmentIdField(builder, equipmentIdField)
-def EquipmentChangePieceExcelAddChangeEquipmentIdField(builder, changeEquipmentIdField): builder.PrependInt32Slot(1, changeEquipmentIdField, 0)
+    EquipmentChangePieceExcelAddEquipmentIdField(builder, equipmentIdField)
+
+def EquipmentChangePieceExcelAddChangeEquipmentIdField(builder, changeEquipmentIdField):
+    builder.PrependInt32Slot(1, changeEquipmentIdField, 0)
+
 def AddChangeEquipmentIdField(builder, changeEquipmentIdField):
-    return EquipmentChangePieceExcelAddChangeEquipmentIdField(builder, changeEquipmentIdField)
-def EquipmentChangePieceExcelAddChangeAmountField(builder, changeAmountField): builder.PrependInt32Slot(2, changeAmountField, 0)
+    EquipmentChangePieceExcelAddChangeEquipmentIdField(builder, changeEquipmentIdField)
+
+def EquipmentChangePieceExcelAddChangeAmountField(builder, changeAmountField):
+    builder.PrependInt32Slot(2, changeAmountField, 0)
+
 def AddChangeAmountField(builder, changeAmountField):
-    return EquipmentChangePieceExcelAddChangeAmountField(builder, changeAmountField)
-def EquipmentChangePieceExcelEnd(builder): return builder.EndObject()
+    EquipmentChangePieceExcelAddChangeAmountField(builder, changeAmountField)
+
+def EquipmentChangePieceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EquipmentChangePieceExcelEnd(builder)

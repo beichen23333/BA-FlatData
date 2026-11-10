@@ -49,15 +49,26 @@ class InteractiveWorldRaidSkillDescriptionListExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def InteractiveWorldRaidSkillDescriptionListExcelTableStart(builder): builder.StartObject(1)
+def InteractiveWorldRaidSkillDescriptionListExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return InteractiveWorldRaidSkillDescriptionListExcelTableStart(builder)
-def InteractiveWorldRaidSkillDescriptionListExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    InteractiveWorldRaidSkillDescriptionListExcelTableStart(builder)
+
+def InteractiveWorldRaidSkillDescriptionListExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return InteractiveWorldRaidSkillDescriptionListExcelTableAddDataList(builder, dataList)
-def InteractiveWorldRaidSkillDescriptionListExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    InteractiveWorldRaidSkillDescriptionListExcelTableAddDataList(builder, dataList)
+
+def InteractiveWorldRaidSkillDescriptionListExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return InteractiveWorldRaidSkillDescriptionListExcelTableStartDataListVector(builder, numElems)
-def InteractiveWorldRaidSkillDescriptionListExcelTableEnd(builder): return builder.EndObject()
+
+def InteractiveWorldRaidSkillDescriptionListExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InteractiveWorldRaidSkillDescriptionListExcelTableEnd(builder)

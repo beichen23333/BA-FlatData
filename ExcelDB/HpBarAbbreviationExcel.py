@@ -45,18 +45,32 @@ class HpBarAbbreviationExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def HpBarAbbreviationExcelStart(builder): builder.StartObject(3)
+def HpBarAbbreviationExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return HpBarAbbreviationExcelStart(builder)
-def HpBarAbbreviationExcelAddMonsterLvField(builder, monsterLvField): builder.PrependInt32Slot(0, monsterLvField, 0)
+    HpBarAbbreviationExcelStart(builder)
+
+def HpBarAbbreviationExcelAddMonsterLvField(builder, monsterLvField):
+    builder.PrependInt32Slot(0, monsterLvField, 0)
+
 def AddMonsterLvField(builder, monsterLvField):
-    return HpBarAbbreviationExcelAddMonsterLvField(builder, monsterLvField)
-def HpBarAbbreviationExcelAddStandardHpBarField(builder, standardHpBarField): builder.PrependInt32Slot(1, standardHpBarField, 0)
+    HpBarAbbreviationExcelAddMonsterLvField(builder, monsterLvField)
+
+def HpBarAbbreviationExcelAddStandardHpBarField(builder, standardHpBarField):
+    builder.PrependInt32Slot(1, standardHpBarField, 0)
+
 def AddStandardHpBarField(builder, standardHpBarField):
-    return HpBarAbbreviationExcelAddStandardHpBarField(builder, standardHpBarField)
-def HpBarAbbreviationExcelAddRaidBossHpBarField(builder, raidBossHpBarField): builder.PrependInt32Slot(2, raidBossHpBarField, 0)
+    HpBarAbbreviationExcelAddStandardHpBarField(builder, standardHpBarField)
+
+def HpBarAbbreviationExcelAddRaidBossHpBarField(builder, raidBossHpBarField):
+    builder.PrependInt32Slot(2, raidBossHpBarField, 0)
+
 def AddRaidBossHpBarField(builder, raidBossHpBarField):
-    return HpBarAbbreviationExcelAddRaidBossHpBarField(builder, raidBossHpBarField)
-def HpBarAbbreviationExcelEnd(builder): return builder.EndObject()
+    HpBarAbbreviationExcelAddRaidBossHpBarField(builder, raidBossHpBarField)
+
+def HpBarAbbreviationExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return HpBarAbbreviationExcelEnd(builder)

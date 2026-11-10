@@ -65,21 +65,38 @@ class VoiceCommonExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
-def VoiceCommonExcelStart(builder): builder.StartObject(3)
+def VoiceCommonExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return VoiceCommonExcelStart(builder)
-def VoiceCommonExcelAddVoiceEventField(builder, voiceEventField): builder.PrependInt32Slot(0, voiceEventField, 0)
+    VoiceCommonExcelStart(builder)
+
+def VoiceCommonExcelAddVoiceEventField(builder, voiceEventField):
+    builder.PrependInt32Slot(0, voiceEventField, 0)
+
 def AddVoiceEventField(builder, voiceEventField):
-    return VoiceCommonExcelAddVoiceEventField(builder, voiceEventField)
-def VoiceCommonExcelAddRateField(builder, rateField): builder.PrependInt32Slot(1, rateField, 0)
+    VoiceCommonExcelAddVoiceEventField(builder, voiceEventField)
+
+def VoiceCommonExcelAddRateField(builder, rateField):
+    builder.PrependInt32Slot(1, rateField, 0)
+
 def AddRateField(builder, rateField):
-    return VoiceCommonExcelAddRateField(builder, rateField)
-def VoiceCommonExcelAddVoiceHashField(builder, voiceHashField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(voiceHashField), 0)
+    VoiceCommonExcelAddRateField(builder, rateField)
+
+def VoiceCommonExcelAddVoiceHashField(builder, voiceHashField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(voiceHashField), 0)
+
 def AddVoiceHashField(builder, voiceHashField):
-    return VoiceCommonExcelAddVoiceHashField(builder, voiceHashField)
-def VoiceCommonExcelStartVoiceHashFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartVoiceHashFieldVector(builder, numElems):
+    VoiceCommonExcelAddVoiceHashField(builder, voiceHashField)
+
+def VoiceCommonExcelStartVoiceHashFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartVoiceHashFieldVector(builder, numElems: int) -> int:
     return VoiceCommonExcelStartVoiceHashFieldVector(builder, numElems)
-def VoiceCommonExcelEnd(builder): return builder.EndObject()
+
+def VoiceCommonExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return VoiceCommonExcelEnd(builder)

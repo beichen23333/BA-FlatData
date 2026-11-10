@@ -38,15 +38,26 @@ class StageFileRefreshSettingExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def StageFileRefreshSettingExcelStart(builder): builder.StartObject(2)
+def StageFileRefreshSettingExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return StageFileRefreshSettingExcelStart(builder)
-def StageFileRefreshSettingExcelAddGroundIdField(builder, groundIdField): builder.PrependInt32Slot(0, groundIdField, 0)
+    StageFileRefreshSettingExcelStart(builder)
+
+def StageFileRefreshSettingExcelAddGroundIdField(builder, groundIdField):
+    builder.PrependInt32Slot(0, groundIdField, 0)
+
 def AddGroundIdField(builder, groundIdField):
-    return StageFileRefreshSettingExcelAddGroundIdField(builder, groundIdField)
-def StageFileRefreshSettingExcelAddForceSaveField(builder, forceSaveField): builder.PrependBoolSlot(1, forceSaveField, 0)
+    StageFileRefreshSettingExcelAddGroundIdField(builder, groundIdField)
+
+def StageFileRefreshSettingExcelAddForceSaveField(builder, forceSaveField):
+    builder.PrependBoolSlot(1, forceSaveField, 0)
+
 def AddForceSaveField(builder, forceSaveField):
-    return StageFileRefreshSettingExcelAddForceSaveField(builder, forceSaveField)
-def StageFileRefreshSettingExcelEnd(builder): return builder.EndObject()
+    StageFileRefreshSettingExcelAddForceSaveField(builder, forceSaveField)
+
+def StageFileRefreshSettingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return StageFileRefreshSettingExcelEnd(builder)

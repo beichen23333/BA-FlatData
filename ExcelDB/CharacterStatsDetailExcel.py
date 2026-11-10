@@ -85,24 +85,44 @@ class CharacterStatsDetailExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
-def CharacterStatsDetailExcelStart(builder): builder.StartObject(3)
+def CharacterStatsDetailExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return CharacterStatsDetailExcelStart(builder)
-def CharacterStatsDetailExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    CharacterStatsDetailExcelStart(builder)
+
+def CharacterStatsDetailExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return CharacterStatsDetailExcelAddIdField(builder, idField)
-def CharacterStatsDetailExcelAddDetailShowStatsField(builder, detailShowStatsField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(detailShowStatsField), 0)
+    CharacterStatsDetailExcelAddIdField(builder, idField)
+
+def CharacterStatsDetailExcelAddDetailShowStatsField(builder, detailShowStatsField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(detailShowStatsField), 0)
+
 def AddDetailShowStatsField(builder, detailShowStatsField):
-    return CharacterStatsDetailExcelAddDetailShowStatsField(builder, detailShowStatsField)
-def CharacterStatsDetailExcelStartDetailShowStatsFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDetailShowStatsFieldVector(builder, numElems):
+    CharacterStatsDetailExcelAddDetailShowStatsField(builder, detailShowStatsField)
+
+def CharacterStatsDetailExcelStartDetailShowStatsFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDetailShowStatsFieldVector(builder, numElems: int) -> int:
     return CharacterStatsDetailExcelStartDetailShowStatsFieldVector(builder, numElems)
-def CharacterStatsDetailExcelAddIsStatsPercentField(builder, isStatsPercentField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(isStatsPercentField), 0)
+
+def CharacterStatsDetailExcelAddIsStatsPercentField(builder, isStatsPercentField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(isStatsPercentField), 0)
+
 def AddIsStatsPercentField(builder, isStatsPercentField):
-    return CharacterStatsDetailExcelAddIsStatsPercentField(builder, isStatsPercentField)
-def CharacterStatsDetailExcelStartIsStatsPercentFieldVector(builder, numElems): return builder.StartVector(1, numElems, 1)
-def StartIsStatsPercentFieldVector(builder, numElems):
+    CharacterStatsDetailExcelAddIsStatsPercentField(builder, isStatsPercentField)
+
+def CharacterStatsDetailExcelStartIsStatsPercentFieldVector(builder, numElems):
+    return builder.StartVector(1, numElems, 1)
+
+def StartIsStatsPercentFieldVector(builder, numElems: int) -> int:
     return CharacterStatsDetailExcelStartIsStatsPercentFieldVector(builder, numElems)
-def CharacterStatsDetailExcelEnd(builder): return builder.EndObject()
+
+def CharacterStatsDetailExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterStatsDetailExcelEnd(builder)

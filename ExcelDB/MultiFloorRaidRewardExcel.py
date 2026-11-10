@@ -59,24 +59,44 @@ class MultiFloorRaidRewardExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MultiFloorRaidRewardExcelStart(builder): builder.StartObject(5)
+def MultiFloorRaidRewardExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return MultiFloorRaidRewardExcelStart(builder)
-def MultiFloorRaidRewardExcelAddRewardGroupIdField(builder, rewardGroupIdField): builder.PrependInt32Slot(0, rewardGroupIdField, 0)
+    MultiFloorRaidRewardExcelStart(builder)
+
+def MultiFloorRaidRewardExcelAddRewardGroupIdField(builder, rewardGroupIdField):
+    builder.PrependInt32Slot(0, rewardGroupIdField, 0)
+
 def AddRewardGroupIdField(builder, rewardGroupIdField):
-    return MultiFloorRaidRewardExcelAddRewardGroupIdField(builder, rewardGroupIdField)
-def MultiFloorRaidRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField): builder.PrependInt32Slot(1, clearStageRewardProbField, 0)
+    MultiFloorRaidRewardExcelAddRewardGroupIdField(builder, rewardGroupIdField)
+
+def MultiFloorRaidRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField):
+    builder.PrependInt32Slot(1, clearStageRewardProbField, 0)
+
 def AddClearStageRewardProbField(builder, clearStageRewardProbField):
-    return MultiFloorRaidRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField)
-def MultiFloorRaidRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField): builder.PrependInt32Slot(2, clearStageRewardParcelTypeField, 0)
+    MultiFloorRaidRewardExcelAddClearStageRewardProbField(builder, clearStageRewardProbField)
+
+def MultiFloorRaidRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField):
+    builder.PrependInt32Slot(2, clearStageRewardParcelTypeField, 0)
+
 def AddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField):
-    return MultiFloorRaidRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField)
-def MultiFloorRaidRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField): builder.PrependInt32Slot(3, clearStageRewardParcelUniqueIDField, 0)
+    MultiFloorRaidRewardExcelAddClearStageRewardParcelTypeField(builder, clearStageRewardParcelTypeField)
+
+def MultiFloorRaidRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField):
+    builder.PrependInt32Slot(3, clearStageRewardParcelUniqueIDField, 0)
+
 def AddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField):
-    return MultiFloorRaidRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField)
-def MultiFloorRaidRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField): builder.PrependInt32Slot(4, clearStageRewardAmountField, 0)
+    MultiFloorRaidRewardExcelAddClearStageRewardParcelUniqueIDField(builder, clearStageRewardParcelUniqueIDField)
+
+def MultiFloorRaidRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField):
+    builder.PrependInt32Slot(4, clearStageRewardAmountField, 0)
+
 def AddClearStageRewardAmountField(builder, clearStageRewardAmountField):
-    return MultiFloorRaidRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField)
-def MultiFloorRaidRewardExcelEnd(builder): return builder.EndObject()
+    MultiFloorRaidRewardExcelAddClearStageRewardAmountField(builder, clearStageRewardAmountField)
+
+def MultiFloorRaidRewardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MultiFloorRaidRewardExcelEnd(builder)

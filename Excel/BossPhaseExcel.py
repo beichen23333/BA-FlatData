@@ -72,24 +72,44 @@ class BossPhaseExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         return o == 0
 
-def BossPhaseExcelStart(builder): builder.StartObject(4)
+def BossPhaseExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return BossPhaseExcelStart(builder)
-def BossPhaseExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    BossPhaseExcelStart(builder)
+
+def BossPhaseExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return BossPhaseExcelAddIdField(builder, idField)
-def BossPhaseExcelAddAIPhaseField(builder, aIPhaseField): builder.PrependInt32Slot(1, aIPhaseField, 0)
+    BossPhaseExcelAddIdField(builder, idField)
+
+def BossPhaseExcelAddAIPhaseField(builder, aIPhaseField):
+    builder.PrependInt32Slot(1, aIPhaseField, 0)
+
 def AddAIPhaseField(builder, aIPhaseField):
-    return BossPhaseExcelAddAIPhaseField(builder, aIPhaseField)
-def BossPhaseExcelAddNormalAttackSkillUniqueNameField(builder, normalAttackSkillUniqueNameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(normalAttackSkillUniqueNameField), 0)
+    BossPhaseExcelAddAIPhaseField(builder, aIPhaseField)
+
+def BossPhaseExcelAddNormalAttackSkillUniqueNameField(builder, normalAttackSkillUniqueNameField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(normalAttackSkillUniqueNameField), 0)
+
 def AddNormalAttackSkillUniqueNameField(builder, normalAttackSkillUniqueNameField):
-    return BossPhaseExcelAddNormalAttackSkillUniqueNameField(builder, normalAttackSkillUniqueNameField)
-def BossPhaseExcelAddUseExSkillField(builder, useExSkillField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(useExSkillField), 0)
+    BossPhaseExcelAddNormalAttackSkillUniqueNameField(builder, normalAttackSkillUniqueNameField)
+
+def BossPhaseExcelAddUseExSkillField(builder, useExSkillField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(useExSkillField), 0)
+
 def AddUseExSkillField(builder, useExSkillField):
-    return BossPhaseExcelAddUseExSkillField(builder, useExSkillField)
-def BossPhaseExcelStartUseExSkillFieldVector(builder, numElems): return builder.StartVector(1, numElems, 1)
-def StartUseExSkillFieldVector(builder, numElems):
+    BossPhaseExcelAddUseExSkillField(builder, useExSkillField)
+
+def BossPhaseExcelStartUseExSkillFieldVector(builder, numElems):
+    return builder.StartVector(1, numElems, 1)
+
+def StartUseExSkillFieldVector(builder, numElems: int) -> int:
     return BossPhaseExcelStartUseExSkillFieldVector(builder, numElems)
-def BossPhaseExcelEnd(builder): return builder.EndObject()
+
+def BossPhaseExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BossPhaseExcelEnd(builder)

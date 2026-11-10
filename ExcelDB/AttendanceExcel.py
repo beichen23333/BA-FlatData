@@ -164,69 +164,134 @@ class AttendanceExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def AttendanceExcelStart(builder): builder.StartObject(20)
+def AttendanceExcelStart(builder):
+    builder.StartObject(20)
+
 def Start(builder):
-    return AttendanceExcelStart(builder)
-def AttendanceExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    AttendanceExcelStart(builder)
+
+def AttendanceExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return AttendanceExcelAddIdField(builder, idField)
-def AttendanceExcelAddTypeField(builder, typeField): builder.PrependInt32Slot(1, typeField, 0)
+    AttendanceExcelAddIdField(builder, idField)
+
+def AttendanceExcelAddTypeField(builder, typeField):
+    builder.PrependInt32Slot(1, typeField, 0)
+
 def AddTypeField(builder, typeField):
-    return AttendanceExcelAddTypeField(builder, typeField)
-def AttendanceExcelAddCountdownPrefabField(builder, countdownPrefabField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(countdownPrefabField), 0)
+    AttendanceExcelAddTypeField(builder, typeField)
+
+def AttendanceExcelAddCountdownPrefabField(builder, countdownPrefabField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(countdownPrefabField), 0)
+
 def AddCountdownPrefabField(builder, countdownPrefabField):
-    return AttendanceExcelAddCountdownPrefabField(builder, countdownPrefabField)
-def AttendanceExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(3, displayOrderField, 0)
+    AttendanceExcelAddCountdownPrefabField(builder, countdownPrefabField)
+
+def AttendanceExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(3, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return AttendanceExcelAddDisplayOrderField(builder, displayOrderField)
-def AttendanceExcelAddTargetGroupField(builder, targetGroupField): builder.PrependInt32Slot(4, targetGroupField, 0)
+    AttendanceExcelAddDisplayOrderField(builder, displayOrderField)
+
+def AttendanceExcelAddTargetGroupField(builder, targetGroupField):
+    builder.PrependInt32Slot(4, targetGroupField, 0)
+
 def AddTargetGroupField(builder, targetGroupField):
-    return AttendanceExcelAddTargetGroupField(builder, targetGroupField)
-def AttendanceExcelAddAccountLevelLimitField(builder, accountLevelLimitField): builder.PrependInt32Slot(5, accountLevelLimitField, 0)
+    AttendanceExcelAddTargetGroupField(builder, targetGroupField)
+
+def AttendanceExcelAddAccountLevelLimitField(builder, accountLevelLimitField):
+    builder.PrependInt32Slot(5, accountLevelLimitField, 0)
+
 def AddAccountLevelLimitField(builder, accountLevelLimitField):
-    return AttendanceExcelAddAccountLevelLimitField(builder, accountLevelLimitField)
-def AttendanceExcelAddTitleField(builder, titleField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(titleField), 0)
+    AttendanceExcelAddAccountLevelLimitField(builder, accountLevelLimitField)
+
+def AttendanceExcelAddTitleField(builder, titleField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(titleField), 0)
+
 def AddTitleField(builder, titleField):
-    return AttendanceExcelAddTitleField(builder, titleField)
-def AttendanceExcelAddInfomationLocalizeCodeField(builder, infomationLocalizeCodeField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(infomationLocalizeCodeField), 0)
+    AttendanceExcelAddTitleField(builder, titleField)
+
+def AttendanceExcelAddInfomationLocalizeCodeField(builder, infomationLocalizeCodeField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(infomationLocalizeCodeField), 0)
+
 def AddInfomationLocalizeCodeField(builder, infomationLocalizeCodeField):
-    return AttendanceExcelAddInfomationLocalizeCodeField(builder, infomationLocalizeCodeField)
-def AttendanceExcelAddCountRuleField(builder, countRuleField): builder.PrependInt32Slot(8, countRuleField, 0)
+    AttendanceExcelAddInfomationLocalizeCodeField(builder, infomationLocalizeCodeField)
+
+def AttendanceExcelAddCountRuleField(builder, countRuleField):
+    builder.PrependInt32Slot(8, countRuleField, 0)
+
 def AddCountRuleField(builder, countRuleField):
-    return AttendanceExcelAddCountRuleField(builder, countRuleField)
-def AttendanceExcelAddCountResetField(builder, countResetField): builder.PrependInt32Slot(9, countResetField, 0)
+    AttendanceExcelAddCountRuleField(builder, countRuleField)
+
+def AttendanceExcelAddCountResetField(builder, countResetField):
+    builder.PrependInt32Slot(9, countResetField, 0)
+
 def AddCountResetField(builder, countResetField):
-    return AttendanceExcelAddCountResetField(builder, countResetField)
-def AttendanceExcelAddBookSizeField(builder, bookSizeField): builder.PrependInt32Slot(10, bookSizeField, 0)
+    AttendanceExcelAddCountResetField(builder, countResetField)
+
+def AttendanceExcelAddBookSizeField(builder, bookSizeField):
+    builder.PrependInt32Slot(10, bookSizeField, 0)
+
 def AddBookSizeField(builder, bookSizeField):
-    return AttendanceExcelAddBookSizeField(builder, bookSizeField)
-def AttendanceExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+    AttendanceExcelAddBookSizeField(builder, bookSizeField)
+
+def AttendanceExcelAddStartDateField(builder, startDateField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+
 def AddStartDateField(builder, startDateField):
-    return AttendanceExcelAddStartDateField(builder, startDateField)
-def AttendanceExcelAddStartableEndDateField(builder, startableEndDateField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(startableEndDateField), 0)
+    AttendanceExcelAddStartDateField(builder, startDateField)
+
+def AttendanceExcelAddStartableEndDateField(builder, startableEndDateField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(startableEndDateField), 0)
+
 def AddStartableEndDateField(builder, startableEndDateField):
-    return AttendanceExcelAddStartableEndDateField(builder, startableEndDateField)
-def AttendanceExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+    AttendanceExcelAddStartableEndDateField(builder, startableEndDateField)
+
+def AttendanceExcelAddEndDateField(builder, endDateField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+
 def AddEndDateField(builder, endDateField):
-    return AttendanceExcelAddEndDateField(builder, endDateField)
-def AttendanceExcelAddExpiryDateField(builder, expiryDateField): builder.PrependInt32Slot(14, expiryDateField, 0)
+    AttendanceExcelAddEndDateField(builder, endDateField)
+
+def AttendanceExcelAddExpiryDateField(builder, expiryDateField):
+    builder.PrependInt32Slot(14, expiryDateField, 0)
+
 def AddExpiryDateField(builder, expiryDateField):
-    return AttendanceExcelAddExpiryDateField(builder, expiryDateField)
-def AttendanceExcelAddMailTypeField(builder, mailTypeField): builder.PrependInt32Slot(15, mailTypeField, 0)
+    AttendanceExcelAddExpiryDateField(builder, expiryDateField)
+
+def AttendanceExcelAddMailTypeField(builder, mailTypeField):
+    builder.PrependInt32Slot(15, mailTypeField, 0)
+
 def AddMailTypeField(builder, mailTypeField):
-    return AttendanceExcelAddMailTypeField(builder, mailTypeField)
-def AttendanceExcelAddDialogCategoryField(builder, dialogCategoryField): builder.PrependInt32Slot(16, dialogCategoryField, 0)
+    AttendanceExcelAddMailTypeField(builder, mailTypeField)
+
+def AttendanceExcelAddDialogCategoryField(builder, dialogCategoryField):
+    builder.PrependInt32Slot(16, dialogCategoryField, 0)
+
 def AddDialogCategoryField(builder, dialogCategoryField):
-    return AttendanceExcelAddDialogCategoryField(builder, dialogCategoryField)
-def AttendanceExcelAddTitleImagePathField(builder, titleImagePathField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePathField), 0)
+    AttendanceExcelAddDialogCategoryField(builder, dialogCategoryField)
+
+def AttendanceExcelAddTitleImagePathField(builder, titleImagePathField):
+    builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(titleImagePathField), 0)
+
 def AddTitleImagePathField(builder, titleImagePathField):
-    return AttendanceExcelAddTitleImagePathField(builder, titleImagePathField)
-def AttendanceExcelAddDecorationImagePathField(builder, decorationImagePathField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(decorationImagePathField), 0)
+    AttendanceExcelAddTitleImagePathField(builder, titleImagePathField)
+
+def AttendanceExcelAddDecorationImagePathField(builder, decorationImagePathField):
+    builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(decorationImagePathField), 0)
+
 def AddDecorationImagePathField(builder, decorationImagePathField):
-    return AttendanceExcelAddDecorationImagePathField(builder, decorationImagePathField)
-def AttendanceExcelAddDecorationGarlandImagePathField(builder, decorationGarlandImagePathField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(decorationGarlandImagePathField), 0)
+    AttendanceExcelAddDecorationImagePathField(builder, decorationImagePathField)
+
+def AttendanceExcelAddDecorationGarlandImagePathField(builder, decorationGarlandImagePathField):
+    builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(decorationGarlandImagePathField), 0)
+
 def AddDecorationGarlandImagePathField(builder, decorationGarlandImagePathField):
-    return AttendanceExcelAddDecorationGarlandImagePathField(builder, decorationGarlandImagePathField)
-def AttendanceExcelEnd(builder): return builder.EndObject()
+    AttendanceExcelAddDecorationGarlandImagePathField(builder, decorationGarlandImagePathField)
+
+def AttendanceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AttendanceExcelEnd(builder)

@@ -506,6 +506,7 @@ enum BattleCalculationStat:int {
 enum StatTransType:int {
     SpecialTransStat = 0,
     TSATransStat = 1,
+    SumSynergyBulletType = 2,
 }
 
 enum BattleDialogType:int {
@@ -643,7 +644,15 @@ enum StatType:int {
     EffectiveDamagedRatio = 90,
     NormalDamagedRatio = 91,
     ResistDamagedRatio = 92,
-    Max = 93,
+    AddDamageRatioSynergyBulletType = 93,
+    AddStreetTerrainFactor = 94,
+    AddOutdoorTerrainFactor = 95,
+    AddIndoorTerrainFactor = 96,
+    EnhanceResistDamageRate = 97,
+    ReduceResistDamagedRate = 98,
+    AddSummonedObstacleDamagedRatio = 99,
+    DamagedRatio_Obstacle = 100,
+    Max = 101,
 }
 
 enum ProductionStep:int {
@@ -698,6 +707,14 @@ enum GrowthFactor:int {
     PotentialStat03Level = 16,
     FavorRank = 17,
     Max = 18,
+}
+
+enum GrowthReturnType:int {
+    None = 0,
+    ExpItemReturn = 1,
+    ExpCreditReturn = 2,
+    EquipmentExpItemReturn = 3,
+    EquipmentCreditReturn = 4,
 }
 
 enum ClanRewardType:int {
@@ -790,6 +807,7 @@ enum ContentType:int {
     MinigameDefense = 22,
     InteractiveWorldRaid = 23,
     PermanentRaid = 24,
+    TacticalRelay = 25,
 }
 
 enum EventContentType:int {
@@ -837,6 +855,7 @@ enum EventContentType:int {
     Concentration = 41,
     InteractiveWorldRaid = 42,
     ClueSearch = 43,
+    MinigameJanken = 44,
 }
 
 enum StarGoalType:int {
@@ -846,6 +865,8 @@ enum StarGoalType:int {
     GetBoxes = 3,
     ClearTimeInSec = 4,
     AllyBaseDamage = 5,
+    UsedTurn = 6,
+    LeftHitPoint = 7,
 }
 
 enum OpenConditionContent:int {
@@ -910,6 +931,9 @@ enum OpenConditionContent:int {
     Main_L_1_5 = 58,
     Main_SNS = 59,
     PermanentRaid = 60,
+    MinigameJanken = 61,
+    TacticalRelay = 62,
+    Engrave = 63,
 }
 
 enum TutorialFailureContentType:int {
@@ -923,6 +947,7 @@ enum TutorialFailureContentType:int {
     EliminateRaid = 7,
     MultiFloorRaid = 8,
     InteractiveWorldRaid = 9,
+    TacticalRelay = 10,
 }
 
 enum FeverBattleType:int {
@@ -950,6 +975,7 @@ enum EventTargetType:int {
     Raid = 8,
     EliminateRaid = 9,
     MultiFloorRaid = 10,
+    TacticalRelay = 11,
 }
 
 enum EventContentItemType:int {
@@ -994,6 +1020,7 @@ enum ShortcutContentType:int {
     Academy = 11,
     Mission = 12,
     MultiFloorRaid = 13,
+    TacticalRelay = 14,
 }
 
 enum SchoolDungeonType:int {
@@ -1047,6 +1074,7 @@ enum EventNotifyType:int {
     TimeAttackDungeonSeasonManage = 3,
     EliminateRaidSeasonManage = 4,
     MultiFloorRaidSeasonManage = 5,
+    TacticalRelaySeasonManage = 6,
 }
 
 enum EventContentDiceRaceResultType:int {
@@ -1149,6 +1177,25 @@ enum RaidBossGroupType:int {
     EN0010 = 12,
     EN0013 = 13,
     EN0022 = 14,
+    EN0023 = 15,
+}
+
+enum TacticalRelayStageType:int {
+    None = 0,
+    Explosion = 1,
+    Pierce = 2,
+    Mystic = 3,
+    Sonic = 4,
+    Chemical = 5,
+}
+
+enum ApcSynergyTriggerType:int {
+    CharacterId = 0,
+    WeaponType = 1,
+    School = 2,
+    Club = 3,
+    PersonalityId = 4,
+    Tags = 5,
 }
 
 enum EquipmentCategory:int {
@@ -1265,6 +1312,14 @@ enum EquipmentOptionType:int {
     EnhanceChemicalRate_Coefficient = 92,
     EnhanceCompositeArmorRate_Base = 93,
     EnhanceCompositeArmorRate_Coefficient = 94,
+    AddStreetTerrainFactor_Base = 95,
+    AddOutdoorTerrainFactor_Base = 96,
+    AddIndoorTerrainFactor_Base = 97,
+    ReduceResistDamagedRate_Base = 98,
+    AddSummonedObstacleDamagedRatio_Base = 99,
+    EnhanceExDamageRate_Base = 100,
+    EnhanceBasicsDamageRate_Base = 101,
+    AddDamageRatioSynergyBulletType_Base = 102,
 }
 
 enum MultipleConditionCheckType:int {
@@ -1312,6 +1367,14 @@ enum EchelonType:int {
     MultiFloorRaid = 24,
     MinigameDefense = 25,
     PermanentRaid = 26,
+    TacticalRelay = 27,
+    TacticalRelayExplosion = 28,
+    TacticalRelayPierce = 29,
+    TacticalRelayMystic = 30,
+    TacticalRelaySonic = 31,
+    TacticalRelayChemical = 32,
+    WeekDungeonChaserD = 33,
+    WeekDungeonChaserE = 34,
 }
 
 enum EchelonExtensionType:int {
@@ -1471,6 +1534,45 @@ enum DirectingCharacter:int {
     Both = 3,
 }
 
+enum NodeGrade:int {
+    Start = 0,
+    Normal = 1,
+    Rare = 2,
+    Unique = 3,
+    KeyStone = 4,
+}
+
+enum FrameCategory:int {
+    None = 0,
+    Default = 1,
+    Mission = 2,
+    GroupStory = 3,
+    Event = 4,
+    MainStory = 5,
+    Favor = 6,
+    Boss = 7,
+    Etc = 8,
+    Etc_Anniversary = 9,
+    MultiFloorRaid = 10,
+    Potential = 11,
+    BattlePass = 12,
+}
+
+enum FrameDisplayType:int {
+    Always = 0,
+    Time = 1,
+    Favor = 2,
+    Potential = 3,
+}
+
+enum FrameCheckPassType:int {
+    None = 0,
+    Default = 1,
+    Favor = 2,
+    Story = 3,
+    Potential = 4,
+}
+
 enum FieldConditionType:int {
     Invalid = 0,
     Interaction = 1,
@@ -1588,6 +1690,7 @@ enum ItemCategory:int {
     BattlePass = 10,
     ProductSelect = 11,
     ProductDailyRecord = 12,
+    ProductStreakRecord = 13,
 }
 
 enum DisplayGroupType:int {
@@ -1603,6 +1706,7 @@ enum DisplayGroupType:int {
     MinigameShooting = 9,
     MinigameRoad = 10,
     MinigameCCG = 11,
+    MinigameJanken = 12,
 }
 
 enum MailType:int {
@@ -1642,6 +1746,10 @@ enum MailType:int {
     PaymentCenterBattlePass = 33,
     PaymentCenterDailyRecord = 34,
     ExpiryProductDailyRecordItem = 35,
+    ExpiryStreakRecordItem = 36,
+    ExpirySeasonRecordItem = 37,
+    PaymentCenterStreakRecord = 38,
+    ExpiryGlobalAttendanceItem = 39,
 }
 
 enum AttendanceType:int {
@@ -1797,6 +1905,24 @@ enum DreamMakerEndingRewardType:int {
     LoopEndingReward = 2,
 }
 
+enum JankenStageType:int {
+    None = 0,
+    Story = 1,
+    Normal = 2,
+    Challenge = 3,
+}
+
+enum JankenVoiceCondition:int {
+    None = 0,
+    WinTurn = 1,
+    LoseTurn = 2,
+    DrawTurn = 3,
+    WinTurnSpecial = 4,
+    LoseTurnSpecial = 5,
+    WinBattle = 6,
+    LoseBattle = 7,
+}
+
 enum RoadPuzzleMapTileType:int {
     None = 0,
     Start = 1,
@@ -1924,6 +2050,7 @@ enum MissionCategory:int {
     DailyFixed = 10,
     EventFixed = 11,
     WelcomeMission = 12,
+    CharacterAdaptationMission = 13,
 }
 
 enum MissionResetType:int {
@@ -2124,6 +2251,12 @@ enum MissionCompleteConditionType:int {
     Reset_WorldRaidActivateCoreCount = 187,
     Reset_WorldRaidActivateUSBCount = 188,
     Reset_EnterUICount = 189,
+    Reset_JankenClearCount = 190,
+    Reset_JankenEquipmentTierCheckCount = 191,
+    Reset_JankenGetSpecificScore = 192,
+    Reset_SpecificTacticalRelayWaveClear = 193,
+    Achieve_ClearTacticalRelayCount = 194,
+    Achieve_EngraveLevelUpCount = 195,
 }
 
 enum MissionToastDisplayConditionType:int {
@@ -2289,6 +2422,8 @@ enum ParcelType:int {
     ProductSelect = 29,
     SNSPost = 30,
     ProductDailyRecord = 31,
+    StudentFrame = 32,
+    ProductStreakRecord = 33,
 }
 
 enum Rarity:int {
@@ -2354,6 +2489,7 @@ enum RecipeType:int {
     WeaponTranscendence = 7,
     SelectRecruit = 8,
     CharacterPotential = 9,
+    EngraveOpen = 10,
 }
 
 enum GachaGroupType:int {
@@ -2391,6 +2527,8 @@ enum ScenarioCharacterAction:int {
     Stiff = 5,
     Hophop = 6,
     Jump = 7,
+    FalldownLeftAuto = 8,
+    FalldownRightAuto = 9,
 }
 
 enum ScenarioCharacterShapes:int {
@@ -2490,6 +2628,8 @@ enum DialogCategory:int {
     UIEventClueSearch = 77,
     UIWorkAronaWatering = 78,
     UIWorkCoexist_PlanaWatchPot = 79,
+    UIAttendanceEvent22 = 80,
+    UITacticalRelay = 81,
 }
 
 enum DialogCondition:int {
@@ -2567,6 +2707,7 @@ enum School:int {
     Tokiwadai = 14,
     Sakugawa = 15,
     Highlander = 16,
+    Odyssey = 17,
 }
 
 enum StoryCondition:int {
@@ -2731,6 +2872,8 @@ enum PurchaseSourceType:int {
     ProductSelect = 4,
     ProductGooglePoint = 5,
     ProductDailyRecord = 6,
+    ProductStreakRecord = 7,
+    ProductPickupPackage_UseGlobal = 8,
 }
 
 enum ProductCategory:int {
@@ -2743,6 +2886,19 @@ enum ProductCategory:int {
     BattlePass = 6,
     GooglePoint = 7,
     DailyRecord = 8,
+    StreakRecord = 9,
+    PackagePickup = 10,
+    PackageDaily = 11,
+    PackageWeekly = 12,
+    PackageMonthly = 13,
+    GemLimited = 14,
+    TimeLimit2 = 15,
+    TimeLimit3 = 16,
+    TimeLimit4 = 17,
+    Stepup1 = 18,
+    Stepup2 = 19,
+    SpecialSupport = 20,
+    Stepup3 = 21,
 }
 
 enum ProductDisplayTag:int {
@@ -2752,6 +2908,7 @@ enum ProductDisplayTag:int {
     Sale = 3,
     Limited = 4,
     Free = 5,
+    Recommend = 6,
 }
 
 enum ProductTagType:int {
@@ -2779,47 +2936,8 @@ enum GachaDisplayTag:int {
     Revival = 9,
     SelectLimited = 10,
     NewbieDateLimited = 11,
-}
-
-enum ShopFilterType:int {
-    GachaTicket = 0,
-    SecretStone = 1,
-    SecretStone_1 = 2,
-    SkillBook_Ultimate = 3,
-    ExSkill = 4,
-    SkillBook = 5,
-    Craft = 6,
-    AP = 7,
-    CharacterExpItem = 8,
-    Equip = 9,
-    Material = 10,
-    Creddit = 11,
-    Furniture = 12,
-    SelectItem = 13,
-    Currency = 14,
-    Hyakkiyako = 15,
-    RedWinter = 16,
-    Trinity = 17,
-    Gehenna = 18,
-    Abydos = 19,
-    Millennium = 20,
-    Arius = 21,
-    Shanhaijing = 22,
-    Valkyrie = 23,
-    WildHunt = 24,
-    Event = 25,
-    ChaserTotalTicket = 26,
-    SchoolTotalTicket = 27,
-    SRT = 28,
-    Highlander = 29,
-    ShopFilterDUMMY_3 = 30,
-    ShopFilterDUMMY_4 = 31,
-    ShopFilterDUMMY_5 = 32,
-    ShopFilterDUMMY_6 = 33,
-    ShopFilterDUMMY_7 = 34,
-    ETC = 35,
-    Bundle = 36,
-    FavorItem = 37,
+    Unowned = 12,
+    SelectRecruitNotForSale = 13,
 }
 
 enum ShopRefresherType:int {
@@ -2855,6 +2973,30 @@ enum AutoSelectPopupType:int {
     None = 0,
     FavorItem = 1,
     GrowthItem = 2,
+}
+
+enum ProductGroupType:int {
+    None = 0,
+    Recommend = 1,
+    TimeLimit = 2,
+    Package = 3,
+    Monthly = 4,
+    Gem = 5,
+    Stepup = 6,
+    SpecialSupport = 7,
+}
+
+enum RecommendPageType:int {
+    Package = 0,
+    Gem = 1,
+    Monthly = 2,
+    SelectSecretStone = 3,
+}
+
+enum WishListConfig:int {
+    NotUse = 0,
+    UseToggle = 1,
+    UseFixed = 2,
 }
 
 enum AccountState:int {
@@ -6023,5 +6165,7 @@ enum Club:int {
     NicomediasTroop = 55,
     PublishingDepartment = 56,
     FoxSquad = 57,
+    DivingClub = 58,
+    Class183 = 59,
 }
 

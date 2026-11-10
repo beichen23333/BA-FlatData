@@ -49,15 +49,26 @@ class ScenarioBGName_GlobalExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ScenarioBGName_GlobalExcelTableStart(builder): builder.StartObject(1)
+def ScenarioBGName_GlobalExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ScenarioBGName_GlobalExcelTableStart(builder)
-def ScenarioBGName_GlobalExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ScenarioBGName_GlobalExcelTableStart(builder)
+
+def ScenarioBGName_GlobalExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ScenarioBGName_GlobalExcelTableAddDataList(builder, dataList)
-def ScenarioBGName_GlobalExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ScenarioBGName_GlobalExcelTableAddDataList(builder, dataList)
+
+def ScenarioBGName_GlobalExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ScenarioBGName_GlobalExcelTableStartDataListVector(builder, numElems)
-def ScenarioBGName_GlobalExcelTableEnd(builder): return builder.EndObject()
+
+def ScenarioBGName_GlobalExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioBGName_GlobalExcelTableEnd(builder)

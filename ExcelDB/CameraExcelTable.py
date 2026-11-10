@@ -49,15 +49,26 @@ class CameraExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def CameraExcelTableStart(builder): builder.StartObject(1)
+def CameraExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return CameraExcelTableStart(builder)
-def CameraExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    CameraExcelTableStart(builder)
+
+def CameraExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return CameraExcelTableAddDataList(builder, dataList)
-def CameraExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    CameraExcelTableAddDataList(builder, dataList)
+
+def CameraExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return CameraExcelTableStartDataListVector(builder, numElems)
-def CameraExcelTableEnd(builder): return builder.EndObject()
+
+def CameraExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CameraExcelTableEnd(builder)

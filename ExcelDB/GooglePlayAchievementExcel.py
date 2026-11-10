@@ -59,24 +59,44 @@ class GooglePlayAchievementExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def GooglePlayAchievementExcelStart(builder): builder.StartObject(5)
+def GooglePlayAchievementExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return GooglePlayAchievementExcelStart(builder)
-def GooglePlayAchievementExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    GooglePlayAchievementExcelStart(builder)
+
+def GooglePlayAchievementExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return GooglePlayAchievementExcelAddIdField(builder, idField)
-def GooglePlayAchievementExcelAddConditionTypeField(builder, conditionTypeField): builder.PrependInt32Slot(1, conditionTypeField, 0)
+    GooglePlayAchievementExcelAddIdField(builder, idField)
+
+def GooglePlayAchievementExcelAddConditionTypeField(builder, conditionTypeField):
+    builder.PrependInt32Slot(1, conditionTypeField, 0)
+
 def AddConditionTypeField(builder, conditionTypeField):
-    return GooglePlayAchievementExcelAddConditionTypeField(builder, conditionTypeField)
-def GooglePlayAchievementExcelAddConditionValueField(builder, conditionValueField): builder.PrependInt32Slot(2, conditionValueField, 0)
+    GooglePlayAchievementExcelAddConditionTypeField(builder, conditionTypeField)
+
+def GooglePlayAchievementExcelAddConditionValueField(builder, conditionValueField):
+    builder.PrependInt32Slot(2, conditionValueField, 0)
+
 def AddConditionValueField(builder, conditionValueField):
-    return GooglePlayAchievementExcelAddConditionValueField(builder, conditionValueField)
-def GooglePlayAchievementExcelAddGooglePlayIdField(builder, googlePlayIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(googlePlayIdField), 0)
+    GooglePlayAchievementExcelAddConditionValueField(builder, conditionValueField)
+
+def GooglePlayAchievementExcelAddGooglePlayIdField(builder, googlePlayIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(googlePlayIdField), 0)
+
 def AddGooglePlayIdField(builder, googlePlayIdField):
-    return GooglePlayAchievementExcelAddGooglePlayIdField(builder, googlePlayIdField)
-def GooglePlayAchievementExcelAddAchievementTypeField(builder, achievementTypeField): builder.PrependInt32Slot(4, achievementTypeField, 0)
+    GooglePlayAchievementExcelAddGooglePlayIdField(builder, googlePlayIdField)
+
+def GooglePlayAchievementExcelAddAchievementTypeField(builder, achievementTypeField):
+    builder.PrependInt32Slot(4, achievementTypeField, 0)
+
 def AddAchievementTypeField(builder, achievementTypeField):
-    return GooglePlayAchievementExcelAddAchievementTypeField(builder, achievementTypeField)
-def GooglePlayAchievementExcelEnd(builder): return builder.EndObject()
+    GooglePlayAchievementExcelAddAchievementTypeField(builder, achievementTypeField)
+
+def GooglePlayAchievementExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return GooglePlayAchievementExcelEnd(builder)

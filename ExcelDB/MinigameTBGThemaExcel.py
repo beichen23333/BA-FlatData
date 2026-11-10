@@ -162,60 +162,116 @@ class MinigameTBGThemaExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def MinigameTBGThemaExcelStart(builder): builder.StartObject(15)
+def MinigameTBGThemaExcelStart(builder):
+    builder.StartObject(15)
+
 def Start(builder):
-    return MinigameTBGThemaExcelStart(builder)
-def MinigameTBGThemaExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MinigameTBGThemaExcelStart(builder)
+
+def MinigameTBGThemaExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MinigameTBGThemaExcelAddEventContentIdField(builder, eventContentIdField)
-def MinigameTBGThemaExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+    MinigameTBGThemaExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MinigameTBGThemaExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(1, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MinigameTBGThemaExcelAddUniqueIdField(builder, uniqueIdField)
-def MinigameTBGThemaExcelAddThemaIndexField(builder, themaIndexField): builder.PrependInt32Slot(2, themaIndexField, 0)
+    MinigameTBGThemaExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MinigameTBGThemaExcelAddThemaIndexField(builder, themaIndexField):
+    builder.PrependInt32Slot(2, themaIndexField, 0)
+
 def AddThemaIndexField(builder, themaIndexField):
-    return MinigameTBGThemaExcelAddThemaIndexField(builder, themaIndexField)
-def MinigameTBGThemaExcelAddThemaTypeField(builder, themaTypeField): builder.PrependInt32Slot(3, themaTypeField, 0)
+    MinigameTBGThemaExcelAddThemaIndexField(builder, themaIndexField)
+
+def MinigameTBGThemaExcelAddThemaTypeField(builder, themaTypeField):
+    builder.PrependInt32Slot(3, themaTypeField, 0)
+
 def AddThemaTypeField(builder, themaTypeField):
-    return MinigameTBGThemaExcelAddThemaTypeField(builder, themaTypeField)
-def MinigameTBGThemaExcelAddThemaMapField(builder, themaMapField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(themaMapField), 0)
+    MinigameTBGThemaExcelAddThemaTypeField(builder, themaTypeField)
+
+def MinigameTBGThemaExcelAddThemaMapField(builder, themaMapField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(themaMapField), 0)
+
 def AddThemaMapField(builder, themaMapField):
-    return MinigameTBGThemaExcelAddThemaMapField(builder, themaMapField)
-def MinigameTBGThemaExcelAddThemaMapBGField(builder, themaMapBGField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(themaMapBGField), 0)
+    MinigameTBGThemaExcelAddThemaMapField(builder, themaMapField)
+
+def MinigameTBGThemaExcelAddThemaMapBGField(builder, themaMapBGField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(themaMapBGField), 0)
+
 def AddThemaMapBGField(builder, themaMapBGField):
-    return MinigameTBGThemaExcelAddThemaMapBGField(builder, themaMapBGField)
-def MinigameTBGThemaExcelAddPortalConditionField(builder, portalConditionField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(portalConditionField), 0)
+    MinigameTBGThemaExcelAddThemaMapBGField(builder, themaMapBGField)
+
+def MinigameTBGThemaExcelAddPortalConditionField(builder, portalConditionField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(portalConditionField), 0)
+
 def AddPortalConditionField(builder, portalConditionField):
-    return MinigameTBGThemaExcelAddPortalConditionField(builder, portalConditionField)
-def MinigameTBGThemaExcelStartPortalConditionFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPortalConditionFieldVector(builder, numElems):
+    MinigameTBGThemaExcelAddPortalConditionField(builder, portalConditionField)
+
+def MinigameTBGThemaExcelStartPortalConditionFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPortalConditionFieldVector(builder, numElems: int) -> int:
     return MinigameTBGThemaExcelStartPortalConditionFieldVector(builder, numElems)
-def MinigameTBGThemaExcelAddPortalConditionParameterField(builder, portalConditionParameterField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(portalConditionParameterField), 0)
+
+def MinigameTBGThemaExcelAddPortalConditionParameterField(builder, portalConditionParameterField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(portalConditionParameterField), 0)
+
 def AddPortalConditionParameterField(builder, portalConditionParameterField):
-    return MinigameTBGThemaExcelAddPortalConditionParameterField(builder, portalConditionParameterField)
-def MinigameTBGThemaExcelStartPortalConditionParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPortalConditionParameterFieldVector(builder, numElems):
+    MinigameTBGThemaExcelAddPortalConditionParameterField(builder, portalConditionParameterField)
+
+def MinigameTBGThemaExcelStartPortalConditionParameterFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPortalConditionParameterFieldVector(builder, numElems: int) -> int:
     return MinigameTBGThemaExcelStartPortalConditionParameterFieldVector(builder, numElems)
-def MinigameTBGThemaExcelAddThemaNameLocalizeField(builder, themaNameLocalizeField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(themaNameLocalizeField), 0)
+
+def MinigameTBGThemaExcelAddThemaNameLocalizeField(builder, themaNameLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(themaNameLocalizeField), 0)
+
 def AddThemaNameLocalizeField(builder, themaNameLocalizeField):
-    return MinigameTBGThemaExcelAddThemaNameLocalizeField(builder, themaNameLocalizeField)
-def MinigameTBGThemaExcelAddThemaLoadingImageField(builder, themaLoadingImageField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(themaLoadingImageField), 0)
+    MinigameTBGThemaExcelAddThemaNameLocalizeField(builder, themaNameLocalizeField)
+
+def MinigameTBGThemaExcelAddThemaLoadingImageField(builder, themaLoadingImageField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(themaLoadingImageField), 0)
+
 def AddThemaLoadingImageField(builder, themaLoadingImageField):
-    return MinigameTBGThemaExcelAddThemaLoadingImageField(builder, themaLoadingImageField)
-def MinigameTBGThemaExcelAddThemaPlayerPrefabField(builder, themaPlayerPrefabField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(themaPlayerPrefabField), 0)
+    MinigameTBGThemaExcelAddThemaLoadingImageField(builder, themaLoadingImageField)
+
+def MinigameTBGThemaExcelAddThemaPlayerPrefabField(builder, themaPlayerPrefabField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(themaPlayerPrefabField), 0)
+
 def AddThemaPlayerPrefabField(builder, themaPlayerPrefabField):
-    return MinigameTBGThemaExcelAddThemaPlayerPrefabField(builder, themaPlayerPrefabField)
-def MinigameTBGThemaExcelAddThemaLeaderIdField(builder, themaLeaderIdField): builder.PrependInt32Slot(11, themaLeaderIdField, 0)
+    MinigameTBGThemaExcelAddThemaPlayerPrefabField(builder, themaPlayerPrefabField)
+
+def MinigameTBGThemaExcelAddThemaLeaderIdField(builder, themaLeaderIdField):
+    builder.PrependInt32Slot(11, themaLeaderIdField, 0)
+
 def AddThemaLeaderIdField(builder, themaLeaderIdField):
-    return MinigameTBGThemaExcelAddThemaLeaderIdField(builder, themaLeaderIdField)
-def MinigameTBGThemaExcelAddThemaGoalLocalizeField(builder, themaGoalLocalizeField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(themaGoalLocalizeField), 0)
+    MinigameTBGThemaExcelAddThemaLeaderIdField(builder, themaLeaderIdField)
+
+def MinigameTBGThemaExcelAddThemaGoalLocalizeField(builder, themaGoalLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(themaGoalLocalizeField), 0)
+
 def AddThemaGoalLocalizeField(builder, themaGoalLocalizeField):
-    return MinigameTBGThemaExcelAddThemaGoalLocalizeField(builder, themaGoalLocalizeField)
-def MinigameTBGThemaExcelAddInstantClearCostAmountField(builder, instantClearCostAmountField): builder.PrependInt32Slot(13, instantClearCostAmountField, 0)
+    MinigameTBGThemaExcelAddThemaGoalLocalizeField(builder, themaGoalLocalizeField)
+
+def MinigameTBGThemaExcelAddInstantClearCostAmountField(builder, instantClearCostAmountField):
+    builder.PrependInt32Slot(13, instantClearCostAmountField, 0)
+
 def AddInstantClearCostAmountField(builder, instantClearCostAmountField):
-    return MinigameTBGThemaExcelAddInstantClearCostAmountField(builder, instantClearCostAmountField)
-def MinigameTBGThemaExcelAddIsTutorialField(builder, isTutorialField): builder.PrependBoolSlot(14, isTutorialField, 0)
+    MinigameTBGThemaExcelAddInstantClearCostAmountField(builder, instantClearCostAmountField)
+
+def MinigameTBGThemaExcelAddIsTutorialField(builder, isTutorialField):
+    builder.PrependBoolSlot(14, isTutorialField, 0)
+
 def AddIsTutorialField(builder, isTutorialField):
-    return MinigameTBGThemaExcelAddIsTutorialField(builder, isTutorialField)
-def MinigameTBGThemaExcelEnd(builder): return builder.EndObject()
+    MinigameTBGThemaExcelAddIsTutorialField(builder, isTutorialField)
+
+def MinigameTBGThemaExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameTBGThemaExcelEnd(builder)

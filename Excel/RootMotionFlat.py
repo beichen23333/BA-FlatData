@@ -24,9 +24,14 @@ class RootMotionFlat(object):
     def Init(self, buf, pos):
         self._tab = flatbuffers.table.Table(buf, pos)
 
-def RootMotionFlatStart(builder): builder.StartObject(0)
+def RootMotionFlatStart(builder):
+    builder.StartObject(0)
+
 def Start(builder):
-    return RootMotionFlatStart(builder)
-def RootMotionFlatEnd(builder): return builder.EndObject()
+    RootMotionFlatStart(builder)
+
+def RootMotionFlatEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return RootMotionFlatEnd(builder)

@@ -66,27 +66,50 @@ class LimitedStageSeasonExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def LimitedStageSeasonExcelStart(builder): builder.StartObject(6)
+def LimitedStageSeasonExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return LimitedStageSeasonExcelStart(builder)
-def LimitedStageSeasonExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    LimitedStageSeasonExcelStart(builder)
+
+def LimitedStageSeasonExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return LimitedStageSeasonExcelAddIdField(builder, idField)
-def LimitedStageSeasonExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+    LimitedStageSeasonExcelAddIdField(builder, idField)
+
+def LimitedStageSeasonExcelAddStartDateField(builder, startDateField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+
 def AddStartDateField(builder, startDateField):
-    return LimitedStageSeasonExcelAddStartDateField(builder, startDateField)
-def LimitedStageSeasonExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+    LimitedStageSeasonExcelAddStartDateField(builder, startDateField)
+
+def LimitedStageSeasonExcelAddEndDateField(builder, endDateField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+
 def AddEndDateField(builder, endDateField):
-    return LimitedStageSeasonExcelAddEndDateField(builder, endDateField)
-def LimitedStageSeasonExcelAddTypeACountField(builder, typeACountField): builder.PrependInt32Slot(3, typeACountField, 0)
+    LimitedStageSeasonExcelAddEndDateField(builder, endDateField)
+
+def LimitedStageSeasonExcelAddTypeACountField(builder, typeACountField):
+    builder.PrependInt32Slot(3, typeACountField, 0)
+
 def AddTypeACountField(builder, typeACountField):
-    return LimitedStageSeasonExcelAddTypeACountField(builder, typeACountField)
-def LimitedStageSeasonExcelAddTypeBCountField(builder, typeBCountField): builder.PrependInt32Slot(4, typeBCountField, 0)
+    LimitedStageSeasonExcelAddTypeACountField(builder, typeACountField)
+
+def LimitedStageSeasonExcelAddTypeBCountField(builder, typeBCountField):
+    builder.PrependInt32Slot(4, typeBCountField, 0)
+
 def AddTypeBCountField(builder, typeBCountField):
-    return LimitedStageSeasonExcelAddTypeBCountField(builder, typeBCountField)
-def LimitedStageSeasonExcelAddTypeCCountField(builder, typeCCountField): builder.PrependInt32Slot(5, typeCCountField, 0)
+    LimitedStageSeasonExcelAddTypeBCountField(builder, typeBCountField)
+
+def LimitedStageSeasonExcelAddTypeCCountField(builder, typeCCountField):
+    builder.PrependInt32Slot(5, typeCCountField, 0)
+
 def AddTypeCCountField(builder, typeCCountField):
-    return LimitedStageSeasonExcelAddTypeCCountField(builder, typeCCountField)
-def LimitedStageSeasonExcelEnd(builder): return builder.EndObject()
+    LimitedStageSeasonExcelAddTypeCCountField(builder, typeCCountField)
+
+def LimitedStageSeasonExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return LimitedStageSeasonExcelEnd(builder)

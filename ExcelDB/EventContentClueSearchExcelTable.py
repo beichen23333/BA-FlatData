@@ -49,15 +49,26 @@ class EventContentClueSearchExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def EventContentClueSearchExcelTableStart(builder): builder.StartObject(1)
+def EventContentClueSearchExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return EventContentClueSearchExcelTableStart(builder)
-def EventContentClueSearchExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    EventContentClueSearchExcelTableStart(builder)
+
+def EventContentClueSearchExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return EventContentClueSearchExcelTableAddDataList(builder, dataList)
-def EventContentClueSearchExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    EventContentClueSearchExcelTableAddDataList(builder, dataList)
+
+def EventContentClueSearchExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return EventContentClueSearchExcelTableStartDataListVector(builder, numElems)
-def EventContentClueSearchExcelTableEnd(builder): return builder.EndObject()
+
+def EventContentClueSearchExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentClueSearchExcelTableEnd(builder)

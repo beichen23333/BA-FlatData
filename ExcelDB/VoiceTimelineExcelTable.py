@@ -49,15 +49,26 @@ class VoiceTimelineExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def VoiceTimelineExcelTableStart(builder): builder.StartObject(1)
+def VoiceTimelineExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return VoiceTimelineExcelTableStart(builder)
-def VoiceTimelineExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    VoiceTimelineExcelTableStart(builder)
+
+def VoiceTimelineExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return VoiceTimelineExcelTableAddDataList(builder, dataList)
-def VoiceTimelineExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    VoiceTimelineExcelTableAddDataList(builder, dataList)
+
+def VoiceTimelineExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return VoiceTimelineExcelTableStartDataListVector(builder, numElems)
-def VoiceTimelineExcelTableEnd(builder): return builder.EndObject()
+
+def VoiceTimelineExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return VoiceTimelineExcelTableEnd(builder)

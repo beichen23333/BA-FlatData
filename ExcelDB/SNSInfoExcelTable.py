@@ -49,15 +49,26 @@ class SNSInfoExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def SNSInfoExcelTableStart(builder): builder.StartObject(1)
+def SNSInfoExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return SNSInfoExcelTableStart(builder)
-def SNSInfoExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    SNSInfoExcelTableStart(builder)
+
+def SNSInfoExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return SNSInfoExcelTableAddDataList(builder, dataList)
-def SNSInfoExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    SNSInfoExcelTableAddDataList(builder, dataList)
+
+def SNSInfoExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return SNSInfoExcelTableStartDataListVector(builder, numElems)
-def SNSInfoExcelTableEnd(builder): return builder.EndObject()
+
+def SNSInfoExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return SNSInfoExcelTableEnd(builder)

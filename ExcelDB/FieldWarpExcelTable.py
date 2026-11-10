@@ -49,15 +49,26 @@ class FieldWarpExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def FieldWarpExcelTableStart(builder): builder.StartObject(1)
+def FieldWarpExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return FieldWarpExcelTableStart(builder)
-def FieldWarpExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    FieldWarpExcelTableStart(builder)
+
+def FieldWarpExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return FieldWarpExcelTableAddDataList(builder, dataList)
-def FieldWarpExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    FieldWarpExcelTableAddDataList(builder, dataList)
+
+def FieldWarpExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return FieldWarpExcelTableStartDataListVector(builder, numElems)
-def FieldWarpExcelTableEnd(builder): return builder.EndObject()
+
+def FieldWarpExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldWarpExcelTableEnd(builder)

@@ -45,18 +45,32 @@ class VoiceRoomExceptionExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def VoiceRoomExceptionExcelStart(builder): builder.StartObject(3)
+def VoiceRoomExceptionExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return VoiceRoomExceptionExcelStart(builder)
-def VoiceRoomExceptionExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField): builder.PrependInt32Slot(0, costumeUniqueIdField, 0)
+    VoiceRoomExceptionExcelStart(builder)
+
+def VoiceRoomExceptionExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField):
+    builder.PrependInt32Slot(0, costumeUniqueIdField, 0)
+
 def AddCostumeUniqueIdField(builder, costumeUniqueIdField):
-    return VoiceRoomExceptionExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
-def VoiceRoomExceptionExcelAddLinkedCharacterVoicePrintTypeField(builder, linkedCharacterVoicePrintTypeField): builder.PrependInt32Slot(1, linkedCharacterVoicePrintTypeField, 0)
+    VoiceRoomExceptionExcelAddCostumeUniqueIdField(builder, costumeUniqueIdField)
+
+def VoiceRoomExceptionExcelAddLinkedCharacterVoicePrintTypeField(builder, linkedCharacterVoicePrintTypeField):
+    builder.PrependInt32Slot(1, linkedCharacterVoicePrintTypeField, 0)
+
 def AddLinkedCharacterVoicePrintTypeField(builder, linkedCharacterVoicePrintTypeField):
-    return VoiceRoomExceptionExcelAddLinkedCharacterVoicePrintTypeField(builder, linkedCharacterVoicePrintTypeField)
-def VoiceRoomExceptionExcelAddLinkedCostumeUniqueIdField(builder, linkedCostumeUniqueIdField): builder.PrependInt32Slot(2, linkedCostumeUniqueIdField, 0)
+    VoiceRoomExceptionExcelAddLinkedCharacterVoicePrintTypeField(builder, linkedCharacterVoicePrintTypeField)
+
+def VoiceRoomExceptionExcelAddLinkedCostumeUniqueIdField(builder, linkedCostumeUniqueIdField):
+    builder.PrependInt32Slot(2, linkedCostumeUniqueIdField, 0)
+
 def AddLinkedCostumeUniqueIdField(builder, linkedCostumeUniqueIdField):
-    return VoiceRoomExceptionExcelAddLinkedCostumeUniqueIdField(builder, linkedCostumeUniqueIdField)
-def VoiceRoomExceptionExcelEnd(builder): return builder.EndObject()
+    VoiceRoomExceptionExcelAddLinkedCostumeUniqueIdField(builder, linkedCostumeUniqueIdField)
+
+def VoiceRoomExceptionExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return VoiceRoomExceptionExcelEnd(builder)

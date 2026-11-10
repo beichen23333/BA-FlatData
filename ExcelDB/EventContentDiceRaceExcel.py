@@ -99,36 +99,68 @@ class EventContentDiceRaceExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
-def EventContentDiceRaceExcelStart(builder): builder.StartObject(7)
+def EventContentDiceRaceExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return EventContentDiceRaceExcelStart(builder)
-def EventContentDiceRaceExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentDiceRaceExcelStart(builder)
+
+def EventContentDiceRaceExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentDiceRaceExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentDiceRaceExcelAddDiceCostGoodsIdField(builder, diceCostGoodsIdField): builder.PrependInt32Slot(1, diceCostGoodsIdField, 0)
+    EventContentDiceRaceExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentDiceRaceExcelAddDiceCostGoodsIdField(builder, diceCostGoodsIdField):
+    builder.PrependInt32Slot(1, diceCostGoodsIdField, 0)
+
 def AddDiceCostGoodsIdField(builder, diceCostGoodsIdField):
-    return EventContentDiceRaceExcelAddDiceCostGoodsIdField(builder, diceCostGoodsIdField)
-def EventContentDiceRaceExcelAddSkipableLapField(builder, skipableLapField): builder.PrependInt32Slot(2, skipableLapField, 0)
+    EventContentDiceRaceExcelAddDiceCostGoodsIdField(builder, diceCostGoodsIdField)
+
+def EventContentDiceRaceExcelAddSkipableLapField(builder, skipableLapField):
+    builder.PrependInt32Slot(2, skipableLapField, 0)
+
 def AddSkipableLapField(builder, skipableLapField):
-    return EventContentDiceRaceExcelAddSkipableLapField(builder, skipableLapField)
-def EventContentDiceRaceExcelAddDiceRacePawnPrefabField(builder, diceRacePawnPrefabField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(diceRacePawnPrefabField), 0)
+    EventContentDiceRaceExcelAddSkipableLapField(builder, skipableLapField)
+
+def EventContentDiceRaceExcelAddDiceRacePawnPrefabField(builder, diceRacePawnPrefabField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(diceRacePawnPrefabField), 0)
+
 def AddDiceRacePawnPrefabField(builder, diceRacePawnPrefabField):
-    return EventContentDiceRaceExcelAddDiceRacePawnPrefabField(builder, diceRacePawnPrefabField)
-def EventContentDiceRaceExcelAddIsUsingFixedDiceField(builder, isUsingFixedDiceField): builder.PrependBoolSlot(4, isUsingFixedDiceField, 0)
+    EventContentDiceRaceExcelAddDiceRacePawnPrefabField(builder, diceRacePawnPrefabField)
+
+def EventContentDiceRaceExcelAddIsUsingFixedDiceField(builder, isUsingFixedDiceField):
+    builder.PrependBoolSlot(4, isUsingFixedDiceField, 0)
+
 def AddIsUsingFixedDiceField(builder, isUsingFixedDiceField):
-    return EventContentDiceRaceExcelAddIsUsingFixedDiceField(builder, isUsingFixedDiceField)
-def EventContentDiceRaceExcelAddFixedDiceIconField(builder, fixedDiceIconField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(fixedDiceIconField), 0)
+    EventContentDiceRaceExcelAddIsUsingFixedDiceField(builder, isUsingFixedDiceField)
+
+def EventContentDiceRaceExcelAddFixedDiceIconField(builder, fixedDiceIconField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(fixedDiceIconField), 0)
+
 def AddFixedDiceIconField(builder, fixedDiceIconField):
-    return EventContentDiceRaceExcelAddFixedDiceIconField(builder, fixedDiceIconField)
-def EventContentDiceRaceExcelStartFixedDiceIconFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartFixedDiceIconFieldVector(builder, numElems):
+    EventContentDiceRaceExcelAddFixedDiceIconField(builder, fixedDiceIconField)
+
+def EventContentDiceRaceExcelStartFixedDiceIconFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartFixedDiceIconFieldVector(builder, numElems: int) -> int:
     return EventContentDiceRaceExcelStartFixedDiceIconFieldVector(builder, numElems)
-def EventContentDiceRaceExcelAddDiceRaceEventTypeField(builder, diceRaceEventTypeField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(diceRaceEventTypeField), 0)
+
+def EventContentDiceRaceExcelAddDiceRaceEventTypeField(builder, diceRaceEventTypeField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(diceRaceEventTypeField), 0)
+
 def AddDiceRaceEventTypeField(builder, diceRaceEventTypeField):
-    return EventContentDiceRaceExcelAddDiceRaceEventTypeField(builder, diceRaceEventTypeField)
-def EventContentDiceRaceExcelStartDiceRaceEventTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDiceRaceEventTypeFieldVector(builder, numElems):
+    EventContentDiceRaceExcelAddDiceRaceEventTypeField(builder, diceRaceEventTypeField)
+
+def EventContentDiceRaceExcelStartDiceRaceEventTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDiceRaceEventTypeFieldVector(builder, numElems: int) -> int:
     return EventContentDiceRaceExcelStartDiceRaceEventTypeFieldVector(builder, numElems)
-def EventContentDiceRaceExcelEnd(builder): return builder.EndObject()
+
+def EventContentDiceRaceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentDiceRaceExcelEnd(builder)

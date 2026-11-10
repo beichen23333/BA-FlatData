@@ -49,15 +49,26 @@ class EventContentTreasureCellRewardExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def EventContentTreasureCellRewardExcelTableStart(builder): builder.StartObject(1)
+def EventContentTreasureCellRewardExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return EventContentTreasureCellRewardExcelTableStart(builder)
-def EventContentTreasureCellRewardExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    EventContentTreasureCellRewardExcelTableStart(builder)
+
+def EventContentTreasureCellRewardExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return EventContentTreasureCellRewardExcelTableAddDataList(builder, dataList)
-def EventContentTreasureCellRewardExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    EventContentTreasureCellRewardExcelTableAddDataList(builder, dataList)
+
+def EventContentTreasureCellRewardExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return EventContentTreasureCellRewardExcelTableStartDataListVector(builder, numElems)
-def EventContentTreasureCellRewardExcelTableEnd(builder): return builder.EndObject()
+
+def EventContentTreasureCellRewardExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentTreasureCellRewardExcelTableEnd(builder)

@@ -49,15 +49,26 @@ class CharacterPotentialStatExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def CharacterPotentialStatExcelTableStart(builder): builder.StartObject(1)
+def CharacterPotentialStatExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return CharacterPotentialStatExcelTableStart(builder)
-def CharacterPotentialStatExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    CharacterPotentialStatExcelTableStart(builder)
+
+def CharacterPotentialStatExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return CharacterPotentialStatExcelTableAddDataList(builder, dataList)
-def CharacterPotentialStatExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    CharacterPotentialStatExcelTableAddDataList(builder, dataList)
+
+def CharacterPotentialStatExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return CharacterPotentialStatExcelTableStartDataListVector(builder, numElems)
-def CharacterPotentialStatExcelTableEnd(builder): return builder.EndObject()
+
+def CharacterPotentialStatExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterPotentialStatExcelTableEnd(builder)

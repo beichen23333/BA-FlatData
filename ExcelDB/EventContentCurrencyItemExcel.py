@@ -52,21 +52,38 @@ class EventContentCurrencyItemExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EventContentCurrencyItemExcelStart(builder): builder.StartObject(4)
+def EventContentCurrencyItemExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return EventContentCurrencyItemExcelStart(builder)
-def EventContentCurrencyItemExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentCurrencyItemExcelStart(builder)
+
+def EventContentCurrencyItemExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentCurrencyItemExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentCurrencyItemExcelAddEventContentItemTypeField(builder, eventContentItemTypeField): builder.PrependInt32Slot(1, eventContentItemTypeField, 0)
+    EventContentCurrencyItemExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentCurrencyItemExcelAddEventContentItemTypeField(builder, eventContentItemTypeField):
+    builder.PrependInt32Slot(1, eventContentItemTypeField, 0)
+
 def AddEventContentItemTypeField(builder, eventContentItemTypeField):
-    return EventContentCurrencyItemExcelAddEventContentItemTypeField(builder, eventContentItemTypeField)
-def EventContentCurrencyItemExcelAddItemUniqueIdField(builder, itemUniqueIdField): builder.PrependInt32Slot(2, itemUniqueIdField, 0)
+    EventContentCurrencyItemExcelAddEventContentItemTypeField(builder, eventContentItemTypeField)
+
+def EventContentCurrencyItemExcelAddItemUniqueIdField(builder, itemUniqueIdField):
+    builder.PrependInt32Slot(2, itemUniqueIdField, 0)
+
 def AddItemUniqueIdField(builder, itemUniqueIdField):
-    return EventContentCurrencyItemExcelAddItemUniqueIdField(builder, itemUniqueIdField)
-def EventContentCurrencyItemExcelAddUseShortCutContentTypeField(builder, useShortCutContentTypeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(useShortCutContentTypeField), 0)
+    EventContentCurrencyItemExcelAddItemUniqueIdField(builder, itemUniqueIdField)
+
+def EventContentCurrencyItemExcelAddUseShortCutContentTypeField(builder, useShortCutContentTypeField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(useShortCutContentTypeField), 0)
+
 def AddUseShortCutContentTypeField(builder, useShortCutContentTypeField):
-    return EventContentCurrencyItemExcelAddUseShortCutContentTypeField(builder, useShortCutContentTypeField)
-def EventContentCurrencyItemExcelEnd(builder): return builder.EndObject()
+    EventContentCurrencyItemExcelAddUseShortCutContentTypeField(builder, useShortCutContentTypeField)
+
+def EventContentCurrencyItemExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentCurrencyItemExcelEnd(builder)

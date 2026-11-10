@@ -113,36 +113,68 @@ class MiniGameDreamEndingExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         return o == 0
 
-def MiniGameDreamEndingExcelStart(builder): builder.StartObject(7)
+def MiniGameDreamEndingExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return MiniGameDreamEndingExcelStart(builder)
-def MiniGameDreamEndingExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MiniGameDreamEndingExcelStart(builder)
+
+def MiniGameDreamEndingExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MiniGameDreamEndingExcelAddEventContentIdField(builder, eventContentIdField)
-def MiniGameDreamEndingExcelAddEndingIdField(builder, endingIdField): builder.PrependInt32Slot(1, endingIdField, 0)
+    MiniGameDreamEndingExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MiniGameDreamEndingExcelAddEndingIdField(builder, endingIdField):
+    builder.PrependInt32Slot(1, endingIdField, 0)
+
 def AddEndingIdField(builder, endingIdField):
-    return MiniGameDreamEndingExcelAddEndingIdField(builder, endingIdField)
-def MiniGameDreamEndingExcelAddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField): builder.PrependInt32Slot(2, dreamMakerEndingTypeField, 0)
+    MiniGameDreamEndingExcelAddEndingIdField(builder, endingIdField)
+
+def MiniGameDreamEndingExcelAddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField):
+    builder.PrependInt32Slot(2, dreamMakerEndingTypeField, 0)
+
 def AddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField):
-    return MiniGameDreamEndingExcelAddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField)
-def MiniGameDreamEndingExcelAddOrderField(builder, orderField): builder.PrependInt32Slot(3, orderField, 0)
+    MiniGameDreamEndingExcelAddDreamMakerEndingTypeField(builder, dreamMakerEndingTypeField)
+
+def MiniGameDreamEndingExcelAddOrderField(builder, orderField):
+    builder.PrependInt32Slot(3, orderField, 0)
+
 def AddOrderField(builder, orderField):
-    return MiniGameDreamEndingExcelAddOrderField(builder, orderField)
-def MiniGameDreamEndingExcelAddScenarioGroupIdField(builder, scenarioGroupIdField): builder.PrependInt32Slot(4, scenarioGroupIdField, 0)
+    MiniGameDreamEndingExcelAddOrderField(builder, orderField)
+
+def MiniGameDreamEndingExcelAddScenarioGroupIdField(builder, scenarioGroupIdField):
+    builder.PrependInt32Slot(4, scenarioGroupIdField, 0)
+
 def AddScenarioGroupIdField(builder, scenarioGroupIdField):
-    return MiniGameDreamEndingExcelAddScenarioGroupIdField(builder, scenarioGroupIdField)
-def MiniGameDreamEndingExcelAddEndingConditionField(builder, endingConditionField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(endingConditionField), 0)
+    MiniGameDreamEndingExcelAddScenarioGroupIdField(builder, scenarioGroupIdField)
+
+def MiniGameDreamEndingExcelAddEndingConditionField(builder, endingConditionField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(endingConditionField), 0)
+
 def AddEndingConditionField(builder, endingConditionField):
-    return MiniGameDreamEndingExcelAddEndingConditionField(builder, endingConditionField)
-def MiniGameDreamEndingExcelStartEndingConditionFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEndingConditionFieldVector(builder, numElems):
+    MiniGameDreamEndingExcelAddEndingConditionField(builder, endingConditionField)
+
+def MiniGameDreamEndingExcelStartEndingConditionFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartEndingConditionFieldVector(builder, numElems: int) -> int:
     return MiniGameDreamEndingExcelStartEndingConditionFieldVector(builder, numElems)
-def MiniGameDreamEndingExcelAddEndingConditionValueField(builder, endingConditionValueField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(endingConditionValueField), 0)
+
+def MiniGameDreamEndingExcelAddEndingConditionValueField(builder, endingConditionValueField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(endingConditionValueField), 0)
+
 def AddEndingConditionValueField(builder, endingConditionValueField):
-    return MiniGameDreamEndingExcelAddEndingConditionValueField(builder, endingConditionValueField)
-def MiniGameDreamEndingExcelStartEndingConditionValueFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEndingConditionValueFieldVector(builder, numElems):
+    MiniGameDreamEndingExcelAddEndingConditionValueField(builder, endingConditionValueField)
+
+def MiniGameDreamEndingExcelStartEndingConditionValueFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartEndingConditionValueFieldVector(builder, numElems: int) -> int:
     return MiniGameDreamEndingExcelStartEndingConditionValueFieldVector(builder, numElems)
-def MiniGameDreamEndingExcelEnd(builder): return builder.EndObject()
+
+def MiniGameDreamEndingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameDreamEndingExcelEnd(builder)

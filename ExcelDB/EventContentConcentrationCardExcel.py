@@ -52,21 +52,38 @@ class EventContentConcentrationCardExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EventContentConcentrationCardExcelStart(builder): builder.StartObject(4)
+def EventContentConcentrationCardExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return EventContentConcentrationCardExcelStart(builder)
-def EventContentConcentrationCardExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentConcentrationCardExcelStart(builder)
+
+def EventContentConcentrationCardExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentConcentrationCardExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentConcentrationCardExcelAddCardIdField(builder, cardIdField): builder.PrependInt32Slot(1, cardIdField, 0)
+    EventContentConcentrationCardExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentConcentrationCardExcelAddCardIdField(builder, cardIdField):
+    builder.PrependInt32Slot(1, cardIdField, 0)
+
 def AddCardIdField(builder, cardIdField):
-    return EventContentConcentrationCardExcelAddCardIdField(builder, cardIdField)
-def EventContentConcentrationCardExcelAddRarityField(builder, rarityField): builder.PrependInt32Slot(2, rarityField, 0)
+    EventContentConcentrationCardExcelAddCardIdField(builder, cardIdField)
+
+def EventContentConcentrationCardExcelAddRarityField(builder, rarityField):
+    builder.PrependInt32Slot(2, rarityField, 0)
+
 def AddRarityField(builder, rarityField):
-    return EventContentConcentrationCardExcelAddRarityField(builder, rarityField)
-def EventContentConcentrationCardExcelAddImagePathField(builder, imagePathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+    EventContentConcentrationCardExcelAddRarityField(builder, rarityField)
+
+def EventContentConcentrationCardExcelAddImagePathField(builder, imagePathField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(imagePathField), 0)
+
 def AddImagePathField(builder, imagePathField):
-    return EventContentConcentrationCardExcelAddImagePathField(builder, imagePathField)
-def EventContentConcentrationCardExcelEnd(builder): return builder.EndObject()
+    EventContentConcentrationCardExcelAddImagePathField(builder, imagePathField)
+
+def EventContentConcentrationCardExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentConcentrationCardExcelEnd(builder)

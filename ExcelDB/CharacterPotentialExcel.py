@@ -52,21 +52,38 @@ class CharacterPotentialExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def CharacterPotentialExcelStart(builder): builder.StartObject(4)
+def CharacterPotentialExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return CharacterPotentialExcelStart(builder)
-def CharacterPotentialExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    CharacterPotentialExcelStart(builder)
+
+def CharacterPotentialExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return CharacterPotentialExcelAddIdField(builder, idField)
-def CharacterPotentialExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField): builder.PrependInt32Slot(1, potentialStatGroupIdField, 0)
+    CharacterPotentialExcelAddIdField(builder, idField)
+
+def CharacterPotentialExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField):
+    builder.PrependInt32Slot(1, potentialStatGroupIdField, 0)
+
 def AddPotentialStatGroupIdField(builder, potentialStatGroupIdField):
-    return CharacterPotentialExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField)
-def CharacterPotentialExcelAddPotentialStatBonusRateTypeField(builder, potentialStatBonusRateTypeField): builder.PrependInt32Slot(2, potentialStatBonusRateTypeField, 0)
+    CharacterPotentialExcelAddPotentialStatGroupIdField(builder, potentialStatGroupIdField)
+
+def CharacterPotentialExcelAddPotentialStatBonusRateTypeField(builder, potentialStatBonusRateTypeField):
+    builder.PrependInt32Slot(2, potentialStatBonusRateTypeField, 0)
+
 def AddPotentialStatBonusRateTypeField(builder, potentialStatBonusRateTypeField):
-    return CharacterPotentialExcelAddPotentialStatBonusRateTypeField(builder, potentialStatBonusRateTypeField)
-def CharacterPotentialExcelAddIsUnnecessaryStatField(builder, isUnnecessaryStatField): builder.PrependBoolSlot(3, isUnnecessaryStatField, 0)
+    CharacterPotentialExcelAddPotentialStatBonusRateTypeField(builder, potentialStatBonusRateTypeField)
+
+def CharacterPotentialExcelAddIsUnnecessaryStatField(builder, isUnnecessaryStatField):
+    builder.PrependBoolSlot(3, isUnnecessaryStatField, 0)
+
 def AddIsUnnecessaryStatField(builder, isUnnecessaryStatField):
-    return CharacterPotentialExcelAddIsUnnecessaryStatField(builder, isUnnecessaryStatField)
-def CharacterPotentialExcelEnd(builder): return builder.EndObject()
+    CharacterPotentialExcelAddIsUnnecessaryStatField(builder, isUnnecessaryStatField)
+
+def CharacterPotentialExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return CharacterPotentialExcelEnd(builder)

@@ -288,111 +288,218 @@ class LimitedStageExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def LimitedStageExcelStart(builder): builder.StartObject(32)
+def LimitedStageExcelStart(builder):
+    builder.StartObject(32)
+
 def Start(builder):
-    return LimitedStageExcelStart(builder)
-def LimitedStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    LimitedStageExcelStart(builder)
+
+def LimitedStageExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return LimitedStageExcelAddIdField(builder, idField)
-def LimitedStageExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+    LimitedStageExcelAddIdField(builder, idField)
+
+def LimitedStageExcelAddNameField(builder, nameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+
 def AddNameField(builder, nameField):
-    return LimitedStageExcelAddNameField(builder, nameField)
-def LimitedStageExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(2, seasonIdField, 0)
+    LimitedStageExcelAddNameField(builder, nameField)
+
+def LimitedStageExcelAddSeasonIdField(builder, seasonIdField):
+    builder.PrependInt32Slot(2, seasonIdField, 0)
+
 def AddSeasonIdField(builder, seasonIdField):
-    return LimitedStageExcelAddSeasonIdField(builder, seasonIdField)
-def LimitedStageExcelAddStageDifficultyField(builder, stageDifficultyField): builder.PrependInt32Slot(3, stageDifficultyField, 0)
+    LimitedStageExcelAddSeasonIdField(builder, seasonIdField)
+
+def LimitedStageExcelAddStageDifficultyField(builder, stageDifficultyField):
+    builder.PrependInt32Slot(3, stageDifficultyField, 0)
+
 def AddStageDifficultyField(builder, stageDifficultyField):
-    return LimitedStageExcelAddStageDifficultyField(builder, stageDifficultyField)
-def LimitedStageExcelAddStageNumberField(builder, stageNumberField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stageNumberField), 0)
+    LimitedStageExcelAddStageDifficultyField(builder, stageDifficultyField)
+
+def LimitedStageExcelAddStageNumberField(builder, stageNumberField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(stageNumberField), 0)
+
 def AddStageNumberField(builder, stageNumberField):
-    return LimitedStageExcelAddStageNumberField(builder, stageNumberField)
-def LimitedStageExcelAddStageDisplayField(builder, stageDisplayField): builder.PrependInt32Slot(5, stageDisplayField, 0)
+    LimitedStageExcelAddStageNumberField(builder, stageNumberField)
+
+def LimitedStageExcelAddStageDisplayField(builder, stageDisplayField):
+    builder.PrependInt32Slot(5, stageDisplayField, 0)
+
 def AddStageDisplayField(builder, stageDisplayField):
-    return LimitedStageExcelAddStageDisplayField(builder, stageDisplayField)
-def LimitedStageExcelAddPrevStageIdField(builder, prevStageIdField): builder.PrependInt32Slot(6, prevStageIdField, 0)
+    LimitedStageExcelAddStageDisplayField(builder, stageDisplayField)
+
+def LimitedStageExcelAddPrevStageIdField(builder, prevStageIdField):
+    builder.PrependInt32Slot(6, prevStageIdField, 0)
+
 def AddPrevStageIdField(builder, prevStageIdField):
-    return LimitedStageExcelAddPrevStageIdField(builder, prevStageIdField)
-def LimitedStageExcelAddOpenDateField(builder, openDateField): builder.PrependInt32Slot(7, openDateField, 0)
+    LimitedStageExcelAddPrevStageIdField(builder, prevStageIdField)
+
+def LimitedStageExcelAddOpenDateField(builder, openDateField):
+    builder.PrependInt32Slot(7, openDateField, 0)
+
 def AddOpenDateField(builder, openDateField):
-    return LimitedStageExcelAddOpenDateField(builder, openDateField)
-def LimitedStageExcelAddOpenEventPointField(builder, openEventPointField): builder.PrependInt32Slot(8, openEventPointField, 0)
+    LimitedStageExcelAddOpenDateField(builder, openDateField)
+
+def LimitedStageExcelAddOpenEventPointField(builder, openEventPointField):
+    builder.PrependInt32Slot(8, openEventPointField, 0)
+
 def AddOpenEventPointField(builder, openEventPointField):
-    return LimitedStageExcelAddOpenEventPointField(builder, openEventPointField)
-def LimitedStageExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(9, battleDurationField, 0)
+    LimitedStageExcelAddOpenEventPointField(builder, openEventPointField)
+
+def LimitedStageExcelAddBattleDurationField(builder, battleDurationField):
+    builder.PrependInt32Slot(9, battleDurationField, 0)
+
 def AddBattleDurationField(builder, battleDurationField):
-    return LimitedStageExcelAddBattleDurationField(builder, battleDurationField)
-def LimitedStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField): builder.PrependInt32Slot(10, stageEnterCostTypeField, 0)
+    LimitedStageExcelAddBattleDurationField(builder, battleDurationField)
+
+def LimitedStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField):
+    builder.PrependInt32Slot(10, stageEnterCostTypeField, 0)
+
 def AddStageEnterCostTypeField(builder, stageEnterCostTypeField):
-    return LimitedStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
-def LimitedStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField): builder.PrependInt32Slot(11, stageEnterCostIdField, 0)
+    LimitedStageExcelAddStageEnterCostTypeField(builder, stageEnterCostTypeField)
+
+def LimitedStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField):
+    builder.PrependInt32Slot(11, stageEnterCostIdField, 0)
+
 def AddStageEnterCostIdField(builder, stageEnterCostIdField):
-    return LimitedStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
-def LimitedStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField): builder.PrependInt32Slot(12, stageEnterCostAmountField, 0)
+    LimitedStageExcelAddStageEnterCostIdField(builder, stageEnterCostIdField)
+
+def LimitedStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField):
+    builder.PrependInt32Slot(12, stageEnterCostAmountField, 0)
+
 def AddStageEnterCostAmountField(builder, stageEnterCostAmountField):
-    return LimitedStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
-def LimitedStageExcelAddStageEnterEchelonCountField(builder, stageEnterEchelonCountField): builder.PrependInt32Slot(13, stageEnterEchelonCountField, 0)
+    LimitedStageExcelAddStageEnterCostAmountField(builder, stageEnterCostAmountField)
+
+def LimitedStageExcelAddStageEnterEchelonCountField(builder, stageEnterEchelonCountField):
+    builder.PrependInt32Slot(13, stageEnterEchelonCountField, 0)
+
 def AddStageEnterEchelonCountField(builder, stageEnterEchelonCountField):
-    return LimitedStageExcelAddStageEnterEchelonCountField(builder, stageEnterEchelonCountField)
-def LimitedStageExcelAddStarConditionTacticRankSCountField(builder, starConditionTacticRankSCountField): builder.PrependInt32Slot(14, starConditionTacticRankSCountField, 0)
+    LimitedStageExcelAddStageEnterEchelonCountField(builder, stageEnterEchelonCountField)
+
+def LimitedStageExcelAddStarConditionTacticRankSCountField(builder, starConditionTacticRankSCountField):
+    builder.PrependInt32Slot(14, starConditionTacticRankSCountField, 0)
+
 def AddStarConditionTacticRankSCountField(builder, starConditionTacticRankSCountField):
-    return LimitedStageExcelAddStarConditionTacticRankSCountField(builder, starConditionTacticRankSCountField)
-def LimitedStageExcelAddStarConditionTurnCountField(builder, starConditionTurnCountField): builder.PrependInt32Slot(15, starConditionTurnCountField, 0)
+    LimitedStageExcelAddStarConditionTacticRankSCountField(builder, starConditionTacticRankSCountField)
+
+def LimitedStageExcelAddStarConditionTurnCountField(builder, starConditionTurnCountField):
+    builder.PrependInt32Slot(15, starConditionTurnCountField, 0)
+
 def AddStarConditionTurnCountField(builder, starConditionTurnCountField):
-    return LimitedStageExcelAddStarConditionTurnCountField(builder, starConditionTurnCountField)
-def LimitedStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(enterScenarioGroupIdField), 0)
+    LimitedStageExcelAddStarConditionTurnCountField(builder, starConditionTurnCountField)
+
+def LimitedStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(enterScenarioGroupIdField), 0)
+
 def AddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField):
-    return LimitedStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField)
-def LimitedStageExcelStartEnterScenarioGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEnterScenarioGroupIdFieldVector(builder, numElems):
+    LimitedStageExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField)
+
+def LimitedStageExcelStartEnterScenarioGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartEnterScenarioGroupIdFieldVector(builder, numElems: int) -> int:
     return LimitedStageExcelStartEnterScenarioGroupIdFieldVector(builder, numElems)
-def LimitedStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(clearScenarioGroupIdField), 0)
+
+def LimitedStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(clearScenarioGroupIdField), 0)
+
 def AddClearScenarioGroupIdField(builder, clearScenarioGroupIdField):
-    return LimitedStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField)
-def LimitedStageExcelStartClearScenarioGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartClearScenarioGroupIdFieldVector(builder, numElems):
+    LimitedStageExcelAddClearScenarioGroupIdField(builder, clearScenarioGroupIdField)
+
+def LimitedStageExcelStartClearScenarioGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartClearScenarioGroupIdFieldVector(builder, numElems: int) -> int:
     return LimitedStageExcelStartClearScenarioGroupIdFieldVector(builder, numElems)
-def LimitedStageExcelAddStrategyMapField(builder, strategyMapField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(strategyMapField), 0)
+
+def LimitedStageExcelAddStrategyMapField(builder, strategyMapField):
+    builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(strategyMapField), 0)
+
 def AddStrategyMapField(builder, strategyMapField):
-    return LimitedStageExcelAddStrategyMapField(builder, strategyMapField)
-def LimitedStageExcelAddStrategyMapBGField(builder, strategyMapBGField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(strategyMapBGField), 0)
+    LimitedStageExcelAddStrategyMapField(builder, strategyMapField)
+
+def LimitedStageExcelAddStrategyMapBGField(builder, strategyMapBGField):
+    builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(strategyMapBGField), 0)
+
 def AddStrategyMapBGField(builder, strategyMapBGField):
-    return LimitedStageExcelAddStrategyMapBGField(builder, strategyMapBGField)
-def LimitedStageExcelAddStageRewardIdField(builder, stageRewardIdField): builder.PrependInt32Slot(20, stageRewardIdField, 0)
+    LimitedStageExcelAddStrategyMapBGField(builder, strategyMapBGField)
+
+def LimitedStageExcelAddStageRewardIdField(builder, stageRewardIdField):
+    builder.PrependInt32Slot(20, stageRewardIdField, 0)
+
 def AddStageRewardIdField(builder, stageRewardIdField):
-    return LimitedStageExcelAddStageRewardIdField(builder, stageRewardIdField)
-def LimitedStageExcelAddMaxTurnField(builder, maxTurnField): builder.PrependInt32Slot(21, maxTurnField, 0)
+    LimitedStageExcelAddStageRewardIdField(builder, stageRewardIdField)
+
+def LimitedStageExcelAddMaxTurnField(builder, maxTurnField):
+    builder.PrependInt32Slot(21, maxTurnField, 0)
+
 def AddMaxTurnField(builder, maxTurnField):
-    return LimitedStageExcelAddMaxTurnField(builder, maxTurnField)
-def LimitedStageExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(22, stageTopographyField, 0)
+    LimitedStageExcelAddMaxTurnField(builder, maxTurnField)
+
+def LimitedStageExcelAddStageTopographyField(builder, stageTopographyField):
+    builder.PrependInt32Slot(22, stageTopographyField, 0)
+
 def AddStageTopographyField(builder, stageTopographyField):
-    return LimitedStageExcelAddStageTopographyField(builder, stageTopographyField)
-def LimitedStageExcelAddRecommandLevelField(builder, recommandLevelField): builder.PrependInt32Slot(23, recommandLevelField, 0)
+    LimitedStageExcelAddStageTopographyField(builder, stageTopographyField)
+
+def LimitedStageExcelAddRecommandLevelField(builder, recommandLevelField):
+    builder.PrependInt32Slot(23, recommandLevelField, 0)
+
 def AddRecommandLevelField(builder, recommandLevelField):
-    return LimitedStageExcelAddRecommandLevelField(builder, recommandLevelField)
-def LimitedStageExcelAddBgmIdField(builder, bgmIdField): builder.PrependInt32Slot(24, bgmIdField, 0)
+    LimitedStageExcelAddRecommandLevelField(builder, recommandLevelField)
+
+def LimitedStageExcelAddBgmIdField(builder, bgmIdField):
+    builder.PrependInt32Slot(24, bgmIdField, 0)
+
 def AddBgmIdField(builder, bgmIdField):
-    return LimitedStageExcelAddBgmIdField(builder, bgmIdField)
-def LimitedStageExcelAddStrategyEnvironmentField(builder, strategyEnvironmentField): builder.PrependInt32Slot(25, strategyEnvironmentField, 0)
+    LimitedStageExcelAddBgmIdField(builder, bgmIdField)
+
+def LimitedStageExcelAddStrategyEnvironmentField(builder, strategyEnvironmentField):
+    builder.PrependInt32Slot(25, strategyEnvironmentField, 0)
+
 def AddStrategyEnvironmentField(builder, strategyEnvironmentField):
-    return LimitedStageExcelAddStrategyEnvironmentField(builder, strategyEnvironmentField)
-def LimitedStageExcelAddGroundIDField(builder, groundIDField): builder.PrependInt32Slot(26, groundIDField, 0)
+    LimitedStageExcelAddStrategyEnvironmentField(builder, strategyEnvironmentField)
+
+def LimitedStageExcelAddGroundIDField(builder, groundIDField):
+    builder.PrependInt32Slot(26, groundIDField, 0)
+
 def AddGroundIDField(builder, groundIDField):
-    return LimitedStageExcelAddGroundIDField(builder, groundIDField)
-def LimitedStageExcelAddContentTypeField(builder, contentTypeField): builder.PrependInt32Slot(27, contentTypeField, 0)
+    LimitedStageExcelAddGroundIDField(builder, groundIDField)
+
+def LimitedStageExcelAddContentTypeField(builder, contentTypeField):
+    builder.PrependInt32Slot(27, contentTypeField, 0)
+
 def AddContentTypeField(builder, contentTypeField):
-    return LimitedStageExcelAddContentTypeField(builder, contentTypeField)
-def LimitedStageExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(28, bGMIdField, 0)
+    LimitedStageExcelAddContentTypeField(builder, contentTypeField)
+
+def LimitedStageExcelAddBGMIdField(builder, bGMIdField):
+    builder.PrependInt32Slot(28, bGMIdField, 0)
+
 def AddBGMIdField(builder, bGMIdField):
-    return LimitedStageExcelAddBGMIdField(builder, bGMIdField)
-def LimitedStageExcelAddInstantClearField(builder, instantClearField): builder.PrependBoolSlot(29, instantClearField, 0)
+    LimitedStageExcelAddBGMIdField(builder, bGMIdField)
+
+def LimitedStageExcelAddInstantClearField(builder, instantClearField):
+    builder.PrependBoolSlot(29, instantClearField, 0)
+
 def AddInstantClearField(builder, instantClearField):
-    return LimitedStageExcelAddInstantClearField(builder, instantClearField)
-def LimitedStageExcelAddBuffContentIdField(builder, buffContentIdField): builder.PrependInt32Slot(30, buffContentIdField, 0)
+    LimitedStageExcelAddInstantClearField(builder, instantClearField)
+
+def LimitedStageExcelAddBuffContentIdField(builder, buffContentIdField):
+    builder.PrependInt32Slot(30, buffContentIdField, 0)
+
 def AddBuffContentIdField(builder, buffContentIdField):
-    return LimitedStageExcelAddBuffContentIdField(builder, buffContentIdField)
-def LimitedStageExcelAddChallengeDisplayField(builder, challengeDisplayField): builder.PrependBoolSlot(31, challengeDisplayField, 0)
+    LimitedStageExcelAddBuffContentIdField(builder, buffContentIdField)
+
+def LimitedStageExcelAddChallengeDisplayField(builder, challengeDisplayField):
+    builder.PrependBoolSlot(31, challengeDisplayField, 0)
+
 def AddChallengeDisplayField(builder, challengeDisplayField):
-    return LimitedStageExcelAddChallengeDisplayField(builder, challengeDisplayField)
-def LimitedStageExcelEnd(builder): return builder.EndObject()
+    LimitedStageExcelAddChallengeDisplayField(builder, challengeDisplayField)
+
+def LimitedStageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return LimitedStageExcelEnd(builder)

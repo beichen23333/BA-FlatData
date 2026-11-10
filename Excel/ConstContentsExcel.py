@@ -52,21 +52,38 @@ class ConstContentsExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ConstContentsExcelStart(builder): builder.StartObject(4)
+def ConstContentsExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return ConstContentsExcelStart(builder)
-def ConstContentsExcelAddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField): builder.PrependBoolSlot(0, useSearchFieldOptimizeField, 0)
+    ConstContentsExcelStart(builder)
+
+def ConstContentsExcelAddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField):
+    builder.PrependBoolSlot(0, useSearchFieldOptimizeField, 0)
+
 def AddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField):
-    return ConstContentsExcelAddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField)
-def ConstContentsExcelAddSearchUpdateTimeField(builder, searchUpdateTimeField): builder.PrependFloat32Slot(1, searchUpdateTimeField, 0.0)
+    ConstContentsExcelAddUseSearchFieldOptimizeField(builder, useSearchFieldOptimizeField)
+
+def ConstContentsExcelAddSearchUpdateTimeField(builder, searchUpdateTimeField):
+    builder.PrependFloat32Slot(1, searchUpdateTimeField, 0.0)
+
 def AddSearchUpdateTimeField(builder, searchUpdateTimeField):
-    return ConstContentsExcelAddSearchUpdateTimeField(builder, searchUpdateTimeField)
-def ConstContentsExcelAddLobbyDayTimeFromField(builder, lobbyDayTimeFromField): builder.PrependInt32Slot(2, lobbyDayTimeFromField, 0)
+    ConstContentsExcelAddSearchUpdateTimeField(builder, searchUpdateTimeField)
+
+def ConstContentsExcelAddLobbyDayTimeFromField(builder, lobbyDayTimeFromField):
+    builder.PrependInt32Slot(2, lobbyDayTimeFromField, 0)
+
 def AddLobbyDayTimeFromField(builder, lobbyDayTimeFromField):
-    return ConstContentsExcelAddLobbyDayTimeFromField(builder, lobbyDayTimeFromField)
-def ConstContentsExcelAddLobbyNightTimeFromField(builder, lobbyNightTimeFromField): builder.PrependInt32Slot(3, lobbyNightTimeFromField, 0)
+    ConstContentsExcelAddLobbyDayTimeFromField(builder, lobbyDayTimeFromField)
+
+def ConstContentsExcelAddLobbyNightTimeFromField(builder, lobbyNightTimeFromField):
+    builder.PrependInt32Slot(3, lobbyNightTimeFromField, 0)
+
 def AddLobbyNightTimeFromField(builder, lobbyNightTimeFromField):
-    return ConstContentsExcelAddLobbyNightTimeFromField(builder, lobbyNightTimeFromField)
-def ConstContentsExcelEnd(builder): return builder.EndObject()
+    ConstContentsExcelAddLobbyNightTimeFromField(builder, lobbyNightTimeFromField)
+
+def ConstContentsExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ConstContentsExcelEnd(builder)

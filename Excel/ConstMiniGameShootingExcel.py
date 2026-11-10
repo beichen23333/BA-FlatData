@@ -128,48 +128,92 @@ class ConstMiniGameShootingExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ConstMiniGameShootingExcelStart(builder): builder.StartObject(12)
+def ConstMiniGameShootingExcelStart(builder):
+    builder.StartObject(12)
+
 def Start(builder):
-    return ConstMiniGameShootingExcelStart(builder)
-def ConstMiniGameShootingExcelAddNormalStageIdField(builder, normalStageIdField): builder.PrependInt32Slot(0, normalStageIdField, 0)
+    ConstMiniGameShootingExcelStart(builder)
+
+def ConstMiniGameShootingExcelAddNormalStageIdField(builder, normalStageIdField):
+    builder.PrependInt32Slot(0, normalStageIdField, 0)
+
 def AddNormalStageIdField(builder, normalStageIdField):
-    return ConstMiniGameShootingExcelAddNormalStageIdField(builder, normalStageIdField)
-def ConstMiniGameShootingExcelAddNormalSectionCountField(builder, normalSectionCountField): builder.PrependInt32Slot(1, normalSectionCountField, 0)
+    ConstMiniGameShootingExcelAddNormalStageIdField(builder, normalStageIdField)
+
+def ConstMiniGameShootingExcelAddNormalSectionCountField(builder, normalSectionCountField):
+    builder.PrependInt32Slot(1, normalSectionCountField, 0)
+
 def AddNormalSectionCountField(builder, normalSectionCountField):
-    return ConstMiniGameShootingExcelAddNormalSectionCountField(builder, normalSectionCountField)
-def ConstMiniGameShootingExcelAddHardStageIdField(builder, hardStageIdField): builder.PrependInt32Slot(2, hardStageIdField, 0)
+    ConstMiniGameShootingExcelAddNormalSectionCountField(builder, normalSectionCountField)
+
+def ConstMiniGameShootingExcelAddHardStageIdField(builder, hardStageIdField):
+    builder.PrependInt32Slot(2, hardStageIdField, 0)
+
 def AddHardStageIdField(builder, hardStageIdField):
-    return ConstMiniGameShootingExcelAddHardStageIdField(builder, hardStageIdField)
-def ConstMiniGameShootingExcelAddHardSectionCountField(builder, hardSectionCountField): builder.PrependInt32Slot(3, hardSectionCountField, 0)
+    ConstMiniGameShootingExcelAddHardStageIdField(builder, hardStageIdField)
+
+def ConstMiniGameShootingExcelAddHardSectionCountField(builder, hardSectionCountField):
+    builder.PrependInt32Slot(3, hardSectionCountField, 0)
+
 def AddHardSectionCountField(builder, hardSectionCountField):
-    return ConstMiniGameShootingExcelAddHardSectionCountField(builder, hardSectionCountField)
-def ConstMiniGameShootingExcelAddFreeStageIdField(builder, freeStageIdField): builder.PrependInt32Slot(4, freeStageIdField, 0)
+    ConstMiniGameShootingExcelAddHardSectionCountField(builder, hardSectionCountField)
+
+def ConstMiniGameShootingExcelAddFreeStageIdField(builder, freeStageIdField):
+    builder.PrependInt32Slot(4, freeStageIdField, 0)
+
 def AddFreeStageIdField(builder, freeStageIdField):
-    return ConstMiniGameShootingExcelAddFreeStageIdField(builder, freeStageIdField)
-def ConstMiniGameShootingExcelAddFreeSectionCountField(builder, freeSectionCountField): builder.PrependInt32Slot(5, freeSectionCountField, 0)
+    ConstMiniGameShootingExcelAddFreeStageIdField(builder, freeStageIdField)
+
+def ConstMiniGameShootingExcelAddFreeSectionCountField(builder, freeSectionCountField):
+    builder.PrependInt32Slot(5, freeSectionCountField, 0)
+
 def AddFreeSectionCountField(builder, freeSectionCountField):
-    return ConstMiniGameShootingExcelAddFreeSectionCountField(builder, freeSectionCountField)
-def ConstMiniGameShootingExcelAddPlayerCharacterIdField(builder, playerCharacterIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(playerCharacterIdField), 0)
+    ConstMiniGameShootingExcelAddFreeSectionCountField(builder, freeSectionCountField)
+
+def ConstMiniGameShootingExcelAddPlayerCharacterIdField(builder, playerCharacterIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(playerCharacterIdField), 0)
+
 def AddPlayerCharacterIdField(builder, playerCharacterIdField):
-    return ConstMiniGameShootingExcelAddPlayerCharacterIdField(builder, playerCharacterIdField)
-def ConstMiniGameShootingExcelStartPlayerCharacterIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartPlayerCharacterIdFieldVector(builder, numElems):
+    ConstMiniGameShootingExcelAddPlayerCharacterIdField(builder, playerCharacterIdField)
+
+def ConstMiniGameShootingExcelStartPlayerCharacterIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartPlayerCharacterIdFieldVector(builder, numElems: int) -> int:
     return ConstMiniGameShootingExcelStartPlayerCharacterIdFieldVector(builder, numElems)
-def ConstMiniGameShootingExcelAddHiddenPlayerCharacterIdField(builder, hiddenPlayerCharacterIdField): builder.PrependInt32Slot(7, hiddenPlayerCharacterIdField, 0)
+
+def ConstMiniGameShootingExcelAddHiddenPlayerCharacterIdField(builder, hiddenPlayerCharacterIdField):
+    builder.PrependInt32Slot(7, hiddenPlayerCharacterIdField, 0)
+
 def AddHiddenPlayerCharacterIdField(builder, hiddenPlayerCharacterIdField):
-    return ConstMiniGameShootingExcelAddHiddenPlayerCharacterIdField(builder, hiddenPlayerCharacterIdField)
-def ConstMiniGameShootingExcelAddCameraSmoothTimeField(builder, cameraSmoothTimeField): builder.PrependFloat32Slot(8, cameraSmoothTimeField, 0.0)
+    ConstMiniGameShootingExcelAddHiddenPlayerCharacterIdField(builder, hiddenPlayerCharacterIdField)
+
+def ConstMiniGameShootingExcelAddCameraSmoothTimeField(builder, cameraSmoothTimeField):
+    builder.PrependFloat32Slot(8, cameraSmoothTimeField, 0.0)
+
 def AddCameraSmoothTimeField(builder, cameraSmoothTimeField):
-    return ConstMiniGameShootingExcelAddCameraSmoothTimeField(builder, cameraSmoothTimeField)
-def ConstMiniGameShootingExcelAddSpawnEffectPathField(builder, spawnEffectPathField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(spawnEffectPathField), 0)
+    ConstMiniGameShootingExcelAddCameraSmoothTimeField(builder, cameraSmoothTimeField)
+
+def ConstMiniGameShootingExcelAddSpawnEffectPathField(builder, spawnEffectPathField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(spawnEffectPathField), 0)
+
 def AddSpawnEffectPathField(builder, spawnEffectPathField):
-    return ConstMiniGameShootingExcelAddSpawnEffectPathField(builder, spawnEffectPathField)
-def ConstMiniGameShootingExcelAddWaitTimeAfterSpawnField(builder, waitTimeAfterSpawnField): builder.PrependFloat32Slot(10, waitTimeAfterSpawnField, 0.0)
+    ConstMiniGameShootingExcelAddSpawnEffectPathField(builder, spawnEffectPathField)
+
+def ConstMiniGameShootingExcelAddWaitTimeAfterSpawnField(builder, waitTimeAfterSpawnField):
+    builder.PrependFloat32Slot(10, waitTimeAfterSpawnField, 0.0)
+
 def AddWaitTimeAfterSpawnField(builder, waitTimeAfterSpawnField):
-    return ConstMiniGameShootingExcelAddWaitTimeAfterSpawnField(builder, waitTimeAfterSpawnField)
-def ConstMiniGameShootingExcelAddFreeGearIntervalField(builder, freeGearIntervalField): builder.PrependInt32Slot(11, freeGearIntervalField, 0)
+    ConstMiniGameShootingExcelAddWaitTimeAfterSpawnField(builder, waitTimeAfterSpawnField)
+
+def ConstMiniGameShootingExcelAddFreeGearIntervalField(builder, freeGearIntervalField):
+    builder.PrependInt32Slot(11, freeGearIntervalField, 0)
+
 def AddFreeGearIntervalField(builder, freeGearIntervalField):
-    return ConstMiniGameShootingExcelAddFreeGearIntervalField(builder, freeGearIntervalField)
-def ConstMiniGameShootingExcelEnd(builder): return builder.EndObject()
+    ConstMiniGameShootingExcelAddFreeGearIntervalField(builder, freeGearIntervalField)
+
+def ConstMiniGameShootingExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ConstMiniGameShootingExcelEnd(builder)

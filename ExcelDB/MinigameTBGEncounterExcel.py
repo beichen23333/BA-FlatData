@@ -185,78 +185,152 @@ class MinigameTBGEncounterExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def MinigameTBGEncounterExcelStart(builder): builder.StartObject(23)
+def MinigameTBGEncounterExcelStart(builder):
+    builder.StartObject(23)
+
 def Start(builder):
-    return MinigameTBGEncounterExcelStart(builder)
-def MinigameTBGEncounterExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MinigameTBGEncounterExcelStart(builder)
+
+def MinigameTBGEncounterExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MinigameTBGEncounterExcelAddEventContentIdField(builder, eventContentIdField)
-def MinigameTBGEncounterExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+    MinigameTBGEncounterExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MinigameTBGEncounterExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(1, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MinigameTBGEncounterExcelAddUniqueIdField(builder, uniqueIdField)
-def MinigameTBGEncounterExcelAddAllThemaField(builder, allThemaField): builder.PrependBoolSlot(2, allThemaField, 0)
+    MinigameTBGEncounterExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MinigameTBGEncounterExcelAddAllThemaField(builder, allThemaField):
+    builder.PrependBoolSlot(2, allThemaField, 0)
+
 def AddAllThemaField(builder, allThemaField):
-    return MinigameTBGEncounterExcelAddAllThemaField(builder, allThemaField)
-def MinigameTBGEncounterExcelAddThemaIndexField(builder, themaIndexField): builder.PrependInt32Slot(3, themaIndexField, 0)
+    MinigameTBGEncounterExcelAddAllThemaField(builder, allThemaField)
+
+def MinigameTBGEncounterExcelAddThemaIndexField(builder, themaIndexField):
+    builder.PrependInt32Slot(3, themaIndexField, 0)
+
 def AddThemaIndexField(builder, themaIndexField):
-    return MinigameTBGEncounterExcelAddThemaIndexField(builder, themaIndexField)
-def MinigameTBGEncounterExcelAddThemaTypeField(builder, themaTypeField): builder.PrependInt32Slot(4, themaTypeField, 0)
+    MinigameTBGEncounterExcelAddThemaIndexField(builder, themaIndexField)
+
+def MinigameTBGEncounterExcelAddThemaTypeField(builder, themaTypeField):
+    builder.PrependInt32Slot(4, themaTypeField, 0)
+
 def AddThemaTypeField(builder, themaTypeField):
-    return MinigameTBGEncounterExcelAddThemaTypeField(builder, themaTypeField)
-def MinigameTBGEncounterExcelAddObjectTypeField(builder, objectTypeField): builder.PrependInt32Slot(5, objectTypeField, 0)
+    MinigameTBGEncounterExcelAddThemaTypeField(builder, themaTypeField)
+
+def MinigameTBGEncounterExcelAddObjectTypeField(builder, objectTypeField):
+    builder.PrependInt32Slot(5, objectTypeField, 0)
+
 def AddObjectTypeField(builder, objectTypeField):
-    return MinigameTBGEncounterExcelAddObjectTypeField(builder, objectTypeField)
-def MinigameTBGEncounterExcelAddEnemyImagePathField(builder, enemyImagePathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(enemyImagePathField), 0)
+    MinigameTBGEncounterExcelAddObjectTypeField(builder, objectTypeField)
+
+def MinigameTBGEncounterExcelAddEnemyImagePathField(builder, enemyImagePathField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(enemyImagePathField), 0)
+
 def AddEnemyImagePathField(builder, enemyImagePathField):
-    return MinigameTBGEncounterExcelAddEnemyImagePathField(builder, enemyImagePathField)
-def MinigameTBGEncounterExcelAddEnemyPrefabNameField(builder, enemyPrefabNameField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(enemyPrefabNameField), 0)
+    MinigameTBGEncounterExcelAddEnemyImagePathField(builder, enemyImagePathField)
+
+def MinigameTBGEncounterExcelAddEnemyPrefabNameField(builder, enemyPrefabNameField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(enemyPrefabNameField), 0)
+
 def AddEnemyPrefabNameField(builder, enemyPrefabNameField):
-    return MinigameTBGEncounterExcelAddEnemyPrefabNameField(builder, enemyPrefabNameField)
-def MinigameTBGEncounterExcelAddEnemyNameLocalizeField(builder, enemyNameLocalizeField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(enemyNameLocalizeField), 0)
+    MinigameTBGEncounterExcelAddEnemyPrefabNameField(builder, enemyPrefabNameField)
+
+def MinigameTBGEncounterExcelAddEnemyNameLocalizeField(builder, enemyNameLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(enemyNameLocalizeField), 0)
+
 def AddEnemyNameLocalizeField(builder, enemyNameLocalizeField):
-    return MinigameTBGEncounterExcelAddEnemyNameLocalizeField(builder, enemyNameLocalizeField)
-def MinigameTBGEncounterExcelAddOptionGroupIdField(builder, optionGroupIdField): builder.PrependInt32Slot(9, optionGroupIdField, 0)
+    MinigameTBGEncounterExcelAddEnemyNameLocalizeField(builder, enemyNameLocalizeField)
+
+def MinigameTBGEncounterExcelAddOptionGroupIdField(builder, optionGroupIdField):
+    builder.PrependInt32Slot(9, optionGroupIdField, 0)
+
 def AddOptionGroupIdField(builder, optionGroupIdField):
-    return MinigameTBGEncounterExcelAddOptionGroupIdField(builder, optionGroupIdField)
-def MinigameTBGEncounterExcelAddRewardHideField(builder, rewardHideField): builder.PrependBoolSlot(10, rewardHideField, 0)
+    MinigameTBGEncounterExcelAddOptionGroupIdField(builder, optionGroupIdField)
+
+def MinigameTBGEncounterExcelAddRewardHideField(builder, rewardHideField):
+    builder.PrependBoolSlot(10, rewardHideField, 0)
+
 def AddRewardHideField(builder, rewardHideField):
-    return MinigameTBGEncounterExcelAddRewardHideField(builder, rewardHideField)
-def MinigameTBGEncounterExcelAddEncounterTitleLocalizeField(builder, encounterTitleLocalizeField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(encounterTitleLocalizeField), 0)
+    MinigameTBGEncounterExcelAddRewardHideField(builder, rewardHideField)
+
+def MinigameTBGEncounterExcelAddEncounterTitleLocalizeField(builder, encounterTitleLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(encounterTitleLocalizeField), 0)
+
 def AddEncounterTitleLocalizeField(builder, encounterTitleLocalizeField):
-    return MinigameTBGEncounterExcelAddEncounterTitleLocalizeField(builder, encounterTitleLocalizeField)
-def MinigameTBGEncounterExcelAddStoryImagePathField(builder, storyImagePathField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(storyImagePathField), 0)
+    MinigameTBGEncounterExcelAddEncounterTitleLocalizeField(builder, encounterTitleLocalizeField)
+
+def MinigameTBGEncounterExcelAddStoryImagePathField(builder, storyImagePathField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(storyImagePathField), 0)
+
 def AddStoryImagePathField(builder, storyImagePathField):
-    return MinigameTBGEncounterExcelAddStoryImagePathField(builder, storyImagePathField)
-def MinigameTBGEncounterExcelAddBeforeStoryLocalizeField(builder, beforeStoryLocalizeField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(beforeStoryLocalizeField), 0)
+    MinigameTBGEncounterExcelAddStoryImagePathField(builder, storyImagePathField)
+
+def MinigameTBGEncounterExcelAddBeforeStoryLocalizeField(builder, beforeStoryLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(beforeStoryLocalizeField), 0)
+
 def AddBeforeStoryLocalizeField(builder, beforeStoryLocalizeField):
-    return MinigameTBGEncounterExcelAddBeforeStoryLocalizeField(builder, beforeStoryLocalizeField)
-def MinigameTBGEncounterExcelAddBeforeStoryOption1LocalizeField(builder, beforeStoryOption1LocalizeField): builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(beforeStoryOption1LocalizeField), 0)
+    MinigameTBGEncounterExcelAddBeforeStoryLocalizeField(builder, beforeStoryLocalizeField)
+
+def MinigameTBGEncounterExcelAddBeforeStoryOption1LocalizeField(builder, beforeStoryOption1LocalizeField):
+    builder.PrependUOffsetTRelativeSlot(14, flatbuffers.number_types.UOffsetTFlags.py_type(beforeStoryOption1LocalizeField), 0)
+
 def AddBeforeStoryOption1LocalizeField(builder, beforeStoryOption1LocalizeField):
-    return MinigameTBGEncounterExcelAddBeforeStoryOption1LocalizeField(builder, beforeStoryOption1LocalizeField)
-def MinigameTBGEncounterExcelAddBeforeStoryOption2LocalizeField(builder, beforeStoryOption2LocalizeField): builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(beforeStoryOption2LocalizeField), 0)
+    MinigameTBGEncounterExcelAddBeforeStoryOption1LocalizeField(builder, beforeStoryOption1LocalizeField)
+
+def MinigameTBGEncounterExcelAddBeforeStoryOption2LocalizeField(builder, beforeStoryOption2LocalizeField):
+    builder.PrependUOffsetTRelativeSlot(15, flatbuffers.number_types.UOffsetTFlags.py_type(beforeStoryOption2LocalizeField), 0)
+
 def AddBeforeStoryOption2LocalizeField(builder, beforeStoryOption2LocalizeField):
-    return MinigameTBGEncounterExcelAddBeforeStoryOption2LocalizeField(builder, beforeStoryOption2LocalizeField)
-def MinigameTBGEncounterExcelAddBeforeStoryOption3LocalizeField(builder, beforeStoryOption3LocalizeField): builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(beforeStoryOption3LocalizeField), 0)
+    MinigameTBGEncounterExcelAddBeforeStoryOption2LocalizeField(builder, beforeStoryOption2LocalizeField)
+
+def MinigameTBGEncounterExcelAddBeforeStoryOption3LocalizeField(builder, beforeStoryOption3LocalizeField):
+    builder.PrependUOffsetTRelativeSlot(16, flatbuffers.number_types.UOffsetTFlags.py_type(beforeStoryOption3LocalizeField), 0)
+
 def AddBeforeStoryOption3LocalizeField(builder, beforeStoryOption3LocalizeField):
-    return MinigameTBGEncounterExcelAddBeforeStoryOption3LocalizeField(builder, beforeStoryOption3LocalizeField)
-def MinigameTBGEncounterExcelAddAllyAttackLocalizeField(builder, allyAttackLocalizeField): builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(allyAttackLocalizeField), 0)
+    MinigameTBGEncounterExcelAddBeforeStoryOption3LocalizeField(builder, beforeStoryOption3LocalizeField)
+
+def MinigameTBGEncounterExcelAddAllyAttackLocalizeField(builder, allyAttackLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(17, flatbuffers.number_types.UOffsetTFlags.py_type(allyAttackLocalizeField), 0)
+
 def AddAllyAttackLocalizeField(builder, allyAttackLocalizeField):
-    return MinigameTBGEncounterExcelAddAllyAttackLocalizeField(builder, allyAttackLocalizeField)
-def MinigameTBGEncounterExcelAddEnemyAttackLocalizeField(builder, enemyAttackLocalizeField): builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(enemyAttackLocalizeField), 0)
+    MinigameTBGEncounterExcelAddAllyAttackLocalizeField(builder, allyAttackLocalizeField)
+
+def MinigameTBGEncounterExcelAddEnemyAttackLocalizeField(builder, enemyAttackLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(18, flatbuffers.number_types.UOffsetTFlags.py_type(enemyAttackLocalizeField), 0)
+
 def AddEnemyAttackLocalizeField(builder, enemyAttackLocalizeField):
-    return MinigameTBGEncounterExcelAddEnemyAttackLocalizeField(builder, enemyAttackLocalizeField)
-def MinigameTBGEncounterExcelAddAttackDefenceLocalizeField(builder, attackDefenceLocalizeField): builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(attackDefenceLocalizeField), 0)
+    MinigameTBGEncounterExcelAddEnemyAttackLocalizeField(builder, enemyAttackLocalizeField)
+
+def MinigameTBGEncounterExcelAddAttackDefenceLocalizeField(builder, attackDefenceLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(19, flatbuffers.number_types.UOffsetTFlags.py_type(attackDefenceLocalizeField), 0)
+
 def AddAttackDefenceLocalizeField(builder, attackDefenceLocalizeField):
-    return MinigameTBGEncounterExcelAddAttackDefenceLocalizeField(builder, attackDefenceLocalizeField)
-def MinigameTBGEncounterExcelAddClearStoryLocalizeField(builder, clearStoryLocalizeField): builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(clearStoryLocalizeField), 0)
+    MinigameTBGEncounterExcelAddAttackDefenceLocalizeField(builder, attackDefenceLocalizeField)
+
+def MinigameTBGEncounterExcelAddClearStoryLocalizeField(builder, clearStoryLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(20, flatbuffers.number_types.UOffsetTFlags.py_type(clearStoryLocalizeField), 0)
+
 def AddClearStoryLocalizeField(builder, clearStoryLocalizeField):
-    return MinigameTBGEncounterExcelAddClearStoryLocalizeField(builder, clearStoryLocalizeField)
-def MinigameTBGEncounterExcelAddDefeatStoryLocalizeField(builder, defeatStoryLocalizeField): builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(defeatStoryLocalizeField), 0)
+    MinigameTBGEncounterExcelAddClearStoryLocalizeField(builder, clearStoryLocalizeField)
+
+def MinigameTBGEncounterExcelAddDefeatStoryLocalizeField(builder, defeatStoryLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(21, flatbuffers.number_types.UOffsetTFlags.py_type(defeatStoryLocalizeField), 0)
+
 def AddDefeatStoryLocalizeField(builder, defeatStoryLocalizeField):
-    return MinigameTBGEncounterExcelAddDefeatStoryLocalizeField(builder, defeatStoryLocalizeField)
-def MinigameTBGEncounterExcelAddRunawayStoryLocalizeField(builder, runawayStoryLocalizeField): builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(runawayStoryLocalizeField), 0)
+    MinigameTBGEncounterExcelAddDefeatStoryLocalizeField(builder, defeatStoryLocalizeField)
+
+def MinigameTBGEncounterExcelAddRunawayStoryLocalizeField(builder, runawayStoryLocalizeField):
+    builder.PrependUOffsetTRelativeSlot(22, flatbuffers.number_types.UOffsetTFlags.py_type(runawayStoryLocalizeField), 0)
+
 def AddRunawayStoryLocalizeField(builder, runawayStoryLocalizeField):
-    return MinigameTBGEncounterExcelAddRunawayStoryLocalizeField(builder, runawayStoryLocalizeField)
-def MinigameTBGEncounterExcelEnd(builder): return builder.EndObject()
+    MinigameTBGEncounterExcelAddRunawayStoryLocalizeField(builder, runawayStoryLocalizeField)
+
+def MinigameTBGEncounterExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameTBGEncounterExcelEnd(builder)

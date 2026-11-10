@@ -52,21 +52,38 @@ class MinigameDreamVoiceExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameDreamVoiceExcelStart(builder): builder.StartObject(4)
+def MinigameDreamVoiceExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return MinigameDreamVoiceExcelStart(builder)
-def MinigameDreamVoiceExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MinigameDreamVoiceExcelStart(builder)
+
+def MinigameDreamVoiceExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MinigameDreamVoiceExcelAddEventContentIdField(builder, eventContentIdField)
-def MinigameDreamVoiceExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+    MinigameDreamVoiceExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MinigameDreamVoiceExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(1, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MinigameDreamVoiceExcelAddUniqueIdField(builder, uniqueIdField)
-def MinigameDreamVoiceExcelAddVoiceConditionField(builder, voiceConditionField): builder.PrependInt32Slot(2, voiceConditionField, 0)
+    MinigameDreamVoiceExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MinigameDreamVoiceExcelAddVoiceConditionField(builder, voiceConditionField):
+    builder.PrependInt32Slot(2, voiceConditionField, 0)
+
 def AddVoiceConditionField(builder, voiceConditionField):
-    return MinigameDreamVoiceExcelAddVoiceConditionField(builder, voiceConditionField)
-def MinigameDreamVoiceExcelAddVoiceClipField(builder, voiceClipField): builder.PrependUint32Slot(3, voiceClipField, 0)
+    MinigameDreamVoiceExcelAddVoiceConditionField(builder, voiceConditionField)
+
+def MinigameDreamVoiceExcelAddVoiceClipField(builder, voiceClipField):
+    builder.PrependUint32Slot(3, voiceClipField, 0)
+
 def AddVoiceClipField(builder, voiceClipField):
-    return MinigameDreamVoiceExcelAddVoiceClipField(builder, voiceClipField)
-def MinigameDreamVoiceExcelEnd(builder): return builder.EndObject()
+    MinigameDreamVoiceExcelAddVoiceClipField(builder, voiceClipField)
+
+def MinigameDreamVoiceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameDreamVoiceExcelEnd(builder)

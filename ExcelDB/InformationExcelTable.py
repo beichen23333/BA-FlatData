@@ -49,15 +49,26 @@ class InformationExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def InformationExcelTableStart(builder): builder.StartObject(1)
+def InformationExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return InformationExcelTableStart(builder)
-def InformationExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    InformationExcelTableStart(builder)
+
+def InformationExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return InformationExcelTableAddDataList(builder, dataList)
-def InformationExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    InformationExcelTableAddDataList(builder, dataList)
+
+def InformationExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return InformationExcelTableStartDataListVector(builder, numElems)
-def InformationExcelTableEnd(builder): return builder.EndObject()
+
+def InformationExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return InformationExcelTableEnd(builder)

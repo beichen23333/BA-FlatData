@@ -49,15 +49,26 @@ class PossessionCheckExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def PossessionCheckExcelTableStart(builder): builder.StartObject(1)
+def PossessionCheckExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return PossessionCheckExcelTableStart(builder)
-def PossessionCheckExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    PossessionCheckExcelTableStart(builder)
+
+def PossessionCheckExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return PossessionCheckExcelTableAddDataList(builder, dataList)
-def PossessionCheckExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    PossessionCheckExcelTableAddDataList(builder, dataList)
+
+def PossessionCheckExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return PossessionCheckExcelTableStartDataListVector(builder, numElems)
-def PossessionCheckExcelTableEnd(builder): return builder.EndObject()
+
+def PossessionCheckExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return PossessionCheckExcelTableEnd(builder)

@@ -49,15 +49,26 @@ class ContentsScenarioExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ContentsScenarioExcelTableStart(builder): builder.StartObject(1)
+def ContentsScenarioExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ContentsScenarioExcelTableStart(builder)
-def ContentsScenarioExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ContentsScenarioExcelTableStart(builder)
+
+def ContentsScenarioExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ContentsScenarioExcelTableAddDataList(builder, dataList)
-def ContentsScenarioExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ContentsScenarioExcelTableAddDataList(builder, dataList)
+
+def ContentsScenarioExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ContentsScenarioExcelTableStartDataListVector(builder, numElems)
-def ContentsScenarioExcelTableEnd(builder): return builder.EndObject()
+
+def ContentsScenarioExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ContentsScenarioExcelTableEnd(builder)

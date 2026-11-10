@@ -134,45 +134,86 @@ class MinigameRoadPuzzleRoadRoundExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         return o == 0
 
-def MinigameRoadPuzzleRoadRoundExcelStart(builder): builder.StartObject(10)
+def MinigameRoadPuzzleRoadRoundExcelStart(builder):
+    builder.StartObject(10)
+
 def Start(builder):
-    return MinigameRoadPuzzleRoadRoundExcelStart(builder)
-def MinigameRoadPuzzleRoadRoundExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MinigameRoadPuzzleRoadRoundExcelStart(builder)
+
+def MinigameRoadPuzzleRoadRoundExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MinigameRoadPuzzleRoadRoundExcelAddEventContentIdField(builder, eventContentIdField)
-def MinigameRoadPuzzleRoadRoundExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+    MinigameRoadPuzzleRoadRoundExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MinigameRoadPuzzleRoadRoundExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(1, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MinigameRoadPuzzleRoadRoundExcelAddUniqueIdField(builder, uniqueIdField)
-def MinigameRoadPuzzleRoadRoundExcelAddRoundField(builder, roundField): builder.PrependInt32Slot(2, roundField, 0)
+    MinigameRoadPuzzleRoadRoundExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MinigameRoadPuzzleRoadRoundExcelAddRoundField(builder, roundField):
+    builder.PrependInt32Slot(2, roundField, 0)
+
 def AddRoundField(builder, roundField):
-    return MinigameRoadPuzzleRoadRoundExcelAddRoundField(builder, roundField)
-def MinigameRoadPuzzleRoadRoundExcelAddIsLoopField(builder, isLoopField): builder.PrependBoolSlot(3, isLoopField, 0)
+    MinigameRoadPuzzleRoadRoundExcelAddRoundField(builder, roundField)
+
+def MinigameRoadPuzzleRoadRoundExcelAddIsLoopField(builder, isLoopField):
+    builder.PrependBoolSlot(3, isLoopField, 0)
+
 def AddIsLoopField(builder, isLoopField):
-    return MinigameRoadPuzzleRoadRoundExcelAddIsLoopField(builder, isLoopField)
-def MinigameRoadPuzzleRoadRoundExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField): builder.PrependInt32Slot(4, enterScenarioGroupIdField, 0)
+    MinigameRoadPuzzleRoadRoundExcelAddIsLoopField(builder, isLoopField)
+
+def MinigameRoadPuzzleRoadRoundExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField):
+    builder.PrependInt32Slot(4, enterScenarioGroupIdField, 0)
+
 def AddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField):
-    return MinigameRoadPuzzleRoadRoundExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField)
-def MinigameRoadPuzzleRoadRoundExcelAddEndScenarioGroupIdField(builder, endScenarioGroupIdField): builder.PrependInt32Slot(5, endScenarioGroupIdField, 0)
+    MinigameRoadPuzzleRoadRoundExcelAddEnterScenarioGroupIdField(builder, enterScenarioGroupIdField)
+
+def MinigameRoadPuzzleRoadRoundExcelAddEndScenarioGroupIdField(builder, endScenarioGroupIdField):
+    builder.PrependInt32Slot(5, endScenarioGroupIdField, 0)
+
 def AddEndScenarioGroupIdField(builder, endScenarioGroupIdField):
-    return MinigameRoadPuzzleRoadRoundExcelAddEndScenarioGroupIdField(builder, endScenarioGroupIdField)
-def MinigameRoadPuzzleRoadRoundExcelAddMapGroupIdField(builder, mapGroupIdField): builder.PrependInt32Slot(6, mapGroupIdField, 0)
+    MinigameRoadPuzzleRoadRoundExcelAddEndScenarioGroupIdField(builder, endScenarioGroupIdField)
+
+def MinigameRoadPuzzleRoadRoundExcelAddMapGroupIdField(builder, mapGroupIdField):
+    builder.PrependInt32Slot(6, mapGroupIdField, 0)
+
 def AddMapGroupIdField(builder, mapGroupIdField):
-    return MinigameRoadPuzzleRoadRoundExcelAddMapGroupIdField(builder, mapGroupIdField)
-def MinigameRoadPuzzleRoadRoundExcelAddRoundRewardField(builder, roundRewardField): builder.PrependInt32Slot(7, roundRewardField, 0)
+    MinigameRoadPuzzleRoadRoundExcelAddMapGroupIdField(builder, mapGroupIdField)
+
+def MinigameRoadPuzzleRoadRoundExcelAddRoundRewardField(builder, roundRewardField):
+    builder.PrependInt32Slot(7, roundRewardField, 0)
+
 def AddRoundRewardField(builder, roundRewardField):
-    return MinigameRoadPuzzleRoadRoundExcelAddRoundRewardField(builder, roundRewardField)
-def MinigameRoadPuzzleRoadRoundExcelAddAdditionalRewardIDField(builder, additionalRewardIDField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(additionalRewardIDField), 0)
+    MinigameRoadPuzzleRoadRoundExcelAddRoundRewardField(builder, roundRewardField)
+
+def MinigameRoadPuzzleRoadRoundExcelAddAdditionalRewardIDField(builder, additionalRewardIDField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(additionalRewardIDField), 0)
+
 def AddAdditionalRewardIDField(builder, additionalRewardIDField):
-    return MinigameRoadPuzzleRoadRoundExcelAddAdditionalRewardIDField(builder, additionalRewardIDField)
-def MinigameRoadPuzzleRoadRoundExcelStartAdditionalRewardIDFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAdditionalRewardIDFieldVector(builder, numElems):
+    MinigameRoadPuzzleRoadRoundExcelAddAdditionalRewardIDField(builder, additionalRewardIDField)
+
+def MinigameRoadPuzzleRoadRoundExcelStartAdditionalRewardIDFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartAdditionalRewardIDFieldVector(builder, numElems: int) -> int:
     return MinigameRoadPuzzleRoadRoundExcelStartAdditionalRewardIDFieldVector(builder, numElems)
-def MinigameRoadPuzzleRoadRoundExcelAddAdditionalRewardAmountField(builder, additionalRewardAmountField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(additionalRewardAmountField), 0)
+
+def MinigameRoadPuzzleRoadRoundExcelAddAdditionalRewardAmountField(builder, additionalRewardAmountField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(additionalRewardAmountField), 0)
+
 def AddAdditionalRewardAmountField(builder, additionalRewardAmountField):
-    return MinigameRoadPuzzleRoadRoundExcelAddAdditionalRewardAmountField(builder, additionalRewardAmountField)
-def MinigameRoadPuzzleRoadRoundExcelStartAdditionalRewardAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartAdditionalRewardAmountFieldVector(builder, numElems):
+    MinigameRoadPuzzleRoadRoundExcelAddAdditionalRewardAmountField(builder, additionalRewardAmountField)
+
+def MinigameRoadPuzzleRoadRoundExcelStartAdditionalRewardAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartAdditionalRewardAmountFieldVector(builder, numElems: int) -> int:
     return MinigameRoadPuzzleRoadRoundExcelStartAdditionalRewardAmountFieldVector(builder, numElems)
-def MinigameRoadPuzzleRoadRoundExcelEnd(builder): return builder.EndObject()
+
+def MinigameRoadPuzzleRoadRoundExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameRoadPuzzleRoadRoundExcelEnd(builder)

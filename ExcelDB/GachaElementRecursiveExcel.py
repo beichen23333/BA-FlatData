@@ -80,33 +80,62 @@ class GachaElementRecursiveExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def GachaElementRecursiveExcelStart(builder): builder.StartObject(8)
+def GachaElementRecursiveExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return GachaElementRecursiveExcelStart(builder)
-def GachaElementRecursiveExcelAddIDField(builder, iDField): builder.PrependInt32Slot(0, iDField, 0)
+    GachaElementRecursiveExcelStart(builder)
+
+def GachaElementRecursiveExcelAddIDField(builder, iDField):
+    builder.PrependInt32Slot(0, iDField, 0)
+
 def AddIDField(builder, iDField):
-    return GachaElementRecursiveExcelAddIDField(builder, iDField)
-def GachaElementRecursiveExcelAddGachaGroupIDField(builder, gachaGroupIDField): builder.PrependInt32Slot(1, gachaGroupIDField, 0)
+    GachaElementRecursiveExcelAddIDField(builder, iDField)
+
+def GachaElementRecursiveExcelAddGachaGroupIDField(builder, gachaGroupIDField):
+    builder.PrependInt32Slot(1, gachaGroupIDField, 0)
+
 def AddGachaGroupIDField(builder, gachaGroupIDField):
-    return GachaElementRecursiveExcelAddGachaGroupIDField(builder, gachaGroupIDField)
-def GachaElementRecursiveExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependInt32Slot(2, parcelTypeField, 0)
+    GachaElementRecursiveExcelAddGachaGroupIDField(builder, gachaGroupIDField)
+
+def GachaElementRecursiveExcelAddParcelTypeField(builder, parcelTypeField):
+    builder.PrependInt32Slot(2, parcelTypeField, 0)
+
 def AddParcelTypeField(builder, parcelTypeField):
-    return GachaElementRecursiveExcelAddParcelTypeField(builder, parcelTypeField)
-def GachaElementRecursiveExcelAddParcelIDField(builder, parcelIDField): builder.PrependInt32Slot(3, parcelIDField, 0)
+    GachaElementRecursiveExcelAddParcelTypeField(builder, parcelTypeField)
+
+def GachaElementRecursiveExcelAddParcelIDField(builder, parcelIDField):
+    builder.PrependInt32Slot(3, parcelIDField, 0)
+
 def AddParcelIDField(builder, parcelIDField):
-    return GachaElementRecursiveExcelAddParcelIDField(builder, parcelIDField)
-def GachaElementRecursiveExcelAddParcelAmountMinField(builder, parcelAmountMinField): builder.PrependInt32Slot(4, parcelAmountMinField, 0)
+    GachaElementRecursiveExcelAddParcelIDField(builder, parcelIDField)
+
+def GachaElementRecursiveExcelAddParcelAmountMinField(builder, parcelAmountMinField):
+    builder.PrependInt32Slot(4, parcelAmountMinField, 0)
+
 def AddParcelAmountMinField(builder, parcelAmountMinField):
-    return GachaElementRecursiveExcelAddParcelAmountMinField(builder, parcelAmountMinField)
-def GachaElementRecursiveExcelAddParcelAmountMaxField(builder, parcelAmountMaxField): builder.PrependInt32Slot(5, parcelAmountMaxField, 0)
+    GachaElementRecursiveExcelAddParcelAmountMinField(builder, parcelAmountMinField)
+
+def GachaElementRecursiveExcelAddParcelAmountMaxField(builder, parcelAmountMaxField):
+    builder.PrependInt32Slot(5, parcelAmountMaxField, 0)
+
 def AddParcelAmountMaxField(builder, parcelAmountMaxField):
-    return GachaElementRecursiveExcelAddParcelAmountMaxField(builder, parcelAmountMaxField)
-def GachaElementRecursiveExcelAddProbField(builder, probField): builder.PrependInt32Slot(6, probField, 0)
+    GachaElementRecursiveExcelAddParcelAmountMaxField(builder, parcelAmountMaxField)
+
+def GachaElementRecursiveExcelAddProbField(builder, probField):
+    builder.PrependInt32Slot(6, probField, 0)
+
 def AddProbField(builder, probField):
-    return GachaElementRecursiveExcelAddProbField(builder, probField)
-def GachaElementRecursiveExcelAddStateField(builder, stateField): builder.PrependInt32Slot(7, stateField, 0)
+    GachaElementRecursiveExcelAddProbField(builder, probField)
+
+def GachaElementRecursiveExcelAddStateField(builder, stateField):
+    builder.PrependInt32Slot(7, stateField, 0)
+
 def AddStateField(builder, stateField):
-    return GachaElementRecursiveExcelAddStateField(builder, stateField)
-def GachaElementRecursiveExcelEnd(builder): return builder.EndObject()
+    GachaElementRecursiveExcelAddStateField(builder, stateField)
+
+def GachaElementRecursiveExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return GachaElementRecursiveExcelEnd(builder)

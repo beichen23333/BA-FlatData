@@ -59,24 +59,44 @@ class MinigameCCGLevelExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGLevelExcelStart(builder): builder.StartObject(5)
+def MinigameCCGLevelExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return MinigameCCGLevelExcelStart(builder)
-def MinigameCCGLevelExcelAddLevelIdField(builder, levelIdField): builder.PrependInt32Slot(0, levelIdField, 0)
+    MinigameCCGLevelExcelStart(builder)
+
+def MinigameCCGLevelExcelAddLevelIdField(builder, levelIdField):
+    builder.PrependInt32Slot(0, levelIdField, 0)
+
 def AddLevelIdField(builder, levelIdField):
-    return MinigameCCGLevelExcelAddLevelIdField(builder, levelIdField)
-def MinigameCCGLevelExcelAddCCGIdField(builder, cCGIdField): builder.PrependInt32Slot(1, cCGIdField, 0)
+    MinigameCCGLevelExcelAddLevelIdField(builder, levelIdField)
+
+def MinigameCCGLevelExcelAddCCGIdField(builder, cCGIdField):
+    builder.PrependInt32Slot(1, cCGIdField, 0)
+
 def AddCCGIdField(builder, cCGIdField):
-    return MinigameCCGLevelExcelAddCCGIdField(builder, cCGIdField)
-def MinigameCCGLevelExcelAddFloorIndexField(builder, floorIndexField): builder.PrependInt32Slot(2, floorIndexField, 0)
+    MinigameCCGLevelExcelAddCCGIdField(builder, cCGIdField)
+
+def MinigameCCGLevelExcelAddFloorIndexField(builder, floorIndexField):
+    builder.PrependInt32Slot(2, floorIndexField, 0)
+
 def AddFloorIndexField(builder, floorIndexField):
-    return MinigameCCGLevelExcelAddFloorIndexField(builder, floorIndexField)
-def MinigameCCGLevelExcelAddBackgroundPathField(builder, backgroundPathField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(backgroundPathField), 0)
+    MinigameCCGLevelExcelAddFloorIndexField(builder, floorIndexField)
+
+def MinigameCCGLevelExcelAddBackgroundPathField(builder, backgroundPathField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(backgroundPathField), 0)
+
 def AddBackgroundPathField(builder, backgroundPathField):
-    return MinigameCCGLevelExcelAddBackgroundPathField(builder, backgroundPathField)
-def MinigameCCGLevelExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(4, bGMIdField, 0)
+    MinigameCCGLevelExcelAddBackgroundPathField(builder, backgroundPathField)
+
+def MinigameCCGLevelExcelAddBGMIdField(builder, bGMIdField):
+    builder.PrependInt32Slot(4, bGMIdField, 0)
+
 def AddBGMIdField(builder, bGMIdField):
-    return MinigameCCGLevelExcelAddBGMIdField(builder, bGMIdField)
-def MinigameCCGLevelExcelEnd(builder): return builder.EndObject()
+    MinigameCCGLevelExcelAddBGMIdField(builder, bGMIdField)
+
+def MinigameCCGLevelExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGLevelExcelEnd(builder)

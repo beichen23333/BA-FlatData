@@ -45,18 +45,32 @@ class BGMRaidExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def BGMRaidExcelStart(builder): builder.StartObject(3)
+def BGMRaidExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return BGMRaidExcelStart(builder)
-def BGMRaidExcelAddStageIdField(builder, stageIdField): builder.PrependInt32Slot(0, stageIdField, 0)
+    BGMRaidExcelStart(builder)
+
+def BGMRaidExcelAddStageIdField(builder, stageIdField):
+    builder.PrependInt32Slot(0, stageIdField, 0)
+
 def AddStageIdField(builder, stageIdField):
-    return BGMRaidExcelAddStageIdField(builder, stageIdField)
-def BGMRaidExcelAddPhaseIndexField(builder, phaseIndexField): builder.PrependInt32Slot(1, phaseIndexField, 0)
+    BGMRaidExcelAddStageIdField(builder, stageIdField)
+
+def BGMRaidExcelAddPhaseIndexField(builder, phaseIndexField):
+    builder.PrependInt32Slot(1, phaseIndexField, 0)
+
 def AddPhaseIndexField(builder, phaseIndexField):
-    return BGMRaidExcelAddPhaseIndexField(builder, phaseIndexField)
-def BGMRaidExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(2, bGMIdField, 0)
+    BGMRaidExcelAddPhaseIndexField(builder, phaseIndexField)
+
+def BGMRaidExcelAddBGMIdField(builder, bGMIdField):
+    builder.PrependInt32Slot(2, bGMIdField, 0)
+
 def AddBGMIdField(builder, bGMIdField):
-    return BGMRaidExcelAddBGMIdField(builder, bGMIdField)
-def BGMRaidExcelEnd(builder): return builder.EndObject()
+    BGMRaidExcelAddBGMIdField(builder, bGMIdField)
+
+def BGMRaidExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return BGMRaidExcelEnd(builder)

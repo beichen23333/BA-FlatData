@@ -49,15 +49,26 @@ class GachaCombinedCostExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def GachaCombinedCostExcelTableStart(builder): builder.StartObject(1)
+def GachaCombinedCostExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return GachaCombinedCostExcelTableStart(builder)
-def GachaCombinedCostExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    GachaCombinedCostExcelTableStart(builder)
+
+def GachaCombinedCostExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return GachaCombinedCostExcelTableAddDataList(builder, dataList)
-def GachaCombinedCostExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    GachaCombinedCostExcelTableAddDataList(builder, dataList)
+
+def GachaCombinedCostExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return GachaCombinedCostExcelTableStartDataListVector(builder, numElems)
-def GachaCombinedCostExcelTableEnd(builder): return builder.EndObject()
+
+def GachaCombinedCostExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return GachaCombinedCostExcelTableEnd(builder)

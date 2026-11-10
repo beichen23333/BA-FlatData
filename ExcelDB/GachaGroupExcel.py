@@ -52,21 +52,38 @@ class GachaGroupExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def GachaGroupExcelStart(builder): builder.StartObject(4)
+def GachaGroupExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return GachaGroupExcelStart(builder)
-def GachaGroupExcelAddIDField(builder, iDField): builder.PrependInt32Slot(0, iDField, 0)
+    GachaGroupExcelStart(builder)
+
+def GachaGroupExcelAddIDField(builder, iDField):
+    builder.PrependInt32Slot(0, iDField, 0)
+
 def AddIDField(builder, iDField):
-    return GachaGroupExcelAddIDField(builder, iDField)
-def GachaGroupExcelAddNameKrField(builder, nameKrField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameKrField), 0)
+    GachaGroupExcelAddIDField(builder, iDField)
+
+def GachaGroupExcelAddNameKrField(builder, nameKrField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(nameKrField), 0)
+
 def AddNameKrField(builder, nameKrField):
-    return GachaGroupExcelAddNameKrField(builder, nameKrField)
-def GachaGroupExcelAddIsRecursiveField(builder, isRecursiveField): builder.PrependBoolSlot(2, isRecursiveField, 0)
+    GachaGroupExcelAddNameKrField(builder, nameKrField)
+
+def GachaGroupExcelAddIsRecursiveField(builder, isRecursiveField):
+    builder.PrependBoolSlot(2, isRecursiveField, 0)
+
 def AddIsRecursiveField(builder, isRecursiveField):
-    return GachaGroupExcelAddIsRecursiveField(builder, isRecursiveField)
-def GachaGroupExcelAddGroupTypeField(builder, groupTypeField): builder.PrependInt32Slot(3, groupTypeField, 0)
+    GachaGroupExcelAddIsRecursiveField(builder, isRecursiveField)
+
+def GachaGroupExcelAddGroupTypeField(builder, groupTypeField):
+    builder.PrependInt32Slot(3, groupTypeField, 0)
+
 def AddGroupTypeField(builder, groupTypeField):
-    return GachaGroupExcelAddGroupTypeField(builder, groupTypeField)
-def GachaGroupExcelEnd(builder): return builder.EndObject()
+    GachaGroupExcelAddGroupTypeField(builder, groupTypeField)
+
+def GachaGroupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return GachaGroupExcelEnd(builder)

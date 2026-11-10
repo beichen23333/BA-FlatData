@@ -207,54 +207,104 @@ class RecipeIngredientExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def RecipeIngredientExcelStart(builder): builder.StartObject(9)
+def RecipeIngredientExcelStart(builder):
+    builder.StartObject(9)
+
 def Start(builder):
-    return RecipeIngredientExcelStart(builder)
-def RecipeIngredientExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    RecipeIngredientExcelStart(builder)
+
+def RecipeIngredientExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return RecipeIngredientExcelAddIdField(builder, idField)
-def RecipeIngredientExcelAddRecipeTypeField(builder, recipeTypeField): builder.PrependInt32Slot(1, recipeTypeField, 0)
+    RecipeIngredientExcelAddIdField(builder, idField)
+
+def RecipeIngredientExcelAddRecipeTypeField(builder, recipeTypeField):
+    builder.PrependInt32Slot(1, recipeTypeField, 0)
+
 def AddRecipeTypeField(builder, recipeTypeField):
-    return RecipeIngredientExcelAddRecipeTypeField(builder, recipeTypeField)
-def RecipeIngredientExcelAddCostParcelTypeField(builder, costParcelTypeField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelTypeField), 0)
+    RecipeIngredientExcelAddRecipeTypeField(builder, recipeTypeField)
+
+def RecipeIngredientExcelAddCostParcelTypeField(builder, costParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelTypeField), 0)
+
 def AddCostParcelTypeField(builder, costParcelTypeField):
-    return RecipeIngredientExcelAddCostParcelTypeField(builder, costParcelTypeField)
-def RecipeIngredientExcelStartCostParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCostParcelTypeFieldVector(builder, numElems):
+    RecipeIngredientExcelAddCostParcelTypeField(builder, costParcelTypeField)
+
+def RecipeIngredientExcelStartCostParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCostParcelTypeFieldVector(builder, numElems: int) -> int:
     return RecipeIngredientExcelStartCostParcelTypeFieldVector(builder, numElems)
-def RecipeIngredientExcelAddCostIdField(builder, costIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(costIdField), 0)
+
+def RecipeIngredientExcelAddCostIdField(builder, costIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(costIdField), 0)
+
 def AddCostIdField(builder, costIdField):
-    return RecipeIngredientExcelAddCostIdField(builder, costIdField)
-def RecipeIngredientExcelStartCostIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCostIdFieldVector(builder, numElems):
+    RecipeIngredientExcelAddCostIdField(builder, costIdField)
+
+def RecipeIngredientExcelStartCostIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCostIdFieldVector(builder, numElems: int) -> int:
     return RecipeIngredientExcelStartCostIdFieldVector(builder, numElems)
-def RecipeIngredientExcelAddCostAmountField(builder, costAmountField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(costAmountField), 0)
+
+def RecipeIngredientExcelAddCostAmountField(builder, costAmountField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(costAmountField), 0)
+
 def AddCostAmountField(builder, costAmountField):
-    return RecipeIngredientExcelAddCostAmountField(builder, costAmountField)
-def RecipeIngredientExcelStartCostAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCostAmountFieldVector(builder, numElems):
+    RecipeIngredientExcelAddCostAmountField(builder, costAmountField)
+
+def RecipeIngredientExcelStartCostAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCostAmountFieldVector(builder, numElems: int) -> int:
     return RecipeIngredientExcelStartCostAmountFieldVector(builder, numElems)
-def RecipeIngredientExcelAddIngredientParcelTypeField(builder, ingredientParcelTypeField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ingredientParcelTypeField), 0)
+
+def RecipeIngredientExcelAddIngredientParcelTypeField(builder, ingredientParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(ingredientParcelTypeField), 0)
+
 def AddIngredientParcelTypeField(builder, ingredientParcelTypeField):
-    return RecipeIngredientExcelAddIngredientParcelTypeField(builder, ingredientParcelTypeField)
-def RecipeIngredientExcelStartIngredientParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartIngredientParcelTypeFieldVector(builder, numElems):
+    RecipeIngredientExcelAddIngredientParcelTypeField(builder, ingredientParcelTypeField)
+
+def RecipeIngredientExcelStartIngredientParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartIngredientParcelTypeFieldVector(builder, numElems: int) -> int:
     return RecipeIngredientExcelStartIngredientParcelTypeFieldVector(builder, numElems)
-def RecipeIngredientExcelAddIngredientIdField(builder, ingredientIdField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(ingredientIdField), 0)
+
+def RecipeIngredientExcelAddIngredientIdField(builder, ingredientIdField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(ingredientIdField), 0)
+
 def AddIngredientIdField(builder, ingredientIdField):
-    return RecipeIngredientExcelAddIngredientIdField(builder, ingredientIdField)
-def RecipeIngredientExcelStartIngredientIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartIngredientIdFieldVector(builder, numElems):
+    RecipeIngredientExcelAddIngredientIdField(builder, ingredientIdField)
+
+def RecipeIngredientExcelStartIngredientIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartIngredientIdFieldVector(builder, numElems: int) -> int:
     return RecipeIngredientExcelStartIngredientIdFieldVector(builder, numElems)
-def RecipeIngredientExcelAddIngredientAmountField(builder, ingredientAmountField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ingredientAmountField), 0)
+
+def RecipeIngredientExcelAddIngredientAmountField(builder, ingredientAmountField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(ingredientAmountField), 0)
+
 def AddIngredientAmountField(builder, ingredientAmountField):
-    return RecipeIngredientExcelAddIngredientAmountField(builder, ingredientAmountField)
-def RecipeIngredientExcelStartIngredientAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartIngredientAmountFieldVector(builder, numElems):
+    RecipeIngredientExcelAddIngredientAmountField(builder, ingredientAmountField)
+
+def RecipeIngredientExcelStartIngredientAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartIngredientAmountFieldVector(builder, numElems: int) -> int:
     return RecipeIngredientExcelStartIngredientAmountFieldVector(builder, numElems)
-def RecipeIngredientExcelAddCostTimeInSecondField(builder, costTimeInSecondField): builder.PrependInt32Slot(8, costTimeInSecondField, 0)
+
+def RecipeIngredientExcelAddCostTimeInSecondField(builder, costTimeInSecondField):
+    builder.PrependInt32Slot(8, costTimeInSecondField, 0)
+
 def AddCostTimeInSecondField(builder, costTimeInSecondField):
-    return RecipeIngredientExcelAddCostTimeInSecondField(builder, costTimeInSecondField)
-def RecipeIngredientExcelEnd(builder): return builder.EndObject()
+    RecipeIngredientExcelAddCostTimeInSecondField(builder, costTimeInSecondField)
+
+def RecipeIngredientExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return RecipeIngredientExcelEnd(builder)

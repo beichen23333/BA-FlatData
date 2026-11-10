@@ -202,63 +202,122 @@ class ProductSelectExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         return o == 0
 
-def ProductSelectExcelStart(builder): builder.StartObject(14)
+def ProductSelectExcelStart(builder):
+    builder.StartObject(14)
+
 def Start(builder):
-    return ProductSelectExcelStart(builder)
-def ProductSelectExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    ProductSelectExcelStart(builder)
+
+def ProductSelectExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return ProductSelectExcelAddIdField(builder, idField)
-def ProductSelectExcelAddProductSelectSubTypeField(builder, productSelectSubTypeField): builder.PrependInt32Slot(1, productSelectSubTypeField, 0)
+    ProductSelectExcelAddIdField(builder, idField)
+
+def ProductSelectExcelAddProductSelectSubTypeField(builder, productSelectSubTypeField):
+    builder.PrependInt32Slot(1, productSelectSubTypeField, 0)
+
 def AddProductSelectSubTypeField(builder, productSelectSubTypeField):
-    return ProductSelectExcelAddProductSelectSubTypeField(builder, productSelectSubTypeField)
-def ProductSelectExcelAddAutoSelectPopupTypeField(builder, autoSelectPopupTypeField): builder.PrependInt32Slot(2, autoSelectPopupTypeField, 0)
+    ProductSelectExcelAddProductSelectSubTypeField(builder, productSelectSubTypeField)
+
+def ProductSelectExcelAddAutoSelectPopupTypeField(builder, autoSelectPopupTypeField):
+    builder.PrependInt32Slot(2, autoSelectPopupTypeField, 0)
+
 def AddAutoSelectPopupTypeField(builder, autoSelectPopupTypeField):
-    return ProductSelectExcelAddAutoSelectPopupTypeField(builder, autoSelectPopupTypeField)
-def ProductSelectExcelAddProductIdField(builder, productIdField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+    ProductSelectExcelAddAutoSelectPopupTypeField(builder, autoSelectPopupTypeField)
+
+def ProductSelectExcelAddProductIdField(builder, productIdField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(productIdField), 0)
+
 def AddProductIdField(builder, productIdField):
-    return ProductSelectExcelAddProductIdField(builder, productIdField)
-def ProductSelectExcelAddTeenProductIdField(builder, teenProductIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(teenProductIdField), 0)
+    ProductSelectExcelAddProductIdField(builder, productIdField)
+
+def ProductSelectExcelAddTeenProductIdField(builder, teenProductIdField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(teenProductIdField), 0)
+
 def AddTeenProductIdField(builder, teenProductIdField):
-    return ProductSelectExcelAddTeenProductIdField(builder, teenProductIdField)
-def ProductSelectExcelAddStoreTypeField(builder, storeTypeField): builder.PrependInt32Slot(5, storeTypeField, 0)
+    ProductSelectExcelAddTeenProductIdField(builder, teenProductIdField)
+
+def ProductSelectExcelAddStoreTypeField(builder, storeTypeField):
+    builder.PrependInt32Slot(5, storeTypeField, 0)
+
 def AddStoreTypeField(builder, storeTypeField):
-    return ProductSelectExcelAddStoreTypeField(builder, storeTypeField)
-def ProductSelectExcelAddPriceField(builder, priceField): builder.PrependInt32Slot(6, priceField, 0)
+    ProductSelectExcelAddStoreTypeField(builder, storeTypeField)
+
+def ProductSelectExcelAddPriceField(builder, priceField):
+    builder.PrependInt32Slot(6, priceField, 0)
+
 def AddPriceField(builder, priceField):
-    return ProductSelectExcelAddPriceField(builder, priceField)
-def ProductSelectExcelAddPriceReferenceField(builder, priceReferenceField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(priceReferenceField), 0)
+    ProductSelectExcelAddPriceField(builder, priceField)
+
+def ProductSelectExcelAddPriceReferenceField(builder, priceReferenceField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(priceReferenceField), 0)
+
 def AddPriceReferenceField(builder, priceReferenceField):
-    return ProductSelectExcelAddPriceReferenceField(builder, priceReferenceField)
-def ProductSelectExcelAddPurchasePeriodTypeField(builder, purchasePeriodTypeField): builder.PrependInt32Slot(8, purchasePeriodTypeField, 0)
+    ProductSelectExcelAddPriceReferenceField(builder, priceReferenceField)
+
+def ProductSelectExcelAddPurchasePeriodTypeField(builder, purchasePeriodTypeField):
+    builder.PrependInt32Slot(8, purchasePeriodTypeField, 0)
+
 def AddPurchasePeriodTypeField(builder, purchasePeriodTypeField):
-    return ProductSelectExcelAddPurchasePeriodTypeField(builder, purchasePeriodTypeField)
-def ProductSelectExcelAddPurchasePeriodLimitField(builder, purchasePeriodLimitField): builder.PrependInt32Slot(9, purchasePeriodLimitField, 0)
+    ProductSelectExcelAddPurchasePeriodTypeField(builder, purchasePeriodTypeField)
+
+def ProductSelectExcelAddPurchasePeriodLimitField(builder, purchasePeriodLimitField):
+    builder.PrependInt32Slot(9, purchasePeriodLimitField, 0)
+
 def AddPurchasePeriodLimitField(builder, purchasePeriodLimitField):
-    return ProductSelectExcelAddPurchasePeriodLimitField(builder, purchasePeriodLimitField)
-def ProductSelectExcelAddParcelTypeField(builder, parcelTypeField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+    ProductSelectExcelAddPurchasePeriodLimitField(builder, purchasePeriodLimitField)
+
+def ProductSelectExcelAddParcelTypeField(builder, parcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(parcelTypeField), 0)
+
 def AddParcelTypeField(builder, parcelTypeField):
-    return ProductSelectExcelAddParcelTypeField(builder, parcelTypeField)
-def ProductSelectExcelStartParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelTypeFieldVector(builder, numElems):
+    ProductSelectExcelAddParcelTypeField(builder, parcelTypeField)
+
+def ProductSelectExcelStartParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelTypeFieldVector(builder, numElems: int) -> int:
     return ProductSelectExcelStartParcelTypeFieldVector(builder, numElems)
-def ProductSelectExcelAddParcelIdField(builder, parcelIdField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(parcelIdField), 0)
+
+def ProductSelectExcelAddParcelIdField(builder, parcelIdField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(parcelIdField), 0)
+
 def AddParcelIdField(builder, parcelIdField):
-    return ProductSelectExcelAddParcelIdField(builder, parcelIdField)
-def ProductSelectExcelStartParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelIdFieldVector(builder, numElems):
+    ProductSelectExcelAddParcelIdField(builder, parcelIdField)
+
+def ProductSelectExcelStartParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelIdFieldVector(builder, numElems: int) -> int:
     return ProductSelectExcelStartParcelIdFieldVector(builder, numElems)
-def ProductSelectExcelAddParcelAmountField(builder, parcelAmountField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(parcelAmountField), 0)
+
+def ProductSelectExcelAddParcelAmountField(builder, parcelAmountField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(parcelAmountField), 0)
+
 def AddParcelAmountField(builder, parcelAmountField):
-    return ProductSelectExcelAddParcelAmountField(builder, parcelAmountField)
-def ProductSelectExcelStartParcelAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartParcelAmountFieldVector(builder, numElems):
+    ProductSelectExcelAddParcelAmountField(builder, parcelAmountField)
+
+def ProductSelectExcelStartParcelAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartParcelAmountFieldVector(builder, numElems: int) -> int:
     return ProductSelectExcelStartParcelAmountFieldVector(builder, numElems)
-def ProductSelectExcelAddProductSelectionSlotField(builder, productSelectionSlotField): builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(productSelectionSlotField), 0)
+
+def ProductSelectExcelAddProductSelectionSlotField(builder, productSelectionSlotField):
+    builder.PrependUOffsetTRelativeSlot(13, flatbuffers.number_types.UOffsetTFlags.py_type(productSelectionSlotField), 0)
+
 def AddProductSelectionSlotField(builder, productSelectionSlotField):
-    return ProductSelectExcelAddProductSelectionSlotField(builder, productSelectionSlotField)
-def ProductSelectExcelStartProductSelectionSlotFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartProductSelectionSlotFieldVector(builder, numElems):
+    ProductSelectExcelAddProductSelectionSlotField(builder, productSelectionSlotField)
+
+def ProductSelectExcelStartProductSelectionSlotFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartProductSelectionSlotFieldVector(builder, numElems: int) -> int:
     return ProductSelectExcelStartProductSelectionSlotFieldVector(builder, numElems)
-def ProductSelectExcelEnd(builder): return builder.EndObject()
+
+def ProductSelectExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ProductSelectExcelEnd(builder)

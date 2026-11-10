@@ -7,6 +7,7 @@ from .AnimatorDataTable import AnimatorDataTable
 from .AnimatorData import AnimatorData
 from .AniStateData import AniStateData
 from .AniEventData import AniEventData
+from .AppIconExcel import AppIconExcel
 from .BattleExcel import BattleExcel
 from .BossPhaseExcel import BossPhaseExcel
 from .BuffParticleExcel import BuffParticleExcel
@@ -24,6 +25,7 @@ from .ConstEventCommonExcel import ConstEventCommonExcel
 from .ConstFieldExcel import ConstFieldExcel
 from .ConstKeyMappingExcel import ConstKeyMappingExcel
 from .ConstMinigameCCGExcel import ConstMinigameCCGExcel
+from .ConstMinigameJankenExcel import ConstMinigameJankenExcel
 from .ConstMinigameRoadPuzzleExcel import ConstMinigameRoadPuzzleExcel
 from .ConstMiniGameShootingExcel import ConstMiniGameShootingExcel
 from .ConstMinigameTBGExcel import ConstMinigameTBGExcel
@@ -93,6 +95,7 @@ from .VoiceSkillUseExcel import VoiceSkillUseExcel
 from .WeekDungeonFindGiftRewardExcel import WeekDungeonFindGiftRewardExcel
 from .AddressableBlackListExcelTable import AddressableBlackListExcelTable
 from .AddressableWhiteListExcelTable import AddressableWhiteListExcelTable
+from .AppIconExcelTable import AppIconExcelTable
 from .BattleExcelTable import BattleExcelTable
 from .BossPhaseExcelTable import BossPhaseExcelTable
 from .BuffParticleExcelTable import BuffParticleExcelTable
@@ -110,6 +113,7 @@ from .ConstEventCommonExcelTable import ConstEventCommonExcelTable
 from .ConstFieldExcelTable import ConstFieldExcelTable
 from .ConstKeyMappingExcelTable import ConstKeyMappingExcelTable
 from .ConstMinigameCCGExcelTable import ConstMinigameCCGExcelTable
+from .ConstMinigameJankenExcelTable import ConstMinigameJankenExcelTable
 from .ConstMinigameRoadPuzzleExcelTable import ConstMinigameRoadPuzzleExcelTable
 from .ConstMiniGameShootingExcelTable import ConstMiniGameShootingExcelTable
 from .ConstMinigameTBGExcelTable import ConstMinigameTBGExcelTable

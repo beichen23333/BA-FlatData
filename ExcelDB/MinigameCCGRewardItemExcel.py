@@ -73,30 +73,56 @@ class MinigameCCGRewardItemExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGRewardItemExcelStart(builder): builder.StartObject(7)
+def MinigameCCGRewardItemExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return MinigameCCGRewardItemExcelStart(builder)
-def MinigameCCGRewardItemExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    MinigameCCGRewardItemExcelStart(builder)
+
+def MinigameCCGRewardItemExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return MinigameCCGRewardItemExcelAddIdField(builder, idField)
-def MinigameCCGRewardItemExcelAddCCGIdField(builder, cCGIdField): builder.PrependInt32Slot(1, cCGIdField, 0)
+    MinigameCCGRewardItemExcelAddIdField(builder, idField)
+
+def MinigameCCGRewardItemExcelAddCCGIdField(builder, cCGIdField):
+    builder.PrependInt32Slot(1, cCGIdField, 0)
+
 def AddCCGIdField(builder, cCGIdField):
-    return MinigameCCGRewardItemExcelAddCCGIdField(builder, cCGIdField)
-def MinigameCCGRewardItemExcelAddMinPointField(builder, minPointField): builder.PrependInt32Slot(2, minPointField, 0)
+    MinigameCCGRewardItemExcelAddCCGIdField(builder, cCGIdField)
+
+def MinigameCCGRewardItemExcelAddMinPointField(builder, minPointField):
+    builder.PrependInt32Slot(2, minPointField, 0)
+
 def AddMinPointField(builder, minPointField):
-    return MinigameCCGRewardItemExcelAddMinPointField(builder, minPointField)
-def MinigameCCGRewardItemExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+    MinigameCCGRewardItemExcelAddMinPointField(builder, minPointField)
+
+def MinigameCCGRewardItemExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(3, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return MinigameCCGRewardItemExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def MinigameCCGRewardItemExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(4, rewardParcelIdField, 0)
+    MinigameCCGRewardItemExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def MinigameCCGRewardItemExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependInt32Slot(4, rewardParcelIdField, 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return MinigameCCGRewardItemExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def MinigameCCGRewardItemExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(5, rewardParcelAmountField, 0)
+    MinigameCCGRewardItemExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def MinigameCCGRewardItemExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependInt32Slot(5, rewardParcelAmountField, 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return MinigameCCGRewardItemExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def MinigameCCGRewardItemExcelAddDisplayOrderField(builder, displayOrderField): builder.PrependInt32Slot(6, displayOrderField, 0)
+    MinigameCCGRewardItemExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def MinigameCCGRewardItemExcelAddDisplayOrderField(builder, displayOrderField):
+    builder.PrependInt32Slot(6, displayOrderField, 0)
+
 def AddDisplayOrderField(builder, displayOrderField):
-    return MinigameCCGRewardItemExcelAddDisplayOrderField(builder, displayOrderField)
-def MinigameCCGRewardItemExcelEnd(builder): return builder.EndObject()
+    MinigameCCGRewardItemExcelAddDisplayOrderField(builder, displayOrderField)
+
+def MinigameCCGRewardItemExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGRewardItemExcelEnd(builder)

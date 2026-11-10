@@ -38,15 +38,26 @@ class ClearDeckRuleExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ClearDeckRuleExcelStart(builder): builder.StartObject(2)
+def ClearDeckRuleExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return ClearDeckRuleExcelStart(builder)
-def ClearDeckRuleExcelAddContentTypeField(builder, contentTypeField): builder.PrependInt32Slot(0, contentTypeField, 0)
+    ClearDeckRuleExcelStart(builder)
+
+def ClearDeckRuleExcelAddContentTypeField(builder, contentTypeField):
+    builder.PrependInt32Slot(0, contentTypeField, 0)
+
 def AddContentTypeField(builder, contentTypeField):
-    return ClearDeckRuleExcelAddContentTypeField(builder, contentTypeField)
-def ClearDeckRuleExcelAddSizeLimitField(builder, sizeLimitField): builder.PrependInt32Slot(1, sizeLimitField, 0)
+    ClearDeckRuleExcelAddContentTypeField(builder, contentTypeField)
+
+def ClearDeckRuleExcelAddSizeLimitField(builder, sizeLimitField):
+    builder.PrependInt32Slot(1, sizeLimitField, 0)
+
 def AddSizeLimitField(builder, sizeLimitField):
-    return ClearDeckRuleExcelAddSizeLimitField(builder, sizeLimitField)
-def ClearDeckRuleExcelEnd(builder): return builder.EndObject()
+    ClearDeckRuleExcelAddSizeLimitField(builder, sizeLimitField)
+
+def ClearDeckRuleExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ClearDeckRuleExcelEnd(builder)

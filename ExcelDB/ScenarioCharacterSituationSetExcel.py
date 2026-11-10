@@ -73,30 +73,56 @@ class ScenarioCharacterSituationSetExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def ScenarioCharacterSituationSetExcelStart(builder): builder.StartObject(7)
+def ScenarioCharacterSituationSetExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return ScenarioCharacterSituationSetExcelStart(builder)
-def ScenarioCharacterSituationSetExcelAddNameField(builder, nameField): builder.PrependUint32Slot(0, nameField, 0)
+    ScenarioCharacterSituationSetExcelStart(builder)
+
+def ScenarioCharacterSituationSetExcelAddNameField(builder, nameField):
+    builder.PrependUint32Slot(0, nameField, 0)
+
 def AddNameField(builder, nameField):
-    return ScenarioCharacterSituationSetExcelAddNameField(builder, nameField)
-def ScenarioCharacterSituationSetExcelAddFaceField(builder, faceField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(faceField), 0)
+    ScenarioCharacterSituationSetExcelAddNameField(builder, nameField)
+
+def ScenarioCharacterSituationSetExcelAddFaceField(builder, faceField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(faceField), 0)
+
 def AddFaceField(builder, faceField):
-    return ScenarioCharacterSituationSetExcelAddFaceField(builder, faceField)
-def ScenarioCharacterSituationSetExcelAddBehaviorField(builder, behaviorField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(behaviorField), 0)
+    ScenarioCharacterSituationSetExcelAddFaceField(builder, faceField)
+
+def ScenarioCharacterSituationSetExcelAddBehaviorField(builder, behaviorField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(behaviorField), 0)
+
 def AddBehaviorField(builder, behaviorField):
-    return ScenarioCharacterSituationSetExcelAddBehaviorField(builder, behaviorField)
-def ScenarioCharacterSituationSetExcelAddActionField(builder, actionField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(actionField), 0)
+    ScenarioCharacterSituationSetExcelAddBehaviorField(builder, behaviorField)
+
+def ScenarioCharacterSituationSetExcelAddActionField(builder, actionField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(actionField), 0)
+
 def AddActionField(builder, actionField):
-    return ScenarioCharacterSituationSetExcelAddActionField(builder, actionField)
-def ScenarioCharacterSituationSetExcelAddShapeField(builder, shapeField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(shapeField), 0)
+    ScenarioCharacterSituationSetExcelAddActionField(builder, actionField)
+
+def ScenarioCharacterSituationSetExcelAddShapeField(builder, shapeField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(shapeField), 0)
+
 def AddShapeField(builder, shapeField):
-    return ScenarioCharacterSituationSetExcelAddShapeField(builder, shapeField)
-def ScenarioCharacterSituationSetExcelAddEffectField(builder, effectField): builder.PrependUint32Slot(5, effectField, 0)
+    ScenarioCharacterSituationSetExcelAddShapeField(builder, shapeField)
+
+def ScenarioCharacterSituationSetExcelAddEffectField(builder, effectField):
+    builder.PrependUint32Slot(5, effectField, 0)
+
 def AddEffectField(builder, effectField):
-    return ScenarioCharacterSituationSetExcelAddEffectField(builder, effectField)
-def ScenarioCharacterSituationSetExcelAddEmotionField(builder, emotionField): builder.PrependUint32Slot(6, emotionField, 0)
+    ScenarioCharacterSituationSetExcelAddEffectField(builder, effectField)
+
+def ScenarioCharacterSituationSetExcelAddEmotionField(builder, emotionField):
+    builder.PrependUint32Slot(6, emotionField, 0)
+
 def AddEmotionField(builder, emotionField):
-    return ScenarioCharacterSituationSetExcelAddEmotionField(builder, emotionField)
-def ScenarioCharacterSituationSetExcelEnd(builder): return builder.EndObject()
+    ScenarioCharacterSituationSetExcelAddEmotionField(builder, emotionField)
+
+def ScenarioCharacterSituationSetExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioCharacterSituationSetExcelEnd(builder)

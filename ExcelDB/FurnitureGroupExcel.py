@@ -99,30 +99,56 @@ class FurnitureGroupExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         return o == 0
 
-def FurnitureGroupExcelStart(builder): builder.StartObject(5)
+def FurnitureGroupExcelStart(builder):
+    builder.StartObject(5)
+
 def Start(builder):
-    return FurnitureGroupExcelStart(builder)
-def FurnitureGroupExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    FurnitureGroupExcelStart(builder)
+
+def FurnitureGroupExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return FurnitureGroupExcelAddIdField(builder, idField)
-def FurnitureGroupExcelAddGroupNameLocalizeField(builder, groupNameLocalizeField): builder.PrependUint32Slot(1, groupNameLocalizeField, 0)
+    FurnitureGroupExcelAddIdField(builder, idField)
+
+def FurnitureGroupExcelAddGroupNameLocalizeField(builder, groupNameLocalizeField):
+    builder.PrependUint32Slot(1, groupNameLocalizeField, 0)
+
 def AddGroupNameLocalizeField(builder, groupNameLocalizeField):
-    return FurnitureGroupExcelAddGroupNameLocalizeField(builder, groupNameLocalizeField)
-def FurnitureGroupExcelAddLocalizeEtcIdField(builder, localizeEtcIdField): builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+    FurnitureGroupExcelAddGroupNameLocalizeField(builder, groupNameLocalizeField)
+
+def FurnitureGroupExcelAddLocalizeEtcIdField(builder, localizeEtcIdField):
+    builder.PrependUint32Slot(2, localizeEtcIdField, 0)
+
 def AddLocalizeEtcIdField(builder, localizeEtcIdField):
-    return FurnitureGroupExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
-def FurnitureGroupExcelAddRequiredFurnitureCountField(builder, requiredFurnitureCountField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(requiredFurnitureCountField), 0)
+    FurnitureGroupExcelAddLocalizeEtcIdField(builder, localizeEtcIdField)
+
+def FurnitureGroupExcelAddRequiredFurnitureCountField(builder, requiredFurnitureCountField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(requiredFurnitureCountField), 0)
+
 def AddRequiredFurnitureCountField(builder, requiredFurnitureCountField):
-    return FurnitureGroupExcelAddRequiredFurnitureCountField(builder, requiredFurnitureCountField)
-def FurnitureGroupExcelStartRequiredFurnitureCountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRequiredFurnitureCountFieldVector(builder, numElems):
+    FurnitureGroupExcelAddRequiredFurnitureCountField(builder, requiredFurnitureCountField)
+
+def FurnitureGroupExcelStartRequiredFurnitureCountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRequiredFurnitureCountFieldVector(builder, numElems: int) -> int:
     return FurnitureGroupExcelStartRequiredFurnitureCountFieldVector(builder, numElems)
-def FurnitureGroupExcelAddComfortBonusField(builder, comfortBonusField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(comfortBonusField), 0)
+
+def FurnitureGroupExcelAddComfortBonusField(builder, comfortBonusField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(comfortBonusField), 0)
+
 def AddComfortBonusField(builder, comfortBonusField):
-    return FurnitureGroupExcelAddComfortBonusField(builder, comfortBonusField)
-def FurnitureGroupExcelStartComfortBonusFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartComfortBonusFieldVector(builder, numElems):
+    FurnitureGroupExcelAddComfortBonusField(builder, comfortBonusField)
+
+def FurnitureGroupExcelStartComfortBonusFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartComfortBonusFieldVector(builder, numElems: int) -> int:
     return FurnitureGroupExcelStartComfortBonusFieldVector(builder, numElems)
-def FurnitureGroupExcelEnd(builder): return builder.EndObject()
+
+def FurnitureGroupExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FurnitureGroupExcelEnd(builder)

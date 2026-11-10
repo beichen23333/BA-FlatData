@@ -49,15 +49,26 @@ class ScenarioScriptFunnelExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ScenarioScriptFunnelExcelTableStart(builder): builder.StartObject(1)
+def ScenarioScriptFunnelExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ScenarioScriptFunnelExcelTableStart(builder)
-def ScenarioScriptFunnelExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ScenarioScriptFunnelExcelTableStart(builder)
+
+def ScenarioScriptFunnelExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ScenarioScriptFunnelExcelTableAddDataList(builder, dataList)
-def ScenarioScriptFunnelExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ScenarioScriptFunnelExcelTableAddDataList(builder, dataList)
+
+def ScenarioScriptFunnelExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ScenarioScriptFunnelExcelTableStartDataListVector(builder, numElems)
-def ScenarioScriptFunnelExcelTableEnd(builder): return builder.EndObject()
+
+def ScenarioScriptFunnelExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ScenarioScriptFunnelExcelTableEnd(builder)

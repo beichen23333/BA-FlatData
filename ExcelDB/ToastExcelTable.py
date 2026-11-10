@@ -49,15 +49,26 @@ class ToastExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def ToastExcelTableStart(builder): builder.StartObject(1)
+def ToastExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return ToastExcelTableStart(builder)
-def ToastExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    ToastExcelTableStart(builder)
+
+def ToastExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return ToastExcelTableAddDataList(builder, dataList)
-def ToastExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    ToastExcelTableAddDataList(builder, dataList)
+
+def ToastExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return ToastExcelTableStartDataListVector(builder, numElems)
-def ToastExcelTableEnd(builder): return builder.EndObject()
+
+def ToastExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ToastExcelTableEnd(builder)

@@ -149,57 +149,110 @@ class MinigameCCGLevelStageExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MinigameCCGLevelStageExcelStart(builder): builder.StartObject(15)
+def MinigameCCGLevelStageExcelStart(builder):
+    builder.StartObject(15)
+
 def Start(builder):
-    return MinigameCCGLevelStageExcelStart(builder)
-def MinigameCCGLevelStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    MinigameCCGLevelStageExcelStart(builder)
+
+def MinigameCCGLevelStageExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return MinigameCCGLevelStageExcelAddIdField(builder, idField)
-def MinigameCCGLevelStageExcelAddGroupIdField(builder, groupIdField): builder.PrependInt32Slot(1, groupIdField, 0)
+    MinigameCCGLevelStageExcelAddIdField(builder, idField)
+
+def MinigameCCGLevelStageExcelAddGroupIdField(builder, groupIdField):
+    builder.PrependInt32Slot(1, groupIdField, 0)
+
 def AddGroupIdField(builder, groupIdField):
-    return MinigameCCGLevelStageExcelAddGroupIdField(builder, groupIdField)
-def MinigameCCGLevelStageExcelAddEnemyGroupIdField(builder, enemyGroupIdField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(enemyGroupIdField), 0)
+    MinigameCCGLevelStageExcelAddGroupIdField(builder, groupIdField)
+
+def MinigameCCGLevelStageExcelAddEnemyGroupIdField(builder, enemyGroupIdField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(enemyGroupIdField), 0)
+
 def AddEnemyGroupIdField(builder, enemyGroupIdField):
-    return MinigameCCGLevelStageExcelAddEnemyGroupIdField(builder, enemyGroupIdField)
-def MinigameCCGLevelStageExcelStartEnemyGroupIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartEnemyGroupIdFieldVector(builder, numElems):
+    MinigameCCGLevelStageExcelAddEnemyGroupIdField(builder, enemyGroupIdField)
+
+def MinigameCCGLevelStageExcelStartEnemyGroupIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartEnemyGroupIdFieldVector(builder, numElems: int) -> int:
     return MinigameCCGLevelStageExcelStartEnemyGroupIdFieldVector(builder, numElems)
-def MinigameCCGLevelStageExcelAddStageTypeField(builder, stageTypeField): builder.PrependInt32Slot(3, stageTypeField, 0)
+
+def MinigameCCGLevelStageExcelAddStageTypeField(builder, stageTypeField):
+    builder.PrependInt32Slot(3, stageTypeField, 0)
+
 def AddStageTypeField(builder, stageTypeField):
-    return MinigameCCGLevelStageExcelAddStageTypeField(builder, stageTypeField)
-def MinigameCCGLevelStageExcelAddCampDiscardCardCountField(builder, campDiscardCardCountField): builder.PrependInt32Slot(4, campDiscardCardCountField, 0)
+    MinigameCCGLevelStageExcelAddStageTypeField(builder, stageTypeField)
+
+def MinigameCCGLevelStageExcelAddCampDiscardCardCountField(builder, campDiscardCardCountField):
+    builder.PrependInt32Slot(4, campDiscardCardCountField, 0)
+
 def AddCampDiscardCardCountField(builder, campDiscardCardCountField):
-    return MinigameCCGLevelStageExcelAddCampDiscardCardCountField(builder, campDiscardCardCountField)
-def MinigameCCGLevelStageExcelAddCampSprPathField(builder, campSprPathField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(campSprPathField), 0)
+    MinigameCCGLevelStageExcelAddCampDiscardCardCountField(builder, campDiscardCardCountField)
+
+def MinigameCCGLevelStageExcelAddCampSprPathField(builder, campSprPathField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(campSprPathField), 0)
+
 def AddCampSprPathField(builder, campSprPathField):
-    return MinigameCCGLevelStageExcelAddCampSprPathField(builder, campSprPathField)
-def MinigameCCGLevelStageExcelAddCampBackgroundPathField(builder, campBackgroundPathField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(campBackgroundPathField), 0)
+    MinigameCCGLevelStageExcelAddCampSprPathField(builder, campSprPathField)
+
+def MinigameCCGLevelStageExcelAddCampBackgroundPathField(builder, campBackgroundPathField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(campBackgroundPathField), 0)
+
 def AddCampBackgroundPathField(builder, campBackgroundPathField):
-    return MinigameCCGLevelStageExcelAddCampBackgroundPathField(builder, campBackgroundPathField)
-def MinigameCCGLevelStageExcelAddRewardTypeField(builder, rewardTypeField): builder.PrependInt32Slot(7, rewardTypeField, 0)
+    MinigameCCGLevelStageExcelAddCampBackgroundPathField(builder, campBackgroundPathField)
+
+def MinigameCCGLevelStageExcelAddRewardTypeField(builder, rewardTypeField):
+    builder.PrependInt32Slot(7, rewardTypeField, 0)
+
 def AddRewardTypeField(builder, rewardTypeField):
-    return MinigameCCGLevelStageExcelAddRewardTypeField(builder, rewardTypeField)
-def MinigameCCGLevelStageExcelAddRewardCountField(builder, rewardCountField): builder.PrependInt32Slot(8, rewardCountField, 0)
+    MinigameCCGLevelStageExcelAddRewardTypeField(builder, rewardTypeField)
+
+def MinigameCCGLevelStageExcelAddRewardCountField(builder, rewardCountField):
+    builder.PrependInt32Slot(8, rewardCountField, 0)
+
 def AddRewardCountField(builder, rewardCountField):
-    return MinigameCCGLevelStageExcelAddRewardCountField(builder, rewardCountField)
-def MinigameCCGLevelStageExcelAddRewardCardGroupIdField(builder, rewardCardGroupIdField): builder.PrependInt32Slot(9, rewardCardGroupIdField, 0)
+    MinigameCCGLevelStageExcelAddRewardCountField(builder, rewardCountField)
+
+def MinigameCCGLevelStageExcelAddRewardCardGroupIdField(builder, rewardCardGroupIdField):
+    builder.PrependInt32Slot(9, rewardCardGroupIdField, 0)
+
 def AddRewardCardGroupIdField(builder, rewardCardGroupIdField):
-    return MinigameCCGLevelStageExcelAddRewardCardGroupIdField(builder, rewardCardGroupIdField)
-def MinigameCCGLevelStageExcelAddCardRarityGroupIdField(builder, cardRarityGroupIdField): builder.PrependInt32Slot(10, cardRarityGroupIdField, 0)
+    MinigameCCGLevelStageExcelAddRewardCardGroupIdField(builder, rewardCardGroupIdField)
+
+def MinigameCCGLevelStageExcelAddCardRarityGroupIdField(builder, cardRarityGroupIdField):
+    builder.PrependInt32Slot(10, cardRarityGroupIdField, 0)
+
 def AddCardRarityGroupIdField(builder, cardRarityGroupIdField):
-    return MinigameCCGLevelStageExcelAddCardRarityGroupIdField(builder, cardRarityGroupIdField)
-def MinigameCCGLevelStageExcelAddIsSkipIntroScenarioField(builder, isSkipIntroScenarioField): builder.PrependBoolSlot(11, isSkipIntroScenarioField, 0)
+    MinigameCCGLevelStageExcelAddCardRarityGroupIdField(builder, cardRarityGroupIdField)
+
+def MinigameCCGLevelStageExcelAddIsSkipIntroScenarioField(builder, isSkipIntroScenarioField):
+    builder.PrependBoolSlot(11, isSkipIntroScenarioField, 0)
+
 def AddIsSkipIntroScenarioField(builder, isSkipIntroScenarioField):
-    return MinigameCCGLevelStageExcelAddIsSkipIntroScenarioField(builder, isSkipIntroScenarioField)
-def MinigameCCGLevelStageExcelAddIntroScenarioGroupIdField(builder, introScenarioGroupIdField): builder.PrependInt32Slot(12, introScenarioGroupIdField, 0)
+    MinigameCCGLevelStageExcelAddIsSkipIntroScenarioField(builder, isSkipIntroScenarioField)
+
+def MinigameCCGLevelStageExcelAddIntroScenarioGroupIdField(builder, introScenarioGroupIdField):
+    builder.PrependInt32Slot(12, introScenarioGroupIdField, 0)
+
 def AddIntroScenarioGroupIdField(builder, introScenarioGroupIdField):
-    return MinigameCCGLevelStageExcelAddIntroScenarioGroupIdField(builder, introScenarioGroupIdField)
-def MinigameCCGLevelStageExcelAddIsSkipOutroScenarioField(builder, isSkipOutroScenarioField): builder.PrependBoolSlot(13, isSkipOutroScenarioField, 0)
+    MinigameCCGLevelStageExcelAddIntroScenarioGroupIdField(builder, introScenarioGroupIdField)
+
+def MinigameCCGLevelStageExcelAddIsSkipOutroScenarioField(builder, isSkipOutroScenarioField):
+    builder.PrependBoolSlot(13, isSkipOutroScenarioField, 0)
+
 def AddIsSkipOutroScenarioField(builder, isSkipOutroScenarioField):
-    return MinigameCCGLevelStageExcelAddIsSkipOutroScenarioField(builder, isSkipOutroScenarioField)
-def MinigameCCGLevelStageExcelAddOutroScenarioGroupIdField(builder, outroScenarioGroupIdField): builder.PrependInt32Slot(14, outroScenarioGroupIdField, 0)
+    MinigameCCGLevelStageExcelAddIsSkipOutroScenarioField(builder, isSkipOutroScenarioField)
+
+def MinigameCCGLevelStageExcelAddOutroScenarioGroupIdField(builder, outroScenarioGroupIdField):
+    builder.PrependInt32Slot(14, outroScenarioGroupIdField, 0)
+
 def AddOutroScenarioGroupIdField(builder, outroScenarioGroupIdField):
-    return MinigameCCGLevelStageExcelAddOutroScenarioGroupIdField(builder, outroScenarioGroupIdField)
-def MinigameCCGLevelStageExcelEnd(builder): return builder.EndObject()
+    MinigameCCGLevelStageExcelAddOutroScenarioGroupIdField(builder, outroScenarioGroupIdField)
+
+def MinigameCCGLevelStageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MinigameCCGLevelStageExcelEnd(builder)

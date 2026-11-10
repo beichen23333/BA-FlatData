@@ -80,33 +80,62 @@ class AssistSlotExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def AssistSlotExcelStart(builder): builder.StartObject(8)
+def AssistSlotExcelStart(builder):
+    builder.StartObject(8)
+
 def Start(builder):
-    return AssistSlotExcelStart(builder)
-def AssistSlotExcelAddSlotIdField(builder, slotIdField): builder.PrependInt32Slot(0, slotIdField, 0)
+    AssistSlotExcelStart(builder)
+
+def AssistSlotExcelAddSlotIdField(builder, slotIdField):
+    builder.PrependInt32Slot(0, slotIdField, 0)
+
 def AddSlotIdField(builder, slotIdField):
-    return AssistSlotExcelAddSlotIdField(builder, slotIdField)
-def AssistSlotExcelAddEchelonTypeField(builder, echelonTypeField): builder.PrependInt32Slot(1, echelonTypeField, 0)
+    AssistSlotExcelAddSlotIdField(builder, slotIdField)
+
+def AssistSlotExcelAddEchelonTypeField(builder, echelonTypeField):
+    builder.PrependInt32Slot(1, echelonTypeField, 0)
+
 def AddEchelonTypeField(builder, echelonTypeField):
-    return AssistSlotExcelAddEchelonTypeField(builder, echelonTypeField)
-def AssistSlotExcelAddSlotNumberField(builder, slotNumberField): builder.PrependInt32Slot(2, slotNumberField, 0)
+    AssistSlotExcelAddEchelonTypeField(builder, echelonTypeField)
+
+def AssistSlotExcelAddSlotNumberField(builder, slotNumberField):
+    builder.PrependInt32Slot(2, slotNumberField, 0)
+
 def AddSlotNumberField(builder, slotNumberField):
-    return AssistSlotExcelAddSlotNumberField(builder, slotNumberField)
-def AssistSlotExcelAddAssistTermRewardPeriodFromSecField(builder, assistTermRewardPeriodFromSecField): builder.PrependInt32Slot(3, assistTermRewardPeriodFromSecField, 0)
+    AssistSlotExcelAddSlotNumberField(builder, slotNumberField)
+
+def AssistSlotExcelAddAssistTermRewardPeriodFromSecField(builder, assistTermRewardPeriodFromSecField):
+    builder.PrependInt32Slot(3, assistTermRewardPeriodFromSecField, 0)
+
 def AddAssistTermRewardPeriodFromSecField(builder, assistTermRewardPeriodFromSecField):
-    return AssistSlotExcelAddAssistTermRewardPeriodFromSecField(builder, assistTermRewardPeriodFromSecField)
-def AssistSlotExcelAddAssistRewardLimitField(builder, assistRewardLimitField): builder.PrependInt32Slot(4, assistRewardLimitField, 0)
+    AssistSlotExcelAddAssistTermRewardPeriodFromSecField(builder, assistTermRewardPeriodFromSecField)
+
+def AssistSlotExcelAddAssistRewardLimitField(builder, assistRewardLimitField):
+    builder.PrependInt32Slot(4, assistRewardLimitField, 0)
+
 def AddAssistRewardLimitField(builder, assistRewardLimitField):
-    return AssistSlotExcelAddAssistRewardLimitField(builder, assistRewardLimitField)
-def AssistSlotExcelAddAssistRentRewardDailyMaxCountField(builder, assistRentRewardDailyMaxCountField): builder.PrependInt32Slot(5, assistRentRewardDailyMaxCountField, 0)
+    AssistSlotExcelAddAssistRewardLimitField(builder, assistRewardLimitField)
+
+def AssistSlotExcelAddAssistRentRewardDailyMaxCountField(builder, assistRentRewardDailyMaxCountField):
+    builder.PrependInt32Slot(5, assistRentRewardDailyMaxCountField, 0)
+
 def AddAssistRentRewardDailyMaxCountField(builder, assistRentRewardDailyMaxCountField):
-    return AssistSlotExcelAddAssistRentRewardDailyMaxCountField(builder, assistRentRewardDailyMaxCountField)
-def AssistSlotExcelAddAssistRentalFeeAmountField(builder, assistRentalFeeAmountField): builder.PrependInt32Slot(6, assistRentalFeeAmountField, 0)
+    AssistSlotExcelAddAssistRentRewardDailyMaxCountField(builder, assistRentRewardDailyMaxCountField)
+
+def AssistSlotExcelAddAssistRentalFeeAmountField(builder, assistRentalFeeAmountField):
+    builder.PrependInt32Slot(6, assistRentalFeeAmountField, 0)
+
 def AddAssistRentalFeeAmountField(builder, assistRentalFeeAmountField):
-    return AssistSlotExcelAddAssistRentalFeeAmountField(builder, assistRentalFeeAmountField)
-def AssistSlotExcelAddAssistRentalFeeAmountStrangerField(builder, assistRentalFeeAmountStrangerField): builder.PrependInt32Slot(7, assistRentalFeeAmountStrangerField, 0)
+    AssistSlotExcelAddAssistRentalFeeAmountField(builder, assistRentalFeeAmountField)
+
+def AssistSlotExcelAddAssistRentalFeeAmountStrangerField(builder, assistRentalFeeAmountStrangerField):
+    builder.PrependInt32Slot(7, assistRentalFeeAmountStrangerField, 0)
+
 def AddAssistRentalFeeAmountStrangerField(builder, assistRentalFeeAmountStrangerField):
-    return AssistSlotExcelAddAssistRentalFeeAmountStrangerField(builder, assistRentalFeeAmountStrangerField)
-def AssistSlotExcelEnd(builder): return builder.EndObject()
+    AssistSlotExcelAddAssistRentalFeeAmountStrangerField(builder, assistRentalFeeAmountStrangerField)
+
+def AssistSlotExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AssistSlotExcelEnd(builder)

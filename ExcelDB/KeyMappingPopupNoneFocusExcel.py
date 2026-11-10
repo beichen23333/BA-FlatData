@@ -38,15 +38,26 @@ class KeyMappingPopupNoneFocusExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def KeyMappingPopupNoneFocusExcelStart(builder): builder.StartObject(2)
+def KeyMappingPopupNoneFocusExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return KeyMappingPopupNoneFocusExcelStart(builder)
-def KeyMappingPopupNoneFocusExcelAddPrefabNameField(builder, prefabNameField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+    KeyMappingPopupNoneFocusExcelStart(builder)
+
+def KeyMappingPopupNoneFocusExcelAddPrefabNameField(builder, prefabNameField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(prefabNameField), 0)
+
 def AddPrefabNameField(builder, prefabNameField):
-    return KeyMappingPopupNoneFocusExcelAddPrefabNameField(builder, prefabNameField)
-def KeyMappingPopupNoneFocusExcelAddButtonNameField(builder, buttonNameField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(buttonNameField), 0)
+    KeyMappingPopupNoneFocusExcelAddPrefabNameField(builder, prefabNameField)
+
+def KeyMappingPopupNoneFocusExcelAddButtonNameField(builder, buttonNameField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(buttonNameField), 0)
+
 def AddButtonNameField(builder, buttonNameField):
-    return KeyMappingPopupNoneFocusExcelAddButtonNameField(builder, buttonNameField)
-def KeyMappingPopupNoneFocusExcelEnd(builder): return builder.EndObject()
+    KeyMappingPopupNoneFocusExcelAddButtonNameField(builder, buttonNameField)
+
+def KeyMappingPopupNoneFocusExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return KeyMappingPopupNoneFocusExcelEnd(builder)

@@ -73,30 +73,56 @@ class DuplicateBonusExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def DuplicateBonusExcelStart(builder): builder.StartObject(7)
+def DuplicateBonusExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return DuplicateBonusExcelStart(builder)
-def DuplicateBonusExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    DuplicateBonusExcelStart(builder)
+
+def DuplicateBonusExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return DuplicateBonusExcelAddIdField(builder, idField)
-def DuplicateBonusExcelAddItemCategoryField(builder, itemCategoryField): builder.PrependInt32Slot(1, itemCategoryField, 0)
+    DuplicateBonusExcelAddIdField(builder, idField)
+
+def DuplicateBonusExcelAddItemCategoryField(builder, itemCategoryField):
+    builder.PrependInt32Slot(1, itemCategoryField, 0)
+
 def AddItemCategoryField(builder, itemCategoryField):
-    return DuplicateBonusExcelAddItemCategoryField(builder, itemCategoryField)
-def DuplicateBonusExcelAddItemIdField(builder, itemIdField): builder.PrependInt32Slot(2, itemIdField, 0)
+    DuplicateBonusExcelAddItemCategoryField(builder, itemCategoryField)
+
+def DuplicateBonusExcelAddItemIdField(builder, itemIdField):
+    builder.PrependInt32Slot(2, itemIdField, 0)
+
 def AddItemIdField(builder, itemIdField):
-    return DuplicateBonusExcelAddItemIdField(builder, itemIdField)
-def DuplicateBonusExcelAddCharacterIdField(builder, characterIdField): builder.PrependInt32Slot(3, characterIdField, 0)
+    DuplicateBonusExcelAddItemIdField(builder, itemIdField)
+
+def DuplicateBonusExcelAddCharacterIdField(builder, characterIdField):
+    builder.PrependInt32Slot(3, characterIdField, 0)
+
 def AddCharacterIdField(builder, characterIdField):
-    return DuplicateBonusExcelAddCharacterIdField(builder, characterIdField)
-def DuplicateBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(4, rewardParcelTypeField, 0)
+    DuplicateBonusExcelAddCharacterIdField(builder, characterIdField)
+
+def DuplicateBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(4, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return DuplicateBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def DuplicateBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(5, rewardParcelIdField, 0)
+    DuplicateBonusExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def DuplicateBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependInt32Slot(5, rewardParcelIdField, 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return DuplicateBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def DuplicateBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(6, rewardParcelAmountField, 0)
+    DuplicateBonusExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def DuplicateBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependInt32Slot(6, rewardParcelAmountField, 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return DuplicateBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def DuplicateBonusExcelEnd(builder): return builder.EndObject()
+    DuplicateBonusExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def DuplicateBonusExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return DuplicateBonusExcelEnd(builder)

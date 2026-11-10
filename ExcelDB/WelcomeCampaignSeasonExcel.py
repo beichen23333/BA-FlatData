@@ -129,54 +129,104 @@ class WelcomeCampaignSeasonExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def WelcomeCampaignSeasonExcelStart(builder): builder.StartObject(15)
+def WelcomeCampaignSeasonExcelStart(builder):
+    builder.StartObject(15)
+
 def Start(builder):
-    return WelcomeCampaignSeasonExcelStart(builder)
-def WelcomeCampaignSeasonExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    WelcomeCampaignSeasonExcelStart(builder)
+
+def WelcomeCampaignSeasonExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return WelcomeCampaignSeasonExcelAddIdField(builder, idField)
-def WelcomeCampaignSeasonExcelAddTitleLocalizeCodeField(builder, titleLocalizeCodeField): builder.PrependUint32Slot(1, titleLocalizeCodeField, 0)
+    WelcomeCampaignSeasonExcelAddIdField(builder, idField)
+
+def WelcomeCampaignSeasonExcelAddTitleLocalizeCodeField(builder, titleLocalizeCodeField):
+    builder.PrependUint32Slot(1, titleLocalizeCodeField, 0)
+
 def AddTitleLocalizeCodeField(builder, titleLocalizeCodeField):
-    return WelcomeCampaignSeasonExcelAddTitleLocalizeCodeField(builder, titleLocalizeCodeField)
-def WelcomeCampaignSeasonExcelAddTargetGroupField(builder, targetGroupField): builder.PrependInt32Slot(2, targetGroupField, 0)
+    WelcomeCampaignSeasonExcelAddTitleLocalizeCodeField(builder, titleLocalizeCodeField)
+
+def WelcomeCampaignSeasonExcelAddTargetGroupField(builder, targetGroupField):
+    builder.PrependInt32Slot(2, targetGroupField, 0)
+
 def AddTargetGroupField(builder, targetGroupField):
-    return WelcomeCampaignSeasonExcelAddTargetGroupField(builder, targetGroupField)
-def WelcomeCampaignSeasonExcelAddActiveOrderField(builder, activeOrderField): builder.PrependInt32Slot(3, activeOrderField, 0)
+    WelcomeCampaignSeasonExcelAddTargetGroupField(builder, targetGroupField)
+
+def WelcomeCampaignSeasonExcelAddActiveOrderField(builder, activeOrderField):
+    builder.PrependInt32Slot(3, activeOrderField, 0)
+
 def AddActiveOrderField(builder, activeOrderField):
-    return WelcomeCampaignSeasonExcelAddActiveOrderField(builder, activeOrderField)
-def WelcomeCampaignSeasonExcelAddStartDateField(builder, startDateField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+    WelcomeCampaignSeasonExcelAddActiveOrderField(builder, activeOrderField)
+
+def WelcomeCampaignSeasonExcelAddStartDateField(builder, startDateField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(startDateField), 0)
+
 def AddStartDateField(builder, startDateField):
-    return WelcomeCampaignSeasonExcelAddStartDateField(builder, startDateField)
-def WelcomeCampaignSeasonExcelAddEndDateField(builder, endDateField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+    WelcomeCampaignSeasonExcelAddStartDateField(builder, startDateField)
+
+def WelcomeCampaignSeasonExcelAddEndDateField(builder, endDateField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(endDateField), 0)
+
 def AddEndDateField(builder, endDateField):
-    return WelcomeCampaignSeasonExcelAddEndDateField(builder, endDateField)
-def WelcomeCampaignSeasonExcelAddExpiryDateField(builder, expiryDateField): builder.PrependInt32Slot(6, expiryDateField, 0)
+    WelcomeCampaignSeasonExcelAddEndDateField(builder, endDateField)
+
+def WelcomeCampaignSeasonExcelAddExpiryDateField(builder, expiryDateField):
+    builder.PrependInt32Slot(6, expiryDateField, 0)
+
 def AddExpiryDateField(builder, expiryDateField):
-    return WelcomeCampaignSeasonExcelAddExpiryDateField(builder, expiryDateField)
-def WelcomeCampaignSeasonExcelAddEnterIconImageField(builder, enterIconImageField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(enterIconImageField), 0)
+    WelcomeCampaignSeasonExcelAddExpiryDateField(builder, expiryDateField)
+
+def WelcomeCampaignSeasonExcelAddEnterIconImageField(builder, enterIconImageField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(enterIconImageField), 0)
+
 def AddEnterIconImageField(builder, enterIconImageField):
-    return WelcomeCampaignSeasonExcelAddEnterIconImageField(builder, enterIconImageField)
-def WelcomeCampaignSeasonExcelAddBackgroundImageField(builder, backgroundImageField): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(backgroundImageField), 0)
+    WelcomeCampaignSeasonExcelAddEnterIconImageField(builder, enterIconImageField)
+
+def WelcomeCampaignSeasonExcelAddBackgroundImageField(builder, backgroundImageField):
+    builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(backgroundImageField), 0)
+
 def AddBackgroundImageField(builder, backgroundImageField):
-    return WelcomeCampaignSeasonExcelAddBackgroundImageField(builder, backgroundImageField)
-def WelcomeCampaignSeasonExcelAddTitleImageField(builder, titleImageField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(titleImageField), 0)
+    WelcomeCampaignSeasonExcelAddBackgroundImageField(builder, backgroundImageField)
+
+def WelcomeCampaignSeasonExcelAddTitleImageField(builder, titleImageField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(titleImageField), 0)
+
 def AddTitleImageField(builder, titleImageField):
-    return WelcomeCampaignSeasonExcelAddTitleImageField(builder, titleImageField)
-def WelcomeCampaignSeasonExcelAddEnterRewardGroupIdField(builder, enterRewardGroupIdField): builder.PrependInt32Slot(10, enterRewardGroupIdField, 0)
+    WelcomeCampaignSeasonExcelAddTitleImageField(builder, titleImageField)
+
+def WelcomeCampaignSeasonExcelAddEnterRewardGroupIdField(builder, enterRewardGroupIdField):
+    builder.PrependInt32Slot(10, enterRewardGroupIdField, 0)
+
 def AddEnterRewardGroupIdField(builder, enterRewardGroupIdField):
-    return WelcomeCampaignSeasonExcelAddEnterRewardGroupIdField(builder, enterRewardGroupIdField)
-def WelcomeCampaignSeasonExcelAddRewardIncreaseIdField(builder, rewardIncreaseIdField): builder.PrependInt32Slot(11, rewardIncreaseIdField, 0)
+    WelcomeCampaignSeasonExcelAddEnterRewardGroupIdField(builder, enterRewardGroupIdField)
+
+def WelcomeCampaignSeasonExcelAddRewardIncreaseIdField(builder, rewardIncreaseIdField):
+    builder.PrependInt32Slot(11, rewardIncreaseIdField, 0)
+
 def AddRewardIncreaseIdField(builder, rewardIncreaseIdField):
-    return WelcomeCampaignSeasonExcelAddRewardIncreaseIdField(builder, rewardIncreaseIdField)
-def WelcomeCampaignSeasonExcelAddMaximumLoginCountField(builder, maximumLoginCountField): builder.PrependInt32Slot(12, maximumLoginCountField, 0)
+    WelcomeCampaignSeasonExcelAddRewardIncreaseIdField(builder, rewardIncreaseIdField)
+
+def WelcomeCampaignSeasonExcelAddMaximumLoginCountField(builder, maximumLoginCountField):
+    builder.PrependInt32Slot(12, maximumLoginCountField, 0)
+
 def AddMaximumLoginCountField(builder, maximumLoginCountField):
-    return WelcomeCampaignSeasonExcelAddMaximumLoginCountField(builder, maximumLoginCountField)
-def WelcomeCampaignSeasonExcelAddAttendanceBookSizeField(builder, attendanceBookSizeField): builder.PrependInt32Slot(13, attendanceBookSizeField, 0)
+    WelcomeCampaignSeasonExcelAddMaximumLoginCountField(builder, maximumLoginCountField)
+
+def WelcomeCampaignSeasonExcelAddAttendanceBookSizeField(builder, attendanceBookSizeField):
+    builder.PrependInt32Slot(13, attendanceBookSizeField, 0)
+
 def AddAttendanceBookSizeField(builder, attendanceBookSizeField):
-    return WelcomeCampaignSeasonExcelAddAttendanceBookSizeField(builder, attendanceBookSizeField)
-def WelcomeCampaignSeasonExcelAddContinuousAttendanceField(builder, continuousAttendanceField): builder.PrependBoolSlot(14, continuousAttendanceField, 0)
+    WelcomeCampaignSeasonExcelAddAttendanceBookSizeField(builder, attendanceBookSizeField)
+
+def WelcomeCampaignSeasonExcelAddContinuousAttendanceField(builder, continuousAttendanceField):
+    builder.PrependBoolSlot(14, continuousAttendanceField, 0)
+
 def AddContinuousAttendanceField(builder, continuousAttendanceField):
-    return WelcomeCampaignSeasonExcelAddContinuousAttendanceField(builder, continuousAttendanceField)
-def WelcomeCampaignSeasonExcelEnd(builder): return builder.EndObject()
+    WelcomeCampaignSeasonExcelAddContinuousAttendanceField(builder, continuousAttendanceField)
+
+def WelcomeCampaignSeasonExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return WelcomeCampaignSeasonExcelEnd(builder)

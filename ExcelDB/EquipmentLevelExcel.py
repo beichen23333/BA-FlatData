@@ -85,24 +85,44 @@ class EquipmentLevelExcel(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         return o == 0
 
-def EquipmentLevelExcelStart(builder): builder.StartObject(3)
+def EquipmentLevelExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return EquipmentLevelExcelStart(builder)
-def EquipmentLevelExcelAddLevelField(builder, levelField): builder.PrependInt32Slot(0, levelField, 0)
+    EquipmentLevelExcelStart(builder)
+
+def EquipmentLevelExcelAddLevelField(builder, levelField):
+    builder.PrependInt32Slot(0, levelField, 0)
+
 def AddLevelField(builder, levelField):
-    return EquipmentLevelExcelAddLevelField(builder, levelField)
-def EquipmentLevelExcelAddTierLevelExpField(builder, tierLevelExpField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(tierLevelExpField), 0)
+    EquipmentLevelExcelAddLevelField(builder, levelField)
+
+def EquipmentLevelExcelAddTierLevelExpField(builder, tierLevelExpField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(tierLevelExpField), 0)
+
 def AddTierLevelExpField(builder, tierLevelExpField):
-    return EquipmentLevelExcelAddTierLevelExpField(builder, tierLevelExpField)
-def EquipmentLevelExcelStartTierLevelExpFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTierLevelExpFieldVector(builder, numElems):
+    EquipmentLevelExcelAddTierLevelExpField(builder, tierLevelExpField)
+
+def EquipmentLevelExcelStartTierLevelExpFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartTierLevelExpFieldVector(builder, numElems: int) -> int:
     return EquipmentLevelExcelStartTierLevelExpFieldVector(builder, numElems)
-def EquipmentLevelExcelAddTotalExpField(builder, totalExpField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(totalExpField), 0)
+
+def EquipmentLevelExcelAddTotalExpField(builder, totalExpField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(totalExpField), 0)
+
 def AddTotalExpField(builder, totalExpField):
-    return EquipmentLevelExcelAddTotalExpField(builder, totalExpField)
-def EquipmentLevelExcelStartTotalExpFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartTotalExpFieldVector(builder, numElems):
+    EquipmentLevelExcelAddTotalExpField(builder, totalExpField)
+
+def EquipmentLevelExcelStartTotalExpFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartTotalExpFieldVector(builder, numElems: int) -> int:
     return EquipmentLevelExcelStartTotalExpFieldVector(builder, numElems)
-def EquipmentLevelExcelEnd(builder): return builder.EndObject()
+
+def EquipmentLevelExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EquipmentLevelExcelEnd(builder)

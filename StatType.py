@@ -92,4 +92,12 @@ class StatType:
     EffectiveDamagedRatio = 90
     NormalDamagedRatio = 91
     ResistDamagedRatio = 92
-    Max = 93
+    AddDamageRatioSynergyBulletType = 93
+    AddStreetTerrainFactor = 94
+    AddOutdoorTerrainFactor = 95
+    AddIndoorTerrainFactor = 96
+    EnhanceResistDamageRate = 97
+    ReduceResistDamagedRate = 98
+    AddSummonedObstacleDamagedRatio = 99
+    DamagedRatio_Obstacle = 100
+    Max = 101

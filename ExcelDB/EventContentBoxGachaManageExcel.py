@@ -52,21 +52,38 @@ class EventContentBoxGachaManageExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def EventContentBoxGachaManageExcelStart(builder): builder.StartObject(4)
+def EventContentBoxGachaManageExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return EventContentBoxGachaManageExcelStart(builder)
-def EventContentBoxGachaManageExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentBoxGachaManageExcelStart(builder)
+
+def EventContentBoxGachaManageExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentBoxGachaManageExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentBoxGachaManageExcelAddRoundField(builder, roundField): builder.PrependInt32Slot(1, roundField, 0)
+    EventContentBoxGachaManageExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentBoxGachaManageExcelAddRoundField(builder, roundField):
+    builder.PrependInt32Slot(1, roundField, 0)
+
 def AddRoundField(builder, roundField):
-    return EventContentBoxGachaManageExcelAddRoundField(builder, roundField)
-def EventContentBoxGachaManageExcelAddGoodsIdField(builder, goodsIdField): builder.PrependInt32Slot(2, goodsIdField, 0)
+    EventContentBoxGachaManageExcelAddRoundField(builder, roundField)
+
+def EventContentBoxGachaManageExcelAddGoodsIdField(builder, goodsIdField):
+    builder.PrependInt32Slot(2, goodsIdField, 0)
+
 def AddGoodsIdField(builder, goodsIdField):
-    return EventContentBoxGachaManageExcelAddGoodsIdField(builder, goodsIdField)
-def EventContentBoxGachaManageExcelAddIsLoopField(builder, isLoopField): builder.PrependBoolSlot(3, isLoopField, 0)
+    EventContentBoxGachaManageExcelAddGoodsIdField(builder, goodsIdField)
+
+def EventContentBoxGachaManageExcelAddIsLoopField(builder, isLoopField):
+    builder.PrependBoolSlot(3, isLoopField, 0)
+
 def AddIsLoopField(builder, isLoopField):
-    return EventContentBoxGachaManageExcelAddIsLoopField(builder, isLoopField)
-def EventContentBoxGachaManageExcelEnd(builder): return builder.EndObject()
+    EventContentBoxGachaManageExcelAddIsLoopField(builder, isLoopField)
+
+def EventContentBoxGachaManageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentBoxGachaManageExcelEnd(builder)

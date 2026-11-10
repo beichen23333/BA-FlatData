@@ -49,15 +49,26 @@ class AudioAnimatorExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def AudioAnimatorExcelTableStart(builder): builder.StartObject(1)
+def AudioAnimatorExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return AudioAnimatorExcelTableStart(builder)
-def AudioAnimatorExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    AudioAnimatorExcelTableStart(builder)
+
+def AudioAnimatorExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return AudioAnimatorExcelTableAddDataList(builder, dataList)
-def AudioAnimatorExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    AudioAnimatorExcelTableAddDataList(builder, dataList)
+
+def AudioAnimatorExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return AudioAnimatorExcelTableStartDataListVector(builder, numElems)
-def AudioAnimatorExcelTableEnd(builder): return builder.EndObject()
+
+def AudioAnimatorExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return AudioAnimatorExcelTableEnd(builder)

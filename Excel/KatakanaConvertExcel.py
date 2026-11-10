@@ -38,15 +38,26 @@ class KatakanaConvertExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def KatakanaConvertExcelStart(builder): builder.StartObject(2)
+def KatakanaConvertExcelStart(builder):
+    builder.StartObject(2)
+
 def Start(builder):
-    return KatakanaConvertExcelStart(builder)
-def KatakanaConvertExcelAddKrField(builder, krField): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(krField), 0)
+    KatakanaConvertExcelStart(builder)
+
+def KatakanaConvertExcelAddKrField(builder, krField):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(krField), 0)
+
 def AddKrField(builder, krField):
-    return KatakanaConvertExcelAddKrField(builder, krField)
-def KatakanaConvertExcelAddJpField(builder, jpField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(jpField), 0)
+    KatakanaConvertExcelAddKrField(builder, krField)
+
+def KatakanaConvertExcelAddJpField(builder, jpField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(jpField), 0)
+
 def AddJpField(builder, jpField):
-    return KatakanaConvertExcelAddJpField(builder, jpField)
-def KatakanaConvertExcelEnd(builder): return builder.EndObject()
+    KatakanaConvertExcelAddJpField(builder, jpField)
+
+def KatakanaConvertExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return KatakanaConvertExcelEnd(builder)

@@ -45,18 +45,32 @@ class EventContentMiniEventTokenExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def EventContentMiniEventTokenExcelStart(builder): builder.StartObject(3)
+def EventContentMiniEventTokenExcelStart(builder):
+    builder.StartObject(3)
+
 def Start(builder):
-    return EventContentMiniEventTokenExcelStart(builder)
-def EventContentMiniEventTokenExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentMiniEventTokenExcelStart(builder)
+
+def EventContentMiniEventTokenExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentMiniEventTokenExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentMiniEventTokenExcelAddItemUniqueIdField(builder, itemUniqueIdField): builder.PrependInt32Slot(1, itemUniqueIdField, 0)
+    EventContentMiniEventTokenExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentMiniEventTokenExcelAddItemUniqueIdField(builder, itemUniqueIdField):
+    builder.PrependInt32Slot(1, itemUniqueIdField, 0)
+
 def AddItemUniqueIdField(builder, itemUniqueIdField):
-    return EventContentMiniEventTokenExcelAddItemUniqueIdField(builder, itemUniqueIdField)
-def EventContentMiniEventTokenExcelAddMaximumAmountField(builder, maximumAmountField): builder.PrependInt32Slot(2, maximumAmountField, 0)
+    EventContentMiniEventTokenExcelAddItemUniqueIdField(builder, itemUniqueIdField)
+
+def EventContentMiniEventTokenExcelAddMaximumAmountField(builder, maximumAmountField):
+    builder.PrependInt32Slot(2, maximumAmountField, 0)
+
 def AddMaximumAmountField(builder, maximumAmountField):
-    return EventContentMiniEventTokenExcelAddMaximumAmountField(builder, maximumAmountField)
-def EventContentMiniEventTokenExcelEnd(builder): return builder.EndObject()
+    EventContentMiniEventTokenExcelAddMaximumAmountField(builder, maximumAmountField)
+
+def EventContentMiniEventTokenExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentMiniEventTokenExcelEnd(builder)

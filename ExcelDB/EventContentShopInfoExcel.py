@@ -175,57 +175,110 @@ class EventContentShopInfoExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def EventContentShopInfoExcelStart(builder): builder.StartObject(13)
+def EventContentShopInfoExcelStart(builder):
+    builder.StartObject(13)
+
 def Start(builder):
-    return EventContentShopInfoExcelStart(builder)
-def EventContentShopInfoExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    EventContentShopInfoExcelStart(builder)
+
+def EventContentShopInfoExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return EventContentShopInfoExcelAddEventContentIdField(builder, eventContentIdField)
-def EventContentShopInfoExcelAddCategoryTypeField(builder, categoryTypeField): builder.PrependFloat32Slot(1, categoryTypeField, 0.0)
+    EventContentShopInfoExcelAddEventContentIdField(builder, eventContentIdField)
+
+def EventContentShopInfoExcelAddCategoryTypeField(builder, categoryTypeField):
+    builder.PrependFloat32Slot(1, categoryTypeField, 0.0)
+
 def AddCategoryTypeField(builder, categoryTypeField):
-    return EventContentShopInfoExcelAddCategoryTypeField(builder, categoryTypeField)
-def EventContentShopInfoExcelAddLocalizeCodeField(builder, localizeCodeField): builder.PrependUint32Slot(2, localizeCodeField, 0)
+    EventContentShopInfoExcelAddCategoryTypeField(builder, categoryTypeField)
+
+def EventContentShopInfoExcelAddLocalizeCodeField(builder, localizeCodeField):
+    builder.PrependUint32Slot(2, localizeCodeField, 0)
+
 def AddLocalizeCodeField(builder, localizeCodeField):
-    return EventContentShopInfoExcelAddLocalizeCodeField(builder, localizeCodeField)
-def EventContentShopInfoExcelAddCostParcelTypeField(builder, costParcelTypeField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelTypeField), 0)
+    EventContentShopInfoExcelAddLocalizeCodeField(builder, localizeCodeField)
+
+def EventContentShopInfoExcelAddCostParcelTypeField(builder, costParcelTypeField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelTypeField), 0)
+
 def AddCostParcelTypeField(builder, costParcelTypeField):
-    return EventContentShopInfoExcelAddCostParcelTypeField(builder, costParcelTypeField)
-def EventContentShopInfoExcelStartCostParcelTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCostParcelTypeFieldVector(builder, numElems):
+    EventContentShopInfoExcelAddCostParcelTypeField(builder, costParcelTypeField)
+
+def EventContentShopInfoExcelStartCostParcelTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCostParcelTypeFieldVector(builder, numElems: int) -> int:
     return EventContentShopInfoExcelStartCostParcelTypeFieldVector(builder, numElems)
-def EventContentShopInfoExcelAddCostParcelIdField(builder, costParcelIdField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelIdField), 0)
+
+def EventContentShopInfoExcelAddCostParcelIdField(builder, costParcelIdField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(costParcelIdField), 0)
+
 def AddCostParcelIdField(builder, costParcelIdField):
-    return EventContentShopInfoExcelAddCostParcelIdField(builder, costParcelIdField)
-def EventContentShopInfoExcelStartCostParcelIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartCostParcelIdFieldVector(builder, numElems):
+    EventContentShopInfoExcelAddCostParcelIdField(builder, costParcelIdField)
+
+def EventContentShopInfoExcelStartCostParcelIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartCostParcelIdFieldVector(builder, numElems: int) -> int:
     return EventContentShopInfoExcelStartCostParcelIdFieldVector(builder, numElems)
-def EventContentShopInfoExcelAddIsRefreshField(builder, isRefreshField): builder.PrependBoolSlot(5, isRefreshField, 0)
+
+def EventContentShopInfoExcelAddIsRefreshField(builder, isRefreshField):
+    builder.PrependBoolSlot(5, isRefreshField, 0)
+
 def AddIsRefreshField(builder, isRefreshField):
-    return EventContentShopInfoExcelAddIsRefreshField(builder, isRefreshField)
-def EventContentShopInfoExcelAddIsSoldOutDimmedField(builder, isSoldOutDimmedField): builder.PrependBoolSlot(6, isSoldOutDimmedField, 0)
+    EventContentShopInfoExcelAddIsRefreshField(builder, isRefreshField)
+
+def EventContentShopInfoExcelAddIsSoldOutDimmedField(builder, isSoldOutDimmedField):
+    builder.PrependBoolSlot(6, isSoldOutDimmedField, 0)
+
 def AddIsSoldOutDimmedField(builder, isSoldOutDimmedField):
-    return EventContentShopInfoExcelAddIsSoldOutDimmedField(builder, isSoldOutDimmedField)
-def EventContentShopInfoExcelAddAutoRefreshCoolTimeField(builder, autoRefreshCoolTimeField): builder.PrependInt32Slot(7, autoRefreshCoolTimeField, 0)
+    EventContentShopInfoExcelAddIsSoldOutDimmedField(builder, isSoldOutDimmedField)
+
+def EventContentShopInfoExcelAddAutoRefreshCoolTimeField(builder, autoRefreshCoolTimeField):
+    builder.PrependInt32Slot(7, autoRefreshCoolTimeField, 0)
+
 def AddAutoRefreshCoolTimeField(builder, autoRefreshCoolTimeField):
-    return EventContentShopInfoExcelAddAutoRefreshCoolTimeField(builder, autoRefreshCoolTimeField)
-def EventContentShopInfoExcelAddRefreshAbleCountField(builder, refreshAbleCountField): builder.PrependInt32Slot(8, refreshAbleCountField, 0)
+    EventContentShopInfoExcelAddAutoRefreshCoolTimeField(builder, autoRefreshCoolTimeField)
+
+def EventContentShopInfoExcelAddRefreshAbleCountField(builder, refreshAbleCountField):
+    builder.PrependInt32Slot(8, refreshAbleCountField, 0)
+
 def AddRefreshAbleCountField(builder, refreshAbleCountField):
-    return EventContentShopInfoExcelAddRefreshAbleCountField(builder, refreshAbleCountField)
-def EventContentShopInfoExcelAddGoodsIdField(builder, goodsIdField): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(goodsIdField), 0)
+    EventContentShopInfoExcelAddRefreshAbleCountField(builder, refreshAbleCountField)
+
+def EventContentShopInfoExcelAddGoodsIdField(builder, goodsIdField):
+    builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(goodsIdField), 0)
+
 def AddGoodsIdField(builder, goodsIdField):
-    return EventContentShopInfoExcelAddGoodsIdField(builder, goodsIdField)
-def EventContentShopInfoExcelStartGoodsIdFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartGoodsIdFieldVector(builder, numElems):
+    EventContentShopInfoExcelAddGoodsIdField(builder, goodsIdField)
+
+def EventContentShopInfoExcelStartGoodsIdFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartGoodsIdFieldVector(builder, numElems: int) -> int:
     return EventContentShopInfoExcelStartGoodsIdFieldVector(builder, numElems)
-def EventContentShopInfoExcelAddOpenPeriodFromField(builder, openPeriodFromField): builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(openPeriodFromField), 0)
+
+def EventContentShopInfoExcelAddOpenPeriodFromField(builder, openPeriodFromField):
+    builder.PrependUOffsetTRelativeSlot(10, flatbuffers.number_types.UOffsetTFlags.py_type(openPeriodFromField), 0)
+
 def AddOpenPeriodFromField(builder, openPeriodFromField):
-    return EventContentShopInfoExcelAddOpenPeriodFromField(builder, openPeriodFromField)
-def EventContentShopInfoExcelAddOpenPeriodToField(builder, openPeriodToField): builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(openPeriodToField), 0)
+    EventContentShopInfoExcelAddOpenPeriodFromField(builder, openPeriodFromField)
+
+def EventContentShopInfoExcelAddOpenPeriodToField(builder, openPeriodToField):
+    builder.PrependUOffsetTRelativeSlot(11, flatbuffers.number_types.UOffsetTFlags.py_type(openPeriodToField), 0)
+
 def AddOpenPeriodToField(builder, openPeriodToField):
-    return EventContentShopInfoExcelAddOpenPeriodToField(builder, openPeriodToField)
-def EventContentShopInfoExcelAddShopProductUpdateDateField(builder, shopProductUpdateDateField): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(shopProductUpdateDateField), 0)
+    EventContentShopInfoExcelAddOpenPeriodToField(builder, openPeriodToField)
+
+def EventContentShopInfoExcelAddShopProductUpdateDateField(builder, shopProductUpdateDateField):
+    builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(shopProductUpdateDateField), 0)
+
 def AddShopProductUpdateDateField(builder, shopProductUpdateDateField):
-    return EventContentShopInfoExcelAddShopProductUpdateDateField(builder, shopProductUpdateDateField)
-def EventContentShopInfoExcelEnd(builder): return builder.EndObject()
+    EventContentShopInfoExcelAddShopProductUpdateDateField(builder, shopProductUpdateDateField)
+
+def EventContentShopInfoExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return EventContentShopInfoExcelEnd(builder)

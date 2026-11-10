@@ -161,51 +161,98 @@ class MiniGameDreamScheduleResultExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def MiniGameDreamScheduleResultExcelStart(builder): builder.StartObject(11)
+def MiniGameDreamScheduleResultExcelStart(builder):
+    builder.StartObject(11)
+
 def Start(builder):
-    return MiniGameDreamScheduleResultExcelStart(builder)
-def MiniGameDreamScheduleResultExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    MiniGameDreamScheduleResultExcelStart(builder)
+
+def MiniGameDreamScheduleResultExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return MiniGameDreamScheduleResultExcelAddIdField(builder, idField)
-def MiniGameDreamScheduleResultExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(1, eventContentIdField, 0)
+    MiniGameDreamScheduleResultExcelAddIdField(builder, idField)
+
+def MiniGameDreamScheduleResultExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(1, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MiniGameDreamScheduleResultExcelAddEventContentIdField(builder, eventContentIdField)
-def MiniGameDreamScheduleResultExcelAddDreamMakerResultField(builder, dreamMakerResultField): builder.PrependInt32Slot(2, dreamMakerResultField, 0)
+    MiniGameDreamScheduleResultExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MiniGameDreamScheduleResultExcelAddDreamMakerResultField(builder, dreamMakerResultField):
+    builder.PrependInt32Slot(2, dreamMakerResultField, 0)
+
 def AddDreamMakerResultField(builder, dreamMakerResultField):
-    return MiniGameDreamScheduleResultExcelAddDreamMakerResultField(builder, dreamMakerResultField)
-def MiniGameDreamScheduleResultExcelAddDreamMakerScheduleGroupField(builder, dreamMakerScheduleGroupField): builder.PrependInt32Slot(3, dreamMakerScheduleGroupField, 0)
+    MiniGameDreamScheduleResultExcelAddDreamMakerResultField(builder, dreamMakerResultField)
+
+def MiniGameDreamScheduleResultExcelAddDreamMakerScheduleGroupField(builder, dreamMakerScheduleGroupField):
+    builder.PrependInt32Slot(3, dreamMakerScheduleGroupField, 0)
+
 def AddDreamMakerScheduleGroupField(builder, dreamMakerScheduleGroupField):
-    return MiniGameDreamScheduleResultExcelAddDreamMakerScheduleGroupField(builder, dreamMakerScheduleGroupField)
-def MiniGameDreamScheduleResultExcelAddProbField(builder, probField): builder.PrependInt32Slot(4, probField, 0)
+    MiniGameDreamScheduleResultExcelAddDreamMakerScheduleGroupField(builder, dreamMakerScheduleGroupField)
+
+def MiniGameDreamScheduleResultExcelAddProbField(builder, probField):
+    builder.PrependInt32Slot(4, probField, 0)
+
 def AddProbField(builder, probField):
-    return MiniGameDreamScheduleResultExcelAddProbField(builder, probField)
-def MiniGameDreamScheduleResultExcelAddRewardParameterField(builder, rewardParameterField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParameterField), 0)
+    MiniGameDreamScheduleResultExcelAddProbField(builder, probField)
+
+def MiniGameDreamScheduleResultExcelAddRewardParameterField(builder, rewardParameterField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParameterField), 0)
+
 def AddRewardParameterField(builder, rewardParameterField):
-    return MiniGameDreamScheduleResultExcelAddRewardParameterField(builder, rewardParameterField)
-def MiniGameDreamScheduleResultExcelStartRewardParameterFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParameterFieldVector(builder, numElems):
+    MiniGameDreamScheduleResultExcelAddRewardParameterField(builder, rewardParameterField)
+
+def MiniGameDreamScheduleResultExcelStartRewardParameterFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParameterFieldVector(builder, numElems: int) -> int:
     return MiniGameDreamScheduleResultExcelStartRewardParameterFieldVector(builder, numElems)
-def MiniGameDreamScheduleResultExcelAddRewardParameterOperationTypeField(builder, rewardParameterOperationTypeField): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParameterOperationTypeField), 0)
+
+def MiniGameDreamScheduleResultExcelAddRewardParameterOperationTypeField(builder, rewardParameterOperationTypeField):
+    builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParameterOperationTypeField), 0)
+
 def AddRewardParameterOperationTypeField(builder, rewardParameterOperationTypeField):
-    return MiniGameDreamScheduleResultExcelAddRewardParameterOperationTypeField(builder, rewardParameterOperationTypeField)
-def MiniGameDreamScheduleResultExcelStartRewardParameterOperationTypeFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParameterOperationTypeFieldVector(builder, numElems):
+    MiniGameDreamScheduleResultExcelAddRewardParameterOperationTypeField(builder, rewardParameterOperationTypeField)
+
+def MiniGameDreamScheduleResultExcelStartRewardParameterOperationTypeFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParameterOperationTypeFieldVector(builder, numElems: int) -> int:
     return MiniGameDreamScheduleResultExcelStartRewardParameterOperationTypeFieldVector(builder, numElems)
-def MiniGameDreamScheduleResultExcelAddRewardParameterAmountField(builder, rewardParameterAmountField): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParameterAmountField), 0)
+
+def MiniGameDreamScheduleResultExcelAddRewardParameterAmountField(builder, rewardParameterAmountField):
+    builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(rewardParameterAmountField), 0)
+
 def AddRewardParameterAmountField(builder, rewardParameterAmountField):
-    return MiniGameDreamScheduleResultExcelAddRewardParameterAmountField(builder, rewardParameterAmountField)
-def MiniGameDreamScheduleResultExcelStartRewardParameterAmountFieldVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartRewardParameterAmountFieldVector(builder, numElems):
+    MiniGameDreamScheduleResultExcelAddRewardParameterAmountField(builder, rewardParameterAmountField)
+
+def MiniGameDreamScheduleResultExcelStartRewardParameterAmountFieldVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartRewardParameterAmountFieldVector(builder, numElems: int) -> int:
     return MiniGameDreamScheduleResultExcelStartRewardParameterAmountFieldVector(builder, numElems)
-def MiniGameDreamScheduleResultExcelAddRewardParcelTypeField(builder, rewardParcelTypeField): builder.PrependInt32Slot(8, rewardParcelTypeField, 0)
+
+def MiniGameDreamScheduleResultExcelAddRewardParcelTypeField(builder, rewardParcelTypeField):
+    builder.PrependInt32Slot(8, rewardParcelTypeField, 0)
+
 def AddRewardParcelTypeField(builder, rewardParcelTypeField):
-    return MiniGameDreamScheduleResultExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
-def MiniGameDreamScheduleResultExcelAddRewardParcelIdField(builder, rewardParcelIdField): builder.PrependInt32Slot(9, rewardParcelIdField, 0)
+    MiniGameDreamScheduleResultExcelAddRewardParcelTypeField(builder, rewardParcelTypeField)
+
+def MiniGameDreamScheduleResultExcelAddRewardParcelIdField(builder, rewardParcelIdField):
+    builder.PrependInt32Slot(9, rewardParcelIdField, 0)
+
 def AddRewardParcelIdField(builder, rewardParcelIdField):
-    return MiniGameDreamScheduleResultExcelAddRewardParcelIdField(builder, rewardParcelIdField)
-def MiniGameDreamScheduleResultExcelAddRewardParcelAmountField(builder, rewardParcelAmountField): builder.PrependInt32Slot(10, rewardParcelAmountField, 0)
+    MiniGameDreamScheduleResultExcelAddRewardParcelIdField(builder, rewardParcelIdField)
+
+def MiniGameDreamScheduleResultExcelAddRewardParcelAmountField(builder, rewardParcelAmountField):
+    builder.PrependInt32Slot(10, rewardParcelAmountField, 0)
+
 def AddRewardParcelAmountField(builder, rewardParcelAmountField):
-    return MiniGameDreamScheduleResultExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
-def MiniGameDreamScheduleResultExcelEnd(builder): return builder.EndObject()
+    MiniGameDreamScheduleResultExcelAddRewardParcelAmountField(builder, rewardParcelAmountField)
+
+def MiniGameDreamScheduleResultExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameDreamScheduleResultExcelEnd(builder)

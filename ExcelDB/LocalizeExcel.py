@@ -66,27 +66,50 @@ class LocalizeExcel(object):
             return self._tab.String(o + self._tab.Pos)
         return None
 
-def LocalizeExcelStart(builder): builder.StartObject(6)
+def LocalizeExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return LocalizeExcelStart(builder)
-def LocalizeExcelAddKeyField(builder, keyField): builder.PrependUint32Slot(0, keyField, 0)
+    LocalizeExcelStart(builder)
+
+def LocalizeExcelAddKeyField(builder, keyField):
+    builder.PrependUint32Slot(0, keyField, 0)
+
 def AddKeyField(builder, keyField):
-    return LocalizeExcelAddKeyField(builder, keyField)
-def LocalizeExcelAddKrField(builder, krField): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(krField), 0)
+    LocalizeExcelAddKeyField(builder, keyField)
+
+def LocalizeExcelAddKrField(builder, krField):
+    builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(krField), 0)
+
 def AddKrField(builder, krField):
-    return LocalizeExcelAddKrField(builder, krField)
-def LocalizeExcelAddJpField(builder, jpField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(jpField), 0)
+    LocalizeExcelAddKrField(builder, krField)
+
+def LocalizeExcelAddJpField(builder, jpField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(jpField), 0)
+
 def AddJpField(builder, jpField):
-    return LocalizeExcelAddJpField(builder, jpField)
-def LocalizeExcelAddThField(builder, thField): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(thField), 0)
+    LocalizeExcelAddJpField(builder, jpField)
+
+def LocalizeExcelAddThField(builder, thField):
+    builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(thField), 0)
+
 def AddThField(builder, thField):
-    return LocalizeExcelAddThField(builder, thField)
-def LocalizeExcelAddTwField(builder, twField): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(twField), 0)
+    LocalizeExcelAddThField(builder, thField)
+
+def LocalizeExcelAddTwField(builder, twField):
+    builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(twField), 0)
+
 def AddTwField(builder, twField):
-    return LocalizeExcelAddTwField(builder, twField)
-def LocalizeExcelAddEnField(builder, enField): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(enField), 0)
+    LocalizeExcelAddTwField(builder, twField)
+
+def LocalizeExcelAddEnField(builder, enField):
+    builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(enField), 0)
+
 def AddEnField(builder, enField):
-    return LocalizeExcelAddEnField(builder, enField)
-def LocalizeExcelEnd(builder): return builder.EndObject()
+    LocalizeExcelAddEnField(builder, enField)
+
+def LocalizeExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return LocalizeExcelEnd(builder)

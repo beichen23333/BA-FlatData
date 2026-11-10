@@ -73,30 +73,56 @@ class SNSInfoExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def SNSInfoExcelStart(builder): builder.StartObject(7)
+def SNSInfoExcelStart(builder):
+    builder.StartObject(7)
+
 def Start(builder):
-    return SNSInfoExcelStart(builder)
-def SNSInfoExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    SNSInfoExcelStart(builder)
+
+def SNSInfoExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return SNSInfoExcelAddIdField(builder, idField)
-def SNSInfoExcelAddOpenScenarioModeIdField(builder, openScenarioModeIdField): builder.PrependInt32Slot(1, openScenarioModeIdField, 0)
+    SNSInfoExcelAddIdField(builder, idField)
+
+def SNSInfoExcelAddOpenScenarioModeIdField(builder, openScenarioModeIdField):
+    builder.PrependInt32Slot(1, openScenarioModeIdField, 0)
+
 def AddOpenScenarioModeIdField(builder, openScenarioModeIdField):
-    return SNSInfoExcelAddOpenScenarioModeIdField(builder, openScenarioModeIdField)
-def SNSInfoExcelAddCloseScenarioModeIdField(builder, closeScenarioModeIdField): builder.PrependInt32Slot(2, closeScenarioModeIdField, 0)
+    SNSInfoExcelAddOpenScenarioModeIdField(builder, openScenarioModeIdField)
+
+def SNSInfoExcelAddCloseScenarioModeIdField(builder, closeScenarioModeIdField):
+    builder.PrependInt32Slot(2, closeScenarioModeIdField, 0)
+
 def AddCloseScenarioModeIdField(builder, closeScenarioModeIdField):
-    return SNSInfoExcelAddCloseScenarioModeIdField(builder, closeScenarioModeIdField)
-def SNSInfoExcelAddOpenTitleLocalizeKeyField(builder, openTitleLocalizeKeyField): builder.PrependUint32Slot(3, openTitleLocalizeKeyField, 0)
+    SNSInfoExcelAddCloseScenarioModeIdField(builder, closeScenarioModeIdField)
+
+def SNSInfoExcelAddOpenTitleLocalizeKeyField(builder, openTitleLocalizeKeyField):
+    builder.PrependUint32Slot(3, openTitleLocalizeKeyField, 0)
+
 def AddOpenTitleLocalizeKeyField(builder, openTitleLocalizeKeyField):
-    return SNSInfoExcelAddOpenTitleLocalizeKeyField(builder, openTitleLocalizeKeyField)
-def SNSInfoExcelAddCloseTitleLocalizeKeyField(builder, closeTitleLocalizeKeyField): builder.PrependUint32Slot(4, closeTitleLocalizeKeyField, 0)
+    SNSInfoExcelAddOpenTitleLocalizeKeyField(builder, openTitleLocalizeKeyField)
+
+def SNSInfoExcelAddCloseTitleLocalizeKeyField(builder, closeTitleLocalizeKeyField):
+    builder.PrependUint32Slot(4, closeTitleLocalizeKeyField, 0)
+
 def AddCloseTitleLocalizeKeyField(builder, closeTitleLocalizeKeyField):
-    return SNSInfoExcelAddCloseTitleLocalizeKeyField(builder, closeTitleLocalizeKeyField)
-def SNSInfoExcelAddOpenDescLocalizeKeyField(builder, openDescLocalizeKeyField): builder.PrependUint32Slot(5, openDescLocalizeKeyField, 0)
+    SNSInfoExcelAddCloseTitleLocalizeKeyField(builder, closeTitleLocalizeKeyField)
+
+def SNSInfoExcelAddOpenDescLocalizeKeyField(builder, openDescLocalizeKeyField):
+    builder.PrependUint32Slot(5, openDescLocalizeKeyField, 0)
+
 def AddOpenDescLocalizeKeyField(builder, openDescLocalizeKeyField):
-    return SNSInfoExcelAddOpenDescLocalizeKeyField(builder, openDescLocalizeKeyField)
-def SNSInfoExcelAddCloseDescLocalizeKeyField(builder, closeDescLocalizeKeyField): builder.PrependUint32Slot(6, closeDescLocalizeKeyField, 0)
+    SNSInfoExcelAddOpenDescLocalizeKeyField(builder, openDescLocalizeKeyField)
+
+def SNSInfoExcelAddCloseDescLocalizeKeyField(builder, closeDescLocalizeKeyField):
+    builder.PrependUint32Slot(6, closeDescLocalizeKeyField, 0)
+
 def AddCloseDescLocalizeKeyField(builder, closeDescLocalizeKeyField):
-    return SNSInfoExcelAddCloseDescLocalizeKeyField(builder, closeDescLocalizeKeyField)
-def SNSInfoExcelEnd(builder): return builder.EndObject()
+    SNSInfoExcelAddCloseDescLocalizeKeyField(builder, closeDescLocalizeKeyField)
+
+def SNSInfoExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return SNSInfoExcelEnd(builder)

@@ -49,15 +49,26 @@ class LocalizeEtcExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def LocalizeEtcExcelTableStart(builder): builder.StartObject(1)
+def LocalizeEtcExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return LocalizeEtcExcelTableStart(builder)
-def LocalizeEtcExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    LocalizeEtcExcelTableStart(builder)
+
+def LocalizeEtcExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return LocalizeEtcExcelTableAddDataList(builder, dataList)
-def LocalizeEtcExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    LocalizeEtcExcelTableAddDataList(builder, dataList)
+
+def LocalizeEtcExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return LocalizeEtcExcelTableStartDataListVector(builder, numElems)
-def LocalizeEtcExcelTableEnd(builder): return builder.EndObject()
+
+def LocalizeEtcExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return LocalizeEtcExcelTableEnd(builder)

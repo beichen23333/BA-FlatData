@@ -49,15 +49,26 @@ class TutorialCharacterDialogExcelTable(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         return o == 0
 
-def TutorialCharacterDialogExcelTableStart(builder): builder.StartObject(1)
+def TutorialCharacterDialogExcelTableStart(builder):
+    builder.StartObject(1)
+
 def Start(builder):
-    return TutorialCharacterDialogExcelTableStart(builder)
-def TutorialCharacterDialogExcelTableAddDataList(builder, dataList): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+    TutorialCharacterDialogExcelTableStart(builder)
+
+def TutorialCharacterDialogExcelTableAddDataList(builder, dataList):
+    builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(dataList), 0)
+
 def AddDataList(builder, dataList):
-    return TutorialCharacterDialogExcelTableAddDataList(builder, dataList)
-def TutorialCharacterDialogExcelTableStartDataListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
-def StartDataListVector(builder, numElems):
+    TutorialCharacterDialogExcelTableAddDataList(builder, dataList)
+
+def TutorialCharacterDialogExcelTableStartDataListVector(builder, numElems):
+    return builder.StartVector(4, numElems, 4)
+
+def StartDataListVector(builder, numElems: int) -> int:
     return TutorialCharacterDialogExcelTableStartDataListVector(builder, numElems)
-def TutorialCharacterDialogExcelTableEnd(builder): return builder.EndObject()
+
+def TutorialCharacterDialogExcelTableEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return TutorialCharacterDialogExcelTableEnd(builder)

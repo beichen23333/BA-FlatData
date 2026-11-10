@@ -11,3 +11,5 @@ class GachaDisplayTag:
     Revival = 9
     SelectLimited = 10
     NewbieDateLimited = 11
+    Unowned = 12
+    SelectRecruitNotForSale = 13

@@ -52,21 +52,38 @@ class MiniGameRoadPuzzleVoiceExcel(object):
             return self._tab.Get(flatbuffers.number_types.Uint32Flags, o + self._tab.Pos)
         return 0
 
-def MiniGameRoadPuzzleVoiceExcelStart(builder): builder.StartObject(4)
+def MiniGameRoadPuzzleVoiceExcelStart(builder):
+    builder.StartObject(4)
+
 def Start(builder):
-    return MiniGameRoadPuzzleVoiceExcelStart(builder)
-def MiniGameRoadPuzzleVoiceExcelAddEventContentIdField(builder, eventContentIdField): builder.PrependInt32Slot(0, eventContentIdField, 0)
+    MiniGameRoadPuzzleVoiceExcelStart(builder)
+
+def MiniGameRoadPuzzleVoiceExcelAddEventContentIdField(builder, eventContentIdField):
+    builder.PrependInt32Slot(0, eventContentIdField, 0)
+
 def AddEventContentIdField(builder, eventContentIdField):
-    return MiniGameRoadPuzzleVoiceExcelAddEventContentIdField(builder, eventContentIdField)
-def MiniGameRoadPuzzleVoiceExcelAddUniqueIdField(builder, uniqueIdField): builder.PrependInt32Slot(1, uniqueIdField, 0)
+    MiniGameRoadPuzzleVoiceExcelAddEventContentIdField(builder, eventContentIdField)
+
+def MiniGameRoadPuzzleVoiceExcelAddUniqueIdField(builder, uniqueIdField):
+    builder.PrependInt32Slot(1, uniqueIdField, 0)
+
 def AddUniqueIdField(builder, uniqueIdField):
-    return MiniGameRoadPuzzleVoiceExcelAddUniqueIdField(builder, uniqueIdField)
-def MiniGameRoadPuzzleVoiceExcelAddVoiceConditionField(builder, voiceConditionField): builder.PrependInt32Slot(2, voiceConditionField, 0)
+    MiniGameRoadPuzzleVoiceExcelAddUniqueIdField(builder, uniqueIdField)
+
+def MiniGameRoadPuzzleVoiceExcelAddVoiceConditionField(builder, voiceConditionField):
+    builder.PrependInt32Slot(2, voiceConditionField, 0)
+
 def AddVoiceConditionField(builder, voiceConditionField):
-    return MiniGameRoadPuzzleVoiceExcelAddVoiceConditionField(builder, voiceConditionField)
-def MiniGameRoadPuzzleVoiceExcelAddVoiceClipField(builder, voiceClipField): builder.PrependUint32Slot(3, voiceClipField, 0)
+    MiniGameRoadPuzzleVoiceExcelAddVoiceConditionField(builder, voiceConditionField)
+
+def MiniGameRoadPuzzleVoiceExcelAddVoiceClipField(builder, voiceClipField):
+    builder.PrependUint32Slot(3, voiceClipField, 0)
+
 def AddVoiceClipField(builder, voiceClipField):
-    return MiniGameRoadPuzzleVoiceExcelAddVoiceClipField(builder, voiceClipField)
-def MiniGameRoadPuzzleVoiceExcelEnd(builder): return builder.EndObject()
+    MiniGameRoadPuzzleVoiceExcelAddVoiceClipField(builder, voiceClipField)
+
+def MiniGameRoadPuzzleVoiceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return MiniGameRoadPuzzleVoiceExcelEnd(builder)

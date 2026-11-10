@@ -94,39 +94,74 @@ class FieldStoryStageExcel(object):
             return bool(self._tab.Get(flatbuffers.number_types.BoolFlags, o + self._tab.Pos))
         return False
 
-def FieldStoryStageExcelStart(builder): builder.StartObject(10)
+def FieldStoryStageExcelStart(builder):
+    builder.StartObject(10)
+
 def Start(builder):
-    return FieldStoryStageExcelStart(builder)
-def FieldStoryStageExcelAddIdField(builder, idField): builder.PrependInt32Slot(0, idField, 0)
+    FieldStoryStageExcelStart(builder)
+
+def FieldStoryStageExcelAddIdField(builder, idField):
+    builder.PrependInt32Slot(0, idField, 0)
+
 def AddIdField(builder, idField):
-    return FieldStoryStageExcelAddIdField(builder, idField)
-def FieldStoryStageExcelAddSeasonIdField(builder, seasonIdField): builder.PrependInt32Slot(1, seasonIdField, 0)
+    FieldStoryStageExcelAddIdField(builder, idField)
+
+def FieldStoryStageExcelAddSeasonIdField(builder, seasonIdField):
+    builder.PrependInt32Slot(1, seasonIdField, 0)
+
 def AddSeasonIdField(builder, seasonIdField):
-    return FieldStoryStageExcelAddSeasonIdField(builder, seasonIdField)
-def FieldStoryStageExcelAddNameField(builder, nameField): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+    FieldStoryStageExcelAddSeasonIdField(builder, seasonIdField)
+
+def FieldStoryStageExcelAddNameField(builder, nameField):
+    builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(nameField), 0)
+
 def AddNameField(builder, nameField):
-    return FieldStoryStageExcelAddNameField(builder, nameField)
-def FieldStoryStageExcelAddBattleDurationField(builder, battleDurationField): builder.PrependInt32Slot(3, battleDurationField, 0)
+    FieldStoryStageExcelAddNameField(builder, nameField)
+
+def FieldStoryStageExcelAddBattleDurationField(builder, battleDurationField):
+    builder.PrependInt32Slot(3, battleDurationField, 0)
+
 def AddBattleDurationField(builder, battleDurationField):
-    return FieldStoryStageExcelAddBattleDurationField(builder, battleDurationField)
-def FieldStoryStageExcelAddStageTopographyField(builder, stageTopographyField): builder.PrependInt32Slot(4, stageTopographyField, 0)
+    FieldStoryStageExcelAddBattleDurationField(builder, battleDurationField)
+
+def FieldStoryStageExcelAddStageTopographyField(builder, stageTopographyField):
+    builder.PrependInt32Slot(4, stageTopographyField, 0)
+
 def AddStageTopographyField(builder, stageTopographyField):
-    return FieldStoryStageExcelAddStageTopographyField(builder, stageTopographyField)
-def FieldStoryStageExcelAddRecommandLevelField(builder, recommandLevelField): builder.PrependInt32Slot(5, recommandLevelField, 0)
+    FieldStoryStageExcelAddStageTopographyField(builder, stageTopographyField)
+
+def FieldStoryStageExcelAddRecommandLevelField(builder, recommandLevelField):
+    builder.PrependInt32Slot(5, recommandLevelField, 0)
+
 def AddRecommandLevelField(builder, recommandLevelField):
-    return FieldStoryStageExcelAddRecommandLevelField(builder, recommandLevelField)
-def FieldStoryStageExcelAddGroundIDField(builder, groundIDField): builder.PrependInt32Slot(6, groundIDField, 0)
+    FieldStoryStageExcelAddRecommandLevelField(builder, recommandLevelField)
+
+def FieldStoryStageExcelAddGroundIDField(builder, groundIDField):
+    builder.PrependInt32Slot(6, groundIDField, 0)
+
 def AddGroundIDField(builder, groundIDField):
-    return FieldStoryStageExcelAddGroundIDField(builder, groundIDField)
-def FieldStoryStageExcelAddBGMIdField(builder, bGMIdField): builder.PrependInt32Slot(7, bGMIdField, 0)
+    FieldStoryStageExcelAddGroundIDField(builder, groundIDField)
+
+def FieldStoryStageExcelAddBGMIdField(builder, bGMIdField):
+    builder.PrependInt32Slot(7, bGMIdField, 0)
+
 def AddBGMIdField(builder, bGMIdField):
-    return FieldStoryStageExcelAddBGMIdField(builder, bGMIdField)
-def FieldStoryStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField): builder.PrependInt32Slot(8, fixedEchelonIdField, 0)
+    FieldStoryStageExcelAddBGMIdField(builder, bGMIdField)
+
+def FieldStoryStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField):
+    builder.PrependInt32Slot(8, fixedEchelonIdField, 0)
+
 def AddFixedEchelonIdField(builder, fixedEchelonIdField):
-    return FieldStoryStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
-def FieldStoryStageExcelAddSkipFormationSettingsField(builder, skipFormationSettingsField): builder.PrependBoolSlot(9, skipFormationSettingsField, 0)
+    FieldStoryStageExcelAddFixedEchelonIdField(builder, fixedEchelonIdField)
+
+def FieldStoryStageExcelAddSkipFormationSettingsField(builder, skipFormationSettingsField):
+    builder.PrependBoolSlot(9, skipFormationSettingsField, 0)
+
 def AddSkipFormationSettingsField(builder, skipFormationSettingsField):
-    return FieldStoryStageExcelAddSkipFormationSettingsField(builder, skipFormationSettingsField)
-def FieldStoryStageExcelEnd(builder): return builder.EndObject()
+    FieldStoryStageExcelAddSkipFormationSettingsField(builder, skipFormationSettingsField)
+
+def FieldStoryStageExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return FieldStoryStageExcelEnd(builder)

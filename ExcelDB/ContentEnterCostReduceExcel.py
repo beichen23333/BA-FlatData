@@ -66,27 +66,50 @@ class ContentEnterCostReduceExcel(object):
             return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-def ContentEnterCostReduceExcelStart(builder): builder.StartObject(6)
+def ContentEnterCostReduceExcelStart(builder):
+    builder.StartObject(6)
+
 def Start(builder):
-    return ContentEnterCostReduceExcelStart(builder)
-def ContentEnterCostReduceExcelAddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField): builder.PrependInt32Slot(0, enterCostReduceGroupIdField, 0)
+    ContentEnterCostReduceExcelStart(builder)
+
+def ContentEnterCostReduceExcelAddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField):
+    builder.PrependInt32Slot(0, enterCostReduceGroupIdField, 0)
+
 def AddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField):
-    return ContentEnterCostReduceExcelAddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField)
-def ContentEnterCostReduceExcelAddContentTypeField(builder, contentTypeField): builder.PrependInt32Slot(1, contentTypeField, 0)
+    ContentEnterCostReduceExcelAddEnterCostReduceGroupIdField(builder, enterCostReduceGroupIdField)
+
+def ContentEnterCostReduceExcelAddContentTypeField(builder, contentTypeField):
+    builder.PrependInt32Slot(1, contentTypeField, 0)
+
 def AddContentTypeField(builder, contentTypeField):
-    return ContentEnterCostReduceExcelAddContentTypeField(builder, contentTypeField)
-def ContentEnterCostReduceExcelAddStageIdField(builder, stageIdField): builder.PrependInt32Slot(2, stageIdField, 0)
+    ContentEnterCostReduceExcelAddContentTypeField(builder, contentTypeField)
+
+def ContentEnterCostReduceExcelAddStageIdField(builder, stageIdField):
+    builder.PrependInt32Slot(2, stageIdField, 0)
+
 def AddStageIdField(builder, stageIdField):
-    return ContentEnterCostReduceExcelAddStageIdField(builder, stageIdField)
-def ContentEnterCostReduceExcelAddReduceEnterCostTypeField(builder, reduceEnterCostTypeField): builder.PrependInt32Slot(3, reduceEnterCostTypeField, 0)
+    ContentEnterCostReduceExcelAddStageIdField(builder, stageIdField)
+
+def ContentEnterCostReduceExcelAddReduceEnterCostTypeField(builder, reduceEnterCostTypeField):
+    builder.PrependInt32Slot(3, reduceEnterCostTypeField, 0)
+
 def AddReduceEnterCostTypeField(builder, reduceEnterCostTypeField):
-    return ContentEnterCostReduceExcelAddReduceEnterCostTypeField(builder, reduceEnterCostTypeField)
-def ContentEnterCostReduceExcelAddReduceEnterCostIdField(builder, reduceEnterCostIdField): builder.PrependInt32Slot(4, reduceEnterCostIdField, 0)
+    ContentEnterCostReduceExcelAddReduceEnterCostTypeField(builder, reduceEnterCostTypeField)
+
+def ContentEnterCostReduceExcelAddReduceEnterCostIdField(builder, reduceEnterCostIdField):
+    builder.PrependInt32Slot(4, reduceEnterCostIdField, 0)
+
 def AddReduceEnterCostIdField(builder, reduceEnterCostIdField):
-    return ContentEnterCostReduceExcelAddReduceEnterCostIdField(builder, reduceEnterCostIdField)
-def ContentEnterCostReduceExcelAddReduceAmountField(builder, reduceAmountField): builder.PrependInt32Slot(5, reduceAmountField, 0)
+    ContentEnterCostReduceExcelAddReduceEnterCostIdField(builder, reduceEnterCostIdField)
+
+def ContentEnterCostReduceExcelAddReduceAmountField(builder, reduceAmountField):
+    builder.PrependInt32Slot(5, reduceAmountField, 0)
+
 def AddReduceAmountField(builder, reduceAmountField):
-    return ContentEnterCostReduceExcelAddReduceAmountField(builder, reduceAmountField)
-def ContentEnterCostReduceExcelEnd(builder): return builder.EndObject()
+    ContentEnterCostReduceExcelAddReduceAmountField(builder, reduceAmountField)
+
+def ContentEnterCostReduceExcelEnd(builder):
+    return builder.EndObject()
+
 def End(builder):
     return ContentEnterCostReduceExcelEnd(builder)
